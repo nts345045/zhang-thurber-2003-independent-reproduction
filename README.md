@@ -4,12 +4,22 @@ Independent C++/OpenMP implementation of the ray-based inverse problem in
 Zhang and Thurber (2003), *BSSA* 93, 1875–1889,
 [doi:10.1785/0120020190](https://doi.org/10.1785/0120020190).
 
-This is a research reproduction attempt, with explicit limits. The true
-synthetic velocity profile is reconstructed from prose. Synthetic inversion
-panels use independently generated source/receiver geometry and are partial
-reproductions. The Hayward field-data panels require observations excluded
-by the task and are not reproduced. No original model code, observations,
-simulation outputs, plotting scripts, or figure files were used.
+This is a research reproduction attempt, with explicit limits. The existing
+report records the first attempt: its synthetic inversion panels use generated
+source/receiver geometry and are partial reproductions; Hayward field-data
+panels were not computed. The original task excluded source observations.
+
+On 2026-10-09 the user revised that restriction: real station and earthquake
+data, including metadata, must now come from authoritative sources, starting
+with USGS and EarthScope web services. All saved records must retain SEED
+codes and resource identifiers as applicable. The independent-code and
+figure-input restrictions still apply. Successful historical catalog, phase,
+and station metadata queries are saved in
+[the acquisition record](data/authoritative/discovery/README.md).
+These discovery records have not been used in an inversion. The exact paper
+event/station selections remain unidentified; clarification is required by
+[the observational-data rule](AGENTS.md#observational-data-for-reproduction)
+before proceeding with dataset selection.
 
 [Read the PDF report](report/report.pdf) or the
 [panel-by-panel audit](FIGURE_AUDIT.md).
@@ -58,7 +68,7 @@ do not establish that the latest rebuild succeeded.
 - `diagnostics/`: optional source-derivative sweep; commands are in `data/development/README.md`.
 - `figures/`: generated PDF and PNG figures.
 - `report/report.tex`, `report/report.pdf`: final report source and compiled report.
-- `reference/task.md`: project scope and exclusions.
+- `reference/task.md`: original task; subsequent data-sourcing rules are in `AGENTS.md`.
 
 The model uses km, km/s and s. The origin-time convention is a local epoch;
 all true synthetic origin times are zero. Stochastic generation uses C++
