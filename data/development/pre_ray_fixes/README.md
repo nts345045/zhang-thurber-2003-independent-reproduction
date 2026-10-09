@@ -1,0 +1,1 @@
+Exploratory runs deliberately stopped after review found blocked boundary ray directions and collapsed path segments. These logs are not used in final figures. The initial truth-grid timing check was insufficient to detect derivative convergence failures. The corrected code is tested against explicit boundary and collapsed-segment regressions.

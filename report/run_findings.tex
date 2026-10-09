@@ -1,0 +1,13 @@
+All 32 implementation consistency checks passed. Across 32 deterministic source--receiver pairs, halving the ray segment spacing and increasing the iteration limit changed travel times by a median of 0.054 ms and a maximum of 0.892 ms. This check does not establish global ray optimality.
+
+In the small known-model recovery check, the median three-dimensional location error decreased from 0.3035 to 0.0343 km; the final absolute-time RMS was 0.0034 s. Only 0.01 s time quantization remains in this check.
+
+Before the main inversions, the median three-dimensional source error was 1.0285 km. The homogeneous 5.50 km/s initial model had mean absolute velocity errors of 0.456 km/s over the full domain and 0.544 km/s in the interior, evaluated at the same saved slice samples as the recovered models.
+
+The standard run ended with median three-dimensional source error 1.7069 km, 0 sources on a model boundary, 1 zero-update iterations, and nodal velocities ranging from 2.41 to 7.05 km/s. LSQR converged in 10 of 10 solves, with worst relative normal residual 8.35e-09.
+The dd run ended with median three-dimensional source error 0.8222 km, 0 sources on a model boundary, 1 zero-update iterations, and nodal velocities ranging from 3.74 to 6.41 km/s. LSQR converged in 18 of 18 solves, with worst relative normal residual 8.5e-09.
+The loc1d run ended with median three-dimensional source error 2.9856 km, 11 sources on a model boundary, 1 zero-update iterations, and nodal velocities ranging from 5.50 to 5.50 km/s. LSQR converged in 15 of 15 solves, with worst relative normal residual 9.64e-09.
+The loc3d run ended with median three-dimensional source error 0.1974 km, 14 sources on a model boundary, 0 zero-update iterations, and nodal velocities ranging from 4.00 to 6.00 km/s. LSQR converged in 18 of 18 solves, with worst relative normal residual 9.32e-09.
+
+
+Relative to standard tomography, DD changed the full-domain mean absolute velocity error by -0.269 km/s and the median depth error by -0.996 km. Negative differences indicate improvement. These comparisons refer only to the independent experiment.

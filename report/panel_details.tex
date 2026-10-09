@@ -1,0 +1,448 @@
+\subsubsection*{Panel 1}
+\noindent\textbf{Quantity:} Horizontal true P-velocity slice\par
+\noindent\textbf{Written specification:} Synthetic Test, p.1877; caption 1\par
+\noindent\textbf{Parameters:} Written sandwich profile, x=-35..35 km, y=-60..40 km; constant with depth\par
+\noindent\textbf{Status:} independently reproduced\par
+\noindent\textbf{Attempt and limitation:} Physical velocity profile reconstructed from prose; plotting extent and depth chosen from model domain.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+./build/dd generate configs/synthetic.cfg data/synthetic
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+python3 plot.py --figure 1
+\end{lstlisting}
+\subsubsection*{Panel 2}
+\noindent\textbf{Quantity:} Synthetic-test event/station geometry and inversion grid\par
+\noindent\textbf{Written specification:} Caption 2, p.1879\par
+\noindent\textbf{Parameters:} Published 8x6x5 inversion grid; 120 independent sources and 32 independent stations, seed 2003\par
+\noindent\textbf{Status:} partially reproduced\par
+\noindent\textbf{Attempt and limitation:} Grid recovered from caption. Original Loma Prieta coordinates are excluded and are not reconstructed from map pixels.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+./build/dd generate configs/synthetic.cfg data/synthetic
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+python3 plot.py --figure 2
+\end{lstlisting}
+\subsubsection*{Panel 3a}
+\noindent\textbf{Quantity:} Standard tomographic P velocity; all generated depth slices\par
+\noindent\textbf{Written specification:} Synthetic Test pp.1877-1879; captions 3 pp.1880-1881\par
+\noindent\textbf{Parameters:} Depths 0,3,7,11,16 km; grid from caption 2; noise 0.04 s and station bias +/-0.3 s; configs/synthetic.cfg\par
+\noindent\textbf{Status:} partially reproduced\par
+\noindent\textbf{Attempt and limitation:} Independent geometry, homogeneous initial velocity, and explicit replacements for unpublished numerical settings; numerical comparisons cannot isolate implementation from experiment differences.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+./build/dd generate configs/synthetic.cfg data/synthetic && ./build/dd invert configs/synthetic.cfg data/synthetic standard
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+python3 plot.py --figure 3a
+\end{lstlisting}
+\subsubsection*{Panel 3b}
+\noindent\textbf{Quantity:} DD tomographic P velocity; all generated depth slices\par
+\noindent\textbf{Written specification:} Synthetic Test pp.1877-1879; captions 3 pp.1880-1881\par
+\noindent\textbf{Parameters:} Depths 0,3,7,11,16 km; grid from caption 2; noise 0.04 s and station bias +/-0.3 s; configs/synthetic.cfg\par
+\noindent\textbf{Status:} partially reproduced\par
+\noindent\textbf{Attempt and limitation:} Independent geometry, homogeneous initial velocity, and explicit replacements for unpublished numerical settings; numerical comparisons cannot isolate implementation from experiment differences.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+./build/dd generate configs/synthetic.cfg data/synthetic && ./build/dd invert configs/synthetic.cfg data/synthetic dd
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+python3 plot.py --figure 3b
+\end{lstlisting}
+\subsubsection*{Panel 3c}
+\noindent\textbf{Quantity:} True minus DD P velocity; all generated depth slices\par
+\noindent\textbf{Written specification:} Synthetic Test pp.1877-1879; captions 3 pp.1880-1881\par
+\noindent\textbf{Parameters:} Depths 0,3,7,11,16 km; grid from caption 2; noise 0.04 s and station bias +/-0.3 s; configs/synthetic.cfg\par
+\noindent\textbf{Status:} partially reproduced\par
+\noindent\textbf{Attempt and limitation:} Independent geometry, homogeneous initial velocity, and explicit replacements for unpublished numerical settings; numerical comparisons cannot isolate implementation from experiment differences.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+./build/dd generate configs/synthetic.cfg data/synthetic && ./build/dd invert configs/synthetic.cfg data/synthetic dd
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+python3 plot.py --figure 3c
+\end{lstlisting}
+\subsubsection*{Panel 3d}
+\noindent\textbf{Quantity:} True minus standard P velocity; all generated depth slices\par
+\noindent\textbf{Written specification:} Synthetic Test pp.1877-1879; captions 3 pp.1880-1881\par
+\noindent\textbf{Parameters:} Depths 0,3,7,11,16 km; grid from caption 2; noise 0.04 s and station bias +/-0.3 s; configs/synthetic.cfg\par
+\noindent\textbf{Status:} partially reproduced\par
+\noindent\textbf{Attempt and limitation:} Independent geometry, homogeneous initial velocity, and explicit replacements for unpublished numerical settings; numerical comparisons cannot isolate implementation from experiment differences.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+./build/dd generate configs/synthetic.cfg data/synthetic && ./build/dd invert configs/synthetic.cfg data/synthetic standard
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+python3 plot.py --figure 3d
+\end{lstlisting}
+\subsubsection*{Panel 4}
+\noindent\textbf{Quantity:} Hayward network, catalog seismicity, and inversion grid\par
+\noindent\textbf{Written specification:} Caption 4, p.1882\par
+\noindent\textbf{Parameters:} Grid x=-35,-20,-10,-5,-4,-3,0,5,10,20,35; y=-30,-20,-10,0,10,20,30; z=0,4,8,12,20 km\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered written grid and required observation counts; no authorized coordinates for 1489 events or 52 stations. No invented field map is presented.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded observed coordinates
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 5a}
+\noindent\textbf{Quantity:} Hayward event map: NCSN catalog\par
+\noindent\textbf{Written specification:} Event Locations pp.1881-1883; caption 5\par
+\noindent\textbf{Parameters:} 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: traced input dependencies. Catalog picks, differential times and event identities cannot be inferred from written descriptions or regenerated by a physical forward model.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded observations
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 5b}
+\noindent\textbf{Quantity:} Hayward event map: standard tomography\par
+\noindent\textbf{Written specification:} Event Locations pp.1881-1883; caption 5\par
+\noindent\textbf{Parameters:} 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: traced input dependencies. Catalog picks, differential times and event identities cannot be inferred from written descriptions or regenerated by a physical forward model.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded observations
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 5c}
+\noindent\textbf{Quantity:} Hayward event map: DD location\par
+\noindent\textbf{Written specification:} Event Locations pp.1881-1883; caption 5\par
+\noindent\textbf{Parameters:} 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: traced input dependencies. Catalog picks, differential times and event identities cannot be inferred from written descriptions or regenerated by a physical forward model.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded observations
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 5d}
+\noindent\textbf{Quantity:} Hayward event map: DD tomography\par
+\noindent\textbf{Written specification:} Event Locations pp.1881-1883; caption 5\par
+\noindent\textbf{Parameters:} 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: traced input dependencies. Catalog picks, differential times and event identities cannot be inferred from written descriptions or regenerated by a physical forward model.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded observations
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 6a}
+\noindent\textbf{Quantity:} catalog: geographical map\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 6b}
+\noindent\textbf{Quantity:} catalog: rotated Cartesian map\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 6c}
+\noindent\textbf{Quantity:} catalog: across-strike depth section AA-prime\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 6d}
+\noindent\textbf{Quantity:} catalog: along-strike depth section BB-prime\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 7a}
+\noindent\textbf{Quantity:} standard tomography: geographical map\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 7b}
+\noindent\textbf{Quantity:} standard tomography: rotated Cartesian map\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 7c}
+\noindent\textbf{Quantity:} standard tomography: across-strike depth section AA-prime\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 7d}
+\noindent\textbf{Quantity:} standard tomography: along-strike depth section BB-prime\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 8a}
+\noindent\textbf{Quantity:} DD location: geographical map\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 8b}
+\noindent\textbf{Quantity:} DD location: rotated Cartesian map\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 8c}
+\noindent\textbf{Quantity:} DD location: across-strike depth section AA-prime\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 8d}
+\noindent\textbf{Quantity:} DD location: along-strike depth section BB-prime\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 9a}
+\noindent\textbf{Quantity:} DD tomography: geographical map\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 9b}
+\noindent\textbf{Quantity:} DD tomography: rotated Cartesian map\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 9c}
+\noindent\textbf{Quantity:} DD tomography: across-strike depth section AA-prime\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 9d}
+\noindent\textbf{Quantity:} DD tomography: along-strike depth section BB-prime\par
+\noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
+\noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered projection convention and regional selection. Input event locations/identities and, for c/d, box membership are unavailable under the data restriction. No digitization used.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded event catalog and travel times
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no source data
+\end{lstlisting}
+\subsubsection*{Panel 10a: all seven sections at y=-30,-20,-10,0,10,20,30 km}
+\noindent\textbf{Quantity:} Hayward across-strike DD velocity\par
+\noindent\textbf{Written specification:} Velocity Structure p.1884; caption 10 p.1887\par
+\noindent\textbf{Parameters:} Published Hayward grid; smoothing weight 10; all seven y sections listed above; hypocenters within 5 km\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered grid, smoothing choice and cross-section convention. The observational velocity contrast is an inversion result, not a forward-model input specified by prose.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded Hayward observations
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no field inversion output
+\end{lstlisting}
+\subsubsection*{Panel 10b: all seven sections at y=-30,-20,-10,0,10,20,30 km}
+\noindent\textbf{Quantity:} Hayward across-strike standard velocity\par
+\noindent\textbf{Written specification:} Velocity Structure p.1884; caption 10 p.1887\par
+\noindent\textbf{Parameters:} Published Hayward grid; smoothing weight 10; all seven y sections listed above; hypocenters within 5 km\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered grid, smoothing choice and cross-section convention. The observational velocity contrast is an inversion result, not a forward-model input specified by prose.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded Hayward observations
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no field inversion output
+\end{lstlisting}
+\subsubsection*{Panel 10c: all seven sections at y=-30,-20,-10,0,10,20,30 km}
+\noindent\textbf{Quantity:} Hayward across-strike DD minus standard velocity\par
+\noindent\textbf{Written specification:} Velocity Structure p.1884; caption 10 p.1887\par
+\noindent\textbf{Parameters:} Published Hayward grid; smoothing weight 10; all seven y sections listed above; hypocenters within 5 km\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: recovered grid, smoothing choice and cross-section convention. The observational velocity contrast is an inversion result, not a forward-model input specified by prose.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded Hayward observations
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no field inversion output
+\end{lstlisting}
+\subsubsection*{Panel 11a: all seven sections at y=-30,-20,-10,0,10,20,30 km}
+\noindent\textbf{Quantity:} Hayward resolution-matrix diagonal\par
+\noindent\textbf{Written specification:} Velocity Structure pp.1884,1886; caption 11 p.1888\par
+\noindent\textbf{Parameters:} Absolute-data standard-tomography linearization at the DD velocity model; all seven y sections listed above\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: established dependency on the actual ray geometry, final field model, damping and data covariance. These cannot be replaced by an unrelated synthetic resolution matrix and called a reproduction.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded observation matrix and inferred field velocity
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no field matrix
+\end{lstlisting}
+\subsubsection*{Panel 11b: all seven sections at y=-30,-20,-10,0,10,20,30 km}
+\noindent\textbf{Quantity:} Hayward one-sigma velocity uncertainty\par
+\noindent\textbf{Written specification:} Velocity Structure pp.1884,1886; caption 11 p.1888\par
+\noindent\textbf{Parameters:} Absolute-data standard-tomography linearization at the DD velocity model; all seven y sections listed above\par
+\noindent\textbf{Status:} not reproduced\par
+\noindent\textbf{Attempt and limitation:} Attempt: established dependency on the actual ray geometry, final field model, damping and data covariance. These cannot be replaced by an unrelated synthetic resolution matrix and called a reproduction.\par
+\noindent\textbf{Generate data:}
+\begin{lstlisting}
+Unavailable: requires excluded observation matrix and inferred field velocity
+\end{lstlisting}
+\noindent\textbf{Create plot:}
+\begin{lstlisting}
+Unavailable: no field matrix
+\end{lstlisting}
