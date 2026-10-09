@@ -5,17 +5,20 @@
 The scientific specification is Zhang and Thurber (2003), BSSA 93,
 1875–1889, doi:10.1785/0120020190. The full manuscript text was read through
 its author-posted ResearchGate transcription (publication 215754286), after
-the publisher returned HTTP 403. No original implementation, observations,
-synthetic arrival files, plotting scripts, or figure files have been used.
+the publisher returned HTTP 403. No original implementation, simulation output,
+plotting scripts, or figure files have been used. The initial attempt excluded
+observational inputs. The user subsequently required authoritative observations
+and metadata, with SEED codes and resource IDs retained in saved records.
 The permitted repository guidance files were retrieved from the two URLs in
 `reference/task.md`. Reference pages were accessed on 2026-10-09.
 
 The synthetic experiment in the publication uses actual Loma Prieta source
-and receiver coordinates. These are excluded by the task, and coordinates
-are not tabulated in the article. Our independent geometry therefore cannot
-reproduce the exact published inversion. The Hayward field-data inversions
-likewise require excluded observations. We will identify every affected panel
-and never interpret our generated seismicity as observed Hayward seismicity.
+and receiver coordinates. They were not tabulated in the article or used in
+the initial attempt. The existing generated geometry cannot reproduce that
+experiment exactly. Historical USGS/EarthScope retrievals now establish data
+access, but the exact manuscript subset remains unidentified. Dataset selection
+and inversion await clarification under the observational-data rule in
+`AGENTS.md`. Generated seismicity is not observed Hayward seismicity.
 
 ## Physical problem
 
@@ -38,12 +41,18 @@ is fixed as extra information.
 ## Numerical implementation
 
 `src/core.hpp` interpolates nodal **velocity** trilinearly. Each ray segment
-is split at model grid planes and its travel time integrated with two-point
+is split at model grid planes and its travel time integrated with eight-point
 Gauss quadrature. The derivative of this quadrature with respect to each
 velocity node is integrated with the same interpolation weights. Converting
 to log-slowness increments gives the factor minus the current nodal velocity.
 The source derivative is the derivative of the endpoint segment integral.
 This converges to the local ray-direction formula for stationary resolved rays.
+The initial run used two-point quadrature. A later crossing-segment test found
+an objective/gradient discrepancy of 0.000119 s/km because finite quadrature
+did not accurately integrate the moving grid cuts. Eight points reduce that
+test discrepancy to 5.6e-12 s/km. The variational derivative is still a numerical
+integral, not an algebraically exact derivative of arbitrary finite quadrature;
+a three-dimensional crossing test also checks its consistency.
 Interpolation gradients use paired nodal-velocity differences, preserving an
 exactly constant coordinate direction without cancellation roundoff. This is
 algebraically the same trilinear derivative; it introduces no extra smoothing.
@@ -57,7 +66,12 @@ convergence. Source checks use 0.01 km with the unchanged
 0.003 s/km tolerance; the fixed-path velocity perturbation remains 0.001 km/s.
 
 The independently written ray tracer minimizes Fermat travel time with
-limited-memory BFGS (eight secant pairs) and Armijo backtracking. The initial
+limited-memory BFGS (eight secant pairs) and Armijo backtracking. Its initial
+inverse-Hessian metric is the inverse fixed-endpoint weighted path Laplacian,
+with segment weights equal to midpoint slowness divided by segment length.
+This positive definite metric approximates transverse ray stiffness without
+adding a smoothing penalty or restricting paths. Secant scaling is
+`gamma = (s^T y)/(y^T B y)`, where `B` is the inverse Laplacian. The initial
 path is straight with segments no longer than the configured spacing.
 This variational discretization replaces the article's specific pseudo-bending
 implementation. It finds a local stationary path; global first-arrival
@@ -69,6 +83,12 @@ are numerical tolerances far below the ray spacing. Projected and raw
 gradients, convergence flags, merge counts, and ray iteration limits are
 recorded explicitly. Rays for different source/receiver
 pairs are computed with OpenMP.
+
+The numerical correction and analytic isolation experiments are recorded in
+`data/development/ray_optimizer_audit/README.md`. All 48 current component
+checks pass. Forward retracing of the frozen initial models improves but does
+not eliminate nonconvergence. No inversion has been rerun with this correction;
+existing inversion metrics and manuscript panels retain their baseline status.
 
 The sparse joint system is solved by an independently implemented LSQR
 bidiagonalization. Columns are normalized before adding damping equations.

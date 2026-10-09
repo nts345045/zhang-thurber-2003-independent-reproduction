@@ -155,8 +155,10 @@ struct Ray {
   double raw_gradient = 0;
   bool converged = false;
 };
-// Two-point Gauss integration on each piece split at grid-plane intersections.
-// Splitting avoids quadrature jumps when a long segment crosses a narrow cell.
+// Eight-point Gauss integration on each piece split at grid-plane intersections.
+// Both travel time and its continuous variational derivatives must be accurately
+// integrated: inaccurate moving-cut quadrature otherwise gives inconsistent
+// objective/gradient pairs even when the variational formula is correct.
 double segment(const Grid &g, P a, P b, P *ga = nullptr, P *gb = nullptr,
                Vec *dv = nullptr, Vec *length = nullptr) {
   P d = b - a;
@@ -177,23 +179,28 @@ double segment(const Grid &g, P a, P b, P *ga = nullptr, P *gb = nullptr,
   for (size_t j = 1; j < cuts.size(); j++) {
     double mid = (cuts[j] + cuts[j - 1]) / 2,
            half = (cuts[j] - cuts[j - 1]) / 2;
-    for (double sign : {-1., 1.}) {
-      double t = mid + sign * half / std::sqrt(3.);
-      auto s = g.sample(a + d * t);
-      double u = 1 / s.v, weight = half;
-      T += L * weight * u;
-      P grad = s.grad * (-u * u);
-      if (ga)
-        *ga = *ga + (d * (-u / L) + grad * (L * (1 - t))) * weight;
-      if (gb)
-        *gb = *gb + (d * (u / L) + grad * (L * t)) * weight;
-      if (dv)
-        for (int m = 0; m < 8; m++)
-          (*dv)[s.ids[m]] -= L * weight * s.w[m] * u * u;
-      if (length)
-        for (int m = 0; m < 8; m++)
-          (*length)[s.ids[m]] += L * weight * s.w[m];
-    }
+    static constexpr double nodes[] = {0.1834346424956498, 0.5255324099163290,
+                                      0.7966664774136267, 0.9602898564975363};
+    static constexpr double weights[] = {0.3626837833783620, 0.3137066458778873,
+                                        0.2223810344533745, 0.1012285362903763};
+    for (int point = 0; point < 4; point++)
+      for (double sign : {-1., 1.}) {
+        double t = mid + sign * half * nodes[point];
+        auto s = g.sample(a + d * t);
+        double u = 1 / s.v, weight = half * weights[point];
+        T += L * weight * u;
+        P grad = s.grad * (-u * u);
+        if (ga)
+          *ga = *ga + (d * (-u / L) + grad * (L * (1 - t))) * weight;
+        if (gb)
+          *gb = *gb + (d * (u / L) + grad * (L * t)) * weight;
+        if (dv)
+          for (int m = 0; m < 8; m++)
+            (*dv)[s.ids[m]] -= L * weight * s.w[m] * u * u;
+        if (length)
+          for (int m = 0; m < 8; m++)
+            (*length)[s.ids[m]] += L * weight * s.w[m];
+      }
   }
   return T;
 }
@@ -253,6 +260,37 @@ double projected_ray_gradient(const Grid &g, const std::vector<P> &p,
   project_ray_direction(g, p, d);
   return norm(d);
 }
+// Midpoint slowness / segment length approximates the transverse stiffness
+// of a straight ray. The corresponding fixed-endpoint weighted Laplacian is
+// positive definite. Its inverse is a search metric, not a smoothing penalty:
+// it changes neither Fermat travel time nor the set of admissible paths.
+Vec ray_metric_weights(const Grid &g, const std::vector<P> &p) {
+  Vec weights(p.size() - 1);
+  for (size_t i = 0; i < weights.size(); i++)
+    weights[i] = 1 / (g.sample((p[i] + p[i + 1]) * 0.5).v *
+                      norm(p[i + 1] - p[i]));
+  return weights;
+}
+Vec inverse_ray_metric(const Vec &weights, Vec rhs) {
+  size_t n = weights.size() - 1;
+  Vec diagonal(n);
+  for (size_t i = 0; i < n; i++) {
+    diagonal[i] = weights[i] + weights[i + 1];
+    if (i) {
+      double ratio = weights[i] / diagonal[i - 1];
+      diagonal[i] -= weights[i] * ratio;
+      for (int axis = 0; axis < 3; axis++)
+        rhs[3 * i + axis] += ratio * rhs[3 * (i - 1) + axis];
+    }
+  }
+  for (size_t i = n; i-- > 0;)
+    for (int axis = 0; axis < 3; axis++) {
+      if (i + 1 < n)
+        rhs[3 * i + axis] += weights[i + 1] * rhs[3 * (i + 1) + axis];
+      rhs[3 * i + axis] /= diagonal[i];
+    }
+  return rhs;
+}
 // Independently implemented limited-memory BFGS minimization of Fermat travel
 // time. Fixed endpoints; directions at active boundaries are projected onto
 // feasible tangents, and other trial paths outside the model are rejected.
@@ -284,9 +322,10 @@ Ray trace(const Grid &g, P a, P b, double spacing = 1, int maxit = 180,
       for (size_t k = 0; k < q.size(); k++)
         q[k] -= alpha[j] * Y[j][k];
     }
-    double scale = S.empty()
-                       ? spacing * 5
-                       : dot(S.back(), Y.back()) / dot(Y.back(), Y.back());
+    Vec weights = ray_metric_weights(g, p);
+    double scale = S.empty() ? 1 : dot(S.back(), Y.back()) /
+                                      dot(Y.back(), inverse_ray_metric(weights, Y.back()));
+    q = inverse_ray_metric(weights, std::move(q));
     for (auto &v : q)
       v *= scale;
     for (size_t j = 0; j < S.size(); j++) {

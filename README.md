@@ -21,6 +21,12 @@ event/station selections remain unidentified; clarification is required by
 [the observational-data rule](AGENTS.md#observational-data-for-reproduction)
 before proceeding with dataset selection.
 
+Independent ray-kernel corrections now improve quadrature accuracy and
+optimizer conditioning. [The numerical audit](data/development/ray_optimizer_audit/README.md)
+records 48 passing component checks and remaining failures when retracing
+frozen baseline models. The saved inversions remain from the initial code;
+the complete inversion rebuild has not been rerun with these corrections.
+
 [Read the PDF report](report/report.pdf) or the
 [panel-by-panel audit](FIGURE_AUDIT.md).
 

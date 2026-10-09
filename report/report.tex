@@ -23,10 +23,13 @@ and damped, smoothed least squares. We reconstruct the specified synthetic
 velocity profile and generate new event and station geometries. Consequently,
 the true-model panel is independently reproduced, whereas synthetic inversion
 panels are partial reproductions. The Hayward field-data figures depend on
-observations excluded by the project instructions and are not reproduced.
+observations excluded by the initial project instructions and are not reproduced.
 All numerical figures in this report use saved output from this implementation.
 The result is a reproducible method investigation, not a recovery of the
 published Hayward velocity model.
+The resumed work permits authoritative observational inputs. A later section
+records successful archive access and ray-kernel corrections; the reported
+inverse solutions remain the baseline results.
 \end{abstract}
 
 \section{Scientific scope and evidence}
@@ -37,11 +40,11 @@ Its written equations, experiment descriptions, and captions are the scientific
 specification. The publisher page returned HTTP 403; the complete manuscript
 transcription posted by an author on
 \href{https://www.researchgate.net/publication/215754286}{ResearchGate}
-provided the text. No original model code, source observations, synthetic
-arrival files, plotting scripts, or figure files were consulted or used.
+provided the text. The baseline calculations used no original model code,
+source observations, synthetic arrival files, plotting scripts, or figure files.
 No published plot was digitized. No published image appears in this report.
 
-The exclusion of source observations has a direct scientific consequence.
+The initial exclusion of source observations had a direct scientific consequence.
 A physical forward model can generate new arrival times for a specified
 geometry, but it cannot recover the historical earthquake realization and
 picking errors from a prose description. We therefore separate a reconstructible
@@ -109,7 +112,7 @@ at boundaries and failed updates are counted in the results because they
 can indicate model error or weak constraints.
 
 \subsection{Ray integration and numerical substitutions}
-The ray tracer minimizes discretized Fermat time with limited-memory BFGS
+The baseline ray tracer minimizes discretized Fermat time with limited-memory BFGS
 and Armijo backtracking, starting from a straight path. Each segment is split
 at grid-plane crossings and integrated with two-point Gaussian quadrature.
 This independent variational method replaces the paper's pseudo-bending
@@ -403,7 +406,7 @@ For Hayward Figures 4--11, the missing dependencies are observational.
 The field velocity model is the result to be inferred, not an input that can
 be reconstructed by assuming the reported contrast. We recovered the written
 grid, projection conventions, sample counts and section definitions, then
-traced each panel's required data. These attempts stop at excluded arrivals
+traced each panel's required data. Those initial attempts stopped at excluded arrivals
 and event coordinates. In particular, resolution and uncertainty require
 the actual linearized ray matrix, damping convention and covariance model.
 A synthetic resolution matrix would not reproduce Figure 11, so none is
@@ -425,13 +428,15 @@ iteration histories remain in \path{data/}; raw console logs are local
 diagnostics excluded from the shared repository. All caches and build intermediates
 are confined to the project directory.
 
-For this delivery, the complete clean procedure finished successfully on
+For the baseline delivery, the complete clean procedure finished successfully on
 9 October 2026 in 801 seconds, with all 32 implementation consistency checks
 passing and both PDF compilation passes completing. The numerical results
 come from that run. \path{reference/delivery_environment.json} records the
 compiler, Python packages, TeX version, and parallel settings.
-The final interpretation and plot-label revisions were compiled afterward
-from the same numerical outputs; no model inputs or inversion code changed.
+Interpretation and plot-label revisions were compiled afterward from those
+same numerical outputs. The subsequent ray-kernel changes described below
+have not been followed by a complete inversion rebuild. The 801-second
+record therefore verifies the baseline, not the revised kernel.
 
 Requirements are a C++17 compiler, CMake, OpenMP, Python with NumPy and
 Matplotlib, and pdfLaTeX with standard packages. No tomography, optimization,
@@ -441,6 +446,69 @@ Standard-library random distributions may differ across platforms, so
 cross-platform bitwise equality of newly generated observations is not
 assumed. The experiment configuration, source code, plotting scripts,
 generated data and figure audit are retained with this LaTeX source.
+
+\section{Resumed work: authoritative inputs and ray corrections}
+On 9 October 2026 the user required real earthquake and station observations
+and metadata from authoritative sources, beginning with USGS and EarthScope.
+Saved records must retain SEED naming codes and resource identifiers.
+USGS supplied a Loma Prieta mainshock QuakeML product containing 315 P picks;
+EarthScope supplied 364 historical NC station records. Provider identifiers,
+station epochs, retrieval URLs, raw-file hashes, and identifier attachments
+are saved in \path{data/authoritative/discovery/}. These are archive-access
+checks, not the manuscript's selected event and station set.
+
+The target's exact Loma Prieta selection remains unidentified. Its Hayward
+sample contains 1,489 events and 52 stations, whereas the cited precursor
+describes a broader selection. The user was asked whether to trace the exact
+selection further, supply identifiers, or permit a documented independent
+subset. Dataset selection and inversion remain stopped under the explicit
+clarification rule. The field-panel statuses therefore have not changed.
+
+Independent component work isolated two numerical deficiencies. First,
+two-point integration of a segment crossing velocity-grid boundaries left
+a $1.19\times10^{-4}$ s/km discrepancy between its variational endpoint
+gradient and finite differences of computed time. Eight-point integration
+reduces that example's discrepancy to $5.6\times10^{-12}$ s/km and its
+time error from 33.4 microseconds to numerical roundoff. A separate
+three-dimensional segment check gives $8.9\times10^{-11}$ s/km.
+This improves integration accuracy; it is not proof of exact gradients for
+every finite quadrature problem.
+
+Second, the homogeneous transverse ray Hessian is a fixed-endpoint path
+Laplacian, whose condition number grows quadratically with path-node count.
+Replacing the scalar initial L-BFGS metric with an inverse weighted path
+Laplacian reduces this stiffness without changing the Fermat objective or
+admissible paths. Positive segment weights are midpoint slowness divided by
+segment length. An analytic circular-ray test in $v(z)=5+0.2z$ km/s over
+40 km failed to converge within 1,000 baseline updates at spacings 1, 0.5,
+and 0.25 km. The revised metric converges in 32, 23, and 25 updates with
+unchanged stopping criteria. Halving spacing reduces the travel-time error
+by approximately four. A metric-only control preserves this improvement,
+separating it from the quadrature correction.
+
+All 48 current component checks pass. Forward retracing of frozen baseline
+models gives the following convergence counts out of 32 sampled rays:
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Frozen model & Production: baseline / revised & Refined: baseline / revised\\
+\midrule
+Standard & 1 / 5 & 3 / 22\\
+Double difference & 1 / 9 & 8 / 23\\
+\bottomrule
+\end{tabular}
+\end{center}
+Nonconvergence remains substantial, and some source finite-difference errors
+increase despite improved stationarity. These checks do not demonstrate that
+the 0.439-s baseline DD differential residual is corrected. No inverse solution
+or manuscript panel was regenerated with the revised kernel. Analytic
+comparisons, source hashes, all 48 checks, and frozen-model ray tables are in
+\path{data/development/ray_optimizer_audit/}. Run the standalone audit with
+\begin{lstlisting}
+python3 diagnostics/run_ray_optimizer_audit.py
+\end{lstlisting}
+Its README records the validation and forward-check commands. The appendix below retains the
+baseline 32-check record supporting the baseline figures.
 
 \clearpage
 \appendix

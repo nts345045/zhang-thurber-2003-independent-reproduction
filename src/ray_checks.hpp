@@ -107,6 +107,90 @@ template <class Check> void run_ray_checks(Check check) {
   check("trilinear_gradient_finite_difference",
         norm(invariant.sample(point).grad - fd), 2e-10);
 
+  // A segment crossing moving grid cuts exposed inadequate two-point
+  // quadrature. Check the integral against its exact piecewise-linear value,
+  // and both endpoint gradients against finite differences of that integral.
+  auto endpoint_error = [](const Grid &model, P a, P b) {
+    P ga{}, gb{};
+    segment(model, a, b, &ga, &gb);
+    double error = 0, h = 1e-5;
+    for (int end = 0; end < 2; end++)
+      for (int axis = 0; axis < 3; axis++) {
+        P ap = a, am = a, bp = b, bm = b;
+        (end ? bp : ap)[axis] += h;
+        (end ? bm : am)[axis] -= h;
+        double fd = (segment(model, ap, bp) - segment(model, am, bm)) / (2 * h);
+        error = std::max(error, std::abs((end ? gb : ga)[axis] - fd));
+      }
+    return error;
+  };
+  Grid crossing = grid(true);
+  set_true(crossing);
+  P ca{-0.5, 0, 1}, cb{1.5, 1, 1};
+  double exact_segment = std::sqrt(5.) / 2 *
+                         (0.5 / 6 + std::log(6. / 4) / 2 + 0.5 / 4);
+  check("crossing_segment_exact_time",
+        std::abs(segment(crossing, ca, cb) - exact_segment), 1e-12);
+  check("crossing_segment_endpoint_gradients", endpoint_error(crossing, ca, cb),
+        2e-10);
+  for (int k = 0; k < int(crossing.z.size()); k++)
+    for (int j = 0; j < int(crossing.y.size()); j++)
+      for (int i = 0; i < int(crossing.x.size()); i++)
+        crossing.v[crossing.id(i, j, k)] =
+            5 + 0.8 * std::sin(0.25 * crossing.x[i]) +
+            0.5 * std::cos(0.11 * crossing.y[j]) + 0.02 * crossing.z[k] +
+            0.0001 * crossing.x[i] * crossing.y[j] * crossing.z[k];
+  check("three_dimensional_segment_endpoint_gradients",
+        endpoint_error(crossing, {-0.5, -2, 2.5}, {6.5, 12, 10.5}), 1e-9);
+
+  Vec metric_weights{0.4, 2, 0.7, 3, 0.9, 1.7}, rhs(15), other(15);
+  for (int i = 0; i < 15; i++) {
+    rhs[i] = std::cos(i + 0.3);
+    other[i] = std::sin(0.7 * i + 0.2);
+  }
+  Vec metric_solution = inverse_ray_metric(metric_weights, rhs), residual(15);
+  for (int i = 0; i < 5; i++)
+    for (int axis = 0; axis < 3; axis++) {
+      int index = 3 * i + axis;
+      residual[index] = (metric_weights[i] + metric_weights[i + 1]) *
+                            metric_solution[index] - rhs[index];
+      if (i)
+        residual[index] -= metric_weights[i] * metric_solution[index - 3];
+      if (i < 4)
+        residual[index] -= metric_weights[i + 1] * metric_solution[index + 3];
+    }
+  check("ray_metric_linear_system", norm(residual) / norm(rhs), 1e-12);
+  check("ray_metric_symmetry",
+        std::abs(dot(other, metric_solution) -
+                 dot(rhs, inverse_ray_metric(metric_weights, other))), 1e-12);
+  check("ray_metric_positive_definite", dot(rhs, metric_solution) > 0 ? 0. : 1., 0);
+
+  // Independent smooth-gradient reference: the continuous ray is a circular
+  // arc in v(z)=5+0.2*z. Test stationarity at fixed spacing separately from
+  // second-order convergence of the polygonal approximation as spacing halves.
+  Grid affine = grid();
+  for (int k = 0; k < int(affine.z.size()); k++)
+    for (int j = 0; j < int(affine.y.size()); j++)
+      for (int i = 0; i < int(affine.x.size()); i++)
+        affine.v[affine.id(i, j, k)] = 5 + 0.2 * affine.z[k];
+  double exact_time = 10 * std::asinh(0.8), previous_error = 0;
+  double radius = std::hypot(25., 20.);
+  P exact_source{-1 / (0.2 * radius), 0, -4 / radius};
+  for (double spacing : {1., 0.5, 0.25}) {
+    Ray arc = trace(affine, {-20, 0, 0}, {20, 0, 0}, spacing, 180);
+    std::string label = "affine_ray_" + std::to_string(spacing);
+    check(label + "_converged", arc.converged ? 0. : 1., 0);
+    check(label + "_stationarity", arc.gradient, 1e-5);
+    double error = std::abs(arc.time - exact_time);
+    if (previous_error)
+      check(label + "_refinement_ratio", error / previous_error, 0.3);
+    previous_error = error;
+    if (spacing == 0.25) {
+      check(label + "_exact_time", error, 2.5e-5);
+      check(label + "_source_derivative", norm(arc.source - exact_source), 3e-6);
+    }
+  }
+
   Grid g = grid();
   for (int k = 0; k < int(g.z.size()); k++)
     for (int j = 0; j < int(g.y.size()); j++)

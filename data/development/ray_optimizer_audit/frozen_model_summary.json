@@ -1,0 +1,61 @@
+{
+  "standard": {
+    "baseline": {
+      "rays": 32,
+      "production_converged": 1,
+      "refined_converged": 3,
+      "median_production_gradient_s_per_km": 0.00014699554222149998,
+      "max_production_gradient_s_per_km": 0.011769810702,
+      "median_refined_gradient_s_per_km": 4.11058399436e-05,
+      "max_refined_gradient_s_per_km": 0.00644739441078,
+      "max_spacing_time_difference_s": 0.000684365233159,
+      "max_production_source_fd_error_s_per_km": 0.000745829079551,
+      "max_refined_source_fd_error_s_per_km": 0.000328023470759
+    },
+    "corrected": {
+      "rays": 32,
+      "production_converged": 5,
+      "refined_converged": 22,
+      "median_production_gradient_s_per_km": 4.61577477509e-05,
+      "max_production_gradient_s_per_km": 0.00816558392964,
+      "median_refined_gradient_s_per_km": 2.0573901832100003e-06,
+      "max_refined_gradient_s_per_km": 0.00602702987255,
+      "max_spacing_time_difference_s": 0.00041628515181,
+      "max_production_source_fd_error_s_per_km": 0.000291088027589,
+      "max_refined_source_fd_error_s_per_km": 0.000292056361164
+    }
+  },
+  "dd": {
+    "baseline": {
+      "rays": 32,
+      "production_converged": 1,
+      "refined_converged": 8,
+      "median_production_gradient_s_per_km": 0.00011143545726349999,
+      "max_production_gradient_s_per_km": 0.0114601501304,
+      "median_refined_gradient_s_per_km": 3.480032340585e-05,
+      "max_refined_gradient_s_per_km": 0.014016549265,
+      "max_spacing_time_difference_s": 0.000861315893063,
+      "max_production_source_fd_error_s_per_km": 0.00058878052323,
+      "max_refined_source_fd_error_s_per_km": 0.00017915914138
+    },
+    "corrected": {
+      "rays": 32,
+      "production_converged": 9,
+      "refined_converged": 23,
+      "median_production_gradient_s_per_km": 2.8135766817399997e-05,
+      "max_production_gradient_s_per_km": 0.00116082021594,
+      "median_refined_gradient_s_per_km": 1.8231275296099999e-06,
+      "max_refined_gradient_s_per_km": 0.000136259058317,
+      "max_spacing_time_difference_s": 0.000425871729833,
+      "max_production_source_fd_error_s_per_km": 0.000321186569008,
+      "max_refined_source_fd_error_s_per_km": 0.000249015828094
+    }
+  },
+  "source_inputs": {
+    "stations.csv": "4ee5353588c6dc8099a6cedac30ab0fc5b0201c8a771ea741e818b3100d7bb58",
+    "standard_events.csv": "0c8605c1e823aada7ba1bd2c324753dd0e63451c1bd6087664a86cafcccb645a",
+    "standard_grid.csv": "5813c852e09aea92e1e19485f088730b904ee6504aa268e8656564439d28ae5a",
+    "dd_events.csv": "0e010525d0a3fd319c6021e74e739b1ec235ba196961ae7757854689454a2e65",
+    "dd_grid.csv": "9d7a1fd9937ba970cfe505cadb6d6b014651448d5f7efa71ad41e45c099ec270"
+  }
+}
