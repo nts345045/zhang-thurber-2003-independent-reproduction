@@ -1,0 +1,120 @@
+{
+  "purpose": "Independent FMM candidate paths followed by unchanged continuous variational bending; prototype only",
+  "real_observations_used": false,
+  "production_solver_changed": false,
+  "command": "python3 diagnostics/run_fmm_initialization_audit.py",
+  "cases": 72,
+  "extraction_failures": [],
+  "checks": 61,
+  "failed_checks": [
+    {
+      "case": "constant_top_gradient_14.680000",
+      "auxiliary_spacing_km": "0.25",
+      "path_spacing_km": "0.25",
+      "test": "exact_time",
+      "value": "0.000176503121348759",
+      "tolerance": "2.5e-05",
+      "passed": "0"
+    },
+    {
+      "case": "constant_top_gradient_14.680000",
+      "auxiliary_spacing_km": "0.25",
+      "path_spacing_km": "0.25",
+      "test": "exact_source_derivative",
+      "value": "0.0672645003566615",
+      "tolerance": "3e-06",
+      "passed": "0"
+    },
+    {
+      "case": "constant_top_gradient_15.000000",
+      "auxiliary_spacing_km": "0.25",
+      "path_spacing_km": "0.25",
+      "test": "exact_time",
+      "value": "0.00318963680337525",
+      "tolerance": "2.5e-05",
+      "passed": "0"
+    },
+    {
+      "case": "constant_top_gradient_15.000000",
+      "auxiliary_spacing_km": "0.25",
+      "path_spacing_km": "0.25",
+      "test": "exact_source_derivative",
+      "value": "0.0699370387579115",
+      "tolerance": "3e-06",
+      "passed": "0"
+    },
+    {
+      "case": "constant_top_gradient_16.000000",
+      "auxiliary_spacing_km": "0.25",
+      "path_spacing_km": "0.25",
+      "test": "exact_time",
+      "value": "0.0141133809963443",
+      "tolerance": "2.5e-05",
+      "passed": "0"
+    },
+    {
+      "case": "constant_top_gradient_16.000000",
+      "auxiliary_spacing_km": "0.25",
+      "path_spacing_km": "0.25",
+      "test": "exact_source_derivative",
+      "value": "0.0776706722502429",
+      "tolerance": "3e-06",
+      "passed": "0"
+    },
+    {
+      "case": "constant_top_gradient_20.000000",
+      "auxiliary_spacing_km": "0.25",
+      "path_spacing_km": "0.25",
+      "test": "exact_source_derivative",
+      "value": "9.10603799574779e-06",
+      "tolerance": "3e-06",
+      "passed": "0"
+    },
+    {
+      "case": "constant_top_gradient_40.000000",
+      "auxiliary_spacing_km": "0.25",
+      "path_spacing_km": "0.25",
+      "test": "exact_time",
+      "value": "2.81682545129058e-05",
+      "tolerance": "2.5e-05",
+      "passed": "0"
+    },
+    {
+      "case": "constant_gradient_10.000000",
+      "auxiliary_spacing_km": "0.25",
+      "path_spacing_km": "0.25",
+      "test": "exact_source_derivative",
+      "value": "4.47779571233122e-06",
+      "tolerance": "3e-06",
+      "passed": "0"
+    },
+    {
+      "case": "constant_gradient_40.000000",
+      "auxiliary_spacing_km": "0.25",
+      "path_spacing_km": "0.25",
+      "test": "exact_time",
+      "value": "2.83667999312343e-05",
+      "tolerance": "2.5e-05",
+      "passed": "0"
+    }
+  ],
+  "selected_nonconverged": [],
+  "limitations": [
+    "Finite seeds and auxiliary grids do not certify global first arrival.",
+    "FMM field time is not used as the reported continuous travel time.",
+    "Nondifferentiability at an exact branch crossing requires separate one-sided interpretation.",
+    "No field model has been reinverted with this prototype."
+  ],
+  "sha256": {
+    "diagnostics/check_fmm_initialization.cpp": "595e2ed7581320b2ae18ab5223e5e331a2034bfd9a21af0666e57b9296e09aa3",
+    "diagnostics/first_arrival_fmm.hpp": "31bc54dba1a3630023651f3e4eb6843127ae8275dd4f42aab83bb0ac5da2c165",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "diagnostics/run_fmm_initialization_audit.py": "7efbedec40ed70911c2f7d2fb776a87b097a091019f8a5932a1669558f23fcb3",
+    "diagnostics/seeded_bending.py": "44c00fe5a9fc04da0ba3a9b82e750add019245eed62eabfa37454c31b2af2305",
+    "tmp/fmm_initialization_audit/seeded_bending.hpp": "8b7295f04ffdf28c64ac9ce40ff5b32aa92210c7ec5c2661387388d5865790f6",
+    "tmp/fmm_initialization_audit/check_fmm_initialization": "c1d3d11cac8aaf4495312d26989e793b1386497941261bd812e39108385cc252",
+    "data/development/fmm_initialization_audit/consistency.csv": "0138fe04ffce0f834b4d022e513dd7917a783db5d66dedf137e05dce60bdfeca",
+    "data/development/fmm_initialization_audit/paths.csv": "b754ea34def7ff809317cefd5ec47b1080478f5cdde9f5d3790deb5b2df316b1",
+    "data/development/fmm_initialization_audit/results.csv": "219062b716c139fd5fbf8ceacb6d8eee7ee14aa49addca7f0f06b39fc01cedfb"
+  }
+}

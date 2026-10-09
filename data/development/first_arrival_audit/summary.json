@@ -1,0 +1,32 @@
+{
+  "purpose": "An invented analytic velocity field diagnoses a branch-selection failure; no real observations are used.",
+  "model": "v=4 km/s for -1<=z<=0 km; v=4+0.2*z km/s for 0<=z<=20 km; source and receiver z=-0.5 km",
+  "geometry": "horizontal separations 4,20,40 km; infinite horizontal layer interpreted within a box containing every tested ray",
+  "method": "Snell-law integration of direct and both turning branches; independent fine-polyline quadrature checks the analytic diving time",
+  "current_solver": "Production trace() initialized at a straight path; spacing0.5km/max1000updates; stopping criteria unchanged",
+  "maximum_first_arrival_error_s": 1.01062592473651,
+  "stationary_but_late_cases": [
+    20.0,
+    40.0
+  ],
+  "interpretation": "Optimizer stationarity and finite differences of the selected branch do not establish a first arrival. This counterexample does not quantify the error of each field ray.",
+  "command": "python3 diagnostics/run_first_arrival_audit.py",
+  "compiler_command": [
+    "c++",
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "diagnostics/check_layered_first_arrival.cpp",
+    "-o",
+    "tmp/first_arrival_audit/check_layered_first_arrival"
+  ],
+  "sha256": {
+    "diagnostics/check_layered_first_arrival.cpp": "e95a3913557571425c457e61e7cc547dad6156003ee007da3a5a76ae583074cc",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "diagnostics/run_first_arrival_audit.py": "87f82f0d14c3727d59ea89c1a571a45c6c24b33b0a5ca639f5cd581cfdb68d7a",
+    "tmp/first_arrival_audit/check_layered_first_arrival": "9c30e95af6948ba5a7882f948dd13b235751cefceaa600c3c815a5507613f656",
+    "data/development/first_arrival_audit/results.csv": "4b8f54f26e734c61b91bd76a767842885d00ba7416d008f51811473185738874"
+  }
+}
