@@ -1,0 +1,63 @@
+{
+  "source_url": "https://service.ncedc.org/dart/NC/CMW1.NC/",
+  "final_url": "https://service.ncedc.org/dart/NC/CMW1.NC/",
+  "http_status": 200,
+  "retrieved_utc": "2026-10-09T21:52:35.360928+00:00",
+  "bytes": 1751,
+  "sha256": "6a6028a2c6ebe1feb6c58d5d3662d3ee35961dee30bcc4ab1da1f38b2c1db8c1",
+  "content_type": "text/html;charset=ISO-8859-1",
+  "raw_file": "cmw1_ncedc_dart_directory.html",
+  "investigation_station_seed_id": "NC.CMW1",
+  "investigation_station_fdsn_source_id": "FDSN:NC_CMW1",
+  "investigation_identity_basis": "Derived from NC.CMW1 codes already present in provider picks; a query target does not prove metadata exists.",
+  "derived_identifier_standard": "https://docs.fdsn.org/projects/source-identifiers/en/v1.0/definition.html",
+  "returned_stationxml_identities": [],
+  "non_xml_scope": "Historical metadata/discovery evidence; the parent acquisition normalizer uses the exact CMW1 operation epochs and ELEV under its separately declared sensor-elevation assumption.",
+  "record_identity_columns": [
+    "source_line",
+    "station_seed_id",
+    "station_fdsn_source_id",
+    "channel_seed_id",
+    "channel_fdsn_source_id"
+  ],
+  "record_identities": [
+    [
+      12,
+      "NC.CMW1",
+      "FDSN:NC_CMW1",
+      "NC.CMW1..HN1",
+      "FDSN:NC_CMW1__H_N_1"
+    ],
+    [
+      13,
+      "NC.CMW1",
+      "FDSN:NC_CMW1",
+      "NC.CMW1..HN2",
+      "FDSN:NC_CMW1__H_N_2"
+    ],
+    [
+      14,
+      "NC.CMW1",
+      "FDSN:NC_CMW1",
+      "NC.CMW1..HN3",
+      "FDSN:NC_CMW1__H_N_3"
+    ],
+    [
+      15,
+      "NC.CMW1",
+      "FDSN:NC_CMW1",
+      "NC.CMW1..HV1",
+      "FDSN:NC_CMW1__H_V_1"
+    ],
+    [
+      16,
+      "NC.CMW1",
+      "FDSN:NC_CMW1",
+      "NC.CMW1..LDO",
+      "FDSN:NC_CMW1__L_D_O"
+    ]
+  ],
+  "record_count": 5,
+  "identifier_basis": "SEED codes preserved; FDSN identifiers derived by the cited standard, not supplied provider resource IDs.",
+  "record_interpretation": "Current DART directory channel names; directory entries do not establish historical epoch coverage."
+}

@@ -1,0 +1,33 @@
+{
+  "document_resource_id": "https://seismo.berkeley.edu/archive/2013_Annual_Report-archived.pdf",
+  "provider_resource_id_basis": "official URL of the document, not an invented station or channel resource ID",
+  "source_sha256": "ef2c4011e3ed4a445c4c2ee6cfc4d492a17af9c530ef0156447ac6fd1cae5773",
+  "response_kind": "official documentation",
+  "records": [
+    {
+      "station_seed_id": "NC.CCH1",
+      "station_fdsn_source_id": "FDSN:NC_CCH1",
+      "network_code": "NC",
+      "station_code": "CCH1",
+      "metadata_epoch_basis": "publication table operation dates; exact cached channel metadata epochs are separately preserved in channel_epoch_snapshot.csv"
+    },
+    {
+      "station_seed_id": "NC.CGP1",
+      "station_fdsn_source_id": "FDSN:NC_CGP1",
+      "network_code": "NC",
+      "station_code": "CGP1",
+      "metadata_epoch_basis": "publication table operation dates; exact cached channel metadata epochs are separately preserved in channel_epoch_snapshot.csv"
+    },
+    {
+      "station_seed_id": "NC.CSU1",
+      "station_fdsn_source_id": "FDSN:NC_CSU1",
+      "network_code": "NC",
+      "station_code": "CSU1",
+      "metadata_epoch_basis": "publication table operation dates; exact cached channel metadata epochs are separately preserved in channel_epoch_snapshot.csv"
+    }
+  ],
+  "related_channel_epochs_file": "channel_epoch_snapshot.csv",
+  "channel_identifier_mapping": "channel_epoch_snapshot.csv.identifiers.json",
+  "identifier_basis": "Station/channel standardized IDs derived from exact NC and station codes; the report PDFs themselves do not supply channel IDs.",
+  "derived_text_of": "bsl_2013_archived.pdf"
+}

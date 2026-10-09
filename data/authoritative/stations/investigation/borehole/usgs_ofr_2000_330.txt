@@ -1,0 +1,973 @@
+by David H. Oppenheimer1
+Open-File Report 00-330
+
+
+
+2000
+
+
+
+
+This report is preliminary and has not been reviewed for conformity with U.S. Geological Survey editorial
+standards or with the North American Stratigraphic Code. Any use of trade, firm, or product names is for
+descriptive purposes only and does not imply endorsement by the U.S. Government.
+
+U.S. DEPARTMENT OF THE INTERIOR
+U.S. GEOLOGICAL SURVEY
+
+1
+    Menlo Park, California
+Three-month performance evaluation of the Nanometrics, Inc.,
+Libra Satellite Seismograph System in the Northern California
+Seismic Network
+
+Background
+In 1999 the Northern California Seismic Network (NCSN) purchased a Libra
+satellite seismograph system from Nanometrics, Inc to assess whether this
+technology was a cost-effective and robust replacement for their analog
+microwave system. The system was purchased subject to it meeting the
+requirements, criteria and tests described in Appendix A. In early 2000,
+Nanometrics began delivery of various components of the system, such as the
+hub and remote satellite dish and mounting hardware, and the NCSN installed
+and assembled most equipment in advance of the arrival of Nanometrics
+engineers to facilitate the configuration of the system. The hub was installed in
+its permanent location, but for logistical reasons the “remote” satellite hardware
+was initially configured at the NCSN for testing.
+During the first week of April Nanometrics engineers came to Menlo Park to
+configure the system and train NCSN staff. The two dishes were aligned with the
+satellite, and the system was fully operational in 2 days with little problem.
+Nanometrics engineers spent the remaining 3 days providing hands-on training
+to NCSN staff in hardware/software operation, configuration, and maintenance.
+During the second week of April 2000, NCSN staff moved the entire remote
+system of digitizers, dish assembly, and mounting hardware to Mammoth Lakes,
+California. The system was reinstalled at the Mammoth Lakes water treatment
+plant and communications successfully reestablished with the hub via the
+satellite on 14 April 2000. The system has been in continuous operation since
+then.
+This report reviews the performance of the Libra system for the three-month
+period 20 April 2000 through 20 July 2000. The purpose of the report is to
+assess whether the system passed the acceptance tests described in Appendix
+A. We examine all data gaps reported by NCSN “gap list” software and discuss
+their cause.
+
+System configuration and effect on data loss
+We purchased the Libra system as a replacement for our analog microwave
+system that telemeters seismic data from Mammoth Lakes to Menlo Park. At the
+remote site in Mammoth Lakes we connected three Nanometrics 6-channel
+HRD24 dataloggers to a Cygnus satellite terminal and configured them in an
+unusual fashion. Rather than having one datalogger per station, we use each of
+the 6 channels of the datalogger to digitize a single, analog, vertical channel
+telemetered from a remote station. Thus with 3 data loggers at the remote site
+we were able to transmit with one transceiver and very small aperture terminal
+(VSAT) 100 sample/sec, 24-bit continuous data from 18 different seismic stations
+
+
+
+                                                                                     2
+(Figure 1) over a single, 100KHz block of satellite transponder bandwidth.
+Nanometrics software permits each channel to be given a different name.
+The Nanometrics acquisition software has the capability to retrieve missing data
+packets from the remote seismic datalogger as long as the data resides in the
+memory buffer of the datalogger. The length of time in which data resides in
+memory is a function of the data sample rate, number of channels, amount of
+datalogger memory, and efficiency of data compression. Practically speaking, if
+the satellite system is available and data compression is optimal, it can recover
+missing data within 1.5 hours of occurrence after which the data in memory is
+overwritten. Because the NCSN provides information about current earthquake
+locations and magnitudes to the public via the WWW, its Earthworm software is
+designed to operate under near real-time conditions. Therefore, we impose a
+maximum 30 sec delay after receipt of a data packet before we broadcast the
+Nanometrics data to the NCSN Earthworm system using the NAQS2EW module
+(described at http://www.cnss.org/EWAB/toc.html). This delay interval provides
+the Libra system sufficient time to make at least one request for missing packets,
+yet provides the Earthworm system with data in a timely fashion for rapid
+reporting of earthquakes. This report discusses data quality broadcast after the
+30-sec delay, which we hereafter refer to as “30-sec broadcast data”. The ability
+of the Libra system to ultimately recover all missing data, albeit in a delayed
+fashion, facilitates NCSN needs for waveform archival. Except where noted, the
+Libra system ultimately recovered all missing data.
+The analog signals have much lower dynamic range, ~40 dB, than does the
+Nanometrics digitizer (nominally 132 dB). Soon after installation, we realized that
+the analog input signal levels were not optimally matched to the digitizer, such
+that we were using most the dynamic range to digitize telemetry noise. The
+“noisy” signal reduced the efficiency of data compression, and most data
+samples compressed to 2 bytes rather than 1 under normal signal levels.
+Consequently, the digital signal utilized more of the satellite capacity than
+intended. This also reduced the amount of data available for retransmission in
+the datalogger buffer to 45minutes. While poor data compression has the
+potential to degrade data throughput, we did not observe this during the three-
+month interval because we budgeted satellite bandwidth for 2.4 bytes of
+data/sample based on a compression analysis of a M5 earthquake recorded at
+an epicentral distance of 7.5 km by the Berkeley Digital Seismic Network on a
+24-bit datalogger with broadband sensors and accelerometers.
+However, as discussed below, during a severe “rain” fade we lost
+communications with the remote system for 45 minutes. When communications
+was reestablished between the hub and the remote, there was insufficient
+satellite bandwidth for the Libra system to transmit both current data and
+“requested” data packets for the 45-minute interval before data was overwritten
+in datalogger memory. In future deployments we will attenuate the analog
+signals so that the level of the analog input signal is appropriately matched to the
+digitizer range.
+
+
+
+                                                                                   3
+Observations
+We illustrate “30-sec broadcast data “ loss in two different ways. In Figure 2 we
+show the total data loss per day both in absolute seconds lost and as a percent
+of time lost per day. The latter metric is an acceptance specification shown in
+Appendix A and must be less than 1%/day on average. In Figure 3 we show the
+same information, but as histograms that show the number of gaps/day of
+various gap length. A feature of Nanometrics equipment is that channel 1
+receives priority transmission if throughput is inadequate. While this feature is
+observed in the performance of each datalogger, we show only the first channel
+of each datalogger (see Figure 1) because the plots for channels 2-6 are nearly
+identical.
+In the following discussion we note when all significant system outages occurred.
+We note whether the outages were due to the performance of the Libra system
+or whether the NCSN took down the system.
+14 April 2000 – Rain Fade and Snow Storm
+This outage occurred the same day that the remote site was reinstalled in
+Mammoth Lakes. The outage is not shown in Figures 2 and 3 because outage
+log files only commence on 20 April 2000. Even though the outage precedes the
+3-month evaluation period, we discuss the event because it illustrates a
+weakness common to all satellite communication systems. Communication
+between the hub and remote was lost between the hours of 18:30 and 21:00.
+The onset of the fade was sudden and caused by a large thundercloud that
+passed overhead in Menlo Park. The duration lasted ~45 minutes. NCSN staff
+still in Mammoth Lakes, where it was sunny, confirmed that data acquisition there
+was unimpeded. Due to confusion about why the system lost connectivity, the
+NCSN rebooted the Carina, causing yet an additional 11 minutes of outage.
+As the cloud sailed out of the path to the satellite, data resumed and throughput
+was 100%. The system then began requesting retransmission of data in the rain
+fade interval. Only channel 1 of each datalogger had nearly complete data for
+the fade interval. About 45% of that data was retransmitted. All other channels
+had 500-700 sec (out of 3600) still missing, in lots of small gaps. What data that
+was received was ~30-35% retransmitted. Subsequent analysis of the system
+performance revealed that data recovery through retransmission requests was
+impeded by the poor compression performance discussed above. We expect
+that data recovery will greatly improve when we attenuate the input analog signal
+level so that the analog data compresses to 1 byte.
+No other weather-related outages were observed in the 3-month interval. In
+particular, there was a brief snowstorm at Mammoth Lakes earlier on 14 April
+2000, and no data loss was observed.
+20 April 2000 – Move of Carina transceiver
+At ~20:00 while the Libra system was operational, we dragged the cabinet
+hardware containing the Carina transceiver a few feet across the floor, closed its
+back door, then again pushed it back to the same position. The Carina hub
+
+
+                                                                                     4
+stopped receiving any data at 20:09 by the system clock and automatically
+rebooted at 21:15 as programmed. It again failed to reestablish connectivity with
+the Cygnus. Signal level at the dish was verified to be ok. At 22:12 the NCSN
+staff performed a power-down on the Carina, disconnected and reconnected all
+cables, and restored power to the unit at 22:27. System still failed to establish
+connectivity with remote, so NCSN staff performed a software shutdown/reboot,
+and again verified that signal level at dish was ok. At 22:54 the Carina
+reestablished connectivity with remote. The system was off the air for
+approximately 2:46 (see Figures 2 and 3).
+While we are unable to verify if the movement of the transceiver cabinet caused
+the system outage, the near coincidence and uniqueness of the event indicates a
+cause and effect. Nanometrics staff attempted to replicate the situation and was
+unsuccessful. They speculate that a cable may have a marginal connection.
+The NCSN has not tried to replicate the situation during the test period because
+we plan to move the Carina in September and will attempt to replicate the failure
+mode at that time.
+26 June 2000
+The NCSN shut down the Carina for approximately 20 minutes to move the
+cabinet.
+18 July 2000
+The power was off at the Mammoth Lakes Water Treatment facility for 73
+minutes. All 3 data loggers and satellite system went down and automatically
+rebooted when power was restored. This was an unrecoverable data loss due to
+lack of a UPS.
+Malfunctioning HRD24
+Datalogger HRD1 (Figure 1) immediately malfunctioned after installation at
+Mammoth Lakes. The unit periodically rebooted, causing permanent data loss
+as shown in Figure 2 and the large numbers of gaps in Figure 3. The unit
+completely died on 13 May 2000 and was replaced on 24 May 2000. During this
+11-day interval the “total amount of data lost per day” (Figure 2) is meaningless
+for HRD1. After the unit was replaced no further gaps occurred. These data
+gaps are not related to Libra performance.
+Unexplained gaps
+On 16 June 2000 a series of gaps as small 1 sec and exceeding 4 sec occurred,
+resulting in some disruption to near real-time (30 sec delay) broadcast of data
+(Figures 2 and 3). Approximately 1350 sec of data were delayed, but the data
+were ultimately recovered by retransmission requests. There was no indication
+in NCSN notes of any system maintenance activity on that day. Similar gaps
+occurred on 23 June 2000. These delayed transmissions may be weather
+related.
+
+
+
+
+                                                                                    5
+Discussion
+The procurement by the NCSN of a satellite based seismic telemetry system
+specified requirements and evaluation criteria (Appendix A) that any vendor,
+including Nanometrics, must meet. The Nanometrics system, as purchased, met
+all of these requirements. The procurement also included three acceptance
+tests to be evaluated after 3 months of operation. In this section we discuss the
+performance of the Nanometrics Libra system with regard to these tests.
+1) The data packet loss for initial transmission (after 30 sec) exceeded 1% per
+   day on three days – 14 April due to rain fade, 20 April when the Carina was
+   offline, and on 16 June 2000. On average, however, the initial data packet
+   loss was near zero and the system meets the test.
+2) The final data packet loss within the time interval available for retransmission
+   (i.e., ~1.5 hour) did not exceed 0.01% per day except for the rain fade of 14
+   April and when the Carina was offline on 20 April 2000. In retrospect, this
+   acceptance test is vague. The final packet loss is also a function of the
+   amount of satellite bandwidth available for real-time and retransmit requests.
+   If the amount satellite bandwidth leased were sufficient only to carry real-time
+   data, then no system would be able to deliver retransmit requests.
+   Conversely, if an “infinite” amount of bandwidth were available, then the test
+   would be meaningless.
+   When we specified the satellite bandwidth, we did not anticipate that the
+   digitization of analog system noise would compromise data compression. We
+   now believe that if we appropriately attenuate the analog signal level to match
+   the dynamic range of the digitizer that the satellite bandwidth we currently
+   lease will be sufficient to will meet this test. Otherwise, we will allocate more
+   satellite bandwidth. In any event, the Libra system performed as designed,
+   given the available bandwidth on the satellite channel.
+   Regarding rain fade, in a VSAT system the manufacturer is responsible for
+   insuring that its equipment meets specifications and is reliable. The space
+   segment provider is responsible for preparing a link budget that guarantees a
+   certain level of availability, in this case 99.9%. The most common solution to
+   this problem is to negotiate more power on the satellite and thus gain more
+   rain fade margin. We can also install more memory at the remote site to
+   improve ultimate data recovery. A third and more costly approach to
+   overcome the problem of downlink fade is to have a second hub at a second
+   location.
+3) No large earthquakes occurred during the 3-month evaluation period.
+   Consequently, no evaluation is possible.
+
+Conclusion
+During the evaluation period we observed two occasions where telemetry
+outages can be attributed to the Libra system. The first outage occurred on the
+day when the system was installed in Mammoth Lakes. That outage was due to
+
+
+
+                                                                                    6
+“rain” fade, a weather phenomenon that affects all satellite telemetry systems.
+We believe we can reduce the likelihood of rain fades by increasing the transmit
+power to the satellite. The second outage occurred when the hub transceiver was
+moved slightly while the system was in operation. The latter outage has not
+been explained and may be due to a loose connection in the cabling. Otherwise,
+the system performed as advertised and data recovery under typical operating
+conditions met specifications. Other outages did occur, but we can attribute
+them to causes other than the Libra system.
+Based on this three-month evaluation period, the Libra system appears to be a
+very reliable means of digital telemetry, can be deployed in remote locations in a
+few days, and offers a cost-effective solution to replacing the obsolete NCSN
+microwave system.
+
+Acknowledgements
+Many people deserve thanks for making this project a success. Lynn Dietz
+deserves a great amount of credit for writing and supporting the data interface
+from the Libra system to our Earthworm system, configuring system hardware,
+troubleshooting and logging system performance, and managing the system on a
+daily basis. Likewise, Tom Burdette managed the complex installation of the
+physical hardware, such as king posts, dishes, and cabling in both Menlo Park
+and Mammoth Lakes. Gray Jensen participated in most aspects of the project,
+including system procurement, design of the analog-to-digital configuration at the
+remote end, and physical hardware installation. Bob McClearn, Lester
+Sutherland, Fred Fischer, Dave Reneau, Dave Croker, and Don Farrell installed
+equipment, aligned dishes, and troubleshot equipment. Will Kohler assembled
+and configured computers and networking for the installation. Don Ritchey
+assembled the VCO hardware for the analog-to-digital rack at Mammoth Lakes.
+Brad Tavner and Emil Farkas of Nanometrics provided on-site installation
+instructions, training, and follow-on support. Thanks to Lynn Dietz, Will Kohler,
+Tom Burdette, and Gray Jensen for their reviews of the report.
+
+
+
+
+                                                                                     7
+Appendix A. Procurement requirements and evaluation criteria
+
+Requirements
+The Northern California Seismic Network (NCSN) seeks to procure a system
+utilizing digital satellite telemetry to replace its analog microwave telemetry
+system. The system must be similar to or exceed the capabilities of the Libra
+Satellite Seismograph system developed by Nanometrics, Inc. The system must
+have the following features:
+•= All data must be continuously transmitted directly between the field VSAT,
+   satellite, and the central data acquisition receive site (to be deployed in Menlo
+   Park, CA) and not utilize any terrestrial communications lines (e.g., Internet or
+   private telephone circuits) or multiple satellite hops.
+•= The NCSN has a substantial investment in Nanometrics HRD24 seismic
+   dataloggers and wishes to make continued use of this investment. Software
+   at VSAT must interface directly to a Nanometrics HRD24 datalogger and be
+   able to request that the dataloggers re-transmit lost or corrupt data packets
+   for the amount of data residing in the unit’s memory.
+•= The system must be able to integrate at a single VSAT digital data from
+   multiple, physically discrete seismic dataloggers, including those local to the
+   VSAT, and that may be digitizing data at different sample rates and that may
+   have different numbers of channels at each datalogger.
+•= Multiple VSAT units must be capable of sharing a single satellite link for
+   transmitting their data to the central receive site.
+•= The central-site data acquisition software must function under a Solaris or NT
+   operating system. Software must be able to broadcast continuously acquired
+   seismic data within 1 sec in the USGS Earthworm UDP packet format,
+   regardless of success of data transmission.
+•= The system must transmit data with maximum delay (from time of sample
+   acquisition to receipt of sample by central-site acquisition software) no greater
+   than 6 sec.
+•= The central-site data acquisition software must be able to acquire delayed
+   data packets due to retransmit requests of lost/corrupted information, and
+   provide that data, on request, in the proper time order to the USGS
+   Earthworm system.
+•= The integrated software and hardware system must be in commercial
+   production and in use by customers. The NCSN will not accept any hardware
+   or software products in development.
+•= The system must be gradually expandable, such that ultimately the central-
+   site acquisition could receive and re-broadcast data to the USGS Earthworm
+   system at rates of approximately 2 Mbytes/sec.
+
+
+
+                                                                                     8
+•= The system must be able to operate -20°C to +55°C with less than 30W
+   power consumption, including VSAT, remote digitizer, and GPS
+
+Evaluation criteria
+•= Efficiency. A premium will be placed on systems that maximize bandwidth
+   efficiency and minimize the number of VSAT’s/hubs/space segments to
+   transmit NCSN seismic data.
+•= Timely data delivery. While a premium is placed on efficient utilization of
+   satellite space segment bandwidth, systems utilizing seismic compression
+   algorithms to achieve higher telemetry bandwidth must be able to specify the
+   anticipated delay in data transmission if compression is minimal during large
+   earthquakes. The NCSN will provide a benchmark suite of seismograms to
+   prospective vendors for reporting on the resulting amount (or lack thereof) of
+   compression. The NCSN will take into consideration the degradation of
+   compression during large earthquakes in evaluating the efficiency of data
+   delivery.
+•= Ease of operation. A premium will be placed on telemetry systems that allow
+   remote configuration of the VSAT’s via the satellite. We will also place a
+   premium on systems that allow remote monitoring of VSAT equipment status,
+   such as temperature, supply voltage, and data integrity.
+•= Cost
+•= Timely delivery of hardware and software
+
+Acceptance tests
+The following tests will be carried out. The criteria will be evaluated at the end of
+a 3-month operation period.
+1. Subject to satellite availability (i.e., excluding rain fade, solar storm outages,
+   satellite failure, etc.), data packet loss in initial transmission may not exceed,
+   on average 1% per day for the entire space segment. Software gaps will be
+   identified with NCSN “gap list” software or by software mutually agreed upon
+   by the NCSN and vendor.
+2. Final data packet loss within time interval available for retransmission from a
+   4 Mbyte memory buffer shall not exceed 0.01% per day for the entire space
+   segment.
+3. The system transmission throughput cannot significantly degrade during large
+   or extended earthquake sequences. Should data transmission delays exceed
+   time interval in digitizer buffer resulting in a permanent loss of data, the
+   system will be considered to have failed to meet acceptance tests. Vendor is
+   expected to supply NCSN with worst-case compression efficiency from
+   NCSN-supplied benchmark seismograms in order to configure system with
+   appropriate bandwidth per VSAT.
+
+
+
+                                                                                        9
+                                                                INTERNET                                                                                         100 Mbit Waveform LAN
+
+                                                                       Internet Switch                                           EW Waveform HUB
+
+                                                                                                                                                                                                              KEY
+
+                                                                                                                                                                                                              IP link
+
+                                                                                                      Nanometrics                                                                                             Serial link
+                                                                                                      Acquisition PC
+                                MENLO PARK                                                             NaqsServer                                                                                             Nanometrics
+                                                                                                                                                                                                        NMX
+                                                                                                                                                                                                              Hardware
+                                                                                                       Earthworm
+
+                                                                                      COM
+
+
+
+
+                                                                                                                                     10 Mbit
+                                    Hayes modem
+                                                                                                                x-over
+                                                                            Nmx HUB                                                            Nmx HUB
+       PacBell analog
+          phone line
+
+
+
+
+                                      Libra                                                                                 RM4 #1                                                       RM4 #2                                      RM4 #3
+                                   Carina Hub                                                                      1 2 3 4 5 6 7                                                 1 2 3 4 5 6 7                           1 2 3 4 5 6 7
+
+
+
+
+                                      satellite
+
+
+                                                                                                                                                                   CSU/DSU
+
+
+
+
+                                                                                                                                                                                   FreeWave
+
+
+
+
+                                                                                                                                                                                                  FreeWave
+
+
+
+
+                                                                                                                                                                                                                          FreeWave
+
+
+
+
+                                                                                                                                                                                                                                              FreeWave
+                                                                                modem
+
+
+
+                                                                                                modem
+
+
+
+                                                                                                             modem
+
+
+
+                                                                                                                              modem
+
+
+
+                                                                                                                                                   modem
+                                                                                V.3400
+
+
+
+                                                                                                V.3400
+
+
+
+                                                                                                             V.3400
+
+
+
+                                                                                                                              V.3400
+
+
+
+                                                                                                                                                   V.3400
+
+
+
+                                                                                                                                                                     Cray
+
+                                           Libra
+                                                                               microwave
+
+
+
+                                                                                                microwave
+
+
+
+                                                                                                            microwave
+
+
+
+                                                                                                                              microwave
+
+
+
+                                                                                                                                                   microwave
+
+
+
+
+                                          Cygnus
+                                                                                modem
+
+
+
+                                                                                                 modem
+
+
+
+                                                                                                             modem
+
+
+
+                                                                                                                               modem
+
+
+
+                                                                                                                                                    modem
+     MAMMOTH LAKES
+
+
+
+
+                                           10 Mbit
+
+
+
+
+                                                                                                                                                                 ADN line
+
+
+
+
+                                     Mammoth                                       m        i          c    r           o     w                a    v                            SS             SS                   SS                   SS
+                                     Nmx HUB                                                                                                                                    radio          radio                radio                radio
+                                           10 Mbit
+
+
+
+
+                                                                               microwave
+
+
+
+                                                                                                microwave
+
+
+
+                                                                                                             microwave
+
+
+
+                                                                                                                              microwave
+
+
+
+                                                                                                                                                   microwave
+                                                                                modem
+
+
+
+                                                                                                 modem
+
+
+
+                                                                                                              modem
+
+
+
+                                                                                                                               modem
+
+
+
+                                                                                                                                                    modem
+
+
+
+
+                                    RM4 Mmth
+                                    1 2 3 4 5 6 7
+                                                                                                                                                                   CSU/DSU
+
+
+
+
+                                                                                                                                                                                   FreeWave
+
+
+
+
+                                                                                                                                                                                                  FreeWave
+
+
+
+
+                                                                                                                                                                                                                          FreeWave
+
+
+
+
+                                                                                                                                                                                                                                              FreeWave
+                                                                               modem
+
+
+
+                                                                                                modem
+
+
+
+                                                                                                             modem
+
+
+
+                                                                                                                              modem
+
+
+
+                                                                                                                                                   modem
+                                                                               V.3400
+
+
+
+                                                                                                V.3400
+
+
+
+                                                                                                             V.3400
+
+
+
+                                                                                                                              V.3400
+
+
+
+                                                                                                                                                   V.3400
+
+
+
+                                                                                                                                                                     Cray
+
+
+
+
+                                                                                                                                                                                  38.4kb
+
+
+
+
+                                                                                                                                                                                                 38.4kb
+
+
+
+
+                                                                                                                                                                                                                                          38.4kb
+                                                                                                                                                                                                                         19.2kb
+                                                                                                                                                                                  200hz
+
+
+
+
+                                                                                                                                                                                                 200hz
+
+
+
+
+                                                                                                                                                                                                                                          200hz
+                                                                                                                                                    100hz
+
+
+
+
+                                                                                                                                                                   100hz
+
+
+
+
+                                                                                                                                                                                                                         100hz
+                                                                                9.6kb
+
+
+
+
+                                                                                                 9.6kb
+
+
+
+
+                                                                                                                9.6kb
+
+
+
+
+                                                                                                                              9.6kb
+
+
+
+
+                                                                                                                                                    9.6kb
+
+
+
+
+                                                                                                                                                                   9.6kb
+                                                                                50hz
+
+
+
+
+                                                                                                 50hz
+
+
+
+
+                                                                                                                50hz
+
+
+
+
+                                                                                                                              50hz
+
+
+
+
+            100hz      19.2kb     100hz    19.2kb    100hz   19.2kb
+
+              Nanometrics         Nanometrics        Nanometrics
+                HRD24               HRD24              HRD24
+                                                                              Nanometrics
+
+
+                                                                                            Nanometrics
+
+
+                                                                                                            Nanometrics
+
+
+                                                                                                                             Nanometrics
+
+
+                                                                                                                                                   Nanometrics
+
+
+                                                                                                                                                                  Nanometrics
+
+
+
+
+                                                                                                                                                                                 Nanometrics
+
+
+
+                                                                                                                                                                                                Nanometrics
+
+
+
+
+                                                                                                                                                                                                                        Nanometrics
+
+
+
+                                                                                                                                                                                                                                          Nanometrics
+                                                                                HRD24
+
+
+                                                                                              HRD24
+
+
+                                                                                                              HRD24
+
+
+                                                                                                                               HRD24
+
+
+                                                                                                                                                     HRD24
+
+
+                                                                                                                                                                    HRD24
+
+
+
+
+                                                                                                                                                                                   HRD24
+
+
+
+                                                                                                                                                                                                  HRD24
+
+
+
+
+                                                                                                                                                                                                                          HRD24
+
+
+
+                                                                                                                                                                                                                                            HRD24
+
+
+
+
+                     HRD1          HRD2               HRD3
+            1 2 3 4 5 6           1 2 3 4 5 6        1 2 3 4 5 6
+           MLH.VHZ
+           MSL.VHZ
+           MLM.VHZ
+           MDC.VHZ
+           MEM.VHZ
+           MCS.VHZ
+
+                                 MRD.VHZ
+                                 MDP.VHZ
+                                 MTU.VHZ
+                                 MMP.VHZ
+                                  MDP.DLI
+                                 MFB.VHZ
+
+                                                     MCD.VHZ
+                                                     MRC.VHZ
+                                                     MCV.VHZ
+                                                     MCM.VHZ
+                                                     MCL.VHZ
+                                                     MDR.VHZ
+
+
+
+
+                                                                              KMPB          KCPB            KHMB             NSM                   JSGB           KMPB           CGP1           CMW1                    CSU1              CCH1
+
+
+                                                                           15 bundles/packet on all HRD's telemetered by other-than-satellite means. All HRDs record 3 channels of velocity and acceleration
+                 19 bundles/packet on all three Mammoth HRDs
+
+
+
+
+ Figure 1. Nanometrics configuration in the NCSN. Shaded block at lower left
+hand side represents configuration of Cygnus hardware, networking, and data
+loggers at Mammoth Lakes. Shaded block in upper half of diagram represents
+Carina hardware, networking, and acquisition computers at the NCSN.
+
+
+
+
+                                                                                                                                                                                                                                                         10
+                             MLH
+
+
+
+     12000                                             14
+     10000                                             12
+                                                       10
+      8000
+                                                       8
+      6000
+                                                       6
+      4000
+                                                       4
+      2000                                             2
+        0                                              0
+
+
+
+
+                             MRD
+
+
+
+     12000                                             14
+     10000                                             12
+                                                       10
+      8000
+                                                       8
+      6000
+                                                       6
+      4000
+                                                       4
+      2000                                             2
+        0                                              0
+
+
+
+
+                             MCD
+
+
+
+     12000                                             14
+     10000                                             12
+                                                       10
+      8000
+                                                       8
+      6000
+                                                       6
+      4000
+                                                       4
+      2000                                             2
+        0                                              0
+
+
+
+
+Figure 2. Total amount of data lost per day for “30-sec” broadcast data. Only
+channel 1 of each datalogger is shown.
+
+
+                                                                                11
+                              MLH
+
+
+
+     50
+     45
+     40                                                  0
+     35                                                  0-.15
+     30
+     25                                                  .15-.25
+     20                                                  .25-.5
+     15
+     10                                                  .5-1
+      5                                                  1-2
+      0
+                                                         2-4
+                                                         >4
+
+
+
+
+                              MRD
+
+
+
+     30
+     25                                                  0
+     20                                                  0-.15
+
+     15                                                  .15-.25
+                                                         .25-.5
+     10
+                                                         .5-1
+      5
+                                                         1-2
+      0
+                                                         2-4
+                                                         >4
+
+
+
+
+                              MCD
+
+
+
+     30
+     25                                                  0
+     20                                                  0-.15
+
+     15                                                  .15-.25
+                                                         .25-.5
+     10
+                                                         .5-1
+      5
+                                                         1-2
+      0
+                                                         2-4
+                                                         >4
+
+
+
+
+Figure 3. Histograms of data gaps as a function of gap length for “30-sec”
+broadcast data. Only channel 1 of each datalogger is shown.
+
+
+
+
+                                                                             12
+

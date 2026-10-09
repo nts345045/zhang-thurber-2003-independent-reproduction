@@ -39,6 +39,14 @@ StationXML channel elevation is treated as sensor elevation, following the
 Sensor depth below ground is preserved separately. A depth correction must not
 be applied twice. The provider's stated coordinate datum and any unstated
 vertical-reference assumptions are retained with normalized metadata.
+The completed [metadata investigation](stations/README.md) recovered all CMW1
+historical channel identities. Its historical elevation is interpreted as sensor
+elevation with an explicit assumption flag. The three other investigated
+boreholes retain provider-declared sensor elevations; conflicting wellhead
+tables and datum labels remain documented. No written study exclusion has
+been established for any of the four stations, so none is excluded on that basis.
+Reproduction and additional-data preparation are separate selections; all
+acquired records remain preserved with their identifiers.
 
 ## Differences that affect comparison
 

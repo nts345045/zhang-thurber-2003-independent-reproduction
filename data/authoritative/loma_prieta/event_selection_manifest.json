@@ -1,0 +1,126 @@
+{
+  "created_utc": "2026-10-09T22:22:31.615266Z",
+  "criteria": {
+    "status": "independent authoritative geometry; not the manuscript's exact cohort",
+    "start_utc_inclusive": "1989-10-18T00:00:00Z",
+    "end_utc_exclusive": "1989-11-18T00:00:00Z",
+    "magnitude_inclusive": [
+      2.0,
+      5.5
+    ],
+    "query_latitude_inclusive": [
+      36.5,
+      37.6
+    ],
+    "query_longitude_inclusive": [
+      -122.6,
+      -121.2
+    ],
+    "event_type": "earthquake",
+    "geoid_depth_km_inclusive": [
+      0,
+      16
+    ],
+    "origin_latitude_deg": 37.0361667,
+    "origin_longitude_deg": -121.8798333,
+    "origin_coordinate_source": "../discovery/usgs_nc216859.geojson",
+    "origin_event_resource_id": "quakeml:nc.anss.org/Event/NC/216859",
+    "origin_origin_resource_id": "quakeml:nc.anss.org/Origin/NC/2642104",
+    "axis_rotation_anticlockwise_deg": 45,
+    "x_km_inclusive": [
+      -15,
+      20
+    ],
+    "y_km_inclusive": [
+      -45,
+      25
+    ],
+    "horizontal_coordinates": "WGS84 zero-ellipsoid-height ECEF difference projected onto origin east/north tangent basis; x=E*cos(45)+N*sin(45), y=-E*sin(45)+N*cos(45)",
+    "catalog": "NCSS preferred origins and magnitudes as retrieved",
+    "summary_page_limit": 10000,
+    "selection_cap": null,
+    "event_service_documentation": "https://service.ncedc.org/fdsnws/event/1/",
+    "depth_datum_documentation": "https://ncedc.org/blog/2015/10/07/the-ncss-now-reports-earthquake.html"
+  },
+  "summary_queries": [
+    {
+      "offset": 1,
+      "count": 823,
+      "raw_file": "raw/events_00001.xml"
+    }
+  ],
+  "candidate_events": 823,
+  "selected_events": 724,
+  "excluded_events": 99,
+  "exclusion_reason_counts_nonexclusive": {
+    "outside_geoid_depth_range": 53,
+    "outside_y_range": 35,
+    "outside_x_range": 22,
+    "non_earthquake_event_type": 4
+  },
+  "candidate_event_types": {
+    "earthquake": 819,
+    "quarry blast": 4
+  },
+  "unknown_event_type_count": 0,
+  "selected_by_day": {
+    "1989-10-18": 386,
+    "1989-10-19": 80,
+    "1989-10-20": 41,
+    "1989-10-21": 25,
+    "1989-10-22": 18,
+    "1989-10-23": 16,
+    "1989-10-24": 16,
+    "1989-10-25": 20,
+    "1989-10-26": 10,
+    "1989-10-27": 5,
+    "1989-10-28": 7,
+    "1989-10-29": 9,
+    "1989-10-30": 8,
+    "1989-10-31": 9,
+    "1989-11-01": 8,
+    "1989-11-02": 9,
+    "1989-11-03": 4,
+    "1989-11-04": 2,
+    "1989-11-05": 8,
+    "1989-11-06": 5,
+    "1989-11-07": 4,
+    "1989-11-08": 4,
+    "1989-11-09": 2,
+    "1989-11-10": 4,
+    "1989-11-11": 3,
+    "1989-11-12": 2,
+    "1989-11-13": 2,
+    "1989-11-14": 5,
+    "1989-11-15": 2,
+    "1989-11-16": 6,
+    "1989-11-17": 4
+  },
+  "selection_manifest_complete": true,
+  "discovery_and_normalization_inputs": {
+    "mainshock_event_resource_id": "quakeml:nc.anss.org/Event/NC/216859",
+    "mainshock_origin_resource_id": "quakeml:nc.anss.org/Origin/NC/2642104",
+    "mainshock_geojson": {
+      "source_file": "../discovery/usgs_nc216859.geojson",
+      "sha256": "b1a751b3a3a2ed1fc6b46245434c7ac77e7863326f821e5f92ee03eb05bd236f",
+      "source_url": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc216859&format=geojson"
+    },
+    "mainshock_quakeml": {
+      "source_file": "../discovery/usgs_nc216859_phases.xml",
+      "sha256": "23d82629efea8524527da3ada65733562fbaef7705d03ebe4c3a945e9553389d",
+      "source_url": "https://earthquake.usgs.gov/product/phase-data/nc216859/nc/1776724281230/quakeml.xml"
+    },
+    "prior_earthscope_routing": {
+      "source_file": "../discovery/earthscope_nc_1989_fedcatalog.txt",
+      "sha256": "bf84509214689bb57064edb25f32bee3e13f657a610e4e01e2bf63d07a77b02f",
+      "source_url": "https://service.earthscope.org/irisws/fedcatalog/1/query?network=NC&starttime=1989-10-17T00:00:00&endtime=1989-10-19T00:00:00&minlatitude=36.5&maxlatitude=38.0&minlongitude=-123.0&maxlongitude=-121.0&targetservice=station&level=station&format=request",
+      "scope": "Earlier capability discovery; current snapshot queried separately"
+    },
+    "normalization_scripts": {
+      "acquire.py": "a20765e1a9b8c41c1b1c8fd9ad400368bdc708fadeda52470a34e78126adf604",
+      "../hayward/acquire.py": "6bea77c2c5b5e58d844b061efdaab1cd5b88e8ce5a688181b168099d3f09a927",
+      "../stations/acquire.py": "497d02aca9ed10ca125e46d940129ac6d01a0905d46553e6836fcb06e02cd5d6"
+    }
+  },
+  "observational_pick_acquisition": "not requested; these catalog locations define synthetic source geometry"
+}

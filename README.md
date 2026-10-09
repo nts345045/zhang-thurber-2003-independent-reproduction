@@ -23,12 +23,15 @@ The independent selection, metadata matching, and exclusions are recorded in
 lists remain unidentified; a new subset does not establish exact replication.
 
 The completed Hayward retrieval contains 1,768 selected events and 42,236 P
-picks. Historical channel matching identifies a new unresolved issue: 142 picks
-at NC.CMW1 lack matching channel epochs, and borehole elevation conventions are
-ambiguous at NC.CCH1, NC.CGP1, and NC.CSU1. These four stations account for 464
-picks. [The metadata record](data/authoritative/stations/README.md) documents the
-evidence. A clarification request is pending about excluding these stations or
-resolving their metadata first. No field inversion has used them.
+picks. Metadata investigation recovered NC.CMW1's historical channel operation
+epochs from the authoritative NCSN station history; all picks now match uniquely.
+NC.CCH1, NC.CGP1, and NC.CSU1 use provider-declared sensor elevations without a
+second burial subtraction. CMW1's historical elevation is interpreted as sensor
+elevation under an explicit assumption. [The metadata record](data/authoritative/stations/README.md)
+preserves conflicting historical tables, datum statements, and all identities.
+Written study membership remains unknown for all four stations; none is excluded
+on a manuscript-membership claim. Separate preparation selections preserve
+documented study exclusions for a later additional-data comparison.
 
 Independent ray-kernel corrections now improve quadrature accuracy and
 optimizer conditioning. [The numerical audit](data/development/ray_optimizer_audit/README.md)
@@ -41,19 +44,37 @@ diagnostic mappings, traces observed pairs only, and exports an unweighted
 absolute-arrival Jacobian with `dd linearize`. `prepare_hayward.py` prepares the
 identified field inputs, `resolution_hayward.py` implements conditional
 resolution/noise propagation, and `plot_hayward.py` plots saved field results.
-Their field-data execution awaits the metadata decision. The block algebra has
-been checked against a direct joint-matrix calculation, including an unsensed
-source column; this check does not establish field-data resolution.
+The Hayward input review checks all 58,980 observations and both native epochs
+of each differential observation. All 32 sampled initial rays converge at the
+configured and refined spacings. Later model convergence must be assessed from
+the method-specific histories and final diagnostics. The resolution block algebra
+has been checked against a direct joint-matrix calculation, including an unsensed
+source column; this component check does not establish field-data resolution.
 
 `dd simulate CONFIG DIR` can generate synthetic observations from supplied
 identified catalog geometry and supplied true/initial grids. Its observations
 are labeled synthetic and retain geometry identifiers without inventing provider
 pick IDs. Invented component fixtures check analytic arrivals, metadata retention,
-and unchanged baseline random generation. No Loma Prieta subset has yet been
-fetched or inverted with this command.
+and unchanged baseline random generation. The [Loma Prieta geometry
+archive](data/authoritative/loma_prieta/README.md) now contains 724 selected
+earthquakes and 52 historical NC EHZ receiver channels, with preserved candidate
+and exclusion records. It has not yet been simulated or inverted with this command.
 
 [Read the PDF report](report/report.pdf) or the
 [panel-by-panel audit](FIGURE_AUDIT.md).
+
+## Where to inspect outputs
+
+- `data/synthetic/`: existing baseline inversions. `standard_grid.csv` and
+  `dd_grid.csv` contain inferred P velocities; method-specific `*_events.csv`,
+  `*_history.csv`, and `*_residuals.csv` contain source estimates, convergence
+  histories, and observation residuals. These inversions predate the ray fixes.
+- [`data/hayward/`](data/hayward/README.md): authoritative inputs and current
+  Hayward runs. The file guide distinguishes initial geometry, inversion
+  products, and separate ray diagnostics. Missing method files mean that result
+  has not been produced.
+- `figures/` and `figures/hayward/`: plots generated from the saved numerical
+  tables. `report/report.pdf` explains the experiments and reproduction limits.
 
 ## Build and run
 
@@ -63,6 +84,15 @@ Matplotlib, and pdfLaTeX with the `fontenc`, `lmodern`, `geometry`, `amsmath`,
 and `listings` packages. No third-party tomography or optimization library
 is required. The formatter used during development is not a runtime dependency.
 The delivery environment is recorded in `reference/delivery_environment.json`.
+The Hayward plotting and resolution workflow also requires SciPy.
+
+`./rebuild_hayward.sh` reuses the saved authoritative archive, prepares its
+identified subset, builds the solver, and runs absolute-data tomography,
+catalog DD tomography, and fixed-model relocation. It records source/input
+hashes and per-method logs in `data/hayward/`, then generates ray diagnostics,
+conditional resolution, figures, and the report. It uses three concurrent
+inversions with eight OpenMP threads each by default. This command makes no
+new web-service queries.
 
 ```sh
 ./rebuild.sh

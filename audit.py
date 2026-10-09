@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Maintain an explicit manuscript-panel audit without substituting field data."""
 import csv
+import hashlib
 import json
 from pathlib import Path
 
@@ -72,16 +73,189 @@ if Path('data/authoritative/hayward/pick_selection_manifest.json').exists():
                 row['limitation'] = ('The saved baseline uses random geometry. A documented authoritative Loma Prieta subset is authorized; '
                                      'it has not yet replaced this experiment. No digitization used.')
             if int(row['panel'].split()[0].rstrip('abcd')) >= 4:
-                row['data_command'] = ('Pending metadata clarification: python3 prepare_hayward.py; '
+                row['data_command'] = ('Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; '
                                        './build/dd invert configs/hayward.cfg data/hayward MODE')
                 row['plot_command'] = 'python3 plot_hayward.py (requires completed field outputs)'
-                row['limitation'] = ('Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole '
-                                     'elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.')
+                row['limitation'] = ('Authoritative inputs now have complete metadata identities and documented elevation interpretations. '
+                                     'No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.')
                 if row['panel'].startswith('11'):
                     row['data_command'] += ('; ./build/dd linearize configs/hayward.cfg data/hayward dd; '
                                             'OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py')
                     row['limitation'] += (' The independent absolute-data resolution/noise algebra passes a small joint-matrix check; '
                                           'it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.')
+
+geometry_path = Path('data/hayward/figure04_geometry_manifest.json')
+if geometry_path.exists():
+    geometry = json.loads(geometry_path.read_text())
+    for row in rows:
+        if row['panel'] == '4':
+            row['parameters'] = ('{} independently selected current catalog earthquakes, {} physical stations, '
+                                 '{} horizontal grid nodes; identified source and receiver inputs in data/hayward').format(
+                                     geometry['events'], geometry['physical_stations'], geometry['horizontal_model_nodes'])
+            row['data_command'] = 'python3 prepare_hayward.py --selection reproduction'
+            row['plot_command'] = 'python3 plot_hayward.py --geometry-only'
+            row['status'] = 'partially reproduced'
+            row['limitation'] = ('Generated geometry uses authoritative observations and an independent selection; '
+                                 'the original 1489-event/52-station cohort remains unidentified. '
+                                 'CMW1 historical elevation interpretation and conflicting borehole wellhead tables are documented. '
+                                 'This input-geometry panel does not establish an inferred velocity model.')
+
+# The plotting helper writes these metrics only after all field figures finish.
+# Require each panel's own outputs as well, and reject CSVs changed since that
+# completed plot run. Merely acquiring data does not complete an inverse panel.
+field_data = Path('data/hayward')
+field_figures = Path('figures/hayward')
+field_metrics_path = field_data / 'figure_metrics.json'
+field_metrics = json.loads(field_metrics_path.read_text()) if field_metrics_path.exists() else None
+selection_path = field_data / 'selection_manifest.json'
+selection = json.loads(selection_path.read_text()) if selection_path.exists() else {}
+field_hashes = {}
+
+
+def field_artifact_issues(paths):
+    issues = []
+    recorded = field_metrics.get('input_sha256', {}) if field_metrics else {}
+    for path in paths:
+        if not path.is_file() or path.stat().st_size == 0:
+            issues.append('missing ' + str(path))
+        elif path.parent == field_data and path.suffix == '.csv' and not path.name.endswith('_zoom_events.csv'):
+            if path.name not in recorded:
+                issues.append('missing figure input hash: ' + str(path))
+            else:
+                if path not in field_hashes:
+                    field_hashes[path] = hashlib.sha256(path.read_bytes()).hexdigest()
+                if field_hashes[path] != recorded[path.name]:
+                    issues.append('changed since figure metrics: ' + str(path))
+    return issues
+
+
+def field_resolution_issues():
+    provenance = json.loads((field_data / 'absolute_resolution_manifest.json').read_text())
+    recorded = provenance.get('input_sha256', {})
+    paths = [field_data / name for name in ('dd_events.csv', 'dd_grid.csv', 'dd_linearization_rows.csv',
+                                           'dd_linearization_matrix.csv', 'dd_linearization_columns.csv')]
+    paths.append(Path('configs/hayward.cfg'))
+    issues = []
+    for path in paths:
+        if not path.is_file():
+            issues.append('missing resolution input: ' + str(path))
+        elif str(path) not in recorded:
+            issues.append('missing resolution input hash: ' + str(path))
+        else:
+            if path not in field_hashes:
+                field_hashes[path] = hashlib.sha256(path.read_bytes()).hexdigest()
+            if field_hashes[path] != recorded[str(path)]:
+                issues.append('changed since resolution calculation: ' + str(path))
+    return issues
+
+
+def field_mode_files(mode):
+    if mode == 'initial':
+        return [field_data / 'initial_events.csv']
+    return [field_data / (mode + '_' + name + '.csv') for name in
+            ('events', 'grid', 'residuals', 'history', 'ray_convergence',
+             'ray_derivatives', 'ray_identifiers')]
+
+
+def field_mode_command(mode):
+    return ('./build/dd invert configs/hayward.cfg data/hayward ' + mode +
+            '; ./build/dd raycheck configs/hayward.cfg data/hayward ' + mode)
+
+
+def field_run_limit(mode):
+    if mode == 'initial':
+        return 'Catalog coordinates are provider preferred-origin estimates; this panel contains no inverse estimate.'
+    description = {
+        'standard': 'Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings.',
+        'loc1d': 'Fixed-model relocation uses catalog differences with absolute-data anchoring; it is an independent counterpart of the published DD-location experiment.',
+        'dd': 'Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs.'
+    }[mode]
+    diagnostic = field_metrics.get('modes', {}).get(mode, {}) if field_metrics else {}
+    if 'accepted_updates' in diagnostic and 'failed_linear_solves' in diagnostic:
+        description += ' Saved history records {} accepted updates and {} failed LSQR stopping checks.'.format(
+            diagnostic['accepted_updates'], diagnostic['failed_linear_solves'])
+    return description + (' Catalog displacement is not location error against independent truth. '
+                          'Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. '
+                          'Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.')
+
+
+observed_counts = selection.get('observations_by_type', {})
+cohort_difference = ('Independent subset: {} events, {} physical stations, {} absolute P picks and {} catalog differences; '
+                     'the manuscript reports 1489, 52, 20257 and 767127, respectively. '
+                     'Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. ').format(
+                         selection.get('events', 'unavailable'), selection.get('physical_station_codes', 'unavailable'),
+                         observed_counts.get('0', 'unavailable'), observed_counts.get('1', 'unavailable'))
+common_field_files = [field_data / name for name in
+                      ('initial_events.csv', 'stations.csv', 'observations.csv', 'initial_grid.csv', 'selection_manifest.json')]
+for row in rows:
+    number = int(row['panel'].split()[0].rstrip('abcd'))
+    if number < 5:
+        continue
+    label = row['panel'].split()[0][-1]
+    modes = []
+    extra_files = []
+    if number == 5:
+        mode = dict(zip('abcd', ('initial', 'standard', 'loc1d', 'dd')))[label]
+        modes = [mode]
+        figure = 'figure05_locations'
+        limitation = field_run_limit(mode)
+    elif 6 <= number <= 9:
+        mode = {6: 'initial', 7: 'standard', 8: 'loc1d', 9: 'dd'}[number]
+        modes = [mode]
+        figure = 'figure{:02d}_{}'.format(number, mode)
+        extra_files = [field_data / (mode + '_zoom_events.csv')]
+        limitation = field_run_limit(mode) + (' Zoom membership is fixed by the provider catalog coordinates within the written geographic window. '
+                                              'AA/BB section-box boundaries and fault traces were not recovered or digitized; '
+                                              'both depth views include every selected zoom event.')
+    elif number == 10:
+        modes = ['standard', 'dd']
+        figure = 'figure10_velocity'
+        extra_files = [field_data / 'vertical_sections.csv']
+        limitation = ('Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. '
+                      'The model grid extends above the geoid to include receivers. ' +
+                      field_run_limit('standard') + ' ' + field_run_limit('dd'))
+    elif number == 11:
+        modes = ['dd']
+        figure = 'figure11_resolution'
+        extra_files = [field_data / name for name in
+                       ('absolute_resolution.csv', 'absolute_resolution_manifest.json', 'absolute_resolution_matrices.npz',
+                        'dd_linearization_rows.csv', 'dd_linearization_matrix.csv', 'dd_linearization_columns.csv', 'resolution_sections.csv')]
+        row['parameters'] = ('Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; '
+                             'independent log-slowness smoothing and column-scaled damping; ' + row['panel'].split('(', 1)[1].rstrip(')'))
+        if label == 'b':
+            row['quantity'] = 'Hayward conditional velocity noise from independent picks'
+        limitation = ('The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. '
+                      'It is not a full DD resolution matrix or the original simul2000 calculation. '
+                      'Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. '
+                      'It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. '
+                      'Small conditional noise does not establish small total velocity error. ' + field_run_limit('dd'))
+    else:
+        continue
+    commands = ['python3 prepare_hayward.py --selection reproduction']
+    commands.extend(field_mode_command(mode) for mode in modes if mode != 'initial')
+    row['data_command'] = '; '.join(commands)
+    if number == 11:
+        row['data_command'] += ('; ./build/dd linearize configs/hayward.cfg data/hayward dd; '
+                                'OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py')
+    row['plot_command'] = 'python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh'
+    required = common_field_files + extra_files
+    for mode in modes:
+        required.extend(field_mode_files(mode))
+    required.extend(field_figures / (figure + suffix) for suffix in ('.pdf', '.png'))
+    if field_metrics is None:
+        row['limitation'] = ('Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. '
+                             + cohort_difference + limitation)
+        continue
+    issues = field_artifact_issues(required)
+    issues.extend('missing mode metrics: ' + mode for mode in modes if mode not in field_metrics.get('modes', {}))
+    if number == 11 and not issues:
+        issues.extend(field_resolution_issues())
+    if issues:
+        row['limitation'] = ('Field outputs are incomplete or stale for this panel: ' + '; '.join(issues) + '. '
+                             + cohort_difference + limitation)
+        continue
+    row['status'] = 'partially reproduced'
+    row['limitation'] = cohort_difference + limitation
 
 Path('data').mkdir(exist_ok=True)
 with open('data/panel_audit.csv', 'w', newline='') as f:
@@ -99,3 +273,5 @@ with open('FIGURE_AUDIT.md', 'w') as f:
                 f.write('**{}:** {}\n\n'.format(key.replace('_', ' ').capitalize(), value))
     f.write('## Supplementary figures\n\nNo supplement is listed for this article on the original SSA issue contents or article abstract page. No supplementary figures were identified. Direct primary links and the check are recorded in reference/specification_notes.md.\n')
 print('Wrote audit for {} panel/section entries.'.format(len(rows)))
+if field_metrics is None:
+    print('No completed Hayward figure metrics: field panels 5-11 remain pending.')

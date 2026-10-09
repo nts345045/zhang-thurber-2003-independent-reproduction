@@ -1,0 +1,74 @@
+{
+  "created_utc": "2026-10-09T22:22:31.086719Z",
+  "criteria": {
+    "status": "independent authoritative geometry; not the manuscript's exact cohort",
+    "snapshot_utc": "1989-11-01T00:00:00Z",
+    "snapshot_interval_convention": "effective metadata start <= snapshot < effective metadata end; no end means open epoch",
+    "network_code": "NC",
+    "channel_code": "EHZ",
+    "location_selection": "all valid locations",
+    "x_km_inclusive": [
+      -35,
+      35
+    ],
+    "y_km_inclusive": [
+      -60,
+      40
+    ],
+    "horizontal_coordinates": "WGS84 zero-ellipsoid-height ECEF difference projected onto origin east/north tangent basis; x=E*cos(45)+N*sin(45), y=-E*sin(45)+N*cos(45)",
+    "origin_latitude_deg": 37.0361667,
+    "origin_longitude_deg": -121.8798333,
+    "grid_top_km": "min(-1, floor(minimum selected sensor z in km)); all horizontally selected sensors retained",
+    "maximum_sensor_z_km": 16,
+    "sensor_z_definition": "minus Channel/Elevation in metres divided by 1000; do not subtract burial depth twice",
+    "vertical_coordinate_interpretation": "Provider-declared sensor elevation under StationXML semantics; burial depth preserved independently; no inferred datum conversion or independent survey-verification claim",
+    "vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depths on the same datum; StationXML supplies no explicit per-channel vertical datum",
+    "selection_cap": null
+  },
+  "earthscope_routing_records": 355,
+  "earthscope_routing_services": [
+    "https://service.ncedc.org/fdsnws/station/1/"
+  ],
+  "candidate_channel_epochs": 355,
+  "selected_channels": 52,
+  "selected_stations": 52,
+  "excluded_channel_epochs": 303,
+  "exclusion_reason_counts_nonexclusive": {
+    "outside_x_range": 239,
+    "outside_y_range": 277
+  },
+  "minimum_selected_sensor_z_km": -0.921,
+  "maximum_selected_sensor_z_km": -0.039,
+  "suggested_grid_top_km": -1,
+  "overlapping_selected_channel_epochs": 0,
+  "selection_manifest_complete": true,
+  "vertical_coordinate_status_counts": {
+    "stationxml_sensor_elevation_convention_applied": 52
+  },
+  "selected_nonzero_sensor_depth_count": 0,
+  "discovery_and_normalization_inputs": {
+    "mainshock_event_resource_id": "quakeml:nc.anss.org/Event/NC/216859",
+    "mainshock_origin_resource_id": "quakeml:nc.anss.org/Origin/NC/2642104",
+    "mainshock_geojson": {
+      "source_file": "../discovery/usgs_nc216859.geojson",
+      "sha256": "b1a751b3a3a2ed1fc6b46245434c7ac77e7863326f821e5f92ee03eb05bd236f",
+      "source_url": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc216859&format=geojson"
+    },
+    "mainshock_quakeml": {
+      "source_file": "../discovery/usgs_nc216859_phases.xml",
+      "sha256": "23d82629efea8524527da3ada65733562fbaef7705d03ebe4c3a945e9553389d",
+      "source_url": "https://earthquake.usgs.gov/product/phase-data/nc216859/nc/1776724281230/quakeml.xml"
+    },
+    "prior_earthscope_routing": {
+      "source_file": "../discovery/earthscope_nc_1989_fedcatalog.txt",
+      "sha256": "bf84509214689bb57064edb25f32bee3e13f657a610e4e01e2bf63d07a77b02f",
+      "source_url": "https://service.earthscope.org/irisws/fedcatalog/1/query?network=NC&starttime=1989-10-17T00:00:00&endtime=1989-10-19T00:00:00&minlatitude=36.5&maxlatitude=38.0&minlongitude=-123.0&maxlongitude=-121.0&targetservice=station&level=station&format=request",
+      "scope": "Earlier capability discovery; current snapshot queried separately"
+    },
+    "normalization_scripts": {
+      "acquire.py": "a20765e1a9b8c41c1b1c8fd9ad400368bdc708fadeda52470a34e78126adf604",
+      "../hayward/acquire.py": "6bea77c2c5b5e58d844b061efdaab1cd5b88e8ce5a688181b168099d3f09a927",
+      "../stations/acquire.py": "497d02aca9ed10ca125e46d940129ac6d01a0905d46553e6836fcb06e02cd5d6"
+    }
+  }
+}

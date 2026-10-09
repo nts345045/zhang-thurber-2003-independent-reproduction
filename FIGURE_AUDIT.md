@@ -104,15 +104,15 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Documentation:** Caption 4, p.1882
 
-**Parameters:** Grid x=-35,-20,-10,-5,-4,-3,0,5,10,20,35; y=-30,-20,-10,0,10,20,30; z=0,4,8,12,20 km
+**Parameters:** 1092 independently selected current catalog earthquakes, 37 physical stations, 77 horizontal grid nodes; identified source and receiver inputs in data/hayward
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --geometry-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Generated geometry uses authoritative observations and an independent selection; the original 1489-event/52-station cohort remains unidentified. CMW1 historical elevation interpretation and conflicting borehole wellhead tables are documented. This input-geometry panel does not establish an inferred velocity model.
 
 ## Panel 5a
 
@@ -122,13 +122,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 5b
 
@@ -138,13 +138,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 5c
 
@@ -154,13 +154,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 5d
 
@@ -170,13 +170,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 6a
 
@@ -186,13 +186,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 6b
 
@@ -202,13 +202,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 6c
 
@@ -218,13 +218,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 6d
 
@@ -234,13 +234,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 7a
 
@@ -250,13 +250,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 7b
 
@@ -266,13 +266,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 7c
 
@@ -282,13 +282,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 7d
 
@@ -298,13 +298,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 8a
 
@@ -314,13 +314,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 8b
 
@@ -330,13 +330,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 8c
 
@@ -346,13 +346,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 8d
 
@@ -362,13 +362,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 9a
 
@@ -378,13 +378,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 9b
 
@@ -394,13 +394,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 9c
 
@@ -410,13 +410,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 9d
 
@@ -426,13 +426,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10a (y=-30)
 
@@ -442,13 +442,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-30 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10a (y=-20)
 
@@ -458,13 +458,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-20 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10a (y=-10)
 
@@ -474,13 +474,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-10 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10a (y=0)
 
@@ -490,13 +490,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=0 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10a (y=10)
 
@@ -506,13 +506,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=10 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10a (y=20)
 
@@ -522,13 +522,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=20 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10a (y=30)
 
@@ -538,13 +538,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=30 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10b (y=-30)
 
@@ -554,13 +554,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-30 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10b (y=-20)
 
@@ -570,13 +570,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-20 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10b (y=-10)
 
@@ -586,13 +586,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-10 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10b (y=0)
 
@@ -602,13 +602,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=0 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10b (y=10)
 
@@ -618,13 +618,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=10 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10b (y=20)
 
@@ -634,13 +634,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=20 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10b (y=30)
 
@@ -650,13 +650,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=30 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10c (y=-30)
 
@@ -666,13 +666,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-30 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10c (y=-20)
 
@@ -682,13 +682,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-20 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10c (y=-10)
 
@@ -698,13 +698,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-10 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10c (y=0)
 
@@ -714,13 +714,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=0 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10c (y=10)
 
@@ -730,13 +730,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=10 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10c (y=20)
 
@@ -746,13 +746,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=20 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 10c (y=30)
 
@@ -762,13 +762,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=30 km; hypocenters within 5 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
 
 ## Panel 11a (y=-30)
 
@@ -778,13 +778,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=-30 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Panel 11a (y=-20)
 
@@ -794,13 +794,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=-20 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Panel 11a (y=-10)
 
@@ -810,13 +810,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=-10 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Panel 11a (y=0)
 
@@ -826,13 +826,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=0 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Panel 11a (y=10)
 
@@ -842,13 +842,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=10 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Panel 11a (y=20)
 
@@ -858,13 +858,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=20 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Panel 11a (y=30)
 
@@ -874,13 +874,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=30 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Panel 11b (y=-30)
 
@@ -890,13 +890,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=-30 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Panel 11b (y=-20)
 
@@ -906,13 +906,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=-20 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Panel 11b (y=-10)
 
@@ -922,13 +922,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=-10 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Panel 11b (y=0)
 
@@ -938,13 +938,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=0 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Panel 11b (y=10)
 
@@ -954,13 +954,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=10 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Panel 11b (y=20)
 
@@ -970,13 +970,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=20 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Panel 11b (y=30)
 
@@ -986,13 +986,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=30 km
 
-**Data command:** Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
 **Plot command:** python3 plot_hayward.py (requires completed field outputs)
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
 
 ## Supplementary figures
 

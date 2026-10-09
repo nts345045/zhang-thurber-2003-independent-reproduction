@@ -6983,7 +6983,32 @@
       "retrieved_utc": "2026-10-09T21:26:28.486230Z"
     }
   ],
-  "status": "Metadata clarification required. No substitution or inversion performed. Ambiguous solver depths remain blank.",
+  "status": "Original clarification snapshot preserved. Metadata investigation completed; authoritative operation epochs recover all CMW1 picks. Provider sensor elevations retained without second burial subtraction; CMW1 ELEV interpreted as sensor elevation under explicit assumption. No study exclusion established.",
   "picks_csv_sha256": "34e2f64f7a95b4fb6c63bafeffde833d6d02054ab83170a502edcf95f9b74044",
-  "channel_epochs_csv_sha256": "e044db3db577b288942ca2accc527def72baca3c37d5532bccc6196cd8125a70"
+  "channel_epochs_csv_sha256": "e044db3db577b288942ca2accc527def72baca3c37d5532bccc6196cd8125a70",
+  "investigation_outcome": {
+    "station_resource_ids": [
+      "FDSN:NC_CMW1",
+      "FDSN:NC_CCH1",
+      "FDSN:NC_CGP1",
+      "FDSN:NC_CSU1"
+    ],
+    "study_membership": "unknown for all four; no study-based exclusion",
+    "adopted_model_z_km": {
+      "NC.CMW1": -0.214,
+      "NC.CCH1": -0.107,
+      "NC.CGP1": -0.219,
+      "NC.CSU1": -0.375
+    },
+    "cmw1_assumption": "historical ELEV214m interpreted as sensor elevation; later XML consistency is not independent survey validation; historical burial depth remains unknown",
+    "other_borehole_interpretation": "current provider Channel/Elevation is sensor elevation; no second burial correction",
+    "current_unique_pick_matches": 42236,
+    "current_channel_epochs_sha256": "4f96d7480387c5349f1190e4a1e4e0be3a5fccce9821ae2856da8de73e063d7b",
+    "historical_snapshot_note": "Original lists and hashes below record the earlier issue state, not current normalized rows. See matching_summary.json and channel_epochs.csv for current state.",
+    "evidence": [
+      "investigation/study_membership.md",
+      "investigation/borehole_elevations.md",
+      "investigation/cmw1_report.md"
+    ]
+  }
 }

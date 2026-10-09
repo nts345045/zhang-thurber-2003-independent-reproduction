@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Plot independently inferred Hayward results, retaining identified point tables."""
+import argparse
 import csv
 import hashlib
 import json
@@ -80,10 +81,10 @@ def setup(ax, x, y):
     ax.grid(alpha=.18)
 
 
-def main():
+def main(geometry_only=False):
     FIG.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.right": False})
-    cohort = {mode: events(mode) for mode in ("initial", "standard", "loc1d", "dd")}
+    cohort = {mode: events(mode) for mode in (("initial",) if geometry_only else ("initial", "standard", "loc1d", "dd"))}
     initial = cohort["initial"]
     station_rows = read("stations.csv")
     station_points = {(float(r["longitude_deg"]), float(r["latitude_deg"])) for r in station_rows}
@@ -102,6 +103,17 @@ def main():
     ax.legend(fontsize=8)
     ax.set_title("Figure 4 counterpart: authoritative subset and model grid")
     save(fig, "figure04_geometry")
+    geometry = dict(events=len(initial), physical_stations=len({r["station_seed_id"] for r in station_rows}),
+                    receiver_positions=len(station_points), horizontal_model_nodes=len(xy),
+                    status="partially reproduced: independently selected authoritative geometry, not the original manuscript cohort",
+                    metadata_interpretation="Provider sensor elevations and the explicit CMW1 historical-ELEV assumption are documented in data/authoritative/stations/README.md",
+                    inputs={name: hashlib.sha256((DATA / name).read_bytes()).hexdigest()
+                            for name in ("initial_events.csv", "stations.csv", "initial_grid.csv", "selection_manifest.json")},
+                    plot_script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
+    (DATA / "figure04_geometry_manifest.json").write_text(json.dumps(geometry, indent=2) + "\n")
+    if geometry_only:
+        print(json.dumps(geometry, indent=2))
+        return
 
     names = {"initial": "Catalog", "standard": "Absolute-data tomography",
              "loc1d": "Fixed 1D model relocation", "dd": "Catalog DD tomography"}
@@ -238,4 +250,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--geometry-only", action="store_true", help="Generate Figure 4 from identified inputs before inversion")
+    main(parser.parse_args().geometry_only)

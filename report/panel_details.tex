@@ -85,26 +85,26 @@ python3 plot.py --figure 3d
 \subsubsection*{Panel 4}
 \noindent\textbf{Quantity:} Hayward network, catalog seismicity, and inversion grid\par
 \noindent\textbf{Written specification:} Caption 4, p.1882\par
-\noindent\textbf{Parameters:} Grid x=-35,-20,-10,-5,-4,-3,0,5,10,20,35; y=-30,-20,-10,0,10,20,30; z=0,4,8,12,20 km\par
-\noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Parameters:} 1092 independently selected current catalog earthquakes, 37 physical stations, 77 horizontal grid nodes; identified source and receiver inputs in data/hayward\par
+\noindent\textbf{Status:} partially reproduced\par
+\noindent\textbf{Attempt and limitation:} Generated geometry uses authoritative observations and an independent selection; the original 1489-event/52-station cohort remains unidentified. CMW1 historical elevation interpretation and conflicting borehole wellhead tables are documented. This input-geometry panel does not establish an inferred velocity model.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+python3 prepare_hayward.py --selection reproduction
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
-python3 plot_hayward.py (requires completed field outputs)
+python3 plot_hayward.py --geometry-only
 \end{lstlisting}
 \subsubsection*{Panel 5a}
 \noindent\textbf{Quantity:} Hayward event map: NCSN catalog\par
 \noindent\textbf{Written specification:} Event Locations pp.1881-1883; caption 5\par
 \noindent\textbf{Parameters:} 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -115,10 +115,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1881-1883; caption 5\par
 \noindent\textbf{Parameters:} 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -129,10 +129,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1881-1883; caption 5\par
 \noindent\textbf{Parameters:} 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -143,10 +143,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1881-1883; caption 5\par
 \noindent\textbf{Parameters:} 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -157,10 +157,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -171,10 +171,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -185,10 +185,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -199,10 +199,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -213,10 +213,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -227,10 +227,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -241,10 +241,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -255,10 +255,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -269,10 +269,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -283,10 +283,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -297,10 +297,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -311,10 +311,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -325,10 +325,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -339,10 +339,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -353,10 +353,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -367,10 +367,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Event Locations pp.1882-1884; captions 6-9\par
 \noindent\textbf{Parameters:} Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -381,10 +381,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Velocity Structure p.1884; caption 10 p.1887\par
 \noindent\textbf{Parameters:} Published Hayward grid; smoothing weight 10; all seven y sections listed above; hypocenters within 5 km\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -395,10 +395,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Velocity Structure p.1884; caption 10 p.1887\par
 \noindent\textbf{Parameters:} Published Hayward grid; smoothing weight 10; all seven y sections listed above; hypocenters within 5 km\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -409,10 +409,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Velocity Structure p.1884; caption 10 p.1887\par
 \noindent\textbf{Parameters:} Published Hayward grid; smoothing weight 10; all seven y sections listed above; hypocenters within 5 km\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -423,10 +423,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Velocity Structure pp.1884,1886; caption 11 p.1888\par
 \noindent\textbf{Parameters:} Absolute-data standard-tomography linearization at the DD velocity model; all seven y sections listed above\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}
@@ -437,10 +437,10 @@ python3 plot_hayward.py (requires completed field outputs)
 \noindent\textbf{Written specification:} Velocity Structure pp.1884,1886; caption 11 p.1888\par
 \noindent\textbf{Parameters:} Absolute-data standard-tomography linearization at the DD velocity model; all seven y sections listed above\par
 \noindent\textbf{Status:} not reproduced\par
-\noindent\textbf{Attempt and limitation:} Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.\par
+\noindent\textbf{Attempt and limitation:} Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.\par
 \noindent\textbf{Generate data:}
 \begin{lstlisting}
-Pending metadata clarification: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 \end{lstlisting}
 \noindent\textbf{Create plot:}
 \begin{lstlisting}

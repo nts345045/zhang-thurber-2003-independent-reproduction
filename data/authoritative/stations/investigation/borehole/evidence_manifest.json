@@ -1,0 +1,127 @@
+{
+  "status": "provider_declared_sensor_elevations_supported_with_documented_table_and_datum_discrepancies",
+  "channel_epoch_count": 30,
+  "historical_row_count": 33,
+  "raw_resources": [
+    {
+      "file": "bsl_2005_2006.pdf",
+      "exists": true,
+      "url": "https://www.ncedc.org/pub/annual_report/ar05_06.pdf",
+      "http_status": 200,
+      "sha256": "33a1540cbf40e3c6d1a57d05545d46d2a35fe2255ae702072f042f77918449c2",
+      "error": null
+    },
+    {
+      "file": "bsl_2013_archived.pdf",
+      "exists": true,
+      "url": "https://seismo.berkeley.edu/archive/2013_Annual_Report-archived.pdf",
+      "http_status": 200,
+      "sha256": "ef2c4011e3ed4a445c4c2ee6cfc4d492a17af9c530ef0156447ac6fd1cae5773",
+      "error": null
+    },
+    {
+      "file": "bsl_2013_ncedc.pdf",
+      "exists": true,
+      "url": "https://www.ncedc.org/pub/annual_report/2013_Annual_Report.pdf",
+      "http_status": 404,
+      "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "error": null
+    },
+    {
+      "file": "bsl_2013_part2.pdf",
+      "exists": true,
+      "url": "https://earthquakes.berkeley.edu/docs/2013part2.pdf",
+      "http_status": 404,
+      "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "error": null
+    },
+    {
+      "file": "fdsn_stationxml_reference.html",
+      "exists": true,
+      "url": "https://docs.fdsn.org/projects/stationxml/en/latest/reference.html",
+      "http_status": 200,
+      "sha256": "3aaa252a538e7290a44dc61a71d55b9ca805e101a2b01259439f44f9d4be951e",
+      "error": null
+    },
+    {
+      "file": "ncedc_1997_catalog_revision.html",
+      "exists": true,
+      "url": "https://ncedc.org/blog/1997/04/20/revision-of-ncsn-catalog.html",
+      "http_status": 200,
+      "sha256": "22c99130d4cabe8be1534534c9dfbf7fd841dd4c86acabd3d2a97a66c37161a6",
+      "error": null
+    },
+    {
+      "file": "ncedc_2015_depth_datum.html",
+      "exists": true,
+      "url": "https://ncedc.org/blog/2015/10/07/the-ncss-now-reports-earthquake.html",
+      "http_status": 200,
+      "sha256": "cf0d49f1ad9f5e09aa9e414ba6d0a4da6a50897336183f6f08ca3f9cc08dc29f",
+      "error": null
+    },
+    {
+      "file": "ncedc_channel_schema.html",
+      "exists": true,
+      "url": "https://ncedc.org/db/Documents/NewSchemas/IR/v1.5.2/IR.1.5.2/Model1/Tbl3.htm",
+      "http_status": 200,
+      "sha256": "17556638eb5eea72b8c68d611d6c0a4fcecfc8508f874869eb59709ff5a77e89",
+      "error": null
+    },
+    {
+      "file": "ncedc_fdsn_station_help.html",
+      "exists": true,
+      "url": "https://service.ncedc.org/fdsnws/station/help/index.html",
+      "http_status": 200,
+      "sha256": "85b4010b8f7f4fe47aeed1a92e96240f66048f9fb725e02bd36d075cf4ac4417",
+      "error": null
+    },
+    {
+      "file": "ncedc_historical_directory.html",
+      "exists": true,
+      "url": "https://ncedc.org/pub/doc/ncsn/old/",
+      "http_status": 200,
+      "sha256": "8c9c9100674dd1951fb27bf021ab6f29473e4e19105ea297e4e17e4cb43ded22",
+      "error": null
+    },
+    {
+      "file": "ncedc_ncsn_directory.html",
+      "exists": true,
+      "url": "https://ncedc.org/pub/doc/ncsn/",
+      "http_status": 200,
+      "sha256": "5945f3bce2ac4d64e76043667d111330aee6adf215339d80fc07a63d1263e92a",
+      "error": null
+    },
+    {
+      "file": "ncedc_spreadsheet.txt",
+      "exists": true,
+      "url": "https://ncedc.org/pub/doc/ncsn/spreadsheet.txt",
+      "http_status": 404,
+      "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "error": null
+    },
+    {
+      "file": "usgs_ofr_2000_330.pdf",
+      "exists": true,
+      "url": "https://pubs.usgs.gov/of/2000/0330/pdf/of00-330.pdf",
+      "http_status": 200,
+      "sha256": "1cac0366d7acc27675bdc02c7feccf55c59eeb5e2f5f1a7adde730a819014b55",
+      "error": null
+    },
+    {
+      "file": "usgs_spreadsheet.txt",
+      "exists": false,
+      "url": "https://ehzftp.wr.usgs.gov/klein/stations/spreadsheet.txt",
+      "http_status": null,
+      "sha256": null,
+      "error": "<urlopen error [Errno 101] Network is unreachable>"
+    }
+  ],
+  "validation": [
+    "Raw HTTP response hashes verified",
+    "All NSLCs match preserved fields, including empty location",
+    "All30cachedXMLsourcehashes verified",
+    "All33historicalrawlines match exact one-based source line",
+    "Current XML and historical numeric elevations agree",
+    "No source or metadata acquisition table changed"
+  ]
+}

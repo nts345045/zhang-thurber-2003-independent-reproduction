@@ -1,0 +1,403 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head profile="http://www.w3.org/2005/10/profile">
+<link rel="icon" 
+      type="image/ico" 
+      href="/BSL_template_img/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!--IE EDGE code below is a legacy from the previous version of the homepage, not sure if it's needed now-->
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=edge;" >
+<title>NCEDC: Northern California Seismic Network</title>
+<meta name="Description" content="Northern California Earthquake Data Center">
+<link href="/css/NCEDC_2013.css" rel="stylesheet" type="text/css" media="screen,print">
+<link href="/css/NCEDC_2013_print.css" rel="stylesheet" type="text/css" media="print">
+<!--[if IE 8]>
+<link href="/css/NCEDC_2013_IE8.css" rel="stylesheet" type="text/css" media="screen,print">
+<![endif]-->
+<!--[if IE 7]>
+<link href="/css/NCEDC_2013_IE7.css" rel="stylesheet" type="text/css" media="screen,print">
+<![endif]-->
+<!-- jQuery library -->
+<script src="/js/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+<script src="/js/iPhoneiPad.js" type="text/javascript"></script>
+<script src="/js/getyear.js" type="text/javascript"></script>
+<script src="/js/slideDownTopics.js" type="text/javascript"></script>
+<script src="/js/station_channel_selection.js" type="text/javascript"></script>
+<script src="/js/anss_cutoffdate.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40249211-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+<body>
+<!--The div below is the header of the page, containing logo, search tools, and the navbar-->
+<div id="blueheader">
+<!--Alternate navigation for accessibility, tabbing-only users.-->
+<div id="altnav"><a href="/sitemap.html">Site Map/Alternate Navigation </a> <a href="#maincontent">Skip to Main Content</a></div>
+    <!-- Search tool from previous website version, originally from http://www.berkeley.edu/webstyle/index.shtml  -->
+    <div id="tools"> 
+<script type="text/javascript">
+<!--
+function convertQuote(form)
+{
+	var str = form.q.value;
+	form.q.value = (str.replace(/'/g,"'"));
+}
+document.write('<form action="http://www.berkeley.edu/search/" id="cse-search-box">');
+document.write('<div style="display:inline;">');
+document.write('<input type="hidden" name="cx" value="005208590012297439780:lskafcc54kw" >');
+document.write('<input type="hidden" name="cof" value="FORID:11" >');
+document.write('<input type="hidden" name="ie" value="UTF-8" >');
+document.write('<label for="search">SEARCH<\/label>&nbsp;<input type="text" name="q" size="15" id="search" >&nbsp;');
+document.write('<input type="image" src="/NCEDC_template_images/bearpaw.gif" alt="Go" class="go" name="Submit" align="bottom" onClick="convertQuote(this.form);" >&nbsp;');
+document.write('<\/div><\/form>');
+//-->
+</script>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en;"></script>
+</div><!-- /#tools -->
+
+<!-- Website logo -->
+<div id="NCEDCLogo"><a href="/"><img id="NCEDCLogoImage" src="/NCEDC_template_images/IAJ_ncedc_logo_RA1.png" alt=""></a></div>
+<div id="BSLLogo"><a href="http://earthquakes.berkeley.edu"><img id="BSLLogoImage" height="80" src="/NCEDC_template_images/BSLlogo_forweb_75pct.jpg" alt=""></a></div>
+</div><!--/header-->
+
+<!-- End of header part A for wsmake --><!--Menu begins here-->
+
+<!--Please update sitemap.txt every time you update this menu by running "csh -x make_sitemap" in htdocs.devel, which re-creates file htdocs.devel/includes/sitemap.txt -->
+
+<!--This is the mega-dropdown menu. divs Networks, Access Data, etc. are hidden until hovered over -->
+<div id="dropbox">
+     <ul class="dropdown"> 
+     	 <li onmouseover="" id="Networks">Networks
+	 <div id="dropNetworks">
+	      <ul id="networksListMain">
+	      	  <li class="spacedListItem"><span class="makeBlue">Seismic Networks</span>
+		      <ul id="networksListA">
+		      	  <li><a href="/bdsn/bdsn.overview.html">Berkeley Digital Seismic Network, UC Berkeley (BK)</a></li>
+			  <li><a href="/ncsn/">Northern California Seismic Network, USGS (NC)</a></li>
+	  		  <li><a href="/dwr/dwr.overview.html">CA Division of Water Resources Seismic Network, DWR (WR)</a></li>
+	  		  <li><a href="/pge/">Central Coast Seismic Network, PG&amp;E (PG)</a></li>
+	  		  <li><a href="/egs/">Enhanced Geothermal Systems, Calpine/LBL (BG, formerly 3B, 4B, 5B)</a></li>
+		      </ul>	
+		  <li class="spacedListItem"><span class="makeBlue">Borehole Networks</span>
+		      <ul id="networksListB">
+		      	  <li><a href="/bbn/">Berkeley Borehole Network, UC Berkeley (BK)</a></li>
+			  <li><a href="/pbo/">Plate Boundary Observatory, Earthscope</a></li>
+			  <li><a href="/geysers/">Calpine/Unocal, the Geysers, Calpine/Unocal (UG and BG)</a></li>
+			  <li><a href="/hrsn/">High Resolution Seismic Network, Parkfield, UC Berkeley (BP)</a></li>
+		      </ul>
+       		  <li class="spacedListItem"><a class="makeBlue" href="/ncedc/supporting-networks.html">Supporting and Historic Networks</a>
+		  <li class="spacedListItem"><span class="makeBlue">GPS Networks</span>
+	  	      <ul id="networksListC">
+	  		  <li><a href="/bard.overview.html">Bay Area Regional Deformation Network, UC Berkeley (BARD)</a></li>
+			  <li><a href="/usgs-gps/">USGS GPS data</a></li>
+       		      </ul>
+		  <li class="spacedListItem"><a class="makeBlue" href="/ncedc/other-geophysical-datasets.html">Other Geophysical datasets, including non-Seed format assembled datasets, strain data, and other geophysical data</a></li>
+	      </ul>	  					
+	</div><!--/#dropNetworks-->
+    	</li><!--/Networks-->
+
+	<li onmouseover="" id="AccessData">Access Data
+	<div id="dropAccessData">
+	     <div id="accessDataListContainer">
+	     	  <ul id="accessDataList">
+		      <li><a href="http://service.ncedc.org/">Web Services</a></li>
+		      <li><a href="/SeismiQuery/">SeismiQuery</a></li>
+		      <li><a href="/ncedc/about-the-dart.html">DART (Data Available in Real Time)</a></li>
+		      <li><a href="/bard.overview.html">GPS (BARD)</a></li>
+		      <li><a href="/usgs-gps/">GPS (USGS)</a></li>
+		      <li><a href="/ncedc/other-geophysical-datasets.html">Strain, SAR, and other Geophysical Datasets</a></li>
+                      <li><a href="/acknowledge.html">Acknowledging data sources</a></li>
+		  </ul>
+             </div>	
+	</div><!--/dropAccessData-->
+    	</li><!--/Access Data-->
+                   
+	<li onmouseover="" id="EarthquakeCatalogs">Earthquake Catalogs
+	<div id="dropEarthquakeCatalogs">
+	     <div id="earthquakeCatalogListContainer">
+	     	  <ul id="earthquakeCatalogList">
+		      <li><a href="/anss/catalog-search.html">Advanced National Seismic System (ANSS)</a></li>
+		      <li><a href="/ncedc/catalog-search.html">Northern California Earthquake Catalog (NCSS)</a></li>
+		      <li><a href="/egs/catalog-search.html">DOE Enhanced Geothermal System Earthquake Catalog (EGS)</a></li>
+		      <li><a href="/ncedc/other-catalogs.html">Other Catalogs</a></li>
+                      <li><a href="/acknowledge.html">Acknowledging data sources</a></li>
+       		  </ul>
+             </div>
+	</div><!--/#dropEarthquakeCatalogs-->
+	</li><!--/Earthquake Catalogs-->
+
+	<li onmouseover="" id="Other">Other
+	    <div id="dropOther">
+	    	 <ul id="otherList">
+		     <li><a href="/blog/">NCEDC Blog (News and Info)</a></li>
+		     <li><a href="/comments.html">Contact and Connect</a></li>
+		     <li><a href="/ncedc/download-software.html">Download Software</a></li>
+		     <li><a href="/ncedc/documents.html">Documentation</a></li>
+		     <li><a href="/bdsn/make_seismogram.html">Make Your Own Seismogram</a></li>
+		     <li><a href="/bdsn/quicklook.html">BDSN Quicklook Seismogram</a></li>
+		     <li><a href="/convert/dd.html">Date Conversion Calculator</a></li>
+		     <li><a href="/bk_doi_metadata.html">BDSN DOI</a></li>
+		     <li><a href="/bp_doi_metadata.html">HRSN DOI</a></li>
+		     <li><a href="/bard_doi_metadata.html">BARD DOI</a></li>
+		     <li><a href="/ncedc_doi_metadata.html">NCEDC DOI</a></li>
+		 </ul>
+	    </div><!--/dropOther-->
+    	</li><!--/Other-->
+
+	<li onmouseover="" id="Shortcuts">Shortcuts
+    	    <div id="dropShortcuts"> 
+		<div>
+			<div id="shortcutsListContainer">
+        		     <ul id="shortcutsList">
+			     	 <li><a href="/blog/">NCEDC Blog (News and Info)</a></li>
+          			 <li><a href="http://service.ncedc.org/">Web Services</a></li>
+	  			 <li><a href="/SeismiQuery/">SeismiQuery</a></li>
+	  			 <li><a href="/ncedc/about-the-dart.html">DART (Data Available in Real Time)</a></li>
+	  			 <li><a href="/anss/catalog-search.html">ANSS Catalog</a></li>
+	  			 <li><a href="/ncedc/catalog-search.html">NCSS Catalog</a></li>
+	  			 <li><a href="/ncedc/simple-responses.html">Simple Responses</a></li>
+	  			 <li><a href="/ncedc/PDF/">PSD Plots</a></li>
+	  			 <li><a href="/bdsn/make_seismogram.html">Make Your Own Seismogram</a></li>
+	  			 <li><a href="/bdsn/quicklook.html">BDSN Quicklook Seismograms</a></li>	
+       			     </ul>
+			</div>
+		</div>
+	    </div><!--/#dropShortcuts-->
+	</li><!--/Shortcuts-->
+
+	</ul>
+</div>  <!--/#dropbox--> 
+
+<!--Menu ends here-->
+<!--Part B of the wsmake header starts here-->
+<div id="bodybox">
+<div class="content">
+<!-- Link target for accessibility SkipNav -->
+      <a name="maincontent" id="maincontent"></a>
+<h1>Northern California Seismic Network</h1>
+<!--Part B of the wsmake header ends here-->
+<!--<P>
+<center>
+<A HREF="#net">Network</A> |
+<A HREF="#equip">Equipment</A> |
+<A HREF="#chan">Channels</A> <br>
+<A HREF="#info">Station Information</A> |
+<A HREF="#data">Data access</A> |
+<A HREF="#coll">Collaborations</A> 
+</center>-->
+
+<p><b>Please see note on <a href="/blog/ncedcblog.php/timing-problem-at-mammoth-analog">Timing problem at Mammoth analog stations 01/22/2015 - 01/27/2015</a></b></p>
+
+<p>Since 1967 the U.S. Geological Survey has operated the Northern California Seismic Network (NCSN) to provide earthquake data for a wide range of research topics and hazard-reduction activities. The NCSN is designed to detect all local earthquakes having signal strength above the background level of microseisms. The network configuration was motivated by the need to monitor active faults and volcanoes with a station density sufficient to determine the focal depth of shallow (0-15 km) crustal earthquakes. Depending on the concentration of stations in a region, the magnitude (M) level at which earthquake detection is complete varies from approximately 1.0 in parts of the central Coast Ranges to 2.6 in the Klamath Mountain range. However, earthquakes with M<1.0 are routinely detected throughout the network.</p>
+
+
+<p>The NCSN operates 580 stations in northern and central California and records an additional 159 stations maintained by the Southern California Seismic Network, Pacific Gas & Electric, the University of Nevada Reno, the California Department of Water Resources, Calpine/LBNL, and the California Geological Survey. It records a total of 1850 channels of data using a mix of digital and analog systems. Nearly 60% of the stations in the network are now digital, and 24 of the digital stations have broadband sensors, 333 have strong-motion sensors, and 10 are borehole installations. The remainder of the stations are mostly comprised of short-period vertical-component sensors. The NCSN telemetry system utilizes local collection nodes which are linked to Menlo Park via a microwave system between Geyser Peak above Geyserville and Black Mountain near San Luis Obispo, satellite telemetry, and leased digital circuits. The network also utilizes direct radio telemetry to Menlo Park, cellular data services, and operates an extensive LAN that links urban stations located in the San Francisco Bay region.</p>
+
+<p><a name="net"></a><b>Network Code:</b> NC (also includes the Southern Hayward Fault Network)</p>
+
+<div class="instructions">
+<p>Click on each topic below to expand to more information.</p>
+<button id="viewAllTopics">View All Topics</button> <button id="viewPrintableVersion">View Printable Version</button>
+</div>
+
+<h2 class="slideDownTopic"><a name="equip"></a>Typical Station Equipment</h2>
+<div class="slideDownText">
+NCSN stations generally fall into 4 categories:  short-period, broadband, 
+strong-motion, and borehole.  Each station type has its own equipment.
+<p>
+<b>Short-period stations of the NCSN</b>  
+<ul>  
+<li>Vertical-component velocity sensor (Mark Products L-4)
+<li>Central site digitization and timing if analog
+<li>Continuous telemetry to the USGS Menlo Park 
+<li>Backup power supply
+</ul>    
+<p>
+<b>Strong-motion sensors of the NCSN</b> 
+
+<ul> 
+<li>3-component accelerometer (Kinemetrics EpiSensor or GeoSIG AC-63)
+<li>Vertical-component velocity sensor (Mark Products L-4)
+<li>Kinemetrics K2/Basalt, GeoSIG NetQuakes, Nanometrics Taurus/Trident, Reftek 130
+<li>Continuous and triggered telemetry to the USGS Menlo Park
+<li>Backup power supply
+</ul> 
+<p> 
+<b>Broadband stations of the NCSN</b>
+<ul>
+<li>3-component broadband seismometer (Guralp CMG-3ESP, Streckheisen STS-2, Nanometrics Trillium Compact)
+<li>Nanometrics Taurus, Reftek 130
+<li>Continuous telemetry to the USGS Menlo Park
+<li>Backup power supply
+</ul>
+<p>
+<b>Borehole stations of the NCSN</b>
+<ul>
+<li>3-component geophone seismometer (Oyo HS1)
+<li>3-component accelerometer (Wilcoxon)
+<li>Kinemetrics Basalt, Nanometrics Taurus, Reftek 130        
+<li>Continuous telemetry to the USGS Menlo Park
+<li>Backup power supply
+</ul>
+<br><br></div>
+
+<h2 class="slideDownTopic"><a name="chan"></a>Typical Recorded Channels</h2>
+<div class="slideDownText">
+<table border=4 cellpadding=2 cellspacing=4>
+<tr>
+<td><b>Sensor</b></td>
+<td><b>SEED Channels</b></td>
+<td><b>Rate (samples/sec)</b></td>
+<td><b>Sampling Mode</b></td>
+<td><b>FIR Filter</b></td>
+</tr>
+<tr> 
+<td>Broadband seismometer</td> 
+<td>HHZ, HHN, HHE</td> 
+<td>100.0</td> 
+<td>Continuous</td> 
+<td>Acausal</td>
+</tr> 
+<tr>  
+<td>Accelerometer</td>  
+<td>HNZ, HNN, HNE</td>  
+<td>100.0 or 200.0</td>  
+<td>Continuous and Triggered</td>  
+<td>Causal</td>
+</tr>  
+<tr>
+<td>Short-period seismometers</td>
+<td>EHZ, EHN, EHE</td>
+<td>100.0</td>
+<td>Continuous</td>
+<td>Causal</td>
+</tr>
+
+</table>
+<br><br></div>
+
+<h2 class="slideDownTopic"><a name="info"></a>Station and Channel Information</h2>
+<div class="slideDownText">
+<ul>
+<li><a href="http://earthquake.usgs.gov/monitoring/helicorders/nca/">View seismograms from the NCSN</a>
+</li>
+</ul>
+<ul>
+<li><a href="http://www.ncedc.org/ftp/pub/doc/NC.info/">NC Information Directory</a>, including
+<ul>
+<li><a href="http://www.ncedc.org/ftp/pub/doc/NC.info/NC.stations">List of station locations</a>
+<li>List of available channels
+<ul>
+<li><a href="http://www.ncedc.org/ftp/pub/doc/NC.info/NC.channel.summary.day">Year/month/day format</a>
+<li><a href="http://www.ncedc.org/ftp/pub/doc/NC.info/NC.channel.summary.doy">Year,doy format</a>
+</ul>
+<li>Instrument Response
+<ul>
+<li><a href="http://www.ncedc.org/ftp/pub/doc/NC.info/NC.responses/">SEED format</a>
+<li><a href="http://www.ncedc.org/ftp/pub/doc/NC.info/NC.simple.responses">Simplified Responses</a>
+</ul>
+</ul>
+</ul>
+<br><br></div>
+
+<h2 class="slideDownTopic"><a name="data"></a>Data Access</h2>
+<div class="slideDownText">
+An earthquake catalog is produced from analysis of the NCSN data.
+Locations, magnitude, phases, coda durations, and first-motion mechanisms
+are available using the
+<a href="/ncedc/catalog-search.html">earthquake catalog search</a>.
+
+Several tools provide access to SEED format data at the 
+NCEDC, both in terms of querying the archives and
+allowing data requests.  
+   <p>
+      <ul>
+         <li>Querying the archives
+         <ul>
+            <li><a href="/SeismiQuery/">SeismiQuery at the NCEDC</a>
+         </ul>
+         <li><a href="http://service.ncedc.org/">Access data through NCEDC web services</a>
+      </ul>
+<p>
+<a href="/ncedc/waveform-access.html">Help on using these
+tools</a> is available.
+</p>Several tools provide access to SEED format data at the 
+NCEDC, both in terms of querying the archives and
+allowing data requests.  
+   <p>
+      <ul>
+         <li>Querying the archives
+         <ul>
+            <li><a href="/SeismiQuery/">SeismiQuery at the NCEDC</a>
+         </ul>
+         <li><a href="http://service.ncedc.org/">Access data through NCEDC web services</a>
+      </ul>
+<p>
+<a href="/ncedc/waveform-access.html">Help on using these
+tools</a> is available.
+</p>
+<br><br></div>
+
+<h2 class="slideDownTopic"><a name="coll"></a>Collaborations</h2>
+<div class="slideDownText">
+The NCSN records and exchanges seismic data with several other institutions.
+<ul>
+<li><a href="http://www.seismolab.caltech.edu/">California Institute of Technology Seismological Laboratory</a>
+<li><a href="http://wwwdwr.water.ca.gov/">California Department of Water Resources</a>
+<li><a href="http://www.llnl.gov">Lawrence Livermore National Laboratory</a>
+<li><a href="http://www.prh.noaa.gov/ptwc/">NOAA Pacific Tsunami Warning Center</a>
+<li><a href="http://wcatwc.arh.noaa.gov/">NOAA West Coast and Alaska Tsunami Warning Center</a>
+<li><a href="http://pubs.usgs.gov/fs/fs-0146-97/FS146-97.pdf">USGS National Seismic Network</a>
+<li><a href="http://agram.wr.usgs.gov/">USGS National Strong
+Motion Program</a>
+<li><a href="http://www.seismo.berkeley.edu/seismo">University of California Berkeley Seismological Laboratory</a>
+<li><a href="http://www.seismo.unr.edu/">University of Nevada Reno Seismological Laboratory</a>
+<li><a href="http://www.pnsn.org/">University of Washington Pacific Northwest Seismic Network</a>
+</ul>
+<br><br>
+</div>
+
+<h2 class="slideDownTopic">More information</h2>
+<div class="slideDownText">
+If you have additional questions on the Northern California Seismic Network,
+you may contact Lind Gee <a href="mailto:lgee@usgs.gov">lgee@usgs.gov</a>.
+</div><!--Beginning of wsmake footer-->
+</div><!--closes content div, must be commented out for homepage-->
+</div> <!--/#bodybox-->
+
+<div id="footer">
+<div id="footerTextblock">
+<table>
+<tr>
+<td>
+Contact us: <a href="mailto:ncedcinfo@ncedc.org">ncedcinfo@ncedc.org</a><br>
+<a href="/news/">NCEDC blog (News and Info)</a> <br>
+<a href="/privacy.html">Privacy</a>
+<br>
+Copyright &copy; UC Regents
+</td>
+</tr>
+</table>
+</div>
+<div id="footerLogos">
+<a href="http://earthquake.usgs.gov/monitoring/anss/"><img id="lastLogo" height="60" src="/NCEDC_template_images/anss-sm.gif" alt=""></a>
+<a href="http://www.lbl.gov/"><img height="60" src="/NCEDC_template_images/LBNL_Full_Logo_Final.png" alt=""></a>
+<a href="http://earthquake.usgs.gov/regional/nca/"><img height="60" src="/NCEDC_template_images/USGS_logo.png" alt=""></a>
+<a href="http://seismo.berkeley.edu/"><img height="60" src="/NCEDC_template_images/BSLlogo_NCEDC.png" alt=""></a>
+<!--<img id="" height="60" src="NCEDC_template_images/ucseal_540_874.gif" alt="">-->
+<!--<img id="" height="60" src="NCEDC_template_images/nehrp.jpg" alt="">-->
+</div>
+</div><!-- /#footer -->
+</body>
+</html>

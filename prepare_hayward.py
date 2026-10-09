@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Prepare identified catalog observations; no network calls or invented picks."""
+import argparse
 import csv
 import hashlib
 import json
@@ -14,7 +15,7 @@ from data.authoritative.hayward.acquire import horizontal_coordinates, parse_tim
 ROOT = Path(__file__).resolve().parent
 CATALOG = ROOT / "data/authoritative/hayward"
 STATIONS = ROOT / "data/authoritative/stations"
-OUT = ROOT / "data/hayward"
+POLICY = STATIONS / "study_station_policy.csv"
 
 
 def read(path):
@@ -36,6 +37,15 @@ def epoch_key(row):
             row["metadata_epoch_end"])
 
 
+def geometry_key(row):
+    """Match a physical channel without conflating its native metadata epochs."""
+    position = tuple(float(row[key]) for key in
+                     ("latitude_deg", "longitude_deg", "sensor_z_geoid_km"))
+    if not all(math.isfinite(value) for value in position):
+        raise ValueError("Nonfinite receiver geometry: " + row["channel_seed_id"])
+    return (row["channel_seed_id"],) + position
+
+
 def matches_epoch(pick, channel):
     t = parse_time(pick["pick_time_utc"])
     return (parse_time(channel["metadata_epoch_start"]) <= t and
@@ -43,7 +53,35 @@ def matches_epoch(pick, channel):
              t < parse_time(channel["metadata_epoch_end"])))
 
 
-def prepare():
+def study_station_policy(path=POLICY):
+    """A missing study list does not establish station exclusion."""
+    policy = {}
+    for row in read(path):
+        seed = row["network_code"] + "." + row["station_code"]
+        fdsn = "FDSN:" + row["network_code"] + "_" + row["station_code"]
+        if row["station_seed_id"] != seed or row["station_fdsn_source_id"] != fdsn:
+            raise ValueError("Study station policy identifiers disagree")
+        if seed in policy:
+            raise ValueError("Duplicate station in study policy: " + seed)
+        if row["study_membership"] not in ("included", "excluded", "unknown"):
+            raise ValueError("Unknown study-membership status: " + seed)
+        if row["study_membership"] != "unknown" and not all(
+                row[k].strip() for k in ("study_evidence_url", "study_evidence_locator", "evidence_summary")):
+            raise ValueError("Confirmed study membership requires written evidence: " + seed)
+        policy[seed] = row
+    return policy
+
+
+def excluded_by_study(pick, policy, selection):
+    if selection not in ("reproduction", "additional"):
+        raise ValueError("Unknown station selection")
+    seed = pick["network_code"] + "." + pick["station_code"]
+    return selection == "reproduction" and policy.get(seed, {}).get("study_membership") == "excluded"
+
+
+def prepare(selection="reproduction"):
+    out = ROOT / "data" / ("hayward" if selection == "reproduction" else "hayward_additional")
+    policy = study_station_policy()
     if not json.loads((CATALOG / "pick_selection_manifest.json").read_text())["acquisition_complete"]:
         raise ValueError("Refusing an incomplete catalog pick acquisition")
     events = read(CATALOG / "selected_events.csv")
@@ -63,6 +101,9 @@ def prepare():
     selected, excluded = [], []
     missing = []
     for pick in picks:
+        if excluded_by_study(pick, policy, selection):
+            excluded.append(dict(pick, exclusion_reasons="documented_study_station_exclusion"))
+            continue
         channel_matches = [r for r in epochs[pick["channel_seed_id"]]
                            if matches_epoch(pick, r)]
         if len(channel_matches) != 1:
@@ -100,9 +141,9 @@ def prepare():
             continue
         selected.append(dict(pick=pick, channel=channel, x=x, y=y, z=z,
                              travel=travel, sigma=sigma))
-    OUT.mkdir(parents=True, exist_ok=True)
+    out.mkdir(parents=True, exist_ok=True)
     if missing:
-        write(OUT / "unresolved_metadata.csv", missing)
+        write(out / "unresolved_metadata.csv", missing)
         raise RuntimeError("Required channel metadata is missing or ambiguous; "
                            "stop for clarification, see unresolved_metadata.csv")
 
@@ -153,19 +194,30 @@ def prepare():
         row = dict(id=k, x=source["x"], y=source["y"], z=source["z"], t=0)
         row.update(source["channel"])
         row["source_file"] = "../authoritative/stations/" + source["channel"]["source_file"]
+        if row.get("format_source_file"):
+            row["format_source_file"] = "../authoritative/stations/" + row["format_source_file"]
         receiver_rows.append(row)
     by_event = defaultdict(dict)
+    by_geometry = defaultdict(dict)
     for row in kept:
         i = indices[row["pick"]["event_resource_id"]]
         k = receiver_index[epoch_key(row["channel"])]
         by_event[i][k] = row
+        geometry = geometry_key(row["channel"])
+        if geometry in by_geometry[i]:
+            raise ValueError("Multiple native epochs supply P picks for one event/channel geometry; "
+                             "review before pairing: " + row["pick"]["event_resource_id"] + " " + geometry[0])
+        by_geometry[i][geometry] = k
 
-    def datum(i, j, k):
+    def datum(i, j, k, kj=-1):
         a = by_event[i][k]
-        b = by_event[j][k] if j >= 0 else None
+        b = by_event[j][kj] if j >= 0 else None
+        if b and geometry_key(a["channel"]) != geometry_key(b["channel"]):
+            raise ValueError("Differential observation requires the same NSLC and exact receiver position")
         sigma = math.hypot(a["sigma"], b["sigma"]) if b else a["sigma"]
         row = dict(i=i, j=j, station=k, type=int(j >= 0),
                    value=a["travel"] - (b["travel"] if b else 0))
+        row["station_j"] = kj if b else -1
         for side, item in (("i", a), ("j", b)):
             for kind in ("event", "origin", "arrival", "pick"):
                 row[kind + "_" + side + "_resource_id"] = item["pick"][kind + "_resource_id"] if item else ""
@@ -173,11 +225,16 @@ def prepare():
             row["pick_" + side + "_uncertainty_s"] = item["sigma"] if item else ""
             row["pick_" + side + "_uncertainty_confidence_level"] = item["pick"]["pick_uncertainty_confidence_level"] if item else ""
             row["pick_" + side + "_source_sha256"] = item["pick"]["source_sha256"] if item else ""
+            row["arrival_" + side + "_time_weight"] = item["pick"]["arrival_time_weight"] if item else ""
         for key in ("network_code", "station_code", "location_code", "channel_code",
                     "channel_seed_id", "channel_fdsn_source_id", "metadata_epoch_start",
                     "metadata_epoch_end"):
             row[key] = a["channel"][key]
         row["channel_source_sha256"] = a["channel"]["source_sha256"]
+        row["metadata_epoch_j_start"] = b["channel"]["metadata_epoch_start"] if b else ""
+        row["metadata_epoch_j_end"] = b["channel"]["metadata_epoch_end"] if b else ""
+        row["channel_j_source_sha256"] = b["channel"]["source_sha256"] if b else ""
+        row["cross_metadata_epoch"] = int(bool(b) and epoch_key(a["channel"]) != epoch_key(b["channel"]))
         row["uncertainty_s"] = sigma
         row["a_priori_weight"] = 0.05 / sigma
         row["observation_basis"] = "catalog P pick difference" if b else "catalog P pick minus reference origin"
@@ -191,7 +248,7 @@ def prepare():
         distances = np.linalg.norm(positions[i + 1:] - positions[i], axis=1)
         for offset in np.flatnonzero(distances < 10):
             j = i + 1 + int(offset)
-            common = sorted(set(by_event[i]).intersection(by_event[j]))
+            common = sorted(set(by_geometry[i]).intersection(by_geometry[j]))
             if len(common) >= 8:
                 candidates.append((float(distances[offset]), i, j, common))
     # An undirected greedy degree cap is explicit and deterministic. It does
@@ -203,8 +260,8 @@ def prepare():
             continue
         degree[i] += 1
         degree[j] += 1
-        for k in common:
-            observations.append(datum(i, j, k))
+        for geometry in common:
+            observations.append(datum(i, j, by_geometry[i][geometry], by_geometry[j][geometry]))
         pairs.append(dict(i=i, j=j, distance_km=distance, common_channels=len(common),
                           event_i_resource_id=event_rows[i]["event_resource_id"],
                           event_j_resource_id=event_rows[j]["event_resource_id"],
@@ -229,36 +286,54 @@ def prepare():
     profile_v = [3.77, 4.64, 5.34, 5.75, 6.22, 7.98]
     grid = [dict(x=x, y=y, z=z, v=float(np.interp(z, profile_z, profile_v)))
             for z in zaxis for y in yaxis for x in xaxis]
-    write(OUT / "initial_events.csv", event_rows)
-    write(OUT / "stations.csv", receiver_rows)
-    write(OUT / "observations.csv", observations)
-    write(OUT / "initial_grid.csv", grid)
-    write(OUT / "event_pairs.csv", pairs,
+    write(out / "initial_events.csv", event_rows)
+    write(out / "stations.csv", receiver_rows)
+    write(out / "observations.csv", observations)
+    write(out / "initial_grid.csv", grid)
+    write(out / "event_pairs.csv", pairs,
           ["i", "j", "distance_km", "common_channels", "event_i_resource_id",
            "event_j_resource_id", "origin_i_resource_id", "origin_j_resource_id"])
-    fields = list(picks[0]) + (["exclusion_reasons"] if "exclusion_reasons" not in picks[0] else [])
-    write(OUT / "excluded_picks.csv", excluded, fields)
+    for row in excluded:
+        row["solver_selected"] = 0
+    fields = list(picks[0]) + (["exclusion_reasons"] if "exclusion_reasons" not in picks[0] else []) + ["solver_selected"]
+    write(out / "excluded_picks.csv", excluded, fields)
     event_audit = [dict(event_resource_id=e["event_resource_id"],
                         origin_resource_id=e["origin_resource_id"],
                         retained_domain_pick_count=count[e["event_resource_id"]],
-                        selected=int(e["event_resource_id"] in retained)) for e in events]
-    write(OUT / "event_selection.csv", event_audit)
-    (OUT / "authoritative_ids_required").write_text("Provider IDs and SEED/FDSN channel epochs are mandatory.\n")
+                        selected=int(e["event_resource_id"] in retained),
+                        pair_degree=degree[indices[e["event_resource_id"]]] if e["event_resource_id"] in retained else 0,
+                        pair_graph_component_size=components[find(indices[e["event_resource_id"]])] if e["event_resource_id"] in retained else 0)
+                   for e in events]
+    write(out / "event_selection.csv", event_audit)
+    (out / "authoritative_ids_required").write_text("Provider IDs and SEED/FDSN channel epochs are mandatory.\n")
     manifest = {
         "dataset_status": "independently selected authoritative observations; manuscript cohort unidentified",
+        "station_selection": selection,
+        "station_selection_rule": "reproduction omits only documented study exclusions; additional restores their eligibility with the same metadata, quality, and model-domain requirements",
+        "study_station_policy": list(policy.values()),
+        "unknown_membership_policy": "unknown membership does not establish exclusion; eligible for the authorized independent subset subject to other declared filters",
+        "archive_preservation": "all acquired records remain in data/authoritative; excluded_picks.csv retains identified observations omitted from this solver selection",
         "events_before_domain_pick_selection": len(events), "events": len(event_rows),
         "physical_station_codes": len(set(r["station_seed_id"] for r in receiver_rows)),
         "channels": len(set(r["channel_seed_id"] for r in receiver_rows)),
         "channel_epochs": len(receiver_rows),
+        "receiver_geometries": len(set(geometry_key(r) for r in receiver_rows)),
         "observations_by_type": dict(Counter(r["type"] for r in observations)),
         "excluded_picks": len(excluded),
+        "excluded_pick_selection_flags": "selected records the original acquisition quality filter; solver_selected=0 records exclusion from this solver input",
         "pick_exclusions_nonexclusive": dict(Counter(reason for r in excluded for reason in r["exclusion_reasons"].split(";"))),
         "pair_candidate_count": len(candidates), "event_pairs": len(pairs),
         "maximum_event_degree": max(degree.values()) if degree else 0,
         "unlinked_events": sum(degree[i] == 0 for i in range(len(event_rows))),
         "pair_graph_component_sizes": sorted(components.values(), reverse=True),
-        "pairing": "ascending 3D catalog distance <10km; >=8 common channel epochs; undirected degree <=10",
+        "pairing": "ascending 3D catalog distance <10km; >=8 common NSLC/exact-position geometries; undirected degree <=10",
+        "receiver_geometry_key": ["channel_seed_id", "latitude_deg", "longitude_deg", "sensor_z_geoid_km"],
+        "receiver_geometry_equality": "exact numeric coordinate equality; no positional tolerance or averaging",
         "epoch_interval": "start inclusive, end exclusive",
+        "epoch_scope": "Each pick matches its own native channel epoch. stations.csv retains one row per native epoch. station and metadata_epoch_start/end identify side i; station_j and metadata_epoch_j_start/end identify side j. Absolute data have station_j=-1 and blank j metadata. No union epoch is invented.",
+        "cross_metadata_epoch_differences": sum(r["cross_metadata_epoch"] for r in observations),
+        "timing_calibration_caveat": "Matching NSLC and reported receiver position permits shared geometric ray paths across response/gain epochs; it does not establish unchanged timing calibration. Both epoch identities and source hashes are preserved, and cross_metadata_epoch flags these observations for residual and sensitivity comparisons.",
+        "event_graph_audit": "event_selection.csv gives pair_degree and pair_graph_component_size; retained unlinked events have degree 0 and component size 1, while excluded events have component size 0",
         "minimum_absolute_picks_per_event": 8,
         "provider_association_weight_policy": "exclude known nonpositive weights; positive provider weights are retained as provenance, not multiplied again into inverse-uncertainty weights",
         "uncertainty_weight": "0.05s/sigma; difference sigma=sqrt(sigma_i^2+sigma_j^2); correlations among differences are not whitened",
@@ -274,14 +349,17 @@ def prepare():
                               "waveform_differences": 17955},
         "inputs": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in (CATALOG / "selected_events.csv", CATALOG / "picks_selected.csv",
-                             STATIONS / "channel_epochs.csv")},
+                             STATIONS / "channel_epochs.csv", POLICY)},
         "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
     }
-    (OUT / "selection_manifest.json").write_text(json.dumps(manifest, indent=2, allow_nan=False) + "\n")
+    (out / "selection_manifest.json").write_text(json.dumps(manifest, indent=2, allow_nan=False) + "\n")
     print(json.dumps({k: manifest[k] for k in ("events", "physical_station_codes",
                      "channel_epochs", "observations_by_type", "event_pairs",
                      "unlinked_events", "pair_graph_component_sizes")}, indent=2))
 
 
 if __name__ == "__main__":
-    prepare()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--selection", choices=("reproduction", "additional"), default="reproduction",
+                        help="Write separate inputs; additional restores documented study-excluded stations if their metadata passes the same checks")
+    prepare(parser.parse_args().selection)

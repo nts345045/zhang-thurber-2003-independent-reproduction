@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Quantitative audit of saved results; emits machine-readable and LaTeX tables."""
 import csv
+import hashlib
 import json
+import sys
 from pathlib import Path
 import numpy as np
 
@@ -108,6 +110,298 @@ def ray_diagnostics(prefix):
             source_derivative_error_seconds_per_km=stats(error),
             source_derivative_components_over_tolerance=int(np.sum(error > 0.003)))
     return result
+
+def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), required=False):
+    """Audit completed identified field results without imposing recovery gates."""
+    directory, report = Path(directory), Path(report)
+    methods = ['standard', 'dd', 'loc1d']
+    names = ['figure_metrics.json', 'absolute_resolution_manifest.json',
+             'absolute_resolution.csv', 'initial_events.csv', 'initial_grid.csv',
+             'stations.csv', 'observations.csv', 'selection_manifest.json', 'dd_linearization_rows.csv']
+    for mode in methods:
+        names += [mode + suffix for suffix in ['_events.csv', '_grid.csv', '_residuals.csv',
+                  '_history.csv', '_ray_convergence.csv', '_ray_derivatives.csv', '_ray_identifiers.csv']]
+    missing = [name for name in names if not (directory / name).exists()]
+    if missing:
+        if required or (directory / 'figure_metrics.json').exists():
+            raise RuntimeError('Incomplete Hayward results: ' + ', '.join(missing))
+        return None
+    hashes = {}
+
+    def record(path):
+        path = Path(path)
+        value = hashlib.sha256(path.read_bytes()).hexdigest()
+        hashes[str(path)] = value
+        return value
+
+    def finite_json(name):
+        path = directory / name
+        record(path)
+        def invalid(value):
+            raise RuntimeError('{} contains nonfinite JSON value {}'.format(path, value))
+        return json.loads(path.read_text(), parse_constant=invalid)
+
+    def table(name, fields=None, empty=False, nan_fields=()):
+        path = directory / name
+        record(path)
+        with path.open(newline='') as f:
+            reader = csv.DictReader(f)
+            columns = reader.fieldnames
+            rows = list(reader)
+        if not columns or (not rows and not empty):
+            raise RuntimeError('{} contains no tabulated results'.format(path))
+        fields = columns if fields is None else fields
+        values = {}
+        for key in fields:
+            if key not in columns:
+                raise RuntimeError('{} lacks {}'.format(path, key))
+            a = np.array([float(r[key]) for r in rows])
+            valid = np.isfinite(a) | (np.isnan(a) if key in nan_fields else False)
+            if not np.all(valid):
+                raise RuntimeError('{} field {} contains nonfinite modeled results'.format(path, key))
+            values[key] = a
+        return rows, values
+
+    def summary(values):
+        a = np.asarray(values, dtype=float)
+        if not a.size:
+            return None
+        result = stats(a)
+        result.update(count=int(a.size), min=float(np.min(a)))
+        return result
+
+    def flags(values, label):
+        if np.any((values != 0) & (values != 1)):
+            raise RuntimeError('Invalid {} convergence flags'.format(label))
+        return int(np.sum(values == 1))
+
+    figures = finite_json('figure_metrics.json')
+    resolution = finite_json('absolute_resolution_manifest.json')
+    selection = finite_json('selection_manifest.json')
+    # A report must not silently join a new model to old plots or resolution.
+    missing_hashes = [name for name in names if name.endswith('.csv') and name not in figures['input_sha256']]
+    if missing_hashes:
+        raise RuntimeError('Missing Hayward figure input hashes: ' + ', '.join(missing_hashes))
+    for name, expected in figures['input_sha256'].items():
+        if record(directory / name) != expected:
+            raise RuntimeError('Stale Hayward figure input: ' + name)
+    for name, expected in resolution['input_sha256'].items():
+        if record(Path(name)) != expected:
+            raise RuntimeError('Stale Hayward resolution input: ' + name)
+    initial_rows, initial = table('initial_events.csv', ['id', 'x', 'y', 'z', 't'])
+    _, initial_grid = table('initial_grid.csv')
+    observation_rows, observations = table('observations.csv', ['i', 'j', 'station', 'type', 'value'])
+    types = observations['type']
+    if np.any((types != 0) & (types != 1) & (types != 2)):
+        raise RuntimeError('Unexpected Hayward observation type')
+    counts = {str(t): int(np.sum(types == t)) for t in range(3)}
+    if not counts['0'] or not counts['1']:
+        raise RuntimeError('Hayward review requires absolute and catalog-difference observations')
+    for r in initial_rows:
+        if not r['event_resource_id'] or not r['origin_resource_id']:
+            raise RuntimeError('Missing Hayward reference event/origin identity')
+    result = dict(dataset='independent authoritative Hayward subset', finite_modeled_results=True,
+                  observation_counts=counts, modes={}, resolution=resolution,
+                  boundary_tolerance_km=1e-6, objective_audit_tolerance=1e-8,
+                  history_scope='Ray and residual diagnostics precede each saved update; the last history row is not generally the final model.',
+                  precise_rms_interpretation=('No type-2 waveform-correlation observations; NaN history precise_rms is an empty category, represented by null here.' if counts['2'] == 0 else 'Type-2 observations are present.'),
+                  displacement_interpretation='Change from reference catalog coordinates is not location error against truth.',
+                  uncertainty_interpretation=selection.get('uncertainty_interpretation'),
+                  differential_weight_assumption=selection.get('uncertainty_weight'),
+                  timing_calibration_caveat=selection.get('timing_calibration_caveat'))
+    saved_events, saved_grids = {}, {}
+    for mode in methods:
+        event_rows, events = table(mode+'_events.csv', ['id', 'x', 'y', 'z', 't'])
+        if len(event_rows) != len(initial_rows) or any(
+                any(a[k] != b[k] for k in ['id', 'event_resource_id', 'origin_resource_id'])
+                for a, b in zip(event_rows, initial_rows)):
+            raise RuntimeError('Hayward event identities do not match: ' + mode)
+        _, grid = table(mode+'_grid.csv')
+        for k in ['x', 'y', 'z']:
+            if not np.array_equal(grid[k], initial_grid[k]):
+                raise RuntimeError('Hayward grid coordinates do not match: ' + mode)
+        if np.any(grid['v'] <= 0):
+            raise RuntimeError('Nonpositive Hayward velocity: ' + mode)
+        residual_rows, residual = table(mode+'_residuals.csv', ['i', 'j', 'station', 'type', 'residual'])
+        if len(residual_rows) != len(observation_rows) or any(
+                any(a[k] != b[k] for k in observation_rows[0] if k != 'value')
+                for a, b in zip(residual_rows, observation_rows)):
+            raise RuntimeError('Hayward residual observation identities do not match: ' + mode)
+        history_rows, history = table(mode+'_history.csv', nan_fields=['precise_rms'] if counts['2'] == 0 else [])
+        accepted = history['step_fraction'] > 0
+        if np.any(history['step_fraction'] < 0) or np.any(history['step_fraction'] > 1):
+            raise RuntimeError('Invalid Hayward step fraction: ' + mode)
+        nsolves = len(history_rows)
+        nlinear = flags(history['lsqr_converged'], mode+' LSQR')
+        if np.any(history['lsqr_relative_normal_residual'] < 0):
+            raise RuntimeError('Negative LSQR residual: ' + mode)
+        n = history['ray_count']
+        nc = history['ray_converged_count']
+        if np.any(n <= 0) or np.any(nc < 0) or np.any(nc > n) or np.any(n != np.floor(n)) or np.any(nc != np.floor(nc)):
+            raise RuntimeError('Invalid full-ray counts: ' + mode)
+        increase = history['objective_after'] - history['objective_before']
+        displacement = np.sqrt(sum((events[k]-initial[k])**2 for k in ['x', 'y', 'z']))
+        boundary = np.zeros(len(event_rows), dtype=bool)
+        for k in ['x', 'y', 'z']:
+            boundary |= (events[k] <= min(grid[k])+1e-6) | (events[k] >= max(grid[k])-1e-6)
+        m = dict(final_residual_rms_seconds={str(t): (stats(residual['residual'][types == t])['rms'] if counts[str(t)] else None) for t in range(3)},
+                 initial_residual_rms_seconds={str(t): (float(history[name+'_rms'][0]) if counts[str(t)] else None) for t, name in enumerate(['absolute', 'catalog', 'precise'])},
+                 iterations_recorded=nsolves, accepted_updates=int(np.sum(accepted)), zero_updates=int(np.sum(~accepted)),
+                 accepted_objective_increases_raw=int(np.sum(accepted & (increase > 0))),
+                 accepted_objective_increases_above_audit_tolerance=int(np.sum(accepted & (increase > 1e-8))),
+                 largest_accepted_objective_increase=max(0., float(np.max(increase[accepted]))) if np.any(accepted) else 0.,
+                 objective_interpretation='Frozen-weight objective is compared within each accepted update, not between weight stages.',
+                 lsqr=dict(solves=nsolves, converged=nlinear, unconverged=nsolves-nlinear,
+                           max_iterations=int(max(history['lsqr_iterations'])),
+                           worst_relative_normal_residual=float(max(history['lsqr_relative_normal_residual'])), tolerance=1e-8),
+                 all_ray_history=dict(count_min=int(min(n)), count_max=int(max(n)),
+                     converged_count_min=int(min(nc)), converged_count_max=int(max(nc)),
+                     minimum_converged_percent=float(min(100*nc/n)), last_preupdate_converged_percent=float(100*nc[-1]/n[-1]),
+                     projected_gradient_max_seconds_per_km=float(max(history['ray_projected_gradient_max'])),
+                     raw_gradient_max_seconds_per_km=float(max(history['ray_raw_gradient_max'])),
+                     iterations=[dict(iteration=int(h['iteration']), rays=int(h['ray_count']), converged=int(h['ray_converged_count']),
+                        projected_gradient_max_seconds_per_km=float(h['ray_projected_gradient_max']),
+                        raw_gradient_max_seconds_per_km=float(h['ray_raw_gradient_max'])) for h in history_rows]),
+                 catalog_displacement_3d_km=summary(displacement),
+                 catalog_displacement_components_km={k: summary(events[k]-initial[k]) for k in ['x', 'y', 'z']},
+                 origin_time_correction_from_catalog_seconds=summary(events['t']-initial['t']),
+                 boundary_sources=int(np.sum(boundary)),
+                 velocity_range_km_per_s=[float(min(grid['v'])), float(max(grid['v']))])
+        _, ray = table(mode+'_ray_convergence.csv')
+        _, derivative = table(mode+'_ray_derivatives.csv', empty=True)
+        identifiers, _ = table(mode+'_ray_identifiers.csv', [])
+        ray_keys = {(r['diagnostic_row'], r['event'], r['station']) for r in identifiers}
+        expected_keys = {(str(int(q)), str(int(e)), str(int(s))) for q, e, s in zip(ray['diagnostic_row'], ray['event'], ray['station'])}
+        if ray_keys != expected_keys:
+            raise RuntimeError('Missing or mismatched final ray identifier mapping: ' + mode)
+        derivative_keys = {(str(int(q)), str(int(e)), str(int(s))) for q, e, s in
+                           zip(derivative['diagnostic_row'], derivative['event'], derivative['station'])}
+        if not derivative_keys.issubset(expected_keys) or np.any(~np.isin(derivative['axis'], [0, 1, 2])):
+            raise RuntimeError('Derivative rows do not match final ray samples: ' + mode)
+        nrays = len(ray['difference'])
+        check = dict(rays=nrays, identifier_associations=len(identifiers),
+                     identifier_mapping=str(directory/(mode+'_ray_identifiers.csv')),
+                     time_refinement_seconds=summary(abs(ray['difference'])),
+                     derivative_components=len(derivative['axis']),
+                     derivative_components_skipped_at_boundaries=3*min(8, nrays)-len(derivative['axis']),
+                     derivative_half_step_km=0.01, derivative_diagnostic_tolerance_seconds_per_km=0.003)
+        for setting in ['production', 'refined']:
+            converged = flags(ray[setting+'_converged'], mode+' '+setting)
+            error = abs(derivative[setting+'_error'])
+            check[setting] = dict(converged=converged, unconverged=nrays-converged,
+                converged_percent=100.*converged/nrays,
+                projected_gradient_seconds_per_km=summary(ray[setting+'_gradient']),
+                raw_gradient_seconds_per_km=summary(ray[setting+'_raw_gradient']),
+                max_iterations=int(max(ray[setting+'_iterations'])), total_merged_nodes=int(sum(ray[setting+'_merged'])),
+                source_derivative_error_seconds_per_km=summary(error),
+                source_derivative_components_over_existing_tolerance=int(np.sum(error > 0.003)))
+        m['final_sampled_rays'] = check
+        result['modes'][mode] = m
+        saved_events[mode], saved_grids[mode] = events, grid
+    delta = saved_grids['dd']['v']-saved_grids['standard']['v']
+    result['dd_minus_standard'] = dict(nodal_velocity_km_per_s=summary(delta),
+        absolute_nodal_velocity_difference_km_per_s=summary(abs(delta)),
+        source_separation_3d_km=summary(np.sqrt(sum((saved_events['dd'][k]-saved_events['standard'][k])**2 for k in ['x', 'y', 'z']))),
+        final_residual_rms_difference_seconds={str(t): (result['modes']['dd']['final_residual_rms_seconds'][str(t)]-result['modes']['standard']['final_residual_rms_seconds'][str(t)] if counts[str(t)] else None) for t in range(3)},
+        interpretation='Signed differences and source separations compare estimates; no field truth is supplied.')
+    _, resolution_values = table('absolute_resolution.csv')
+    if np.any(resolution_values['independent_pick_sigma_velocity_km_s'] < 0):
+        raise RuntimeError('Negative conditional velocity uncertainty')
+    _, linearization = table('dd_linearization_rows.csv', ['i', 'station', 'observed', 'predicted', 'residual', 'ray_converged', 'ray_projected_gradient', 'ray_raw_gradient', 'ray_time', 'ray_iterations'])
+    _, unique = np.unique(np.column_stack([linearization['i'], linearization['station']]), axis=0, return_index=True)
+    converged = flags(linearization['ray_converged'][unique], 'DD absolute linearization')
+    result['resolution_linearization_rays'] = dict(unique_rays=len(unique), converged=converged,
+        converged_percent=100.*converged/len(unique),
+        projected_gradient_max_seconds_per_km=float(max(linearization['ray_projected_gradient'])),
+        raw_gradient_max_seconds_per_km=float(max(linearization['ray_raw_gradient'])),
+        scope='All unique absolute-data rays retraced at the final DD estimate; independent-pick noise calculation uses these derivatives.')
+    result['ray_stopping_criterion'] = 'Projected gradient <1e-7 s/km, or time change <1e-11 s and projected gradient <1e-5 s/km.'
+    result['ray_limits'] = ['Histories contain maxima over all used rays before each update, not final-model distributions.',
+        'Final samples are deterministic and do not certify every production ray or globally earliest arrivals.',
+        'Derivative perturbation traces do not save their own convergence flags; refined traces are numerical comparisons, not exact references.',
+        'The existing 0.003 s/km component tolerance is a diagnostic comparison, not an inversion-error bound.']
+    record(Path(__file__))
+    result['input_sha256'] = hashes
+    # Reject nonfinite values anywhere in the assembled modeled diagnostics.
+    output = json.dumps(result, indent=2, allow_nan=False)+'\n'
+    report.mkdir(parents=True, exist_ok=True)
+    (directory/'numerical_review.json').write_text(output)
+    with (report/'hayward_results.tex').open('w') as f:
+        f.write('These results use the independently selected authoritative Hayward cohort. '
+                'Residuals below are unweighted final residuals; standard tomography fits absolute picks only, '
+                'so its catalog-difference RMS is an additional diagnostic. '
+                'Catalog displacement measures relocation, not error against known source positions.\n\n')
+        f.write(r'\begin{center}\begin{tabular}{lrrrrr}\toprule Method & $R_{\rm abs}$ (s) & $R_{\rm cat}$ (s) & Updates & LSQR & Min. rays (\%)\\\midrule'+'\n')
+        for mode in methods:
+            m = result['modes'][mode]
+            f.write('{} & {:.5f} & {:.5f} & {}/{} & {}/{} & {:.2f}\\\\\n'.format(
+                esc(mode), m['final_residual_rms_seconds']['0'], m['final_residual_rms_seconds']['1'],
+                m['accepted_updates'], m['iterations_recorded'], m['lsqr']['converged'], m['lsqr']['solves'],
+                m['all_ray_history']['minimum_converged_percent']))
+        f.write(r'\bottomrule\end{tabular}\end{center}'+'\n')
+        f.write('Updates counts accepted steps; LSQR counts solves meeting the existing relative normal-residual tolerance of $10^{-8}$. '
+                'The last column is the minimum converged fraction over all used rays in any saved pre-update history row. '
+                'These history entries precede their update and do not represent the final model. '
+                'Frozen-weight objectives are compared within each update; weights can change between iterations.\n\n')
+        if counts['2'] == 0:
+            f.write('No waveform-correlation observations are included. The history column for precise-difference RMS is therefore empty (NaN), not a nonfinite modeled residual.\n\n')
+        for mode in methods:
+            m = result['modes'][mode]
+            h, q = m['all_ray_history'], m['final_sampled_rays']
+            p, r = q['production'], q['refined']
+            f.write('For {}, median and maximum catalog displacements are {:.3f} and {:.3f} km; {} sources lie within $10^{{-6}}$ km of a grid boundary. '
+                    'Nodal velocities range from {:.3f} to {:.3f} km/s. '
+                    'There are {} zero-update iterations and {} accepted objective increases above the existing $10^{{-8}}$ audit tolerance; '
+                    'the worst LSQR relative normal residual is {:.3g}. '.format(
+                        esc(mode), m['catalog_displacement_3d_km']['median'], m['catalog_displacement_3d_km']['max'],
+                        m['boundary_sources'], *m['velocity_range_km_per_s'], m['zero_updates'],
+                        m['accepted_objective_increases_above_audit_tolerance'], m['lsqr']['worst_relative_normal_residual']))
+            f.write('Across all {}--{} rays per recorded iteration, the largest projected/raw gradient norms are {:.3g}/{:.3g} s/km. '
+                    'At the final model, production/refined convergence counts are {}/{} of {} sampled rays, '
+                    'with maximum projected gradients {:.3g}/{:.3g} s/km and raw gradients {:.3g}/{:.3g} s/km. '
+                    'Halving the segment spacing changes sampled travel times by at most {:.3f} ms. '.format(
+                        h['count_min'], h['count_max'], h['projected_gradient_max_seconds_per_km'], h['raw_gradient_max_seconds_per_km'],
+                        p['converged'], r['converged'], q['rays'], p['projected_gradient_seconds_per_km']['max'],
+                        r['projected_gradient_seconds_per_km']['max'], p['raw_gradient_seconds_per_km']['max'],
+                        r['raw_gradient_seconds_per_km']['max'], 1000*q['time_refinement_seconds']['max']))
+            if q['derivative_components']:
+                f.write('For {} source-coordinate derivatives, maximum production/refined errors against centered travel-time differences are {:.3g}/{:.3g} s/km; '
+                        '{}/{} components exceed the existing 0.003 s/km component tolerance. '.format(
+                            q['derivative_components'], p['source_derivative_error_seconds_per_km']['max'], r['source_derivative_error_seconds_per_km']['max'],
+                            p['source_derivative_components_over_existing_tolerance'], r['source_derivative_components_over_existing_tolerance']))
+            f.write('{} derivative components are omitted at domain boundaries.\n\n'.format(q['derivative_components_skipped_at_boundaries']))
+        d = result['dd_minus_standard']
+        f.write('Over the saved model nodes, DD minus standard velocity has mean {:.4f} km/s, RMS {:.4f} km/s, and maximum absolute difference {:.4f} km/s. '
+                'The median separation between their source estimates is {:.3f} km. '
+                'These differences do not establish which field model is more accurate.\n\n'.format(
+                    d['nodal_velocity_km_per_s']['mean'], d['nodal_velocity_km_per_s']['rms'],
+                    d['absolute_nodal_velocity_difference_km_per_s']['max'], d['source_separation_3d_km']['median']))
+        c = resolution['conditioning']
+        lr = result['resolution_linearization_rays']
+        f.write('The absolute-data resolution calculation is linearized at the final DD model with fixed uncertainty weights, first-difference log-slowness smoothing, '
+                'and column-scaled damping. The model Schur-complement condition number is {:.3g}, its inverse relative residual is {:.3g}, '
+                'and the smallest damped source-block eigenvalue is {:.3g}. '
+                'Resolution diagonals range from {:.3g} to {:.3g}; conditional velocity-noise standard deviations range from {:.3g} to {:.3g} km/s. '
+                'For this final DD linearization, {}/{} unique absolute-data rays meet the ray stopping criterion; '
+                'maximum projected/raw gradient norms are {:.3g}/{:.3g} s/km.\n\n'.format(
+                    c['model_schur_condition_number'], c['inverse_relative_residual'], c['minimum_source_normal_eigenvalue'],
+                    *resolution['resolution_diagonal_min_max'], *resolution['velocity_sigma_min_max_km_s'],
+                    lr['converged'], lr['unique_rays'], lr['projected_gradient_max_seconds_per_km'], lr['raw_gradient_max_seconds_per_km']))
+        f.write('This is a conditional absolute-data calculation, not full DD resolution. '
+                'Reported symmetric pick uncertainties are interpreted as independent one-standard-deviation errors; provider confidence levels are absent. '
+                'Propagation through the damped estimator excludes correlated station/model errors, regularization bias, and nonlinear or ray errors. '
+                'Small propagated noise therefore does not establish small total velocity error. '
+                'Ray convergence means a projected gradient below $10^{-7}$ s/km, or a travel-time change below $10^{-11}$ s with gradient below $10^{-5}$ s/km. '
+                'The source finite-difference half-step is 0.01 km. Small spacing changes alone do not establish derivative convergence or globally earliest arrivals, '
+                'and the deterministic final samples do not certify every production ray.\n')
+    return result
+
+
+if __name__ == '__main__' and '--hayward-only' in sys.argv[1:]:
+    review = analyze_hayward(required=True)
+    print(json.dumps({'hayward': review['modes']}, indent=2, allow_nan=False))
+    sys.exit(0)
+
 
 truth = load('truth_events.csv')
 initial = load('initial_events.csv')
@@ -397,3 +691,6 @@ with open(R/'panel_details.tex','w') as f:
             f.write('\\noindent\\textbf{'+label+':} '+esc(value)+'\\par\n')
         for field,label in [('data_command','Generate data'),('plot_command','Create plot')]:
             f.write('\\noindent\\textbf{'+label+':}\n\\begin{lstlisting}\n'+r[field]+'\n\\end{lstlisting}\n')
+
+# Optional field-data review; the synthetic baseline above is unchanged.
+analyze_hayward()

@@ -1,77 +1,51 @@
-# Independent Loma Prieta geometry: acquisition pending
+# Independent authoritative Loma Prieta geometry
 
-The user authorized an independent authoritative subset for the synthetic
-experiment. `acquire.py` implements the selection below, but **no Loma Prieta
-catalog or station request has been made by this helper**. Acquisition was
-paused on 2026-10-09 after the separate Hayward metadata review found missing
-channel epochs and an unresolved elevation convention for buried sensors.
-The prepared script is syntax checked only. No geometry count or successful
-metadata match is claimed here.
+Acquisition completed on 2026-10-09 with **724 earthquakes and 52 NC EHZ receiver channels at 52 stations**. These are independently selected authoritative coordinates for a later synthetic experiment. They are not an identified manuscript cohort. No observed arrivals, synthetic travel times, simulation, or inversion were produced by this acquisition.
 
-## Prepared event selection
+| Records | Queried candidates | Selected | Excluded and preserved |
+| --- | ---:| ---:| ---:|
+| Catalog events | 823 | 724 | 99 |
+| Channel metadata epochs | 355 | 52 | 303 |
 
-The NCEDC NCSS preferred catalog origins and magnitudes will be queried for:
+The event and station manifests record the complete criteria, query counts, prior USGS/EarthScope discovery, and normalization-script hashes. All candidates retain their resource IDs, source hashes, selection flags and exclusion reasons. Exclusion reasons can overlap: event counts include 53 outside the depth range, 35 outside Y, 22 outside X, and four quarry blasts; receiver exclusions are horizontal-domain checks.
 
-- Origin time from 1989-10-18 00:00:00 UTC inclusive to 1989-11-18 00:00:00
-  UTC exclusive, and magnitude 2.0--5.5 inclusive.
-- Broad query rectangle 36.5--37.6 degrees N and -122.6 to -121.2 degrees
-  longitude; explicit earthquake type; current geoid depth 0--16 km.
-- Local coordinates X from -15 to 20 km and Y from -45 to 25 km, inclusive.
+## Event selection and coordinate origin
 
-The local horizontal origin is 37.0361667 degrees N, -121.8798333 degrees
-longitude, taken from the already retrieved USGS mainshock record in
-`../discovery/usgs_nc216859.geojson`. Its native event and origin IDs are
-`quakeml:nc.anss.org/Event/NC/216859` and
-`quakeml:nc.anss.org/Origin/NC/2642104`. The mainshock location defines the
-coordinate origin; the stated time, magnitude, depth, and geometric filters
-define the aftershock subset separately.
+NCEDC NCSS preferred catalog origins and magnitudes were queried with no cohort cap. The selection is unchanged from the previously documented plan:
 
-Horizontal geographic positions at zero ellipsoid height are converted to
-WGS84 ECEF coordinates and projected onto the origin's tangent east and north
-directions. A 45-degree rotation gives `X=(E+N)/sqrt(2)` and
-`Y=(-E+N)/sqrt(2)`. This rotation and all selection windows are independent
-choices. They were not recovered from the paper's maps. Catalog geoid depths
-are retained separately from this horizontal construction.
+- Origin time from 1989-10-18 00:00:00 UTC inclusive to 1989-11-18 00:00:00 UTC exclusive; magnitude 2.0–5.5 inclusive.
+- Broad query rectangle 36.5–37.6 degrees N and −122.6 to −121.2 degrees longitude. Retain explicit earthquake type and current catalog geoid depth 0–16 km.
+- Local coordinates X from −15 to 20 km and Y from −45 to 25 km, inclusive.
 
-All candidates, native event/origin/magnitude IDs, decisions, and exclusion
-reasons will be exported. Query pagination has no cohort cap. Only event
-geometry is requested; observations for a later synthetic experiment must be
-generated and identified as synthetic.
+The projection origin is latitude 37.0361667 degrees, longitude −121.8798333 degrees, verified against the pinned [USGS mainshock GeoJSON](../discovery/usgs_nc216859.geojson) and [QuakeML](../discovery/usgs_nc216859_phases.xml). The provider event and origin IDs are `quakeml:nc.anss.org/Event/NC/216859` and `quakeml:nc.anss.org/Origin/NC/2642104`. Both raw-file hashes are checked before either acquisition stage.
 
-## Prepared receiver selection and unresolved vertical convention
+Geographic positions at zero ellipsoid height are converted to WGS84 ECEF coordinates and projected onto the origin's tangent east and north directions. A 45-degree rotation gives `X=(E+N)/sqrt(2)` and `Y=(-E+N)/sqrt(2)`. The rotation and selection windows are independent choices, not recovered from the paper's maps. Catalog geoid depth is retained separately from this horizontal construction. Native event, preferred-origin and preferred-magnitude resource IDs remain attached to each coordinate record.
 
-The requested historical snapshot is 1989-11-01 00:00:00 UTC, for network NC
-and EHZ channels at all valid locations. EarthScope's federated catalog is the
-first station-discovery service; the returned NCEDC route supplies channel
-StationXML. Effective channel epochs must contain the snapshot under the
-half-open convention `start <= time < end`. Overlapping active epochs for one
-NSLC identity stop acquisition for review.
+## Receiver snapshot and elevation convention
 
-The intended receiver domain is X from -35 to 35 km and Y from -60 to 40 km.
-All channels in this horizontal domain will be retained, and their sensor
-depth range will be reported before choosing the above-geoid grid extension.
-The proposed top is `min(-1, floor(minimum sensor z))` km. A sensor below
-16 km would require review before any vertical exclusion.
+EarthScope's federated catalog routed the 1989-11-01 00:00:00 UTC snapshot to the authoritative NCEDC station service. The query requested network NC, EHZ channels and all valid locations. Effective channel epochs contain the snapshot under `start <= time < end`; no end denotes an open interval. All 52 selected NSLCs have one active epoch, with no overlap. These frozen receiver coordinates define the planned synthetic geometry; the acquisition does not establish which receivers recorded each selected earthquake.
 
-The current helper reuses the station parser's generic StationXML convention:
-sensor Z equals minus Channel/Elevation, divided by 1000. The Hayward review
-has identified provider records whose burial depth may make that convention
-inappropriate. Therefore this part of the prepared helper must be reconciled
-with the user's resolution of the metadata issue before use. Station elevation,
-channel elevation, burial depth, and provider identifiers remain separate
-fields; no missing epoch or elevation is invented.
+The receiver domain is X from −35 to 35 km and Y from −60 to 40 km. All channels in this horizontal domain were retained. Receiver model depth is `−Channel/Elevation/1000`, positive downward, following StationXML sensor-elevation semantics and the documented [metadata interpretation](../stations/README.md). Channel elevation, station elevation and burial depth remain separate. No burial correction is applied twice and no numerical datum conversion is inferred.
 
-## Rebuild design
+Selected sensor depths range from −0.921 to −0.039 km; all 52 records report zero burial depth. The planned grid extension `min(-1, floor(minimum sensor z))` therefore gives a suggested top of −1 km, preserving every selected receiver above the geoid. This acquisition did not construct that grid. NCEDC documents catalog depths and station elevations on a common geoid reference; StationXML has no explicit per-channel vertical-datum field. These are provider-declared coordinates, not independently surveyed positions.
 
-The helper reuses time/provenance utilities from `../hayward/acquire.py` and
-the identifier/StationXML parser from `../stations/acquire.py`; it writes only
-inside this directory. The `events` and `stations` stages will save unchanged
-raw replies with request URLs, UTC times, SHA-256 hashes, and identifier
-sidecars. `--offline` will verify and normalize only pinned replies, failing
-before network access if a reply is absent. These commands have not yet been
-run. The later completed manifest must replace this pending status.
+## Comparison with the written experiment
 
-Written API references inspected 2026-10-09:
-[NCEDC event service](https://service.ncedc.org/fdsnws/event/1/),
-[EarthScope federated catalog](https://service.earthscope.org/irisws/fedcatalog/1/),
-[StationXML reference](https://docs.fdsn.org/projects/stationxml/en/latest/reference.html).
+The manuscript's synthetic experiment uses real Loma Prieta source and receiver geometry. Its exact input roster and a verified original synthetic-cohort count have not been established in this review, so no original-count agreement is claimed. Our month-long event window, magnitude/depth limits, 45-degree projection, station snapshot and NC EHZ restriction are disclosed independent choices. The repository's earlier 120-source/32-station random baseline is not evidence of manuscript cohort size. No map coordinates were digitized and no author code, input deck or numerical output was used.
+
+## Files and reproducibility
+
+`catalog_candidates.csv` and `selected_events.csv` preserve event geometry and native event/origin/magnitude IDs. `channel_candidates.csv` and `selected_channels.csv` preserve SEED NSLC, derived FDSN station/channel identifiers, provider IDs where supplied, effective epochs, coordinates and metadata provenance. Empty location codes are preserved. FDSN identifiers derived from SEED codes are distinguished from provider-supplied resource IDs. Routing selectors identify requests and are not fabricated channel identities.
+
+The three raw responses under `raw/` are unchanged, with exact URLs, retrieval UTC, HTTP status, SHA-256 and identifier sidecars. [Acquisition checks](acquisition_checks.json) record identity, epoch, exclusion-preservation and hash checks. Offline rebuilds reproduced all four normalized CSVs and three raw-response hashes exactly; manifest creation times may change.
+
+Run from the repository root:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 data/authoritative/loma_prieta/acquire.py events --offline
+PYTHONDONTWRITEBYTECODE=1 python3 data/authoritative/loma_prieta/acquire.py stations --offline
+```
+
+Omitting `--offline` permits retrieval only when a pinned reply is absent. Cached responses must still match their URL and hash. The helper writes inside this directory and reuses the project's time, projection, provenance, identifier and StationXML parsers. The historical station snapshot is not a request for calibrated instrument responses or waveform samples.
+
+Service references: [NCEDC event service](https://service.ncedc.org/fdsnws/event/1/), [EarthScope federated catalog](https://service.earthscope.org/irisws/fedcatalog/1/), [StationXML reference](https://docs.fdsn.org/projects/stationxml/en/latest/reference.html), [NCEDC depth datum](https://ncedc.org/blog/2015/10/07/the-ncss-now-reports-earthquake.html).

@@ -1,4 +1,11 @@
-# Superseded numerical histories
+# Development evidence
+
+The current external-input checks, native cross-epoch receiver tests, all 48
+numerical validation results, and Hayward initial-ray preflight are described in
+[`external_input_checks.md`](external_input_checks.md). Their result files and
+provenance distinguish completed checks from the superseded histories below.
+
+## Superseded numerical histories
 
 These saved iteration histories document an interrupted development run. Rejecting a
 whole update if any source left the domain prevented progress for other

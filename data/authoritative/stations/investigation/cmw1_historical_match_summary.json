@@ -1,0 +1,54 @@
+{
+  "station_seed_id": "NC.CMW1",
+  "station_fdsn_source_id": "FDSN:NC_CMW1",
+  "channel_fdsn_source_ids": [
+    "FDSN:NC_CMW1__E_P_2",
+    "FDSN:NC_CMW1__E_P_3",
+    "FDSN:NC_CMW1__H_N_1",
+    "FDSN:NC_CMW1__H_N_2",
+    "FDSN:NC_CMW1__H_N_3",
+    "FDSN:NC_CMW1__H_V_1"
+  ],
+  "historical_identity_rows": 14595,
+  "channel_summary_identity_rows": 33764,
+  "fedcatalog_request_identity_rows": 69,
+  "cmw1_historical_channel_epochs": 10,
+  "cmw1_picks": 142,
+  "unique_matches": 142,
+  "missing_matches": 0,
+  "overlapping_matches": 0,
+  "picks_per_channel": {
+    "NC.CMW1..EP2": 2,
+    "NC.CMW1..EP3": 4,
+    "NC.CMW1..HN1": 129,
+    "NC.CMW1..HN2": 1,
+    "NC.CMW1..HN3": 3,
+    "NC.CMW1..HV1": 3
+  },
+  "positive_association_weight_picks": 138,
+  "minimum_pick_time_utc": "1995-08-23T09:16:26.250000Z",
+  "maximum_pick_time_utc": "1998-12-22T21:10:07.560000Z",
+  "historical_source_sha256": "ae8165b4adc28ceb18dbf0b7386bbd53e86d27dfbb2463c2db0ce632da7ddc0a",
+  "picks_source_sha256": "34e2f64f7a95b4fb6c63bafeffde833d6d02054ab83170a502edcf95f9b74044",
+  "derived_identifier_standard": "https://docs.fdsn.org/projects/source-identifiers/en/v1.0/definition.html",
+  "original_investigation_state": {
+    "vertical_coordinate_status": "Historical master does not separately identify sensor elevation or burial depth.",
+    "historical_epoch_csv": "cmw1_historical_channel_epochs.csv",
+    "description": "Investigation CSV preserves source ambiguity with sensor_z blank; adopted model coordinates are recorded separately."
+  },
+  "current_adopted_metadata": {
+    "metadata_file": "../channel_epochs.csv",
+    "metadata_readme": "../README.md",
+    "matching_summary_file": "../matching_summary.json",
+    "vertical_coordinate_status": "historical_elevation_interpreted_as_sensor_explicit_assumption",
+    "provider_elevation_m": 214,
+    "sensor_z_geoid_km": -0.214,
+    "historical_sensor_burial_depth_m": null,
+    "assumption": "Historical ELEV used unchanged as receiver elevation; its sensor interpretation is consistent with later Channel/Elevation=214m, not independently survey verified.",
+    "location_status_preserved": "E: external GPS antenna",
+    "vertical_datum_basis": "Historical format describes GPS-site elevations as geoid referenced; no numerical datum conversion imposed.",
+    "later_stationxml_depth_backfilled": false,
+    "operation_epochs_distinct_from_response_epochs": true,
+    "inversion_execution_status": "Not established by metadata review; consult inversion run records."
+  }
+}

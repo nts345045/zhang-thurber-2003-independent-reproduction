@@ -1,0 +1,107 @@
+	MASTER STATION LOCATION/HISTORY FILE (calsta2000.loc)
+
+The file calsta2000.loc (also know at the NCEDC as ncsn.stations)
+presently resides in Menlo Park on andreas.wr.usgs.gov in
+/home1/calnet/klein/stas/ and also in ftp anonymous in
+ehzftp.wr.usgs.gov/klein/stations.  Additional stations not currently
+used in NCSN phase data are in more2000.loc in the same directories.
+
+The file calsta2000.loc has the complete history of the NCSN network.
+The file has most stations in the surrounding networks but is not
+updated as frequently.  The on and off dates are as accurate as
+possible.  Calsta2000.loc also has the station name history.  Codes
+are here for pre-1977 (4-letters), 1977-1986 (4-letters including
+component), 1986-1994 (5-letters including net and component), and
+1994-2006 (10-letters including net and component).  The "unique" or
+"universal" station codes consist of a 3-5 letter site code, 2-letter
+net code and 3-letter USGS component codes.  The 1-letter component
+code is used as a label in various station files, but is not unique.
+
+Starting in 2006, it is expected that 3-letter SEED component
+codes will be used instead of the USGS codes.  The ambiguity of SEED
+codes, together with station moves, also requires 2-letter location
+codes. The SEED station codes consist of a 3-5 letter site code,
+2-letter net code, 3-letter SEED component codes, and a 2-letter
+location code. The location code "-" is used as a default for station
+where a location code tie-breaker is not required.
+
+Most NCSN stations with coordinates to 4 decimal places of minutes of
+lat/lon have been surveyed with GPS instrumentation.  These precise
+locations have mostly replaced the locations estimated from a
+topographic map, that are all that is available for abandoned sites.
+The elevation at these GPS sites is referenced to the geoid instead of
+sea level.
+
+----------------------------------------------
+Table 1. FORMAT OF STATION LOCATION FILE
+----------------------------------------------
+
+cols. length heading data
+------------------------------------------------------------------------------
+1-5      5   SITE    Station site code (within its own network)
+6-7      2   NET     Unique station net code (assigned by IRIS)
+9-11     3   USGS    USGS component (channel) code (SEED for some digitals) 
+                     These 3 fields are the "unique" station code (1994-2006).
+
+13-15    3   RATN    Station name code (Rationalized code 1986-94)
+16       1           1-letter network code (Rationalized code 1986-94)
+18       1   C       1-letter component code (Rationalized code 1986-94)
+
+21-24    4   4LET    "New" 4-letter code 1977-86, 4th letter is the component
+26-29    4   OLD     "Old" or standard code (pre-1977 for USGS)
+
+31-32    2   LAT     North latitude, degrees
+34-40    7           North latitude, minutes (F7.4)
+42-44    3   LON     West longitude, degrees
+46-52    7           West longitude, minutes (F7.4)
+55-58    4   ELEV    Elevation, meters
+
+60       1   R       Geographic region code of Eaton
+61       1   G       GPS/topo datum & location status code (see below)
+63-84   22           Full geographic name. "&" in col 84 if the channel is a 
+                     duplicate and temporary alias name no longer used (DDI aka
+                     HV1) or an additional decimation with the same SNC code.
+85       1           Colon (:) if non-USGS station recorded in Menlo Park,
+                     Semi-colon (;) if non-USGS station formerly recorded in MP
+                     Comma (,) if non-USGS station maintained but not recorded,
+                     or used in another station database.
+86-89    4   ORG     Network owner/operator code
+
+90-97    8   OPERATN Start date of operation of instrument (YYYYMMDD)
+99-106   8           End date of operation of instrument (YYYYMMDD)
+109-116  8   DATAUSE Start date of USGS-MP usage of data (YYYYMMDD)
+118-125  8           End date of USGS-MP usage of data (YYYYMMDD)
+
+127-129  3   SEED    SEED code for component, non-unique mapping to USGS code.
+131-132  2   LOC     2-letter location code for breaking ties, not used yet.
+
+134-137 4   ON      On time (hr-min GMT) of start date of operation.
+139-142  4   OFF     Off time (hr-min GMT) of end date of operation.
+144-147  4   JPE     Jerry Eaton's station name. Same as 4-letter name for
+                     USGS-Menlo stations.
+
+149-152  4   ALIAS   Alias, erroneous or unofficial name.
+154-157  4           Additional alias, erroneous or unofficial name.
+
+----------------------------------------------
+Table 2. GPS/topo datum & location status code table
+----------------------------------------------
+
+(see spreadsheet.txt for more notes about the use of this location
+status code in the NCSN)
+
+code definition:			  	  comment:
+------------------------------------------------------------------------------
+A    WGS84 handheld GPS of sensor	Most common NCSN case, within 2 meters 
+					of sensor.
+B    WGS84 sensor offset from GPS 	Offset (distance & azimuth) estimated
+					from nearby GPS location.
+E    WGS84 GPS external antenna 	Self-reported GPS of telemetry antenna.
+N    WGS84 nearby handheld GPS		GPS of nearby, outdoor location.
+D    WGS84 hi-acc differential GPS	The highest accuracy GPS we can do 
+					(seldom used).
+C    WGS84 from topo map location 	Never GPS'ed, converted from topo map.
+T    NAD27 topo map			Never GPS'ed, from topo map only, 
+					ie from abandoned site.
+W    WGS84 either antenna/sensor	GPS exact site undocumented.
+blank   Not yet determined.  

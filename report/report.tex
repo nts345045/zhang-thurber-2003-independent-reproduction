@@ -22,14 +22,18 @@ variational ray tracing, trilinear velocity interpolation, joint linearization,
 and damped, smoothed least squares. We reconstruct the specified synthetic
 velocity profile and generate new event and station geometries. Consequently,
 the true-model panel is independently reproduced, whereas synthetic inversion
-panels are partial reproductions. The Hayward field-data figures depend on
-observations excluded by the initial project instructions and are not reproduced.
+panels are partial reproductions. The initial project instructions excluded
+Hayward observations. A later authorized acquisition supplies an independently
+selected, identified geometry for a partial Figure 4 counterpart.
+\IfFileExists{hayward_results.tex}{The revised solver also generates partial
+counterparts to the Hayward relocation, velocity, and conditional resolution
+panels from catalog observations.}{Field inversion panels remain uncomputed.}
 All numerical figures in this report use saved output from this implementation.
 The result is a reproducible method investigation, not a recovery of the
 published Hayward velocity model.
 The resumed work permits authoritative observational inputs. A later section
-records successful archive access and ray-kernel corrections; the reported
-inverse solutions remain the baseline results.
+records authoritative metadata investigation and ray-kernel corrections. The
+synthetic inverse solutions retain their original baseline provenance.
 \end{abstract}
 
 \section{Scientific scope and evidence}
@@ -47,11 +51,12 @@ No published plot was digitized. No published image appears in this report.
 The initial exclusion of source observations had a direct scientific consequence.
 A physical forward model can generate new arrival times for a specified
 geometry, but it cannot recover the historical earthquake realization and
-picking errors from a prose description. We therefore separate a reconstructible
-velocity specification, an independent synthetic inverse experiment, and
-unavailable field-data inversions. The panel audit preserves all eleven
-manuscript figures rather than replacing the missing field results with
-invented observations. No supplement is listed for this article on the original SSA issue contents
+picking errors from a prose description. The baseline therefore separated a
+reconstructible velocity specification, an independent synthetic inverse
+experiment, and unavailable field-data inversions. Later sections document the
+authorized authoritative-data retrieval and subsequent calculations. The panel
+audit preserves all eleven manuscript figures and records each remaining
+experimental difference. No supplement is listed for this article on the original SSA issue contents
 or its original abstract page. No supplementary figures were identified.
 The official issue contents marks supplements for other articles explicitly;
 \path{reference/specification_notes.md} records those checks.
@@ -402,7 +407,7 @@ interior. The boundary counts record this remaining geometric limitation;
 the symmetry correction removes numerical drift rather than supplying
 missing depth sensitivity.
 
-For Hayward Figures 4--11, the missing dependencies are observational.
+For the initial Hayward Figures 4--11 attempts, the missing dependencies were observational.
 The field velocity model is the result to be inferred, not an input that can
 be reconstructed by assuming the reported contrast. We recovered the written
 grid, projection conventions, sample counts and section definitions, then
@@ -465,22 +470,64 @@ identity criteria, across 464 channels at 387 stations. The manuscript's 1,489
 events and 52 stations are not forced by sampling. Current catalog revisions,
 including the geoid depth convention, remain explicit comparison differences.
 
-Historical channel matching gives 42,094 unique matches and 142 missing epochs,
-all at NC.CMW1. Borehole metadata at NC.CCH1, NC.CGP1, and NC.CSU1 list identical
-station and channel elevations with burial depths of 119--124 m. Applying the
-generic StationXML sensor-elevation convention or interpreting elevation as
-ground level therefore changes receiver depth by that amount. No interpretation
-has been silently chosen. These four stations account for 464 candidate picks.
-The user was asked whether to exclude them with a recorded selection difference
-or resolve the archive metadata first. Data-dependent calculations remain stopped
-under the explicit clarification rule; no new field inversion is claimed here.
+At the user's request, metadata investigation preceded exclusion. Targeted
+EarthScope and NCEDC StationXML queries start NC.CMW1 in 2000, but the authoritative
+NCSN master history explicitly identifies its earlier channels and operation
+dates. All 142 previously unmatched picks now have unique historical matches;
+the full join contains 42,236 unique matches. Operation epochs do not establish
+calibrated response epochs. The examined written studies give no station list
+establishing inclusion or exclusion of any of the four investigated boreholes.
+Their manuscript membership remains unknown, and no study-based exclusion is
+applied. Identified records are preserved for a later additional-data comparison.
+
+NC.CCH1, NC.CGP1 and NC.CSU1 retain provider-declared sensor elevations of
+107, 219 and 375 m. StationXML defines channel elevation at the sensor; burial
+depth is not subtracted again merely because station and channel fields agree.
+Historical BSL wellhead tables conflict by one burial depth, and their ellipsoid
+labels differ from NCEDC's stated shared geoid convention. These inconsistencies
+are recorded without inferring a numerical datum conversion. NC.CMW1 uses its
+historical ELEV value of 214 m as receiver elevation under an explicit sensor
+interpretation. Agreement with later StationXML is consistency evidence, not an
+independent survey. Historical burial depth remains unknown and is not backfilled.
+The evidence is in \path{data/authoritative/stations/investigation/}.
+
+The declared quality and model-domain filters retain 1,092 events and 37 physical
+stations, with 14,262 absolute P picks. All four investigated stations contribute
+observations. Figure~\ref{fig:haywardgeometry} shows this independently selected
+geometry. Exact manuscript membership and waveform-correlation observations
+remain unmatched.
+\IfFileExists{hayward_results.tex}{The later field results use this independent
+subset and catalog differences only.}{No new field inversion is claimed here.}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.80\linewidth]{hayward/figure04_geometry.pdf}
+\caption{Independent Figure 4 counterpart from identified authoritative inputs:
+1,092 selected earthquakes, 37 receiver positions, and 77 horizontal model nodes.
+The source and receiver selection differs from the published 1,489-event,
+52-station cohort. This is a partial geometry reproduction, not an inferred
+velocity or relocation result. All plotted identities and input hashes are saved.}
+\label{fig:haywardgeometry}
+\end{figure}
+
+Metadata review also found avoidable loss of differential links. Requiring the
+same metadata epoch split otherwise identical receiver locations: all 62 used
+NSLCs have one reported position across their used epochs. The initial strict
+selection and its identified inputs are preserved as a sensitivity subset.
+The primary pairing instead retains each pick's native epoch and permits links
+at the same NSLC and exact position. Such pairs are flagged because shared
+geometry does not establish unchanged timing calibration. An undirected neighbor
+cap of ten remains an independent pairing choice; its difference-count bound
+cannot recover the paper's reported count from the reported absolute-pick pool.
 
 The code now preserves provider identities and channel epochs through numerical
 inputs and outputs, and computes rays only for observed source--receiver pairs.
 An absolute-data Jacobian exporter and a block-elimination resolution diagnostic
 have also been implemented. The resolution algebra agrees with a direct small
-joint-matrix calculation to floating-point precision. It has not yet been
-applied to an inferred field model. Its uncertainty calculation assumes that
+joint-matrix calculation to floating-point precision.
+\IfFileExists{hayward_results.tex}{The later field diagnostic applies this
+calculation to absolute arrivals at the catalog DD solution.}{It has not yet
+been applied to an inferred field model.} Its uncertainty calculation assumes that
 reported symmetric pick uncertainties represent independent one-standard-
 deviation errors; the archive does not supply confidence levels establishing
 this calibration. Correlated model errors and regularization bias are excluded.
@@ -521,13 +568,100 @@ Double difference & 1 / 9 & 8 / 23\\
 \end{center}
 Nonconvergence remains substantial, and some source finite-difference errors
 increase despite improved stationarity. These checks do not demonstrate that
-the 0.439-s baseline DD differential residual is corrected. No inverse solution
-or manuscript panel was regenerated with the revised kernel. Analytic
+the 0.439-s baseline DD differential residual is corrected. The synthetic
+inverse solutions have not been regenerated with the revised kernel. Analytic
 comparisons, source hashes, all 48 checks, and frozen-model ray tables are in
 \path{data/development/ray_optimizer_audit/}. Run the standalone audit with
 \begin{lstlisting}
 python3 diagnostics/run_ray_optimizer_audit.py
 \end{lstlisting}
+
+\IfFileExists{hayward_results.tex}{
+\clearpage
+\section{Authoritative Hayward subset results}
+The following calculations use 1,092 catalog sources, 37 physical stations,
+14,262 absolute P observations, and 44,718 catalog differences. They contain
+no waveform-correlation observations. The same identified subset is used for
+absolute-data tomography, catalog DD tomography, and relocation in the fixed
+initial one-dimensional velocity model. Figures~\ref{fig:haywardlocations}--\ref{fig:haywardresolution}
+are partial counterparts to the manuscript figures because the observations,
+pairing, initial model, and numerical implementation differ.
+
+\input{hayward_results.tex}
+
+Rebuild this calculation from the saved authoritative responses with
+\begin{lstlisting}
+./rebuild_hayward.sh
+\end{lstlisting}
+Source, executable, configuration, and input hashes are recorded in
+\path{data/hayward/run_manifest.json}. The method-specific history and residual
+files retain numerical diagnostics and observational identities. Synthetic
+baseline results earlier in this report are a separate experiment and have not
+been replaced by these field inversions.
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.96\linewidth]{hayward/figure05_locations.pdf}
+\caption{Independent Figure 5 counterpart. All four maps retain the same
+catalog-selected events. Source movement measures change relative to the
+reference catalog, not location error against known truth. The fixed-model
+relocation uses absolute arrivals for anchoring as well as catalog differences.}
+\label{fig:haywardlocations}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.96\linewidth]{hayward/figure06_initial.pdf}
+\caption{Independent Figure 6 counterpart: catalog events within the documented
+geographic zoom window. Both depth views show all selected zoom events; the
+manuscript's undocumented AA$'$ and BB$'$ section-box memberships are not
+reconstructed. This same event subset is retained in the following three figures.}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.96\linewidth]{hayward/figure07_standard.pdf}
+\caption{Independent Figure 7 counterpart: the common zoom events after
+absolute-data tomography. Reference event and origin identifiers remain attached
+to the independently estimated coordinates.}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.96\linewidth]{hayward/figure08_loc1d.pdf}
+\caption{Independent Figure 8 counterpart: relocation in the fixed initial
+one-dimensional velocity model using catalog differences and absolute anchoring.
+The point set is fixed by the original catalog selection.}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.96\linewidth]{hayward/figure09_dd.pdf}
+\caption{Independent Figure 9 counterpart: catalog DD tomography for the common
+zoom events. No waveform-correlation observations enter this calculation.}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.98\linewidth,height=0.84\textheight,keepaspectratio]{hayward/figure10_velocity.pdf}
+\caption{Independent Figure 10 counterpart: seven across-strike sections of
+catalog DD velocity, absolute-data velocity, and their signed difference.
+Points lie within 5 km of each section. Interpolation displays the saved nodal
+model; ray coverage and smoothing do not by themselves establish resolution.}
+\label{fig:haywardvelocity}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.96\linewidth,height=0.84\textheight,keepaspectratio]{hayward/figure11_resolution.pdf}
+\caption{Independent Figure 11 counterpart: absolute-arrival model-resolution
+diagonal and propagated picking noise, linearized at the catalog DD solution.
+Reported symmetric uncertainties are assumed to represent independent
+one-standard-deviation errors. These conditional noise estimates omit model,
+metadata, correlation, nonlinear, and regularization-bias contributions.}
+\label{fig:haywardresolution}
+\end{figure}
+}{ }
 \clearpage
 \appendix
 \section{Numerical validation record}\label{sec:validation}

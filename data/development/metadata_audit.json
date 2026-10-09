@@ -1,0 +1,1394 @@
+{
+  "created_utc": "2026-10-09T22:11:11.447601+00:00",
+  "scope": "Read-only audit of stations/investigation artifacts and all previously tracked data XML; no network queries",
+  "head_commit": "d9bc346bcadbfb90cb8d48ed9ad75c8375b79faa",
+  "counts": {
+    "raw_responses": 28,
+    "http_200": 24,
+    "http_404": 4,
+    "network_failures": 1,
+    "pdf_text_derivatives": 5,
+    "tracked_xml_verified": 104,
+    "authored_text_files_private_path_scanned": 81,
+    "stationxml_identity_records_verified": 131,
+    "reviewed_borehole_document_station_attachments": 18
+  },
+  "checks": [
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2005_2006.pdf",
+      "passed": true,
+      "sha256": "33a1540cbf40e3c6d1a57d05545d46d2a35fe2255ae702072f042f77918449c2",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2005_2006.pdf.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/borehole/bsl_2005_2006.pdf",
+      "sha256": "33a1540cbf40e3c6d1a57d05545d46d2a35fe2255ae702072f042f77918449c2"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2013_archived.pdf",
+      "passed": true,
+      "sha256": "ef2c4011e3ed4a445c4c2ee6cfc4d492a17af9c530ef0156447ac6fd1cae5773",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2013_archived.pdf.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/borehole/bsl_2013_archived.pdf",
+      "sha256": "ef2c4011e3ed4a445c4c2ee6cfc4d492a17af9c530ef0156447ac6fd1cae5773"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2013_ncedc.pdf",
+      "passed": true,
+      "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "http_status": 404
+    },
+    {
+      "check": "http_error_labeled_not_metadata",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2013_ncedc.pdf",
+      "passed": true,
+      "label": " HTTP error or failed request; not metadata"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2013_part2.pdf",
+      "passed": true,
+      "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "http_status": 404
+    },
+    {
+      "check": "http_error_labeled_not_metadata",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2013_part2.pdf",
+      "passed": true,
+      "label": " HTTP error or failed request; not metadata"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/borehole/fdsn_stationxml_reference.html",
+      "passed": true,
+      "sha256": "3aaa252a538e7290a44dc61a71d55b9ca805e101a2b01259439f44f9d4be951e",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/borehole/fdsn_stationxml_reference.html.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/borehole/fdsn_stationxml_reference.html",
+      "sha256": "3aaa252a538e7290a44dc61a71d55b9ca805e101a2b01259439f44f9d4be951e"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_1997_catalog_revision.html",
+      "passed": true,
+      "sha256": "22c99130d4cabe8be1534534c9dfbf7fd841dd4c86acabd3d2a97a66c37161a6",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_1997_catalog_revision.html.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/borehole/ncedc_1997_catalog_revision.html",
+      "sha256": "22c99130d4cabe8be1534534c9dfbf7fd841dd4c86acabd3d2a97a66c37161a6"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_2015_depth_datum.html",
+      "passed": true,
+      "sha256": "cf0d49f1ad9f5e09aa9e414ba6d0a4da6a50897336183f6f08ca3f9cc08dc29f",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_2015_depth_datum.html.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/borehole/ncedc_2015_depth_datum.html",
+      "sha256": "cf0d49f1ad9f5e09aa9e414ba6d0a4da6a50897336183f6f08ca3f9cc08dc29f"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_channel_schema.html",
+      "passed": true,
+      "sha256": "17556638eb5eea72b8c68d611d6c0a4fcecfc8508f874869eb59709ff5a77e89",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_channel_schema.html.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/borehole/ncedc_channel_schema.html",
+      "sha256": "17556638eb5eea72b8c68d611d6c0a4fcecfc8508f874869eb59709ff5a77e89"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_fdsn_station_help.html",
+      "passed": true,
+      "sha256": "85b4010b8f7f4fe47aeed1a92e96240f66048f9fb725e02bd36d075cf4ac4417",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_fdsn_station_help.html.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/borehole/ncedc_fdsn_station_help.html",
+      "sha256": "85b4010b8f7f4fe47aeed1a92e96240f66048f9fb725e02bd36d075cf4ac4417"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_historical_directory.html",
+      "passed": true,
+      "sha256": "8c9c9100674dd1951fb27bf021ab6f29473e4e19105ea297e4e17e4cb43ded22",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_historical_directory.html.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/borehole/ncedc_historical_directory.html",
+      "sha256": "8c9c9100674dd1951fb27bf021ab6f29473e4e19105ea297e4e17e4cb43ded22"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_ncsn_directory.html",
+      "passed": true,
+      "sha256": "5945f3bce2ac4d64e76043667d111330aee6adf215339d80fc07a63d1263e92a",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_ncsn_directory.html.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/borehole/ncedc_ncsn_directory.html",
+      "sha256": "5945f3bce2ac4d64e76043667d111330aee6adf215339d80fc07a63d1263e92a"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_spreadsheet.txt",
+      "passed": true,
+      "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "http_status": 404
+    },
+    {
+      "check": "http_error_labeled_not_metadata",
+      "path": "data/authoritative/stations/investigation/borehole/ncedc_spreadsheet.txt",
+      "passed": true,
+      "label": " HTTP error or failed request; not metadata"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/borehole/usgs_ofr_2000_330.pdf",
+      "passed": true,
+      "sha256": "1cac0366d7acc27675bdc02c7feccf55c59eeb5e2f5f1a7adde730a819014b55",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/borehole/usgs_ofr_2000_330.pdf.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/borehole/usgs_ofr_2000_330.pdf",
+      "sha256": "1cac0366d7acc27675bdc02c7feccf55c59eeb5e2f5f1a7adde730a819014b55"
+    },
+    {
+      "check": "network_failure_labeled",
+      "path": "data/authoritative/stations/investigation/borehole/usgs_spreadsheet.txt.provenance.json",
+      "passed": true,
+      "error_kind": "network unreachable; no response body"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/cmw1_earthscope_fedcatalog_all_epochs.txt",
+      "passed": true,
+      "sha256": "eb700391d115b122624f760896984e6d8b21caa930fe838370f1e55687d8d83f",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/cmw1_earthscope_fedcatalog_all_epochs.txt.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/cmw1_earthscope_fedcatalog_all_epochs.txt",
+      "sha256": "eb700391d115b122624f760896984e6d8b21caa930fe838370f1e55687d8d83f"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/cmw1_earthscope_station_all_epochs.xml",
+      "passed": true,
+      "sha256": "f45757ca33cb5bb7b0bbfbe827fb919a8c1dd73ee928ef711f53c95fdbf45b6f",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/cmw1_earthscope_station_all_epochs.xml.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/cmw1_earthscope_station_all_epochs.xml",
+      "sha256": "f45757ca33cb5bb7b0bbfbe827fb919a8c1dd73ee928ef711f53c95fdbf45b6f"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/cmw1_ncedc_2008_mapping_notice.html",
+      "passed": true,
+      "sha256": "d6dedaed628a461e1df7c67ab80e9d105ead5e3ed1f285906f47b25232685f56",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/cmw1_ncedc_2008_mapping_notice.html.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/cmw1_ncedc_2008_mapping_notice.html",
+      "sha256": "d6dedaed628a461e1df7c67ab80e9d105ead5e3ed1f285906f47b25232685f56"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/cmw1_ncedc_channel_summary_day.txt",
+      "passed": true,
+      "sha256": "9b97a3cb2c2e5aedf620ad61bc1278e89b934a3277d4c5bcbf57d1e09fb9e4dc",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/cmw1_ncedc_channel_summary_day.txt.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/cmw1_ncedc_channel_summary_day.txt",
+      "sha256": "9b97a3cb2c2e5aedf620ad61bc1278e89b934a3277d4c5bcbf57d1e09fb9e4dc"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/cmw1_ncedc_dart_directory.html",
+      "passed": true,
+      "sha256": "6a6028a2c6ebe1feb6c58d5d3662d3ee35961dee30bcc4ab1da1f38b2c1db8c1",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/cmw1_ncedc_dart_directory.html.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/cmw1_ncedc_dart_directory.html",
+      "sha256": "6a6028a2c6ebe1feb6c58d5d3662d3ee35961dee30bcc4ab1da1f38b2c1db8c1"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/cmw1_ncedc_station_all_epochs.xml",
+      "passed": true,
+      "sha256": "589c360b023f9c53f8ae840cf7d546bad2e02c5e0a313eee274660f111dc89a3",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/cmw1_ncedc_station_all_epochs.xml.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/cmw1_ncedc_station_all_epochs.xml",
+      "sha256": "589c360b023f9c53f8ae840cf7d546bad2e02c5e0a313eee274660f111dc89a3"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/cmw1_ncsn_historical_stations.txt",
+      "passed": true,
+      "sha256": "ae8165b4adc28ceb18dbf0b7386bbd53e86d27dfbb2463c2db0ce632da7ddc0a",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/cmw1_ncsn_historical_stations.txt.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/cmw1_ncsn_historical_stations.txt",
+      "sha256": "ae8165b4adc28ceb18dbf0b7386bbd53e86d27dfbb2463c2db0ce632da7ddc0a"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/cmw1_ncsn_overview.html",
+      "passed": true,
+      "sha256": "02ce92a6118dcf53c32c7cab08437d13c4e39e9e47dacfb704cbbd292f215e7e",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/cmw1_ncsn_overview.html.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/cmw1_ncsn_overview.html",
+      "sha256": "02ce92a6118dcf53c32c7cab08437d13c4e39e9e47dacfb704cbbd292f215e7e"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/cmw1_ncsn_station_format.txt",
+      "passed": true,
+      "sha256": "fc5b937257d774fd1ef84e338c114b7c7d12595c4d867b7d442a3e63cc67d587",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/cmw1_ncsn_station_format.txt.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/cmw1_ncsn_station_format.txt",
+      "sha256": "fc5b937257d774fd1ef84e338c114b7c7d12595c4d867b7d442a3e63cc67d587"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/membership_bsl_2001_2002.pdf",
+      "passed": true,
+      "sha256": "3d403e5d9e1332f15a09059ba21fbe67ba0df53cbdb26806e9f21cd6887bc3c4",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/membership_bsl_2001_2002.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/membership_bsl_2001_2002.pdf",
+      "sha256": "3d403e5d9e1332f15a09059ba21fbe67ba0df53cbdb26806e9f21cd6887bc3c4"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/membership_usgs_01HQGR0157.http404.body",
+      "passed": true,
+      "sha256": "9476edbce614be0391422c3fa3934513954a94104c07ce5637a47464071b18e0",
+      "http_status": 404
+    },
+    {
+      "check": "http_error_labeled_not_metadata",
+      "path": "data/authoritative/stations/investigation/membership_usgs_01HQGR0157.http404.body",
+      "passed": true,
+      "label": "HTTP404 response; not treated as a successfully retrieved PDF or direct textual evidence"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/membership_waldhauser_ellsworth_2002.pdf",
+      "passed": true,
+      "sha256": "f2ec95366d46286c533370ca2c451f78729cca1e5bfd32d5727db17a4e78024f",
+      "http_status": 200
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/terrain_usgs_NC_CCH1.json",
+      "passed": true,
+      "sha256": "7c4fd27cf217417d28209ea3992ab438b6e497a0c673a7e55f24ef9fb20d5cd1",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/terrain_usgs_NC_CCH1.json.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/terrain_usgs_NC_CCH1.json",
+      "sha256": "7c4fd27cf217417d28209ea3992ab438b6e497a0c673a7e55f24ef9fb20d5cd1"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/terrain_usgs_NC_CGP1.json",
+      "passed": true,
+      "sha256": "596362712c6bb5c92ef1ae4974c8cbf351376d727111ec81b8715afc65f651c7",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/terrain_usgs_NC_CGP1.json.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/terrain_usgs_NC_CGP1.json",
+      "sha256": "596362712c6bb5c92ef1ae4974c8cbf351376d727111ec81b8715afc65f651c7"
+    },
+    {
+      "check": "http_response_provenance",
+      "path": "data/authoritative/stations/investigation/terrain_usgs_NC_CSU1.json",
+      "passed": true,
+      "sha256": "51892d36f617e1a9cbdef5a9df524b6eea09ba373c2cd0577fe484abf864a7e1",
+      "http_status": 200
+    },
+    {
+      "check": "identifier_attachment_raw_hash",
+      "path": "data/authoritative/stations/investigation/terrain_usgs_NC_CSU1.json.identifiers.json",
+      "passed": true,
+      "raw_file": "data/authoritative/stations/investigation/terrain_usgs_NC_CSU1.json",
+      "sha256": "51892d36f617e1a9cbdef5a9df524b6eea09ba373c2cd0577fe484abf864a7e1"
+    },
+    {
+      "check": "derived_pdf_text_hashes",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2005_2006.txt",
+      "passed": true,
+      "sha256": "de0ea53fb11f0a07ba9643ae1823f5a7511148aaf391893f112145988e9d60c1",
+      "source_file": "data/authoritative/stations/investigation/borehole/bsl_2005_2006.pdf",
+      "source_sha256": "33a1540cbf40e3c6d1a57d05545d46d2a35fe2255ae702072f042f77918449c2"
+    },
+    {
+      "check": "derived_pdf_text_hashes",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2013_archived.txt",
+      "passed": true,
+      "sha256": "f9afaf579423d965e9a928dbd1535f1be7f94dd3259fe37d457839faeeded725",
+      "source_file": "data/authoritative/stations/investigation/borehole/bsl_2013_archived.pdf",
+      "source_sha256": "ef2c4011e3ed4a445c4c2ee6cfc4d492a17af9c530ef0156447ac6fd1cae5773"
+    },
+    {
+      "check": "derived_pdf_text_hashes",
+      "path": "data/authoritative/stations/investigation/borehole/usgs_ofr_2000_330.txt",
+      "passed": true,
+      "sha256": "e24e288fd48c146c4d6ed1fb24294788c6cffee512d964a665bd88a2f1dff642",
+      "source_file": "data/authoritative/stations/investigation/borehole/usgs_ofr_2000_330.pdf",
+      "source_sha256": "1cac0366d7acc27675bdc02c7feccf55c59eeb5e2f5f1a7adde730a819014b55"
+    },
+    {
+      "check": "membership_pdf_text_reproducible",
+      "path": "data/authoritative/stations/investigation/membership_bsl_2001_2002.txt",
+      "passed": true,
+      "sha256": "98451cd13846a6b7bc7ef0972a147497e38163c9acf088305640a3ff03fafc9f",
+      "source_file": "data/authoritative/stations/investigation/membership_bsl_2001_2002.pdf",
+      "source_sha256": "3d403e5d9e1332f15a09059ba21fbe67ba0df53cbdb26806e9f21cd6887bc3c4"
+    },
+    {
+      "check": "membership_pdf_text_reproducible",
+      "path": "data/authoritative/stations/investigation/membership_waldhauser_ellsworth_2002.txt",
+      "passed": true,
+      "sha256": "5fe20004100d36656a6d38dfda90bad5d562027de208ad84f5a670cc7aa1176f",
+      "source_file": "data/authoritative/stations/investigation/membership_waldhauser_ellsworth_2002.pdf",
+      "source_sha256": "f2ec95366d46286c533370ca2c451f78729cca1e5bfd32d5727db17a4e78024f"
+    },
+    {
+      "check": "membership_station_identities",
+      "path": "data/authoritative/stations/investigation/membership_bsl_2001_2002.identifiers.json",
+      "passed": true,
+      "records": 4
+    },
+    {
+      "check": "borehole_snapshot_exact_HEAD_rows_and_identifiers",
+      "path": "data/authoritative/stations/investigation/borehole/channel_epoch_snapshot.csv",
+      "passed": true,
+      "records": 30,
+      "sha256": "0dc0ac437af211c9ddd0adc5759760859c2c1f0171f68ede8e45f3061bb6c083",
+      "source_git_ref": "HEAD:data/authoritative/stations/channel_epochs.csv",
+      "source_sha256": "e044db3db577b288942ca2accc527def72baca3c37d5532bccc6196cd8125a70"
+    },
+    {
+      "check": "historical_csv_raw_lines_and_identifiers",
+      "path": "data/authoritative/stations/investigation/borehole/historical_station_rows.csv",
+      "passed": true,
+      "records": 33,
+      "sha256": "5f96dc2efb63823b460bb5519b8c419f87c4cc27a50d9b889b2604e772cafeb4"
+    },
+    {
+      "check": "historical_csv_raw_lines_and_identifiers",
+      "path": "data/authoritative/stations/investigation/cmw1_historical_channel_epochs.csv",
+      "passed": true,
+      "records": 10,
+      "sha256": "bfefb3ec34bfa6c3b30e307961250db379d50e5db91288fd63d3e342a6b81832"
+    },
+    {
+      "check": "cmw1_text_identity_attachment",
+      "path": "data/authoritative/stations/investigation/cmw1_ncsn_historical_stations.txt",
+      "passed": true,
+      "records": 14595
+    },
+    {
+      "check": "cmw1_text_identity_attachment",
+      "path": "data/authoritative/stations/investigation/cmw1_ncedc_channel_summary_day.txt",
+      "passed": true,
+      "records": 33764
+    },
+    {
+      "check": "cmw1_text_identity_attachment",
+      "path": "data/authoritative/stations/investigation/cmw1_earthscope_fedcatalog_all_epochs.txt",
+      "passed": true,
+      "records": 69
+    },
+    {
+      "check": "cmw1_text_identity_attachment",
+      "path": "data/authoritative/stations/investigation/cmw1_ncedc_dart_directory.html",
+      "passed": true,
+      "records": 5
+    },
+    {
+      "check": "terrain_station_identities_and_coordinate_provenance",
+      "path": "data/authoritative/stations/investigation/terrain_usgs_NC_CCH1.json",
+      "passed": true,
+      "records": 12,
+      "sha256": "7c4fd27cf217417d28209ea3992ab438b6e497a0c673a7e55f24ef9fb20d5cd1",
+      "coordinate_source_file": "data/authoritative/stations/investigation/../channel_epochs.csv",
+      "coordinate_source_sha256": "4f96d7480387c5349f1190e4a1e4e0be3a5fccce9821ae2856da8de73e063d7b"
+    },
+    {
+      "check": "terrain_station_identities_and_coordinate_provenance",
+      "path": "data/authoritative/stations/investigation/terrain_usgs_NC_CGP1.json",
+      "passed": true,
+      "records": 6,
+      "sha256": "596362712c6bb5c92ef1ae4974c8cbf351376d727111ec81b8715afc65f651c7",
+      "coordinate_source_file": "data/authoritative/stations/investigation/../channel_epochs.csv",
+      "coordinate_source_sha256": "4f96d7480387c5349f1190e4a1e4e0be3a5fccce9821ae2856da8de73e063d7b"
+    },
+    {
+      "check": "terrain_station_identities_and_coordinate_provenance",
+      "path": "data/authoritative/stations/investigation/terrain_usgs_NC_CSU1.json",
+      "passed": true,
+      "records": 12,
+      "sha256": "51892d36f617e1a9cbdef5a9df524b6eea09ba373c2cd0577fe484abf864a7e1",
+      "coordinate_source_file": "data/authoritative/stations/investigation/../channel_epochs.csv",
+      "coordinate_source_sha256": "4f96d7480387c5349f1190e4a1e4e0be3a5fccce9821ae2856da8de73e063d7b"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/discovery/usgs_nc216859_phases.xml",
+      "passed": true,
+      "git_blob": "d6f9faad1fe801cda6cbaab2d0be7fedc28b60ee",
+      "sha256": "23d82629efea8524527da3ada65733562fbaef7705d03ebe4c3a945e9553389d"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00000.xml",
+      "passed": true,
+      "git_blob": "595b0a3f8cad28767af42b6877d213e6a8ec792c",
+      "sha256": "6babe1fafdfe665e0355a1624928b2a134b17a802650ec797d7d0d6bb8ac62f3"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00025.xml",
+      "passed": true,
+      "git_blob": "b59cba3c9658bd0b0e037724334b5d7f5dc025d8",
+      "sha256": "5c3180c93a9e529dd21c0b1c83b416aa6485d3cea577ff7353b7be6faea516a0"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00050.xml",
+      "passed": true,
+      "git_blob": "013adfb2e1bf9006024fe6ccdb497230dabf7225",
+      "sha256": "2686d2f8d89f30d9d05f24c524a190ec15155374250f79f552bff301e01a7102"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00075.xml",
+      "passed": true,
+      "git_blob": "c055ed4b5f5606433f1608b58a35f7f4d6e6c0fe",
+      "sha256": "5b958fe85d5be5b8eadba9c24c5d7b3d6d5b7bf0f8021f1e63831766be2beb89"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00100.xml",
+      "passed": true,
+      "git_blob": "c7ec1def44254232c9c436b0e241775b89a60e6c",
+      "sha256": "66b5d9d103e98d261d37f694df140bc322e7849b7d664f1e5233817277cf816e"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00125.xml",
+      "passed": true,
+      "git_blob": "025d7d637e8f508948ad581920fb96d755ccc91a",
+      "sha256": "93f3c9911a62dc7c58e022888c246c6729320a975dcb37bf4fdf3d8ec21ebff6"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00150.xml",
+      "passed": true,
+      "git_blob": "8ffbb08f5fb56add7ec28045fde0aa603d9dedb0",
+      "sha256": "9929076534c26d00a5c480e29a8ab13b6a6b0c3f78938d722bf4c7ee016f215e"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00175.xml",
+      "passed": true,
+      "git_blob": "9d1d3579a999e1cf9445c135d4f578c530c609bc",
+      "sha256": "2ded286df380c908d3756952ecde748c302f3a5c328e44c06751788b35c9b982"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00200.xml",
+      "passed": true,
+      "git_blob": "047fa508f6c82ea9e31072ad6b80ea96b684e031",
+      "sha256": "1b685b00ce7ce64da2131030cece39601cea3c030906569e8a953a48f2d2120f"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00225.xml",
+      "passed": true,
+      "git_blob": "0095ea44736a1543b53c2e569c6a24c849cb90ac",
+      "sha256": "0466f671263bc5361cda83f74a36179cca01d5a5fa3178aec82f9b0377fdefd9"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00250.xml",
+      "passed": true,
+      "git_blob": "d18e12d805414340b2e6c6cc75e4fac26c5570f6",
+      "sha256": "5292fb5c21f1356446524c05f5df1d231c84bbf91be4e8a80660911e285aa69d"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00275.xml",
+      "passed": true,
+      "git_blob": "d4c5b07ee6f5a42c99a091407ef12cbea4a5e590",
+      "sha256": "a48c318b670e439942ed7c7650856846a14e396bf639d119a19e087724b2d72b"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00300.xml",
+      "passed": true,
+      "git_blob": "313a694fd95612e7a73bc8d9270188e9df904615",
+      "sha256": "e15db2cf8c0def3d56debe3d5b5b9aa3c972757dee34bc4c5e219ffe6cffd537"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00325.xml",
+      "passed": true,
+      "git_blob": "8565dca177b6582490aa3464a8ec83d1b8c2f2a1",
+      "sha256": "b8c400a1d28e999b05e48bd4063f393f374af5b613dffed4d34b3a21c5cc9fb2"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00350.xml",
+      "passed": true,
+      "git_blob": "6967718176181b2e75063f5a148a11714b9b7d85",
+      "sha256": "53481543d7d7dcb934a82f32e06f2821fcd67a35952b5a5c009766baa2ddf6cb"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00375.xml",
+      "passed": true,
+      "git_blob": "ac7cad2c7850b3de88545a7836a73fe7e40e2184",
+      "sha256": "1b2af36eb02c0a242348c22b04d458254f81db61abd2ae667af50178ad45ce65"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00400.xml",
+      "passed": true,
+      "git_blob": "807199bf3f8c3a03f9ddf6154ce5b184382edf79",
+      "sha256": "388db2d1d61d00f2bd4fa081ce8ad71e67a36d0d10b3616ad911f825547b0469"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00425.xml",
+      "passed": true,
+      "git_blob": "2aa5a4cf2962c9197d7427acbf6830005ed75c01",
+      "sha256": "75609fa9a554ba77e5afe2a2d3d44b3b994304cf039f75b67c8759a691805d5c"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00450.xml",
+      "passed": true,
+      "git_blob": "f23eb0b5677978f574dad69cf764a95c533e758d",
+      "sha256": "1e14d55b99ac3cae2d8761022c45543eb2d2ba01ce964eb7fa12234de3cbee1b"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00475.xml",
+      "passed": true,
+      "git_blob": "b3a38c4e420da4b37c8fe7f992d62178c858b1e5",
+      "sha256": "d94e48bf812093c317f728d5ad56c66ad4c434cb51673dc010a39a1c0f1096f1"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00500.xml",
+      "passed": true,
+      "git_blob": "e192c3b3cd49388d9a3db41f85df56985acb0b28",
+      "sha256": "bc5732a2116aa865d81f09ddd03721ba6217895069436d08117fdad56cc17f6a"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00525.xml",
+      "passed": true,
+      "git_blob": "21c8a2b5654317eb8fdf9e9cc29fd26ed915c16f",
+      "sha256": "cd2c725b91fbb1debd64b5b46b85bbe21857c8a838f7c73f1be2460a768d8a88"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00550.xml",
+      "passed": true,
+      "git_blob": "2dd5922ca9f37a92bb5a10645997e8317a5288d5",
+      "sha256": "409fa3bd5d8d5706dab476cc7f5ddc4e258d2813c0ca214f0a065c04338aceb0"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00575.xml",
+      "passed": true,
+      "git_blob": "f39e539fbf4946d8c887db5b8e2d841bf268f827",
+      "sha256": "bb24e8b813f3156209aab0bd1624d1d2415f0995a012231889c3e0db47c881bb"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00600.xml",
+      "passed": true,
+      "git_blob": "65ad078259935c9b2cf7a091024c978425aacde1",
+      "sha256": "8dd7d0fa68cea635e52eb5af6b60f15b173a74e9139e22bd794c2bf75d2a24e7"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00625.xml",
+      "passed": true,
+      "git_blob": "36b9767fb56ea7d9d7ace2f9757a0545e60569d2",
+      "sha256": "98ece66c0f41cffb4d3ab0d22397aabf8a43cdb8ea0e6398ca0d8d8d7bf39907"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00650.xml",
+      "passed": true,
+      "git_blob": "28f80f83383ecb1c98e1c3240a92ff3fe940ad90",
+      "sha256": "f598ddd3e4fa36d6e3b0c00f51d3c5dfc5687b59d90520e0d6e4b6f8cb1c4f4b"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00675.xml",
+      "passed": true,
+      "git_blob": "3ab5a0019bc1afb502ad5ba83e59136ad6472936",
+      "sha256": "0c78c91f593ed97625bd470e041bdf88f053b587d74316f5150d945ef4202e55"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00700.xml",
+      "passed": true,
+      "git_blob": "121d6e990970a2d7c08798ef4b6601f3eba380a4",
+      "sha256": "d1d46ec20840ae0b9d0c9741a1d0514caa4a8082cf9037a082f41655114738c3"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00725.xml",
+      "passed": true,
+      "git_blob": "c0d03ce10c6f0fd30d211902e5e72768f6d180c2",
+      "sha256": "8dc548c747655084b2572676fdc71b6e00e54e119d3309fe56234fec1e93496c"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00750.xml",
+      "passed": true,
+      "git_blob": "f426fe598aa33a78ce770253b5fa9de09458d6ce",
+      "sha256": "87ba887cfd17204ef27bf4197642c83d1901b6ca5677bac28443fe67588ad639"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00775.xml",
+      "passed": true,
+      "git_blob": "4396e978b20409766418b7e4c49c450f3f02d2e8",
+      "sha256": "c28e6ecb89ce0405fbd4b8afc3a93b0276aaf79db2e14851514c517509faafcc"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00800.xml",
+      "passed": true,
+      "git_blob": "f9c40d2977797d8734ab29c152b6e8334884c7fa",
+      "sha256": "50af9e5298e2037701ae045545cc833a9faf6c5ed14f6c8b708a9bc371a2c9e8"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00825.xml",
+      "passed": true,
+      "git_blob": "5f072b500f309a528f39e3bd6d3fec4feb1f1a53",
+      "sha256": "7b845f00f17181fc7d577d042ca39b3f7fea610ffd460a6b2c4c65c8f930a28a"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00850.xml",
+      "passed": true,
+      "git_blob": "778916ffee7a322e8f376e82f86c898e53311264",
+      "sha256": "e245a42ea20821914c618be93c1645b892edf6de04aa08763cc0559905616846"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00875.xml",
+      "passed": true,
+      "git_blob": "f61e0749a08e01e73169ccdc39571d4e3ca21418",
+      "sha256": "2ebd925b38fdd2274729523f662a64570bb6b4a69a2f10b39ea2d708300aecb2"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00900.xml",
+      "passed": true,
+      "git_blob": "d25f8d0f570a693046acb0d314347dc18c0dcc59",
+      "sha256": "9aec2035f606c189c1f61ed1720dc90dec8e51b1399671853584054f316851bb"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00925.xml",
+      "passed": true,
+      "git_blob": "7a3d1cb0503abd74c8dea884953b1bc0c94bd684",
+      "sha256": "28bff3bad66b86b200ed5fe3d2243648a1de064725114848e34a378fb1c39329"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00950.xml",
+      "passed": true,
+      "git_blob": "cf2ee479f4045ffd7ca6d89df49722c68b26745a",
+      "sha256": "27ecc88e560ea6f604bd27264015175376b6d6b6373b5396adfe1e0c828062af"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_00975.xml",
+      "passed": true,
+      "git_blob": "3388e449962c3489afa6d558dbea047e85c1d8e7",
+      "sha256": "538d4b0b91801e18571c1bb5090c4f26ecfe336adb4cd089b0105a2b6f95fa4d"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01000.xml",
+      "passed": true,
+      "git_blob": "5c1b14d3e4a3b3ff7f1a6d3b19b1aa5ac52367dd",
+      "sha256": "5a2c6799fbcb95c88c8e616b1d9896f6999039f814a7c970f4474df3182bf22d"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01025.xml",
+      "passed": true,
+      "git_blob": "8e6e7cfa24c84b5d9cd1c91581e288324d5d07ad",
+      "sha256": "fdbf6de4820ea57f5f8a4cf4987b93ee0bf32276b6388c4580df878166f7d881"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01050.xml",
+      "passed": true,
+      "git_blob": "a6a3afd6f96d0cbef304d74c16941cbea40d789d",
+      "sha256": "2f3dfbd0f43677073c02cacd285322aa4de51c727bff13a28c56e921488f7cba"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01075.xml",
+      "passed": true,
+      "git_blob": "1368fb234767bc23df8630441c56d8ada37d4bd6",
+      "sha256": "45c7547490abc10dfc059a74071a7b3b2edf96de18867b22baf7ffdfd8c6d835"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01100.xml",
+      "passed": true,
+      "git_blob": "c627d1b9c14c0f51ef108553616babc0dea2400a",
+      "sha256": "943f929634a1b45d414b1ead2a1763be1a4ab8b27ee4aee1e9dae048d7840753"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01125.xml",
+      "passed": true,
+      "git_blob": "7391c79c8b1306da6771de616a7b8fdd1879b420",
+      "sha256": "948ad3f955ff07d4377836dc46028cd9d781bf175a9bdfbdfd1f1fff7c7b760d"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01150.xml",
+      "passed": true,
+      "git_blob": "aa87951a7701a4ef7d273694dbabf6d6cf2b6ee9",
+      "sha256": "7db7a0289b8292cc8d4da85bc801196a84c43745aa2fa533d5df2fa9318b4ae3"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01175.xml",
+      "passed": true,
+      "git_blob": "3d5f30b1e3cec6a93bbe49088962a4d5f81b27e0",
+      "sha256": "b7665607695a34248cfe98af516ae214b34ac635ba5c7a6c1191101545d81f12"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01200.xml",
+      "passed": true,
+      "git_blob": "a012575cd516b24e22975d9ba627b6df73a17794",
+      "sha256": "d7764bb98643dbf0d114501ea0c542407de42d3e7932d0cf3ae33a83e26a6c1f"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01225.xml",
+      "passed": true,
+      "git_blob": "24f5e06d7a827c1cecec5fc95a6f858d5eec1f58",
+      "sha256": "55245cf1fab86e752af508718f3c57c81c0fc84f3a001174ba25c51a908ce759"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01250.xml",
+      "passed": true,
+      "git_blob": "d2b075f8a103989cd3c1a581fccc08cb10670468",
+      "sha256": "96ed9d723a8c3db381929ee4f71ad15d3ba6b09bdf0242f9ac2d12cb9e522d69"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01275.xml",
+      "passed": true,
+      "git_blob": "41d10f737a1b98204a088bcea92986406799ea55",
+      "sha256": "deabb86187b616b127079e4837c59bd7d552b4e1ee6d9ebebfb71884a7961310"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01300.xml",
+      "passed": true,
+      "git_blob": "47c1133684d9d7d263a2b0daf0ba965b5f2246ea",
+      "sha256": "ebc709d566bd83bd784ef77c2bae973b81b8c445ad117e9eb13d43c62cb2af82"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01325.xml",
+      "passed": true,
+      "git_blob": "3387bd1d3bb923df8d0eb0d38dd3e2640eccf0b8",
+      "sha256": "176d6b0bc731341a037c8305e97b749a5f3d6d21413c2689d93c9d5c28dfe857"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01350.xml",
+      "passed": true,
+      "git_blob": "31fbbbd39735e9feae4de3fc0f7717d381dd5804",
+      "sha256": "6522f73b136cdd2dabab3a0fc677fcb5f661e12d60899ad2e358a263a950f5f4"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01375.xml",
+      "passed": true,
+      "git_blob": "7249a7776c785660dabc333ef95901af294af2c5",
+      "sha256": "08bec4f49389c091d6284ad86b013bdb56bd89e12cf7647daf6eaf82d714d94b"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01400.xml",
+      "passed": true,
+      "git_blob": "2f655bb414ff9a9746359864f0626da344305573",
+      "sha256": "a91d7a27e2fa6b32818e58d1dab7c6d9116a526d798f7f257e018cd733ad3779"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01425.xml",
+      "passed": true,
+      "git_blob": "a22cf236cd261fa1afea57cfbe6daef774a39f56",
+      "sha256": "c30bd25af72a046936347fb27f71ccf8653b65e4a7fc013865604e086829ae47"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01450.xml",
+      "passed": true,
+      "git_blob": "aafa61b7399c7b6829ec0bf4af6226157fa8d9a9",
+      "sha256": "3df5e8c99d47d68510b888cba5912a976344e2a4ede748388e8eb5780ad01781"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01475.xml",
+      "passed": true,
+      "git_blob": "d0aab1488f84d6c3ac61210d105ac4e52fe09f12",
+      "sha256": "49b8233ab820948a8d704a804e5541c79733021beb576a20aaaebf28f3cb906b"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01500.xml",
+      "passed": true,
+      "git_blob": "1f9723d35598815011c11f608ab38606c4efb3b7",
+      "sha256": "4f7da87652454b358b5af357f065e6a098938f005e99ab6d03b62d93ac96fdc9"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01525.xml",
+      "passed": true,
+      "git_blob": "b45208b9f8ad097589ac14291450b3ba2799edac",
+      "sha256": "1a303b187fc53614804cdb630e1df07801be090017ba3d5f67e0f885d4e63804"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01550.xml",
+      "passed": true,
+      "git_blob": "cb8ccc4e3f676c1960ef5f65b8eba4d7ce956b93",
+      "sha256": "8e4515907d3f9285c352c2674b7b6cd43c90dc3d21c814a5b54f6ba6d90b8a8a"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01575.xml",
+      "passed": true,
+      "git_blob": "11be102e27e0dfd49c513b5bebcc089d970c32ab",
+      "sha256": "af86422462b67eb6fcc9afb06b65e5f93855baeae7e102e243c59042b8ded8ad"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01600.xml",
+      "passed": true,
+      "git_blob": "db68f5b1b905320abe997e3f9341c300c19df32f",
+      "sha256": "2817729c211254fdf0429f80ed43c243357db374019b293a43216d29f5077615"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01625.xml",
+      "passed": true,
+      "git_blob": "e1db38ea2d27d10f0dc8760fcaea2b9bb63903dc",
+      "sha256": "f8cfe8dc188c51819f1d79520a8542c4c4671c575dfedf86456031af4dfc7363"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01650.xml",
+      "passed": true,
+      "git_blob": "e87b5526095558244d915577d578ae92a735a51e",
+      "sha256": "b95e1ae629b3c9cbed40f2d954f7527375913f69a419fedd2b6c480b4dc99c30"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01675.xml",
+      "passed": true,
+      "git_blob": "56d553f1c7e1713ffe92ca224c1a397ddd7a2b9e",
+      "sha256": "cc10d4c959e2db6abe2274e7881a2bf0a7a639073b1fbfdc9ffee287bf30c817"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01700.xml",
+      "passed": true,
+      "git_blob": "3033ceddc8637711e39b0bb8b2eab1ef6b58b5d8",
+      "sha256": "4d005c018ed06a7807346d1ca8c4c61cc7ded25d125f0c568e8a2cf7b49ad6a7"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01725.xml",
+      "passed": true,
+      "git_blob": "7c004e421ecbc2cd053d83f58ecb3fcceb539e83",
+      "sha256": "24980c503c21b4f4530a20363de19d06d672b4a7f90f9e4169bae841f8209cb8"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/picks_01750.xml",
+      "passed": true,
+      "git_blob": "1306ba9a40c265c212a4df6d16d8f3569e8626e4",
+      "sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1984_00001.xml",
+      "passed": true,
+      "git_blob": "d8da1e7ca252de265391014a5e18052fdbb7e982",
+      "sha256": "16c32263c9ce0936afcca7dbb83544edc72b0089d79c41bedd35475abd2ee881"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1985_00001.xml",
+      "passed": true,
+      "git_blob": "77a3ae53dc45e0e3addcdd3796897e437fc8fcdc",
+      "sha256": "e58d515cf2cdcfc4a31b1f7805311d3ec19e3bad89c4e02fd53b51ed56f8a127"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1986_00001.xml",
+      "passed": true,
+      "git_blob": "85bcc71fb6a764f56196600c660ac1048bcb6fad",
+      "sha256": "6d34856129e91e8309ab36b63872cf6ee1ec27b180c4adb0f74efc26cf24f99a"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1987_00001.xml",
+      "passed": true,
+      "git_blob": "0839acc823892a684fb86bb03b8b9366969e5dbf",
+      "sha256": "faaa3972b31b1715b0c883720c2825f74429ac410395f65b3985cc9cbd0e8ec4"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1988_00001.xml",
+      "passed": true,
+      "git_blob": "505332474fa207d4810aab731462abe5b55ef1c6",
+      "sha256": "d04935b31cb98ead67169c12df3b6c5d8986bf9a597ed212c5f04a56b15cf848"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1989_00001.xml",
+      "passed": true,
+      "git_blob": "bca30a83a7806f1c050b01e511409ab21a2fe39b",
+      "sha256": "32136a742e24a4ee3d1d7ddcc5601bff3d338cc045a26bc0a298221d131c0079"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1990_00001.xml",
+      "passed": true,
+      "git_blob": "c2dd2c7c19f654b2c7e491d0af8060138e70e2c2",
+      "sha256": "4ae2f662de593f63fe694ce7215e4e9045ab8340a41abbf710df808b7ec0b886"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1991_00001.xml",
+      "passed": true,
+      "git_blob": "0aff572628089c011e5dfc561339bd982434efc0",
+      "sha256": "378cdcfeb8dd0031c83d286832257b3178e92e07f9bdffa30bc0e28162a810c2"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1992_00001.xml",
+      "passed": true,
+      "git_blob": "1ee4d84a7aaf3808d2fcaa2ae5eb4a26088f1023",
+      "sha256": "68ad9da6062abf539d48b50b98eb62e55f1315945900aa01da86f2b142d18476"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1993_00001.xml",
+      "passed": true,
+      "git_blob": "f39061541f47a060b5949414071561349cf6ca54",
+      "sha256": "ce4fbc6a828fae33c67148437da6ec7dadbbdc9861c38f8a95ae4797dc2fe917"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1994_00001.xml",
+      "passed": true,
+      "git_blob": "361b389bcf1ff47ae77af8919503303d44f4ffca",
+      "sha256": "fdf7a6c8e91d99244a82948d7e8baf3d142722d656f9e2fb60521755864bd8eb"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1995_00001.xml",
+      "passed": true,
+      "git_blob": "3a5e388796596e7a85d8c5b222cfc7cd4dbd6299",
+      "sha256": "1aa0f84b7eec59719518c304fba1ca0c6cf76d7be7fba8a463a336b5bc5de2f1"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1996_00001.xml",
+      "passed": true,
+      "git_blob": "4270cda6f3cbcd40807bfa66917d11219ebd5c33",
+      "sha256": "840e07ceed8dda3abb703ece046a5f0c21dffefe2b57c4b681f8cbebb4eefe87"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1997_00001.xml",
+      "passed": true,
+      "git_blob": "905bbc489a69f43af4d4021242142bb2fa7a952d",
+      "sha256": "b752fbde045c0793506f392b90fa682eefb3f01b6053fb34698c835c38b6fef0"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/hayward/raw/summaries_1998_00001.xml",
+      "passed": true,
+      "git_blob": "0906be1fbe003318e1d09415f39cbf2ef2546736",
+      "sha256": "91b1e8df147f6af764081770c185f9dc931f797b099a0c18bb702edd23f4722c"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_161d973dd7a5.xml",
+      "passed": true,
+      "git_blob": "5269a26e12cb08e1384782849f68d6bdb2153f1d",
+      "sha256": "62b3c8be513fb97520ef9b0b66b032fb7336e201904c776596ac90285622afbc"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_229ddedeca3b.xml",
+      "passed": true,
+      "git_blob": "8b943f3e7d32cb80f07a9d33a483af617e052fc9",
+      "sha256": "d5c2bbe74ea77fb12472c487ff64f61f217065425305b97e2fc2b396d41dc80e"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_26a85a0b6a04.xml",
+      "passed": true,
+      "git_blob": "d7a8105185aad043a5225d72167ed980d17c10a8",
+      "sha256": "4b0695ac0d52481455d8de5e0f8693a2bd14e8d30dd47e1f7fdf9b2fc1aa9f88"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_3625bbdb0f94.xml",
+      "passed": true,
+      "git_blob": "836fdbaddaf6943412457f7293d43db03dff25f8",
+      "sha256": "6622e88b1bcdf3ef1d3a4bdb9cdb0f1bd9e412224a7eba77599fbd725677a33a"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_389e06168de9.xml",
+      "passed": true,
+      "git_blob": "4006be838bc79b5d4fbf912dd898878f018f79d3",
+      "sha256": "200bbad0002f12ce230fe3c0729436026855118b3e92134274a769f1291c1399"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_40f92ff5c2e1.xml",
+      "passed": true,
+      "git_blob": "b8677a0c76c421ab79ab3b4ca587d7063bf5c4c4",
+      "sha256": "7cdf9f02d36c91b5eeac23487ba3cd5ef782c3f7300baa23db2a189a190f3e3a"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_66df0dc53922.xml",
+      "passed": true,
+      "git_blob": "1b4bea85bef5bd10d432465124a2a2fae641451e",
+      "sha256": "a4ea10a5c47df2972a893b693fbfb813b0badf1f62b5b6f939906224aa515666"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_6d9c3e031439.xml",
+      "passed": true,
+      "git_blob": "32480bb23e40c07ac17143e52f8935b065f3a5d1",
+      "sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_8b2f04bb49e0.xml",
+      "passed": true,
+      "git_blob": "ebcab367c27386ca04b56e2d3ea7cc9742e68dd0",
+      "sha256": "bde23190969bf134cbe4196439d646741c0db281da45461163405c8d9e55997a"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_987aa2b70b3c.xml",
+      "passed": true,
+      "git_blob": "fc47179567a62d694484fc39d7f79f2b276b460d",
+      "sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_a4750d70ae4f.xml",
+      "passed": true,
+      "git_blob": "5023b6b8f626f0b713b8d48d030a6f6132e2b7e5",
+      "sha256": "b7786d5cd18eff5e9ac80a9724303d96313fdb043009e47e4020a8ee9ed842a3"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_afd361bd889c.xml",
+      "passed": true,
+      "git_blob": "8c1125f1eb38de6b632223b5f97555b51871497a",
+      "sha256": "e5f44b6a0bb12a8e7e2bc9f9e7a181b7abd1508d9a94653927d2a987362654df"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_afdc64c1b94c.xml",
+      "passed": true,
+      "git_blob": "e0b0890107de544c7fc3f9c2a30c50521a919de6",
+      "sha256": "6b5a4a28757d02aea3b2b16b7bfe80ee4500cec2858ce9f0103c33acd358d350"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_c57a2aac7850.xml",
+      "passed": true,
+      "git_blob": "c05483dc38cc9174d625d4d16948b20c960c2898",
+      "sha256": "5f925defe95a2b9f076085f88f696a476253de672d1be187d4dc54c378fd1259"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_ef43444141f1.xml",
+      "passed": true,
+      "git_blob": "ca88ecfca0a244e3680f20596b91c172e33a1863",
+      "sha256": "8a3d9dd61ed656d55ed706ffed8ca61b8131e8aa186baad8505c68a797af4d9c"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_f4b65ee9d43d.xml",
+      "passed": true,
+      "git_blob": "f6ad06e545deeed33766bbb371b3cce12067c5b1",
+      "sha256": "faf07601ad203e7823901072599a4238073823bbe9b7890d5d259d6337110010"
+    },
+    {
+      "check": "tracked_raw_xml_unchanged_from_HEAD",
+      "path": "data/authoritative/stations/raw/ncedc_channels_NC_f72d0dca378f.xml",
+      "passed": true,
+      "git_blob": "ff8e80804f7307d65888aec2ba873c0cac07a0f0",
+      "sha256": "0c74f87684ba2fd7c543141b28e4fefa62251b38c20e40a4aa78d43c0d33721b"
+    },
+    {
+      "check": "stationxml_identity_sidecar_matches_raw_epochs",
+      "path": "data/authoritative/stations/investigation/cmw1_earthscope_station_all_epochs.xml",
+      "passed": true,
+      "records": 70,
+      "sha256": "f45757ca33cb5bb7b0bbfbe827fb919a8c1dd73ee928ef711f53c95fdbf45b6f"
+    },
+    {
+      "check": "stationxml_identity_sidecar_matches_raw_epochs",
+      "path": "data/authoritative/stations/investigation/cmw1_ncedc_station_all_epochs.xml",
+      "passed": true,
+      "records": 61,
+      "sha256": "589c360b023f9c53f8ae840cf7d546bad2e02c5e0a313eee274660f111dc89a3"
+    },
+    {
+      "check": "borehole_document_reviewed_station_identifiers",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2005_2006.pdf.identifiers.json",
+      "passed": true,
+      "records": 3
+    },
+    {
+      "check": "borehole_document_reviewed_station_identifiers",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2005_2006.txt.identifiers.json",
+      "passed": true,
+      "records": 3
+    },
+    {
+      "check": "borehole_document_reviewed_station_identifiers",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2013_archived.pdf.identifiers.json",
+      "passed": true,
+      "records": 3
+    },
+    {
+      "check": "borehole_document_reviewed_station_identifiers",
+      "path": "data/authoritative/stations/investigation/borehole/bsl_2013_archived.txt.identifiers.json",
+      "passed": true,
+      "records": 3
+    },
+    {
+      "check": "borehole_document_reviewed_station_identifiers",
+      "path": "data/authoritative/stations/investigation/borehole/usgs_ofr_2000_330.pdf.identifiers.json",
+      "passed": true,
+      "records": 3
+    },
+    {
+      "check": "borehole_document_reviewed_station_identifiers",
+      "path": "data/authoritative/stations/investigation/borehole/usgs_ofr_2000_330.txt.identifiers.json",
+      "passed": true,
+      "records": 3
+    }
+  ],
+  "private_path_scan_files": [
+    "data/authoritative/stations/investigation/borehole/bsl_2005_2006.pdf.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/bsl_2005_2006.pdf.provenance.json",
+    "data/authoritative/stations/investigation/borehole/bsl_2005_2006.txt.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/bsl_2005_2006.txt.provenance.json",
+    "data/authoritative/stations/investigation/borehole/bsl_2013_archived.pdf.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/bsl_2013_archived.pdf.provenance.json",
+    "data/authoritative/stations/investigation/borehole/bsl_2013_archived.txt.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/bsl_2013_archived.txt.provenance.json",
+    "data/authoritative/stations/investigation/borehole/bsl_2013_ncedc.pdf.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/bsl_2013_ncedc.pdf.provenance.json",
+    "data/authoritative/stations/investigation/borehole/bsl_2013_part2.pdf.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/bsl_2013_part2.pdf.provenance.json",
+    "data/authoritative/stations/investigation/borehole/channel_epoch_snapshot.csv",
+    "data/authoritative/stations/investigation/borehole/channel_epoch_snapshot.csv.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/channel_epoch_snapshot.csv.provenance.json",
+    "data/authoritative/stations/investigation/borehole/evidence_manifest.json",
+    "data/authoritative/stations/investigation/borehole/fdsn_stationxml_reference.html.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/fdsn_stationxml_reference.html.provenance.json",
+    "data/authoritative/stations/investigation/borehole/historical_station_rows.csv",
+    "data/authoritative/stations/investigation/borehole/historical_station_rows.csv.provenance.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_1997_catalog_revision.html.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_1997_catalog_revision.html.provenance.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_2015_depth_datum.html.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_2015_depth_datum.html.provenance.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_channel_schema.html.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_channel_schema.html.provenance.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_fdsn_station_help.html.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_fdsn_station_help.html.provenance.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_historical_directory.html.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_historical_directory.html.provenance.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_ncsn_directory.html.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_ncsn_directory.html.provenance.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_spreadsheet.txt.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/ncedc_spreadsheet.txt.provenance.json",
+    "data/authoritative/stations/investigation/borehole/usgs_ofr_2000_330.pdf.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/usgs_ofr_2000_330.pdf.provenance.json",
+    "data/authoritative/stations/investigation/borehole/usgs_ofr_2000_330.txt.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/usgs_ofr_2000_330.txt.provenance.json",
+    "data/authoritative/stations/investigation/borehole/usgs_spreadsheet.txt.identifiers.json",
+    "data/authoritative/stations/investigation/borehole/usgs_spreadsheet.txt.provenance.json",
+    "data/authoritative/stations/investigation/borehole_elevations.md",
+    "data/authoritative/stations/investigation/cmw1_earthscope_fedcatalog_all_epochs.txt.identifiers.json",
+    "data/authoritative/stations/investigation/cmw1_earthscope_fedcatalog_all_epochs.txt.provenance.json",
+    "data/authoritative/stations/investigation/cmw1_earthscope_station_all_epochs.xml.identifiers.json",
+    "data/authoritative/stations/investigation/cmw1_earthscope_station_all_epochs.xml.provenance.json",
+    "data/authoritative/stations/investigation/cmw1_fetch.py",
+    "data/authoritative/stations/investigation/cmw1_historical_channel_epochs.csv",
+    "data/authoritative/stations/investigation/cmw1_historical_match_summary.json",
+    "data/authoritative/stations/investigation/cmw1_historical_pick_matches.csv",
+    "data/authoritative/stations/investigation/cmw1_ncedc_2008_mapping_notice.html.identifiers.json",
+    "data/authoritative/stations/investigation/cmw1_ncedc_2008_mapping_notice.html.provenance.json",
+    "data/authoritative/stations/investigation/cmw1_ncedc_channel_summary_day.txt.identifiers.json",
+    "data/authoritative/stations/investigation/cmw1_ncedc_channel_summary_day.txt.provenance.json",
+    "data/authoritative/stations/investigation/cmw1_ncedc_dart_directory.html.identifiers.json",
+    "data/authoritative/stations/investigation/cmw1_ncedc_dart_directory.html.provenance.json",
+    "data/authoritative/stations/investigation/cmw1_ncedc_station_all_epochs.xml.identifiers.json",
+    "data/authoritative/stations/investigation/cmw1_ncedc_station_all_epochs.xml.provenance.json",
+    "data/authoritative/stations/investigation/cmw1_ncsn_historical_stations.txt.identifiers.json",
+    "data/authoritative/stations/investigation/cmw1_ncsn_historical_stations.txt.provenance.json",
+    "data/authoritative/stations/investigation/cmw1_ncsn_overview.html.identifiers.json",
+    "data/authoritative/stations/investigation/cmw1_ncsn_overview.html.provenance.json",
+    "data/authoritative/stations/investigation/cmw1_ncsn_station_format.txt.identifiers.json",
+    "data/authoritative/stations/investigation/cmw1_ncsn_station_format.txt.provenance.json",
+    "data/authoritative/stations/investigation/cmw1_normalize.py",
+    "data/authoritative/stations/investigation/cmw1_report.md",
+    "data/authoritative/stations/investigation/membership_bsl_2001_2002.identifiers.json",
+    "data/authoritative/stations/investigation/membership_bsl_2001_2002.provenance.json",
+    "data/authoritative/stations/investigation/membership_usgs_01HQGR0157.provenance.json",
+    "data/authoritative/stations/investigation/membership_waldhauser_ellsworth_2002.provenance.json",
+    "data/authoritative/stations/investigation/membership_zhang_thurber_2003.consulted.json",
+    "data/authoritative/stations/investigation/study_membership.md",
+    "data/authoritative/stations/investigation/terrain_check.py",
+    "data/authoritative/stations/investigation/terrain_usgs_NC_CCH1.json",
+    "data/authoritative/stations/investigation/terrain_usgs_NC_CCH1.json.identifiers.json",
+    "data/authoritative/stations/investigation/terrain_usgs_NC_CCH1.json.provenance.json",
+    "data/authoritative/stations/investigation/terrain_usgs_NC_CGP1.json",
+    "data/authoritative/stations/investigation/terrain_usgs_NC_CGP1.json.identifiers.json",
+    "data/authoritative/stations/investigation/terrain_usgs_NC_CGP1.json.provenance.json",
+    "data/authoritative/stations/investigation/terrain_usgs_NC_CSU1.json",
+    "data/authoritative/stations/investigation/terrain_usgs_NC_CSU1.json.identifiers.json",
+    "data/authoritative/stations/investigation/terrain_usgs_NC_CSU1.json.provenance.json"
+  ],
+  "issues": [],
+  "audit_status": "passed",
+  "resolved_during_review": [
+    {
+      "path": "data/authoritative/stations/investigation/cmw1_report.md",
+      "detail": "Root changed the unavailable USGS grant report from direct independent evidence to a search lead; the final report does not claim a successful retrieval."
+    }
+  ]
+}

@@ -1,0 +1,1365 @@
+                   JOURNAL OF GEOPHYSICAL RESEARCH, VOL. 107, NO. B3, 10.1029/2000JB000084, 2002
+
+
+
+
+Fault structure and mechanics of the Hayward Fault,
+California, from double-difference earthquake locations
+Felix Waldhauser1 and William L. Ellsworth
+U.S. Geological Survey, Menlo Park, California, USA
+
+Received 1 December 2000; revised 13 June 2001; accepted 18 August 2001; published 28 March 2002.
+[1] The relationship between small-magnitude seismicity and large-scale crustal faulting along
+the Hayward Fault, California, is investigated using a double-difference (DD) earthquake location
+algorithm. We used the DD method to determine high-resolution hypocenter locations of the
+seismicity that occurred between 1967 and 1998. The DD technique incorporates catalog travel
+time data and relative P and S wave arrival time measurements from waveform cross correlation
+to solve for the hypocentral separation between events. The relocated seismicity reveals a narrow,
+near-vertical fault zone at most locations. This zone follows the Hayward Fault along its northern
+half and then diverges from it to the east near San Leandro, forming the Mission trend. The
+relocated seismicity is consistent with the idea that slip from the Calaveras Fault is transferred
+over the Mission trend onto the northern Hayward Fault. The Mission trend is not clearly
+associated with any mapped active fault as it continues to the south and joins the Calaveras Fault
+at Calaveras Reservoir. In some locations, discrete structures adjacent to the main trace are seen,
+features that were previously hidden in the uncertainty of the network locations. The fine
+structure of the seismicity suggests that the fault surface on the northern Hayward Fault is curved
+or that the events occur on several substructures. Near San Leandro, where the more westerly
+striking trend of the Mission seismicity intersects with the surface trace of the (aseismic) southern
+Hayward Fault, the seismicity remains diffuse after relocation, with strong variation in focal
+mechanisms between adjacent events indicating a highly fractured zone of deformation. The
+seismicity is highly organized in space, especially on the northern Hayward Fault, where it forms
+horizontal, slip-parallel streaks of hypocenters of only a few tens of meters width, bounded by
+areas almost absent of seismic activity. During the interval from 1984 to 1998, when digital
+waveforms are available, we find that fewer than 6.5% of the earthquakes can be classified as
+repeating earthquakes, events that rupture the same fault patch more than one time. These most
+commonly are located in the shallow creeping part of the fault, or within the streaks at greater
+depth. The slow repeat rate of 2– 3 times within the 15-year observation period for events with
+magnitudes around M = 1.5 is indicative of a low slip rate or a high stress drop. The absence of
+microearthquakes over large, contiguous areas of the northern Hayward Fault plane in the depth
+interval from 5 to 10 km and the concentrations of seismicity at these depths suggest that the
+aseismic regions are either locked or retarded and are storing strain energy for release in future
+large-magnitude earthquakes.        INDEX TERMS: 7230 Seismology: Seismicity and
+seismotectonics; 7215 Seismology: Earthquake parameters; 8010 Structural Geology: Fractures
+and faults; 8020 Structural Geology: Mechanics; KEYWORDS: Hayward Fault, seismicity,
+earthquake relocation, fault structure, fault mechanics
+
+
+
+1. Introduction                                                         1999] and is arguably one of the most hazardous faults in the
+                                                                        United States.
+  [2] The Hayward Fault is located on the eastern side of San             [3] The potential of the fault to rupture in large earthquakes is
+Francisco Bay, California, and forms one branch of the San              well documented by an M6.8 earthquake that occurred in 1868 and
+Andreas Fault system that accommodates the relative motion              ruptured the surface at least 30 km from Fremont to somewhere
+between the North American and Pacific plates. It extends for 85        north of San Leandro [Lawson, 1908; Radbruch-Hall, 1974;
+km from south of Fremont on the south to San Pablo Bay on the           Bakun, 1999]. Recent studies suggest that the rupture may have
+north and traverses densely populated urban areas [Lienkaemper et       extended as far north as Oakland [Lienkaemper and Borchardt,
+al., 1991; Graymer et al., 1995] (Figure 1). The fault is considered    1992] or Berkeley [Yu and Segall, 1996]. No other large historic
+the most probable source of a future major earthquake in the area       earthquake has been unequivocally assigned to the Hayward Fault.
+[Working Group on California Earthquake Probabilities (WGCEP),          An 1836 earthquake, long assumed to have ruptured the northern
+                                                                        Hayward Fault, is now believed to have occurred 100 km to the
+    1
+      Now at Lamont-Doherty Earth Observatory of Columbia University,   SE, implying that the northernmost Hayward Fault has not rup-
+Palisades, New York.                                                    tured since the region was settled beginning in 1776 [Bakun and
+                                                                        Wentworth, 1997; Toppozada and Borchardt, 1998]. Paleoseismic
+Copyright 2002 by the American Geophysical Union.                       observations from El Cerrito and the historical record suggest that
+0148-0227/02/2000JB000084$09.00                                         the most recent large event on the northern Hayward Fault occurred
+
+                                                             ESE         3-1
+ESE             3-2         WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT
+
+
+         a 38.2                                                                         b 38.2
+
+                     38.1    San Pablo Bay                                                         38.1
+
+
+
+
+                                      N
+                      38                                                                            38
+
+
+
+                                         Ha
+                                                                                                              PP
+
+
+
+
+                                           yw
+                                             ar
+                     37.9                                                                          37.9            EC
+
+
+
+
+                                             dF
+                                                                                                                    BE
+                     37.8                                                                          37.8                 OK
+                            San
+          latitude
+
+
+
+
+                                                                                        latitude
+                                                            Cal
+                             Francisco
+                                                                                                                             SL
+
+
+
+
+                                                             ave
+                     37.7                SF Bay                                                    37.7
+
+
+
+
+                                                                ras
+                                                                                                                                  HW
+
+
+
+
+                                                                    Fau
+                     37.6                                                                          37.6
+                                                                                                                                       UC
+
+
+
+                                                                        l
+                               Sa
+
+
+
+
+                                                                     t
+                                 nA
+
+
+
+
+                     37.5                                                                          37.5                                     FR
+                                   nd
+                                     re
+
+
+
+
+                                                             S
+                                       as
+
+
+
+
+                     37.4                                                                          37.4
+                                                               Ha
+
+                                                                                                                                                 AR
+                                          Fa
+
+
+
+
+                                                                 yw
+                                            ult
+
+
+
+
+                                                                   ar
+
+
+                            10 km                                                                         10 km
+                                                                      d
+
+
+                     37.3                                                                          37.3
+                                                                            F
+
+
+
+
+                     37.2                                                                          37.2
+                              122.4        122.2      122       121.8           121.6                      122.4        122.2      122           121.8   121.6
+                                               longitude                                                                    longitude
+
+          Figure 1. Overview of San Francisco Bay area faults and seismicity recorded by the Northern California Seismic
+          Network (NCSN). (a) Earthquake locations by the NCSN. (b) Double-difference relocations using NCSN travel time
+          data. Thin lines denote coast and fault lines, triangles in Figure 1a are stations used to relocate the earthquakes. PP,
+          Point Pinole; EC, El Cerrito; BE, Berkeley; OK, Oakland; SL, San Leandro; HW, Hayward; UC, Union City; FR,
+          Fremont; AR, Alum Rock. Boxes indicate areas investigated. Earthquake magnitudes within boxes range from M0.0
+          to M5.8. The small box in Figure 1a includes events shown in Figure 5 and for which catalog and cross-correlation
+          data were used for relocation.
+
+between 1640 and 1776 [Hayward Fault Paleoearthquake Group,                                [7] The seismicity diverges from the mapped surface trace of
+1999]. Williams [1992] documented at least six Hayward Fault                            the Hayward Fault south of San Leandro to follow a more easterly
+ruptures during the past 2100 years in a trenching study on the                         trend down to Fremont. This diverging strand of seismicity lies
+southern Hayward Fault near Fremont.                                                    partly under the more northwesterly trending Mission Fault,
+   [4] At the surface the fault is creeping along its entire length                     although there is no throughgoing structure at the surface that
+[Lienkaemper et al., 1991], although the rate of creep varies                           follows the seismicity trend from the Hayward to the Calaveras
+spatially along the fault trace. A current average creep rate near                      Faults [Wong and Hemphill-Haley, 1992; Andrews et al., 1993;
+the surface of 5 mm/yr and an estimated long-term slip rate of 9                       Graymer et al., 1995]. In this article we will refer to the diverging
+mm/yr suggest that >1 m of slip has accumulated since the 1868                          trend of seismicity as the ‘‘Mission trend.’’ The adjacent principal
+event, and thus M > 6.5 events are now capable of occurring on the                      surface trace of the Hayward Fault is nearly aseismic, although the
+Hayward Fault [Lienkaemper et al., 1991; Savage and Lisowski,                           most southern part of this portion of the fault exhibits the highest
+1993].                                                                                  surface creep rate (10 mm/yr) observed anywhere along the fault
+   [5] About 2000 events with coda duration magnitudes up to                            [Lienkaemper et al., 1991]. The cumulative seismic moment is
+M = 4.6 have been recorded since 1967 by the Northern                                   significantly lower on the Mission trend than on the northern
+California Seismic Network (NCSN) along the Hayward Fault                               Hayward Fault for the time period 1984 – 1998. The Mission Fault
+(Figure 1, small box). Slip produced by these earthquakes and                           has been hypothesized to accommodate the compressive strain in
+fault creep are not enough to accommodate the strain accumu-                            the left step over configuration between the Calaveras and the
+lation on the fault due to relative plate movement. The estimated                       Hayward Faults [Andrews et al., 1993]. On the other hand, because
+30-year probability for rupture of the northern Hayward Fault by                        of the lack of definite evidence of Holocene surface rupture, Wong
+a M6.7 event is 16% and of the southern Hayward Fault is 17%                            and Hemphill-Haley [1992] associated the Mission seismicity to a
+[WGCEP, 1999]. Estimated cost and loss of life from such an                             seismically active buried trace of the Hayward Fault located east of
+event approach tens of billions dollars and several thousand                            its mapped surface trace.
+deaths, respectively.                                                                      [8] The factor of 2 difference between the long-term slip rate
+   [6] The epicentral alignment of the recorded seismicity                              and the observed surface creep rate, the sparse seismicity that is
+correlates well with the mapped surface trace of the fault                              organized in patches on the fault plane, and the paleoseismic
+especially north of San Leandro [Ellsworth et al., 1982;                                rupture history lead to the broadly accepted view that the Hayward
+Oppenheimer et al., 1992; Castillo and Ellsworth, 1993] (Figure                         Fault is accumulating strain at depth. For the northern Hayward
+1). The seismic activity takes place in almost equally spaced                           Fault this view has recently been challenged as geodetic data
+clusters along the fault with a separation distance of 10 km on                         indicate that the northern Hayward Fault north of Berkeley may be
+average. Gravity and magnetic anomalies suggest that the                                creeping at seismogenic depths [Bürgmann et al., 2000; Simpson,
+locations of some of these clusters may correlate with the                              2000].
+presence of mafic and ultramafic rocks within the fault zone                               [9] A major limitation in investigating the behavior of the
+[Ponce et al., 1998]. The clusters are from 2 to 8 km in length                         Hayward Fault is the sparse seismicity and the lack of accurate
+and are separated by quiet regions in which there is very little                        information on the rupture process of the one large historical
+seismicity.                                                                             event. In a collection of papers published by the California
+                     WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT                                  ESE          3-3
+
+Department of Conservation [Borchardt et al., 1992] the instru-          Table 1. One-Dimensional P Velocity Model
+mental seismicity has been studied on the basis of earthquake            Top of Layer, km                                      Vp, km/s
+locations routinely determined by the Northern California Seismic
+Network (NCSN). Although in some cases the events were                          0                                                 3.77
+relocated, it was not possible to observe any fine structure within             1                                                 4.64
+                                                                                3                                                 5.34
+the clusters or to discriminate between on-fault and off-fault                  6                                                 5.75
+seismicity. Recently, Waldhauser et al. [1999] imaged with high                 14                                                6.22
+resolution the seismicity on the northern Hayward Fault using a                 25                                                7.98
+double-difference earthquake location technique [Waldhauser and
+Ellsworth, 2000], revealing the surprising existence of horizontal
+streaks of hypocenters in the fault plane near Berkeley and El
+Cerrito.
+                                                                         portion of the ray path that lies outside the focal volume. Details of
+   [10] In this study we relocate the seismicity recorded between
+                                                                         the DD algorithm are given by Waldhauser and Ellsworth [2000].
+1967 and 1998 by the NCSN along the Hayward and Mission
+                                                                           [13] We use ordinary phase picks from the NCSN earthquake
+Faults using hypoDD [Waldhauser, 2001], a program that imple-
+                                                                         catalog together with high-precision differential travel times from
+ments the double-difference (DD) algorithm by Waldhauser and
+                                                                         phase correlation of P and S waves. The former are expressed as
+Ellsworth [2000]. We obtain relative location uncertainties that are
+                                                                         differential travel times so that the same equation is used for all
+in many cases smaller than the size of individual earthquakes (for
+                                                                         data. The combined use of both catalog and cross-correlation data
+M > 1.5), which enables us to image the fine-scale structure of
+                                                                         permits the simultaneous relocation of all events, with interevent
+the seismically slipping surface. We use the new locations together
+                                                                         distances within clusters of correlated events (multiplets) deter-
+with high-resolution focal mechanisms to find a wide range of
+                                                                         mined to the accuracy of the cross-correlation data, whereas
+complex seismicity patterns and style of faulting, which we
+                                                                         relative locations between the multiplets and uncorrelated events
+analyze in terms of the structure and mechanics of the Hayward
+                                                                         are determined to the accuracy of the absolute data.
+Fault system.
+                                                                         2.1. Catalog Travel Time Differences
+                                                                            [14] Travel times routinely computed from P wave arrival times
+2. Data Analysis                                                         of 13,800 events recorded by the NCSN between 1967 and 1998
+                                                                         near the Hayward/Mission Faults (see large box in Figure 1) are
+  [11] The DD earthquake relocation algorithm takes advantage            differenced for pairs of earthquakes at each station that observed
+of the fact that if the hypocentral separation between two earth-        both events. The travel time differences are selected to build a
+quakes is small compared to the event-station distance and the           network of pair-wise connected events in which any event is linked
+scale length of velocity heterogeneity, then the ray paths between       to a maximum of 10 neighboring events by at least eight pair-wise
+the source region and a common station are similar along almost          observations, so that all events are simultaneously relocated
+the entire ray path [Fréchet, 1985; Got et al., 1994]. In this case,    relative to each other. An NCSN pick quality of 0, 1, or 2 is used.
+the difference in travel times for two events observed at one station    Only event pairs with hypocentral separation <10 km are consid-
+can be attributed to the spatial offset between the events by            ered to keep the effect of ray path differences outside the source
+differencing Geiger’s equation for earthquake location [Wald-            region small [Waldhauser and Ellsworth, 2000].
+hauser and Ellsworth, 2000]:                                                [15] Figure 2a shows 250,000 selected catalog travel time
+                                                                         differences as a function of separation distance obtained from
+        dtik       dtjk                obs          cal              events on the Hayward and Mission Faults for the time period
+             mi       mj ¼ tik  tjk      tik  tjk ;         ð1Þ    1984 – 1998 using 260 stations; 99.7% of the catalog travel-time
+        dm         dm
+                                                                         differences are smaller than the maximum travel time difference
+                                                                         expected for a given event pair offset when the station lies on the
+where the right-hand side is the difference between observed and         line connecting both events. Travel time differences are close to 0 s
+calculated travel time difference between two events, i and j, at        at zero event pair offset and generally smaller than 2 s at offsets
+station k (a double difference), and m are the changes required in      of 10 km, indicating an average source region velocity of 5 km/s.
+the hypocentral parameters to make the model better fit the data.        Data above the indicated straight line in Figure 2a are considered to
+The partial derivatives of the travel times t for events i and j, with   be outliers and are removed before relocation. The concentration of
+respect to their locations (x,y,z) and origin times (t), respectively,   outliers near the zero offset (Figure 2b) is due to the increased
+are calculated from a one-dimensional (1-D) layered velocity             number of observations for nearby events in our sampling scheme.
+model for the current hypocenters and the location of the station        Outliers that occur within the triangular area below the line,
+where the kth phase was recorded. We use the velocity model used         however, cannot be detected by this approach. Theoretically, we
+for routine location by the NCSN for events on the Hayward Fault         could detect these outliers by predicting travel time differences
+(Table 1). The S velocity model  pﬃﬃﬃ is obtained by scaling the P      based on the offset of an event pair and its relative orientation to a
+velocity model by a factor 1 3: The use of a 1-D model is                specific station. For a horizontally aligned event pair, for example,
+appropriate since the DD algorithm cancels errors due to                 delay times plotted against observation azimuth describe a sine
+unmodeled velocity structure.                                            curve with the amplitude scaled by the length of the offset.
+   [12] DD equations are built to link each event to several             However, the uncertainty in the catalog locations, and thus the
+neighboring events, so that all events are connected and the             uncertainty in the orientation of the event pair, is too large to detect
+solution for the adjustment to each hypocenter can be determined         such outliers efficiently. We remove these outliers during reloca-
+simultaneously. The DD vector is minimized by weighted least             tion.
+squares using the conjugate gradient method (LSQR) [Paige and
+Saunders, 1982]. Solutions are found by iteratively adjusting the        2.2. Cross-Correlation Travel Time Differentials
+vector difference between hypocentral pairs [Waldhauser, 2001].            [16] In addition to the catalog travel time differences for events
+When the earthquake location problem is linearized using the DD          that are on or close to the Hayward/Mission Faults (small box in
+equations, the common mode errors cancel, principally those              Figure 1a) we measure travel time differentials for each event pair
+related to the receiver-side structure. Thus we avoid the need for       with waveforms that correlated at a common station using the
+station corrections or high-accuracy predicted travel times for the      cross-spectral method described by Poupinet et al. [1984]. Identi-
+ESE         3-4                         WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT
+
+
+                                                   Catalog Data                 respect to the other. In 3.2% of the data with both P and S wave
+           a                10                                                  measurements, however, we observe sign changes between P and S
+                                                                                delay times. The distribution of the differences between P and S
+                             8                                                  delay times of these inconsistent data (Figure 3b) shows that 20%
+                                                                                of the data have a difference between P and S delay times <5 ms,
+                                                                                reflecting measurement uncertainties for close-by events rather
+           Delay time [s]
+
+
+
+                             6
+                                                                                than outliers. Data in the tails of Figure 3b represent outliers
+                                                                                (e.g., misaligned phases), either in the P wave or the S wave data,
+                             4                                                  or both. Coherency values of these data, however, are typically
+                                                                                low, and the measurements will therefore be downweighted during
+                             2
+                                                                                relocation.
+                                                                                2.3. Data Weighting
+                             0                                                    [18] The catalog data are downweighted by a factor of 100
+                                 0        2         4         6        8   10
+                                              Separation distance [km]          relative to the cross-correlation data. Cross-correlation data are a
+                                                                                priori weighted by the squared coherency catalog data by weights
+                                     4
+                                 x 10                                           of 1, 0.75, and 0.25 for NCSN pick qualities 0, 1, and 2. Equal
+           b                 6
+                                                                                weights are used for P and S wave cross-correlation data. Resid-
+                             5
+                                                                                uals are reweighted after each iteration according to the misfit and
+                                                                                the distance between events [Waldhauser and Ellsworth, 2000]
+                             4                                                  (Figure 4). Catalog and cross-correlation data are removed/
+                                                                                reweighted for event pairs with separation distances larger/smaller
+                   Counts
+
+
+
+
+                             3                                                  than 10 and 2 km, respectively. Weights are highest for close-by
+                                                                                events and drop exponentially with increasing separation distance.
+                             2                                                  Residuals larger than 6 times the median absolute deviation from
+                                                                                the median of each data type are considered outliers and discarded.
+                             1
+                                                                                When using both data types simultaneously, one has to be aware
+                             0                                                  that the first-motion arrival times image the point of rupture
+                                 0        2         4         6        8   10   initiation (hypocenter), whereas cross-correlation data image the
+                                              Separation distance [km]
+
+Figure 2. (a) Catalog travel time differences for event pairs as a
+function of the distance between the events, computed for 1700                                                           Cross-correlation Data
+events recorded along the Hayward Fault between 1984 and 1998.                                10000
+Travel time differences above the straight line are considered
+                                                                                                            a
+outliers. The straight line represents travel time differences                                 8000
+between two events computed with a constant source region
+velocity of 5 km/s. The line is shifted by 0.5 s along the time axis                           6000
+                                                                                     Counts
+
+
+
+
+to account for possible uncertainties in the catalog locations. (b)
+Number of measured travel time differences as a function of                                    4000
+distance between the events.
+                                                                                               2000
+
+cal waveforms occur when the sources have a common slip surface                                         0
+(i.e., a repeating earthquake). Waveform similarity decreases with                                      0.5         0.6        0.7     0.8         0.9    1
+event pair separation because of increasingly different wave                                                                    Coherency
+propagation paths and/or focal mechanisms and generally breaks
+down after the separation distance exceeds roughly the first Fresnel
+zone (300 m for 5-Hz P waves). We use the digital waveforms                                                       Erroneous Cross-correlation Data
+recorded on vertical component seismometers and archived since                                         30
+1984 by the NCSN. Stations at distances of up to 200 km from the                                              b
+event pair centroid are used. Two waveforms recorded at a specific                                     25
+station are considered similar when half of the squared coherency
+                                                                                                       20
+values, in the frequency range 2 – 10 Hz, of a tapered 2.56-s (256
+                                                                                              Counts
+
+
+
+
+samples) window containing the P wave (S wave) train, exceed                                           15
+0.9. For two similar waveforms the time difference is proportional
+to the slope of the phase of the cross spectrum [Poupinet et al.,                                      10
+1984]. For sufficiently similar signals a precision of 1 ms can be
+achieved for the measurement of time differences in the energy of                                       5
+P and S arrivals from data digitized at 10-ms intervals [Poupinet et
+                                                                                                        0
+al., 1984; Fréchet, 1985].                                                                                       -0.2    -0.1       0     0.1      0.2   0.3
+   [17] The distributions of coherency values for 56,000 measured                                                             dtP - dtS [sec]
+P and S wave differential travel times are shown in Figure 3a.
+Both distributions feature a peak at 0.9 coherency, indicating the              Figure 3. Quality and distribution of cross-correlation data. (a)
+high quality of the data. Outliers are difficult to detect prior to             Histogram of coherency values of P phases (solid) and S phases
+relocation, but we can assess the consistency between the P and S               (shaded) used to determine travel time differences between events
+wave data. For a given event pair and station we expect P and S                 at common stations. (b) Distribution of the differences in travel
+wave delay times to be either negative or positive, i.e., exhibiting            time differences between cross-correlation P and S wave data for
+either a delay or an advance of the travel time of one event with               pairs of events that have opposite signs at a common station.
+                              WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT                        ESE         3-5
+
+                                        Residual [s] -----               average horizontal and vertical uncertainties in the routine loca-
+                                                                         tions are 370 and 680 m, respectively. In general, the error
+                        0.0   0.04     0.08     0.12     0.16      0.2   estimates in hypocenter location decreased by an order of magni-
+                    0
+                   10                                                    tude. The resolution estimates reflect the relative location uncer-
+                                                                         tainty, but the absolute location uncertainty might be larger.
+                                                                            [21] The improvement in relative hypocenter location is, to first
+                                                             cat         order, due to the use of travel time differences as the data, which
+                    -1         c-c                                       minimizes common model travel time errors [Waldhauser and
+                   10                                                    Ellsworth, 2000]. The further improvement of the correlated events
+                                                                         is due to the increased accuracy with which cross-correlation
+                                                                         techniques measure P and S wave delay times (1 ms). This is
+    log (weight)
+
+
+
+
+                                                                         particularly important for S waves for which absolute arrivals
+                    -2               cat 0                               cannot be identified on the vertical component seismograms but
+                   10
+                                     cat 1
+                                                                         for which the relative travel time for two similar events can easily
+                                                                         be measured with cross correlation.
+                                                                            [22] In map view the relocated seismicity reveals a narrow fault
+                                     cat 2
+                    -3                                                   zone at most locations along the Hayward and Mission trends. In
+                   10                                                    some locations, discrete structures adjacent to the main trace are
+                                                                         seen, features that were previously hidden in the uncertainty of the
+                                                                         routine locations (Figures 1 and 5). Near San Leandro, where the
+                                                                         more westerly striking Mission seismicity trend intersects the
+                    -4                                                   Hayward Fault, the seismicity remains diffuse, indicating a more
+                   10
+                         0     2         4        6           8    10    volumetric zone of deformation to the northwest of the main trace
+                                                                         of the Hayward Fault. Most of the on-fault seismicity collapses into
+                                         Offset [km]
+                                                                         narrow lines of epicenters that are oriented in the general direction
+Figure 4. Reweighting functions used to downweight/reject data           of the trend of the seismicity (Figure 5b). Off-fault activity is
+with large distances between the events (shown for cross-                notable near Berkeley where the seismicity forms tight clusters to
+correlation data, 2 km, and catalog data, 10 km, of different            the east of a well-defined Hayward Fault surface. The southern
+weight classes; solid lines) and/or large residuals (shown for           Hayward Fault as mapped at the surface is aseismic except for a
+catalog data only and a typical rejection threshold of 0.2 s; dashed     small cluster of events slightly to the northeast of the fault near
+line). From Waldhauser and Ellsworth [2000].                             Alum Rock (AR, Figure 1). Few earthquakes are located southwest
+                                                                         of the Hayward Fault.
+                                                                            [23] Fault-parallel cross-sectional views of the on-fault seismic-
+center of moment release (hypocentroid) as the cross spectra of          ity indicate that most of the events are located within a depth range
+entire P or S phases are used to estimate the time delays between        of 3 – 13 km (Figure 5b). The maximum depths are more constant
+the event arrivals.                                                      on the Hayward Fault than on the Mission trend. Most of the
+                                                                         earthquakes cluster in patches on the fault surface, with large
+3. Relocation Results                                                    regions devoid of detectable earthquakes adjacent to the clusters.
+                                                                         The aseismic regions at depths shallower than 4 km are believed
+   [19] While catalog P wave travel times are available for events       to release stress primarily by creep [Savage and Lisowski, 1993].
+that date back as far as 1967, digital waveforms were archived by        Creep is likely to also occur in regions of the fault characterized by
+the NCSN only from 1984. To account for the different time               dense microseismicity.
+periods and data quality, we perform two sets of relocations. The           [24] In fault-parallel cross section the relocated events reveal
+first set includes catalog data of 13,764 well-located and well-         that only a small fraction of the fault plane slips seismically,
+connected events (84% of the events listed in the catalog) that          compared to a much larger area that might be inferred from the
+occurred between 1967 and 1998 and are located within a larger           catalog locations. This is mostly evident on the northern Hayward
+area encompassing the Hayward/Mission Fault system (large box            Fault between Point Pinole and Berkeley, where the relocated
+in Figure 1a). The epicenter distribution of the 13,598 relocated        hypocenters form seismic streaks or lineations, alignments of
+events is shown in Figure 1b. Events get deleted during relocation       hypocenters along one-dimensional horizontal structures (P1, E1,
+when they loose linkage to neighboring events due to outlier             E2, B1, B2 in Figure 5b) [Waldhauser et al., 1999]. The streaks
+removal. The RMS residual decreased by 75% from 78 to 18                seem to bound holes, large areas where seismicity is sparse or
+ms after relocation.                                                     absent. The seismicity on the Hayward Fault south of Berkeley and
+   [20] The second set includes catalog and waveform data of             on the Mission trend is more scattered in depth, and fewer events
+events between 1984 and 1998 that are located on the Hayward/            correlate. Three small groups of correlated events in the San
+Mission Faults or are within 10 km of the surface trace of the          Leandro cluster form short southeast dipping streaks (S1, S2, S3
+Hayward Fault (Figure 5a). The combined data set of 300,000             in Figure 5b) that parallel the Hayward Fault. These streaks,
+delay time observations enables us to relocate 97% of the 1251           composed of 10 events each and extending over a few hundred
+hypocenters listed in the NCSN catalog (Figure 5b). Most of the          meters, are many times smaller in size and length than the ones
+excluded events do not have waveforms and/or have only few and           observed farther north (several tens of events along 2000 m).
+low-quality first-arrival picks. Sixty-two percent of the events have    Although short, the horizontal alignment of the hypocenters is
+at least four cross-correlation measurements. In Figure 5b, groups       unambiguous. On the Mission Fault the distribution of correlated
+of eight or more events with highly correlated waveforms are             events is more diffuse. Near Hayward, the shallow multiplet H1 at
+indicated in red and labeled. Routine locations for correlated events    3 km depth seems to trend more westerly than the multiplet H2 at
+are dramatically improved by including the phase correlation             a depth of 6 km (Figure 5).
+measurements, with RMS error decreasing by 95% from 110 to                  [25] Cross-sectional views perpendicular to the fault (Figure 5b)
+5 ms. The RMS error for catalog P wave data decreased by 50% to          show that the general dip of the fault is near-vertical, although it
+54 ms. The mean shifts in horizontal and vertical direction during      dips slightly to the northeast near El Cerrito and Union City. While
+relocation are 250 and 520 m, respectively. In comparison, the           the seismicity on the northern Hayward Fault clearly underlies the
+ESE                   3-6                        WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT
+
+
+         a)                                                                                                                  CATALOG LOCATIONS 1984-1998
+                                                                                                                                                          Map View
+
+                                 5
+             distance [km]
+
+
+
+
+                                 0       A
+                                                                                                                                                                                                                                                                                      A'
+                                                         l   e                                                                                                            d   ro
+                                                      no                                 o                               y                                             an                            rd                               ity                              t
+                             -5                  Pi                                rit                              le                            nd              Le
+                                                                                                                                                                                                                                  C                               on
+                                            nt                                er                               ke                            la                                                 wa                           on                               m
+                                        i                                 C                                r                            ak                    n                             y                            i                                e
+                                     Po                                El                               Be                          O                      Sa                            Ha                           Un                               Fr
+
+                                     0                                    10                                             20                            30            40                                          50                              60                              70
+                                     A                                                                                                                 Fault Plane View                                                                                                          A'
+                                 0
+      depth [km]
+
+
+
+
+                             5
+
+
+                            10
+
+
+                            15
+                                     0                                    10                                             20                   30           40                                                    50                              60                              70
+                                                                                                                                         Distance Along Strike [km]
+
+         b)                                                                                                                          AFTER RELOCATION
+                                                                                                                                                          Map View
+
+                                                                                                                BE'
+                              5
+            distance [km]
+
+
+
+
+                                                                          EC'                                                                                                                                                     UC'                          FR'
+                                                                                                        B3                                   OK'                        SL'                                HW'
+                                                                                    E2            B1                                                          S2                                                       U2                   U1             F3
+                              0          A                                                   E1                                                                           S1                              H2                                                                F2
+                                                       P1                                                                     B2
+                                                                                                                                                                         S3                                    H1                                     F1                              A'
+                                                                                                         BE
+                                                                         EC
+                                                                                                                                                                                                           HW                         UC                       FR
+                              -5                                                                                                         OK                        SL
+
+
+                                  0                                       10                                             20                            30            40                                          50                              60                              70
+                                     A                                                                                                                 Fault Plane View                                                                                                          A'
+                              0
+                                                                                                                                                                                                               H1
+                                                                                    E3
+                                                                                                                                                                         S3
+      depth [km]
+
+
+
+
+                              5                              P1                              E1                               B2                                          S1                                   H2
+                                                                                                                                                                                                                                                      F3                    F2
+                                                                                    E2                                                                                                                                U2
+                             10                                                                   B1                                                          S2
+                                                                                                                                                                                                                                            U1         F1
+
+
+                             15
+                                  0                                       10                                             20                  30           40                                                     50                              60                              70
+                                                                                                                                        Distance Along Strike [km]
+                                                                                                                                            Fault Normal View
+                                 EC              EC              EC'          BE              BE        BE'                  OK    OK OK'                SL        SL              SL'   HW          HW HW'           UC          UC         UC'           FR              FR        FR'
+                             0                   v                                       v                                         v                              v                      v                            v                                    v
+
+                             2                                                                                                                                                                       H1
+                                                  E3
+                                                                                                                                                                          S3
+                             4
+       depth [km]
+
+
+
+
+                                                                                              B2                                                                                   S1                                                                                            F3
+                             6           E1                                                                                                                                                               H2
+                                                                                                                                                                                                                                                                   F2
+                             8                                                                                                                                                                                          U2
+                                                 E2
+                            10                                                     B2                                                                                                                                                       U1                                  F1
+                                                                                                                                                                                   S2
+                                                                                                   E3
+                            12
+
+                            14
+                                 -2 0     2     4                               -2 0      2                                  -4 -2 0        2            -4 -2 0        2                 -2 0      2                  -2 0      2                          -4 -2 0
+                                  distance [km]                                distance [km]                                  distance [km]               distance [km]                  distance [km]                distance [km]                        distance [km]
+                    WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT                               ESE         3-7
+
+
+
+
+          Figure 6. Stereoscopic plot of hypocenters. View is from 50 km above the surface near the San Leandro cluster in
+          the middle of the box. Surface trace of the Hayward Fault is indicated. Size of box corresponds approximately to the
+          small box shown in Figure 1a. View figure from 30 cm distance and try to superimpose the two boxes until it snaps
+          into a 3-D view. Be patient.
+
+
+surface trace of the fault, the association of seismicity and mapped   Along streak B1 at a depth of 10 km the width is as small as 25
+fault trace south of San Leandro is less clear. The geometry of the    m. Such narrow fault zones are consistent with geologic findings
+seismically active fault is easily seen in a three-dimensional view    [Chester et al., 1993] and studies based on a comparison of plate
+of the hypocenters by means of stereoscopic plotting in Figure 6.      rates to seismic moment release in the Bay area [King et al., 1994].
+At some locations, in particular, north of Oakland, the active fault   In contrast, the seismicity near San Leandro forms a large-scale
+zone is very narrow. The width of the streaks and presumably that      inverted flower structure, with the width of the earthquake dis-
+of the active fault plane at these locations is generally <200 m.      tribution at greater depth being many times larger than the mis-
+
+
+
+Figure 5. (opposite) (a) NCSN locations and (b) double-difference locations of events recorded between 1984 and 1998, including
+catalog P and cross-correlation P and S wave data. Map view (rotated so that fault trace points east-west) and longitudinal cross sections
+(in kilometers from Point Pinole) are shown. Fault-normal cross sections are shown for the relocated seismicity only. Earthquakes in
+longitudinal cross sections are plotted as circles of dimensions appropriate for their magnitude assuming a 30-bar constant stress drop
+source. Boxes in map views include events shown in cross sections. In Figure 5b, groups of eight or more correlated events are indicated
+in red and labeled (see text for details). In fault-normal cross sections, ‘‘v’’ indicates the surface trace of the Hayward Fault. See color
+version of this figure at back of this issue.
+ESE         3-8      WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT
+
+
+                                 38.1
+                                                                          55
+                                                P1                        28
+
+                                          60
+                                  38
+                                                                                    57
+                                          26                           E2
+                                                                                     B3
+                                          25                           E1
+                                                                                               40
+                                                                                    48
+                                          68
+                                                                                               58
+                                 37.9                                               6
+                                                     B1                                        9
+                                                     33                                        8         29
+                      latitude
+
+
+
+
+                                                     B2                                                  1
+                                 37.8                        47
+                                                                                                         7
+                                                             46
+                                                                                                         S2
+                                                                  11
+                                                                                                         14           61
+                                                                  12
+                                 37.7                                                                    59           U2
+                                                                  38
+                                                                                    S3                   S1           41
+                                                                  24                     H2
+                                                                                                                      31
+                                                                  13                     H1
+                                 37.6
+                                                                  70                                                  53
+                                                                                                         F1
+                                                 10 km                              23                                     30
+                                                                                                         F3
+                                                                                    22
+                                                                                                         F2
+                                 37.5
+                                        122.4        122.3        122.2            122.1           122        121.9        121.8
+                                                                               longitude
+
+          Figure 7. Epicenter distribution (dots) with single event (shaded) and composite focal mechanisms (solid). Thin
+          lines denote coast lines and fault trace. See text for labels. Labels of composite mechanisms correspond to multiplet
+          labels in Figure 5b.
+
+
+location accuracy. This implies that the seismicity is occurring on              seismicity and the surface trace. Small variations in the strike of
+structures adjacent to the Hayward Fault or that the fault consists of           the composite mechanisms for the streaks are consistent with
+several substructures at this location. The short, southeast dipping             the variation in streak orientation (Figure 8). We observe a trend
+streaks S1, S2, and S3 (Figure 5b) may represent the slip direction              of N45W for streak E1 near El Cerrito, while the fault plane
+on such secondary faults.                                                        solution gives a strike of N41W (±5) (Figure 8a). Similarly, a
+                                                                                 trend of N55W is observed for the deeper streaks E2 near El
+4. Focal Mechanisms                                                              Cerrito (Figure 8b) and B1 near Berkeley (Figure 8c), consistent
+                                                                                 with the strike of N57W (±3) obtained from the fault plane
+   [26] We compute well-constrained P wave focal mechanisms                      solutions. Although streak P1 near Point Pinole is only 700 m
+having a minimum of 30 first-motion picks for selected M > 2.5                   in length, it exhibits a clear N55W direction which agrees with
+events with the newly computed takeoff angles (Figure 7,                         the fault plane solution at the 95% confidence level (N50E ±
+shaded mechanisms). The mechanisms and 95% confidence                            5) (Figure 8e). These results indicate that the trend of the
+regions were determined using FPFIT, a least squares grid                        deeper fault plane is 10 more northerly than the shallow
+search procedure which minimizes the number of discrepant                        trend (see 3-D view in Figure 6). The change in strike occurs
+first motions [Reasenberg and Oppenheimer, 1985]. In addition                    across the almost aseismic depth interval from 5 to 9 km,
+to the single-event focal mechanisms we compute composite                        indicating a curved fault surface or different structures on which
+mechanisms (solid mechanisms in Figure 7) for events that                        the events occur. The streaks at shallow depths show a slight
+belong to a multiplet. First motions of such correlated events                   counterclockwise rotation in strike from southeast (Berkeley) to
+are, in general, consistent, which is what we expect because of                  northwest (El Cerrito) (see mechanisms B2, E1, and 33 in
+the high similarity of the waveforms. Hence variations in focal                  Figure 7).
+mechanisms of individual events within a multiplet are due to                       [28] The composite focal mechanism for the off-fault multiplet
+variations in the number of observations per event or errors in                  B3 near Berkeley as well as focal mechanisms from single events
+the reading and not due to variations in faulting. Thus we can                   (6 and 48 in Figure 7) within that cluster all show shear parallel to
+enhance the solution of these events by computing composite                      the main trace of the Hayward Fault. This is different from what is
+mechanisms.                                                                      observed, for example, on the creeping San Andreas Fault near
+   [27] The focal mechanisms displayed in Figure 7 show that                     Stone Canyon or along the Calaveras Fault [Zoback et al., 1987;
+the dominant style of deformation along the Hayward/Mission                      Oppenheimer et al., 1988], where maximum stress orientations
+Faults is right-lateral strike slip on NW trending planes, with                  show fault normal compression off the fault, arguing for a weak
+indication of convergent components near San Leandro and on                      rheology of these faults.
+the Mission Fault. Events on the northern Hayward Fault north                       [29] The diffuse spatial distribution of the events and the strong
+of Oakland exhibit pure strike-slip motion, indicating a fault                   variation in focal mechanisms between close-by events near Oak-
+plane with a strike that is consistent with the trend of the                     land and San Leandro argue for a highly fractured zone. Only 40%
+            WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT                                                                                    ESE   3-9
+
+                 a)                                                                                 b)
+                                             1                         E1                                             1                     E2
+
+
+
+                 distance [km]
+
+
+
+
+                                                                                                    distance [km]
+                                            0.5                                                                     0.5
+                                             0                                                                        0
+                                    -0.5                                                                            -0.5
+                                                                                P                                                                       P
+                                             -1                                                                      -1
+                                                  -1         0       1                                                     -1         0       1
+                                                       distance [km]                                                            distance [km]
+                 c)                                                                                 d)
+                                             2                                                                        1
+                                                                       B1                                                                   B2
+                                                                                P
+                            distance [km]
+
+
+
+
+                                                                                                    distance [km]
+                                                                                                                                                            P
+                                             1                                                                      0.5
+                                             0                                                                        0
+
+                                             -1                                                                     -0.5
+
+                                             -2                                                                      -1
+                                              -2             0          2                                                  -1         0       1
+                                                       distance [km]                                                            distance [km]
+                 e)
+                                            0.5
+                                                                       P1
+                 distance [km]
+
+
+
+
+                                             0
+
+                                                                                P
+
+                                    -0.5
+                                      -0.5                   0       0.5
+                                                       distance [km]
+
+Figure 8. Map view of events and composite focal mechanisms of the streaks (a) E1, (b) E2, (c) B1, (d) B2, and (e)
+P1 on the northern Hayward Fault. Crosses indicate 2s errors.
+
+
+
+
+                                                                                             30
+
+                 50                                                                          25
+
+                                                                                             20
+                                                                                    Number
+
+
+
+
+                 40                                                                          15
+
+                                                                                             10
+        Number
+
+
+
+
+                 30                                                                          5
+
+                                                                                             0
+                                                                                              0      5                     10        15      20        25       30
+                                                                                                                                    Days
+                 20
+
+
+
+                 10
+
+
+
+                      0
+                       0                                     2              4                       6                              8              10                 12
+                                                                                                  Years
+Figure 9. Histograms of recurrence intervals for all events on the Hayward/Mission Faults that are closeby and
+successive. Inset shows the distribution of intervals <1 month.
+ESE                       3 - 10      WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT
+
+
+
+a                      NW                                                     Surface Creep Rate                                                                     SW
+                  10
+        mm/year
+
+
+
+
+                   5
+
+
+
+                                                                              On Fault Seismicity
+                  0
+                                       b                                                                                       c
+ Depth [km]
+
+
+
+
+                  5
+                                                                                  B
+                                                                 A
+              10                                                                                                      C                                   D
+                                                     d
+
+              15
+                      0                        10        20                       30             40                       50                             60           70
+                                                                              Distance Along Strike [km]
+
+                           b                             d
+                       2.65                                            9.45
+                                                                                                                  55
+                                                          Depth [km]
+
+
+
+
+                                           7                            9.5
+                          2.7                                                                 10
+                                                                       9.55
+                       2.75                                             9.6      21                       3
+                                                                                         51
+                                                                       9.65                                               56
+                          2.8
+                                9.8            9.9                               15.6          15.8             16         16.2                               16.4    16.6
+                                                                                                              Distance [km]
+                          c                              e             2000                                                                      4
+                                                                                                                           56 24
+                                                                                         51           3          55                          4
+                       4.35                                                                                                         4
+                                                                                                                                    24
+                                                                       1995       21                      3
+                                                             Year
+
+
+
+
+                                      35                                                  51 10                  55       56       24    4   4                4
+
+                          4.4                                          1990
+                                                                                  21                                               24
+                                                                                              10          3               56             4           4
+                       4.45                                            1985
+                         50.05 50.1 50.15                                        15.6          15.8             16          16.2                              16.4    16.6
+                                                                                                              Distance [km]
+                       Figure 10. (a) (top) Surface creep rate along the Hayward Fault [after Lienkaemper et al., 2001]. Bars represent
+                       uncertainties. (bottom) Longitudinal cross section of seismicity as in Figure 5b. The location of repeating earthquake
+                       sequences are indicated by dots. For A, B, C, and D, see text. (b), (c), and (d) Zoom into locations of interest. (e)
+                       Time-distance plots of events shown in Figure 10d with rupture lengths displayed as a function of position along the
+                       streak versus date of occurrence. Thick circles in Figures 10b – 10d and thick lines in Figure 10e denote repeating
+                       earthquakes. Numbers attached to sequences correspond to numbers in Table 1.
+
+
+of the events in these clusters correlate, compared to 80% in                           evidence for a change in strike as observed in the relocated
+clusters like El Cerrito or Fremont. The variation in faulting in the                    seismicity (Figures 5 and 8). This might indicate that the shallow
+San Leandro – Oakland area persists to depth as shown by a reverse                       seismicity occurs on en echelon structures (Figure 6). Near Union
+event (40) that occurred at a depth of 9 km. Some events (1, 7, 14,                     City one event (41 in Figure 7) indicates dip-slip motion. Near
+59, 29 in Figure 7) indicate strike-slip motion on northwest trending                    Fremont, composite focal mechanisms for multiplets F1 and F3
+planes, while others (11, 12, 13, 24, 38, S3 in Figure 7) exhibit                        are consistent with a vertical fault plane. Events in multiplet F2
+right-lateral strike slip on a shallow northeast dipping plane. The                      show compressional components, as does an event (53) that lies
+M4.5 earthquake of 27 March 1984 appears to occur on the latter                          slightly to the east of the main fault (Figure 7).
+structure (large circle, located at 35 km distance and 6 km depth in
+the cross section of Figure 5b), although its focal mechanism (70 in                     5. Repeating Earthquakes
+Figure 7) indicates oblique right-lateral reverse motion.
+   [30] On the Mission Fault near Hayward the composite mech-                              [31] Location uncertainties in the meter range for events that
+anisms for the two elongated multiplets H1 and H2 do not show                            correlate permit us to investigate the existence of repeating
+                  WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT   ESE   3 - 11
+
+Table 2. Repeating Earthquakes
+    Date                Time, UT       Latitude        Longitude       Depth, km           Mag      ID
+  4 Nov. 1992           1135:08.4     38.03734        122.40607          6.332            1.7       63
+ 31 May 1998            0945:18.9     38.03734        122.40607          6.335            1.7       63
+  6 May 1985            0108:05.1     37.91717        122.29480          2.729            1.8        7
+ 31 July 1993           1219:04.6     37.91710        122.29484          2.734            1.8        7
+ 19 Oct. 1997           172353.4      37.91710        122.29483          2.730            1.5        7
+ 3 March 1986           0518:14.8     37.93170        122.30281          4.975            1.5       19
+ 12 June 1991           0637:11.9     37.93180        122.30306          4.987            1.2       19
+ 28 Dec. 1986           0449:33.7     37.95211        122.30498          8.654            1.6       27
+  3 June 1996           0715:43.5     37.95203        122.30446          8.657            1.8       27
+ 19 Feb. 1989           0232:17.9     37.95815        122.30934          9.275            1.5       42
+ 13 Sept. 1993          0801:34.2     37.95826        122.30910          9.301            1.5       42
+  4 Nov. 1991           1054:18.1     37.86287        122.23271          9.621            1.6       52
+  4 June 1997           0745:38.6     37.86300        122.23272          9.619            1.4       52
+ 19 Nov. 1991           1919:00.0     37.86592        122.23716         10.492            1.6       53
+  29 May 1998           1829:42.4     37.86619        122.23728         10.510            1.7       53
+ 14 May 1992            2104:41.0     37.80116        122.19738         10.258            1.5       60
+ 15 May 1996            0411:37.0     37.80075        122.19734         10.291            1.9       60
+ 16 Oct. 1986           1120:37.2     37.75521        122.13379          7.837            2.4       23
+ 14 Jan. 1987           1307:39.5     37.75567        122.13376          7.882            2.4       23
+  7 June 1990           2230:58.1     37.75551        122.13431          7.831            2.3       23
+ 20 Nov. 1994           1129:46.7     37.76992        122.19230         11.159            1.4       77
+  4 June 1997           1028:07.4     37.76999        122.19217         11.127            1.1       77
+  7 April 1984          1133:36.0     37.74735        122.14401          4.023            1.9        1
+ 26 July 1989           1045:37.8     37.74724        122.14414          4.026            1.9        1
+ 27 Feb. 1986           1347:15.1     37.72635        122.12038          3.993            1.3       18
+  6 Nov. 1994           0555:17.5     37.72617        122.12043          4.010            1.1       18
+ 27 Jan. 1986           1935:30.4     37.71180        122.10612          5.302            1.7       15
+ 29 Jan. 1995           0753:39.0     37.71172        122.10620          5.286            1.4       15
+ 24 May 1988            1748:27.1     37.65070        122.03842          5.541            1.5       37
+ 24 Jan. 1998           1848:29.5     37.65039        122.03843          5.504            1.5       37
+ 22 Dec. 1990           0543:30.7     37.65084        122.04206          3.694            1.2       49
+  9 Dec. 1994           1404:32.1     37.65083        122.04206          3.706            1.1       49
+ 31 Jan. 1986           0319:12.9     37.64750        122.04432          2.625            1.0       16
+ 25 Dec. 1987           1840:10.3     37.64749        122.04443          2.620            1.0       16
+ 18 Feb. 1988           1054:21.7     37.62963        122.01853          4.414            1.4       35
+ 21 Sept. 1997          0451:42.0     37.62947        122.01848          4.386            1.4       35
+ 14 Aug. 1990           0001:43.7     37.60884        121.99156          6.114            2.9       48
+  6 Aug. 1993           2334:49.9     37.60875        121.99174          6.127            2.6       48
+  4 Feb. 1992           2059:32.8     37.58722        121.96957          6.428            2.2       57
+ 12 Aug. 1997           2201:59.6     37.58712        121.96957          6.439            2.0       57
+ 23 Nov. 1984           1354:33.3     37.58833        121.97653          2.978            1.0       2
+ 12 July 1988           0720:14.0     37.58850        121.97652          2.978            1.3       2
+ 18 May 1985            1116:49.7     37.55590        121.93544          5.836            1.3       8
+ 11 Feb. 1990           1844:11.7     37.55581        121.93559          5.836            1.3       8
+ 29 July 1985           2210:29.3     37.55799        121.93536          6.224            1.2       9
+ 21 Oct. 1987           1937:52.8     37.55787        121.93531          6.229            1.1       9
+ 19 July 1985           0200:07.6     37.55767        121.93509          6.296            0.7      101
+ 27 May 1988            1211:47.3     37.55774        121.93521          6.305            1.2      101
+  28 Nov. 1985          1221:35.9     37.54950        121.92518          6.079            0.9       13
+ 3 April 1987           1419:32.9     37.54958        121.92509          6.077            0.7       13
+ 15 Aug. 1997           1224:33.2     37.54943        121.92539          6.069            1.1       13
+28 March 1989           0019:16.3     37.53813        121.91744          5.616            1.4       43
+4 March 1995            0339:19.9     37.53810        121.91757          5.624            1.0       43
+ 11 Oct. 1997           0544:08.0     37.53803        121.91739          5.621            1.5       43
+ 11 Nov. 1985           0406:23.0     37.54270        121.92025          6.327            1.0       12
+ 23 July 1993           1205:01.7     37.54259        121.92048          6.301            1.0       12
+ 11 Oct. 1996           1833:51.6     37.54260        121.92041          6.317            1.2       12
+ 26 Oct. 1986           0426:12.5     37.52432        121.89282          6.106            0.8       25
+3 March 1991            0614:28.4     37.52448        121.89277          6.119            1.0       25
+  5 Nov. 1988           0817:01.1     37.52381        121.89222          6.132            0.6      102
+ 29 Aug. 1998           2223:48.8     37.52386        121.89244          6.139            1.1      102
+ 26 Dec. 1986           0837:15.5     37.54004        121.91666          8.465            1.1       26
+ 22 Jan. 1995           1613:41.6     37.54006        121.91673          8.452            1.1       26
+21 March 1992           0135:34.7     37.54785        121.92418          6.800            1.4       58
+7 March 1996            0530:52.4     37.54775        121.92427          6.769            1.5       58
+ 2 April 1985           0557:16.4     37.87927        122.24462          9.569            1.9       3
+  8 Nov. 1996           1915:06.4     37.87939        122.24493          9.560            2.3       3
+ 14 Aug. 1985           1801:55.5     37.88049        122.24548          9.560            2.0       10
+ 10 Jan. 1992           1439:51.8     37.88043        122.24554          9.555            1.8       10
+ 21 Feb. 1986           0239:40.8     37.86866        122.23788          9.882            1.6       17
+ 17 Aug. 1997           1841:54.2     37.86836        122.23787          9.856            1.3       17
+  5 Oct. 1986           1039:20.4     37.88197        122.24637          9.574            2.0       21
+ 12 May 1994            0858:13.8     37.88184        122.24642          9.569            1.6       21
+ESE         3 - 12   WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT
+
+
+Table 2. (continued)
+    Date                  Time, UT                        Latitude               Longitude                Depth, km                Mag                ID
+  5 July 1991             0219:17.4                       37.88083              122.24572                   9.581                  0.9               51
+ 9 Nov. 1996              0617:11.9                       37.88080              122.24585                   9.567                  1.3               51
+29 Dec. 1991              1240:04.2                       37.87840              122.24422                   9.530                  1.4               55
+ 9 Nov. 1996              0041:12.6                       37.87835              122.24427                   9.537                  1.5               55
+8 March 1985              1705:21.4                       37.87783              122.24360                   9.597                  1.1               56
+ 7 Jan. 1992              1212:02.5                       37.87783              122.24360                   9.611                  1.6               56
+ 22 Jan. 1998             0029:48.1                       37.87769              122.24354                   9.603                  1.7               56
+
+
+
+earthquakes. Presumably, these earthquakes are caused by patches                 percent of the intervals are <1 month, and 27% are <1 day (Figure
+of brittle material (asperities) on the fault that fail repeatedly as            9, inset). Time intervals of <1 month are approximately exponen-
+they are loaded by creep on the surrounding surface [Vidale et al.,              tially distributed, suggesting that they represent an aftershock
+1994; Nadeau et al., 1995]. In theory, repeating events will have                process. Those events with short time separation may, in fact,
+identical waveforms due to identical source mechanisms, ray                      have little or no overlap, given our lack of control on source
+paths, and receiver response. Real seismograms, however, may                     dimension. To form sequences of repeating earthquakes, we only
+exhibit small variations in the shape of the signals that reflect                consider events with recurrence intervals >1 by removing the
+changes in source, path, receiver characteristics, and/or noise.                 smaller-magnitude event that precedes or follows another event
+Although two events might be perfectly colocated, the signals                    by <1 month in each sequence.
+may be incoherent due to noise in the data. On the other hand,                      [33] The locations of these sequences on the fault surface are
+two events that are separated in space, could produce highly                     shown in Figure 10a. A detailed look at the relative location of the
+coherent waveforms if they occur in a homogenous velocity field.                 repeating events shows that some sequences are formed by events
+Although the degree of similarity between two phases at a                        that lie virtually on top of each other (Figure 10b), whereas others
+common station can be used as a rough measure of the closeness                   include events that are possibly slightly separated in space (Figure
+of two events [Nadeau et al., 1995; Menke, 1999], it does not                    10c). Events of the latter type could be distinct if their stress drop is
+translate directly into the distance between the events. In partic-              >30 bars. Unfortunately, not all of the hypocentroids are precise
+ular, relative location uncertainties cannot easily be estimated                 enough to test this possibility. Some repeating sequences occupy
+from waveform similarity alone.                                                  distinct, isolated areas on the fault plane (Figures 10b and 10c),
+   [32] Given these problems, we search for repeating events in the              others are located in close proximity to other events (Figure 10d,
+1984 – 1998 seismicity by investigating the separation distance                  left part of streak). Some sequences may occur within groups of
+between centroids determined from phase correlation measure-                     scattered hypocenters that include fore/aftershock sequences,
+ments. We select events that have small relative location uncer-                 mostly within clusters or streaks (Figure 10d, right part of the
+tainites, with probable overlap of their source areas (>50%),                    streak). The source parameters for the first two types of repeating
+assuming a 3-MPa stress drop and magnitude differences smaller                   earthquakes are listed in Table 2. There are 31 sequences that have
+than 0.5. The time intervals between successive events show a                    two repeating events and five sequences that have three events. The
+broad distribution between 1 and 11 years with a peak around 5.5                 sequences with three events typically show a larger variation in
+years and a sharp peak for intervals <1 year (Figure 9). Thirty-four             their magnitudes.
+
+
+
+                                                3
+
+
+
+
+                                               2.5
+                           Average Magnitude
+
+
+
+
+                                                2
+
+
+
+
+                                               1.5
+
+
+
+
+                                                1
+
+
+
+
+                                               0.5
+                                                  0   2               4          6           8              10            12
+                                                                     Recurrence Interval (years)
+
+           Figure 11. Recurrence intervals plotted against the average magnitude between all pairs of repeating events along
+           the Hayward and Mission Faults. No correlation between magnitude and recurrence interval is observed.
+                     WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT                               ESE          3 - 13
+
+   [34] From Figure 10a we see that repeating events are most            the streaks are close to the upper and lower boundaries of the
+common at shallow depth, between 2 and 7 km. Surface creep              proposed seismogenic zone. If correct, stress concentrations due to
+measurements [Lienkaemper et al., 2001] (Figure 10a) and geo-            fault creep above and below the locked zone may explain the
+detic surveys indicate that the fault is creeping to 5 km depth         generation and localization of the streaks. Such stress concentra-
+[Savage and Lisowski, 1993; Lienkaemper and Galehouse, 1998;             tions are highest if the zone between the streaks is frictionally
+Bürgmann et al., 1998]. The shallow repeating events can be             locked.
+interpreted to represent strong patches undergoing stick-slip failure       [39] Interferometric synthetic aperture radar (InSAR) and GPS
+as they are continuously loaded by creep on the surrounding fault        data analyzed by Bürgmann et al. [2000], on the other hand,
+plane. Multiplets with higher repeat rates (e.g., multiplet 7 with       suggest a freely slipping northern Hayward Fault (NW of km 25 in
+three events of M1.8, M1.8, and M1.5 in the 15-year observational        Figure 10a). Their model favors fault creep of 7 mm/yr to depths
+period, Figure 10a and 10b) located at the shallowest depths,            >6 km. In their model, however, a locked fault below 6 km would
+suggesting a positive creep rate gradient toward the surface.            decrease the creep rate only by 7%, which is less than the mean
+   [35] Repeating events at greater depth rarely occur as isolated       of the uncertainties of the creep rate measurements. Bürgmann et
+sources. Instead, they predominantly occur within the streaks. A         al. [2000] supported their argument of a freely slipping fault by
+time-distance plot of the events along streak B1 (Figure 10e) shows      analyzing repeating earthquakes to infer the distribution of subsur-
+a large variability of recurrence intervals and magnitude. Although      face fault creep rates [Nadeau and McEvilly, 1999]. They deter-
+there is no clear pattern emerging from Figure 10e, a possible           mined a creep rate of 5 – 7 mm/yr from repeating earthquakes with
+progression of events along the streak can be observed that seems        catalog locations around 5.7 and 9.8 km depth near El Cerrito and
+plausible from a triggering viewpoint since these events are all         Berkeley (one of their repeating earthquake locates at 7 km depth).
+more or less in a line. Also, a clearer pattern may be hidden in a       The relocated hypocenters in Figure 10a show that there is no
+seismic gap observed between 1987 and 1992 that may be related           evidence for repeating earthquakes between 6 and 9 km depth.
+to stress changes on the Hayward Fault caused by the 1989 M7.1           Thus the creep rate of Bürgmann et al. [2000] might represent the
+Loma Prieta earthquake [Reasenberg and Simpson, 1992; Lien-              creep rate at the upper and lower boundary of a locked zone (area
+kaemper et al., 1997].                                                   A, Figure 10a).
+   [36] In contrast to creeping portions of the San Andreas and             [40] The Hayward Fault is one member of a series of linked
+Calaveras Faults where repeating earthquakes are the norm and            strike-slip faults that parallels the San Andreas Fault from the
+occur throughout the slipping fault surface [Nadeau et al., 1995;        Calaveras – San Andreas junction to near the Mendocino Triple
+Schaff et al., 1998; Rubin et al., 1999], the Hayward Fault less         Junction 400 km to the northwest. Castillo and Ellsworth [1993]
+frequently exhibits repeating behavior. On the Parkfield section of      suggested that the Hayward Fault reflects a mature stage of fault
+the San Andreas Fault, repeating events of M  1.4 have been             development from the systematic evolution of seismically defined
+found to occur at a rate of about once per year or two [Nadeau and       structures within this fault system from its northwest end (young-
+Johnson, 1998], with a creep rate that is 4 times the average           est) to its southeast end (oldest). This hypothesis is strengthened by
+creep rate of the Hayward Fault. Thus the repeat rate for source 7       the streaks described by Waldhauser et al. [1999], who argued that
+(Figure 10b), when scaled by creep rate, approximately agrees with       the streaks on the northern Hayward Fault might represent long-
+San Andreas Fault recurrence rate. Comparisons, however, are             lived structures created by a wear process. The absence of such
+hampered by the fact that repeat rates on the Hayward Fault appear       streaks on the Mission trend may indicate that this structure is
+to be less regular than on the San Andreas Fault and do not              relatively young or that is has been reactivated. The fault-normal
+correlate with magnitude (Figure 11).                                    cross sections in Figure 5b show that the Mission trend seismicity
+                                                                         near Union City and to the south does not underlie the surface trace
+6. Discussion and Conclusion                                             of the Hayward Fault, suggesting an independent structure in this
+                                                                         area. North of Union City to near San Leandro the seismicity seems
+  [37] The seismicity rate of the Hayward Fault is substantially         to occur on the Chabot Fault, a feature that extends 1 km to the
+lower than that of the creeping central Calaveras Fault to its south,    northeast and parallel to the Hayward Fault and is recognized by R.
+whether measured by the contemporary microearthquake rate or             W. Graymer (Neogene development of the Hayward Fault zone: A
+twentieth century moderate magnitude activity [Oppenheimer et            different perspective on an active strike-slip fault, submitted to
+al., 1990]. The difference in seismicity rates cannot be explained       Tectonics, 2001, hereinafter referred to as Graymer, submitted
+by the difference in creep rates (6 versus 15 mm/yr). This suggests      manuscript, 2001) as part of a broadened zone of the Hayward
+to us that there is a more fundamental difference between them. We       Fault. Double-difference locations near Hayward, where the inter-
+suggest that the large aseismic areas on the Hayward Fault plane         section between the Mission and the Chabot Fault takes place,
+between 5 and 10 km are either locked or retarded (areas A, B, C,       show that the shallow seismicity strikes more westerly than the
+D in Figure 10a). Studies on pre- and post-main shock seismicity         seismicity at greater depth (best seen in Figure 6), suggesting that
+on the Calaveras Fault [Bakun et al., 1986; Oppenheimer et al.,          the intersection of the Mission trend with the Hayward Fault may
+1990] and along the San Andreas Fault segment that ruptured              involve substructures such as the Chabot Fault. It is possible that
+during the 1989 Loma Prieta earthquake [Olson, 1990; Oppen-              we see a migration process in which new strands are generated, old
+heimer, 1990] have shown that sections of the fault that rupture         strands are reactivated, or the Mission trend and the southern
+during main shocks exhibit little on-fault earthquake activity in        Hayward Fault interact in their activity.
+between the time of major events. The circular hole near Fremont            [41] Andrews et al. [1993] placed the Mission trend in a left step
+(area D), for example, could produce a M  5.5 event (considering        over between the Calaveras and Hayward Faults, with a structure
+3-MPa stress drop) or larger if it ruptured into the adjacent aseismic   along the Mission trend transferring slip from the Calaveras Fault
+areas to the northwest near Union City and Hayward (area C).             onto the northern Hayward Fault. Assuming pure strike-slip on the
+Although several large historic earthquakes have occurred near the       Hayward Fault and the Calaveras Fault, they argue for a blind
+Mission trend [Andrews et al., 1993; Bakun, 1999], uncertainties in      dipping structure to satisfy the geometric constraint of conver-
+their locations are too large to determine if one or more of them        gence. They interpret the apparent absence of dip on the structure
+actually occurred on the Mission trend.                                  as defined by the Mission seismicity trend as indicating an
+  [38] On the northern Hayward Fault, creep rates may vary with          accumulating dip-slip moment deficit that will eventually be
+depth. A relatively high rate of creep might encompass the shallow       released in a large earthquake, thus making the Mission step over
+repeating events, while large aseismic areas (within area A)             more likely to rupture in large earthquakes than previously
+between the streaks suggest zones of locking. In this interpretation     assumed. The relocated seismicity along the Mission trend, on
+ESE           3 - 14    WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT
+
+
+the other hand, indicates that at least some compression is being                 Got, J.-L., J. Fréchet, and F. W. Klein, Deep fault plane geometry inferred
+accommodated. Fault-normal cross sections (Figure 5b) show that                     from multiplet relative relocation beneath the south flank of Kilauea,
+the dip changes from near vertical near Fremont to 75 southeast                   J. Geophys. Res., 99, 15,375 – 15,386, 1994.
+                                                                                  Graymer, R. W., D. L. Jones, and E. E. Brabb, Geologic map of the Hay-
+dipping near Hayward. A few thrust events are observed along the                    ward Fault zone, Contra Costa, Alameda, and Santa Clara Counties,
+entire Mission trend, the most notable near San Leandro where we                    California: A digital database, U.S. Geol. Surv. Open File Rep., 95 –
+observe shallow dip-slip events (including five M > 3.0 events) that                597, 1995.
+occur on a 10, northwest dipping structure (Figure 7). The                       Hayward Fault Paleoearthquake Group, Timing of paleoearthquakes on the
+contemporary seismicity on the Mission trend, however, is not                       northern Hayward Fault—Preliminary evidence in El Cerrito, California,
+                                                                                    U.S. Geol. Surv. Open File Rep., 99 – 318, 1999.
+able accommodate enough slip to compensate the compressional                      King, G., and J. Nábelek, Role of fault bends and the initiation and termi-
+forces evident in the topographic expression.                                       nation of earthquake rupture, Science, 228, 984 – 987, 1985.
+   [42] The wide range of complex faulting associated with the                    King, G., D. Oppenheimer, and F. Amelung, Block versus continuum de-
+intersection of the Mission trend and the Hayward Fault might                       formation in the western United States, Earth Planet. Sci. Lett., 128, 55 –
+represent stress accumulation that arises from slip transfer along                  64, 1994.
+the Mission trend between the Calaveras and the Hayward Faults.                   Lawson, A. C., The California earthquake of April 18, 1906, in Report of
+                                                                                    the State Earthquake Investigation Commision, vol. 1, Carnegie Inst. of
+Similar complex patterns are observed in zones of fault bends                       Washington, Washington, D. C., 1908.
+where stress concentrations at the tip of the fault are relieved by               Lienkaemper, J. J., and G. Borchardt, Hayward Fault: Large earthquakes
+complex faulting patterns [King and Nábelek, 1985]. In addition to                 versus surface creep, in Proceedings of the Second Conference on Earth-
+geometric complexity, faulting in this area might be complicated or                 quake Hazards in the Eastern San Francisco Bay Area, edited by G.
+controlled by structural heterogeneities, in particular, by a gabbroic              Borchardt et al., Spec. Publ. Calif. Div. Mines Geol., 113, 101 – 110,
+body near San Leandro that steeply dips into the fault zone from its                1992.
+                                                                                  Lienkaemper, J. J., and J. S. Galehouse, New evidence doubles the seismic
+western side [Ponce et al., 1998; Graymer, submitted manuscript,                    potential of the Hayward Fault, Seismol. Res. Lett., 69, 519 – 523, 1998.
+2001]. The off-fault seismicity near Berkeley might also be an                    Lienkaemper, J. J., G. Borchardt, and M. Lisowski, Historic creep rate and
+indication that the transfer of slip onto the northern Hayward Fault                potential for seismic slip along the Hayward Fault, California, J. Geo-
+is not occurring in a smooth fashion, as irregularities on the surface              phys. Res., 96, 18,261 – 18,283, 1991.
+of the northern Hayward Fault and possibly locked patches act as                  Lienkaemper, J. J., J. S. Galehouse, and R. W. Simpson, Creep response of
+                                                                                    the Hayward Fault to stress changes caused by the Loma Prieta earth-
+asperities and distribute slip away from the main trace.                            quake, Science, 276, 2014 – 2016, 1997.
+                                                                                  Lienkaemper, J. J., J. S. Galehouse, and R. W. Simpson, Long-term mon-
+                                                                                    itoring of creep rate along the Hayward Fault and evidence for a lasting
+   [43] Acknowledgments. We thank Bob Simpson, David Oppen-                         creep response to 1989 Loma Prieta earthquake, Geophys. Res. Lett., 28,
+heimer, Andy Michael, Allan Rubin, and two anonymous reviewers for                  2265 – 2268, 2001.
+their constructive comments on the manuscript. We greatly benefited from          Menke, W., Using waveform similarity to constrain earthquake locations,
+fruitful discussions within the USGS Hayward Fault Working Group. Russ              Bull. Seismol. Soc. Am., 89, 1143 – 1146, 1999.
+Graymer is thanked for leading a elucidating field trip to the Hayward Fault.     Nadeau, R. M., and L. R. Johnson, Seismological studies at Parkfield, VI,
+We are grateful to the staff at the NCSN for making their data available. We        Moment release rates and estimates of source parameters for small re-
+thank Paul Reasenberg and Bruce Julian for providing the software to create         peating earthquakes, Bull. Seismol. Soc. Am., 88, 790 – 814, 1998.
+Figure 6.                                                                         Nadeau, R. M., and T. V. McEvilly, Fault slip rates at depth from recurrence
+                                                                                    intervals of repeating microearthquakes, Science, 285, 718 – 721, 1999.
+                                                                                  Nadeau, R. M., W. Foxall, and T. V. McEvilly, Clustering and periodic
+References                                                                          recurrence of microearthquakes on the San Andreas Fault at Parkfield,
+Andrews, D. J., D. H. Oppenheimer, and J. J. Lienkaemper, The Mission               California, Science, 267, 503 – 507, 1995.
+  link between the Hayward and Calaveras Faults, J. Geophys. Res., 98,            Olson, J. A., Seismicity in the twenty years preceding the Loma Prieta,
+  12,083 – 12,095, 1993.                                                            California, earthquake, Geophys. Res. Lett., 17, 1429 – 1432, 1990.
+Bakun, W. H., Seismic activity of the San Francisco Bay region, Bull.             Oppenheimer, D. H., Aftershock slip behavior of the 1989 Loma Prieta,
+  Seismol. Soc. Am., 89, 764 – 784, 1999.                                           California earthquake, Geophys. Res. Lett., 17, 1199 – 1202, 1990.
+Bakun, W. H., and C. M. Wentworth, Estimating earthquake location and             Oppenheimer, D. H., P. A. Reasenberg, and R. W. Simpson, Fault plane
+  magnitude from seismic intensity data, Bull. Seismol. Soc. Am., 87,               solutions for the 1984 Morgan Hill, California, earthquake sequence:
+  1502 – 1521, 1997.                                                                Evidence for the state of stress on the Calaveras Fault, J. Geophys.
+Bakun, W. H., G. C. P. King, and R. S. Cockerham, Seismic slip, aseismic            Res., 93, 9007 – 9026, 1988.
+  slip, and the mechanics of repeating earthquakes on the Calaveras Fault,        Oppenheimer, D. H., W. H. Bakun, and A. G. Lindh, Slip partitioning of the
+  California, in Earthquake Source Mechanics, Geophys. Monogr. Ser., vol.           Calaveras Fault, California, and prospects for future earthquakes, J. Geo-
+  37, edited by S. Das, J. Boatwright, and C. H. Scholz, pp. 195 – 207,             phys. Res., 95, 8433 – 8498, 1990.
+  AGU, Washington, D. C., 1986.                                                   Oppenheimer, D. H., I. G. Wong, and F. W. Klein, The seismicity of the
+Borchardt, G., S. E. Hirschfeld, J. J. Lienkaemper, P. McClellan, and I. G.         Hayward Fault, California, in Proceedings of the Second Conference on
+  Wong (Eds.), Proceedings of the Second Conference on Earthquake Ha-               Earthquake Hazards in the Eastern San Francisco Bay Area, edited by
+  zards in the Eastern San Francisco Bay Area, Spec. Publ. Calif. Div.              G. Borchardt et al., Spec. Publ. Calif. Div. Mines Geol., 113, 91 – 100,
+  Mines Geol., 113, 1992.                                                           1992.
+Bürgmann, R., E. Fielding, and J. Sukhatme, Slip along the Hayward Fault,        Paige, C. C., and M. A. Saunders, LSQR: Sparse linear equations and least
+  California, estimated from space-based synthetic aperture radar interfero-        squares problems, ACM Trans. Math. Software, 8(2), 195 – 209, 1982.
+  metry, Geology, 26, 559 – 562, 1998.                                            Ponce, D. A., T. G. Hildenbrand, R. C. Jachens, C. W. Roberts, and P. E.
+Bürgmann, R., D. Schmidt, R. M. Nadeau, M. d’Alessio, E. Fielding, D.              Fahringer, Gravity and magnetic anomalies along the Hayward Fault and
+  Manaker, T. V. McEvilly, and M. H. Murray, Earthquake potential along             their relation to earthquake seismicity, California (abstract), Eos Trans.
+  the northern Hayward Fault, California, Science, 289, 1178 – 1182,                AGU, 79(45), Fall Meet. Suppl., F594, 1998.
+  2000.                                                                           Poupinet, G., W. L. Ellsworth, and J. Fréchet, Monitoring velocity varia-
+Castillo, D. A., and W. L. Ellsworth, Seismotectonics of the San Andreas            tions in the crust using earthquake doublets: An application to the Cala-
+  Fault system between Point Arena and Cape Mendocino in northern                   veras Fault, California, J. Geophys. Res., 89, 5719 – 5731, 1984.
+  California: Implications for the development and evolution of a young           Radbruch-Hall, D. H., Map showing recently active breaks along the Hay-
+  transform, J. Geophys. Res., 98, 6543 – 6560, 1993.                               ward Fault zone and the southern part of the Calaveras Fault zone, U.S.
+Chester, F. M., J. P. Evans, and R. L. Biegel, Internal structure and weak-         Geol. Surv. Misc. Invest. Ser., Map, I-813, 1974.
+  ening mechanisms of the San Andreas Fault, J. Geophys. Res., 98, 771 –          Reasenberg, P., and D. Oppenheimer, FPFIT, FPPLOT, and FPPAGE: FOR-
+  786, 1993.                                                                        TRAN computer programs for calculating and displaying earthquake
+Ellsworth, W. L., J. A. Olson, L. N. Shjio, and S. M. Marks, Seismicity and         fault-plane solutions, U.S. Geol. Surv. Open File Rep., 85 – 739, 109,
+  active faults in the eastern San Francisco Bay region, Spec. Publ. Calif.         1985.
+  Div. Mines Geol., 62, 83 – 91, 1982.                                            Reasenberg, P. A., and R. W. Simpson, Response of regional seismicity to
+Fréchet, J., Sismogenèse et doublets sismiques, thèse d’Etat, 206 pp., Univ.     the static stress change produced by the Loma Prieta earthquake, Science,
+  Sci. et Méd. de Grenoble, Grenoble, France, 1985.                                255, 1687 – 1690, 1992.
+                       WALDHAUSER AND ELLSWORTH: STRUCTURE AND MECHANICS OF THE HAYWARD FAULT                                          ESE           3 - 15
+
+Rubin, A. M., D. Gillard, and J.-L. Got, Streaks of microearthquakes along        Proceedings of the Second Conference on Earthquake Hazards in the
+  creeping faults, Nature, 400, 635 – 641, 1999.                                  Eastern San Francisco Bay Area, edited by G. Borchardt et al., Spec.
+Savage, J. C., and M. Lisowski, Inferred depth of creep on the Hayward            Publ. Calif. Div. Mines Geol., 113, 171 – 179, 1992.
+  Fault, central California, J. Geophys. Res., 98, 787 – 793, 1993.             Wong, I. G., and M. A. Hemphill-Haley, Seismicity and faulting near the
+Schaff, D. P., G. C. Beroza, and B. E. Shaw, Postseismic response of              Hayward and Mission Faults, in Proceedings of the Second Conference on
+  repeating aftershocks, Geophys. Res. Lett., 25, 4549 – 4552, 1998.              Earthquake Hazards in the Eastern San Francisco Bay Area, edited by G.
+Simpson, R. W., Watching the Hayward Fault, Science, 289, 1147 – 1148,            Borchardt et al., Spec. Publ. Calif. Div. Mines Geol., 113, 207 – 215, 1992.
+  2000.                                                                         Working Group on California Earthquake Probabilities (WGCEP), Earth-
+Toppozada, T. R., and G. Borchardt, Re-evaluation of the 1836 ‘Hayward            quake probabilities in the San Francisco Bay region: 2000 to 2030—A
+  Fault’ earthquake and the 1838 San Andreas Fault earthquake, Bull.              summary of findings, U.S. Geol. Surv. Open File Rep., 99 – 517, 1999.
+  Seismol. Soc. Am., 88, 140 – 159, 1998.                                       Yu, E., and P. Segall, Slip in the 1868 Hayward earthquake from the analysis
+Vidale, J. E., W. L. Ellsworth, A. Cole, and C. Marone, Variations in rupture     of historical triangulation data, J. Geophys. Res., 101, 16,101 – 16,118,
+  process with recurrence interval in a repeated small earthquake, Nature,        1996.
+  368, 624 – 626, 1994.                                                         Zoback, M. D., et al., New evidence on the state of stress of the San
+Waldhauser, F., hypoDD: A computer program to compute double-differ-              Adnreas Fault system, Science, 238, 1105 – 1111, 1987.
+  ence hypocenter locations, U.S. Geol. Surv. Open File Rep., 01-113, 25
+  pp., 2001.
+Waldhauser, F., and W. L. Ellsworth, A double-difference earthquake loca-
+  tion algorithm: Method and application to the northern Hayward Fault,         
+  California, Bull. Seismol. Soc. Am., 90, 1353 – 1368, 2000.                     W. L. Ellsworth, U.S. Geological Survey, 345 Middlefield Road, MS
+Waldhauser, F., W. L. Ellsworth, and A. Cole, Slip-parallel seismic linea-      977, Menlo Park, CA 94025, USA. (ellsworth@usgs.gov)
+  tions along the northern Hayward Fault, California, Geophys. Res. Lett.,         F. Waldhauser, Lamont-Doherty Earth Observatory of Columbia
+  26, 3525 – 3528, 1999.                                                        University, 61 Route 9W, Palisades, NY 10964, USA. (felixw@ldeo.
+Williams, P. L., Geologic record of southern Hayward Fault earthquakes, in      columbia.edu)
+                                   JOURNAL OF GEOPHYSICAL RESEARCH, VOL. 107, NO. B3, 10.1029/2000JB000084, 2002
+
+
+   a)                                                                                                          CATALOG LOCATIONS 1984-1998
+                                                                                                                                                  Map View
+
+                           5
+       distance [km]
+
+
+
+
+                           0       A
+                                                                                                                                                                                                                                                                                 A’
+                                              e                                                                                                                       r   o
+                                           ol                            to                                                                                        nd                                                             ty
+                       -5                in
+                                                                   rri                                   ey                            nd                      a                                rd                           Ci                              on
+                                                                                                                                                                                                                                                                  t
+                                   n   tP                      e                                k   el                            la                        Le                             wa                           on                               m
+                                oi                          lC                               er                              ak                        an                              y                            i                                 re
+                               P                        E                                B                               O                         S                                Ha                           Un                               F
+
+                               0                              10                                          20                                30            40                                                50                              60                              70
+                               A                                                                                                            Fault Plane View                                                                                                                A’
+                           0
+depth [km]
+
+
+
+
+                       5
+
+
+                      10
+
+
+                      15
+                               0                              10                                          20                       30           40                                                          50                              60                              70
+                                                                                                                              Distance Along Strike [km]
+
+   b)                                                                                                                     AFTER RELOCATION
+                                                                                                                                                  Map View
+
+                                                                                                     BE’
+                        5
+      distance [km]
+
+
+
+
+                                                              EC’                                                                                                                                                             UC’                         FR’
+                                                                                         B3                                       OK’                              SL’                                HW’
+                                                                     E2            B1                                                               S2                                                            U2                   U1              F3
+                        0          A                                          E1                                                                                     S1                              H2                                                                F2
+                                          P1                                                                       B2
+                                                                                                                                                                    S3                                    H1                                     F1                              A’
+                                                                                         BE
+                                                             EC
+                                                                                                                                                                                                      HW                      UC                          FR
+                        -5                                                                                                    OK                             SL
+
+
+                            0                                10                                           20                                30            40                                                50                              60                              70
+                               A                                                                                                            Fault Plane View                                                                                                                A’
+                        0
+                                                                                                                                                                                                          H1
+                                                                     E3
+                                                                                                                                                                    S3
+depth [km]
+
+
+
+
+                        5                     P1                              E1                                   B2                                                     S1                              H2
+                                                                                                                                                                                                                                                 F3                    F2
+                                                                     E2                                                                                                                                          U2
+                       10                                                          B1                                                               S2
+                                                                                                                                                                                                                                       U1         F1
+
+
+                       15
+                            0                                10                                           20                      30           40                                                           50                              60                              70
+                                                                                                                             Distance Along Strike [km]
+                                                                                                                                 Fault Normal View
+                           EC           EC        EC’          BE              BE        BE’                   OK       OK OK’                SL             SL               SL’   HW          HW HW’           UC           UC        UC’           FR              FR        FR’
+                       0                v                                 v                                             v                                   v                       v                            v                                    v
+
+                       2                                                                                                                                                                        H1
+                                         E3
+                                                                                                                                                                     S3
+                       4
+ depth [km]
+
+
+
+
+                                                                               B2                                                                                             S1                                                                                            F3
+                       6           E1                                                                                                                                                                H2
+                                                                                                                                                                                                                                                              F2
+                       8                                                                                                                                                                                           U2
+                                        E2
+                      10                                            B2                                                                                                                                                                 U1                                  F1
+                                                                                                                                                                              S2
+                                                                                    E3
+                      12
+
+                      14
+                       -2       0   2     4                        -2    0    2                               -4      -2   0     2           -4      -2   0     2                   -2    0    2                 -2    0    2                           -4 -2      0
+                            distance [km]                          distance [km]                                   distance [km]                  distance [km]                     distance [km]                distance [km]                          distance [km]
+
+                                                                                                                                        ESE                   3-6
+                  JOURNAL OF GEOPHYSICAL RESEARCH, VOL. 107, NO. B3, 10.1029/2000JB000084, 2002
+
+
+
+
+Figure 5. (opposite) (a) NCSN locations and (b) double-difference locations of events recorded between 1984 and 1998, including
+catalog P and cross-correlation P and S wave data. Map view (rotated so that fault trace points east-west) and longitudinal cross sections
+(in kilometers from Point Pinole) are shown. Fault-normal cross sections are shown for the relocated seismicity only. Earthquakes in
+longitudinal cross sections are plotted as circles of dimensions appropriate for their magnitude assuming a 30-bar constant stress drop
+source. Boxes in map views include events shown in cross sections. In Figure 5b, groups of eight or more correlated events are indicated
+in red and labeled (see text for details). In fault-normal cross sections, ‘‘v’’ indicates the surface trace of the Hayward Fault.
+
+                                                           ESE         3-6
+

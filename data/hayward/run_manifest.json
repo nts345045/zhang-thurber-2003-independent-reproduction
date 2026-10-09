@@ -1,0 +1,26 @@
+{
+  "started_utc": "2026-10-09T22:21:20.408777+00:00",
+  "command": "./rebuild_hayward.sh",
+  "modes": [
+    "standard",
+    "dd",
+    "loc1d"
+  ],
+  "omp_threads_per_process": 8,
+  "base_commit": "d9bc346bcadbfb90cb8d48ed9ad75c8375b79faa",
+  "sha256": {
+    "configs/hayward.cfg": "cd7a922200f9811994d9fe4d7b66c48cbe1c9ff5f0dae2eef8ca85f6234aedb2",
+    "prepare_hayward.py": "d3197c79d54ed9fcd756c26091674850b07060e38690559fb253f97f1752ed34",
+    "rebuild_hayward.sh": "c655bcd1ea4f983d61213a5b25bc51349720fa76c7886475c92fed37208ed1d6",
+    "build/dd": "1be4bbcd4965082b59b5c3dbbed406d1a3253c89493ae30b80ba703585b7032a",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "src/csv.hpp": "f3ec5080bd0234fc7d0d6731b66aadd9eae219353244c9d4ef1c157a67bfd4c0",
+    "src/main.cpp": "79db0d337e0220c2d574fb7e22609d7a1c4d70eaac55dec5dd7610f83e2a29a4",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "data/hayward/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/hayward/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/hayward/selection_manifest.json": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004"
+  }
+}

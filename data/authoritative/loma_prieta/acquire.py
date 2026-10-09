@@ -8,6 +8,7 @@ import json
 import math
 from collections import Counter
 from pathlib import Path
+import xml.etree.ElementTree as ET
 
 import requests
 
@@ -66,8 +67,46 @@ STATION_CRITERIA = {
     "grid_top_km": "min(-1, floor(minimum selected sensor z in km)); all horizontally selected sensors retained",
     "maximum_sensor_z_km": 16,
     "sensor_z_definition": "minus Channel/Elevation in metres divided by 1000; do not subtract burial depth twice",
+    "vertical_coordinate_interpretation": "Provider-declared sensor elevation under StationXML semantics; burial depth preserved independently; no inferred datum conversion or independent survey-verification claim",
+    "vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depths on the same datum; StationXML supplies no explicit per-channel vertical datum",
     "selection_cap": None,
 }
+
+
+def discovery_inputs():
+    """Verify the cached authoritative coordinate origin and initial routing."""
+    discovery = ROOT.parent / "discovery"
+    geo_path = discovery / "usgs_nc216859.geojson"
+    geo_meta = json.loads((discovery / "usgs_nc216859.provenance.json").read_text())
+    xml_path = discovery / "usgs_nc216859_phases.xml"
+    xml_meta = json.loads((discovery / "usgs_nc216859_phases.provenance.json").read_text())
+    for path, meta in ((geo_path, geo_meta), (xml_path, xml_meta)):
+        if hashlib.sha256(path.read_bytes()).hexdigest() != meta["sha256"]:
+            raise ValueError("Cached USGS discovery hash mismatch: " + path.name)
+    longitude, latitude, _ = json.loads(geo_path.read_text())["geometry"]["coordinates"]
+    if (latitude, longitude) != (CRITERIA["origin_latitude_deg"], CRITERIA["origin_longitude_deg"]):
+        raise ValueError("Declared projection origin differs from cached USGS coordinates")
+    event = ET.parse(str(xml_path)).getroot().find(".//q:event", event_api.NS)
+    origin = event_api.preferred(event, "origin", "preferredOriginID")
+    if (event.get("publicID"), origin.get("publicID")) != (
+            CRITERIA["origin_event_resource_id"], CRITERIA["origin_origin_resource_id"]):
+        raise ValueError("Declared mainshock identifiers differ from provider QuakeML")
+    route_path = discovery / "earthscope_nc_1989_fedcatalog.txt"
+    route_meta = [r for r in json.loads((discovery / "earthscope_probe_provenance.json").read_text())
+                  if r["raw_file"] == route_path.name][0]
+    if hashlib.sha256(route_path.read_bytes()).hexdigest() != route_meta["sha256"]:
+        raise ValueError("Cached EarthScope discovery hash mismatch")
+    return {"mainshock_event_resource_id": event.get("publicID"),
+            "mainshock_origin_resource_id": origin.get("publicID"),
+            "mainshock_geojson": {"source_file": "../discovery/" + geo_path.name,
+                                  "sha256": geo_meta["sha256"], "source_url": geo_meta["requested_url"]},
+            "mainshock_quakeml": {"source_file": "../discovery/" + xml_path.name,
+                                  "sha256": xml_meta["sha256"], "source_url": xml_meta["requested_url"]},
+            "prior_earthscope_routing": {"source_file": "../discovery/" + route_path.name,
+                                         "sha256": route_meta["sha256"], "source_url": route_meta["url"],
+                                         "scope": "Earlier capability discovery; current snapshot queried separately"},
+            "normalization_scripts": {relative: hashlib.sha256((ROOT / relative).read_bytes()).hexdigest()
+                                      for relative in ("acquire.py", "../hayward/acquire.py", "../stations/acquire.py")}}
 
 
 def event_row(event, meta):
@@ -117,6 +156,7 @@ def event_row(event, meta):
 
 
 def events():
+    discovery = discovery_inputs()
     rows, queries = [], []
     offset = 1
     while True:
@@ -136,6 +176,8 @@ def events():
         raise ValueError("Duplicate native event identities across catalog pages")
     rows.sort(key=lambda row: (row["origin_time_utc"], row["event_resource_id"]))
     selected = [row for row in rows if row["selected"]]
+    if not rows or not selected:
+        raise RuntimeError("No selected catalog geometry; acquisition/selection requires review")
     event_api.write_csv(ROOT / "catalog_candidates.csv", rows)
     event_api.write_csv(ROOT / "selected_events.csv", selected, list(rows[0]))
     manifest = {"created_utc": event_api.utc_now(), "criteria": CRITERIA, "summary_queries": queries,
@@ -145,7 +187,7 @@ def events():
                 "candidate_event_types": dict(Counter(row["event_type"] for row in rows)),
                 "unknown_event_type_count": sum(not row["event_type"] for row in rows),
                 "selected_by_day": dict(Counter(row["origin_time_utc"][:10] for row in selected)),
-                "selection_manifest_complete": True,
+                "selection_manifest_complete": True, "discovery_and_normalization_inputs": discovery,
                 "observational_pick_acquisition": "not requested; these catalog locations define synthetic source geometry"}
     event_api.write_json(ROOT / "event_selection_manifest.json", manifest)
     print(json.dumps({key: value for key, value in manifest.items() if key != "criteria"}, indent=2), flush=True)
@@ -182,6 +224,7 @@ def fetch_station(endpoint, params, stem, suffix):
 
 
 def stations():
+    discovery = discovery_inputs()
     # Query the snapshot instant. Explicit effective-epoch checks follow below.
     params = {"network": "NC", "channel": "EHZ", "starttime": SNAPSHOT, "endtime": SNAPSHOT,
               "targetservice": "station", "level": "channel", "format": "request"}
@@ -203,13 +246,17 @@ def stations():
             raise ValueError("Unrecognized EarthScope route record: " + line)
         net, sta, loc, cha, start, end = fields
         loc = "" if loc == "--" else loc
-        identity = station_api.identifiers(net, sta, loc, cha)
+        concrete = not any(character in loc + cha for character in "*?,")
+        identity = station_api.identifiers(net, sta, loc, cha) if concrete else station_api.identifiers(net, sta)
         identity.update(raw_line=line_number, request_start=start, request_end=end,
+                        location_selector=loc, channel_selector=cha,
                         station_service=service, datacenter=datacenter, provider_resource_id=None,
                         record_kind="metadata request, not a channel epoch")
         routes.append(identity)
         services.add(service)
-    event_api.write_json(path.with_suffix(".txt.identifiers.json"), dict(meta, records=routes))
+    event_api.write_json(path.with_suffix(".txt.identifiers.json"), dict(meta, records=routes,
+                         identifier_standard=station_api.FDSN_STANDARD,
+                         wildcard_policy="Selectors are metadata requests, never invented concrete channel identities."))
     ncedc = [value for value in services if value.startswith("https://service.ncedc.org/fdsnws/station/1")]
     if len(ncedc) != 1:
         raise RuntimeError("Could not identify a unique authoritative NCEDC station route")
@@ -254,7 +301,10 @@ def stations():
                 "exclusion_reason_counts_nonexclusive": dict(Counter(reason for row in rows for reason in row["exclusion_reasons"].split(";") if reason)),
                 "minimum_selected_sensor_z_km": z_min, "maximum_selected_sensor_z_km": z_max,
                 "suggested_grid_top_km": min(-1, math.floor(z_min)),
-                "overlapping_selected_channel_epochs": 0, "selection_manifest_complete": True}
+                "overlapping_selected_channel_epochs": 0, "selection_manifest_complete": True,
+                "vertical_coordinate_status_counts": dict(Counter(row["vertical_coordinate_status"] for row in selected)),
+                "selected_nonzero_sensor_depth_count": sum(row["sensor_depth_below_ground_m"] != 0 for row in selected),
+                "discovery_and_normalization_inputs": discovery}
     event_api.write_json(ROOT / "station_selection_manifest.json", manifest)
     print(json.dumps(manifest, indent=2), flush=True)
 

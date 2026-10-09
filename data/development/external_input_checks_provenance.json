@@ -1,0 +1,109 @@
+{
+  "commands_run_before_preservation": [
+    {
+      "command": "TMPDIR=\"$PWD/tmp\" g++ -std=c++17 -O2 -Wall -Wextra -Wpedantic -fopenmp src/main.cpp -lstdc++fs -o tmp/external_input_checks/dd_cross_epoch",
+      "exit_code": 0
+    },
+    {
+      "command": "TMPDIR=\"$PWD/tmp\" g++ -std=c++17 -O2 -Wall -Wextra -Wpedantic -fopenmp diagnostics/check_external_inputs.cpp -lstdc++fs -o tmp/external_input_checks/check_cross_epoch",
+      "exit_code": 0
+    },
+    {
+      "command": "OMP_NUM_THREADS=2 tmp/external_input_checks/check_cross_epoch tmp/external_input_checks/cross_epoch_checks.json",
+      "exit_code": 0
+    },
+    {
+      "command": "OMP_NUM_THREADS=2 tmp/external_input_checks/dd_cross_epoch validate tmp/external_input_checks/cross_epoch_validation",
+      "exit_code": 0
+    }
+  ],
+  "component_check_categories": 11,
+  "component_report": "data/development/external_input_checks.json",
+  "copies": [
+    {
+      "original": {
+        "file_mtime_utc": "2026-10-09T22:10:34.127803Z",
+        "path": "tmp/external_input_checks/cross_epoch_checks.json",
+        "sha256": "29d0b35d72e77b12e3223e8643ad605e72516f784063c66c423bafb790279222"
+      },
+      "preserved": {
+        "file_mtime_utc": "2026-10-09T22:19:24.071088Z",
+        "path": "data/development/external_input_checks.json",
+        "sha256": "29d0b35d72e77b12e3223e8643ad605e72516f784063c66c423bafb790279222"
+      }
+    },
+    {
+      "original": {
+        "file_mtime_utc": "2026-10-09T22:10:40.225806Z",
+        "path": "tmp/external_input_checks/cross_epoch_validation/validation.csv",
+        "sha256": "740f6f34fabb49b0f553065601aa42e20d296535460d9c9a75c5742ac8b288c9"
+      },
+      "preserved": {
+        "file_mtime_utc": "2026-10-09T22:19:24.072088Z",
+        "path": "data/development/cross_epoch_validation.csv",
+        "sha256": "740f6f34fabb49b0f553065601aa42e20d296535460d9c9a75c5742ac8b288c9"
+      }
+    },
+    {
+      "original": {
+        "file_mtime_utc": "2026-10-09T22:10:40.225806Z",
+        "path": "tmp/external_input_checks/cross_epoch_validation/validation_ray.csv",
+        "sha256": "f76ba32b5880ff9b5ab63bbe5d24fc9a92c0aa40609d1e57db86f1302a1d112e"
+      },
+      "preserved": {
+        "file_mtime_utc": "2026-10-09T22:19:24.072088Z",
+        "path": "data/development/cross_epoch_validation_ray.csv",
+        "sha256": "f76ba32b5880ff9b5ab63bbe5d24fc9a92c0aa40609d1e57db86f1302a1d112e"
+      }
+    }
+  ],
+  "notes": [
+    "The result files are byte-for-byte copies of the completed run; no test was rerun during preservation.",
+    "File modification times identify saved artifacts, not measured process start or completion timestamps.",
+    "The validation-ray coordinates are an invented sandwich-medium fixture, not real station/event data.",
+    "These records supersede the earlier external_input_checks.json report that lacked cross-epoch checks."
+  ],
+  "numerical_validation_checks": 48,
+  "numerical_validation_passed": 48,
+  "preserved_utc": "2026-10-09T22:19:24.073683Z",
+  "scope": "Latest native cross-epoch component checks and 48 numerical validations; invented fixtures only; no inversion.",
+  "sources_at_preservation": [
+    {
+      "file_mtime_utc": "2026-10-09T22:07:37.295708Z",
+      "path": "src/main.cpp",
+      "sha256": "79db0d337e0220c2d574fb7e22609d7a1c4d70eaac55dec5dd7610f83e2a29a4"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T21:02:23.627652Z",
+      "path": "src/core.hpp",
+      "sha256": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T21:02:23.628653Z",
+      "path": "src/ray_checks.hpp",
+      "sha256": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T21:16:32.666092Z",
+      "path": "src/csv.hpp",
+      "sha256": "f3ec5080bd0234fc7d0d6731b66aadd9eae219353244c9d4ef1c157a67bfd4c0"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T22:09:27.406767Z",
+      "path": "diagnostics/check_external_inputs.cpp",
+      "sha256": "63bb769ce6112b5febc3e87c28bc80ce3ab70d3734df727958cd19b1b99ae753"
+    }
+  ],
+  "test_binaries_at_preservation": [
+    {
+      "file_mtime_utc": "2026-10-09T22:09:53.175781Z",
+      "path": "tmp/external_input_checks/dd_cross_epoch",
+      "sha256": "07dfcce1e8861641c67430db98bd7f10358d169528f2e287649fa3f7d565a13b"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T22:10:00.320785Z",
+      "path": "tmp/external_input_checks/check_cross_epoch",
+      "sha256": "af0ba33828673fc02102746d709a8d46d09181bc53807efb8214f3cf1f301199"
+    }
+  ]
+}

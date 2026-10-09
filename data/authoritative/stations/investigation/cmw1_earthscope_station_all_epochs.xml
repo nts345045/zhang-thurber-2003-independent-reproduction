@@ -1,0 +1,2304 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+ <FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iris="http://www.fdsn.org/xml/station/1/iris" xsi:schemaLocation="http://www.fdsn.org/xml/station/1 http://www.fdsn.org/xml/station/fdsn-station-1.1.xsd" schemaVersion="1.1">
+  <Source>EarthScope</Source>
+  <Sender>EarthScope</Sender>
+  <Module>EarthScope WEB SERVICE: fdsnws-station | version: 1.1.58</Module>
+  <ModuleURI>https://service.earthscope.org/fdsnws/station/1/query?network=NC&amp;station=CMW1&amp;level=channel&amp;format=xml</ModuleURI>
+  <Created>2026-10-09T21:52:33.6950</Created>
+  <Network code="NC" startDate="1966-01-01T00:00:00.0000" restrictedStatus="open">
+   <Description>USGS Northern California Network (NCSN)</Description>
+   <Identifier type="DOI">10.7914/SN/NC
+   </Identifier>
+   <TotalNumberStations>1222</TotalNumberStations>
+   <SelectedNumberStations>1</SelectedNumberStations>
+   <Station code="CMW1" startDate="2000-09-24T15:00:00.0000" restrictedStatus="open" iris:alternateNetworkCodes=".UNRESTRICTED,_US-REGIONAL">
+    <Latitude>37.540257</Latitude>
+    <Longitude>-121.887581</Longitude>
+    <Elevation>214.0</Elevation>
+    <Site>
+     <Name>Mill Creek</Name>
+    </Site>
+    <CreationDate>2000-09-24T15:00:00.0000</CreationDate>
+    <TotalNumberChannels>69</TotalNumberChannels>
+    <SelectedNumberChannels>69</SelectedNumberChannels>
+    <Channel code="BV1" locationCode="" startDate="2000-09-24T15:00:00.0000" endDate="2000-09-25T21:30:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E01</SampleRate>
+     <ClockDrift>1E-02</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DIL</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3366441.12</Value>
+       <Frequency>0.102</Frequency>
+       <InputUnits>
+         <Name>microstrain</Name>
+         <Description>Microstrain</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="BV1" locationCode="" startDate="2000-09-25T21:30:00.0000" endDate="2004-03-12T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E01</SampleRate>
+     <ClockDrift>1E-02</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DIL</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3366441.12</Value>
+       <Frequency>0.102</Frequency>
+       <InputUnits>
+         <Name>microstrain</Name>
+         <Description>Microstrain</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="BV1" locationCode="" startDate="2004-03-12T00:00:00.0000" endDate="2006-01-24T18:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E01</SampleRate>
+     <ClockDrift>1E-02</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DIL</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>2738040.174</Value>
+       <Frequency>0.102</Frequency>
+       <InputUnits>
+         <Name>microstrain</Name>
+         <Description>Microstrain</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP2" locationCode="" startDate="2000-09-24T15:00:00.0000" endDate="2000-09-25T21:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>1E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>4.3203E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP2" locationCode="" startDate="2000-09-25T21:00:00.0000" endDate="2000-09-25T21:30:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>1E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>4.3203E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP2" locationCode="" startDate="2000-09-25T21:30:00.0000" endDate="2004-03-12T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>4.31628E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP2" locationCode="" startDate="2004-03-12T00:00:00.0000" endDate="2005-04-27T22:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51058E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP2" locationCode="" startDate="2005-04-27T22:00:00.0000" endDate="2005-05-04T21:15:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51058E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP2" locationCode="" startDate="2005-05-04T21:15:00.0000" endDate="2006-01-24T18:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51058E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP2" locationCode="" startDate="2006-01-24T18:00:00.0000" endDate="2006-12-21T19:06:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51058E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP2" locationCode="" startDate="2006-12-21T19:06:00.0000" endDate="2008-11-06T22:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51058E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP2" locationCode="" startDate="2008-11-06T22:00:00.0000" endDate="2012-01-11T20:23:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51058E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP3" locationCode="" startDate="2000-09-24T15:00:00.0000" endDate="2000-09-25T21:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>1E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>4.3203E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP3" locationCode="" startDate="2000-09-25T21:00:00.0000" endDate="2000-09-25T21:30:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>1E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>4.3203E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP3" locationCode="" startDate="2000-09-25T21:30:00.0000" endDate="2004-03-12T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>4.31628E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP3" locationCode="" startDate="2004-03-12T00:00:00.0000" endDate="2005-04-27T22:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51058E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP3" locationCode="" startDate="2005-04-27T22:00:00.0000" endDate="2005-05-04T21:15:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51058E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP3" locationCode="" startDate="2005-05-04T21:15:00.0000" endDate="2006-01-24T18:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51058E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP3" locationCode="" startDate="2006-01-24T18:00:00.0000" endDate="2006-12-21T19:06:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51058E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP3" locationCode="" startDate="2006-12-21T19:06:00.0000" endDate="2008-11-06T22:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51058E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="EP3" locationCode="" startDate="2008-11-06T22:00:00.0000" endDate="2012-01-11T20:23:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>HS-1-LT HORIZONTAL,Geophone,GEOSPACE</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51058E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN1" locationCode="" startDate="2000-09-24T15:00:00.0000" endDate="2000-09-25T21:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>-90</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>1E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983692.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN1" locationCode="" startDate="2000-09-25T21:00:00.0000" endDate="2000-09-25T21:30:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>-90</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>1E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983692.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN1" locationCode="" startDate="2000-09-25T21:30:00.0000" endDate="2004-03-12T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>-90</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983465.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN1" locationCode="" startDate="2004-03-12T00:00:00.0000" endDate="2005-04-27T22:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>-90</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>799885.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN1" locationCode="" startDate="2005-04-27T22:00:00.0000" endDate="2005-05-04T21:15:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>-90</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983465.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN1" locationCode="" startDate="2005-05-04T21:15:00.0000" endDate="2006-12-21T19:06:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>-90</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983465.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN1" locationCode="" startDate="2006-12-21T19:06:00.0000" endDate="2008-11-06T22:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>-90</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983465.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN1" locationCode="" startDate="2008-11-06T22:00:00.0000" endDate="2012-01-26T22:30:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>-90</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>799885.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN1" locationCode="" startDate="2012-01-26T22:30:00.0000" endDate="2014-06-03T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>-90</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>799885.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN1" locationCode="" startDate="2014-06-03T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>-90</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>427799.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN2" locationCode="" startDate="2000-09-24T15:00:00.0000" endDate="2000-09-25T21:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>1E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983692.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN2" locationCode="" startDate="2000-09-25T21:00:00.0000" endDate="2000-09-25T21:30:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>1E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983692.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN2" locationCode="" startDate="2000-09-25T21:30:00.0000" endDate="2004-03-12T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983465.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN2" locationCode="" startDate="2004-03-12T00:00:00.0000" endDate="2005-04-27T22:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>799885.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN2" locationCode="" startDate="2005-04-27T22:00:00.0000" endDate="2005-05-04T21:15:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983465.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN2" locationCode="" startDate="2005-05-04T21:15:00.0000" endDate="2006-12-21T19:06:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983465.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN2" locationCode="" startDate="2006-12-21T19:06:00.0000" endDate="2008-11-06T22:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983465.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN2" locationCode="" startDate="2008-11-06T22:00:00.0000" endDate="2012-01-26T22:30:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>799885.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN2" locationCode="" startDate="2012-01-26T22:30:00.0000" endDate="2014-06-03T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>799885.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN2" locationCode="" startDate="2014-06-03T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>427799.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN3" locationCode="" startDate="2000-09-24T15:00:00.0000" endDate="2000-09-25T21:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>1E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983692.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN3" locationCode="" startDate="2000-09-25T21:00:00.0000" endDate="2000-09-25T21:30:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>1E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983692.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN3" locationCode="" startDate="2000-09-25T21:30:00.0000" endDate="2004-03-12T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983465.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN3" locationCode="" startDate="2004-03-12T00:00:00.0000" endDate="2005-04-27T22:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>799885.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN3" locationCode="" startDate="2005-04-27T22:00:00.0000" endDate="2005-05-04T21:15:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983465.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN3" locationCode="" startDate="2005-05-04T21:15:00.0000" endDate="2006-12-21T19:06:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983465.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN3" locationCode="" startDate="2006-12-21T19:06:00.0000" endDate="2008-11-06T22:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>983465.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN3" locationCode="" startDate="2008-11-06T22:00:00.0000" endDate="2012-01-26T22:30:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>799885.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN3" locationCode="" startDate="2012-01-26T22:30:00.0000" endDate="2014-06-03T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>799885.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HN3" locationCode="" startDate="2014-06-03T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>731A,Accelerometer,WILCOXON</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>427799.0</Value>
+       <Frequency>10.0</Frequency>
+       <InputUnits>
+         <Name>M/S**2</Name>
+         <Description>Acceleration in Meters Per Second Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HV1" locationCode="" startDate="2000-09-24T15:00:00.0000" endDate="2000-09-25T21:30:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>1E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DILATOMETER,Volumetric Strain,NCSN-LEGACY</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3366610.0</Value>
+       <Frequency>1.0</Frequency>
+       <InputUnits>
+         <Name>UM/UM</Name>
+         <Description>Strain in Micrometer/micrometer</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HV1" locationCode="" startDate="2000-09-25T21:30:00.0000" endDate="2004-03-12T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DILATOMETER,Volumetric Strain,NCSN-LEGACY</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3366060.0</Value>
+       <Frequency>1.0</Frequency>
+       <InputUnits>
+         <Name>UM/UM</Name>
+         <Description>Strain in Micrometer/micrometer</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HV1" locationCode="" startDate="2004-03-12T00:00:00.0000" endDate="2005-04-27T22:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DILATOMETER,Volumetric Strain,NCSN-LEGACY</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>2737730.0</Value>
+       <Frequency>1.0</Frequency>
+       <InputUnits>
+         <Name>UM/UM</Name>
+         <Description>Strain in Micrometer/micrometer</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HV1" locationCode="" startDate="2005-04-27T22:00:00.0000" endDate="2005-05-04T21:15:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DILATOMETER,Volumetric Strain,NCSN-LEGACY</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>2737730.0</Value>
+       <Frequency>1.0</Frequency>
+       <InputUnits>
+         <Name>UM/UM</Name>
+         <Description>Strain in Micrometer/micrometer</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HV1" locationCode="" startDate="2005-05-04T21:15:00.0000" endDate="2006-01-24T18:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DILATOMETER,Volumetric Strain,NCSN-LEGACY</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>2737730.0</Value>
+       <Frequency>1.0</Frequency>
+       <InputUnits>
+         <Name>UM/UM</Name>
+         <Description>Strain in Micrometer/micrometer</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HV1" locationCode="" startDate="2006-01-24T18:00:00.0000" endDate="2006-12-21T19:06:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DILATOMETER,Volumetric Strain,NCSN-LEGACY</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>2737730.0</Value>
+       <Frequency>1.0</Frequency>
+       <InputUnits>
+         <Name>UM/UM</Name>
+         <Description>Strain in Micrometer/micrometer</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HV1" locationCode="" startDate="2006-12-21T19:06:00.0000" endDate="2008-11-06T22:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DILATOMETER,Volumetric Strain,NCSN-LEGACY</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>2737730.0</Value>
+       <Frequency>1.0</Frequency>
+       <InputUnits>
+         <Name>UM/UM</Name>
+         <Description>Strain in Micrometer/micrometer</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HV1" locationCode="" startDate="2008-11-06T22:00:00.0000" endDate="2012-01-11T21:17:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DILATOMETER,Volumetric Strain,NCSN-LEGACY</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>2737730.0</Value>
+       <Frequency>1.0</Frequency>
+       <InputUnits>
+         <Name>UM/UM</Name>
+         <Description>Strain in Micrometer/micrometer</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HV1" locationCode="" startDate="2012-01-11T21:17:00.0000" endDate="2012-01-26T22:30:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DILATOMETER,Volumetric Strain,NCSN-LEGACY</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>2737730.0</Value>
+       <Frequency>1.0</Frequency>
+       <InputUnits>
+         <Name>UM/UM</Name>
+         <Description>Strain in Micrometer/micrometer</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HV1" locationCode="" startDate="2012-01-26T22:30:00.0000" endDate="2014-06-03T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DILATOMETER,Volumetric Strain,NCSN-LEGACY</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>2737730.0</Value>
+       <Frequency>1.0</Frequency>
+       <InputUnits>
+         <Name>UM/UM</Name>
+         <Description>Strain in Micrometer/micrometer</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="HV1" locationCode="" startDate="2014-06-03T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E02</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>DILATOMETER,Volumetric Strain,NCSN-LEGACY</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>5857730.0</Value>
+       <Frequency>1.0</Frequency>
+       <InputUnits>
+         <Name>UM/UM</Name>
+         <Description>Strain in Micrometer/micrometer</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="LDO" locationCode="" startDate="2014-06-03T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>0</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>1E00</SampleRate>
+     <ClockDrift>0E00</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>MODEL 204,Pressure,SETRA</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>27852.3</Value>
+       <Frequency>1.0</Frequency>
+       <InputUnits>
+         <Name>MBAR</Name>
+         <Description>Pressure in Millibars</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="SP2" locationCode="" startDate="2000-09-24T15:00:00.0000" endDate="2000-09-25T21:30:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E01</SampleRate>
+     <ClockDrift>1E-02</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>OYO-HS1</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>4.3201536E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="SP2" locationCode="" startDate="2000-09-25T21:30:00.0000" endDate="2004-03-12T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E01</SampleRate>
+     <ClockDrift>1E-02</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>OYO-HS1</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>4.3201536E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="SP2" locationCode="" startDate="2004-03-12T00:00:00.0000" endDate="2006-01-24T18:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>0</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E01</SampleRate>
+     <ClockDrift>1E-02</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>OYO-HS1</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51372672E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="SP3" locationCode="" startDate="2000-09-24T15:00:00.0000" endDate="2000-09-25T21:30:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E01</SampleRate>
+     <ClockDrift>1E-02</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>OYO-HS1</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>4.3201536E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="SP3" locationCode="" startDate="2000-09-25T21:30:00.0000" endDate="2004-03-12T00:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E01</SampleRate>
+     <ClockDrift>1E-02</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>OYO-HS1</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>4.3201536E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+    <Channel code="SP3" locationCode="" startDate="2004-03-12T00:00:00.0000" endDate="2006-01-24T18:00:00.0000" restrictedStatus="open">
+     <Latitude>37.540257</Latitude>
+     <Longitude>-121.887581</Longitude>
+     <Elevation>214</Elevation>
+     <Depth>155</Depth>
+     <Azimuth>90</Azimuth>
+     <Dip>0</Dip>
+     <Type>CONTINUOUS</Type>
+     <Type>GEOPHYSICAL</Type>
+     <SampleRate>2E01</SampleRate>
+     <ClockDrift>1E-02</ClockDrift>
+     <CalibrationUnits>
+      <Name>A</Name>
+      <Description>Amperes</Description>
+     </CalibrationUnits>
+     <Sensor>
+      <Description>OYO-HS1</Description>
+     </Sensor>
+     <Response>
+     <InstrumentSensitivity>
+       <Value>3.51372672E7</Value>
+       <Frequency>30.0</Frequency>
+       <InputUnits>
+         <Name>M/S</Name>
+         <Description>Velocity in Meters Per Second</Description>
+       </InputUnits>
+       <OutputUnits>
+         <Name>COUNTS</Name>
+         <Description>Digital Counts</Description>
+       </OutputUnits>
+     </InstrumentSensitivity>
+     </Response>
+    </Channel>
+   </Station>
+  </Network>
+ </FDSNStationXML>

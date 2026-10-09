@@ -2,23 +2,40 @@
 
 These station records support the independently selected event/pick cohort in `../hayward/`. They do not establish the manuscript's original station subset.
 
-## Acquisition status and required clarification
+## Metadata investigation and adopted interpretation
 
-Acquisition returned 4,970 channel epochs representing 511 NSLCs. Of 42,236 selected picks, 42,094 have unique metadata matches and 142 have none; no overlapping matches were found. The helper stopped at this check. These data have not been used in an inversion. New observational queries are paused while the user clarifies the following cases.
+The user requested metadata investigation before exclusions, with documented study exclusions omitted from reproduction but preserved for a later additional-data comparison. The [written-source review](investigation/study_membership.md) found no evidence establishing inclusion or exclusion of `NC.CMW1`, `NC.CCH1`, `NC.CGP1`, or `NC.CSU1` in the manuscript cohort. Their membership remains **unknown**. No station is excluded on a study-membership claim.
 
-All 142 unmatched picks belong to `NC.CMW1` (`FDSN:NC_CMW1`) during 1995-08-23 through 1998-12-22, across 142 events. Channel counts are `NC.CMW1..HN1` 129, `..EP3` 4, `..HN3` 3, `..HV1` 3, `..EP2` 2, and `..HN2` 1. Of these picks, 138 have positive provider arrival-association weights and four have zero weights. The saved [NCEDC request and response](raw/ncedc_channels_NC_26a85a0b6a04.xml) explicitly requested `CMW1` but returned no metadata for it. Its [provenance](raw/ncedc_channels_NC_26a85a0b6a04.xml.provenance.json) records the complete URL and hash. No station name or coordinates have been substituted. The provider's distance values are not used to infer coordinates or selection; their units require separate clarification.
+The original StationXML retrieval supplied 4,970 epochs and left 142 CMW1 picks unmatched. Targeted EarthScope and NCEDC queries found that their StationXML coverage begins in 2000. The authoritative [NCSN station-history file](https://ncedc.org/pub/doc/ncsn/ncsn.stations) explicitly supplies historical SEED channel names and operation dates. Its ten CMW1 operation epochs have now been added, giving **4,980 epochs, 521 NSLCs, and unique matches for all 42,236 selected picks**. No alias or backward extension of modern StationXML was used. The [CMW1 investigation](investigation/cmw1_report.md) preserves the exact records and all 142 identified pick matches.
 
-Thirty returned epochs at three stations have nonzero burial depth, but their channel elevation equals station elevation. This raises a provider-convention question relative to the generic StationXML sensor-elevation definition below. Seventeen of the 18 returned channels are used by 322 selected picks, of which 289 have positive association weights. All three stations lie inside the proposed Hayward model's horizontal bounds:
+| Station SEED name | Derived station resource ID | Adopted elevation (m) | Model z (km, downward positive) | Initial selected picks |
+| --- | --- | ---: | ---: | ---: |
+| NC.CCH1 | FDSN:NC_CCH1 | 107 | −0.107 | 134 |
+| NC.CGP1 | FDSN:NC_CGP1 | 219 | −0.219 | 115 |
+| NC.CSU1 | FDSN:NC_CSU1 | 375 | −0.375 | 73 |
+| NC.CMW1 | FDSN:NC_CMW1 | 214 | −0.214 | 142 |
 
-| Station resource ID | Channel/station elevation (m) | Burial depth (m) | Selected picks | Positive association weights |
-| --- | ---: | ---: | ---: | ---: |
-| `FDSN:NC_CCH1` | 107 | 119 | 134 | 125 |
-| `FDSN:NC_CGP1` | 219 | 121 | 115 | 114 |
-| `FDSN:NC_CSU1` | 375 | 124 | 73 | 50 |
+For CCH1/CGP1/CSU1, the current provider `Channel/Elevation` is used as sensor elevation under StationXML semantics; burial depth is not subtracted again. Equality with `Station/Elevation` alone does not demonstrate a provider error. Historical BSL wellhead tables conflict: later values exceed earlier ones by exactly one burial depth. Their ellipsoid labels also differ from the provider's stated geoid convention. The [elevation review](investigation/borehole_elevations.md) records these conflicts and the USGS terrain corroboration. These are provider-declared coordinates, not independently surveyed sensor positions; no inferred datum correction is applied.
 
-The raw records are in [the CCH1/CGP1 response](raw/ncedc_channels_NC_987aa2b70b3c.xml) and [the CSU1 response](raw/ncedc_channels_NC_26a85a0b6a04.xml), with channel/epoch IDs in their sidecars. These 30 records have `vertical_coordinate_status=ambiguous_provider_borehole_elevation_convention` and a blank `sensor_z_geoid_km`, so a solver cannot silently adopt either interpretation. The explicitly conditional columns `z_if_sensor_elevation_km` and `z_if_ground_elevation_km` retain the two calculations. They differ by the 119–124 m burial depths; neither resolves the provider convention.
+For CMW1, the historical `ELEV=214 m` is used unchanged as receiver elevation. **Interpreting this field as sensor elevation is an explicit assumption**, consistent with the later StationXML value but not independently verified by it. The history's external-GPS-antenna location flag `E` is preserved. Historical burial depth and StationXML-specific elevation fields remain blank; the later 155 m burial depth is not backfilled. Historical dates identify instrument operation epochs, not calibrated response epochs. All selected picks fall strictly inside those intervals, so unspecified endpoint inclusion does not affect their matches.
 
-`metadata_clarification.json` preserves per-channel counts, all affected event/origin/arrival/pick IDs, metadata epoch IDs and raw-response links. `matching_summary.json` and `pick_epoch_matches.csv` retain the complete join outcome. No missing epoch or unresolved burial convention is silently repaired.
+`channel_epochs.csv` records these source types, epoch bases, interpretation flags and provenance. `pick_epoch_matches.csv` preserves every event/origin/arrival/pick identity and matching metadata source. `metadata_clarification.json` retains the original issue snapshot plus the adopted investigation outcome. No raw response or pick was deleted or altered.
+
+## Reproduction and additional-data selections
+
+`study_station_policy.csv` records investigated stations and written evidence. Unknown or unlisted membership does not cause exclusion. A confirmed inclusion/exclusion requires an evidence URL, locator and summary. The default preparation omits only documented study exclusions, in addition to its separately declared quality and model-domain filters:
+
+```bash
+python3 prepare_hayward.py --selection reproduction
+```
+
+A later comparison can restore the eligibility of documented study-excluded stations while retaining the same metadata and other selection checks, writing a separate directory:
+
+```bash
+python3 prepare_hayward.py --selection additional
+```
+
+These write `data/hayward/` and `data/hayward_additional/` respectively. All acquired observations remain under `data/authoritative/`; prepared `excluded_picks.csv` files retain identities and explicit reasons. Currently there are no confirmed study exclusions, so these two station-policy choices alone do not select different observations. The additional run has not been performed.
 
 ## Rebuilding the acquisition and join
 
@@ -28,9 +45,9 @@ After event/pick acquisition has written `../hayward/channel_requests.csv` and `
 python3 data/authoritative/stations/acquire.py acquire
 ```
 
-Use `acquire --offline` to regenerate normalized metadata and sidecars from the pinned raw-response cache without permitting network retrieval. The unresolved metadata matches intentionally still produce a nonzero exit status after writing the diagnostic files.
+Use `acquire --offline` to regenerate normalized metadata and sidecars from the pinned raw-response cache without permitting network retrieval. The current pinned inputs pass the complete join. Any future missing or overlapping match still produces a nonzero exit status after writing diagnostics.
 
-The helper first asks the [EarthScope federated catalog](https://service.earthscope.org/irisws/fedcatalog/1/) for station-service routing, then requests [NCEDC StationXML](https://service.ncedc.org/fdsnws/station/1/) for batches of 25 stations and the relevant pick-time interval. It retrieves channel metadata, not waveform samples or full instrument responses. Channel epochs from the station batches can include channels unused by the selected picks; the pick-to-epoch join identifies the used records.
+The helper first asks the [EarthScope federated catalog](https://service.earthscope.org/irisws/fedcatalog/1/) for station-service routing, then requests [NCEDC StationXML](https://service.ncedc.org/fdsnws/station/1/) for batches of 25 stations and the relevant pick-time interval. It retrieves channel metadata, not waveform samples or full instrument responses. Channel epochs from the station batches can include channels unused by the selected picks; the pick-to-epoch join identifies the used records. Offline normalization also parses the pinned NCSN historical file through `investigation/cmw1_normalize.py`; it does not extend modern response epochs.
 
 Raw replies under `raw/` are preserved unchanged. Their sibling `.provenance.json` files record the exact request URL, retrieval UTC, status, byte length, and SHA-256 hash. Cached replies are reused only after checking their request URL and hash. `.identifiers.json` sidecars attach SEED names, standardized FDSN identifiers, provider IDs where present, metadata epochs, and raw-file links. IDs derived under the [FDSN Source Identifiers standard](https://docs.fdsn.org/projects/source-identifiers/en/v1.0/definition.html) are explicitly distinguished from identifiers present in the provider's XML. Empty location codes remain empty, for example `NC.BAV..EHZ` and `FDSN:NC_BAV__E_H_Z`.
 
@@ -42,4 +59,4 @@ Raw replies under `raw/` are preserved unchanged. Their sibling `.provenance.jso
 python3 data/authoritative/stations/acquire.py match
 ```
 
-The [StationXML reference](https://docs.fdsn.org/projects/stationxml/en/latest/reference.html) defines `Channel/Elevation` as sensor elevation and `Channel/Depth` as burial depth below local ground. Under that convention, model depth is `-channel_sensor_elevation_m / 1000`, positive downward. Burial depth is preserved independently. The alternative interpretation treats the elevation field as ground elevation and gives `(burial_depth - elevation) / 1000`; ambiguous records retain both conditional values with no solver depth assigned. The [NCEDC depth-datum documentation](https://ncedc.org/blog/2015/10/07/the-ncss-now-reports-earthquake.html) places station elevations and event depths on the same geoid datum. StationXML supplies no explicit per-channel vertical datum, so its documentary basis is recorded separately. Latitude/longitude datum attributes are preserved; absent attributes use the explicit StationXML WGS84 default.
+The [StationXML reference](https://docs.fdsn.org/projects/stationxml/en/latest/reference.html) defines `Channel/Elevation` as sensor elevation and `Channel/Depth` as burial depth below local ground. Under that convention, model depth is `-channel_sensor_elevation_m / 1000`, positive downward. Burial depth is preserved independently. The alternative interpretation treats the elevation field as ground elevation and gives `(burial_depth - elevation) / 1000`; the two conditional calculations remain in the StationXML rows, but the selected sensor-elevation interpretation and its caveats are now explicit. They are not two equally endorsed receiver depths. The [NCEDC depth-datum documentation](https://ncedc.org/blog/2015/10/07/the-ncss-now-reports-earthquake.html) places station elevations and event depths on the same geoid datum. StationXML supplies no explicit per-channel vertical datum, so its documentary basis is recorded separately. Latitude/longitude datum attributes are preserved; absent attributes use the explicit StationXML WGS84 default.

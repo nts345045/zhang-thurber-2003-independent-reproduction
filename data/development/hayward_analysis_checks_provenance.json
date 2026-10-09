@@ -1,0 +1,29 @@
+{
+  "preserved_utc": "2026-10-09T22:30:37.214659Z",
+  "scope": "Nine invented-fixture checks of parsing, aggregate statistics, error rejection, and LaTeX text generation. No provider observations, real-data analysis, simulations, or inversions.",
+  "result_file": "data/development/hayward_analysis_checks.json",
+  "result_sha256": "8bee771a06d761918ea6e3e5dfc5ebef345bfd3981ca9b60ea3b9da97871877b",
+  "original_result_file": "tmp/hayward_analysis_checks/results.json",
+  "executed_command": "python3 tmp/hayward_analysis_checks/check.py",
+  "executed_command_exit_code": 0,
+  "original_helper": "tmp/hayward_analysis_checks/check.py",
+  "original_helper_sha256": "434b6f13baa9d4254fa595b8aaad72f6d787960846eefab3930669d5add67610",
+  "tested_analysis_source": "analyze.py",
+  "tested_analysis_source_sha256": "022fd987ccdb3229f519344d6f06fd227bec774ba582d446cbb3d82eaa7baca2",
+  "preserved_helper": "diagnostics/check_hayward_analysis.py",
+  "preserved_helper_sha256": "797d47a0882aea0085c332ea1d7a73feffa625a9a470295a969dfc5bd52b13c0",
+  "rerun_command": "python3 diagnostics/check_hayward_analysis.py",
+  "working_directory": "repository root",
+  "runtime": "Python 3.6 and NumPy",
+  "rerun_output_directory": "tmp/hayward_analysis_checks/",
+  "preservation_changes": [
+    "Added a fixture-only module description and interpreter line.",
+    "Made fixture-directory creation include missing parents so the preserved helper runs from a clean checkout."
+  ],
+  "validation_at_preservation": "Result copied byte for byte; source hash matches the tested version; preserved helper syntax compiled without execution. No checks rerun.",
+  "interpretation_limits": [
+    "Fixture resource IDs are explicitly invented and do not identify provider records.",
+    "Fixture-generated numerical_review.json and hayward_results.tex exercise the real report template with invented numbers and are not field results.",
+    "The LaTeX check validates generated text and formatting substitutions; it does not run a TeX compiler."
+  ]
+}

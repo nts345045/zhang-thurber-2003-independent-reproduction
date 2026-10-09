@@ -1,0 +1,99 @@
+{
+  "url": "https://epqs.nationalmap.gov/v1/json?x=-122.011276&y=37.645447&units=Meters&wkid=4326&includeDate=true",
+  "final_url": "https://epqs.nationalmap.gov/v1/json?x=-122.011276&y=37.645447&units=Meters&wkid=4326&includeDate=true",
+  "http_status": 200,
+  "retrieved_utc": "2026-10-09T21:55:07.192840+00:00",
+  "bytes": 210,
+  "sha256": "596362712c6bb5c92ef1ae4974c8cbf351376d727111ec81b8715afc65f651c7",
+  "source_file": "terrain_usgs_NC_CGP1.json",
+  "query_parameters": {
+    "x": "-122.011276",
+    "y": "37.645447",
+    "units": "Meters",
+    "wkid": "4326",
+    "includeDate": "true"
+  },
+  "purpose": "Terrain corroboration only; not sensor coordinates or survey evidence",
+  "station_seed_id": "NC.CGP1",
+  "station_fdsn_source_id": "FDSN:NC_CGP1",
+  "identifier_basis": "FDSN identifiers derived from authoritative SEED codes; USGS EPQS supplies no seismic station ID",
+  "coordinate_source_file": "../channel_epochs.csv",
+  "coordinate_source_sha256": "4f96d7480387c5349f1190e4a1e4e0be3a5fccce9821ae2856da8de73e063d7b",
+  "input_horizontal_reference": "WGS84 from station metadata, explicitly requested with wkid=4326",
+  "vertical_datum_note": "USGS documents CONUS DEM elevations as NAVD88; the point response supplies no explicit vertical datum. No conversion to geoid or ellipsoid was performed.",
+  "role": "independent interpolated ground-surface check, not an authoritative sensor elevation or surveyed well-head height",
+  "channel_epochs": [
+    {
+      "network_code": "NC",
+      "station_code": "CGP1",
+      "location_code": "",
+      "channel_code": "EP2",
+      "channel_seed_id": "NC.CGP1..EP2",
+      "channel_fdsn_source_id": "FDSN:NC_CGP1__E_P_2",
+      "metadata_epoch_start": "1995-06-01T00:00:00",
+      "metadata_epoch_end": "1999-03-03T00:00:00",
+      "source_file": "raw/ncedc_channels_NC_987aa2b70b3c.xml",
+      "source_sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833"
+    },
+    {
+      "network_code": "NC",
+      "station_code": "CGP1",
+      "location_code": "",
+      "channel_code": "EP3",
+      "channel_seed_id": "NC.CGP1..EP3",
+      "channel_fdsn_source_id": "FDSN:NC_CGP1__E_P_3",
+      "metadata_epoch_start": "1995-06-01T00:00:00",
+      "metadata_epoch_end": "1999-03-03T00:00:00",
+      "source_file": "raw/ncedc_channels_NC_987aa2b70b3c.xml",
+      "source_sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833"
+    },
+    {
+      "network_code": "NC",
+      "station_code": "CGP1",
+      "location_code": "",
+      "channel_code": "HN1",
+      "channel_seed_id": "NC.CGP1..HN1",
+      "channel_fdsn_source_id": "FDSN:NC_CGP1__H_N_1",
+      "metadata_epoch_start": "1995-06-01T00:00:00",
+      "metadata_epoch_end": "1999-03-03T00:00:00",
+      "source_file": "raw/ncedc_channels_NC_987aa2b70b3c.xml",
+      "source_sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833"
+    },
+    {
+      "network_code": "NC",
+      "station_code": "CGP1",
+      "location_code": "",
+      "channel_code": "HN2",
+      "channel_seed_id": "NC.CGP1..HN2",
+      "channel_fdsn_source_id": "FDSN:NC_CGP1__H_N_2",
+      "metadata_epoch_start": "1995-06-01T00:00:00",
+      "metadata_epoch_end": "1999-03-03T00:00:00",
+      "source_file": "raw/ncedc_channels_NC_987aa2b70b3c.xml",
+      "source_sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833"
+    },
+    {
+      "network_code": "NC",
+      "station_code": "CGP1",
+      "location_code": "",
+      "channel_code": "HN3",
+      "channel_seed_id": "NC.CGP1..HN3",
+      "channel_fdsn_source_id": "FDSN:NC_CGP1__H_N_3",
+      "metadata_epoch_start": "1995-06-01T00:00:00",
+      "metadata_epoch_end": "1999-03-03T00:00:00",
+      "source_file": "raw/ncedc_channels_NC_987aa2b70b3c.xml",
+      "source_sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833"
+    },
+    {
+      "network_code": "NC",
+      "station_code": "CGP1",
+      "location_code": "",
+      "channel_code": "HV1",
+      "channel_seed_id": "NC.CGP1..HV1",
+      "channel_fdsn_source_id": "FDSN:NC_CGP1__H_V_1",
+      "metadata_epoch_start": "1995-06-01T00:00:00",
+      "metadata_epoch_end": "1999-03-03T00:00:00",
+      "source_file": "raw/ncedc_channels_NC_987aa2b70b3c.xml",
+      "source_sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833"
+    }
+  ]
+}

@@ -18,10 +18,13 @@ the initial attempt. The existing generated geometry cannot reproduce that
 experiment exactly. Historical USGS/EarthScope retrievals now establish data
 access, but the exact manuscript subset remains unidentified. The user has
 authorized an independently selected authoritative subset with its differences
-reported. That resolves the cohort-selection question. Subsequent channel-epoch
-gaps and borehole elevation ambiguity are recorded separately in
-`data/authoritative/stations/`; no field inversion may treat them as resolved
-without the clarification required by `AGENTS.md`.
+reported. That resolves the cohort-selection question. At the user's request,
+metadata investigation preceded station exclusion. The NCSN master history
+supplies the missing CMW1 operation epochs; all 42,236 picks now match uniquely.
+No examined written source establishes inclusion or exclusion of the four
+investigated borehole stations in the paper. Their membership remains unknown.
+The evidence and adopted vertical interpretations are recorded in
+`data/authoritative/stations/`; they do not establish independent survey accuracy.
 
 ## Authoritative subset and conditional resolution
 
@@ -38,17 +41,38 @@ numerical indices. It refuses incomplete acquisition and nonunique metadata
 matches. Its additional selection excludes known nonpositive provider
 association weights, receivers outside the model's horizontal bounds, and events
 with fewer than eight remaining picks. Catalog pairs share at least eight
-channel epochs and have separation below 10 km. An explicitly independent
+channel locations and have separation below 10 km. An explicitly independent
 greedy selection processes pairs in ascending separation and caps each event's
 undirected degree at ten. It reports disconnected components instead of forcing
-connections. These choices need not reproduce the original pairing algorithm.
+connections. Each side retains its native channel epoch and metadata provenance;
+an epoch change alone does not move a receiver. Cross-epoch pairs are flagged
+because common geometry does not establish unchanged timing calibration. A strict
+same-epoch sensitivity subset is retained in `data/development/hayward_epoch_restricted/`.
+These choices need not reproduce the original pairing algorithm. In particular,
+an undirected degree cap of ten bounds the number of differences by five times
+the available absolute-pick count, so this interpretation cannot recover the
+paper's reported difference count from its reported absolute-pick pool.
 
 Time observations are pick time minus that event's reference catalog origin.
 The source time unknown is a correction to this reference. Differences subtract
 those two elapsed times and preserve both events, origins, arrivals, and picks.
-The same channel epoch identifies the common receiver. Numerical event outputs
+The common NSLC and exact reported position identify the receiver; each pick's
+epoch remains separate. Numerical event outputs
 retain the catalog resource IDs as references; updated numerical coordinates
-do not claim to be provider-issued origins.
+do not claim to be provider-issued origins. The reproduction selection omits
+only documented study exclusions in `study_station_policy.csv`; unknown membership
+does not cause exclusion. `--selection additional` restores those stations'
+eligibility under identical metadata, quality, and domain checks, in a separate
+output directory. No original or acquired record is deleted.
+
+CCH1, CGP1 and CSU1 use StationXML Channel/Elevation values 107, 219 and 375 m
+as provider-declared sensor elevations. Burial depth is retained but is not
+subtracted again. CMW1 uses historical ELEV=214 m as receiver elevation under
+an explicit sensor-elevation interpretation; agreement with later StationXML is
+not independent validation. Its historical burial depth remains unknown. The
+provider's shared geoid convention for elevations and earthquake depths is
+retained without a guessed ellipsoid conversion. Conflicting BSL wellhead tables
+and their datum labels are documented alongside USGS terrain checks.
 
 The proposed field grid retains the written horizontal and depth nodes, with
 one additional level above the geoid to contain elevated receivers. The starting

@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-10-09T22:23:33.585860Z",
+  "status": "passed",
+  "event_candidates": 823,
+  "selected_events": 724,
+  "excluded_events_preserved": 99,
+  "channel_epoch_candidates": 355,
+  "selected_channels": 52,
+  "excluded_channel_epochs_preserved": 303,
+  "event_resource_records": 2470,
+  "unique_selected_NSLCS": 52,
+  "all_selected_epochs_contain_snapshot": true,
+  "all_selected_sensor_depths_zero": true,
+  "native_event_origin_magnitude_ids_match_raw": true,
+  "station_SEED_FDSN_ids_match_raw": true,
+  "raw_sources": [
+    {
+      "source_file": "raw/earthscope_routes.txt",
+      "sha256": "61da8b13875cce83115873a6b3c0b958c027ee21fb7b15f0d190efedd0d16772",
+      "http_status": 200,
+      "identifier_sidecar": "raw/earthscope_routes.txt.identifiers.json"
+    },
+    {
+      "source_file": "raw/events_00001.xml",
+      "sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+      "http_status": 200,
+      "identifier_sidecar": "raw/events_00001.identifiers.json"
+    },
+    {
+      "source_file": "raw/ncedc_channel_epochs.xml",
+      "sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+      "http_status": 200,
+      "identifier_sidecar": "raw/ncedc_channel_epochs.xml.identifiers.json"
+    }
+  ],
+  "offline_rebuild_identical_raw_and_normalized_hashes": {
+    "channel_candidates.csv": "5d15c48ac45b8821fd83fd72a699ff3fbbac004d4e1a262f7701b2b2ad5d02c7",
+    "selected_channels.csv": "42d221cf7a03ac581739c882597dcb256d24769c1aab8114ccca9eab6efe072e",
+    "catalog_candidates.csv": "f26db6a52ffdfbb0635d117909b80e80f68d56e9e286073b96d786dd13a23f64",
+    "selected_events.csv": "d1cbc2fc8ef0c65cf58fd6cbcbd8c3486bdd6c80c6c6f4b2c8dbd8e59f5729c5",
+    "raw/ncedc_channel_epochs.xml": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+    "raw/events_00001.xml": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+    "raw/earthscope_routes.txt": "61da8b13875cce83115873a6b3c0b958c027ee21fb7b15f0d190efedd0d16772"
+  },
+  "selected_origin_time_range_utc": [
+    "1989-10-18T00:07:15.290000Z",
+    "1989-11-17T19:49:34.710000Z"
+  ],
+  "selected_geoid_depth_range_km": [
+    0.224,
+    15.964
+  ],
+  "selected_sensor_z_range_km": [
+    -0.921,
+    -0.039
+  ],
+  "simulation_or_inversion_performed": false,
+  "all_355_channel_codes_coordinates_and_raw_epochs_match_stationxml": true,
+  "README_relative_links_valid": true,
+  "authored_files_contain_no_private_home_or_project_absolute_paths": true
+}

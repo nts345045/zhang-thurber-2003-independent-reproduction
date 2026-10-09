@@ -1,0 +1,12 @@
+{
+  "derived_from": "usgs_ofr_2000_330.pdf",
+  "source_sha256": "1cac0366d7acc27675bdc02c7feccf55c59eeb5e2f5f1a7adde730a819014b55",
+  "output_sha256": "e24e288fd48c146c4d6ed1fb24294788c6cffee512d964a665bd88a2f1dff642",
+  "derivation_command": [
+    "pdftotext",
+    "-layout",
+    "usgs_ofr_2000_330.pdf",
+    "usgs_ofr_2000_330.txt"
+  ],
+  "record_kind": "derived text of preserved official PDF, not a new metadata source"
+}

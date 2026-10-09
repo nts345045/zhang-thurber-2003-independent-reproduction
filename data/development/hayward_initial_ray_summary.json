@@ -1,0 +1,189 @@
+{
+  "created_utc": "2026-10-09T22:19:28.298400Z",
+  "limits": [
+    "Only 32 of 14,262 used native event/receiver pairs are sampled, and source derivatives cover 8 rays.",
+    "All sampled converged flags satisfy the combined stopping branch; none of the saved gradients is below the stricter 1e-7 s/km branch.",
+    "Production/refined agreement is not an independent exact solution or proof of the globally earliest ray.",
+    "The finite-difference perturbation rays do not save their individual stationarity flags; the recorded derivative comparison is a consistency check.",
+    "These diagnostics concern the initial model; each updated/final model still requires convergence assessment.",
+    "No universal field-data pass threshold is imposed by raycheck; the numeric differences above are reported directly."
+  ],
+  "production": {
+    "converged": 32,
+    "gradient_below_1e_minus_7": 0,
+    "merged_nodes_total": 0,
+    "projected_gradient_norm_s_per_km": {
+      "count": 32,
+      "maximum": 9.63083544924e-06,
+      "maximum_absolute": 9.63083544924e-06,
+      "mean": 2.2597943906543128e-06,
+      "minimum": 5.40596905549e-07,
+      "rms": 2.871196916796975e-06
+    },
+    "raw_gradient_norm_s_per_km": {
+      "count": 32,
+      "maximum": 9.63083544924e-06,
+      "maximum_absolute": 9.63083544924e-06,
+      "mean": 2.2597943906543128e-06,
+      "minimum": 5.40596905549e-07,
+      "rms": 2.871196916796975e-06
+    },
+    "updates": {
+      "count": 32,
+      "maximum": 778.0,
+      "maximum_absolute": 778.0,
+      "mean": 503.09375,
+      "minimum": 42.0,
+      "rms": 544.2817227778277
+    }
+  },
+  "production_source_derivative_minus_finite_difference_s_per_km": {
+    "count": 24,
+    "maximum": 2.67964809746e-05,
+    "maximum_absolute": 8.15460626756e-05,
+    "mean": -1.4300392652744798e-05,
+    "minimum": -8.15460626756e-05,
+    "rms": 3.172895303771318e-05
+  },
+  "readiness_inference": "The passing component suite and sampled initial-model checks support beginning the configured inversion. This is a numerical preflight, not an inversion result or an all-ray convergence certificate.",
+  "refined": {
+    "converged": 32,
+    "gradient_below_1e_minus_7": 0,
+    "merged_nodes_total": 0,
+    "projected_gradient_norm_s_per_km": {
+      "count": 32,
+      "maximum": 9.56156556314e-06,
+      "maximum_absolute": 9.56156556314e-06,
+      "mean": 3.3120345149078125e-06,
+      "minimum": 8.9210859764e-07,
+      "rms": 3.970640433181958e-06
+    },
+    "raw_gradient_norm_s_per_km": {
+      "count": 32,
+      "maximum": 9.56156556314e-06,
+      "maximum_absolute": 9.56156556314e-06,
+      "mean": 3.3120345149078125e-06,
+      "minimum": 8.9210859764e-07,
+      "rms": 3.970640433181958e-06
+    },
+    "updates": {
+      "count": 32,
+      "maximum": 563.0,
+      "maximum_absolute": 563.0,
+      "mean": 244.09375,
+      "minimum": 3.0,
+      "rms": 283.99048179472493
+    }
+  },
+  "refined_source_derivative_minus_finite_difference_s_per_km": {
+    "count": 24,
+    "maximum": 2.76048558749e-05,
+    "maximum_absolute": 7.72063154005e-05,
+    "mean": -1.3641829976693757e-05,
+    "minimum": -7.72063154005e-05,
+    "rms": 3.0505904464093167e-05
+  },
+  "sampling": {
+    "available_native_event_receiver_pairs": 14262,
+    "derivative_components": 24,
+    "derivative_rays_sampled": 8,
+    "identifier_associations": 210,
+    "identifier_j_associations": 94,
+    "identifier_mapping": "data/hayward/initial_ray_identifiers.csv; diagnostic_row links both numeric diagnostic tables to provider IDs, native receiver epochs, and observation associations",
+    "method": "32 deterministic, evenly spaced indices in the sorted unique observed event/native-receiver support; no ray_samples.csv override",
+    "rays_sampled": 32
+  },
+  "scope": "Aggregate calculation from the saved initial-model ray diagnostics; no inversion or new ray trace run.",
+  "settings": {
+    "production_max_updates": 1000,
+    "production_spacing_km": 0.5,
+    "refined_max_updates": 1000,
+    "refined_spacing_km": 0.25,
+    "source_finite_difference_half_step_km": 0.01,
+    "source_finite_difference_method": "Centered differences of refined-spacing retraced travel times"
+  },
+  "source_derivative_spacing_difference_s_per_km": {
+    "count": 24,
+    "maximum": 1.382287979999862e-05,
+    "maximum_absolute": 2.1813912499998173e-05,
+    "mean": -6.585626587493512e-07,
+    "minimum": -2.1813912499998173e-05,
+    "rms": 5.843468082397843e-06
+  },
+  "source_files": [
+    {
+      "file_mtime_utc": "2026-10-09T22:13:10.052886Z",
+      "path": "data/hayward/initial_ray_convergence.csv",
+      "sha256": "8c68f00240926e95d7e55be9f3ac2ed79a0c695d565ed286fd3cb56bcb909d8e"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T22:13:10.052886Z",
+      "path": "data/hayward/initial_ray_derivatives.csv",
+      "sha256": "7674e7c07dd07b964630ed6bc5aa27149dc445b29074b41979dead3e1aa312fe"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T22:13:10.052886Z",
+      "path": "data/hayward/initial_ray_identifiers.csv",
+      "sha256": "f4aabb2de29ec88ae70b1de5b6a370ba06917427ebef1e4bf7f0a8a8cfa7b3eb"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T22:19:19.689086Z",
+      "path": "data/hayward/initial_events.csv",
+      "sha256": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T22:19:24.079088Z",
+      "path": "data/hayward/initial_grid.csv",
+      "sha256": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T22:19:19.729086Z",
+      "path": "data/hayward/stations.csv",
+      "sha256": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T22:19:24.076088Z",
+      "path": "data/hayward/observations.csv",
+      "sha256": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T22:19:26.687090Z",
+      "path": "data/hayward/selection_manifest.json",
+      "sha256": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T22:08:36.705740Z",
+      "path": "configs/hayward.cfg",
+      "sha256": "cd7a922200f9811994d9fe4d7b66c48cbe1c9ff5f0dae2eef8ca85f6234aedb2"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T21:02:23.627652Z",
+      "path": "src/core.hpp",
+      "sha256": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T22:07:37.295708Z",
+      "path": "src/main.cpp",
+      "sha256": "79db0d337e0220c2d574fb7e22609d7a1c4d70eaac55dec5dd7610f83e2a29a4"
+    },
+    {
+      "file_mtime_utc": "2026-10-09T22:12:15.859857Z",
+      "path": "build/dd",
+      "sha256": "1be4bbcd4965082b59b5c3dbbed406d1a3253c89493ae30b80ba703585b7032a"
+    }
+  ],
+  "stationarity_criterion": {
+    "combined_gradient_norm_s_per_km": 1e-05,
+    "combined_travel_time_change_s": 1e-11,
+    "definition": "Converged if projected gradient norm <1e-7 s/km, or a step changes time by <1e-11 s and projected gradient norm <1e-5 s/km.",
+    "gradient_only_norm_s_per_km": 1e-07
+  },
+  "travel_time_spacing_difference_s": {
+    "count": 32,
+    "maximum": 0.000106474762376,
+    "maximum_absolute": 0.000106474762376,
+    "mean": 3.1441676435069056e-05,
+    "minimum": 2.49669164898e-06,
+    "rms": 3.700045414744545e-05
+  }
+}

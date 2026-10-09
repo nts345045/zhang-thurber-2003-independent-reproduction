@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "reviewed_utc": "2026-10-09T22:23:52Z",
+  "scope": "Independent static cross-epoch C++ review and exhaustive read-only validation of identified Hayward observations. This JSON is the only file written by the input review.",
+  "input_stability": "No Python preparation writer was present at this snapshot. Current source/input hashes exactly match the completed exhaustive audit and were rechecked after reading. Initial ray mappings were also rechecked after the path rebasing and rebuild. Selection/run manifests are omitted because the rebuild regenerates them.",
+  "counts": {
+    "events": 1092,
+    "physical_station_codes": 37,
+    "native_receiver_epoch_rows": 372,
+    "channel_geometries": 62,
+    "observations": 58980,
+    "absolute_observations": 14262,
+    "catalog_differences": 44718,
+    "cross_epoch_differences": 28576,
+    "unique_native_rays": 14262,
+    "unsupported_distinct_j_rays_that_legacy_station_indexing_would_request": 17063,
+    "diagnostic_samples_checked": 32,
+    "diagnostic_identifier_rows_checked": 210,
+    "diagnostic_identifier_sides_checked": {
+      "i": 116,
+      "j": 94
+    }
+  },
+  "checks": [
+    "All event/origin/pick/arrival tuples map to authoritative normalized picks and corresponding solver events.",
+    "Full SEED/FDSN identities and exact numeric receiver coordinates agree on both DD sides.",
+    "Each pick falls within its own native half-open UTC metadata epoch; both epoch fields and source hashes match the station rows.",
+    "All selected provider arrival weights are known and positive; their exported values match the authoritative records.",
+    "Absolute values equal pick time minus retained reference origin time; differences equal the difference of these absolute values.",
+    "Picking uncertainties, independent-error differential propagation and 0.05/sigma row multipliers agree with source records.",
+    "Absolute data use station_j=-1 and blank second-side identities; cross_metadata_epoch flags agree with native epoch boundaries.",
+    "Sparse support equals the native rays supplied by absolute observations; no wrong-epoch j ray is needed.",
+    "All saved initial ray-mapping observation/source/receiver metadata fields agree with current inputs, including rebased source paths.",
+    "Static C++ review found consistent station_j handling in tracing, prediction, source/model derivative assembly, residual output and diagnostics."
+  ],
+  "numeric_check_maxima": {
+    "absolute_or_difference_value_error_s": 0.0,
+    "propagated_sigma_error_s": 0.0
+  },
+  "source_review_locations": {
+    "src/main.cpp:317": "Native receiver-pair validation",
+    "src/main.cpp:359": "Sparse i/j support",
+    "src/main.cpp:497": "DD prediction",
+    "src/main.cpp:505": "Source and log-slowness derivative assembly",
+    "src/main.cpp:729": "Residual identifiers and native metadata",
+    "src/main.cpp:901": "Diagnostic i/j and native receiver mapping"
+  },
+  "assumptions_and_limits": [
+    "The independent cohort is not identified as the manuscript cohort; waveform-correlation observations are absent.",
+    "Exact reported coordinates do not establish survey accuracy; documented borehole and CMW1 elevation interpretations remain assumptions.",
+    "Same NSLC and receiver geometry across epochs do not prove unchanged timing calibration. Both epochs and cross_metadata_epoch flags remain available for residual/sensitivity analysis.",
+    "Symmetric pick uncertainties are conditionally treated as independent one-standard-deviation noise; confidence levels are absent and shared-pick difference correlations are not whitened.",
+    "The existing 5 m nodal path-length-difference cutoff is unchanged; this is not a claim that the thresholded matrix is the unmodified exact full Jacobian.",
+    "The pass establishes index, identity, arithmetic and derivative-assembly consistency, not inverse recovery, calibrated uncertainty, complete ray convergence or global optimality."
+  ],
+  "sha256": {
+    "src/main.cpp": "79db0d337e0220c2d574fb7e22609d7a1c4d70eaac55dec5dd7610f83e2a29a4",
+    "data/hayward/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/hayward/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/authoritative/hayward/picks_selected.csv": "34e2f64f7a95b4fb6c63bafeffde833d6d02054ab83170a502edcf95f9b74044"
+  },
+  "initial_ray_identifiers_sha256": "f4aabb2de29ec88ae70b1de5b6a370ba06917427ebef1e4bf7f0a8a8cfa7b3eb",
+  "inversions_run_by_this_review": false,
+  "source_or_input_edits_by_this_review": false
+}

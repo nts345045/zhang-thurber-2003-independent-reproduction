@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>The NCSS now reports earthquake depth relative to the geoid (sea level)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="UC Berkeley Seismological Lab">
+<meta name="author" content="UC Berkeley">
+
+
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet'>
+		<link href='http://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet'>
+
+        <!-- Le styles -->
+	  <link rel="stylesheet" href="/css/bootstrap.min.css">
+	  <!-- Prototype styles -->
+	  <link rel="stylesheet" href="/css/nav.css">
+	  <link rel="stylesheet" href="/css/layout.css">
+	  <link rel="stylesheet" href="/css/typography.css">
+	  <link rel="stylesheet" href="/css/components.css">
+	  <link rel="stylesheet" href="/css/infographics.css">
+	  <link rel="stylesheet" href="/css/utils.css">
+	  <link rel="stylesheet" href="/css/entypo.css">
+	  
+	  <!-- Owl stylesheets -->
+		<link rel="stylesheet" href="/css/owl.carousel.css">
+		<link rel="stylesheet" href="/css/owl.theme.css">
+		
+	  <!-- Yamm! Menus -->
+	  <link rel="stylesheet" href="/css/yamm.css">
+	  
+	  <!-- Site Specific CSS -->
+	  <link rel="stylesheet" href="/css/site.css">
+	  	  
+		<link rel="shortcut icon" href="/favicon.ico">
+        
+        <!-- Dreamweaver WYSIWYG CSS -->
+	  <!--<link rel="stylesheet" href="/lib/css/dreamweaver.css">-->
+      
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/css/custom.css"> 
+
+      <!-- CSS specific to BSL -->
+      <link rel="stylesheet" href="/css/bsl.specific.css"> 
+       
+
+  <!-- Font styles -->
+		<!-- PASTE YOUR TYPEKIT FONT CODE HERE 
+					Please note in order to use the preferred font "freight-micro-pro" you need to purchase a typekit account. 
+					For more information please read:	http://brand.berkeley.edu/typography/
+					Not adding typekit code here will fallback to Google "Sans Serif Pro"  
+		-->
+	 
+     <script src="//use.typekit.net/ixk1zbq.js"></script> 
+	 <script>try{Typekit.load();}catch(e){}</script>
+				
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body class="home">
+<p><a class="sr-only skip-link sr-only-focusable skip-to-content" title="Skip to content" href="#content">Skip to content</a> </p>
+
+
+<header id="site-header" class="subbrand light">
+  <div class="navbar navbar-default navbar-static-top yamm">
+    <div class="container"> <a href="http://berkeley.edu" class="home-link">UC Berkeley</a> <a href="https://www.usgs.gov/" class="home-link" style="margin-left:120px;">US Geological Survey</a> 
+      <!-- Brand and toggle get grouped for better mobile display -->
+     <div class="navbar-header one-line">
+        <a href="/index.html"><!--<span class="b-wordmark" aria-hidden="true"></span>--> <span class="dept-title one">Northern California
+          Earthquake Data Center</span></a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="
+icon-bar"></span> <span class="icon-bar"></span> </button>
+     </div>    
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="main-nav">
+        <div id="tools-nav">
+          <form id="navbar-search" class="navbar-form navbar-right" method="get" action="/search/index.html" role="search">
+            <div class="form-group">
+              <input class="form-control" type="search" aria-label="search term" placeholder="Search NCEDC" name="q">
+            </div>
+            <button class="btn btn-default" value="Search" aria-label="search" type="submit"> <span class="entypo search"></span> </button>
+          </form>
+        </div>
+        <nav id="primary-nav" role="navigation">
+          <ul class="nav navbar-nav">
+            <li class="dropdown yamm-fw" id="aboutus"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Networks <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="yamm-content">
+                    <div class="row">
+                      <div class="col-sm-3 hidden-xs"> <img alt="" src="/photos/PGE_NPD_1.jpg"> </div>
+                      <div class=" col-sm-9">
+                        <div class="subnav">
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+				<li><a href="/berkeley-networks.html">Berkeley Seismic Networks, UC Berkeley</a></li>
+			        <li><a href="/usgs-networks.html">Northern California Seismic Network, National Strong Motion Program, and other USGS Networks</a></li>	        
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="/partner-networks.html">Partner and Contributing Seismic Networks</a></li>
+				<li><a href="/other-networks.html">Other Seismic Networks, incl. Geothermal and Research Networks</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+				<li><a href="/gnss-networks.html">Global Navigation Satellite System Networks</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown yamm-fw" id="research"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Access Data <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="yamm-content">
+                    <div class="row">
+                      <div class="col-sm-3 hidden-xs"> <img alt="" src="/gifs/ncedc_stock_photo_computer.jpeg"> </div>
+                      <div class=" col-sm-9">
+                        <div class="subnav">
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="/aws-public-dataset.html">AWS Public Dataset</a></li>
+                                <li><a href="/web-services-home.html">Web Services</a></li>
+                                <li><a href="http://ncedc.org/SeismiQuery/">SeismiQuery</a></li>
+                                <li><a href="/ncedc/about-the-dart.html">DART (Data Available in Real Time)</a></li>                                               
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="/bard.overview.html">GPS (BARD)</a></li>    
+                                <li><a href="/usgs-gps/">GPS (USGS)</a></li>
+                                <li><a href="/ncedc/other-geophysical-datasets.html">Strain, SAR, and other Geophysical Datasets</a></li>
+                                <li><a href="/acknowledge.html">Acknowledging data sources</a></li>
+                              </ul>
+                            </div>
+			    <div class="col-sm-4">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown yamm-fw" id="facilities"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Earthquake Catalogs <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="yamm-content">
+                    <div class="row">
+                      <div class="col-sm-3 hidden-xs"> <img alt="" src="/photos/PGE_LQ_2.jpg"> </div>
+                      <div class=" col-sm-9">
+                        <div class="subnav">
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="/ncedc/catalog-search.html">Northern California Earthquake Catalog (NCSS)</a></li>
+                                <li><a href="/ncedc/catalog-snapshots.html">NCEDC Daily Catalog Snapshots</a></li>
+                                <li><a href="/egs/catalog-search.html">DOE Enhanced Geothermal System Earthquake Catalog (EGS)</a></li>
+				<li><a href="/anss/catalog-search.html">Historic ANSS Catalog (1898-2012)</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+	                        <li><a href="/ncedc/other-catalogs.html">Other Catalogs</a></li>
+                                <li><a href="/acknowledge.html">Acknowledging data sources</a></li>
+                                <!--<li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>-->
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <!--<ul class="list-unstyled">
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                              </ul>-->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown yamm-fw" id="facilities"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="yamm-content">
+                    <div class="row">
+                      <div class="col-sm-3 hidden-xs"> <img alt="" src="/photos/USGS_duck_20050929s.jpg"> </div>
+                      <div class=" col-sm-9">
+                        <div class="subnav">
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">   
+                               <li><a href="/waveformDisplay/">Waveform Display Tool</a></li>
+                               <li><a href="/bdsn/make_seismogram.html">Make Your Own Seismogram</a></li>
+                               <!--<li><a href="/bdsn/quicklook.html">BDSN Quicklook Seismogram</a></li>    -->
+                               <li><a href="/ncedc/simple-responses.html">Simple Responses</a></li>
+                               <li><a href="/ncedc/PDF/">PSD Plots</a></li>                        
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="/bk_doi_metadata.html">BDSN DOI</a></li>
+                                <li><a href="/bp_doi_metadata.html">HRSN DOI</a></li>
+                                <li><a href="/bard_doi_metadata.html">BARD DOI</a></li>
+                                <li><a href="/ncedc_doi_metadata.html">NCEDC DOI</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="/comments.html">Contact and Connect</a></li>
+                                <li><a href="/ncedc/download-software.html">Download Software</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown yamm-fw" id="seismoblog"> <a class="dropdown-toggle" href="/blog/">News/ Blog <!--<span class="caret"></span>--></a>
+             <!-- <ul class="dropdown-menu">
+                <li>
+                  <div class="yamm-content">
+                    <div class="row">
+                      <div class="col-sm-3 hidden-xs"> <img alt="lorem ipsum" src="NCEDC_template_img/sm-thumb-05.jpg"> </div>
+                      <div class=" col-sm-9">
+                        <div class="subnav">
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>-->
+            <!--<li class="dropdown yamm-fw" id="research"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="yamm-content">
+                    <div class="row">
+                      <div class="col-sm-3 hidden-xs"> <img alt="lorem ipsum" src="NCEDC_template_img/sm-thumb-01.jpg"> </div>
+                      <div class=" col-sm-9">
+                        <div class="subnav">
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown yamm-fw" id="alumni"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Alumni <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="yamm-content">
+                    <div class="row">
+                      <div class="col-sm-3 hidden-xs"> <img alt="lorem ipsum" src="NCEDC_template_img/sm-thumb-02.jpg"> </div>
+                      <div class=" col-sm-9">
+                        <div class="subnav">
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <ul class="list-unstyled">
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                                <li><a href="#" class="">Subnav</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>-->
+          </ul>
+        </nav>
+        <!-- /.primary-nav --> 
+        
+      </div>
+      <!-- /.navbar-collapse --> 
+      
+    </div>
+    <!-- /.container-fluid --> 
+  </div>
+</header>
+
+<section class="page-header founders-rock" style="margin-top:0px;margin-bottom:0px;padding:0px;padding-bottom:5px;">
+    <div class="container">
+      <a style="text-decoration:none;" href="http://seismo.berkeley.edu"><h2 style="color:white;">Hosted at the Berkeley Seismology Lab</h2></a>
+    </div>
+  </section>
+
+
+
+
+
+
+<div id="content" role="main">
+  <div class="container">
+    <div class="inner">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>NCEDC News/Blog</h1>
+            <h2>The NCSS now reports earthquake depth relative to the geoid (sea level)</h2>
+
+	      
+              <p>
+		  Categories: &thinsp;
+		  
+		     
+                        
+		           <a href="/blog/all_posts_by_category.html#Northern California Seismic System (NCSS)">Northern California Seismic System (NCSS)</a>
+		           
+		              &thinsp;|&thinsp;
+		           
+                        
+                     
+		  
+		     
+                        
+		           <a href="/blog/all_posts_by_category.html#Earthquake Depths">Earthquake Depths</a>
+		           
+		              &thinsp;|&thinsp;
+		           
+                        
+                     
+		  
+		     
+                        
+		           <a href="/blog/all_posts_by_category.html#Earthquake Catalogue">Earthquake Catalogue</a>
+		           
+		              &thinsp;|&thinsp;
+		           
+                        
+                     
+		  
+		     
+                        
+		           <a href="/blog/all_posts_by_category.html#Catalogs">Catalogs</a>
+		           
+		              &thinsp;|&thinsp;
+		           
+                        
+                     
+		  
+		     
+                        
+		           <a href="/blog/all_posts_by_category.html#Earthquake Locations">Earthquake Locations</a>
+		           
+                        
+                     
+		  
+	      </p>
+
+	      
+         
+              <p><span style="font-weight:bold;">October 7, 2015&nbsp;</span>
+
+		
+		     
+		  
+		     
+		  
+		     
+		  
+		     
+		  
+		     
+		  
+	       </p>		      
+			<p>Starting 2015/10/07, the Northern California Seismic System (NCSS) is reporting earthquake depths relative to the earth geoid surface (which is approximately mean sea level) instead of the previously used surface of the velocity model used to locate the events. Geoid depths have been determined for all events in the NCSS database from 1966 to the present. (<a href="/blog/2015/10/07/geoid-depth-faq.html"><b>Learn more about Geoid FAQ</b></a>) Requests for event information from the NCSS catalog will now return depths with respect to the geoid surface. This change is to comply with recently established USGS Advanced National Seismic Network (ANSS) convention regarding event depth reporting. Additional concurrent changes made to the NCSS earthquake information database are also described below.</p>
+
+<table width="350">
+<tr>
+<td width="5"></td>
+<td>
+<a href="/gifs/news_20151007_fig1.png"><br />
+<img width="432" border="0" src="/gifs/news_20151007_fig1.png" /><br />
+</a>
+</td>
+</tr>
+<tr>
+<td width="5"></td>
+<td>
+<i><small>The offset between the geoid and model depths is the "depth datum." The depth datum is normally the average elevation (above the geoid) of the nearest five stations used to locate the earthquake. Only stations closer than 100 km are used in the average, even if there are fewer than five. Earthquakes for which the nearest station is more than 100 km distant have very poorly determined depths, and the elevation of the nearest station is used as the estimate of the depth datum. Details of the algorithm for determining depth datum, and the handling of model and geoid depths can be found in the hypoinverse manual. For example, deep borehole stations where the sensor is far below the surface are not used in the nearest-five average. Also, the few catalog earthquakes with no station phases cannot be adjusted, and the model and geoid depths are the same. (Click to view larger.)</small></i>
+</td>
+</tr>
+</table>
+
+<p>To accomplish this transition, an additional step has been added to the location process. The NCSS locates earthquakes with the program hypoinverse using a flat-topped crustal model with linear velocity gradients, referred to as "CRT" layer crustal models. The earthquake depth below this model surface is called the model depth. To determine the geoid depth, the elevation of the flat model surface is inferred from the nearby seismic stations used to locate the event and is subtracted from the model depth. The relationship between model depth and geoid depth is illustrated in Figure 1, taken from the hypoinverse v.1.41 manual (<a href="https://ehzftp.wr.usgs.gov/klein/hyp1.41/doc/hyp1.41.pdf">https://ehzftp.wr.usgs.gov/klein/hyp1.41/doc/hyp1.41.pdf</a>, p. 25). Model depth must continue to be used internally in hypoinverse, for purposes such as setting trial or fixed depths. The fundamental location algorithm and multiple crustal models used in the NCSS are unchanged, and the geoid depth adjustment is applied after the earthquake is located. The geoid depth is stored in the database field "depth" in the origin table; the model depth is stored in the field "mdepth."</p>
+
+<p> The model depth is always positive or zero, but the geoid depth can be negative for events above sea level. Catalog searches using depth as a criterion must now use a new minimum negative depth (such as -4 km) to be sure of retrieving all events, including shallow earthquakes in the high Sierras or the Geysers areas. The geoid used for earthquake depths and for station elevations are the same, WGS84.</p>
+
+<p>Networks using hypoellipse "CRE" layer crustal models already calculate geoid depths because both stations and earthquakes are embedded within a layer model that is referred to the geoid. The NCSS will continue to use crustal models with linear gradients ("CRT" models) as there are many benefits. It is very difficult to modify hypoinverse to embed stations in gradient models that allow for shadow zones and interpolating in travel time tables. The NCSS decided it was better to adjust model depths to the geoid rather than attempt calculation of geoid depths directly.</p>
+
+<p>Double-difference depths will also now (eventually) be geoid depths, but DD depths can't be simply adjusted from the model depth. The DD procedure begins with single-event depths from hypoinverse and adjusts locations based on differences between common stations for nearby events. DD locations must be computed from the new geoid depths because the mix of associated events will change once their depths are adjusted to the geoid. We are developing a plan to implement this transition.</p>
+
+<p>New crust model fields were added to the event table in the catalog database that are computed by hypoinverse. These fields are output to hypoinverse format, but are not written to simpler output formats. The crust model fields are not a property of the physical earthquake and are not implemented as search criteria. This involved a schema change to the database.</p>
+
+<p><b>Additional catalog output for multiple hypoinverse crustal models</b></p>
+<p> The field "crust type " is one letter for the type of hypoinverse crust model, corresponds to the 3rd letter of the hypoinverse command and thus the model type, and is in the database origin table. Currently the NC and BK nets use gradient type T, and CI uses layer type H.</p>
+
+<pre>
+ H - Homogeneous layers, all stations at top (CRH model)
+T - Travel time table with linear gradient, stations at top (CRT model)
+E - Hypoellipse layer model, using station elevations(CRE model)
+L - Hypoellipse single gradient model, using station elevations (CRL)
+V - Hypoellipse single gradient over halfspace, using station elevations (CRV) </pre>
+
+<p> The field "crust model" is the 3-letter code for the regional crust model. The code is for the "dominant" model because a blend of up to 3 different models can be used for smooth transitions between adjacent models, and the one with the highest weight is saved in this field. In the NCSS, model zones were picked to enclose zones of high seismicity and faults, thus most earthquakes use a single model. Each crust model has its own set of station delays, now in their 4th revision but soon to be in the 5th revision. Many of the crust models are those originally used when individual regions were processed by different research groups, but other models have been added as necessary. The models denoted by east and west are the paired "alternate" models, where one model is used for stations on the east side of the San Andreas fault and the other model for those on the west side. The alternate models are assigned to earthquakes in the same geographic region. The crust model code is in the db origin table. The table is from the shadow2000.doc file used in the NCSS.</p>
+
+<pre>
+Code Name            Source of original model              How derived
+AUB  Auburn          Eaton &amp; Simirenko (OFR 80-604, 1980)  test&amp;modify
+BAE  Bartlett Spr E  Castillo pers. comm. (1991)             VELEST
+BAR  Bartlett Spr Ft Castillo pers. comm. (1991)             VELEST
+BAS  Basin &amp; Range   averaged Prodehl (Prof Pap 1034, 1979)  refract
+COA  Coalinga        Eaton OFR 85-44 (1985)                test&amp;modify
+CON  Concord-Calaveras Klein pers. comm. (1991)              VELEST
+COY  Coyote Lake     Reasenberg &amp; Ellsworth (JGR 1982)       VELEST
+CST  Central Coast   Poley &amp; Eaton pers. comm.             test&amp;modify
+DIA  Diablo-Bear Valley Dietz pers. comm. &amp;                  VELEST       
+     (west)        Walter &amp; Mooney (BSSA 1982)             refract
+GAB  Gabilan-Bear Valley Dietz pers. comm. &amp;                 VELEST       
+     (east)        Walter &amp; Mooney (BSSA 1982)             refract
+GEY  Geysers         Eberhart-Phillips &amp; Oppenheimer JGR &#194;&#162;84 VELEST 
+HAY  Hayward Fault   Klein pers. comm. (1990)                VELEST
+LAS  Lassen          S. Walter pers. comm.                   VELEST
+LEW  Mt. Lewis       Klein pers. comm. (1990)                VELEST
+LIV  Livermore-Antioch Klein pers. comm. (1991)              VELEST
+LOM  Loma Prieta (west) J. Olsen and M. Zoback (1995)        VELEST
+LON  Loma Prieta (east) J. Olsen and M. Zoback (1995)        VELEST
+MAA  Maacama Fault   Castillo pers. comm. (1991)             VELEST
+MAM  Mammoth Lakes   Kissling (PhD thesis 1986?) &amp;         refract &amp;                     
+                     Cockerham &amp; Kissling pers. comm.      inversion
+MAN  Maacama North   Castillo pers. comm. (1991)             VELEST
+MEN  Mendocino       Magee pers. comm. (1991)                VELEST
+MOR  Morgan Hill     Cockerham &amp; Eaton                     
+                     (USGS Bulletin 1639, 1987)              VELEST
+NBY  North SF Bay Eberhart-Phillips &amp; Oppenheimer (JGR 1984) VELEST
+NCG  N. Calif gradient default model derived from                     
+                     Eaton pers. comm.                    test&amp;modify
+PEN  SF Peninsula north Olson (Proc. Rec. Crus. Mvmts. 1987?) VELEST
+PES  SF Peninsula south Olson (Proc. Rec. Crus. Mvmts. 1987?) VELEST
+PGH  Park.-Gold Hill Poley &amp; Eaton pers. comm.            test&amp;modify
+PMM  Park.-Middle Mtn. same as PGH.                       test&amp;modify
+PSM  Park.-Simmler   same as PGH                          test&amp;modify
+PTA  Pt Arena, Ft Bragg Castillo pers. comm. (1991)           VELEST
+SCA  Southern Calif. Jones pers. comm.                       refract?
+SHA  Shasta &amp; Oregon average from Zucca et al. (JGR 1986)    refract
+SIM  San Simeon &amp; central coast Klein pers. Comm.             VELEST
+TRA  Transverse Ranges Prodehl PP-1034 (1979)                refract
+TRE  Tres Pinos      Dietz pers. comm. &amp;                      VELEST                     
+                     Walter &amp; Mooney (BSSA 1982)             refract
+WAL  Walker Pass     Jones &amp; Dollar (BSSA 1986)           test&amp;modify
+</pre>
+	
+				
+				
+				 
+
+
+	</div><!--/column-->	
+	<div class="col-md-4">
+            <div class="block promo solid-background founders-rock" style="margin-top:30px;min-height:98px;"> <a href="http://ncedc.org">
+    <div class="thumbnail">
+       <div class="promo-image"><img src="/NCEDC_template_img/Feb2018_NCEDCLogoTransparent.png" alt=""></div>
+          <!--<div class="caption">
+             <div class="caption-inner">
+                <p>The Northern California Earthquake Data Center (NCEDC) is a permanent archive and distribution center for digital geophysical data relating to earthquakes in central and northern California.</p>
+             </div>
+          </div>-->
+    </div>
+</a></div>
+
+           
+           <h3>NCEDC News</h3>
+           <ul class="post-list">
+           
+              <li>
+                 <h4><span class="post-meta">Feb 9, 2024</span><a class="post-link" href="/blog/2024/02/09/ncedc-on-aws.html">: &nbspEntire NCEDC Dataset Now Available Through AWS</a></h4>
+              </li>
+           
+              <li>
+                 <h4><span class="post-meta">Nov 1, 2022</span><a class="post-link" href="/blog/2022/11/01/obspy-web-services-redirect-issue.html">: &nbspCurrent issue with ObsPy FDSN web service client</a></h4>
+              </li>
+           
+              <li>
+                 <h4><span class="post-meta">May 9, 2022</span><a class="post-link" href="/blog/2022/05/09/ftp-service-to-be-retired.html">: &nbspFTP service to be retired on May 31, 2022</a></h4>
+              </li>
+           
+           </ul>
+
+          <h3>Categories</h3>
+
+	  
+
+	  <ul>
+          
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#2003 San Simeon Earthquake">2003 San Simeon Earthquake (5)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#2004 Parkfield Earthquake">2004 Parkfield Earthquake (3)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Berkeley Digital Seismic Network (BDSN, BK)">Berkeley Digital Seismic Network (BDSN, BK) (11)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Bugs">Bugs (6)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Calpine/LBL Geysers data (BG)">Calpine/LBL Geysers data (BG) (8)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Catalogs">Catalogs (21)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Data Access Methods">Data Access Methods (19)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Data Availability">Data Availability (32)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Data Center Operations">Data Center Operations (26)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Data Center Outages">Data Center Outages (9)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Data Distribution">Data Distribution (3)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Data Holdings">Data Holdings (16)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Earthquake Catalogue">Earthquake Catalogue (21)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Earthquake Depths">Earthquake Depths (3)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Earthquake Locations">Earthquake Locations (9)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#High Resolution Seismic Network (HRSN, BP)">High Resolution Seismic Network (HRSN, BP) (4)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Magnitude">Magnitude (10)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Magnitude Errors">Magnitude Errors (4)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Metadata">Metadata (4)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Northern California Earthquake Data Center (NCEDC)">Northern California Earthquake Data Center (NCEDC) (14)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Northern California Seismic System (NCSS)">Northern California Seismic System (NCSS) (7)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Northern Hayward Fault Network (NHFN, BK)">Northern Hayward Fault Network (NHFN, BK) (3)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#SEED format">SEED format (6)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Sampling Rate">Sampling Rate (3)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Strain Data">Strain Data (3)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#The Geysers">The Geysers (5)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Timing Errors">Timing Errors (3)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#U.S. Geological Survey (USGS)">U.S. Geological Survey (USGS) (3)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#UC Berkeley Seismological Laboratory (BSL)">UC Berkeley Seismological Laboratory (BSL) (4)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	               
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#USGS Northern California Seismic Network (NCSN)">USGS Northern California Seismic Network (NCSN) (11)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Uncategorized">Uncategorized (4)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Waveform Data">Waveform Data (33)</a></li>
+                       
+                 
+	      
+             
+	     
+	     
+                
+                   
+                   
+	           
+                      <li><a href="/blog/all_posts_by_category.html#Web Services">Web Services (5)</a></li>
+                       
+                 
+	      
+          
+          </ul>
+
+          <h3><a href="/blog/all_posts_by_category.html">View All Posts By Category</a></h3>
+
+          <h3><a href="/blog/all_posts_by_date.html">View Posts By Date</a></h3>
+
+        </div><!--/column-->
+      </div>
+      <!-- / row -->
+    </div>
+    <!-- /.inner --> 
+  </div>
+  <!-- .container --> 
+</div>
+<!-- #content --> 
+
+<footer id="dept-footer">
+  <div class="container">
+    <div class="row">
+    	<div class="col-sm-8">
+    		<div class="row">
+		      <div class="col-sm-4">
+		      	<div class="block">
+				<h3 class="block-header">Quick Links</h3>
+				<ul class="list-group">
+				        <li class="list-group-item"><a href="/web-services-home.html">Web Services</a></li>
+				        <li class="list-group-item"><a href="/ncedc/catalog-search.html">NCSS Catalog</a></li>
+				        <li class="list-group-item"><a href="/blog/">NCEDC News/Blog</a></li>
+				        <li class="list-group-item"><a href="/ncedc/about-the-dart.html">DART</a></li>
+                                        <li class="list-group-item"><a href="/waveformDisplay/">Waveform Display Tool</a></li>
+                                        <li class="list-group-item"><a href="/bdsn/make_seismogram.html">Make Your Own Seismogram</a></li>
+				</ul>
+			</div>
+		      </div>
+		      <div class="col-sm-4">
+		      <div class="block">
+				<h3 class="block-header">About Us</h3>
+				<ul class="list-group">
+                                        <li class="list-group-item"><a href="/about-the-ncedc.html">About the NCEDC</a></li>
+				        <li class="list-group-item"><a href="/comments.html">Contact Us</a></li>
+                                        <li class="list-group-item"><a href="/privacy.html">Privacy Statement</a></li>
+				</ul>
+			</div>
+		      </div>       
+		      <div class="col-sm-4">
+		      	<div class="block">
+				  
+				  <h3 class="block-header">Looking for Earthquake Information?</h3>
+				<ul class="list-group">
+				        <li class="list-group-item"><a href="http://earthquakes.berkeley.edu/seismo.real.time.map.html">Real-time Earthquake Map</a></li>
+				        <li class="list-group-item"><a href="http://earthquakes.berkeley.edu/hayward/index.html">The Hayward Fault</a></li>
+				        <li class="list-group-item"><a href="http://earthquakes.berkeley.edu/outreach/faq.html">Earthquake FAQ</a></li>
+				        <li class="list-group-item"><a href="http://earthquakes.berkeley.edu/outreach/be_prepared.html">Be Prepared</a></li>
+				</ul>
+			</div>
+		      </div>
+    		</div>
+    	</div>
+      <div class="col-sm-4">
+      
+      </div>   
+    </div>
+    
+  </div>
+</footer>
+		<footer id="universal-footer">
+		  <div class="container">
+		    <div class="row">
+		      <div class="col-xs-6 col-sm-4 col-md-3">
+		      	<div class="block logo">
+			        <a href="http://www.berkeley.edu/"><img src="/NCEDC_template_img/logo-ucberkeley-white.png" alt="University of California Berkeley"></a>
+		      	</div> <!--/block-logo-->  
+		      </div><!--/column-->	
+                      <div class="col-xs-6 col-sm-4 col-md-3">
+		        <div class="block logo">
+                                <a href="https://earthquake.usgs.gov/"><img src="/NCEDC_template_img/usgs-logo.svg" alt="USGS"></a>
+		      	</div>   <!--/block logo-->
+		      </div><!--/column-->
+		      <div class="col-xs-12 col-sm-4 col-md-6">
+			      
+		      	<div class="copyright">
+		      	  
+				        Copyright &copy; <!--#config timefmt="%Y" --> <!--#echo var="DATE_LOCAL" -->  UC Regents; all rights reserved
+		      	</div><!--/copyright-->
+		      </div><!--/column-->      
+		    </div><!--/row-->
+		    
+		  </div><!--/container-->
+		</footer><!--/footer-->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--Fallback to locally hosted copy of jquery if CDN is down - JTaggart added 11/4/2016-->
+<script>window.jQuery || document.write('<script src="js/jquery/jquery-2.1.1.min.js">\x3C/script>')</script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/vendor/owl.carousel.min.js"></script>
+<script src="/js/vendor/modernizr.custom.js"></script>
+<script src="/js/vendor/globalize.min.js"></script>
+<script src="/js/vendor/jquery.ba-throttle-debounce.min.js"></script>
+<script src="/js/vendor/grid.js"></script>
+<script src="/js/vendor/imagesloaded.pkgd.min.js"></script>
+<script src="/js/components.js"></script>
+<!-- Global Javascript (all pages) -->
+<script>
+	// custom javascript for ALL PAGES
+	$(document).ready(function () {	
+
+
+	}); // end document ready
+</script>
+<script src="/js/SpotlightLocalStorage.js"></script>
+
+<!-- PASTE ANALYTICS CODE BELOW COMMENT -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FC1SHP8EEV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FC1SHP8EEV');
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40249211-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

@@ -6,6 +6,7 @@ import hashlib
 import json
 import math
 import re
+import importlib.util
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -199,12 +200,14 @@ def stationxml(raw, meta, path):
                            provider_network_resource_ids_json=provider_ids(network),
                            latitude_datum=channel.find("s:Latitude", NS).get("datum", "WGS84 (StationXML default)"),
                            longitude_datum=channel.find("s:Longitude", NS).get("datum", "WGS84 (StationXML default)"),
-                           sensor_z_geoid_km="" if ambiguous else z_sensor,
+                           sensor_z_geoid_km=z_sensor,
                            z_if_sensor_elevation_km=z_sensor,
                            z_if_ground_elevation_km=z_ground,
-                           vertical_coordinate_status="ambiguous_provider_borehole_elevation_convention" if ambiguous else "stationxml_sensor_elevation_convention_applied",
+                           vertical_coordinate_status="provider_sensor_elevation_with_documented_conflicts" if ambiguous else "stationxml_sensor_elevation_convention_applied",
                            vertical_datum_basis="NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
-                           elevation_semantics="Nonzero burial depth and equal channel/station elevations require provider-convention clarification" if ambiguous else "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+                           elevation_semantics="Channel/Elevation used as provider-declared sensor elevation; no second burial subtraction; conflicting historical wellhead tables and datum documentation retained in investigation/borehole_elevations.md" if ambiguous else "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+                           metadata_epoch_basis="Intersection of provider StationXML network, station and channel epochs",
+                           metadata_source_kind="StationXML channel metadata",
                            stationxml_schema_version=tree.get("schemaVersion", ""),
                            source_document_metadata_index=len(rows),
                            source_file=meta["source_file"], source_url=meta["source_url"],
@@ -213,6 +216,35 @@ def stationxml(raw, meta, path):
     json_write(path.with_suffix(path.suffix + ".identifiers.json"), dict(meta, channel_epochs=rows,
                identifier_standard=FDSN_STANDARD, stationxml_standard=XML_STANDARD,
                vertical_datum_documentation=DATUM_SOURCE))
+    return rows
+
+
+def historical_cmw1():
+    """Use the exact historical identities, without backdating modern XML."""
+    helper = ROOT / "investigation" / "cmw1_normalize.py"
+    spec = importlib.util.spec_from_file_location("cmw1_history", str(helper))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    meta, _, records = module.historical_rows()
+    rows = []
+    for item in records:
+        row = identifiers(item["network_code"], item["station_code"],
+                          item["location_code"], item["channel_code"])
+        row.update(item)
+        row.update(latitude_deg=item["latitude"], longitude_deg=item["longitude"],
+                   latitude_datum="WGS84, provider location status E (external GPS antenna)",
+                   longitude_datum="WGS84, provider location status E (external GPS antenna)",
+                   channel_sensor_elevation_m="", station_elevation_m="",
+                   sensor_depth_below_ground_m="",
+                   sensor_z_geoid_km=-float(item["provider_elevation_m"]) / 1000.,
+                   vertical_coordinate_status="historical_elevation_interpreted_as_sensor_explicit_assumption",
+                   vertical_datum_basis="NCSN history format declares GPS-site elevations geoid referenced; provider datum retained without inferred conversion",
+                   elevation_semantics="Historical ELEV used unchanged as receiver elevation; interpretation as sensor elevation is an explicit assumption, consistent with later StationXML Channel/Elevation=214m but not independently survey verified. Historical burial depth unknown; later 155m depth not backfilled.",
+                   metadata_source_kind="NCSN master station/channel history",
+                   metadata_epoch_basis=item["epoch_basis"] + " Instrument operation epoch, not a calibrated response epoch. All selected picks are interior to the interval.",
+                   source_file="investigation/" + item["source_file"],
+                   format_source_file="investigation/" + item["format_source_file"])
+        rows.append(row)
     return rows
 
 
@@ -244,10 +276,12 @@ def acquire():
             raw, meta, path = fetch(endpoint, params, "ncedc_channels_" + network, ".xml")
             metadata.extend(stationxml(raw, meta, path))
             print(network, offset, "station batch retrieved", flush=True)
+    metadata.extend(historical_cmw1())
     keys = [(row["channel_seed_id"], row["metadata_epoch_start"], row["metadata_epoch_end"]) for row in metadata]
     if len(keys) != len(set(keys)):
         raise ValueError("Duplicate NSLC/epoch keys in returned metadata; do not collapse them silently")
-    csv_write(ROOT / "channel_epochs.csv", metadata)
+    fields = list(dict.fromkeys(key for row in metadata for key in row))
+    csv_write(ROOT / "channel_epochs.csv", metadata, fields)
     match()
 
 
@@ -283,7 +317,9 @@ def match():
                "metadata_epoch_start": candidates[0]["metadata_epoch_start"] if len(candidates) == 1 else "",
                "metadata_epoch_end": candidates[0]["metadata_epoch_end"] if len(candidates) == 1 else "",
                "metadata_source_file": candidates[0]["source_file"] if len(candidates) == 1 else "",
-               "metadata_source_sha256": candidates[0]["source_sha256"] if len(candidates) == 1 else ""}
+               "metadata_source_sha256": candidates[0]["source_sha256"] if len(candidates) == 1 else "",
+               "metadata_epoch_basis": candidates[0].get("metadata_epoch_basis", "") if len(candidates) == 1 else "",
+               "vertical_coordinate_status": candidates[0]["vertical_coordinate_status"] if len(candidates) == 1 else ""}
         matches.append(row)
         if len(candidates) != 1:
             failures.append(dict(row, candidate_epochs=candidates))

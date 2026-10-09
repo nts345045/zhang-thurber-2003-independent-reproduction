@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="keywords" content="web services">
+<meta name="description" content="NCEDC Web-Services">
+<title>NCEDC FDSN Station Web Service</title>
+<LINK REL="STYLESHEET" HREF="/css/default-simple.css" TYPE="text/css" media="all">
+<!--[if IE]>
+                        <LINK REL="STYLESHEET" HREF="/css/ie7.css" TYPE="text/css">
+                        <script type="text/javascript" src="/js/ie_menu.js"></script>
+                <![endif]-->
+<!--[if lte IE 6]>
+                        <LINK REL="STYLESHEET" HREF="/css/ie6.css" TYPE="text/css">
+                <![endif]-->
+
+<LINK REL="STYLESHEET" HREF="/css/print.css" TYPE="text/css" MEDIA="print">
+<LINK REL="STYLESHEET" HREF="/css/main.css" TYPE="text/css" MEDIA="screen">
+
+<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<style type="text/css">
+textarea
+{
+   resize: none;
+   font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+}
+</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40249211-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<center>
+<A HREF="https://service.ncedc.org"><IMG src="/images/WebServicesHeader.png"></A>
+</center>
+<div id="container">
+
+<div id="unknown">
+<center>
+<div id="LogoLink">
+</div>
+</center>
+</div>
+<div id="nav"><!-- --></div>
+<div id="belowNav"><!-- --></div>
+<div id="main">
+<div id="content">
+<div id="sub-content">
+<h1 class="style1">&nbsp;FDSN Station Web Service</h1>
+<div id="breadCrumbs">&nbsp; &nbsp; <a href="http://ncedc.org">Home</a> &raquo;
+<a href="https://service.ncedc.org">NCEDC Web Services</a> &raquo; FDSN Station</div>
+
+<BR>
+<a href="https://service.ncedc.org/fdsnws/station/1/#description-box" class="classname">Description</a>
+<a href="https://service.ncedc.org/fdsnws/station/1/#usagetable" class="classname">Usage</a>
+<a href="https://service.ncedc.org/fdsnws/station/1/#urlbuilder" class="classname">URL Builder</a>
+<a href="https://service.ncedc.org/fdsnws/station/help/index.html" class="classname">Help</a>
+
+<div id="description-box">
+<pre>
+<U><B>Description</B></U>
+
+The fdsnws-station web service returns station metadata in <A HREF="http://www.fdsn.org/xml/station/">FDSN StationXML format</A> (<A HREF="http://www.fdsn.org/xml/station/fdsn-station-1.1.xsd">schema here</A>) or as delimited text. Results
+are available at multiple levels of granularity: network, station, channel and response.
+
+Metadata may be selected based on channel descriptors, time ranges, geographic regions, and more.
+
+This service is an implementation of the <A HREF="http://www.fdsn.org/webservices/">FDSN web service specification</A> version 1.1.
+<BR>
+<U><B>Service Output</B></U>
+
+Information can be retrieved at different levels of detail
+
+The station web service can return station information at multiple levels of detail. The service response time and the volume of
+information returned are directly related to the requested level. With increasing detail the levels are:
+</pre>
+<TABLE BORDER=0 CELLSPACING=10>
+<TR><TD><B>network</B><TD><B><I>net</I></B><TD>Network level information only, network description and station count.
+<TR><TD><B>station</B><TD><B><I>sta</I></B><TD>Station description, coordinates, time ranges and channel count. The default level.
+<TR><TD><B>channel</B><TD><B><I>cha</I></B><TD>Channel descriptions, coordinates, time ranges, instrument descriptions and channel sensitivity.
+<TR><TD><B>response</B><TD><B><I>resp</I></B><TD>Complete channel response information.
+</TABLE>
+<pre>
+
+<B><U>Output format</U></B>
+
+<B>FDSN StationXML</B>
+The FDSN StationXML format is an XML schema designed for exchanging station metadata.
+
+<B>Text</B>
+The text format contains parameters separated by vertical bar characters (|).
+
+Sample text output for <I>level=network</I>
+
+<textarea rows="5" cols="91" wrap="off" readonly="readonly">
+#Network | Description | StartTime | EndTime | TotalStations
+BG|Berkeley Geysers Network|2002-07-30T00:00:00|3000-01-01T00:00:00|38
+BK|Berkeley Digital Seismic Network (BDSN)|1980-10-01T00:00:00|3000-01-01T00:00:00|67
+BP|Parkfield High Resolution Seismic Network (HRSN)|2000-11-10T00:00:00|3000-01-01T00:00:00|13
+</textarea>
+
+Sample text output for <I>level=station</I>
+
+<textarea rows="5" cols="91" wrap="off" readonly="readonly">
+#Network | Station | Latitude | Longitude | Elevation | SiteName | StartTime | EndTime
+BK|ARC|40.87772|-124.07738|30.1|Humboldt State University, Arcata, CA, USA|1992-05-28T19:48:00|2001-08-02T00:36:00
+BK|BBEB|37.821596|-122.329751|-30.8|Bay Bridge Pier 23, Oakland, CA, USA|2002-09-10T02:54:00|2007-11-20T01:30:00
+BK|BDM|37.95397|-121.86554|219.8|Black Diamond Mines Park, Antioch, CA, USA|1998-11-12T00:00:00|3000-01-01T00:00:00
+</textarea>
+
+Sample text output for <I>level=channel</I>
+
+<textarea rows="5" cols="91" wrap="off" readonly="readonly">
+#Network | Station | Location | Channel | Latitude | Longitude | Elevation | Depth | Azimuth | Dip | Instrument | Scale | ScaleFreq | ScaleUnits | SampleRate | StartTime | EndTime
+BK|BKS|00|BHE|37.87622|-122.23558|243.9|25.6|90|0|Streckeisen STS-1/E300 VBB Feedback Seismometer|4734530355.2|1|M/S|40|2011-03-02T20:00:00|3000-01-01T00:00:00
+BK|BKS|00|BHN|37.87622|-122.23558|243.9|25.6|0|0|Streckeisen STS-1/E300 VBB Feedback Seismometer|3217870028.8|1|M/S|40|2011-03-02T20:00:00|3000-01-01T00:00:00
+BK|BKS|00|BHZ|37.87622|-122.23558|243.9|25.6|0|-90|Streckeisen STS-1/E300 VBB Feedback Seismometer|5877058764.8|1|M/S|40|2011-03-02T20:00:00|3000-01-01T00:00:00
+</textarea>
+
+The text format is not available for <I>level=response</I>. 
+
+<U><B>Metadata selection</B></U>
+
+The fdsnws-station service allows data selection using the following parameters:
+
+	* Network, station, location and channel
+	* Time windowing
+	* Geographic region, rectangular area or radius from a point
+	* Metadata updated after a specific date
+<BR>
+<U><B>Using Wildcards and lists</B></U>
+
+Both wildcards and lists can be used for channel naming criteria: <B><I>network, station, location, channel</I></B>.
+<BR>
+<B>Wildcards</B>
+
+The service supports the use of * (asterisk) and ? (question mark) in specifying search criteria. The * is used to indicate any
+combination of characters while ? is used to indicate one character only. They can be used at the beginning, middle or the end of
+the search criteria.
+Some examples: net=B*, net=*K, chan=B*Z or chan=B?Z.
+<BR>
+<B>Lists</B>
+
+Users can specify multiple networks, stations, channels or locations in their search criteria by providing comma separated list.
+For example: sta=CMB,BKS or chan=BHZ,BHE.
+<BR>
+<U><B>Geographic search</B></U>
+
+Searches may be limited geographically, either by specifying a bounding rectangle of minimum and maximum latitudes and
+longitudes, or by specifying a bounding radius, using a minimum/maximum radius around a latitude/longitude pair. These two
+types of search are exclusive. All values are specified using decimal degrees.
+<BR>
+<B>Using latitude / longitude boundaries (Bounding Rectangle)</B>
+
+The following four parameters work together to specify a boundary rectangle: <B><I>minlatitude, maxlatitude, minlongitude,
+maxlongitude</I></B>.  All four parameters are optional, but may not be mixed with the parameters used for searching within a
+defined radius. The bounding box will cross the +/- 180 meridian when minlongitude > maxlongitude.
+<BR>
+<B>Using a radial boundary (Bounding Radius)</B>
+
+The following four parameters work together to search within a great circle radius around a coordinate: <B><I>latitude, longitude,
+maxradius, minradius</I></B>. If any these parameters are used, all other (unspecified) parameters are assigned default values.
+<BR>
+<U><B>Temporal searches</B></U>
+
+<B><I>starttime, endtime, startbefore, endbefore, startafter, endafter</I></B>
+
+All of these criteria are applied to the channel epochs to limit the returned metadata. Even when the requested level is network or
+station, the test is applied to the channel epochs within the networks and stations. This means it is not possible to select network or
+station time ranges where there are no channels defined, but this situation rarely occurs and would be mostly meaningless from a
+data-use perspective.
+<BR>
+<B><U>wget example</U></B>
+
+Requests can be made with a selection file and the wget unix command line utility.
+<B><I>
+$ cat station.request
+level=station
+format=xml
+NC * -- BHZ 2010-03-25T00:00:00 2010-04-01T00:00:00
+BK CMB -- BH* 2010-03-25T00:00:00 2010-04-01T00:00:00
+
+$ wget --post-file=station.request -O station.xml https://service.ncedc.org/fdsnws/station/1/query
+</I></B>
+
+This will send the request to the server and save the results in a file name station.xml
+<BR>
+<B><U>curl example</U></B>
+
+Requests can also be made with a selection file and the curl unix command line utility.
+<B><I>
+$ cat channel.request
+level=channel
+format=text
+BK CMB * * 2000-01-15T00:00:00 2010-04-01T00:00:00
+
+$ curl --data-binary @channel.request -o channel.txt https://service.ncedc.org/fdsnws/station/1/query
+</I></B>
+
+This will send the request to the server and save the results in a file name channel.txt
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
