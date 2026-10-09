@@ -1,13 +1,17 @@
 #include "core.hpp"
 #include "ray_checks.hpp"
+#include "csv.hpp"
 #include <filesystem>
 struct Event {
   P p;
   double t = 0;
+  Metadata metadata{};
 };
 struct Datum {
   int i, j, k, type;
   double value;
+  Metadata metadata{};
+  double a_priori_weight = 1;
 };
 std::ofstream output(std::string p) {
   std::ofstream f(p);
@@ -27,27 +31,24 @@ void write_grid(const Grid &g, std::string path) {
 }
 void write_events(const std::vector<Event> &e, std::string path) {
   auto f = output(path);
-  f << "id,x,y,z,t\n";
-  for (size_t i = 0; i < e.size(); i++)
+  f << "id,x,y,z,t";
+  if (!e.empty())
+    csv_metadata_header(f, e.front().metadata);
+  f << '\n';
+  for (size_t i = 0; i < e.size(); i++) {
     f << i << ',' << e[i].p[0] << ',' << e[i].p[1] << ',' << e[i].p[2] << ','
-      << e[i].t << '\n';
+      << e[i].t;
+    csv_metadata_values(f, e[i].metadata);
+    f << '\n';
+  }
 }
 std::vector<Vec> read_csv(std::string path) {
-  std::ifstream f(path);
-  if (!f)
-    throw std::runtime_error("Cannot read " + path);
-  std::string l;
-  std::getline(f, l);
   std::vector<Vec> r;
-  while (std::getline(f, l)) {
-    std::replace(l.begin(), l.end(), ',', ' ');
-    std::istringstream s(l);
+  for (const auto &fields : csv_table(path).rows) {
     Vec row;
-    double v;
-    while (s >> v)
-      row.push_back(v);
-    if (!row.empty())
-      r.push_back(row);
+    for (const auto &field : fields)
+      row.push_back(csv_double(field));
+    r.push_back(row);
   }
   return r;
 }
@@ -78,18 +79,28 @@ Grid read_grid(std::string path) {
 }
 std::vector<Event> read_events(std::string path) {
   std::vector<Event> e;
-  for (auto &r : read_csv(path))
-    e.push_back({{r[1], r[2], r[3]}, r[4]});
+  auto table = csv_table(path, {"id", "x", "y", "z", "t"});
+  for (const auto &row : table.rows) {
+    if (csv_int(row[0]) != int(e.size()))
+      throw std::runtime_error("Event/station IDs must be consecutive row indices in " + path);
+    e.push_back({{csv_double(row[1]), csv_double(row[2]), csv_double(row[3])},
+                 csv_double(row[4]), csv_metadata(table, row, 5)});
+  }
+  if (e.empty())
+    throw std::runtime_error("No events/stations in " + path);
   return e;
 }
 std::vector<Ray> rays(const Grid &g, const std::vector<Event> &e,
                       const std::vector<Event> &s, const Config &c,
-                      bool deriv = true) {
+                      bool deriv = true, const std::vector<int> *used = nullptr) {
   std::vector<Ray> r(e.size() * s.size());
+  const int count = used ? int(used->size()) : int(r.size());
 #pragma omp parallel for schedule(dynamic)
-  for (int n = 0; n < int(r.size()); n++)
+  for (int q = 0; q < count; q++) {
+    int n = used ? (*used)[q] : q;
     r[n] = trace(g, e[n / s.size()].p, s[n % s.size()].p, c.get("ray_spacing"),
                  c.get("ray_iterations"), deriv);
+  }
   return r;
 }
 double setting(const Config &c, const std::string &key, double fallback) {
@@ -112,6 +123,97 @@ double starting_velocity(const Config &c, double depth) {
       int(std::upper_bound(z.begin(), z.end(), depth) - z.begin()) - 1, 0, 3);
   return v[k] + (v[k + 1] - v[k]) * (depth - z[k]) / (z[k + 1] - z[k]);
 }
+
+void set_metadata(Metadata &metadata, const std::string &key, const std::string &value) {
+  for (auto &field : metadata)
+    if (field.first == key) {
+      field.second = value;
+      return;
+    }
+  metadata.push_back({key, value});
+}
+
+Metadata simulation_metadata(const std::vector<Event> &events,
+                             const std::vector<Event> &stations,
+                             int i, int j, int k, int type) {
+  Metadata result;
+  for (const auto &side : {std::make_pair("i", i), std::make_pair("j", j)})
+    for (const auto *kind : {"event", "origin"}) {
+      std::string key = std::string(kind) + "_resource_id";
+      result.push_back({std::string(kind) + "_" + side.first + "_resource_id",
+                        side.second < 0 ? "" : required_metadata(events[side.second].metadata, key)});
+    }
+  for (const auto *key : {"network_code", "station_code", "location_code", "channel_code",
+                          "channel_seed_id", "channel_fdsn_source_id",
+                          "metadata_epoch_start", "metadata_epoch_end"})
+    result.push_back({key, required_metadata(stations[k].metadata, key,
+                      std::string(key) == "location_code" || std::string(key) == "metadata_epoch_end")});
+  const char *basis[] = {"synthetic noisy absolute travel time",
+                         "synthetic difference of noisy absolute travel times",
+                         "synthetic difference of rounded noise-free travel times"};
+  result.push_back({"synthetic_observation", "1"});
+  result.push_back({"observation_basis", basis[type]});
+  result.push_back({"source_position_basis", "catalog-defined simulation truth"});
+  result.push_back({"simulation_origin_time_basis", "zero for every truth event; no observed pick times"});
+  result.push_back({"event_geometry_table", "truth_events.csv"});
+  result.push_back({"receiver_geometry_table", "stations.csv"});
+  return result;
+}
+
+// Shared noise generation preserves the original generator's random-number order.
+void synthetic_observations(const Config &c, const std::string &dir,
+                            const std::vector<Event> &events,
+                            const std::vector<Event> &stations,
+                            const std::vector<Ray> &rr, std::mt19937 &gen,
+                            std::uniform_real_distribution<double> &u,
+                            std::normal_distribution<double> &normal,
+                            bool identified_geometry = false) {
+  const int ne = events.size(), ns = stations.size();
+  Vec true_t(rr.size()), abs_t(rr.size()), rounded(rr.size()), bias(ns);
+  for (auto &v : bias)
+    v = (2 * u(gen) - 1) * c.get("station_noise");
+  auto raw = output(dir + "/arrivals.csv");
+  raw << "event,station,true_time,rounded_time,station_bias,pick_noise,absolute_time";
+  if (identified_geometry)
+    csv_metadata_header(raw, simulation_metadata(events, stations, 0, -1, 0, 0));
+  raw << '\n';
+  for (int i = 0; i < ne; i++)
+    for (int k = 0; k < ns; k++) {
+      int n = i * ns + k;
+      true_t[n] = rr[n].time;
+      double quantum = setting(c, "time_quantum", 0.01);
+      rounded[n] = quantum > 0 ? std::round(true_t[n] / quantum) * quantum : true_t[n];
+      double noise = c.get("noise") * normal(gen);
+      abs_t[n] = rounded[n] + bias[k] + noise;
+      raw << i << ',' << k << ',' << true_t[n] << ',' << rounded[n] << ','
+          << bias[k] << ',' << noise << ',' << abs_t[n];
+      if (identified_geometry)
+        csv_metadata_values(raw, simulation_metadata(events, stations, i, -1, k, 0));
+      raw << '\n';
+    }
+  auto f = output(dir + "/observations.csv");
+  f << "i,j,station,type,value";
+  if (identified_geometry)
+    csv_metadata_header(f, simulation_metadata(events, stations, 0, -1, 0, 0));
+  f << '\n';
+  auto observation = [&](int i, int j, int k, int type, double value) {
+    f << i << ',' << j << ',' << k << ',' << type << ',' << value;
+    if (identified_geometry)
+      csv_metadata_values(f, simulation_metadata(events, stations, i, j, k, type));
+    f << '\n';
+  };
+  for (int i = 0; i < ne; i++)
+    for (int k = 0; k < ns; k++)
+      observation(i, -1, k, 0, abs_t[i * ns + k]);
+  for (int i = 0; i < ne; i++)
+    for (int j = i + 1; j < ne; j++)
+      if (norm(events[i].p - events[j].p) < c.get("pair_distance"))
+        for (int k = 0; k < ns; k++) {
+          observation(i, j, k, 1, abs_t[i * ns + k] - abs_t[j * ns + k]);
+          observation(i, j, k, 2, rounded[i * ns + k] - rounded[j * ns + k]);
+        }
+}
+
 void generate(const Config &c, std::string dir) {
   std::filesystem::create_directories(dir);
   std::mt19937 gen(c.get("seed"));
@@ -161,38 +263,7 @@ void generate(const Config &c, std::string dir) {
         rr[i * ns + k].time = norm(e[i].p - s[k].p) / 6;
   } else
     rr = rays(truth, e, s, c, false);
-  Vec true_t(rr.size()), abs_t(rr.size()), rounded(rr.size()), bias(ns);
-  for (auto &v : bias)
-    v = (2 * u(gen) - 1) * c.get("station_noise");
-  auto raw = output(dir + "/arrivals.csv");
-  raw << "event,station,true_time,rounded_time,station_bias,pick_noise,"
-         "absolute_time\n";
-  for (int i = 0; i < ne; i++)
-    for (int k = 0; k < ns; k++) {
-      int n = i * ns + k;
-      true_t[n] = rr[n].time;
-      double quantum = setting(c, "time_quantum", 0.01);
-      rounded[n] =
-          quantum > 0 ? std::round(true_t[n] / quantum) * quantum : true_t[n];
-      double noise = c.get("noise") * normal(gen);
-      abs_t[n] = rounded[n] + bias[k] + noise;
-      raw << i << ',' << k << ',' << true_t[n] << ',' << rounded[n] << ','
-          << bias[k] << ',' << noise << ',' << abs_t[n] << '\n';
-    }
-  auto f = output(dir + "/observations.csv");
-  f << "i,j,station,type,value\n";
-  for (int i = 0; i < ne; i++)
-    for (int k = 0; k < ns; k++)
-      f << i << ",-1," << k << ",0," << abs_t[i * ns + k] << '\n';
-  for (int i = 0; i < ne; i++)
-    for (int j = i + 1; j < ne; j++)
-      if (norm(e[i].p - e[j].p) < c.get("pair_distance"))
-        for (int k = 0; k < ns; k++) {
-          f << i << ',' << j << ',' << k << ",1,"
-            << abs_t[i * ns + k] - abs_t[j * ns + k] << '\n';
-          f << i << ',' << j << ',' << k << ",2,"
-            << rounded[i * ns + k] - rounded[j * ns + k] << '\n';
-        }
+  synthetic_observations(c, dir, e, s, rr, gen, u, normal);
   // Dense sampling saved by the model, used directly by the figure-1 plotting
   // routine.
   auto slice = output(dir + "/truth_slice.csv");
@@ -205,9 +276,165 @@ void generate(const Config &c, std::string dir) {
 }
 std::vector<Datum> observations(std::string path) {
   std::vector<Datum> d;
-  for (auto &r : read_csv(path))
-    d.push_back({int(r[0]), int(r[1]), int(r[2]), int(r[3]), r[4]});
+  auto table = csv_table(path, {"i", "j", "station", "type", "value"});
+  for (const auto &row : table.rows) {
+    Datum datum{csv_int(row[0]), csv_int(row[1]), csv_int(row[2]),
+                csv_int(row[3]), csv_double(row[4]), csv_metadata(table, row, 5)};
+    if (const auto *weight = metadata_value(datum.metadata, "a_priori_weight")) {
+      datum.a_priori_weight = csv_double(*weight);
+      if (datum.a_priori_weight < 0)
+        throw std::runtime_error("Negative a_priori_weight");
+    }
+    d.push_back(std::move(datum));
+  }
+  if (d.empty())
+    throw std::runtime_error("No observations in " + path);
   return d;
+}
+
+std::vector<int> observed_rays(const std::vector<Datum> &data, int ne, int ns) {
+  if (ne <= 0 || ns <= 0 || size_t(ne) * size_t(ns) > size_t(std::numeric_limits<int>::max()))
+    throw std::runtime_error("Invalid event/station dimensions");
+  std::vector<int> used;
+  for (const auto &d : data) {
+    if (d.i < 0 || d.i >= ne || d.k < 0 || d.k >= ns || d.type < 0 || d.type > 2 ||
+        (d.type == 0 ? d.j != -1 : (d.j < 0 || d.j >= ne || d.i == d.j)))
+      throw std::runtime_error("Invalid observation event/station/type indices");
+    used.push_back(d.i * ns + d.k);
+    if (d.j >= 0)
+      used.push_back(d.j * ns + d.k);
+  }
+  std::sort(used.begin(), used.end());
+  used.erase(std::unique(used.begin(), used.end()), used.end());
+  return used;
+}
+
+bool authoritative_input(const Config &c, const std::string &dir) {
+  return setting(c, "authoritative_ids_required", 0) != 0 ||
+         std::filesystem::exists(dir + "/authoritative_ids_required");
+}
+
+bool authoritative_geometry(const Config &c, const std::string &dir) {
+  return setting(c, "authoritative_geometry", 0) != 0 ||
+         std::filesystem::exists(dir + "/authoritative_geometry");
+}
+
+void validate_geometry(const std::vector<Event> &events,
+                       const std::vector<Event> &stations) {
+  for (const auto &event : events)
+    for (const auto *key : {"event_resource_id", "origin_resource_id"})
+      required_metadata(event.metadata, key);
+  for (const auto &station : stations) {
+    for (const auto *key : {"network_code", "station_code", "channel_code",
+                            "channel_seed_id", "channel_fdsn_source_id",
+                            "metadata_epoch_start"})
+      required_metadata(station.metadata, key);
+    required_metadata(station.metadata, "location_code", true);
+    required_metadata(station.metadata, "metadata_epoch_end", true);
+  }
+}
+
+void validate_identities(const std::vector<Event> &events,
+                         const std::vector<Event> &stations,
+                         const std::vector<Datum> &data,
+                         bool simulated = false) {
+  validate_geometry(events, stations);
+  for (const auto &d : data) {
+    if (simulated && required_metadata(d.metadata, "synthetic_observation") != "1")
+      throw std::runtime_error("Geometry-only identity mode requires explicitly synthetic observations");
+    const auto &station = stations[d.k].metadata;
+    for (const auto *key : {"channel_seed_id", "channel_fdsn_source_id",
+                            "metadata_epoch_start", "metadata_epoch_end"}) {
+      bool empty = std::string(key) == "metadata_epoch_end";
+      if (required_metadata(d.metadata, key, empty) != required_metadata(station, key, empty))
+        throw std::runtime_error(std::string("Observation/channel identity mismatch: ") + key);
+    }
+    for (const auto &side : {std::make_pair("i", d.i), std::make_pair("j", d.j)}) {
+      bool absent = side.second < 0;
+      for (const auto *kind : {"event", "origin", "pick", "arrival"}) {
+        std::string field = std::string(kind) + "_" + side.first + "_resource_id";
+        if (simulated && (std::string(kind) == "pick" || std::string(kind) == "arrival")) {
+          const auto *id = metadata_value(d.metadata, field);
+          if (id && !id->empty())
+            throw std::runtime_error("Synthetic observations must not claim provider pick/arrival IDs");
+          continue;
+        }
+        const auto &id = required_metadata(d.metadata, field, absent);
+        if (absent) {
+          if (!id.empty())
+            throw std::runtime_error("Absolute observation has a second event identity");
+        } else if (std::string(kind) == "event" || std::string(kind) == "origin") {
+          if (id != required_metadata(events[side.second].metadata, std::string(kind) + "_resource_id"))
+            throw std::runtime_error("Observation/event identity mismatch: " + field);
+        }
+      }
+    }
+  }
+}
+
+void simulate(const Config &c, const std::string &dir) {
+  if (!authoritative_geometry(c, dir) || authoritative_input(c, dir))
+    throw std::runtime_error("simulate requires authoritative_geometry, not authoritative_ids_required");
+  auto events = read_events(dir + "/truth_events.csv");
+  auto stations = read_events(dir + "/stations.csv");
+  validate_geometry(events, stations);
+  Grid truth = read_grid(dir + "/truth_grid.csv");
+  Grid start = read_grid(dir + "/initial_grid.csv");
+  for (auto &event : events) {
+    if (!truth.contains(event.p) || !start.contains(event.p))
+      throw std::runtime_error("Catalog simulation source lies outside supplied grids");
+    event.t = 0;
+    set_metadata(event.metadata, "coordinate_basis", "catalog-defined simulation truth");
+    set_metadata(event.metadata, "origin_resource_id_basis",
+                 "provider catalog geometry reference, not a simulated pick/origin identifier");
+    set_metadata(event.metadata, "simulation_origin_time_basis", "truth t=0; initial/inverted t is a simulated correction in seconds");
+  }
+  for (const auto &station : stations)
+    if (!truth.contains(station.p) || !start.contains(station.p))
+      throw std::runtime_error("Simulation receiver lies outside supplied grids");
+  std::mt19937 gen(c.get("seed"));
+  std::uniform_real_distribution<double> u(0, 1);
+  std::normal_distribution<double> normal(0, 1);
+  auto initial = events;
+  const Vec *axes[] = {&start.x, &start.y, &start.z};
+  for (auto &event : initial) {
+    for (int axis = 0; axis < 3; axis++)
+      event.p[axis] = std::clamp(event.p[axis] + c.get("location_noise") * normal(gen),
+                                 axes[axis]->front(), axes[axis]->back());
+    event.t = 0.05 * normal(gen);
+    set_metadata(event.metadata, "coordinate_basis", "perturbed catalog-defined simulation truth");
+  }
+  // Calculate all requested synthetic rays from the supplied truth grid.
+  // Stations retain their archived geometry/epoch identities, but these are
+  // simulated receiver placements, not claims of an observed pick at each pair.
+  auto rr = rays(truth, events, stations, c, false);
+  write_events(events, dir + "/truth_events.csv");
+  write_events(initial, dir + "/initial_events.csv");
+  synthetic_observations(c, dir, events, stations, rr, gen, u, normal, true);
+  auto marker = output(dir + "/authoritative_geometry");
+  marker << "Catalog event/origin and channel epoch IDs describe geometry; all arrivals are synthetic.\n";
+  std::cout << "Simulated " << events.size() << " catalog-defined truth sources and "
+            << stations.size() << " identified receiver placements.\n";
+}
+
+using StageWeights = std::array<std::array<double, 3>, 3>;
+StageWeights stage_weights(const Config &c, const std::vector<Datum> &data) {
+  StageWeights weights{{{{1, 0.1, 0.01}}, {{0.1, 1, 0.01}}, {{0.001, 0.01, 1}}}};
+  if (setting(c, "catalog_only_dd", 0) != 0) {
+    for (const auto &d : data)
+      if (d.type == 2)
+        throw std::runtime_error("catalog_only_dd requires no type-2 observations");
+    weights = {{{{1, 0.1, 0}}, {{0.1, 1, 0}}, {{0.1, 1, 0}}}};
+  }
+  const char *types[] = {"absolute", "catalog", "precise"};
+  for (int stage = 0; stage < 3; stage++)
+    for (int type = 0; type < 3; type++) {
+      std::string key = "stage" + std::to_string(stage + 1) + "_" + types[type] + "_weight";
+      weights[stage][type] = setting(c, key, weights[stage][type]);
+      if (!std::isfinite(weights[stage][type]) || weights[stage][type] < 0)
+        throw std::runtime_error("Invalid data weight: " + key);
+    }
+  return weights;
 }
 double prediction(const Datum &d, const std::vector<Ray> &r,
                   const std::vector<Event> &e, int ns) {
@@ -239,6 +466,15 @@ void invert(const Config &c, std::string dir, std::string mode) {
   auto e = read_events(dir + "/initial_events.csv"),
        stations = read_events(dir + "/stations.csv");
   auto data = observations(dir + "/observations.csv");
+  const auto used = observed_rays(data, e.size(), stations.size());
+  const bool authoritative = authoritative_input(c, dir);
+  if (authoritative)
+    validate_identities(e, stations, data);
+  else if (authoritative_geometry(c, dir))
+    validate_identities(e, stations, data, true);
+  const auto weights = stage_weights(c, data);
+  if (!(c.get("stage_length") > 0))
+    throw std::runtime_error("stage_length must be positive");
   Grid g = read_grid(dir + "/initial_grid.csv");
   bool locate = mode == "loc1d" || mode == "loc3d";
   if (mode == "loc3d")
@@ -248,11 +484,18 @@ void invert(const Config &c, std::string dir, std::string mode) {
   auto log = output(dir + "/" + mode + "_history.csv");
   log << "iteration,stage,absolute_rms,catalog_rms,precise_rms,velocity_step,"
          "location_step,step_fraction,objective_before,objective_after,lsqr_"
-         "iterations,lsqr_relative_normal_residual,lsqr_converged\n";
+         "iterations,lsqr_relative_normal_residual,lsqr_converged,ray_count,"
+         "ray_converged_count,ray_projected_gradient_max,ray_raw_gradient_max\n";
   for (int it = 0; it < int(c.get("iterations")); it++) {
-    auto r = rays(g, e, stations, c);
+    auto r = rays(g, e, stations, c, true, &used);
+    size_t ray_converged = 0;
+    double ray_projected_max = 0, ray_raw_max = 0;
+    for (int index : used) {
+      ray_converged += r[index].converged;
+      ray_projected_max = std::max(ray_projected_max, r[index].gradient);
+      ray_raw_max = std::max(ray_raw_max, r[index].raw_gradient);
+    }
     int stage = std::min(2, int(it / c.get("stage_length")));
-    double weights[3][3] = {{1, 0.1, 0.01}, {0.1, 1, 0.01}, {0.001, 0.01, 1}};
     Matrix A(n);
     Vec residual(data.size()), w(data.size());
     double ss[3] = {}, count[3] = {};
@@ -275,13 +518,14 @@ void invert(const Config &c, std::string dir, std::string mode) {
       cutoff[t] = std::max(0.01, 6 * 1.4826 * a[a.size() / 2]);
     }
     for (size_t q = 0; q < data.size(); q++) {
-      auto d = data[q];
+      const auto &d = data[q];
       double res = residual[q];
       ss[d.type] += res * res;
       count[d.type]++;
       if (mode == "standard" && d.type != 0)
         continue;
       double weight = mode == "standard" ? 1 : weights[stage][d.type];
+      weight *= d.a_priori_weight;
       double z = res / cutoff[d.type];
       weight *= std::pow(std::max(0., 1 - z * z), 2);
       if (d.j >= 0) {
@@ -360,7 +604,7 @@ void invert(const Config &c, std::string dir, std::string mode) {
         }
       if (!valid)
         continue;
-      auto nr = rays(ng, ee, stations, c, false);
+      auto nr = rays(ng, ee, stations, c, false, &used);
       after = objective(ng, ee, nr);
       if (after <= before) {
         accepted = true;
@@ -387,7 +631,8 @@ void invert(const Config &c, std::string dir, std::string mode) {
         << (count[2] > 0 ? std::sqrt(ss[2] / count[2]) : NAN) << ',' << dv
         << ',' << dx << ',' << step << ',' << before << ',' << after << ','
         << linear_info.iterations << ',' << linear_info.relative_normal_residual
-        << ',' << linear_info.converged << '\n';
+        << ',' << linear_info.converged << ',' << used.size() << ','
+        << ray_converged << ',' << ray_projected_max << ',' << ray_raw_max << '\n';
     log.flush();
     std::cout << mode << " iteration " << it << " stage " << stage << " rms "
               << (count[0] > 0 ? std::sqrt(ss[0] / count[0]) : NAN) << ' '
@@ -404,31 +649,50 @@ void invert(const Config &c, std::string dir, std::string mode) {
     }
   }
   write_grid(g, dir + "/" + mode + "_grid.csv");
+  if (authoritative || authoritative_geometry(c, dir))
+    for (auto &event : e)
+      set_metadata(event.metadata, "coordinate_basis",
+                   "independent " + mode + " inversion estimate; provider IDs identify reference catalog records");
   write_events(e, dir + "/" + mode + "_events.csv");
-  auto rr = rays(g, e, stations, c);
+  auto rr = rays(g, e, stations, c, true, &used);
   auto coverage = output(dir + "/" + mode + "_coverage.csv");
   coverage << "node,path_length\n";
   for (int k = 0; k < g.size(); k++) {
     double length = 0;
-    for (const auto &ray : rr)
-      length += ray.length[k];
+    for (int index : used)
+      length += rr[index].length[k];
     coverage << k << ',' << length << '\n';
   }
   auto f = output(dir + "/" + mode + "_residuals.csv");
-  f << "i,j,station,type,residual\n";
-  for (auto d : data)
+  f << "i,j,station,type,residual";
+  csv_metadata_header(f, data.front().metadata);
+  f << '\n';
+  for (const auto &d : data) {
     f << d.i << ',' << d.j << ',' << d.k << ',' << d.type << ','
-      << d.value - prediction(d, rr, e, ns) << '\n';
+      << d.value - prediction(d, rr, e, ns);
+    csv_metadata_values(f, d.metadata);
+    f << '\n';
+  }
+  // Real data have no synthetic sandwich truth; plot their saved grid separately.
+  if (authoritative)
+    return;
   // Model-generated horizontal sections, including signed recovered-minus-true
   // errors.
   auto sl = output(dir + "/" + mode + "_slices.csv");
   sl << "x,y,z,v,error\n";
-  for (double z : {0., 3., 7., 11., 16.})
-    for (double y = -60; y <= 40; y += 2)
-      for (double x = -35; x <= 35; x += 0.5) {
+  const bool supplied_geometry = authoritative_geometry(c, dir);
+  Grid truth;
+  if (supplied_geometry)
+    truth = read_grid(dir + "/truth_grid.csv");
+  Vec depths = supplied_geometry ? g.z : Vec{0., 3., 7., 11., 16.};
+  for (double z : depths)
+    for (double y = supplied_geometry ? g.y.front() : -60; y <= (supplied_geometry ? g.y.back() : 40); y += 2)
+      for (double x = supplied_geometry ? g.x.front() : -35; x <= (supplied_geometry ? g.x.back() : 35); x += 0.5) {
+        if (supplied_geometry && !truth.contains({x, y, z}))
+          throw std::runtime_error("Synthetic error slice lies outside supplied truth grid");
         double v = g.sample({x, y, z}).v;
         sl << x << ',' << y << ',' << z << ',' << v << ','
-           << v - true_velocity(c, x) << '\n';
+           << v - (supplied_geometry ? truth.sample({x, y, z}).v : true_velocity(c, x)) << '\n';
       }
 }
 void validate(std::string dir) {
@@ -520,18 +784,68 @@ void validate(std::string dir) {
 void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
   auto e = read_events(dir + "/" + mode + "_events.csv");
   auto stations = read_events(dir + "/stations.csv");
+  auto data = observations(dir + "/observations.csv");
+  auto used = observed_rays(data, e.size(), stations.size());
+  const bool authoritative = authoritative_input(c, dir);
+  if (authoritative)
+    validate_identities(e, stations, data);
+  else if (authoritative_geometry(c, dir))
+    validate_identities(e, stations, data, true);
+  std::vector<int> samples;
+  const int ns = stations.size();
+  const std::string sample_path = dir + "/ray_samples.csv";
+  if (std::filesystem::exists(sample_path)) {
+    auto table = csv_table(sample_path, {"event", "station"});
+    for (const auto &row : table.rows) {
+      int i = csv_int(row[0]), k = csv_int(row[1]);
+      if (i < 0 || i >= int(e.size()) || k < 0 || k >= ns ||
+          !std::binary_search(used.begin(), used.end(), i * ns + k))
+        throw std::runtime_error("Ray sample must identify an observed event/channel pair");
+      if (std::find(samples.begin(), samples.end(), i * ns + k) != samples.end())
+        throw std::runtime_error("Duplicate ray sample");
+      samples.push_back(i * ns + k);
+    }
+    if (samples.empty())
+      throw std::runtime_error("Empty ray_samples.csv");
+  } else if (!authoritative && used.size() == e.size() * stations.size()) {
+    // Preserve the original synthetic diagnostic sample.
+    for (int n = 0; n < 32; n++)
+      samples.push_back(((37 * n + 3) % e.size()) * ns + (13 * n + 7) % ns);
+  } else {
+    // Deterministic samples of the actual sparse observation support.
+    size_t count = std::min(size_t(32), used.size());
+    for (size_t n = 0; n < count; n++)
+      samples.push_back(used[count == 1 ? 0 : n * (used.size() - 1) / (count - 1)]);
+  }
   Grid g = read_grid(dir + "/" + mode + "_grid.csv");
   std::string prefix = mode == "truth" ? "ray" : mode + "_ray";
   auto f = output(dir + "/" + prefix + "_convergence.csv");
   f << "event,station,production_time,refined_time,difference,production_"
        "gradient,refined_gradient,production_raw_gradient,refined_raw_gradient,"
        "production_iterations,refined_iterations,production_converged,refined_"
-       "converged,production_merged,refined_merged\n";
+       "converged,production_merged,refined_merged,diagnostic_row\n";
   auto df = output(dir + "/" + prefix + "_derivatives.csv");
   df << "event,station,axis,production_derivative,refined_derivative,finite_"
-        "difference,production_error,refined_error\n";
-  for (int n = 0; n < 32; n++) {
-    int i = (37 * n + 3) % e.size(), k = (13 * n + 7) % stations.size();
+        "difference,production_error,refined_error,diagnostic_row\n";
+  // Both diagnostic tables refer to this zero-based sample key. Each mapping
+  // row identifies an original observations.csv row and its i/j event side.
+  auto identifiers = output(dir + "/" + prefix + "_identifiers.csv");
+  identifiers << "diagnostic_row,event,station,observation_row,observation_event_side";
+  csv_metadata_header(identifiers, data.front().metadata, "observation_");
+  csv_metadata_header(identifiers, e.front().metadata, "source_");
+  csv_metadata_header(identifiers, stations.front().metadata, "receiver_");
+  identifiers << '\n';
+  for (size_t n = 0; n < samples.size(); n++) {
+    int i = samples[n] / ns, k = samples[n] % ns;
+    for (size_t q = 0; q < data.size(); q++)
+      if (data[q].k == k && (data[q].i == i || data[q].j == i)) {
+        identifiers << n << ',' << i << ',' << k << ',' << q << ','
+                    << (data[q].i == i ? "i" : "j");
+        csv_metadata_values(identifiers, data[q].metadata);
+        csv_metadata_values(identifiers, e[i].metadata);
+        csv_metadata_values(identifiers, stations[k].metadata);
+        identifiers << '\n';
+      }
     Ray a = trace(g, e[i].p, stations[k].p, c.get("ray_spacing"),
                   c.get("ray_iterations"));
     Ray b = trace(g, e[i].p, stations[k].p, c.get("ray_spacing") / 2, 1000);
@@ -539,7 +853,7 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
       << a.time - b.time << ',' << a.gradient << ',' << b.gradient << ','
       << a.raw_gradient << ',' << b.raw_gradient << ',' << a.iterations << ','
       << b.iterations << ',' << a.converged << ',' << b.converged << ','
-      << a.merged_nodes << ',' << b.merged_nodes << '\n';
+      << a.merged_nodes << ',' << b.merged_nodes << ',' << n << '\n';
     if (n < 8)
       for (int axis = 0; axis < 3; axis++) {
         double h = 0.01;
@@ -556,10 +870,96 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
             (2 * h);
         df << i << ',' << k << ',' << axis << ',' << a.source[axis] << ','
            << b.source[axis] << ',' << fd << ',' << a.source[axis] - fd << ','
-           << b.source[axis] - fd << '\n';
+           << b.source[axis] - fd << ',' << n << '\n';
       }
   }
 }
+
+// Frozen, unweighted absolute-data Jacobian at the saved event/model estimate.
+// Noise, prior, robust, and smoothing weights are deliberately not folded into G.
+void linearize(const Config &c, const std::string &dir, const std::string &mode) {
+  auto events = read_events(dir + "/" + mode + "_events.csv");
+  auto stations = read_events(dir + "/stations.csv");
+  auto data = observations(dir + "/observations.csv");
+  observed_rays(data, events.size(), stations.size());
+  if (authoritative_input(c, dir))
+    validate_identities(events, stations, data);
+  else if (authoritative_geometry(c, dir))
+    validate_identities(events, stations, data, true);
+  Grid g = read_grid(dir + "/" + mode + "_grid.csv");
+  const int ns = stations.size(), off = 4 * events.size();
+  std::vector<int> used;
+  for (const auto &d : data)
+    if (d.type == 0)
+      used.push_back(d.i * ns + d.k);
+  std::sort(used.begin(), used.end());
+  used.erase(std::unique(used.begin(), used.end()), used.end());
+  if (used.empty())
+    throw std::runtime_error("Absolute-data linearization requires absolute observations");
+  auto traced = rays(g, events, stations, c, true, &used);
+  auto matrix = output(dir + "/" + mode + "_linearization_matrix.csv");
+  matrix << "row,column,value\n";
+  auto rows = output(dir + "/" + mode + "_linearization_rows.csv");
+  rows << "row,observation_row,i,station,observed,predicted,residual,"
+          "ray_converged,ray_projected_gradient,ray_iterations,ray_time,ray_raw_gradient";
+  csv_metadata_header(rows, data.front().metadata);
+  const bool prior_column = metadata_value(data.front().metadata, "a_priori_weight");
+  if (!prior_column)
+    rows << ",a_priori_weight";
+  rows << '\n';
+  size_t row = 0;
+  for (size_t q = 0; q < data.size(); q++) {
+    const auto &d = data[q];
+    if (d.type != 0)
+      continue;
+    const auto &ray = traced[d.i * ns + d.k];
+    for (int axis = 0; axis < 3; axis++)
+      if (ray.source[axis] != 0)
+        matrix << row << ',' << 4 * d.i + axis << ',' << ray.source[axis] << '\n';
+    matrix << row << ',' << 4 * d.i + 3 << ",1\n";
+    for (int node = 0; node < g.size(); node++) {
+      double value = -g.v[node] * ray.dv[node];
+      if (value != 0)
+        matrix << row << ',' << off + node << ',' << value << '\n';
+    }
+    double predicted = prediction(d, traced, events, ns);
+    rows << row << ',' << q << ',' << d.i << ',' << d.k << ',' << d.value << ','
+         << predicted << ',' << d.value - predicted << ',' << ray.converged << ','
+         << ray.gradient << ',' << ray.iterations << ',' << ray.time << ',' << ray.raw_gradient;
+    csv_metadata_values(rows, d.metadata);
+    if (!prior_column)
+      rows << ',' << d.a_priori_weight;
+    rows << '\n';
+    row++;
+  }
+  auto columns = output(dir + "/" + mode + "_linearization_columns.csv");
+  columns << "column,parameter,event,node,x,y,z,reference_value,parameter_unit";
+  csv_metadata_header(columns, events.front().metadata, "source_");
+  columns << '\n';
+  const char *parameters[] = {"x", "y", "z", "t"};
+  for (size_t event = 0; event < events.size(); event++)
+    for (int axis = 0; axis < 4; axis++) {
+      const auto &e = events[event];
+      columns << 4 * event + axis << ',' << parameters[axis] << ',' << event
+              << ",-1," << e.p[0] << ',' << e.p[1] << ',' << e.p[2] << ','
+              << (axis == 3 ? e.t : e.p[axis]) << ',' << (axis == 3 ? "s" : "km");
+      csv_metadata_values(columns, e.metadata);
+      columns << '\n';
+    }
+  for (int k = 0; k < int(g.z.size()); k++)
+    for (int j = 0; j < int(g.y.size()); j++)
+      for (int i = 0; i < int(g.x.size()); i++) {
+        int node = g.id(i, j, k);
+        columns << off + node << ",q,-1," << node << ',' << g.x[i] << ',' << g.y[j]
+                << ',' << g.z[k] << ",0,dimensionless";
+        for (size_t field = 0; field < events.front().metadata.size(); field++)
+          columns << ',';
+        columns << '\n';
+      }
+  std::cout << "Exported " << row << " absolute rows, " << off + g.size()
+            << " columns, " << used.size() << " observed rays at " << mode << '\n';
+}
+
 int main(int argc, char **argv) {
   try {
     if (argc >= 3 && std::string(argv[1]) == "validate") {
@@ -568,15 +968,20 @@ int main(int argc, char **argv) {
     }
     if (argc < 4)
       throw std::runtime_error("Usage: dd validate OUT | dd generate CONFIG "
-                               "OUT | dd invert CONFIG OUT MODE");
+                               "OUT | dd simulate CONFIG OUT | dd invert CONFIG OUT MODE | "
+                               "dd raycheck CONFIG OUT [MODE] | dd linearize CONFIG OUT MODE");
     Config c(argv[2]);
     std::string cmd = argv[1];
     if (cmd == "generate")
       generate(c, argv[3]);
+    else if (cmd == "simulate")
+      simulate(c, argv[3]);
     else if (cmd == "raycheck")
       raycheck(c, argv[3], argc == 5 ? argv[4] : "truth");
     else if (cmd == "invert" && argc == 5)
       invert(c, argv[3], argv[4]);
+    else if (cmd == "linearize" && argc == 5)
+      linearize(c, argv[3], argv[4]);
     else
       throw std::runtime_error("Unknown command");
   } catch (const std::exception &e) {

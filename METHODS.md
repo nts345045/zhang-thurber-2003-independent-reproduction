@@ -16,9 +16,78 @@ The synthetic experiment in the publication uses actual Loma Prieta source
 and receiver coordinates. They were not tabulated in the article or used in
 the initial attempt. The existing generated geometry cannot reproduce that
 experiment exactly. Historical USGS/EarthScope retrievals now establish data
-access, but the exact manuscript subset remains unidentified. Dataset selection
-and inversion await clarification under the observational-data rule in
-`AGENTS.md`. Generated seismicity is not observed Hayward seismicity.
+access, but the exact manuscript subset remains unidentified. The user has
+authorized an independently selected authoritative subset with its differences
+reported. That resolves the cohort-selection question. Subsequent channel-epoch
+gaps and borehole elevation ambiguity are recorded separately in
+`data/authoritative/stations/`; no field inversion may treat them as resolved
+without the clarification required by `AGENTS.md`.
+
+## Authoritative subset and conditional resolution
+
+`data/authoritative/README.md` and the acquisition manifests define the Hayward
+time, magnitude, spatial, depth, and pick-quality selection. The current catalog
+query selects 1,768 earthquakes; 42,236 NC P picks have identifiable provider
+event/origin/arrival/pick IDs, concrete SEED channel codes, and reported symmetric
+uncertainty no larger than 0.15 s. Every raw reply is preserved with its query,
+retrieval time, hash, and identifier attachment. These are current archive
+records, not a reconstruction of the manuscript's exact cohort.
+
+`prepare_hayward.py` joins picks to effective channel epochs before preparing
+numerical indices. It refuses incomplete acquisition and nonunique metadata
+matches. Its additional selection excludes known nonpositive provider
+association weights, receivers outside the model's horizontal bounds, and events
+with fewer than eight remaining picks. Catalog pairs share at least eight
+channel epochs and have separation below 10 km. An explicitly independent
+greedy selection processes pairs in ascending separation and caps each event's
+undirected degree at ten. It reports disconnected components instead of forcing
+connections. These choices need not reproduce the original pairing algorithm.
+
+Time observations are pick time minus that event's reference catalog origin.
+The source time unknown is a correction to this reference. Differences subtract
+those two elapsed times and preserve both events, origins, arrivals, and picks.
+The same channel epoch identifies the common receiver. Numerical event outputs
+retain the catalog resource IDs as references; updated numerical coordinates
+do not claim to be provider-issued origins.
+
+The proposed field grid retains the written horizontal and depth nodes, with
+one additional level above the geoid to contain elevated receivers. The starting
+profile is a continuous-gradient adaptation of Waldhauser and Ellsworth (2002),
+Table 1: depths 0, 1, 3, 6, 14, 25 km and velocities 3.77, 4.64, 5.34, 5.75,
+6.22, 7.98 km/s, interpolated onto the inversion grid and constant above zero.
+This differs from a discontinuous layered model and is not verified as the exact
+target-paper starting model. Current geoid depths are used without inventing a
+conversion back to the historical velocity-model depth datum.
+
+Catalog-only DD uses absolute/catalog row multipliers 1/0.1 initially, then
+0.1/1. It does not enter the waveform-dominated stage without waveform data.
+The additional prior multiplier is 0.05 s divided by reported pick uncertainty;
+the pair uncertainty is the square root of the sum of the two squared values.
+Differences reuse picks and are correlated; this objective is not a likelihood
+of independent differences. For the conditional noise calculation only,
+reported symmetric uncertainty is interpreted as independent one-standard-
+deviation error. The provider supplies no confidence levels establishing that
+calibration. Source and receiver identities survive event, residual, and ray
+diagnostic outputs. Sparse ray calculation uses observed pairs only.
+
+`dd linearize` exports the unweighted absolute-arrival Jacobian at a saved model,
+along with identified row and column mappings and ray stationarity diagnostics.
+`resolution_hayward.py` partitions its weighted Jacobian into source blocks E
+and velocity block B. With the same spatial smoothing L and column-scaled
+damping as the solver, it forms source normals C and cross blocks D = E^T B.
+The velocity Schur complement is H = B^T B + L^T L + damping - sum(D^T C^-1 D).
+Writing Q = B^T B - sum(D^T C^-1 D), its velocity-parameter resolution is
+H^-1 Q. Noise propagation uses N = B^T B - 2 sum(D^T C^-1 D) +
+sum[(C^-1 D)^T E^T E (C^-1 D)], and covariance 0.05^2 H^-1 N H^-T.
+The script preserves the C++ fallback scaling for tiny or zero columns. A direct
+small joint-matrix comparison, including an unsensed source-depth column,
+agrees within 3e-16 for resolution and 3e-17 for noise covariance.
+
+This diagnostic treats weights and rays as fixed. It is an absolute-data
+linearization at the DD model, not full DD resolution or the original simul2000
+calculation. Propagated picking noise excludes regularization bias, correlated
+station errors, catalog selection, nonlinear effects, and ray errors. Small
+propagated uncertainty therefore does not establish accurate velocity.
 
 ## Physical problem
 

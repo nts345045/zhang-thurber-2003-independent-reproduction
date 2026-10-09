@@ -457,12 +457,33 @@ station epochs, retrieval URLs, raw-file hashes, and identifier attachments
 are saved in \path{data/authoritative/discovery/}. These are archive-access
 checks, not the manuscript's selected event and station set.
 
-The target's exact Loma Prieta selection remains unidentified. Its Hayward
-sample contains 1,489 events and 52 stations, whereas the cited precursor
-describes a broader selection. The user was asked whether to trace the exact
-selection further, supply identifiers, or permit a documented independent
-subset. Dataset selection and inversion remain stopped under the explicit
-clarification rule. The field-panel statuses therefore have not changed.
+The user subsequently authorized a documented authoritative subset with its
+differences reported, resolving the exact-cohort selection question. Independent
+NCEDC queries select 1,768 Hayward earthquakes from 24,301 broad-query records.
+Their preferred origins have 42,236 NC P picks passing the initial quality and
+identity criteria, across 464 channels at 387 stations. The manuscript's 1,489
+events and 52 stations are not forced by sampling. Current catalog revisions,
+including the geoid depth convention, remain explicit comparison differences.
+
+Historical channel matching gives 42,094 unique matches and 142 missing epochs,
+all at NC.CMW1. Borehole metadata at NC.CCH1, NC.CGP1, and NC.CSU1 list identical
+station and channel elevations with burial depths of 119--124 m. Applying the
+generic StationXML sensor-elevation convention or interpreting elevation as
+ground level therefore changes receiver depth by that amount. No interpretation
+has been silently chosen. These four stations account for 464 candidate picks.
+The user was asked whether to exclude them with a recorded selection difference
+or resolve the archive metadata first. Data-dependent calculations remain stopped
+under the explicit clarification rule; no new field inversion is claimed here.
+
+The code now preserves provider identities and channel epochs through numerical
+inputs and outputs, and computes rays only for observed source--receiver pairs.
+An absolute-data Jacobian exporter and a block-elimination resolution diagnostic
+have also been implemented. The resolution algebra agrees with a direct small
+joint-matrix calculation to floating-point precision. It has not yet been
+applied to an inferred field model. Its uncertainty calculation assumes that
+reported symmetric pick uncertainties represent independent one-standard-
+deviation errors; the archive does not supply confidence levels establishing
+this calibration. Correlated model errors and regularization bias are excluded.
 
 Independent component work isolated two numerical deficiencies. First,
 two-point integration of a segment crossing velocity-grid boundaries left
@@ -507,12 +528,10 @@ comparisons, source hashes, all 48 checks, and frozen-model ray tables are in
 \begin{lstlisting}
 python3 diagnostics/run_ray_optimizer_audit.py
 \end{lstlisting}
-Its README records the validation and forward-check commands. The appendix below retains the
-baseline 32-check record supporting the baseline figures.
-
 \clearpage
 \appendix
 \section{Numerical validation record}\label{sec:validation}
+This appendix retains the baseline 32-check record supporting the baseline figures.
 \input{validation_table.tex}
 Error units follow each test: seconds for time comparisons, seconds per km
 for source derivatives, seconds per (km/s) for velocity derivatives, and

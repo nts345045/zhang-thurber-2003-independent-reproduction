@@ -16,16 +16,41 @@ codes and resource identifiers as applicable. The independent-code and
 figure-input restrictions still apply. Successful historical catalog, phase,
 and station metadata queries are saved in
 [the acquisition record](data/authoritative/discovery/README.md).
-These discovery records have not been used in an inversion. The exact paper
-event/station selections remain unidentified; clarification is required by
-[the observational-data rule](AGENTS.md#observational-data-for-reproduction)
-before proceeding with dataset selection.
+The user subsequently authorized a documented authoritative subset with its
+differences reported. That decision resolves the exact-cohort selection hold.
+The independent selection, metadata matching, and exclusions are recorded in
+[the subset record](data/authoritative/README.md). The exact paper event/station
+lists remain unidentified; a new subset does not establish exact replication.
+
+The completed Hayward retrieval contains 1,768 selected events and 42,236 P
+picks. Historical channel matching identifies a new unresolved issue: 142 picks
+at NC.CMW1 lack matching channel epochs, and borehole elevation conventions are
+ambiguous at NC.CCH1, NC.CGP1, and NC.CSU1. These four stations account for 464
+picks. [The metadata record](data/authoritative/stations/README.md) documents the
+evidence. A clarification request is pending about excluding these stations or
+resolving their metadata first. No field inversion has used them.
 
 Independent ray-kernel corrections now improve quadrature accuracy and
 optimizer conditioning. [The numerical audit](data/development/ray_optimizer_audit/README.md)
 records 48 passing component checks and remaining failures when retracing
 frozen baseline models. The saved inversions remain from the initial code;
 the complete inversion rebuild has not been rerun with these corrections.
+
+The revised solver preserves identities in event/residual CSV files and ray
+diagnostic mappings, traces observed pairs only, and exports an unweighted
+absolute-arrival Jacobian with `dd linearize`. `prepare_hayward.py` prepares the
+identified field inputs, `resolution_hayward.py` implements conditional
+resolution/noise propagation, and `plot_hayward.py` plots saved field results.
+Their field-data execution awaits the metadata decision. The block algebra has
+been checked against a direct joint-matrix calculation, including an unsensed
+source column; this check does not establish field-data resolution.
+
+`dd simulate CONFIG DIR` can generate synthetic observations from supplied
+identified catalog geometry and supplied true/initial grids. Its observations
+are labeled synthetic and retain geometry identifiers without inventing provider
+pick IDs. Invented component fixtures check analytic arrivals, metadata retention,
+and unchanged baseline random generation. No Loma Prieta subset has yet been
+fetched or inverted with this command.
 
 [Read the PDF report](report/report.pdf) or the
 [panel-by-panel audit](FIGURE_AUDIT.md).

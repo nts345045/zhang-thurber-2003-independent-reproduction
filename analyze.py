@@ -372,7 +372,7 @@ with open(R/'run_findings.tex','w') as f:
     a,b=metrics['modes']['standard'],metrics['modes']['dd']
     f.write('Relative to standard tomography, DD changed the full-domain mean absolute velocity error by {:.3f} km/s and the median depth error by {:.3f} km. Negative differences indicate improvement. These comparisons refer only to the independent experiment.\n'.format(b['velocity_full_domain']['mean']-a['velocity_full_domain']['mean'],b['location']['z']['median']-a['location']['z']['median']))
 with open(R/'panel_table.tex','w') as f:
-    f.write(r'\begin{longtable}{p{0.13\textwidth}p{0.28\textwidth}p{0.48\textwidth}}\toprule Panel & Quantity & Status and limiting dependency\\\midrule\endhead'+'\n')
+    f.write(r'\begin{longtable}{>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}p{0.28\textwidth}>{\raggedright\arraybackslash}p{0.48\textwidth}}\toprule Panel & Quantity & Status and limiting dependency\\\midrule\endhead'+'\n')
     for row in json.loads(Path('data/panel_audit.json').read_text()):
         f.write('{} & {} & {}. {}\\\\\n'.format(esc(row['panel']),esc(row['quantity']),esc(row['status']),esc(row['limitation'])))
     f.write(r'\bottomrule\end{longtable}'+'\n')

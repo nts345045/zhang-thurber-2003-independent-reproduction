@@ -1,0 +1,172 @@
+{
+  "created_utc": "2026-10-09T21:25:11.463070Z",
+  "criteria": {
+    "status": "independent authoritative subset; not the manuscript's exact cohort",
+    "start_utc_inclusive": "1984-01-01T00:00:00Z",
+    "end_utc_exclusive": "1999-01-01T00:00:00Z",
+    "magnitude_inclusive": [
+      0.2,
+      4.5
+    ],
+    "query_latitude_inclusive": [
+      37.2,
+      38.3
+    ],
+    "query_longitude_inclusive": [
+      -122.7,
+      -121.4
+    ],
+    "geoid_depth_km_inclusive": [
+      0,
+      20
+    ],
+    "origin_latitude_deg": 37.72,
+    "origin_longitude_deg": -122.06,
+    "axis_rotation_anticlockwise_deg": 35,
+    "x_km_inclusive": [
+      -10,
+      10
+    ],
+    "y_km_inclusive": [
+      -30,
+      30
+    ],
+    "horizontal_coordinates": "WGS84 zero-ellipsoid-height ECEF difference projected onto origin east/north tangent basis; x=E*cos(35)+N*sin(35), y=-E*sin(35)+N*cos(35)",
+    "catalog": "NCSS preferred origins and magnitudes as retrieved",
+    "event_type_filter": "earthquake only; other and unknown types explicitly excluded",
+    "summary_page_limit": 10000,
+    "event_service_documentation": "https://service.ncedc.org/fdsnws/event/1/",
+    "depth_datum_documentation": "https://ncedc.org/blog/2015/10/07/the-ncss-now-reports-earthquake.html",
+    "prior_discovery": "../discovery/README.md; USGS and EarthScope service discovery preceded NCEDC acquisition"
+  },
+  "summary_queries": [
+    {
+      "year": 1984,
+      "offset": 1,
+      "count": 3162,
+      "raw_file": "raw/summaries_1984_00001.xml"
+    },
+    {
+      "year": 1985,
+      "offset": 1,
+      "count": 1856,
+      "raw_file": "raw/summaries_1985_00001.xml"
+    },
+    {
+      "year": 1986,
+      "offset": 1,
+      "count": 4410,
+      "raw_file": "raw/summaries_1986_00001.xml"
+    },
+    {
+      "year": 1987,
+      "offset": 1,
+      "count": 1984,
+      "raw_file": "raw/summaries_1987_00001.xml"
+    },
+    {
+      "year": 1988,
+      "offset": 1,
+      "count": 1732,
+      "raw_file": "raw/summaries_1988_00001.xml"
+    },
+    {
+      "year": 1989,
+      "offset": 1,
+      "count": 2065,
+      "raw_file": "raw/summaries_1989_00001.xml"
+    },
+    {
+      "year": 1990,
+      "offset": 1,
+      "count": 1951,
+      "raw_file": "raw/summaries_1990_00001.xml"
+    },
+    {
+      "year": 1991,
+      "offset": 1,
+      "count": 1145,
+      "raw_file": "raw/summaries_1991_00001.xml"
+    },
+    {
+      "year": 1992,
+      "offset": 1,
+      "count": 939,
+      "raw_file": "raw/summaries_1992_00001.xml"
+    },
+    {
+      "year": 1993,
+      "offset": 1,
+      "count": 902,
+      "raw_file": "raw/summaries_1993_00001.xml"
+    },
+    {
+      "year": 1994,
+      "offset": 1,
+      "count": 972,
+      "raw_file": "raw/summaries_1994_00001.xml"
+    },
+    {
+      "year": 1995,
+      "offset": 1,
+      "count": 837,
+      "raw_file": "raw/summaries_1995_00001.xml"
+    },
+    {
+      "year": 1996,
+      "offset": 1,
+      "count": 764,
+      "raw_file": "raw/summaries_1996_00001.xml"
+    },
+    {
+      "year": 1997,
+      "offset": 1,
+      "count": 792,
+      "raw_file": "raw/summaries_1997_00001.xml"
+    },
+    {
+      "year": 1998,
+      "offset": 1,
+      "count": 790,
+      "raw_file": "raw/summaries_1998_00001.xml"
+    }
+  ],
+  "candidate_events": 24301,
+  "selected_events": 1768,
+  "excluded_events": 22533,
+  "exclusion_reason_counts_nonexclusive": {
+    "outside_along_strike_corridor": 18325,
+    "outside_geoid_depth_range": 2776,
+    "outside_across_strike_corridor": 12364,
+    "non_earthquake_event_type": 2837
+  },
+  "candidate_event_types": {
+    "earthquake": 21464,
+    "quarry blast": 2783,
+    "explosion": 54
+  },
+  "unknown_event_type_count": 0,
+  "selected_event_types": {
+    "earthquake": 1768
+  },
+  "selected_by_year": {
+    "1984": 136,
+    "1985": 145,
+    "1986": 153,
+    "1987": 119,
+    "1988": 108,
+    "1989": 135,
+    "1990": 128,
+    "1991": 107,
+    "1992": 120,
+    "1993": 99,
+    "1994": 139,
+    "1995": 109,
+    "1996": 71,
+    "1997": 96,
+    "1998": 103
+  },
+  "selection_manifest_complete": true,
+  "pick_acquisition_status": "complete",
+  "pick_manifest": "pick_selection_manifest.json"
+}

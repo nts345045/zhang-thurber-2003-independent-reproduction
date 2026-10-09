@@ -1,0 +1,531 @@
+{
+  "created_utc": "2026-10-09T21:30:03.222116Z",
+  "selection_status": "independent authoritative subset; not the manuscript's exact cohort",
+  "criteria": {
+    "origin": "provider preferred origin matching the retrieved summary",
+    "phase": "exact arrival phase P; other phase labels retained as excluded",
+    "network": "NC",
+    "time_uncertainty_s_inclusive": [
+      0,
+      0.15
+    ],
+    "uncertainty_policy": "provider symmetric time/uncertainty required; unknown/nonfinite/negative excluded; no uncertainty imputed",
+    "identity_policy": "known network, station, location (empty is valid), three-character channel, event/origin/pick/arrival provider public IDs required",
+    "station_epoch_status": "channel metadata matching is a separate stage; no unverified epoch is invented",
+    "arrival_time_weight_policy": "retained without additional cutoff; reported explicitly",
+    "duplicate_policy": "no phase/channel averaging or silent deduplication; preferred-origin pick associations must be unique",
+    "batch_size": 25,
+    "fdsn_standard": "https://docs.fdsn.org/projects/source-identifiers/en/v1.0/definition.html"
+  },
+  "acquisition_complete": true,
+  "selected_catalog_events": 1768,
+  "batch_requests": [
+    {
+      "offset": 0,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00000.xml"
+    },
+    {
+      "offset": 25,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00025.xml"
+    },
+    {
+      "offset": 50,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00050.xml"
+    },
+    {
+      "offset": 75,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00075.xml"
+    },
+    {
+      "offset": 100,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00100.xml"
+    },
+    {
+      "offset": 125,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00125.xml"
+    },
+    {
+      "offset": 150,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00150.xml"
+    },
+    {
+      "offset": 175,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00175.xml"
+    },
+    {
+      "offset": 200,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00200.xml"
+    },
+    {
+      "offset": 225,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00225.xml"
+    },
+    {
+      "offset": 250,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00250.xml"
+    },
+    {
+      "offset": 275,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00275.xml"
+    },
+    {
+      "offset": 300,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00300.xml"
+    },
+    {
+      "offset": 325,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00325.xml"
+    },
+    {
+      "offset": 350,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00350.xml"
+    },
+    {
+      "offset": 375,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00375.xml"
+    },
+    {
+      "offset": 400,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00400.xml"
+    },
+    {
+      "offset": 425,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00425.xml"
+    },
+    {
+      "offset": 450,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00450.xml"
+    },
+    {
+      "offset": 475,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00475.xml"
+    },
+    {
+      "offset": 500,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00500.xml"
+    },
+    {
+      "offset": 525,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00525.xml"
+    },
+    {
+      "offset": 550,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00550.xml"
+    },
+    {
+      "offset": 575,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00575.xml"
+    },
+    {
+      "offset": 600,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00600.xml"
+    },
+    {
+      "offset": 625,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00625.xml"
+    },
+    {
+      "offset": 650,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00650.xml"
+    },
+    {
+      "offset": 675,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00675.xml"
+    },
+    {
+      "offset": 700,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00700.xml"
+    },
+    {
+      "offset": 725,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00725.xml"
+    },
+    {
+      "offset": 750,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00750.xml"
+    },
+    {
+      "offset": 775,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00775.xml"
+    },
+    {
+      "offset": 800,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00800.xml"
+    },
+    {
+      "offset": 825,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00825.xml"
+    },
+    {
+      "offset": 850,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00850.xml"
+    },
+    {
+      "offset": 875,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00875.xml"
+    },
+    {
+      "offset": 900,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00900.xml"
+    },
+    {
+      "offset": 925,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00925.xml"
+    },
+    {
+      "offset": 950,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00950.xml"
+    },
+    {
+      "offset": 975,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_00975.xml"
+    },
+    {
+      "offset": 1000,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01000.xml"
+    },
+    {
+      "offset": 1025,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01025.xml"
+    },
+    {
+      "offset": 1050,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01050.xml"
+    },
+    {
+      "offset": 1075,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01075.xml"
+    },
+    {
+      "offset": 1100,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01100.xml"
+    },
+    {
+      "offset": 1125,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01125.xml"
+    },
+    {
+      "offset": 1150,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01150.xml"
+    },
+    {
+      "offset": 1175,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01175.xml"
+    },
+    {
+      "offset": 1200,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01200.xml"
+    },
+    {
+      "offset": 1225,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01225.xml"
+    },
+    {
+      "offset": 1250,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01250.xml"
+    },
+    {
+      "offset": 1275,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01275.xml"
+    },
+    {
+      "offset": 1300,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01300.xml"
+    },
+    {
+      "offset": 1325,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01325.xml"
+    },
+    {
+      "offset": 1350,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01350.xml"
+    },
+    {
+      "offset": 1375,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01375.xml"
+    },
+    {
+      "offset": 1400,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01400.xml"
+    },
+    {
+      "offset": 1425,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01425.xml"
+    },
+    {
+      "offset": 1450,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01450.xml"
+    },
+    {
+      "offset": 1475,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01475.xml"
+    },
+    {
+      "offset": 1500,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01500.xml"
+    },
+    {
+      "offset": 1525,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01525.xml"
+    },
+    {
+      "offset": 1550,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01550.xml"
+    },
+    {
+      "offset": 1575,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01575.xml"
+    },
+    {
+      "offset": 1600,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01600.xml"
+    },
+    {
+      "offset": 1625,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01625.xml"
+    },
+    {
+      "offset": 1650,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01650.xml"
+    },
+    {
+      "offset": 1675,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01675.xml"
+    },
+    {
+      "offset": 1700,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01700.xml"
+    },
+    {
+      "offset": 1725,
+      "requested_events": 25,
+      "returned_events": 25,
+      "raw_file": "raw/picks_01725.xml"
+    },
+    {
+      "offset": 1750,
+      "requested_events": 18,
+      "returned_events": 18,
+      "raw_file": "raw/picks_01750.xml"
+    }
+  ],
+  "events_acquired": 1768,
+  "events_represented_by_pick_rows": 1768,
+  "events_with_selected_picks": 1768,
+  "all_arrival_or_unassociated_pick_rows": 52553,
+  "selected_P_pick_rows": 42236,
+  "excluded_rows": 10317,
+  "exclusion_reason_counts_nonexclusive": {
+    "outside_time_uncertainty_range": 9838,
+    "not_exact_P_phase": 1927,
+    "not_NC_network": 117
+  },
+  "all_phase_counts": {
+    "P": 50626,
+    "S": 1927
+  },
+  "all_network_counts": {
+    "NC": 52436,
+    "WR": 42,
+    "NN": 41,
+    "BK": 4,
+    "CI": 30
+  },
+  "all_uncertainty_counts": {
+    "0.03": 16774,
+    "0.30": 9838,
+    "0.06": 13363,
+    "0.15": 12578
+  },
+  "unknown_or_nonfinite_uncertainty_rows": 0,
+  "missing_or_unsupported_SEED_identity_rows": 0,
+  "selected_zero_uncertainty_count": 0,
+  "selected_arrival_time_weight_counts": {
+    "0.24": 531,
+    "0.12": 1535,
+    "0.05": 2629,
+    "0.00": 5795,
+    "0.19": 1189,
+    "0.10": 2065,
+    "0.04": 3229,
+    "0.21": 888,
+    "0.02": 607,
+    "0.20": 1429,
+    "0.18": 1498,
+    "0.17": 1234,
+    "0.08": 1612,
+    "0.11": 1847,
+    "0.09": 2034,
+    "0.07": 1085,
+    "0.03": 2215,
+    "0.01": 757,
+    "0.42": 3,
+    "0.16": 1599,
+    "0.13": 1283,
+    "0.35": 12,
+    "0.26": 289,
+    "0.29": 132,
+    "0.06": 1206,
+    "0.14": 1503,
+    "0.15": 1355,
+    "0.22": 785,
+    "0.30": 86,
+    "0.25": 512,
+    "0.34": 18,
+    "0.23": 697,
+    "0.47": 1,
+    "0.28": 147,
+    "0.32": 22,
+    "0.31": 56,
+    "0.27": 304,
+    "0.45": 1,
+    "0.37": 3,
+    "0.33": 29,
+    "0.38": 4,
+    "0.40": 4,
+    "0.41": 1,
+    "0.36": 4,
+    "0.49": 1
+  },
+  "selected_channels": 464,
+  "selected_stations": 387,
+  "missing_channel_metadata": "not assessed in this acquisition stage; station/channel epoch join required before inversion"
+}

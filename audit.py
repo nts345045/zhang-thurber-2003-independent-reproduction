@@ -61,6 +61,28 @@ for label, quantity in [('a', 'resolution-matrix diagonal'), ('b', 'one-sigma ve
             'Unavailable: requires excluded observation matrix and inferred field velocity', 'Unavailable: no field matrix', 'not reproduced',
             'Attempt: established dependency on the actual ray geometry, final field model, damping and data covariance. These cannot be replaced by an unrelated synthetic resolution matrix and called a reproduction.')
 
+# Later authorization permits independently retrieved authoritative observations.
+# Keep the baseline panel record, but do not repeat its superseded exclusion as
+# the current reason no field result exists.
+if Path('data/authoritative/hayward/pick_selection_manifest.json').exists():
+    acquisition = json.loads(Path('data/authoritative/hayward/pick_selection_manifest.json').read_text())
+    if acquisition['acquisition_complete']:
+        for row in rows:
+            if row['panel'] == '2':
+                row['limitation'] = ('The saved baseline uses random geometry. A documented authoritative Loma Prieta subset is authorized; '
+                                     'it has not yet replaced this experiment. No digitization used.')
+            if int(row['panel'].split()[0].rstrip('abcd')) >= 4:
+                row['data_command'] = ('Pending metadata clarification: python3 prepare_hayward.py; '
+                                       './build/dd invert configs/hayward.cfg data/hayward MODE')
+                row['plot_command'] = 'python3 plot_hayward.py (requires completed field outputs)'
+                row['limitation'] = ('Authoritative subset acquired; calculation awaits clarification of missing NC.CMW1 epochs and borehole '
+                                     'elevations at NC.CCH1/CGP1/CSU1. No corresponding result yet. The manuscript cohort and waveform differences remain unmatched.')
+                if row['panel'].startswith('11'):
+                    row['data_command'] += ('; ./build/dd linearize configs/hayward.cfg data/hayward dd; '
+                                            'OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py')
+                    row['limitation'] += (' The independent absolute-data resolution/noise algebra passes a small joint-matrix check; '
+                                          'it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.')
+
 Path('data').mkdir(exist_ok=True)
 with open('data/panel_audit.csv', 'w', newline='') as f:
     writer = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator='\n')
