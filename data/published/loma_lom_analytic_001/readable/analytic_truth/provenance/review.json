@@ -1,0 +1,27 @@
+{
+  "scope": "Post-completion readback and physical consistency, with no reference or production ray reruns",
+  "counts": {
+    "pairs": 37648,
+    "reference_valid": 37648,
+    "branch_turning": 5951,
+    "branch_direct": 25724,
+    "branch_critical_maximum_or_plateau": 5474,
+    "branch_flat_direct": 499
+  },
+  "prior104_full_reference_dictionary_matches": 104,
+  "physical_bounds": {
+    "minimum_time_minus_euclidean_over_global_vmax_s": -3.552713678800501e-15,
+    "maximum_time_minus_independent_straight_action_s": 3.552713678800501e-15,
+    "maximum_absolute_endpoint_eikonal_norm_residual_s_per_km": 8.326672684688674e-17
+  },
+  "interpretation": "Physical-bound residuals are reported without a new scientific acceptance threshold; floating-point equality can leave roundoff-sized signed differences.",
+  "limitations": [
+    "These bounds are necessary consistency checks, not a separate completeness proof or an interval time-ordering certificate.",
+    "Source gradients belong to the selected branch; near ties do not establish a unique ordinary derivative.",
+    "No simulated observations, noise, inversion or production solver substitution was performed."
+  ],
+  "summary_sha256": "d88e827166d5cfc8b0bbf58cd005831ea9c2c5169cc78c47e067d333e60b453d",
+  "execution_sha256": "9e77f560ece246036c717f3abdbca02356ab52adcadb47e887956417dc2a5008",
+  "prior104_summary_sha256": "f283b0db2c9ecdd3a2f86f85cc03725368344c6172e112477cae87057bec6f63",
+  "review_source_sha256": "a212d2beab6b1e48b7d516d3f04c888a295003143651d233e819d4bfcbff1974"
+}
