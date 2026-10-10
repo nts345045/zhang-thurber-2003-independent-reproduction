@@ -1,0 +1,57 @@
+{
+  "reviewed_utc": "2026-10-10T00:11:15.623872Z",
+  "purpose": "Invented FMM field/extraction fixtures only; no real data, ray bending, or inversion.",
+  "command": "python3 data/development/fmm_field_checks/run_checks.py --variant order1_control --suite full --order 1",
+  "suite": "full",
+  "fmm_order": 1,
+  "run_command": [
+    "tmp/fmm_field_checks/order1_control/check_fmm_field",
+    "data/development/fmm_field_checks/order1_control/results.csv",
+    "1"
+  ],
+  "TMPDIR": "tmp",
+  "compiler_command": [
+    "c++",
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "diagnostics/check_fmm_field.cpp",
+    "-o",
+    "tmp/fmm_field_checks/order1_control/check_fmm_field"
+  ],
+  "exit_code": 0,
+  "stdout": "PASS paths=39 invalid_sources=18 invalid_fields=8 full_domain_nodes=733623 full_domain_seconds=1.99971\n",
+  "stderr": "",
+  "status": "passed",
+  "sha256": {
+    "diagnostics/first_arrival_fmm.hpp": "c437c5d3ce2b09d59b098ae90b43705efdf9db9015dec26971421ee968337be7",
+    "diagnostics/check_fmm_field.cpp": "9a10f138e0a458505dfad14964ca4a20c3e2651c371fe75a6192be7f64dff37f",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "data/development/fmm_field_checks/run_checks.py": "288050651bbcb7dcdc45b164a9dd26a9db28e5a08aa74ceecf40c9cb36cd1c3e",
+    "data/development/fmm_field_checks/order1_control/results.csv": "d0061a8a0c82ea37d7d0409ed6f76914986744272776a7f19e8ef46a1e41caa1",
+    "tmp/fmm_field_checks/order1_control/check_fmm_field": "2d267d61552a698643eafe70e0388affa48661e8086f0483429a5e3743919db6"
+  },
+  "limitations": [
+    "These component tests do not establish first-arrival branch completeness or final bent-ray accuracy.",
+    "The 1e-12 second homogeneous action allowance covers floating-point roundoff and is not a ray-convergence tolerance.",
+    "The 36 homogeneous cases include nine coincident source/receiver cases; three additional synthetic full-domain paths test extraction at practical field size.",
+    "Timing is a single measurement while other authorized processes are active, not a performance guarantee."
+  ],
+  "path_cases": 39,
+  "full_domain_build_seconds": 1.999710591,
+  "full_domain_nodes": 733623,
+  "full_domain_stencils": {
+    "first_order_direction_evaluations": 4318317,
+    "second_order_direction_evaluations": 0,
+    "second_order_ineligible": 0,
+    "causal_fallback_updates": 0,
+    "root_bisection_updates": 0,
+    "second_neighbor_revisits": 0
+  },
+  "maximum_endpoint_error_km": 0.0,
+  "nondecreasing_field_steps": 0,
+  "extraction_fallback_steps": 0,
+  "artifact_packaging_note": "Displayed paths were made repository-relative after calculation. Source and numerical data hashes are unchanged. See ../../fmm_artifact_packaging.json."
+}

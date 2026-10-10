@@ -8,8 +8,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def write_header(destination):
-    source = (ROOT / "src/core.hpp").read_text()
+def write_header(destination, source_path=None):
+    source = Path(source_path or ROOT / "src/core.hpp").read_text()
     start = source.index("Ray trace(const Grid &g,")
     body = source.index("  int merged = merge_close_nodes(p), updates = 0;", start)
     end = source.index("\nstruct Entry {", body)

@@ -604,7 +604,8 @@ The test definition, numerical results, and source hashes are saved in
 this diagnostic, and it does not modify the field calculations.
 
 Figure~\ref{fig:firstarrivalaudit} tests an experimental first-order fast-marching
-method (FMM) initializer followed by the unchanged continuous ray bending.
+method (FMM) initializer followed by the unchanged continuous ray bending;
+it preserves the historical first-order comparison.
 The original auxiliary-grid audit fails 10 of 61 acceptance checks across
 72 cases. Independent refinement of the auxiliary grid and continuous path
 spacing to 0.0625 km reduces the travel-time errors at 20 and 40 km to less
@@ -622,7 +623,7 @@ acceptance thresholds are retained in
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.94\linewidth]{diagnostics/first_arrival_audit.pdf}
-\caption{Independent forward-solver diagnostic, not a manuscript counterpart.
+\caption{Original first-order FMM diagnostic, not a manuscript counterpart.
 The medium has $v=4$ km/s for $-1\leq z\leq0$ km and $v=4+0.2z$ below;
 both endpoints have $z=-0.5$ km. Left: the stationary straight ray and a
 faster FMM-seeded, continuously bent path at 40-km separation.
@@ -633,6 +634,68 @@ logarithmic scale is linear within $\pm0.001$ ms. Both spacings miss the
 earlier branch near the crossing.}
 \label{fig:firstarrivalaudit}
 \end{figure}
+
+A controlled comparison separates the stencil order from source seeding.
+The optional second-order one-sided derivative is
+$(3T-4T_1+T_2)/(2h)$ when both upstream values are accepted and
+$T_2\leq T_1$; otherwise that direction retains first order. Here $h$ is
+the auxiliary spacing, and $T_1,T_2$ are the nearest and next upstream
+times. The two opposite directions are compared on each axis. A separate seed rule uses
+the union of corners of every grid cell whose closure contains the receiver.
+It agrees with the original single-cell rule off grid, but restores seed symmetry
+when the receiver lies exactly on a grid plane, edge, or node. In 224 component
+comparisons the original rule retains 28 reflection failures; the closed-cell
+rule has none, with off-grid fields and paths unchanged.
+
+\begin{center}
+\begin{tabular}{llrrl}
+\toprule
+Stencil & Receiver seeds & Failed at 0.25 km & Failed at 0.0625 km & Missed offsets (km)\\
+\midrule
+First order & Original cell & 10/61 & 4/37 & 14.68, 15\\
+First order & Closed-cell union & 10/61 & 4/37 & 14.68, 15\\
+Second order & Original cell & 9/61 & 2/37 & 14.68\\
+Second order & Closed-cell union & 9/61 & 0/37 & None missed\\
+\bottomrule
+\end{tabular}
+\end{center}
+Both auxiliary-grid and path spacings take the indicated finest value in
+each column; missed offsets refer to that finest refined calculation,
+among the tested offsets.
+The coarse suite contains 72 comparisons and 61 gates; the refined suite
+contains 44 comparisons and 37 gates, omitting the already tested homogeneous
+fixtures. The retained time and source-gradient tolerances remain
+$2.5\times10^{-5}$ s and $3\times10^{-6}$ s/km.
+With second order and the closed-cell rule, the finest refined time and
+source-gradient errors are at most $1.80\times10^{-6}$ s and
+$4.43\times10^{-7}$ s/km. All 44 refined paths extract successfully,
+meet the local stopping rule, retain exact endpoints, and stay in the domain.
+The coarse suites separately retain three first-order and four second-order
+strict endpoint discrepancies, at most $8.90\times10^{-16}$ km; these are
+recorded outside the original accuracy-gate counts.
+
+The repeated first-order control reproduces the historical numerical rows
+and all 61 gates exactly. Frozen source snapshots, output hashes, and the
+complete controlled comparison are in
+\path{data/development/fmm_order_comparison.json}. Passing this finite
+analytic suite is not a general first-arrival certificate or a demonstration
+of global second-order accuracy.
+
+A subsequent three-dimensional check uses the positive affine velocity
+$v(\mathbf r)=6+\mathbf g\cdot\mathbf r$ km/s, with
+$\lVert\mathbf g\rVert=0.12$ s$^{-1}$ in a $[-15,15]^3$ km box.
+One oblique off-grid geometry, its reflection, and its coordinate permutation
+are each traced in both directions. The exact circular rays remain at least
+3.73 km inside the box. At 0.5-km auxiliary spacing and 0.25-km path spacing,
+all 72 checks pass across the six directional comparisons. The FMM-seeded,
+continuously bent paths have maximum time and source-gradient errors of
+$4.31\times10^{-6}$ s and $4.58\times10^{-7}$ s/km. Both this candidate
+and the selected minimum over seeds are tested separately, so a correct
+direct seed cannot conceal an inaccurate FMM candidate. The evidence is in
+\path{data/development/fmm_rotated_affine_baseline/}.
+These smooth affine cases do not establish branch completeness in arbitrary
+three-dimensional media. Field validation remains necessary, and the
+production inversions have not changed.
 
 \subsection{Completed DD outputs and a targeted path comparison}
 \IfFileExists{hayward_results.tex}{The following path comparison uses the saved
@@ -648,7 +711,7 @@ Nineteen have negative geoid depth, which does not establish position
 relative to local terrain. The DD output audit is in
 \path{data/development/hayward_final_output_review.json}.}
 
-A separate fixed-model diagnostic examines every saved DD absolute ray
+The preserved first-order fixed-model diagnostic examines every saved DD absolute ray
 whose source and receiver depths both lie within $[-1,0]$ km. This selection
 contains 186 rays and is not representative of all field paths. With auxiliary
 and continuous path spacings of 0.5 km, the prototype finds two admissible
@@ -658,7 +721,7 @@ establishes a late original path in this fixed model; agreement does not
 certify a first arrival, and this experiment does not quantify source or
 velocity bias.
 
-The comparison retains its failures. One FMM extraction has no descending
+This original comparison retains its failures. One FMM extraction has no descending
 step (solver event index 1043, receiver index 284); its original direct-seed
 candidate is retained with an explicit failure flag. One selected ray
 misses the existing local stopping rule. All selected paths stay within

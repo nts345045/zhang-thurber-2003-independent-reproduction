@@ -1,0 +1,107 @@
+{
+  "purpose": "Remove machine-specific ownership and displayed absolute workspace paths from newly published diagnostic artifacts without changing scientific evidence.",
+  "originals_retained_locally": "tmp/fmm_initialization_audit/VARIANT/original_packaging and tmp/fmm_field_checks/VARIANT/original_packaging",
+  "initialization_variants": [
+    {
+      "variant": "order1_control",
+      "original_archive_sha256": "0fca4475c51d8908e88afb481366d3ee662ec8f88b53ae96106525e714a73f6c",
+      "published_archive_sha256": "e6a4c20f25b46698e86bc294600b4a5098fd091772dfbf7acfdc5396928c577f",
+      "original_summary_sha256": "b49d29ae05c94f8cc3d42d89459c116e320e4f49e92052d4d0d1d76daf9ff967",
+      "published_summary_sha256": "d514c95af275080a767ba3363d0d151b30dbc3d5b3d764de8113bf681223f46d",
+      "source_member_count": 6,
+      "all_source_member_hashes_preserved": true
+    },
+    {
+      "variant": "order2_baseline",
+      "original_archive_sha256": "0fca4475c51d8908e88afb481366d3ee662ec8f88b53ae96106525e714a73f6c",
+      "published_archive_sha256": "e6a4c20f25b46698e86bc294600b4a5098fd091772dfbf7acfdc5396928c577f",
+      "original_summary_sha256": "4add28c7b929280e21bc9d5c03873e619d879d726b82968cfa04194e223d0383",
+      "published_summary_sha256": "df814c2ab5eb0e569c7e2f3cde27ab258f8097ddfdec4fc798edba7d814640c9",
+      "source_member_count": 6,
+      "all_source_member_hashes_preserved": true
+    },
+    {
+      "variant": "order1_closed",
+      "original_archive_sha256": "4444e2c34b1caedc945986b5743efcfcbbbfa552caada1ed69c3cf13ab36c0e6",
+      "published_archive_sha256": "e6a4c20f25b46698e86bc294600b4a5098fd091772dfbf7acfdc5396928c577f",
+      "original_summary_sha256": "5c3f1e6633dddbc2a6a836b33350e226c84dfd1e38a1e51d2cae0d7cf1cc9377",
+      "published_summary_sha256": "4d96e2193c4c7d1fc344d5500748f512211fca6260f4bf0d4fb0f6a4c8354313",
+      "source_member_count": 6,
+      "all_source_member_hashes_preserved": true
+    },
+    {
+      "variant": "order2_closed",
+      "original_archive_sha256": "4444e2c34b1caedc945986b5743efcfcbbbfa552caada1ed69c3cf13ab36c0e6",
+      "published_archive_sha256": "e6a4c20f25b46698e86bc294600b4a5098fd091772dfbf7acfdc5396928c577f",
+      "original_summary_sha256": "cd428fd9fa83d7fb46a2674631b0c1128450eeb8ad2692f2a41004ec08588384",
+      "published_summary_sha256": "fada85be93cf1cd8e7476b6dc8d6fadfdd19289a10ed7a0531c58f15a86171b8",
+      "source_member_count": 6,
+      "all_source_member_hashes_preserved": true
+    },
+    {
+      "variant": "order2_refinement",
+      "original_archive_sha256": "4444e2c34b1caedc945986b5743efcfcbbbfa552caada1ed69c3cf13ab36c0e6",
+      "published_archive_sha256": "e6a4c20f25b46698e86bc294600b4a5098fd091772dfbf7acfdc5396928c577f",
+      "original_summary_sha256": "af9783f1afbd1108559b3e792d69b36a0ecd74dda60580f9c98c59697f14bff8",
+      "published_summary_sha256": "6a374f9f5bdf27dddc3b2068e550bdceb7586bd6d2af559236d3b94d877f8000",
+      "source_member_count": 6,
+      "all_source_member_hashes_preserved": true
+    },
+    {
+      "variant": "order2_closed_refinement",
+      "original_archive_sha256": "6c19311f9076482a57791a2979470eb523fb706d34cc5cd5e766522bc216072f",
+      "published_archive_sha256": "e6a4c20f25b46698e86bc294600b4a5098fd091772dfbf7acfdc5396928c577f",
+      "original_summary_sha256": "ceea659138ad85c4f6f1bd792602639915c3a87a2790ebf0258edaac51ca4c5f",
+      "published_summary_sha256": "fd740bcb45464f235da7fd901503ae547b2de251a586a1e3cfcc0ca43221291c",
+      "source_member_count": 6,
+      "all_source_member_hashes_preserved": true
+    },
+    {
+      "variant": "order1_closed_refinement",
+      "original_archive_sha256": "9a9d6be6ab969961d0409433b79c6fea8ad0946a94a8964f59dd7033c2b50c8d",
+      "published_archive_sha256": "e6a4c20f25b46698e86bc294600b4a5098fd091772dfbf7acfdc5396928c577f",
+      "original_summary_sha256": "3aac3e305829a37bcb2fc7ca829feb46dd24ad37bef2b5f59b693a415e504381",
+      "published_summary_sha256": "7d8d9d840f7e208dc2eb3b2aad566a45b71ada2e297f5a7e9131a7c5fdd41424",
+      "source_member_count": 6,
+      "all_source_member_hashes_preserved": true
+    }
+  ],
+  "field_check_variants": [
+    {
+      "variant": "order2",
+      "original_summary_sha256": "0e2b6af5b0db2c1ef03bbe6bb522d887493d6bbd42f984db7e1db8e7f1c9ab10",
+      "published_summary_sha256": "624708ef4c10b32a2070bc1c42901e94cbb2ced2d6d0e36774b761b3113ce96c"
+    },
+    {
+      "variant": "order2_mixed",
+      "original_summary_sha256": "7f116f4dd7e9c5d3113d4f16fd4b0997dd734ab4ee0239f6f6a317fcff86779b",
+      "published_summary_sha256": "6f354b18fedd99e5fbd75ad9110d177e7c8490b45c8c12287ecb5f899366e572"
+    },
+    {
+      "variant": "order2_mixed_complete",
+      "original_summary_sha256": "900f032ad2ae2343d546ca22d6170db98b8cea2dbc26f53634bad93e84ea98f3",
+      "published_summary_sha256": "fc7760bdf011b813d65a4e1ea0c2f196076ea8d026d3b19483e5660eda5a6b33"
+    },
+    {
+      "variant": "closed_seed_rules",
+      "original_summary_sha256": "4849c5d014055c1baa893cf70fa3e55e1d1dd3cc81274ca8696e266aabb5b253",
+      "published_summary_sha256": "26ea6eef20726263d7b1dd63f2e012cfc5943ee3187f23c3f2eb30ccee8fe1b2"
+    },
+    {
+      "variant": "order1_control",
+      "original_summary_sha256": "a52aba52cf955f9ab61f0572433574f4d69044eaf5035cee035d4c0fbfd2dd58",
+      "published_summary_sha256": "6fb8cbbf6db34eb114be3a94e3d379f60654dedddfa64a16a719a617ffe388c2"
+    },
+    {
+      "variant": "order2_current",
+      "original_summary_sha256": "77e74b696e77d85bd77993156098c7ccd43413f12b835780867bc9a5c6553be1",
+      "published_summary_sha256": "0bebccfd4748291fde6047756efffa31d30e858ce2d794e2826c7568823e55c5"
+    }
+  ],
+  "unchanged": [
+    "All archived compilation-source member bytes",
+    "All scientific CSV file bytes",
+    "All source and numerical-output hashes",
+    "All calculated values and pass/fail classifications"
+  ]
+}

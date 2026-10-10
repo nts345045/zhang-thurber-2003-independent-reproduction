@@ -1,0 +1,21 @@
+{
+  "purpose": "Exact order2/half-open-seed baseline source snapshot; preserve the eight recorded reflection failures. No generated result or existing summary changed.",
+  "sources": {
+    "diagnostics/first_arrival_fmm.hpp": {
+      "snapshot": "data/development/fmm_field_checks/order2_mixed_complete/source_snapshot/first_arrival_fmm.hpp",
+      "sha256": "1ae11e34654b5431cb2a158647855936f4228d188acd1d207426b471865b3651"
+    },
+    "diagnostics/check_fmm_field.cpp": {
+      "snapshot": "data/development/fmm_field_checks/order2_mixed_complete/source_snapshot/check_fmm_field.cpp",
+      "sha256": "5a63a9451f3ade8beb6e998ca245c4dff1de290f5294ce2b5a22af402eec5c50"
+    },
+    "data/development/fmm_field_checks/run_checks.py": {
+      "snapshot": "data/development/fmm_field_checks/order2_mixed_complete/source_snapshot/run_checks.py",
+      "sha256": "a648c4381e0ef7a2eb816ac090f5209c848e1a48ecd5b60475fe3869e2e0d464"
+    }
+  },
+  "core_source": "src/core.hpp",
+  "core_sha256": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+  "core_available_in_commit": "d3ef004",
+  "rebuild_note": "Place these snapshots at their original source paths in an isolated checkout with the recorded core source, then execute the command recorded in the original summary using a new output variant."
+}

@@ -1,0 +1,47 @@
+{
+  "reviewed_utc": "2026-10-10T00:06:57.847222Z",
+  "purpose": "Invented FMM field/extraction fixtures only; no real data, ray bending, or inversion.",
+  "command": "python3 data/development/fmm_field_checks/run_checks.py --variant order2_mixed --suite mixed-order --order 2",
+  "suite": "mixed-order",
+  "fmm_order": 2,
+  "run_command": [
+    "tmp/fmm_field_checks/order2_mixed/check_fmm_field",
+    "data/development/fmm_field_checks/order2_mixed/results.csv",
+    "2",
+    "mixed-order"
+  ],
+  "TMPDIR": "tmp",
+  "compiler_command": [
+    "c++",
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "diagnostics/check_fmm_field.cpp",
+    "-o",
+    "tmp/fmm_field_checks/order2_mixed/check_fmm_field"
+  ],
+  "exit_code": 1,
+  "stdout": "mixed_order_checks failures=8 random_roots=100000 affine_cases=384 field_reflections=32 invalid_orders=2\n",
+  "stderr": "",
+  "status": "failed",
+  "sha256": {
+    "diagnostics/first_arrival_fmm.hpp": "1ae11e34654b5431cb2a158647855936f4228d188acd1d207426b471865b3651",
+    "diagnostics/check_fmm_field.cpp": "ab8df7fddd94ccbc9f1cb387305ab52e1fdd03481d166051884dcce601e60675",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "data/development/fmm_field_checks/run_checks.py": "a648c4381e0ef7a2eb816ac090f5209c848e1a48ecd5b60475fe3869e2e0d464",
+    "data/development/fmm_field_checks/order2_mixed/results.csv": "ad7fde690dedee5756db7825d6dee2a7d7d42e5409e5ba5f7bdc0a2254159eec",
+    "tmp/fmm_field_checks/order2_mixed/check_fmm_field": "4bcd0dbb487697bdfbd35ac8a63aafd18d220b9abdf9662751e9d6b4c1976be1"
+  },
+  "limitations": [
+    "These component tests do not establish first-arrival branch completeness or final bent-ray accuracy.",
+    "The 1e-12 second homogeneous action allowance covers floating-point roundoff and is not a ray-convergence tolerance.",
+    "Local scalar roots are compared with independent long-double bisection; affine travel-time stencils and reflected point-source fields test consistency/symmetry. The 128-epsilon arithmetic allowance is not a ray accuracy criterion."
+  ],
+  "cases": 100422,
+  "failures": 8,
+  "maximum_scalar_error_s": 0.07447400065372445,
+  "maximum_error_in_epsilon_units": 194653125056569.6,
+  "artifact_packaging_note": "Displayed paths were made repository-relative after calculation. Source and numerical data hashes are unchanged. See ../../fmm_artifact_packaging.json."
+}

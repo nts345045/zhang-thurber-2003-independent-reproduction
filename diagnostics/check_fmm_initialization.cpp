@@ -77,7 +77,7 @@ void write_paths(std::ofstream &f, std::string name, double aux, double spacing,
 }
 
 void row(std::ofstream &f, std::string name, double aux, double spacing,
-         double distance, size_t nodes, double field_seconds,
+         double distance, const first_arrival::Field &field, double field_seconds,
          const Grid &g, P a, P b, const Reference &ref, const Comparison &c) {
   double outside = 0, max_depth = a[2];
   for (auto p : c.best.path) {
@@ -85,7 +85,7 @@ void row(std::ofstream &f, std::string name, double aux, double spacing,
     max_depth = std::max(max_depth, p[2]);
   }
   const bool ok = c.seed.success;
-  f << name << ',' << aux << ',' << spacing << ',' << distance << ',' << nodes
+  f << name << ',' << aux << ',' << spacing << ',' << distance << ',' << field.node_count()
     << ',' << field_seconds << ',' << ok << ',' << c.seed.message << ','
     << c.seed.field_time << ',' << (ok ? path_eval(g,c.seed.path) : NAN) << ','
     << c.seed.descent_steps << ',' << c.seed.fallback_steps << ','
@@ -99,13 +99,25 @@ void row(std::ofstream &f, std::string name, double aux, double spacing,
     << ',' << ref.source[0] << ',' << ref.source[1] << ',' << ref.source[2]
     << ',' << max_depth << ',' << outside << ','
     << norm(c.best.path.front()-a)+norm(c.best.path.back()-b) << ',' << c.seconds
+    << ',' << field.order() << ',' << field.closed_seed_cells()
+    << ',' << field.stats.seed_nodes
+    << ',' << field.stats.first_order_direction_evaluations
+    << ',' << field.stats.second_order_direction_evaluations
+    << ',' << field.stats.second_order_ineligible
+    << ',' << field.stats.causal_fallback_updates
+    << ',' << field.stats.root_bisection_updates
+    << ',' << field.stats.second_neighbor_revisits
     << std::endl;
 }
 
 int main(int argc, char **argv) {
-  if (argc < 2 || argc > 3 || (argc == 3 && std::string(argv[2]) != "refine"))
-    throw std::runtime_error("Usage: check_fmm_initialization OUT_DIR [refine]");
-  const bool refine = argc == 3;
+  if (argc != 5 || (std::string(argv[2]) != "baseline" && std::string(argv[2]) != "refine") ||
+      (std::string(argv[3]) != "1" && std::string(argv[3]) != "2") ||
+      (std::string(argv[4]) != "original" && std::string(argv[4]) != "closed"))
+    throw std::runtime_error("Usage: check_fmm_initialization OUT_DIR baseline|refine 1|2 original|closed");
+  const bool refine = std::string(argv[2]) == "refine";
+  const int order = std::stoi(argv[3]);
+  const bool closed_seed_cells = std::string(argv[4]) == "closed";
   const Vec auxiliary = refine ? Vec{.125,.0625} : Vec{1.,.5,.25};
   const Vec path_spacing = refine ? Vec{.125,.0625} : Vec{.5,.25};
   const std::string out = argv[1];
@@ -119,7 +131,9 @@ int main(int argc, char **argv) {
        "direct_bent_time_s,direct_converged,fmm_bent_time_s,fmm_converged,fmm_gradient,fmm_updates,"
        "selected,best_time_s,reference_time_s,reference_branch,time_error_s,converged,gradient,"
        "source_error_s_per_km,source_dx,source_dy,source_dz,reference_dx,reference_dy,reference_dz,"
-       "maximum_depth_km,outside_nodes,endpoint_error_km,ray_seconds\n";
+       "maximum_depth_km,outside_nodes,endpoint_error_km,ray_seconds,order,closed_seed_cells,seed_nodes,"
+       "first_order_direction_evaluations,second_order_direction_evaluations,second_order_ineligible,"
+       "causal_fallback_updates,root_bisection_updates,second_neighbor_revisits\n";
   paths << "case,auxiliary_spacing_km,path_spacing_km,distance_km,path,node,x,y,z\n";
   checks << "case,auxiliary_spacing_km,path_spacing_km,test,value,tolerance,passed\n";
   auto check = [&](std::string name, double aux, double spacing, std::string test,
@@ -135,7 +149,7 @@ int main(int argc, char **argv) {
     const Vec distances = flat ? Vec{4,12,14,14.64,14.68,15,16,20,40} : Vec{10,40};
     for (double aux : auxiliary) {
       auto start = Clock::now();
-      const first_arrival::Field field(g,b,aux);
+      const first_arrival::Field field(g,b,aux,order,closed_seed_cells);
       const double field_seconds = elapsed(start);
       for (double spacing : path_spacing)
         for (double distance : distances) {
@@ -144,7 +158,7 @@ int main(int argc, char **argv) {
           const Reference ref = flat ? flat_reference(distance) :
             Reference{10*std::asinh(distance/40), {-B/(4*radius),0,-distance/(8*radius)}, "diving"};
           const auto c = compare(g,field,a,b,spacing);
-          row(f,name,aux,spacing,distance,field.node_count(),field_seconds,g,a,b,ref,c);
+          row(f,name,aux,spacing,distance,field,field_seconds,g,a,b,ref,c);
           if (aux==auxiliary.back() && spacing==path_spacing.back()) {
             write_paths(paths,name,aux,spacing,distance,c);
             // Existing analytic-ray tolerances retained. Layer-interface cases
@@ -154,7 +168,7 @@ int main(int argc, char **argv) {
             check(label,aux,spacing,"exact_source_derivative",norm(c.best.source-ref.source),3e-6);
             check(label,aux,spacing,"converged",c.best.converged ? 0 : 1,0);
             if (flat && (distance==20 || distance==40)) {
-              const first_arrival::Field reverse_field(g,a,aux);
+              const first_arrival::Field reverse_field(g,a,aux,order,closed_seed_cells);
               const auto reversed = compare(g,reverse_field,b,a,spacing);
               check(label,aux,spacing,"reciprocity",std::abs(c.best.time-reversed.best.time),2e-5);
               double fd_error = 0;
@@ -186,11 +200,11 @@ int main(int argc, char **argv) {
     const std::string name="homogeneous_"+std::to_string(n++);
     for (double aux : {.5,.25}) {
       auto start=Clock::now();
-      const first_arrival::Field field(homogeneous,b,aux);
+      const first_arrival::Field field(homogeneous,b,aux,order,closed_seed_cells);
       const double field_seconds=elapsed(start),distance=norm(b-a);
       const auto c=compare(homogeneous,field,a,b,.25);
       const Reference ref{distance/6,(a-b)*(1/(6*distance)),"direct"};
-      row(f,name,aux,.25,distance,field.node_count(),field_seconds,homogeneous,a,b,ref,c);
+      row(f,name,aux,.25,distance,field,field_seconds,homogeneous,a,b,ref,c);
       check(name,aux,.25,"exact_time",std::abs(c.best.time-ref.time),1e-10);
       check(name,aux,.25,"exact_source_derivative",norm(c.best.source-ref.source),1e-9);
       check(name,aux,.25,"extracted",c.seed.success ? 0 : 1,0);

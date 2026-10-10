@@ -3,9 +3,18 @@
 This is an isolated, incomplete numerical correction. The production solver
 and the original Hayward inversion runs have not been changed.
 
+The following command records the historical baseline at commit `2d662da`:
+
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python3 diagnostics/run_fmm_initialization_audit.py
 ```
+
+The current runner requires a new named variant to preserve this evidence:
+`PYTHONDONTWRITEBYTECODE=1 python3 diagnostics/run_fmm_initialization_audit.py --variant baseline_repeat --order 1`.
+It saves separate outputs under `data/development/fmm_initialization_baseline_repeat/`
+and archives its exact compilation sources. Optional `--order 2`, `--refine`,
+and `--closed-seed-cells` isolate subsequent changes; they do not modify this
+historical experiment. Use a fresh variant name for each new calculation.
 
 The runner generates a temporary seeded entry point by copying the existing
 ray optimizer body without alteration. It resamples an extracted path at the

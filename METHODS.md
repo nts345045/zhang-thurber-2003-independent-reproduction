@@ -186,8 +186,16 @@ the revised kernel and has complete numerical outputs; the absolute-data and
 fixed-model runs and the full comparison workflow remain pending at this
 checkpoint. Local stationarity also fails to identify the earliest branch in
 the constant-layer/gradient counterexample in
-`data/development/first_arrival_audit/`. An experimental FMM initializer improves
-some cases but retains near-crossing failures and is not part of these inversions.
+`data/development/first_arrival_audit/`. The original first-order FMM initializer
+retains near-crossing failures. A [controlled comparison](data/development/fmm_order_comparison.md)
+separates a switched second-order stencil from symmetric receiver seeding using
+all cells whose closure contains the receiver. Together, at 0.0625-km auxiliary
+and path spacing, they pass all 37 retained analytic checks across 44 comparisons.
+This finite suite does not establish general first arrivals or global second-order
+accuracy. A separate [oblique 3D affine check](data/development/fmm_rotated_affine_baseline/README.md)
+passes 72 checks, including the continuously bent FMM candidate itself. Branch
+completeness in arbitrary 3D media and field validation remain open. These
+prototypes are not part of the production inversions.
 
 The sparse joint system is solved by an independently implemented LSQR
 bidiagonalization. Columns are normalized before adding damping equations.

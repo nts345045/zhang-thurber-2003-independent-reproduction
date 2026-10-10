@@ -1,0 +1,75 @@
+{
+  "purpose": "Compare all recorded non-timing fields at their saved precision; this is not a claim of bitwise equality of unrecorded state.",
+  "comparisons": [
+    {
+      "before": "data/development/fmm_field_checks/closed_cell_full/results.csv",
+      "after": "data/development/fmm_field_checks/order1_control/results.csv",
+      "rows_before": 39,
+      "rows_after": 39,
+      "compared_columns": [
+        "case",
+        "spacing_km",
+        "nodes",
+        "source_x",
+        "source_y",
+        "source_z",
+        "receiver_x",
+        "receiver_y",
+        "receiver_z",
+        "field_time_s",
+        "seed_action_s",
+        "exact_time_s",
+        "path_nodes",
+        "descent_steps",
+        "fallback_steps",
+        "endpoint_error_km",
+        "nondecreasing_field_steps"
+      ],
+      "mismatches": [],
+      "passed": true,
+      "sha256": {
+        "data/development/fmm_field_checks/closed_cell_full/results.csv": "b5f737072c7ef218a1d798141065e894b0bbf84a65c35460ffe5e9744def5a62",
+        "data/development/fmm_field_checks/order1_control/results.csv": "d0061a8a0c82ea37d7d0409ed6f76914986744272776a7f19e8ef46a1e41caa1"
+      }
+    },
+    {
+      "before": "data/development/fmm_field_checks/order2/results.csv",
+      "after": "data/development/fmm_field_checks/order2_current/results.csv",
+      "rows_before": 39,
+      "rows_after": 39,
+      "compared_columns": [
+        "case",
+        "spacing_km",
+        "nodes",
+        "source_x",
+        "source_y",
+        "source_z",
+        "receiver_x",
+        "receiver_y",
+        "receiver_z",
+        "field_time_s",
+        "seed_action_s",
+        "exact_time_s",
+        "path_nodes",
+        "descent_steps",
+        "fallback_steps",
+        "endpoint_error_km",
+        "nondecreasing_field_steps",
+        "fmm_order",
+        "first_order_direction_evaluations",
+        "second_order_direction_evaluations",
+        "second_order_ineligible",
+        "causal_fallback_updates",
+        "root_bisection_updates",
+        "second_neighbor_revisits"
+      ],
+      "mismatches": [],
+      "passed": true,
+      "sha256": {
+        "data/development/fmm_field_checks/order2/results.csv": "850e884336074b58ecdd6f8821a5d6b2878028b5882adcd201997f5bb5aeb58e",
+        "data/development/fmm_field_checks/order2_current/results.csv": "75f8fba6066958191439364d50a83f8ac00a05b0d2507fe49fd5bc924ff48fa7"
+      }
+    }
+  ],
+  "current_header_sha256": "c437c5d3ce2b09d59b098ae90b43705efdf9db9015dec26971421ee968337be7"
+}

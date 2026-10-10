@@ -17,10 +17,115 @@ struct Candidate {
   int fallback_steps = 0;
 };
 
+struct UpwindDerivative {
+  double offset = 0;
+  double inverse_h = 0; // Zero means this direction is unavailable.
+};
+using UpwindAxes = std::array<std::array<UpwindDerivative, 2>, 3>;
+
+// Solve sum_axis max(0, d_minus(T), d_plus(T))^2 = slowness^2.
+// This helper includes both directions because their switched orders can differ.
+inline double mixed_order_time(const UpwindAxes &axes, double slowness,
+                               bool *used_bisection = nullptr) {
+  if (used_bisection) *used_bisection = false;
+  const double infinity = std::numeric_limits<double>::infinity();
+  if (!(slowness > 0) || !std::isfinite(slowness))
+    return infinity;
+  double base = infinity;
+  for (const auto &axis : axes)
+    for (auto d : axis) {
+      if (d.inverse_h < 0 || !std::isfinite(d.inverse_h) ||
+          (d.inverse_h > 0 && !std::isfinite(d.offset)))
+        return infinity;
+      if (d.inverse_h > 0) base = std::min(base, d.offset);
+    }
+  if (!std::isfinite(base)) return infinity;
+  UpwindAxes shifted = axes;
+  double upper = infinity;
+  for (auto &axis : shifted)
+    for (auto &d : axis)
+      if (d.inverse_h > 0) {
+        d.offset -= base;
+        upper = std::min(upper, d.offset + slowness / d.inverse_h);
+      }
+  if (!(upper > 0) || !std::isfinite(upper)) return infinity;
+  std::array<double, 11> breaks{};
+  int count = 0;
+  breaks[count++] = 0;
+  breaks[count++] = upper;
+  for (const auto &axis : shifted) {
+    for (auto d : axis)
+      if (d.inverse_h > 0 && d.offset > 0 && d.offset < upper)
+        breaks[count++] = d.offset;
+    auto a = axis[0], b = axis[1];
+    if (a.inverse_h > 0 && b.inverse_h > 0 && a.inverse_h != b.inverse_h) {
+      double cross = (a.inverse_h * a.offset - b.inverse_h * b.offset) /
+                     (a.inverse_h - b.inverse_h);
+      if (cross > 0 && cross < upper) breaks[count++] = cross;
+    }
+  }
+  std::sort(breaks.begin(), breaks.begin() + count);
+  for (int interval = 1; interval < count; ++interval) {
+    double lo = breaks[interval - 1], hi = breaks[interval];
+    if (lo == hi) continue;
+    double midpoint = lo + (hi - lo) / 2;
+    double aa = 0, bb = 0, cc = -slowness * slowness;
+    for (const auto &axis : shifted) {
+      UpwindDerivative selected;
+      double largest = 0;
+      for (auto d : axis) {
+        double value = d.inverse_h * (midpoint - d.offset);
+        if (value > largest) { largest = value; selected = d; }
+      }
+      double weight = selected.inverse_h * selected.inverse_h;
+      aa += weight;
+      bb += weight * selected.offset;
+      cc += weight * selected.offset * selected.offset;
+    }
+    if (!(aa > 0)) continue;
+    double discriminant = bb * bb - aa * cc;
+    if (discriminant < 0) continue;
+    double root = (bb + std::sqrt(discriminant)) / aa;
+    if (std::isfinite(root) && root >= lo && root <= hi)
+      return base + root;
+  }
+  // Roundoff at an operator switch can reject adjacent quadratic pieces.
+  // Safeguarded scalar bisection retains the same equation and bracket.
+  if (used_bisection) *used_bisection = true;
+  double lo = 0, hi = upper;
+  for (int iteration = 0; iteration < 64; ++iteration) {
+    double midpoint = lo + (hi - lo) / 2;
+    if (midpoint == lo || midpoint == hi) break;
+    double value = 0;
+    for (const auto &axis : shifted) {
+      double derivative = 0;
+      for (auto d : axis)
+        derivative = std::max(derivative, d.inverse_h * (midpoint - d.offset));
+      value += derivative * derivative;
+    }
+    if (value < slowness * slowness) lo = midpoint;
+    else hi = midpoint;
+  }
+  return base + hi;
+}
+
+struct FieldStats {
+  std::size_t seed_nodes = 0;
+  // Counts are directional stencil evaluations during updates, not unique nodes.
+  std::size_t first_order_direction_evaluations = 0;
+  std::size_t second_order_direction_evaluations = 0;
+  std::size_t second_order_ineligible = 0;
+  std::size_t causal_fallback_updates = 0;
+  std::size_t root_bisection_updates = 0;
+  std::size_t second_neighbor_revisits = 0;
+};
+
 class Field {
   // The model must outlive the field and remain unchanged.
   const Grid &model_;
   P receiver_, spacing_{};
+  int order_ = 1;
+  bool closed_seed_cells_ = false;
   std::array<Vec, 3> axes_;
   std::array<int, 3> shape_{};
   Vec time_;
@@ -57,6 +162,18 @@ class Field {
         for (int i = 0; i < 2; ++i)
           result[n++] = id(q[0] + i, q[1] + j, q[2] + k);
     return result;
+  }
+  std::array<std::array<int, 2>, 3> receiver_seed_bounds() const {
+    auto q = cell(receiver_);
+    std::array<std::array<int, 2>, 3> bounds{};
+    for (int axis = 0; axis < 3; ++axis) {
+      bounds[axis] = {q[axis], q[axis] + 1};
+      // An exact interior grid tie belongs to the closures of both adjacent
+      // cells. Their Cartesian product gives unique vertices without a radius.
+      if (closed_seed_cells_ && q[axis] > 0 && receiver_[axis] == axes_[axis][q[axis]])
+        --bounds[axis][0];
+    }
+    return bounds;
   }
   struct Sample {
     double time = 0;
@@ -116,14 +233,19 @@ class Field {
     std::priority_queue<Entry, std::vector<Entry>, std::greater<Entry>> trial;
     // The exact off-grid point is connected to its cell vertices by continuous
     // action integrals. These are trial upper bounds, not fixed accepted times.
-    for (int n : corners(receiver_)) {
-      double value = segment(model_, receiver_, position(n));
-      if (!std::isfinite(value) || value < 0)
-        throw std::runtime_error("Invalid exact-receiver FMM seed action");
-      time_[n] = value;
-      trial.push({value, n});
-    }
-    auto update = [&](int n) {
+    auto bounds = receiver_seed_bounds();
+    for (int k = bounds[2][0]; k <= bounds[2][1]; ++k)
+      for (int j = bounds[1][0]; j <= bounds[1][1]; ++j)
+        for (int i = bounds[0][0]; i <= bounds[0][1]; ++i) {
+          int n = id(i, j, k);
+          double value = segment(model_, receiver_, position(n));
+          if (!std::isfinite(value) || value < 0)
+            throw std::runtime_error("Invalid exact-receiver FMM seed action");
+          time_[n] = value;
+          trial.push({value, n});
+          ++stats.seed_nodes;
+        }
+    auto first_order_update = [&](int n, int &parent) {
       auto q = indices(n);
       struct Neighbor { double time, inverse_h2; int id; };
       std::array<Neighbor, 3> used{};
@@ -136,14 +258,16 @@ class Field {
           if (next[axis] < 0 || next[axis] >= shape_[axis])
             continue;
           int other = id(next[0], next[1], next[2]);
-          if (accepted[other] && (best < 0 || time_[other] < time_[best]))
-            best = other;
+          if (accepted[other]) {
+            ++stats.first_order_direction_evaluations;
+            if (best < 0 || time_[other] < time_[best]) best = other;
+          }
         }
         if (best >= 0)
           used[count++] = {time_[best], 1 / (spacing_[axis] * spacing_[axis]), best};
       }
       if (!count)
-        return;
+        return infinity;
       std::sort(used.begin(), used.begin() + count,
                 [](const Neighbor &a, const Neighbor &b) { return a.time < b.time; });
       // Shift by the smallest time to avoid subtracting large squared times.
@@ -162,9 +286,74 @@ class Field {
       }
       if (!std::isfinite(value) || value < used[0].time)
         throw std::runtime_error("Nonfinite or noncausal FMM update");
+      parent = used[0].id;
+      return value;
+    };
+    auto update = [&](int n) {
+      int parent = -1;
+      double value = infinity;
+      if (order_ == 1) {
+        value = first_order_update(n, parent);
+      } else {
+        auto q = indices(n);
+        UpwindAxes axes{};
+        std::array<std::array<int, 2>, 3> near{}, far{};
+        for (int axis = 0; axis < 3; ++axis)
+          for (int side = 0; side < 2; ++side) {
+            near[axis][side] = far[axis][side] = -1;
+            int sign = side ? 1 : -1;
+            auto first = q;
+            first[axis] += sign;
+            if (first[axis] < 0 || first[axis] >= shape_[axis]) continue;
+            int one = id(first[0], first[1], first[2]);
+            if (!accepted[one]) continue;
+            near[axis][side] = one;
+            auto &d = axes[axis][side];
+            d = {time_[one], 1 / spacing_[axis]};
+            auto second = first;
+            second[axis] += sign;
+            if (second[axis] >= 0 && second[axis] < shape_[axis]) {
+              int two = id(second[0], second[1], second[2]);
+              if (accepted[two] && time_[two] <= time_[one]) {
+                far[axis][side] = two;
+                d = {time_[one] + (time_[one] - time_[two]) / 3,
+                     1.5 / spacing_[axis]};
+              }
+            }
+            if (far[axis][side] >= 0) ++stats.second_order_direction_evaluations;
+            else {
+              ++stats.first_order_direction_evaluations;
+              ++stats.second_order_ineligible;
+            }
+          }
+        bool bisection = false;
+        value = mixed_order_time(axes, slowness[n], &bisection);
+        stats.root_bisection_updates += bisection;
+        bool causal = std::isfinite(value), active = false;
+        for (int axis = 0; axis < 3; ++axis) {
+          int side = -1;
+          double largest = 0;
+          for (int k = 0; k < 2; ++k) {
+            auto d = axes[axis][k];
+            double derivative = d.inverse_h * (value - d.offset);
+            if (derivative > largest) { largest = derivative; side = k; }
+          }
+          if (side < 0) continue;
+          active = true;
+          int one = near[axis][side], two = far[axis][side];
+          // Only the positive winning direction is upstream at this root.
+          causal = causal && one >= 0 && value >= time_[one] &&
+                   (two < 0 || value >= time_[two]);
+          if (one >= 0 && (parent < 0 || time_[one] < time_[parent])) parent = one;
+        }
+        if (!causal || !active) {
+          ++stats.causal_fallback_updates;
+          value = first_order_update(n, parent);
+        }
+      }
       if (value < time_[n]) {
         time_[n] = value;
-        parent_[n] = used[0].id;
+        parent_[n] = parent;
         trial.push({value, n});
       }
     };
@@ -188,8 +377,19 @@ class Field {
           if (next[axis] < 0 || next[axis] >= shape_[axis])
             continue;
           int other = id(next[0], next[1], next[2]);
-          if (!accepted[other])
-            update(other);
+          if (!accepted[other]) update(other);
+          // Reconsider an existing stencil when its second neighbor becomes
+          // accepted at an equal time. Strictly lower second values were
+          // already accepted before the near value, by heap ordering.
+          if (order_ == 2 && accepted[other] && time_[n] <= time_[other]) {
+            next[axis] += sign;
+            if (next[axis] < 0 || next[axis] >= shape_[axis]) continue;
+            int farther = id(next[0], next[1], next[2]);
+            if (!accepted[farther]) {
+              ++stats.second_neighbor_revisits;
+              update(farther);
+            }
+          }
         }
     }
     if (accepted_nodes != node_count())
@@ -198,9 +398,13 @@ class Field {
 
 public:
   std::size_t accepted_nodes = 0;
+  FieldStats stats;
 
-  Field(const Grid &model, P receiver, double requested_spacing)
-      : model_(model), receiver_(receiver) {
+  Field(const Grid &model, P receiver, double requested_spacing, int order = 1,
+        bool closed_seed_cells = false)
+      : model_(model), receiver_(receiver), order_(order), closed_seed_cells_(closed_seed_cells) {
+    if (order != 1 && order != 2)
+      throw std::runtime_error("FMM order must be 1 or 2");
     if (!finite(receiver) || !std::isfinite(requested_spacing) || requested_spacing <= 0)
       throw std::runtime_error("Invalid FMM receiver or requested spacing");
     const Vec *original[] = {&model.x, &model.y, &model.z};
@@ -237,6 +441,8 @@ public:
     return std::size_t(shape_[0]) * shape_[1] * shape_[2];
   }
   P spacing() const { return spacing_; }
+  int order() const { return order_; }
+  bool closed_seed_cells() const { return closed_seed_cells_; }
   double interpolated_time(P p) const {
     if (!finite(p) || !model_.contains(p))
       throw std::runtime_error("FMM interpolation point outside finite domain");
@@ -253,7 +459,7 @@ public:
     result.field_time = interpolated_time(source);
     P current = source;
     const double step = *std::min_element(spacing_.begin(), spacing_.end()) / 2;
-    const auto receiver_cell = cell(receiver_);
+    const auto receiver_bounds = receiver_seed_bounds();
     // A finite numerical guard reports failure; it is not a physical path limit.
     const std::size_t limit = 4 * node_count();
     for (std::size_t iteration = 0; iteration < limit; ++iteration) {
@@ -262,8 +468,8 @@ public:
       bool in_receiver_cell = true;
       for (int axis = 0; axis < 3; ++axis)
         in_receiver_cell = in_receiver_cell &&
-            current[axis] >= axes_[axis][receiver_cell[axis]] &&
-            current[axis] <= axes_[axis][receiver_cell[axis] + 1];
+            current[axis] >= axes_[axis][receiver_bounds[axis][0]] &&
+            current[axis] <= axes_[axis][receiver_bounds[axis][1]];
       if (current == receiver_ || in_receiver_cell ||
           norm(current - receiver_) <= step) {
         if (current != receiver_)

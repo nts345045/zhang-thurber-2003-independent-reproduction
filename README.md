@@ -42,9 +42,15 @@ records 48 passing component checks and remaining failures when retracing
 frozen baseline models. The saved synthetic inversions retain their original
 kernel; the Hayward runs use the revised kernel. A separate
 [first-arrival audit](data/development/first_arrival_audit/README.md) shows that
-local ray stationarity can select a late branch. The experimental FMM
-initializer still fails near a branch crossing and has not been integrated
-into the production inversions. The [fixed-model field comparison](data/development/fmm_hayward_audit/README.md)
+local ray stationarity can select a late branch. The original first-order FMM
+initializer retains near-crossing failures. A [controlled refinement](data/development/fmm_order_comparison.md)
+combining switched second-order updates with symmetric receiver seeding passes
+all 37 retained analytic checks at 0.0625-km grid/path spacing. This finite suite
+does not certify general first arrivals. A separate [oblique 3D affine check](data/development/fmm_rotated_affine_baseline/README.md)
+passes all 72 checks; branch completeness in arbitrary 3D media and field
+validation remain open.
+The prototype has not been integrated into the production inversions.
+The [fixed-model field comparison](data/development/fmm_hayward_audit/README.md)
 finds two faster candidates exceeding 1 ms among 186 selected shallow-endpoint
 rays; it does not quantify the resulting inversion bias or certify first arrivals.
 

@@ -1,9 +1,16 @@
 # Separate field and path refinement
 
+These commands record the historical refinement at commit `88b60b5`:
+
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python3 diagnostics/run_fmm_initialization_audit.py --refine
 PYTHONDONTWRITEBYTECODE=1 python3 diagnostics/plot_first_arrival_audit.py
 ```
+
+The current audit runner requires a fresh `--variant` name. For a separate
+first-order repeat, add `--variant refinement_repeat --order 1` to the first
+command; its outputs go to `data/development/fmm_initialization_refinement_repeat/`.
+The plotting command above continues to read the preserved historical results.
 
 This extends the [first-order baseline](../fmm_initialization_audit/README.md)
 without changing the FMM algorithm, continuous optimizer, or accuracy gates.

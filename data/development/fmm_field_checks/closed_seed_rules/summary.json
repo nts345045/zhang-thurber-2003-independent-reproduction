@@ -1,0 +1,47 @@
+{
+  "reviewed_utc": "2026-10-10T00:10:32.957731Z",
+  "purpose": "Invented FMM field/extraction fixtures only; no real data, ray bending, or inversion.",
+  "command": "python3 data/development/fmm_field_checks/run_checks.py --variant closed_seed_rules --suite seed-rules --order 2",
+  "suite": "seed-rules",
+  "fmm_order": 2,
+  "run_command": [
+    "tmp/fmm_field_checks/closed_seed_rules/check_fmm_field",
+    "data/development/fmm_field_checks/closed_seed_rules/results.csv",
+    "2",
+    "seed-rules"
+  ],
+  "TMPDIR": "tmp",
+  "compiler_command": [
+    "c++",
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "diagnostics/check_fmm_field.cpp",
+    "-o",
+    "tmp/fmm_field_checks/closed_seed_rules/check_fmm_field"
+  ],
+  "exit_code": 0,
+  "stdout": "seed_rule_checks cases=224 failures=0 preserved_half_open_reflection_failures=28\n",
+  "stderr": "",
+  "status": "passed",
+  "sha256": {
+    "diagnostics/first_arrival_fmm.hpp": "c437c5d3ce2b09d59b098ae90b43705efdf9db9015dec26971421ee968337be7",
+    "diagnostics/check_fmm_field.cpp": "9a10f138e0a458505dfad14964ca4a20c3e2651c371fe75a6192be7f64dff37f",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "data/development/fmm_field_checks/run_checks.py": "288050651bbcb7dcdc45b164a9dd26a9db28e5a08aa74ceecf40c9cb36cd1c3e",
+    "data/development/fmm_field_checks/closed_seed_rules/results.csv": "0ff3164b775e96ae1834b9c9089ed296eacbe3b841208768bc0d4da63503fd8e",
+    "tmp/fmm_field_checks/closed_seed_rules/check_fmm_field": "2d267d61552a698643eafe70e0388affa48661e8086f0483429a5e3743919db6"
+  },
+  "limitations": [
+    "These component tests do not establish first-arrival branch completeness or final bent-ray accuracy.",
+    "The 1e-12 second homogeneous action allowance covers floating-point roundoff and is not a ray-convergence tolerance.",
+    "Default half-open source-seed reflection failures are retained as a comparison; pass status applies to closed-cell-union symmetry, exact endpoints, monotone extraction, physical action bounds, and bitwise unchanged off-grid fields/paths."
+  ],
+  "cases": 224,
+  "half_open_reflection_failures": 28,
+  "closed_seed_reflection_failures": 0,
+  "off_grid_changed_cases": 0,
+  "artifact_packaging_note": "Displayed paths were made repository-relative after calculation. Source and numerical data hashes are unchanged. See ../../fmm_artifact_packaging.json."
+}
