@@ -1,0 +1,8 @@
+{
+  "status": "source_review_found_unexecuted_native_selection_bug",
+  "source_sha256": "947f79dc879c81d58aaa130b5fa275b929ad47567858ea3db56478ae130ac599",
+  "invented_checks_passed": 22,
+  "native_evaluation_performed": false,
+  "finding": "Native focus-node selector matched three saved finite-difference steps and then required exactly one.",
+  "correction": "Explicitly select the declared original 1e-6 km step; fresh003 adds multiple-step, missing and duplicate selection controls. No action formula or tolerance changed."
+}

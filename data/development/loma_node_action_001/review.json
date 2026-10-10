@@ -1,0 +1,57 @@
+{
+  "status": "passed_saved_result_review",
+  "material_issue_found": false,
+  "scope": "Independent native/hash and exact saved-interval arithmetic readback; no new action evaluation, ray trace or optimization.",
+  "summary_sha256": "5b9383b2052a34a80e47e08d34b0a1fbc0ddf136eb4d028964ddc3c9b84dc597",
+  "execution_receipt_sha256": "4c18a01967d7fb811effe1fb792d9850b8034a6eb8dc710278e7cf73a7db67c7",
+  "review_revision_sha256": "4d112cf433a0f96b143efe425877842c6f5b69c12508816fd87589c6b5d99409",
+  "checker_sha256": "1441ba3be322a8aa2461ad6d2ea58728b1bdc29a3160b18db6f7cedfe786f992",
+  "frozen_input_hashes_verified": 14,
+  "current_nonreview_input_hashes_verified": 13,
+  "artifact_hashes_verified": 14,
+  "consumed_controls_review_sha256": "16acd46c7d22e1550a165018c5fd9110bdc53c4d091ca03799c21d2b0b523717",
+  "documented_later_review_sha256": "b5eeb253d8731331d35eb8a9db1de8ee910d26387cf402f2253e6c5fa89007ae",
+  "probe_count": 40,
+  "native_identity_fields_all_match": true,
+  "original_flag_unchanged": true,
+  "coordinate_and_axis_mapping_verified": true,
+  "action_and_gradient_interval_subtractions_verified": true,
+  "central_spans_and_interval_quotients_verified": true,
+  "collapsed_binary_probe_count": 2,
+  "native_identifiers": {
+    "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/10090782",
+    "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642854",
+    "receiver_channel_seed_id": "NC.JSJ..EHZ",
+    "receiver_channel_fdsn_source_id": "FDSN:NC_JSJ__E_H_Z",
+    "receiver_metadata_epoch_start": "1989-05-02T15:00:00",
+    "receiver_metadata_epoch_end": "1990-09-14T21:50:00"
+  },
+  "exact_node_z_gradient": {
+    "lower_rational": "1754509748604141693774447426666127/170141183460469231731687303715884105728",
+    "upper_rational": "109656859287758855860902964166633/10633823966279326983230456482242756608",
+    "lower_display": 1.0312081489734001e-05,
+    "upper_display": 1.0312081489734001e-05
+  },
+  "exact_minus_saved_z_gradient": {
+    "lower_rational": "-779335620744970609/170141183460469231731687303715884105728",
+    "upper_rational": "-48708476296560663/10633823966279326983230456482242756608",
+    "lower_display": -4.5805230979014685e-21,
+    "upper_display": -4.5805230979014685e-21
+  },
+  "minus_half_gap_binary_action_change": {
+    "lower_rational": "-55381994869507183086743699/170141183460469231731687303715884105728",
+    "upper_rational": "-55381994869507183086743697/170141183460469231731687303715884105728",
+    "lower_display": -3.25506110531873e-13,
+    "upper_display": -3.25506110531873e-13
+  },
+  "original_crossing_probe_action_signs": [
+    "strict_increase",
+    "strict_increase"
+  ],
+  "limitations": [
+    "These are fixed-polygon coordinate probes, not the original saved L-BFGS search direction or trial paths.",
+    "A cross-break central quotient need not equal the local derivative at the original node.",
+    "The frozen consumed review is authoritative for this run; its later three prose revisions do not alter source, status or control pins.",
+    "No source derivative, convergence flag, production method or inverse acceptance changes."
+  ]
+}

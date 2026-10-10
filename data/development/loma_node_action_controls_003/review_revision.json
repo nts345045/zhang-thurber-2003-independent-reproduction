@@ -1,0 +1,60 @@
+{
+  "scope": "Post-completion wording-only review revision; native results and frozen input bytes unchanged",
+  "created_utc": "2026-10-10T05:45:33.959903+00:00",
+  "native_summary_sha256": "5b9383b2052a34a80e47e08d34b0a1fbc0ddf136eb4d028964ddc3c9b84dc597",
+  "consumed_review_sha256": "16acd46c7d22e1550a165018c5fd9110bdc53c4d091ca03799c21d2b0b523717",
+  "preserved_consumed_review_path": "data/development/loma_node_action_controls_003/review_at_native_launch.json",
+  "native_frozen_review_path": "data/development/loma_node_action_001/source/data/development/loma_node_action_controls_003/review.json",
+  "later_review_sha256": "b5eeb253d8731331d35eb8a9db1de8ee910d26387cf402f2253e6c5fa89007ae",
+  "later_review_path": "data/development/loma_node_action_controls_003/review.json",
+  "changed_fields": {
+    "source_math_findings": {
+      "at_launch": [
+        "The coordinate permutation (x,y,z) to (z,x,y) is orthogonal and inverted correctly for gradient output; the middle-node derivative sums left.gb and right.ga.",
+        "The homogeneous triangle action is2s and its middle z derivative8/25s/km; the smooth equal-depth example gives -1/27s/km.",
+        "Reciprocal-affine slowness primitives and exact rational square-root/log enclosures are the unchanged reviewed sources. Decimal finite differences are consistency controls, not rigorous interval proofs.",
+        "Native probes alter only the selected middle-node depth; the two-segment action difference is consequently the whole fixed-polygon action difference. The original break-crossing probe is labeled separately from shrinking interior probes.",
+        "Exact rational and binary64-rounded coordinates and actual central spans remain explicit; collapsed rounded probes remain unchanged/inconclusive rather than being divided by zero."
+      ],
+      "later_wording": [
+        "The coordinate permutation (x,y,z) to (z,x,y) is orthogonal and inverted correctly for gradient output; the middle-node derivative sums left.gb and right.ga.",
+        "The homogeneous triangle action is 2 s and its middle z derivative is 8/25 s/km; the smooth equal-depth example gives -1/27 s/km.",
+        "Reciprocal-affine slowness primitives and exact rational square-root/log enclosures are the unchanged reviewed sources. Decimal finite differences are consistency controls, not rigorous interval proofs.",
+        "Native probes alter only the selected middle-node depth; the two-segment action difference is consequently the whole fixed-polygon action difference. The original break-crossing probe is labeled separately from shrinking interior probes.",
+        "Exact rational and binary64-rounded coordinates and actual central spans remain explicit; collapsed rounded probes remain unchanged/inconclusive rather than being divided by zero."
+      ]
+    },
+    "native_input_review": {
+      "at_launch": [
+        "The reviewed observer summary and path/result/history/FD/grid hashes are required; copied native_context and identifier sidecar must match.",
+        "Source event/origin and receiver SEED/FDSN/epoch fields remain attached to every probe; the full native context preserves remaining metadata.",
+        "The selected saved row is exactly the declared1e-6km central probe among three original step sizes, with missing and duplicate selection controls.",
+        "The original false local flag is required and retained; frozen source hashes are rechecked against the hash-bound control review before native execution and after copying/evaluation."
+      ],
+      "later_wording": [
+        "The reviewed observer summary and path/result/history/FD/grid hashes are required; copied native_context and identifier sidecar must match.",
+        "Source event/origin and receiver SEED/FDSN/epoch fields remain attached to every probe; the full native context preserves remaining metadata.",
+        "The selected saved row is exactly the declared 1e-6 km central probe among three original step sizes, with missing and duplicate selection controls.",
+        "The original false local flag is required and retained; frozen source hashes are rechecked against the hash-bound control review before native execution and after copying/evaluation."
+      ]
+    },
+    "limitations": {
+      "at_launch": [
+        "Approval is for this isolated node484 fixed-polygon action diagnostic only.",
+        "The original L-BFGS search direction/trial paths were not exported; new probe differences cannot replay that search or establish its failure cause.",
+        "No source derivative, stopping criterion, production direction, inversion acceptance or convergence flag is changed."
+      ],
+      "later_wording": [
+        "Approval is for this isolated node 484 fixed-polygon action diagnostic only.",
+        "The original L-BFGS search direction/trial paths were not exported; new probe differences cannot replay that search or establish its failure cause.",
+        "No source derivative, stopping criterion, production direction, inversion acceptance or convergence flag is changed."
+      ]
+    }
+  },
+  "identical_status_source_and_controls_pins": true,
+  "native_final_input_hash_gate_passed": true,
+  "observed_native_summary_mtime_utc": "2026-10-10T05:44:22.863186+00:00",
+  "observed_later_review_mtime_utc": "2026-10-10T05:44:23.422187+00:00",
+  "timestamp_limit": "Filesystem mtimes are recorded observations; successful terminal summary follows the source-enforced final hash gate.",
+  "future_policy": "Consumed independent-review files remain immutable; subsequent prose changes use a separate versioned file."
+}
