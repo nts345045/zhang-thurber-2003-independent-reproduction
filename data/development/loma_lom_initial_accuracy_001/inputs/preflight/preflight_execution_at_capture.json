@@ -1,0 +1,197 @@
+{
+  "status": "running",
+  "started_utc": "2026-10-10T03:41:22.996837+00:00",
+  "driver_pid": 74578,
+  "command": [
+    "run_loma_initial_preflight.py",
+    "--simulation",
+    "data/loma_lom_analytic_001",
+    "--output",
+    "data/loma_lom_initial_preflight_001",
+    "--build",
+    "tmp/loma_initial_preflight_runs/lom_001"
+  ],
+  "threads": 4,
+  "completed_commands": [
+    {
+      "stage": "cmake_version",
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lom_initial_preflight_001/cmake_version_resources.txt",
+        "cmake",
+        "--version"
+      ],
+      "pid": 75187,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:42:16.820881+00:00",
+      "maximum_resident_set_kbytes": 14196
+    },
+    {
+      "stage": "configure",
+      "command": [
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_runs/lom_001/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_runs/lom_001/compiled"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lom_initial_preflight_001/configure_resources.txt",
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_runs/lom_001/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_runs/lom_001/compiled"
+      ],
+      "pid": 75189,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:42:18.283142+00:00",
+      "maximum_resident_set_kbytes": 22712
+    },
+    {
+      "stage": "compiler_version",
+      "command": [
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lom_initial_preflight_001/compiler_version_resources.txt",
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "pid": 75241,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:42:18.421173+00:00",
+      "maximum_resident_set_kbytes": 2924
+    },
+    {
+      "stage": "compile",
+      "command": [
+        "cmake",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_runs/lom_001/compiled",
+        "-j",
+        "2"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lom_initial_preflight_001/compile_resources.txt",
+        "cmake",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_runs/lom_001/compiled",
+        "-j",
+        "2"
+      ],
+      "pid": 75243,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:42:48.065902+00:00",
+      "maximum_resident_set_kbytes": 341012
+    },
+    {
+      "stage": "runtime_libraries",
+      "command": [
+        "ldd",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_runs/lom_001/compiled/dd"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lom_initial_preflight_001/runtime_libraries_resources.txt",
+        "ldd",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_runs/lom_001/compiled/dd"
+      ],
+      "pid": 75387,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:42:48.121924+00:00",
+      "maximum_resident_set_kbytes": 2820
+    },
+    {
+      "stage": "initial_matrix_preflight",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_runs/lom_001/compiled/dd",
+        "invert",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lom_initial_preflight_001/run.cfg",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lom_initial_preflight_001",
+        "dd"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lom_initial_preflight_001/initial_matrix_preflight_resources.txt",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_runs/lom_001/compiled/dd",
+        "invert",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lom_initial_preflight_001/run.cfg",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lom_initial_preflight_001",
+        "dd"
+      ],
+      "pid": 75989,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T05:18:51.092818+00:00",
+      "maximum_resident_set_kbytes": 40377956
+    }
+  ],
+  "scope": "Freeze initial Loma rays and a stage-0 matrix census; never solve an inversion.",
+  "simulation_directory": "data/loma_lom_analytic_001",
+  "simulation_review_sha256": "e4e2745f0fc4bc44ba32906bb6c1fe224c8e9dab364c61b276f05fa3ea5d60c7",
+  "input_sha256": {
+    "initial_events.csv": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+    "initial_grid.csv": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+    "truth_events.csv": "45e2682389d1a21d7389c132dced4c98f11872b5c98909b53be44c12a254285e",
+    "truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "observations.csv": "c369cabeac01f5fea506cd05c21a5d6ea27673a0f69cb1e59bb9eea4823c2179",
+    "ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "authoritative_geometry": "13952d674c3c41253c5943b0d457ae9f16eb88a17fc5c057bee727467c90d166",
+    "simulation_provenance/run.cfg": "d28f691c27559c0fd45f99c5e107f35a343c15e4bf371065716814102352a6b2",
+    "simulation_provenance/preparation_manifest.json": "951464e9b44c536b6fb241b45e046053b2b73d0c338a31b25c4cf0f66d20c90a",
+    "simulation_provenance/analytic_truth_manifest.json": "9cd8b597b1f90d03e6e0709c032c07589feed2e4dd2f1fa7b0ee8fea792f686d",
+    "simulation_provenance/simulation_execution.json": "524d2ee8787b74c5b988624fb0381f2570a4a9667e71e03fd364546965b8e2bd",
+    "simulation_provenance/simulation_run_manifest.json": "64d5eea9365ee513d129cf81f7dd4eaba9fdd581ec4433491d7c2d90de90744f",
+    "simulation_provenance/simulation_source.tar.gz": "dce48474043764dec422b9b59ab897a7c9d8187691b5ca630db3573b6ff262f9",
+    "simulation_provenance/independent_simulation_review.json": "e4e2745f0fc4bc44ba32906bb6c1fe224c8e9dab364c61b276f05fa3ea5d60c7",
+    "run.cfg": "dc1effa319378e76db5c4459ea01a791d1a371458863d8c90cc9937fdd10bed8"
+  },
+  "source_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "run_loma_initial_preflight.py": "f1acc19135c11edda106e3b8c7d8c1879d7d490db729d4ad55263b87022946f1",
+    "run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5",
+    "diagnostics/review_loma_analytic_simulation.py": "786c1ccc99cfa3d3677dde88f11a96f9677693966de874d40c15ca2972a76246",
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "source_archive_sha256": "44517c8472ef07d0c313dda5b666c562dad9027c30fd1c800fef87ba6a854d0c",
+  "current_stage": "initial_geometrycheck",
+  "current_command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_runs/lom_001/compiled/dd",
+    "geometrycheck",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lom_initial_preflight_001/run.cfg",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lom_initial_preflight_001",
+    "initial"
+  ],
+  "current_command_started_utc": "2026-10-10T05:19:47.737398+00:00",
+  "current_child_pid": 149424,
+  "child_pid_semantics": "GNU time process-group leader; it waits for the stated executable"
+}
