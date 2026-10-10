@@ -24,7 +24,7 @@ if (ROOT/out).exists() or (ROOT/build).exists():parser.error('Choose a fresh var
 (ROOT/out).mkdir(parents=True);(ROOT/build).mkdir(parents=True)
 snapshot=build/'source'
 sources=['diagnostics/check_cone_ray_metric.cpp','diagnostics/cone_ray_metric.hpp',
-         'diagnostics/reduced_ray_metric.hpp','diagnostics/run_cone_ray_metric_checks.py','src/core.hpp']
+         'diagnostics/reduced_ray_metric.hpp','diagnostics/run_cone_ray_metric_checks.py','src/core.hpp', 'src/ray_metric.hpp']
 def sha(path):return hashlib.sha256((ROOT/path).read_bytes()).hexdigest()
 for name in sources:
     target=ROOT/snapshot/name;target.parent.mkdir(parents=True,exist_ok=True)

@@ -85,7 +85,7 @@ sources = ['diagnostics/check_fmm_hayward.cpp', 'diagnostics/first_arrival_fmm.h
            'diagnostics/production_entry_checks.hpp',
            'src/first_arrival.hpp', 'src/forward.hpp',
            'diagnostics/seeded_bending.py', 'diagnostics/run_fmm_hayward_audit.py',
-           'src/main.cpp', 'src/core.hpp', 'src/ray_checks.hpp', 'src/csv.hpp']
+           'src/main.cpp', 'src/core.hpp', 'src/ray_checks.hpp', 'src/csv.hpp', 'src/ray_metric.hpp']
 for relative in sources:
     target = ROOT / snapshot / relative
     target.parent.mkdir(parents=True, exist_ok=True)

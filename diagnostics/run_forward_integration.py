@@ -25,7 +25,7 @@ if out.exists() or build.exists():
     parser.error('Choose a fresh variant; existing evidence is preserved')
 out.mkdir(parents=True)
 snapshot = build / 'source'
-sources = ['src/core.hpp', 'src/forward.hpp', 'src/first_arrival.hpp',
+sources = ['src/core.hpp', 'src/ray_metric.hpp', 'src/forward.hpp', 'src/first_arrival.hpp',
            'src/main.cpp', 'src/csv.hpp', 'src/ray_checks.hpp',
            'diagnostics/check_forward_integration.cpp', 'diagnostics/run_forward_integration.py']
 for name in sources:

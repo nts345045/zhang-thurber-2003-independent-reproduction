@@ -3,7 +3,9 @@
 #include "../src/main.cpp"
 #undef main
 #include "first_arrival_fmm.hpp"
+#ifndef AUDIT_PRODUCTION_HYBRID
 #include "seeded_bending.hpp"
+#endif
 #ifdef AUDIT_REDUCED_METRIC
 #include "reduced_ray_metric.hpp"
 #ifdef AUDIT_CONE_METRIC
@@ -15,8 +17,9 @@
 std::ofstream *audit_history=nullptr;
 std::string audit_run;
 std::string audit_observation;
-#ifdef AUDIT_REDUCED_METRIC
+#if defined(AUDIT_REDUCED_METRIC) || defined(AUDIT_PRODUCTION_HYBRID)
 std::ofstream *audit_metric_file=nullptr;
+#ifdef AUDIT_REDUCED_METRIC
 void audit_metric(const ReducedRayMetricStats &stats) {
   if(audit_metric_file)
     *audit_metric_file<<audit_run<<','<<audit_observation<<','<<stats.initial_fixed<<','
@@ -24,6 +27,7 @@ void audit_metric(const ReducedRayMetricStats &stats) {
       <<stats.slope<<','<<stats.inward_multiplier_violations<<','
       <<stats.most_negative_signed_multiplier<<'\n';
 }
+#endif
 #ifdef AUDIT_CONE_METRIC
 void audit_metric(const ConeRayMetricStats &stats) {
   if(audit_metric_file)
@@ -102,7 +106,7 @@ int main(int argc,char **argv) {
   std::ofstream results(out+"/results.csv"),history(out+"/history.csv"),paths(out+"/paths.csv"),fd(out+"/path_gradient_checks.csv");
   if(!results||!history||!paths||!fd)throw std::runtime_error("Cannot open ray-stopping audit files");
   for(auto f:{&results,&history,&paths,&fd})*f<<std::setprecision(17);
-#ifdef AUDIT_REDUCED_METRIC
+#if defined(AUDIT_REDUCED_METRIC) || defined(AUDIT_PRODUCTION_HYBRID)
 #ifdef AUDIT_CONE_METRIC
   std::ofstream metric(out+"/cone_metric.csv");
 #else
@@ -131,17 +135,24 @@ int main(int argc,char **argv) {
     if(budget<=0||budget_value!=budget||spacing<=0)throw std::runtime_error("Invalid component budget or spacing");
     audit_run=(fmm?"fmm_":"straight_")+std::to_string(spacing)+"_"+std::to_string(budget);
     audit_history=&history;
+#ifdef AUDIT_PRODUCTION_HYBRID
+    Ray ray=observed_trace(g,a,b,spacing,budget,true,fmm?&seed.path:nullptr);
+#else
     Ray ray=fmm?observed_bend_seed(g,seed.path,spacing,budget):observed_trace(g,a,b,spacing,budget);
+#endif
     audit_history=nullptr;
     // Test observation neutrality against the actual unmodified functions.
-#ifdef AUDIT_REDUCED_METRIC
+#ifdef AUDIT_PRODUCTION_HYBRID
+    Ray control=trace(g,a,b,spacing,budget,true,fmm?&seed.path:nullptr);
+#elif defined(AUDIT_REDUCED_METRIC)
     Ray control=fmm?control_bend_seed(g,seed.path,spacing,budget):control_trace(g,a,b,spacing,budget);
 #else
     Ray control=fmm?bend_seed(g,seed.path,spacing,budget):trace(g,a,b,spacing,budget);
 #endif
     bool matches=ray.time==control.time&&ray.path==control.path&&ray.gradient==control.gradient&&
                  ray.raw_gradient==control.raw_gradient&&ray.source==control.source&&
-                 ray.iterations==control.iterations&&ray.converged==control.converged;
+                 ray.iterations==control.iterations&&ray.converged==control.converged&&
+                 ray.dv==control.dv&&ray.length==control.length&&ray.merged_nodes==control.merged_nodes;
     results<<audit_run<<','<<audit_observation<<','<<(fmm?"fmm":"straight")<<','<<spacing<<','<<budget
            <<','<<ray.iterations<<','<<ray.converged<<','<<ray.time<<','<<ray.gradient<<','<<ray.raw_gradient
            <<','<<ray.merged_nodes<<','<<ray.path.size();

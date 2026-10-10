@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Observe unchanged bending for one identified nonconverged saved-model ray."""
+"""Observe a declared ray optimizer for one identified saved-model ray.
+
+Historical direction variants require the pre-promotion optimizer. The explicit
+production mode observes the current trace without changing its directions.
+"""
 import argparse
 import csv
 import difflib
@@ -31,9 +35,12 @@ direction_group.add_argument('--cone-metric', action='store_true',
                     help='Solve the full tangent-cone metric quadratic by a feasible active-set method at every update')
 direction_group.add_argument('--cone-hybrid', action='store_true',
                     help='Retain feasible descent L-BFGS directions; replace projected or non-descent directions by the full cone metric')
+direction_group.add_argument('--production-hybrid', action='store_true',
+                    help='Observe the promoted trace directly; change no direction, initialization, or stopping rule')
 args = parser.parse_args()
-use_cone=args.cone_metric or args.cone_hybrid
-use_reduced=args.reduced_metric or args.reduced_all or use_cone
+use_cone=args.cone_metric or args.cone_hybrid or args.production_hybrid
+use_reduced=args.reduced_metric or args.reduced_all or args.cone_metric or args.cone_hybrid
+record_metric=use_reduced or args.production_hybrid
 pure_metric=args.reduced_all or args.cone_metric
 if not re.fullmatch(r'[a-zA-Z0-9_-]+', args.variant):
     parser.error('Variant must contain only letters, digits, underscores, or hyphens')
@@ -43,11 +50,23 @@ build = Path('tmp/ray_stopping') / args.variant
 out = Path('data/development') / ('ray_stopping_' + args.variant)
 if (ROOT / build).exists() or (ROOT / out).exists():
     parser.error('Choose a fresh variant to preserve evidence')
+fallback_old = ('      q = grad;\n      for (auto &v : q)\n        v = -v;\n'
+                '      project_ray_direction(g, p, q);')
+current_core = (ROOT / 'src/core.hpp').read_text()
+if args.production_hybrid:
+    if current_core.count('      q = cone_ray_direction(g, p, grad);') != 1:
+        parser.error('Production mode requires the promoted hybrid trace')
+elif current_core.count(fallback_old) != 1:
+    parser.error('Historical optimizer modes require the pre-promotion trace and diagnostic helpers; '
+                 'use their frozen source snapshot, or --production-hybrid for current trace')
 inputs = Path('data/development/hayward_dd_top_layer_rays.csv')
 grid = Path('data/hayward/dd_grid.csv')
 fixed = [inputs, grid, Path('data/hayward/dd_events.csv'), Path('data/hayward/stations.csv'),
          Path('configs/hayward.cfg'), Path('src/core.hpp'), Path('src/main.cpp'),
          Path('src/csv.hpp'), Path('src/ray_checks.hpp')]
+for name in ['src/first_arrival.hpp', 'src/forward.hpp', 'src/ray_metric.hpp']:
+    if (ROOT / name).exists():
+        fixed.append(Path(name))
 def sha(path): return hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
 input_hashes = {str(path): sha(path) for path in fixed}
 with (ROOT / inputs).open() as stream:
@@ -65,27 +84,26 @@ with (ROOT / identified).open('w', newline='') as stream:
     writer.writerows(selected)
 snapshot = build / 'source'
 sources = ['diagnostics/check_ray_stopping.cpp', 'diagnostics/first_arrival_fmm.hpp',
-           'src/first_arrival.hpp', 'src/forward.hpp',
            'diagnostics/seeded_bending.py', 'diagnostics/run_ray_stopping.py',
            'src/core.hpp', 'src/main.cpp', 'src/csv.hpp', 'src/ray_checks.hpp']
+sources += [str(path) for path in fixed if str(path).startswith('src/') and str(path) not in sources]
 if use_reduced:
     sources.append('diagnostics/reduced_ray_metric.hpp')
-if use_cone:
+if use_cone and not args.production_hybrid:
     sources.append('diagnostics/cone_ray_metric.hpp')
 for relative in sources:
     target = ROOT / snapshot / relative
     target.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(str(ROOT / relative), str(target))
-write_header(ROOT / snapshot / 'diagnostics/seeded_bending.hpp', ROOT / snapshot / 'src/core.hpp')
-sources.append('diagnostics/seeded_bending.hpp')
+if not args.production_hybrid:
+    write_header(ROOT / snapshot / 'diagnostics/seeded_bending.hpp', ROOT / snapshot / 'src/core.hpp')
+    sources.append('diagnostics/seeded_bending.hpp')
 core = (ROOT / snapshot / 'src/core.hpp').read_text()
 start = core.index('Ray trace(const Grid &g,')
 end = core.index('\nstruct Entry {', start)
 trace_source = core[start:end]
-seed_source = (ROOT / snapshot / 'diagnostics/seeded_bending.hpp').read_text()
+seed_source = '' if args.production_hybrid else (ROOT / snapshot / 'diagnostics/seeded_bending.hpp').read_text()
 original_trace_source, original_seed_source = trace_source, seed_source
-fallback_old = ('      q = grad;\n      for (auto &v : q)\n        v = -v;\n'
-                '      project_ray_direction(g, p, q);')
 fallback_new = ('      ReducedRayMetricStats metric_stats;\n'
                 '      q = reduced_ray_direction(g,p,grad,&metric_stats);')
 if use_reduced:
@@ -138,9 +156,14 @@ def instrument(source):
                '  audit_step("initial",0,0,g,p,grad,T,NAN,NAN,NAN,NAN,nullptr,0,S.size(),false,0,false);\n'
                '  for (; iter < maxit; iter++) {\n'
                '    int audit_searches=0;\n    bool audit_reset=false,audit_curvature=false;')
-    if not pure_metric and not args.cone_hybrid:
+    if not pure_metric and not args.cone_hybrid and not args.production_hybrid:
         substitute('    if (slope >= 0) {', '    if (slope >= 0) {\n      audit_reset=true;')
-    if args.cone_hybrid:
+    if args.production_hybrid:
+        substitute('      q = cone_ray_direction(g, p, grad);',
+                   '      ConeRayMetricStats metric_stats;\n'
+                   '      q = cone_ray_direction(g, p, grad, &metric_stats);\n'
+                   '      audit_reset=true; audit_metric(metric_stats);')
+    elif args.cone_hybrid:
         substitute('      q = cone_ray_direction(g,p,grad,&metric_stats);',
                    '      q = cone_ray_direction(g,p,grad,&metric_stats);\n      audit_reset=true; audit_metric(metric_stats);')
     elif pure_metric:
@@ -164,7 +187,8 @@ def instrument(source):
                '  audit_step("final",iter,updates,g,p,grad,T,NAN,NAN,NAN,NAN,nullptr,0,S.size(),false,0,false);\n'
                '  Ray r;')
     return source
-observed_trace, observed_seed = instrument(trace_source), instrument(seed_source)
+observed_trace = instrument(trace_source)
+observed_seed = '' if args.production_hybrid else instrument(seed_source)
 (ROOT / snapshot / 'diagnostics/observed_optimizer.hpp').write_text(observed_trace + '\n' + observed_seed)
 patch = ''.join(difflib.unified_diff(original_trace_source.splitlines(True), observed_trace.splitlines(True),
                                    fromfile='original_trace.cpp', tofile='observed_trace.cpp'))
@@ -191,6 +215,8 @@ if use_reduced:
     command.insert(1,'-DAUDIT_REDUCED_METRIC')
 if use_cone:
     command.insert(1,'-DAUDIT_CONE_METRIC')
+if args.production_hybrid:
+    command.insert(1,'-DAUDIT_PRODUCTION_HYBRID')
 environment = dict(os.environ, TMPDIR=str(ROOT / 'tmp'), OMP_NUM_THREADS='1')
 compiled = subprocess.run(command, cwd=str(ROOT), env=environment, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE, universal_newlines=True)
@@ -207,13 +233,13 @@ for path in fixed:
 with (ROOT / out / 'results.csv').open() as stream:
     rows = list(csv.DictReader(stream))
 files = [binary, archive_path, out / 'instrumentation.diff'] + sorted(p.relative_to(ROOT) for p in (ROOT / out).glob('*.csv')) + sorted(p.relative_to(ROOT) for p in (ROOT / out).glob('*.txt'))
-matches_column='logged_matches_unobserved_variant' if use_reduced else 'logged_matches_unmodified'
-summary = {'purpose': ('Reduced weighted-Laplacian direction comparison; original objective, Armijo/domain and stopping rules retained.' if use_reduced else 'Unchanged ray stopping and update rules, with observation-only hooks tested against unmodified functions for one identified ray.'),
+matches_column='logged_matches_unobserved_variant' if record_metric else 'logged_matches_unmodified'
+summary = {'purpose': ('Observation-only hooks in the current promoted trace, tested against direct calls to that trace, including source/dv/length/path equality.' if args.production_hybrid else 'Reduced weighted-Laplacian direction comparison; original objective, Armijo/domain and stopping rules retained.' if use_reduced else 'Unchanged ray stopping and update rules, with observation-only hooks tested against unmodified functions for one identified ray.'),
            'command': 'PYTHONDONTWRITEBYTECODE=1 python3 diagnostics/run_ray_stopping.py ' + ' '.join(shlex.quote(a) for a in sys.argv[1:]),
            'compile_command': command, 'run_command': run_command, 'TMPDIR': 'tmp', 'OMP_NUM_THREADS': 1,
            'budgets': args.budgets, 'spacings_km': args.spacings, 'return_code': result.returncode,
            'reduced_metric': use_reduced,
-           'direction_mode': 'cone_hybrid' if args.cone_hybrid else 'cone_all' if args.cone_metric else 'reduced_all' if args.reduced_all else 'reduced_fallback' if args.reduced_metric else 'original',
+           'direction_mode': 'production_hybrid' if args.production_hybrid else 'cone_hybrid' if args.cone_hybrid else 'cone_all' if args.cone_metric else 'reduced_all' if args.reduced_all else 'reduced_fallback' if args.reduced_metric else 'original',
            'identity_mapping': str(identified), 'identity_join_column': 'observation_index',
            'observation_index': selected[0]['observation_index'], 'cases': len(rows),
            'observation_changed_result': [r for r in rows if r[matches_column] != '1'],

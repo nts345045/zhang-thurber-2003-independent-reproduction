@@ -1,4 +1,5 @@
 #pragma once
+#include "ray_metric.hpp"
 #include <algorithm>
 #include <array>
 #include <cmath>
@@ -12,7 +13,6 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
-using Vec = std::vector<double>;
 using P = std::array<double, 3>;
 P operator+(P a, P b) {
   for (int i = 0; i < 3; i++)
@@ -299,9 +299,29 @@ Vec inverse_ray_metric(const Vec &weights, Vec rhs) {
     }
   return rhs;
 }
+Vec cone_ray_direction(const Grid &g,const std::vector<P> &path,const Vec &gradient,
+                       ConeRayMetricStats *record=nullptr) {
+  std::vector<int> sign(gradient.size());
+  const Vec *axes[]={&g.x,&g.y,&g.z};
+  for(std::size_t i=1;i+1<path.size();++i)for(int axis=0;axis<3;++axis) {
+    const std::size_t k=3*(i-1)+axis;
+    if(path[i][axis]<=axes[axis]->front()+1e-10)sign[k]=1;
+    else if(path[i][axis]>=axes[axis]->back()-1e-10)sign[k]=-1;
+  }
+  ConeRayMetricStats stats;
+  auto direction=solve_cone_ray_metric(ray_metric_weights(g,path),gradient,sign,stats);
+  if(record)*record=stats;
+  if(!stats.success)throw std::runtime_error(stats.message);
+  const bool nonzero=std::any_of(direction.begin(),direction.end(),[](double value){return value!=0;});
+  if((nonzero&&!(stats.slope<0))||(!nonzero&&projected_ray_gradient(g,path,gradient)>0))
+    throw std::runtime_error("Cone metric lacks a strict descent direction for a nonstationary ray");
+  return direction;
+}
+
 // Independently implemented limited-memory BFGS minimization of Fermat travel
-// time. Fixed endpoints; directions at active boundaries are projected onto
-// feasible tangents, and other trial paths outside the model are rejected.
+// time. Retain feasible descent directions; replace clipped or non-descent
+// directions with the tangent-cone metric minimizer. Trial paths outside the
+// model are rejected, with fixed endpoints and unchanged Armijo/stopping rules.
 Ray trace(const Grid &g, P a, P b, double spacing = 1, int maxit = 180,
           bool deriv = true, const std::vector<P> *seed = nullptr) {
   if (!(spacing > 0) || !std::isfinite(spacing))
@@ -368,18 +388,21 @@ Ray trace(const Grid &g, P a, P b, double spacing = 1, int maxit = 180,
     }
     for (auto &v : q)
       v = -v;
-    project_ray_direction(g, p, q);
-    double slope = dot(grad, q);
-    if (slope >= 0) {
-      q = grad;
-      for (auto &v : q)
-        v = -v;
-      project_ray_direction(g, p, q);
-      slope = dot(grad, q);
+    Vec feasible_direction = q;
+    project_ray_direction(g, p, feasible_direction);
+    if (feasible_direction != q || !(dot(grad, q) < 0)) {
+      q = cone_ray_direction(g, p, grad);
       S.clear();
       Y.clear();
       rho.clear();
     }
+    double slope = dot(grad, q);
+    Vec check_feasible = q;
+    project_ray_direction(g, p, check_feasible);
+    if (!std::isfinite(slope) ||
+        std::any_of(q.begin(), q.end(), [](double value) { return !std::isfinite(value); }) ||
+        check_feasible != q || !(slope < 0))
+      throw std::runtime_error("Hybrid ray direction is not feasible strict descent");
     double step = 1, newT = T;
     // Start with a feasible step even when a point is very close to a face.
     // Otherwise a fixed number of halvings can fail before reaching the box.
@@ -468,6 +491,13 @@ Ray trace(const Grid &g, P a, P b, double spacing = 1, int maxit = 180,
         r.source = sa;
     }
   }
+  const auto nonfinite = [](double value) { return !std::isfinite(value); };
+  if (!std::isfinite(r.time) || !std::isfinite(r.gradient) ||
+      !std::isfinite(r.raw_gradient) ||
+      std::any_of(r.source.begin(), r.source.end(), nonfinite) ||
+      std::any_of(r.dv.begin(), r.dv.end(), nonfinite) ||
+      std::any_of(r.length.begin(), r.length.end(), nonfinite))
+    throw std::runtime_error("Nonfinite ray action, gradient or derivative");
   return r;
 }
 struct Entry {

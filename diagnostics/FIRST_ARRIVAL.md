@@ -1,5 +1,36 @@
 # Shared first-arrival initializer
 
+The current integration also includes the boundary-ray correction in
+`src/ray_metric.hpp` and `src/core.hpp`. A feasible L-BFGS descent direction is
+retained. A direction that would be clipped at a domain face, or is not descent,
+is replaced by the strictly convex tangent-cone metric minimizer, and curvature
+memory is cleared. The active-set solve releases coordinates with incorrect
+multiplier signs. This changes the search direction, not the Fermat objective,
+admissible box, fixed endpoints, quadrature, Armijo rule, or stopping tolerances.
+Nonfinite action/derivative returns and uncertified directions are rejected.
+
+The [promotion review](../data/development/cone_production_review/review.json)
+records 9,007 unchanged algebra checks, 37 layered and 72 oblique analytic gates,
+48 existing solver checks, and 26 forward/metadata checks. All 186 identified
+saved-model shallow rays now meet the selected local stopping rule, with exact
+entry parity and no extraction, endpoint, domain, or action-increase failures.
+Only two selected actions differ from the preceding integrated result, both
+decreasing by at most 5.63 nanoseconds; iteration counts drop substantially.
+This improvement in stopping does not establish global first-arrival accuracy.
+The four detailed [production controls](../data/development/ray_stopping_i775_production_hybrid/README.md)
+also match the frozen diagnostic paths, actions, histories, and KKT records
+byte for byte. A separate four-case finite-return fixture preserves finite
+zero-update/coincident paths and rejects overflowing positive-velocity cases.
+
+The new `run_hayward_first_arrival.py` freezes a separate binary, complete
+authoritative inputs, source archive, and configuration for each new variant.
+Its `preflight` phase writes a full initial absolute-ray linearization and the
+existing identified refinement sample, then stops for accuracy inspection.
+The explicit `invert` phase rechecks hashes and runs DD, standard, and fixed-model
+relocation from the same initial inputs. Existing variant histories are never
+overwritten. Numerical completion still requires inspection of stopping flags,
+derivatives, accepted updates, resolution assumptions, and manuscript differences.
+
 The canonical implementation is [src/first_arrival.hpp](../src/first_arrival.hpp).
 It includes `core.hpp` and provides `first_arrival::Field` and its extracted
 candidate paths. The diagnostic [first_arrival_fmm.hpp](first_arrival_fmm.hpp)
