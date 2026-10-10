@@ -1,0 +1,18 @@
+--- original_observation
++++ capture_observation
+@@ -17,6 +17,7 @@
+ std::ofstream *audit_history=nullptr;
+ std::string audit_run;
+ std::string audit_observation;
++#include "failed_search_capture.hpp"
+ #if defined(AUDIT_REDUCED_METRIC) || defined(AUDIT_PRODUCTION_HYBRID)
+ std::ofstream *audit_metric_file=nullptr;
+ #ifdef AUDIT_REDUCED_METRIC
+@@ -103,6 +104,7 @@
+   P a=pos("source_"),b=pos("receiver_");
+   audit_observation=record[cols.at("observation_index")];
+   std::string out=argv[3];
++  capture_output=out;
+   std::ofstream results(out+"/results.csv"),history(out+"/history.csv"),paths(out+"/paths.csv"),fd(out+"/path_gradient_checks.csv");
+   if(!results||!history||!paths||!fd)throw std::runtime_error("Cannot open ray-stopping audit files");
+   for(auto f:{&results,&history,&paths,&fd})*f<<std::setprecision(17);

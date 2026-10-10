@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "created_utc": "2026-10-10T05:54:50.843309+00:00",
+  "prepared_sha256": "f287e4e8e5ef0e6b264505175460ca022e4e3ac25e343324197c5c526b87998c",
+  "review_scope": "Root source and exact insertion-diff review before the one authorized native replay; no numerical replay in this review.",
+  "input_hashes_verified": 66,
+  "snapshot_hashes_verified": 30,
+  "source_hashes_verified": 16,
+  "source_sha256": {
+    "diagnostics/observe_loma_failed_search.py": "61cd381c0eb0c323b64def612a4902247d4d826db16fd61486d40c26ac8adef6",
+    "diagnostics/failed_search_capture.hpp": "f546ce81c2c3b73dfb5e04d23ddcdf541bd600ee08f5285505d19cf69953809b",
+    "data/development/loma_failed_search_3426_001/capture_insertion.diff": "829e36a8aa65fd972703ad3aef92789ba3428dee962de6092de2ea30fca4d849",
+    "data/development/loma_failed_search_3426_001/capture_driver.diff": "07ebe4cfbddb99237814f95e892e0ee5e935006f2b949be8f3a498a737361f24"
+  },
+  "findings": [
+    "Per-iteration buffer reset precedes the original line-search loop.",
+    "Invalid trials are captured before the unchanged continue; valid paths are captured after their original merge and action evaluation.",
+    "The original Armijo acceptance expression and accepted/break statements remain unchanged.",
+    "Failure-only flush captures base, gradient and actual direction before the original failed-search history/break.",
+    "Base reevaluation occurs only after failure and affects no decision.",
+    "Evaluated step and post-loop halved step are separate; endpoint q values are zero and endpoint gradients blank.",
+    "The run requires all five original numerical CSVs byte-identical and both full-array in-process equality flags true."
+  ],
+  "limits": [
+    "Neutrality and trial identities remain subject to the terminal replay checks.",
+    "No acceptance rule, production ray arithmetic or convergence flag is changed."
+  ]
+}
