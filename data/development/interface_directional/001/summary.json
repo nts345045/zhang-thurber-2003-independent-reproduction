@@ -1,0 +1,320 @@
+{
+  "status": "passed",
+  "scope": "Directional diagnostics only; no optimizer, production path, stopping flag or tolerance change",
+  "checks": [
+    {
+      "name": "invented_directional_closed_forms",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "name": "directional_quadrature_subdivision_control",
+      "passed": true,
+      "detail": 3.5575383784680614e-20
+    },
+    {
+      "name": "homogeneous_straight_zero_first_variation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "plateau_all_sampled_directions_nonnegative",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "cusp_maximum_has_both_signed_guide_descents",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "native_original_flags_and_IDs_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "native_frozen_chosen_gradient_matches",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "commands": [
+    {
+      "stage": "compiler_version",
+      "argv": [
+        "g++",
+        "--version"
+      ],
+      "return_code": 0,
+      "elapsed_seconds": 0.013424756936728954
+    },
+    {
+      "stage": "compile",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-fopenmp",
+        "data/development/interface_directional/001/source/diagnostics/check_interface_directional.cpp",
+        "-lstdc++fs",
+        "-o",
+        "tmp/interface_directional/001/check"
+      ],
+      "return_code": 0,
+      "elapsed_seconds": 24.61854165897239
+    },
+    {
+      "stage": "diagnostic",
+      "argv": [
+        "tmp/interface_directional/001/check",
+        "data/development/interface_directional/001/inputs/truth_grid.csv",
+        "data/development/interface_directional/001/inputs/native_case.csv",
+        "data/development/interface_directional/001/inputs/native_path.csv",
+        "data/development/interface_directional/001"
+      ],
+      "return_code": 0,
+      "elapsed_seconds": 1.5500844020862132
+    }
+  ],
+  "native_case": {
+    "case_id": "row5_h0.03125",
+    "diagnostic_row": "5",
+    "spacing_km": "0.03125",
+    "reference_time_s": "15.127837995735218",
+    "reference_source_dx": "0.18633899812498247",
+    "reference_source_dy": "0.16396795782848875",
+    "reference_source_dz": "0.029871166420692513",
+    "event": "473",
+    "station": "2",
+    "diagnostic_selection": "farthest_source",
+    "straight_distance_km": "80.44926892701524",
+    "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+    "source_provider_event_dataid": "nc20091683",
+    "source_provider_event_datasource": "nc",
+    "source_provider_event_eventid": "20091683",
+    "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+    "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1411939",
+    "source_origin_time_utc": "1989-10-20T04:02:56.690000Z",
+    "source_origin_time_provider_text": "1989-10-20T04:02:56.69",
+    "source_latitude_deg": "37.1996667",
+    "source_longitude_deg": "-122.0661667",
+    "source_geoid_depth_km": "14.115",
+    "source_magnitude": "2.47",
+    "source_magnitude_type": "Md",
+    "source_event_type": "earthquake",
+    "source_origin_evaluation_status": "final",
+    "source_origin_method_resource_id": "smi:NC.anss.org/origin/HYPO_m2g",
+    "source_earth_model_resource_id": "",
+    "source_east_km": "-16.542349064131866",
+    "source_north_km": "18.161383222015537",
+    "source_x_km": "1.1448300320121945",
+    "source_y_km": "24.539244432017355",
+    "source_selected": "1",
+    "source_exclusion_reasons": "",
+    "source_source_file": "raw/events_00001.xml",
+    "source_source_sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+    "source_source_url": "https://service.ncedc.org/fdsnws/event/1/query?start=1989-10-18T00%3A00%3A00&end=1989-11-18T00%3A00%3A00&minmag=2.0&maxmag=5.5&minlat=36.5&maxlat=37.6&minlon=-122.6&maxlon=-121.2&catalog=NCSS&format=xml&includearrivals=false&orderby=time-asc&limit=10000&offset=1",
+    "source_retrieved_utc": "2026-10-09T22:21:36.623257Z",
+    "source_id": "473",
+    "source_x": "1.1448300320121945",
+    "source_y": "24.539244432017355",
+    "source_z": "14.115",
+    "source_t": "0",
+    "source_coordinate_basis": "catalog-defined simulation truth",
+    "source_origin_resource_id_basis": "provider catalog geometry reference, not a simulated pick/origin identifier",
+    "source_simulation_origin_time_basis": "truth t=0; initial/inverted t is a simulated correction in seconds",
+    "receiver_network_code": "NC",
+    "receiver_station_code": "BSL",
+    "receiver_station_seed_id": "NC.BSL",
+    "receiver_station_fdsn_source_id": "FDSN:NC_BSL",
+    "receiver_location_code": "",
+    "receiver_channel_code": "EHZ",
+    "receiver_channel_seed_id": "NC.BSL..EHZ",
+    "receiver_channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+    "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+    "receiver_latitude_deg": "36.776535",
+    "receiver_longitude_deg": "-121.35009",
+    "receiver_channel_sensor_elevation_m": "142.0",
+    "receiver_sensor_depth_below_ground_m": "0.0",
+    "receiver_station_elevation_m": "142.0",
+    "receiver_metadata_epoch_start": "1989-08-25T19:45:00",
+    "receiver_metadata_epoch_end": "1990-09-10T19:20:00",
+    "receiver_channel_epoch_start": "1989-08-25T19:45:00",
+    "receiver_channel_epoch_end": "1990-09-10T19:20:00",
+    "receiver_station_epoch_start": "1975-07-16T00:00:00",
+    "receiver_station_epoch_end": "2020-06-01T18:40:00",
+    "receiver_provider_channel_source_id": "",
+    "receiver_provider_channel_resource_ids_json": "[]",
+    "receiver_provider_station_resource_ids_json": "[]",
+    "receiver_provider_network_resource_ids_json": "[]",
+    "receiver_latitude_datum": "WGS84 (StationXML default)",
+    "receiver_longitude_datum": "WGS84 (StationXML default)",
+    "receiver_sensor_z_geoid_km": "-0.142",
+    "receiver_z_if_sensor_elevation_km": "-0.142",
+    "receiver_z_if_ground_elevation_km": "-0.142",
+    "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+    "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+    "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+    "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+    "receiver_metadata_source_kind": "StationXML channel metadata",
+    "receiver_stationxml_schema_version": "1.2",
+    "receiver_source_document_metadata_index": "39",
+    "receiver_source_file": "raw/ncedc_channel_epochs.xml",
+    "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&cha=EHZ&start=1989-11-01T00%3A00%3A00Z&end=1989-11-01T00%3A00%3A00Z&level=channel&format=xml",
+    "receiver_source_sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+    "receiver_retrieved_utc": "2026-10-09T22:21:22.924933Z",
+    "receiver_east_km": "47.29029394047113",
+    "receiver_north_km": "-28.681081582242232",
+    "receiver_x_km": "13.158700251044163",
+    "receiver_y_km": "-53.71987480818031",
+    "receiver_snapshot_utc": "1989-11-01T00:00:00Z",
+    "receiver_selected": "1",
+    "receiver_exclusion_reasons": "",
+    "receiver_id": "2",
+    "receiver_x": "13.158700251044163",
+    "receiver_y": "-53.71987480818031",
+    "receiver_z": "-0.142",
+    "receiver_t": "0",
+    "original_converged": "0",
+    "original_updates": "0"
+  },
+  "native_witnesses": [
+    {
+      "direction": "negative_chosen_gradient",
+      "directional_slope_s_per_km": -7.99925798274101e-10,
+      "exact_action_decreasing_steps_km": [
+        1e-07,
+        1e-08
+      ],
+      "exact_and_production_action_decreasing_steps_km": [
+        1e-07
+      ],
+      "exact_action_maximum_decrease_s": 4.597017211338539e-17,
+      "negative_directional_with_independent_decrease": true
+    },
+    {
+      "direction": "in_plane_negative_gradient",
+      "directional_slope_s_per_km": -6.825839466036376e-06,
+      "exact_action_decreasing_steps_km": [
+        1e-06,
+        1e-07,
+        1e-08,
+        1e-09
+      ],
+      "exact_and_production_action_decreasing_steps_km": [
+        1e-06,
+        1e-07,
+        1e-08,
+        1e-09
+      ],
+      "exact_action_maximum_decrease_s": 4.531769057236623e-12,
+      "negative_directional_with_independent_decrease": true
+    },
+    {
+      "direction": "in_plane_metric_direction",
+      "directional_slope_s_per_km": -2.746098017121723e-07,
+      "exact_action_decreasing_steps_km": [
+        0.001,
+        0.0001,
+        1e-05,
+        1e-06,
+        1e-07,
+        1e-08,
+        1e-09
+      ],
+      "exact_and_production_action_decreasing_steps_km": [
+        0.001,
+        0.0001,
+        1e-05,
+        1e-06,
+        1e-07,
+        1e-09
+      ],
+      "exact_action_maximum_decrease_s": 2.0278664251277556e-10,
+      "negative_directional_with_independent_decrease": true
+    },
+    {
+      "direction": "guide_negative_translation",
+      "directional_slope_s_per_km": -3.5910693975211075e-10,
+      "exact_action_decreasing_steps_km": [
+        1e-08
+      ],
+      "exact_and_production_action_decreasing_steps_km": [],
+      "exact_action_maximum_decrease_s": 1.734723475976807e-18,
+      "negative_directional_with_independent_decrease": true
+    },
+    {
+      "direction": "guide_positive_translation",
+      "directional_slope_s_per_km": 0.07510230413638473,
+      "exact_action_decreasing_steps_km": [],
+      "exact_and_production_action_decreasing_steps_km": [],
+      "exact_action_maximum_decrease_s": 0.0,
+      "negative_directional_with_independent_decrease": false
+    },
+    {
+      "direction": "opposite_adjacent_guide_normals",
+      "directional_slope_s_per_km": 0.0009203024417781437,
+      "exact_action_decreasing_steps_km": [],
+      "exact_and_production_action_decreasing_steps_km": [],
+      "exact_action_maximum_decrease_s": 0.0,
+      "negative_directional_with_independent_decrease": false
+    }
+  ],
+  "declared_component_controls": {
+    "closed_form_tolerance_s_per_km": 2e-14,
+    "quadrature_subdivision_tolerance_s_per_km": 2e-12
+  },
+  "source_sha256": {
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_interface_directional.cpp": "25c2bd4321b31dac3e42e12c548fbe717b35b9b9e686a9251670b43d1b10c5e8",
+    "diagnostics/interface_directional.hpp": "e1262ba6ef5b8e858d63b61458330c39f26bcb70c5fae2f6e0f7201a39a81289",
+    "diagnostics/run_interface_directional.py": "7e395c7e559d7d2f17c16f2c7411e4d10a0aaa7eeff7a75f8e54704d3e3db068",
+    "diagnostics/loma_path_checks.hpp": "479c44abd9d422b35d5cdee1ace6dd706829182246dfebc3f590b612c135e739"
+  },
+  "input_sha256": {
+    "data/development/loma_geometry_preflight/reference_seeds_001/summary.json": "f8ac08aef10d66eb8b041a12c606a1b3b94e829a022538786992162aa7d1f21e",
+    "data/development/loma_geometry_preflight/reference_seeds_001/packaging.json": "73f00f796d7d3c50c847830aa0de6996330bb55166386bc63afca776205403d9",
+    "data/development/loma_geometry_preflight/reference_seeds_001/cases.csv": "ac570e0dd6a68a9a561c4ed6d1ba418a9273a86bf6efce034685e3e5f0c39d24",
+    "data/development/loma_geometry_preflight/reference_seeds_001/results.csv": "0ea6ac72e99cdb52514a1276e7dab7a813de3ebfd1a52e60384601254007b786",
+    "data/development/loma_geometry_preflight/reference_seeds_001/paths.csv": "dcfdee50c1640d2cea02eb1838466a957a998c9fe35246d57995a66a4a5274ab",
+    "data/development/loma_geometry_preflight/reference_seeds_001/inputs/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47"
+  },
+  "binary_sha256": "9792088f00eaebef5686e05059ac3d333fc16df415535a31cd18098592233614",
+  "output_sha256": {
+    "compiler_version_stdout.log": "f4895a731c57603df3662adff9f5d69ae764d6147b226f4028f324c8f6088dd2",
+    "compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "diagnostic_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "diagnostic_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "directional.csv": "e9e3a23ff2052d9f72c88031a838f0b3d4c347049218f07a54221ca6c57d68e1",
+    "secants.csv": "e6d9799621c1b20698c85940022961484e615a3a9bb8494a39101a2db01704f0",
+    "directions.csv": "8d3c7a9217bb31c8e37638e52fffe667e66cf7e5676365b01ae9bb563d5e6f57",
+    "inputs/native_case.csv": "df6e60bce09e0a8f2124bedfdb98e807c9d545d53f37e6f60ee79d6155564ae9",
+    "inputs/native_path.csv": "55c0d830b86030c59775f7c1ceceee1110a0ecaedf39d964ba448fb37be57117",
+    "inputs/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "source/src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/diagnostics/check_interface_directional.cpp": "25c2bd4321b31dac3e42e12c548fbe717b35b9b9e686a9251670b43d1b10c5e8",
+    "source/diagnostics/interface_directional.hpp": "e1262ba6ef5b8e858d63b61458330c39f26bcb70c5fae2f6e0f7201a39a81289",
+    "source/diagnostics/run_interface_directional.py": "7e395c7e559d7d2f17c16f2c7411e4d10a0aaa7eeff7a75f8e54704d3e3db068",
+    "source/diagnostics/loma_path_checks.hpp": "479c44abd9d422b35d5cdee1ace6dd706829182246dfebc3f590b612c135e739"
+  },
+  "limitations": [
+    "A negative feasible directional derivative establishes descent; nonnegative finitely many probes cannot certify full stationarity.",
+    "Long-double exact segment formulas and first variations are floating-point evaluations, not interval certificates.",
+    "This does not repair or validate optimized endpoint/model derivatives, and does not relabel the retained false local flag.",
+    "The restricted metric vector is only another explicitly saved feasible diagnostic direction; it is not an optimizer or a physical constraint."
+  ]
+}

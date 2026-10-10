@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "reviewer": "independent ray-math review",
+  "scope": "Source/formula, saved native associations and classification review; no optimizer or high-precision numerical rerun",
+  "source_summary_sha256": "581907db8552db102c47e2cae2812fc07b05307f11b7b316af9205eec755c88e",
+  "review_summary_sha256": "8bcb9873fa800af14a4986bfee2cf277c51c67c9885c2c4af16d59569f5b7573",
+  "reviewed_source_sha256": {
+    "diagnostics/interface_directional.hpp": "e1262ba6ef5b8e858d63b61458330c39f26bcb70c5fae2f6e0f7201a39a81289",
+    "diagnostics/check_interface_directional.cpp": "25c2bd4321b31dac3e42e12c548fbe717b35b9b9e686a9251670b43d1b10c5e8",
+    "diagnostics/review_interface_directional.py": "974d595ce6919143f7bbb7c257bea71d9ef83120cc5131a7f7b0a56e19417bda"
+  },
+  "native_identity": {
+    "event": "473",
+    "station": "2",
+    "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+    "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+    "receiver_channel_seed_id": "NC.BSL..EHZ",
+    "receiver_channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+    "receiver_metadata_epoch_start": "1989-08-25T19:45:00",
+    "receiver_metadata_epoch_end": "1990-09-10T19:20:00"
+  },
+  "findings": [
+    "The length variation and negative reciprocal-velocity derivative have consistent factors and signs.",
+    "For a sustained face segment, the interpolated normal direction chooses the correct incident cell, with splits at sign changes; coupled opposite endpoint directions are retained.",
+    "At a face intersection each normal sign chooses its incident cell. An identically zero normal direction makes the side choice immaterial to the tangential first variation.",
+    "Transverse moving-face terms cancel by continuity of slowness. Fixed unperturbed cell crossings suffice in the first-variation integral.",
+    "The independent Decimal reciprocal-affine segment integral and binary64 displaced geometry match the saved finite perturbations.",
+    "All saved native resource/SEED/FDSN/epoch associations match. Two substantive in-plane decreases are distinguished from two inconclusive near-roundoff normal signs."
+  ],
+  "material_issue_found": false,
+  "limitations": [
+    "Quadrature evaluates a directional derivative, not a minimization over all feasible joint directions or a global first-arrival certificate.",
+    "The frozen helper is used only with subdivisions=1 or4; it does not reject nonpositive subdivision counts and must not be interpreted as validated for those inputs.",
+    "80/100-digit consistency is not interval-certified arithmetic. The tiny raw normal signs must not be called demonstrated descent.",
+    "No production source, original local flag or optimizer was changed."
+  ]
+}
