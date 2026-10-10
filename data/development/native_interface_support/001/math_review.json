@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "reviewed_utc": "2026-10-10T04:41:20.195492Z",
+  "scope": "Independent read-only mathematical/source/result/hash review; no numerical rerun or production changes.",
+  "source_document_sha256": {
+    "diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+    "data/development/native_interface_support/proof.md": "4b6aaeb913c1f037ded2a0a9626c54138aab4b60fb23b8c85f54b436d7ab3727",
+    "data/development/native_interface_support/README.md": "231e24b2d5cc27ac7311c8eef4c52a80da5da9789b3863e057e37768aceab3c6",
+    "data/development/native_interface_support/001/summary.json": "4ab53a668bda8332b16259af18dd667ac3fff88382c6d38bf0ef61c02c43dbd1"
+  },
+  "frozen_artifact_hashes_verified": 9,
+  "recorded_controls": 23,
+  "recorded_control_failures": [],
+  "material_issue_found": false,
+  "checks": [
+    "Reciprocal-affine primitives are split at every crossed x plane. The endpoint derivatives (J-s(a))/dx and (s(b)-J)/dx have the correct signs, including negative dx; continuity cancels moving cell-boundary terms.",
+    "For an aligned convex slowness-gradient jump, choosing the left slope gives a valid linear support because the omitted contribution is (g_plus-g_minus)*max(q,0), which is nonnegative for every coupled endpoint direction.",
+    "The rational atanh-series remainder uses the first omitted power and a geometric upper bound; interval reciprocals exclude zero, and per-segment dyadic rounding is outward. The frozen square-root routine verifies exact squared endpoint inequalities.",
+    "Accumulated component midpoint/radius intervals yield ||G|| <= ||m||+||r|| <= B, hence F(d) >= -B||d||. README explicitly corrects the frozen summary shorthand; the positive B itself is not a directional lower bound.",
+    "The native tangent direction fixes both endpoints and has zero normal displacement at every kink-incident knot. Therefore its enclosed G dot d equals its actual continuous first variation; the strictly negative interval supports retained-node descent.",
+    "Native event/origin and receiver NSLC/FDSN/epoch identities are retained in every output knot. Fixed endpoint derivative fields are blank and the original local flag remains zero."
+  ],
+  "limitations": [
+    "The result concerns the continuous Fermat action of the saved binary64-valued polygon in this positive x-only model, not arbitrary trilinear media.",
+    "The large support-norm upper bound alone is not a nonstationarity proof; the independently negative tangent slope is the descent witness.",
+    "No inserted-knot variation, global first-arrival certification, source/model envelope derivative, optimizer update or production stopping change is established.",
+    "The recorded Decimal finite-difference controls are consistency evidence; the inclusion argument uses exact rational remainder, arithmetic and square inequalities."
+  ]
+}

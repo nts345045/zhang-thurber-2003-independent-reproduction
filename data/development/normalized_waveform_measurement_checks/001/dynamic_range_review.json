@@ -1,0 +1,13 @@
+{
+  "status": "nonfinite_coefficient_counterexample_confirmed",
+  "input": "Invented int32 records, small nonconstant samples and one2**30 search-margin spike",
+  "old_method_status": "invalid_numerical_coefficient",
+  "maximum_coefficient_error": 4.163336342344337e-17,
+  "expected_peak_index": 41,
+  "old_coefficient_at_true_peak": null,
+  "direct_coefficient_at_true_peak": 1.0,
+  "method_source_sha256": "58849c65415e73862764f121c6962fe15c0e958b36699e730ebdc4adfa4cd48f",
+  "limits": "No real waveform or tolerance changed; this isolates rolling-variance cancellation.",
+  "classification": "The original method correctly rejects the undefined numerical coefficient; this demonstrates lost local variance, not an accepted wrong delay.",
+  "diagnostic_note": "The initial finite-only maximum-error classification missed the NaN at the true peak; this corrected classification records it explicitly."
+}

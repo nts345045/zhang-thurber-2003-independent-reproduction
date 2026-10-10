@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "reviewed_utc": "2026-10-10T04:38:49.364951Z",
+  "scope": "Independent source/specification/result/hash review. The reviewer tested a separate invented counterexample against frozen001; no002 numerical rerun and no real waveform access.",
+  "material_issue_found": false,
+  "summary_sha256": "5b034057f723db1de26a3f938b0ef82f846d2e6ac5624b5c9edf52b5c5a26b02",
+  "source_sha256": {
+    "diagnostics/check_normalized_waveform_measurement.py": "8167eb7d40901a307c2daab603ffc23006f656fcef65f7b8af506e2a9fb844b6",
+    "diagnostics/normalized_waveform_cc.py": "98bc3880882e9e117338931ce5c11d0d0b6863a929f2db045a72edb87645740e",
+    "data/development/normalized_correlation_specification/README.md": "fb656f2eddefb0c7fd2641e0d88367800d4742f475a0c0a2163b0596c30e8845"
+  },
+  "frozen_outputs_verified": 4,
+  "recorded_checks": 41,
+  "recorded_failures": [],
+  "checks": [
+    "Integer sample indexing selects the nearest template sample, with earlier exact half-sample tie; all native-grid candidate starts within the complete declared plus/minus0.25s support are included without narrowing missing support.",
+    "Delay uses actual pick-relative sample offsets and discrete lag. Subtracting the j-minus-i feature delay from the catalog i-minus-j travel-time difference has the tested sign, including biased picks and unequal sample-grid offsets.",
+    "The final code independently demeans/scales each candidate and computes its signed Pearson coefficient directly. This removes rolling-moment cancellation without changing the declared mathematical estimator.",
+    "Constant template/search candidates, nonfinite/masked records, nonpositive peaks, boundary maxima and numerical ties retain explicit rejection states. All lag coefficients remain available; a constant candidate has an undefined coefficient.",
+    "Post-alignment symmetric-Hann/5-bin spectral smoothing uses conj(Xi)*Xj and both power spectra, retains the20 original2-10Hz bins, requires at least10 strictly above0.9, and rejects unresolved powers.",
+    "Accepted output stores discrete delay, catalog/result values, coefficient and squared coefficient. The10ms spacing is distinct from formal_timing_uncertainty_s=None; no residual multiplier or solver observation is fabricated."
+  ],
+  "resolved_finding": {
+    "issue": "Global search scaling did not prevent cancellation in ObsPy rolling local variance; some invented int32-range margin-spike cases gave inaccurate or nonfinite coefficients.",
+    "old_result_scope": "The reviewed invented examples preserved numerical rejection; no wrong accepted real-data delay was demonstrated.",
+    "correction": "Direct per-window centering and positive scaling, followed by explicit local Pearson norms and dot products.",
+    "recorded_regression": "All four margin-spike cases1e5,1e7,1e8,2e9 recover the known discrete lag; maximum coefficient difference from the independent centered definition is4.440892098500626e-16."
+  },
+  "limitations": [
+    "These are invented-array component checks, not authoritative waveform decoding, complete native identity joins, a real-data correlation measurement or dt.cc export.",
+    "The caller must verify exact NSLC, sample rate/grid/continuity and pick-relative timing, and must supply the catalog i-minus-j travel-time difference with the intended origin-time convention.",
+    "The empirical post-alignment coherence screen does not establish unbiased timing, instrument phase equivalence or formal uncertainty.",
+    "Real-data ingestion and solver weighting remain separate explicit steps."
+  ]
+}
