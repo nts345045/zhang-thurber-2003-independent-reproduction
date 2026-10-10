@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit/ray_math_review",
+  "controls_summary_sha256": "eb4fa507e993f8c6d918a9be3a66afd6b831771944dff0cd14c04eceea0d1196",
+  "source_sha256": {
+    "diagnostics/check_outer_accumulation.cpp": "2794e2ea5d575f5b66e618c361fd23a8523a70605a493755cc25ad6cc823fed0",
+    "diagnostics/prepare_outer_accumulation.py": "50b3c2d56020bbe12b27babed3235a4272cdb26bb2ba43a8235e6bf1a13b26d0"
+  },
+  "single_change_diff_sha256": "68400a74c4d739a00b780837c2f48d28fb4ef1cc0c8be200dcca01eff2b79628",
+  "variant_source_sha256": {
+    "baseline": {
+      "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+      "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+      "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+      "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+      "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+      "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+      "src/main.cpp": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+      "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+      "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+      "diagnostics/check_ray_stopping.cpp": "17e422fa51e41e686935966d46e47e66419a44ba6d7c3031b1f76289fee54577",
+      "diagnostics/run_ray_stopping.py": "b39f64a35ab3920d57be3336a3234a0ecda1f91b0a9147d900ae069eb7deb3ec",
+      "diagnostics/first_arrival_fmm.hpp": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+      "diagnostics/observe_loma_initial_failure.py": "c6090c788f9f061a0d21458dbc410f930058782e048730d1eebbe3e22d74b6aa",
+      "diagnostics/observed_optimizer.hpp": "34638c1996feaec7c0bc5df2da3b826e36ea1088c431a3d025d4de4e1ddebcf3",
+      "diagnostics/original_path_eval.hpp": "b9596439ed7806697b28011a9c9e4f1bbb79dd7070072f22a8cacf345227cf81",
+      "diagnostics/check_outer_accumulation.cpp": "2794e2ea5d575f5b66e618c361fd23a8523a70605a493755cc25ad6cc823fed0",
+      "diagnostics/prepare_outer_accumulation.py": "50b3c2d56020bbe12b27babed3235a4272cdb26bb2ba43a8235e6bf1a13b26d0"
+    },
+    "outer_extended": {
+      "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+      "src/core.hpp": "ca405f21bd6d2236d0775262688b4c2cde0a7817676bf67a4c770c33be903f6e",
+      "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+      "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+      "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+      "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+      "src/main.cpp": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+      "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+      "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+      "diagnostics/check_ray_stopping.cpp": "17e422fa51e41e686935966d46e47e66419a44ba6d7c3031b1f76289fee54577",
+      "diagnostics/run_ray_stopping.py": "b39f64a35ab3920d57be3336a3234a0ecda1f91b0a9147d900ae069eb7deb3ec",
+      "diagnostics/first_arrival_fmm.hpp": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+      "diagnostics/observe_loma_initial_failure.py": "c6090c788f9f061a0d21458dbc410f930058782e048730d1eebbe3e22d74b6aa",
+      "diagnostics/observed_optimizer.hpp": "34638c1996feaec7c0bc5df2da3b826e36ea1088c431a3d025d4de4e1ddebcf3",
+      "diagnostics/original_path_eval.hpp": "b9596439ed7806697b28011a9c9e4f1bbb79dd7070072f22a8cacf345227cf81",
+      "diagnostics/check_outer_accumulation.cpp": "2794e2ea5d575f5b66e618c361fd23a8523a70605a493755cc25ad6cc823fed0",
+      "diagnostics/prepare_outer_accumulation.py": "50b3c2d56020bbe12b27babed3235a4272cdb26bb2ba43a8235e6bf1a13b26d0"
+    }
+  },
+  "input_hashes_verified": 98,
+  "artifact_hashes_verified": 67,
+  "compiler_sha256": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7",
+  "control_binary_sha256": {
+    "baseline": "de04ae02f32cb93dd7c19122fc2a9a02bd24f568eac353c8ed2bc9c0bedc9982",
+    "outer_extended": "38f6b1f18a4470a10b03143014f3c15c8287fa0ad3bea40a13df1b04b96f4fce"
+  },
+  "recorded_passing_checks": {
+    "baseline": 91,
+    "outer_extended": 91
+  },
+  "native_saved_paths_per_variant": 25,
+  "copied_native_trial_vertices_verified": 27216,
+  "native_identifiers": {
+    "event": "65",
+    "station": "46",
+    "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/10090782",
+    "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642854",
+    "receiver_channel_seed_id": "NC.JSJ..EHZ",
+    "receiver_channel_fdsn_source_id": "FDSN:NC_JSJ__E_H_Z",
+    "receiver_metadata_epoch_start": "1989-05-02T15:00:00",
+    "receiver_metadata_epoch_end": "1990-09-14T21:50:00"
+  },
+  "full_native_context_and_empty_location_preserved": true,
+  "scope": "Read-only source/diff, terminal controls, copied-native-table/order/identity and hash readback. No control rerun, ray trace or action certification.",
+  "findings": [
+    "Reconstructed the exact full-header change: only path_eval accumulator double T=0 becomes long double T=0. The public function return remains double, and all segment, gradient, optimizer, constraint, derivative and stopping source outside that declaration is unchanged.",
+    "The generated original_path_eval is the exact frozen old function body with only its function name changed. Both variants use identical copies of that oracle and the same original segment implementation.",
+    "The four invented geometries have the declared homogeneous actions. Their checks separately compare original and variant sums and bitwise internal gradients. The addition-count-scaled forward-error allowances are arithmetic controls, not changes to ray accuracy or stopping gates.",
+    "Each native build records25 original-total matches to archived base/trial values,25 exact variant matches to the appropriate sum and25 bitwise internal-gradient matches. The extended candidate equals the double cast of the long-double sum of unchanged double segment values. All25 candidate action totals differ from the original totals, while all25 baseline totals agree.",
+    "All25 path groups and24 decisions join the reviewed original pair3426 with unchanged full provider metadata. Independently verified every copied trial index/node order/step, all27216 saved trial vertices through byte-identical input tables, all copied geometry files and all output identity sidecars.",
+    "The C++ reader relies on the frozen reviewed trial-block order instead of checking each trial_index field itself. The preparer pins all original/replay output hashes, and this independent review verifies the actual copied ordering, so this does not create a mismatch in the bounded recorded fixture.",
+    "All98 input pins,67 artifact pins,17 source members per variant and both compiler/binary records verified; all four compile/control commands returned0 and both91-check inventories are complete."
+  ],
+  "limitations": [
+    "Native gradient arrays are checked bitwise inside the C++ controls and represented by passing records; they are not separately exported or recomputed by this reviewer.",
+    "Only internal path-gradient arrays are directly compared here. Endpoint/model derivative formulas remain unchanged by source identity; newly optimized paths could produce different derivatives.",
+    "Long-double outer summation retains binary64 segment error and a final binary64 return. It is not a certified exact action and does not remove all possible cancellation or sub-ulp decision effects.",
+    "No newly optimized ray, convergence improvement, continuous source accuracy or inversion acceptance is established by these controls.",
+    "No production source, scientific threshold, local flag or original evidence was changed by this review."
+  ],
+  "material_issue_found": false,
+  "ray_traces_performed_by_reviewer": 0
+}

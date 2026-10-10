@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "reviewed_utc": "2026-10-10T07:02:34Z",
+  "prepared_sha256": "1f2d231e4b4fc5cd040e09207d256d92ed55d62c55da7e6805239ae636fb98b4",
+  "launcher_sha256": "8aade549147e6a2b080cd45bd1087fb3c30cff8f22cdd559945aee89246a59ce",
+  "checker_sha256": "aab3a5ff4e934d4790951c10294d44ad4f6695e3e69094c5cae58e95d9406fbe",
+  "verified_hash_counts": {
+    "input_sha256": 130,
+    "prepared_file_sha256": 44,
+    "source_sha256": 21
+  },
+  "native_context_fields": 199,
+  "capture_controls": 38,
+  "rational_controls": 27,
+  "source_review": [
+    "Read complete header, preparation, launcher, rational helper and both exact insertion diffs.",
+    "Read-only pair capture follows the existing retention branch; resets follow the original memory clears.",
+    "Capture is disabled around the unchanged trace used for in-process numerical comparison.",
+    "No logged value enters action, gradient, line search, memory decision or stopping arithmetic."
+  ],
+  "required_terminal_checks": [
+    "All five old CSVs must match the reviewed B hashes exactly.",
+    "Both observed trace results must numerically equal unchanged B traces.",
+    "Every capture table must retain the full native identity sidecar.",
+    "No convergence promotion, threshold change, update-budget change or new inverse."
+  ],
+  "limitations": [
+    "This permits only the frozen diagnostic replay. Native neutrality is assessed after completion.",
+    "The mathematical exact sums describe saved doubles, not continuum curvature or an optimizer correction."
+  ]
+}

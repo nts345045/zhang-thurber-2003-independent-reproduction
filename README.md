@@ -96,7 +96,7 @@ now passes both unchanged accuracy limits and all local/initializer flags for
 all 14,262 rays. Maximum time and source-vector errors are 0.959 microseconds
 and 1.782e-6 s/km. The [full-cohort error distributions](figures/diagnostics/hayward_full_initial_accuracy.pdf)
 retain the same native observations and references. The separate sampled
-refinement remains active; no corrected inversion has been launched.
+refinement has not yet completed accuracy review; no corrected inversion has been launched.
 
 The revised solver preserves identities in event/residual CSV files and ray
 diagnostic mappings, traces observed pairs only, and exports an unweighted
@@ -184,6 +184,26 @@ and source derivative still pass their reference limits. The
 this arithmetic change is insufficient to resolve stationarity; 564 accepted
 updates have equal recorded binary64 actions. All original results remain
 preserved, and no stopping threshold is relaxed.
+A [neutral curvature capture](data/development/loma_curvature_capture_native_001/README.md)
+reproduces those tables byte for byte. All 960 discarded pairs have positive
+curvature below the fixed retention cutoff, including the final 565 updates.
+Exact sums preserve every sign and cutoff classification. This identifies a
+retention question for a separate controlled experiment; it supplies no
+accepted optimizer correction.
+A [static interface calculation](data/development/loma_candidate_support_001/README.md)
+then places two nearly aligned vertices exactly on the 7 km interface. The
+prescribed candidate has a slightly smaller exact action and admits a
+supporting-vector norm of 5.579e-6 s/km. An independent readback checks all
+3,396 internal components. The [candidate comparison](figures/diagnostics/loma_interface_candidate.pdf)
+also retains the action increase when only vertex 485 is moved. This explains
+why the nonsmooth interface needs explicit treatment; it does not provide a
+general optimizer correction or change the original false flag.
+A separate [boundary component calculation](data/development/loma_endpoint_connector_native_001/README.md)
+replaces the first straight element by a constrained curved connector in the
+saved affine layer. It retains the same local action, removes the demonstrated
+source-normal term, and preserves the neighboring vertex's second-element
+reaction. The reviewed calculation supplies no general trilinear connector
+or model Jacobian and does not produce a new inverse result.
 Only 37,599 rays pass all checks. LOM sampled checks and the LON initial-ray
 preflight remain active; neither performs an inverse update. A separate
 [one-sided curvature calculation](data/development/native_interface_conditioning/README.md)

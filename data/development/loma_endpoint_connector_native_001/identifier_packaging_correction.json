@@ -1,0 +1,12 @@
+{
+  "status": "metadata_attachment_only_numerical_evidence_unchanged",
+  "recorded_utc": "2026-10-10T07:10:01.705017Z",
+  "original_summary_sha256": "15667b67c7417f4648c8bfdaf8eba6f47b5d0ebf5f6b7fa146f022c8b2776d3e",
+  "original_execution_sha256": "4f50a269f52bce9f5e09868fb30513b7862a4ef6cd50715c70e387f19a4a4e12",
+  "executed_source_sha256": "03fc88f4e8c3171461958dda9a137c5f420813eec3a990fa25498b53ea0458c5",
+  "addition_sha256": {
+    "exact_baseline_formulas.json.identifiers.json": "ff9fa2976ed296cca06261c45130d28717f5b494736673564d9f88674fe8496c"
+  },
+  "reason": "Root review identified that exact_baseline_formulas.json held real point coordinates without a file-specific identifier sidecar. The original summary already retained all native context; this attachment makes the mapping explicit on the coordinate document.",
+  "scope": "No numerical file, summary, execution, flag, source or original input changed. The metadata-only helper-loop correction for future runs is deferred until current source review is complete."
+}

@@ -1,0 +1,107 @@
+{
+  "status": "passed",
+  "check_count": 20,
+  "checks": [
+    {
+      "name": "valid_inventory_and_both_start_ids",
+      "passed": true
+    },
+    {
+      "name": "all_19_selected_pre_post_paths",
+      "passed": true
+    },
+    {
+      "name": "header_only_memory_events_valid",
+      "passed": true
+    },
+    {
+      "name": "raw_and_resampled_seed_inventory",
+      "passed": true
+    },
+    {
+      "name": "reject_old_byte_change",
+      "passed": true
+    },
+    {
+      "name": "reject_missing_pair",
+      "passed": true
+    },
+    {
+      "name": "reject_duplicate_pair",
+      "passed": true
+    },
+    {
+      "name": "reject_wrong_native_pair",
+      "passed": true
+    },
+    {
+      "name": "reject_changed_retention",
+      "passed": true
+    },
+    {
+      "name": "reject_changed_accepted_step",
+      "passed": true
+    },
+    {
+      "name": "reject_changed_memory_size",
+      "passed": true
+    },
+    {
+      "name": "reject_missing_selected_geometry",
+      "passed": true
+    },
+    {
+      "name": "reject_wrong_endpoint",
+      "passed": true
+    },
+    {
+      "name": "reject_nonfinite_geometry",
+      "passed": true
+    },
+    {
+      "name": "reject_wrong_new_table_identity",
+      "passed": true
+    },
+    {
+      "name": "reject_duplicate_seed_metadata",
+      "passed": true
+    },
+    {
+      "name": "reject_incomplete_saved_seed",
+      "passed": true
+    },
+    {
+      "name": "reject_wrong_seed_node_order",
+      "passed": true
+    },
+    {
+      "name": "restored_fixture_passes",
+      "passed": true
+    },
+    {
+      "name": "sources_unchanged",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "diagnostics/run_curvature_capture.py": "8aade549147e6a2b080cd45bd1087fb3c30cff8f22cdd559945aee89246a59ce",
+    "diagnostics/check_curvature_launcher.py": "38f8ee92d12e8317512fef375c520711d9651846cd29b36ba6fda4e95dbb6a4c"
+  },
+  "scope": "Invented table inventory and identity controls only; no compiler, signal, numerical kernel or native trace validation",
+  "output_sha256": {
+    "source/run_curvature_capture.py": "8aade549147e6a2b080cd45bd1087fb3c30cff8f22cdd559945aee89246a59ce",
+    "source/check_curvature_launcher.py": "38f8ee92d12e8317512fef375c520711d9651846cd29b36ba6fda4e95dbb6a4c",
+    "invented/results.csv": "260517e9656cd7ace9ffb27d7bb9de9aaac16f59894f0a050e8054f2b3fba6a0",
+    "invented/history.csv": "49b94ff429723cd0d2b6b0986902abb599941fd56bdd680438318d3ff1fd858c",
+    "invented/paths.csv": "5dbfde8f25b16666ab7ddadf5f6b5fd5ed32ab6103adb11bd0b7b4719478c1c5",
+    "invented/path_gradient_checks.csv": "5dbfde8f25b16666ab7ddadf5f6b5fd5ed32ab6103adb11bd0b7b4719478c1c5",
+    "invented/cone_metric.csv": "5dbfde8f25b16666ab7ddadf5f6b5fd5ed32ab6103adb11bd0b7b4719478c1c5",
+    "invented/curvature_pairs.csv": "6fc6190830f9e8859517435905e2dab81b20f038f0b6b28adaeb8abb0fc52a77",
+    "invented/curvature_selected_geometry.csv": "cf4c289060acf6f8b2e29fc18af6c816d9431535eb4cb4a0771b7a14888fb418",
+    "invented/curvature_initialization.csv": "fc68a1888569aaf2ae4fc13332ba484ea46917ff414c0820158a28e9a496d04a",
+    "invented/curvature_components.csv.gz": "46c51c6bd99cb370d7e3754f7afb638bdf234e42d10d32663f5ba43cd1c2c1a6",
+    "invented/curvature_selected_cuts.csv": "5dbfde8f25b16666ab7ddadf5f6b5fd5ed32ab6103adb11bd0b7b4719478c1c5",
+    "invented/curvature_seed_metadata.csv": "5dbfde8f25b16666ab7ddadf5f6b5fd5ed32ab6103adb11bd0b7b4719478c1c5",
+    "invented/curvature_memory_events.csv": "4a24760a03d5f83585769d7763f52c495d23f4c2552b5adaf508cce643f63d55"
+  }
+}

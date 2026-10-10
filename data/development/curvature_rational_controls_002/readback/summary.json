@@ -1,0 +1,29 @@
+{
+  "status": "completed_exact_sums_of_saved_binary64_components",
+  "input_sha256": {
+    "data/development/curvature_rational_controls_002/pairs.csv": "dc73f79989e2bd5b8bd9c500d220799ce4a2da7a472f9c30a44dc756bb076522",
+    "data/development/curvature_rational_controls_002/components.csv": "2342abce67ae9746e1f8fc44775e8793e63a3582f4657225d6acff1382259b58",
+    "data/development/curvature_rational_controls_002/source/reconstruct_curvature_capture.py": "ed880bf7214a987fc9c83f7877d2b5beaeb291b7504a516ed00f49bd27ddf330"
+  },
+  "counts": {
+    "pairs": 9,
+    "rounded_dot_mismatches": 0,
+    "computed_positive_rejected": 3,
+    "exact_stored_dot_positive_rejected": 4,
+    "exact_actual_dot_positive_rejected": 3,
+    "exact_stored_dot_nonpositive_retained": 0,
+    "stored_s_differs_from_actual_displacement": 1,
+    "recorded_binary64_armijo_failures": 0,
+    "exact_declared_recorded_total_armijo_failures": 1
+  },
+  "output_sha256": {
+    "exact_sums.csv": "b2f12653c95c22fe80a054539b85606c559cc8f8a039ec45964633fddc057728"
+  },
+  "interpretation": [
+    "Fractions reconstruct the exact algebraic products/sums of saved binary64 values, not continuum curvature.",
+    "Computed sy and its actual retention decision remain unchanged and are exported alongside reconstructed sums.",
+    "The actual-displacement dot product uses the separately captured rounded coordinate differences.",
+    "Recorded-total Armijo margins concern approximate saved totals; they do not certify exact Fermat action changes.",
+    "Positive curvature alone does not establish an informative or admissible replacement memory pair."
+  ]
+}

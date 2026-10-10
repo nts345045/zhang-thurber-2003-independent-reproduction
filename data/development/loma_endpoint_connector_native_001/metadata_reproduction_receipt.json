@@ -1,0 +1,24 @@
+{
+  "status": "metadata_reproduction_documented",
+  "summary_sha256": "15667b67c7417f4648c8bfdaf8eba6f47b5d0ebf5f6b7fa146f022c8b2776d3e",
+  "numerical_source_sha256": "03fc88f4e8c3171461958dda9a137c5f420813eec3a990fa25498b53ea0458c5",
+  "unchanged_numerical_summary": true,
+  "prior_documentation_receipt_sha256": "c4c7a201ce1b539ffaf14327433c5b1363c8914941b0fd6e77661b69d88e15bc",
+  "prior_readme_preserved_as": "README_at_documentation_receipt.md",
+  "output_sha256": {
+    "README.md": "e2ca5a789e7c375ad23652d8f1ac5d1ae8f3f932e802d2c4ad56bc40f8e607fc",
+    "README_at_documentation_receipt.md": "7516a9ef7a0f566075b57bd87f472a02dc419c659786a2436e9c8155527a6995",
+    "attach_formula_identifiers.py": "47e105700e7de453ee66aba81e165a2bdecce5d4f513be042f4fdb632001f61b",
+    "exact_baseline_formulas.json.identifiers.json": "ff9fa2976ed296cca06261c45130d28717f5b494736673564d9f88674fe8496c",
+    "identifier_packaging_correction.json": "7d2a1d09ef70201f06df0603566ea8e0b2ea3e38a9332f353cb7d9ec365f0847"
+  },
+  "executed_command": [
+    "python3",
+    "data/development/loma_endpoint_connector_native_001/attach_formula_identifiers.py",
+    "--output",
+    "data/development/loma_endpoint_connector_native_001",
+    "--verify-existing"
+  ],
+  "return_code": 0,
+  "scope": "Verified metadata reproduction only; no numerical/source/flag change."
+}

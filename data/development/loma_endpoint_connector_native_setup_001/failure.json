@@ -1,0 +1,16 @@
+{
+  "status": "pre_output_pin_failure_preserved",
+  "recorded_utc": "2026-10-10T07:08:02.583806Z",
+  "command": [
+    "python3",
+    "diagnostics/check_loma_endpoint_connector.py",
+    "--output",
+    "data/development/loma_endpoint_connector_native_001"
+  ],
+  "return_code": 1,
+  "failure": "ValueError: Changed release pin: data/development/loma_initial_failure_24104_001/review.json",
+  "source_sha256": "03453544f0b7b681cb039270af0a78789a4bc8ffe0ccafd6903d5430aa1cdf2d",
+  "old_incorrect_pin": "037c9f3b97dea31d584d26e2bc25f84abc2ccd355a81d7d4ea6e24afde2b863e",
+  "actual_committed_review_sha256": "4d0fead4b92bff7504b2eb702d7d8b4450a1abafd7e03508d52a759d2c8ec3db",
+  "disposition": "New helper carried an older remembered review pin; current input is unchanged and byte-identical to committed HEAD. Correct only that new helper constant. No native output directory or numerical result was created."
+}

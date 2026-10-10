@@ -1,0 +1,41 @@
+--- frozen_B/check_ray_stopping.cpp
++++ neutral_capture/check_ray_stopping.cpp
+@@ -82,6 +82,7 @@
+   for(int count:faces)f<<','<<count;
+   f<<'\n';
+ }
++#include "curvature_capture.hpp"
+ #include "observed_optimizer.hpp"
+ 
+ Vec values(const std::string &text) {
+@@ -103,6 +104,7 @@
+   P a=pos("source_"),b=pos("receiver_");
+   audit_observation=record[cols.at("observation_index")];
+   std::string out=argv[3];
++  curvature_open(out);
+   std::ofstream results(out+"/results.csv"),history(out+"/history.csv"),paths(out+"/paths.csv"),fd(out+"/path_gradient_checks.csv");
+   if(!results||!history||!paths||!fd)throw std::runtime_error("Cannot open ray-stopping audit files");
+   for(auto f:{&results,&history,&paths,&fd})*f<<std::setprecision(17);
+@@ -134,6 +136,8 @@
+     int budget=int(budget_value);
+     if(budget<=0||budget_value!=budget||spacing<=0)throw std::runtime_error("Invalid component budget or spacing");
+     audit_run=(fmm?"fmm_":"straight_")+std::to_string(spacing)+"_"+std::to_string(budget);
++    curvature_capture_active=fmm;
++    if(fmm)curvature_seed(seed);
+     audit_history=&history;
+ #ifdef AUDIT_PRODUCTION_HYBRID
+     Ray ray=observed_trace(g,a,b,spacing,budget,true,fmm?&seed.path:nullptr);
+@@ -141,6 +145,7 @@
+     Ray ray=fmm?observed_bend_seed(g,seed.path,spacing,budget):observed_trace(g,a,b,spacing,budget);
+ #endif
+     audit_history=nullptr;
++    curvature_capture_active=false;
+     // Test observation neutrality against the actual unmodified functions.
+ #ifdef AUDIT_PRODUCTION_HYBRID
+     Ray control=trace(g,a,b,spacing,budget,true,fmm?&seed.path:nullptr);
+@@ -184,4 +189,5 @@
+     std::cout<<audit_run<<" converged="<<ray.converged<<" updates="<<ray.iterations
+              <<" gradient="<<ray.gradient<<" observed_matches="<<matches<<std::endl;
+   }
++  curvature_flush();
+ }

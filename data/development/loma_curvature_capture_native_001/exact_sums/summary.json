@@ -1,0 +1,29 @@
+{
+  "status": "completed_exact_sums_of_saved_binary64_components",
+  "input_sha256": {
+    "data/development/loma_curvature_capture_native_001/curvature_pairs.csv": "734aaff2b46c07df02ec1257c43aa09ba2f86a3ee39ea96cfe28934f5d48c694",
+    "data/development/loma_curvature_capture_native_001/curvature_components.csv.gz": "e0732a765eb43a4c6e25749c23a0f764d95ab81ab1425da4720d281b2b70cbb5",
+    "data/development/loma_curvature_capture_native_001/source/diagnostics/reconstruct_curvature_capture.py": "ed880bf7214a987fc9c83f7877d2b5beaeb291b7504a516ed00f49bd27ddf330"
+  },
+  "counts": {
+    "pairs": 1000,
+    "rounded_dot_mismatches": 0,
+    "computed_positive_rejected": 960,
+    "exact_stored_dot_positive_rejected": 960,
+    "exact_actual_dot_positive_rejected": 960,
+    "exact_stored_dot_nonpositive_retained": 0,
+    "stored_s_differs_from_actual_displacement": 1000,
+    "recorded_binary64_armijo_failures": 0,
+    "exact_declared_recorded_total_armijo_failures": 564
+  },
+  "output_sha256": {
+    "exact_sums.csv": "75f644966a046cf8d66f61956a6d9e7d1db776d80a2b06fbfac371384f470478"
+  },
+  "interpretation": [
+    "Fractions reconstruct the exact algebraic products/sums of saved binary64 values, not continuum curvature.",
+    "Computed sy and its actual retention decision remain unchanged and are exported alongside reconstructed sums.",
+    "The actual-displacement dot product uses the separately captured rounded coordinate differences.",
+    "Recorded-total Armijo margins concern approximate saved totals; they do not certify exact Fermat action changes.",
+    "Positive curvature alone does not establish an informative or admissible replacement memory pair."
+  ]
+}
