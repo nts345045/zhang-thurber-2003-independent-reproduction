@@ -1,0 +1,58 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T09:25:57.571743+00:00",
+  "prepared_sha256": "42160974ce6642cee79363d9910c742ad2db9d5f9dad08b1e92f6b2556837013",
+  "prelaunch_review_sha256": "69af315434e36c39b5f5c8525d6bcb46b6a7e0422e12346f0a0d28b2bfc3d486",
+  "commands": [
+    {
+      "stage": "compile_strict",
+      "command": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_strict_straight_replay_001/driver.cpp",
+        "-I/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_strict_straight_replay_001/source/strict",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_strict_straight_replay_001/build/trace_strict",
+        "-lstdc++fs"
+      ],
+      "started_utc": "2026-10-10T09:25:57.574541+00:00",
+      "pid": 303446,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T09:26:28.950164+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "trace_strict",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_strict_straight_replay_001/build/trace_strict",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_strict_straight_replay_001/inputs",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_strict_straight_replay_001/results/strict"
+      ],
+      "started_utc": "2026-10-10T09:26:29.092992+00:00",
+      "pid": 303645,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T09:26:34.835873+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "native_calls_planned": 2,
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "LC_ALL": "C",
+    "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "current_stage": "trace_strict",
+  "return_code": 0,
+  "finished_utc": "2026-10-10T09:26:35.343008+00:00",
+  "summary_sha256": "363886801314b87e7e3cf5d1869180c7f25f2124594c16a92f3276fdf9678da2",
+  "native_calls_completed": 2
+}

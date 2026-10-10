@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "reviewed_utc": "2026-10-10T09:41:29.250445Z",
+  "scope": "Read-only helper/source/manifest and complete saved archive byte/hash/dependency review; no extraction, classification rerun, compiler, binary, ray or network call.",
+  "manifest_sha256": "4016d24f72362dc733bcc42fef3def5d2ad1e4dc25b893e0a02105867f6ea1c6",
+  "archive_sha256": "aea609c985ae0e8c447510b3ecc78968a38f0777977ffa7c36b5b55139e504e3",
+  "archive_members": 61,
+  "uncompressed_member_bytes": 541489704,
+  "original_run_files": 57,
+  "nested_source_members": 14,
+  "classification_inputs_resolved": 68,
+  "inherited_pins_resolved": 12,
+  "readable_copies": 13,
+  "external_repository_pins": 2,
+  "restore_checks": "Reviewed recorded successful fresh restore and four refusal controls; did not repeat extraction. Explicit parent-traversal rejection is present in final helper.",
+  "input_sha256": {
+    "package.py": "a9504b6c6945c04c6363aee72c8fc46c555d726d07438f951d57e0f7ae8622d9",
+    "restore_check.py": "0f0175283cfea617e6a34c656f4678c4074d935890930f45962bebfa2c3e97bc",
+    "restore_check.json": "ddb5302f3c3b6ada7ad8ebdfc3ba00c1b3bb0a8e18d03fb85876b23012566df6",
+    "archive_verification.json": "f25e8d8da6e9c232e36b0e17441d6ec77588b19c40f46d3fe3a2449d2055700b",
+    "README.md": "81e7796789851c4b94cf3c01efce1b76e0ec251e4149903259b31b81b59c0bf5",
+    "classification/check.py": "72aef2abb73c61ae0dee5d07891fc38465e5f96ea96b2811df04c85826d37803",
+    "classification/summary.json": "438c9d783240f0b1979de8103f2d821327d9928728de6386ca0511305356ef6a",
+    "classification/identified_failures.csv": "9d4a424b0eca9f083c061efc7910c5b56447a8c73fd64e1f6bd3840f0db4e97c",
+    "initial_attempt/package.py": "c9816545ed027990abe96a0e4663643a5d9796dd3dd4f0747b570b078b2a7d6d",
+    "initial_attempt/manifest.json": "fb32c694bce3ad4b85efcb7714aa1e0f3ccebcc309bf28e498037718ccbb42a3",
+    "initial_attempt/archive_verification.json": "9ba48330f380ed4a4c8cb47cd527c976265f7d5c00a9cface5fc3e9675cc6ac6"
+  },
+  "limitations": [
+    "Byte-exact preservation is distinct from scientific convergence or inverse success.",
+    "Runtime library hashes are retained as provenance, not packaged system libraries.",
+    "Historical absolute paths are preserved inside original evidence; relative extraction instructions do not invoke the archived binary.",
+    "The initial traversal-check gap and successful pre-correction byte readback remain preserved; numerical/archive bytes are unchanged."
+  ]
+}

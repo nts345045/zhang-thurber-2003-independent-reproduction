@@ -1,0 +1,465 @@
+{
+  "all_original_run_files_archived": true,
+  "archive_files": [
+    {
+      "bytes": 18775402,
+      "file": "archive/failed_run.tar.gz",
+      "sha256": "aea609c985ae0e8c447510b3ecc78968a38f0777977ffa7c36b5b55139e504e3"
+    }
+  ],
+  "compressed_bytes": 18775402,
+  "compressed_sha256": "aea609c985ae0e8c447510b3ecc78968a38f0777977ffa7c36b5b55139e504e3",
+  "created_utc": "2026-10-10T09:36:35.540097Z",
+  "executed_binary_member": "execution_provenance/dd",
+  "executed_binary_sha256": "c8c1b56a78fc55cbe3fbbf6c7370a799ce0819e9a90db34e6f931a2f895e6203",
+  "external_repository_files": {
+    "data/development/hayward_first_arrival_004_1d_support/frozen_tables.tar.gz": {
+      "bytes": 16864150,
+      "sha256": "47d31cd8bbd823a4375d7e73127415058dc88080759434b9ee09eb76f35eff3f"
+    },
+    "data/development/hayward_first_arrival_004_1d_support/packaging.json": {
+      "bytes": 3421,
+      "sha256": "d461e7efcdb7be71cd515036824edd7b5b81d9b65ce34b3e76846ae5004df063"
+    }
+  },
+  "format": "gzip-tar-member-sha256-v1",
+  "frozen_source_members_verified": 14,
+  "inherited_evidence_resolution": {
+    "data/development/hayward_first_arrival_004_1d_support/frozen_tables.tar.gz": {
+      "repository_file": "data/development/hayward_first_arrival_004_1d_support/frozen_tables.tar.gz",
+      "sha256": "47d31cd8bbd823a4375d7e73127415058dc88080759434b9ee09eb76f35eff3f"
+    },
+    "data/development/hayward_first_arrival_004_1d_support/independent_review.json": {
+      "archive_member": "run/preflight_provenance/reference_review.json",
+      "sha256": "29e95b53bbaaedccb1d98c8d24f41561fd5f0b5886d1e972789ba4858c5ef325"
+    },
+    "data/development/hayward_first_arrival_004_1d_support/packaging.json": {
+      "repository_file": "data/development/hayward_first_arrival_004_1d_support/packaging.json",
+      "sha256": "d461e7efcdb7be71cd515036824edd7b5b81d9b65ce34b3e76846ae5004df063"
+    },
+    "data/development/hayward_first_arrival_004_1d_support/summary.json": {
+      "archive_member": "run/preflight_provenance/reference_summary.json",
+      "sha256": "a1fc5194c83a65019a62add7b6ec5d10478be87dd5f6c8d7ffb9e6eab535ad7d"
+    },
+    "data/development/hayward_guard_adoption_checks/001/summary.json": {
+      "archive_member": "run/preflight_provenance/parity_review.json",
+      "sha256": "6893f3fd746d21a88878990d5af1bfb0a60107d13ae16be42ae0d049cb59f3ab"
+    },
+    "data/development/hayward_sampled_accuracy_004_002/accuracy_review.json": {
+      "archive_member": "run/preflight_provenance/accuracy_review.json",
+      "sha256": "d1012da3b7a3504db3394bc97892769ca8219836b23437e824aca4a5a91cc448"
+    },
+    "data/hayward_first_arrival_004/initial_ray_convergence.csv": {
+      "archive_member": "inherited_samples/initial_ray_convergence.csv",
+      "sha256": "94c066425481b2a6bd17921efddbf3d07d7d259f18194c7531cc78d6d1b036ea"
+    },
+    "data/hayward_first_arrival_004/initial_ray_derivatives.csv": {
+      "archive_member": "inherited_samples/initial_ray_derivatives.csv",
+      "sha256": "77be66b9caa186b4519671a14d49277b56312b8216517ec857159d39cff7bbff"
+    },
+    "data/hayward_first_arrival_004/initial_ray_identifiers.csv": {
+      "archive_member": "inherited_samples/initial_ray_identifiers.csv",
+      "sha256": "f4aabb2de29ec88ae70b1de5b6a370ba06917427ebef1e4bf7f0a8a8cfa7b3eb"
+    },
+    "data/hayward_first_arrival_004/preflight.json": {
+      "archive_member": "run/preflight_provenance/checks.json",
+      "sha256": "55a09aa9adda173043cc1baa713d55a3ab73e1705d6ddc533a4aa5547d0631e8"
+    },
+    "data/hayward_first_arrival_004/preflight_execution.json": {
+      "archive_member": "run/preflight_provenance/ledger.json",
+      "sha256": "8c51039a6fe28c3972cea0971b93346ee5cc2ed0cd021c6af14b28aff1ea8859"
+    },
+    "data/hayward_first_arrival_004/run_manifest.json": {
+      "archive_member": "run/preflight_provenance/manifest.json",
+      "sha256": "75631991144e76cf16731e0b73e396860ab78db386c556415f990968cb7cc00a"
+    }
+  },
+  "limitations": [
+    "Byte preservation does not validate ray accuracy or an inverse result.",
+    "Full scientific/native/state classification is published separately under classification/.",
+    "Absolute project paths in original ledgers/logs are preserved as historical evidence, not portable execution commands.",
+    "The archived binary is environment-specific; compiler, flags and runtime hashes remain in the original manifest.",
+    "Only the executed binary and existing small build provenance are included; the generated CMake tree is not archived."
+  ],
+  "members": {
+    "execution_provenance/dd": {
+      "bytes": 596840,
+      "original_repository_path": "tmp/hayward_guarded_runs/001/compiled/dd",
+      "sha256": "c8c1b56a78fc55cbe3fbbf6c7370a799ce0819e9a90db34e6f931a2f895e6203"
+    },
+    "inherited_samples/initial_ray_convergence.csv": {
+      "bytes": 12704,
+      "original_repository_path": "data/hayward_first_arrival_004/initial_ray_convergence.csv",
+      "sha256": "94c066425481b2a6bd17921efddbf3d07d7d259f18194c7531cc78d6d1b036ea"
+    },
+    "inherited_samples/initial_ray_derivatives.csv": {
+      "bytes": 7795,
+      "original_repository_path": "data/hayward_first_arrival_004/initial_ray_derivatives.csv",
+      "sha256": "77be66b9caa186b4519671a14d49277b56312b8216517ec857159d39cff7bbff"
+    },
+    "inherited_samples/initial_ray_identifiers.csv": {
+      "bytes": 518526,
+      "original_repository_path": "data/hayward_first_arrival_004/initial_ray_identifiers.csv",
+      "sha256": "f4aabb2de29ec88ae70b1de5b6a370ba06917427ebef1e4bf7f0a8a8cfa7b3eb"
+    },
+    "run/authoritative_ids_required": {
+      "bytes": 57,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/authoritative_ids_required",
+      "sha256": "00d86d4465702c0424ec511ef34eee9eb080977c55c21ac8af2106257760ba47"
+    },
+    "run/build_provenance/CMakeCache.txt": {
+      "bytes": 14235,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/build_provenance/CMakeCache.txt",
+      "sha256": "45a72f715451c86acaa49073d448be4dcb9eee6b0f69a52936ef3299ae31c43f"
+    },
+    "run/build_provenance/CMakeFiles/dd.dir/flags.make": {
+      "bytes": 229,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/build_provenance/CMakeFiles/dd.dir/flags.make",
+      "sha256": "d56dc65ba833a0cd88231813d73aba646ad70d11d564c6ec0b6b36620c8bd485"
+    },
+    "run/build_provenance/CMakeFiles/dd.dir/link.txt": {
+      "bytes": 136,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/build_provenance/CMakeFiles/dd.dir/link.txt",
+      "sha256": "7240bb26b9d3bdcb54faa96a09f9e0255f807b70f59ced1a8d904458bfca9c98"
+    },
+    "run/cmake_version_resources.txt": {
+      "bytes": 733,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/cmake_version_resources.txt",
+      "sha256": "d430db7fadd4bb612f6362e68cc3f89779e221fa69a1aae0fe6da64358293af6"
+    },
+    "run/cmake_version_stderr.log": {
+      "bytes": 0,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/cmake_version_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run/cmake_version_stdout.log": {
+      "bytes": 91,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/cmake_version_stdout.log",
+      "sha256": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8"
+    },
+    "run/compile_resources.txt": {
+      "bytes": 856,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/compile_resources.txt",
+      "sha256": "7effaab8322a93e83623b24b3c01736589f6e39a3548f9da988f03e22e2bdb47"
+    },
+    "run/compile_stderr.log": {
+      "bytes": 0,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/compile_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run/compile_stdout.log": {
+      "bytes": 116,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/compile_stdout.log",
+      "sha256": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1"
+    },
+    "run/compiler_version_resources.txt": {
+      "bytes": 735,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/compiler_version_resources.txt",
+      "sha256": "3652f88e7ae6c8d127b01e163a58cf4eee780ca36a847d956a215ca854d76022"
+    },
+    "run/compiler_version_stderr.log": {
+      "bytes": 0,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/compiler_version_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run/compiler_version_stdout.log": {
+      "bytes": 246,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/compiler_version_stdout.log",
+      "sha256": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a"
+    },
+    "run/configure_resources.txt": {
+      "bytes": 962,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/configure_resources.txt",
+      "sha256": "6e41d40e50fe6cb53a3e23effe9ada8e26c0393485bfa3892b140c33361b1fea"
+    },
+    "run/configure_stderr.log": {
+      "bytes": 0,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/configure_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run/configure_stdout.log": {
+      "bytes": 561,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/configure_stdout.log",
+      "sha256": "dfef8119261d3824d1f78153e29e4d8e98ae5af3c866183637128d7d34bb6080"
+    },
+    "run/controller_provenance/completion.json": {
+      "bytes": 1323,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/controller_provenance/completion.json",
+      "sha256": "534eb21e8d3b5c58b8ed07560531a044f691afd403e0ccea4084e73a1b82de18"
+    },
+    "run/controller_provenance/controller.py": {
+      "bytes": 2709,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/controller_provenance/controller.py",
+      "sha256": "66b3c6e3fedc773904606d50e002cd0c97962a33a3fb9cc9c4220e6f7584ee50"
+    },
+    "run/controller_provenance/launch.json": {
+      "bytes": 1023,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/controller_provenance/launch.json",
+      "sha256": "c0e1a06711370aaab6eabe5cfaeff19015cde1055950ac8d0444d30853cf5ee1"
+    },
+    "run/controller_provenance/stderr.log": {
+      "bytes": 840,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/controller_provenance/stderr.log",
+      "sha256": "d896fe88f1aefb231a3e540803e17118e7f8b3c15644d7b757581568e07f6786"
+    },
+    "run/controller_provenance/stdout.log": {
+      "bytes": 0,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/controller_provenance/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run/dd_failed_forward_context.csv": {
+      "bytes": 640,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_failed_forward_context.csv",
+      "sha256": "0884cf02c39ffcef87344f3e433c78f512d40a11997dc5151309c5da3637a11f"
+    },
+    "run/dd_failed_forward_events.csv": {
+      "bytes": 567347,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_failed_forward_events.csv",
+      "sha256": "9b470b1d70ce469d4bc53c8eeaa8a49e7f3e4a68f7b213a9ee87d34a8759a2da"
+    },
+    "run/dd_failed_forward_grid.csv": {
+      "bytes": 12844,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_failed_forward_grid.csv",
+      "sha256": "b85a7ff605674f46ac26d3953b7ab149092f1bd218fe82076d595bfc50c62d4c"
+    },
+    "run/dd_failed_forward_ray_failures.csv": {
+      "bytes": 323216,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_failed_forward_ray_failures.csv",
+      "sha256": "2856fd154c61eaae4c678afad07a4d20fec1f42e14903b9cc0f5c97ac766aa83"
+    },
+    "run/dd_failed_forward_ray_paths.csv": {
+      "bytes": 432260494,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_failed_forward_ray_paths.csv",
+      "sha256": "910826b8aee730d30f577554e31088d3456c8946a2fcc938a188db1808102f33"
+    },
+    "run/dd_failed_forward_ray_status.csv": {
+      "bytes": 29975831,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_failed_forward_ray_status.csv",
+      "sha256": "76627475c13d5d258f9430093b047ca0e0e59107ac5592b51b238613503b0f4b"
+    },
+    "run/dd_history.csv": {
+      "bytes": 360,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_history.csv",
+      "sha256": "a81ab7df0823a47ffbd2d0430a3feac3c97abc306dd0b6b8eb63905949d5d134"
+    },
+    "run/dd_inversion_execution.json": {
+      "bytes": 10041,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_inversion_execution.json",
+      "sha256": "48f863316f2719703b57c7d0684b30a2334d711ebe42faf1c460b2f569dfd418"
+    },
+    "run/dd_inversion_run_manifest.json": {
+      "bytes": 7701,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_inversion_run_manifest.json",
+      "sha256": "89c013bb0bd5a8987d99e017abf5a6a6f32a88cfb3b75b3f124d8969b6b401e2"
+    },
+    "run/dd_invert_resources.txt": {
+      "bytes": 1143,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_invert_resources.txt",
+      "sha256": "adda6e288a82aacf7aa53dda2ce5436e6a496265b634c2080813759897bff839"
+    },
+    "run/dd_invert_stderr.log": {
+      "bytes": 496,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_invert_stderr.log",
+      "sha256": "ac1038217fb98d47cdbfb4a892516bce83b2b417c7316ef02ff98238b357b550"
+    },
+    "run/dd_invert_stdout.log": {
+      "bytes": 82,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_invert_stdout.log",
+      "sha256": "654b85a14a0ffea4180bc3ea5fa96bec4d50bf66e3313a686271849e3bd5ab64"
+    },
+    "run/dd_last_accepted_events.csv": {
+      "bytes": 555435,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_last_accepted_events.csv",
+      "sha256": "f20935a739ca71ad97d313f965474cbe4db1f6cc230157b7e36008667eb409fa"
+    },
+    "run/dd_last_accepted_grid.csv": {
+      "bytes": 9807,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_last_accepted_grid.csv",
+      "sha256": "ac72eb8bd9bd3379044854e8314723b99ecb672f379724acd53a47629b4ee40f"
+    },
+    "run/dd_matrix_preflight.csv": {
+      "bytes": 261,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/dd_matrix_preflight.csv",
+      "sha256": "e921725b0ffdb3fd1b545a28b4357811fb24a1f224dc513a8beb53dfdd5579b5"
+    },
+    "run/event_pairs.csv": {
+      "bytes": 818174,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/event_pairs.csv",
+      "sha256": "b678922c56c2c0841769aa882e98291631d3f7651a19661206c0433bfe9826ae"
+    },
+    "run/event_selection.csv": {
+      "bytes": 152030,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/event_selection.csv",
+      "sha256": "d8563afe642aaaf719b9c92f0206bcd88003d256ad9067c08b0b40c60c3fb256"
+    },
+    "run/excluded_picks.csv": {
+      "bytes": 27570457,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/excluded_picks.csv",
+      "sha256": "93aab31ede96f61d65f4e363eb9bd8748b67014e477b12be12daee3ba09af0ca"
+    },
+    "run/guarded_source.tar.gz": {
+      "bytes": 67418,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/guarded_source.tar.gz",
+      "sha256": "950b2f781804ce0f1311f4efd699b1d3f8ef3c7329b3f90aecc6d97b1c84fedd"
+    },
+    "run/initial_events.csv": {
+      "bytes": 438756,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/initial_events.csv",
+      "sha256": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05"
+    },
+    "run/initial_geographic_events.csv": {
+      "bytes": 492985,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/initial_geographic_events.csv",
+      "sha256": "7a7fba3e9f128a77dc2935d5a1a0a4926bd1442525ff4a477c45cba44c059a09"
+    },
+    "run/initial_grid.csv": {
+      "bytes": 8345,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/initial_grid.csv",
+      "sha256": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810"
+    },
+    "run/observations.csv": {
+      "bytes": 46415956,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/observations.csv",
+      "sha256": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c"
+    },
+    "run/preflight_provenance/accuracy_review.json": {
+      "bytes": 3528,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/preflight_provenance/accuracy_review.json",
+      "sha256": "d1012da3b7a3504db3394bc97892769ca8219836b23437e824aca4a5a91cc448"
+    },
+    "run/preflight_provenance/checks.json": {
+      "bytes": 1337,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/preflight_provenance/checks.json",
+      "sha256": "55a09aa9adda173043cc1baa713d55a3ab73e1705d6ddc533a4aa5547d0631e8"
+    },
+    "run/preflight_provenance/ledger.json": {
+      "bytes": 1973,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/preflight_provenance/ledger.json",
+      "sha256": "8c51039a6fe28c3972cea0971b93346ee5cc2ed0cd021c6af14b28aff1ea8859"
+    },
+    "run/preflight_provenance/manifest.json": {
+      "bytes": 3423,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/preflight_provenance/manifest.json",
+      "sha256": "75631991144e76cf16731e0b73e396860ab78db386c556415f990968cb7cc00a"
+    },
+    "run/preflight_provenance/parity_review.json": {
+      "bytes": 91321,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/preflight_provenance/parity_review.json",
+      "sha256": "6893f3fd746d21a88878990d5af1bfb0a60107d13ae16be42ae0d049cb59f3ab"
+    },
+    "run/preflight_provenance/reference_review.json": {
+      "bytes": 8845,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/preflight_provenance/reference_review.json",
+      "sha256": "29e95b53bbaaedccb1d98c8d24f41561fd5f0b5886d1e972789ba4858c5ef325"
+    },
+    "run/preflight_provenance/reference_summary.json": {
+      "bytes": 13522,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/preflight_provenance/reference_summary.json",
+      "sha256": "a1fc5194c83a65019a62add7b6ec5d10478be87dd5f6c8d7ffb9e6eab535ad7d"
+    },
+    "run/run.cfg": {
+      "bytes": 522,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/run.cfg",
+      "sha256": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4"
+    },
+    "run/runtime_libraries_resources.txt": {
+      "bytes": 834,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/runtime_libraries_resources.txt",
+      "sha256": "d8750e4f623981011b66aee832df981006b9d6d8ece86c18210aabf8f4c2f93b"
+    },
+    "run/runtime_libraries_stderr.log": {
+      "bytes": 0,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/runtime_libraries_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run/runtime_libraries_stdout.log": {
+      "bytes": 490,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/runtime_libraries_stdout.log",
+      "sha256": "a163ec0696af166127a8a6c3ac288158a4c9f031e5ae34a4637ca7d3fa94fe44"
+    },
+    "run/selection_manifest.json": {
+      "bytes": 7634,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/selection_manifest.json",
+      "sha256": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004"
+    },
+    "run/stations.csv": {
+      "bytes": 505739,
+      "original_repository_path": "data/hayward_first_arrival_guarded_001/stations.csv",
+      "sha256": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652"
+    }
+  },
+  "native_identity_mapping": {
+    "all_ray_status_and_native_metadata": "run/dd_failed_forward_ray_status.csv",
+    "events": "run/initial_events.csv",
+    "failed_paths_with_native_metadata": "run/dd_failed_forward_ray_paths.csv",
+    "failed_ray_roster": "run/dd_failed_forward_ray_failures.csv",
+    "failed_trial_events": "run/dd_failed_forward_events.csv",
+    "original_catalog_observations": "run/observations.csv",
+    "receivers_with_native_epochs": "run/stations.csv"
+  },
+  "original_run": "data/hayward_first_arrival_guarded_001",
+  "original_run_file_count": 57,
+  "original_run_unchanged": true,
+  "outcome": {
+    "accepted_updates": 0,
+    "exit_code": 1,
+    "final_accepted_solution_written": false,
+    "last_accepted_tables_are_starting_state_not_an_inferred_solution": true,
+    "terminal_status": "failed"
+  },
+  "packager_sha256": "c9816545ed027990abe96a0e4663643a5d9796dd3dd4f0747b570b078b2a7d6d",
+  "readable_files": {
+    "readable/authoritative_ids_required": {
+      "bytes": 57,
+      "sha256": "00d86d4465702c0424ec511ef34eee9eb080977c55c21ac8af2106257760ba47"
+    },
+    "readable/controller_provenance/completion.json": {
+      "bytes": 1323,
+      "sha256": "534eb21e8d3b5c58b8ed07560531a044f691afd403e0ccea4084e73a1b82de18"
+    },
+    "readable/dd_failed_forward_context.csv": {
+      "bytes": 640,
+      "sha256": "0884cf02c39ffcef87344f3e433c78f512d40a11997dc5151309c5da3637a11f"
+    },
+    "readable/dd_failed_forward_ray_failures.csv": {
+      "bytes": 323216,
+      "sha256": "2856fd154c61eaae4c678afad07a4d20fec1f42e14903b9cc0f5c97ac766aa83"
+    },
+    "readable/dd_history.csv": {
+      "bytes": 360,
+      "sha256": "a81ab7df0823a47ffbd2d0430a3feac3c97abc306dd0b6b8eb63905949d5d134"
+    },
+    "readable/dd_inversion_execution.json": {
+      "bytes": 10041,
+      "sha256": "48f863316f2719703b57c7d0684b30a2334d711ebe42faf1c460b2f569dfd418"
+    },
+    "readable/dd_inversion_run_manifest.json": {
+      "bytes": 7701,
+      "sha256": "89c013bb0bd5a8987d99e017abf5a6a6f32a88cfb3b75b3f124d8969b6b401e2"
+    },
+    "readable/dd_invert_stderr.log": {
+      "bytes": 496,
+      "sha256": "ac1038217fb98d47cdbfb4a892516bce83b2b417c7316ef02ff98238b357b550"
+    },
+    "readable/dd_matrix_preflight.csv": {
+      "bytes": 261,
+      "sha256": "e921725b0ffdb3fd1b545a28b4357811fb24a1f224dc513a8beb53dfdd5579b5"
+    },
+    "readable/initial_events.csv": {
+      "bytes": 438756,
+      "sha256": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05"
+    },
+    "readable/initial_grid.csv": {
+      "bytes": 8345,
+      "sha256": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810"
+    },
+    "readable/run.cfg": {
+      "bytes": 522,
+      "sha256": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4"
+    },
+    "readable/stations.csv": {
+      "bytes": 505739,
+      "sha256": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652"
+    }
+  }
+}

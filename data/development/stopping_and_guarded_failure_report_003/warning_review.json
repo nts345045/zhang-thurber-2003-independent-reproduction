@@ -1,0 +1,34 @@
+{
+  "checked_utc": "2026-10-10T09:45:08.849635Z",
+  "compile_receipt_sha256": "07b4b8e58453040a67203b1bcdaf0bca4188d8aa44712cb42931093fb21e5d55",
+  "interpretation": "Both passes retain one pre-existing pdfTeX warning about multiple PDF page groups on page14. No undefined references, overfull boxes or compilation errors; this warning was not included in the case-sensitive validation.json warning list.",
+  "passes": {
+    "1": {
+      "log_sha256": "21f96bb23de72c973c3e4342e5eedbbf711633e4578d730776a4422cb6da4f00",
+      "prior_log_sha256": "85be501e1d8836f9418c171ec3b4c31098c34671f45311dc72286a61d0e30a0e",
+      "same_warning_in_prior_published_log": "data/development/lon_curvature_resolution_report_001/pass1_report.log",
+      "warnings": [
+        {
+          "continuation": "multiple pdfs with page group included in a single page",
+          "line_1_based": 613,
+          "text": "pdfTeX warning: pdflatex (file ../figures/location_errors.pdf): PDF inclusion: "
+        }
+      ]
+    },
+    "2": {
+      "log_sha256": "21f96bb23de72c973c3e4342e5eedbbf711633e4578d730776a4422cb6da4f00",
+      "prior_log_sha256": "300960f9c530dbbb7e722b8dbba74d72f6ec8e6f1c2af749a93194161bd9029f",
+      "same_warning_in_prior_published_log": "data/development/lon_curvature_resolution_report_001/pass2_report.log",
+      "warnings": [
+        {
+          "continuation": "multiple pdfs with page group included in a single page",
+          "line_1_based": 613,
+          "text": "pdfTeX warning: pdflatex (file ../figures/location_errors.pdf): PDF inclusion: "
+        }
+      ]
+    }
+  },
+  "report_sha256": "2e4f3969746425396c5ff0c1dc9cf89b855e577e1f4c0b7f39e87140a14bd281",
+  "scope": "Case-insensitive review supplements the original validator, which checks only uppercase Warning. No TeX or PDF bytes changed.",
+  "status": "passed_with_existing_pdf_page_group_warning"
+}

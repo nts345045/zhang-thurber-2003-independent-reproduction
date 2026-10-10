@@ -1,0 +1,751 @@
+{
+  "status": "passed_saved_failure_audit",
+  "created_utc": "2026-10-10T09:36:43.897566Z",
+  "reviewer": "scientific_audit",
+  "source_sha256": "72aef2abb73c61ae0dee5d07891fc38465e5f96ea96b2811df04c85826d37803",
+  "input_sha256": {
+    "data/hayward_first_arrival_guarded_001/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward_first_arrival_guarded_001/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/hayward_first_arrival_guarded_001/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward_first_arrival_guarded_001/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/hayward_first_arrival_guarded_001/selection_manifest.json": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004",
+    "data/hayward_first_arrival_guarded_001/authoritative_ids_required": "00d86d4465702c0424ec511ef34eee9eb080977c55c21ac8af2106257760ba47",
+    "data/hayward_first_arrival_guarded_001/event_pairs.csv": "b678922c56c2c0841769aa882e98291631d3f7651a19661206c0433bfe9826ae",
+    "data/hayward_first_arrival_guarded_001/event_selection.csv": "d8563afe642aaaf719b9c92f0206bcd88003d256ad9067c08b0b40c60c3fb256",
+    "data/hayward_first_arrival_guarded_001/initial_geographic_events.csv": "7a7fba3e9f128a77dc2935d5a1a0a4926bd1442525ff4a477c45cba44c059a09",
+    "data/hayward_first_arrival_guarded_001/excluded_picks.csv": "93aab31ede96f61d65f4e363eb9bd8748b67014e477b12be12daee3ba09af0ca",
+    "data/hayward_first_arrival_guarded_001/run.cfg": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4",
+    "data/hayward_first_arrival_guarded_001/preflight_provenance/manifest.json": "75631991144e76cf16731e0b73e396860ab78db386c556415f990968cb7cc00a",
+    "data/hayward_first_arrival_guarded_001/preflight_provenance/ledger.json": "8c51039a6fe28c3972cea0971b93346ee5cc2ed0cd021c6af14b28aff1ea8859",
+    "data/hayward_first_arrival_guarded_001/preflight_provenance/checks.json": "55a09aa9adda173043cc1baa713d55a3ab73e1705d6ddc533a4aa5547d0631e8",
+    "data/hayward_first_arrival_guarded_001/preflight_provenance/reference_summary.json": "a1fc5194c83a65019a62add7b6ec5d10478be87dd5f6c8d7ffb9e6eab535ad7d",
+    "data/hayward_first_arrival_guarded_001/preflight_provenance/reference_review.json": "29e95b53bbaaedccb1d98c8d24f41561fd5f0b5886d1e972789ba4858c5ef325",
+    "data/hayward_first_arrival_guarded_001/preflight_provenance/accuracy_review.json": "d1012da3b7a3504db3394bc97892769ca8219836b23437e824aca4a5a91cc448",
+    "data/hayward_first_arrival_guarded_001/preflight_provenance/parity_review.json": "6893f3fd746d21a88878990d5af1bfb0a60107d13ae16be42ae0d049cb59f3ab",
+    "data/hayward_first_arrival_guarded_001/build_provenance/CMakeCache.txt": "45a72f715451c86acaa49073d448be4dcb9eee6b0f69a52936ef3299ae31c43f",
+    "data/hayward_first_arrival_guarded_001/build_provenance/CMakeFiles/dd.dir/flags.make": "d56dc65ba833a0cd88231813d73aba646ad70d11d564c6ec0b6b36620c8bd485",
+    "data/hayward_first_arrival_guarded_001/build_provenance/CMakeFiles/dd.dir/link.txt": "7240bb26b9d3bdcb54faa96a09f9e0255f807b70f59ced1a8d904458bfca9c98",
+    "data/hayward_first_arrival_guarded_001/guarded_source.tar.gz": "950b2f781804ce0f1311f4efd699b1d3f8ef3c7329b3f90aecc6d97b1c84fedd",
+    "data/hayward_first_arrival_guarded_001/cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "data/hayward_first_arrival_guarded_001/cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/hayward_first_arrival_guarded_001/cmake_version_resources.txt": "d430db7fadd4bb612f6362e68cc3f89779e221fa69a1aae0fe6da64358293af6",
+    "data/hayward_first_arrival_guarded_001/configure_stdout.log": "dfef8119261d3824d1f78153e29e4d8e98ae5af3c866183637128d7d34bb6080",
+    "data/hayward_first_arrival_guarded_001/configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/hayward_first_arrival_guarded_001/configure_resources.txt": "6e41d40e50fe6cb53a3e23effe9ada8e26c0393485bfa3892b140c33361b1fea",
+    "data/hayward_first_arrival_guarded_001/compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "data/hayward_first_arrival_guarded_001/compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/hayward_first_arrival_guarded_001/compiler_version_resources.txt": "3652f88e7ae6c8d127b01e163a58cf4eee780ca36a847d956a215ca854d76022",
+    "data/hayward_first_arrival_guarded_001/compile_stdout.log": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+    "data/hayward_first_arrival_guarded_001/compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/hayward_first_arrival_guarded_001/compile_resources.txt": "7effaab8322a93e83623b24b3c01736589f6e39a3548f9da988f03e22e2bdb47",
+    "data/hayward_first_arrival_guarded_001/runtime_libraries_stdout.log": "a163ec0696af166127a8a6c3ac288158a4c9f031e5ae34a4637ca7d3fa94fe44",
+    "data/hayward_first_arrival_guarded_001/runtime_libraries_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/hayward_first_arrival_guarded_001/runtime_libraries_resources.txt": "d8750e4f623981011b66aee832df981006b9d6d8ece86c18210aabf8f4c2f93b",
+    "data/hayward_first_arrival_guarded_001/dd_inversion_run_manifest.json": "89c013bb0bd5a8987d99e017abf5a6a6f32a88cfb3b75b3f124d8969b6b401e2",
+    "data/hayward_first_arrival_guarded_001/dd_invert_stdout.log": "654b85a14a0ffea4180bc3ea5fa96bec4d50bf66e3313a686271849e3bd5ab64",
+    "data/hayward_first_arrival_guarded_001/dd_invert_stderr.log": "ac1038217fb98d47cdbfb4a892516bce83b2b417c7316ef02ff98238b357b550",
+    "data/hayward_first_arrival_guarded_001/dd_invert_resources.txt": "adda6e288a82aacf7aa53dda2ce5436e6a496265b634c2080813759897bff839",
+    "data/hayward_first_arrival_guarded_001/dd_history.csv": "a81ab7df0823a47ffbd2d0430a3feac3c97abc306dd0b6b8eb63905949d5d134",
+    "data/hayward_first_arrival_guarded_001/dd_matrix_preflight.csv": "e921725b0ffdb3fd1b545a28b4357811fb24a1f224dc513a8beb53dfdd5579b5",
+    "data/hayward_first_arrival_guarded_001/dd_failed_forward_ray_status.csv": "76627475c13d5d258f9430093b047ca0e0e59107ac5592b51b238613503b0f4b",
+    "data/hayward_first_arrival_guarded_001/dd_failed_forward_ray_failures.csv": "2856fd154c61eaae4c678afad07a4d20fec1f42e14903b9cc0f5c97ac766aa83",
+    "data/hayward_first_arrival_guarded_001/dd_failed_forward_ray_paths.csv": "910826b8aee730d30f577554e31088d3456c8946a2fcc938a188db1808102f33",
+    "data/hayward_first_arrival_guarded_001/dd_failed_forward_events.csv": "9b470b1d70ce469d4bc53c8eeaa8a49e7f3e4a68f7b213a9ee87d34a8759a2da",
+    "data/hayward_first_arrival_guarded_001/dd_failed_forward_grid.csv": "b85a7ff605674f46ac26d3953b7ab149092f1bd218fe82076d595bfc50c62d4c",
+    "data/hayward_first_arrival_guarded_001/dd_last_accepted_events.csv": "f20935a739ca71ad97d313f965474cbe4db1f6cc230157b7e36008667eb409fa",
+    "data/hayward_first_arrival_guarded_001/dd_last_accepted_grid.csv": "ac72eb8bd9bd3379044854e8314723b99ecb672f379724acd53a47629b4ee40f",
+    "data/hayward_first_arrival_guarded_001/dd_failed_forward_context.csv": "0884cf02c39ffcef87344f3e433c78f512d40a11997dc5151309c5da3637a11f",
+    "tmp/hayward_guarded_runs/001/source/CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "tmp/hayward_guarded_runs/001/source/run_hayward_guarded_inversion.py": "f9ca4ae89a706d4f1c92e0f0277b846766af35a73998c6ce890cfdaef65b2df3",
+    "tmp/hayward_guarded_runs/001/source/run_loma_initial_preflight.py": "f1acc19135c11edda106e3b8c7d8c1879d7d490db729d4ad55263b87022946f1",
+    "tmp/hayward_guarded_runs/001/source/run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5",
+    "tmp/hayward_guarded_runs/001/source/diagnostics/review_loma_analytic_simulation.py": "786c1ccc99cfa3d3677dde88f11a96f9677693966de874d40c15ca2972a76246",
+    "tmp/hayward_guarded_runs/001/source/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "tmp/hayward_guarded_runs/001/source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "tmp/hayward_guarded_runs/001/source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "tmp/hayward_guarded_runs/001/source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "tmp/hayward_guarded_runs/001/source/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "tmp/hayward_guarded_runs/001/source/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "tmp/hayward_guarded_runs/001/source/src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "tmp/hayward_guarded_runs/001/source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "tmp/hayward_guarded_runs/001/source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "tmp/hayward_guarded_runs/001/compiled/dd": "c8c1b56a78fc55cbe3fbbf6c7370a799ce0819e9a90db34e6f931a2f895e6203",
+    "data/hayward_first_arrival_guarded_001/dd_inversion_execution.json": "48f863316f2719703b57c7d0684b30a2334d711ebe42faf1c460b2f569dfd418",
+    "data/hayward_first_arrival_guarded_001/controller_provenance/completion.json": "534eb21e8d3b5c58b8ed07560531a044f691afd403e0ccea4084e73a1b82de18"
+  },
+  "output_sha256": {
+    "identified_failures.csv": "9d4a424b0eca9f083c061efc7910c5b56447a8c73fd64e1f6bd3840f0db4e97c"
+  },
+  "scope": "Saved failure/native/state/hash census only; no solver, ray, matrix, reference, objective or observational query.",
+  "terminal_context": {
+    "mode": "dd",
+    "iteration": "0",
+    "phase": "line_search_trial",
+    "line_search_trial": "0",
+    "derivatives_requested": "0",
+    "initialization_required": "1",
+    "significant_digits": "17",
+    "message": "Inverse forward evaluation rejected 181 rays; see /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001/dd_failed_forward_ray_status.csv; first: event 32 event_resource_id=quakeml:NC.anss.org/Event/NC/17321 origin_resource_id=quakeml:NC.anss.org/Origin/NC/7437274; native receiver 340 channel_seed_id=NC.JSA..EHZ channel_fdsn_source_id=FDSN:NC_JSA__E_H_Z metadata_epoch_start=1984-01-01T00:00:00 metadata_epoch_end=1987-05-01T00:00:00"
+  },
+  "controller_reaped": true,
+  "native_observations": 58980,
+  "native_rays": 14262,
+  "native_failed_rays": 181,
+  "accepted_updates": 0,
+  "history_rows": 0,
+  "last_accepted_state_numerically_equals_initial": true,
+  "failure_reasons": {
+    "local_stopping_failed": 181
+  },
+  "derived_selected_termination_counts": {
+    "update_budget_exhausted": 106,
+    "line_search_exhausted": 75
+  },
+  "derivation_limit": "Loop exit is inferred from the frozen original optimizer and accepted-update count; no iteration history or final rejected direction was saved.",
+  "failure_events": 152,
+  "failure_native_receiver_epochs": 61,
+  "failure_channels": [
+    {
+      "channel_seed_id": "NC.CBR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_CBR__E_H_Z",
+      "count": 1,
+      "native_epochs": [
+        {
+          "native_receiver_index": 15,
+          "metadata_epoch_start": "1993-03-31T22:15:00",
+          "metadata_epoch_end": "1996-05-02T12:00:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.CLC..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_CLC__E_H_Z",
+      "count": 7,
+      "native_epochs": [
+        {
+          "native_receiver_index": 115,
+          "metadata_epoch_start": "1984-01-01T00:00:00",
+          "metadata_epoch_end": "1986-06-18T18:45:00"
+        },
+        {
+          "native_receiver_index": 116,
+          "metadata_epoch_start": "1986-06-18T18:45:00",
+          "metadata_epoch_end": "1987-05-01T00:00:00"
+        },
+        {
+          "native_receiver_index": 125,
+          "metadata_epoch_start": "1991-10-01T19:55:00",
+          "metadata_epoch_end": "1993-10-27T22:15:00"
+        },
+        {
+          "native_receiver_index": 128,
+          "metadata_epoch_start": "1996-01-11T20:12:00",
+          "metadata_epoch_end": "1997-12-04T23:25:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.CMJ..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_CMJ__E_H_Z",
+      "count": 54,
+      "native_epochs": [
+        {
+          "native_receiver_index": 147,
+          "metadata_epoch_start": "1984-01-01T00:00:00",
+          "metadata_epoch_end": "1986-02-28T21:20:00"
+        },
+        {
+          "native_receiver_index": 148,
+          "metadata_epoch_start": "1986-02-28T21:20:00",
+          "metadata_epoch_end": "1987-01-27T21:56:00"
+        },
+        {
+          "native_receiver_index": 151,
+          "metadata_epoch_start": "1988-03-11T20:45:00",
+          "metadata_epoch_end": "1988-10-04T20:30:00"
+        },
+        {
+          "native_receiver_index": 153,
+          "metadata_epoch_start": "1988-10-19T21:45:00",
+          "metadata_epoch_end": "1989-04-27T21:35:00"
+        },
+        {
+          "native_receiver_index": 154,
+          "metadata_epoch_start": "1989-04-27T21:35:00",
+          "metadata_epoch_end": "1990-08-23T21:15:00"
+        },
+        {
+          "native_receiver_index": 155,
+          "metadata_epoch_start": "1990-08-23T21:15:00",
+          "metadata_epoch_end": "1991-08-13T22:20:00"
+        },
+        {
+          "native_receiver_index": 156,
+          "metadata_epoch_start": "1991-08-13T22:20:00",
+          "metadata_epoch_end": "1992-05-20T21:20:00"
+        },
+        {
+          "native_receiver_index": 157,
+          "metadata_epoch_start": "1992-05-20T21:20:00",
+          "metadata_epoch_end": "1993-09-20T20:00:00"
+        },
+        {
+          "native_receiver_index": 158,
+          "metadata_epoch_start": "1993-09-20T20:00:00",
+          "metadata_epoch_end": "1995-01-18T20:00:00"
+        },
+        {
+          "native_receiver_index": 159,
+          "metadata_epoch_start": "1995-01-18T20:00:00",
+          "metadata_epoch_end": "1996-11-12T23:45:00"
+        },
+        {
+          "native_receiver_index": 160,
+          "metadata_epoch_start": "1996-11-12T23:45:00",
+          "metadata_epoch_end": "1998-06-09T19:30:00"
+        },
+        {
+          "native_receiver_index": 161,
+          "metadata_epoch_start": "1998-06-09T19:30:00",
+          "metadata_epoch_end": "1999-02-18T18:15:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.CMW1..HN1",
+      "channel_fdsn_source_id": "FDSN:NC_CMW1__H_N_1",
+      "count": 1,
+      "native_epochs": [
+        {
+          "native_receiver_index": 190,
+          "metadata_epoch_start": "1995-03-04T00:00:00Z",
+          "metadata_epoch_end": "3000-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.CNI..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_CNI__E_H_Z",
+      "count": 1,
+      "native_epochs": [
+        {
+          "native_receiver_index": 193,
+          "metadata_epoch_start": "1993-03-08T00:00:00",
+          "metadata_epoch_end": "1996-10-17T23:00:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.CRP..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_CRP__E_H_Z",
+      "count": 15,
+      "native_epochs": [
+        {
+          "native_receiver_index": 216,
+          "metadata_epoch_start": "1985-02-20T20:53:00",
+          "metadata_epoch_end": "1985-09-10T21:00:00"
+        },
+        {
+          "native_receiver_index": 218,
+          "metadata_epoch_start": "1985-10-21T21:45:00",
+          "metadata_epoch_end": "1986-03-10T21:58:00"
+        },
+        {
+          "native_receiver_index": 221,
+          "metadata_epoch_start": "1987-05-01T00:00:00",
+          "metadata_epoch_end": "1988-01-18T18:45:00"
+        },
+        {
+          "native_receiver_index": 225,
+          "metadata_epoch_start": "1989-01-26T22:00:00",
+          "metadata_epoch_end": "1990-04-12T19:23:00"
+        },
+        {
+          "native_receiver_index": 226,
+          "metadata_epoch_start": "1990-04-12T19:23:00",
+          "metadata_epoch_end": "1990-05-18T19:43:00"
+        },
+        {
+          "native_receiver_index": 230,
+          "metadata_epoch_start": "1993-11-29T20:55:00",
+          "metadata_epoch_end": "1995-07-06T19:20:00"
+        },
+        {
+          "native_receiver_index": 232,
+          "metadata_epoch_start": "1997-03-20T23:45:00",
+          "metadata_epoch_end": "1998-02-18T23:40:00"
+        },
+        {
+          "native_receiver_index": 233,
+          "metadata_epoch_start": "1998-02-18T23:40:00",
+          "metadata_epoch_end": "1999-02-18T03:00:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.CSL..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_CSL__E_H_Z",
+      "count": 2,
+      "native_epochs": [
+        {
+          "native_receiver_index": 254,
+          "metadata_epoch_start": "1991-08-08T23:40:00",
+          "metadata_epoch_end": "1994-03-28T23:05:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.CYB..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_CYB__E_H_Z",
+      "count": 2,
+      "native_epochs": [
+        {
+          "native_receiver_index": 300,
+          "metadata_epoch_start": "1992-06-04T21:40:00",
+          "metadata_epoch_end": "1995-02-15T22:00:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.JCP..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JCP__E_H_Z",
+      "count": 6,
+      "native_epochs": [
+        {
+          "native_receiver_index": 305,
+          "metadata_epoch_start": "1992-03-03T21:10:00",
+          "metadata_epoch_end": "1992-12-03T23:53:00"
+        },
+        {
+          "native_receiver_index": 306,
+          "metadata_epoch_start": "1992-12-03T23:53:00",
+          "metadata_epoch_end": "1996-02-05T20:40:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.JJR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+      "count": 7,
+      "native_epochs": [
+        {
+          "native_receiver_index": 310,
+          "metadata_epoch_start": "1990-10-11T20:10:00",
+          "metadata_epoch_end": "1992-04-20T19:10:00"
+        },
+        {
+          "native_receiver_index": 311,
+          "metadata_epoch_start": "1992-04-20T19:10:00",
+          "metadata_epoch_end": "1995-03-06T23:10:00"
+        },
+        {
+          "native_receiver_index": 312,
+          "metadata_epoch_start": "1995-03-06T23:10:00",
+          "metadata_epoch_end": "1996-11-07T20:07:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.JLT..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JLT__E_H_Z",
+      "count": 12,
+      "native_epochs": [
+        {
+          "native_receiver_index": 315,
+          "metadata_epoch_start": "1984-01-01T00:00:00",
+          "metadata_epoch_end": "1985-01-23T20:40:00"
+        },
+        {
+          "native_receiver_index": 317,
+          "metadata_epoch_start": "1985-05-22T17:45:00",
+          "metadata_epoch_end": "1987-02-09T23:55:00"
+        },
+        {
+          "native_receiver_index": 319,
+          "metadata_epoch_start": "1987-05-01T00:00:00",
+          "metadata_epoch_end": "1988-06-09T23:10:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+      "count": 4,
+      "native_epochs": [
+        {
+          "native_receiver_index": 324,
+          "metadata_epoch_start": "1984-12-19T21:08:00",
+          "metadata_epoch_end": "1985-12-12T21:30:00"
+        },
+        {
+          "native_receiver_index": 328,
+          "metadata_epoch_start": "1987-09-25T19:00:00",
+          "metadata_epoch_end": "1988-05-16T18:10:00"
+        },
+        {
+          "native_receiver_index": 335,
+          "metadata_epoch_start": "1993-09-09T22:25:00",
+          "metadata_epoch_end": "1995-02-28T19:42:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.JSA..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JSA__E_H_Z",
+      "count": 36,
+      "native_epochs": [
+        {
+          "native_receiver_index": 340,
+          "metadata_epoch_start": "1984-01-01T00:00:00",
+          "metadata_epoch_end": "1987-05-01T00:00:00"
+        },
+        {
+          "native_receiver_index": 341,
+          "metadata_epoch_start": "1987-05-01T00:00:00",
+          "metadata_epoch_end": "1987-11-24T20:30:00"
+        },
+        {
+          "native_receiver_index": 343,
+          "metadata_epoch_start": "1988-10-19T21:45:00",
+          "metadata_epoch_end": "1989-05-05T22:45:00"
+        },
+        {
+          "native_receiver_index": 344,
+          "metadata_epoch_start": "1989-05-05T22:45:00",
+          "metadata_epoch_end": "1992-03-20T22:45:00"
+        },
+        {
+          "native_receiver_index": 345,
+          "metadata_epoch_start": "1992-03-20T22:45:00",
+          "metadata_epoch_end": "1993-05-07T22:45:00"
+        },
+        {
+          "native_receiver_index": 346,
+          "metadata_epoch_start": "1993-05-07T22:45:00",
+          "metadata_epoch_end": "1994-07-11T21:30:00"
+        },
+        {
+          "native_receiver_index": 347,
+          "metadata_epoch_start": "1994-07-11T21:30:00",
+          "metadata_epoch_end": "1997-07-10T20:20:00"
+        },
+        {
+          "native_receiver_index": 348,
+          "metadata_epoch_start": "1997-07-10T20:20:00",
+          "metadata_epoch_end": "1999-02-19T02:42:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.JSB..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JSB__E_H_Z",
+      "count": 4,
+      "native_epochs": [
+        {
+          "native_receiver_index": 349,
+          "metadata_epoch_start": "1991-10-31T23:30:00",
+          "metadata_epoch_end": "1993-05-07T23:30:00"
+        },
+        {
+          "native_receiver_index": 351,
+          "metadata_epoch_start": "1994-06-01T19:30:00",
+          "metadata_epoch_end": "1996-03-09T12:00:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.JSF..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JSF__E_H_Z",
+      "count": 26,
+      "native_epochs": [
+        {
+          "native_receiver_index": 354,
+          "metadata_epoch_start": "1984-01-01T00:00:00",
+          "metadata_epoch_end": "1984-06-22T18:30:00"
+        },
+        {
+          "native_receiver_index": 356,
+          "metadata_epoch_start": "1985-03-15T21:15:00",
+          "metadata_epoch_end": "1986-05-08T22:00:00"
+        },
+        {
+          "native_receiver_index": 357,
+          "metadata_epoch_start": "1986-05-08T22:00:00",
+          "metadata_epoch_end": "1987-05-01T00:00:00"
+        },
+        {
+          "native_receiver_index": 358,
+          "metadata_epoch_start": "1987-05-01T00:00:00",
+          "metadata_epoch_end": "1988-10-19T21:45:00"
+        },
+        {
+          "native_receiver_index": 360,
+          "metadata_epoch_start": "1989-04-13T18:55:00",
+          "metadata_epoch_end": "1990-01-24T20:40:00"
+        },
+        {
+          "native_receiver_index": 361,
+          "metadata_epoch_start": "1990-01-24T20:40:00",
+          "metadata_epoch_end": "1992-07-21T20:40:00"
+        },
+        {
+          "native_receiver_index": 362,
+          "metadata_epoch_start": "1992-07-21T20:40:00",
+          "metadata_epoch_end": "1995-11-30T23:45:00"
+        },
+        {
+          "native_receiver_index": 363,
+          "metadata_epoch_start": "1995-11-30T23:45:00",
+          "metadata_epoch_end": "1996-01-26T23:45:00"
+        },
+        {
+          "native_receiver_index": 364,
+          "metadata_epoch_start": "1997-04-19T15:30:00",
+          "metadata_epoch_end": "1997-09-25T00:00:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.JSF.10.EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JSF_10_E_H_Z",
+      "count": 2,
+      "native_epochs": [
+        {
+          "native_receiver_index": 368,
+          "metadata_epoch_start": "1996-01-26T23:46:00",
+          "metadata_epoch_end": "1997-04-21T22:03:00"
+        }
+      ]
+    },
+    {
+      "channel_seed_id": "NC.JTR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JTR__E_H_Z",
+      "count": 1,
+      "native_epochs": [
+        {
+          "native_receiver_index": 371,
+          "metadata_epoch_start": "1988-10-19T21:45:00",
+          "metadata_epoch_end": "1990-10-11T20:00:00"
+        }
+      ]
+    }
+  ],
+  "failed_projected_gradient_s_per_km": {
+    "minimum": 2.2138892513161203e-05,
+    "median": 0.0003012196672113922,
+    "maximum": 0.001298787161049932,
+    "mean": 0.000355740890128252
+  },
+  "failed_raw_gradient_s_per_km": {
+    "minimum": 2.2138892513161203e-05,
+    "median": 0.0003012196672113922,
+    "maximum": 0.001298787161049932,
+    "mean": 0.000355740890128252
+  },
+  "failed_iterations": {
+    "minimum": 93,
+    "median": 1000,
+    "maximum": 1000,
+    "mean": 800.4861878453039
+  },
+  "failed_merged_nodes": {
+    "0": 181
+  },
+  "failed_source_coordinates_km": {
+    "x": {
+      "minimum": -7.48659647505723,
+      "median": -1.4419811486374212,
+      "maximum": 9.604630968002006,
+      "mean": -0.009041258708528066
+    },
+    "y": {
+      "minimum": -30.0,
+      "median": -1.408088745064553,
+      "maximum": 23.853909663583064,
+      "mean": -3.7256586516846366
+    },
+    "z": {
+      "minimum": 2.4174360857032484,
+      "median": 7.374975642298792,
+      "maximum": 11.60764254200002,
+      "mean": 7.274790832656958
+    }
+  },
+  "all_failed_selected_fmm": true,
+  "all_initializers_succeeded": true,
+  "full_status_all_finite_domain_exact_endpoints": true,
+  "path_rows_checked": 240003,
+  "native_metadata_cells_checked": 18051404,
+  "trial_change": {
+    "source_displacement_3d_km": {
+      "minimum": 0.10455046770218021,
+      "median": 1.0539611401478446,
+      "maximum": 4.448015464158284,
+      "mean": 1.1318118955169074
+    },
+    "source_time_correction_s": {
+      "minimum": -0.4776273337276682,
+      "median": 0.030970218054509002,
+      "maximum": 0.40280323772766014,
+      "mean": 0.0539526429404947
+    },
+    "source_exact_boundary_counts": {
+      "x_lower": 0,
+      "x_upper": 0,
+      "y_lower": 2,
+      "y_upper": 1,
+      "z_lower": 0,
+      "z_upper": 0
+    },
+    "velocity_difference_km_per_s": {
+      "minimum": -2.6346692761386308,
+      "median": -0.20438716588355588,
+      "maximum": 1.6295136629173013,
+      "mean": -0.18692435366880858
+    },
+    "absolute_velocity_difference_km_per_s": {
+      "minimum": 0.005859405137793594,
+      "median": 0.7065531108350454,
+      "maximum": 2.6346692761386308,
+      "mean": 0.7101763712203727
+    },
+    "delta_log_slowness": {
+      "minimum": -0.35923388563172376,
+      "median": 0.03713555163137881,
+      "maximum": 0.457198891551892,
+      "mean": 0.017197372485960608
+    },
+    "initial_velocity_range_km_per_s": {
+      "minimum": 3.77,
+      "median": 5.672083333333333,
+      "maximum": 7.18,
+      "mean": 5.3611111111110965
+    },
+    "candidate_velocity_range_km_per_s": {
+      "minimum": 3.2237769552262097,
+      "median": 5.220402214548561,
+      "maximum": 6.624551544773853,
+      "mean": 5.1741867574423015
+    }
+  },
+  "maximum_projected_gradient_record": {
+    "event": "495",
+    "station": "154",
+    "source_x": "0.92715294036917162",
+    "source_y": "3.3600184621335805",
+    "source_z": "5.8104280231400125",
+    "receiver_x": "0.8110964733584467",
+    "receiver_y": "-27.614272174304624",
+    "receiver_z": "-0.47899999999999998",
+    "ray_time": "6.0626752482246413",
+    "ray_converged": "0",
+    "ray_finite": "1",
+    "ray_projected_gradient": "0.0012987871610499321",
+    "ray_raw_gradient": "0.0012987871610499321",
+    "ray_iterations": "1000",
+    "ray_merged_nodes": "0",
+    "ray_initialization_attempted": "1",
+    "ray_initialization_succeeded": "1",
+    "ray_selected_fmm_seed": "1",
+    "ray_direct_seed_time": "6.0626752628811964",
+    "ray_fmm_seed_time": "6.0626752482246413",
+    "ray_field_time": "6.0610283377075014",
+    "ray_extraction_fallback_steps": "0",
+    "ray_extraction_message": "Exact endpoints connected by a descending FMM seed",
+    "source_t": "-0.021805714408759797",
+    "source_dx": "",
+    "source_dy": "",
+    "source_dz": "",
+    "ray_path_points": "1046",
+    "ray_path_in_domain": "1",
+    "ray_exact_source_endpoint": "1",
+    "ray_exact_receiver_endpoint": "1",
+    "ray_derivatives_evaluated": "0",
+    "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/160221",
+    "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2897334",
+    "source_reference_origin_time_utc": "1990-06-30T18:18:41.580000Z",
+    "source_catalog_latitude_deg": "37.7521667",
+    "source_catalog_longitude_deg": "-122.0825",
+    "source_catalog_geoid_depth_km": "4.713",
+    "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1536514",
+    "source_catalog_magnitude": "2.05",
+    "source_catalog_magnitude_type": "Md",
+    "source_origin_resource_id_basis": "provider reference origin; t is a correction in seconds",
+    "source_source_file": "../authoritative/hayward/raw/summaries_1990_00001.xml",
+    "source_source_sha256": "4ae2f662de593f63fe694ce7215e4e9045ab8340a41abbf710df808b7ec0b886",
+    "source_coordinate_basis": "independent failed forward evaluation at recorded coordinates; see companion context for evaluation phase",
+    "receiver_network_code": "NC",
+    "receiver_station_code": "CMJ",
+    "receiver_station_seed_id": "NC.CMJ",
+    "receiver_station_fdsn_source_id": "FDSN:NC_CMJ",
+    "receiver_location_code": "",
+    "receiver_channel_code": "EHZ",
+    "receiver_channel_seed_id": "NC.CMJ..EHZ",
+    "receiver_channel_fdsn_source_id": "FDSN:NC_CMJ__E_H_Z",
+    "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+    "receiver_latitude_deg": "37.520237",
+    "receiver_longitude_deg": "-121.873314",
+    "receiver_channel_sensor_elevation_m": "479.0",
+    "receiver_sensor_depth_below_ground_m": "0.0",
+    "receiver_station_elevation_m": "479.0",
+    "receiver_metadata_epoch_start": "1989-04-27T21:35:00",
+    "receiver_metadata_epoch_end": "1990-08-23T21:15:00",
+    "receiver_channel_epoch_start": "1989-04-27T21:35:00",
+    "receiver_channel_epoch_end": "1990-08-23T21:15:00",
+    "receiver_station_epoch_start": "1972-07-01T00:00:00",
+    "receiver_station_epoch_end": "2017-05-05T21:13:00",
+    "receiver_provider_channel_source_id": "",
+    "receiver_provider_channel_resource_ids_json": "[]",
+    "receiver_provider_station_resource_ids_json": "[]",
+    "receiver_provider_network_resource_ids_json": "[]",
+    "receiver_latitude_datum": "WGS84 (StationXML default)",
+    "receiver_longitude_datum": "WGS84 (StationXML default)",
+    "receiver_sensor_z_geoid_km": "-0.479",
+    "receiver_z_if_sensor_elevation_km": "-0.479",
+    "receiver_z_if_ground_elevation_km": "-0.479",
+    "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+    "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+    "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+    "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+    "receiver_metadata_source_kind": "StationXML channel metadata",
+    "receiver_stationxml_schema_version": "1.2",
+    "receiver_source_document_metadata_index": "454",
+    "receiver_source_file": "../authoritative/stations/raw/ncedc_channels_NC_987aa2b70b3c.xml",
+    "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&sta=CAC%2CCAD%2CCAI%2CCAL%2CCAO%2CCBK%2CCBLG%2CCBR%2CCBS%2CCBW%2CCCH1%2CCCO%2CCCY%2CCDA%2CCDO%2CCDU%2CCDV%2CCGP%2CCGP1%2CCLC%2CCMC%2CCMH%2CCMJ%2CCML%2CCMM&start=1984-01-13T06%3A19%3A16.750000&end=1998-12-28T06%3A23%3A19.520000&cha=EHZ%2CELN%2CELZ%2CEP2%2CEP3%2CHN1%2CHN2%2CHN3%2CHV1&level=channel&format=xml",
+    "receiver_source_sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833",
+    "receiver_retrieved_utc": "2026-10-09T21:26:26.325950Z",
+    "receiver_epoch_basis": "",
+    "receiver_provider_start_date": "",
+    "receiver_provider_start_hm": "",
+    "receiver_provider_end_date": "",
+    "receiver_provider_end_hm": "",
+    "receiver_provider_data_use_start_date": "",
+    "receiver_provider_data_use_end_date": "",
+    "receiver_latitude": "",
+    "receiver_longitude": "",
+    "receiver_provider_elevation_m": "",
+    "receiver_provider_location_status": "",
+    "receiver_location_status_definition": "",
+    "receiver_provider_usgs_channel_code": "",
+    "receiver_provider_location_code": "",
+    "receiver_provider_resource_id": "",
+    "receiver_source_line": "",
+    "receiver_format_source_file": "",
+    "receiver_format_source_sha256": "",
+    "failure_reasons": "local_stopping_failed",
+    "derived_selected_ray_termination": "update_budget_exhausted",
+    "trial_source_shift_3d_km": 1.3966862092340009,
+    "trial_source_time_shift_s": -0.021805714408759797,
+    "saved_path_nodes_checked": 1046,
+    "exact_domain_face_nodes": 0,
+    "minimum_internal_depth_plane_distance_km": 0.00297021364062644
+  },
+  "interpretation": [
+    "The initial state passed the current-model gate and reached matrix assembly/solve; the first full-step candidate was rejected before its objective could be evaluated.",
+    "No proposed update was accepted. Failed candidate and last accepted state are distinct, with original resource IDs retained.",
+    "All181 selected-ray failures are local stopping failures; there is no saved evidence of initializer/domain/endpoint/nonfinite failure.",
+    "This run used the frozen original kernel7111f67c, not the later adopted D kernel.",
+    "No candidate source derivatives were evaluated, no LSQR diagnostics or candidate objective were flushed before the exception, and no continuous3D accuracy reference exists for this trial.",
+    "The census does not establish a common mechanism or that D would fix the rays. A bounded identified old/D replay is a proposal, not an executed remedy."
+  ]
+}

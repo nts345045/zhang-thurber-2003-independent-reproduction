@@ -1,0 +1,11 @@
+--- strict_1000/driver.cpp
++++ strict_4000/driver.cpp
+@@ -14,7 +14,7 @@
+     if (events.size() != 724 || stations.size() != 52)
+       throw std::runtime_error("Unexpected full native geometry inventory");
+     const Config config(input + "/run.cfg");
+-    if (config.get("ray_spacing") != 0.03125 || config.get("ray_iterations") != 1000)
++    if (config.get("ray_spacing") != 0.03125 || config.get("ray_iterations") != 4000)
+       throw std::runtime_error("Unexpected frozen straight-trace settings");
+     const std::vector<int> pairs{8670, 8674};
+     std::vector<Ray> result(events.size() * stations.size());
