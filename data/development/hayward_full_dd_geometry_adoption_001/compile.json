@@ -1,0 +1,38 @@
+{
+  "adoption_sha256": "6126ddb34d5566a512c8e5a69cbe34efc9d4226cb962f3ea06b8e7266dcd973a",
+  "commands": [
+    {
+      "argv": [
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_adoption_001/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/full_dd_geometry_adoption_001"
+      ],
+      "log": "compile_0.log",
+      "log_sha256": "81550aebe5a4c67a7e1d7c1608e9465b47897747303022f0eed41bbfaba97116",
+      "reaped": true,
+      "return_code": 0
+    },
+    {
+      "argv": [
+        "cmake",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/full_dd_geometry_adoption_001",
+        "-j",
+        "2"
+      ],
+      "log": "compile_1.log",
+      "log_sha256": "7b949a3e24b671123de3de7d9cc6e00f790b93796ee2f90387742b20a074af2a",
+      "reaped": true,
+      "return_code": 2
+    }
+  ],
+  "error": "Compile command failed: 2",
+  "finished_utc": "2026-10-10T11:16:28.475595Z",
+  "native_evaluations": 0,
+  "reader_syntax_passed": true,
+  "script_sha256": "93932f8c9dc1ce20cbe782bd69152c9efc78fcc2d6cb43b845309aac6ef32eea",
+  "started_utc": "2026-10-10T11:16:23.280657Z",
+  "status": "failed"
+}

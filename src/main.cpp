@@ -64,6 +64,17 @@ std::ofstream output(std::string p) {
   f << std::setprecision(12);
   return f;
 }
+// Checked diagnostic writes preserve failures before later assembly.
+void finish_output(std::ofstream &stream, const std::string &path) {
+  stream.flush();
+  stream.close();
+  if (!stream) throw std::runtime_error("Cannot finish writing " + path);
+}
+void require_new_outputs(const std::string &prefix, const std::vector<std::string> &suffixes) {
+  for (const auto &suffix : suffixes)
+    if (std::filesystem::exists(std::filesystem::symlink_status(prefix + suffix)))
+      throw std::runtime_error("Refusing prior failure/audit artifact " + prefix + suffix);
+}
 void write_grid(const Grid &g, std::string path, int precision = 12) {
   auto f = output(path);
   f << std::setprecision(precision);
@@ -401,7 +412,7 @@ std::pair<size_t, size_t> write_ray_status(const std::string &path,
       ++failures;
     }
   }
-  out.close();
+  finish_output(out, path);
   return {failures, first};
 }
 void simulation_ray_gate(const std::string &dir, const std::vector<Event> &events,

@@ -1,0 +1,34 @@
+{
+  "adoption_sha256": "1c57a65365a792e3c41074ed2895f8796deeae49a5efc14d6d9075c4f1d02d1b",
+  "compile_source_sha256": "aa88093f5d689123bfc2a9c1b82c47d126043eb8c77d4d1998502273ee5765de",
+  "current_source_sha256": {
+    "src/full_linearization.hpp": "107ce4a71f83652225ad412b259e065fe7c684547abb75c1d874fa93b2711977",
+    "src/main.cpp": "dd659c059be80c077e08819352b3df872dda1023d30628b0b702395c3fb30529"
+  },
+  "exact_body_comparisons": [
+    {
+      "byte_equal": true,
+      "sha256": "c27c77672b36e5c269817a332e574cb38538581f56ee544d10c92a285288daf1",
+      "start": "void finish_output("
+    },
+    {
+      "byte_equal": true,
+      "sha256": "faae3c97e5720f0d86ea08860c0561f1f3caeee5cd3508040c09c4a6158470e3",
+      "start": "std::pair<size_t, size_t> write_ray_status("
+    }
+  ],
+  "executed_numerical_calls": 0,
+  "findings": [
+    "No change to inversion arithmetic, source/model coefficients, ray selection, optimization, or convergence thresholds.",
+    "Successful-output contents are unchanged by checked flush/close; failed diagnostic writes now propagate instead of being silently lost.",
+    "Earlier compile001 remains separate; this review does not claim a successful compile002 or numerical evaluation."
+  ],
+  "live_frozen_binary_changed": false,
+  "maintained_files_edited_by_reviewer": [],
+  "reference_main": "data/development/hayward_full_dd_geometry_export_candidate_001/after/src/main.cpp",
+  "reference_main_sha256": "a10dcdc300d9a4e43f6ae0cba2e354d7cec549438319cf411b577790b2373058",
+  "reviewed_utc": "2026-10-10T11:19:30.135380+00:00",
+  "reviewer": "scientific_audit",
+  "scope": "Read-only review of the narrow maintained-source compatibility bridge: two existing reviewed output helper bodies and checked write_ray_status completion; exporter header remains byte-identical to reviewed candidate.",
+  "status": "passed"
+}
