@@ -69,6 +69,18 @@ def values(rows, field):
     return np.array([float(r[field]) for r in rows])
 
 
+def color_range(samples, lower, upper):
+    samples = np.asarray(samples, dtype=float)
+    if not samples.size or not np.all(np.isfinite(samples)):
+        raise ValueError("Color ranges require finite plotted values")
+    below, above = int(np.sum(samples < lower)), int(np.sum(samples > upper))
+    extend = "both" if below and above else "min" if below else "max" if above else "neither"
+    return dict(color_limits=[float(lower), float(upper)],
+                actual_min_max=[float(samples.min()), float(samples.max())],
+                sampled_points=int(samples.size), below_limit=below, above_limit=above,
+                extend=extend)
+
+
 def save(fig, name):
     fig.savefig(str(FIG / (name + ".pdf")), bbox_inches="tight")
     fig.savefig(str(FIG / (name + ".png")), dpi=160, bbox_inches="tight")
@@ -189,11 +201,13 @@ def main(geometry_only=False, data_dir=DATA, figure_dir=FIG):
     x, z = np.linspace(-35, 35, 141), np.linspace(zmin, zmax, int(round((zmax - zmin) / .25)) + 1)
     xx, zz = np.meshgrid(x, z)
     standard, dd = model("standard"), model("dd")
-    sections = []
+    sections, velocity_panel_ranges = [], []
     fig, axes = plt.subplots(7, 3, figsize=(11, 15), sharex=True, sharey=True)
     for row, y in enumerate(range(-30, 31, 10)):
         points = np.column_stack([xx.ravel(), np.full(xx.size, y), zz.ravel()])
         vs, vd = standard(points).reshape(xx.shape), dd(points).reshape(xx.shape)
+        velocity_panel_ranges.append(dict(y_km=y, standard_velocity=color_range(vs, 3.5, 7),
+            dd_velocity=color_range(vd, 3.5, 7), dd_minus_standard=color_range(vd - vs, -.8, .8)))
         for index, (xv, zv, sv, dv) in enumerate(zip(xx.ravel(), zz.ravel(), vs.ravel(), vd.ravel())):
             sections.append(dict(x=xv, y=y, z=zv, standard_v=sv, dd_v=dv, dd_minus_standard=dv - sv))
         for col, vv, mode in ((0, vd, "dd"), (1, vs, "standard"), (2, vd - vs, "dd")):
@@ -212,8 +226,16 @@ def main(geometry_only=False, data_dir=DATA, figure_dir=FIG):
                 ax.set_xlabel("X northeast (km)")
     for ax, title in zip(axes[0], ["(a) Catalog DD", "(b) Absolute only", "(c) DD minus absolute"]):
         ax.set_title(title)
-    fig.colorbar(im, ax=axes[:, :2].ravel().tolist(), label="P velocity (km/s)", shrink=.7, pad=.02)
-    fig.colorbar(diff, ax=axes[:, 2].ravel().tolist(), label="Velocity difference (km/s)", shrink=.7, pad=.02)
+    velocity_colors = dict(
+        standard_velocity=color_range(values(sections, "standard_v"), 3.5, 7),
+        dd_velocity=color_range(values(sections, "dd_v"), 3.5, 7),
+        shared_velocity_colorbar=color_range(np.concatenate([values(sections, "standard_v"), values(sections, "dd_v")]), 3.5, 7),
+        dd_minus_standard=color_range(values(sections, "dd_minus_standard"), -.8, .8),
+        sections=velocity_panel_ranges)
+    fig.colorbar(im, ax=axes[:, :2].ravel().tolist(), label="P velocity (km/s)", shrink=.7, pad=.02,
+                 extend=velocity_colors["shared_velocity_colorbar"]["extend"])
+    fig.colorbar(diff, ax=axes[:, 2].ravel().tolist(), label="Velocity difference (km/s)", shrink=.7, pad=.02,
+                 extend=velocity_colors["dd_minus_standard"]["extend"])
     fig.suptitle("Figure 10 counterpart: independent subset; points within 5 km of each section")
     write("vertical_sections.csv", sections)
     save(fig, "figure10_velocity")
@@ -240,8 +262,17 @@ def main(geometry_only=False, data_dir=DATA, figure_dir=FIG):
     max_sigma = max(r["independent_pick_sigma_velocity_km_s"] for r in resolution_sections)
     for ax in axes[:, 1]:
         ax.collections[0].set_clim(0, max_sigma)
-    fig.colorbar(rim, ax=axes[:, 0].tolist(), label="Interpolated nodal resolution diagonal", shrink=.7, pad=.02)
-    fig.colorbar(sim, ax=axes[:, 1].tolist(), label="Interpolated nodal velocity noise (km/s)", shrink=.7, pad=.02)
+    resolution_colors = dict(
+        resolution=color_range(values(resolution_sections, "resolution_diagonal"), 0, 1),
+        noise=color_range(values(resolution_sections, "independent_pick_sigma_velocity_km_s"), 0, max_sigma),
+        sections=[dict(y_km=y,
+            resolution=color_range([r["resolution_diagonal"] for r in resolution_sections if r["y"] == y], 0, 1),
+            noise=color_range([r["independent_pick_sigma_velocity_km_s"] for r in resolution_sections if r["y"] == y], 0, max_sigma))
+            for y in range(-30, 31, 10)])
+    fig.colorbar(rim, ax=axes[:, 0].tolist(), label="Interpolated nodal resolution diagonal", shrink=.7, pad=.02,
+                 extend=resolution_colors["resolution"]["extend"])
+    fig.colorbar(sim, ax=axes[:, 1].tolist(), label="Interpolated nodal velocity noise (km/s)", shrink=.7, pad=.02,
+                 extend=resolution_colors["noise"]["extend"])
     fig.suptitle("Figure 11 counterpart: absolute-data linearization at the catalog DD solution")
     write("resolution_sections.csv", resolution_sections)
     save(fig, "figure11_resolution")
@@ -249,6 +280,8 @@ def main(geometry_only=False, data_dir=DATA, figure_dir=FIG):
     metric = {"catalog_zoom_events": len(zoom_ids), "zoom_common_coordinate_limits": zoom_limits,
               "data_directory": str(DATA.relative_to(ROOT)), "figure_directory": str(FIG.relative_to(ROOT)),
               "section_geoid_depth_range_km": [zmin, zmax],
+              "color_saturation": dict(figure10=velocity_colors, figure11=resolution_colors,
+                  interpretation="Counts refer to sampled section interpolation points, not model nodes. Triangular colorbar extensions mark values beyond the declared common limits; limits are unchanged."),
               "resolution_section_interpretation": "The resolution_diagonal and independent_pick_sigma_velocity_km_s columns interpolate nodal diagnostics for display; the latter is not sqrt(w^T C_v w) for interpolated velocity.",
               "modes": {}}
     p0 = np.column_stack([values(initial, k) for k in ("x", "y", "z")])
