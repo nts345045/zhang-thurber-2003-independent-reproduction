@@ -1,0 +1,34 @@
+{
+  "status": "completed",
+  "command": [
+    "python3",
+    "diagnostics/package_loma_variant.py",
+    "create",
+    "--data",
+    "data/loma_lon_analytic_001",
+    "--review",
+    "data/loma_lon_analytic_001/independent_simulation_review.json",
+    "--comparison",
+    "data/development/loma_variant_comparison_001/comparison.json",
+    "--base",
+    "data/published/loma_lom_analytic_001",
+    "--output",
+    "data/published/loma_lon_analytic_001"
+  ],
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "start_utc": "2026-10-10T03:57:37Z",
+  "source_sha256": {
+    "diagnostics/package_loma_variant.py": "a6e5b1e25ab395e96167bc0b62b0b3e8fafefd213579d2d84441ac333ff85763",
+    "diagnostics/package_loma_simulation.py": "0efadef52efe787d713d80b93c74b2242e1355db02a4249e7341593427961195"
+  },
+  "returncode": 0,
+  "elapsed_s": 101.11061242304277,
+  "end_utc": "2026-10-10T03:59:18Z",
+  "output_sha256": {
+    "overlay_create_stdout.json": "91706af493f96142ac4323232efd91b65b0bb72c8425d6c570ce49952e3e6ff0",
+    "overlay_create_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "overlay_create_resource_usage.txt": "b77009a1102102829ac4711f02106aaf40b23d5153e9be17a1f5a217734b06a1"
+  }
+}

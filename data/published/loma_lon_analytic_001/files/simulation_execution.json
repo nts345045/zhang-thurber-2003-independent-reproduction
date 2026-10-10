@@ -1,0 +1,126 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T03:29:09.916065+00:00",
+  "driver_pid": 66176,
+  "command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/run_loma_analytic_simulation.py",
+    "--data",
+    "data/loma_lon_analytic_001",
+    "--build",
+    "tmp/loma_analytic_runs/lon_001",
+    "--threads",
+    "4"
+  ],
+  "threads": 4,
+  "completed_commands": [
+    {
+      "stage": "simulation_cmake_version",
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "pid": 66178,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:29:10.075861+00:00"
+    },
+    {
+      "stage": "simulation_configure",
+      "command": [
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_analytic_runs/lon_001/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_analytic_runs/lon_001/compiled"
+      ],
+      "pid": 66179,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:29:11.748718+00:00"
+    },
+    {
+      "stage": "simulation_compiler_version",
+      "command": [
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "pid": 66228,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:29:11.774834+00:00"
+    },
+    {
+      "stage": "simulation_compile",
+      "command": [
+        "cmake",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_analytic_runs/lon_001/compiled",
+        "-j",
+        "2"
+      ],
+      "pid": 66229,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:29:40.012774+00:00"
+    },
+    {
+      "stage": "simulation_runtime_libraries",
+      "command": [
+        "ldd",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_analytic_runs/lon_001/compiled/dd"
+      ],
+      "pid": 66717,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:29:40.164167+00:00"
+    },
+    {
+      "stage": "simulate",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_analytic_runs/lon_001/compiled/dd",
+        "simulate",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lon_analytic_001/run.cfg",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lon_analytic_001",
+        "--analytic-truth",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lon_analytic_001/analytic_truth"
+      ],
+      "pid": 66786,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:34:08.734739+00:00"
+    }
+  ],
+  "analytic_truth_manifest_sha256": "64661c55d2a73b20841b83bafb35cdc0184f30bf4cbc00492869beb9863c46df",
+  "scope": "Synthetic observations from reviewed continuous layered truth; no inverse calculation or forward-solver acceptance",
+  "current_stage": "simulate",
+  "current_command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_analytic_runs/lon_001/compiled/dd",
+    "simulate",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lon_analytic_001/run.cfg",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lon_analytic_001",
+    "--analytic-truth",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/loma_lon_analytic_001/analytic_truth"
+  ],
+  "current_command_started_utc": "2026-10-10T03:29:40.977561+00:00",
+  "current_child_pid": 66786,
+  "finished_utc": "2026-10-10T03:34:57.163173+00:00",
+  "return_code": 0,
+  "result_status": "simulation_complete_awaiting_independent_output_review",
+  "immutable_prepared_files_verified": 22,
+  "output_sha256": {
+    "initial_events.csv": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+    "arrivals.csv": "236284ee2adf8c2bea92dabe49c07d1c63148939a2a595ae55b74ff64603437f",
+    "observations.csv": "c369cabeac01f5fea506cd05c21a5d6ea27673a0f69cb1e59bb9eea4823c2179",
+    "simulation_truth_status.csv": "cea6755f71078e32f0a7500b426a1cf8a9b9c2b8a323e2611830ff34c86653ea",
+    "simulation_truth_mode.txt": "f1a9a5dec8eaa6c2f51b484ef730768ec312b74a2bebe001244bfc1d7d5ff7d5",
+    "authoritative_geometry": "13952d674c3c41253c5943b0d457ae9f16eb88a17fc5c057bee727467c90d166",
+    "truth_events.csv": "45e2682389d1a21d7389c132dced4c98f11872b5c98909b53be44c12a254285e",
+    "simulation_cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "simulation_cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulation_configure_stdout.log": "e411b33d45ab13bb5920ce27f6b53d4323615f892ef340c15e3df2cafa7bdb8e",
+    "simulation_configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulation_compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "simulation_compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulation_compile_stdout.log": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+    "simulation_compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulation_runtime_libraries_stdout.log": "f89e38f59c7b23342da5cdeecbbc8159a2b6ed42de254a522f655519de27b692",
+    "simulation_runtime_libraries_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate_stdout.log": "384ba01fa254a610e6638cbcdcb2e841879a54ba52d0df9347acce655d1be85a",
+    "simulate_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulation_run_manifest.json": "a2bc7f143b37837090f6f97ee175757d5400c9d9f9757d65745620e65c37594a"
+  }
+}

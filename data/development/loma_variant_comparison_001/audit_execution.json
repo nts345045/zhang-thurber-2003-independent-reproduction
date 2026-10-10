@@ -1,0 +1,31 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T03:36:40.871930Z",
+  "command": [
+    "python3",
+    "diagnostics/review_loma_analytic_simulation.py",
+    "--data",
+    "data/loma_lon_analytic_001",
+    "--output",
+    "data/loma_lon_analytic_001/independent_simulation_review.json",
+    "--reviewer",
+    "earthscope_discovery"
+  ],
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "review_source_sha256": "786c1ccc99cfa3d3677dde88f11a96f9677693966de874d40c15ca2972a76246",
+  "simulation_execution_sha256": "c209a4550dda670ddeaff018de744343148c677d6feaf6d7d80097e5ea80395f",
+  "base_commit": "84ebd25266457c252c9c6bda26fd2c5df11f05fd",
+  "source_change": "Only optional executing-reviewer metadata was added; all numerical and identity gates are unchanged.",
+  "return_code": 0,
+  "result_status": "passed",
+  "finished_utc": "2026-10-10T03:47:13.191416Z",
+  "independent_review_sha256": "01483067c89c4df00f4807961eb2c8d7fddf4f8c2c6a368d9bff3c03213e0eff",
+  "simulation_run_manifest_sha256": "a2bc7f143b37837090f6f97ee175757d5400c9d9f9757d65745620e65c37594a",
+  "output_sha256": {
+    "audit_stdout.json": "a690db367eb1bee93460ca2ab997644f8e05bff8836972f6ca2f2f89269e5eba",
+    "audit_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit_resource_usage.txt": "786ad340795761636d873a086e204a5ae02c7473fa1b8529cd088b9426f542ed"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "status": "completed",
+  "command": [
+    "python3",
+    "diagnostics/package_loma_variant.py",
+    "restore",
+    "--package",
+    "data/published/loma_lon_analytic_001",
+    "--base",
+    "data/published/loma_lom_analytic_001",
+    "--output",
+    "tmp/loma_lon_overlay_restore_001"
+  ],
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "start_utc": "2026-10-10T03:59:29Z",
+  "source_sha256": {
+    "diagnostics/package_loma_variant.py": "a6e5b1e25ab395e96167bc0b62b0b3e8fafefd213579d2d84441ac333ff85763",
+    "diagnostics/package_loma_simulation.py": "0efadef52efe787d713d80b93c74b2242e1355db02a4249e7341593427961195"
+  },
+  "returncode": 0,
+  "elapsed_s": 170.85247674502898,
+  "end_utc": "2026-10-10T04:02:20Z",
+  "output_sha256": {
+    "overlay_restore_stdout.json": "a3855d0b2ef1970ef15dd5cb2adb9d777b2496d4671f8b2f22a23da404652115",
+    "overlay_restore_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "overlay_restore_resource_usage.txt": "712ffce8da935341425d1ba85d1c3dfca51ef7d7f5b395e6d84ca3abd841cd50"
+  }
+}

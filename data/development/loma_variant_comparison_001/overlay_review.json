@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "created_utc": "2026-10-10T04:07:12.362830+00:00",
+  "scope": "Independent publication inventory, exact member mapping, provenance and completed-restore evidence review",
+  "base_files_rehashed": 51,
+  "package_files": 15,
+  "reused_members": 37,
+  "stored_members": 11,
+  "restored_members": 48,
+  "restored_nonobservation_members_rehashed": 47,
+  "native_table_rows": {
+    "analytic_truth/inputs/stations.csv": 52,
+    "analytic_truth/inputs/truth_events.csv": 724,
+    "stations.csv": 52,
+    "truth_events.csv": 724
+  },
+  "evidence_sha256": {
+    "data/published/loma_lon_analytic_001/manifest.json": "9ccab3cb28abe7d6480b4b0c88ef88e31f487bdf183687b22c4ef1485ef13093",
+    "data/development/loma_variant_comparison_001/comparison.json": "73e28c5d84ca49a75445f3b3fef2223d060276a423eb45ae7eaeff5f063f2fcf",
+    "data/development/loma_variant_comparison_001/overlay_restore_execution.json": "f7f6d5c77c6fdfbcc30a7d11c6c0de1478b8f2423abe97a8d31be494272c378b",
+    "data/development/loma_variant_comparison_001/overlay_restore_stdout.json": "a3855d0b2ef1970ef15dd5cb2adb9d777b2496d4671f8b2f22a23da404652115",
+    "data/development/loma_variant_comparison_001/review_overlay.py": "8e6704cff0d3414728f6f2ffae1e9e76a6a2128ec44d5d4ff43d07b476529c0f"
+  },
+  "limits": [
+    "The 6.8 GB observation payload was fully hashed by the completed fresh-restore command; this review verifies its pinned terminal evidence and file size without repeating that full read.",
+    "Publication validates lossless storage and identity preservation, not inverse accuracy."
+  ]
+}
