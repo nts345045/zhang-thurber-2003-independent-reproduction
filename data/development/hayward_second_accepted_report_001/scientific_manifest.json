@@ -1,0 +1,146 @@
+{
+  "status": "validated_scientific_report_update",
+  "scope": "Two published intermediate accepted Hayward states; no new scientific calculation.",
+  "report": {
+    "path": "report/report.pdf",
+    "sha256": "bf40d081df39fa1911db0cd77d9983ec32cff8eba7eefe2f079afac1f679d854",
+    "bytes": 2831217,
+    "pages": 124
+  },
+  "changed_source": {
+    "path": "report/recovery_checkpoint.tex",
+    "before_sha256": "006bfa0df2a2ea65ac5c9581940582a9a7a476bdc845b84169fd6848232a5b44",
+    "after_sha256": "75da74ed24f91e9142cc8c5e380c81d72b026d202687e4a95058f0e036574863"
+  },
+  "scientific_bindings": {
+    "report/report.tex": {
+      "sha256": "6911e139cefe057c70da650e5147edd414467be86ff8ae95d707da9ed4f6a4b9",
+      "bytes": 56535
+    },
+    "report/recovery_checkpoint.tex": {
+      "sha256": "75da74ed24f91e9142cc8c5e380c81d72b026d202687e4a95058f0e036574863",
+      "bytes": 93558
+    },
+    "figures/hayward_accepted_update_001.pdf": {
+      "sha256": "35b01c027c3a0a011143a754838d653c043548bd0ce233e8316035e4ebef301c",
+      "bytes": 158323
+    },
+    "data/panel_audit.json": {
+      "sha256": "c49c954019a0c888ececf0d9320e178e7b0880ce2d5706570dfa9a96a72f762f",
+      "bytes": 115260
+    },
+    "data/panel_audit.csv": {
+      "sha256": "c2969f9968e0fbc38255054189d1469affc06e17141ba648b05142850281ed49",
+      "bytes": 104887
+    },
+    "FIGURE_AUDIT.md": {
+      "sha256": "6370e706d97ecfad570a94c1095f5545bb3f53801a492ab06dd9df5481fe03de",
+      "bytes": 113183
+    },
+    "report/panel_table.tex": {
+      "sha256": "03a4f24c131c6e1cc2d0c619e753df67f541d87c741133a9956d6aa5cf45ed65",
+      "bytes": 78114
+    },
+    "report/panel_details.tex": {
+      "sha256": "a44c3a176bc33ad69e67787a97251a9b851f6ec118370581bdeeb9bf2fff7f0b",
+      "bytes": 52705
+    },
+    "data/development/hayward_second_accepted_update_figure_001/scientific_manifest.json": {
+      "sha256": "4073752162ecac5173a118319c0ea102eb5f0872fa45dceda29de18bb9f3a97e",
+      "bytes": 5479
+    },
+    "data/development/hayward_second_accepted_update_figure_001/figure/summary.json": {
+      "sha256": "f245a245bd880f5fc81282498d8f668e2843d1b794ed599735f53e9349452ac7",
+      "bytes": 7368
+    },
+    "data/development/hayward_second_accepted_update_figure_001/figure/statistics.json": {
+      "sha256": "d7039440b4bda3284a1b1635585065b7d424d63a76a5247f8f57028f18a62a7a",
+      "bytes": 5252
+    },
+    "data/development/hayward_second_accepted_update_figure_001/figure/native_identifiers.json.gz": {
+      "sha256": "e79cb1583365a1cfe326886ce91ac1ff6eac7978cf1ece85d722922083660ad8",
+      "bytes": 419864
+    },
+    "data/development/hayward_second_accepted_update_figure_001/figure/accepted_update_2_minus_1.pdf": {
+      "sha256": "1dda86cc97cbf5a0947881156b08f809b1ed41d4e9aa2ad3feb7b119b1b23fd6",
+      "bytes": 155674
+    },
+    "data/development/hayward_second_accepted_update_figure_001/figure/accepted_update_2_minus_1.pdf.identifiers.json": {
+      "sha256": "0b006a7507f454997258d8b88c2b8f00d7d16248b7f7079abfdfe3565883851c",
+      "bytes": 224624
+    },
+    "data/development/hayward_second_accepted_update_figure_001/validation.json": {
+      "sha256": "9a45b05640d832c81348d391ef42e00d34ac9f3543cf4928204d40acbebedabf",
+      "bytes": 3274
+    },
+    "data/development/hayward_second_accepted_update_figure_001/inputs/dd_rejected_trial_it_2_ls_0_accepted_events.csv": {
+      "sha256": "adbbb9f3a026941d83dd5e7c6feff122564260ff44bd96716f20333386fde63d",
+      "bytes": 579251
+    },
+    "data/development/hayward_second_accepted_update_figure_001/inputs/dd_rejected_trial_it_2_ls_0_accepted_grid.csv": {
+      "sha256": "e4aa28f533e5acbafcd45eb3b4158f3a775a01629745080b6e16efbe5abd16ff",
+      "bytes": 12849
+    }
+  },
+  "accepted_update": {
+    "ordinal": 2,
+    "iteration": 1,
+    "trial": 4,
+    "fraction": "1/16",
+    "fixed_weight_objective_before": "1410.9617357448938",
+    "fixed_weight_objective_after": "1250.1138773364614",
+    "decrease_percent_rounded": "11.3999",
+    "comparison": "second accepted minus first accepted",
+    "events": 1092,
+    "grid_nodes": 462,
+    "plotted_depth_km": 8,
+    "plotted_nodes": 77,
+    "detail_events": 122,
+    "receiver_epochs": 372,
+    "channel_seed_ids": 62,
+    "blank_location_epochs": 349
+  },
+  "validation": {
+    "tex_passes": 2,
+    "tex_passes_successful": 2,
+    "tex_paths_checked": 139,
+    "figure_bindings_checked": 30,
+    "panel_counts": {
+      "independently reproduced": 1,
+      "partially reproduced": 61
+    },
+    "prior_figure_files_unchanged": 22,
+    "other_tex_files_unchanged": 15,
+    "panel_audit_unchanged": true,
+    "published_scientific_inputs_unchanged": true,
+    "undefined_references": 0,
+    "overfull_boxes": 0,
+    "known_warning": "Existing location_errors.pdf page-group inclusion warning.",
+    "visual_review_pages": [
+      44,
+      49,
+      50,
+      51
+    ],
+    "visual_review": "Prose, figures, captions and adjacent CC map legible; no clipping or overlap."
+  },
+  "content_locations": {
+    "two_state_discussion_page": 44,
+    "first_state_figure": {
+      "number": 19,
+      "page": 49
+    },
+    "second_minus_first_figure": {
+      "number": 20,
+      "page": 50
+    }
+  },
+  "limits": [
+    "History RMS and ray-quality fields describe the pre-update state.",
+    "Next-iteration weights change; its objective is not directly comparable with the accepted fixed-weight objective.",
+    "No final convergence, recovery, post-update first-arrival accuracy or source-derivative accuracy is established.",
+    "Complete eligible Jacobian evidence is still required for full-DD resolution and covariance.",
+    "This checks report integration against published evidence; it is not a clean end-to-end scientific rebuild."
+  ],
+  "new_numerical_calls": 0
+}
