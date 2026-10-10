@@ -161,8 +161,18 @@ failure with its selected time and derivatives blank. A separately reviewed
 [turning-speed arithmetic correction](data/development/loma_lon_initial_reference_002/README.md)
 passes all 37,648 LON references without changing the isolated roots or acceptance
 limits. The largest candidate-time change is 1.70 nanoseconds; only the previously
-invalid pair changes validity. Separate full LOM and LON initial-ray and
-matrix-census preflights are active; neither performs an inverse update.
+invalid pair changes validity. The
+[full LOM initial comparison](data/development/loma_lom_initial_accuracy_001/README.md)
+now finds all 37,648 travel times within the unchanged limit, but 48 bottom-face
+source derivatives fail and one additional ray fails local stopping. The
+[observed failures](data/development/loma_initial_failure_review_001/README.md)
+separate an exhausted line search from a
+[boundary endpoint discretization effect](data/development/loma_boundary_endpoint_001/README.md).
+Only 37,599 rays pass all checks. LOM sampled checks and the LON initial-ray
+preflight remain active; neither performs an inverse update. A separate
+[one-sided curvature calculation](data/development/native_interface_conditioning/README.md)
+assesses a saved interface direction, without changing production optimization
+or promoting any failed flag.
 
 A new [inversion forward guard](data/development/inversion_ray_gate_checks/README.md)
 on the integration branch rejects locally unconverged or otherwise invalid rays
@@ -203,6 +213,16 @@ relative weight, with no formal timing uncertainty inferred. These measurements
 have not entered the running catalog-only inversion; its saved results retain
 their original inputs and limitations.
 
+The separately [prepared catalog-plus-CC inputs](data/hayward_catalog_cc_001/README.md)
+retain all 58,980 catalog rows and append the 98 waveform differences. Both
+receiver epochs remain attached, including 38 pairs across metadata epochs;
+the combined input uses exactly the same 14,262 native forward pairs.
+The [adopted empirical weighting](data/development/catalog_cc_weight_adoption_001/README.md)
+uses literal CC squared as a residual/Jacobian row multiplier, hence CC to the
+fourth power in the squared objective before other factors. Timing uncertainty
+remains explicitly unestimated. The preparation and independent full-file audit
+do not create a configuration or inversion result.
+
 [Read the PDF report](report/report.pdf) or the
 [panel-by-panel audit](FIGURE_AUDIT.md).
 
@@ -237,6 +257,10 @@ earlier forward operators.
   The full measurement roster and attempted lag/coherence arrays are in
   `data/development/native_waveform_cc_001/`. These directories contain inputs,
   not an additional inversion result.
+- [`data/hayward_catalog_cc_001/`](data/hayward_catalog_cc_001/README.md):
+  reviewed combined inputs in `observations.csv`, copied original geometry,
+  `preparation_manifest.json`, and `independent_review.json`. All original
+  catalog rows remain unchanged; no inversion outputs exist in this directory.
 - [`data/published/loma_lom_analytic_001/`](data/published/loma_lom_analytic_001/README.md):
   complete, audited synthetic observations and authoritative geometry, with
   verified archive restoration instructions. These are inputs for the corrected
