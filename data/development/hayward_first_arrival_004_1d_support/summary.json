@@ -1,0 +1,265 @@
+{
+  "status": "complete",
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/compare_hayward_1d_support.py --data data/hayward_first_arrival_004 --output data/development/hayward_first_arrival_004_1d_support --completed-linearization-only --reference-cache data/development/hayward_first_arrival_003_1d_support",
+  "scope": "Continuous 1D reference versus saved full initial absolute support; no solver or inversion rerun",
+  "rays": 14262,
+  "unique_native_pairs": 14262,
+  "source_derivative_components": 42786,
+  "elapsed_reference_seconds": 9.662711381912231,
+  "reference_counts": {
+    "branch_turning": 5193,
+    "reference_complete": 14262,
+    "reference_valid": 14262,
+    "near_ties": 0,
+    "saved_nonconverged": 0,
+    "branch_direct": 9069
+  },
+  "profile_depth_velocity_km_km_s": [
+    [
+      -1.0,
+      3.77
+    ],
+    [
+      0.0,
+      3.77
+    ],
+    [
+      4.0,
+      5.476666666666667
+    ],
+    [
+      8.0,
+      5.8675
+    ],
+    [
+      12.0,
+      6.1025
+    ],
+    [
+      20.0,
+      7.18
+    ]
+  ],
+  "preflight_status": null,
+  "readiness_basis": "completed_linearization_ledger_and_frozen_inputs",
+  "overall_preflight_assessed": false,
+  "original_reverified_sha256": {
+    "data/hayward_first_arrival_004/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward_first_arrival_004/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/hayward_first_arrival_004/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward_first_arrival_004/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/hayward_first_arrival_004/selection_manifest.json": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004",
+    "data/hayward_first_arrival_004/authoritative_ids_required": "00d86d4465702c0424ec511ef34eee9eb080977c55c21ac8af2106257760ba47",
+    "data/hayward_first_arrival_004/event_pairs.csv": "b678922c56c2c0841769aa882e98291631d3f7651a19661206c0433bfe9826ae",
+    "data/hayward_first_arrival_004/event_selection.csv": "d8563afe642aaaf719b9c92f0206bcd88003d256ad9067c08b0b40c60c3fb256",
+    "data/hayward_first_arrival_004/initial_geographic_events.csv": "7a7fba3e9f128a77dc2935d5a1a0a4926bd1442525ff4a477c45cba44c059a09",
+    "data/hayward_first_arrival_004/excluded_picks.csv": "93aab31ede96f61d65f4e363eb9bd8748b67014e477b12be12daee3ba09af0ca",
+    "data/hayward_first_arrival_004/run.cfg": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4",
+    "data/hayward_first_arrival_004/source_snapshot.tar.gz": "70735ea679cebcf3be385f76ec3674cc0c8136b96a3266df2b715d7b85630863",
+    "tmp/hayward_runs/first_arrival_004/compiled/dd": "951fa8bf5c43809bc4386bc41a6d6bdefccec33d7124fec2aacbd4e7bc7f13c8",
+    "data/hayward_first_arrival_004/initial_linearization_rows.csv": "c6ca47454b13578ebdbcd9906c274069e7dbe248ed1b1de0c75c9f56c9c7c6a0",
+    "data/hayward_first_arrival_004/initial_linearization_columns.csv": "8406c92706120c2f7dcc07d2d6deb0d7f3900cd42c1619e32df52b688a14048d",
+    "data/hayward_first_arrival_004/initial_linearization_matrix.csv": "624d3a9b2a1782828a6e42f6537260c9c9f5f756b371dd62605889819d4696fa",
+    "data/hayward_first_arrival_004/run_manifest.json": "75631991144e76cf16731e0b73e396860ab78db386c556415f990968cb7cc00a"
+  },
+  "reused_reference_sha256": {
+    "data/development/hayward_first_arrival_003_1d_support/summary.json": "6d757a106a8c607fb5d2baa124cf447e1bad5b3033442710a6fddbaf018c86df",
+    "data/development/hayward_first_arrival_003_1d_support/inputs/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/development/hayward_first_arrival_003_1d_support/inputs/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/development/hayward_first_arrival_003_1d_support/inputs/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/development/hayward_first_arrival_003_1d_support/inputs/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/development/hayward_first_arrival_003_1d_support/source/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "data/development/hayward_first_arrival_003_1d_support/references.jsonl": "ff32376d1ae5709c2360e72e5bc283795b37b5826594d5d459f6419cbefba40e"
+  },
+  "accuracy_control_limits": {
+    "absolute_time_s": 2.5e-05,
+    "source_euclidean_norm_s_per_km": 3e-06,
+    "basis": "Unchanged analytic component limits; original preflight flags preserved"
+  },
+  "accuracy": {
+    "all": {
+      "count": 14262,
+      "compared_unique_references": 14262,
+      "absolute_time_error_s": {
+        "count": 14262,
+        "minimum": 9.355205499161912e-10,
+        "maximum": 9.585109452814322e-07,
+        "median": 3.3310252356422154e-07,
+        "mean": 3.285178352950086e-07,
+        "rms": 3.5574947921949933e-07,
+        "maximum_absolute": 9.585109452814322e-07
+      },
+      "source_error_euclidean_norm_s_per_km": {
+        "count": 14262,
+        "minimum": 1.7058900496965209e-09,
+        "maximum": 1.7816334497719923e-06,
+        "median": 2.4217010586568805e-08,
+        "mean": 4.428738213577527e-08,
+        "rms": 7.726465003496296e-08,
+        "maximum_absolute": 1.7816334497719923e-06
+      },
+      "time_limit_pass": 14262,
+      "source_vector_limit_pass": 14262,
+      "both_limits_pass": 14262
+    },
+    "local_flag_true": {
+      "count": 14262,
+      "compared_unique_references": 14262,
+      "absolute_time_error_s": {
+        "count": 14262,
+        "minimum": 9.355205499161912e-10,
+        "maximum": 9.585109452814322e-07,
+        "median": 3.3310252356422154e-07,
+        "mean": 3.285178352950086e-07,
+        "rms": 3.5574947921949933e-07,
+        "maximum_absolute": 9.585109452814322e-07
+      },
+      "source_error_euclidean_norm_s_per_km": {
+        "count": 14262,
+        "minimum": 1.7058900496965209e-09,
+        "maximum": 1.7816334497719923e-06,
+        "median": 2.4217010586568805e-08,
+        "mean": 4.428738213577527e-08,
+        "rms": 7.726465003496296e-08,
+        "maximum_absolute": 1.7816334497719923e-06
+      },
+      "time_limit_pass": 14262,
+      "source_vector_limit_pass": 14262,
+      "both_limits_pass": 14262
+    },
+    "local_flag_false": {
+      "count": 0,
+      "compared_unique_references": 0,
+      "absolute_time_error_s": null,
+      "source_error_euclidean_norm_s_per_km": null,
+      "time_limit_pass": 0,
+      "source_vector_limit_pass": 0,
+      "both_limits_pass": 0
+    }
+  },
+  "original_columns_preserved": [
+    "row",
+    "observation_row",
+    "i",
+    "station",
+    "observed",
+    "predicted",
+    "residual",
+    "ray_converged",
+    "ray_projected_gradient",
+    "ray_iterations",
+    "ray_time",
+    "ray_raw_gradient",
+    "ray_initialization_attempted",
+    "ray_initialization_succeeded",
+    "ray_selected_fmm_seed",
+    "ray_direct_seed_time",
+    "ray_fmm_seed_time",
+    "ray_field_time",
+    "ray_extraction_fallback_steps",
+    "ray_extraction_message",
+    "station_j",
+    "event_i_resource_id",
+    "origin_i_resource_id",
+    "arrival_i_resource_id",
+    "pick_i_resource_id",
+    "pick_i_time_utc",
+    "pick_i_uncertainty_s",
+    "pick_i_uncertainty_confidence_level",
+    "pick_i_source_sha256",
+    "arrival_i_time_weight",
+    "event_j_resource_id",
+    "origin_j_resource_id",
+    "arrival_j_resource_id",
+    "pick_j_resource_id",
+    "pick_j_time_utc",
+    "pick_j_uncertainty_s",
+    "pick_j_uncertainty_confidence_level",
+    "pick_j_source_sha256",
+    "arrival_j_time_weight",
+    "network_code",
+    "station_code",
+    "location_code",
+    "channel_code",
+    "channel_seed_id",
+    "channel_fdsn_source_id",
+    "metadata_epoch_start",
+    "metadata_epoch_end",
+    "channel_source_sha256",
+    "metadata_epoch_j_start",
+    "metadata_epoch_j_end",
+    "channel_j_source_sha256",
+    "cross_metadata_epoch",
+    "uncertainty_s",
+    "a_priori_weight",
+    "observation_basis"
+  ],
+  "identity_join": [
+    "row",
+    "observation_row",
+    "i",
+    "station"
+  ],
+  "candidate_join": "references.jsonl row/observation_row/event/station join comparison.csv row/observation_row/i/station",
+  "production_minus_reference_s": {
+    "count": 14262,
+    "minimum": 9.355205499161912e-10,
+    "maximum": 9.585109452814322e-07,
+    "median": 3.3310252356422154e-07,
+    "mean": 3.285178352950086e-07,
+    "rms": 3.5574947921949933e-07,
+    "maximum_absolute": 9.585109452814322e-07
+  },
+  "production_source_derivative_minus_reference_s_per_km": {
+    "count": 42786,
+    "minimum": -1.7813358086406217e-06,
+    "maximum": 8.462922163124387e-07,
+    "median": -3.1583968287951514e-09,
+    "mean": -1.220502940555836e-08,
+    "rms": 4.460876649652796e-08,
+    "maximum_absolute": 1.7813358086406217e-06
+  },
+  "input_sha256": {
+    "data/development/hayward_first_arrival_004_1d_support/inputs/authoritative_ids_required": "00d86d4465702c0424ec511ef34eee9eb080977c55c21ac8af2106257760ba47",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/event_pairs.csv": "b678922c56c2c0841769aa882e98291631d3f7651a19661206c0433bfe9826ae",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/event_selection.csv": "d8563afe642aaaf719b9c92f0206bcd88003d256ad9067c08b0b40c60c3fb256",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/excluded_picks.csv": "93aab31ede96f61d65f4e363eb9bd8748b67014e477b12be12daee3ba09af0ca",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/initial_geographic_events.csv": "7a7fba3e9f128a77dc2935d5a1a0a4926bd1442525ff4a477c45cba44c059a09",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/initial_linearization_columns.csv": "8406c92706120c2f7dcc07d2d6deb0d7f3900cd42c1619e32df52b688a14048d",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/initial_linearization_matrix.csv": "624d3a9b2a1782828a6e42f6537260c9c9f5f756b371dd62605889819d4696fa",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/initial_linearization_rows.csv": "c6ca47454b13578ebdbcd9906c274069e7dbe248ed1b1de0c75c9f56c9c7c6a0",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/run.cfg": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/run_manifest.json": "75631991144e76cf16731e0b73e396860ab78db386c556415f990968cb7cc00a",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/selection_manifest.json": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/source_snapshot.tar.gz": "70735ea679cebcf3be385f76ec3674cc0c8136b96a3266df2b715d7b85630863",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/development/hayward_first_arrival_004_1d_support/inputs/preflight_execution_at_capture.json": "a592f1005450947be443afc778911280171865f6e0f2549d711b71cd8f7e343d",
+    "diagnostics/compare_hayward_1d_support.py": "9d85e163bf4d4fe60c5ca72854c3706963bd36d9bc232094f58c86bf0268f182",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  },
+  "output_sha256": {
+    "data/development/hayward_first_arrival_004_1d_support/comparison.csv": "0705a0f6d2402187fecaf8d7313a20e69bd7f45d3370a88a7be16c477ffd256a",
+    "data/development/hayward_first_arrival_004_1d_support/references.jsonl": "ff32376d1ae5709c2360e72e5bc283795b37b5826594d5d459f6419cbefba40e",
+    "data/development/hayward_first_arrival_004_1d_support/source/compare_hayward_1d_support.py": "9d85e163bf4d4fe60c5ca72854c3706963bd36d9bc232094f58c86bf0268f182",
+    "data/development/hayward_first_arrival_004_1d_support/source/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  },
+  "versions": {
+    "python": "3.6.8",
+    "numpy": "1.19.5",
+    "scipy": "1.5.4"
+  },
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "limitations": [
+    "Initial horizontally uniform monotone profile only; no claim for updated three-dimensional models.",
+    "Branch enumeration is certified only when complete; time ordering uses ordinary floating-point evaluations and near ties remain explicit.",
+    "A late time relative to the reference alone does not distinguish branch choice, path discretization, or incomplete local convergence.",
+    "Source derivatives are branch derivatives; distinct tied first arrivals need not have a unique derivative.",
+    "No new field pass threshold or inversion gate is imposed; all signed differences and existing stopping flags are retained.",
+    "Saved model/Jacobian values have the solver 12-significant-digit serialization; reference coordinates use the frozen original input precision."
+  ]
+}
