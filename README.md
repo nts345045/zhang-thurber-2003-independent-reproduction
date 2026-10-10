@@ -214,13 +214,16 @@ saved-initializer replay. It satisfies the unchanged combined local stop after
 145 updates, with time error 0.861 microseconds and source-vector error
 3.18e-8 s/km. The [history comparison](figures/diagnostics/loma_retention.pdf)
 supports a role for discarded curvature in this case. Positive subnormal and
-infinite curvature remain unsafe in invented controls; no general optimizer
-change is adopted.
+infinite curvature remain unsafe in invented controls.
 A [usable-curvature replay](data/development/loma_usable_curvature_native_001/README.md)
 rejects nonfinite or unrepresentable memory operations and preserves the existing
 fallback. It reproduces all five native C tables byte for byte after 183 invented
-checks per variant. This supports the safeguard on the tested case; it remains
-an isolated diagnostic and does not repair the separate endpoint-action failure.
+checks per variant. After [bounded integration checks](data/development/usable_curvature_integration_checks_001/README.md),
+the `first-arrival-integration` branch [adopts the tested correction](data/development/usable_curvature_adoption_001/README.md).
+The finest-grid layered and oblique comparisons pass; a retained coarse layered
+source derivative exceeds its accuracy target. Full-cohort validation remains
+pending. The running jobs retain their earlier frozen binaries, and the
+separate endpoint-action failure remains unresolved.
 Historical replays use the [inert sentinel archive](data/development/terminal_lock_archive_001/README.md)
 to restore omitted terminal evidence into a fresh scratch checkout; existing
 run directories and runtime locks are preserved.
@@ -240,8 +243,16 @@ uses curved candidates and the same action for all original-node perturbations.
 All 40 affine reference comparisons pass, while all 24 inward boundary secants
 retain finite-step failures and the expected square-root truncation trend.
 This supplies an action-consistent local candidate, with no native adoption.
-Only 37,599 rays pass all checks. LOM sampled checks and the LON initial-ray
-preflight remain active; neither performs an inverse update. A separate
+A [saved boundary-limit calculation](data/development/loma_endpoint_shooting_asymptotics_002/README.md)
+separates square-root finite-step truncation from the old polygon's nonzero
+linear term. All 24 raw failures remain reported; the separate extrapolates
+agree with limiting momentum but deteriorate at the finer steps.
+Only 37,599 LOM rays pass all full-ray comparison criteria. The [completed LON census](data/development/loma_lon_initial_accuracy_001/README.md)
+passes all 37,648 local and time checks but retains 50 source-vector failures:
+13 at bottom sources and 37 at interior sources. Both sampled preflights remain
+active; neither performs an inverse update. These results use the earlier
+frozen optimizer. Repeating the invented endpoint-mesh controls with D preserves
+their two false local flags and 32 derivative failures. A separate
 [one-sided curvature calculation](data/development/native_interface_conditioning/README.md)
 assesses a saved interface direction, without changing production optimization
 or promoting any failed flag.
@@ -299,6 +310,9 @@ do not create a configuration or inversion result.
 [panel-by-panel audit](FIGURE_AUDIT.md).
 The [failure summary](FAILURE_SUMMARY.md) connects the input, forward-model,
 inversion, and uncertainty deficiencies to the remaining partial reproductions.
+An [additional authoritative waveform pilot](data/authoritative/waveforms/eventdata_pilot_001/README.md)
+returned no samples for its two exact event/channel requests. The existing
+98 waveform measurements and full catalog selection remain unchanged.
 
 ## Where to inspect outputs
 

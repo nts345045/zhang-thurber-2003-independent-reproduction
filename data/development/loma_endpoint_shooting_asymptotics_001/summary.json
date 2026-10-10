@@ -1,0 +1,1343 @@
+{
+  "action_reintegration_performed": false,
+  "affine_coefficient": {
+    "bottom_velocity_km_per_s": 6.0,
+    "c_s_per_km_to_three_halves": "0.064150029909958418278794308944661939516400194585569652890955814053775296922548148",
+    "checks": [
+      {
+        "h_km": 9.5367431640625e-07,
+        "identity": {
+          "both_bottom": false,
+          "geometry": "invented",
+          "mixed": false,
+          "resource_ids": null,
+          "setting": "base",
+          "side": 1
+        },
+        "leading_prediction_s_per_km": "-0.000062646513583943767850385067328771425308984565024970364151324037161889938400925926",
+        "meaning": "Leading asymptotic term, not an exact finite-step oracle or enclosure",
+        "recorded_minus_leading_s_per_km": "-1.2619081364567293765679041074691015434975029635848675962838110061599074074E-11",
+        "recorded_over_leading": "1.0000002014330988692330096999968321552317072491408746562012815140404983565230297"
+      },
+      {
+        "h_km": 5.960464477539063e-08,
+        "identity": {
+          "both_bottom": false,
+          "geometry": "invented",
+          "mixed": false,
+          "resource_ids": null,
+          "setting": "base",
+          "side": 1
+        },
+        "leading_prediction_s_per_km": "-0.000015661628395985941962596266832192856327246141256242591037831009290472484600231481",
+        "meaning": "Leading asymptotic term, not an exact finite-step oracle or enclosure",
+        "recorded_minus_leading_s_per_km": "3.91565930228309031813707192856327246141256242591037831009290472484600231481E-10",
+        "recorded_over_leading": "0.99997499838967392005376074785613609927751437755046380024217458450708478521610057"
+      },
+      {
+        "h_km": 3.725290298461914e-09,
+        "identity": {
+          "both_bottom": false,
+          "geometry": "invented",
+          "mixed": false,
+          "resource_ids": null,
+          "setting": "base",
+          "side": 1
+        },
+        "leading_prediction_s_per_km": "-0.0000039154070989964854906490667080482140818115353140606477594577523226181211500578704",
+        "meaning": "Leading asymptotic term, not an exact finite-step oracle or enclosure",
+        "recorded_minus_leading_s_per_km": "1.50281565068614672115667080482140818115353140606477594577523226181211500578704E-8",
+        "recorded_over_leading": "0.99616178953378483501642620092833467490857262613862406360900080367282500111887347"
+      },
+      {
+        "h_km": 9.5367431640625e-07,
+        "identity": {
+          "both_bottom": false,
+          "geometry": "invented",
+          "mixed": false,
+          "resource_ids": null,
+          "setting": "tight",
+          "side": 1
+        },
+        "leading_prediction_s_per_km": "-0.000062646513583943767850385067328771425308984565024970364151324037161889938400925926",
+        "meaning": "Leading asymptotic term, not an exact finite-step oracle or enclosure",
+        "recorded_minus_leading_s_per_km": "-1.2619081364567293765679041074691015434975029635848675962838110061599074074E-11",
+        "recorded_over_leading": "1.0000002014330988692330096999968321552317072491408746562012815140404983565230297"
+      },
+      {
+        "h_km": 5.960464477539063e-08,
+        "identity": {
+          "both_bottom": false,
+          "geometry": "invented",
+          "mixed": false,
+          "resource_ids": null,
+          "setting": "tight",
+          "side": 1
+        },
+        "leading_prediction_s_per_km": "-0.000015661628395985941962596266832192856327246141256242591037831009290472484600231481",
+        "meaning": "Leading asymptotic term, not an exact finite-step oracle or enclosure",
+        "recorded_minus_leading_s_per_km": "3.91565930228309031813707192856327246141256242591037831009290472484600231481E-10",
+        "recorded_over_leading": "0.99997499838967392005376074785613609927751437755046380024217458450708478521610057"
+      },
+      {
+        "h_km": 3.725290298461914e-09,
+        "identity": {
+          "both_bottom": false,
+          "geometry": "invented",
+          "mixed": false,
+          "resource_ids": null,
+          "setting": "tight",
+          "side": 1
+        },
+        "leading_prediction_s_per_km": "-0.0000039154070989964854906490667080482140818115353140606477594577523226181211500578704",
+        "meaning": "Leading asymptotic term, not an exact finite-step oracle or enclosure",
+        "recorded_minus_leading_s_per_km": "1.50281565068614672115667080482140818115353140606477594577523226181211500578704E-8",
+        "recorded_over_leading": "0.99616178953378483501642620092833467490857262613862406360900080367282500111887347"
+      }
+    ],
+    "formula": "(2/3)*sqrt(2*g)/v_b^(3/2)",
+    "g_km_per_s_per_km": 1.0,
+    "precision_digits": 80
+  },
+  "extrapolate_count": 16,
+  "extrapolates": [
+    {
+      "coarse_h_km": 9.5367431640625e-07,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": 5.262942674259344e-10,
+      "exact_combination_q": {
+        "denominator": "412316860416",
+        "numerator": "217"
+      },
+      "extrapolated_s_per_km": 5.262942674259344e-10,
+      "fine_h_km": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": false,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "interval_error_certificate": false,
+      "pair_index": 0
+    },
+    {
+      "coarse_h_km": 5.960464477539063e-08,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": 1.9907020032405853e-08,
+      "exact_combination_q": {
+        "denominator": "8589934592",
+        "numerator": "171"
+      },
+      "extrapolated_s_per_km": 1.9907020032405853e-08,
+      "fine_h_km": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": false,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "interval_error_certificate": false,
+      "pair_index": 1
+    },
+    {
+      "coarse_h_km": 9.5367431640625e-07,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": 1.1350493878126144e-09,
+      "exact_combination_q": {
+        "denominator": "34359738368",
+        "numerator": "39"
+      },
+      "extrapolated_s_per_km": 1.1350493878126144e-09,
+      "fine_h_km": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "interval_error_certificate": false,
+      "pair_index": 0
+    },
+    {
+      "coarse_h_km": 5.960464477539063e-08,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": -2.2506962219874063e-09,
+      "exact_combination_q": {
+        "denominator": "12884901888",
+        "numerator": "-29"
+      },
+      "extrapolated_s_per_km": -2.2506962219874063e-09,
+      "fine_h_km": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "interval_error_certificate": false,
+      "pair_index": 1
+    },
+    {
+      "coarse_h_km": 9.5367431640625e-07,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": -1.8432425955931346e-09,
+      "exact_combination_q": {
+        "denominator": "51539607552",
+        "numerator": "-95"
+      },
+      "extrapolated_s_per_km": -1.8432425955931346e-09,
+      "fine_h_km": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 0
+      },
+      "interval_error_certificate": false,
+      "pair_index": 0
+    },
+    {
+      "coarse_h_km": 5.960464477539063e-08,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": -4.765267173449198e-08,
+      "exact_combination_q": {
+        "denominator": "6442450944",
+        "numerator": "-307"
+      },
+      "extrapolated_s_per_km": -4.765267173449198e-08,
+      "fine_h_km": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 0
+      },
+      "interval_error_certificate": false,
+      "pair_index": 1
+    },
+    {
+      "coarse_h_km": 9.5367431640625e-07,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": -2.078498558451732e-09,
+      "exact_combination_q": {
+        "denominator": "412316860416",
+        "numerator": "-857"
+      },
+      "extrapolated_s_per_km": -2.078498558451732e-09,
+      "fine_h_km": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "interval_error_certificate": false,
+      "pair_index": 0
+    },
+    {
+      "coarse_h_km": 5.960464477539063e-08,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": -4.3655745685100555e-08,
+      "exact_combination_q": {
+        "denominator": "8589934592",
+        "numerator": "-375"
+      },
+      "extrapolated_s_per_km": -4.3655745685100555e-08,
+      "fine_h_km": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "interval_error_certificate": false,
+      "pair_index": 1
+    },
+    {
+      "coarse_h_km": 9.5367431640625e-07,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": 5.262942674259344e-10,
+      "exact_combination_q": {
+        "denominator": "412316860416",
+        "numerator": "217"
+      },
+      "extrapolated_s_per_km": 5.262942674259344e-10,
+      "fine_h_km": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": false,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "interval_error_certificate": false,
+      "pair_index": 0
+    },
+    {
+      "coarse_h_km": 5.960464477539063e-08,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": 1.9907020032405853e-08,
+      "exact_combination_q": {
+        "denominator": "8589934592",
+        "numerator": "171"
+      },
+      "extrapolated_s_per_km": 1.9907020032405853e-08,
+      "fine_h_km": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": false,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "interval_error_certificate": false,
+      "pair_index": 1
+    },
+    {
+      "coarse_h_km": 9.5367431640625e-07,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": 1.1350493878126144e-09,
+      "exact_combination_q": {
+        "denominator": "34359738368",
+        "numerator": "39"
+      },
+      "extrapolated_s_per_km": 1.1350493878126144e-09,
+      "fine_h_km": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "interval_error_certificate": false,
+      "pair_index": 0
+    },
+    {
+      "coarse_h_km": 5.960464477539063e-08,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": -2.2506962219874063e-09,
+      "exact_combination_q": {
+        "denominator": "12884901888",
+        "numerator": "-29"
+      },
+      "extrapolated_s_per_km": -2.2506962219874063e-09,
+      "fine_h_km": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "interval_error_certificate": false,
+      "pair_index": 1
+    },
+    {
+      "coarse_h_km": 9.5367431640625e-07,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": -3.2426517767210803e-09,
+      "exact_combination_q": {
+        "denominator": "412316860416",
+        "numerator": "-1337"
+      },
+      "extrapolated_s_per_km": -3.2426517767210803e-09,
+      "fine_h_km": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 0
+      },
+      "interval_error_certificate": false,
+      "pair_index": 0
+    },
+    {
+      "coarse_h_km": 5.960464477539063e-08,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": -4.978695263465246e-08,
+      "exact_combination_q": {
+        "denominator": "25769803776",
+        "numerator": "-1283"
+      },
+      "extrapolated_s_per_km": -4.978695263465246e-08,
+      "fine_h_km": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 0
+      },
+      "interval_error_certificate": false,
+      "pair_index": 1
+    },
+    {
+      "coarse_h_km": 9.5367431640625e-07,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": -3.4633558243513107e-09,
+      "exact_combination_q": {
+        "denominator": "34359738368",
+        "numerator": "-119"
+      },
+      "extrapolated_s_per_km": -3.4633558243513107e-09,
+      "fine_h_km": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "interval_error_certificate": false,
+      "pair_index": 0
+    },
+    {
+      "coarse_h_km": 5.960464477539063e-08,
+      "comparison_with_existing_limit": true,
+      "difference_s_per_km": -4.5790026585261025e-08,
+      "exact_combination_q": {
+        "denominator": "6442450944",
+        "numerator": "-295"
+      },
+      "extrapolated_s_per_km": -4.5790026585261025e-08,
+      "fine_h_km": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "interval_error_certificate": false,
+      "pair_index": 1
+    }
+  ],
+  "extrapolates_within_existing_numeric_limit": 16,
+  "fine_pair_maximum_error_exceeds_coarse_pair": true,
+  "input_sha256": {
+    "data/development/loma_boundary_endpoint_mesh_controls_001/positive_guide/evaluations.csv": "383637cd5adf387e486728251327a727154ebec4ed9d57251ef9c61d653d9baa",
+    "data/development/loma_boundary_endpoint_mesh_controls_001/positive_guide/grid.csv": "38468cad3b8d7b48f4230b9c46dcd8d629d39f30d9f3b1e5763abb2605325c14",
+    "data/development/loma_boundary_endpoint_mesh_controls_001/summary.json": "534fa492a55bb167f6b751efdb46642c235369a806d8e308d490cca6afac622c",
+    "data/development/loma_endpoint_connector_next_step_001/shooting_control.md": "9c85218a847eaf94d68ec8b7bd2c17df19d1358b363dd153c2efa354912140bc",
+    "data/development/loma_endpoint_shooting_asymptotics_001/README.md": "d9578de8ec1a6ff4b2856d9684d683513116d0e670ef0a14d25cdc797a263225",
+    "data/development/loma_endpoint_shooting_asymptotics_001/check.py": "700178b4371594f91df779912ff2ed0bc5aaf60995201c2a99b7feb703faa517",
+    "data/development/loma_endpoint_shooting_baselines_001/baseline_candidates.json": "26dba5372876bbed5faa607ac9e7a979ebf67ada1cef5a0973eebe0cbc4f9cde",
+    "data/development/loma_endpoint_shooting_baselines_001/comparison.json": "25ffbd86c84d0e483216a22a5b4f91ac3acc1ef02679b2305c6d14561c1a2b6f",
+    "data/development/loma_endpoint_shooting_baselines_001/execution.json": "dca5e6b9c8772eb39b83b8290e34f398085bb58df18885ff82859efdab6bfcf2",
+    "data/development/loma_endpoint_shooting_baselines_001/inputs/execution.json": "d6ea437afbdb3858bd428d9870601a2d886e8e0903fc98c555e92a6b206d34b9",
+    "data/development/loma_endpoint_shooting_baselines_001/inputs/invented_inputs.json": "4136942ca995741e6d792cfa45441ac06a6f6d5832261a1d003128eb9a40cb69",
+    "data/development/loma_endpoint_shooting_baselines_001/inputs/perturbations.json": "66a3e3eba57e694244b0ccb7399d15786feff03c38287607e07261d6a781fe26",
+    "data/development/loma_endpoint_shooting_baselines_001/inputs/summary.json": "0ca944a3fa240721e62b193b7db6361604137d40f34bccabca8566ddf5e61945",
+    "data/development/loma_endpoint_shooting_baselines_001/review.json": "99ee570710877a0fc224795356e3adfef38ce0205490686203a2e314698ac380",
+    "data/development/loma_endpoint_shooting_baselines_001/source/check_endpoint_shooting.py": "f10e59a44a2c27d5b568d704194eee926ffd959674e676b3d312c6b1e3c0e367",
+    "data/development/loma_endpoint_shooting_baselines_001/source/replay_endpoint_shooting_baselines.py": "ac00f9671d62f36b7e5a2e539eb9a5c147e8964936a1e96f3a58047f28dc6a84",
+    "data/development/loma_endpoint_shooting_baselines_001/summary.json": "616ff5cb6ff2e0150faf546802ea8ae4b7edd54074928f894af02552fa60fbd1",
+    "data/development/loma_endpoint_shooting_controls_001/baseline_results.json": "1c352d8a38391d2731eb1c0523c7aa9377d4a1c230684b69e2c2ec564128e376",
+    "data/development/loma_endpoint_shooting_controls_001/comparisons.json": "3843ce9c97a92e55c7e72e29900ca48eb8d3c130f0f4786f9b8705fc74301e6b",
+    "data/development/loma_endpoint_shooting_controls_001/execution.json": "d6ea437afbdb3858bd428d9870601a2d886e8e0903fc98c555e92a6b206d34b9",
+    "data/development/loma_endpoint_shooting_controls_001/invented_inputs.json": "4136942ca995741e6d792cfa45441ac06a6f6d5832261a1d003128eb9a40cb69",
+    "data/development/loma_endpoint_shooting_controls_001/perturbations.json": "66a3e3eba57e694244b0ccb7399d15786feff03c38287607e07261d6a781fe26",
+    "data/development/loma_endpoint_shooting_controls_001/review.json": "c98d0f04d25c50bee8e079284a6dde33af096cd9d27ef691908df46ae7a3e9d2",
+    "data/development/loma_endpoint_shooting_controls_001/source/check_endpoint_shooting.py": "f10e59a44a2c27d5b568d704194eee926ffd959674e676b3d312c6b1e3c0e367",
+    "data/development/loma_endpoint_shooting_controls_001/source/endpoint_connector.py": "c5848169606ae0f49071e8067dd88029e7ba83756fd700700059182c5ce28857",
+    "data/development/loma_endpoint_shooting_controls_001/source/shooting_control.md": "9c85218a847eaf94d68ec8b7bd2c17df19d1358b363dd153c2efa354912140bc",
+    "data/development/loma_endpoint_shooting_controls_001/summary.json": "0ca944a3fa240721e62b193b7db6361604137d40f34bccabca8566ddf5e61945",
+    "diagnostics/check_endpoint_shooting.py": "f10e59a44a2c27d5b568d704194eee926ffd959674e676b3d312c6b1e3c0e367",
+    "diagnostics/endpoint_connector.py": "c5848169606ae0f49071e8067dd88029e7ba83756fd700700059182c5ce28857",
+    "diagnostics/replay_endpoint_shooting_baselines.py": "ac00f9671d62f36b7e5a2e539eb9a5c147e8964936a1e96f3a58047f28dc6a84"
+  },
+  "ladder_count": 8,
+  "ladders": [
+    {
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": false,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "raw_error_reduction_factors": [
+        4.000100814694229,
+        4.015311604584527
+      ],
+      "rows": [
+        {
+          "base_time_s": 0.04166691138409132,
+          "base_topology": "zero_last_cap",
+          "difference_s_per_km": -6.264652620302513e-05,
+          "finite_difference_s_per_km": -6.264652620302513e-05,
+          "h_km": 9.5367431640625e-07,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.041666911443835705,
+          "perturbed_topology": "two_caps",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.04166691138409132,
+          "base_topology": "zero_last_cap",
+          "difference_s_per_km": -1.5661236830055714e-05,
+          "finite_difference_s_per_km": -1.5661236830055714e-05,
+          "h_km": 5.960464477539063e-08,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.041666911385024805,
+          "perturbed_topology": "two_caps",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.04166691138409132,
+          "base_topology": "zero_last_cap",
+          "difference_s_per_km": -3.900378942489624e-06,
+          "finite_difference_s_per_km": -3.900378942489624e-06,
+          "h_km": 3.725290298461914e-09,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.04166691138410585,
+          "perturbed_topology": "two_caps",
+          "raw_within_existing_limit": false
+        }
+      ]
+    },
+    {
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "raw_error_reduction_factors": [
+        4.000217417158487,
+        3.998276271992392
+      ],
+      "rows": [
+        {
+          "base_time_s": 0.0416608788123823,
+          "base_topology": "zero_last_cap",
+          "difference_s_per_km": -6.265068077482283e-05,
+          "finite_difference_s_per_km": -6.265068077482283e-05,
+          "h_km": 9.5367431640625e-07,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.041660878872130644,
+          "perturbed_topology": "two_caps",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.0416608788123823,
+          "base_topology": "zero_last_cap",
+          "difference_s_per_km": -1.566181890666485e-05,
+          "finite_difference_s_per_km": -1.566181890666485e-05,
+          "h_km": 5.960464477539063e-08,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.041660878813315816,
+          "perturbed_topology": "two_caps",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.0416608788123823,
+          "base_topology": "zero_last_cap",
+          "difference_s_per_km": -3.917142748832703e-06,
+          "finite_difference_s_per_km": -3.917142748832703e-06,
+          "h_km": 3.725290298461914e-09,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.04166087881239689,
+          "perturbed_topology": "two_caps",
+          "raw_within_existing_limit": false
+        }
+      ]
+    },
+    {
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 0
+      },
+      "raw_error_reduction_factors": [
+        3.99964772019342,
+        3.9638993414863593
+      ],
+      "rows": [
+        {
+          "base_time_s": 0.04166063359385641,
+          "base_topology": "both_zero_caps",
+          "difference_s_per_km": -6.278237560763955e-05,
+          "finite_difference_s_per_km": -6.278237560763955e-05,
+          "h_km": 9.5367431640625e-07,
+          "limiting_branch_momentum_s_per_km": -0.0,
+          "perturbed_time_s": 0.04166063365373035,
+          "perturbed_topology": "zero_last_cap",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.04166063359385641,
+          "base_topology": "both_zero_caps",
+          "difference_s_per_km": -1.5696976333856583e-05,
+          "finite_difference_s_per_km": -1.5696976333856583e-05,
+          "h_km": 5.960464477539063e-08,
+          "limiting_branch_momentum_s_per_km": -0.0,
+          "perturbed_time_s": 0.041660633594792024,
+          "perturbed_topology": "zero_last_cap",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.04166063359385641,
+          "base_topology": "both_zero_caps",
+          "difference_s_per_km": -3.959983587265015e-06,
+          "finite_difference_s_per_km": -3.959983587265015e-06,
+          "h_km": 3.725290298461914e-09,
+          "limiting_branch_momentum_s_per_km": -0.0,
+          "perturbed_time_s": 0.04166063359387116,
+          "perturbed_topology": "zero_last_cap",
+          "raw_within_existing_limit": false
+        }
+      ]
+    },
+    {
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "raw_error_reduction_factors": [
+        3.9996019285793913,
+        3.966833726415094
+      ],
+      "rows": [
+        {
+          "base_time_s": 0.04166063359385641,
+          "base_topology": "both_zero_caps",
+          "difference_s_per_km": -6.26508190180175e-05,
+          "finite_difference_s_per_km": -6.26508190180175e-05,
+          "h_km": 9.5367431640625e-07,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.04166063365360489,
+          "perturbed_topology": "zero_first_cap",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.04166063359385641,
+          "base_topology": "both_zero_caps",
+          "difference_s_per_km": -1.5664263628423214e-05,
+          "finite_difference_s_per_km": -1.5664263628423214e-05,
+          "h_km": 5.960464477539063e-08,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.041660633594790074,
+          "perturbed_topology": "zero_first_cap",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.04166063359385641,
+          "base_topology": "both_zero_caps",
+          "difference_s_per_km": -3.948807716369629e-06,
+          "finite_difference_s_per_km": -3.948807716369629e-06,
+          "h_km": 3.725290298461914e-09,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.04166063359387112,
+          "perturbed_topology": "zero_first_cap",
+          "raw_within_existing_limit": false
+        }
+      ]
+    },
+    {
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": false,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "raw_error_reduction_factors": [
+        4.000100814694229,
+        4.015311604584527
+      ],
+      "rows": [
+        {
+          "base_time_s": 0.04166691138409132,
+          "base_topology": "zero_last_cap",
+          "difference_s_per_km": -6.264652620302513e-05,
+          "finite_difference_s_per_km": -6.264652620302513e-05,
+          "h_km": 9.5367431640625e-07,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.041666911443835705,
+          "perturbed_topology": "two_caps",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.04166691138409132,
+          "base_topology": "zero_last_cap",
+          "difference_s_per_km": -1.5661236830055714e-05,
+          "finite_difference_s_per_km": -1.5661236830055714e-05,
+          "h_km": 5.960464477539063e-08,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.041666911385024805,
+          "perturbed_topology": "two_caps",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.04166691138409132,
+          "base_topology": "zero_last_cap",
+          "difference_s_per_km": -3.900378942489624e-06,
+          "finite_difference_s_per_km": -3.900378942489624e-06,
+          "h_km": 3.725290298461914e-09,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.04166691138410585,
+          "perturbed_topology": "two_caps",
+          "raw_within_existing_limit": false
+        }
+      ]
+    },
+    {
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "raw_error_reduction_factors": [
+        4.000217417158487,
+        3.998276271992392
+      ],
+      "rows": [
+        {
+          "base_time_s": 0.0416608788123823,
+          "base_topology": "zero_last_cap",
+          "difference_s_per_km": -6.265068077482283e-05,
+          "finite_difference_s_per_km": -6.265068077482283e-05,
+          "h_km": 9.5367431640625e-07,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.041660878872130644,
+          "perturbed_topology": "two_caps",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.0416608788123823,
+          "base_topology": "zero_last_cap",
+          "difference_s_per_km": -1.566181890666485e-05,
+          "finite_difference_s_per_km": -1.566181890666485e-05,
+          "h_km": 5.960464477539063e-08,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.041660878813315816,
+          "perturbed_topology": "two_caps",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.0416608788123823,
+          "base_topology": "zero_last_cap",
+          "difference_s_per_km": -3.917142748832703e-06,
+          "finite_difference_s_per_km": -3.917142748832703e-06,
+          "h_km": 3.725290298461914e-09,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.04166087881239689,
+          "perturbed_topology": "two_caps",
+          "raw_within_existing_limit": false
+        }
+      ]
+    },
+    {
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 0
+      },
+      "raw_error_reduction_factors": [
+        3.99938030701917,
+        3.962300188058298
+      ],
+      "rows": [
+        {
+          "base_time_s": 0.04166063359385638,
+          "base_topology": "both_zero_caps",
+          "difference_s_per_km": -6.278236833168194e-05,
+          "finite_difference_s_per_km": -6.278236833168194e-05,
+          "h_km": 9.5367431640625e-07,
+          "limiting_branch_momentum_s_per_km": -0.0,
+          "perturbed_time_s": 0.041660633653730315,
+          "perturbed_topology": "zero_last_cap",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.04166063359385638,
+          "base_topology": "both_zero_caps",
+          "difference_s_per_km": -1.5698024071753025e-05,
+          "finite_difference_s_per_km": -1.5698024071753025e-05,
+          "h_km": 5.960464477539063e-08,
+          "limiting_branch_momentum_s_per_km": -0.0,
+          "perturbed_time_s": 0.04166063359479206,
+          "perturbed_topology": "zero_last_cap",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.04166063359385638,
+          "base_topology": "both_zero_caps",
+          "difference_s_per_km": -3.961846232414246e-06,
+          "finite_difference_s_per_km": -3.961846232414246e-06,
+          "h_km": 3.725290298461914e-09,
+          "limiting_branch_momentum_s_per_km": -0.0,
+          "perturbed_time_s": 0.04166063359387114,
+          "perturbed_topology": "zero_last_cap",
+          "raw_within_existing_limit": false
+        }
+      ]
+    },
+    {
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "raw_error_reduction_factors": [
+        3.999336746826789,
+        3.965228665723715
+      ],
+      "rows": [
+        {
+          "base_time_s": 0.04166063359385638,
+          "base_topology": "both_zero_caps",
+          "difference_s_per_km": -6.265085539780557e-05,
+          "finite_difference_s_per_km": -6.265085539780557e-05,
+          "h_km": 9.5367431640625e-07,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.041660633653604895,
+          "perturbed_topology": "zero_first_cap",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.04166063359385638,
+          "base_topology": "both_zero_caps",
+          "difference_s_per_km": -1.5665311366319656e-05,
+          "finite_difference_s_per_km": -1.5665311366319656e-05,
+          "h_km": 5.960464477539063e-08,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.04166063359479011,
+          "perturbed_topology": "zero_first_cap",
+          "raw_within_existing_limit": false
+        },
+        {
+          "base_time_s": 0.04166063359385638,
+          "base_topology": "both_zero_caps",
+          "difference_s_per_km": -3.95067036151886e-06,
+          "finite_difference_s_per_km": -3.95067036151886e-06,
+          "h_km": 3.725290298461914e-09,
+          "limiting_branch_momentum_s_per_km": 0.0,
+          "perturbed_time_s": 0.0416606335938711,
+          "perturbed_topology": "zero_first_cap",
+          "raw_within_existing_limit": false
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Exact fractions refer to saved binary64 secants, not exact travel times.",
+    "All 24 raw finite-step failures remain failures; extrapolation does not overwrite them.",
+    "Mixed-field expansion is conditional on a stable regular guide branch and positive reaction.",
+    "No global branch enumeration, uniform numerical error bound, or error certificate is established.",
+    "The finer extrapolate worsens; two ODE settings do not bound common root/roundoff errors.",
+    "Fixed-knot polygon partial is correct for that polygon, but differs from continuous guide sensitivity.",
+    "No optimizer, native path, production stopping flag, or model derivative is changed."
+  ],
+  "maximum_extrapolated_error_by_pair_s_per_km": [
+    3.4633558243513107e-09,
+    4.978695263465246e-08
+  ],
+  "native_execution_performed": false,
+  "numerical_solve_performed": false,
+  "old_fixed_polygon_linear_term": [
+    {
+      "continuous_guide_limiting_source_dz_s_per_km": 0.0,
+      "exact_fixed_other_knots_source_dz_q": {
+        "denominator": "288",
+        "numerator": "-1"
+      },
+      "exact_fixed_other_knots_source_dz_s_per_km": -0.003472222222222222,
+      "iterations": 0,
+      "saved_converged": "1",
+      "saved_projected_gradient": 7.850462293418876e-17,
+      "saved_source_dz": -0.003472222222222222,
+      "subsegments": 1
+    },
+    {
+      "continuous_guide_limiting_source_dz_s_per_km": 0.0,
+      "exact_fixed_other_knots_source_dz_q": {
+        "denominator": "576",
+        "numerator": "-1"
+      },
+      "exact_fixed_other_knots_source_dz_s_per_km": -0.001736111111111111,
+      "iterations": 0,
+      "saved_converged": "1",
+      "saved_projected_gradient": 7.850462293418876e-17,
+      "saved_source_dz": -0.0017361111111111108,
+      "subsegments": 2
+    },
+    {
+      "continuous_guide_limiting_source_dz_s_per_km": 0.0,
+      "exact_fixed_other_knots_source_dz_q": {
+        "denominator": "1152",
+        "numerator": "-1"
+      },
+      "exact_fixed_other_knots_source_dz_s_per_km": -0.0008680555555555555,
+      "iterations": 0,
+      "saved_converged": "1",
+      "saved_projected_gradient": 7.850462293418876e-17,
+      "saved_source_dz": -0.0008680555555555555,
+      "subsegments": 4
+    },
+    {
+      "continuous_guide_limiting_source_dz_s_per_km": 0.0,
+      "exact_fixed_other_knots_source_dz_q": {
+        "denominator": "2304",
+        "numerator": "-1"
+      },
+      "exact_fixed_other_knots_source_dz_s_per_km": -0.00043402777777777775,
+      "iterations": 0,
+      "saved_converged": "1",
+      "saved_projected_gradient": 7.850462293418876e-17,
+      "saved_source_dz": -0.00043402777777777786,
+      "subsegments": 8
+    },
+    {
+      "continuous_guide_limiting_source_dz_s_per_km": 0.0,
+      "exact_fixed_other_knots_source_dz_q": {
+        "denominator": "4608",
+        "numerator": "-1"
+      },
+      "exact_fixed_other_knots_source_dz_s_per_km": -0.00021701388888888888,
+      "iterations": 0,
+      "saved_converged": "1",
+      "saved_projected_gradient": 1.5700924586837752e-16,
+      "saved_source_dz": -0.00021701388888888888,
+      "subsegments": 16
+    }
+  ],
+  "raw_existing_limit_failures": 24,
+  "raw_secant_count": 24,
+  "saved_guide_eligibility": [
+    {
+      "endpoint_residual_km": 8.326672684688674e-17,
+      "guide_duration_s": 0.03208184187854806,
+      "h": 9.5367431640625e-07,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": false,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "invariant_residual": 4.440892098500626e-16,
+      "sampled_minimum_reaction": 0.1666666666666665,
+      "topology": "two_caps"
+    },
+    {
+      "endpoint_residual_km": 5.551115123125783e-17,
+      "guide_duration_s": 0.032504705823185584,
+      "h": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": false,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "invariant_residual": 7.771561172376096e-16,
+      "sampled_minimum_reaction": 0.1666666666666665,
+      "topology": "two_caps"
+    },
+    {
+      "endpoint_residual_km": 2.498001805406602e-16,
+      "guide_duration_s": 0.03261042181451386,
+      "h": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": false,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "invariant_residual": 6.661338147750939e-16,
+      "sampled_minimum_reaction": 0.1666666666666665,
+      "topology": "two_caps"
+    },
+    {
+      "endpoint_residual_km": 5.551115123125783e-17,
+      "guide_duration_s": 0.032100915841845046,
+      "h": 9.5367431640625e-07,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "invariant_residual": 6.661338147750939e-16,
+      "sampled_minimum_reaction": 0.16660458468278216,
+      "topology": "two_caps"
+    },
+    {
+      "endpoint_residual_km": 1.3877787807814457e-16,
+      "guide_duration_s": 0.0325239788823203,
+      "h": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "invariant_residual": 6.661338147750939e-16,
+      "sampled_minimum_reaction": 0.16659548950503295,
+      "topology": "two_caps"
+    },
+    {
+      "endpoint_residual_km": 1.1102230246251565e-16,
+      "guide_duration_s": 0.032629747421930186,
+      "h": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "invariant_residual": 8.881784197001252e-16,
+      "sampled_minimum_reaction": 0.1665932189635942,
+      "topology": "two_caps"
+    },
+    {
+      "endpoint_residual_km": 2.7755575615628914e-17,
+      "guide_duration_s": 0.04109868055515692,
+      "h": 9.5367431640625e-07,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 0
+      },
+      "invariant_residual": 5.551115123125783e-16,
+      "sampled_minimum_reaction": 0.16659246240563208,
+      "topology": "zero_last_cap"
+    },
+    {
+      "endpoint_residual_km": 1.3877787807814457e-16,
+      "guide_duration_s": 0.04152014886784929,
+      "h": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 0
+      },
+      "invariant_residual": 9.992007221626409e-16,
+      "sampled_minimum_reaction": 0.1665924624056322,
+      "topology": "zero_last_cap"
+    },
+    {
+      "endpoint_residual_km": 2.220446049250313e-16,
+      "guide_duration_s": 0.04162551263362099,
+      "h": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 0
+      },
+      "invariant_residual": 6.661338147750939e-16,
+      "sampled_minimum_reaction": 0.16659246240563208,
+      "topology": "zero_last_cap"
+    },
+    {
+      "endpoint_residual_km": 2.7755575615628914e-17,
+      "guide_duration_s": 0.0410965455874321,
+      "h": 9.5367431640625e-07,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "invariant_residual": 6.661338147750939e-16,
+      "sampled_minimum_reaction": 0.16660458468280895,
+      "topology": "zero_first_cap"
+    },
+    {
+      "endpoint_residual_km": 8.326672684688674e-17,
+      "guide_duration_s": 0.04151960862790734,
+      "h": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "invariant_residual": 8.881784197001252e-16,
+      "sampled_minimum_reaction": 0.16659548950503966,
+      "topology": "zero_first_cap"
+    },
+    {
+      "endpoint_residual_km": 2.7755575615628914e-17,
+      "guide_duration_s": 0.0416253771675172,
+      "h": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "base",
+        "side": 1
+      },
+      "invariant_residual": 7.771561172376096e-16,
+      "sampled_minimum_reaction": 0.16659321896359575,
+      "topology": "zero_first_cap"
+    },
+    {
+      "endpoint_residual_km": 8.326672684688674e-17,
+      "guide_duration_s": 0.03208184187854806,
+      "h": 9.5367431640625e-07,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": false,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "invariant_residual": 4.440892098500626e-16,
+      "sampled_minimum_reaction": 0.1666666666666665,
+      "topology": "two_caps"
+    },
+    {
+      "endpoint_residual_km": 5.551115123125783e-17,
+      "guide_duration_s": 0.032504705823185584,
+      "h": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": false,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "invariant_residual": 7.771561172376096e-16,
+      "sampled_minimum_reaction": 0.1666666666666665,
+      "topology": "two_caps"
+    },
+    {
+      "endpoint_residual_km": 2.498001805406602e-16,
+      "guide_duration_s": 0.03261042181451386,
+      "h": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": false,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "invariant_residual": 6.661338147750939e-16,
+      "sampled_minimum_reaction": 0.1666666666666665,
+      "topology": "two_caps"
+    },
+    {
+      "endpoint_residual_km": 5.551115123125783e-17,
+      "guide_duration_s": 0.032100915841845046,
+      "h": 9.5367431640625e-07,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "invariant_residual": 6.661338147750939e-16,
+      "sampled_minimum_reaction": 0.16660458468278216,
+      "topology": "two_caps"
+    },
+    {
+      "endpoint_residual_km": 1.3877787807814457e-16,
+      "guide_duration_s": 0.0325239788823203,
+      "h": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "invariant_residual": 6.661338147750939e-16,
+      "sampled_minimum_reaction": 0.16659548950503295,
+      "topology": "two_caps"
+    },
+    {
+      "endpoint_residual_km": 1.1102230246251565e-16,
+      "guide_duration_s": 0.032629747421930186,
+      "h": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": false,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "invariant_residual": 8.881784197001252e-16,
+      "sampled_minimum_reaction": 0.1665932189635942,
+      "topology": "two_caps"
+    },
+    {
+      "endpoint_residual_km": 8.326672684688674e-17,
+      "guide_duration_s": 0.04109868055515689,
+      "h": 9.5367431640625e-07,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 0
+      },
+      "invariant_residual": 1.2212453270876722e-15,
+      "sampled_minimum_reaction": 0.16659246240563205,
+      "topology": "zero_last_cap"
+    },
+    {
+      "endpoint_residual_km": 2.7755575615628914e-17,
+      "guide_duration_s": 0.0415201488678493,
+      "h": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 0
+      },
+      "invariant_residual": 8.881784197001252e-16,
+      "sampled_minimum_reaction": 0.16659246240563222,
+      "topology": "zero_last_cap"
+    },
+    {
+      "endpoint_residual_km": 5.551115123125783e-17,
+      "guide_duration_s": 0.04162551263362097,
+      "h": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 0
+      },
+      "invariant_residual": 8.881784197001252e-16,
+      "sampled_minimum_reaction": 0.16659246240563236,
+      "topology": "zero_last_cap"
+    },
+    {
+      "endpoint_residual_km": 5.551115123125783e-17,
+      "guide_duration_s": 0.041096545587432115,
+      "h": 9.5367431640625e-07,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "invariant_residual": 8.881784197001252e-16,
+      "sampled_minimum_reaction": 0.16660458468280895,
+      "topology": "zero_first_cap"
+    },
+    {
+      "endpoint_residual_km": 8.326672684688674e-17,
+      "guide_duration_s": 0.041519608627907344,
+      "h": 5.960464477539063e-08,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "invariant_residual": 7.771561172376096e-16,
+      "sampled_minimum_reaction": 0.1665954895050397,
+      "topology": "zero_first_cap"
+    },
+    {
+      "endpoint_residual_km": 8.326672684688674e-17,
+      "guide_duration_s": 0.04162537716751718,
+      "h": 3.725290298461914e-09,
+      "identity": {
+        "both_bottom": true,
+        "geometry": "invented",
+        "mixed": true,
+        "resource_ids": null,
+        "setting": "tight",
+        "side": 1
+      },
+      "invariant_residual": 6.661338147750939e-16,
+      "sampled_minimum_reaction": 0.16659321896359577,
+      "topology": "zero_first_cap"
+    }
+  ],
+  "scientific_acceptance_changed": false,
+  "source_sha256": "700178b4371594f91df779912ff2ed0bc5aaf60995201c2a99b7feb703faa517",
+  "status": "completed_saved_output_consistency_check"
+}

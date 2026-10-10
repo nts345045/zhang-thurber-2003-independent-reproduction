@@ -1,0 +1,30 @@
+--- old001_runner
++++ D_runner
+@@ -16,7 +16,8 @@
+ import sys
+ import time
+ 
+-ROOT = Path(__file__).resolve().parents[1]
++ROOT = Path(__file__).resolve().parents[3]
++NUMERICAL_SOURCE = ROOT / 'data/development/usable_curvature_integration_prepared_001/after/src'
+ OBSERVER = ROOT / 'data/development/loma_initial_failure_24104_001'
+ PLAN = ROOT / 'data/development/loma_boundary_endpoint_next_step/plan.json'
+ 
+@@ -246,7 +247,7 @@
+     observer=json.loads((OBSERVER/'summary.json').read_text())
+     compiler=Path(observer['compiler']);need(sha(compiler)==observer['compiler_sha256'],'Compiler changed')
+     sources=[Path(__file__).resolve(),ROOT/'diagnostics/check_endpoint_mesh.cpp',PLAN]
+-    sources += [OBSERVER/'source/src'/name for name in ('core.hpp','ray_metric.hpp','csv.hpp')]
++    sources += [NUMERICAL_SOURCE/name for name in ('core.hpp','ray_metric.hpp','csv.hpp','usable_ray_curvature.hpp')]
+     pins={str(p.relative_to(ROOT)):sha(p) for p in sources}
+     out.mkdir(parents=True);build.mkdir(parents=True)
+     summary=dict(status='preparing',mode='invented_controls_only',input_sha256=pins,
+@@ -276,7 +277,7 @@
+         need(code==0,name+' failed')
+     try:
+         for p in sources:
+-            if p.parent==OBSERVER/'source/src':target=out/'source/src'/p.name
++            if p.parent==NUMERICAL_SOURCE:target=out/'source/src'/p.name
+             elif p==PLAN:target=out/'source/plan.json'
+             else:target=out/'source/diagnostics'/p.name
+             target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(str(p),str(target))

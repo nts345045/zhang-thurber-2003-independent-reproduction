@@ -1,0 +1,11 @@
+--- original/run_fmm_initialization_audit.py
++++ copied/run_fmm_initialization_audit.py
+@@ -34,7 +34,7 @@
+ os.environ["TMPDIR"] = str(ROOT / "tmp")
+ snapshot = BUILD / "source"
+ relative_sources = ["diagnostics/check_fmm_initialization.cpp", "diagnostics/first_arrival_fmm.hpp",
+-                    "src/first_arrival.hpp", "src/core.hpp", "src/ray_metric.hpp", "src/forward.hpp",
++                    "src/first_arrival.hpp", "src/core.hpp", "src/ray_metric.hpp", "src/usable_ray_curvature.hpp", "src/forward.hpp",
+                     "diagnostics/production_entry_checks.hpp", "diagnostics/run_fmm_initialization_audit.py",
+                     "diagnostics/seeded_bending.py"]
+ for relative in relative_sources:

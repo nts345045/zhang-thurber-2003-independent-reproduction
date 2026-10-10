@@ -1,0 +1,31 @@
+{
+  "status": "completed",
+  "controller_pid": 275719,
+  "started_utc": "2026-10-10T08:44:14.375783Z",
+  "command": [
+    "/usr/bin/python3",
+    "diagnostics/compare_loma_initial_rays.py",
+    "--data",
+    "data/loma_lon_initial_preflight_001",
+    "--reference",
+    "data/development/loma_lon_initial_reference_002",
+    "--output",
+    "data/development/loma_lon_initial_accuracy_001"
+  ],
+  "source_sha256": "1712d8ab9f55739aea26c58fd3fb5efb561078b1e184943979331d0e03fb8faf",
+  "controller_sha256": "df3317156606b4c794ed7aaba99b09b4514877c844424ca1c848451c32a02b30",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "scope": "Saved-table comparison only; no ray solve or inversion",
+  "child_pid": 275720,
+  "child_return_code": 0,
+  "child_reaped": true,
+  "finished_utc": "2026-10-10T08:45:10.135418Z",
+  "summary_sha256": "27044f9a6e96a55706924eceb85f9a87ba4465ac5ae3e8ef8fb8c87d2637d7ac",
+  "execution_sha256": "5026182b25a7fd0e39b24aa36fa986fadbef4d43917e7178bb207821dad07b76",
+  "log_sha256": {
+    "stdout.log": "78ad41e8c4e541b2b58245bcf6715b32e5421413b3659d21e0a56cf93ab895c9",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

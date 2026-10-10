@@ -1,0 +1,15 @@
+{
+  "README_unified_diff": "--- 001/README.md\n+++ 002/README.md\n@@ -82,7 +82,7 @@\n From the integration worktree, run the saved-only checker with a fresh output:\n \n ```sh\n-PYTHONDONTWRITEBYTECODE=1 python3 data/development/loma_endpoint_shooting_asymptotics_001/check.py --output /tmp/loma_endpoint_asymptotics_NEW.json\n+PYTHONDONTWRITEBYTECODE=1 python3 data/development/loma_endpoint_shooting_asymptotics_002/check.py --output tmp/loma_endpoint_asymptotics_NEW.json\n ```\n \n The original summaries and independent reviews must match, every consumed\n",
+  "excluded_comparison_fields": [
+    "input_sha256",
+    "source_sha256"
+  ],
+  "old_package_unchanged": true,
+  "scientific_result_fields_exactly_equal": true,
+  "source_changes": "Only output-path guard now requires a fresh path within ROOT. README replay uses project tmp/.",
+  "source_unified_diff": "--- 001/check.py\n+++ 002/check.py\n@@ -42,8 +42,8 @@\n     args = parser.parse_args()\n     output = Path(args.output).resolve()\n     require(not output.exists(), 'Output must be new')\n-    require(output.parent == HERE or (ROOT not in output.parents and output != ROOT),\n-            'Use this evidence directory or a fresh path outside the repository')\n+    require(ROOT in output.parents,\n+            'Output must be a fresh path within the project root')\n     pins = {}\n \n     def pin(path, expected=None):\n",
+  "status": "output_scope_corrected",
+  "summary_sha256": "0fac307f7973e08a26fe7e8e792468f189f763e29935ac19f8358511f3f68dd6",
+  "superseded_summary_sha256": "73aa5897fdb11f514726efe10d91e2063ae51b287528cd904b90a04144329d72",
+  "supersedes": "data/development/loma_endpoint_shooting_asymptotics_001"
+}

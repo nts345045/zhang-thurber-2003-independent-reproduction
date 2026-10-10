@@ -1,0 +1,60 @@
+{
+  "status": "predeclared_before_native_execution",
+  "native_pair_index": 24104,
+  "native_run_id": "fmm_0.031250_1000",
+  "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091537",
+  "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2658134",
+  "receiver_channel_seed_id": "NC.HQR..EHZ",
+  "receiver_channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+  "receiver_metadata_epoch_start": "1989-07-11T19:55:00",
+  "receiver_metadata_epoch_end": "1990-03-24T19:55:00",
+  "subdivision_levels": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "inward_source_displacements_km": [
+    0.0,
+    0.0009765625,
+    6.103515625e-05,
+    3.814697265625e-06,
+    2.384185791015625e-07
+  ],
+  "displacement_definitions": [
+    "0",
+    "2^-10",
+    "2^-14",
+    "2^-18",
+    "2^-22"
+  ],
+  "optimizer_max_updates": 1000,
+  "threads": 1,
+  "source_coordinate_change": "z_source minus epsilon; no outward or central difference",
+  "families": [
+    "fixed_other_knots",
+    "inserted_knots_tied_affinely_to_original_first_edge",
+    "reoptimized_explicit_mesh"
+  ],
+  "reoptimized_perturbation_seed": "same-level optimized zero-displacement polygon; source alone moved, all interior vertices free",
+  "merge_policy": "unchanged frozen merge_close_nodes; preserve count and resulting topology",
+  "reference": "unchanged precise-turn continuous monotone depth reference, with every candidate and completeness/validity flag retained",
+  "scientific_limits": {
+    "time_s": 2.5e-05,
+    "source_norm_s_per_km": 3e-06
+  },
+  "interpretation": "Arithmetic/control pass is not scientific acceptance of a coarse polygon, converged-value envelope or native correction. All source/optimizer failures remain explicit.",
+  "input_sha256": {
+    "data/development/loma_initial_failure_24104_001/summary.json": "05ee19cbfb2a8619e9613084354fa5d66f158794caa1b0159486171bd633c573",
+    "data/development/loma_initial_failure_24104_001/identified_ray.csv": "69a4c5c662f9f0128cda637155285de2b13484eb8f7bd0e84ef5621f33c948b1",
+    "data/development/loma_initial_failure_24104_001/paths.csv": "9430accb3c963f5e487d6479c5cd6ad7ac30511c12fe780da560e7ba356db734",
+    "data/development/loma_initial_failure_24104_001/inputs/initial_grid.csv": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+    "data/development/loma_initial_failure_24104_001/source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "data/development/loma_initial_failure_24104_001/source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "data/development/loma_initial_failure_24104_001/source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2"
+  },
+  "proposal_sha256": "ec910dddf91746f9dcbbd7fc9d9d0be27e84bbb9a40a3f3156bf8e79d615d4b3",
+  "native_execution_requires": "independent controls/source review with exact summary and maintained-source hashes; no native run is performed by this plan"
+}
