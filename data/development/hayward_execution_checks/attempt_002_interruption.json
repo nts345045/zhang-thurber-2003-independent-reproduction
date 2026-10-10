@@ -1,0 +1,40 @@
+{
+  "status": "interrupted_without_linearization_exports",
+  "recorded_utc": "2026-10-10T01:25:58.908960+00:00",
+  "variant": "first_arrival_002",
+  "driver_pid": 4159873,
+  "driver_tool_session": 91467,
+  "driver_terminal_status": 143,
+  "driver_terminal_status_source": "Root agent write_stdin result: exit_code 143 with empty output",
+  "driver_termination_cause": "Unknown; status 143 is consistent with SIGTERM-style shell termination but does not establish its cause.",
+  "child_pid": 4160079,
+  "child_starttime_ticks": 53651419,
+  "child_exit_code": null,
+  "child_exit_code_interpretation": "Not captured after the supervising driver disappeared; not inferred from absence.",
+  "last_observed_child_state": {
+    "ppid": 1,
+    "state": "running",
+    "elapsed": "07:23",
+    "threads": 4,
+    "rss_kib": 790216
+  },
+  "child_absence_verified_utc": "2026-10-10T01:25:58.909010+00:00",
+  "linearization_outputs": [],
+  "logs": {
+    "initial_linearize_stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "initial_linearize_stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "frozen_manifest_files_verified": 13,
+  "frozen_source_members_verified": 9,
+  "run_manifest_sha256": "17aa4a569db101b3966dc40e98f298e8d2e1041a310396ebf45ebc7d0b47c129",
+  "observed_cgroup_memory_failcnt": 0,
+  "observed_cgroup_oom_kill_count": 0,
+  "interpretation": "No completed initial-ray result or numerical failure was identified. Preserve this attempt; a fresh variant is required for a rerun.",
+  "action": "No child restart, source/input/binary modification, or raycheck was performed."
+}

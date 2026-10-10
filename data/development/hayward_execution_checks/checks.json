@@ -1,0 +1,124 @@
+{
+  "status": "passed",
+  "scope": "Invented execution-lifecycle checks; no numerical solver or actual preflight executed",
+  "checks": [
+    "configure child failure records actual code7 and PID",
+    "same-variant rerun rejected without changing marker",
+    "SIGTERM driver records143 and unknown still-running child status",
+    "invented child explicitly cleaned up",
+    "successful command records code0 without marking whole preflight finished",
+    "full numerical preflight validator AST unchanged"
+  ],
+  "source_sha256": "9baa6e40e2d7115963d17d87d5e90ff29aa73e011902484e1803af07b0c3175e",
+  "frozen_002_runner_sha256": "faa7cef8fa76c89c33a1ee109217e15ce3bc23810ce8c1db0bd59a72534c1bd2",
+  "test_script_sha256": "b33ab4182f588103ab191a992e2badde4727174d8e29dae5648d0587e93d614d",
+  "invented_records": {
+    "failure": {
+      "phase": "preflight",
+      "status": "failed",
+      "started_utc": "2026-10-10T01:26:49.117189+00:00",
+      "driver_pid": 4168664,
+      "threads": 4,
+      "return_code": 7,
+      "completed_commands": [
+        {
+          "command": [
+            "cmake",
+            "-S",
+            "tmp/hayward_runs/configure_failure/source",
+            "-B",
+            "tmp/hayward_runs/configure_failure/compiled"
+          ],
+          "stage": "configure",
+          "pid": 4168665,
+          "return_code": 7,
+          "finished_utc": "2026-10-10T01:26:49.194100+00:00"
+        }
+      ],
+      "current_command": [
+        "cmake",
+        "-S",
+        "tmp/hayward_runs/configure_failure/source",
+        "-B",
+        "tmp/hayward_runs/configure_failure/compiled"
+      ],
+      "current_stage": "configure",
+      "current_command_started_utc": "2026-10-10T01:26:49.127832+00:00",
+      "current_child_pid": 4168665,
+      "current_command_return_code": 7,
+      "error": "Command '['cmake', '-S', 'tmp/hayward_runs/configure_failure/source', '-B', 'tmp/hayward_runs/configure_failure/compiled']' returned non-zero exit status 7.",
+      "finished_utc": "2026-10-10T01:26:49.194989+00:00"
+    },
+    "interrupted": {
+      "phase": "preflight",
+      "status": "interrupted",
+      "started_utc": "2026-10-10T01:26:49.520796+00:00",
+      "driver_pid": 4168668,
+      "threads": 4,
+      "return_code": 143,
+      "completed_commands": [],
+      "current_command": [
+        "cmake",
+        "-S",
+        "tmp/hayward_runs/interrupted/source",
+        "-B",
+        "tmp/hayward_runs/interrupted/compiled"
+      ],
+      "current_stage": "configure",
+      "current_command_started_utc": "2026-10-10T01:26:49.530780+00:00",
+      "current_child_pid": 4168670,
+      "current_command_return_code": null,
+      "signal": 15,
+      "finished_utc": "2026-10-10T01:26:49.541684+00:00",
+      "child_return_code_at_driver_signal": null
+    },
+    "success": {
+      "phase": "preflight",
+      "status": "running",
+      "started_utc": "2026-10-10T01:26:49.590273+00:00",
+      "driver_pid": 4168626,
+      "threads": 4,
+      "return_code": null,
+      "completed_commands": [
+        {
+          "command": [
+            "/usr/bin/python3",
+            "-c",
+            "print(\"invented command success\")"
+          ],
+          "stage": "invented_success",
+          "pid": 4168672,
+          "return_code": 0,
+          "finished_utc": "2026-10-10T01:26:49.647584+00:00"
+        }
+      ],
+      "current_command": [
+        "/usr/bin/python3",
+        "-c",
+        "print(\"invented command success\")"
+      ],
+      "current_stage": "invented_success",
+      "current_command_started_utc": "2026-10-10T01:26:49.590850+00:00",
+      "current_child_pid": 4168672,
+      "current_command_return_code": 0
+    }
+  },
+  "created_utc": "2026-10-10T01:27:41.783425+00:00",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 tmp/check_hayward_execution.py",
+  "independent_review": "Root and ray_math_review independently reviewed the maintained runner diff: no material issue in exclusive phase records, signal/child lifecycle, failure preservation, or unchanged numerical validator.",
+  "limitations": [
+    "Execution-record checks use invented commands and do not establish ray accuracy or successful real-data preflight.",
+    "SIGKILL cannot be trapped; a stale running record and absent process must remain unknown rather than be treated as success.",
+    "Driver interruption does not kill a surviving child; its recorded PID must be checked before any new attempt."
+  ],
+  "source_snapshot_sha256": "7bcd98e2c62a295bbb0cdb0af2c92e7e4f0f3fd912274db6dce9ba4b5d251294",
+  "snapshot_member_sha256": {
+    "run_hayward_first_arrival.py": "9baa6e40e2d7115963d17d87d5e90ff29aa73e011902484e1803af07b0c3175e",
+    "runner_before.py": "faa7cef8fa76c89c33a1ee109217e15ce3bc23810ce8c1db0bd59a72534c1bd2",
+    "check_hayward_execution.py": "b33ab4182f588103ab191a992e2badde4727174d8e29dae5648d0587e93d614d"
+  },
+  "attempt_002_evidence_sha256": {
+    "attempt_002_interruption.json": "2e87f3b3f0182efc57bfcedac2179b89248a4bf04ab13fed4c026c0d5e2c3798",
+    "attempt_002_manifest.json": "17aa4a569db101b3966dc40e98f298e8d2e1041a310396ebf45ebc7d0b47c129"
+  }
+}
