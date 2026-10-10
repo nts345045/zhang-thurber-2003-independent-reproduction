@@ -1,0 +1,65 @@
+{
+  "status": "completed",
+  "source_pdf_sha256": "8998e62502a8dfb1f7efb386daca06fca75f7f60ebc36c15c6f68115b55bbc8c",
+  "commands": [
+    {
+      "command": [
+        "pdftoppm",
+        "-f",
+        "31",
+        "-l",
+        "31",
+        "-scale-to",
+        "1400",
+        "-singlefile",
+        "-png",
+        "report/report.pdf",
+        "data/development/loma_interface_diagnostics_delivery_review_001/report_page_031"
+      ],
+      "return_code": 0,
+      "stderr": ""
+    },
+    {
+      "command": [
+        "pdftoppm",
+        "-f",
+        "33",
+        "-l",
+        "33",
+        "-scale-to",
+        "1400",
+        "-singlefile",
+        "-png",
+        "report/report.pdf",
+        "data/development/loma_interface_diagnostics_delivery_review_001/report_page_033"
+      ],
+      "return_code": 0,
+      "stderr": ""
+    },
+    {
+      "command": [
+        "pdftoppm",
+        "-f",
+        "34",
+        "-l",
+        "34",
+        "-scale-to",
+        "1400",
+        "-singlefile",
+        "-png",
+        "report/report.pdf",
+        "data/development/loma_interface_diagnostics_delivery_review_001/report_page_034"
+      ],
+      "return_code": 0,
+      "stderr": ""
+    }
+  ],
+  "output_sha256": {
+    "report_page_031.png": "489d7eef84db44461b018efe170f7b425d2a3d8ab349b6e82ace2d6815a024a4",
+    "report_page_031.png.identifiers.json": "4b38aacb51c74364fe2f8d45e9bdf55f01174e4a5e956f3344df39562d93ae02",
+    "report_page_033.png": "807e806d0272fe16be5790d0cbd6968e39033571529f1674b2b7852d99a994db",
+    "report_page_033.png.identifiers.json": "998e4d496bd4b944314339f92f01e8127e008bc97bd39de50c1f29667713e615",
+    "report_page_034.png": "1ee43476139c33a09670b6da869bdf41ac66cd00fa2b648ac630a5678cba95ca",
+    "report_page_034.png.identifiers.json": "012c2f235dafba762a7f7a2639633250d29cd5df2a7a725597b6f9785d3170b9"
+  }
+}

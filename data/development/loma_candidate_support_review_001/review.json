@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "reviewed_utc": "2026-10-10T07:05:47Z",
+  "summary_sha256": "29f874fe30419411ab31a154d32ded2e17f4aa7a3536247c3c9aa85174eb35d0",
+  "checker_sha256": "1532ab08d15f332551c66b51b40cb79aa50fce63e94daabaec0da83b94fd3634",
+  "verified_inputs": 14,
+  "verified_artifacts": 18,
+  "controls": 25,
+  "native_context_fields": 199,
+  "positive_edges": 1133,
+  "internal_components": 3396,
+  "certified_normal_zero_components": [
+    [
+      484,
+      "z"
+    ],
+    [
+      485,
+      "z"
+    ]
+  ],
+  "decimal_readbacks": [
+    {
+      "precision": 80,
+      "action_s": "6.5184200416971232004240822684255871470211757872592969800369530539920286372588086",
+      "alpha0_norm": "0.000068893656185342949176193589150459147368203420505203589599799393529236363502823444",
+      "support_norm": "0.0000055790287388815603789523073410651382116450857331119105126196775196595589602283428"
+    },
+    {
+      "precision": 120,
+      "action_s": "6.51842004169712320042408226842558714702117578725929698003695305399202863725854210190427662286748878755239479793666909680",
+      "alpha0_norm": "0.0000688936561853429491761935891504591473682034205052035895997993935292259909731471369702906055347787292857086237337613437800",
+      "support_norm": "0.00000557902873888156037895230734106513821164508573311191051261967751966529553946950556970921875236423375422489791402970163274"
+    }
+  ],
+  "findings": [
+    "Full physical-xyz first variations independently agree with every alpha0 interval at80/120digits.",
+    "The positive constant jump and both strict outward moment margins establish simultaneous cancellation.",
+    "All3396 internal components enter the norm, with exactly the two certified normal components zero.",
+    "Original B geometry/results stay distinct from the prescribed candidate and original false flag is preserved."
+  ],
+  "limitations": [
+    "Decimal agreement is an independent consistency check, not an additional interval proof.",
+    "This is existence of a supporting vector for the prescribed fixed-topology polygon; no minimum-norm or general-model claim.",
+    "No ray solve, source/model derivative update, convergence promotion or inverse result follows."
+  ]
+}

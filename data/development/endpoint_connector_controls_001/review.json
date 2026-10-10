@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "reviewed_utc": "2026-10-10T07:02:52.910154Z",
+  "summary_sha256": "67c848b3c880a5492b17432afab6efd1be3f2571ee8202536382418799fb1497",
+  "source_sha256": {
+    "diagnostics/endpoint_connector.py": "c5848169606ae0f49071e8067dd88029e7ba83756fd700700059182c5ce28857",
+    "diagnostics/check_endpoint_connector.py": "d38909b28e71f9f64c65c0ea58adf9f1200165d5c0bcdc69692afb6b5ade84d6"
+  },
+  "input_hashes_verified": 4,
+  "artifact_hashes_verified": 5,
+  "additional_document_sha256": {
+    "data/development/endpoint_connector_controls_001/README.md": "3800da3a1ad1a5166b80c19a46d12bbd8ae657442d4bcc669c3a1121efcb09ae",
+    "data/development/loma_endpoint_connector_proposal_001/native_saved_path_plan.md": "58e389b8845521dcf97644aa448b59611ea14092aa44a96c76c127ec123a19fd"
+  },
+  "recorded_controls": 304,
+  "invented_cases": 33,
+  "independent_exact_branch_readbacks": 33,
+  "max_saved_action_error_s": "2.229537276590742199265262769E-16",
+  "max_saved_endpoint_component_error_s_per_km": "2.883407798240763728262066037E-17",
+  "material_issue_found": false,
+  "method": "Read maintained/frozen connector, independent Snell oracle, proposal and native saved-path plan. Rehash every declared input/artifact. Independently verify every saved branch using Fraction arithmetic and read back saved time/momentum errors. No controls, ray traces, native connector calculations or optimizations rerun.",
+  "mathematical_findings": [
+    "For a positive affine speed gradient, R >= sqrt(A)+sqrt(C) is exactly equivalent to left>=0 and left^2>=4AC; the one-leg/two-leg transition decisions preserve the supplied binary64 inputs.",
+    "The guide action is R/vB plus sum[(atanh(q)-q)/g], and its endpoint momenta have the correct depth signs. The rationalized guide-length expression equals R-sqrt(A)-sqrt(C).",
+    "The admissible interior action 2/g asinh(gD/(2sqrt(va*vb))) differentiates to the two saved endpoint vectors; the stable excess is an algebraic rearrangement of that same action.",
+    "The Snell-leg logarithmic oracle and endpoint momenta use a different evaluation formula. Its finite-bottom containment and horizontal monotonicity support the invented finite boxes.",
+    "The homogeneous oblique and positive-gradient nonguide cases refute blanket zeroing of a bottom source derivative. Changing only the derivative of the old straight element is correctly rejected."
+  ],
+  "scope_limits": [
+    "The 1e-32 km finite differences perturb the 80-digit continuous Snell action, not a binary64 production ray.",
+    "Recorded Decimal checks are independent numerical consistency, not outward interval proofs or arbitrary-scale robustness guarantees.",
+    "No native computation is approved by this review. The proposed fixed saved-path component must retain the exact grid-derived affine ratio and full source/first-vertex variation.",
+    "No full nodal-grid Jacobian, general trilinear-medium connector, optimized whole-path envelope derivative, stationarity or first-arrival certificate follows."
+  ]
+}

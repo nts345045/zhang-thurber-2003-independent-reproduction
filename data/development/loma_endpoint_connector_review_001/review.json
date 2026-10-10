@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "reviewed_utc": "2026-10-10T07:11:27Z",
+  "summary_sha256": "15667b67c7417f4648c8bfdaf8eba6f47b5d0ebf5f6b7fa146f022c8b2776d3e",
+  "execution_sha256": "4f50a269f52bce9f5e09868fb30513b7862a4ef6cd50715c70e387f19a4a4e12",
+  "checker_sha256": "61c7aecf9649794db773bc55447fa46b35ad5f048b58fdccfec8639fa3da1aaf",
+  "independent_xyz_helper_sha256": "1532ab08d15f332551c66b51b40cb79aa50fce63e94daabaec0da83b94fd3634",
+  "formula_identity_sidecar_sha256": "ff9fa2976ed296cca06261c45130d28717f5b494736673564d9f88674fe8496c",
+  "verified_inputs": 40,
+  "verified_outputs": 52,
+  "native_context_fields": 199,
+  "independent_precision": 120,
+  "display_readback_allowance": "1E-95",
+  "largest_display_component_difference": "2.8706143092823093379E-101",
+  "stored_float_residual_norms": {
+    "saved_source_minus_exact_straight": "6.24544417658989543553710219686225700061174872777811776432483744921184228996168343471944046465376962464452008438661493409E-18",
+    "saved_x1_minus_exact_old_complete_x1": "7.18165202603417055386589904751250549861996007518719156869562324964406809223938574731412754260864226433558584898121649399E-17",
+    "connector_source_minus_saved_reference": "7.83092262313042822275607943002134332017469844998860770386519770061601646904016841900013598317207366358643364829788174002E-17"
+  },
+  "findings": [
+    "Exact binary64 grid values determine the rational affine slope; no rounded replacement model is used.",
+    "The horizontal constrained guide has the same local mathematical action and zero inward normal endpoint limits.",
+    "Independent xyz first variations reproduce both straight edges and all source/first-vertex component accounting.",
+    "The unchanged second edge retains its nonzero full first-vertex normal contribution.",
+    "The standalone formula coordinates now have a complete identifier sidecar."
+  ],
+  "limitations": [
+    "The Decimal readback verifies displayed values; it is not a rigorous interval calculation.",
+    "No whole-ray envelope, perturbed action, general-trilinear connector, nodal Jacobian, stopping or accuracy flag is certified.",
+    "The separately attached metadata sidecar is outside the original numerical-summary inventory and is pinned here."
+  ]
+}

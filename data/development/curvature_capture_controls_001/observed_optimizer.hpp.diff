@@ -1,0 +1,35 @@
+--- frozen_B/observed_optimizer.hpp
++++ neutral_capture/observed_optimizer.hpp
+@@ -41,6 +41,7 @@
+   int iter = 0;
+   bool converged = false;
+   audit_step("initial",0,0,g,p,grad,T,NAN,NAN,NAN,NAN,nullptr,0,S.size(),false,0,false);
++  curvature_begin(p);
+   for (; iter < maxit; iter++) {
+     int audit_searches=0;
+     bool audit_reset=false,audit_curvature=false;
+@@ -76,6 +77,7 @@
+       S.clear();
+       Y.clear();
+       rho.clear();
++      curvature_memory_clear(iter,"cone_metric_fallback");
+     }
+     double slope = dot(grad, q);
+     Vec check_feasible = q;
+@@ -129,6 +131,7 @@
+       S.clear();
+       Y.clear();
+       rho.clear();
++      curvature_memory_clear(iter,"accepted_node_merge");
+       merged += trial_merged;
+     } else {
+       Vec s(q.size()), y(q.size());
+@@ -148,6 +151,8 @@
+         Y.push_back(y);
+         rho.push_back(1 / sy);
+       }
++      curvature_pair(iter,updates+1,g,p,trial,grad,ng,q,s,y,sy,audit_curvature,
++                     step,T,newT,slope,scale,S,Y);
+     }
+     p = std::move(trial);
+     grad = std::move(ng);

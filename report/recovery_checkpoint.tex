@@ -15,7 +15,7 @@ has been verified. The original native identities, branch certificates,
 and local flags are retained in
 \path{data/development/hayward_first_arrival_004_1d_support/}.
 This passes the full initial-model comparison. The separate sampled
-refinement calculation remains active at this checkpoint; no corrected
+refinement has not yet completed accuracy review at this checkpoint; no corrected
 inversion is accepted or launched. The initial depth-dependent reference
 does not establish accuracy for later three-dimensional velocity models.
 
@@ -340,6 +340,80 @@ arithmetic accuracy, but this experiment does not resolve local stationarity.}
 \label{fig:loma-outer-accumulation}
 \end{figure}
 
+A subsequent logging-only replay reproduces all five existing diagnostic
+tables byte for byte and exports every curvature pair. Here $s$ is the stored
+step and $y$ is the gradient change. All 960 discarded pairs have positive
+$s^Ty$, between $2.06\times10^{-20}$ and $8.91\times10^{-15}$ s, below the
+unchanged $10^{-14}$ s retention cutoff. Exact rational sums of the saved
+binary64 components retain the same signs and cutoff classifications.
+Replacing the stored step by the actual rounded coordinate displacement
+also leaves every classification unchanged. The last retained pair is
+iteration 434 (update 435); all 565 subsequent pairs are discarded.
+The eight retained pairs are 565--967 iterations old at the final update.
+
+Independent readback streams all 1,132,000 component records and recomputes
+exact sums for 22 representative iterations, including the smallest pair
+and both sides of the cutoff. These results isolate the implemented
+retention decision, but positivity alone does not establish useful curvature
+or a remedy for the failed local flag. The exact sums concern stored steps
+and gradients, not a continuous Hessian or exact path-action differences.
+The complete identified capture, saved initializer, terminal receipts and
+review are retained in
+\path{data/development/loma_curvature_capture_native_001/} and
+\path{data/development/loma_curvature_capture_review_001/}.
+
+The terminal modified-accumulator polygon approaches a velocity-gradient
+interface: vertices 484 and 485 lie on opposite sides of 7 km, within
+$4.67\times10^{-12}$ km of the plane. Three prescribed candidates place
+either vertex, or both, exactly on that interface while retaining every
+other coordinate and both endpoints. Rational integration gives action
+changes of $-1.46038\times10^{-16}$, $+4.31712\times10^{-17}$, and
+$-2.11958\times10^{-16}$ s, respectively
+(Figure~\ref{fig:loma-interface-candidate}). Moving vertex 485 alone therefore
+increases the action. These values concern explicit candidates, not accepted
+optimizer steps or a rule for moving vertices onto interfaces.
+
+The two-vertex candidate has exactly one aligned convex-kink edge in the
+depth-only velocity field. Let $c=L(s'_+-s'_-)>0$ for that edge. Its interface
+first variation admits normal increments $A$ and $B$ satisfying
+$(A+B)^2\leq2cA$ and $(A+B)^2\leq2cB$. The pinned moment-set derivation
+retains their coupled dependence; the two endpoint increments cannot be
+chosen independently. Outward rational bounds give strictly positive
+margins for the increments that cancel both internal normal components.
+All other internal components remain fixed. The complete supporting-vector
+norm is enclosed near $5.57903\times10^{-6}$ s/km, compared with
+$6.88937\times10^{-5}$ s/km for the lower-side support on the same candidate.
+An independent integration in physical coordinates at 80 and 120 decimal
+digits agrees with every one of the 3,396 component enclosures.
+
+This establishes the existence of a small supporting vector for the
+prescribed polygon and its fixed positive-length topology. It does not
+select an ordinary gradient at the kink, find a minimum-norm vector,
+certify the original off-interface polygon, or supply a general optimizer
+correction. Source and velocity-model derivatives are not changed. The
+original modified-accumulator ray retains its false flag. The complete
+identified candidates are retained in
+\path{data/development/loma_interface_candidates_002/}.
+Supporting-vector enclosures are saved in
+\path{data/development/loma_candidate_support_001/};
+the independent review is in
+\path{data/development/loma_candidate_support_review_001/}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.94\linewidth]{../figures/diagnostics/loma_interface_candidate.pdf}
+\caption{Static interface candidates for LOM initial pair 3426, event
+\texttt{NC/10090782} at \texttt{NC.JSJ..EHZ}. Left: exact-action changes
+when vertex 484, vertex 485, or both are placed at 7 km, retaining all other
+coordinates. Right: norms of two admissible supporting vectors on the
+two-vertex candidate. The second norm is an existence bound obtained from
+the coupled interface moments, with every other internal component retained.
+The rational enclosure widths are smaller than the plotted symbols.
+These are prescribed polygons and supports, not accepted optimizer steps
+or ordinary gradients. No convergence flag or manuscript panel status changes.}
+\label{fig:loma-interface-candidate}
+\end{figure}
+
 For the captured boundary ray, the first segment is horizontal at 16 km.
 Let $L$ be its length and $s'_z$ the local depth derivative of slowness.
 Holding its other endpoint fixed gives
@@ -368,6 +442,34 @@ secant. These preserved controls in
 \path{data/development/loma_boundary_endpoint_mesh_controls_001/} therefore
 do not support refinement with unchanged stopping as a sufficient correction.
 The proposed native extension is not executed.
+
+A separate action-level comparison replaces the first straight element
+$S(a,x_1)$ by the constrained curved connector $G(a,x_1)$ in the same affine
+bottom layer. Both source and first-vertex derivatives must then come from
+$G$; changing the source derivative alone would differentiate a different
+travel-time function. Before the native component calculation, 304 invented
+checks cover guide, interior and homogeneous branches, both endpoint
+derivatives, reciprocity and exact branch transitions. Their tiny-step
+finite differences evaluate an 80-digit continuous action, not a binary64
+production ray. Oblique cases retain nonzero normal derivatives and exclude
+blanket zeroing at the bottom face.
+
+For the saved pair 24104, the first connector is a positive horizontal guide.
+Its mathematical action equals the original element action exactly. Both
+inward normal endpoint derivatives of this connector are zero. The complete
+first-vertex derivative includes the unchanged second element, however, and
+its normal component changes from $-3.17013\times10^{-5}$ to
+$-1.58507\times10^{-5}$ s/km. The connector source vector differs from the saved
+continuous reference by $7.83\times10^{-17}$ s/km. The exact grid-derived
+affine ratio and full component accounting are retained in
+\path{data/development/loma_endpoint_connector_native_001/}.
+The independent 120-digit readback is saved in
+\path{data/development/loma_endpoint_connector_review_001/}.
+This evaluates a fixed component and does not reoptimize the ray or promote
+its accuracy flags. A production correction would require one connector
+definition in the actual trilinear medium, with consistent endpoint and
+nodal-model derivatives throughout inversion. The affine calculation alone
+does not supply that definition or Jacobian.
 
 \subsection{Rejecting unsupported forward evaluations during inversion}
 The preceding inversion code recorded local ray failures but could still use

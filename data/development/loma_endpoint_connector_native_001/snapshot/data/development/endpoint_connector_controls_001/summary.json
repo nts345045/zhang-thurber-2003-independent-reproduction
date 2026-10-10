@@ -1,0 +1,3265 @@
+{
+  "status": "passed",
+  "scope": "Invented affine/homogeneous connector controls only; no native/production/global optimizer or inverse run.",
+  "created_utc": "2026-10-10T06:44:06.098604Z",
+  "command": [
+    "tmp/waveform_env/bin/python",
+    "diagnostics/check_endpoint_connector.py",
+    "--output",
+    "data/development/endpoint_connector_controls_001"
+  ],
+  "python_version": "3.11.9 (main, Sep 24 2024, 09:39:15) [GCC 8.5.0 20210514 (Red Hat 8.5.0-22)]",
+  "input_sha256": {
+    "diagnostics/endpoint_connector.py": "c5848169606ae0f49071e8067dd88029e7ba83756fd700700059182c5ce28857",
+    "diagnostics/check_endpoint_connector.py": "d38909b28e71f9f64c65c0ea58adf9f1200165d5c0bcdc69692afb6b5ade84d6",
+    "data/development/loma_endpoint_connector_proposal_001/proposal.md": "652a30b8a65f02777643e32adf2cb9c354b80eb8dbab6eb0796580aaf040aedb",
+    "data/development/loma_endpoint_connector_proposal_001/provenance.json": "4f42c7ac29b4b19c895b40015a5b24f04bbfe2dacdee32a7582e841391391a8e"
+  },
+  "passing_checks": 304,
+  "total_checks": 304,
+  "cases": 33,
+  "checks": [
+    {
+      "name": "positive_guide_0.25_None/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_None/time",
+      "passed": true,
+      "error_s": "2.312964634635742792549232641855875651041666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.25_None/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.25_None/stable_excess",
+      "passed": true,
+      "error_s": "0E-81",
+      "allowance_s": "1.000000000000000000000000000000E-65"
+    },
+    {
+      "name": "positive_guide_0.25_None/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_None/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_None/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_None/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674234859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.25_None/old_action_partial",
+      "passed": true,
+      "old_value_inward_fd": "-0.0034722222222222222222222222222340277777777777777225115715",
+      "old_partial": "-0.0034722222222222222222222222222222222222222222222222222222222222222222222222222222"
+    },
+    {
+      "name": "positive_guide_0.25_None/reject_derivative_only_substitution",
+      "passed": true,
+      "fixed_straight_partial": "-0.0034722222222222222222222222222222222222222222222222222222222222222222222222222222",
+      "old_value_inward_fd": "-0.0034722222222222222222222222222340277777777777777225115715",
+      "connector_partial": -0.0
+    },
+    {
+      "name": "positive_guide_0.25_22/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_22/time",
+      "passed": true,
+      "error_s": "1.809553727446213151028294985662460111080741671563734565177476610E-18"
+    },
+    {
+      "name": "positive_guide_0.25_22/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.25_22/stable_excess",
+      "passed": true,
+      "error_s": "3.05112092043112211773607816234375776111822260320078949622265625E-27",
+      "allowance_s": "5.9744372085715060135752737605886659388223555312600039176543188086479544E-25"
+    },
+    {
+      "name": "positive_guide_0.25_22/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_22/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_22/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_22/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674234859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.25_22/fractional_power",
+      "passed": true,
+      "ratio": "1.0000000178813939190006226808006365674604991856138594427629200361679899289718345"
+    },
+    {
+      "name": "positive_guide_0.25_20/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_20/time",
+      "passed": true,
+      "error_s": "1.490615623638907635577870499979555446746543841071796156485146046E-18"
+    },
+    {
+      "name": "positive_guide_0.25_20/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.25_20/stable_excess",
+      "passed": true,
+      "error_s": "3.9598270283251122652023261996243011376766236362377073129E-26",
+      "allowance_s": "4.77955002325226453241237702416206136473814365639017395241035918547835032E-24"
+    },
+    {
+      "name": "positive_guide_0.25_20/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_20/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_20/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_20/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674235359375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.25_20/fractional_power",
+      "passed": true,
+      "ratio": "1.0000000715255815126044265966128433578445758611539645913026968229814149568919540"
+    },
+    {
+      "name": "positive_guide_0.25_18/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_18/time",
+      "passed": true,
+      "error_s": "1.147723625094579088525904557821300093405904875672974039778850093E-18"
+    },
+    {
+      "name": "positive_guide_0.25_18/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.25_18/stable_excess",
+      "passed": true,
+      "error_s": "4.7556160851291276626397460414553862071511266479557495926E-26",
+      "allowance_s": "3.823640839066337491007620329852369163172615288913905672050458984897467408E-23"
+    },
+    {
+      "name": "positive_guide_0.25_18/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_18/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_18/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_18/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674234859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.25_18/fractional_power",
+      "passed": true,
+      "ratio": "1.0000002861024194360915026113746631739727125221086717105051847577656663046022326"
+    },
+    {
+      "name": "positive_guide_0.25_16/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_16/time",
+      "passed": true,
+      "error_s": "3.03426517506033810086397122999643989161404980807918840148296017E-19"
+    },
+    {
+      "name": "positive_guide_0.25_16/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.25_16/stable_excess",
+      "passed": true,
+      "error_s": "1.50517538652619157970561690474771224072983445193868631066E-25",
+      "allowance_s": "3.0589152967438376475255580872934279508108968878375426820203315945480298528E-22"
+    },
+    {
+      "name": "positive_guide_0.25_16/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_16/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_16/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.25_16/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674234859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.25_16/fractional_power",
+      "passed": true,
+      "ratio": "1.0000011444111719178873796613876231978446985723078747105703086653498392606915530"
+    },
+    {
+      "name": "positive_guide_0.125_None/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_None/time",
+      "passed": true,
+      "error_s": "1.156482317317871396274616320927937825520833333333333333333333333E-18"
+    },
+    {
+      "name": "positive_guide_0.125_None/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.125_None/stable_excess",
+      "passed": true,
+      "error_s": "0E-81",
+      "allowance_s": "1.000000000000000000000000000000E-65"
+    },
+    {
+      "name": "positive_guide_0.125_None/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_None/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_None/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_None/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674234859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.125_None/old_action_partial",
+      "passed": true,
+      "old_value_inward_fd": "-0.0017361111111111111111111111111170138888888888887779224535",
+      "old_partial": "-0.0017361111111111111111111111111111111111111111111111111111111111111111111111111111"
+    },
+    {
+      "name": "positive_guide_0.125_None/reject_derivative_only_substitution",
+      "passed": true,
+      "fixed_straight_partial": "-0.0017361111111111111111111111111111111111111111111111111111111111111111111111111111",
+      "old_value_inward_fd": "-0.0017361111111111111111111111111170138888888888887779224535",
+      "connector_partial": -0.0
+    },
+    {
+      "name": "positive_guide_0.125_22/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_22/time",
+      "passed": true,
+      "error_s": "6.53071410128341754753678664734522285559908338230401231844143276E-19"
+    },
+    {
+      "name": "positive_guide_0.125_22/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.125_22/stable_excess",
+      "passed": true,
+      "error_s": "3.05112092043112211773607816234375776111822260320078949622265625E-27",
+      "allowance_s": "5.9744372085715060135752737605886659388223555312600039176543188086479544E-25"
+    },
+    {
+      "name": "positive_guide_0.125_22/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_22/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_22/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_22/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674234859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.125_22/fractional_power",
+      "passed": true,
+      "ratio": "1.0000000178813939190006226808006365674604991856138594427629200361679899289718345"
+    },
+    {
+      "name": "positive_guide_0.125_20/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_20/time",
+      "passed": true,
+      "error_s": "3.34133306321036239303254179051617621225710507738462823151812713E-19"
+    },
+    {
+      "name": "positive_guide_0.125_20/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.125_20/stable_excess",
+      "passed": true,
+      "error_s": "3.9598270283251122652023261996243011376766236362377073130E-26",
+      "allowance_s": "4.77955002325226453241237702416206136473814365639017395241035918547835040E-24"
+    },
+    {
+      "name": "positive_guide_0.125_20/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_20/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_20/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_20/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674234859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.125_20/fractional_power",
+      "passed": true,
+      "ratio": "1.0000000715255815126044265966128433578445758611539645913026968229814149736299325"
+    },
+    {
+      "name": "positive_guide_0.125_18/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_18/time",
+      "passed": true,
+      "error_s": "8.758692223292307748711763106637732114928457660359293554483241E-21"
+    },
+    {
+      "name": "positive_guide_0.125_18/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.125_18/stable_excess",
+      "passed": true,
+      "error_s": "4.7556160851291276626397460414553862071511266479557495926E-26",
+      "allowance_s": "3.823640839066337491007620329852369163172615288913905672050458984897467408E-23"
+    },
+    {
+      "name": "positive_guide_0.125_18/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_18/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_18/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_18/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674234859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.125_18/fractional_power",
+      "passed": true,
+      "ratio": "1.0000002861024194360915026113746631739727125221086717105051847577656663046022326"
+    },
+    {
+      "name": "positive_guide_0.125_16/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_16/time",
+      "passed": true,
+      "error_s": "2.009538117129708982462835518856231661880261685858747826518370649E-18"
+    },
+    {
+      "name": "positive_guide_0.125_16/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.125_16/stable_excess",
+      "passed": true,
+      "error_s": "1.50517538652619157970561690474771224072983445193868631066E-25",
+      "allowance_s": "3.0589152967438376475255580872934279508108968878375426820203315945480298528E-22"
+    },
+    {
+      "name": "positive_guide_0.125_16/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_16/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_16/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.125_16/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674234859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.125_16/fractional_power",
+      "passed": true,
+      "ratio": "1.0000011444111719178873796613876231978446985723078747105703086653498392606915530"
+    },
+    {
+      "name": "positive_guide_0.0625_None/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_None/time",
+      "passed": true,
+      "error_s": "5.78241158658935698137308160463968912760416666666666666666666667E-19"
+    },
+    {
+      "name": "positive_guide_0.0625_None/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.0625_None/stable_excess",
+      "passed": true,
+      "error_s": "0E-81",
+      "allowance_s": "1.000000000000000000000000000000E-65"
+    },
+    {
+      "name": "positive_guide_0.0625_None/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_None/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_None/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_None/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674234859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.0625_None/old_action_partial",
+      "passed": true,
+      "old_value_inward_fd": "-0.0008680555555555555555555555555585069444444444442222945595",
+      "old_partial": "-0.00086805555555555555555555555555555555555555555555555555555555555555555555555555556"
+    },
+    {
+      "name": "positive_guide_0.0625_None/reject_derivative_only_substitution",
+      "passed": true,
+      "fixed_straight_partial": "-0.00086805555555555555555555555555555555555555555555555555555555555555555555555555556",
+      "old_value_inward_fd": "-0.0008680555555555555555555555555585069444444444442222945595",
+      "connector_partial": -0.0
+    },
+    {
+      "name": "positive_guide_0.0625_22/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_22/time",
+      "passed": true,
+      "error_s": "7.4830251469406056616370504270553372799491671563734565177476609E-20"
+    },
+    {
+      "name": "positive_guide_0.0625_22/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.0625_22/stable_excess",
+      "passed": true,
+      "error_s": "3.05112092043112211773607816234375776111822260320078949522265625E-27",
+      "allowance_s": "5.9744372085715060135752737605886659388223555312600039176543188086479536E-25"
+    },
+    {
+      "name": "positive_guide_0.0625_22/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_22/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_22/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_22/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674234859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.0625_22/fractional_power",
+      "passed": true,
+      "ratio": "1.0000000178813939190006226808006365674604991856138594427629200361679897950680062"
+    },
+    {
+      "name": "positive_guide_0.0625_20/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_20/time",
+      "passed": true,
+      "error_s": "2.44107852337899458834053981412351291534706158928203843514853954E-19"
+    },
+    {
+      "name": "positive_guide_0.0625_20/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.0625_20/stable_excess",
+      "passed": true,
+      "error_s": "3.9598270283251122652023261996243011376766236362377073129E-26",
+      "allowance_s": "4.77955002325226453241237702416206136473814365639017395241035918547835032E-24"
+    },
+    {
+      "name": "positive_guide_0.0625_20/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_20/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_20/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_20/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674234859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.0625_20/fractional_power",
+      "passed": true,
+      "ratio": "1.0000000715255815126044265966128433578445758611539645913026968229814149568919540"
+    },
+    {
+      "name": "positive_guide_0.0625_18/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_18/time",
+      "passed": true,
+      "error_s": "1.147723625094579088525904557821300093405904875672974039778850092E-18"
+    },
+    {
+      "name": "positive_guide_0.0625_18/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.0625_18/stable_excess",
+      "passed": true,
+      "error_s": "4.7556160851291276626397460414553862071511266479557495925E-26",
+      "allowance_s": "3.823640839066337491007620329852369163172615288913905672050458984897467400E-23"
+    },
+    {
+      "name": "positive_guide_0.0625_18/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_18/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_18/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_18/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674234859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.0625_18/fractional_power",
+      "passed": true,
+      "ratio": "1.0000002861024194360915026113746631739727125221086717105051847577656663025099853"
+    },
+    {
+      "name": "positive_guide_0.0625_16/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_16/time",
+      "passed": true,
+      "error_s": "1.431296958470773284325527358392262749119845019192081159851703982E-18"
+    },
+    {
+      "name": "positive_guide_0.0625_16/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "positive_guide_0.0625_16/stable_excess",
+      "passed": true,
+      "error_s": "1.50517538652619157970561690474771224072983445193868631065E-25",
+      "allowance_s": "3.0589152967438376475255580872934279508108968878375426820203315945480298520E-22"
+    },
+    {
+      "name": "positive_guide_0.0625_16/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_16/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_16/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_guide_0.0625_16/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674235359375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_guide_0.0625_16/fractional_power",
+      "passed": true,
+      "ratio": "1.0000011444111719178873796613876231978446985723078747105703086653498392604300220"
+    },
+    {
+      "name": "one_leg_transition_below/branch",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_below/declared_transition",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_below/time",
+      "passed": true,
+      "error_s": "4.25137906050034844286694021789166162266067214017364613987222079E-17"
+    },
+    {
+      "name": "one_leg_transition_below/momenta",
+      "passed": true,
+      "source_error_s_per_km": "1.110223024625156619309722190192009611788258558386064947156156742E-17",
+      "receiver_error_s_per_km": "2.3869795029440864633031949337687840542569984261036607005528843186036060967449648E-17"
+    },
+    {
+      "name": "one_leg_transition_below/stable_excess",
+      "passed": true,
+      "error_s": "1.573263538275246928475842980774310400233932785982635386012777921E-16",
+      "allowance_s": "2.3888983093448775311619618953802056371799244625829308128537712138916911897776632E-14"
+    },
+    {
+      "name": "one_leg_transition_below/distance",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_below/finite_box",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_below/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_below/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "2.386979502944086463303194933766576171875E-17",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "one_leg_transition_at/branch",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_at/declared_transition",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_at/time",
+      "passed": true,
+      "error_s": "9.07129723500153004221663979919819380482653056663625057067813910E-17"
+    },
+    {
+      "name": "one_leg_transition_at/momenta",
+      "passed": true,
+      "source_error_s_per_km": "1.1102230246251565404236316680908203125E-17",
+      "receiver_error_s_per_km": "1.1102230246251565404236316680908203125E-17"
+    },
+    {
+      "name": "one_leg_transition_at/stable_excess",
+      "passed": true,
+      "error_s": "4.63040513650090388052211312683491255482653056663625057067813910E-17",
+      "allowance_s": "2.3888983093448775311619618953802056371799244625819966138775546690999543457488720E-14"
+    },
+    {
+      "name": "one_leg_transition_at/distance",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_at/finite_box",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_at/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_at/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "1.1102230246251565404236316680908203125E-17",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "one_leg_transition_above/branch",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_above/declared_transition",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_above/time",
+      "passed": true,
+      "error_s": "1.351218933350215620391116647156147505482653056663625057067813910E-16"
+    },
+    {
+      "name": "one_leg_transition_above/momenta",
+      "passed": true,
+      "source_error_s_per_km": "1.1102230246251565404236316680908203125E-17",
+      "receiver_error_s_per_km": "1.1102230246251565404236316680908203125E-17"
+    },
+    {
+      "name": "one_leg_transition_above/stable_excess",
+      "passed": true,
+      "error_s": "4.63040513650090388052211312683491255482653056663625057067813910E-17",
+      "allowance_s": "2.3888983093448775311619618953802056371799244625819966138775546690999543457488720E-14"
+    },
+    {
+      "name": "one_leg_transition_above/distance",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_above/finite_box",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_above/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "one_leg_transition_above/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "1.1102230246251565404236316680908203125E-17",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "two_leg_transition_below/branch",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_below/declared_transition",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_below/time",
+      "passed": true,
+      "error_s": "1.341358856890617021019676649541859747168469958982369634498240929E-16"
+    },
+    {
+      "name": "two_leg_transition_below/momenta",
+      "passed": true,
+      "source_error_s_per_km": "2.883407798240763728262066037134893219895790071499471964349190052E-17",
+      "receiver_error_s_per_km": "2.883407798240763728262066037134893219895790071499471964349190052E-17"
+    },
+    {
+      "name": "two_leg_transition_below/stable_excess",
+      "passed": true,
+      "error_s": "2.322377124372399562378307855157847284081530041017630365501759071E-16",
+      "allowance_s": "3.1340757538244400064998188670455749071285534133872032652240328141042924014072568E-14"
+    },
+    {
+      "name": "two_leg_transition_below/distance",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_below/finite_box",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_below/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_below/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "2.88340779824076372826206603713523046875E-17",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "two_leg_transition_at/branch",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_at/declared_transition",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_at/time",
+      "passed": true,
+      "error_s": "4.34997982509633497751453234558548797058553743431308879151883037E-17"
+    },
+    {
+      "name": "two_leg_transition_at/momenta",
+      "passed": true,
+      "source_error_s_per_km": "1.1102230246251565404236316680908203125E-17",
+      "receiver_error_s_per_km": "2.220446049250313080847263336181640625E-17"
+    },
+    {
+      "name": "two_leg_transition_at/stable_excess",
+      "passed": true,
+      "error_s": "1.563403461815648275011083768004927765441446256568691120848116963E-16",
+      "allowance_s": "3.1340757538244400064998188670456181817839255374640386468429947450471033215064296E-14"
+    },
+    {
+      "name": "two_leg_transition_at/distance",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_at/finite_box",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_at/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_at/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "2.220446049250313086942501431420140625E-17",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "two_leg_transition_above/branch",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_above/declared_transition",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_above/time",
+      "passed": true,
+      "error_s": "2.229537276590742199265262768859419952941446256568691120848116963E-16"
+    },
+    {
+      "name": "two_leg_transition_above/momenta",
+      "passed": true,
+      "source_error_s_per_km": "1.1102230246251565404236316680908203125E-17",
+      "receiver_error_s_per_km": "2.220446049250313080847263336181640625E-17"
+    },
+    {
+      "name": "two_leg_transition_above/stable_excess",
+      "passed": true,
+      "error_s": "1.563403461815648275011083768004927765441446256568691120848116963E-16",
+      "allowance_s": "3.1340757538244400064998188670456181817839255374640386468429947450471033215064296E-14"
+    },
+    {
+      "name": "two_leg_transition_above/distance",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_above/finite_box",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_above/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "two_leg_transition_above/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "2.220446049250313080847263336181640625E-17",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "near_zero_guide_26/branch",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_26/declared_transition",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_26/time",
+      "passed": true,
+      "error_s": "7.8691617776305937197690818725027866710096945344540037243869171E-22"
+    },
+    {
+      "name": "near_zero_guide_26/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "near_zero_guide_26/stable_excess",
+      "passed": true,
+      "error_s": "3.176165975631084901363592478613370648475022618940168355115234375E-29",
+      "allowance_s": "9.3350579819018695884090447223040052112057649001516103910346368715713296E-27"
+    },
+    {
+      "name": "near_zero_guide_26/distance",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_26/finite_box",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_26/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_26/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674235029375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "near_zero_guide_24/branch",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_24/declared_transition",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_24/time",
+      "passed": true,
+      "error_s": "1.490452889329368940099404663532975920202745574089717150245217722E-20"
+    },
+    {
+      "name": "near_zero_guide_24/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "near_zero_guide_24/stable_excess",
+      "passed": true,
+      "error_s": "1.3492366615598199416897954743261570323234171016031611205146484375E-28",
+      "allowance_s": "7.46804641056007252917862625799066111962129204069881259384403868628408440E-26"
+    },
+    {
+      "name": "near_zero_guide_24/distance",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_24/finite_box",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_24/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_24/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674235029375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "near_zero_guide_22/branch",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_22/declared_transition",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_22/time",
+      "passed": true,
+      "error_s": "4.02673466075058178542710417230590789754418551676821641690631042E-21"
+    },
+    {
+      "name": "near_zero_guide_22/momenta",
+      "passed": true,
+      "source_error_s_per_km": "6.01823278750675701344696425750169082373986149385697373784989167E-18",
+      "receiver_error_s_per_km": "6.01823278750675701344696425750169082373986149385697373784989167E-18"
+    },
+    {
+      "name": "near_zero_guide_22/stable_excess",
+      "passed": true,
+      "error_s": "5.9032588098344434935507480890301349783575698169635831644546875E-28",
+      "allowance_s": "6.284335671597490978196481240228867441656970768553193253252093533141618328E-25"
+    },
+    {
+      "name": "near_zero_guide_22/distance",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_22/finite_box",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_22/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "near_zero_guide_22/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "6.0182327875067570134469642575051511875E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "homogeneous_oblique/branch",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_oblique/time",
+      "passed": true,
+      "error_s": "2.53640140609644928988422120004661466753038867103348779202563155E-17"
+    },
+    {
+      "name": "homogeneous_oblique/momenta",
+      "passed": true,
+      "source_error_s_per_km": "1.507356858514666706116968570203743447484805664483256103987184226E-17",
+      "receiver_error_s_per_km": "1.507356858514666706116968570203743447484805664483256103987184226E-17"
+    },
+    {
+      "name": "homogeneous_oblique/stable_excess",
+      "passed": true,
+      "error_s": "6.86029698387855055844835086561914146697055337700154458692298217E-18",
+      "allowance_s": "5.5228474983079339840225163227959743809289583383593176423557298398764330461614264E-15"
+    },
+    {
+      "name": "homogeneous_oblique/distance",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_oblique/finite_box",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_oblique/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_oblique/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "1.507356858514666706116968570203735546875E-17",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "homogeneous_oblique/nonzero_bottom_normal",
+      "passed": true
+    },
+    {
+      "name": "positive_gradient_oblique_no_guide/branch",
+      "passed": true
+    },
+    {
+      "name": "positive_gradient_oblique_no_guide/time",
+      "passed": true,
+      "error_s": "2.242188539851737603811852136970503332643622971863493228261742405E-17"
+    },
+    {
+      "name": "positive_gradient_oblique_no_guide/momenta",
+      "passed": true,
+      "source_error_s_per_km": "1.34629923919929370747595460099132093975119272524277400673874218E-18",
+      "receiver_error_s_per_km": "1.61555908703915244897114552118958512770143127029132880808649062E-18"
+    },
+    {
+      "name": "positive_gradient_oblique_no_guide/stable_excess",
+      "passed": true,
+      "error_s": "9.95961948638302305757073561627722578814710361469840105071590928E-18",
+      "allowance_s": "7.2656264255426613792490294874417849235280357035452605517682891758720840572727424E-15"
+    },
+    {
+      "name": "positive_gradient_oblique_no_guide/distance",
+      "passed": true
+    },
+    {
+      "name": "positive_gradient_oblique_no_guide/finite_box",
+      "passed": true
+    },
+    {
+      "name": "positive_gradient_oblique_no_guide/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "positive_gradient_oblique_no_guide/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "1.61555908703915244897114552118684375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "positive_gradient_oblique_no_guide/nonzero_bottom_normal",
+      "passed": true
+    },
+    {
+      "name": "vertical/branch",
+      "passed": true
+    },
+    {
+      "name": "vertical/time",
+      "passed": true,
+      "error_s": "6.21013257136215588458260128249456510894272645165670892748064592E-18"
+    },
+    {
+      "name": "vertical/momenta",
+      "passed": true,
+      "source_error_s_per_km": "1.850371707708594234039386113484700520833333333333333333333333333E-17",
+      "receiver_error_s_per_km": "1.1102230246251565404236316680908203125E-17"
+    },
+    {
+      "name": "vertical/stable_excess",
+      "passed": true,
+      "error_s": "6.21013257136215588458260128249456510894272645165670892748064592E-18",
+      "allowance_s": "1.4585724543516370096937442012361170655791147033158968715418116132536714198451674E-14"
+    },
+    {
+      "name": "vertical/distance",
+      "passed": true
+    },
+    {
+      "name": "vertical/finite_box",
+      "passed": true
+    },
+    {
+      "name": "vertical/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "vertical/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "1.8503717077085942340393861134846171875E-17",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "weak_gradient_oblique_9.53674e-07/branch",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_oblique_9.53674e-07/time",
+      "passed": true,
+      "error_s": "9.56361469422394249723059958282033835999226278095645088948747208E-18"
+    },
+    {
+      "name": "weak_gradient_oblique_9.53674e-07/momenta",
+      "passed": true,
+      "source_error_s_per_km": "2.634725866601093085533170300209316300919750244941308754623259200E-17",
+      "receiver_error_s_per_km": "2.634725866601093085533170300209316300919750244941308754623259200E-17"
+    },
+    {
+      "name": "weak_gradient_oblique_9.53674e-07/stable_excess",
+      "passed": true,
+      "error_s": "4.93768542495245691213213429910858705790892944762311755615413875E-18",
+      "allowance_s": "5.5228489968626866482040640013797247324760547773677328672856441901505955076689000E-15"
+    },
+    {
+      "name": "weak_gradient_oblique_9.53674e-07/distance",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_oblique_9.53674e-07/finite_box",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_oblique_9.53674e-07/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_oblique_9.53674e-07/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "2.634725866601093085533170436430309765625E-17",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "weak_gradient_oblique_9.53674e-07/homogeneous_limit_bound",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_horizontal_9.53674e-07/branch",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_horizontal_9.53674e-07/time",
+      "passed": true,
+      "error_s": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "weak_gradient_horizontal_9.53674e-07/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "weak_gradient_horizontal_9.53674e-07/stable_excess",
+      "passed": true,
+      "error_s": "0E-80",
+      "allowance_s": "1.00000000000000000000000000000E-65"
+    },
+    {
+      "name": "weak_gradient_horizontal_9.53674e-07/distance",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_horizontal_9.53674e-07/finite_box",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_horizontal_9.53674e-07/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_horizontal_9.53674e-07/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674233359375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "weak_gradient_displaced_9.53674e-07/branch",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_displaced_9.53674e-07/time",
+      "passed": true,
+      "error_s": "2.655626058058516763000943320704280997816349343697322672735191515E-18"
+    },
+    {
+      "name": "weak_gradient_displaced_9.53674e-07/momenta",
+      "passed": true,
+      "source_error_s_per_km": "2.055968559087095622111002002752535823483690718707602583907183721E-17",
+      "receiver_error_s_per_km": "2.055968559087095622111002002752535823483690718707602583907183721E-17"
+    },
+    {
+      "name": "weak_gradient_displaced_9.53674e-07/stable_excess",
+      "passed": true,
+      "error_s": "7.4065274067820797327488389312729492647428877309238471169281005859375E-31",
+      "allowance_s": "1.57876455393084642240004036887945435681274197461416245248048548198784E-27"
+    },
+    {
+      "name": "weak_gradient_displaced_9.53674e-07/distance",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_displaced_9.53674e-07/finite_box",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_displaced_9.53674e-07/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_displaced_9.53674e-07/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "2.055968559087095622111001953539751875E-17",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "weak_gradient_oblique_9.09495e-13/branch",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_oblique_9.09495e-13/time",
+      "passed": true,
+      "error_s": "8.03604944004671094755822731917539216130662621456335740064720443E-18"
+    },
+    {
+      "name": "weak_gradient_oblique_9.09495e-13/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.85976308733978567935392024826773391228744050884946278216612137E-18",
+      "receiver_error_s_per_km": "1.330993990292534668723544845781864178806683226081729938287578203E-17"
+    },
+    {
+      "name": "weak_gradient_oblique_9.09495e-13/stable_excess",
+      "passed": true,
+      "error_s": "3.41012017077522536245976203546364085922329288123002406731387110E-18",
+      "allowance_s": "5.5228474983093631170693539475295152739728976365415537621365695015980746148903120E-15"
+    },
+    {
+      "name": "weak_gradient_oblique_9.09495e-13/distance",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_oblique_9.09495e-13/finite_box",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_oblique_9.09495e-13/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_oblique_9.09495e-13/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "1.33099399029253466871716328288105625E-17",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "weak_gradient_oblique_9.09495e-13/homogeneous_limit_bound",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_horizontal_9.09495e-13/branch",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_horizontal_9.09495e-13/time",
+      "passed": true,
+      "error_s": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "weak_gradient_horizontal_9.09495e-13/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18",
+      "receiver_error_s_per_km": "9.25185853854297117019693056742350260416666666666666666666666667E-18"
+    },
+    {
+      "name": "weak_gradient_horizontal_9.09495e-13/stable_excess",
+      "passed": true,
+      "error_s": "0E-80",
+      "allowance_s": "1.00000000000000000000000000000E-65"
+    },
+    {
+      "name": "weak_gradient_horizontal_9.09495e-13/distance",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_horizontal_9.09495e-13/finite_box",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_horizontal_9.09495e-13/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_horizontal_9.09495e-13/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2518585385429711701969305674233359375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "weak_gradient_displaced_9.09495e-13/branch",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_displaced_9.09495e-13/time",
+      "passed": true,
+      "error_s": "7.52913864611951178013065446552742950071386932075060106872991E-22"
+    },
+    {
+      "name": "weak_gradient_displaced_9.09495e-13/momenta",
+      "passed": true,
+      "source_error_s_per_km": "9.24884681417275391205147116737680080338858066530079122260083357E-18",
+      "receiver_error_s_per_km": "9.24884681417275391205147116737680080338858066530079122260083357E-18"
+    },
+    {
+      "name": "weak_gradient_displaced_9.09495e-13/stable_excess",
+      "passed": true,
+      "error_s": "1.36380568249642089432622761179807828658214695392807318651580810546875E-30",
+      "allowance_s": "1.51582456318798956548115934521190239089610267237762123267147521650592E-27"
+    },
+    {
+      "name": "weak_gradient_displaced_9.09495e-13/distance",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_displaced_9.09495e-13/finite_box",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_displaced_9.09495e-13/reciprocity",
+      "passed": true
+    },
+    {
+      "name": "weak_gradient_displaced_9.09495e-13/own_value_derivatives",
+      "passed": true,
+      "max_error_s_per_km": "9.2488468141727539154672399063238859375E-18",
+      "increment_km": "1E-32"
+    },
+    {
+      "name": "first_knot_invariance_None",
+      "passed": true
+    },
+    {
+      "name": "first_knot_invariance_22",
+      "passed": true
+    },
+    {
+      "name": "first_knot_invariance_20",
+      "passed": true
+    },
+    {
+      "name": "first_knot_invariance_18",
+      "passed": true
+    },
+    {
+      "name": "first_knot_invariance_16",
+      "passed": true
+    },
+    {
+      "name": "unchanged_input/diagnostics/endpoint_connector.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_input/diagnostics/check_endpoint_connector.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_input/data/development/loma_endpoint_connector_proposal_001/proposal.md",
+      "passed": true
+    },
+    {
+      "name": "unchanged_input/data/development/loma_endpoint_connector_proposal_001/provenance.json",
+      "passed": true
+    }
+  ],
+  "results": [
+    {
+      "case": {
+        "name": "positive_guide_0.25_None",
+        "a": [
+          0.0,
+          1.0
+        ],
+        "b": [
+          0.25,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.041666666666666664,
+        "excess_s": 0.0,
+        "source": [
+          -0.16666666666666666,
+          -0.0
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.25,
+        "critical_distance_km": 0.0
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.041666666666666666666666666666666666666666666666666666666666666666666666666666667",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.25",
+        "guide": "0.25"
+      },
+      "exact_excess_s": "0E-81",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674234859375E-18",
+        "3.75782174946139440317632817890465E-18",
+        "9.2518585385429711701969305674234859375E-18",
+        "3.75782174946139440317632817890465E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.25_22",
+        "a": [
+          0.0,
+          0.9999997615814209
+        ],
+        "b": [
+          0.25,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.04166666667413471,
+        "excess_s": 7.46804651071438e-12,
+        "source": [
+          -0.16666666666666666,
+          -4.698488658821657e-05
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.2483085441500366,
+        "critical_distance_km": 0.0016914558499633774
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.041666666674134713177381049183635758867402499090194486080741671563734565177476610",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.000046984886588216574931054999840142792104885264277396619360429068148907511872856186"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.25000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "guide": "0.24830854415003662270014595890630427102922820091803571764427719430958221804547878"
+      },
+      "exact_excess_s": "7.468046510714382516969092200735832423527819414075004897067898510809943E-12",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674234859375E-18",
+        "6.6383555011078528388093363538122531890869140625E-21",
+        "9.2518585385429711701969305674234859375E-18",
+        "3.7578217494613944031763281789045E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.25_20",
+        "a": [
+          0.0,
+          0.9999990463256836
+        ],
+        "b": [
+          0.25,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.04166666672641104,
+        "excess_s": 5.974437529065327e-11,
+        "source": [
+          -0.16666666666666666,
+          -9.396978157798691e-05
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.24661708840089186,
+        "critical_distance_km": 0.003382911599108126
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.041666666726411041957319973321821379468692433725893337371543841071796156485146046",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.000093969781577986923871431693747854238647475372602331255633208842237088154647196523"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.25000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "guide": "0.24661708840089187399601628330161052919954384515570182806066610372617679907228921"
+      },
+      "exact_excess_s": "5.9744375290653306655154712802025767059226670704877174405129489818479379E-11",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674235359375E-18",
+        "1.54808166319998462641183021464855865478515625E-20",
+        "9.2518585385429711701969305674235359375E-18",
+        "3.7578217494613944031763281789047E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.25_18",
+        "a": [
+          0.0,
+          0.9999961853027344
+        ],
+        "b": [
+          0.25,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.04166666714462177,
+        "excess_s": 4.779551048832921e-10,
+        "source": [
+          -0.16666666666666666,
+          -0.00018793963036844243
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.2432341776083328,
+        "critical_distance_km": 0.0067658223916671634
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.041666667144621771549958853042619207898212812063243452780904875672974039778850093",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.00018793963036844243233331586607135621217517666652864972180155360019767392715650661"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.25000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "guide": "0.24323417760833283685042397629417591371268116232499118986399939727170454392801290"
+      },
+      "exact_excess_s": "4.77955104883292186375952541231546145396576786114238209006307373112183426E-10",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674234859375E-18",
+        "6.1433426171757301554104361669761444091796875E-21",
+        "9.2518585385429711701969305674234859375E-18",
+        "3.75782174946139440317632817890435E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.25_16",
+        "a": [
+          0.0,
+          0.9999847412109375
+        ],
+        "b": [
+          0.25,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.04166667049031079,
+        "excess_s": 3.823644120929797e-09,
+        "source": [
+          -0.16666666666666666,
+          -0.0003758797984378621
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.23646836166906032,
+        "critical_distance_km": 0.013531638330939693
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.041666670490310787596463726073614275783451605180287651463595019192081159851703983",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.00037587979843786210494052712093996979795527004277835943170903457628867690991317521"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.25000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "guide": "0.23646836166906030753227026014461576317416551118123541834050280478680248189103615"
+      },
+      "exact_excess_s": "3.823644120929797059406947609116784938513620984796928352525414493185037316E-9",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674234859375E-18",
+        "3.04393181677033280791238910674300994873046875E-20",
+        "9.2518585385429711701969305674234859375E-18",
+        "3.75782174946139440317632817890435E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.125_None",
+        "a": [
+          0.0,
+          1.0
+        ],
+        "b": [
+          0.125,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.020833333333333332,
+        "excess_s": 0.0,
+        "source": [
+          -0.16666666666666666,
+          -0.0
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.125,
+        "critical_distance_km": 0.0
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.020833333333333333333333333333333333333333333333333333333333333333333333333333333",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.125",
+        "guide": "0.125"
+      },
+      "exact_excess_s": "0E-81",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674234859375E-18",
+        "3.75782174946139440317632817890455E-18",
+        "9.2518585385429711701969305674234859375E-18",
+        "3.75782174946139440317632817890455E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.125_22",
+        "a": [
+          0.0,
+          0.9999997615814209
+        ],
+        "b": [
+          0.125,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.02083333334080138,
+        "excess_s": 7.46804651071438e-12,
+        "source": [
+          -0.16666666666666666,
+          -4.698488658821657e-05
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.12330854415003663,
+        "critical_distance_km": 0.0016914558499633774
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.020833333340801379844047715850302425534069165756861152747408338230401231844143276",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.000046984886588216574931054999840142792104885264277396619360429068148907511872856186"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.12500000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "guide": "0.12330854415003662270014595890630427102922820091803571764427719430958221804547878"
+      },
+      "exact_excess_s": "7.468046510714382516969092200735832423527819414075004897067898510809943E-12",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674234859375E-18",
+        "6.6383555011078528388093363537622531890869140625E-21",
+        "9.2518585385429711701969305674234859375E-18",
+        "3.75782174946139440317632817890435E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.125_20",
+        "a": [
+          0.0,
+          0.9999990463256836
+        ],
+        "b": [
+          0.125,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.02083333339307771,
+        "excess_s": 5.974437529065327e-11,
+        "source": [
+          -0.16666666666666666,
+          -9.396978157798691e-05
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.1216170884008919,
+        "critical_distance_km": 0.003382911599108126
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.020833333393077708623986639988488046135359100392560004038210507738462823151812713",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.000093969781577986923871431693747854238647475372602331255633208842237088154647196523"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.12500000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "guide": "0.12161708840089187399601628330161052919954384515570182806066610372617679907228921"
+      },
+      "exact_excess_s": "5.9744375290653306655154712802025767059226670704877174405129489818479380E-11",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674234859375E-18",
+        "1.54808166319998462641183021465355865478515625E-20",
+        "9.2518585385429711701969305674234859375E-18",
+        "3.7578217494613944031763281789046E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.125_18",
+        "a": [
+          0.0,
+          0.9999961853027344
+        ],
+        "b": [
+          0.125,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.020833333811288438,
+        "excess_s": 4.779551048832921e-10,
+        "source": [
+          -0.16666666666666666,
+          -0.00018793963036844243
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.11823417760833282,
+        "critical_distance_km": 0.0067658223916671634
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.020833333811288438216625519709285874564879478729910119447571542339640706445516759",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.00018793963036844243233331586607135621217517666652864972180155360019767392715650661"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.12500000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "guide": "0.11823417760833283685042397629417591371268116232499118986399939727170454392801290"
+      },
+      "exact_excess_s": "4.77955104883292186375952541231546145396576786114238209006307373112183426E-10",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674234859375E-18",
+        "6.1433426171757301554104361669261444091796875E-21",
+        "9.2518585385429711701969305674234859375E-18",
+        "3.75782174946139440317632817890455E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.125_16",
+        "a": [
+          0.0,
+          0.9999847412109375
+        ],
+        "b": [
+          0.125,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.020833337156977452,
+        "excess_s": 3.823644120929797e-09,
+        "source": [
+          -0.16666666666666666,
+          -0.0003758797984378621
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.1114683616690603,
+        "critical_distance_km": 0.013531638330939693
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.020833337156977454263130392740280942450118271846954318130261685858747826518370649",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.00037587979843786210494052712093996979795527004277835943170903457628867690991317521"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.12500000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "guide": "0.11146836166906030753227026014461576317416551118123541834050280478680248189103615"
+      },
+      "exact_excess_s": "3.823644120929797059406947609116784938513620984796928352525414493185037316E-9",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674234859375E-18",
+        "3.04393181677033280791238910674800994873046875E-20",
+        "9.2518585385429711701969305674234859375E-18",
+        "3.75782174946139440317632817890435E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.0625_None",
+        "a": [
+          0.0,
+          1.0
+        ],
+        "b": [
+          0.0625,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.010416666666666666,
+        "excess_s": 0.0,
+        "source": [
+          -0.16666666666666666,
+          -0.0
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.0625,
+        "critical_distance_km": 0.0
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.010416666666666666666666666666666666666666666666666666666666666666666666666666667",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.0625",
+        "guide": "0.0625"
+      },
+      "exact_excess_s": "0E-81",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674234859375E-18",
+        "3.7578217494613944031763281789044E-18",
+        "9.2518585385429711701969305674234859375E-18",
+        "3.7578217494613944031763281789044E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.0625_22",
+        "a": [
+          0.0,
+          0.9999997615814209
+        ],
+        "b": [
+          0.0625,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.010416666674134713,
+        "excess_s": 7.46804651071438e-12,
+        "source": [
+          -0.16666666666666666,
+          -4.698488658821657e-05
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.06080854415003663,
+        "critical_distance_km": 0.0016914558499633774
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.010416666674134713177381049183635758867402499090194486080741671563734565177476609",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.000046984886588216574931054999840142792104885264277396619360429068148907511872856186"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.062500000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "guide": "0.060808544150036622700145958906304271029228200918035717644277194309582218045478777"
+      },
+      "exact_excess_s": "7.468046510714382516969092200735832423527819414075004897067898510809942E-12",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674234859375E-18",
+        "6.6383555011078528388093363538122531890869140625E-21",
+        "9.2518585385429711701969305674234859375E-18",
+        "3.75782174946139440317632817890435E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.0625_20",
+        "a": [
+          0.0,
+          0.9999990463256836
+        ],
+        "b": [
+          0.0625,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.010416666726411042,
+        "excess_s": 5.974437529065327e-11,
+        "source": [
+          -0.16666666666666666,
+          -9.396978157798691e-05
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.05911708840089187,
+        "critical_distance_km": 0.003382911599108126
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.010416666726411041957319973321821379468692433725893337371543841071796156485146046",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.000093969781577986923871431693747854238647475372602331255633208842237088154647196523"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.062500000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "guide": "0.059117088400891873996016283301610529199543845155701828060666103726176799072289212"
+      },
+      "exact_excess_s": "5.9744375290653306655154712802025767059226670704877174405129489818479379E-11",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674234859375E-18",
+        "1.54808166319998462641183021464855865478515625E-20",
+        "9.2518585385429711701969305674234859375E-18",
+        "3.75782174946139440317632817890455E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.0625_18",
+        "a": [
+          0.0,
+          0.9999961853027344
+        ],
+        "b": [
+          0.0625,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.01041666714462177,
+        "excess_s": 4.779551048832921e-10,
+        "source": [
+          -0.16666666666666666,
+          -0.00018793963036844243
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.05573417760833283,
+        "critical_distance_km": 0.0067658223916671634
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.010416667144621771549958853042619207898212812063243452780904875672974039778850092",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.00018793963036844243233331586607135621217517666652864972180155360019767392715650661"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.062500000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "guide": "0.055734177608332836850423976294175913712681162324991189863999397271704543928012898"
+      },
+      "exact_excess_s": "4.77955104883292186375952541231546145396576786114238209006307373112183425E-10",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674234859375E-18",
+        "6.1433426171757301554104361669261444091796875E-21",
+        "9.2518585385429711701969305674234859375E-18",
+        "3.75782174946139440317632817890455E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_guide_0.0625_16",
+        "a": [
+          0.0,
+          0.9999847412109375
+        ],
+        "b": [
+          0.0625,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.010416670490310786,
+        "excess_s": 3.823644120929797e-09,
+        "source": [
+          -0.16666666666666666,
+          -0.0003758797984378621
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.04896836166906031,
+        "critical_distance_km": 0.013531638330939693
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.010416670490310787596463726073614275783451605180287651463595019192081159851703982",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.00037587979843786210494052712093996979795527004277835943170903457628867690991317521"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.062500000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "guide": "0.048968361669060307532270260144615763174165511181235418340502804786802481891036146"
+      },
+      "exact_excess_s": "3.823644120929797059406947609116784938513620984796928352525414493185037315E-9",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674235359375E-18",
+        "3.04393181677033280791238910674300994873046875E-20",
+        "9.2518585385429711701969305674235359375E-18",
+        "3.75782174946139440317632817890435E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "one_leg_transition_below",
+        "a": [
+          0.0,
+          -1.0
+        ],
+        "b": [
+          3.9999999999999996,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 5.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "interior",
+        "time_s": 1.0986122886681096,
+        "excess_s": 0.29861228866810985,
+        "source": [
+          -0.2,
+          -0.26666666666666666
+        ],
+        "receiver": [
+          0.2,
+          4.163336342344337e-17
+        ],
+        "guide_length_km": null,
+        "critical_distance_km": 4.0
+      },
+      "independent_snell": {
+        "branch": "interior",
+        "time": "1.0986122886681096025774032669100024707569571105572412266067214017364613987222079",
+        "source": [
+          "-0.19999999999999999999999999999999921113909477898810700711741441613935052843843258",
+          "-0.26666666666666666666666666666666725831234558242558641132860585456033062133065634"
+        ],
+        "receiver": [
+          "0.19999999999999999999999999999999921113909477898810700711741441613935052843843258",
+          "1.7763568394002505632854238215717921176180015738963392994471156813963939032550352E-17"
+        ],
+        "maximum_depth": "1",
+        "distance": "3.9999999999999995559107901499373838305473327636718750000000000000000000000000000",
+        "guide": null
+      },
+      "exact_excess_s": "0.2986122886681096913952452369225257046474905578228662266067214017364613987222079",
+      "derivative_fd_errors": [
+        "1.1102230246251566193097221901923203125E-17",
+        "3.700743415417189059724451142727734375E-18",
+        "1.1102230246251566193097221901923203125E-17",
+        "2.386979502944086463303194933766576171875E-17"
+      ]
+    },
+    {
+      "case": {
+        "name": "one_leg_transition_at",
+        "a": [
+          0.0,
+          -1.0
+        ],
+        "b": [
+          4.0,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 5.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "critical",
+        "time_s": 1.0986122886681098,
+        "excess_s": 0.29861228866810974,
+        "source": [
+          -0.2,
+          -0.26666666666666666
+        ],
+        "receiver": [
+          0.2,
+          -0.0
+        ],
+        "guide_length_km": 0.0,
+        "critical_distance_km": 4.0
+      },
+      "independent_snell": {
+        "branch": "critical",
+        "time": "1.0986122886681096913952452369225257046474905578227494517346943336374942932186090",
+        "source": [
+          "-0.2",
+          "-0.26666666666666666666666666666666666666666666666666666666666666666666666666666667"
+        ],
+        "receiver": [
+          "0.2",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "4",
+        "guide": "0"
+      },
+      "exact_excess_s": "0.2986122886681096913952452369225257046474905578227494517346943336374942932186090",
+      "derivative_fd_errors": [
+        "1.1102230246251565404236316680908203125E-17",
+        "3.700743415417188468078772226967734375E-18",
+        "1.1102230246251565404236316680908203125E-17",
+        "0E-47"
+      ]
+    },
+    {
+      "case": {
+        "name": "one_leg_transition_above",
+        "a": [
+          0.0,
+          -1.0
+        ],
+        "b": [
+          4.000000000000001,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 5.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 1.09861228866811,
+        "excess_s": 0.29861228866810974,
+        "source": [
+          -0.2,
+          -0.26666666666666666
+        ],
+        "receiver": [
+          0.2,
+          -0.0
+        ],
+        "guide_length_km": 8.881784197001254e-16,
+        "critical_distance_km": 4.0
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "1.0986122886681098690309291769475721724285574523539994517346943336374942932186090",
+        "source": [
+          "-0.2",
+          "-0.26666666666666666666666666666666666666666666666666666666666666666666666666666667"
+        ],
+        "receiver": [
+          "0.2",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "4.00000000000000088817841970012523233890533447265625",
+        "guide": "8.8817841970012523233890533447265625E-16"
+      },
+      "exact_excess_s": "0.2986122886681096913952452369225257046474905578227494517346943336374942932186090",
+      "derivative_fd_errors": [
+        "1.1102230246251565404236316680908203125E-17",
+        "3.700743415417188468078772226967734375E-18",
+        "1.1102230246251565404236316680908203125E-17",
+        "4.939784974232478056478506003745E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "two_leg_transition_below",
+        "a": [
+          0.0,
+          -1.0
+        ],
+        "b": [
+          6.999999999999999,
+          0.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 5.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "interior",
+        "time_s": 1.791759469228055,
+        "excess_s": 0.39175946922805477,
+        "source": [
+          -0.19999999999999998,
+          -0.26666666666666666
+        ],
+        "receiver": [
+          0.19999999999999998,
+          -0.14999999999999997
+        ],
+        "guide_length_km": null,
+        "critical_distance_km": 7.0
+      },
+      "independent_snell": {
+        "branch": "interior",
+        "time": "1.7917594692280548231767934183556503956100022821421502831530041017630365501759071",
+        "source": [
+          "-0.20000000000000001218073261303028917626618534998662751145790071499471964349190052",
+          "-0.26666666666666665753111720689394934978856967525178910070674834208663967148367369"
+        ],
+        "receiver": [
+          "0.20000000000000001218073261303028917626618534998662751145790071499471964349190052",
+          "-0.14999999999999998375902318262627972451316962465012120831488494128610194508670492"
+        ],
+        "maximum_depth": "0.9999999999999996954816846742427891396262400177952430938330792252301781022348595",
+        "distance": "6.9999999999999991118215802998747676610946655273437500000000000000000000000000000",
+        "guide": null
+      },
+      "exact_excess_s": "0.3917594692280550008124773583806968633910691766734002831530041017630365501759071",
+      "derivative_fd_errors": [
+        "2.88340779824076372826206603713523046875E-17",
+        "5.434806044355528848799324764447265625E-18",
+        "2.88340779824076372826206603713523046875E-17",
+        "1.7065713921380975937222119667374609375E-17"
+      ]
+    },
+    {
+      "case": {
+        "name": "two_leg_transition_at",
+        "a": [
+          0.0,
+          -1.0
+        ],
+        "b": [
+          7.0,
+          0.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 5.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "critical",
+        "time_s": 1.791759469228055,
+        "excess_s": 0.39175946922805516,
+        "source": [
+          -0.2,
+          -0.26666666666666666
+        ],
+        "receiver": [
+          0.2,
+          -0.15000000000000002
+        ],
+        "guide_length_km": 0.0,
+        "critical_distance_km": 7.0
+      },
+      "independent_snell": {
+        "branch": "critical",
+        "time": "1.7917594692280550008124773583807022727229906921830047058553743431308879151883037",
+        "source": [
+          "-0.2",
+          "-0.26666666666666666666666666666666666666666666666666666666666666666666666666666667"
+        ],
+        "receiver": [
+          "0.2",
+          "-0.15"
+        ],
+        "maximum_depth": "1",
+        "distance": "7",
+        "guide": "0"
+      },
+      "exact_excess_s": "0.3917594692280550008124773583807022727229906921830047058553743431308879151883037",
+      "derivative_fd_errors": [
+        "1.1102230246251565369950602395193203125E-17",
+        "3.700743415417188448793057941252734375E-18",
+        "1.1102230246251565369950602395193203125E-17",
+        "2.220446049250313086942501431420140625E-17"
+      ]
+    },
+    {
+      "case": {
+        "name": "two_leg_transition_above",
+        "a": [
+          0.0,
+          -1.0
+        ],
+        "b": [
+          7.000000000000001,
+          0.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 5.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 1.7917594692280554,
+        "excess_s": 0.39175946922805516,
+        "source": [
+          -0.2,
+          -0.26666666666666666
+        ],
+        "receiver": [
+          0.2,
+          -0.15000000000000002
+        ],
+        "guide_length_km": 8.881784197001252e-16,
+        "critical_distance_km": 7.0
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "1.7917594692280551784481612984057487405040575867142547058553743431308879151883037",
+        "source": [
+          "-0.2",
+          "-0.26666666666666666666666666666666666666666666666666666666666666666666666666666667"
+        ],
+        "receiver": [
+          "0.2",
+          "-0.15"
+        ],
+        "maximum_depth": "1",
+        "distance": "7.00000000000000088817841970012523233890533447265625",
+        "guide": "8.8817841970012523233890533447265625E-16"
+      },
+      "exact_excess_s": "0.3917594692280550008124773583807022727229906921830047058553743431308879151883037",
+      "derivative_fd_errors": [
+        "1.1102230246251565404236316680908203125E-17",
+        "3.700743415417188468078772226967734375E-18",
+        "1.1102230246251565404236316680908203125E-17",
+        "2.220446049250313080847263336181640625E-17"
+      ]
+    },
+    {
+      "case": {
+        "name": "near_zero_guide_26",
+        "a": [
+          0.0,
+          0.9999999850988388
+        ],
+        "b": [
+          0.001,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.0001666666667833549,
+        "excess_s": 1.1668822477377334e-13,
+        "source": [
+          -0.16666666666666666,
+          -1.1746221318868498e-05
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.0005771360335709281,
+        "critical_distance_km": 0.0004228639664290719
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.00016666666678335489490988698847539391451931569459042720448106179655459962756130829",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.000011746221318868498644651111416379740632617079213922065657243763175311151968523109"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.0010000000000000000208166817117216851329430937767028808593750000000000000000000000",
+        "guide": "0.00057713603357092809335565755226403665576687152096788367770694003259206810395218025"
+      },
+      "exact_excess_s": "1.1668822477377336985511305902880006513994706125189512988793296089464162E-13",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674235029375E-18",
+        "1.125310956461021283332154319829776702880859375E-21",
+        "9.2518585385429711701969305674235029375E-18",
+        "3.7578217494613944031763281789044325E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "near_zero_guide_24",
+        "a": [
+          0.0,
+          0.9999999403953552
+        ],
+        "b": [
+          0.001,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.00016666666760017246,
+        "excess_s": 9.33505801320009e-13,
+        "source": [
+          -0.16666666666666666,
+          -2.349244276901125e-05
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 0.00015427206871714718,
+        "critical_distance_km": 0.0008457279312828528
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.00016666666760017247145612268476760913773934826940301664831651824089717150245217722",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "-0.000023492442769011251575281050661413021029611691966744684225166987077651480399130317"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.0010000000000000000208166817117216851329430937767028808593750000000000000000000000",
+        "guide": "0.00015427206871714720102522246938740366953044933656541693049436896641535083820663470"
+      },
+      "exact_excess_s": "9.3350580132000906614732828224883263995253650508735157423050483578551055E-13",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674235029375E-18",
+        "2.78082499968025212154726439160854946136474609375E-21",
+        "9.2518585385429711701969305674235029375E-18",
+        "3.757821749461394403176328178904432E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "near_zero_guide_22",
+        "a": [
+          0.0,
+          0.9999997615814209
+        ],
+        "b": [
+          0.001,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "interior",
+        "time_s": 0.00016666667452208626,
+        "excess_s": 7.855419589496864e-12,
+        "source": [
+          -0.1666666646623807,
+          -5.3625319435653285e-05
+        ],
+        "receiver": [
+          0.1666666646623807,
+          2.584753986104443e-05
+        ],
+        "guide_length_km": null,
+        "critical_distance_km": 0.0016914558499633774
+      },
+      "independent_snell": {
+        "branch": "interior",
+        "time": "0.00016666667452208625963297734136588240577659993152156860392065823323178358309368958",
+        "source": [
+          "-0.16666666466238070401033842565670813242284201934251113623986149385697373784989167",
+          "-0.000053625319435653288290921128007744589523228053195915521198735075209538765499086937"
+        ],
+        "receiver": [
+          "0.16666666466238070401033842565670813242284201934251113623986149385697373784989167",
+          "0.000025847539861044426424980165996072854508485783192783604842521659360333188918750120"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.0010000000000000000208166817117216851329430937767028808593750000000000000000000000",
+        "guide": null
+      },
+      "exact_excess_s": "7.85541958949686372274560155028608430207108846069149156656511691642702291E-12",
+      "derivative_fd_errors": [
+        "6.0182327875067570134469642575051511875E-18",
+        "3.1294191205690171432808178374769258575439453125E-21",
+        "6.0182327875067570134469642575051511875E-18",
+        "3.771792126433512750114357883227880096435546875E-21"
+      ]
+    },
+    {
+      "case": {
+        "name": "homogeneous_oblique",
+        "a": [
+          0.0,
+          1.0
+        ],
+        "b": [
+          1.0,
+          0.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 0.0
+      },
+      "computed": {
+        "branch": "homogeneous",
+        "time_s": 0.23570226039551587,
+        "excess_s": 0.06903559372884918,
+        "source": [
+          -0.1178511301977579,
+          0.1178511301977579
+        ],
+        "receiver": [
+          0.1178511301977579,
+          -0.1178511301977579
+        ],
+        "guide_length_km": null,
+        "critical_distance_km": null
+      },
+      "independent_snell": {
+        "branch": "homogeneous",
+        "time": "0.2357022603955158414669481207016163464282786458961580121961132896651220797436845",
+        "source": [
+          "-0.11785113019775792073347406035080817321413932294807900609805664483256103987184226",
+          "0.11785113019775792073347406035080817321413932294807900609805664483256103987184226"
+        ],
+        "receiver": [
+          "0.11785113019775792073347406035080817321413932294807900609805664483256103987184226",
+          "-0.11785113019775792073347406035080817321413932294807900609805664483256103987184226"
+        ],
+        "maximum_depth": "1",
+        "distance": "1",
+        "guide": null
+      },
+      "exact_excess_s": "0.06903559372884917480028145403494967976161197922949134552944662299845541307701783",
+      "derivative_fd_errors": [
+        "1.507356858514666706116968570203735546875E-17",
+        "1.507356858514666706116968570203685546875E-17",
+        "1.507356858514666706116968570203735546875E-17",
+        "1.507356858514666706116968570203735546875E-17"
+      ]
+    },
+    {
+      "case": {
+        "name": "positive_gradient_oblique_no_guide",
+        "a": [
+          0.0,
+          1.0
+        ],
+        "b": [
+          1.0,
+          0.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "interior",
+        "time_s": 0.25748699698594996,
+        "excess_s": 0.09082033031928326,
+        "source": [
+          -0.12803687993289598,
+          0.10669739994407998
+        ],
+        "receiver": [
+          0.12803687993289598,
+          -0.15364425591947517
+        ],
+        "guide_length_km": null,
+        "critical_distance_km": 3.3166247903554
+      },
+      "independent_snell": {
+        "branch": "interior",
+        "time": "0.25748699698594993390727953525968897821076711296098229856377028136506771738257595",
+        "source": [
+          "-0.12803687993289597367425774976654264612407057601063218524880727475722599326125782",
+          "0.10669739994407997806188145813878553843672548000886015437400606229768832771771485"
+        ],
+        "receiver": [
+          "0.12803687993289597367425774976654264612407057601063218524880727475722599326125782",
+          "-0.15364425591947516840910929971985117534888469121275862229856872970867119191350938"
+        ],
+        "maximum_depth": "1",
+        "distance": "1",
+        "guide": null
+      },
+      "exact_excess_s": "0.09082033031928326724061286859302231154410044629431563189710361469840105071590928",
+      "derivative_fd_errors": [
+        "1.346299239199293707475954600991453125E-18",
+        "1.1219160326660780895632955008264609375E-18",
+        "1.346299239199293707475954600991453125E-18",
+        "1.61555908703915244897114552118684375E-18"
+      ]
+    },
+    {
+      "case": {
+        "name": "vertical",
+        "a": [
+          0.0,
+          1.0
+        ],
+        "b": [
+          0.0,
+          0.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 1.0
+      },
+      "computed": {
+        "branch": "interior",
+        "time_s": 0.18232155679395462,
+        "excess_s": 0.18232155679395462,
+        "source": [
+          -0.0,
+          0.16666666666666669
+        ],
+        "receiver": [
+          0.0,
+          -0.2
+        ],
+        "guide_length_km": null,
+        "critical_distance_km": 3.3166247903554
+      },
+      "independent_snell": {
+        "branch": "interior",
+        "time": "0.18232155679395462621171802515451463319738933791448698394272645165670892748064592",
+        "source": [
+          "0",
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667"
+        ],
+        "receiver": [
+          "0",
+          "-0.2"
+        ],
+        "maximum_depth": "1",
+        "distance": "0",
+        "guide": null
+      },
+      "exact_excess_s": "0.18232155679395462621171802515451463319738933791448698394272645165670892748064592",
+      "derivative_fd_errors": [
+        "0E-48",
+        "1.8503717077085942340393861134846171875E-17",
+        "0E-48",
+        "1.1102230246251565404236316680908703125E-17"
+      ]
+    },
+    {
+      "case": {
+        "name": "weak_gradient_oblique_9.53674e-07",
+        "a": [
+          0.0,
+          1.0
+        ],
+        "b": [
+          1.0,
+          0.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 9.5367431640625e-07
+      },
+      "computed": {
+        "branch": "interior",
+        "time_s": 0.23570227912745026,
+        "excess_s": 0.06903561246078359,
+        "source": [
+          -0.1178511395637246,
+          0.11785112083179045
+        ],
+        "receiver": [
+          0.1178511395637246,
+          -0.11785115829566174
+        ],
+        "guide_length_km": null,
+        "critical_distance_km": 3547.2399129464025
+      },
+      "independent_snell": {
+        "branch": "interior",
+        "time": "0.23570227912745024976921746668391322582261735138376320250773721904354911051252792",
+        "source": [
+          "-0.11785113956372462865773804951550201563326912605556535294750244941308754623259200",
+          "0.11785112083179046846896320030125820378716933083024293861839437848285304835363580"
+        ],
+        "receiver": [
+          "0.11785113956372462865773804951550201563326912605556535294750244941308754623259200",
+          "-0.11785115829566176620773700170351727053090657768942843478872247681572325022913115"
+        ],
+        "maximum_depth": "1",
+        "distance": "1",
+        "guide": null
+      },
+      "exact_excess_s": "0.06903561246078358310255080001724655915595068471709653584107055237688244384586125",
+      "derivative_fd_errors": [
+        "2.634725866601093085533170436430309765625E-17",
+        "2.2737961063192668681246604822129578125E-17",
+        "2.634725866601093085533170436430309765625E-17",
+        "2.359340169169476208395823655771452734375E-17"
+      ]
+    },
+    {
+      "case": {
+        "name": "weak_gradient_horizontal_9.53674e-07",
+        "a": [
+          0.0,
+          1.0
+        ],
+        "b": [
+          1.0,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 9.5367431640625e-07
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.16666666666666666,
+        "excess_s": 0.0,
+        "source": [
+          -0.16666666666666666,
+          -0.0
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 1.0,
+        "critical_distance_km": 0.0
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0"
+        ],
+        "maximum_depth": "1",
+        "distance": "1",
+        "guide": "1"
+      },
+      "exact_excess_s": "0E-80",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674233359375E-18",
+        "3.6697478022083929718569220815E-21",
+        "9.2518585385429711701969305674233359375E-18",
+        "3.6697478022083929718569220815E-21"
+      ]
+    },
+    {
+      "case": {
+        "name": "weak_gradient_displaced_9.53674e-07",
+        "a": [
+          0.0,
+          0.9999997615814209
+        ],
+        "b": [
+          0.25,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 9.5367431640625e-07
+      },
+      "computed": {
+        "branch": "interior",
+        "time_s": 0.0416666666666864,
+        "excess_s": 1.973455692413558e-14,
+        "source": [
+          -0.16666666666659402,
+          -1.6225708855516244e-07
+        ],
+        "receiver": [
+          0.16666666666659402,
+          1.5563435024678244e-07
+        ],
+        "guide_length_km": null,
+        "critical_distance_km": 1.732050807568861
+      },
+      "independent_snell": {
+        "branch": "interior",
+        "time": "0.041666666666686401223590802246946667171277659846126700941349343697322672735191515",
+        "source": [
+          "-0.16666666666659400051373643638608205925783122979886051516309281292397416092816279",
+          "-1.6225708855516242829082031621071574785491559193454375750352253717366411074416617E-7"
+        ],
+        "receiver": [
+          "0.16666666666659400051373643638608205925783122979886051516309281292397416092816279",
+          "1.5563435024678243084143235461305946840591103982430778495877157716067559063638515E-7"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.2500000000000000000000000000000000000000000",
+        "guide": null
+      },
+      "exact_excess_s": "1.9734556924135580280000504610993179460034274682677030656006068524848E-14",
+      "derivative_fd_errors": [
+        "2.055968559087095622111001953539751875E-17",
+        "8.496472416987224718185446283017861843109130859375E-24",
+        "2.055968559087095622111001953539751875E-17",
+        "1.11107716363460765195992904571730911731719970703125E-23"
+      ]
+    },
+    {
+      "case": {
+        "name": "weak_gradient_oblique_9.09495e-13",
+        "a": [
+          0.0,
+          1.0
+        ],
+        "b": [
+          1.0,
+          0.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 9.094947017729282e-13
+      },
+      "computed": {
+        "branch": "interior",
+        "time_s": 0.2357022603955337,
+        "excess_s": 0.06903559372886704,
+        "source": [
+          -0.11785113019776684,
+          0.11785113019774898
+        ],
+        "receiver": [
+          0.11785113019776684,
+          -0.1178511301977847
+        ],
+        "guide_length_km": null,
+        "critical_distance_km": 3632373.8151945486
+      },
+      "independent_snell": {
+        "branch": "interior",
+        "time": "0.23570226039553370563003359101078560759132788712343596369337378543664259935279557",
+        "source": [
+          "-0.11785113019776685281501679505407720163330200028189406853744050884946278216612137",
+          "0.11785113019774898865193132497056574155148503933815234130751093514337449033621570"
+        ],
+        "receiver": [
+          "0.11785113019776685281501679505407720163330200028189406853744050884946278216612137",
+          "-0.11785113019778471697810226784548227468929062090457928806683226081729938287578203"
+        ],
+        "maximum_depth": "1",
+        "distance": "1",
+        "guide": null
+      },
+      "exact_excess_s": "0.06903559372886703896336692434411894092466122045676929702670711876997593268612890",
+      "derivative_fd_errors": [
+        "9.85976308733978568147474998792783984375E-18",
+        "6.4095862744621182801343116648541171875E-18",
+        "9.85976308733978568147474998792783984375E-18",
+        "1.33099399029253466871716328288105625E-17"
+      ]
+    },
+    {
+      "case": {
+        "name": "weak_gradient_horizontal_9.09495e-13",
+        "a": [
+          0.0,
+          1.0
+        ],
+        "b": [
+          1.0,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 9.094947017729282e-13
+      },
+      "computed": {
+        "branch": "guide",
+        "time_s": 0.16666666666666666,
+        "excess_s": 0.0,
+        "source": [
+          -0.16666666666666666,
+          -0.0
+        ],
+        "receiver": [
+          0.16666666666666666,
+          -0.0
+        ],
+        "guide_length_km": 1.0,
+        "critical_distance_km": 0.0
+      },
+      "independent_snell": {
+        "branch": "guide",
+        "time": "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+        "source": [
+          "-0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0E+1"
+        ],
+        "receiver": [
+          "0.16666666666666666666666666666666666666666666666666666666666666666666666666666667",
+          "0E+1"
+        ],
+        "maximum_depth": "1",
+        "distance": "1",
+        "guide": "1"
+      },
+      "exact_excess_s": "0E-80",
+      "derivative_fd_errors": [
+        "9.2518585385429711701969305674233359375E-18",
+        "3.583738088109701804196168E-24",
+        "9.2518585385429711701969305674233359375E-18",
+        "3.583738088109701804196168E-24"
+      ]
+    },
+    {
+      "case": {
+        "name": "weak_gradient_displaced_9.09495e-13",
+        "a": [
+          0.0,
+          0.9999997615814209
+        ],
+        "b": [
+          0.25,
+          1.0
+        ],
+        "bottom": 1.0,
+        "bottom_speed": 6.0,
+        "gradient": 9.094947017729282e-13
+      },
+      "computed": {
+        "branch": "interior",
+        "time_s": 0.041666666666685614,
+        "excess_s": 1.8947807039849868e-14,
+        "source": [
+          -0.16666666666659088,
+          -1.589457225589371e-07
+        ],
+        "receiver": [
+          0.16666666666659088,
+          1.5894571624300168e-07
+        ],
+        "guide_length_km": null,
+        "critical_distance_km": 1773.6200269505302
+      },
+      "independent_snell": {
+        "branch": "interior",
+        "time": "0.041666666666685614473706516536235181158481815446552742950071386932075060106872991",
+        "source": [
+          "-0.16666666666659087544453064701705767155691773338003513411141933469920877739916643",
+          "-1.5894572255893710101547674093513190974055430122986249236561731581267808447651475E-7"
+        ],
+        "receiver": [
+          "0.16666666666659087544453064701705767155691773338003513411141933469920877739916643",
+          "1.5894571624300167203393626694773825335966328223578528555079515618616472252868109E-7"
+        ],
+        "maximum_depth": "1",
+        "distance": "0.250000000000000000000000000000000000000000000",
+        "guide": null
+      },
+      "exact_excess_s": "1.8947807039849869568514491815148779886076283404720265408393440206324E-14",
+      "derivative_fd_errors": [
+        "9.2488468141727539154672399063238859375E-18",
+        "5.87786496302103691533871471416119635105133056640625E-24",
+        "9.2488468141727539154672399063238859375E-18",
+        "1.17629103629752220464580457411031544208526611328125E-23"
+      ]
+    }
+  ],
+  "scientific_source_allowance_s_per_km": 3e-06,
+  "control_time_allowance_s": 2e-14,
+  "control_derivative_allowance_s_per_km": 2e-13,
+  "limitations": [
+    "80-digit Snell readback is independent arithmetic, not an outward interval proof.",
+    "Finite-box checks allow 1e-55 km Decimal roundoff only; binary input branch membership is exact rational.",
+    "No arbitrary-scale robustness or full nodal-grid Jacobian is established.",
+    "This is a changed discrete action; it is never substituted into the old polygon derivative alone.",
+    "Small stable action increments are reported separately from rounded totals. No production accumulation claim."
+  ],
+  "artifact_sha256": {
+    "invented_inputs.json": "3fd35e9a4285228c560e033ecf99a6276b8ea6db41f57947646bd9808dee510a",
+    "source/check_endpoint_connector.py": "d38909b28e71f9f64c65c0ea58adf9f1200165d5c0bcdc69692afb6b5ade84d6",
+    "source/endpoint_connector.py": "c5848169606ae0f49071e8067dd88029e7ba83756fd700700059182c5ce28857",
+    "source/proposal.md": "652a30b8a65f02777643e32adf2cb9c354b80eb8dbab6eb0796580aaf040aedb",
+    "source/provenance.json": "4f42c7ac29b4b19c895b40015a5b24f04bbfe2dacdee32a7582e841391391a8e"
+  }
+}

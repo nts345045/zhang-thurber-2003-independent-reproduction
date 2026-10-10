@@ -1,0 +1,32 @@
+data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp: In function ‘bool fixture::point_bits(P, P)’:
+data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp:23:3: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+   for(int i=0;i<3;++i)if(!bits(a[i],b[i]))return false;return true;
+   ^~~
+data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp:23:56: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   for(int i=0;i<3;++i)if(!bits(a[i],b[i]))return false;return true;
+                                                        ^~~~~~
+data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp: In function ‘bool fixture::path_bits(const std::vector<std::array<double, 3> >&, const std::vector<std::array<double, 3> >&)’:
+data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp:27:3: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+   for(size_t i=0;i<a.size();++i)if(!point_bits(a[i],b[i]))return false;return true;
+   ^~~
+data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp:27:72: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   for(size_t i=0;i<a.size();++i)if(!point_bits(a[i],b[i]))return false;return true;
+                                                                        ^~~~~~
+data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp: In function ‘int main(int, char**)’:
+data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp:169:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+     if(bad==0)b.resize(2);if(bad==1)a.pop_back();if(bad==2)gg.pop_back();if(bad==3)nn.pop_back();
+     ^~
+data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp:169:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+     if(bad==0)b.resize(2);if(bad==1)a.pop_back();if(bad==2)gg.pop_back();if(bad==3)nn.pop_back();
+                           ^~
+data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp:170:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+     if(bad==4)qq.pop_back();if(bad==5)ss.pop_back();if(bad==6)yy.pop_back();
+     ^~
+data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp:170:29: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+     if(bad==4)qq.pop_back();if(bad==5)ss.pop_back();if(bad==6)yy.pop_back();
+                             ^~
+In file included from data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp:3:
+data/development/curvature_capture_controls_001/source/diagnostics/fixture_driver.hpp: In function ‘int frozen_capture_driver_main(int, char**)’:
+data/development/curvature_capture_controls_001/source/diagnostics/fixture_driver.hpp:97:27: warning: control reaches end of non-void function [-Wreturn-type]
+   Grid g=read_grid(argv[1]);
+                           ^

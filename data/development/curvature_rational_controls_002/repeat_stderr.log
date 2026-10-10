@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "data/development/curvature_rational_controls_002/source/reconstruct_curvature_capture.py", line 153, in <module>
+    main()
+  File "data/development/curvature_rational_controls_002/source/reconstruct_curvature_capture.py", line 108, in main
+    need(not out.exists() and pairs != out and components != out, 'Fresh output directory required')
+  File "data/development/curvature_rational_controls_002/source/reconstruct_curvature_capture.py", line 16, in need
+    raise ValueError(message)
+ValueError: Fresh output directory required

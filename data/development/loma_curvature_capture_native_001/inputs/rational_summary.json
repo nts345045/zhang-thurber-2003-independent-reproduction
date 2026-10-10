@@ -1,0 +1,141 @@
+{
+  "status": "passed",
+  "command": [
+    "/usr/bin/python3",
+    "data/development/curvature_rational_controls_002/source/reconstruct_curvature_capture.py",
+    "--pairs",
+    "data/development/curvature_rational_controls_002/pairs.csv",
+    "--components",
+    "data/development/curvature_rational_controls_002/components.csv",
+    "--output",
+    "data/development/curvature_rational_controls_002/readback"
+  ],
+  "checks": [
+    {
+      "name": "dyadic_exact_dot_three",
+      "passed": true
+    },
+    {
+      "name": "dyadic_exact_squared_norms",
+      "passed": true
+    },
+    {
+      "name": "dyadic_no_cancellation",
+      "passed": true
+    },
+    {
+      "name": "dyadic_rounded_movement_identical",
+      "passed": true
+    },
+    {
+      "name": "cancelled_binary64_zero_preserved",
+      "passed": true
+    },
+    {
+      "name": "cancelled_exact_positive_unit_recovered",
+      "passed": true
+    },
+    {
+      "name": "positive_exact_sum_does_not_override_rejection",
+      "passed": true
+    },
+    {
+      "name": "negative_computed_dot_exact_zero_distinguished",
+      "passed": true
+    },
+    {
+      "name": "stored_step_and_actual_movement_distinguished",
+      "passed": true
+    },
+    {
+      "name": "movement_difference_exact_squared",
+      "passed": true
+    },
+    {
+      "name": "binary64_threshold_decision_-1",
+      "passed": true
+    },
+    {
+      "name": "binary64_threshold_decision_0",
+      "passed": true
+    },
+    {
+      "name": "binary64_threshold_decision_1",
+      "passed": true
+    },
+    {
+      "name": "signed_zero_fraction_is_zero",
+      "passed": true
+    },
+    {
+      "name": "rounded_rhs_acceptance_kept",
+      "passed": true
+    },
+    {
+      "name": "exact_recorded_total_margin_distinguished",
+      "passed": true
+    },
+    {
+      "name": "reject_wrong_identity",
+      "passed": true
+    },
+    {
+      "name": "reject_wrong_node_order",
+      "passed": true
+    },
+    {
+      "name": "reject_missing_component_inventory",
+      "passed": true
+    },
+    {
+      "name": "reject_retention_override",
+      "passed": true
+    },
+    {
+      "name": "reject_nonfinite_component",
+      "passed": true
+    },
+    {
+      "name": "frozen_cli_return_zero",
+      "passed": true
+    },
+    {
+      "name": "all_invented_rows_preserved_in_order",
+      "passed": true
+    },
+    {
+      "name": "all_exact_csv_fields_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "cli_hashes_match",
+      "passed": true
+    },
+    {
+      "name": "existing_output_rejected",
+      "passed": true
+    },
+    {
+      "name": "sources_unchanged",
+      "passed": true
+    }
+  ],
+  "check_count": 27,
+  "source_sha256": {
+    "diagnostics/reconstruct_curvature_capture.py": "ed880bf7214a987fc9c83f7877d2b5beaeb291b7504a516ed00f49bd27ddf330",
+    "diagnostics/check_curvature_rational.py": "eeaa80dcff60ed84444af6c541b22528f9b9ea25ae2add5940c3fc48fcde5198"
+  },
+  "scope": "Invented saved binary64 component/scalar controls only; no action evaluation or ray trace",
+  "output_sha256": {
+    "pairs.csv": "dc73f79989e2bd5b8bd9c500d220799ce4a2da7a472f9c30a44dc756bb076522",
+    "components.csv": "2342abce67ae9746e1f8fc44775e8793e63a3582f4657225d6acff1382259b58",
+    "stdout.log": "1ee7d4d3147064b2dd253a1cbf5de227861bf330bc29159051d82f072aa0963c",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "repeat_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "repeat_stderr.log": "f6edca44cc169d55d8ed5c87727b51377351fb55d07f33fdd1b02631a67bfa7a",
+    "source/reconstruct_curvature_capture.py": "ed880bf7214a987fc9c83f7877d2b5beaeb291b7504a516ed00f49bd27ddf330",
+    "source/check_curvature_rational.py": "eeaa80dcff60ed84444af6c541b22528f9b9ea25ae2add5940c3fc48fcde5198",
+    "readback/exact_sums.csv": "b2f12653c95c22fe80a054539b85606c559cc8f8a039ec45964633fddc057728",
+    "readback/summary.json": "2d9f0eaff5afa7002eac4b5fdaec446223d8410c0fb6fb34e221db6d9349fa04"
+  }
+}
