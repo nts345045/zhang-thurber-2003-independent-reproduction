@@ -76,6 +76,7 @@ def main():
                 item['source_d' + key + '_minus_reference'] = float(row['source_d' + key]) - exact
                 errors.append(item['source_d' + key + '_minus_reference'])
             item['source_derivative_max_absolute_error_s_per_km'] = max(map(abs, errors))
+            item['source_derivative_error_norm_s_per_km'] = math.sqrt(sum(e * e for e in errors))
             if not all(math.isfinite(float(item[k])) for k in ('time_minus_reference_s', 'source_derivative_max_absolute_error_s_per_km')):
                 raise ValueError('Nonfinite comparison')
             compared.append(item)

@@ -13,10 +13,11 @@ The reference first arrival turns at depth 4.000928869091735 km and takes
 3.6454799943574034 s. Its distance closure is 3.08e-12 km. The saved 0.5 km
 FMM candidate is later by 194.506 microseconds and has a false local stopping
 flag. The saved 0.25 km FMM candidate is later by 54.0410 microseconds and has
-a true local stopping flag; its largest source-derivative error is
-1.50505e-5 s/km. Raising the saved iteration budget from 1000 to 4000 does
+a true local stopping flag; its source-derivative error norm is
+1.509995e-5 s/km (largest component 1.50505e-5). Raising the saved iteration budget from 1000 to 4000 does
 not change either FMM result. The true local flag therefore does not certify
-the existing analytic-control tolerances (2.5e-5 s and 3e-6 s/km). No new
+the existing analytic-control tolerances (2.5e-5 s and source vector norm
+3e-6 s/km). No new
 field acceptance rule is introduced here.
 
 `midpoint_review.json` independently checks the source and all hashes of
@@ -44,9 +45,10 @@ model and does not establish results for later three-dimensional models.
 The later `fine_path_review.json` compares four saved controls with the same
 reference and native identities. The FMM field stays at 0.5 km while path
 spacing changes to 0.125 and 0.0625 km. Selected FMM time errors are 13.0745
-and 3.26671 microseconds, with source-component errors 2.10691e-6 and
-5.93061e-7 s/km; both satisfy the existing analytic controls. The 0.125 km
-straight start has source error 3.29718e-6 s/km and does not satisfy that
+and 3.26671 microseconds, with source-vector error norms 2.66245e-6 and
+7.87554e-7 s/km; both satisfy the existing analytic controls. Component
+maxima 2.10691e-6 and 5.93061e-7 are also retained descriptively. The 0.125 km
+straight start has source-error norm 3.81288e-6 s/km and does not satisfy that
 control, despite its true local flag. All four unchanged optimizer-parity
 checks pass. Reproduce these comparisons with `check_fine_paths.py`; no
 ray optimization occurs.

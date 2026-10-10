@@ -4,7 +4,7 @@
   "reference_time_s": 3.6454799943574034,
   "existing_control_tolerances": {
     "time_s": 2.5e-05,
-    "source_component_s_per_km": 3e-06
+    "source_vector_norm_s_per_km": 3e-06
   },
   "comparisons": [
     {
@@ -27,6 +27,7 @@
       "field_spacing_km": 0.5,
       "time_minus_reference_s": 1.6107779756691087e-05,
       "source_derivative_max_error_s_per_km": 3.2971752619015415e-06,
+      "source_derivative_error_norm_s_per_km": 3.8128784914168266e-06,
       "existing_analytic_time_control_pass": true,
       "existing_analytic_source_control_pass": false,
       "full_metadata_mapping": "inputs/identified_ray.csv: observation_index = observation_row",
@@ -59,6 +60,7 @@
       "field_spacing_km": 0.5,
       "time_minus_reference_s": 1.3074501951759743e-05,
       "source_derivative_max_error_s_per_km": 2.1069081448665816e-06,
+      "source_derivative_error_norm_s_per_km": 2.662454337360044e-06,
       "existing_analytic_time_control_pass": true,
       "existing_analytic_source_control_pass": true,
       "full_metadata_mapping": "inputs/identified_ray.csv: observation_index = observation_row",
@@ -91,6 +93,7 @@
       "field_spacing_km": 0.5,
       "time_minus_reference_s": 4.189376498597852e-06,
       "source_derivative_max_error_s_per_km": 8.13084853640289e-07,
+      "source_derivative_error_norm_s_per_km": 1.0528668797585893e-06,
       "existing_analytic_time_control_pass": true,
       "existing_analytic_source_control_pass": true,
       "full_metadata_mapping": "inputs/identified_ray.csv: observation_index = observation_row",
@@ -123,6 +126,7 @@
       "field_spacing_km": 0.5,
       "time_minus_reference_s": 3.2667083256221474e-06,
       "source_derivative_max_error_s_per_km": 5.930606386816972e-07,
+      "source_derivative_error_norm_s_per_km": 7.875542246234072e-07,
       "existing_analytic_time_control_pass": true,
       "existing_analytic_source_control_pass": true,
       "full_metadata_mapping": "inputs/identified_ray.csv: observation_index = observation_row",
@@ -142,8 +146,8 @@
     "spacing0_125000_results.csv": "c8b697e2e50dcc76feebb62754d7c4348353a4dd80b0fe15be00d7e8f498ca5e",
     "spacing0_062500_results.csv": "cc3d0739f0ca5b361f632639163fb1cdb3a1fd32c1017b0ede48b139cae281ff"
   },
-  "reference_result_sha256": "853a42d3d85f70d4c614068c18363c465cacd979c4b7289d10b87b91c7eba502",
-  "helper_sha256": "5cb5dda098d3e6600529f547de7807481b81aeb5d024a86d59eb7f6b1993391c",
+  "reference_result_sha256": "169cd01590e94a692f8d16966447607ca5d09b1495205d38e92e1b7cfd34aaf5",
+  "helper_sha256": "d35dbeb71536e456c45485e7b8f9d622ef6c8bb82aaba3b29e6d086858a21238",
   "limitations": [
     "One identified initial 1D ray only.",
     "Local flags remain unchanged.",
