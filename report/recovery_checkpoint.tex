@@ -1,3 +1,37 @@
+\subsection{Full initial Hayward accuracy after separate refinements}
+The fourth Hayward calculation applies the 0.03125 km path spacing and
+0.125 km initialization-field spacing to all 14,262 initial observed rays.
+Every initializer succeeds and every local stopping flag is true. All rays
+also satisfy the unchanged continuous-reference limits of 25 microseconds
+in time and $3\times10^{-6}$ s/km in source-vector norm. The largest errors
+are 0.959 microseconds and $1.782\times10^{-6}$ s/km; their medians are
+0.333 microseconds and $2.422\times10^{-8}$ s/km. In the preceding calculation,
+only 603 rays satisfied both accuracy limits. Figure~\ref{fig:full-initial-accuracy}
+compares the complete distributions without removing failed rays.
+
+The reference cache is reused only after exact equality of the complete
+initial geometry, model, observation tables, and numerical reference source
+has been verified. The original native identities, branch certificates,
+and local flags are retained in
+\path{data/development/hayward_first_arrival_004_1d_support/}.
+This passes the full initial-model comparison. The separate sampled
+refinement calculation remains active at this checkpoint; no corrected
+inversion is accepted or launched. The initial depth-dependent reference
+does not establish accuracy for later three-dimensional velocity models.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{../figures/diagnostics/hayward_full_initial_accuracy.pdf}
+\caption{Initial Hayward errors relative to independently enumerated continuous
+first arrivals. Both curves retain the same 14,262 native observations and
+references. The left panel shows absolute travel-time error; the right shows
+the Euclidean norm of all three source-derivative errors. Dashed lines mark
+the unchanged accuracy limits. Refining path spacing and the initialization
+field together brings every fourth-run ray within both limits. This diagnostic
+does not validate a recovered velocity model.}
+\label{fig:full-initial-accuracy}
+\end{figure}
+
 \subsection{Exact branch seeds and continuous synthetic truth}
 Supplying the exact earliest branch separates initialization error from
 path representation and local optimization. Four identified Loma rays,
@@ -63,6 +97,26 @@ default-mode output files remain byte-identical to the frozen preceding
 executable. Analytic mode writes reference status separately and leaves
 polygon-ray status fields blank. This changes the declared synthetic truth
 calculation; it does not repair or accept the inverse forward operator.
+
+The actual LOM-profile simulation now writes all 37,648 absolute observations,
+7,947,368 catalog differences, and 7,947,368 precise differences, totaling
+15,932,384 rows. A separate streaming audit checks every arrival and observation,
+including order, both native event identities, receiver epoch, quantization,
+station bias, and saved-noise arithmetic. All checks pass. The largest saved
+catalog-subtraction discrepancy is below $1.01\times10^{-10}$ s, within the explicit
+bounds from 12-significant-digit serialization. This rounding bound does not
+relax a scientific accuracy criterion. The raw run remains preserved, and
+\path{data/published/loma_lom_analytic_001/} contains a lossless ten-part archive
+of 504,089,284 compressed bytes. Every member was read back and verified.
+
+The inverse calculation starts from perturbed sources and a depth-dependent
+LOM grid. Its independent initial references therefore require a new
+enumeration; the $x$-dependent truth table cannot validate this operator.
+The next preflight exports its full source derivatives and exact endpoint/domain
+checks from the same rays used to count matrix entries. A separate sampled
+refinement retains every declared sample and finite difference while limiting
+the number of cached fine receiver fields. Neither simulation completion nor
+a matrix storage estimate establishes inverse convergence.
 
 \subsection{Historical waveform metadata and a rejected pilot pair}
 The existing Hayward catalog pair at differential row 15108 links events

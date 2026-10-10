@@ -91,8 +91,12 @@ shows that path refinement approaches a deeper stationary arrival, still
 field](data/development/initial_ray_first_arrival_003_14099_field0125001/README.md)
 recovers the earlier branch with errors of 0.333 microseconds and
 5.98e-9 s/km. The [diagnostic figure](figures/diagnostics/hayward_branch_failure.pdf)
-shows both controls. This single-ray correction requires a full-cohort check;
-no corrected inversion follows the failed third preflight.
+shows both controls. The [fourth full initial comparison](data/development/hayward_first_arrival_004_1d_support/README.md)
+now passes both unchanged accuracy limits and all local/initializer flags for
+all 14,262 rays. Maximum time and source-vector errors are 0.959 microseconds
+and 1.782e-6 s/km. The [full-cohort error distributions](figures/diagnostics/hayward_full_initial_accuracy.pdf)
+retain the same native observations and references. The separate sampled
+refinement remains active; no corrected inversion has been launched.
 
 The revised solver preserves identities in event/residual CSV files and ray
 diagnostic mappings, traces observed pairs only, and exports an unweighted
@@ -115,7 +119,8 @@ pick IDs. Invented component fixtures check analytic arrivals, metadata retentio
 and unchanged baseline random generation. The [Loma Prieta geometry
 archive](data/authoritative/loma_prieta/README.md) now contains 724 selected
 earthquakes and 52 historical NC EHZ receiver channels, with preserved candidate
-and exclusion records. It has not yet been simulated or inverted with this command.
+and exclusion records. The initial polygon-truth attempt failed its ray gate;
+the explicit continuous-truth simulation described below now completes.
 The [completed geometry check](data/development/loma_geometry_preflight/001/README.md)
 retains all 104 sampled rays and finds 31 local failures at each spacing.
 Three locally converged production paths are slower than explicitly feasible
@@ -138,6 +143,12 @@ an explicit alternative source of synthetic truth. The integration branch provid
 and a [frozen simulation launcher](data/development/analytic_simulation_launcher_002/README.md).
 They retain all native identities, preserve earlier failures, and require
 separate output review and inverse forward validation.
+The actual LOM-profile run now contains 15,932,384 synthetic observations:
+37,648 absolute rows and 7,947,368 rows of each differential type. Its independent
+streaming audit passes every row, including identities and timing arithmetic.
+The [verified lossless publication](data/published/loma_lom_analytic_001/README.md)
+retains the complete run in ten archive parts totaling 504 MB, with readable
+geometry, manifests, and reviews. No Loma inversion result is implied.
 Run these newer diagnostic and simulation commands from the
 [`first-arrival-integration` branch](https://github.com/nts345045/zhang-thurber-2003-independent-reproduction/tree/first-arrival-integration).
 
@@ -175,10 +186,15 @@ earlier forward operators.
 - `figures/` and `figures/hayward/`: plots generated from the saved numerical
   tables. `report/report.pdf` explains the experiments and reproduction limits.
 - `data/development/`: numerical diagnostics and frozen failure evidence.
-  `hayward_first_arrival_003_review/` contains the completed full initial-ray
-  check; `hayward_initial_failure_refinement_*` contains identified follow-up
+  `hayward_first_arrival_003_review/` contains the failed third preflight;
+  `hayward_first_arrival_004_1d_support/` contains the passing full initial
+  reference comparison. `hayward_initial_failure_refinement_*` contains identified follow-up
   ray calculations. These directories contain forward checks, not new inversion
   models. Corrected numerical code is maintained on `first-arrival-integration`.
+- [`data/published/loma_lom_analytic_001/`](data/published/loma_lom_analytic_001/README.md):
+  complete, audited synthetic observations and authoritative geometry, with
+  verified archive restoration instructions. These are inputs for the corrected
+  Loma inversion, whose outputs are still pending.
 
 ## Build and run
 

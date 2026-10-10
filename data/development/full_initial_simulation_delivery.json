@@ -1,0 +1,51 @@
+{
+  "scope": "Passing full initial Hayward accuracy comparison and audited full LOM synthetic observations; no completed corrected inversion",
+  "created_utc": "2026-10-10T03:35:04.526833+00:00",
+  "evidence_commit": "d7eb18a186eed56ffe104f97334b40e5df074229",
+  "validation": {
+    "pdf_pages": 98,
+    "pdf_bytes": 1719424,
+    "pdflatex_exit": 0,
+    "no_undefined_references_errors_or_overfull_boxes": true,
+    "new_report_pages_visually_inspected": [
+      26,
+      27,
+      28
+    ],
+    "hayward_initial_rays_passing_both_accuracy_limits": 14262,
+    "loma_audited_observations": 15932384,
+    "loma_archive_parts": 10,
+    "loma_compressed_bytes": 504089284,
+    "panel_statuses": {
+      "independently reproduced": 1,
+      "partially reproduced": 27,
+      "not reproduced": 34
+    }
+  },
+  "sha256": {
+    "README.md": "149141443eef21b361e7e245814196403168846268e3d7d44d2433710e3ee6de",
+    "report/report.tex": "289034e2eae49f6230f2d82c6e0005ab989af6e6443e1293382d6bcafd7f6efe",
+    "report/recovery_checkpoint.tex": "612c4568cd2d42ec453ade43f2e0ccec10cc9d14ca20d4c049a1a7c3f0bf708e",
+    "report/report.pdf": "4b97414cb2f4b1e3486a5d3fab886d118c7d7023ab7fa556d83405232dea2e7b",
+    "data/panel_audit.csv": "e8b115d93a4db2a1a12ab58f160aa68496ba6c1c06f4eb31b9538f0ed6d55a03",
+    "diagnostics/plot_hayward_full_accuracy.py": "2dd64275bd6bbbd3ea03704122d41ce94c401dd9c9b1d6ba8d2039f92fa3f46a",
+    "figures/diagnostics/hayward_full_initial_accuracy.pdf": "79410fa5f495704507a2222763b1a6eef62b32a637589693f171bbd9037507b4",
+    "figures/diagnostics/hayward_full_initial_accuracy.png": "783aba335268507d166a8206c676f3fc0d0ae3f3b2c74cef66f0cb8005caba99",
+    "figures/diagnostics/hayward_full_initial_accuracy.json": "36f6c408ca69c47a555cc22aa1eb02ea5ecd750d4e74297dbb3a1548b109ad09",
+    "data/development/hayward_first_arrival_004_1d_support/summary.json": "a1fc5194c83a65019a62add7b6ec5d10478be87dd5f6c8d7ffb9e6eab535ad7d",
+    "data/development/hayward_first_arrival_004_1d_support/independent_review.json": "29e95b53bbaaedccb1d98c8d24f41561fd5f0b5886d1e972789ba4858c5ef325",
+    "data/development/hayward_first_arrival_004_1d_support/packaging.json": "d461e7efcdb7be71cd515036824edd7b5b81d9b65ce34b3e76846ae5004df063",
+    "data/published/loma_lom_analytic_001/manifest.json": "ac5443300be85779c789221ade281dc164f88fcc0559812735eb189903329695",
+    "data/published/loma_lom_analytic_001/verification.json": "672ed98b507bc36f793acf9904ff888d58465921b19f3ff19f7aa10ca6511e5d",
+    "data/published/loma_lom_analytic_001/independent_output_review.json": "e4e2745f0fc4bc44ba32906bb6c1fe224c8e9dab364c61b276f05fa3ea5d60c7",
+    "data/published/loma_lom_analytic_001/root_review.json": "d75c28c02a167fb83e55d4e55050254ffafc9d5880fb2f18a0ec68ddd98ce19a"
+  },
+  "limits": [
+    "The sampled Hayward refinement remains active at this checkpoint.",
+    "The Loma analytic truth and exhaustive observation audit do not establish inverse forward accuracy.",
+    "The initial-model references do not validate arbitrary updated three-dimensional models.",
+    "Waveform retrieval remains paused pending historical calibration clarification.",
+    "All 62 panel classifications remain unchanged.",
+    "Original main-worktree production inputs and executable remain frozen while baseline relocation is live."
+  ]
+}
