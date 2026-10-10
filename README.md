@@ -126,6 +126,30 @@ passes completeness and distance closure for all 104 samples and confirms
 186.569 microseconds. These numerical failures do not justify excluding
 any observed geometry.
 
+An [exact-branch seed control](data/development/loma_geometry_preflight/reference_seeds_001/README.md)
+finds that supplying the correct earliest guide branch still leaves 39 of 40
+optimized paths failing their local stopping rule. The finest paths can have
+accurate times and source derivatives while ordinary gradients at the
+velocity-gradient interface remain unsuitable for the stopping test. A
+separate [complete continuous layered reference](data/development/loma_layered_full_002/README.md)
+now passes all 37,648 pairs and an independent native-identity review. It supplies
+an explicit alternative source of synthetic truth. The integration branch provides a
+[reviewed-reference exporter](data/development/analytic_truth_preparation_checks_001/README.md)
+and a [frozen simulation launcher](data/development/analytic_simulation_launcher_002/README.md).
+They retain all native identities, preserve earlier failures, and require
+separate output review and inverse forward validation.
+
+The [authoritative waveform pilot](data/authoritative/waveforms/pilot_001/README.md)
+retrieved two five-second records and their historical instrument responses.
+The [fixed pair fails the written coherence screen](data/development/waveform_correlation_pilot_001/README.md):
+only 2 of 20 frequency bins pass, where 10 are required. No waveform difference
+was added. An [offline full-cohort metadata audit](data/authoritative/waveforms/cohort_plan_001/README.md)
+preserves every catalog observation and identifies a calibration gap for 117
+NC.CMW1 picks from 1995–1998; saved StationXML responses begin in 2000.
+Further retrieval is paused for clarification. Provider orientation metadata,
+rather than channel-name suffixes, distinguish vertical channels from other
+orientations. These audit categories establish no study exclusion.
+
 [Read the PDF report](report/report.pdf) or the
 [panel-by-panel audit](FIGURE_AUDIT.md).
 
