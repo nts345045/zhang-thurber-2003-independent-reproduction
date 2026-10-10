@@ -1,0 +1,7 @@
+In file included from /usr/include/c++/8/cassert:44,
+                 from data/development/loma_preparation/preflight_export_001/current_source/diagnostics/check_simulation_gate.cpp:8:
+data/development/loma_preparation/preflight_export_001/current_source/diagnostics/check_simulation_gate.cpp: In function ‘int main(int, char**)’:
+data/development/loma_preparation/preflight_export_001/current_source/diagnostics/check_simulation_gate.cpp:107:21: error: ‘csv_number’ was not declared in this scope
+     assert(std::abs(csv_number(cell(preflight_rays,q,"ray_time"))-distance/5)<5e-12);
+                     ^~~~~~~~~~
+data/development/loma_preparation/preflight_export_001/current_source/diagnostics/check_simulation_gate.cpp:107:21: note: suggested alternative: ‘csv_quote’

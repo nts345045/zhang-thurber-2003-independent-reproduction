@@ -89,7 +89,66 @@ int main(int argc,char **argv) {
   c.v["iterations"]=1;c.v["stage_length"]=1;c.v["smoothing"]=1;c.v["damping"]=.1;
   c.v["matrix_preflight_only"]=1;
   invert(c,dir,"dd");
-  assert(csv_table(dir+"/dd_preflight_ray_status.csv").rows.size()==4);
+  const auto preflight_rays=csv_table(dir+"/dd_preflight_ray_status.csv");
+  assert(preflight_rays.rows.size()==4);
+  auto cell=[](const CsvTable &table,size_t row,const std::string &name) -> const std::string & {
+    const auto column=std::find(table.header.begin(),table.header.end(),name);
+    assert(column!=table.header.end());
+    return table.rows.at(row).at(size_t(column-table.header.begin()));
+  };
+  const auto initial=read_events(dir+"/initial_events.csv");
+  bool nonzero_origin=false;
+  for(size_t q=0;q<4;++q) {
+    const size_t i=q/2,k=q%2;
+    const P displacement=initial[i].p-stations[k].p;
+    const double distance=norm(displacement);
+    assert(cell(preflight_rays,q,"event")==std::to_string(i));
+    assert(cell(preflight_rays,q,"station")==std::to_string(k));
+    assert(std::abs(csv_double(cell(preflight_rays,q,"ray_time"))-distance/5)<5e-12);
+    assert(csv_double(cell(preflight_rays,q,"source_t"))==initial[i].t);
+    nonzero_origin|=initial[i].t!=0;
+    for(int axis=0;axis<3;++axis) {
+      const std::string name=std::string("source_d")+"xyz"[axis];
+      assert(std::abs(csv_double(cell(preflight_rays,q,name))-displacement[axis]/distance/5)<5e-12);
+    }
+    for(const auto *flag:{"ray_finite","ray_path_in_domain","ray_exact_source_endpoint","ray_exact_receiver_endpoint"})
+      assert(cell(preflight_rays,q,flag)=="1");
+    assert(csv_int(cell(preflight_rays,q,"ray_path_points"))>=2);
+    for(const auto &field:initial[i].metadata)
+      assert(cell(preflight_rays,q,"source_"+field.first)==field.second);
+    for(const auto &field:stations[k].metadata)
+      assert(cell(preflight_rays,q,"receiver_"+field.first)==field.second);
+  }
+  assert(nonzero_origin);
+  // Exercise path-status failures with native identities retained, including
+  // an empty path and one-ULP endpoint changes; no tolerance hides either.
+  auto traced=rays(g,initial,stations,c,true);
+  for(int reason=0;reason<6;++reason) {
+    auto altered=traced;
+    std::string column;
+    if(reason==0) {altered[0].path.clear();column="ray_finite";}
+    if(reason==1) {altered[0].path[1][0]=5;column="ray_path_in_domain";}
+    if(reason==2) {altered[0].path.front()[0]=std::nextafter(initial[0].p[0],INFINITY);column="ray_exact_source_endpoint";}
+    if(reason==3) {altered[0].path.back()[0]=std::nextafter(stations[0].p[0],INFINITY);column="ray_exact_receiver_endpoint";}
+    if(reason==4) {altered[0].path[1][1]=NAN;column="ray_path_in_domain";}
+    if(reason==5) {altered[0].converged=false;column="ray_converged";}
+    const std::string name=dir+"/preflight_failure_"+std::to_string(reason)+".csv";
+    const auto failure=write_ray_status(name,initial,stations,altered,nullptr,&g);
+    assert(failure.first==1 && failure.second==0);
+    const auto saved=csv_table(name);
+    assert(saved.rows.size()==4 && cell(saved,0,column)=="0");
+    assert(cell(saved,0,"source_event_resource_id")==initial[0].metadata[0].second);
+  }
+  std::vector<int> sparse_used{3,0};
+  const auto sparse_status=write_ray_status(dir+"/preflight_sparse.csv",initial,stations,traced,&sparse_used,&g);
+  assert(sparse_status.first==0);
+  const auto sparse_rows=csv_table(dir+"/preflight_sparse.csv");
+  assert(sparse_rows.rows.size()==2 && sparse_rows.rows[0]==preflight_rays.rows[3] && sparse_rows.rows[1]==preflight_rays.rows[0]);
+  // Persist the direct Config settings so the runner can compare the old
+  // matrix census and original status fields on byte-identical inputs.
+  auto saved_config=output(dir+"/preflight.cfg");
+  for(const auto &entry:c.v) saved_config << entry.first << ' ' << entry.second << '\n';
+  saved_config.close();
   assert(csv_table(dir+"/dd_matrix_preflight.csv").rows.size()==1);
   assert(csv_table(dir+"/dd_history.csv").rows.empty() && !std::filesystem::exists(dir+"/dd_grid.csv"));
   std::string bad_preflight=dir+"/invalid_preflight";std::filesystem::create_directories(bad_preflight);
@@ -105,5 +164,8 @@ int main(int argc,char **argv) {
       "  \"geometry_only_identity_rows\": 2,\n  \"identified_openmp_exception\": true,\n  \"all_failed_records_preserved\": true,\n"
       "  \"local_initializer_and_nonfinite_rejected\": true,\n  \"successful_arrival_flags\": true,\n  \"existing_output_preserved\": true,\n"
       "  \"preflight_all_native_flags\": true,\n  \"invalid_preflight_rejected_before_matrix\": true,\n"
+      "  \"preflight_time_and_source_derivatives_match_homogeneous_reference\": true,\n"
+      "  \"nonzero_origin_is_separate_from_pure_travel_time\": true,\n"
+      "  \"preflight_geometry_failures_and_sparse_order_preserved\": true,\n"
       "  \"real_rays_or_inversions_run\": false\n}\n";
 }

@@ -335,17 +335,25 @@ void ray_status_values(std::ostream &out, const Ray &ray) {
       << ',' << ray.raw_gradient << ',' << ray.iterations << ',' << ray.merged_nodes;
   initializer_values(out, ray);
 }
-// Save all native identities and coordinates before travel-time rounding and
-// observation-noise draws (source initialization draws have already occurred).
-// This check accepts local convergence only; it does not certify a first arrival.
+bool ray_path_in_domain(const Grid &g, const Ray &ray) {
+  return !ray.path.empty() && std::all_of(ray.path.begin(), ray.path.end(),
+                                         [&](P point) { return g.contains(point); });
+}
+// Save native identities and unchanged local status. Optional preflight fields
+// expose pure travel time, source partials and path geometry from the same rays
+// used for the matrix census. None of these flags certifies a first arrival.
 std::pair<size_t, size_t> write_ray_status(const std::string &path,
                          const std::vector<Event> &events, const std::vector<Event> &stations,
-                         const std::vector<Ray> &rr, const std::vector<int> *used = nullptr) {
+                         const std::vector<Ray> &rr, const std::vector<int> *used = nullptr,
+                         const Grid *path_grid = nullptr) {
   if (rr.size() != events.size() * stations.size())
     throw std::runtime_error("Incomplete ray array");
   auto out = output(path);
   out << "event,station,source_x,source_y,source_z,receiver_x,receiver_y,receiver_z,ray_time";
   ray_status_header(out);
+  if (path_grid)
+    out << ",source_t,source_dx,source_dy,source_dz,ray_path_points,ray_path_in_domain,"
+           "ray_exact_source_endpoint,ray_exact_receiver_endpoint";
   csv_metadata_header(out, events.front().metadata, "source_");
   csv_metadata_header(out, stations.front().metadata, "receiver_");
   out << '\n';
@@ -360,10 +368,19 @@ std::pair<size_t, size_t> write_ray_status(const std::string &path,
     for (double value : stations[k].p) out << ',' << value;
     out << ',' << ray.time;
     ray_status_values(out, ray);
+    if (path_grid) {
+      out << ',' << events[i].t;
+      for (double value : ray.source) out << ',' << value;
+      out << ',' << ray.path.size() << ',' << ray_path_in_domain(*path_grid, ray)
+          << ',' << (!ray.path.empty() && ray.path.front() == events[i].p)
+          << ',' << (!ray.path.empty() && ray.path.back() == stations[k].p);
+    }
     csv_metadata_values(out, events[i].metadata);
     csv_metadata_values(out, stations[k].metadata);
     out << '\n';
     if (!finite_ray(ray) || !ray.converged ||
+        (path_grid && (!ray_path_in_domain(*path_grid, ray) ||
+                       ray.path.front() != events[i].p || ray.path.back() != stations[k].p)) ||
         (ray.initialization_attempted && !ray.initialization_succeeded)) {
       if (failures == 0) first = n;
       ++failures;
@@ -976,9 +993,12 @@ void invert(const Config &c, std::string dir, std::string mode) {
     const bool preflight_only = setting(c, "matrix_preflight_only", 0) != 0;
     auto r = rays(g, e, stations, c, true, &used, &fields, !preflight_only);
     if (preflight_only) {
-      write_ray_status(dir + "/" + mode + "_preflight_ray_status.csv", e, stations, r, &used);
+      write_ray_status(dir + "/" + mode + "_preflight_ray_status.csv", e, stations, r, &used, &g);
       for (int index : used)
         if (!finite_ray(r[index]) ||
+            !ray_path_in_domain(g, r[index]) ||
+            r[index].path.front() != e[index / ns].p ||
+            r[index].path.back() != stations[index % ns].p ||
             (r[index].initialization_attempted && !r[index].initialization_succeeded) ||
             r[index].dv.size() != g.v.size() || r[index].length.size() != g.v.size())
           throw std::runtime_error("Preflight ray evaluation failed; see identified status table; " +

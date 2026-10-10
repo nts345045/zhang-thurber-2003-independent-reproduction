@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "reviewer": "root with independent scientific_audit source review",
+  "scope": "Export, identity, geometry and census parity; no real Loma ray or inverse run",
+  "summary_sha256": "b2b04fffeac1e4b69573c87bb8f769d81a8dba94dd9d65dd0bb88eacce845f9b",
+  "verified_artifacts": 88,
+  "notes": [
+    "Raw source derivatives are the values used by observation_row; source_t is separate from pure ray.time.",
+    "Optional fields affect only matrix_preflight_only output; no numerical kernel changes.",
+    "Empty paths short-circuit safely. Vertex membership covers each segment in the convex box.",
+    "False local flags remain reported; this export does not constitute scientific acceptance."
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "status": "failed",
+  "scope": "Invented component geometry only; no real rays or inversions",
+  "commands": [
+    {
+      "name": "compile_current",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-fopenmp",
+        "data/development/loma_preparation/preflight_export_002/current_source/diagnostics/check_simulation_gate.cpp",
+        "-lstdc++fs",
+        "-o",
+        "tmp/loma_preparation_checks/preflight_export_002/current"
+      ],
+      "exit_code": 0,
+      "seconds": 27.37735629081726
+    },
+    {
+      "name": "current",
+      "argv": [
+        "tmp/loma_preparation_checks/preflight_export_002/current",
+        "data/development/loma_preparation/preflight_export_002/current_fixture"
+      ],
+      "exit_code": 0,
+      "seconds": 0.12778162956237793
+    },
+    {
+      "name": "compile_legacy",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-fopenmp",
+        "data/development/loma_preparation/preflight_export_002/legacy_source/src/main.cpp",
+        "-lstdc++fs",
+        "-o",
+        "tmp/loma_preparation_checks/preflight_export_002/legacy"
+      ],
+      "exit_code": 0,
+      "seconds": 26.32051992416382
+    },
+    {
+      "name": "legacy_simulate",
+      "argv": [
+        "tmp/loma_preparation_checks/preflight_export_002/legacy",
+        "simulate",
+        "data/development/loma_preparation/preflight_export_002/legacy_fixture/fixture.cfg",
+        "data/development/loma_preparation/preflight_export_002/legacy_fixture"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05112481117248535
+    },
+    {
+      "name": "legacy_preflight",
+      "argv": [
+        "tmp/loma_preparation_checks/preflight_export_002/legacy",
+        "invert",
+        "data/development/loma_preparation/preflight_export_002/legacy_fixture/preflight.cfg",
+        "data/development/loma_preparation/preflight_export_002/legacy_fixture",
+        "dd"
+      ],
+      "exit_code": 1,
+      "seconds": 0.04038500785827637
+    }
+  ],
+  "source_sha256": {
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_simulation_gate.cpp": "0640459b56976a9ddc9775d7f82990e5d319160d9790114b4b79b0eca11ecd5b",
+    "diagnostics/run_simulation_gate_checks.py": "6fc8313e774760f3d07b2c736c521c4608930d4ed4809098e7e20ddb2c6b28c8"
+  },
+  "baseline_commit": "e097c11d9166d7725ffea4d8aefdcbc381bea30f",
+  "checks": {
+    "status": "passed",
+    "fixture": "invented homogeneous geometry, four rays and eight simulated rows",
+    "geometry_only_identity_rows": 2,
+    "identified_openmp_exception": true,
+    "all_failed_records_preserved": true,
+    "local_initializer_and_nonfinite_rejected": true,
+    "successful_arrival_flags": true,
+    "existing_output_preserved": true,
+    "preflight_all_native_flags": true,
+    "invalid_preflight_rejected_before_matrix": true,
+    "preflight_time_and_source_derivatives_match_homogeneous_reference": true,
+    "nonzero_origin_is_separate_from_pure_travel_time": true,
+    "preflight_geometry_failures_and_sparse_order_preserved": true,
+    "real_rays_or_inversions_run": false,
+    "legacy_observations_initialization_and_arrival_values_byte_exact": true
+  },
+  "failure": "legacy_preflight failed"
+}

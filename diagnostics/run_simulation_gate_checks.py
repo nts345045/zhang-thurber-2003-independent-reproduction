@@ -3,7 +3,7 @@
 import argparse,csv,hashlib,json,os,shutil,subprocess,time
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];os.chdir(str(ROOT))
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('--variant',required=True);p.add_argument('--baseline',default='deeae0e');a=p.parse_args()
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--variant',required=True);p.add_argument('--baseline',default='e097c11');a=p.parse_args()
 if not a.variant.replace('_','').replace('-','').isalnum():raise ValueError('Invalid variant')
 out=Path('data/development/loma_preparation')/a.variant;out.mkdir(parents=True,exist_ok=False)
 cache=Path('tmp/loma_preparation_checks')/a.variant;cache.mkdir(parents=True,exist_ok=False)
@@ -40,6 +40,19 @@ try:
     assert all(oldrow==newrow[:len(oldrow)] for oldrow,newrow in zip(oldrows,newrows))
     summary['checks']=json.loads((out/'current_fixture/summary.json').read_text())
     summary['checks']['legacy_observations_initialization_and_arrival_values_byte_exact']=True
+    shutil.copyfile(str(out/'current_fixture/preflight.cfg'),str(legacy/'preflight.cfg'))
+    run('legacy_preflight',[cache/'legacy','invert',legacy/'preflight.cfg',legacy,'dd'])
+    assert (legacy/'dd_matrix_preflight.csv').read_bytes()==(out/'current_fixture/dd_matrix_preflight.csv').read_bytes()
+    with (legacy/'dd_preflight_ray_status.csv').open() as first,(out/'current_fixture/dd_preflight_ray_status.csv').open() as second:
+        oldreader,newreader=csv.DictReader(first),csv.DictReader(second)
+        oldrows,newrows=list(oldreader),list(newreader)
+    assert len(oldrows)==len(newrows)==4
+    assert all(old=={key:new[key] for key in old} for old,new in zip(oldrows,newrows))
+    for name in ('simulation_ray_status.csv','dd_history.csv'):
+        assert (legacy/name).read_bytes()==(out/'current_fixture'/name).read_bytes()
+    assert not (legacy/'dd_grid.csv').exists() and not (legacy/'dd_events.csv').exists()
+    summary['checks']['legacy_preflight_census_and_existing_status_fields_byte_exact']=True
+    summary['checks']['legacy_simulation_status_file_byte_exact']=True
     summary['output_sha256']={str(p.relative_to(out)):sha(p) for p in out.rglob('*') if p.is_file() and p!=out/'summary.json'}
     summary['status']='passed';save()
 except BaseException as exc:

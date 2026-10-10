@@ -1,0 +1,36 @@
+{
+  "status": "failed",
+  "scope": "Invented component geometry only; no real rays or inversions",
+  "commands": [
+    {
+      "name": "compile_current",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-fopenmp",
+        "data/development/loma_preparation/preflight_export_001/current_source/diagnostics/check_simulation_gate.cpp",
+        "-lstdc++fs",
+        "-o",
+        "tmp/loma_preparation_checks/preflight_export_001/current"
+      ],
+      "exit_code": 1,
+      "seconds": 3.938952922821045
+    }
+  ],
+  "source_sha256": {
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_simulation_gate.cpp": "a58b4eba792e31388442fc6f52acacac4df9d5224f31c44a369312a676efc635",
+    "diagnostics/run_simulation_gate_checks.py": "6fc8313e774760f3d07b2c736c521c4608930d4ed4809098e7e20ddb2c6b28c8"
+  },
+  "baseline_commit": "e097c11d9166d7725ffea4d8aefdcbc381bea30f",
+  "failure": "compile_current failed"
+}
