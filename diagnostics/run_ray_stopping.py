@@ -27,8 +27,14 @@ direction_group.add_argument('--reduced-metric', action='store_true',
                     help='Replace only the non-descent fallback by a reduced weighted-Laplacian direction')
 direction_group.add_argument('--reduced-all', action='store_true',
                     help='Use the reduced weighted-Laplacian direction on every update, without a curvature correction')
+direction_group.add_argument('--cone-metric', action='store_true',
+                    help='Solve the full tangent-cone metric quadratic by a feasible active-set method at every update')
+direction_group.add_argument('--cone-hybrid', action='store_true',
+                    help='Retain feasible descent L-BFGS directions; replace projected or non-descent directions by the full cone metric')
 args = parser.parse_args()
-use_reduced=args.reduced_metric or args.reduced_all
+use_cone=args.cone_metric or args.cone_hybrid
+use_reduced=args.reduced_metric or args.reduced_all or use_cone
+pure_metric=args.reduced_all or args.cone_metric
 if not re.fullmatch(r'[a-zA-Z0-9_-]+', args.variant):
     parser.error('Variant must contain only letters, digits, underscores, or hyphens')
 if not re.fullmatch(r'[0-9,.]+', args.budgets + args.spacings):
@@ -63,6 +69,8 @@ sources = ['diagnostics/check_ray_stopping.cpp', 'diagnostics/first_arrival_fmm.
            'src/core.hpp', 'src/main.cpp', 'src/csv.hpp', 'src/ray_checks.hpp']
 if use_reduced:
     sources.append('diagnostics/reduced_ray_metric.hpp')
+if use_cone:
+    sources.append('diagnostics/cone_ray_metric.hpp')
 for relative in sources:
     target = ROOT / snapshot / relative
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -82,13 +90,33 @@ fallback_new = ('      ReducedRayMetricStats metric_stats;\n'
 if use_reduced:
     if trace_source.count(fallback_old)!=1 or seed_source.count(fallback_old)!=1:
         raise ValueError('Original fallback insertion point changed')
-    if args.reduced_all:
+    if args.cone_hybrid:
+        def replace_projected_direction(source):
+            first=source.index('    project_ray_direction(g, p, q);')
+            last=source.index('    double step = 1, newT = T;',first)
+            return source[:first]+('    Vec feasible_direction=q;\n'
+                '    project_ray_direction(g,p,feasible_direction);\n'
+                '    if(feasible_direction!=q||!(dot(grad,q)<0)) {\n'
+                '      ConeRayMetricStats metric_stats;\n'
+                '      q = cone_ray_direction(g,p,grad,&metric_stats);\n'
+                '      S.clear(); Y.clear(); rho.clear();\n'
+                '    }\n'
+                '    double slope=dot(grad,q);\n'
+                '    Vec check_feasible=q;\n'
+                '    project_ray_direction(g,p,check_feasible);\n'
+                '    if(!std::isfinite(slope)||std::any_of(q.begin(),q.end(),[](double value){return !std::isfinite(value);})||check_feasible!=q||!(slope<0))\n'
+                '      throw std::runtime_error("Hybrid ray direction is not feasible strict descent");\n')+source[last:]
+        trace_source=replace_projected_direction(trace_source)
+        seed_source=replace_projected_direction(seed_source)
+    elif pure_metric:
         def replace_direction(source):
             first=source.index('    Vec q = grad, alpha(S.size());')
             last=source.index('    double step = 1, newT = T;',first)
+            stats_type='ConeRayMetricStats' if args.cone_metric else 'ReducedRayMetricStats'
+            direction_function='cone_ray_direction' if args.cone_metric else 'reduced_ray_direction'
             return source[:first]+('    S.clear(); Y.clear(); rho.clear();\n'
-                '    ReducedRayMetricStats metric_stats;\n'
-                '    Vec q = reduced_ray_direction(g,p,grad,&metric_stats);\n'
+                '    '+stats_type+' metric_stats;\n'
+                '    Vec q = '+direction_function+'(g,p,grad,&metric_stats);\n'
                 '    double slope = dot(grad,q);\n')+source[last:]
         trace_source=replace_direction(trace_source)
         seed_source=replace_direction(seed_source)
@@ -109,11 +137,14 @@ def instrument(source):
                '  audit_step("initial",0,0,g,p,grad,T,NAN,NAN,NAN,NAN,nullptr,0,S.size(),false,0,false);\n'
                '  for (; iter < maxit; iter++) {\n'
                '    int audit_searches=0;\n    bool audit_reset=false,audit_curvature=false;')
-    if not args.reduced_all:
+    if not pure_metric and not args.cone_hybrid:
         substitute('    if (slope >= 0) {', '    if (slope >= 0) {\n      audit_reset=true;')
-    if args.reduced_all:
-        substitute('    Vec q = reduced_ray_direction(g,p,grad,&metric_stats);',
-                   '    Vec q = reduced_ray_direction(g,p,grad,&metric_stats);\n    audit_reset=true; audit_metric(metric_stats);')
+    if args.cone_hybrid:
+        substitute('      q = cone_ray_direction(g,p,grad,&metric_stats);',
+                   '      q = cone_ray_direction(g,p,grad,&metric_stats);\n      audit_reset=true; audit_metric(metric_stats);')
+    elif pure_metric:
+        call='    Vec q = '+('cone_ray_direction' if args.cone_metric else 'reduced_ray_direction')+'(g,p,grad,&metric_stats);'
+        substitute(call,call+'\n    audit_reset=true; audit_metric(metric_stats);')
     elif args.reduced_metric:
         substitute('      q = reduced_ray_direction(g,p,grad,&metric_stats);',
                    '      q = reduced_ray_direction(g,p,grad,&metric_stats);\n      audit_metric(metric_stats);')
@@ -157,6 +188,8 @@ command = ['c++', '-O3', '-std=c++17', '-Wall', '-Wextra', '-Wpedantic', '-fopen
            str(snapshot / 'diagnostics/check_ray_stopping.cpp'), '-o', str(binary), '-lstdc++fs']
 if use_reduced:
     command.insert(1,'-DAUDIT_REDUCED_METRIC')
+if use_cone:
+    command.insert(1,'-DAUDIT_CONE_METRIC')
 environment = dict(os.environ, TMPDIR=str(ROOT / 'tmp'), OMP_NUM_THREADS='1')
 compiled = subprocess.run(command, cwd=str(ROOT), env=environment, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE, universal_newlines=True)
@@ -179,7 +212,7 @@ summary = {'purpose': ('Reduced weighted-Laplacian direction comparison; origina
            'compile_command': command, 'run_command': run_command, 'TMPDIR': 'tmp', 'OMP_NUM_THREADS': 1,
            'budgets': args.budgets, 'spacings_km': args.spacings, 'return_code': result.returncode,
            'reduced_metric': use_reduced,
-           'direction_mode': 'reduced_all' if args.reduced_all else 'reduced_fallback' if args.reduced_metric else 'original',
+           'direction_mode': 'cone_hybrid' if args.cone_hybrid else 'cone_all' if args.cone_metric else 'reduced_all' if args.reduced_all else 'reduced_fallback' if args.reduced_metric else 'original',
            'identity_mapping': str(identified), 'identity_join_column': 'observation_index',
            'observation_index': selected[0]['observation_index'], 'cases': len(rows),
            'observation_changed_result': [r for r in rows if r[matches_column] != '1'],

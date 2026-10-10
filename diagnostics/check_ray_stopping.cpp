@@ -6,6 +6,9 @@
 #include "seeded_bending.hpp"
 #ifdef AUDIT_REDUCED_METRIC
 #include "reduced_ray_metric.hpp"
+#ifdef AUDIT_CONE_METRIC
+#include "cone_ray_metric.hpp"
+#endif
 #include "control_optimizer.hpp"
 #endif
 
@@ -21,6 +24,17 @@ void audit_metric(const ReducedRayMetricStats &stats) {
       <<stats.slope<<','<<stats.inward_multiplier_violations<<','
       <<stats.most_negative_signed_multiplier<<'\n';
 }
+#ifdef AUDIT_CONE_METRIC
+void audit_metric(const ConeRayMetricStats &stats) {
+  if(audit_metric_file)
+    *audit_metric_file<<audit_run<<','<<audit_observation<<','<<stats.success<<','
+      <<stats.solves<<','<<stats.releases<<','<<stats.blocks<<','<<stats.initial_fixed<<','
+      <<stats.final_fixed<<','<<stats.free_equation_max_error<<','<<stats.primal_violation<<','
+      <<stats.dual_violation<<','<<stats.complementarity_max_error<<','<<stats.slope<<','
+      <<stats.kkt_roundoff_tolerance<<','<<stats.free_equation_relative_backward_error<<','
+      <<stats.maximum_arithmetic_scale<<'\n';
+}
+#endif
 #endif
 void audit_step(const char *phase,int iteration,int updates,const Grid &g,
                 const std::vector<P> &path,const Vec &gradient,double action,
@@ -89,10 +103,18 @@ int main(int argc,char **argv) {
   if(!results||!history||!paths||!fd)throw std::runtime_error("Cannot open ray-stopping audit files");
   for(auto f:{&results,&history,&paths,&fd})*f<<std::setprecision(17);
 #ifdef AUDIT_REDUCED_METRIC
+#ifdef AUDIT_CONE_METRIC
+  std::ofstream metric(out+"/cone_metric.csv");
+#else
   std::ofstream metric(out+"/reduced_metric.csv");
+#endif
   if(!metric)throw std::runtime_error("Cannot open reduced metric audit");
   metric<<std::setprecision(17);
+#ifdef AUDIT_CONE_METRIC
+  metric<<"run_id,observation_index,success,solves,releases,blocks,initial_fixed,final_fixed,free_equation_max_error,primal_violation,dual_violation,complementarity_max_error,slope,kkt_roundoff_tolerance,free_equation_relative_backward_error,maximum_arithmetic_scale\n";
+#else
   metric<<"run_id,observation_index,initial_fixed,added_fixed,solves,free_equation_max_error,slope,inward_multiplier_violations,most_negative_signed_multiplier\n";
+#endif
   audit_metric_file=&metric;
   results<<"run_id,observation_index,initialization,path_spacing_km,max_updates,updates,converged,time_s,projected_gradient,raw_gradient,merged_nodes,path_nodes,source_dx,source_dy,source_dz,logged_matches_unobserved_variant\n";
 #else

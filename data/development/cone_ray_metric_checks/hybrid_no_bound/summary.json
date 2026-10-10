@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "checks": 560,
+  "failures": [],
+  "groups": {
+    "dense_principal_matrix": {
+      "checks": 256,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "no_bound_inverse": {
+      "checks": 6,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "feasible_cone": {
+      "checks": 96,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "negative_slope": {
+      "checks": 96,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "free_equation": {
+      "checks": 96,
+      "failures": 0,
+      "maximum_error": 4.440892098500626e-16
+    },
+    "no_release_limitation_recorded": {
+      "checks": 1,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "no_release_still_descent": {
+      "checks": 1,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "no_bound_affine_unchanged": {
+      "checks": 4,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "no_bound_affine_converged": {
+      "checks": 4,
+      "failures": 0,
+      "maximum_error": 0
+    }
+  },
+  "compile_command": [
+    "c++",
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-include",
+    "diagnostics/cone_ray_metric.hpp",
+    "-I",
+    "tmp/ray_stopping/i775_cone_hybrid/source/diagnostics",
+    "diagnostics/check_reduced_ray_metric.cpp",
+    "-o",
+    "tmp/ray_stopping/check_cone_hybrid_no_bound"
+  ],
+  "run_command": [
+    "tmp/ray_stopping/check_cone_hybrid_no_bound"
+  ],
+  "TMPDIR": "tmp",
+  "source_sha256": {
+    "diagnostics/check_reduced_ray_metric.cpp": "486201fddc0404b230c5c590225df4c4d6ebba1aa5c9aba4e31a271ea6f3e585",
+    "diagnostics/reduced_ray_metric.hpp": "b5dfefaec537fd5f83fae7dddba3ba0d71fc6ff6352dc64aa6201d5ceaa51b9d",
+    "diagnostics/cone_ray_metric.hpp": "d743730d291f118041de1929334e04672ba3881422d89719c9acd53aac7072e5",
+    "diagnostics/control_optimizer.hpp": "9fe7af137653715e8235db09f4358f08e8f0f732da39ef0df03eeee4401ffbd9",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63"
+  },
+  "sha256": {
+    "data/development/cone_ray_metric_checks/hybrid_no_bound/results.csv": "30e9a29c29c7ac67d56ccfa915db131d2754a0b86ff87b2a972cbc1a9a2ae388",
+    "data/development/cone_ray_metric_checks/hybrid_no_bound/stderr.txt": "cab587abf83775ddd3f2d9f5a7cbd0846fb55a9f5b2b71ae48a11d1270c4bfca",
+    "data/development/cone_ray_metric_checks/hybrid_no_bound/source_snapshot.tar.gz": "8bd71415a655d0644319391f9a39196d1e5ad9f530ee710214fc5ee217cf34e7",
+    "tmp/ray_stopping/check_cone_hybrid_no_bound": "052d4c0564e4aa72e5b2cb9593f6463a536aaf399b8e8d9f44b90b04ac70ceca"
+  },
+  "scope": "Hybrid no-bound affine rays are bitwise compared with original trace in both directions at .5/.25 km. Remaining checks repeat the independent reduced-principal algebra fixtures; the complete cone-QP is tested in the separate baseline fixture."
+}
