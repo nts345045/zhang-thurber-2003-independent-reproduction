@@ -156,9 +156,13 @@ The second, [LON-profile simulation](data/published/loma_lon_analytic_001/README
 also passes its complete audit. Actual
 file comparison confirms identical simulated observations and perturbed sources,
 while all 288 starting velocity values differ. The complete LOM starting-model
-reference passes; the separate LON reference preserves one distance-closure
-failure with its selected time and derivatives blank. The full LOM initial-ray
-and matrix-census preflight is active.
+reference passes. The first LON reference attempt preserves one distance-closure
+failure with its selected time and derivatives blank. A separately reviewed
+[turning-speed arithmetic correction](data/development/loma_lon_initial_reference_002/README.md)
+passes all 37,648 LON references without changing the isolated roots or acceptance
+limits. The largest candidate-time change is 1.70 nanoseconds; only the previously
+invalid pair changes validity. Separate full LOM and LON initial-ray and
+matrix-census preflights are active; neither performs an inverse update.
 
 A new [inversion forward guard](data/development/inversion_ray_gate_checks/README.md)
 on the integration branch rejects locally unconverged or otherwise invalid rays

@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "reviewed_utc": "2026-10-10T04:33:01.184061+00:00",
+  "reviewer": "root",
+  "scope": "Independent algebra/source and frozen evidence review; no numerical rerun",
+  "summary_sha256": "37ca679e57a4efab38b6d56058df77887ebe1ee27acafd4fb264172a847a2b5d",
+  "proof_sha256": "000f7644f23c4b4da4d886e18f39c5fdf15a6da3fae2c130978a9d708e5a82c2",
+  "source_sha256": "bad1966a46d087f65954130722e7f344450bb19635ed68d7ffb70b3562a9f07a",
+  "verified_artifacts": 8,
+  "verified_input_source_hashes": 7,
+  "findings": [
+    "Positive-part integral and convex support inequalities hold for arbitrary coupled endpoint directions.",
+    "The c=3/8 coordinate-probe counterexample and c=1/5 constant-versus-two-half-support construction are algebraically correct.",
+    "The polar-cone sign is correct; any feasible coefficients supply a bound independently of auxiliary optimality.",
+    "Reversed nonconvex cusps cannot use this support construction.",
+    "Native tangent residual is reconstructed from identified saved evidence and remains above the existing gradient tolerance; no original path or flag changes."
+  ],
+  "limitations": [
+    "Finite exact component cases illustrate the accompanying proof; they do not certify a native first arrival.",
+    "General variable-coefficient integrals require error bounds before a continuous stationarity certificate.",
+    "An internal-node bound alone establishes neither unique source/model derivatives nor global first-arrival accuracy."
+  ]
+}

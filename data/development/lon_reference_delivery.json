@@ -1,0 +1,45 @@
+{
+  "scope": "Corrected complete LON initial references and separate LOM/LON initial preflights; no corrected inversion accepted",
+  "created_utc": "2026-10-10T04:35:47.189047+00:00",
+  "evidence_commit": "a573e7e186aeed7b4dac2fc2818e34234688176a",
+  "validation": {
+    "pdf_pages": 99,
+    "pdf_bytes": 1765160,
+    "pdflatex_exit": 0,
+    "no_undefined_references_errors_or_overfull_boxes": true,
+    "new_report_pages_visually_inspected": [
+      28,
+      29,
+      30
+    ],
+    "panel_statuses": {
+      "independently reproduced": 1,
+      "partially reproduced": 27,
+      "not reproduced": 34
+    }
+  },
+  "sha256": {
+    "README.md": "a1c112024383b8776b7a674606442b0867a0de68726752adb91f7bb27b54ce6f",
+    "report/report.tex": "289034e2eae49f6230f2d82c6e0005ab989af6e6443e1293382d6bcafd7f6efe",
+    "report/recovery_checkpoint.tex": "155bddf1676a35d0adc513823ea1fd258ba08ed9f0825b98c8b7202610ca9d0f",
+    "report/report.pdf": "2bb197fce975a813d685f26ffb95204bdfb75d5136c82e592ab100c5e89df40d",
+    "data/panel_audit.csv": "e8b115d93a4db2a1a12ab58f160aa68496ba6c1c06f4eb31b9538f0ed6d55a03",
+    "data/development/loma_lon_initial_reference_002/summary.json": "6933ca71c17a9795c137884581a44fc82047735a5021fb3ab9815dbc573ffebf",
+    "data/development/loma_lon_initial_reference_002/independent_review.json": "835d14f3e45fab516db9a31666cefb859ee94e0cee280162f8986229a3b95c40",
+    "data/development/loma_lon_initial_reference_002/attempt_comparison.json": "dfd0ba71eabfdcc8d9969992b6f77b23c6a961c4d4a99480b153157649a0efd5",
+    "data/development/precise_turn_reference_checks/003/summary.json": "4bc542d3f4d2edb0a9e6ef82212db07f2d9d6dfd7f0bfbdff6af4d44e2dd24e6",
+    "data/development/precise_turn_reference_checks/review_003.json": "11b6c57ed050588161e8f30801e644f67b04737188ab235a4df0a677e1d4a192",
+    "data/development/loma_initial_precise_turn_runner_checks/001/summary.json": "e3298568bc202311d447a58577b1e9f5a78b4268841ced6c680d2617f08b2392",
+    "data/development/loma_lon_initial_reference_plan_002/plan.json": "b371fd8c8c85a3435cb6d67559d3997b34b6be4cc5b61a45b91b81edfc6470d2",
+    "data/development/loma_lon_initial_preflight_adoption_001/summary.json": "d69142a4bf60eff89b0718f3ce62f0c241d5377245e2725cdb3494774bc756a2",
+    "data/development/loma_lon_initial_preflight_adoption_001/review.json": "6e7d4ff0d90ae112a899e7aa170dad16e22222c6207daa865033f5350c7a2296",
+    "data/development/loma_lon_initial_preflight_adoption_001/launch_verification.json": "657016339b48b7a61dbf09a92b06d5790ccac3de51c67cf365a6548f66dc62f4"
+  },
+  "limits": [
+    "LON reference attempt001 is unchanged and retains its invalid pair; attempt002 changes only turning-speed evaluation precision.",
+    "Reference validity does not establish production-ray or inverse accuracy.",
+    "Hayward sampled refinement and separate LOM/LON initial preflights are active at this checkpoint.",
+    "Normalized waveform processing has no calibration prerequisite; no new waveform observation or uncertainty is adopted here.",
+    "The live main-worktree baseline source, executable and inputs remain frozen."
+  ]
+}
