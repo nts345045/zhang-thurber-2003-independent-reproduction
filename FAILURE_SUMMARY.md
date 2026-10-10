@@ -68,8 +68,32 @@ do not yet resolve convergence or the source-derivative failures.
 The [next full-size tangent trials](data/development/hayward_cmj_tangent_step_002/RESULTS.md)
 increase action by 3.0212e-10 and 2.7020e-10 s and are rejected. Their initial
 slopes are negative, so the finite step is too large for decrease. This
-supports testing a smaller fraction along the same directions. The first
-accepted paths and their checked gradients remain in place.
+is resolved by a [half-length trial](data/development/hayward_cmj_tangent_half_step_001/RESULTS.md)
+along each same direction: action decreases by 1.9272e-11 and 7.5767e-11 s,
+with both conservative Armijo checks passing. This establishes a finite-step
+size issue for these prescribed trials. Neither decrease yet meets the
+combined stopping scale of 1e-11 s.
+
+The [post-half check](data/development/hayward_cmj_post_half_step_tangent_001/RESULTS.md)
+finds available gradient norms of 2.5528e-6 and 6.7473e-6 s/km. Both retain
+a resolved residual above the strict 1e-7 scale. Their same-geometry
+zero-normal support construction retains ordinary entry and exit terms;
+its large full-vector norms do not establish the minimum support residual.
+The original failed flags therefore remain unchanged.
+
+On the earlier first-step geometry, [exact face-sign checks](data/development/hayward_cmj_post_step_zero_support_001/RESULTS.md)
+permit a shared pointwise mixture with zero normal contributions from aligned
+edges. Ordinary entry and exit contributions remain. The resulting full-vector
+norms, 4.4155e-5 and 2.4963e-5 s/km, describe one feasible support choice;
+their size cannot rule out a smaller support residual. Thus this calculation
+does not establish stationarity or justify changing either failed ray flag.
+
+The [fixed-polygon evaluator check](data/development/hayward_cmj_fixed_polygon_kernel_001/RESULTS.md)
+finds paired action-difference errors below 4.0e-17 s and reproduces all four
+full/half acceptance decisions. Available gradient errors on the four face
+and first-step polygons are below 1.057e-15 s/km. Thus integration error does
+not explain these resolved increases and decreases; step selection and
+the full nonsmooth stationarity condition still require attention.
 
 The original guard also stopped before trying a smaller inverse step. A
 [separate old-kernel candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)

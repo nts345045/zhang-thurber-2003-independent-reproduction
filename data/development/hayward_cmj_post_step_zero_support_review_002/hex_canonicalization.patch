@@ -1,0 +1,11 @@
+--- ../hayward_cmj_post_step_zero_support_review_001/check_saved.py
++++ check_saved.py
+@@ -262,7 +262,7 @@
+     require(n == (1029 if event == 981 else 1031), 'Native path roster')
+     for i, (p, c) in enumerate(zip(path, full['coordinate_provenance'])):
+         require(c['node'] == i and tuple(map(Q, c['exact_rational'])) == p
+-                and [float(x).hex() for x in c['decimal_tokens']] == c['binary64_hex']
++                and [float(x).hex() for x in c['decimal_tokens']] == [float.fromhex(h).hex() for h in c['binary64_hex']]
+                 and tuple(Q(float(x)) for x in c['decimal_tokens']) == p, 'Actual binary64 coordinates')
+     require(len(full['coordinate_provenance']) == n and all(axes[k][0] <= p[k] <= axes[k][-1] for p in path for k in range(3)), 'Complete in-box geometry')
+     require(path[0] == tuple(Q(float(identity['native_context']['source_native'][k])) for k in 'xyz')

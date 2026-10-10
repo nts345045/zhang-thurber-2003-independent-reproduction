@@ -1,0 +1,11 @@
+--- attempt001/prepare_inputs.py
++++ prepare_inputs.py
+@@ -165,7 +165,7 @@
+ 
+ def main():
+     require(not (HERE / 'inputs').exists() and not (HERE / 'oracle.json.gz').exists() and not (HERE / 'input_preparation.json').exists(), 'Fresh input preparation only')
+-    record(Path(__file__))
++    record(Path(__file__).resolve())
+     review_face, unused = audited(FACE, 'hayward_cmj_face_action_review_001', True)
+     review_first, first_prep = audited(FIRST, 'hayward_cmj_tangent_step_review_001')
+     review_second, unused = audited(SECOND, 'hayward_cmj_tangent_step_review_002')

@@ -1,0 +1,904 @@
+{
+  "created_utc": "2026-10-10T13:33:10.830786Z",
+  "exclusions": [
+    "Unchanged earlier evidence",
+    "Maintained solver sources",
+    "Later tangent iteration and active numerical outputs",
+    "Direct tmp/system/runtime state"
+  ],
+  "file_count": 171,
+  "files": {
+    "FAILURE_SUMMARY.md": {
+      "bytes": 12805,
+      "mode": 420,
+      "sha256": "99084569c37dff4eab2d443f184898deb7fd0051ce4b2ad3a40c57e81372a769"
+    },
+    "README.md": {
+      "bytes": 41329,
+      "mode": 420,
+      "sha256": "81a315556e7d64b83030ab0f4f9421c2be7bf66b5dbc28953d5948039c2de234"
+    },
+    "data/development/cmj_half_step_kernel_report_001/README.md": {
+      "bytes": 752,
+      "mode": 420,
+      "sha256": "7aacbed7a7f3050531dae9a4ec5a5cbc1bbcd45651df9eb02f33fbbcf70f79ac"
+    },
+    "data/development/cmj_half_step_kernel_report_001/RESULTS.md": {
+      "bytes": 1828,
+      "mode": 420,
+      "sha256": "8ca53c77824aa66047cb2a589654590ffa3b11074e99cc682c1386d3c2e37904"
+    },
+    "data/development/cmj_half_step_kernel_report_001/compile.json": {
+      "bytes": 3362,
+      "mode": 420,
+      "sha256": "04675a1c4e6abb10cb7ca7fc4d7b9d2298b6844c886eacb8025258df17f7ecab"
+    },
+    "data/development/cmj_half_step_kernel_report_001/compile.py": {
+      "bytes": 3339,
+      "mode": 420,
+      "sha256": "d51d2bc32daa4c6aaf30a0722579f3406f022d4bb816cd759ff0e932ccd963a1"
+    },
+    "data/development/cmj_half_step_kernel_report_001/pass1_report.log": {
+      "bytes": 36324,
+      "mode": 420,
+      "sha256": "e565f5ec5d8fc608a9bce69c526327899d4a21c7ada20975768e9fb968ec346e"
+    },
+    "data/development/cmj_half_step_kernel_report_001/pass1_stdout.txt": {
+      "bytes": 8038,
+      "mode": 420,
+      "sha256": "3419949c86e4e01c91c6613dc631e2d62b75b2aeb57478d43022c9642701828a"
+    },
+    "data/development/cmj_half_step_kernel_report_001/pass2_report.log": {
+      "bytes": 36242,
+      "mode": 420,
+      "sha256": "8809c0f2ade9b79d007ef84e06c3d9fb4564813cc91d9785b980d92f8d463042"
+    },
+    "data/development/cmj_half_step_kernel_report_001/pass2_stdout.txt": {
+      "bytes": 7956,
+      "mode": 420,
+      "sha256": "d805a7c41d83c812eb467d65a766bbc41fe5b579b6f59670415be3d8269afa53"
+    },
+    "data/development/cmj_half_step_kernel_report_001/path_inventory.json": {
+      "bytes": 37822,
+      "mode": 420,
+      "sha256": "737b088a50cd4f9ee6cfeb690d3e4fffd5fafd25324d50677186f1648bf8d260"
+    },
+    "data/development/cmj_half_step_kernel_report_001/pdfinfo.txt": {
+      "bytes": 550,
+      "mode": 420,
+      "sha256": "870edbaa652fbdc75247da3c23be0a1be752f88a378f412ccf30b4e93cb2c49d"
+    },
+    "data/development/cmj_half_step_kernel_report_001/render_receipt.json": {
+      "bytes": 1368,
+      "mode": 420,
+      "sha256": "1727c6b894f08cdb8a2730b47a99bbfd874095054e342ccc4cb0853682924c7f"
+    },
+    "data/development/cmj_half_step_kernel_report_001/report.log": {
+      "bytes": 36242,
+      "mode": 420,
+      "sha256": "8809c0f2ade9b79d007ef84e06c3d9fb4564813cc91d9785b980d92f8d463042"
+    },
+    "data/development/cmj_half_step_kernel_report_001/report.txt": {
+      "bytes": 294855,
+      "mode": 420,
+      "sha256": "639ef1a95834b35711b6b74b799c53bde7e7a597c2695484f556f53456d781ab"
+    },
+    "data/development/cmj_half_step_kernel_report_001/validate.py": {
+      "bytes": 12443,
+      "mode": 420,
+      "sha256": "a349c7009b17cdada71f01a9efc12bd74e471b4c23cb4eaff37639f497f7e7bc"
+    },
+    "data/development/cmj_half_step_kernel_report_001/validation.json": {
+      "bytes": 18944,
+      "mode": 420,
+      "sha256": "a932eed55821624f48e4533f4894c78254fdcb3107a753be63a9c2b05c55b0a2"
+    },
+    "data/development/cmj_half_step_kernel_report_001/visual_review.json": {
+      "bytes": 1618,
+      "mode": 420,
+      "sha256": "026a4caa2ba405e82f5d8f2d37b2fa3ca657fc9edeb036edd67e6066136c287f"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/README.md": {
+      "bytes": 4496,
+      "mode": 420,
+      "sha256": "e7594edd931fb198b29431901d55ddc6b13aa8fb72038174038f1c7a21cf05d7"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/RESULTS.md": {
+      "bytes": 5052,
+      "mode": 420,
+      "sha256": "bc22bcf594f42b9b8988191ebc903d2a043265566b784cf25bd8698b2e0c7ee0"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/benchmark.cpp": {
+      "bytes": 8089,
+      "mode": 420,
+      "sha256": "5d50acef0d4f5e9c18fba8931c034cf5e14578b6d44adf448b40a3fafe7f10b6"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/build/kernel": {
+      "bytes": 123608,
+      "mode": 493,
+      "sha256": "b76c8c083e100f32f15c28e321f73e3b8a88a4b9385d5a92b52b60c2f6ca6997"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/execution.json": {
+      "bytes": 208122,
+      "mode": 420,
+      "sha256": "f14880d495fd3fe9efca5df1f43c829df1df0c78aebb13069815f1e3a08da37e"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/input_preparation.json": {
+      "bytes": 20098,
+      "mode": 420,
+      "sha256": "691bd6ee9013faf27049dcfcabfc782cfa05d730f28784dfa6528e8fc0b514d0"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/input_preparation_attempt_001/correction.patch": {
+      "bytes": 582,
+      "mode": 420,
+      "sha256": "5ebc5a646c0e03e1a6640f72d6b2d26dcd52e859d077261f94a3f79198a6e417"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/input_preparation_attempt_001/execution.json": {
+      "bytes": 557,
+      "mode": 420,
+      "sha256": "3161f1df8b2efef33555ef7d9fcb845db4d0e2ea20571952a35ed9b23dd2086e"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/input_preparation_attempt_001/prepare_inputs.py": {
+      "bytes": 21146,
+      "mode": 420,
+      "sha256": "20c00d7e568e9d998ac8103e86c8b30dd81fad308c090f530ead1b1f883f9f2c"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/input_preparation_execution.json": {
+      "bytes": 1916,
+      "mode": 420,
+      "sha256": "1e4c61abf61d2f6c3940cbb9bb620c5154b41dde085b17e2ceeaaea2f3b2c771"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/981_direction.txt": {
+      "bytes": 71299,
+      "mode": 420,
+      "sha256": "fb280bf387a55f34926f4de4e4491796815d642355b0e993a822a426bc33cc01"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/981_direction.txt.identifiers.json": {
+      "bytes": 221772,
+      "mode": 420,
+      "sha256": "e8598b2a2792a01d98d17cc8ec9b8a7224c4a9364da8ada96b8356c7a6e50ecd"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/981_face.txt": {
+      "bytes": 60671,
+      "mode": 420,
+      "sha256": "979a4ce3231e0c3fab7f425001e5a76321f907b710adafd32221c347f5709dad"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/981_face.txt.identifiers.json": {
+      "bytes": 219171,
+      "mode": 420,
+      "sha256": "ceea3d5078e787e86444247462751d60a4460ed10475a64da9c014b0856ff8d5"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/981_first.txt": {
+      "bytes": 60656,
+      "mode": 420,
+      "sha256": "bf29890f05f84eb6bc84e1d71b1262a588c3d51b61611785423b4fb06f872e1d"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/981_first.txt.identifiers.json": {
+      "bytes": 219145,
+      "mode": 420,
+      "sha256": "c173ff4e3622464da270fe3026d81f374b8cb1a4c006c685acc15fc25e44626d"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/981_half.txt": {
+      "bytes": 60691,
+      "mode": 420,
+      "sha256": "54e683a225c860bb1d86f94bd7c06c016898fdb182a815bdc590e289e6adba7a"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/981_half.txt.identifiers.json": {
+      "bytes": 219148,
+      "mode": 420,
+      "sha256": "47cf52753c18028afce4924beaf6ff21f4b52483a7da0dd44f8f52f2289bc963"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/981_second.txt": {
+      "bytes": 60666,
+      "mode": 420,
+      "sha256": "20f3780044819710f77f01fcab7037c295de69098dcf82dec7a8caaeeb152fd5"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/981_second.txt.identifiers.json": {
+      "bytes": 219147,
+      "mode": 420,
+      "sha256": "04527956384fbe617172e4ca5a1594d3d8b389e8ea60682996962c3b0015eced"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/987_direction.txt": {
+      "bytes": 71436,
+      "mode": 420,
+      "sha256": "be10d05305023b4abda5a480664d9bc07973a5d66febca600705fa926376ae66"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/987_direction.txt.identifiers.json": {
+      "bytes": 221986,
+      "mode": 420,
+      "sha256": "8cca3fc15da44af3f682c6d4ac615c2db8cb7ab7cb8297e71c36186af87ae926"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/987_face.txt": {
+      "bytes": 60760,
+      "mode": 420,
+      "sha256": "bc66f47aa7eafc6cbd8bc196c296e8756c3ef6e216cd936fc52389ea83d58245"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/987_face.txt.identifiers.json": {
+      "bytes": 219360,
+      "mode": 420,
+      "sha256": "4257e70cfbf95f243dc5f2d2dd3a68880e02c4f5a0a30c5a432e4aff02b520af"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/987_first.txt": {
+      "bytes": 60800,
+      "mode": 420,
+      "sha256": "174bd72572aec19abc251e84caaacddee7d96f1c05772112509e258b0be24b9b"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/987_first.txt.identifiers.json": {
+      "bytes": 219334,
+      "mode": 420,
+      "sha256": "e586829c0877a7e1fdb1f8246a3c71ddb416fc5081e2ee8658710b0df75c0685"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/987_half.txt": {
+      "bytes": 60783,
+      "mode": 420,
+      "sha256": "769ebb77dac56f5d8c1c2bcf287c3771143c080c11d0668fc92498b61d8e6ffc"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/987_half.txt.identifiers.json": {
+      "bytes": 219337,
+      "mode": 420,
+      "sha256": "ad15054e9b94b55503abff9c71614f8662881a376065ab601eaade9dddc2782c"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/987_second.txt": {
+      "bytes": 60785,
+      "mode": 420,
+      "sha256": "48adcf7d1dce3e47bf99c3dbab859cdb54b30b148f56fb8d111b626158c6e73c"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/987_second.txt.identifiers.json": {
+      "bytes": 219336,
+      "mode": 420,
+      "sha256": "51969ccc72d2a4b84bdfaae052363e3af311dba8bc6772dd7b065aadbe3753b1"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/grid.txt": {
+      "bytes": 8814,
+      "mode": 420,
+      "sha256": "e9ceedba16c4a9812b4a7eb9ed245c4833147e12fbb346b33099c2ab6e999d0f"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/inputs/grid.txt.identifiers.json": {
+      "bytes": 222398,
+      "mode": 420,
+      "sha256": "beb2bc78c81c99d0942fce81d989c243d5943409f137785aa63563e3862c440a"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/kernel_bridge.json": {
+      "bytes": 728,
+      "mode": 420,
+      "sha256": "a82afe783ef7d3c4ad9ab8ec7811aa95b94ebd48ba045b509d0d0ead212a02e0"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/logs/command_0.stderr": {
+      "bytes": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/logs/command_0.stderr.identifiers.json": {
+      "bytes": 205037,
+      "mode": 420,
+      "sha256": "4c462ead8b8836aa3f44ff1db6d1d68469c222d092508b3f670a3358f326a266"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/logs/command_0.stdout": {
+      "bytes": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/logs/command_0.stdout.identifiers.json": {
+      "bytes": 205037,
+      "mode": 420,
+      "sha256": "7b7f9a78f26c85b7fe3f88c53449cb9b4d819b4fdce7fd9fc407d896497cb0ab"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/logs/command_1.stderr": {
+      "bytes": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/logs/command_1.stderr.identifiers.json": {
+      "bytes": 205037,
+      "mode": 420,
+      "sha256": "66b99f6a155e8bf09b3f1ca0a11100d42848a8151c1382695e0eaaf4331d6c73"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/logs/command_1.stdout": {
+      "bytes": 128,
+      "mode": 420,
+      "sha256": "0774969942595073cdfd51a9793f00c841a71f439c9c193f440b8f03e0108ef6"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/logs/command_1.stdout.identifiers.json": {
+      "bytes": 205037,
+      "mode": 420,
+      "sha256": "b64aaf43c42138d80c30dad16f2c267cc75cf30d6a151b576163d6b396d97b2f"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/native_contexts.json": {
+      "bytes": 197599,
+      "mode": 420,
+      "sha256": "d937f7f85a224a3e131d13c04248e79be84b1fc0d3121c31ebdb6e5789ccd170"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/oracle.json.gz": {
+      "bytes": 1410554,
+      "mode": 420,
+      "sha256": "0db545a3d63452b4244f2295661001a1ed488e3b0f22886dffd6927f6fecd367"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/outer_reaping.json": {
+      "bytes": 205457,
+      "mode": 420,
+      "sha256": "b151dc180fdfe8786299f79e0f03dded0ddaafd4c384b24dc4f662bad37c773d"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/prelaunch_review.json": {
+      "bytes": 207167,
+      "mode": 420,
+      "sha256": "6097b8fc9e4b2531c01cf67a2570d26e91ce8731fe67e599e5668771b5e53f88"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/prepare_inputs.py": {
+      "bytes": 21156,
+      "mode": 420,
+      "sha256": "7610aaffb1816295109af70845a17fb93dada4eb27693489d0e6c8b84ea0a1b1"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/prepared.json": {
+      "bytes": 25574,
+      "mode": 420,
+      "sha256": "9fbc70bc9abd73eaf8b8fa2b40403c840af80732777d5b94468389b671cfc7cc"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/results/comparison_details.json.gz": {
+      "bytes": 1832888,
+      "mode": 420,
+      "sha256": "fc0b73d67da06aa67a73a451a5f847612816fc8fa891e1ed79ad6792a6754a6e"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/results/comparison_details.json.gz.identifiers.json": {
+      "bytes": 205213,
+      "mode": 420,
+      "sha256": "54c74236836e0a45bce3c3ff43823090d2b5e72d5150d164bf1bce60d80827c4"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/results/edges.csv": {
+      "bytes": 467087,
+      "mode": 420,
+      "sha256": "e321961fd8aaa4e5fed6e6a1d826f69948928ee061a887c71de09c19621af581"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/results/edges.csv.identifiers.json": {
+      "bytes": 205196,
+      "mode": 420,
+      "sha256": "d59e3d2fbdebcb96a72e32aec9a00df5d45f5ead5d52d19dac4ab6bac370b78a"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/results/gradients.csv": {
+      "bytes": 1364524,
+      "mode": 420,
+      "sha256": "fd5efbc03b4693a1631a7b993f457fb05165a9ef571b70cbd2d703915bfcc274"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/results/gradients.csv.identifiers.json": {
+      "bytes": 205200,
+      "mode": 420,
+      "sha256": "bd642eb993afadf38df91beea1af2d0a4d069808a2faf417bae59cb0a40c3a2a"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/results/pairs.csv": {
+      "bytes": 1197,
+      "mode": 420,
+      "sha256": "54c2754bb894c9230d116c07a3b4e7004fcaf72e500ad4e7397577c438096ce9"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/results/pairs.csv.identifiers.json": {
+      "bytes": 205196,
+      "mode": 420,
+      "sha256": "8860d59854db0a3013109c37c7035a07f824772bd9580b54ff8a37949ac7260a"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/results/totals.csv": {
+      "bytes": 1646,
+      "mode": 420,
+      "sha256": "b11f0deab7a183f2a9c87bec02faec59f81304f090f98b221753f57353a5e767"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/results/totals.csv.identifiers.json": {
+      "bytes": 205197,
+      "mode": 420,
+      "sha256": "9b1c6b820166d35e05c3944073385aff7e438d895ce3166aaa567710f4b2cda9"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/review.json": {
+      "bytes": 1060674,
+      "mode": 420,
+      "sha256": "c37e04d163a922e822df00bf95bc122736459becea753ec270bd00a945eaa440"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/review_execution.json": {
+      "bytes": 205266,
+      "mode": 420,
+      "sha256": "0d1bd471b973293669123a3e1535336a0c0422a53b48861d44a9dcd2750ee825"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/review_saved.py": {
+      "bytes": 17549,
+      "mode": 420,
+      "sha256": "d37e56f26d36e4d75bac6dddff60a370aa6d1dd32d184267f63a8478371c3a0c"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/review_saved_source.json": {
+      "bytes": 725,
+      "mode": 420,
+      "sha256": "1b388358662d25d315e268f59ba37d5731b55e6ca31f7f0345e5723ba7c9a065"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/run.py": {
+      "bytes": 15721,
+      "mode": 420,
+      "sha256": "94baa2a1faa4dae541129e1b55dc0fa7febadd71dcd297a5da1c9a888ca85575"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/source/core.hpp": {
+      "bytes": 22105,
+      "mode": 420,
+      "sha256": "c9500361c5ca3ff55b2fbcec0aedfb3639d3f3b68a53431267e6849c3a933044"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/source/ray_metric.hpp": {
+      "bytes": 8817,
+      "mode": 420,
+      "sha256": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/source/usable_ray_curvature.hpp": {
+      "bytes": 4259,
+      "mode": 420,
+      "sha256": "5236f9df135dc2449662db70bb68aded36cae3f5ce23e7471caa02d45ce5daac"
+    },
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/summary.json": {
+      "bytes": 249768,
+      "mode": 420,
+      "sha256": "8dda71f8d0c1883f44655ee3738b0e59ff177cceb512503499dec8b93eee1047"
+    },
+    "data/development/hayward_cmj_half_gradient_comparison_001/README.md": {
+      "bytes": 2237,
+      "mode": 420,
+      "sha256": "8d6e74b2f969632d7aaa0a0e6d8c2088dd13c98dad8e33cea89c74493e4a994e"
+    },
+    "data/development/hayward_cmj_half_gradient_comparison_001/RESULTS.md": {
+      "bytes": 3604,
+      "mode": 420,
+      "sha256": "7c3377d47a3ac305bc4785333d032dd8e0ea91abc39e6cecd88cee645aace081"
+    },
+    "data/development/hayward_cmj_half_gradient_comparison_001/check_saved.py": {
+      "bytes": 11322,
+      "mode": 420,
+      "sha256": "ae6938824521445ee56b43595d6ac3acc2ed868a5299595e415d13359cb5c32a"
+    },
+    "data/development/hayward_cmj_half_gradient_comparison_001/comparison.json.gz": {
+      "bytes": 548898,
+      "mode": 420,
+      "sha256": "e7069f4ea58278f09d692bef0128bd0e611c98ab9b74af7b2ca06d2f8850ecda"
+    },
+    "data/development/hayward_cmj_half_gradient_comparison_001/comparison.json.gz.identifiers.json": {
+      "bytes": 247172,
+      "mode": 420,
+      "sha256": "3a3b54f2d871c3d8b20479e05e4a73de9efc60bc3d1a6b1893144b287b69e11c"
+    },
+    "data/development/hayward_cmj_half_gradient_comparison_001/execution_receipt.json": {
+      "bytes": 205560,
+      "mode": 420,
+      "sha256": "278294323bcab5cadd4ba2655248caad6264b9431116a09eb214e173dc63b156"
+    },
+    "data/development/hayward_cmj_half_gradient_comparison_001/source_review.json": {
+      "bytes": 787,
+      "mode": 420,
+      "sha256": "204241f31b43974127e057553210ee577890707f96c58618aa9b4894055970e7"
+    },
+    "data/development/hayward_cmj_half_gradient_comparison_001/summary.json": {
+      "bytes": 454755,
+      "mode": 420,
+      "sha256": "775754c10cad0f57bba55da4d21f05cea4a69d8f63586b881dfa4fdf765a736f"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/README.md": {
+      "bytes": 4014,
+      "mode": 420,
+      "sha256": "d5892cbd8126712adf6389aa37a7ec6810cdf65cf0285b2f18cbc253fbb257d3"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/RESULTS.md": {
+      "bytes": 3696,
+      "mode": 420,
+      "sha256": "d72cbaa23e43c8f714e73ec8bb8ea06f6cc0e0a9e7003be6fd61a350c647ad7a"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/event_981.json.gz": {
+      "bytes": 1300277,
+      "mode": 420,
+      "sha256": "21cb9e032de70282966d3be2057aca0b8e0eee5cc37cf6e3ac954bd23af6c224"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/event_981.json.gz.identifiers.json": {
+      "bytes": 125449,
+      "mode": 420,
+      "sha256": "25d46d9eb8ac6cf4bf837c31e489b64f9b85141f2d8cac964303b45a42ce5de1"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/event_987.json.gz": {
+      "bytes": 1309330,
+      "mode": 420,
+      "sha256": "2e293f09396dad045d02f7e533d9a2ad16ac0296584a866495d93daee7c5e222"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/event_987.json.gz.identifiers.json": {
+      "bytes": 125445,
+      "mode": 420,
+      "sha256": "6cc2ea59c1ae2177a04ff5a181e9ef33ec38fe9a1df8c8e3179e091600904955"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/execution.json": {
+      "bytes": 235914,
+      "mode": 420,
+      "sha256": "2b1a8d28c3609aae7a886f2ffe3f5560c6c9a84d80672ff04f239995c05e1da3"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/native_contexts.json": {
+      "bytes": 197599,
+      "mode": 420,
+      "sha256": "d937f7f85a224a3e131d13c04248e79be84b1fc0d3121c31ebdb6e5789ccd170"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/outer_reaping.json": {
+      "bytes": 205457,
+      "mode": 420,
+      "sha256": "10d090c54bd3b54de9ea6166ba25cc2af8f7b5430ca04064fc3d2f6f7b14edbe"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/post001_to_posthalf.patch": {
+      "bytes": 16346,
+      "mode": 420,
+      "sha256": "0cde5e4819f088b1518925808344d071dfe25726085e062393e5ce8b80374aba"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/prelaunch_review.json": {
+      "bytes": 206219,
+      "mode": 420,
+      "sha256": "d6d461a51e08cfb666f2966ee32f66edede9991cc954e4603074c3926bce462b"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/prepared.json": {
+      "bytes": 33122,
+      "mode": 420,
+      "sha256": "74bc0bc100b71035744633b12cf0c5d460a55d5c78742eb3b60be03fbb91b368"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/run.py": {
+      "bytes": 22991,
+      "mode": 420,
+      "sha256": "1c969649c5a58f73277c73a478132456fcb3a6219bb4f5c78ad3d3d6e41969f5"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_001/summary.json": {
+      "bytes": 419425,
+      "mode": 420,
+      "sha256": "e134f4d35ab853829ac614f2d8d336bbc1e3543133d398de43ddd42ffdbf2894"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_review_001/README.md": {
+      "bytes": 2218,
+      "mode": 420,
+      "sha256": "31a4f1210d336c4b9f56edf23425d2809e78506caf5351eeff0da4774db01d6e"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_review_001/check_saved.py": {
+      "bytes": 30834,
+      "mode": 420,
+      "sha256": "8c300b68d8647ddec4b64acf792625ef3ac68b353d10058c0418f9b169eed46e"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_review_001/execution_receipt.json": {
+      "bytes": 205266,
+      "mode": 420,
+      "sha256": "4a4f70c9470b3232c5274f23c725aa0775470e6c3116071b4eceb3f276d0652a"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_review_001/review.json": {
+      "bytes": 262005,
+      "mode": 420,
+      "sha256": "d16b1da181b06530ed283ee0cd90eecc642bdd6b65674905ab5863e1b176a818"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_review_001/source_review.json": {
+      "bytes": 970,
+      "mode": 420,
+      "sha256": "bd098ec8cbdfced7be313cd12c11143f758b7ae7f83c77025c3bac9e40040e42"
+    },
+    "data/development/hayward_cmj_post_half_step_tangent_review_001/zero_support_to_posthalf.patch": {
+      "bytes": 16841,
+      "mode": 420,
+      "sha256": "c79b6e33e7046e15e49dc66db74065799b52a6ca1eb7866ab56a5e2232233ad3"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/README.md": {
+      "bytes": 4134,
+      "mode": 420,
+      "sha256": "e22b38115f12ab19cf84d2d23834cba6e288f754a9022bf95da1eedef975bc8e"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/RESULTS.md": {
+      "bytes": 3778,
+      "mode": 420,
+      "sha256": "e2e70c5ab121879a15934400e7ebf09dbf8563edda65276d8ecee470590a722f"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/event_981.json.gz": {
+      "bytes": 585507,
+      "mode": 420,
+      "sha256": "d2a215f1582737d1da2a572657deb0d8863a1894ef375a1739c88ce2e402b5ee"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/event_981.json.gz.identifiers.json": {
+      "bytes": 105676,
+      "mode": 420,
+      "sha256": "1bd5cac8e94b40492f50c2c0bdfb1a4cc8e9a040235e1dc81f085d27d97c35a0"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/event_987.json.gz": {
+      "bytes": 590724,
+      "mode": 420,
+      "sha256": "abffcf93e6b530f4e6f5c9da6ee2ae392c2ee56965b92aa025884fd159439b54"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/event_987.json.gz.identifiers.json": {
+      "bytes": 105672,
+      "mode": 420,
+      "sha256": "6bd80323afd86d2fa22bf68587c5e9615b8cc31de0355c7e88ef298cbc28cb7d"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/execution.json": {
+      "bytes": 216155,
+      "mode": 420,
+      "sha256": "2f08b4636d1b8d9c194ea49e06c3f837ee272224c1696bc1cd7fa41d92a331e7"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/native_contexts.json": {
+      "bytes": 197599,
+      "mode": 420,
+      "sha256": "d937f7f85a224a3e131d13c04248e79be84b1fc0d3121c31ebdb6e5789ccd170"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/outer_reaping.json": {
+      "bytes": 205477,
+      "mode": 420,
+      "sha256": "447f5fa3c0c33d0bccf89c2634072c6ce13cc7e55e1a40de94cbc17f3dd22212"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/post001_to_saved_support.patch": {
+      "bytes": 29166,
+      "mode": 420,
+      "sha256": "4f1c190cf8f57cc92341c213c3a477787c4d3891d432cb730c1939fd89e3841a"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/prelaunch_review.json": {
+      "bytes": 205995,
+      "mode": 420,
+      "sha256": "c573aa76594fe42087b610ceeacfc0e32347ed0c606bf2259017bc4dbaf01c02"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/prepared.json": {
+      "bytes": 13520,
+      "mode": 420,
+      "sha256": "ea979bbbb2cd056e809ba6e9a78e8b30c9e52b1b200a945f95f85e63b0e6b47f"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/run.py": {
+      "bytes": 21016,
+      "mode": 420,
+      "sha256": "8223688462bf10d4c619fc6adaffd1a0066de5dd80454d902b2364459b92d067"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_001/summary.json": {
+      "bytes": 415648,
+      "mode": 420,
+      "sha256": "ed28cf8b82b6e6ec6a45cb2e5c0a373c4e12feb65f225452f71937623ea66e39"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_review_001/README.md": {
+      "bytes": 2609,
+      "mode": 420,
+      "sha256": "682649a43704616aa5cc5b92a5b562a597b61cd9bde8aaf9363d354c27f4d346"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_review_001/check_saved.py": {
+      "bytes": 26588,
+      "mode": 420,
+      "sha256": "415698130b945453bf4ddae6860535bcff0af43301aaa61fd07f629132a70e6f"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_review_001/check_saved_before_outer_context.py": {
+      "bytes": 26560,
+      "mode": 420,
+      "sha256": "ab1bade60cb96c5bb6557342107733742562b473231db08ef94001bedc3d2e00"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_review_001/execution_attempt_001.json": {
+      "bytes": 206064,
+      "mode": 420,
+      "sha256": "118b9d3ce4a947de7619d781a77dccf6e5c48059efb4a5cc0933154212a95f68"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_review_001/outer_context_correction.patch": {
+      "bytes": 1347,
+      "mode": 420,
+      "sha256": "866006ac504c52e5b850579290d2f072a096b4026db58796a89c52d6aa0bf39c"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_review_001/source_review.json": {
+      "bytes": 905,
+      "mode": 420,
+      "sha256": "9dfc6edfc0912ba76d9ceb3c937d818cd7b993f0c957c3f1ae8c11368696c5fa"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_review_002/README.md": {
+      "bytes": 3215,
+      "mode": 420,
+      "sha256": "3613077fdb9af2e7d967d3bcae80dea7343da8b99924edcf2276146f42db96ff"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_review_002/check_saved.py": {
+      "bytes": 26622,
+      "mode": 420,
+      "sha256": "e41e7d162495df4f447294d600458150567778327095d8fdebf56bd7a8612583"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_review_002/correction_provenance.json": {
+      "bytes": 1107,
+      "mode": 420,
+      "sha256": "c8961b1d184c0720b89384f2394f68443c52ccbf6b20a1367a0bd357df9ac53f"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_review_002/execution.json": {
+      "bytes": 433,
+      "mode": 420,
+      "sha256": "25f87af5982a7dbb0480cfde1c765d66d6de19b57ce57f6fc10d41971d11bc6f"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_review_002/hex_canonicalization.patch": {
+      "bytes": 908,
+      "mode": 420,
+      "sha256": "13cccae22b85dbcca836836fe450b2692b5a8ba19923ac6144f2dbb591eb7d0e"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_review_002/review.json": {
+      "bytes": 241570,
+      "mode": 420,
+      "sha256": "784f1b4d4ac732819d4848625c812da5c6df0bd7c78f541187e66dfc1b3098f4"
+    },
+    "data/development/hayward_cmj_post_step_zero_support_review_002/source_review.json": {
+      "bytes": 895,
+      "mode": 420,
+      "sha256": "27f102226f1d5caf66e819d0a99923017756912079f95c2c2a19b06dcf0d6561"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/README.md": {
+      "bytes": 3668,
+      "mode": 420,
+      "sha256": "e6e933b1289269f01f25d94599072d1cb3f7d113c8c1036dd6be6ffa7b468923"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/RESULTS.md": {
+      "bytes": 3000,
+      "mode": 420,
+      "sha256": "1ef02a6c397715bd6b68eae536ae385a4a2562bc8035aba15b95afc94eb93bce"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_981/result.json.gz": {
+      "bytes": 1444813,
+      "mode": 420,
+      "sha256": "732045fd9df51b8ac4502ff398916380c01e20376039c83af093d610e502e3df"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_981/result.json.gz.identifiers.json": {
+      "bytes": 125488,
+      "mode": 420,
+      "sha256": "a1a3ba5099e0c2ec8f8a675488e79a2a36e21bb4fa22e5af707ee798db4271b2"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_981/round/input.txt": {
+      "bytes": 135040,
+      "mode": 420,
+      "sha256": "1e402a370021d04e778154b837b8d93d82590bea314c6bebb6fe7f7bd78c60ce"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_981/round/input.txt.identifiers.json": {
+      "bytes": 125709,
+      "mode": 420,
+      "sha256": "4b37e5f302b9aadd76d4daa2059eeae1a67329790d44875b1b2b6ebe4fed9083"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_981/round/stderr.log": {
+      "bytes": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_981/round/stderr.log.identifiers.json": {
+      "bytes": 125632,
+      "mode": 420,
+      "sha256": "b6985c7ed7817e5f82466f590e8320a1c5e1dc5683ae8babb1868004634ccdc8"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_981/round/stdout.json": {
+      "bytes": 132837,
+      "mode": 420,
+      "sha256": "217d4abded8f4266737b1e8d83af8a18adaaaf2995090f03bc8676563d7a188d"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_981/round/stdout.json.identifiers.json": {
+      "bytes": 125635,
+      "mode": 420,
+      "sha256": "5b90a3cfbf01af9b8a09d14fb8cc68af436def6c6f33cec0b22cf8c23252c532"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_987/result.json.gz": {
+      "bytes": 1448943,
+      "mode": 420,
+      "sha256": "39645ad0f77c7dc5a6f28f183918a0ee5601f0b0bfbe454ead3bc952e71150bf"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_987/result.json.gz.identifiers.json": {
+      "bytes": 125518,
+      "mode": 420,
+      "sha256": "1f284df2a8efad9571d0d82edb92521368ae43e8a678a8e917f3eeb43c17923e"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_987/round/input.txt": {
+      "bytes": 135295,
+      "mode": 420,
+      "sha256": "0c20e23135dfca159947b5c9f77b92fa7f5b5d39ffdc1b106d06fe864ae26ca3"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_987/round/input.txt.identifiers.json": {
+      "bytes": 125739,
+      "mode": 420,
+      "sha256": "486b61feedbc048d30236bd7dc383bf3d5385448d13d2506e46160e8462ca811"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_987/round/stderr.log": {
+      "bytes": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_987/round/stderr.log.identifiers.json": {
+      "bytes": 125662,
+      "mode": 420,
+      "sha256": "320a8ee30090a183763b84cee4aff4f56c9e72b9d75d5ec08c6a092ec07c9c42"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_987/round/stdout.json": {
+      "bytes": 133094,
+      "mode": 420,
+      "sha256": "5d586fea71fc22c258b0737df95f72de5f54bb4227282aadd632aaef2d4597dd"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/event_987/round/stdout.json.identifiers.json": {
+      "bytes": 125665,
+      "mode": 420,
+      "sha256": "b548cb76d97a51f70ebfa4928cff78effc64dea3624bcc51274c2bb3b7da9ab2"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/execution.json": {
+      "bytes": 436251,
+      "mode": 420,
+      "sha256": "3aefb4ca476adacbcfa31ae988c675d967f538eb43cb06bf248a0afc13fdc475"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/native_contexts.json": {
+      "bytes": 197599,
+      "mode": 420,
+      "sha256": "d937f7f85a224a3e131d13c04248e79be84b1fc0d3121c31ebdb6e5789ccd170"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/outer_reaping.json": {
+      "bytes": 205480,
+      "mode": 420,
+      "sha256": "2e2966b4ef5cba41eb28f8c3d6a38af4fb0cfc717fb10fdf289a767e47d83070"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/prelaunch_review.json": {
+      "bytes": 205901,
+      "mode": 420,
+      "sha256": "44fcc1649da8ce59e2b686d23331cf5683a99f269eb623f3225824c32c2fc3a1"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/prepared.json": {
+      "bytes": 24760,
+      "mode": 420,
+      "sha256": "85589144a5760543af29011d5df085455bd8a935c7141451ca7e190de5392606"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/run.py": {
+      "bytes": 17266,
+      "mode": 420,
+      "sha256": "db5e256d139fa67b08b7cba8992855fd42d5974208dffe378af3f1e6ec375b3a"
+    },
+    "data/development/hayward_cmj_tangent_half_step_001/summary.json": {
+      "bytes": 412961,
+      "mode": 420,
+      "sha256": "78d5cfa9f2af3d1e1f48f4251516722757e4a9b06623efa67bc6602b7b95908a"
+    },
+    "data/development/hayward_cmj_tangent_half_step_review_001/README.md": {
+      "bytes": 2130,
+      "mode": 420,
+      "sha256": "0881d79071841f71ad0117a2630fa5dff2fc2063f414a4509da604da16417e05"
+    },
+    "data/development/hayward_cmj_tangent_half_step_review_001/check_saved.py": {
+      "bytes": 17546,
+      "mode": 420,
+      "sha256": "794a9f451cc7a2aa4bd7d5064d31f8758d5dc688daa98ceb7f2759533983e599"
+    },
+    "data/development/hayward_cmj_tangent_half_step_review_001/execution.json": {
+      "bytes": 573,
+      "mode": 420,
+      "sha256": "f01d8fcebddc24cdc8799290c6b3c921568afc5349aad470a888fc0c1590412c"
+    },
+    "data/development/hayward_cmj_tangent_half_step_review_001/review.json": {
+      "bytes": 214938,
+      "mode": 420,
+      "sha256": "31a42fe26d47987e6afa065e60498ec8d3839793fe4f28d04657702db62f9c88"
+    },
+    "data/development/hayward_cmj_tangent_half_step_review_001/source_review.json": {
+      "bytes": 772,
+      "mode": 420,
+      "sha256": "3a9d02fc5cef18652c615b29dbbb1ce108323c18fc9546ca6b2d6fa8a5f167ff"
+    },
+    "report/recovery_checkpoint.tex": {
+      "bytes": 78559,
+      "mode": 420,
+      "sha256": "296679067b7831fb723f1a9a900037f8dd95ff273ed37e4a88947422a46b374d"
+    },
+    "report/report.pdf": {
+      "bytes": 2436736,
+      "mode": 420,
+      "sha256": "0d38fc80c16c5562ba94fe9756eb5b7b8301f77c74b552a42d647743a662cbf7"
+    }
+  },
+  "group_counts": {
+    "cmj_half_step_kernel_report_001": 16,
+    "hayward_cmj_fixed_polygon_kernel_001": 66,
+    "hayward_cmj_half_gradient_comparison_001": 8,
+    "hayward_cmj_post_half_step_tangent_001": 14,
+    "hayward_cmj_post_half_step_tangent_review_001": 6,
+    "hayward_cmj_post_step_zero_support_001": 14,
+    "hayward_cmj_post_step_zero_support_review_001": 6,
+    "hayward_cmj_post_step_zero_support_review_002": 7,
+    "hayward_cmj_tangent_half_step_001": 25,
+    "hayward_cmj_tangent_half_step_review_001": 5,
+    "updated_shared_documents": 4
+  },
+  "inventory_review_sha256": "e6efa06dde25b398ae45e77ff122e2043cb0aaba61cb633ca72af51b62f7c257",
+  "limits": "No full stationarity, source derivative, first-arrival or inverse acceptance claim. Original failure flags and 1 reproduced/61 partial panel counts remain unchanged.",
+  "main_baseline_pins_unchanged": 13,
+  "preparer_sha256": "2be46dada82b1fd297946a902de18fda5611e5473f7237fb2dbe92763b7917da",
+  "prior_deliveries_sha256": {
+    "data/development/cmj_tangent_continuation_delivery.json": "be2e1fe49fbaed73563ab08070525fc35bf485274a23f6baa5d20d6ea20f95e0",
+    "data/development/cmj_tangent_step_delivery.json": "764b8a807761d6bde67ed66c22145790371f0ac369fd949fe491d4f85894e56e"
+  },
+  "prior_immutable_members_verified": 275,
+  "review_gate_sha256": {
+    "data/development/cmj_half_step_kernel_report_001/RESULTS.md": "8ca53c77824aa66047cb2a589654590ffa3b11074e99cc682c1386d3c2e37904",
+    "data/development/cmj_half_step_kernel_report_001/render_receipt.json": "1727c6b894f08cdb8a2730b47a99bbfd874095054e342ccc4cb0853682924c7f",
+    "data/development/cmj_half_step_kernel_report_001/validation.json": "a932eed55821624f48e4533f4894c78254fdcb3107a753be63a9c2b05c55b0a2",
+    "data/development/cmj_half_step_kernel_report_001/visual_review.json": "026a4caa2ba405e82f5d8f2d37b2fa3ca657fc9edeb036edd67e6066136c287f",
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/review.json": "c37e04d163a922e822df00bf95bc122736459becea753ec270bd00a945eaa440",
+    "data/development/hayward_cmj_half_gradient_comparison_001/execution_receipt.json": "278294323bcab5cadd4ba2655248caad6264b9431116a09eb214e173dc63b156",
+    "data/development/hayward_cmj_half_gradient_comparison_001/summary.json": "775754c10cad0f57bba55da4d21f05cea4a69d8f63586b881dfa4fdf765a736f",
+    "data/development/hayward_cmj_post_half_step_tangent_review_001/review.json": "d16b1da181b06530ed283ee0cd90eecc642bdd6b65674905ab5863e1b176a818",
+    "data/development/hayward_cmj_post_step_zero_support_review_001/execution_attempt_001.json": "118b9d3ce4a947de7619d781a77dccf6e5c48059efb4a5cc0933154212a95f68",
+    "data/development/hayward_cmj_post_step_zero_support_review_002/review.json": "784f1b4d4ac732819d4848625c812da5c6df0bd7c78f541187e66dfc1b3098f4",
+    "data/development/hayward_cmj_tangent_half_step_review_001/review.json": "31a42fe26d47987e6afa065e60498ec8d3839793fe4f28d04657702db62f9c88"
+  },
+  "scope": "Accepted half steps, historical zero support and retained failed/corrected checker, post-half components and support, fixed-polygon evaluator benchmark, saved half-gradient comparison, updated report.",
+  "total_bytes": 31303570
+}

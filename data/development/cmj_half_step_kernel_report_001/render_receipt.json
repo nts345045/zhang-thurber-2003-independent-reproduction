@@ -1,0 +1,36 @@
+{
+  "status": "completed_and_reaped",
+  "owner": "earthscope_discovery",
+  "observed_utc": "2026-10-10T13:32:23.928612Z",
+  "command": [
+    "pdftoppm",
+    "-f",
+    "27",
+    "-l",
+    "30",
+    "-scale-to",
+    "1800",
+    "-png",
+    "report/report.pdf",
+    "tmp/cmj_half_step_kernel_report_page"
+  ],
+  "working_directory": "repository root",
+  "tool_session_id": 32419,
+  "tool_chunk_id": "396e3e",
+  "return_code": 0,
+  "report_sha256": "0d38fc80c16c5562ba94fe9756eb5b7b8301f77c74b552a42d647743a662cbf7",
+  "validation_sha256": "a932eed55821624f48e4533f4894c78254fdcb3107a753be63a9c2b05c55b0a2",
+  "pdf_pages": [
+    27,
+    28,
+    29,
+    30
+  ],
+  "rendered_page_sha256": {
+    "tmp/cmj_half_step_kernel_report_page-027.png": "d1fe32916eba5644dfbd9d2f551a44e7d9b852f55d960bd5d8225f8b45273b92",
+    "tmp/cmj_half_step_kernel_report_page-028.png": "8f7c21c0a596fa6dd6146b7d8a94236d0c6e76d2c7be960033ecc50e9d78a034",
+    "tmp/cmj_half_step_kernel_report_page-029.png": "6b6f163b36d94bfc92ddec9a8eacf4627abb16727f3c5de783ff3e78575f9526",
+    "tmp/cmj_half_step_kernel_report_page-030.png": "cfc2b3554d05f09e73cbcb9b9d02e4c9bc79ee427ce4127033cd600011b3497e"
+  },
+  "author_visual_readback": "All four pages inspected: equations, Tables 6/7, Figure 12 and section transition legible, no clipping or overlap; root independent visual review recorded separately."
+}

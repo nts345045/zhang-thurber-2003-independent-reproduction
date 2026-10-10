@@ -1,0 +1,42 @@
+{
+  "checks": [
+    "All numeric binary64 decimals/hex/rational coordinates and direction values match saved records.",
+    "Grid uses original exact nodal values in x-fastest order.",
+    "All 18 original catalog uses/native contexts copied unchanged; both false flags and all blank source partials retained.",
+    "All eight full/per-edge action bounds sum exactly; four available derivative oracles and four unavailable statuses explicit.",
+    "Four pair status/alpha records preserve two full-step rejections and two half-step acceptances."
+  ],
+  "command": [
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "LC_ALL=C",
+    "/usr/libexec/platform-python3.6",
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/prepare_inputs.py"
+  ],
+  "compiler_calls": 0,
+  "evaluator_calls": 0,
+  "failed_preparation_attempt": "input_preparation_attempt_001/execution.json",
+  "input_pins_verified": 112,
+  "input_preparation_sha256": "691bd6ee9013faf27049dcfcabfc782cfa05d730f28784dfa6528e8fc0b514d0",
+  "native_contexts_sha256": "d937f7f85a224a3e131d13c04248e79be84b1fc0d3121c31ebdb6e5789ccd170",
+  "observed_utc": "2026-10-10T13:12:43.901894Z",
+  "oracle_sha256": "0db545a3d63452b4244f2295661001a1ed488e3b0f22886dffd6927f6fecd367",
+  "output_pins_verified": 24,
+  "preceding_readback_syntax_attempt": "Inline checker had an IndentationError before execution or writes; corrected without changing prepared files.",
+  "primitive_calls": 0,
+  "readback_counts": {
+    "available_derivative_oracles": 4,
+    "catalog_uses": 18,
+    "direction_components": 6180,
+    "edges": 8232,
+    "numeric_files": 11,
+    "original_false_statuses": 2,
+    "path_components": 24720,
+    "path_nodes": 8240
+  },
+  "return_code": 0,
+  "session_id": 97192,
+  "source_sha256": "7610aaffb1816295109af70845a17fb93dada4eb27693489d0e6c8b84ea0a1b1",
+  "status": "prepared_and_reaped_readback_passed",
+  "tool_completion_chunk": "cd9b63"
+}
