@@ -1,0 +1,11 @@
+--- check_saved_before_outer_context.py
++++ check_saved.py
+@@ -346,7 +346,7 @@
+     pin(RUN / 'outer_reaping.json', sha(RUN / 'outer_reaping.json'))
+     require(all(summary[k] == 0 for k in ('tangent_integrations', 'normal_integrations', 'action_integrations', 'metric_solves', 'rounded_trials', 'trace_calls', 'field_calls', 'optimizer_iterations', 'subprocess_calls')), 'No numerical primitive or native calls')
+     identities = read(RUN / 'native_contexts.json')
+-    require(identities == summary['native_contexts'] == execution['native_contexts'] == read(POST / 'native_contexts.json') == read(STEP / 'native_contexts.json'), 'Unchanged full identity roster')
++    require(identities == summary['native_contexts'] == execution['native_contexts'] == outer['native_contexts'] == read(POST / 'native_contexts.json') == read(STEP / 'native_contexts.json'), 'Unchanged full identity roster')
+     require([v['event'] for v in identities] == [981, 987] and [v['event'] for v in summary['cases']] == [981, 987], 'Exact two-case roster')
+     prior = read(PRIOR_REVIEW); require(prior['status'] == 'passed', 'Passed prior component review')
+     for key, name in [('native_prepared_sha256', 'prepared.json'), ('native_summary_sha256', 'summary.json'), ('native_execution_sha256', 'execution.json'), ('outer_reaping_sha256', 'outer_reaping.json')]:

@@ -159,8 +159,38 @@ and the original failed flags remain unchanged.
 A [second full-size tangent trial](data/development/hayward_cmj_tangent_step_002/RESULTS.md)
 is rejected for each ray: action increases by 3.0212e-10 and 2.7020e-10 s,
 despite negative initial slopes. Exact saved readback confirms both increases
-and the rejection decisions. The first accepted paths remain the current
-state; shorter steps along the new directions have not yet been evaluated.
+and the rejection decisions. Reusing those directions at
+[half length](data/development/hayward_cmj_tangent_half_step_001/RESULTS.md)
+decreases action by 1.9272e-11 and 7.5767e-11 s; both trials pass the same
+conservative Armijo check. Their maximum movements are 0.04553 and 0.02491 m.
+These half-step paths become the retained diagnostic state. Both action
+changes still exceed the combined stopping scale in magnitude.
+
+The [post-half gradient and support check](data/development/hayward_cmj_post_half_step_tangent_001/RESULTS.md)
+reduces the available norms to 2.5528e-6 and 6.7473e-6 s/km, with unchanged
+masks. Both remain above 1e-7, and the last accepted changes remain above
+1e-11 s in magnitude. The exact face-sign checks pass, but the constructed
+full supporting vectors do not establish the minimum support residual.
+Original failed flags remain unchanged.
+
+A [separate support calculation](data/development/hayward_cmj_post_step_zero_support_001/RESULTS.md)
+on the earlier first-step paths proves that zero normal support is feasible
+over all 65 aligned face pieces. It retains ordinary entry and exit terms,
+giving full-vector norms of 4.4155e-5 and 2.4963e-5 s/km. These are norms of
+one feasible vector; they do not establish the minimum support residual or
+stationarity. A saved-data checker first failed on equivalent hexadecimal
+spellings; its corrected readback passes without changing numerical results.
+
+The [existing C++ evaluator comparison](data/development/hayward_cmj_fixed_polygon_kernel_001/RESULTS.md)
+checks all eight saved polygons. Its paired action differences reproduce all
+four full-step rejection and half-step acceptance decisions, with errors below
+4.0e-17 s. Available gradient-vector errors on the face and first-step paths
+are below 1.057e-15 s/km. Each path evaluation takes 1.84–3.42 ms in this
+single batch. These results support further bounded iteration with the
+existing integration method; they do not certify convergence or source accuracy.
+The separate [saved half-gradient comparison](data/development/hayward_cmj_half_gradient_comparison_001/RESULTS.md)
+finds available-vector errors below 1.020e-15 s/km on both half-step paths,
+using the existing emitted C++ values without rerunning the evaluator.
 
 A [bounded backtracking candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)
 retains the original, initially validated ray kernel and changes only the

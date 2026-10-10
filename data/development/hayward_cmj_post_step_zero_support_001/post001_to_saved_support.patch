@@ -1,0 +1,350 @@
+--- hayward_cmj_post_step_tangent_001/run.py
++++ hayward_cmj_post_step_zero_support_001/run.py
+@@ -1,5 +1,8 @@
+ #!/usr/bin/env python3
+-"""Available tangent bounds on two saved rounded trials; no search or action."""
++"""Saved accepted post001 components plus exact one-sided polynomial signs.
++
++No tangent/action integration, metric, rounding, ray, field or optimizer call.
++"""
+ import csv
+ import datetime
+ from fractions import Fraction as Q
+@@ -14,12 +17,11 @@
+ sys.dont_write_bytecode=True
+ HERE=Path(__file__).resolve().parent
+ ROOT=HERE.parents[2]
++POST=ROOT/'data/development/hayward_cmj_post_step_tangent_001'
++REVIEW=ROOT/'data/development/hayward_cmj_post_step_tangent_review_001'
+ STEP=ROOT/'data/development/hayward_cmj_tangent_step_001'
+-REVIEW=ROOT/'data/development/hayward_cmj_tangent_step_review_001'
+ START=ROOT/'data/development/hayward_cmj_face_action_001'
+-PRE=ROOT/'data/development/hayward_cmj_face_action_review_001'
+ SOURCE=ROOT/'data/development/cmj_tangent_step_source_002/source'
+-SETTINGS=dict(terms=8,subdivisions=1,bits=128)
+ 
+ 
+ def require(ok,message):
+@@ -60,6 +62,74 @@
+ 
+ 
+ def add(a,b):return a[0]+b[0],a[1]+b[1]
++
++
++def zero_normal_support(grid,a,b,t):
++    """Exact whole-patch signs only: no reciprocal or normal integration."""
++    a,b,e,aligned,pieces=t.partition(grid,a,b)
++    require(len(aligned)==1,'Zero-normal proof requires one aligned face')
++    axis,index=aligned[0];records=[]
++    for left,right,cell in pieces:
++        minus=list(cell);minus[axis]=index-1
++        plus=list(cell);plus[axis]=index
++        vm,gm,bm=t.cell_polynomials(grid,a,e,left,right,tuple(minus))
++        vp,gp,bp=t.cell_polynomials(grid,a,e,left,right,tuple(plus))
++        require(vm==vp and min(bm[0],bp[0])>0,'Continuous positive face velocity')
++        pm,pp=gm[axis],gp[axis]
++        require(len(pm)<=3 and len(pp)<=3,'One-sided normal is not quadratic')
++        lower=t.quadratic_bounds(pm);upper=t.quadratic_bounds(pp)
++        passed=lower[0]>=0 and upper[1]<=0
++        records.append(dict(u=(left,right),normal_axis=axis,normal_coordinate=grid['axes'][axis][index],
++                            minus_cell=minus,plus_cell=plus,velocity_polynomial=vm,
++                            velocity_vertex_bounds=(min(bm[0],bp[0]),max(bm[1],bp[1])),
++                            minus_velocity_normal_polynomial=pm,plus_velocity_normal_polynomial=pp,
++                            minus_exact_range=lower,plus_exact_range=upper,zero_normal_supported=passed,
++                            both_polynomials_zero=all(x==0 for x in pm+pp),
++                            theta_numerator=pm,theta_denominator=t.padd(pm,t.scale(pp,-1))))
++    return dict(status='proved_zero_normal_support' if all(r['zero_normal_supported'] for r in records)
++                else 'inconclusive_sign_condition_failed',patches=records,
++                parameter='Local patch parameter t in [0,1]; global edge interval u recorded separately.',
++                units='Velocity normal derivatives: (km/s)/km = 1/s.',
++                extrema_rule='Exact rational endpoint values and every interior stationary point of the quadratic.',
++                selection='Where gm-gp>0, theta=gm/(gm-gp) in [0,1] and centered lambda=2theta-1. '
++                          'At gm-gp=0, the proved signs imply gm=gp=0; choose theta=1/2, lambda=0.',
++                first_variation='Positive continuous v gives s_minus,n=-gm/v^2<=0<=-gp/v^2=s_plus,n. '
++                                'The same pointwise mixture makes both weighted endpoint normal moments zero.')
++
++
++def supporting_vector(path,edge_records,proofs,axes):
++    """One feasible vector, retaining ordinary entry/exit normal terms."""
++    failed=[v['edge'] for v in proofs if v['status']!='proved_zero_normal_support']
++    if failed:
++        return dict(status='inconclusive_sign_condition_failed',failed_edges=failed,
++                    vector=None,projected_components=None,norm=None,
++                    interpretation='The zero-normal choice was not proved; no alternative support search or integration.')
++    proved={v['edge'] for v in proofs}
++    normal_slots={(record['edge']+side,k) for record in edge_records for side in (0,1)
++                  for k in record['blocked_axes'] if 0<record['edge']+side<len(path)-1}
++    components=[[(Q(0),Q(0)) for k in range(3)] for p in path]
++    components[0]=components[-1]=None;ordinary=[];zero=[]
++    for record in edge_records:
++        edge=record['edge'];blocked=record['blocked_axes']
++        require(not blocked or edge in proved,'Missing aligned-edge proof')
++        for side in (0,1):
++            node=edge+side
++            if node in (0,len(path)-1):continue
++            for k,value in enumerate(record['components'][side]):
++                require((value is None)==(k in blocked),'Support edge availability')
++                if value is None:zero.append(dict(edge=edge,side=side,node=node,axis=k,contribution=(Q(0),Q(0))))
++                else:
++                    term=interval(value);components[node][k]=add(components[node][k],term)
++                    if (node,k) in normal_slots:ordinary.append(dict(edge=edge,side=side,node=node,axis=k,contribution=term))
++    norm,projected,blocked=projected_norm(path,components,axes)
++    require(not blocked,'Feasible full vector must cover every free coordinate')
++    return dict(status='feasible_zero_aligned_normal_support',
++                vector=[dict(node=i,components=components[i]) for i in range(1,len(path)-1)],
++                zero_aligned_contributions=zero,ordinary_contributions_in_blocked_slots=ordinary,
++                projected_components=projected,norm=norm,
++                interpretation='Upper squared norm bounds one feasible full supporting vector, not the minimum. '
++                               'Ordinary unaligned-edge contributions remain, including every face entry/exit normal. '
++                               'A large upper bound is inconclusive; no convergence flag or global/source accuracy claim.')
+ 
+ 
+ def projected_norm(path,components,axes):
+@@ -106,144 +176,113 @@
+     return dict(axes=axes,velocities=velocity),model
+ 
+ 
+-def load_case(event,identity,pre):
+-    folder=STEP/('event_'+str(event));result=read(folder/'result.json.gz');value=result['result']
+-    rounded=read(folder/'round/stdout.json');tokens=read(folder/'round/stdout.json',parse_float=str,parse_int=str)
+-    for path in (folder/'result.json.gz',folder/'round/stdout.json'):
+-        attached=read(Path(str(path)+'.identifiers.json'))
+-        require(attached['native_context']==identity['native_context'] and attached['catalog_uses']==identity['catalog_uses']
+-                and attached['expected_file']==str(path.relative_to(ROOT)),'Inherited numeric-file sidecar')
+-    require(result['event']==event and result['station']==160 and result['native_context']==identity['native_context']
+-            and result['catalog_uses']==identity['catalog_uses'],'Full native/catalog identity')
+-    require(len(identity['catalog_uses'])==9 and value['status']=='diagnostic_trial_accepted','Reviewed single-trial outcome')
+-    require(result['candidate_convergence_status'] is None and value['new_convergence_status'] is None and not value['original_status_changed'],'No status promotion')
++def load_case(identity,grid,review):
++    event=identity['event'];file=POST/('event_'+str(event)+'.json.gz');post=read(file)
++    trial=read(STEP/('event_'+str(event))/'result.json.gz');path=[tuple(map(Q,p)) for p in trial['result']['trial']]
++    require(len(path)==(1029 if event==981 else 1031),'Fixed native node roster')
++    require(post['status']=='completed_available_tangent_bounds' and post['ineligibility']==[],'Eligible saved post001 components')
++    require(trial['result']['status']=='diagnostic_trial_accepted','Use retained accepted first trial only')
++    for record in (post,trial):
++        require(all(record[k]==identity[k] for k in ('event','station','native_context','catalog_uses')),'Full native/catalog identities')
++        require(record['candidate_convergence_status'] is None,'No candidate flag')
+     status=identity['native_context']['original_status']
+-    require(status==result['original_status'] and status['ray_converged']==status['ray_derivatives_evaluated']=='0'
+-            and all(status['source_d'+k]=='' for k in 'xyz'),'Original flags/blank partials')
+-    require(rounded==value['rounded_record'] and len(rounded['trial'])==len(rounded['trial_hex']),'Saved rounded-output join')
+-    path=[tuple(map(Q,p)) for p in value['trial']];require(len(path)==(1029 if event==981 else 1031),'Fixed node roster')
+-    require(len(rounded['trial'])==3*len(path),'Rounded coordinate inventory');provenance=[]
+-    for node,p in enumerate(path):
+-        for axis,x in enumerate(p):
+-            slot=3*node+axis;a=float(rounded['trial'][slot]);b=float.fromhex(rounded['trial_hex'][slot])
+-            require(a.hex()==b.hex() and Q(a)==x and float(tokens['trial'][slot]).hex()==a.hex(),'Rounded decimal/hex/exact join')
+-        provenance.append(dict(node=node,exact_rational=p,decimal_tokens=tokens['trial'][3*node:3*node+3],
+-                               binary64_hex=rounded['trial_hex'][3*node:3*node+3]))
+-    before=[tuple(map(Q,p['candidate_exact_rational'])) for p in result['coordinate_provenance']]
+-    require(path[0]==before[0] and path[-1]==before[-1],'Fixed endpoints')
+-    require(pre['event']==event and pre['station']==160 and pre['native_context']==identity['native_context'],'Pre-step norm native join')
+-    components=[[None]*3 for p in before];components[0]=components[-1]=None;seen=set()
+-    for row in pre['components']:
+-        node=row['node'];axis='xyz'.index(row['axis']);require((node,axis) not in seen and 0<node<len(before)-1,'Pre-step sparse inventory')
+-        require(Q(row['coordinate_exact'])==before[node][axis],'Pre-step coordinate join')
+-        seen.add((node,axis));components[node][axis]=interval(row['component_bounds'])
+-    return path,before,components,provenance,result
++    require(status['ray_converged']==status['ray_derivatives_evaluated']=='0'
++            and all(status['source_d'+k]=='' for k in 'xyz'),'Original false flags and blank partials')
++    require(post['original_convergence_flag']=='0' and len(identity['catalog_uses'])==9,'Original flag/catalog roster')
++    require(post['prior_result_sha256']==sha(STEP/('event_'+str(event))/'result.json.gz'),'Accepted path byte binding')
++    coordinates=post['coordinate_provenance']
++    require([tuple(map(Q,v['exact_rational'])) for v in coordinates]==path
++            and [v['node'] for v in coordinates]==list(range(len(path))),'Full exact saved coordinates')
++    before=[tuple(map(Q,p['candidate_exact_rational'])) for p in trial['coordinate_provenance']]
++    require(path[0]==before[0] and path[-1]==before[-1] and all(a!=b for a,b in zip(path,path[1:])),'Fixed endpoints and positive edges')
++    axes=grid['axes'];require(all(axes[k][0]<=p[k]<=axes[k][-1] for p in path for k in range(3)),'Physical box')
++    edge_records=post['tangent_edge_records'];require(len(edge_records)==len(path)-1,'Complete saved edges')
++    require(post['attempted_tangent_edges']==post['completed_tangent_edges']==len(path)-1,'Complete prior component pass')
++    alignment=[];blocked=set();components=[None]+[[(Q(0),Q(0)) for k in range(3)] for p in path[1:-1]]+[None]
++    for edge,(a,b,row) in enumerate(zip(path,path[1:],edge_records)):
++        faces=[(k,axis.index(a[k])) for k,axis in enumerate(axes) if a[k]==b[k] and a[k] in axis[1:-1]]
++        require(len(faces)<=1 and row['edge']==edge and row['endpoint_nodes']==[edge,edge+1]
++                and row['blocked_axes']==[k for k,index in faces],'Actual saved alignment')
++        alignment.append(dict(edge=edge,aligned_internal_faces=faces))
++        for side in (0,1):
++            node=edge+side
++            if node in (0,len(path)-1):require(row['components'][side] is None,'Fixed endpoint omission');continue
++            require(len(row['components'][side])==3,'Complete edge axes')
++            for k,value in enumerate(row['components'][side]):
++                require((value is None)==(k in row['blocked_axes']),'Saved edge availability')
++                if value is None:blocked.add((node,k))
++                else:components[node][k]=add(components[node][k],interval(value))
++    for node,k in blocked:components[node][k]=None
++    require(encoded(alignment)==post['aligned_edge_inventory'] and encoded(sorted(blocked))==post['geometric_blocked_slots'],'Geometric mask join')
++    require(encoded([dict(node=i,components=components[i]) for i in range(1,len(path)-1)])==post['free_node_components'],'Saved adjacent component sums')
++    norm,vector,unused=projected_norm(path,components,axes)
++    require(encoded(norm)==post['post_step_norm'] and encoded(vector)==post['available_projected_components'],'Reviewed available norm algebra')
++    audit=next(v for v in review['cases'] if v['event']==event)
++    require(all(audit[k]==identity[k] for k in ('event','station','native_context','catalog_uses'))
++            and interval(audit['post_squared_bounds'])==(norm['lower_squared'],norm['upper_squared']),'Independent saved norm review')
++    return path,post,norm
+ 
+ 
+ def main():
+     prepared=read(HERE/'prepared.json');approval=read(HERE/'prelaunch_review.json')
+-    require(approval.get('status')=='passed' and approval.get('prepared_sha256')==sha(HERE/'prepared.json'),'Independent prelaunch review required')
++    require(approval.get('status')=='passed' and approval.get('prepared_sha256')==sha(HERE/'prepared.json'),'Independent source/prelaunch review required')
+     def verify():
+         for base,pins in ((ROOT,prepared['input_sha256']),(HERE,prepared['output_sha256'])):
+-            for name,digest in pins.items():require(sha(base/name)==digest,'Changed pinned file: '+name)
++            for name,digest in pins.items():require(sha(base/name)==digest,'Changed pin: '+name)
+         for name,digest in prepared['runtime_sha256'].items():require(sha(Path(name))==digest,'Changed runtime: '+name)
+-    verify()
+-    review=read(REVIEW/'review.json');step_summary=read(STEP/'summary.json');outer=read(STEP/'outer_reaping.json')
+-    require(review['status']=='passed' and review['native_summary_sha256']==sha(STEP/'summary.json')
+-            and review['native_execution_sha256']==sha(STEP/'execution.json') and review['outer_reaping_sha256']==sha(STEP/'outer_reaping.json')
+-            and review['native_prepared_sha256']==sha(STEP/'prepared.json'),'Reviewed terminal input bindings')
+-    require(step_summary['status']=='completed_bounded_diagnostic' and outer['status']=='completed_and_reaped' and outer['tool_exit_code']==0,'Terminal prior calculation')
+-    for name,digest in step_summary['output_sha256'].items():require(sha(STEP/name)==digest,'Changed reviewed terminal output: '+name)
++    verify();review=read(REVIEW/'review.json');summary=read(POST/'summary.json')
++    require(review['status']=='passed','Passed post001 review')
++    for key,name in [('native_prepared_sha256','prepared.json'),('native_summary_sha256','summary.json'),
++                     ('native_execution_sha256','execution.json'),('outer_reaping_sha256','outer_reaping.json')]:
++        require(review[key]==sha(POST/name),'Post001 terminal review binding')
++    require(summary['status']=='completed_bounded_tangent_diagnostic','Terminal accepted-geometry components')
++    for name,digest in summary['output_sha256'].items():require(sha(POST/name)==digest,'Changed saved output')
+     identities=read(HERE/'native_contexts.json')
+-    require(identities==read(STEP/'native_contexts.json')==step_summary['native_contexts'] and [v['event'] for v in identities]==[981,987],'Exact two-case native roster')
++    require(identities==read(POST/'native_contexts.json')==summary['native_contexts']
++            and [v['event'] for v in identities]==[981,987],'Native roster')
+     for name in ('execution.json','summary.json','event_981.json.gz','event_987.json.gz'):
+-        require(not (HERE/name).exists(),'Preserve prior output: '+name)
++        require(not (HERE/name).exists(),'Preserve output: '+name)
+     os.environ.update(prepared['environment'])
+     ledger=dict(status='running',pid=os.getpid(),started_utc=now(),native_contexts=identities,
+-                attempted_tangent_edges=0,completed_tangent_edges=0,prepared_sha256=sha(HERE/'prepared.json'),
+-                prelaunch_review_sha256=sha(HERE/'prelaunch_review.json'),input_sha256=prepared['input_sha256'],
+-                environment={k:os.environ[k] for k in prepared['environment']})
++                prepared_sha256=sha(HERE/'prepared.json'),prelaunch_review_sha256=sha(HERE/'prelaunch_review.json'),
++                input_sha256=prepared['input_sha256'],environment={k:os.environ[k] for k in prepared['environment']},
++                sign_edges_completed=0,sign_patches_completed=0)
+     def update():
+         tmp=HERE/'execution.json.new';tmp.write_text(json.dumps(ledger,indent=2,sort_keys=True,allow_nan=False)+'\n');tmp.replace(HERE/'execution.json')
+     def interrupted(sig,unused):raise SystemExit(128+sig)
+     signal.signal(signal.SIGTERM,interrupted);signal.signal(signal.SIGINT,interrupted)
+     update();code=1;reports=[];active=None;destination=None
+     try:
+-        grid,model=load_model();pre_records=read(PRE/'tangent_norms.json')['cases'];pre={v['event']:v for v in pre_records}
+-        require(len(pre_records)==2 and set(pre)=={981,987},'Pre-step norm roster')
+-        require(model['native_contexts']==[v['native_context'] for v in identities],'Model full native context')
++        grid,model=load_model();require(model['native_contexts']==[v['native_context'] for v in identities],'Model native join')
+         sys.path.insert(0,str(SOURCE))
+         from diagnostics import trilinear_action_bounds as t
+         for name in ('trilinear_action_bounds','check_native_interface_support','first_arrival_1d_precise_turn_reference'):
+-            require(Path(sys.modules['diagnostics.'+name].__file__).resolve()==SOURCE/'diagnostics'/(name+'.py'),'Frozen numerical import')
++            require(Path(sys.modules['diagnostics.'+name].__file__).resolve()==SOURCE/'diagnostics'/(name+'.py'),'Frozen polynomial source')
+         for identity in identities:
+             event=identity['event'];destination=HERE/('event_'+str(event)+'.json.gz')
+-            active=dict(identity,status='loading_identified_trial',original_convergence_flag='0',candidate_convergence_status=None,
+-                        settings=SETTINGS,tangent_edge_records=[],attempted_tangent_edges=0,completed_tangent_edges=0)
++            active=dict(identity,status='loading_saved_components',original_convergence_flag='0',candidate_convergence_status=None,
++                        zero_normal_support_proofs=[],source_partials_evaluated=False)
+             save(HERE/(destination.name+'.identifiers.json'),dict(identity,expected_file=str(destination.relative_to(ROOT)),file_sha256=None,
+                  evidence_sha256=prepared['input_sha256'],prepared_sha256=sha(HERE/'prepared.json'),
+-                 coordinate_basis='Exact saved rounded diagnostic trial; failed-state/catalog identities retained',
+-                 node_order='Original order; fixed source node0, fixed receiver n-1; physical xyz',edge_order='edge e joins nodes e,e+1',
+-                 role='Available tangent bounds and exact norm algebra only; no new convergence flag'))
+-            path,before,pre_components,coordinates,prior=load_case(event,identity,pre[event])
+-            active.update(coordinate_provenance=coordinates,prior_result_sha256=sha(STEP/('event_'+str(event))/'result.json.gz'),
+-                          saved_trial_action=prior['result']['action']['trial_action'],interpretation='Saved action copied for geometry identity; not reevaluated.')
+-            axes=grid['axes'];aligned=[];blocked=set();reasons=[]
+-            for node,p in enumerate(path):
+-                if any(not axes[k][0]<=p[k]<=axes[k][-1] for k in range(3)):reasons.append(dict(reason='outside_physical_box',node=node))
+-            for edge,(a,b) in enumerate(zip(path,path[1:])):
+-                faces=[(k,axis.index(a[k])) for k,axis in enumerate(axes) if a[k]==b[k] and a[k] in axis[1:-1]]
+-                aligned.append(dict(edge=edge,aligned_internal_faces=faces))
+-                if a==b:reasons.append(dict(reason='zero_length_edge',edge=edge))
+-                if len(faces)>1:reasons.append(dict(reason='unsupported_multiple_aligned_faces',edge=edge,faces=faces))
+-                for k,unused in faces:
+-                    blocked.update((node,k) for node in (edge,edge+1) if 0<node<len(path)-1)
+-            active.update(aligned_edge_inventory=aligned,geometric_blocked_slots=sorted(blocked),ineligibility=reasons)
+-            if reasons:
+-                active['status']='ineligible_saved_trial';save(destination,active)
+-                reports.append(dict(identity,status=active['status'],ineligibility=reasons,tangent_edge_evaluations=0,
+-                                    result_file=destination.name,result_sha256=sha(destination),
+-                                    original_convergence_flag='0',candidate_convergence_status=None))
+-                active=None;destination=None;continue
+-            pre_norm,unused,pre_blocked=projected_norm(before,pre_components,axes)
+-            require(pre_norm['lower_squared']==Q(pre[event]['summary']['lower_squared']) and pre_norm['upper_squared']==Q(pre[event]['summary']['upper_squared']),
+-                    'Pre-step norm saved arithmetic')
+-            active['pre_step_norm']=pre_norm;active['status']='evaluating_available_tangents'
+-            components=[[(Q(0),Q(0)) for k in range(3)] for p in path];components[0]=components[-1]=None
+-            for edge,(a,b) in enumerate(zip(path,path[1:])):
+-                require(ledger['attempted_tangent_edges']<2058,'Fixed total edge budget')
+-                active['attempted_tangent_edges']+=1;ledger['attempted_tangent_edges']+=1;ledger['current_event']=event;ledger['current_edge']=edge
+-                if edge%64==0:update()
+-                record=t.edge_tangent_components(grid,a,b,SETTINGS)
+-                # Retain every returned record before subsequent assertions;
+-                # fixed endpoint values are omitted even in a failed case.
+-                for side in (0,1):
+-                    if edge+side in (0,len(path)-1):record['components'][side]=None
+-                active['tangent_edge_records'].append(dict(record,edge=edge,endpoint_nodes=[edge,edge+1]))
+-                active['completed_tangent_edges']+=1;ledger['completed_tangent_edges']+=1
+-                require(record['blocked_axes']==[k for k,index in aligned[edge]['aligned_internal_faces']],'Actual aligned-face mask')
+-                for side in (0,1):
+-                    node=edge+side
+-                    if node in (0,len(path)-1):continue
+-                    for k,bounds in enumerate(record['components'][side]):
+-                        require((bounds is None)==(k in record['blocked_axes']),'Edge component availability')
+-                        if bounds is not None:components[node][k]=add(components[node][k],interval(bounds))
+-            for node,k in blocked:components[node][k]=None
+-            post_norm,vector,post_blocked=projected_norm(path,components,axes)
+-            require(post_blocked==sorted(blocked),'Complete incident-edge blocked mask')
+-            comparison=dict(same_available_mask=set(pre_blocked)==blocked,newly_unavailable_slots=sorted(blocked-set(pre_blocked)),
+-                            newly_available_slots=sorted(set(pre_blocked)-blocked),pre=pre_norm,post=post_norm,
+-                            diagnostic_only=True,interpretation='Available components only; differing masks change the compared coordinate subset. No stopping decision.')
+-            if comparison['same_available_mask'] and pre_norm['lower_squared']>0:
+-                comparison['squared_norm_ratio_bounds']=(post_norm['lower_squared']/pre_norm['upper_squared'],post_norm['upper_squared']/pre_norm['lower_squared'])
+-            active.update(status='completed_available_tangent_bounds',free_node_components=[dict(node=i,components=components[i]) for i in range(1,len(path)-1)],
+-                          available_projected_components=vector,post_step_norm=post_norm,comparison=comparison)
++                 coordinate_basis='Retained accepted first trial, distinct from rejected second trial and provider catalog coordinates',
++                 role='Saved component assembly and exact whole-patch polynomial signs; no new integration or convergence flag'))
++            path,post,available=load_case(identity,grid,review)
++            active.update(coordinate_provenance=post['coordinate_provenance'],saved_components_sha256=sha(POST/('event_'+str(event)+'.json.gz')),
++                          available_tangent_norm=available,status='checking_exact_one_sided_signs')
++            for edge,(a,b,row) in enumerate(zip(path,path[1:],post['tangent_edge_records'])):
++                if not row['blocked_axes']:continue
++                proof=dict(zero_normal_support(grid,a,b,t),edge=edge,endpoint_nodes=[edge,edge+1])
++                active['zero_normal_support_proofs'].append(proof)
++                ledger['sign_edges_completed']+=1;ledger['sign_patches_completed']+=len(proof['patches']);update()
++            support=supporting_vector(path,post['tangent_edge_records'],active['zero_normal_support_proofs'],grid['axes'])
++            active.update(status='completed_saved_support_assessment',full_support=support,
++                          interpretation='Available tangent lower norm is a residual obstruction; full feasible-vector upper norm is a witness, not the minimum.')
+             verify();save(destination,active)
+-            reports.append(dict(identity,status=active['status'],result_file=destination.name,result_sha256=sha(destination),
+-                                tangent_edge_evaluations=active['completed_tangent_edges'],comparison=comparison,
++            reports.append(dict(identity,status=active['status'],support_status=support['status'],available_tangent_norm=available,
++                                feasible_full_support_norm=support['norm'],result_file=destination.name,result_sha256=sha(destination),
+                                 original_convergence_flag='0',candidate_convergence_status=None))
+             active=None;destination=None
+-        verify();ledger['status']='completed_bounded_tangent_diagnostic';code=0
++        verify();ledger['status']='completed_bounded_saved_support';code=0
+     except BaseException as exc:
+         if isinstance(exc,SystemExit) and isinstance(exc.code,int):code=exc.code
+         ledger.update(status='failed_preserved',error=dict(type=type(exc).__name__,message=str(exc)))
+@@ -251,15 +290,15 @@
+             active.update(status='failed_preserved',error=ledger['error']);save(destination,active)
+     finally:
+         outputs={str(p.relative_to(HERE)):sha(p) for p in sorted(HERE.glob('event_*')) if p.is_file()}
+-        summary=dict(status=ledger['status'],error=ledger.get('error'),native_contexts=identities,cases=reports,settings=SETTINGS,
+-                     attempted_tangent_edges=ledger['attempted_tangent_edges'],completed_tangent_edges=ledger['completed_tangent_edges'],
+-                     tangent_edge_budget=2058,action_integrations=0,metric_solves=0,rounded_trials=0,trace_calls=0,field_calls=0,optimizer_iterations=0,
+-                     prepared_sha256=sha(HERE/'prepared.json'),prelaunch_review_sha256=sha(HERE/'prelaunch_review.json'),output_sha256=outputs,
+-                     scope='Available tangent vector of the two already saved trials. No source/model partial or convergence/first-arrival certificate.')
+-        save(HERE/'summary.json',summary)
++        result=dict(status=ledger['status'],error=ledger.get('error'),native_contexts=identities,cases=reports,
++                    sign_edges_completed=ledger['sign_edges_completed'],sign_patches_completed=ledger['sign_patches_completed'],
++                    tangent_integrations=0,normal_integrations=0,action_integrations=0,metric_solves=0,rounded_trials=0,
++                    trace_calls=0,field_calls=0,optimizer_iterations=0,subprocess_calls=0,
++                    prepared_sha256=sha(HERE/'prepared.json'),prelaunch_review_sha256=sha(HERE/'prelaunch_review.json'),output_sha256=outputs,
++                    scope='One zero-aligned-normal feasible support on the retained accepted first trial; no support minimization or stopping decision.')
++        save(HERE/'summary.json',result)
+         ledger.update(return_code=code,finished_utc=now(),summary_sha256=sha(HERE/'summary.json'),output_sha256=outputs,
+-                      subprocess_calls=0,outer_reaping_owner='root; separate terminal receipt after this process exits')
+-        update()
++                      outer_reaping_owner='root; separate terminal receipt after this process exits');update()
+     return code
+ 
+ 

@@ -1,0 +1,190 @@
+--- data/development/hayward_cmj_post_step_tangent_001/run.py
++++ data/development/hayward_cmj_post_half_step_tangent_001/run.py
+@@ -1,10 +1,11 @@
+ #!/usr/bin/env python3
+-"""Available tangent bounds on two saved rounded trials; no search or action."""
++"""One tangent pass and exact zero-support signs on the accepted half steps."""
+ import csv
+ import datetime
+ from fractions import Fraction as Q
+ import gzip
+ import hashlib
++import importlib.util
+ import json
+ import os
+ from pathlib import Path
+@@ -14,10 +15,13 @@
+ sys.dont_write_bytecode=True
+ HERE=Path(__file__).resolve().parent
+ ROOT=HERE.parents[2]
+-STEP=ROOT/'data/development/hayward_cmj_tangent_step_001'
+-REVIEW=ROOT/'data/development/hayward_cmj_tangent_step_review_001'
++STEP=ROOT/'data/development/hayward_cmj_tangent_half_step_001'
++REVIEW=ROOT/'data/development/hayward_cmj_tangent_half_step_review_001'
+ START=ROOT/'data/development/hayward_cmj_face_action_001'
+-PRE=ROOT/'data/development/hayward_cmj_face_action_review_001'
++PRE=ROOT/'data/development/hayward_cmj_post_step_tangent_001'
++PRE_REVIEW=ROOT/'data/development/hayward_cmj_post_step_tangent_review_001'
++ZERO=ROOT/'data/development/hayward_cmj_post_step_zero_support_001'
++ZERO_REVIEW=ROOT/'data/development/hayward_cmj_post_step_zero_support_review_002'
+ SOURCE=ROOT/'data/development/cmj_tangent_step_source_002/source'
+ SETTINGS=dict(terms=8,subdivisions=1,bits=128)
+ 
+@@ -129,15 +133,37 @@
+             require(a.hex()==b.hex() and Q(a)==x and float(tokens['trial'][slot]).hex()==a.hex(),'Rounded decimal/hex/exact join')
+         provenance.append(dict(node=node,exact_rational=p,decimal_tokens=tokens['trial'][3*node:3*node+3],
+                                binary64_hex=rounded['trial_hex'][3*node:3*node+3]))
+-    before=[tuple(map(Q,p['candidate_exact_rational'])) for p in result['coordinate_provenance']]
++    before=[tuple(map(Q,p['exact_rational'])) for p in result['coordinate_provenance']]
+     require(path[0]==before[0] and path[-1]==before[-1],'Fixed endpoints')
+-    require(pre['event']==event and pre['station']==160 and pre['native_context']==identity['native_context'],'Pre-step norm native join')
+-    components=[[None]*3 for p in before];components[0]=components[-1]=None;seen=set()
+-    for row in pre['components']:
+-        node=row['node'];axis='xyz'.index(row['axis']);require((node,axis) not in seen and 0<node<len(before)-1,'Pre-step sparse inventory')
+-        require(Q(row['coordinate_exact'])==before[node][axis],'Pre-step coordinate join')
+-        seen.add((node,axis));components[node][axis]=interval(row['component_bounds'])
++    require(all(pre[k]==identity[k] for k in ('event','station','native_context','catalog_uses')),'Pre-step full native join')
++    require(pre['status']=='completed_available_tangent_bounds' and not pre['ineligibility']
++            and pre['original_convergence_flag']=='0' and pre['candidate_convergence_status'] is None,'Reviewed pre-step status')
++    require(pre['coordinate_provenance']==result['coordinate_provenance']
++            and [v['node'] for v in pre['coordinate_provenance']]==list(range(len(before))),'Retained first-step geometry')
++    require(len(pre['free_node_components'])==len(before)-2
++            and [v['node'] for v in pre['free_node_components']]==list(range(1,len(before)-1)),'Complete pre-step raw vector')
++    components=[None]+[[None if v is None else interval(v) for v in row['components']]
++                      for row in pre['free_node_components']]+[None]
++    require(Q(value['alpha'])==Q(1,2) and value['metric_solves']==0 and value['rounded_trials']==1,'Accepted fixed half step')
++    require(result['rejected_full_step']['status']=='diagnostic_trial_not_accepted','Preserved rejected full step')
+     return path,before,components,provenance,result
++
++
++def reviewed_terminal(folder,review_folder,identities,expected_status):
++    review=read(review_folder/'review.json');summary=read(folder/'summary.json');outer=read(folder/'outer_reaping.json')
++    require(review['status']=='passed','Passed independent terminal review')
++    for key,name in (('native_prepared_sha256','prepared.json'),('native_summary_sha256','summary.json'),
++                     ('native_execution_sha256','execution.json'),('outer_reaping_sha256','outer_reaping.json')):
++        require(review[key]==sha(folder/name),'Independent terminal input binding')
++    require(summary['status']==expected_status and outer['status']=='completed_and_reaped'
++            and outer['tool_exit_code']==0,'Reaped prior calculation')
++    require(summary['native_contexts']==identities==read(folder/'native_contexts.json'),'Prior full native roster')
++    require(len(review['cases'])==2 and [v['event'] for v in review['cases']]==[981,987],'Reviewed case roster')
++    for identity,case in zip(identities,review['cases']):
++        require(all(case[k]==identity[k] for k in ('event','station','native_context','catalog_uses'))
++                and case['original_convergence_flag']=='0' and case['candidate_convergence_status'] is None,'Reviewed identities/statuses')
++    for name,digest in summary['output_sha256'].items():require(sha(folder/name)==digest,'Changed prior output: '+name)
++    return review
+ 
+ 
+ def main():
+@@ -148,19 +174,17 @@
+             for name,digest in pins.items():require(sha(base/name)==digest,'Changed pinned file: '+name)
+         for name,digest in prepared['runtime_sha256'].items():require(sha(Path(name))==digest,'Changed runtime: '+name)
+     verify()
+-    review=read(REVIEW/'review.json');step_summary=read(STEP/'summary.json');outer=read(STEP/'outer_reaping.json')
+-    require(review['status']=='passed' and review['native_summary_sha256']==sha(STEP/'summary.json')
+-            and review['native_execution_sha256']==sha(STEP/'execution.json') and review['outer_reaping_sha256']==sha(STEP/'outer_reaping.json')
+-            and review['native_prepared_sha256']==sha(STEP/'prepared.json'),'Reviewed terminal input bindings')
+-    require(step_summary['status']=='completed_bounded_diagnostic' and outer['status']=='completed_and_reaped' and outer['tool_exit_code']==0,'Terminal prior calculation')
+-    for name,digest in step_summary['output_sha256'].items():require(sha(STEP/name)==digest,'Changed reviewed terminal output: '+name)
+     identities=read(HERE/'native_contexts.json')
+-    require(identities==read(STEP/'native_contexts.json')==step_summary['native_contexts'] and [v['event'] for v in identities]==[981,987],'Exact two-case native roster')
++    require([v['event'] for v in identities]==[981,987],'Exact two-case native roster')
++    reviewed_terminal(STEP,REVIEW,identities,'completed_bounded_half_step_diagnostic')
++    pre_review=reviewed_terminal(PRE,PRE_REVIEW,identities,'completed_bounded_tangent_diagnostic')
++    reviewed_terminal(ZERO,ZERO_REVIEW,identities,'completed_bounded_saved_support')
+     for name in ('execution.json','summary.json','event_981.json.gz','event_987.json.gz'):
+         require(not (HERE/name).exists(),'Preserve prior output: '+name)
+     os.environ.update(prepared['environment'])
+     ledger=dict(status='running',pid=os.getpid(),started_utc=now(),native_contexts=identities,
+-                attempted_tangent_edges=0,completed_tangent_edges=0,prepared_sha256=sha(HERE/'prepared.json'),
++                attempted_tangent_edges=0,completed_tangent_edges=0,sign_edges_completed=0,sign_patches_completed=0,
++                prepared_sha256=sha(HERE/'prepared.json'),
+                 prelaunch_review_sha256=sha(HERE/'prelaunch_review.json'),input_sha256=prepared['input_sha256'],
+                 environment={k:os.environ[k] for k in prepared['environment']})
+     def update():
+@@ -169,25 +193,30 @@
+     signal.signal(signal.SIGTERM,interrupted);signal.signal(signal.SIGINT,interrupted)
+     update();code=1;reports=[];active=None;destination=None
+     try:
+-        grid,model=load_model();pre_records=read(PRE/'tangent_norms.json')['cases'];pre={v['event']:v for v in pre_records}
+-        require(len(pre_records)==2 and set(pre)=={981,987},'Pre-step norm roster')
++        grid,model=load_model();pre={event:read(PRE/('event_'+str(event)+'.json.gz')) for event in (981,987)}
+         require(model['native_contexts']==[v['native_context'] for v in identities],'Model full native context')
+         sys.path.insert(0,str(SOURCE))
+         from diagnostics import trilinear_action_bounds as t
+         for name in ('trilinear_action_bounds','check_native_interface_support','first_arrival_1d_precise_turn_reference'):
+             require(Path(sys.modules['diagnostics.'+name].__file__).resolve()==SOURCE/'diagnostics'/(name+'.py'),'Frozen numerical import')
++        spec=importlib.util.spec_from_file_location('frozen_zero_support',str(ZERO/'run.py'))
++        z=importlib.util.module_from_spec(spec);spec.loader.exec_module(z)
++        require(Path(z.__file__).resolve()==ZERO/'run.py','Frozen pure sign/support module')
+         for identity in identities:
+             event=identity['event'];destination=HERE/('event_'+str(event)+'.json.gz')
+             active=dict(identity,status='loading_identified_trial',original_convergence_flag='0',candidate_convergence_status=None,
+-                        settings=SETTINGS,tangent_edge_records=[],attempted_tangent_edges=0,completed_tangent_edges=0)
++                        settings=SETTINGS,tangent_edge_records=[],zero_normal_support_proofs=[],
++                        source_partials_evaluated=False,attempted_tangent_edges=0,completed_tangent_edges=0)
+             save(HERE/(destination.name+'.identifiers.json'),dict(identity,expected_file=str(destination.relative_to(ROOT)),file_sha256=None,
+                  evidence_sha256=prepared['input_sha256'],prepared_sha256=sha(HERE/'prepared.json'),
+-                 coordinate_basis='Exact saved rounded diagnostic trial; failed-state/catalog identities retained',
++                 coordinate_basis='Exact accepted half-step rounded path; retained first-step comparison, rejected full step and original failed-state/catalog identities remain distinct',
+                  node_order='Original order; fixed source node0, fixed receiver n-1; physical xyz',edge_order='edge e joins nodes e,e+1',
+-                 role='Available tangent bounds and exact norm algebra only; no new convergence flag'))
++                 role='One tangent pass plus exact face signs and feasible support assembly; no new convergence flag'))
+             path,before,pre_components,coordinates,prior=load_case(event,identity,pre[event])
+             active.update(coordinate_provenance=coordinates,prior_result_sha256=sha(STEP/('event_'+str(event))/'result.json.gz'),
+-                          saved_trial_action=prior['result']['action']['trial_action'],interpretation='Saved action copied for geometry identity; not reevaluated.')
++                          saved_trial_action=prior['result']['action']['trial_action'],chain_provenance=prior['chain_provenance'],
++                          rejected_full_step=prior['rejected_full_step'],pre_components_sha256=sha(PRE/('event_'+str(event)+'.json.gz')),
++                          interpretation='Saved half-step action copied for geometry identity; not reevaluated.')
+             axes=grid['axes'];aligned=[];blocked=set();reasons=[]
+             for node,p in enumerate(path):
+                 if any(not axes[k][0]<=p[k]<=axes[k][-1] for k in range(3)):reasons.append(dict(reason='outside_physical_box',node=node))
+@@ -206,8 +235,11 @@
+                                     original_convergence_flag='0',candidate_convergence_status=None))
+                 active=None;destination=None;continue
+             pre_norm,unused,pre_blocked=projected_norm(before,pre_components,axes)
+-            require(pre_norm['lower_squared']==Q(pre[event]['summary']['lower_squared']) and pre_norm['upper_squared']==Q(pre[event]['summary']['upper_squared']),
++            require(encoded(pre_norm)==pre[event]['post_step_norm'],
+                     'Pre-step norm saved arithmetic')
++            audit=next(v for v in pre_review['cases'] if v['event']==event)
++            require(interval(audit['post_squared_bounds'])==(pre_norm['lower_squared'],pre_norm['upper_squared']),
++                    'Independent pre-step norm binding')
+             active['pre_step_norm']=pre_norm;active['status']='evaluating_available_tangents'
+             components=[[(Q(0),Q(0)) for k in range(3)] for p in path];components[0]=components[-1]=None
+             for edge,(a,b) in enumerate(zip(path,path[1:])):
+@@ -238,12 +270,22 @@
+                 comparison['squared_norm_ratio_bounds']=(post_norm['lower_squared']/pre_norm['upper_squared'],post_norm['upper_squared']/pre_norm['lower_squared'])
+             active.update(status='completed_available_tangent_bounds',free_node_components=[dict(node=i,components=components[i]) for i in range(1,len(path)-1)],
+                           available_projected_components=vector,post_step_norm=post_norm,comparison=comparison)
++            active['status']='checking_exact_zero_normal_support'
++            for edge,(a,b,record) in enumerate(zip(path,path[1:],active['tangent_edge_records'])):
++                if not record['blocked_axes']:continue
++                proof=dict(z.zero_normal_support(grid,a,b,t),edge=edge,endpoint_nodes=[edge,edge+1])
++                active['zero_normal_support_proofs'].append(proof)
++                ledger['sign_edges_completed']+=1;ledger['sign_patches_completed']+=len(proof['patches']);update()
++            support=z.supporting_vector(path,active['tangent_edge_records'],active['zero_normal_support_proofs'],axes)
++            active.update(status='completed_tangent_and_support_bounds',full_support=support,
++                          support_interpretation='One feasible full-vector upper bound, not a minimum; failed signs remain inconclusive. No stopping decision.')
+             verify();save(destination,active)
+             reports.append(dict(identity,status=active['status'],result_file=destination.name,result_sha256=sha(destination),
+                                 tangent_edge_evaluations=active['completed_tangent_edges'],comparison=comparison,
++                                support_status=support['status'],feasible_full_support_norm=support['norm'],
+                                 original_convergence_flag='0',candidate_convergence_status=None))
+             active=None;destination=None
+-        verify();ledger['status']='completed_bounded_tangent_diagnostic';code=0
++        verify();ledger['status']='completed_bounded_post_half_tangent_and_support';code=0
+     except BaseException as exc:
+         if isinstance(exc,SystemExit) and isinstance(exc.code,int):code=exc.code
+         ledger.update(status='failed_preserved',error=dict(type=type(exc).__name__,message=str(exc)))
+@@ -253,9 +295,11 @@
+         outputs={str(p.relative_to(HERE)):sha(p) for p in sorted(HERE.glob('event_*')) if p.is_file()}
+         summary=dict(status=ledger['status'],error=ledger.get('error'),native_contexts=identities,cases=reports,settings=SETTINGS,
+                      attempted_tangent_edges=ledger['attempted_tangent_edges'],completed_tangent_edges=ledger['completed_tangent_edges'],
++                     sign_edges_completed=ledger['sign_edges_completed'],sign_patches_completed=ledger['sign_patches_completed'],
++                     aligned_normal_integrations=0,support_searches=0,
+                      tangent_edge_budget=2058,action_integrations=0,metric_solves=0,rounded_trials=0,trace_calls=0,field_calls=0,optimizer_iterations=0,
+                      prepared_sha256=sha(HERE/'prepared.json'),prelaunch_review_sha256=sha(HERE/'prelaunch_review.json'),output_sha256=outputs,
+-                     scope='Available tangent vector of the two already saved trials. No source/model partial or convergence/first-arrival certificate.')
++                     scope='One tangent pass and zero-aligned-normal support on both accepted half steps. No source/model partial, stopping decision, minimum or first-arrival certificate.')
+         save(HERE/'summary.json',summary)
+         ledger.update(return_code=code,finished_utc=now(),summary_sha256=sha(HERE/'summary.json'),output_sha256=outputs,
+                       subprocess_calls=0,outer_reaping_owner='root; separate terminal receipt after this process exits')

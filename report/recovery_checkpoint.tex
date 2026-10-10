@@ -187,10 +187,75 @@ $+3.0212\times10^{-10}$ and $+2.7020\times10^{-10}$ s. The action enclosures
 have widths below $6.0\times10^{-32}$ s, so the increases are resolved.
 Negative first variation does not guarantee decrease at unit step length;
 these results motivate a smaller fraction along each saved direction.
-The first accepted paths remain the retained state. Independent saved
+The first accepted paths remain the starting state for that comparison. Independent saved
 readback confirms the exact cache, slope, rounding, action and rejection
 accounting in
 \path{data/development/hayward_cmj_tangent_step_002/RESULTS.md}.
+
+Reusing each direction at half length gives action changes of
+$-1.9272\times10^{-11}$ and $-7.5767\times10^{-11}$ s, with enclosure
+widths below $6.0\times10^{-32}$ s. Both trials satisfy the same conservative
+Armijo check. Maximum node movements are 0.04553 and 0.02491 m, and these
+paths become the retained diagnostic state. The calculation uses no new
+gradient or metric solve: it evaluates two rounded trials and 2,058 new
+edge actions. Independent saved readback confirms the geometry, action,
+acceptance and native identity joins. Both decreases still exceed the
+combined stopping scale of $10^{-11}$ s in magnitude. Results are in
+\path{data/development/hayward_cmj_tangent_half_step_001/RESULTS.md}.
+
+A separate calculation on the earlier first-step paths proves
+$v_{-,n}\geq0\geq v_{+,n}$ over all 65 complete aligned face pieces.
+Because velocity is positive and continuous there, the same pointwise
+convex mixture of the two normal slowness gradients can be zero for both
+endpoint moments. All ordinary adjacent-edge contributions are retained,
+including the entry and exit terms. The resulting feasible full-vector
+norms are $4.4155\times10^{-5}$ and $2.4963\times10^{-5}$ s/km. A large
+norm for one feasible choice gives no lower bound on the minimum support
+residual, so this construction does not certify or exclude stationarity.
+Its geometry is the first accepted step, not the subsequent half step.
+The first saved-data checker failed on equivalent hexadecimal spellings;
+canonicalizing those spellings makes the independent readback pass without
+changing or repeating the numerical calculation. The retained failure and
+corrected review accompany
+\path{data/development/hayward_cmj_post_step_zero_support_001/RESULTS.md}.
+
+On the accepted half-step geometry, a new bounded evaluation of all 2,058
+edges gives available gradient norms of $2.5528\times10^{-6}$ and
+$6.7473\times10^{-6}$ s/km. These are 0.8212 and 0.5306 times their
+preceding values, with unchanged availability masks. Both are below
+$10^{-5}$ s/km, but their lower bounds still exceed $10^{-7}$ s/km.
+The preceding accepted changes exceed $10^{-11}$ s, so these reductions
+do not satisfy the combined stopping condition either. All 65 complete
+face pieces again admit zero aligned-normal support. Retaining the
+ordinary entry and exit terms gives feasible full-vector norms of
+$4.4053\times10^{-5}$ and $2.2711\times10^{-5}$ s/km; these remain
+inconclusive about the minimum support norm. Independent saved readback
+checks the current geometry, incident-edge sums, exact polynomial signs
+and full native identities. Results are in
+\path{data/development/hayward_cmj_post_half_step_tangent_001/RESULTS.md}.
+
+The existing C++ evaluator is compared with those saved action enclosures
+on eight fixed polygons: the face candidate, first accepted step, rejected
+full step and accepted half step for each event. Its eight-point segment
+integration and sampling are unchanged from the original retry kernel.
+Paired sums of the emitted segment changes reproduce all four full-step
+rejection and half-step acceptance decisions, with error below
+$4.0\times10^{-17}$ s. On the face and first-step polygons, the available
+gradient-vector errors are below $1.057\times10^{-15}$ s/km. These errors
+are far smaller than the retained tangent residuals and resolved action
+changes on this roster. Each path evaluation takes 1.84--3.42 ms in this
+single batch. This comparison supports using the existing evaluator for
+further bounded tangent relaxation; it does not establish its accuracy on
+every later polygon or certify endpoint derivatives, stationarity or first
+arrival. Raw hexadecimal values, reference joins and numerical comparisons
+are retained in
+\path{data/development/hayward_cmj_fixed_polygon_kernel_001/}.
+After independent review of the half-step bounds, a separate saved-data
+comparison joins them to the already emitted C++ half-step gradients.
+The two available-vector errors are below $1.020\times10^{-15}$ s/km.
+This adds no evaluator or reference-integration call and leaves the frozen
+benchmark's original oracle inventory unchanged. Evidence is in
+\path{data/development/hayward_cmj_half_gradient_comparison_001/RESULTS.md}.
 
 \begin{table}[ht]
 \centering
