@@ -277,6 +277,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--data', required=True)
     parser.add_argument('--output', required=True)
+    parser.add_argument('--reviewer', default='ray_math_review', help='Identifier of the executing reviewer')
     args = parser.parse_args()
     run, output = [(ROOT / name).resolve() for name in (args.data, args.output)]
     run.relative_to(ROOT); output.relative_to(ROOT)
@@ -291,13 +292,13 @@ def main():
     require(all(actual[k] == expected[k] for k in actual), 'Full declared simulation support differs')
     for name, digest in hashes.items():
         require(sha(run / name) == digest, 'Artifact changed during streaming review: ' + name)
-    result.update(status='passed', reviewer='ray_math_review',
+    result.update(status='passed', reviewer=args.reviewer,
         scope='Exhaustive streaming numerical/native-identity audit of completed synthetic observations; no reference or ray rerun',
         input_sha256=hashes, review_source_sha256=sha(Path(__file__)),
         simulation_run_manifest_sha256=hashes['simulation_run_manifest.json'],
         simulation_execution_sha256=hashes['simulation_execution.json'],
         command='python3 diagnostics/review_loma_analytic_simulation.py --data ' + str(run.relative_to(ROOT)) +
-                ' --output ' + str(output.relative_to(ROOT)),
+                ' --output ' + str(output.relative_to(ROOT)) + ' --reviewer ' + args.reviewer,
         limitations=['The continuous reference and its mathematical/source reviews remain separate prerequisites.',
                      'This checks saved noise algebra, not a reimplementation of the C++ random-number generator.',
                      'Simulation completion does not establish inverse forward-ray accuracy or inversion convergence.'])
