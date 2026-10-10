@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "reviewer": "root source and frozen-result review",
+  "reviewed_utc": "2026-10-10T04:54:29.144909+00:00",
+  "summary_sha256": "167bfd760019f461bdfcf373ce699575739bcc0704874c3ffde94044eedc23eb",
+  "source_sha256": "8785efffa512f8f8637a7289f7e256cb3049c6b6e739a7f6d6f9be422cb82c82",
+  "readback_sha256": "369d68aecb1d5ae701af56f95c663b3ab1194e3c51c2347c2040ce32eab0e4e9",
+  "verified_artifact_hashes": 13,
+  "verified_input_hashes": 9,
+  "controls": 11,
+  "saved_trial_inequalities_verified": 40,
+  "new_support_norm_upper_displays": [
+    1.8417550807580444e-05,
+    1.8417463527938475e-05
+  ],
+  "source_review": [
+    "Exact reciprocal-affine action splits every crossed model interval; no fixed quadrature.",
+    "Continuous first variation includes the positive-part cusp term before deciding descent.",
+    "Negative support dot alone is explicitly shown insufficient by an invented control.",
+    "Conservative Armijo inequality uses upper trial action and lower old action and directional derivative.",
+    "Fixed endpoints, original box and nonzero segments checked; exact rational new polygons saved with native identities.",
+    "The new support bound is recomputed after each accepted step; both increase and no convergence flag is promoted."
+  ],
+  "limitations": [
+    "Two isolated steps from the same polygon, no outer optimization.",
+    "No source/model derivative, inserted-node stationarity or first-arrival certificate."
+  ]
+}

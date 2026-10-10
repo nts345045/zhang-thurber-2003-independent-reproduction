@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "reviewed_utc": "2026-10-10T04:55:24.961447Z",
+  "scope": "Independent read-only mathematical/source/result/hash review; no numerical rerun.",
+  "source_document_sha256": {
+    "diagnostics/check_native_interface_step.py": "8785efffa512f8f8637a7289f7e256cb3049c6b6e739a7f6d6f9be422cb82c82",
+    "data/development/native_interface_step/001/summary.json": "167bfd760019f461bdfcf373ce699575739bcc0704874c3ffde94044eedc23eb",
+    "data/development/native_interface_step/README.md": "2b083ad0b949df649d4f97d946ca9a33c02a803afbbea4be8945ad0bc3f4cddf"
+  },
+  "frozen_artifact_hashes_verified": 13,
+  "recorded_controls": 11,
+  "material_issue_found": false,
+  "checks": [
+    "The exact positive-part integral handles same-sign, opposite-sign and zero endpoint cases; adding L*(g_plus-g_minus)*I_plus to the supporting dot gives the full native first variation.",
+    "Trials require the upper directional interval endpoint to be negative; a negative support dot alone does not pass.",
+    "Normalizing by the norm upper endpoint is conservative. Both controls fix endpoints and check the original box and nonzero trial segments.",
+    "For positive c and step, new_action.upper <= old_action.lower + c*step*D.lower implies the actual Armijo inequality and strict action decrease.",
+    "Actions integrate the reciprocal-affine profile with exact rational enclosures at exact rational trial coordinates; approximate decimal displays are not used as authoritative coordinates.",
+    "Both accepted steps retain the original failed local flag. Their larger new support-norm bounds are reported and do not establish an optimization or stationarity result."
+  ],
+  "limitations": [
+    "Only two independent single steps from the same fixed native polygon; no iterative solver, new stationary-path/source derivative or production change.",
+    "No inserted-knot, general trilinear-medium or global first-arrival result follows."
+  ]
+}

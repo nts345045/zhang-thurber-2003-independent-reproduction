@@ -1,0 +1,32 @@
+{
+  "status": "passed_saved_evidence_readback",
+  "scope": "Native/hash/rational-coordinate/interval-inequality checks only; no action or optimizer rerun.",
+  "summary_sha256": "167bfd760019f461bdfcf373ce699575739bcc0704874c3ffde94044eedc23eb",
+  "execution_receipt_sha256": "5492524079bfc94ad14d9d28912af40d53add84ce4b069d5d9cf547512726d40",
+  "readback_source_sha256": "15f2fbe011c979fd18eaf8dd0f277d1c79b70a885d23e2be543025482f0c9373",
+  "pinned_hashes": 22,
+  "verified": [
+    {
+      "direction": "negative_support_midpoint",
+      "verified_native_rows": 2705,
+      "verified_trials": 20,
+      "exact_step_reconstruction": true,
+      "exact_endpoints": true,
+      "domain_and_nonzero_segments": true,
+      "blank_endpoint_derivatives": true,
+      "interval_norm_bounds": true
+    },
+    {
+      "direction": "tangent_projection",
+      "verified_native_rows": 2705,
+      "verified_trials": 20,
+      "exact_step_reconstruction": true,
+      "exact_endpoints": true,
+      "domain_and_nonzero_segments": true,
+      "blank_endpoint_derivatives": true,
+      "interval_norm_bounds": true
+    }
+  ],
+  "original_flag_preserved": true,
+  "new_stationarity_or_first_arrival_claim": false
+}
