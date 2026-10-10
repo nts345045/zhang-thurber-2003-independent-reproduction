@@ -72,6 +72,22 @@ the continuous reference by 3.82--143.95 microseconds; the refined range is
 1.32--37.48 microseconds. This checks the initial sample only. Interval root
 enumeration does not certify floating-point ordering of nearly tied arrivals.
 
+The [completed third preflight](data/development/hayward_first_arrival_003_review/README.md)
+initializes all 14,262 Hayward rays but retains 139 local stopping failures,
+despite a passing 32-ray stopping sample. An identified near-interface path
+omits a descent variation that appears when its long segment is subdivided;
+exact integration rules out quadrature error at the tested scale. Refining
+all 139 failed paths to 0.125 km resolves their local stopping flags and
+meets the existing 25-microsecond travel-time limit. However, 16 source-vector
+errors still exceed the existing 3e-6 s/km analytic limit. Further refinement
+to 0.03125 km brings all 139 within both limits; the
+[four-variant comparison](data/development/hayward_initial_failure_refinement.md)
+preserves every failed result. The complete initial-model reference also
+finds a locally converged ray 2.232 ms late, with a source-vector error of
+0.033571 s/km, outside the 139-ray subset. Its competing arrival branches
+require separate investigation. No corrected inversion follows this failed
+preflight.
+
 The revised solver preserves identities in event/residual CSV files and ray
 diagnostic mappings, traces observed pairs only, and exports an unweighted
 absolute-arrival Jacobian with `dd linearize`. `prepare_hayward.py` prepares the
@@ -94,6 +110,11 @@ and unchanged baseline random generation. The [Loma Prieta geometry
 archive](data/authoritative/loma_prieta/README.md) now contains 724 selected
 earthquakes and 52 historical NC EHZ receiver channels, with preserved candidate
 and exclusion records. It has not yet been simulated or inverted with this command.
+The [completed geometry check](data/development/loma_geometry_preflight/001/README.md)
+retains all 104 sampled rays and finds 31 local failures at each spacing.
+Three locally converged production paths are slower than explicitly feasible
+guide paths, with gaps up to 37.159 ms. These numerical failures do not justify
+excluding any observed geometry.
 
 [Read the PDF report](report/report.pdf) or the
 [panel-by-panel audit](FIGURE_AUDIT.md).
@@ -117,6 +138,11 @@ earlier forward operators.
   velocity comparison, including its input/output hashes and numerical limitations.
 - `figures/` and `figures/hayward/`: plots generated from the saved numerical
   tables. `report/report.pdf` explains the experiments and reproduction limits.
+- `data/development/`: numerical diagnostics and frozen failure evidence.
+  `hayward_first_arrival_003_review/` contains the completed full initial-ray
+  check; `hayward_initial_failure_refinement_*` contains identified follow-up
+  ray calculations. These directories contain forward checks, not new inversion
+  models. Corrected numerical code is maintained on `first-arrival-integration`.
 
 ## Build and run
 

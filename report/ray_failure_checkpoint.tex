@@ -1,0 +1,159 @@
+\subsection{Identified failures in the full-geometry checks}
+The larger geometry checks expose limitations that the preceding component
+suite did not resolve. These failures concern numerical paths in specified
+velocity models; they are not evidence for excluding any station or event.
+All identified inputs and failed results remain in the experiment.
+
+The completed third Hayward preflight initializes all 14,262 absolute rays,
+but 139 fail the local stopping rule at 0.5 km field and path spacing.
+These failures span 128 events and 80 channel epochs. Of the failed rays,
+121 exhaust 1,000 updates; the remaining 18 stop earlier. All 32 rays in
+the separate refinement sample and all 24 endpoint perturbations meet their
+local stopping rules. Passing this sample therefore does not establish
+convergence on the full observation support. The terminal driver records
+a failed preflight and does not start an inversion. Its complete identified
+tables, configuration, source snapshot, and failure review are preserved in
+\path{data/development/hayward_first_arrival_003_review/}.
+
+Continuous layered-ray enumeration has also completed for all 14,262
+initial rays. Every reference is complete and valid, with no near ties;
+9,069 first arrivals are direct and 5,193 turn below the source. Production
+times exceed the reference by a median 37.803 microseconds and a maximum
+2.232 ms. Only 603 rays satisfy both existing analytic-control limits.
+The largest time and source-vector discrepancies belong to a locally
+converged ray: event \texttt{NC/30204761} to \texttt{NC.JJR..EHZ},
+absolute row 14099. Its source-vector error norm is 0.033571 s/km.
+This outlier requires an identified branch/path investigation independent
+of the 139 failed stopping flags. All reference candidates, original flags,
+identities, and frozen inputs are in
+\path{data/development/hayward_first_arrival_003_1d_support/}.
+
+Event \path{quakeml:NC.anss.org/Event/NC/390228} and channel
+\texttt{NC.CCY..EHZ} define Hayward absolute observation row 9291.
+At 0.5 km field and initial path spacing,
+the selected FMM-started path rejects its line search after 208 accepted
+updates. Its time is 3.645674501 s and projected gradient is
+$2.7990\times10^{-3}$ s/km. Increasing the iteration budget from 1,000 to
+4,000 leaves this result unchanged. Observation hooks reproduce all eight
+uninstrumented candidate calculations exactly, including the paths,
+derivatives, iteration counts, and original stopping flags.
+
+Two adjacent knots approach the 4 km depth interface within
+$2.18\times10^{-13}$ km, leaving an approximately 1.01 km, nearly horizontal
+segment. Inserting a free midpoint preserves the exact curve and action.
+The new midpoint's depth derivative is $-0.001645449$ s/km; moving it
+0.001 km deeper lowers time by $1.28394\times10^{-6}$ s. The velocity
+increase below the interface reduces slowness, whereas a small depth tent
+has zero first-order length cost in the horizontal limit. Thus the retained
+coarse edge omits a feasible descent variation. The calculation uses the
+saved coordinates without moving them onto the interface.
+
+Across all 38 segment insertions and 190 tested perturbations, the exact
+depth-only action changes by at most $3.04\times10^{-18}$ s on insertion,
+and the production quadrature agrees with the exact action within
+$1.06\times10^{-15}$ s. This excludes an action-integration discrepancy
+at the tested scale. At 0.25 km field and initial path spacing, the
+FMM-started path meets the unchanged combined stopping rule in 41 updates,
+with time 3.645534035 s and gradient $5.46\times10^{-6}$ s/km. This resolves
+the local stopping failure for this refined calculation. Independent
+continuous layered-ray enumeration finds a unique first arrival at
+3.645479994 s, turning at depth 4.000928869 km. The coarse selected path
+is therefore late by 194.506 microseconds; the refined FMM path remains
+late by 54.041 microseconds, with maximum source-derivative error
+$1.51\times10^{-5}$ s/km. Its local flag does not establish continuous-model
+accuracy. The records
+are under \path{data/development/initial_ray_first_arrival_003_9291_audit001/}
+and \path{initial_ray_first_arrival_003_9291_midpoint001/} in the same parent;
+the independent reference is in
+\path{initial_ray_first_arrival_003_9291_reference001/}.
+
+A further test retains the 0.5 km initialization field and refines only
+the path. At 0.125 km spacing, the selected FMM-started path stops after
+20 updates, with time error 13.075 microseconds and source-vector error
+norm $2.66\times10^{-6}$ s/km. At 0.0625 km, these errors fall to
+3.267 microseconds and $7.88\times10^{-7}$ s/km. Both selected results meet
+the existing analytic-control limits of 25 microseconds and
+$3\times10^{-6}$ s/km. The 0.125 km straight-started candidate exceeds the
+source-derivative limit despite local convergence. All four candidates are
+retained in \path{initial_ray_first_arrival_003_9291_fine_path001/} under
+the same development-data directory. This single-ray result motivates
+further checks; it does not validate a full-cohort discretization.
+
+Path refinement resolves both stopping and accuracy failures on the
+139-ray subset (Table~\ref{tab:failed-ray-refinement}). Continuous layered-ray
+enumeration finds a unique first arrival for every ray. At 0.125 km spacing,
+all time errors satisfy the 25 microsecond control limit, but 16 source-vector
+errors exceed $3\times10^{-6}$ s/km. Three source errors remain above that
+limit at 0.0625 km. All 139 rays meet both limits at 0.03125 km, with maximum
+time error 0.818 microseconds and source-vector error $1.83\times10^{-6}$
+s/km. These calculations retain the frozen executable and original
+1,000-update budget. They validate this subset at the initial model, not
+the full observation support or a later three-dimensional model. The
+four identified variants and their references are saved under
+\path{data/development/hayward_initial_failure_refinement_001/} through
+\path{hayward_initial_failure_refinement_004_reference/}.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{rrrrrr}
+\toprule
+Path (km) & Field (km) & Local passes & Both limits & Max time ($\mu$s) & Max source (s/km)\\
+\midrule
+0.25 & 0.25 & 134 & 114 & 54.041 & $9.80\times10^{-5}$\\
+0.125 & 0.5 & 139 & 123 & 13.075 & $2.87\times10^{-5}$\\
+0.0625 & 0.5 & 139 & 136 & 3.267 & $4.92\times10^{-6}$\\
+0.03125 & 0.5 & 139 & 139 & 0.818 & $1.83\times10^{-6}$\\
+\bottomrule
+\end{tabular}
+\caption{Refinement of all 139 rays that failed the third Hayward preflight.
+Counts are out of 139. Accuracy uses absolute travel-time error and the
+Euclidean norm of the three-component source-derivative error relative to
+the continuous initial-model reference. The limits remain 25 microseconds
+and $3\times10^{-6}$ s/km. The first row refines both discretizations;
+the remaining rows retain the same 0.5 km initialization field.}
+\label{tab:failed-ray-refinement}
+\end{table}
+
+The Loma Prieta check also separates local convergence from arrival-branch
+selection. The terminal record retains all 104 requested samples.
+For 38 rays, an independently
+integrated path that grazes the maximum-speed plane $x=0$ is admissible.
+Twenty-three production and refined actions exceed that candidate. Three
+production paths report local convergence while remaining 25.693, 20.765,
+and 37.159 ms slower:
+event \texttt{NC/20091683} to \texttt{NC.HLT..EHZ} and
+\texttt{NC.HQR..EHZ}, and event \texttt{NC/256583} to
+\texttt{NC.JSC..EHZ}, respectively. At refined spacing their excesses fall
+to 0.166, 0.187, and 0.133 ms, but none meets the local stopping rule.
+The explicit candidate is an upper bound on the first
+arrival, not a complete enumeration of branches. Its absence for another
+ray does not justify excluding that ray. Full native identities, epochs,
+selector flags, and captured rows are retained in
+\path{data/development/loma_geometry_preflight/all_guides_002/}.
+
+The completed Loma Prieta diagnostic retains all 104 requested rays.
+Initializers succeed for every ray at both spacings, but 31 rays fail the
+local stopping rule at each spacing. The largest time change on refinement
+is 37.026 ms. Endpoint finite-difference comparisons reach approximately
+$1.26\times10^{-3}$ s/km, but only 13 of 24 positive perturbations and
+12 of 24 negative perturbations converge locally. These discrepancies
+cannot be interpreted as validated derivative-error estimates. No
+full synthetic observation set or Loma Prieta inversion follows this check.
+The identified terminal tables are in \path{data/loma_lom_001/}; the review
+and execution provenance are in
+\path{data/development/loma_geometry_preflight/001/}.
+
+A separate exact control identifies a defect in using an ordinary gradient
+at an interface. For $v(x)=6$ km/s on $x\leq0$ and $v(x)=6-2x$ km/s on
+$0\leq x\leq1$ km, a straight 2 km path on $x=0$ attains the lower bound
+$T=1/3$ s. The current trace returns this action but reports nonconvergence,
+using a midpoint normal gradient of $1/18$ s/km from the right-hand cell.
+The true action has unequal one-sided derivatives there. The returned
+source-normal partial is $1/36$ s/km, whereas the optimized continuous
+arrival has zero source-normal derivative at this control. Relabeling its
+stopping flag would therefore leave the sensitivity problem unresolved.
+The reproducible control is in \path{data/development/interface_stationarity/}.
+This component defect is distinct from the off-interface, slowly optimized
+Loma paths already examined. No convergence-only correction has been
+applied, and these checks have not produced a completed corrected inversion.

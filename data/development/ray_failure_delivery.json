@@ -1,0 +1,46 @@
+{
+  "scope": "Publication of completed initial-ray failure analysis and identified refinement evidence; no corrected inverse result",
+  "created_utc": "2026-10-10T02:17:46.845634+00:00",
+  "evidence_commit": "eed3e169235f400ff87db4b4b7b801457892680c",
+  "validation": {
+    "pdf_pages": 94,
+    "pdflatex_exit": 0,
+    "no_undefined_references_errors_or_overfull_boxes": true,
+    "refinement_table_and_failure_text_visually_inspected": true,
+    "frozen_subset_artifact_hashes_verified": 136,
+    "full_reference_rows": 14262,
+    "subset_reference_rows_per_variant": 139,
+    "subset_variants": 4,
+    "loma_terminal_rows": 104,
+    "panel_statuses": {
+      "independently reproduced": 1,
+      "partially reproduced": 27,
+      "not reproduced": 34
+    }
+  },
+  "sha256": {
+    "README.md": "4a4b195c03b1ae19903d05623c92e1e1d609dbf813d8cf9eabe1081f9d9f544d",
+    "report/report.tex": "7bbaedf4b67b51b76a798d0de7501aecfd787210247377503eb957faf43dbb38",
+    "report/ray_failure_checkpoint.tex": "33985c330591c2fbb093e7515687a8bae37159caaadd1ed4c2c89fadf7dc08e6",
+    "report/report.pdf": "84c2d9dd44c53ceae3dd6ed622b89e3945b4c2a47945e8e9779dc342549131e2",
+    "data/panel_audit.csv": "e8b115d93a4db2a1a12ab58f160aa68496ba6c1c06f4eb31b9538f0ed6d55a03",
+    "data/development/hayward_initial_failure_refinement.md": "f9ce201f2f9c917c6ebcbde5d9fd07065fab82b7778df67fd9eefbfe94af1f1e",
+    "data/development/hayward_first_arrival_003_review/review.json": "1be45222696e6ac0bdf310f473d773cd072ed1a6be8ee2baf1154dff28d4740d",
+    "data/development/hayward_first_arrival_003_1d_support/summary.json": "6d757a106a8c607fb5d2baa124cf447e1bad5b3033442710a6fddbaf018c86df",
+    "data/development/hayward_first_arrival_003_1d_support/independent_review.json": "92219ff36cb87cb8c286ea95268349eb6f5b611d69c3a627e2339e3dafce3cea",
+    "data/development/hayward_first_arrival_003_1d_support/packaging.json": "bda2ee23c6b7df6d946941fdbd1d0b2b7d7209ee9f407598261b23b2cd72e940",
+    "data/development/loma_geometry_preflight/001/scientific_review.json": "8cb3a7259f7b9b896131a68a8aa312e2249e2314b9949cb8107b42e2d6b63bf7",
+    "data/development/loma_geometry_preflight/all_guides_002/summary.json": "4efc4444df92ee15d7fb443f414352e8eca3927f488d8ba8cba8bf81c9aac25a",
+    "data/development/hayward_initial_failure_refinement_001_reference/summary.json": "9be3a721a3f03d1a5772665a43400ce52e80e1bafe1247af22d223e076825616",
+    "data/development/hayward_initial_failure_refinement_002_reference/summary.json": "49742072a79a7dd99edf7dc267dca61c0ba3c93258f751a4c26be550b8d48cfd",
+    "data/development/hayward_initial_failure_refinement_003_reference/summary.json": "b33ffd57f6982637358c737b37b45d8760f5b156c4862311c992f34d24f2e4e9",
+    "data/development/hayward_initial_failure_refinement_004_reference/summary.json": "67c60d718f243d6c5241081fdc9347482acdb7633d809c495987fd4145e987cc"
+  },
+  "limits": [
+    "The139-ray refined subset does not certify all14,262 rays or updated3Dmodels.",
+    "The largest locally converged Hayward outlier requires separate branch investigation.",
+    "Loma exact guides in this checkpoint are feasible candidates; the full layered reference is recorded separately.",
+    "Original baseline continues with its frozen executable; numerical integration changes remain on first-arrival-integration.",
+    "No panel classification changes and no corrected inversion completion are claimed."
+  ]
+}
