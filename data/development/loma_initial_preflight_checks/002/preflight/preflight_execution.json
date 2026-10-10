@@ -1,0 +1,260 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T03:35:02.271228+00:00",
+  "driver_pid": 70274,
+  "command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/run_loma_initial_preflight.py",
+    "--simulation",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/invented_simulation",
+    "--output",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight",
+    "--build",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight"
+  ],
+  "threads": 4,
+  "completed_commands": [
+    {
+      "stage": "cmake_version",
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight/cmake_version_resources.txt",
+        "cmake",
+        "--version"
+      ],
+      "pid": 70278,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:35:02.483450+00:00",
+      "maximum_resident_set_kbytes": 14404
+    },
+    {
+      "stage": "configure",
+      "command": [
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight/compiled"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight/configure_resources.txt",
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight/compiled"
+      ],
+      "pid": 70280,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:35:04.136191+00:00",
+      "maximum_resident_set_kbytes": 22600
+    },
+    {
+      "stage": "compiler_version",
+      "command": [
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight/compiler_version_resources.txt",
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "pid": 70356,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:35:04.232415+00:00",
+      "maximum_resident_set_kbytes": 2828
+    },
+    {
+      "stage": "compile",
+      "command": [
+        "cmake",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight/compiled",
+        "-j",
+        "2"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight/compile_resources.txt",
+        "cmake",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight/compiled",
+        "-j",
+        "2"
+      ],
+      "pid": 70365,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:35:32.808130+00:00",
+      "maximum_resident_set_kbytes": 339756
+    },
+    {
+      "stage": "runtime_libraries",
+      "command": [
+        "ldd",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight/compiled/dd"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight/runtime_libraries_resources.txt",
+        "ldd",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight/compiled/dd"
+      ],
+      "pid": 70613,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:35:32.918264+00:00",
+      "maximum_resident_set_kbytes": 3000
+    },
+    {
+      "stage": "initial_matrix_preflight",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight/compiled/dd",
+        "invert",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight/run.cfg",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight",
+        "dd"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight/initial_matrix_preflight_resources.txt",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight/compiled/dd",
+        "invert",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight/run.cfg",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight",
+        "dd"
+      ],
+      "pid": 70620,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:35:33.247230+00:00",
+      "maximum_resident_set_kbytes": 5136
+    },
+    {
+      "stage": "initial_geometrycheck",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight/compiled/dd",
+        "geometrycheck",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight/run.cfg",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight",
+        "initial"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight/initial_geometrycheck_resources.txt",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight/compiled/dd",
+        "geometrycheck",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight/run.cfg",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight",
+        "initial"
+      ],
+      "pid": 70625,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:35:33.928464+00:00",
+      "maximum_resident_set_kbytes": 10760
+    }
+  ],
+  "scope": "Freeze initial Loma rays and a stage-0 matrix census; never solve an inversion.",
+  "simulation_directory": "data/development/loma_initial_preflight_checks/002/invented_simulation",
+  "simulation_review_sha256": "42a5efb7d2b5afac0e9289720e620fb707ca501c5cd7c8a99ac82d6a8a35e6fa",
+  "input_sha256": {
+    "initial_events.csv": "63e62e60e422c9a48b5818c2eeb70a6a626d6fb9528b00534dfe15306e254f9f",
+    "initial_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "truth_events.csv": "5f936b391fb206d48ed68f30f5caf4ff8fb6da23593292e6b048bcbb784d7310",
+    "truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "observations.csv": "ef7c62ddb2917550812432b5ac9df7c6c11e08ea5e0ea14befc1e132b41b8091",
+    "ray_samples.csv": "43ed326270c0e6c13700f1be02b4747eb1967db79b0478e02d49e7d1bc12a7a3",
+    "authoritative_geometry": "13952d674c3c41253c5943b0d457ae9f16eb88a17fc5c057bee727467c90d166",
+    "simulation_provenance/run.cfg": "2ae16cabaf3ac994d9c7f0797683ea38eb36f4a3f0f2ea14cd75f251b5d01d18",
+    "simulation_provenance/preparation_manifest.json": "7703a13d2d5e52d981b7511e413b162f6506c14058d8abd7e7b1d526dd9a9d26",
+    "simulation_provenance/analytic_truth_manifest.json": "ec3939cb84c8506a23f2911065e135fe0ef53faf6061712939a590d0dd64e7ec",
+    "simulation_provenance/simulation_execution.json": "62f0d8cdc237fd5b16e2f9ee28d260cc6724887140203da1e7bab316c198527a",
+    "simulation_provenance/simulation_run_manifest.json": "28213048d587d41a6e422b0f7609eee7ac94ec557a69e29c31f8d3ba52ebf987",
+    "simulation_provenance/simulation_source.tar.gz": "063e95615e19f72acd3e4bf8b4bee02a9d71a72f4865122e77739c8de4a7513f",
+    "simulation_provenance/independent_simulation_review.json": "42a5efb7d2b5afac0e9289720e620fb707ca501c5cd7c8a99ac82d6a8a35e6fa",
+    "run.cfg": "28c8a0ec83ad2672eded06634c96540cb97319a83835ca28498bbe4cc777c3bd"
+  },
+  "source_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "run_loma_initial_preflight.py": "fe76704d78a127322fc4fe9e6ab4bfd0ec50e46cba1d5d8fbee859920cc68872",
+    "run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5",
+    "diagnostics/review_loma_analytic_simulation.py": "c4f6cc7f340a3937ac4584fa33af4833145f50100ebf83cafdd442a93171ee38",
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "source_archive_sha256": "d074855a9a9293f9084e279b739f13ae241f4921701a9e638879c10ca7e017e2",
+  "current_stage": "initial_geometrycheck",
+  "current_command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/002/preflight/compiled/dd",
+    "geometrycheck",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight/run.cfg",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/002/preflight",
+    "initial"
+  ],
+  "current_command_started_utc": "2026-10-10T03:35:33.375752+00:00",
+  "current_child_pid": 70625,
+  "child_pid_semantics": "GNU time process-group leader; it waits for the stated executable",
+  "finished_utc": "2026-10-10T03:35:34.124790+00:00",
+  "return_code": 0,
+  "result_status": "ready_for_accuracy_review",
+  "output_sha256": {
+    "cmake_version_resources.txt": "11b1435dd70884fee26173d0dade48b71270c116445158bf8d24ba5b4da825af",
+    "cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "compile_resources.txt": "e5bab05a6696a89e640c242065141d4f4bda37f48394013b96a2bb9fc9d4de1c",
+    "compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stdout.log": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+    "compiler_version_resources.txt": "9780f7625e6a5f4678779436a3e42b2436279f046dd5cca91fff2a6691306919",
+    "compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "configure_resources.txt": "f52412f13d62fc12ecf92dff53036b5caad64faf9d62dde85e3ca44baa494435",
+    "configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configure_stdout.log": "d3803e599a0f5f422a41992db1a4249040602fcc49e486ac96cf3deb0b3a654c",
+    "dd_history.csv": "a81ab7df0823a47ffbd2d0430a3feac3c97abc306dd0b6b8eb63905949d5d134",
+    "dd_matrix_preflight.csv": "ab802d087acd6838c1c9d705bfb1d659fb6a1f7731196b4f4b47dd5b78f2d2b3",
+    "dd_preflight_ray_status.csv": "694f13002ee3be09a59df28e9f6e633c3c9a2cf32b3405a0a3701d7e0d39ec00",
+    "full_initial_checks.json": "ad233eeb8d84c1cb1e417cf6fc82af4163c6886e2157041033d16c3728cb919a",
+    "geometry_initial_ray_convergence.csv": "989c976807fe30983a49e6d6f151071f50052d3387c4532d21fc47020831a274",
+    "geometry_initial_ray_derivatives.csv": "b13b97ceefa2891330b4fe05617910efcd446b42d37fdbcba0cb2a112c4a1d73",
+    "geometry_initial_ray_identifiers.csv": "23b4bc55d77aa686cfda722dbd5e5df06ab1f6c457c190bcdc45832518c0c666",
+    "initial_geometrycheck_resources.txt": "798eee94e6a154fbbc06122368b915761cd8c9b593f4a687d2de6c0529b85f64",
+    "initial_geometrycheck_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "initial_geometrycheck_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "initial_matrix_preflight_resources.txt": "9d280e2cbd31f6cd1cd9304206cd5b4fa7b0d264d5d72a43a0602638af12befe",
+    "initial_matrix_preflight_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "initial_matrix_preflight_stdout.log": "601884668a782cc93dadb43195d785779f21b7c0bebac3320fe581280078b7bd",
+    "preflight_checks.json": "82757cd3836ae4462b641858e83bfd4672fd416fbb09bfd88e7ea78481357c8e",
+    "preflight_run_manifest.json": "39f977312e5f926171fe428fe193b2d9e843023d13a20179c6fd2eddb12d2fa0",
+    "preflight_source.tar.gz": "d074855a9a9293f9084e279b739f13ae241f4921701a9e638879c10ca7e017e2",
+    "runtime_libraries_resources.txt": "4d3fbca65ee1f9187a57f50bea39b21ad46f26465f9d5b41824edb43984cc646",
+    "runtime_libraries_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime_libraries_stdout.log": "42a1759ca3dd6f60e78e2b9c8eac846683d6349c05fb6c5caf0937db99bd1c1a"
+  },
+  "immutable_inputs_verified": true,
+  "original_simulation_verified": true
+}

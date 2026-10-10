@@ -1,0 +1,35 @@
+{
+  "full": {
+    "full_rays": 4,
+    "local_converged": 4,
+    "local_failures": [],
+    "maximum_projected_gradient": 2.93659941793e-15,
+    "maximum_raw_gradient": 2.93659941793e-15,
+    "matrix_census": {
+      "iteration": "0",
+      "observation_rows": "8",
+      "active_data_rows": "8",
+      "smoothing_rows": "12",
+      "columns": "16",
+      "damped_rows": "36",
+      "damped_entries": "152",
+      "csr_payload_bytes": "2408",
+      "numeric_observation_bytes": "320",
+      "residual_weight_bytes": "128",
+      "lsqr_row_workspace_bound_bytes": "864"
+    },
+    "matrix_stage": 0
+  },
+  "sample": {
+    "sample_rays": 4,
+    "derivative_components": 12,
+    "local_failures": [],
+    "maximum_absolute_time_refinement_s": 5.55111512313e-17,
+    "maximum_production_fd_error_s_per_km": 2.64919965189e-06,
+    "maximum_refined_fd_error_s_per_km": 2.64919965184e-06,
+    "numerical_magnitudes_status": "Retained for scientific review; no new sampled accuracy threshold imposed"
+  },
+  "independent_reference_status": "awaiting separate full initial-z comparison",
+  "inversion_accepted": false,
+  "status": "ready_for_accuracy_review"
+}

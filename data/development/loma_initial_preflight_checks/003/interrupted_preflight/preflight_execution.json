@@ -1,0 +1,151 @@
+{
+  "status": "interrupted",
+  "started_utc": "2026-10-10T03:37:57.547562+00:00",
+  "driver_pid": 72337,
+  "command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/run_loma_initial_preflight.py",
+    "--simulation",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/003/invented_simulation",
+    "--output",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/003/interrupted_preflight",
+    "--build",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/003/interrupted"
+  ],
+  "threads": 4,
+  "completed_commands": [
+    {
+      "stage": "cmake_version",
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/003/interrupted_preflight/cmake_version_resources.txt",
+        "cmake",
+        "--version"
+      ],
+      "pid": 72338,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:37:57.671197+00:00",
+      "maximum_resident_set_kbytes": 14152
+    },
+    {
+      "stage": "configure",
+      "command": [
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/003/interrupted/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/003/interrupted/compiled"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/003/interrupted_preflight/configure_resources.txt",
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/003/interrupted/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/003/interrupted/compiled"
+      ],
+      "pid": 72340,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:37:58.998775+00:00",
+      "maximum_resident_set_kbytes": 22904
+    },
+    {
+      "stage": "compiler_version",
+      "command": [
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/003/interrupted_preflight/compiler_version_resources.txt",
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "pid": 72392,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:37:59.032128+00:00",
+      "maximum_resident_set_kbytes": 2988
+    }
+  ],
+  "scope": "Freeze initial Loma rays and a stage-0 matrix census; never solve an inversion.",
+  "simulation_directory": "data/development/loma_initial_preflight_checks/003/invented_simulation",
+  "simulation_review_sha256": "64f629f922c2b2f9706aa7fc69d04a9b46a43f119361facd871cd800d330a66d",
+  "input_sha256": {
+    "initial_events.csv": "63e62e60e422c9a48b5818c2eeb70a6a626d6fb9528b00534dfe15306e254f9f",
+    "initial_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "truth_events.csv": "5f936b391fb206d48ed68f30f5caf4ff8fb6da23593292e6b048bcbb784d7310",
+    "truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "observations.csv": "ef7c62ddb2917550812432b5ac9df7c6c11e08ea5e0ea14befc1e132b41b8091",
+    "ray_samples.csv": "43ed326270c0e6c13700f1be02b4747eb1967db79b0478e02d49e7d1bc12a7a3",
+    "authoritative_geometry": "13952d674c3c41253c5943b0d457ae9f16eb88a17fc5c057bee727467c90d166",
+    "simulation_provenance/run.cfg": "2ae16cabaf3ac994d9c7f0797683ea38eb36f4a3f0f2ea14cd75f251b5d01d18",
+    "simulation_provenance/preparation_manifest.json": "7703a13d2d5e52d981b7511e413b162f6506c14058d8abd7e7b1d526dd9a9d26",
+    "simulation_provenance/analytic_truth_manifest.json": "ec3939cb84c8506a23f2911065e135fe0ef53faf6061712939a590d0dd64e7ec",
+    "simulation_provenance/simulation_execution.json": "f2fa738df2e3762d41c987712e4244b64e0f40d5fa5f0c348628b8e852090119",
+    "simulation_provenance/simulation_run_manifest.json": "8016dc5d7c23f037c4dc2e88d4aded7306cb5ab7cb3c2436e9d1dd6d98676f94",
+    "simulation_provenance/simulation_source.tar.gz": "3f5e12ea7bc24e550e5c612c88a6fa84019f49cd4d6a5d309c8b959d1382abcc",
+    "simulation_provenance/independent_simulation_review.json": "64f629f922c2b2f9706aa7fc69d04a9b46a43f119361facd871cd800d330a66d",
+    "run.cfg": "28c8a0ec83ad2672eded06634c96540cb97319a83835ca28498bbe4cc777c3bd"
+  },
+  "source_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "run_loma_initial_preflight.py": "f1acc19135c11edda106e3b8c7d8c1879d7d490db729d4ad55263b87022946f1",
+    "run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5",
+    "diagnostics/review_loma_analytic_simulation.py": "786c1ccc99cfa3d3677dde88f11a96f9677693966de874d40c15ca2972a76246",
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "source_archive_sha256": "08fe20e6830bf6fe87670c86ae36a33a3de07b41ce94e8970a9e232779304fa8",
+  "current_stage": "compile",
+  "current_command": [
+    "cmake",
+    "--build",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/003/interrupted/compiled",
+    "-j",
+    "2"
+  ],
+  "current_command_started_utc": "2026-10-10T03:37:59.039155+00:00",
+  "current_child_pid": 72394,
+  "child_pid_semantics": "GNU time process-group leader; it waits for the stated executable",
+  "exception_child": {
+    "pid": 72394,
+    "return_code": -15,
+    "remaining_live_group_members": []
+  },
+  "finished_utc": "2026-10-10T03:37:59.512476+00:00",
+  "error": "143",
+  "return_code": 143,
+  "partial_output_sha256": {
+    "cmake_version_resources.txt": "42bb3cde5b9167ac2e78f8ebc7b26d3a3d7c788aff67e716a0f87e7b930eed77",
+    "cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "compile_resources.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stderr.log": "b527b6856e5ca79a3c086ff010cc27403290fe4f4284b35bb90a39072c5d20f6",
+    "compile_stdout.log": "02aac09017ea5307af56736889403a888e2dc1ca4da63e0435b45d375e44f8a8",
+    "compiler_version_resources.txt": "131696f2bbd3da3f965b316d2eaf1a347799def01b2b79e59387335d36d08362",
+    "compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "configure_resources.txt": "99c7c9e6451a70fcc11184f79fd951824792a80646888df1d0b1873359e9c711",
+    "configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configure_stdout.log": "8a46459e4dcadd12b2f1b1381ce8334783d2533f6c579e8e055fbe65f7685bb9",
+    "preflight_source.tar.gz": "08fe20e6830bf6fe87670c86ae36a33a3de07b41ce94e8970a9e232779304fa8"
+  }
+}

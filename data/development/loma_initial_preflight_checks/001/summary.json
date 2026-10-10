@@ -1,0 +1,364 @@
+{
+  "status": "passed",
+  "scope": "Invented two-event/two-receiver geometry only; no actual Loma forward run or inversion",
+  "checks": [
+    {
+      "name": "requires_genuine_terminal_invented_simulation_and_full_output_review",
+      "passed": true
+    },
+    {
+      "name": "failed_simulation_rejected",
+      "passed": true,
+      "message": "Require terminal successful simulation execution, not live or failed outputs"
+    },
+    {
+      "name": "missing_successful_child_rejected",
+      "passed": true,
+      "message": "No unique successful simulation command"
+    },
+    {
+      "name": "failed_review_rejected",
+      "passed": true,
+      "message": "Independent simulation review does not bind these exact terminal files"
+    },
+    {
+      "name": "stale_review_link_rejected",
+      "passed": true,
+      "message": "Independent review provenance link changed: simulation_execution.json"
+    },
+    {
+      "name": "changed_initial_events.csv_rejected",
+      "passed": true,
+      "message": "Pinned artifact changed: initial_events.csv"
+    },
+    {
+      "name": "changed_initial_grid.csv_rejected",
+      "passed": true,
+      "message": "Pinned artifact changed: initial_grid.csv"
+    },
+    {
+      "name": "changed_observations.csv_rejected",
+      "passed": true,
+      "message": "Pinned artifact changed: observations.csv"
+    },
+    {
+      "name": "changed_ray_samples.csv_rejected",
+      "passed": true,
+      "message": "Pinned artifact changed: ray_samples.csv"
+    },
+    {
+      "name": "source_nested_output_rejected",
+      "passed": true,
+      "message": "Run directories must be disjoint"
+    },
+    {
+      "name": "ancestor_output_rejected",
+      "passed": true,
+      "message": "Run directories must be disjoint"
+    },
+    {
+      "name": "missing_stage_length_rejected",
+      "passed": true,
+      "message": "Require identified geometry and positive stage length"
+    },
+    {
+      "name": "invalid_inherited_numeric_token_rejected",
+      "passed": true,
+      "message": "Nonfinite diagnostic value"
+    },
+    {
+      "name": "real_frozen_build_full_matrix_census_and_geometry_only_refinement",
+      "passed": true,
+      "full_rays": 4,
+      "sample_rays": 4,
+      "valid_fd_components": 12
+    },
+    {
+      "name": "all_child_exit_codes_and_measured_RSS_recorded",
+      "passed": true
+    },
+    {
+      "name": "no_inverse_solve_outputs_or_automatic_accuracy_acceptance",
+      "passed": true
+    },
+    {
+      "name": "raw_simulation_and_native_sample_file_preserved_byte_exactly",
+      "passed": true
+    },
+    {
+      "name": "full_source_event_resource_id_rejected",
+      "passed": true,
+      "message": "Changed native metadata: source_event_resource_id"
+    },
+    {
+      "name": "full_receiver_channel_seed_id_rejected",
+      "passed": true,
+      "message": "Changed native metadata: receiver_channel_seed_id"
+    },
+    {
+      "name": "full_source_t_rejected",
+      "passed": true,
+      "message": "Initial source correction changed or confused with travel time"
+    },
+    {
+      "name": "full_source_dx_rejected",
+      "passed": true,
+      "message": "Nonfinite diagnostic value"
+    },
+    {
+      "name": "full_ray_finite_rejected",
+      "passed": true,
+      "message": "Hard ray validity/initializer failure at event 0, station 0"
+    },
+    {
+      "name": "full_ray_exact_source_endpoint_rejected",
+      "passed": true,
+      "message": "Hard ray validity/initializer failure at event 0, station 0"
+    },
+    {
+      "name": "full_ray_path_in_domain_rejected",
+      "passed": true,
+      "message": "Hard ray validity/initializer failure at event 0, station 0"
+    },
+    {
+      "name": "full_ray_initialization_succeeded_rejected",
+      "passed": true,
+      "message": "Hard ray validity/initializer failure at event 0, station 0"
+    },
+    {
+      "name": "full_event_rejected",
+      "passed": true,
+      "message": "Full initial ray support/order differs"
+    },
+    {
+      "name": "false_full_local_flag_is_retained_scientific_failure_not_missing_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "sample_refined_path_spacing_rejected",
+      "passed": true,
+      "message": "Sample spacing/refinement changed"
+    },
+    {
+      "name": "sample_production_initialization_succeeded_rejected",
+      "passed": true,
+      "message": "Sample initializer failed at diagnostic row 0"
+    },
+    {
+      "name": "sample_refined_time_rejected",
+      "passed": true,
+      "message": "Nonfinite diagnostic value"
+    },
+    {
+      "name": "sample_source_x_rejected",
+      "passed": true,
+      "message": "Diagnostic coordinates differ from actual initial geometry"
+    },
+    {
+      "name": "sample_receiver_metadata_epoch_end_rejected",
+      "passed": true,
+      "message": "Changed native metadata: receiver_metadata_epoch_end"
+    },
+    {
+      "name": "sample_axis_rejected",
+      "passed": true,
+      "message": "Valid central-difference component inventory/order changed"
+    },
+    {
+      "name": "sample_plus_initialization_succeeded_rejected",
+      "passed": true,
+      "message": "Derivative perturbation initializer failed"
+    },
+    {
+      "name": "false_FD_local_flag_is_retained_scientific_failure",
+      "passed": true
+    },
+    {
+      "name": "boundary_initial_sources_omit_only_out_of_domain_central_differences",
+      "passed": true
+    },
+    {
+      "name": "existing_run_cannot_be_overwritten",
+      "passed": true
+    },
+    {
+      "name": "signal_during_compile_records_reaped_group_and_preserves_source_inputs",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "stage": "simulation",
+      "command": [
+        "/usr/bin/python3",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/run_loma_analytic_simulation.py",
+        "--data",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/001/invented_simulation",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/001/simulation",
+        "--threads",
+        "2"
+      ],
+      "return_code": 0
+    },
+    {
+      "stage": "simulation_review",
+      "command": [
+        "/usr/bin/python3",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/diagnostics/review_loma_analytic_simulation.py",
+        "--data",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/001/invented_simulation",
+        "--output",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/001/invented_simulation/independent_simulation_review.json"
+      ],
+      "return_code": 0
+    },
+    {
+      "stage": "preflight",
+      "command": [
+        "/usr/bin/python3",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/run_loma_initial_preflight.py",
+        "--simulation",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/001/invented_simulation",
+        "--output",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/001/preflight",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/001/preflight"
+      ],
+      "return_code": 0
+    }
+  ],
+  "output_sha256": {
+    "simulation_stdout.log": "8eca01f7d75caa183b15743cdd5358f6db5e2d9421724fca66f34b0a34f84162",
+    "simulation_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulation_review_stdout.log": "06c32f03ef1c41a3ad136ff7d95aed083e05c24877c4c1ce6429557427885f8f",
+    "simulation_review_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preflight_stdout.log": "771528d9f52f742660cfb2d69fe28836c16565b16142a7dc3fdd1ca23890e90f",
+    "preflight_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "repeat_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "repeat_stderr.log": "563bf3aa8bf92c682b0f831efec848d2c52c77ca4cab92ab4189656ad8e466e9",
+    "interruption_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interruption_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/truth_events.csv": "5f936b391fb206d48ed68f30f5caf4ff8fb6da23593292e6b048bcbb784d7310",
+    "invented_simulation/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "invented_simulation/truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "invented_simulation/initial_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "invented_simulation/run.cfg": "2ae16cabaf3ac994d9c7f0797683ea38eb36f4a3f0f2ea14cd75f251b5d01d18",
+    "invented_simulation/authoritative_geometry": "13952d674c3c41253c5943b0d457ae9f16eb88a17fc5c057bee727467c90d166",
+    "invented_simulation/preparation_manifest.json": "7703a13d2d5e52d981b7511e413b162f6506c14058d8abd7e7b1d526dd9a9d26",
+    "invented_simulation/analytic_truth_manifest.json": "ec3939cb84c8506a23f2911065e135fe0ef53faf6061712939a590d0dd64e7ec",
+    "invented_simulation/ray_samples.csv": "43ed326270c0e6c13700f1be02b4747eb1967db79b0478e02d49e7d1bc12a7a3",
+    "invented_simulation/simulation_execution.json": "9b3d91132a0b790c649215cb7951e1f0a263e2e1441be2ba740838772d5593ab",
+    "invented_simulation/simulation_source.tar.gz": "6cf6238a7a49dc2db9c3985d6c1f6c04892feb755dc1bd93e7c9135f3898c3c3",
+    "invented_simulation/simulation_cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "invented_simulation/simulation_cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/simulation_configure_stdout.log": "ba64049fe484427d6d69d4f01a70b0b6689a6be58f9e24595bf99bcd185c0115",
+    "invented_simulation/simulation_configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/simulation_compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "invented_simulation/simulation_compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/simulation_compile_stdout.log": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+    "invented_simulation/simulation_compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/simulation_runtime_libraries_stdout.log": "63c6d1c4b6a5fef0dae7b8cc3b7b6e93c585fd415aee675e640cee1df676e9a9",
+    "invented_simulation/simulation_runtime_libraries_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/simulation_run_manifest.json": "676471f511d813d538fdb9fbd685ff34a296c3fe4752ba764dc370fdbda4aeb1",
+    "invented_simulation/simulate_stdout.log": "326e8cf3c81f0a46f8d1dc7c84ddbc3e42a3ad7b78ce01ca45ff9eeeb3e3aa41",
+    "invented_simulation/simulate_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/simulation_truth_status.csv": "8bf2e77aba8fa69bcdd3a1745036c4a94487845f7b0b550dd49801b710c365a5",
+    "invented_simulation/simulation_truth_mode.txt": "f1a9a5dec8eaa6c2f51b484ef730768ec312b74a2bebe001244bfc1d7d5ff7d5",
+    "invented_simulation/initial_events.csv": "63e62e60e422c9a48b5818c2eeb70a6a626d6fb9528b00534dfe15306e254f9f",
+    "invented_simulation/arrivals.csv": "c37288fd68409c93ddcc3263eaaeaae4e8cefee05e57983e7eef96b7c435c2a9",
+    "invented_simulation/observations.csv": "ef7c62ddb2917550812432b5ac9df7c6c11e08ea5e0ea14befc1e132b41b8091",
+    "invented_simulation/independent_simulation_review.json": "64d79ec023b48fecae56212774b2d790871133606a0fd87395f1c2d8d07e533e",
+    "invented_simulation/analytic_truth/references.csv": "1036ac00a716d3f0e794fb8efeb43c68753faf6afe28bfbc09a9214983f18c2f",
+    "invented_simulation/analytic_truth/inputs/truth_events.csv": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+    "invented_simulation/analytic_truth/inputs/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "invented_simulation/analytic_truth/inputs/truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "invented_simulation/analytic_truth/provenance/summary.json": "bcabde525387e6a3d77fc825130ca8fd2da8176a183a3d65f08d4c22b8370f1f",
+    "invented_simulation/analytic_truth/provenance/execution.json": "b4c1b66e45389167aad38882a1eea13ed4c4bf7609268b953ed6020b7144be3a",
+    "invented_simulation/analytic_truth/provenance/review.json": "de6d089820e059edcdf360c672722fdee86a8a0f489dcd4cf7957269473e469a",
+    "invented_simulation/analytic_truth/provenance/independent_review.json": "76fad46da42cad502722514401f659da7fa119587a4fbce1adf802a3173f32db",
+    "invented_simulation/analytic_truth/provenance/certificates.jsonl.gz": "43f88b5ad8b32b11781ba8371809dc1866413c203073f5a7ec5e9591666bb3e7",
+    "invented_simulation/inputs_before_simulation/authoritative_geometry": "b0ce8a108f4346cb5ae60d8cab9c58f48e5c7d4cd4c6c47821b6d25bc3c9f8af",
+    "invented_simulation/inputs_before_simulation/truth_events.csv": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+    "preflight/preflight_execution.json": "9a7fa35ceaec7b42166e721f6aa608773ae8801031cde08b8e1fa7f362e2c7c3",
+    "preflight/initial_events.csv": "63e62e60e422c9a48b5818c2eeb70a6a626d6fb9528b00534dfe15306e254f9f",
+    "preflight/initial_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "preflight/truth_events.csv": "5f936b391fb206d48ed68f30f5caf4ff8fb6da23593292e6b048bcbb784d7310",
+    "preflight/truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "preflight/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "preflight/observations.csv": "ef7c62ddb2917550812432b5ac9df7c6c11e08ea5e0ea14befc1e132b41b8091",
+    "preflight/ray_samples.csv": "43ed326270c0e6c13700f1be02b4747eb1967db79b0478e02d49e7d1bc12a7a3",
+    "preflight/authoritative_geometry": "13952d674c3c41253c5943b0d457ae9f16eb88a17fc5c057bee727467c90d166",
+    "preflight/run.cfg": "28c8a0ec83ad2672eded06634c96540cb97319a83835ca28498bbe4cc777c3bd",
+    "preflight/preflight_source.tar.gz": "8cd58b790a190b7422d92aaa111bba2f03ed4118efaa3c4800f77f4b56d54549",
+    "preflight/cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "preflight/cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preflight/cmake_version_resources.txt": "1842ec3b998604690c9ae523f51443ddf89f70d6e84913d99a4841a86ab4c696",
+    "preflight/configure_stdout.log": "6d0c9fcce7740fa208b951aa40b26b937859d08db889eba2aa029204c311b6ff",
+    "preflight/configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preflight/configure_resources.txt": "24155606263005db0547c2cd1bbac8fb15535977aa023746a4d3b06d911e0779",
+    "preflight/compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "preflight/compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preflight/compiler_version_resources.txt": "dd602f485b98d2d2254fcc60547d747bfceb739ec23ccbe15ad2700d8984b029",
+    "preflight/compile_stdout.log": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+    "preflight/compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preflight/compile_resources.txt": "536b998b127b4d5d1a18659dca97417391a02e8f0266b9b937fd97346455956c",
+    "preflight/runtime_libraries_stdout.log": "47a241ab37dac2b43b566886759ba06f2536835328f3b3b7e7f5311542ed0e61",
+    "preflight/runtime_libraries_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preflight/runtime_libraries_resources.txt": "0a3246c074e998aa72d8f56b35df1f0928adc3fc390440b584a1cc169d359cdb",
+    "preflight/preflight_run_manifest.json": "07c8e363cabe0d15fe3def271bcac8136bcae094ce06db6fbbc67c7515cd318f",
+    "preflight/initial_matrix_preflight_stdout.log": "601884668a782cc93dadb43195d785779f21b7c0bebac3320fe581280078b7bd",
+    "preflight/initial_matrix_preflight_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preflight/initial_matrix_preflight_resources.txt": "f2f1bc0e4d53d48f8067f9b794bcc6e3187461368c7aaa7e9ed33861425ebf2f",
+    "preflight/dd_history.csv": "a81ab7df0823a47ffbd2d0430a3feac3c97abc306dd0b6b8eb63905949d5d134",
+    "preflight/dd_matrix_preflight.csv": "ab802d087acd6838c1c9d705bfb1d659fb6a1f7731196b4f4b47dd5b78f2d2b3",
+    "preflight/dd_preflight_ray_status.csv": "694f13002ee3be09a59df28e9f6e633c3c9a2cf32b3405a0a3701d7e0d39ec00",
+    "preflight/full_initial_checks.json": "ad233eeb8d84c1cb1e417cf6fc82af4163c6886e2157041033d16c3728cb919a",
+    "preflight/initial_geometrycheck_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preflight/initial_geometrycheck_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preflight/initial_geometrycheck_resources.txt": "89d3f86ade1d25dd62ef8eecc347134df6b47973a4d3b92471681a9b36ced1be",
+    "preflight/geometry_initial_ray_convergence.csv": "989c976807fe30983a49e6d6f151071f50052d3387c4532d21fc47020831a274",
+    "preflight/geometry_initial_ray_derivatives.csv": "b13b97ceefa2891330b4fe05617910efcd446b42d37fdbcba0cb2a112c4a1d73",
+    "preflight/geometry_initial_ray_identifiers.csv": "23b4bc55d77aa686cfda722dbd5e5df06ab1f6c457c190bcdc45832518c0c666",
+    "preflight/preflight_checks.json": "82757cd3836ae4462b641858e83bfd4672fd416fbb09bfd88e7ea78481357c8e",
+    "preflight/simulation_provenance/run.cfg": "2ae16cabaf3ac994d9c7f0797683ea38eb36f4a3f0f2ea14cd75f251b5d01d18",
+    "preflight/simulation_provenance/preparation_manifest.json": "7703a13d2d5e52d981b7511e413b162f6506c14058d8abd7e7b1d526dd9a9d26",
+    "preflight/simulation_provenance/analytic_truth_manifest.json": "ec3939cb84c8506a23f2911065e135fe0ef53faf6061712939a590d0dd64e7ec",
+    "preflight/simulation_provenance/simulation_execution.json": "9b3d91132a0b790c649215cb7951e1f0a263e2e1441be2ba740838772d5593ab",
+    "preflight/simulation_provenance/simulation_run_manifest.json": "676471f511d813d538fdb9fbd685ff34a296c3fe4752ba764dc370fdbda4aeb1",
+    "preflight/simulation_provenance/simulation_source.tar.gz": "6cf6238a7a49dc2db9c3985d6c1f6c04892feb755dc1bd93e7c9135f3898c3c3",
+    "preflight/simulation_provenance/independent_simulation_review.json": "64d79ec023b48fecae56212774b2d790871133606a0fd87395f1c2d8d07e533e",
+    "interrupted_preflight/preflight_execution.json": "e87e9b188087ddd67aef7109af9f976822a3f5267477df8fcfd8c192a1883c5c",
+    "interrupted_preflight/initial_events.csv": "63e62e60e422c9a48b5818c2eeb70a6a626d6fb9528b00534dfe15306e254f9f",
+    "interrupted_preflight/initial_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "interrupted_preflight/truth_events.csv": "5f936b391fb206d48ed68f30f5caf4ff8fb6da23593292e6b048bcbb784d7310",
+    "interrupted_preflight/truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "interrupted_preflight/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "interrupted_preflight/observations.csv": "ef7c62ddb2917550812432b5ac9df7c6c11e08ea5e0ea14befc1e132b41b8091",
+    "interrupted_preflight/ray_samples.csv": "43ed326270c0e6c13700f1be02b4747eb1967db79b0478e02d49e7d1bc12a7a3",
+    "interrupted_preflight/authoritative_geometry": "13952d674c3c41253c5943b0d457ae9f16eb88a17fc5c057bee727467c90d166",
+    "interrupted_preflight/run.cfg": "28c8a0ec83ad2672eded06634c96540cb97319a83835ca28498bbe4cc777c3bd",
+    "interrupted_preflight/preflight_source.tar.gz": "4e4666326948f77f7e2590005ca95a3de7d2b25484ea12a4775fb96244decc78",
+    "interrupted_preflight/cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "interrupted_preflight/cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupted_preflight/cmake_version_resources.txt": "0094adfce08bd3bff0e0b77c3f26c3972482cd2b7c2f753ea4f90efff688726a",
+    "interrupted_preflight/configure_stdout.log": "b6da37b7549a71719054b1ad941f31e2c72c81641c0148894f8b55cf6ea8abaf",
+    "interrupted_preflight/configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupted_preflight/configure_resources.txt": "c01a52a0a923f36fe36b11da6f0ea05d8055ef96ddf008b8c46e23cb5d784b18",
+    "interrupted_preflight/compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "interrupted_preflight/compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupted_preflight/compiler_version_resources.txt": "5bb12007708dc20eb0a4701c646b5c95ecf5c7114b2d520f3b573ecf7dd6eb22",
+    "interrupted_preflight/compile_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupted_preflight/compile_stderr.log": "afe3497718abc8c209a4eb59717f1c5d257855da4b4ac020bba7fd2284170a51",
+    "interrupted_preflight/compile_resources.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupted_preflight/simulation_provenance/run.cfg": "2ae16cabaf3ac994d9c7f0797683ea38eb36f4a3f0f2ea14cd75f251b5d01d18",
+    "interrupted_preflight/simulation_provenance/preparation_manifest.json": "7703a13d2d5e52d981b7511e413b162f6506c14058d8abd7e7b1d526dd9a9d26",
+    "interrupted_preflight/simulation_provenance/analytic_truth_manifest.json": "ec3939cb84c8506a23f2911065e135fe0ef53faf6061712939a590d0dd64e7ec",
+    "interrupted_preflight/simulation_provenance/simulation_execution.json": "9b3d91132a0b790c649215cb7951e1f0a263e2e1441be2ba740838772d5593ab",
+    "interrupted_preflight/simulation_provenance/simulation_run_manifest.json": "676471f511d813d538fdb9fbd685ff34a296c3fe4752ba764dc370fdbda4aeb1",
+    "interrupted_preflight/simulation_provenance/simulation_source.tar.gz": "6cf6238a7a49dc2db9c3985d6c1f6c04892feb755dc1bd93e7c9135f3898c3c3",
+    "interrupted_preflight/simulation_provenance/independent_simulation_review.json": "64d79ec023b48fecae56212774b2d790871133606a0fd87395f1c2d8d07e533e",
+    "source/check_loma_initial_preflight.py": "c9c00e73ccb0a266b99a221dd8264f62d5d483a005e9754b298b451955078775",
+    "source/run_loma_initial_preflight.py": "3b4ed9f17fc7b64236f04636a11e56dd950277eb418b00087ba999e7a89e3c7e"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "material_issue_found": false,
+  "scope": "Read-only native initial-geometry/pure-time/stage and final fixture inventory review; lifecycle review and execution are separate",
+  "checks_reported": 40,
+  "all_saved_checks_pass": true,
+  "maintained_launcher_matches_frozen_tested_source": true,
+  "source_sha256": "f1acc19135c11edda106e3b8c7d8c1879d7d490db729d4ad55263b87022946f1",
+  "summary_sha256": "1fbbe1a0d4b7cf71f4661272d1ee7ffbdb93a26e3e8ce8ae7cf548c54153ff7b",
+  "findings": [
+    "Full status rows join event-major Cartesian native support with original resource IDs, NSLC/FDSN and epoch fields.",
+    "source_t is saved separately; write_ray_status exports raw propagation ray.time and source partials. Geometry sample and finite-difference paths use initial coordinates only.",
+    "Sample identity and first-eight feasible plus/minus0.01km component inventory match current C++; path and FMM spacings halve without changed local stopping.",
+    "One iteration with positive stage_length fixes stage0. matrix_preflight_only returns before full matrix reserve/solve; validator requires empty history and absent inverse output tables.",
+    "False local flags and sampled perturbation flags remain scientific failures with native identity context; final status does not automatically accept accuracy or inversion."
+  ],
+  "limitations": [
+    "No actual Loma preflight or solver rerun was performed by this reviewer.",
+    "Sample reported subtraction values are checked finite; their formula comes from the separately frozen C++ implementation and existing parity checks.",
+    "Process-group interruption controls are saved by the executing agent; this scientific/native review does not independently repeat them."
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "status": "interrupted",
+  "started_utc": "2026-10-10T03:33:46.541324+00:00",
+  "driver_pid": 69601,
+  "command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/run_loma_initial_preflight.py",
+    "--simulation",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/001/invented_simulation",
+    "--output",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/001/interrupted_preflight",
+    "--build",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/001/interrupted"
+  ],
+  "threads": 4,
+  "completed_commands": [
+    {
+      "stage": "cmake_version",
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/001/interrupted_preflight/cmake_version_resources.txt",
+        "cmake",
+        "--version"
+      ],
+      "pid": 69602,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:33:46.629116+00:00",
+      "maximum_resident_set_kbytes": 14300
+    },
+    {
+      "stage": "configure",
+      "command": [
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/001/interrupted/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/001/interrupted/compiled"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/001/interrupted_preflight/configure_resources.txt",
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/001/interrupted/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/001/interrupted/compiled"
+      ],
+      "pid": 69604,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:33:47.647930+00:00",
+      "maximum_resident_set_kbytes": 22936
+    },
+    {
+      "stage": "compiler_version",
+      "command": [
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_preflight_checks/001/interrupted_preflight/compiler_version_resources.txt",
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "pid": 69654,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:33:47.657690+00:00",
+      "maximum_resident_set_kbytes": 2884
+    }
+  ],
+  "scope": "Freeze initial Loma rays and a stage-0 matrix census; never solve an inversion.",
+  "current_stage": "compile",
+  "current_command": [
+    "cmake",
+    "--build",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_initial_preflight_checks/001/interrupted/compiled",
+    "-j",
+    "2"
+  ],
+  "current_command_started_utc": "2026-10-10T03:33:47.659238+00:00",
+  "current_child_pid": 69656,
+  "child_pid_semantics": "GNU time process-group leader; it waits for the stated executable",
+  "exception_child": {
+    "pid": 69656,
+    "return_code": -15
+  },
+  "finished_utc": "2026-10-10T03:33:47.691304+00:00",
+  "error": "143",
+  "return_code": 143
+}
