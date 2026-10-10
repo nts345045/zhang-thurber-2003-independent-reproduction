@@ -1,0 +1,25 @@
+case,computed_sy,sy_bits,usable,reciprocal,reciprocal_bits,interpretation
+below_old_cutoff,9.9999999999999984e-15,3d06849b86a12b9a,1,100000000000000.02,42d6bcc41e900001,positive finite computed dot and reciprocal
+old_cutoff,1e-14,3d06849b86a12b9b,1,100000000000000,42d6bcc41e900000,positive finite computed dot and reciprocal
+above_old_cutoff,1.0000000000000002e-14,3d06849b86a12b9c,1,99999999999999.984,42d6bcc41e8fffff,positive finite computed dot and reciprocal
+unit,1,3ff0000000000000,1,1,3ff0000000000000,positive finite computed dot and reciprocal
+minimum_normal,2.2250738585072014e-308,0010000000000000,1,4.4942328371557898e+307,7fd0000000000000,positive finite computed dot and reciprocal
+representable_subnormal,1.1125369292536007e-308,0008000000000000,1,8.9884656743115795e+307,7fe0000000000000,positive finite computed dot and reciprocal
+negative,-1,bff0000000000000,0,0,0000000000000000,supplied computed value is unusable
+negative_zero,-0,8000000000000000,0,0,0000000000000000,supplied computed value is unusable
+zero,0,0000000000000000,0,0,0000000000000000,supplied computed value is unusable
+minimum_subnormal,4.9406564584124654e-324,0000000000000001,0,inf,7ff0000000000000,supplied computed value is unusable
+positive_infinity,inf,7ff0000000000000,0,0,0000000000000000,supplied computed value is unusable
+negative_infinity,-inf,fff0000000000000,0,0,0000000000000000,supplied computed value is unusable
+nan,nan,7ff8000000000000,0,0,0000000000000000,supplied computed value is unusable
+empty,1,3ff0000000000000,0,0,0000000000000000,dimension rejection
+dimension,1,3ff0000000000000,0,0,0000000000000000,dimension rejection
+nonfinite_s,1,3ff0000000000000,0,0,0000000000000000,finite supplied dot cannot conceal nonfinite vector
+nonfinite_y,1,3ff0000000000000,0,0,0000000000000000,finite supplied dot cannot conceal nonfinite vector
+dyadic_-30,8.6736173798840355e-19,3c30000000000000,1,1.152921504606847e+18,43b0000000000000,no fixed absolute cutoff
+dyadic_0,1,3ff0000000000000,1,1,3ff0000000000000,no fixed absolute cutoff
+dyadic_30,1.152921504606847e+18,43b0000000000000,1,8.6736173798840355e-19,3c30000000000000,no fixed absolute cutoff
+cancelled_positive,0,0000000000000000,0,0,0000000000000000,exact real dot is 1; no cancellation repair claimed
+underflowed_positive,0,0000000000000000,0,0,0000000000000000,exact real dot is 2^-1200
+overflowed_dot,inf,7ff0000000000000,0,0,0000000000000000,finite operands do not imply representable dot
+exact_negative_computed_positive,0.5,3fe0000000000000,1,2,4000000000000000,limitation: exact real dot is -1/2; usable arithmetic is not an exact-sign certificate

@@ -1,0 +1,54 @@
+--- C/diagnostics/observed_optimizer.hpp
++++ D/diagnostics/observed_optimizer.hpp
+@@ -48,28 +48,12 @@
+       converged = true;
+       break;
+     }
+-    Vec q = grad, alpha(S.size());
+-    for (int j = int(S.size()) - 1; j >= 0; j--) {
+-      alpha[j] = rho[j] * dot(S[j], q);
+-      for (size_t k = 0; k < q.size(); k++)
+-        q[k] -= alpha[j] * Y[j][k];
+-    }
+-    Vec weights = ray_metric_weights(g, p);
+-    double scale = S.empty() ? 1 : dot(S.back(), Y.back()) /
+-                                      dot(Y.back(), inverse_ray_metric(weights, Y.back()));
+-    q = inverse_ray_metric(weights, std::move(q));
+-    for (auto &v : q)
+-      v *= scale;
+-    for (size_t j = 0; j < S.size(); j++) {
+-      double beta = rho[j] * dot(Y[j], q);
+-      for (size_t k = 0; k < q.size(); k++)
+-        q[k] += S[j][k] * (alpha[j] - beta);
+-    }
+-    for (auto &v : q)
+-      v = -v;
++    Vec q;
++    const bool usable_memory = usable_lbfgs_ray_direction(
++        [&] { return ray_metric_weights(g, p); }, grad, S, Y, rho, q);
+     Vec feasible_direction = q;
+     project_ray_direction(g, p, feasible_direction);
+-    if (feasible_direction != q || !(dot(grad, q) < 0)) {
++    if (!usable_memory || feasible_direction != q || !(dot(grad, q) < 0)) {
+       ConeRayMetricStats metric_stats;
+       q = cone_ray_direction(g, p, grad, &metric_stats);
+       audit_reset=true; audit_metric(metric_stats);
+@@ -137,7 +121,8 @@
+         y[k] = ng[k] - grad[k];
+       }
+       double sy = dot(s, y);
+-      if (sy > 0) {
++      double reciprocal = 0;
++      if (usable_ray_curvature(s, y, sy, reciprocal)) {
+         audit_curvature=true;
+         if (S.size() == 8) {
+           S.erase(S.begin());
+@@ -146,7 +131,7 @@
+         }
+         S.push_back(s);
+         Y.push_back(y);
+-        rho.push_back(1 / sy);
++        rho.push_back(reciprocal);
+       }
+     }
+     p = std::move(trial);

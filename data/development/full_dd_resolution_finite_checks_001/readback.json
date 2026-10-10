@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "scope": "Invented algebra and saved-result readback only.",
+  "original_checks_exactly_unchanged": 34,
+  "total_checks": 39,
+  "old_frozen_omissions": {
+    "finite_input_unmasked_response_overflow": {
+      "ordinary_arrays_finite": true,
+      "physical_response_positive_infinity": true,
+      "ordinary_resolution": [
+        [
+          1.0
+        ]
+      ],
+      "ordinary_covariance": [
+        [
+          0.0
+        ]
+      ]
+    },
+    "finite_input_condition_overflow": {
+      "ordinary_arrays_finite": true,
+      "condition_positive_infinity": true
+    }
+  },
+  "input_sha256": {
+    "data/development/full_dd_resolution_finite_checks_001/readback.py": "9e5f3c717658c99acb8c842ab1e1dca8234d28a45156342f2d7f013e43b895c0",
+    "data/development/full_dd_resolution_finite_checks_001/results.json": "cad1b396ddd84ef3647eca4b1493275df48f66bc3a5db63cbca52fa34a28a7cc",
+    "data/development/full_dd_resolution_checks/results.json": "e49f5466b3a57a3771055b589779c3bb0bad846a1f94949b6e6364890af3bb56",
+    "data/development/full_dd_resolution_finite_checks_001/source/resolution_full_hayward.py": "8f773ca30f4280e75bd45694b9ad62788e2751e6395d797d617666215cfb6b15",
+    "data/development/full_dd_resolution_finite_checks_001/source/check_full_dd_resolution.py": "f8c0df72c635effa279d022608f42eef9b7ff15f121427ed72d7bd47b1cf3ab8",
+    "data/development/full_dd_resolution_checks/source/resolution_full_hayward.py": "f0de3144d6130cd308a89681cc2c50355cd4a48e43b3b408e2338516401d7bd9",
+    "data/development/full_dd_resolution_checks/source/check_full_dd_resolution.py": "a94be1d304e01ec7ee8f3cc9ada27b05fcd7279f683882fc55077e756fc374ea",
+    "resolution_full_hayward.py": "8f773ca30f4280e75bd45694b9ad62788e2751e6395d797d617666215cfb6b15",
+    "diagnostics/check_full_dd_resolution.py": "f8c0df72c635effa279d022608f42eef9b7ff15f121427ed72d7bd47b1cf3ab8"
+  },
+  "limitation": "Finite conditioning is required for serialization; no finite condition-number accuracy threshold is introduced."
+}

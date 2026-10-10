@@ -1,0 +1,31 @@
+{
+  "status": "completed_stationary_candidate_controls",
+  "input_sha256": {
+    "diagnostics/check_endpoint_shooting.py": "f10e59a44a2c27d5b568d704194eee926ffd959674e676b3d312c6b1e3c0e367",
+    "diagnostics/endpoint_connector.py": "c5848169606ae0f49071e8067dd88029e7ba83756fd700700059182c5ce28857",
+    "data/development/loma_endpoint_connector_next_step_001/shooting_control.md": "9c85218a847eaf94d68ec8b7bd2c17df19d1358b363dd153c2efa354912140bc"
+  },
+  "baseline_comparisons": 40,
+  "baseline_accuracy_passes": 40,
+  "perturbation_comparisons": 160,
+  "unresolved_perturbations": 0,
+  "limitations": [
+    "No native geometry, production changes, inverse solve or global branch enumeration.",
+    "All models use the same trilinear Hamiltonian/action and original basis kernels.",
+    "Polynomial evaluations on inadmissible trial arcs are root-finding continuation only; roots failing the finite-box check are not selected.",
+    "Finite-box, reaction and invariant checks sample dense numerical trajectories; they are not outward certificates.",
+    "One successful stationary root per topology is not a proved minimum or complete search.",
+    "Boundary finite differences contain the physical square-root truncation term; raw disagreement is retained.",
+    "Zero-cap branches are explicit, not clipped durations; singular root and branch-switch outcomes remain visible."
+  ],
+  "output_sha256": {
+    "baseline_results.json": "1c352d8a38391d2731eb1c0523c7aa9377d4a1c230684b69e2c2ec564128e376",
+    "comparisons.json": "3843ce9c97a92e55c7e72e29900ca48eb8d3c130f0f4786f9b8705fc74301e6b",
+    "execution.json": "d6ea437afbdb3858bd428d9870601a2d886e8e0903fc98c555e92a6b206d34b9",
+    "invented_inputs.json": "4136942ca995741e6d792cfa45441ac06a6f6d5832261a1d003128eb9a40cb69",
+    "perturbations.json": "66a3e3eba57e694244b0ccb7399d15786feff03c38287607e07261d6a781fe26",
+    "source/check_endpoint_shooting.py": "f10e59a44a2c27d5b568d704194eee926ffd959674e676b3d312c6b1e3c0e367",
+    "source/endpoint_connector.py": "c5848169606ae0f49071e8067dd88029e7ba83756fd700700059182c5ce28857",
+    "source/shooting_control.md": "9c85218a847eaf94d68ec8b7bd2c17df19d1358b363dd153c2efa354912140bc"
+  }
+}

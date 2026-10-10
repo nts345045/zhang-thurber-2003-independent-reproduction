@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "started_utc": "2026-10-10T08:36:20.664331Z",
+  "source_index_tree": "9086a27ec1e4535bcdd46210aea2a81e2d14bb56",
+  "scope": "Fresh staged-index checkout; restore six historical sentinels, verify terminal evidence, and prepare D only. No compilation or numerical execution.",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "data/development/terminal_lock_archive_001/restore.py",
+        "--scratch",
+        "tmp/curvature_controls_checkout_001"
+      ],
+      "cwd_relative_to_source": ".",
+      "return_code": 0,
+      "output": "{\n  \"status\": \"restored_historical_evidence\",\n  \"archive_sha256\": \"2df1c2b4a0ee49f1e5ee349f23cd73836b37ae2dc6efefd8331c1ec9dd23d282\",\n  \"scope\": \"Fresh scratch only; numeric PID text is historical evidence, never process authority\",\n  \"counts\": {\n    \"records\": 6,\n    \"lock_bytes\": 42,\n    \"lock_lookups\": 29,\n    \"terminal_evidence_files\": 32\n  },\n  \"restored_sha256\": {\n    \"data/development/loma_failed_search_3426_001/execution.lock\": \"b14538e0b5e9f57600f64891b62ae3aa75f695701e02a04848dba9861d735539\",\n    \"data/development/loma_outer_accumulation_native_001/execution.lock\": \"64cd6c56f9b9424abd35af74b9a163f1bcc06dad2e92bdc40eb8c4dbdb31a8e8\",\n    \"data/development/loma_curvature_capture_native_001/execution.lock\": \"e44c0fb8cb083b28199ff72731e6600dcb36af19206bdea9ad58c8a0fe638abb\",\n    \"data/development/loma_seed_loaded_b_native_001/execution.lock\": \"e9adec0c2cff74b7b6fab0b045be5fae6efc4211462c24f2773c97e08ab3a52e\",\n    \"data/development/loma_positive_curvature_native_001/execution.lock\": \"c6eabe68e3c1183066dabecc02503db42ed620d884746c3dc4f5b41db068692a\",\n    \"data/development/loma_usable_curvature_native_001/execution.lock\": \"0d112f7030f1420bfc9636db113bf214ab5db759c1afd9a3cb462a1a4e152ef7\"\n  }\n}\n"
+    },
+    {
+      "argv": [
+        "git",
+        "checkout-index",
+        "--stdin",
+        "-z",
+        "--prefix=tmp/curvature_controls_checkout_001/"
+      ],
+      "cwd_relative_to_source": ".",
+      "return_code": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "data/development/terminal_lock_archive_001/restore.py",
+        "--verify",
+        "tmp/curvature_controls_checkout_001"
+      ],
+      "cwd_relative_to_source": ".",
+      "return_code": 0,
+      "output": "{\n  \"status\": \"verified\",\n  \"records\": 6,\n  \"lock_bytes\": 42,\n  \"lock_lookups\": 29,\n  \"terminal_evidence_files\": 32\n}\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "diagnostics/run_usable_curvature_native.py",
+        "--phase",
+        "prepare",
+        "--output",
+        "data/development/clean_checkout_D_prepared_001",
+        "--build",
+        "tmp/clean_checkout_D_prepared_001"
+      ],
+      "cwd_relative_to_source": "tmp/curvature_controls_checkout_001",
+      "return_code": 0,
+      "output": "tmp/curvature_controls_checkout_001/data/development/clean_checkout_D_prepared_001/prepared.json\n"
+    }
+  ],
+  "overlay_tracked_file_count": 11658,
+  "finished_utc": "2026-10-10T08:36:43.504063Z",
+  "archive_sha256": "2df1c2b4a0ee49f1e5ee349f23cd73836b37ae2dc6efefd8331c1ec9dd23d282",
+  "historical_lock_restoration_sha256": "793aa01605cc0a3ca469cdc584bcce4bb2d4d65848e86865c1ff7093f92d3296",
+  "prepared_sha256": "3a2dbf9635a4aefb247b1535a7f1a9c880a0d8c882e6d24a1565ad625c5019aa",
+  "original_input_hashes_verified": 882,
+  "prepared_file_count": 61,
+  "source_count": 21,
+  "native_context_field_count": 199,
+  "prepared_source_exact_match": true,
+  "native_context_exact_match": true,
+  "limitations": [
+    "The index tree is the prospective checkpoint before adding this receipt and final delivery manifest.",
+    "Only D preparation and dependency closure were exercised. Existing finite-trajectory numerical results are separately reviewed.",
+    "Historical PID text is inert archived evidence and authorizes no process operations."
+  ],
+  "path_notation": "Recorded absolute source-root prefixes are expressed relative to the source checkout; arguments, outcomes, and hashes otherwise retain their values."
+}

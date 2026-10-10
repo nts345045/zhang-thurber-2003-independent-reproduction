@@ -455,6 +455,20 @@ The identified replays and independent reviews are in
 \path{data/development/loma_seed_loaded_b_native_001/} and
 \path{data/development/loma_positive_curvature_native_001/}.
 
+A further isolated replay admits only finite positive computed curvature with
+a finite positive reciprocal. It checks the current path metric and the
+intermediate two-loop quantities before using stored curvature; unusable memory
+invokes the existing cone-metric fallback and clears memory. An unusable fallback
+retains its existing exception. These checks introduce no curvature-magnitude
+floor and change neither the action nor the stopping rules. The guarded and
+unguarded variants each pass 183 invented component checks. On the native ray,
+all five C numerical tables remain byte-identical, including both initializers,
+complete histories, paths, source derivatives, and cone diagnostics. This D
+result is saved in \path{data/development/loma_usable_curvature_native_001/}.
+Computed positive curvature is still not an exact-sign or information
+certificate; cancellation can reverse its sign. This diagnostic result does
+not validate a full ray cohort or change the production optimizer.
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.94\linewidth]{../figures/diagnostics/loma_retention.pdf}
@@ -545,6 +559,52 @@ remain unresolved, and the fixed receiver's normal partial remains biased.
 The controls in
 \path{data/development/loma_endpoint_scalar_contact_controls_001/}
 provide no native-ray or production correction.
+
+A shooting calculation then uses curved stationary candidates in the same
+original eight-node trilinear velocity field for every perturbation. Direct
+and bottom-guide branches include explicit zero-length caps. The Hamiltonian
+equations integrate the action and nodal kernels along each candidate; endpoint
+momenta give its endpoint derivatives. The selected value is the least action
+among successfully matched admissible roots. One attempted root per topology,
+sampled domain and reaction checks, and a restricted branch roster do not
+establish a global minimum.
+
+Across both declared integration tolerances, all 40 affine reference comparisons pass.
+The largest travel-time and full endpoint-vector errors are
+$1.97\times10^{-11}$ s and $1.03\times10^{-13}$ s/km. At the three resolved
+source offsets, the excess action agrees with the curved affine reference to
+within $4.4\times10^{-9}$ in relative ratio. All 160 perturbation comparisons
+have matched candidates, but this does not mean all derivative discrepancies
+pass. The 56 central endpoint comparisons differ by at most
+$6.14\times10^{-8}$ s/km. All 24 inward bottom-normal secants exceed
+$3\times10^{-6}$ s/km at the tested steps. Their discrepancies decrease by
+factors 3.962--4.016 when the step decreases by 16, consistent with square-root
+truncation (Figure~\ref{fig:endpoint-shooting}). Original-node model-column
+errors increase from $1.60\times10^{-12}$ to $6.58\times10^{-10}$ s as the
+perturbation decreases from $2^{-16}$ to $2^{-20}$, indicating a numerical floor.
+These controls are saved in
+\path{data/development/loma_endpoint_shooting_controls_001/}.
+A separate four-baseline replay saves initially omitted mixed-model trajectories
+and exactly reproduces the stored kernel, momentum, and boundary-secant values;
+it is preserved in
+\path{data/development/loma_endpoint_shooting_baselines_001/}.
+They provide a local action-consistent candidate, with no native-ray,
+full-path optimization, or production correction claimed.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.96\linewidth]{../figures/diagnostics/loma_endpoint_shooting.pdf}
+\caption{Invented trilinear shooting controls from saved numerical output.
+Left: inward boundary secant errors relative to limiting endpoint momentum,
+with a square-root reference slope and the unchanged $3\times10^{-6}$ s/km
+comparison limit. Every sampled inward secant remains above that limit.
+Right: central finite-difference errors in original-node log-slowness kernels.
+The smaller model perturbation increases the largest discrepancy, so further
+step reduction alone is not evidence of derivative accuracy. Both integration
+tolerances and all corresponding comparisons are retained. These are local
+candidate tests, not reproduced manuscript panels.}
+\label{fig:endpoint-shooting}
+\end{figure}
 
 \subsection{Rejecting unsupported forward evaluations during inversion}
 The preceding inversion code recorded local ray failures but could still use
@@ -678,3 +738,40 @@ an independent full-file audit checks the actual preparation. No run
 configuration or inversion was created. A future calculation must declare
 all nine stage factors explicitly; the existing catalog covariance analysis
 continues to reject waveform rows until their joint noise model is justified.
+
+Catalog differences require a different covariance calculation from independent
+differential measurements because their constituent picks recur. Let $C$ map
+original pick errors into absolute and catalog-difference rows, and assume
+independent original errors with covariance $\Sigma$. A difference row of $C$
+contains $+1$ and $-1$. With actual assembled coefficients $G$, frozen row
+multipliers $W$, velocity smoothing $L$, and the exported column-scaled damping
+penalty $D$, define $H=G^T W^2G+L^TL+D$. If $P$ selects model parameters, then
+\[
+ K=P H^{-1}G^TW^2C,\qquad
+ \operatorname{Cov}(q)=K\Sigma K^T.
+\]
+This propagates shared errors without inverting the singular observation
+covariance $C\Sigma C^T$. Repeating a datum cannot create an independent
+measurement. Physical local model resolution is
+\[
+ R_{\rm model}=P H^{-1}G^TW^2J_{\rm model},
+\]
+where $J_{\rm model}$ retains prediction derivatives suppressed by the
+estimator's DD path-length mask. This response can differ from the model block
+of $H^{-1}G^TW^2G$.
+
+Native pick identities and coupled source elimination are retained by
+\path{resolution_full_hayward.py}. A separate
+dense-source implementation passes 35 invented controls, including repeated
+picks, masked coefficients, and the solver's ordered-entry column norms.
+Its largest agreement error is $1.78\times10^{-15}$ against a declared
+$10^{-10}$ algebra tolerance. The controls are saved in
+\path{data/development/catalog_dd_resolution_controls_003/}.
+Six direct comparisons with the maintained sparse implementation agree within
+$9.44\times10^{-16}$. The maintained calculation also rejects a nonfinite
+unmasked response or conditioning diagnostic; 39 controls include finite-input
+overflow cases and preserve the original 34 results.
+No new field resolution has been calculated. Fixed weights, independent
+one-sigma pick errors, and unconstrained sources remain assumptions; active
+bounds, model and ray errors, nonlinear effects, and waveform noise are outside
+this calculation.

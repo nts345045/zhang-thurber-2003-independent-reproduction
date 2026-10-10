@@ -1,0 +1,132 @@
+{
+  "status": "passed",
+  "scope": "Saved invented coupled/masked fixtures only; no field data, tracing or inverse solve.",
+  "input_sha256": {
+    "data/development/catalog_dd_resolution_controls_003/summary.json": "f271eb8433b88d5b184d6871905940b17a5c70a38ce6304af9a5fa90259fb6f9",
+    "data/development/catalog_dd_resolution_controls_003/compare_maintained.py": "3bbd30b16399a1084c3db20b258956c44f0c7067c6a96a90cec0a4342b8f5a90",
+    "data/development/full_dd_resolution_finite_checks_001/source/resolution_full_hayward.py": "8f773ca30f4280e75bd45694b9ad62788e2751e6395d797d617666215cfb6b15",
+    "data/development/full_dd_resolution_checks/source/resolution_full_hayward.py": "f0de3144d6130cd308a89681cc2c50355cd4a48e43b3b408e2338516401d7bd9",
+    "data/development/catalog_dd_resolution_controls_003/catalog_dd_resolution.py": "3761db6b4de5af78055e3eaed7a7daf10d75bb37284018e24d6f7b1b0608b45d",
+    "data/development/catalog_dd_resolution_controls_003/check_catalog_dd_resolution.py": "a043ab95e35989e69f2cd66811dba2af7a02bda0321e5f5bc112f346ed11fa7a",
+    "data/development/catalog_dd_resolution_controls_003/invented_matrices.npz": "7228ceb03df7250fa14e43bf17fdbb7a863987adf2f93549967728c51e4d5d4a",
+    "data/development/catalog_dd_resolution_controls_003/resolution_hayward.py": "241b7226df090ab32356f983b764c06823fdadb551a5dec6ab48165fcfb6f320"
+  },
+  "checks": [
+    {
+      "case": "coupled",
+      "quantity": "assembly_resolution",
+      "maximum_absolute_difference": 3.3306690738754696e-16,
+      "tolerance": 1e-12,
+      "passed": true,
+      "old_and_fixed_maintained_arrays_exactly_equal": true
+    },
+    {
+      "case": "coupled",
+      "quantity": "shared_pick_covariance",
+      "maximum_absolute_difference": 1.0842021724855044e-18,
+      "tolerance": 1e-12,
+      "passed": true,
+      "old_and_fixed_maintained_arrays_exactly_equal": true
+    },
+    {
+      "case": "coupled",
+      "quantity": "physical_response",
+      "maximum_absolute_difference": 3.3306690738754696e-16,
+      "tolerance": 1e-12,
+      "passed": true,
+      "old_and_fixed_maintained_arrays_exactly_equal": true
+    },
+    {
+      "case": "masked",
+      "quantity": "assembly_resolution",
+      "maximum_absolute_difference": 7.216449660063518e-16,
+      "tolerance": 1e-12,
+      "passed": true,
+      "old_and_fixed_maintained_arrays_exactly_equal": true
+    },
+    {
+      "case": "masked",
+      "quantity": "shared_pick_covariance",
+      "maximum_absolute_difference": 1.951563910473908e-18,
+      "tolerance": 1e-12,
+      "passed": true,
+      "old_and_fixed_maintained_arrays_exactly_equal": true
+    },
+    {
+      "case": "masked",
+      "quantity": "physical_response",
+      "maximum_absolute_difference": 9.43689570931383e-16,
+      "tolerance": 1e-12,
+      "passed": true,
+      "old_and_fixed_maintained_arrays_exactly_equal": true
+    }
+  ],
+  "cases": {
+    "coupled": {
+      "rows": 18,
+      "source_columns": 5,
+      "model_columns": 4,
+      "independent_picks": 12,
+      "damping_scalar": 0.2,
+      "damping_coefficients": [
+        2.348419050855996,
+        0.8208233947664033,
+        0.2,
+        0.9981330786656799,
+        0.8935716268774997,
+        1.064316818098795,
+        0.792905999303289,
+        1.3009012938484128,
+        1.4599496886848427
+      ],
+      "diagnostics": {
+        "source_normal_rows": 5,
+        "source_solve_relative_residual": 1.4432304621235503e-16,
+        "model_schur_condition_number": 6.262917341096177,
+        "resolution_equation_relative_residual": 2.0181530271263199e-16,
+        "noise_transfer_relative_residual": 2.0192163693335553e-16
+      },
+      "physical_minus_assembly_max": 3.3306690738754696e-16
+    },
+    "masked": {
+      "rows": 18,
+      "source_columns": 5,
+      "model_columns": 4,
+      "independent_picks": 12,
+      "damping_scalar": 0.2,
+      "damping_coefficients": [
+        2.348419050855996,
+        0.8208233947664033,
+        0.2,
+        0.9981330786656799,
+        0.8935716268774997,
+        1.0641587550900602,
+        0.792905999303289,
+        1.0334625318807926,
+        1.4599496886848427
+      ],
+      "diagnostics": {
+        "source_normal_rows": 5,
+        "source_solve_relative_residual": 1.1479245999225596e-16,
+        "model_schur_condition_number": 6.653671746494883,
+        "resolution_equation_relative_residual": 1.3406171904496987e-16,
+        "noise_transfer_relative_residual": 1.2704078146610144e-16
+      },
+      "physical_minus_assembly_max": 0.2322129461449467
+    }
+  },
+  "maximum_absolute_difference": 9.43689570931383e-16,
+  "conventions": {
+    "A": "W G_used",
+    "U": "W C diag(sigma_pick)",
+    "L": "Full-width model-only smoothing; source block zero",
+    "damping": "lambda sqrt(exported ordered norm or existing 1e-20 fallback)",
+    "physical": "Weighted unmasked prediction-model Jacobian supplied separately"
+  },
+  "limitations": [
+    "Conditional frozen weights/masks/scales and unconstrained sources.",
+    "Dense output hashes and all original controls_003 files remain unchanged.",
+    "No extra 0.05 factor and no independent differential-pick errors.",
+    "Exact array equality only compares the two maintained revisions on these fixtures."
+  ]
+}
