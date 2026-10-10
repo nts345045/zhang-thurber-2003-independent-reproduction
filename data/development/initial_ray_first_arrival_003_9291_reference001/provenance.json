@@ -1,0 +1,20 @@
+{
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 data/development/initial_ray_first_arrival_003_9291_reference001/check.py",
+  "source_mapping": {
+    "inputs/identified_ray.csv": "data/development/initial_ray_first_arrival_003_9291_audit001/identified_ray.csv",
+    "inputs/initial_grid.csv": "data/development/initial_ray_first_arrival_003_9291_audit001/initial_grid.csv",
+    "inputs/spacing050_results.csv": "data/development/initial_ray_first_arrival_003_9291_audit001/spacing050/results.csv",
+    "inputs/spacing025_results.csv": "data/development/initial_ray_first_arrival_003_9291_audit001/spacing025/results.csv",
+    "source/first_arrival_1d_reference.py": "diagnostics/first_arrival_1d_reference.py",
+    "inputs/audit_summary.json": "data/development/initial_ray_first_arrival_003_9291_audit001/summary.json"
+  },
+  "frozen_sha256": {
+    "inputs/identified_ray.csv": "5f5b51b6a66518f6302bce673b519f8c962f34a973cdfaf11b2145c87087fd85",
+    "inputs/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "inputs/spacing050_results.csv": "4965571826c0dd0068641a1b77696d8734d85f96e9d1dce00898b416983d9281",
+    "inputs/spacing025_results.csv": "478a8a26ea2d27302ad086abf590a5699c6c2e4b099891c171048683b960a95e",
+    "source/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "inputs/audit_summary.json": "65cbc237b07786d2ddb7cc49f6f49ef824f78b8012e9152dc6ab6d76b563de63"
+  },
+  "scope": "Copied completed single-ray diagnostic inputs; no overall Hayward003 preflight success assumed"
+}
