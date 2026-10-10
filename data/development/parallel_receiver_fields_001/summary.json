@@ -1,0 +1,214 @@
+{
+  "status": "passed",
+  "scope": "Invented fixture parity only; no production ray job",
+  "commands": [
+    {
+      "label": "compile_serial",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "-DSERIAL_CACHE",
+        "tmp/parallel_receiver_fields_001/serial/diagnostics/check_parallel_fields.cpp",
+        "-lstdc++fs",
+        "-o",
+        "tmp/parallel_receiver_fields_001/serial_check"
+      ],
+      "status": "complete",
+      "pid": 21224,
+      "return_code": 0,
+      "elapsed_seconds": 26.930082321166992
+    },
+    {
+      "label": "compile_parallel",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "tmp/parallel_receiver_fields_001/parallel/diagnostics/check_parallel_fields.cpp",
+        "-lstdc++fs",
+        "-o",
+        "tmp/parallel_receiver_fields_001/parallel_check"
+      ],
+      "status": "complete",
+      "pid": 21425,
+      "return_code": 0,
+      "elapsed_seconds": 27.633785486221313
+    },
+    {
+      "label": "serial_1",
+      "argv": [
+        "tmp/parallel_receiver_fields_001/serial_check",
+        "data/development/parallel_receiver_fields_001/serial_1",
+        "1"
+      ],
+      "status": "complete",
+      "pid": 21570,
+      "return_code": 0,
+      "elapsed_seconds": 0.7063722610473633
+    },
+    {
+      "label": "serial_4",
+      "argv": [
+        "tmp/parallel_receiver_fields_001/serial_check",
+        "data/development/parallel_receiver_fields_001/serial_4",
+        "4"
+      ],
+      "status": "complete",
+      "pid": 21575,
+      "return_code": 0,
+      "elapsed_seconds": 0.8023169040679932
+    },
+    {
+      "label": "parallel_1",
+      "argv": [
+        "tmp/parallel_receiver_fields_001/parallel_check",
+        "data/development/parallel_receiver_fields_001/parallel_1",
+        "1"
+      ],
+      "status": "complete",
+      "pid": 21633,
+      "return_code": 0,
+      "elapsed_seconds": 0.7958316802978516
+    },
+    {
+      "label": "parallel_4",
+      "argv": [
+        "tmp/parallel_receiver_fields_001/parallel_check",
+        "data/development/parallel_receiver_fields_001/parallel_4",
+        "4"
+      ],
+      "status": "complete",
+      "pid": 21641,
+      "return_code": 0,
+      "elapsed_seconds": 0.8993227481842041
+    }
+  ],
+  "frozen_serial_run_source_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "run_hayward_first_arrival.py": "9baa6e40e2d7115963d17d87d5e90ff29aa73e011902484e1803af07b0c3175e",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "serial_compiled_source_sha256": {
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "64235e422f8f4d9908e9812bc5ba7c731ce9703fd59d8b389e6acafa5282d3c5",
+    "src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_parallel_fields.cpp": "befc6f701f6c5e1a2c8e2e72badbee6567f136c5a3e9899e64f00169e3837d2c"
+  },
+  "serial_binary_sha256": "c4fdeb2af35ca83aa1961c6137e4749c0e6656e5e00808f5de14b3f388c81235",
+  "parallel_compiled_source_sha256": {
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "64235e422f8f4d9908e9812bc5ba7c731ce9703fd59d8b389e6acafa5282d3c5",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "9f1e6db7569aafe01277a9d01b45330b5d26e001659b978dff18020a6bad5bf3",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_parallel_fields.cpp": "befc6f701f6c5e1a2c8e2e72badbee6567f136c5a3e9899e64f00169e3837d2c"
+  },
+  "parallel_binary_sha256": "83cf61b7cff5a277b1f4e4f958d60b3292392ec90098aa7a6887ea0330a927a9",
+  "checks": {
+    "serial_1": {
+      "checks": 22,
+      "failed": 0,
+      "sha256": {
+        "snapshot.bin": "11c2de44517e9660d1d696ceac74fcfc288dde13636894b2d5edfa18027bb2e2",
+        "identified_error.bin": "107cb57b7fdd18d48b5087563fb7f5569e5dc434565b823a92b5a98049c3b38a",
+        "initial_ray_convergence.csv": "6b8e71c3d89d593fd7888b10bdc5944249973de7b1e2885ddccbf013e516a4c1",
+        "initial_ray_derivatives.csv": "ddd7952aae8056ebed60d50b09854ad39bfbd171250ff8aa43e3c5479437855a",
+        "initial_ray_identifiers.csv": "725e6a4a9f83b6fae9d690e463442694cedf2b98b738f3a00475d040ec29e000",
+        "initial_linearization_columns.csv": "be0653a329130a91a9a6bf6660e96a13e942e7ff6ff0b3ea9bf38b37d0fddafc",
+        "initial_linearization_matrix.csv": "0cd6365cc9b7fe5a8967deaee1f2afcc745ef5d72e6ac87671a6125ac8a337fc",
+        "initial_linearization_rows.csv": "052363f6352e7543fdd2b4bd667c313da5950f4a03c40233357a4f960063e2a8"
+      }
+    },
+    "serial_4": {
+      "checks": 22,
+      "failed": 0,
+      "sha256": {
+        "snapshot.bin": "11c2de44517e9660d1d696ceac74fcfc288dde13636894b2d5edfa18027bb2e2",
+        "identified_error.bin": "107cb57b7fdd18d48b5087563fb7f5569e5dc434565b823a92b5a98049c3b38a",
+        "initial_ray_convergence.csv": "6b8e71c3d89d593fd7888b10bdc5944249973de7b1e2885ddccbf013e516a4c1",
+        "initial_ray_derivatives.csv": "ddd7952aae8056ebed60d50b09854ad39bfbd171250ff8aa43e3c5479437855a",
+        "initial_ray_identifiers.csv": "725e6a4a9f83b6fae9d690e463442694cedf2b98b738f3a00475d040ec29e000",
+        "initial_linearization_columns.csv": "be0653a329130a91a9a6bf6660e96a13e942e7ff6ff0b3ea9bf38b37d0fddafc",
+        "initial_linearization_matrix.csv": "0cd6365cc9b7fe5a8967deaee1f2afcc745ef5d72e6ac87671a6125ac8a337fc",
+        "initial_linearization_rows.csv": "052363f6352e7543fdd2b4bd667c313da5950f4a03c40233357a4f960063e2a8"
+      }
+    },
+    "parallel_1": {
+      "checks": 29,
+      "failed": 0,
+      "sha256": {
+        "snapshot.bin": "11c2de44517e9660d1d696ceac74fcfc288dde13636894b2d5edfa18027bb2e2",
+        "identified_error.bin": "107cb57b7fdd18d48b5087563fb7f5569e5dc434565b823a92b5a98049c3b38a",
+        "initial_ray_convergence.csv": "6b8e71c3d89d593fd7888b10bdc5944249973de7b1e2885ddccbf013e516a4c1",
+        "initial_ray_derivatives.csv": "ddd7952aae8056ebed60d50b09854ad39bfbd171250ff8aa43e3c5479437855a",
+        "initial_ray_identifiers.csv": "725e6a4a9f83b6fae9d690e463442694cedf2b98b738f3a00475d040ec29e000",
+        "initial_linearization_columns.csv": "be0653a329130a91a9a6bf6660e96a13e942e7ff6ff0b3ea9bf38b37d0fddafc",
+        "initial_linearization_matrix.csv": "0cd6365cc9b7fe5a8967deaee1f2afcc745ef5d72e6ac87671a6125ac8a337fc",
+        "initial_linearization_rows.csv": "052363f6352e7543fdd2b4bd667c313da5950f4a03c40233357a4f960063e2a8"
+      }
+    },
+    "parallel_4": {
+      "checks": 29,
+      "failed": 0,
+      "sha256": {
+        "snapshot.bin": "11c2de44517e9660d1d696ceac74fcfc288dde13636894b2d5edfa18027bb2e2",
+        "identified_error.bin": "107cb57b7fdd18d48b5087563fb7f5569e5dc434565b823a92b5a98049c3b38a",
+        "initial_ray_convergence.csv": "6b8e71c3d89d593fd7888b10bdc5944249973de7b1e2885ddccbf013e516a4c1",
+        "initial_ray_derivatives.csv": "ddd7952aae8056ebed60d50b09854ad39bfbd171250ff8aa43e3c5479437855a",
+        "initial_ray_identifiers.csv": "725e6a4a9f83b6fae9d690e463442694cedf2b98b738f3a00475d040ec29e000",
+        "initial_linearization_columns.csv": "be0653a329130a91a9a6bf6660e96a13e942e7ff6ff0b3ea9bf38b37d0fddafc",
+        "initial_linearization_matrix.csv": "0cd6365cc9b7fe5a8967deaee1f2afcc745ef5d72e6ac87671a6125ac8a337fc",
+        "initial_linearization_rows.csv": "052363f6352e7543fdd2b4bd667c313da5950f4a03c40233357a4f960063e2a8"
+      }
+    }
+  },
+  "identical_artifact_groups": 8,
+  "source_sha256": {
+    "source/run_parallel_field_checks.py": "662e5ec6212b950afe24e69142b0bfea6c7118100cd319e8794f76fa814329fe",
+    "source/serial/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/serial/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/serial/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/serial/src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "source/serial/src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "source/serial/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/serial/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/serial/diagnostics/check_parallel_fields.cpp": "befc6f701f6c5e1a2c8e2e72badbee6567f136c5a3e9899e64f00169e3837d2c",
+    "source/parallel/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/parallel/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/parallel/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/parallel/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "source/parallel/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "source/parallel/src/main.cpp": "9f1e6db7569aafe01277a9d01b45330b5d26e001659b978dff18020a6bad5bf3",
+    "source/parallel/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/parallel/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/parallel/diagnostics/check_parallel_fields.cpp": "befc6f701f6c5e1a2c8e2e72badbee6567f136c5a3e9899e64f00169e3837d2c"
+  },
+  "limitations": [
+    "Invented component and CLI fixtures; no whole-field performance benchmark.",
+    "Only copied diagnostic Field headers expose raw private arrays; this access change does not change arithmetic.",
+    "Raw snapshots serialize explicit values and vectors, never object padding or addresses.",
+    "Parallel construction failures publish no new entries; changed model/spacing invalidation precedes construction."
+  ]
+}

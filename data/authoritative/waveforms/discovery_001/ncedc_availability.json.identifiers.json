@@ -1,0 +1,76 @@
+{
+  "raw_file": "ncedc_availability.json",
+  "source_url": "https://service.ncedc.org/fdsnws/availability/1/query?net=NC&sta=JPR&loc=02&cha=EHZ&start=1991-11-22T16%3A07%3A22.230000&end=1991-11-22T16%3A07%3A27.230000&format=json&nodata=204",
+  "source_sha256": "c4d3bf52ebfd1622573a268b44c7348dfdf1ec5b4cbb022ca58a1ef6b315b1b6",
+  "response_kind": "success",
+  "resource_identifier_basis": "Source URL identifies the response; supplied native IDs are request context, not an assertion of waveform availability.",
+  "native_request": {
+    "selection": "Chronological median retained absolute pick, ordered by UTC pick time then NSLC; discovery only, no cohort change",
+    "original_observation_index": 7136,
+    "input_file": "data/hayward/observations.csv",
+    "input_sha256": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "request_start_utc": "1991-11-22T16:07:22.230000Z",
+    "request_end_utc": "1991-11-22T16:07:27.230000Z",
+    "original_observation": {
+      "i": "596",
+      "j": "-1",
+      "station": "333",
+      "type": "0",
+      "value": "5.61",
+      "station_j": "-1",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/238035",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/3182499",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/36225834",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/36225834",
+      "pick_i_time_utc": "1991-11-22T16:07:23.230000Z",
+      "pick_i_uncertainty_s": "0.15",
+      "pick_i_uncertainty_confidence_level": "",
+      "pick_i_source_sha256": "5a2c6799fbcb95c88c8e616b1d9896f6999039f814a7c970f4474df3182bf22d",
+      "arrival_i_time_weight": "0.05",
+      "event_j_resource_id": "",
+      "origin_j_resource_id": "",
+      "arrival_j_resource_id": "",
+      "pick_j_resource_id": "",
+      "pick_j_time_utc": "",
+      "pick_j_uncertainty_s": "",
+      "pick_j_uncertainty_confidence_level": "",
+      "pick_j_source_sha256": "",
+      "arrival_j_time_weight": "",
+      "network_code": "NC",
+      "station_code": "JPR",
+      "location_code": "02",
+      "channel_code": "EHZ",
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+      "metadata_epoch_start": "1990-07-31T21:10:00",
+      "metadata_epoch_end": "1992-03-26T21:00:00",
+      "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+      "metadata_epoch_j_start": "",
+      "metadata_epoch_j_end": "",
+      "channel_j_source_sha256": "",
+      "cross_metadata_epoch": "0",
+      "uncertainty_s": "0.15",
+      "a_priori_weight": "0.33333333333333337",
+      "observation_basis": "catalog P pick minus reference origin"
+    },
+    "provider_waveform_resource_id": null,
+    "channel_identifier_basis": "FDSN source ID derived by standard in the pinned metadata; QuakeML event/origin/pick/arrival IDs are provider-supplied"
+  },
+  "response_records": [
+    {
+      "source_json_pointer": "/datasources/0",
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+      "identifier_basis": "Derived FDSN identifier from exact provider-returned SEED codes, not a provider public ID",
+      "provider_resource_id": null,
+      "quality": "D",
+      "sample_rate_hz": 100.0,
+      "provider_timespans": [
+        [
+          "1991/11/22 16:07:01.5800",
+          "1991/11/22 16:08:28.8600"
+        ]
+      ]
+    }
+  ]
+}

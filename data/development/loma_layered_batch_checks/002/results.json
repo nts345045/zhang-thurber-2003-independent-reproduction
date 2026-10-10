@@ -1,0 +1,80 @@
+{
+  "scope": "Invented IO/domain/failure controls only; no field data or production ray execution",
+  "checks": [
+    {
+      "name": "All Cartesian pairs and full native strings survive compression",
+      "passed": true
+    },
+    {
+      "name": "All homogeneous fixture references complete",
+      "passed": true
+    },
+    {
+      "name": "Reference time has the declared coordinate permutation",
+      "passed": true
+    },
+    {
+      "name": "Source gradient maps back to original x/y/z",
+      "passed": true
+    },
+    {
+      "name": "Quoted/newline metadata and valid blank fields preserved",
+      "passed": true
+    },
+    {
+      "name": "Compressed numeric and certificate files deterministic",
+      "passed": true
+    },
+    {
+      "name": "Arithmetic failure preserves complete support",
+      "passed": true
+    },
+    {
+      "name": "Unresolved reference has blank time and false valid flag",
+      "passed": true
+    },
+    {
+      "name": "Repeated native index rejected",
+      "passed": true
+    },
+    {
+      "name": "Endpoint beyond finite box rejected",
+      "passed": true
+    },
+    {
+      "name": "Missing grid corner rejected",
+      "passed": true
+    },
+    {
+      "name": "Transverse velocity variation rejected",
+      "passed": true
+    },
+    {
+      "name": "Repeated output pair rejected during readback",
+      "passed": true
+    },
+    {
+      "name": "Wrong gradient permutation rejected during readback",
+      "passed": true
+    },
+    {
+      "name": "Controller records cohort failure before enumeration",
+      "passed": true
+    },
+    {
+      "name": "Exclusive output refuses reuse without altering failure evidence",
+      "passed": true
+    }
+  ],
+  "passed": 16,
+  "total": 16,
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/check_loma_layered_batch.py --output data/development/loma_layered_batch_checks/002",
+  "controller_failure_return_code": 1,
+  "exclusive_repeat_return_code": 1,
+  "source_sha256": {
+    "check_loma_layered_batch.py": "1bbd458541e134da7b670bbaaac8918b00376a0e2105d438a5a18ddf8680f67f",
+    "run_loma_layered_full.py": "bee4ea28bed4c6e6e28c31220d42d1a57683d991653b0f662cb9e86158961d0c",
+    "first_arrival_layered_reference.py": "f0d715938ef089de10908249bbbb69f875ede81a94f4d10df9c997203e144aff",
+    "first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  }
+}

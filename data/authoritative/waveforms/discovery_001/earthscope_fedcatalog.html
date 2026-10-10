@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+      <title>
+        
+          NGF: 
+  
+  
+
+  
+    IRISWS: 
+  
+
+  
+    Fedcatalog: 
+  
+
+  
+    v. 1
+  
+
+
+
+        
+      </title>
+      
+  <meta name="keywords" content="seismology, seismological data,
+  earthquakes, iris dmc" />
+  <!-- Forces IE to render in 'latest' compatible mode -->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+
+
+
+
+
+
+      
+  <link rel="stylesheet" media="all" type="text/css" href="/static/css/iris.0cc3eb9a3275.css" />
+
+  <link rel="stylesheet" media="print" type="text/css" href="/static/css/print.31c3384e5e41.css" />
+  
+  
+
+  
+    <link rel="shortcut icon" href="/static/img/favicon.2ff62ea8f729.ico" />
+  
+
+      
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+  <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+    <!--
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/libs/megamenu/megamenu_plugins.ea0cee1e1e0e.js"></script>
+    <script type="text/javascript" src="/static/libs/megamenu/megamenu.min.a926dd52f41a.js"></script>
+    -->
+  
+
+  
+  
+
+  
+    <link rel="stylesheet" type="text/css" href="/static/libs/qtip2/2.1.1/jquery.qtip.6c359876746f.css" />
+    <script type="text/javascript" src="/static/libs/qtip2/2.1.1/jquery.qtip.42e6f99f116f.js"></script>
+    <script>
+      $(function() {
+        /* Automatically set up popup help blocks like:
+         * <div class="popup-help">
+         *   <span class="glyphicon glyphicon-question-sign"> </span>
+         *   <div>
+         *      Content to show in the popup.
+         *   </div>
+         * </div>
+         * Hovering over the icon shows the content in a popup.
+         */
+        $(".popup-help").each(function() {
+          var content = $(this).children('div').detach();
+          var popupOnClick = $(this).hasClass('popup-on-click');
+          // Attach to the first element
+          $(this).children().first().qtip({
+            content: { text: content },
+            style: { classes: 'qtip-bootstrap' },
+            hide: {
+              delay: 100,
+              fixed: true
+            },
+            show: {
+              event: popupOnClick ? 'click' : 'mouseenter'
+            },
+            position: {
+              viewport: $(window)
+            },
+          });
+        });
+      });
+    </script>
+  
+
+
+      
+  
+  <!-- START: Syntax highlighting -->
+  <link rel="stylesheet"
+        type="text/css"
+        href="/static/libs/prettify/r298/css/prettify.f19459705215.css" />
+  <script type="text/javascript"
+          src="/static/libs/prettify/r298/js/prettify.d435ff18c832.js">
+  </script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    prettyPrint();
+  });
+  </script>
+  <!-- END: Syntax highlighting -->
+
+  <link rel="stylesheet" type="text/css" href="/static/css/jquery-ui-iris-theme/jquery-ui-1.8.23.custom.83989e3bb5a9.css" />
+  <link rel="stylesheet" type="text/css" href="/static/webservicedoc/css/services.dbaa8315a3f9.css" />
+  <link rel="stylesheet" type="text/css" href="/static/webservicedoc/css/prism.5794297bc49b.css" />
+  <script type="text/javascript" src="/static/webservicedoc/js/datacite-references.a92df3318432.js"></script>
+  <script type="text/javascript" src="/static/webservicedoc/js/prism.ccef0b961cab.js"></script>
+  
+<link rel="stylesheet" href="https://use.typekit.net/peb0kwe.css">
+<link rel="stylesheet" media="all" href="/static/ngf/ngf.82d542b28f96.css">
+
+    
+  </head>
+
+  <body>
+  
+
+    
+
+<header id="nsf-ngf-solo-header-bar">
+  <a href="https://ngf.earthscope.org/">
+    <img class="ngf-banner-logo" src="/static/ngf/NSFNGF-Logo-RGB-White.350c9bd164f9.svg">
+  </a>
+  <span class="ngf-banner-text app-title">
+  </span>
+</header>
+
+
+    
+
+
+    <div class="container blur">
+      <div id="breadcrumbs">
+      
+        <ul class="breadcrumbs">
+          
+            
+              <li>
+                <a href="/">Home</a>
+              </li>
+            
+              <li>
+                <a href="/irisws/">IRISWS</a>
+              </li>
+            
+              <li>
+                <a href="/irisws/fedcatalog/">Fedcatalog</a>
+              </li>
+            
+              <li>
+                <a href="/irisws/fedcatalog/1/">v. 1</a>
+              </li>
+            
+          
+        </ul>
+      
+      </div>
+
+      
+    
+  
+
+              
+              
+
+              <div id="page-content">
+
+                
+                  
+
+
+                  
+
+
+                
+
+                
+                  
+                
+
+                
+
+                  <h1>
+                  
+  NSF National Geophysical Facility
+  IRISWS
+  fedcatalog
+  Web Service Documentation
+
+                  </h1>
+                  
+                  
+
+                  <div id="content">
+                    
+
+  <!-- START: BUTTON GROUP -->
+<div class="btn-group">
+    
+      <a class="btn btn-default active"
+    
+    href="/irisws/fedcatalog/1/">Service interface</a>
+
+  
+    
+      <a class="btn btn-default"
+    
+    href="/irisws/fedcatalog/docs/1/builder/">URL builder</a>
+  
+
+  
+    <a class="btn btn-default"
+  
+  href="/irisws/fedcatalog/docs/1/help/">Help</a>
+
+  
+    <a class="btn btn-default"
+  
+  href="/irisws/fedcatalog/docs/1/revisions/">Revisions</a>
+
+</div>
+<!-- END: BUTTON GROUP -->
+
+
+  <div class="row">
+    <div class="col-xs-10">
+      <h2>Description</h2>
+    </div>
+    
+      <div class="col-xs-2">
+        <a href="/irisws/fedcatalog/docs/1/builder/"
+           role="button"
+           class="btn btn-default hardhat">
+          URL Builder
+        </a>
+      </div>
+    
+  </div>
+
+  
+
+  <div id="webservicedoc-summary" class="alert alert-warning">
+    	<p>The <strong>irisws-fedcatalog</strong> web service returns selected time series channels from across multiple <span class="caps">FDSN</span> data centers.  The combined catalog of channels is updated daily from each contributing data center.</p>
+
+	<p>This interface is primarily designed for discovery of data channels and subsequent requesting of time series using <a href="http://www.fdsn.org/webservices/"><span class="caps">FDSN</span> Web Service</a> interfaces.  The service is also capable of <a href="/irisws/fedcatalog/docs/1/help/#removingoverlap">removing overlap</a> from the channel list when the same channels are available from multiple data centers, avoiding the request and processing of duplicate data.</p>
+
+	<p>This interface is designed to support <a href="/irisws/fedcatalog/docs/1/help/#designanduse">client-side federated data access</a>.</p>
+
+	<h4><span class="caps">FDSN</span> Data Centers</h4>
+
+	<p>A <a href="/irisws/fedcatalog/1/datacenters">list of <span class="caps">FDSN</span> data centers</a> (returns <span class="caps">JSON</span>) contributing to the combined catalog is available in <span class="caps">JSON</span> format and includes web service endpoints at each data center.</p>
+
+	<p>For data centers that wish to have their center included in the EarthScope Federator system see the <a href="/irisws/fedcatalog/docs/1/help/#newdatacenters">new data centers</a> section.</p>
+  </div>
+
+  <p>Below is a full list of service parameters and their usage.</p>
+
+  <h2>Query Usage</h2>
+  <pre>/query? [service-options] [active-options] [passive-options] [nodata=404]</pre>
+
+	<p>where</p>
+
+<pre>
+service-options 	::  [targetservice=&lt;station|dataselect&gt;][format=&lt;request|text&gt;][includeoverlaps=&lt;true|false&gt;]
+active-options 	 	::  [channel-options] [map-constraints] [time-constraints]
+  channel-options 	::  [net=&lt;network&gt;] [sta=&lt;station&gt;] [loc=&lt;location&gt;] [cha=&lt;channel&gt;]
+  map-constraints 	::  [boundaries-rect] OR [boundaries-circ]
+     boundaries-rect 	::  [minlatitude=&lt;degrees&gt;] [maxlatitude=&lt;degrees&gt;] [minlongitude=&lt;degrees&gt;] [maxlongitude=&lt;degrees&gt;]
+     boundaries-circ 	::  [latitude=&lt;degrees&gt;] [longitude=&lt;degrees&gt;] [maxradius=&lt;number&gt;] [minradius=&lt;number&gt;]
+  time-constraints 	::  [starttime=&lt;date&gt;] [endtime=&lt;date&gt;] [startbefore=&lt;date&gt;] [startafter=&lt;date&gt;]
+				[endbefore=&lt;date&gt;] [endafter=&lt;date&gt;] [updatedafter=&lt;date&gt;]
+passive-options 	::  [includerestricted=&lt;true|false&gt;] [includeavailability=&lt;true|false&gt;] [matchtimeseries=&lt;true|false&gt;] 
+                                [longestonly=&lt;true|false&gt;] [quality=&lt;D|R|Q|M|B&gt;] [level=&lt;net|sta|cha|resp&gt;]
+                                [minimumlength=&lt;number&gt;]
+</pre>
+
+	<p>Query parameters are joined by ampersands <strong>&#8221;&amp;&#8221;</strong>, without blank space (see the sample queries).</p>
+
+	<p>In the context of the <strong>irisws-fedcatalog</strong> service, <em>active options</em> refer to parameters that filter the results returned by the service based on the value(s) of the parameter(s).  In contrast, <em>passive options</em> are parameters that do not filter results and are simply passed from command line to output. </p>
+
+	<h2><span class="caps">POST</span> Usage</h2>
+
+	<p>Alternately, <em>instead</em> of providing parameter-value pairs in the <span class="caps">URL</span>, a file containing a selection list can be <span class="caps">POST</span>ed to this service. This is the same method used with the fdsnws-station and fdsnws-dataselect webservices. For additional details, including an example selection file, visit the <a href="/irisws/fedcatalog/docs/1/help/">Help</a> section.</p>
+
+<pre>quality=&lt;D|R|Q|M|B&gt;
+minimumlength=&lt;seconds&gt;
+longestonly=&lt;true|false&gt;
+&lt;Network&gt; &lt;Station&gt; &lt;Location&gt; &lt;Channel&gt; &lt;StartTime&gt; &lt;EndTime&gt;
+...</pre>
+
+	<p><code>quality</code>, <code>minimumlength</code>, and <code>longestonly</code> are optional parameter-value pairs.  Wildcards are acceptable for Network, Station, Location, and Channel.  Click <a href="#time">here</a> for time format details.</p>
+
+	<h2>Datacenters Usage</h2>
+
+	<p>In addition to &#8220;/query&#8221;, a &#8220;/datacenters&#8221; endpoint is available for information on the set of data centers known to the fedcatalog service. The <span class="caps">FDSN</span> services hosted by these data centers are the source of the fedcatalog&#8217;s daily data harvest: see the &#8220;Service <span class="caps">URL</span>s&#8221; field in the /datacenters response. Included in the &#8220;Service <span class="caps">URL</span>s&#8221; field is the <span class="caps">FDSN</span> station <span class="caps">URL</span> used by the fedcatalog for iterating network, station, and channel data per repository.</p>
+
+	<p>Please note the &#8220;Name&#8221; field returned by the datacenters endpoint. This is the identifier which can in turn be used in the &#8220;/query&#8221; endpoint for limiting fedcatalog searches to a subset of repositories (see the &#8220;datacenter&#8221; parameter of the &#8220;/query&#8221; endpoint above).</p>
+
+<pre>/datacenters? [service-options] </pre>
+
+	<p>where</p>
+
+<pre>
+service-options 	::  [format=&lt;json|text|html&gt;]
+</pre>
+
+  <h3>Sample Queries</h3>
+  	<p>*rectangular geographic search with wildcard channel<br />
+<a href="/irisws/fedcatalog/1/query?net=TA&amp;minlat=34&amp;maxlat=38&amp;maxlon=-93&amp;minlon=-85&amp;cha=?HZ">https://service.earthscope.org/irisws/fedcatalog/1/query?net=TA&minlat=34&maxlat=38&maxlon=-93&minlon=-85&cha=?HZ</a></p>
+
+	<p>*time-windowed search for vertical motion on broadband seismograms<br />
+<a href="/irisws/fedcatalog/1/query?net=FR&amp;cha=BHZ&amp;start=2008-09-01&amp;end=2009-01-01">&#8230;/query?net=FR&cha=BHZ&starttime=2008-09-01&endtime=2009-01-01</a></p>
+
+	<p>*json listing of global repositories known to the fedcatalog (/datacenters endpoint)<br />
+<a href="/irisws/fedcatalog/1/datacenters?format=json">&#8230;/datacenters?format=json</a></p>
+
+  <h3>Detailed Descriptions of each Query Parameter</h3>
+  	<h4><code>/query</code></h4>
+
+	<div class="auto-table-scroll-x"><table class="table table-bordered">
+		<tr>
+			<th>parameter</th>
+			<th>examples</th>
+			<th>discussion</th>
+			<th>default</th>
+			<th>type</th>
+		</tr>
+		<tr>
+			<td colspan="5"><em><strong>Service options</strong></em></td>
+		</tr>
+		<tr>
+			<td>format</td>
+			<td><a href="query?format=text&amp;net=IU&amp;station=COLA&amp;starttime=2000-01-01&amp;endtime=2015-01-01" title="...&amp;format=text">text</a> </td>
+			<td>Specify output format. Accepted values are <code>request</code> (the default) and <code>text</code>, <a href="/irisws/fedcatalog/docs/1/help/#outputformats">more details</a>.</td>
+			<td>request</td>
+			<td>string</td>
+		</tr>
+		<tr>
+			<td>targetservice</td>
+			<td>station</td>
+			<td>By default all known service endpoints are returned in the results.  Specify <code>station</code> or <code>dataselect</code> to only return endpoints for one of those services.</td>
+			<th><em>all</em></th>
+			<td>string</td>
+		</tr>
+		<tr>
+			<td>includeoverlaps</td>
+			<td>true</td>
+			<td>Control whether overlapping channel entries are included in the response (<code>true</code> or <code>false</code>).  Overlapping entries will occur when the same data are available from multiple data centers.</td>
+			<td>false</td>
+			<td>boolean</td>
+		</tr>
+		<tr>
+			<td>level</td>
+			<td>station</td>
+			<td>Specify level of detail (for an <strong>fdsnws-station</strong> service) using <code>network</code>, <code>station</code>, <code>channel</code>, or <code>response</code>.</td>
+			<td>channel</td>
+			<td>string</td>
+		</tr>
+		<tr>
+			<td>datacenter</td>
+			<td><span class="caps">IRISDMC</span></td>
+			<td>Limit the results to metadata held at an <span class="caps">FDSN</span> data center of interest. Use data center codes available at the <a href="/irisws/fedcatalog/1/datacenters?format=html"><em>datacenters</em></a> endpoint. Accepts wildcards, lists, and negation.</td>
+			<th><em>all</em></th>
+			<td>string</td>
+		</tr>
+		<tr>
+			<td colspan="5"><em><strong>Channel constraints</strong></em></td>
+		</tr>
+		<tr>
+			<td>net[work]</td>
+			<td> <a href="query?network=IU&amp;station=A%2A" title="...&amp;network=IU">IU</a> </td>
+			<td>Select one or more network codes. Can be <span class="caps">SEED</span> codes or data center defined codes. <a href="#wildcardsandlists">Accepts wildcards and lists.</a></td>
+			<th><em>any</em></th>
+			<td>string</td>
+		</tr>
+		<tr>
+			<td>sta[tion]</td>
+			<td><a href="query?net=IU&amp;station=ANMO" title="...&amp;station=ANMO"><span class="caps">ANMO</span></a> </td>
+			<td>Select one or more <span class="caps">SEED</span> station codes. <a href="#wildcardsandlists">Accepts wildcards and lists.</a></td>
+			<th><em>any</em></th>
+			<td>string</td>
+		</tr>
+		<tr>
+			<td>loc[ation]</td>
+			<td><a href="query?net=IU&amp;station=ANMO&amp;location=00" title="...&amp;location=00">00</a> </td>
+			<td>Select one or more <span class="caps">SEED</span> location identifier. Use <code>--</code> for &#8220;Blank&#8221; location IDs (ID&#8217;s containing 2 spaces). <a href="#wildcardsandlists">Accepts wildcards and lists.</a></td>
+			<th><em>any</em></th>
+			<td>string</td>
+		</tr>
+		<tr>
+			<td>cha[nnel]</td>
+			<td><a href="query?net=IU&amp;station=ANMO&amp;channel=BH1" title="...&amp;channel=BH1">BH1</a> </td>
+			<td>Select one or more <span class="caps">SEED</span> channel codes. <a href="#wildcardsandlists">Accepts wildcards and lists.</a></td>
+			<th><em>any</em></th>
+			<td>string</td>
+		</tr>
+		<tr>
+			<td colspan="5"><em><strong>Time constraints</strong></em></td>
+		</tr>
+		<tr>
+			<td>start[time]</td>
+			<td> <a href="query?sta=ANMO&amp;channel=BH1&amp;starttime=2001-12-31" title="...&amp;starttime=2001-12-31T00:00:00">2001-12-31</a> </td>
+			<td>Limit to metadata listed on or after the specified start time.</td>
+			<th><em>any</em></th>
+			<td><a href="#time">day/time</a> </td>
+		</tr>
+		<tr>
+			<td>end[time]</td>
+			<td> <a href="query?sta=ANMO&amp;channel=BH1&amp;endtime=2001-12-31" title="...&amp;endtime=2001-12-31T00:00:00">2012-12-31</a> </td>
+			<td>Limit to metadata listed on or before the specified end time.</td>
+			<th><em>any</em></th>
+			<td><a href="#time">day/time</a> </td>
+		</tr>
+		<tr>
+			<td>startbefore</td>
+			<td> <a href="query?sta=ANMO&amp;channel=BH1&amp;startbefore=2001-12-31" title="...&amp;startbefore=2001-12-31T00:00:00">2001-12-31</a> </td>
+			<td>Limit to metadata epochs listed before specified time. Applied to channel epochs. </td>
+			<th><em>any</em></th>
+			<td><a href="#time">day/time</a> </td>
+		</tr>
+		<tr>
+			<td>startafter</td>
+			<td> <a href="query?sta=ANMO&amp;channel=BH1&amp;startafter=2005-12-31" title="...&amp;startafter=2005-12-31T00:00:00">2005-12-31</a> </td>
+			<td>Limit to metadata epochs listed after specified time.  Applied to channel epochs.</td>
+			<th><em>any</em></th>
+			<td><a href="#time">day/time</a> </td>
+		</tr>
+		<tr>
+			<td>endbefore</td>
+			<td> <a href="query?sta=ANMO&amp;channel=BH1&amp;endbefore=2005-12-31" title="...&amp;endbefore=2005-12-31T00:00:00">2005-12-31</a> </td>
+			<td>Limit to metadata epochs ending before specified time. Applied to channel epochs.</td>
+			<th><em>any</em></th>
+			<td><a href="#time">day/time</a> </td>
+		</tr>
+		<tr>
+			<td>endafter</td>
+			<td> <a href="query?sta=ANMO&amp;channel=BH1&amp;endafter=2005-12-31" title="...&amp;endafter=2005-12-31">2005-12-31</a> </td>
+			<td>Limit to metadata epochs ending after specified time. Applied to channel epochs.</td>
+			<th><em>any</em></th>
+			<td><a href="#time">day/time</a> </td>
+		</tr>
+		<tr>
+			<td colspan="5"><em><strong>Rectangular geographic constraints</strong></em></td>
+		</tr>
+		<tr>
+			<td>minlat[itude]</td>
+			<td><a href="query?net=TA&amp;minlatitude=34.5&amp;maxlatitude=36.0&amp;minlongitude=-108.0&amp;maxlongitude=-105.0&amp;cha=BHZ" title="...&amp;minlatitude=34.5">34.5</a> </td>
+			<td>Specify the southern boundary.</td>
+			<td>-90&deg;</td>
+			<td>degrees</td>
+		</tr>
+		<tr>
+			<td>maxlat[itude]</td>
+			<td><a href="query?net=TA&amp;minlatitude=34.5&amp;maxlatitude=36.0&amp;minlongitude=-108.0&amp;maxlongitude=-105.0&amp;cha=BHZ" title="...&amp;maxlatitude=36.0">36.0</a> </td>
+			<td>Specify the northern boundary.</td>
+			<td>90&deg;</td>
+			<td>degrees</td>
+		</tr>
+		<tr>
+			<td>minlon[gitude]</td>
+			<td><a href="query?net=TA&amp;minlatitude=34.5&amp;maxlatitude=36.0&amp;minlongitude=-108.0&amp;maxlongitude=-105.0&amp;cha=BHZ" title="...&amp;minlongitude=-108.0">-108.0</a> </td>
+			<td>Specify the western boundary.</td>
+			<td>-180&deg;</td>
+			<td>degrees</td>
+		</tr>
+		<tr>
+			<td>maxlon[gitude]</td>
+			<td><a href="query?net=TA&amp;minlatitude=34.5&amp;maxlatitude=36.0&amp;minlongitude=-108.0&amp;maxlongitude=-105.0&amp;cha=BHZ" title="...&amp;maxlongitude=-105.0">-105.0</a> </td>
+			<td>Specify the eastern boundary.</td>
+			<td>180&deg;</td>
+			<td>degrees</td>
+		</tr>
+		<tr>
+			<td colspan="5"><em><strong>Radial geographic constraints</strong></em></td>
+		</tr>
+		<tr>
+			<td>lat[itude]</td>
+			<td><a href="query?net=TA&amp;latitude=32.0&amp;longitude=-106.5&amp;maxradius=10" title="...&amp;latitude=32.0&amp;...">32.0</a> </td>
+			<td>Specify the central latitude point.</td>
+			<td></td>
+			<td>degrees</td>
+		</tr>
+		<tr>
+			<td>lon[gitude]</td>
+			<td><a href="query?net=TA&amp;latitude=32.0&amp;longitude=-106.5&amp;maxradius=10" title="...&amp;longitude=-106.5&amp;...">-106.5</a> </td>
+			<td>Specify the central longitude point.</td>
+			<td></td>
+			<td>degrees</td>
+		</tr>
+		<tr>
+			<td>maxradius</td>
+			<td><a href="query?net=TA&amp;latitude=32.0&amp;longitude=-106.5&amp;maxradius=10" title="...&amp;maxradius=10">10</a> </td>
+			<td>Specify maximum distance from the geographic point defined by <code>latitude</code> and <code>longitude</code>.</td>
+			<td>N/A</td>
+			<td>degrees</td>
+		</tr>
+		<tr>
+			<td>minradius</td>
+			<td><a href="query?net=TA&amp;latitude=32.0&amp;longitude=-106.5&amp;maxradius=10&amp;minradius=5" title="...&amp;minradius=5">5</a> </td>
+			<td>Specify minimum distance from the geographic point defined by <code>latitude</code> and <code>longitude</code>.</td>
+			<td>0</td>
+			<td>degrees</td>
+		</tr>
+		<tr>
+			<td colspan="5"><em><strong>Waveform options</strong>  these are passive options, passed through in the response but otherwise unused</em></td>
+		</tr>
+		<tr>
+			<td>quality</td>
+			<td>B</td>
+			<td>Select data based on miniSEED data quality indicator. <code>D</code>, <code>R</code>, <code>Q</code>, <code>M</code>, <code>B</code>. <code>M</code> and <code>B</code> (default) are treated the same and indicate <em>best</em> available. If <code>M</code> or <code>B</code> are selected, the output data records will be stamped with an <code>M</code>.</td>
+			<td>B</td>
+			<td>quality</td>
+		</tr>
+		<tr>
+			<td>minimumlength</td>
+			<td>0.0</td>
+			<td>Limit results to continuous data segments of a minimum length specified in seconds.</td>
+			<td>0.0</td>
+			<td>Float</td>
+		</tr>
+		<tr>
+			<td>longestonly</td>
+			<td>false</td>
+			<td>Limit results to the longest continuous segment per channel.</td>
+			<td>false</td>
+			<td>boolean</td>
+		</tr>
+		<tr>
+			<td colspan="5"><strong><em>Other Options</strong> these are passive options, passed through in the response but otherwise unused</em></td>
+		</tr>
+		<tr>
+			<td>includerestricted</td>
+			<td>true</td>
+			<td>Specify whether results should include information relating to restricted channels.</td>
+			<td>true</td>
+			<td>boolean</td>
+		</tr>
+		<tr>
+			<td>includeavailability</td>
+			<td>true</td>
+			<td>Specify if results should include information about time series data availability at the channel level. </td>
+			<td>false</td>
+			<td>boolean</td>
+		</tr>
+		<tr>
+			<td>updatedafter</td>
+			<td> <a href="query?sta=ANMO&amp;channel=BH1&amp;updatedafter=2012-01-01" title="...&amp;updatedafter=2012-01-01T00:00:00">2012-01-01</a> </td>
+			<td>Limit to metadata updated after specified <span class="caps">UTC</span> date; updates are data center specific.</td>
+			<th><em>any</em></th>
+			<td><a href="#time">day/time</a> </td>
+		</tr>
+		<tr>
+			<td>matchtimeseries</td>
+			<td>true</td>
+			<td>Retrieve only metadata that is likely to match available time series data</td>
+			<td>false</td>
+			<td>boolean</td>
+		</tr>
+		<tr>
+			<td>nodata</td>
+			<td>404</td>
+			<td>Specify which <span class="caps">HTTP</span> status code is returned when no data is found.<sup class="footnote" id="fnrev1f39561a711b4e4391121ece0253f39a"><a href="#fn1f39561a711b4e4391121ece0253f39a">1</a></sup> </td>
+			<td>204</td>
+			<td>204 or 404</td>
+		</tr>
+	</table></div>
+
+	<p class="footnote" id="fn1f39561a711b4e4391121ece0253f39a"><sup>1</sup> By default, the service returns a <span class="caps">HTTP</span> response code 204, which means the request was successful, but no data (<em>no content</em>) was retrieved. However, because there was no &#8220;error&#8221;, no error message is generated and it may appear that the browser did nothing.  To force an empty query response to display an error message, add <code>nodata=404</code> to the <span class="caps">URL</span>.</p>
+
+	<h4><code>/datacenters</code></h4>
+
+	<div class="auto-table-scroll-x"><table class="table table-bordered">
+		<tr>
+			<th>parameter</th>
+			<th>examples</th>
+			<th>discussion</th>
+			<th>default</th>
+			<th>type</th>
+		</tr>
+		<tr>
+			<td colspan="5"><em><strong>Service options</strong></em></td>
+		</tr>
+		<tr>
+			<td>format</td>
+			<td><a href="query?format=text&amp;net=IU&amp;station=COLA&amp;starttime=2000-01-01&amp;endtime=2015-01-01" title="...&amp;format=text">text</a> </td>
+			<td>Specify output format. Accepted values are <code>json</code> (the default), <code>html</code>, and <code>text</code>, <a href="/irisws/fedcatalog/docs/1/help/#outputformats">more details</a>.</td>
+			<td>json</td>
+			<td>string</td>
+		</tr>
+	</table></div>
+
+  
+
+  
+
+  
+
+  
+    <hr/>
+    <h3>WADL</h3>
+    <p>Retrieve the <a href="https://www.w3.org/Submission/wadl/">WADL</a>
+    associated with this service:</p>
+    <p>
+      <a href="application.wadl">
+        application.wadl
+      </a>
+    </p>
+  
+
+  <hr/>
+
+  
+    <h3><a name="time"></a>Date and Time Formats</h3>
+    <div>
+      	<p id="time">Year, Month, Day in Month &mdash; Time:</p>
+
+	<p><code>YYYY-MM-DDThh:mm:ss[.ssssss]</code> ex. <small>1997-01-31T12:04:32.123</small></p>
+
+	<p><code>YYYY-MM-DD</code> ex. <small>1997-01-31</small> a time of <small>00:00:00</small> is assumed</p>
+
+	<p>Where:</p>
+
+<pre>YYYY	:: four-digit year
+MM	:: two-digit month (01=January, etc.)
+DD	:: two-digit day of month (01 through 31)
+T	:: date-time separator
+hh	:: two digits of hour (00 through 23) (AM/PM NOT allowed)
+mm	:: two digits of minute (00 through 59)
+ss	:: two digits of second (00 through 59)
+ssssss	:: one to six digits representing decimal fractions of a second, down to microseconds</pre>
+    </div>
+  
+    <h3><a name="wildcardsandlists"></a>Wildcards and Lists</h3>
+    <div>
+      	<p><em>Wildcards</em><br />
+The question mark <code>?</code> represents any single character (exactly one), while the asterisk <code>*</code> represents zero or more characters.</p>
+
+	<p><em>Lists</em><br />
+Multiple items may also be retrieved using a comma separated list. Wildcards may be included in the list.  For example, with channel codes: <code>channel=EH?,BHZ,BHE</code></p>
+    </div>
+  
+
+  
+
+  
+  
+  
+<hr/>
+
+<h3><a name="wsissues_help"></a>Problems with this service?</h3>
+<div>
+  	<p>Please send an email report of which service you were using, your <span class="caps">URL</span> query, and any error feedback to:<br />
+<a href="mailto:help@earthscope.org">help@earthscope.org</a><br />
+<em>We will address your issue as soon as possible.</em></p>
+</div>
+
+
+  <p>
+    <a href="/irisws/fedcatalog/1/">
+      IRISWS fedcatalog web service
+    </a>
+  </p>
+
+
+                  </div>
+
+                
+
+              </div>
+
+            
+
+
+    
+
+
+
+    </div>
+
+    
+<footer id="nsf-ngf-footer"></footer>
+
+
+  
+
+  </body>
+</html>

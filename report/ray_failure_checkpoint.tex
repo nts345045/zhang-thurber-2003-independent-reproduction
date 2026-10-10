@@ -23,8 +23,8 @@ times exceed the reference by a median 37.803 microseconds and a maximum
 The largest time and source-vector discrepancies belong to a locally
 converged ray: event \texttt{NC/30204761} to \texttt{NC.JJR..EHZ},
 absolute row 14099. Its source-vector error norm is 0.033571 s/km.
-This outlier requires an identified branch/path investigation independent
-of the 139 failed stopping flags. All reference candidates, original flags,
+This discrepancy is independent of the 139 failed stopping flags.
+All reference candidates, original flags,
 identities, and frozen inputs are in
 \path{data/development/hayward_first_arrival_003_1d_support/}.
 
@@ -115,6 +115,68 @@ the remaining rows retain the same 0.5 km initialization field.}
 \label{tab:failed-ray-refinement}
 \end{table}
 
+The locally converged outlier follows a later stationary branch
+(Figure~\ref{fig:hayward-branch-failure}). For this identified geometry, the
+continuous initial profile admits three turning rays. The first arrival
+turns at depth 10.896102 km with time 10.775535399 s. A deeper branch turns
+at 14.139000 km and arrives 2.185310 ms later. Refining the path to
+0.03125 km while retaining the 0.5 km initialization field brings the
+numerical action within 0.353 microseconds of the deeper branch, but does
+not select the first arrival. Both straight and field starts remain on this
+branch, and increasing the update budget to 4,000 does not change their
+already-converged results. Exact integration of the saved polygons agrees
+with production action within $1.44\times10^{-14}$ s; finite differences
+of those fixed polygons agree with the returned source partials within
+$3.06\times10^{-9}$ s/km. These controls isolate branch selection from
+action integration and fixed-path differentiation for this case.
+
+At the same 0.03125 km path spacing, refining the field to 0.25 km still
+selects the deeper branch. A 0.125 km field seeds the earlier branch:
+the bent ray stops after six updates with time error 0.333 microseconds
+and source-vector error $5.98\times10^{-9}$ s/km. Its strict projected
+gradient is $9.49\times10^{-8}$ s/km. The straight-started control remains
+on the deeper branch. These results motivate a full-cohort check at the
+finer settings; they do not establish accuracy for other initial rays or
+updated three-dimensional models. Full resource identities, epochs,
+paths, source snapshots, and independent comparisons are retained under
+\path{data/development/initial_ray_first_arrival_003_14099_audit001/}
+and the sibling field variants with suffixes \texttt{field025001} and
+\texttt{field0125001}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{../figures/diagnostics/hayward_branch_failure.pdf}
+\caption{Arrival-branch failure for event \texttt{NC/30204761} and channel
+\texttt{NC.JJR..EHZ}, initial absolute observation row 14099.
+(a) Continuous layered reference curves and saved numerical paths projected
+onto the endpoint vertical plane; crosses mark the fixed endpoints. Open
+symbols use 0.03125 km path spacing and the indicated fast-marching field
+spacing. The horizontal line marks the 12 km velocity-profile interface.
+(b) Path refinement at fixed 0.5 km field spacing approaches the deeper
+stationary branch; the dashed line gives its 2.185310 ms arrival delay.
+(c) Field refinement at fixed 0.03125 km path spacing recovers the earlier
+arrival. Values in (b,c) select the smaller action from straight and field
+starts with the unchanged 1,000-update budget. Every selected candidate
+reports local convergence. This is an independently generated numerical
+diagnostic, not a reproduced manuscript panel.}
+\label{fig:hayward-branch-failure}
+\end{figure}
+
+Tightening only the stopping rule does not resolve every source sensitivity.
+For the near-interface ray from event \texttt{NC/321644} to
+\texttt{NC.CBR..EHZ}, row 8147, a separate control removes the combined
+small-action-change stopping condition while retaining the strict
+$10^{-7}$ s/km gradient criterion. The eight stricter calculations use
+both starts, path spacings 0.125 and 0.0625 km, and budgets of 1,000 and
+4,000 updates. Six exhaust their budget; two reject the line search after
+597 updates. None satisfies strict stationarity or the source-vector
+accuracy limit, although every time error remains within 25 microseconds.
+Further optimization therefore does not establish sensitivity accuracy
+at these path spacings. The unresolved stationarity also prevents
+attributing these errors solely to the finite polygon representation.
+The full comparison is in
+\path{data/development/initial_ray_first_arrival_003_8147_strict_comparison001/}.
+
 The Loma Prieta check also separates local convergence from arrival-branch
 selection. The terminal record retains all 104 requested samples.
 For 38 rays, an independently
@@ -131,6 +193,21 @@ arrival, not a complete enumeration of branches. Its absence for another
 ray does not justify excluding that ray. Full native identities, epochs,
 selector flags, and captured rows are retained in
 \path{data/development/loma_geometry_preflight/all_guides_002/}.
+
+A subsequent continuous reference enumerates direct, turning, and
+maximum-speed guide branches for all 104 sampled Loma geometries. Every
+reference passes its completeness and distance-closure checks, with no
+near ties: 73 first arrivals are direct, 23 follow a critical guide,
+six turn, and two are direct paths in a constant-speed region. The
+23 critical guides confirm the earlier feasible candidates as first
+arrivals for those rays. Production and refined root-mean-square time
+errors are 4.879 ms and 67.366 microseconds; their maxima are 37.159 ms
+and 186.569 microseconds. Even among locally converged production rays,
+the maximum error is 37.159 ms. The reference applies to the specified
+laterally varying synthetic truth model within its finite box and does
+not validate the production path solver. All identities and comparisons
+are saved in
+\path{data/development/loma_geometry_preflight/layered_reference_001/}.
 
 The completed Loma Prieta diagnostic retains all 104 requested rays.
 Initializers succeed for every ray at both spacings, but 31 rays fail the

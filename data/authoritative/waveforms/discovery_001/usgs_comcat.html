@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ANSS Comprehensive Earthquake Catalog (ComCat)</title>
+    <link rel="stylesheet" href="/theme/hazdev/hazdev-template.css">
+    <script src="/theme/hazdev/assets/js/uswds-init.min.js"></script>
+    <link rel="stylesheet" href="/css/site-navigation.css?v=1790799105"><link rel="stylesheet" href="/css/legacy-content.css?v=1790799105"><link rel="stylesheet" href="/data/comcat/index.css"/><meta name="description" content="USGS Earthquake Hazards Program, responsible for monitoring, reporting, and researching earthquakes and earthquake hazards"/><meta name="keywords" content="aftershock,earthquake,epicenter,fault,foreshock,geologist,geophysics,hazard,hypocenter,intensity,intensity scale,magnitude,magnitude scale,mercalli,plate,richter,seismic,seismicity,seismogram,seismograph,seismologist,seismology,subduction,tectonics,tsunami,quake,sismologico,sismologia"/><script id="_fed_an_ua_tag" async="async" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOI&amp;subagency=USGS"></script>  </head>
+  <body id="top" class="hazdev-static-template">
+    <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+    <section class="usa-banner" aria-label="Official website of the United States government">
+      <div class="usa-accordion">
+        <header class="usa-banner__header">
+          <div class="usa-banner__inner">
+            <div class="grid-col-auto"><img aria-hidden="true" class="usa-banner__header-flag" src="/theme/hazdev/assets/img/us_flag_small.png" alt=""></div>
+            <div class="grid-col-fill tablet:grid-col-auto" aria-hidden="true">
+              <p class="usa-banner__header-text">An official website of the United States government</p>
+              <p class="usa-banner__header-action">Here’s how you know</p>
+            </div>
+            <button type="button" class="usa-accordion__button usa-banner__button" aria-expanded="false" aria-controls="gov-banner-content"><span class="usa-banner__button-text">Here’s how you know</span></button>
+          </div>
+        </header>
+        <div class="usa-banner__content usa-accordion__content" id="gov-banner-content" hidden>
+          <div class="grid-row grid-gap-lg">
+            <div class="usa-banner__guidance tablet:grid-col-6">
+              <img class="usa-banner__icon usa-media-block__img" src="/theme/hazdev/assets/img/icon-dot-gov.svg" alt="" aria-hidden="true">
+              <div class="usa-media-block__body"><p><strong>Official websites use .gov</strong><br>A <strong>.gov</strong> website belongs to an official government organization in the United States.</p></div>
+            </div>
+            <div class="usa-banner__guidance tablet:grid-col-6">
+              <img class="usa-banner__icon usa-media-block__img" src="/theme/hazdev/assets/img/icon-https.svg" alt="" aria-hidden="true">
+              <div class="usa-media-block__body"><p><strong>Secure .gov websites use HTTPS</strong><br>A lock or <strong>https://</strong> means you’ve safely connected to the .gov website.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <header class="site-header" role="banner">
+      <div class="hazdev-header hazdev-header--with-menu">
+        <div class="grid-container hazdev-header__container">
+          <div class="hazdev-header__row">
+            <a class="hazdev-header__logo" href="https://www.usgs.gov/" title="U.S. Geological Survey home">
+              <picture>
+                <source media="(max-width: 40rem)" srcset="/theme/hazdev/DrupalVisID/images/usgs-abbreviation.svg">
+                <img src="/theme/hazdev/DrupalVisID/images/usgs.svg" alt="U.S. Geological Survey">
+              </picture>
+            </a>
+            <div class="hazdev-header__actions">
+              <section class="hazdev-header__search" aria-label="Site search">
+                <form action="https://www.usgs.gov/search" class="usa-search usa-search--small" method="get" role="search">
+                  <label for="site-search" class="usa-sr-only">Search</label>
+                  <input class="usa-input" id="site-search" type="search" name="keywords">
+                  <button class="usa-button" type="submit"><img src="/theme/hazdev/assets/img/usa-icons-bg/search--white.svg" class="usa-search__submit-icon" alt="Search"></button>
+                </form>
+              </section>
+              <button class="usa-button hazdev-header__menu-button" type="button" aria-controls="site-navigation" aria-expanded="false" data-hazdev-menu>Menu</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="hazdev-subheader" aria-label="Application subheader">
+      <div class="grid-container subheader-container">
+        <div class="subheader-wrapper">
+          <span class="program-title font-body-sm line-height-body-2 text-bold">Earthquake Hazards Program</span>
+                  </div>
+      </div>
+    </section>
+<nav class="site-primary-navigation site-primary-navigation--desktop" aria-label="Primary navigation">
+  <div class="grid-container">
+    <ul class="site-primary-navigation__list">
+                        <li class="site-primary-navigation__item">
+            <a
+              href="/earthquakes/"
+              >Earthquakes</a>
+          </li>
+                                <li class="site-primary-navigation__item">
+            <a
+              href="/data/"
+              aria-current="page">Data &amp; Tools</a>
+          </li>
+                                <li class="site-primary-navigation__item">
+            <a
+              href="/monitoring/"
+              >Monitoring</a>
+          </li>
+                                <li class="site-primary-navigation__item">
+            <a
+              href="/education/"
+              >Education</a>
+          </li>
+                    <li class="site-primary-navigation__utility">
+        <a href="/earthquakes/map/">
+          <img
+            class="site-primary-navigation__utility-icon"
+            src="/theme/hazdev/assets/img/usa-icons/map.svg"
+            alt=""
+            aria-hidden="true">
+          Latest Earthquakes
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <div class="hazdev-page">
+      <button class="hazdev-navigation__scrim" type="button" aria-label="Close navigation" data-hazdev-scrim hidden></button>
+      <div class="hazdev-page__body hazdev-page__body--with-navigation grid-container">
+        <aside id="site-navigation" class="hazdev-navigation" aria-label="Site navigation">
+          <button class="usa-button usa-button--outline hazdev-navigation__close" type="button" data-hazdev-menu-close>Close</button>
+          <section class="hazdev-navigation__search" aria-label="Navigation search">
+            <form action="https://www.usgs.gov/search" class="usa-search usa-search--small" method="get" role="search">
+              <label for="menu-search" class="usa-sr-only">Search</label>
+              <input class="usa-input" id="menu-search" type="search" name="keywords">
+              <button class="usa-button" type="submit">
+                <img src="/theme/hazdev/assets/img/usa-icons-bg/search--white.svg" class="usa-search__submit-icon" alt="Search">
+              </button>
+            </form>
+          </section>
+                      <nav class="site-navigation__contextual-navigation" aria-label="Side navigation"><ul class="usa-sidenav"><li class="usa-sidenav__item"><a href="/data/catalog/" class="usa-current" aria-current="page">Overview</a></li><li class="usa-sidenav__item"><a href="/data/catalog/contribute/">Contribute Data</a></li><li class="usa-sidenav__item"><a href="/data/catalog/access/">Access Data</a></li><li class="usa-sidenav__item"><a href="/data/catalog/data/">Catalog Data</a><ul class="usa-sidenav__sublist"><li class="usa-sidenav__item"><a href="/data/catalog/availability.php">Availability</a></li><li class="usa-sidenav__item"><a href="/data/catalog/products.php">Products</a></li><li class="usa-sidenav__item"><a href="/data/catalog/catalogs/">Catalogs</a></li><li class="usa-sidenav__item"><a href="/data/catalog/contributors/">Contributors</a></li><li class="usa-sidenav__item"><a href="/data/catalog/references.php">References</a></li></ul></li></ul></nav>
+                              <nav class="site-primary-navigation site-primary-navigation--mobile" aria-label="Primary navigation">
+  <div class="grid-container">
+    <ul class="site-primary-navigation__list">
+                                  <li class="site-primary-navigation__item site-primary-navigation__item--has-children">
+            <div class="site-primary-navigation__control">
+              <a
+                href="/earthquakes/"
+                >Earthquakes</a>
+              <button
+                class="site-primary-navigation__toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="site-primary-navigation-mobile-earthquakes"
+                aria-label="Show Earthquakes navigation"
+                data-site-primary-navigation-toggle>
+                <img src="/theme/hazdev/assets/img/usa-icons/expand_more.svg" alt="" aria-hidden="true">
+              </button>
+            </div>
+            <div class="site-primary-navigation__submenu" id="site-primary-navigation-mobile-earthquakes"  hidden>
+                <ul class="site-primary-navigation__submenu-list site-primary-navigation__submenu-list--depth-1" style="--navigation-depth: 1">
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/earthquakes/map/" >
+            Latest Earthquakes                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/earthquakes/search/" >
+            Search The Earthquake Catalog                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/learn/today/" >
+            Today in Earthquake History                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="https://www.usgs.gov/programs/earthquake-hazards/information-region"  rel="external">
+            Earthquake Information By Region                          <svg class="usa-icon site-external-link__indicator" aria-hidden="true" focusable="false">
+                <use href="/theme/hazdev/assets/img/sprite.svg#launch"></use>
+              </svg>
+              <span class="usa-sr-only"> (external link)</span>
+                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/earthquakes/statistics/" >
+            Historical Earthquake Lists And Statistics                      </a>
+                      <button class="site-primary-navigation__toggle" type="button"
+              aria-expanded="false"
+              aria-controls="site-primary-navigation-branch-5"
+              aria-label="Show Historical Earthquake Lists And Statistics navigation"
+              data-site-primary-navigation-toggle>
+              <img src="/theme/hazdev/assets/img/usa-icons/expand_more.svg" alt="" aria-hidden="true">
+            </button>
+                  </div>
+                  <div id="site-primary-navigation-branch-5"  hidden>
+              <ul class="site-primary-navigation__submenu-list site-primary-navigation__submenu-list--depth-2" style="--navigation-depth: 2">
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/earthquakes/statistics/events/" >
+            Significant And Historic Earthquakes                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/earthquakes/statistics/significant.php" >
+            Significant Earthquakes By Year                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/earthquakes/statistics/m6-world.php" >
+            Worldwide Magnitude 6+ Earthquakes                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/earthquakes/statistics/m7-world.php" >
+            Worldwide Magnitude 7+ Earthquakes                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/earthquakes/statistics/m8-world.php" >
+            Worldwide Magnitude 8+ Earthquakes                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/earthquakes/statistics/deleted.php" >
+            Deleted Earthquakes                      </a>
+                  </div>
+              </li>
+      </ul>
+          </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/earthquakes/feed/" >
+            Real-Time Notifications &amp; Feeds                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/scenarios/" >
+            Earthquake Scenarios                      </a>
+                      <button class="site-primary-navigation__toggle" type="button"
+              aria-expanded="false"
+              aria-controls="site-primary-navigation-branch-13"
+              aria-label="Show Earthquake Scenarios navigation"
+              data-site-primary-navigation-toggle>
+              <img src="/theme/hazdev/assets/img/usa-icons/expand_more.svg" alt="" aria-hidden="true">
+            </button>
+                  </div>
+                  <div id="site-primary-navigation-branch-13"  hidden>
+              <ul class="site-primary-navigation__submenu-list site-primary-navigation__submenu-list--depth-2" style="--navigation-depth: 2">
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/scenarios/catalog/" >
+            Scenario Catalog                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/scenarios/contributor/" >
+            Scenario Contributors                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/scenarios/related/" >
+            Related Exercises                      </a>
+                  </div>
+              </li>
+      </ul>
+          </div>
+              </li>
+      </ul>
+            </div>
+          </li>
+                                          <li class="site-primary-navigation__item site-primary-navigation__item--has-children">
+            <div class="site-primary-navigation__control">
+              <a
+                href="/data/"
+                >Data &amp; Tools</a>
+              <button
+                class="site-primary-navigation__toggle"
+                type="button"
+                aria-expanded="true"
+                aria-controls="site-primary-navigation-mobile-data"
+                aria-label="Hide Data &amp; Tools navigation"
+                data-site-primary-navigation-toggle>
+                <img src="/theme/hazdev/assets/img/usa-icons/expand_more.svg" alt="" aria-hidden="true">
+              </button>
+            </div>
+            <div class="site-primary-navigation__submenu" id="site-primary-navigation-mobile-data" >
+                <ul class="site-primary-navigation__submenu-list site-primary-navigation__submenu-list--depth-1" style="--navigation-depth: 1">
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/" >
+            Earthquake Data Products                      </a>
+                      <button class="site-primary-navigation__toggle" type="button"
+              aria-expanded="false"
+              aria-controls="site-primary-navigation-branch-17"
+              aria-label="Show Earthquake Data Products navigation"
+              data-site-primary-navigation-toggle>
+              <img src="/theme/hazdev/assets/img/usa-icons/expand_more.svg" alt="" aria-hidden="true">
+            </button>
+                  </div>
+                  <div id="site-primary-navigation-branch-17"  hidden>
+              <ul class="site-primary-navigation__submenu-list site-primary-navigation__submenu-list--depth-2" style="--navigation-depth: 2">
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#origin" >
+            Origin                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#phase-data" >
+            Phase Data                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#focal-mechanism" >
+            Focal Mechanism                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#moment-tensor" >
+            Moment Tensor                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#finite-fault" >
+            Finite-Fault Models                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#shakemap" >
+            ShakeMap                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#pager" >
+            PAGER                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#dyfi" >
+            Did You Feel It?                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#ground-failure" >
+            Ground-Failure Estimates                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#event-sequence" >
+            Event Sequence                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#oaf" >
+            Operational Aftershock Forecasts                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#shake-alert" >
+            ShakeAlert                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#cap" >
+            Common Alerting Protocol (CAP)                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#poster" >
+            Event Poster                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#tectonic-summary" >
+            Tectonic Summary                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#general-header" >
+            General Header                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#geoserve" >
+            GeoServe                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#nearby-cities" >
+            Nearby Cities                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#significance" >
+            Significance                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#link-products" >
+            Link Products                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#text-products" >
+            Text Products                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#associate" >
+            Associate                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#disassociate" >
+            Disassociate                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/products/#trump" >
+            Trump                      </a>
+                  </div>
+              </li>
+      </ul>
+          </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/catalog/" >
+            Comprehensive Earthquake Catalog (ComCat)                      </a>
+                      <button class="site-primary-navigation__toggle" type="button"
+              aria-expanded="true"
+              aria-controls="site-primary-navigation-branch-42"
+              aria-label="Hide Comprehensive Earthquake Catalog (ComCat) navigation"
+              data-site-primary-navigation-toggle>
+              <img src="/theme/hazdev/assets/img/usa-icons/expand_more.svg" alt="" aria-hidden="true">
+            </button>
+                  </div>
+                  <div id="site-primary-navigation-branch-42" >
+              <ul class="site-primary-navigation__submenu-list site-primary-navigation__submenu-list--depth-2" style="--navigation-depth: 2">
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/catalog/"  aria-current="page">
+            Overview                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/catalog/contribute/" >
+            Contribute Data                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/catalog/access/" >
+            Access Data                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/catalog/data/" >
+            Catalog Data                      </a>
+                      <button class="site-primary-navigation__toggle" type="button"
+              aria-expanded="false"
+              aria-controls="site-primary-navigation-branch-46"
+              aria-label="Show Catalog Data navigation"
+              data-site-primary-navigation-toggle>
+              <img src="/theme/hazdev/assets/img/usa-icons/expand_more.svg" alt="" aria-hidden="true">
+            </button>
+                  </div>
+                  <div id="site-primary-navigation-branch-46"  hidden>
+              <ul class="site-primary-navigation__submenu-list site-primary-navigation__submenu-list--depth-3" style="--navigation-depth: 3">
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/catalog/availability.php" >
+            Availability                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/catalog/products.php" >
+            Products                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/catalog/catalogs/" >
+            Catalogs                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/catalog/contributors/" >
+            Contributors                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/catalog/references.php" >
+            References                      </a>
+                  </div>
+              </li>
+      </ul>
+          </div>
+              </li>
+      </ul>
+          </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/earthquakes/feed/" >
+            Real-Time Notifications &amp; Feeds                      </a>
+                      <button class="site-primary-navigation__toggle" type="button"
+              aria-expanded="false"
+              aria-controls="site-primary-navigation-branch-52"
+              aria-label="Show Real-Time Notifications &amp; Feeds navigation"
+              data-site-primary-navigation-toggle>
+              <img src="/theme/hazdev/assets/img/usa-icons/expand_more.svg" alt="" aria-hidden="true">
+            </button>
+                  </div>
+                  <div id="site-primary-navigation-branch-52"  hidden>
+              <ul class="site-primary-navigation__submenu-list site-primary-navigation__submenu-list--depth-2" style="--navigation-depth: 2">
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="https://earthquake.usgs.gov/ens/"  rel="external">
+            Earthquake Notification Service (ENS)                          <svg class="usa-icon site-external-link__indicator" aria-hidden="true" focusable="false">
+                <use href="/theme/hazdev/assets/img/sprite.svg#launch"></use>
+              </svg>
+              <span class="usa-sr-only"> (external link)</span>
+                      </a>
+                  </div>
+              </li>
+      </ul>
+          </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/software/" >
+            Developer Resources &amp; Software                      </a>
+                      <button class="site-primary-navigation__toggle" type="button"
+              aria-expanded="false"
+              aria-controls="site-primary-navigation-branch-54"
+              aria-label="Show Developer Resources &amp; Software navigation"
+              data-site-primary-navigation-toggle>
+              <img src="/theme/hazdev/assets/img/usa-icons/expand_more.svg" alt="" aria-hidden="true">
+            </button>
+                  </div>
+                  <div id="site-primary-navigation-branch-54"  hidden>
+              <ul class="site-primary-navigation__submenu-list site-primary-navigation__submenu-list--depth-2" style="--navigation-depth: 2">
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/web-services/" >
+            Web APIs                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/timeline/" >
+            ComCat Event Timeline                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="https://code.usgs.gov/ghsc/hazdev/pdl"  rel="external">
+            Product Distribution Layer (PDL)                          <svg class="usa-icon site-external-link__indicator" aria-hidden="true" focusable="false">
+                <use href="/theme/hazdev/assets/img/sprite.svg#launch"></use>
+              </svg>
+              <span class="usa-sr-only"> (external link)</span>
+                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="https://ghsc.code-pages.usgs.gov/hazdev/pdl/"  rel="external">
+            PDL Documentation                          <svg class="usa-icon site-external-link__indicator" aria-hidden="true" focusable="false">
+                <use href="/theme/hazdev/assets/img/sprite.svg#launch"></use>
+              </svg>
+              <span class="usa-sr-only"> (external link)</span>
+                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="https://code.usgs.gov/ghsc/esi/libcomcat-python"  rel="external">
+            Libcomcat For Python Developers                          <svg class="usa-icon site-external-link__indicator" aria-hidden="true" focusable="false">
+                <use href="/theme/hazdev/assets/img/sprite.svg#launch"></use>
+              </svg>
+              <span class="usa-sr-only"> (external link)</span>
+                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="https://www.usgs.gov/programs/earthquake-hazards/software"  rel="external">
+            Earthquake Hazards Program Software Catalog                          <svg class="usa-icon site-external-link__indicator" aria-hidden="true" focusable="false">
+                <use href="/theme/hazdev/assets/img/sprite.svg#launch"></use>
+              </svg>
+              <span class="usa-sr-only"> (external link)</span>
+                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="https://code.usgs.gov/ghsc/hazdev/comcat-timeline"  rel="external">
+            ComCat Event Timeline Source Code                          <svg class="usa-icon site-external-link__indicator" aria-hidden="true" focusable="false">
+                <use href="/theme/hazdev/assets/img/sprite.svg#launch"></use>
+              </svg>
+              <span class="usa-sr-only"> (external link)</span>
+                      </a>
+                  </div>
+              </li>
+      </ul>
+          </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/rupture/" >
+            Rupture Directivity                      </a>
+                      <button class="site-primary-navigation__toggle" type="button"
+              aria-expanded="false"
+              aria-controls="site-primary-navigation-branch-62"
+              aria-label="Show Rupture Directivity navigation"
+              data-site-primary-navigation-toggle>
+              <img src="/theme/hazdev/assets/img/usa-icons/expand_more.svg" alt="" aria-hidden="true">
+            </button>
+                  </div>
+                  <div id="site-primary-navigation-branch-62"  hidden>
+              <ul class="site-primary-navigation__submenu-list site-primary-navigation__submenu-list--depth-2" style="--navigation-depth: 2">
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/rupture/directivity.php" >
+            What Is Directivity?                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/rupture/details.php" >
+            Rupture Direction and Velocity Methods                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/data/rupture/bssa.php" >
+            Northern California Results                      </a>
+                  </div>
+              </li>
+      </ul>
+          </div>
+              </li>
+      </ul>
+            </div>
+          </li>
+                                          <li class="site-primary-navigation__item site-primary-navigation__item--has-children">
+            <div class="site-primary-navigation__control">
+              <a
+                href="/monitoring/"
+                >Monitoring</a>
+              <button
+                class="site-primary-navigation__toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="site-primary-navigation-mobile-monitoring"
+                aria-label="Show Monitoring navigation"
+                data-site-primary-navigation-toggle>
+                <img src="/theme/hazdev/assets/img/usa-icons/expand_more.svg" alt="" aria-hidden="true">
+              </button>
+            </div>
+            <div class="site-primary-navigation__submenu" id="site-primary-navigation-mobile-monitoring"  hidden>
+                <ul class="site-primary-navigation__submenu-list site-primary-navigation__submenu-list--depth-1" style="--navigation-depth: 1">
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/monitoring/operations/" >
+            Station Maps, Status, And Heliplots                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/monitoring/deformation/edm/" >
+            Two-Color EDM                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/monitoring/deformation/geodolite/" >
+            Geodolite Data                      </a>
+                  </div>
+              </li>
+      </ul>
+            </div>
+          </li>
+                                          <li class="site-primary-navigation__item site-primary-navigation__item--has-children">
+            <div class="site-primary-navigation__control">
+              <a
+                href="/education/"
+                >Education</a>
+              <button
+                class="site-primary-navigation__toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="site-primary-navigation-mobile-learn"
+                aria-label="Show Education navigation"
+                data-site-primary-navigation-toggle>
+                <img src="/theme/hazdev/assets/img/usa-icons/expand_more.svg" alt="" aria-hidden="true">
+              </button>
+            </div>
+            <div class="site-primary-navigation__submenu" id="site-primary-navigation-mobile-learn"  hidden>
+                <ul class="site-primary-navigation__submenu-list site-primary-navigation__submenu-list--depth-1" style="--navigation-depth: 1">
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/education/" >
+            Earthquake Topics                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/learn/activities/" >
+            Activities And Media                      </a>
+                      <button class="site-primary-navigation__toggle" type="button"
+              aria-expanded="false"
+              aria-controls="site-primary-navigation-branch-70"
+              aria-label="Show Activities And Media navigation"
+              data-site-primary-navigation-toggle>
+              <img src="/theme/hazdev/assets/img/usa-icons/expand_more.svg" alt="" aria-hidden="true">
+            </button>
+                  </div>
+                  <div id="site-primary-navigation-branch-70"  hidden>
+              <ul class="site-primary-navigation__submenu-list site-primary-navigation__submenu-list--depth-2" style="--navigation-depth: 2">
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/education/listen/" >
+            Listen To Earthquakes                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/education/shakingsimulations/" >
+            Ground-Shaking Simulations                      </a>
+                  </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/education/geologicmaps/" >
+            Interactive Geologic Maps                      </a>
+                  </div>
+              </li>
+      </ul>
+          </div>
+              </li>
+                <li class="site-primary-navigation__submenu-item">
+        <div class="site-primary-navigation__control">
+          <a href="/learn/parkfield/" >
+            The Parkfield Earthquake Experiment                      </a>
+                  </div>
+              </li>
+      </ul>
+            </div>
+          </li>
+                    <li class="site-primary-navigation__utility">
+        <a href="/earthquakes/map/">
+          <img
+            class="site-primary-navigation__utility-icon"
+            src="/theme/hazdev/assets/img/usa-icons/map.svg"
+            alt=""
+            aria-hidden="true">
+          Latest Earthquakes
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+        </aside>
+<main id="main-content" class="usa-prose template-content-container" tabindex="-1">
+      <nav class="site-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+                            <li>
+                          <a href="/">Home</a>
+                      </li>
+                            <li>
+                          <a href="/data/">Data &amp; Tools</a>
+                      </li>
+                            <li>
+                          <span aria-current="page">Comprehensive Earthquake Catalog (ComCat)</span>
+                      </li>
+              </ol>
+    </nav>
+    <h1>ANSS Comprehensive Earthquake Catalog (ComCat)</h1>
+<p class="lead">
+  The ANSS Comprehensive Earthquake Catalog (ComCat) contains earthquake
+  source parameters and related products contributed by seismic networks
+  around the world.
+</p>
+
+<p class="comcat-actions">
+  <a class="usa-button" href="/earthquakes/search/">Search The Catalog</a>
+  <a class="usa-button" href="/earthquakes/map/">View Latest Earthquakes</a>
+</p>
+
+<h2>Explore ComCat</h2>
+<div class="section-landing__cards">
+  <section class="section-landing__card">
+    <h3><a href="/data/catalog/contribute/">Contribute Data</a></h3>
+    <p>Use the Product Distribution Layer (PDL) to contribute earthquake data and products to USGS real-time systems and ComCat.</p>
+  </section>
+
+  <section class="section-landing__card">
+    <h3><a href="/data/comcat/access.php">Access Earthquake Data</a></h3>
+    <p>
+      Choose an interactive search, web service, real-time feed, notification
+      service, or developer tool.
+    </p>
+  </section>
+
+  <section class="section-landing__card">
+    <h3><a href="/data/comcat/availability.php">Data Availability</a></h3>
+    <p>Review catalog date ranges by contributing seismic network.</p>
+  </section>
+
+  <section class="section-landing__card">
+    <h3><a href="/data/comcat/products.php">Data Products</a></h3>
+    <p>Learn how earthquake products are associated, versioned, and preferred.</p>
+  </section>
+
+  <section class="section-landing__card">
+    <h3><a href="/data/comcat/catalog/">Explore Catalog Sources</a></h3>
+    <p>
+      See the authoritative and historical catalogs that contribute events to
+      ComCat, including their time periods and geographic regions.
+    </p>
+  </section>
+
+  <section class="section-landing__card">
+    <h3><a href="/data/comcat/contributor/">Browse Real-Time Contributors</a></h3>
+    <p>
+      Find the seismic networks and agencies that contribute real-time event
+      parameters and products.
+    </p>
+  </section>
+</div>
+
+<section class="comcat-contribute">
+  <h2>Contribute Or Receive Earthquake Data</h2>
+  <p>
+    Organizations can use the
+    <a href="https://code.usgs.gov/ghsc/hazdev/pdl">Product Distribution Layer (PDL)</a>
+    to send products to and receive products from the USGS.
+  </p>
+</section>
+        </main>
+      </div>
+      <footer class="usa-footer hazdev-footer">
+        <div class="grid-container usa-footer__return-to-top hazdev-footer__return-to-top">
+          <button class="hazdev-footer__return-button" type="button" aria-label="Return to top" data-hazdev-return-to-top>
+            <img class="hazdev-footer__return-icon" src="/theme/hazdev/assets/img/usa-icons/arrow_upward.svg" alt="" aria-hidden="true">
+            <span class="hazdev-footer__return-label">Return to top</span>
+          </button>
+        </div>
+        <div class="usa-footer__secondary-section">
+          <div class="grid-container">
+            <div class="hazdev-footer__content">
+              <div class="usa-footer__logo hazdev-footer__logo-text"><p class="usa-footer__logo-heading">U.S. Geological Survey</p></div>
+              <nav class="hazdev-footer__nav" aria-label="USGS footer navigation">
+                <ul class="hazdev-footer__nav-list">
+                  <li><a href="https://www.usgs.gov/policies-and-notices">Policies and Notices</a></li>
+                  <li><a href="https://www.usgs.gov/accessibility-and-us-geological-survey">Accessibility</a></li>
+                  <li><a href="https://www.usgs.gov/sitemap">Site Map</a></li>
+                  <li><a href="https://answers.usgs.gov/">Contact USGS</a></li>
+                </ul>
+              </nav>
+              <div class="usa-footer__contact-links hazdev-footer__contact">
+                <div class="usa-footer__social-links hazdev-footer__social-links">
+                                      <div class="hazdev-footer__social-item">
+                      <a class="usa-social-link" href="https://www.facebook.com/usgeologicalsurvey" target="_blank" rel="noreferrer">
+                        <img class="usa-social-link__icon" src="/theme/hazdev/assets/img/usa-icons/facebook.svg" alt="Facebook">
+                      </a>
+                    </div>
+                                      <div class="hazdev-footer__social-item">
+                      <a class="usa-social-link" href="https://twitter.com/usgs" target="_blank" rel="noreferrer">
+                        <img class="usa-social-link__icon" src="/theme/hazdev/assets/img/usa-icons/x.svg" alt="X">
+                      </a>
+                    </div>
+                                      <div class="hazdev-footer__social-item">
+                      <a class="usa-social-link" href="https://www.youtube.com/usgs" target="_blank" rel="noreferrer">
+                        <img class="usa-social-link__icon" src="/theme/hazdev/assets/img/usa-icons/youtube.svg" alt="YouTube">
+                      </a>
+                    </div>
+                                      <div class="hazdev-footer__social-item">
+                      <a class="usa-social-link" href="https://www.instagram.com/usgs" target="_blank" rel="noreferrer">
+                        <img class="usa-social-link__icon" src="/theme/hazdev/assets/img/usa-icons/instagram.svg" alt="Instagram">
+                      </a>
+                    </div>
+                                      <div class="hazdev-footer__social-item">
+                      <a class="usa-social-link" href="https://www.flickr.com/photos/usgeologicalsurvey" target="_blank" rel="noreferrer">
+                        <img class="usa-social-link__icon" src="/theme/hazdev/assets/img/usa-icons/flickr.svg" alt="Flickr">
+                      </a>
+                    </div>
+                                      <div class="hazdev-footer__social-item">
+                      <a class="usa-social-link" href="https://github.com/usgs" target="_blank" rel="noreferrer">
+                        <img class="usa-social-link__icon" src="/theme/hazdev/assets/img/usa-icons/github.svg" alt="GitHub">
+                      </a>
+                    </div>
+                                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="usa-identifier">
+        <section class="usa-identifier__section usa-identifier__section--masthead" aria-label="Agency identifier">
+          <div class="usa-identifier__container">
+            <div class="usa-identifier__logos">
+              <a class="usa-identifier__logo" href="https://www.doi.gov/">
+                <img class="usa-identifier__logo-img" src="/theme/hazdev/DrupalVisID/images/doi-logo.png" alt="U.S. Department of the Interior logo">
+              </a>
+            </div>
+            <section class="usa-identifier__identity" aria-label="Agency description">
+              <p class="usa-identifier__identity-domain">usgs.gov</p>
+              <p class="usa-identifier__identity-disclaimer"><span aria-hidden="true">An </span>official website of the <a href="https://www.doi.gov/">U.S. Department of the Interior</a></p>
+            </section>
+          </div>
+        </section>
+        <nav class="usa-identifier__section usa-identifier__section--required-links" aria-label="Important links">
+          <div class="usa-identifier__container">
+            <ul class="usa-identifier__required-links-list">
+              <li class="usa-identifier__required-links-item"><a class="usa-identifier__required-link usa-link" href="https://www.doi.gov/about">About DOI</a></li>
+              <li class="usa-identifier__required-links-item"><a class="usa-identifier__required-link usa-link" href="https://www.doi.gov/accessibility">Accessibility statement</a></li>
+              <li class="usa-identifier__required-links-item"><a class="usa-identifier__required-link usa-link" href="https://www.doi.gov/foia">FOIA requests</a></li>
+              <li class="usa-identifier__required-links-item"><a class="usa-identifier__required-link usa-link" href="https://www.doi.gov/pmb/eeo/no-fear-act">No FEAR Act data</a></li>
+              <li class="usa-identifier__required-links-item"><a class="usa-identifier__required-link usa-link" href="https://www.doioig.gov/">Office of the Inspector General</a></li>
+              <li class="usa-identifier__required-links-item"><a class="usa-identifier__required-link usa-link" href="https://www.doi.gov/privacy">Privacy policy</a></li>
+            </ul>
+          </div>
+        </nav>
+        <section class="usa-identifier__section usa-identifier__section--usagov" aria-label="U.S. government information and services">
+          <div class="usa-identifier__container">Looking for U.S. government information and services?&nbsp; <a class="usa-link" href="https://www.usa.gov/">Visit USA.gov</a></div>
+        </section>
+      </div>
+    </div>
+    
+    <script>
+      (function () {
+        var fragment = window.location.hash;
+        if (fragment) {
+          window.location.replace("/data/comcat/reference.php" + fragment);
+        }
+      }());
+    </script><script defer src="/js/site-navigation.js"></script>    <script defer src="/theme/hazdev/assets/js/uswds.min.js"></script>
+    <script defer src="/theme/hazdev/hazdev-template.js"></script>
+  </body>
+</html>

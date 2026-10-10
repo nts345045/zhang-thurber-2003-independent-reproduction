@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="keywords" content="web services">
+<meta name="description" content="NCEDC Web-Services">
+<title>NCEDC Eventdata Web Service</title>
+<LINK REL="STYLESHEET" HREF="/css/default-simple.css" TYPE="text/css" media="all">
+<!--[if IE]>
+			<LINK REL="STYLESHEET" HREF="/css/ie7.css" TYPE="text/css">
+			<script type="text/javascript" src="/js/ie_menu.js"></script>
+		<![endif]-->
+<!--[if lte IE 6]>
+			<LINK REL="STYLESHEET" HREF="/css/ie6.css" TYPE="text/css">
+		<![endif]-->
+
+<LINK REL="STYLESHEET" HREF="/css/print.css" TYPE="text/css" MEDIA="print">
+<LINK REL="STYLESHEET" HREF="/css/main.css" TYPE="text/css" MEDIA="screen">
+
+<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+
+		$(".form-target").change(function() {
+			  var queryString = "";
+			  var stopBuilding = false;
+			  var first = true;
+			  
+			  
+			  
+			  if($("input#network").val() && $("input#network").val()!=""){
+				  queryString = queryString+"network="+$("input#network").val();
+				  first=false;
+			  }
+			  
+			  if($("input#station").val() && $("input#station").val()!=""){
+				  if(first){first=false;
+				  	queryString = queryString+"station="+$("input#station").val();}
+				  else{
+					  queryString = queryString+"&station="+$("input#station").val();
+				  }
+			  }
+			  
+			  if($("input#channel").val() && $("input#channel").val()!=""){
+				  if(first){first=false;
+				  queryString = queryString+"channel="+$("input#channel").val();}
+				  else{
+					  queryString = queryString+"&channel="+$("input#channel").val();
+				  }
+			  }
+			  
+			  if($("input#location").val() && $("input#location").val()!=""){
+				  if(first){first=false;
+				  queryString = queryString+"location="+$("input#location").val();}
+				  else{
+					  queryString = queryString+"&location="+$("input#location").val();
+				  }
+			  }
+			 
+			  if($("input#time").val() && $("input#time").val()!=""){
+                                  if(first){first=false;
+                                  queryString = queryString+"time="+$("input#time").val();}
+                                        else{
+                                             	queryString = queryString+"&time="+$("input#time").val();
+                                  }
+                          }
+ 
+			  if($("input#starttime").val() && $("input#starttime").val()!=""){
+				  if(first){first=false;
+				  queryString = queryString+"starttime="+$("input#starttime").val();}
+					else{
+						queryString = queryString+"&starttime="+$("input#starttime").val();
+				  }
+			  }
+			  
+			  if($("input#endtime").val() && $("input#endtime").val()!=""){
+				  if(first){first=false;
+				  queryString = queryString+"endtime="+$("input#endtime").val();}
+					else{
+						queryString = queryString+"&endtime="+$("input#endtime").val();
+				  }
+			  }
+
+                          if($("input#catalog").val() && $("input#catalog").val()!=""){
+                                  if(first){first=false;
+                                  queryString = queryString+"catalog="+$("input#catalog").val();}
+                                        else{
+                                                queryString = queryString+"&catalog="+$("input#catalog").val();
+                                  }
+                          }
+
+                          if($("input#eventid").val() && $("input#eventid").val()!=""){
+                                  if(first){first=false;
+                                  queryString = queryString+"eventid="+$("input#eventid").val();}
+                                        else{
+                                                queryString = queryString+"&eventid="+$("input#eventid").val();
+                                  }
+                          }
+			  
+			  $('#urlBuilderLink').attr("href", "/ncedcws/eventdata/1/query?"+queryString);
+			  $('#urlBuilderLink').text("/ncedcws/eventdata/1/query?"+queryString);
+			  
+			});
+});
+
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40249211-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<center>
+<A HREF="https://service.ncedc.org"><IMG src="/images/WebServicesHeader.png"></A>
+</center>
+<div id="container">
+
+<div id="unknown">
+<center>
+<div id="LogoLink">
+</div>
+</center>
+</div>
+<div id="nav"><!-- --></div>
+<div id="belowNav"><!-- --></div>
+<div id="main">
+<div id="content">
+<div id="sub-content">
+<h1 class="style1">&nbsp;Eventdata Web Service</h1>
+<div id="breadCrumbs">&nbsp; &nbsp; <a href="http://ncedc.org">Home</a> &raquo;
+<a href="https://service.ncedc.org">NCEDC Web Services</a> &raquo; Eventdata</div>
+
+<BR>
+<a href="#description-box" class="classname">Description</a>
+<a href="#usagetable" class="classname">Usage</a>
+<a href="#urlbuilder" class="classname">URL Builder</a>
+<a href="https://service.ncedc.org/ncedcws/eventdata/help/index.html" class="classname">Help</a>
+
+
+<div id="description-box">
+<pre>
+
+The eventdata service provides access to time series data for the pre-assembled time series associated 
+with a specific event. The event is specified by two identifiers:
+        An eventid.
+        A catalog that identifies the source of the eventid.
+Together, the eventid and catalog identify a unique event to the web service.
+
+You can optionally specify a more restricted time interval for the time series in the event gather, either globally 
+(for all time series), or for any specific time series.
+
+You can optionally select a subset of the pre-assembled time series by specifying a list of SEED network, station, 
+location, and channels, and optionally a restricted time range for the data channels.  If you do not specify any 
+data channels, all data channels assembled for the event will be returned.
+
+Data are returned in miniSEED format.
+
+<B><U>GET Usage:</U></B>
+
+The simplest way to use the web service is to construct a URL that contains the web service and its
+arguments.  All arguments must be specified as keyword-value pairs in the URL.  You man specify a single
+restrictive starttime and endtime, and may specify a subset of the data channels using the network,
+station, channel, and location keywords.  The values may be a comma-separated list, and may contain wilcards.
+If no data channels are specified, all pre-assembled data channels for the event will be returned.
+<B>Example:</B>
+    <a href="/ncedcws/eventdata/1/query?eventid=72099881">/ncedcws/eventdata/1/query?eventid=72099881&amp;catalog=NCSS</a>
+
+<B><U>POST Usage:</U></B>
+
+Alternately, instead of providing parameters-value pairs in the URL, a file containing the parameters can be POSTed 
+to this service. For the POST method, all parameters must be submitted as part of the POST body.  POST requests 
+should be sent as plain text and should not be formatted as application/x-www-form-urlencoded or multipart/form-data.
+<span style="font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;">
+POST submission:  All info must be provided in the POST input.
+ Required:      eventid=event_id (eg 72099881)
+ Required:      catalog=event_catalog (eg NCSS, EGS, ...)
+ Optional:      starttime=yyyy-mm-ddThh:mm:ss[.ssssss]
+ Optional:      endtime=yyyy-mm-ddThh:mm:ss[.ssssss]
+ Optional:      N S L C
+ Optional:      N S L C starttime endtime
+</span>
+All rules for parameters apply equally whether specified using the GET or POST methods with the exception of 
+blank location IDs, which must be specified as &quot;--&quot; in the POST body due to spaces being used as 
+the field separator.
+
+Below is a full list of service parameters and their usage.
+</pre>
+</div>
+
+<table id="usagetable" class="usagetable" border="1" width="100%">
+	<tr>
+		<td colspan="3"><strong>Query:</strong> /ncedcws/eventdata/1/query?[query-parameters]</td>
+	</tr>
+	<tr>
+		<td valign="top" colspan="3"><b>where query-parameters:</b></td>
+	</tr>
+        <tr>
+                <td>eventid="eventid"</td>
+                <td>Required</td><td>Specifies the event identifier.</td>
+        </tr>
+        <tr>
+                <td>catalog="catalog"</td>
+                <td>Optional</td><td>Specifies the catalog for the eventid (Default: NCSS).</td>
+        </tr>
+	<tr>
+		<td>network="network"</td>
+		<td>Optional</td><td>Specify SEED network code, example network=BK. Wildcards and comma separated list are accepted.</td>
+	</tr>
+	<tr>
+		<td>station="station"</td>
+		<td>Optional</td><td>Specify SEED station code, example station=CMB. Wildcards and comma separated list are accepted.</td>
+	</tr>
+	<tr>
+		<td>channel="channel"</td>
+		<td>Optional</td><td>Specify SEED channel code mask, example: channel=BHE. Wildcards and comma separated list are accepted.</td>
+	</tr>
+	<tr>
+		<td valign="top">location="location"</td>
+		<td>Optional</td><td>Specify SEED location code mask, example: location=00.  substitute dash characters for white space, example: location=--. Wildcards and comma separated list are accepted.</td>
+	</tr>
+	<tr>
+		<td>starttime=YYYY-MM-DDThh:mm:ss[.sss]</td>
+		<td>Optional</td><td>Specifies the start-time for the miniSEED data.</td>
+	</tr>
+	<tr>
+		<td>endtime=YYYY-MM-DDThh:mm:ss[.sss]</td>
+		<td>Optional</td><td>Specifies the end-time for the miniSEED data.</td>
+	</tr>
+        <tr>
+                <td>nodata=204/404</td>
+		<td>Optional</td>
+                <td>Specify which HTML status code is returned when no data is found (Default is 204).</td>
+        </tr>
+
+</table>
+
+
+
+<div id="urlbuilder">
+<form action="" name="GetForm">
+
+<table width="100%">
+<tr bgcolor="#FFFFCC">
+		<td colspan="2"><STRONG>URL Builder</STRONG></td>
+	</tr>
+<tr>
+<td colspan="2">
+
+<fieldset>
+<legend><span>Event</span></legend>
+<ol>
+<li><label for="eventid">eventid</label>
+<input type="text" name="eventid" id="eventid" value=""
+                        class="form-target"></li>
+
+<li><label for="catalog">catalog</label>
+<input type="text" name="catalog" id="catalog" value=""
+                        class="form-target"></li>
+</ol>
+</fieldset>
+
+<fieldset>
+<legend><span>Data Channels</span></legend>  
+<ol>
+<li><label for="network">network</label>
+<input type="text" name="network" id="network" value=""
+			class="form-target"></li>
+<li><label for="station">station</label>
+<input type="text" name="station" id="station" value=""
+			class="form-target"></li>
+<li><label for="channel">channel</label>
+<input type="text" name="channel" id="channel" value=""
+			class="form-target"></li>
+<li><label for="location">location</label>
+<input type="text" name="location" id="location" value="" class="form-target"></li>
+</ol>
+</fieldset>
+</td></tr><tr><td>
+
+</td></tr><tr><td colspan="2">
+<fieldset>
+<legend><span>Time</span></legend>  
+<ol>
+<li><label for="starttime">starttime</label>
+<input type="text" name="starttime" id="starttime" value=""
+			class="form-target"></li>
+
+<li><label for="endtime">endtime</label>
+<input type="text" name="endtime" id="endtime" value=""
+			class="form-target"></li>
+</ol>
+</fieldset> 
+
+</td>
+
+<td valign="top">
+
+
+</td>
+
+</tr>
+<tr bgcolor="#FFFFCC">
+		<td colspan="3"><b>URL:</b> <a href="/ncedcws/eventdata/1/query?" id="urlBuilderLink">/ncedcws/eventdata/1/query?</a></td>
+	</tr>
+
+</table>
+
+
+</form>
+
+</div>
+
+<br>
+<div>
+<hr>
+<table width="100%">
+<tr bgcolor="#FFFFCC">
+                <td colspan="2"><STRONG>POST Submission Form</STRONG></td>
+        </tr>
+<tr>
+<td colspan="2">
+
+<form id="form1"  name="PostForm" method="post" action="/ncedcws/eventdata/1/query" enctype="text/plain">
+
+        <div style="padding-left: 4em; padding-right: 4em; padding-top: 1em; padding-bottom: 1em;">
+<center>
+    <textarea name="selection" cols="54" rows="6"  id="selection" class="mytextarea">eventid=72099881
+catalog=NCSS
+NC * * HH?
+NC * * EHZ
+BK CMB * HH?
+BP * * DP? 2013-11-01T06:20:00 2013-11-01T06:21:00</textarea>
+</center>
+        </div>
+<div style="padding-left: 4em; padding-right: 4em; padding-top: 0em; padding-bottom: 1em;">
+
+    <input type="submit" name="" value="Submit" id="Submit">
+</div>
+
+</form>
+
+</table>
+
+</div>
+
+
+<br>
+<div>
+<hr>
+
+<h3>WADL</h3>
+<p>
+Retrieve the <a href="http://www.w3.org/Submission/wadl/">WADL</a> associated with this service:
+<a href="application.wadl">application.wadl</a></p>
+<hr>
+
+</div>
+
+<br>
+<div id="version"><pre>Version: Eventdata Service:1.0.0
+
+
+</pre></div>
+</div>
+<!-- END of content --></div>
+</div>
+</div>
+</body>
+</html>

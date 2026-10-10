@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="keywords" content="web services">
+<meta name="description" content="NCEDC Web-Services">
+<title>NCEDC FDSN Dataselect Web Service</title>
+<LINK REL="STYLESHEET" HREF="/css/default-simple.css" TYPE="text/css" media="all">
+<!--[if IE]>
+			<LINK REL="STYLESHEET" HREF="/css/ie7.css" TYPE="text/css">
+			<script type="text/javascript" src="/js/ie_menu.js"></script>
+		<![endif]-->
+<!--[if lte IE 6]>
+			<LINK REL="STYLESHEET" HREF="/css/ie6.css" TYPE="text/css">
+		<![endif]-->
+
+<LINK REL="STYLESHEET" HREF="/css/print.css" TYPE="text/css" MEDIA="print">
+<LINK REL="STYLESHEET" HREF="/css/main.css" TYPE="text/css" MEDIA="screen">
+
+<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+
+		$(".form-target").change(function() {
+			  var queryString = "";
+			  var stopBuilding = false;
+			  var first = true;
+			  
+			  
+			  
+			  if($("input#net").val() && $("input#net").val()!=""){
+				  queryString = queryString+"net="+$("input#net").val();
+				  first=false;
+			  }
+			  
+			  if($("input#sta").val() && $("input#sta").val()!=""){
+				  if(first){first=false;
+				  	queryString = queryString+"sta="+$("input#sta").val();}
+				  else{
+					  queryString = queryString+"&sta="+$("input#sta").val();
+				  }
+			  }
+			  
+			  if($("input#cha").val() && $("input#cha").val()!=""){
+				  if(first){first=false;
+				  queryString = queryString+"cha="+$("input#cha").val();}
+				  else{
+					  queryString = queryString+"&cha="+$("input#cha").val();
+				  }
+			  }
+			  
+			  if($("input#loc").val() && $("input#loc").val()!=""){
+				  if(first){first=false;
+				  queryString = queryString+"loc="+$("input#loc").val();}
+				  else{
+					  queryString = queryString+"&loc="+$("input#loc").val();
+				  }
+			  }
+			 
+			  if($("input#time").val() && $("input#time").val()!=""){
+                                  if(first){first=false;
+                                  queryString = queryString+"time="+$("input#time").val();}
+                                        else{
+                                             	queryString = queryString+"&time="+$("input#time").val();
+                                  }
+                          }
+ 
+			  if($("input#start").val() && $("input#start").val()!=""){
+				  if(first){first=false;
+				  queryString = queryString+"start="+$("input#start").val();}
+					else{
+						queryString = queryString+"&start="+$("input#start").val();
+				  }
+			  }
+			  
+			  if($("input#end").val() && $("input#end").val()!=""){
+				  if(first){first=false;
+				  queryString = queryString+"end="+$("input#end").val();}
+					else{
+						queryString = queryString+"&end="+$("input#end").val();
+				  }
+			  }
+			  
+			  $('#urlBuilderLink').attr("href", "/fdsnws/dataselect/1/query?"+queryString);
+			  $('#urlBuilderLink').text("/fdsnws/dataselect/1/query?"+queryString);
+			  
+			});
+});
+
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40249211-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<center>
+<A HREF="https://service.ncedc.org"><IMG src="/images/WebServicesHeader.png"></A>
+</center>
+<div id="container">
+
+<div id="unknown">
+<center>
+<div id="LogoLink">
+</div>
+</center>
+</div>
+<div id="nav"><!-- --></div>
+<div id="belowNav"><!-- --></div>
+<div id="main">
+<div id="content">
+<div id="sub-content">
+<h1 class="style1">&nbsp;FDSN Dataselect Web Service</h1>
+<div id="breadCrumbs">&nbsp; &nbsp; <a href="http://ncedc.org">Home</a> &raquo;
+<a href="https://service.ncedc.org">NCEDC Web Services</a> &raquo; FDSN Dataselect</div>
+
+<BR>
+<a href="#description-box" class="classname">Description</a>
+<a href="#usagetable" class="classname">Usage</a>
+<a href="#urlbuilder" class="classname">URL Builder</a>
+<a href="https://service.ncedc.org/fdsnws/dataselect/help/index.html" class="classname">Help</a>
+
+
+<div id="description-box">
+<pre>
+
+The Dataselect webservice gives access to multiple channels of FDSN miniSEED data for specified time ranges.
+
+<B>POST Usage:</B>
+
+Alternately, instead of providing parameters-value pairs in the URL, a file containing a selection list can be POSTed to this service.
+For the POST method, all parameters must be submitted as part of the POST body.
+POST requests should be sent as plain text and should not be formatted as applcation/x-www-form-urlencoded or multipart/form-data.
+
+Time and channel constraints parameters should be repeated as many times as necessary following this pattern:<br>
+</pre>
+<table BORDER="1" cellspacing="5" bgcolor="#EEEEEE">
+<TR><TD>NET<TD>STA<TD>LOC<TD>CHA<TD>STARTTIME<TD>ENDTIME
+<TR><TD>NET<TD>STA<TD>LOC<TD>CHA<TD>STARTTIME<TD>ENDTIME
+<TR><TD>NET<TD>STA<TD>LOC<TD>CHA<TD>STARTTIME<TD>ENDTIME
+</TD></TR>
+</table>
+<pre>
+
+All rules for parameters apply equally whether specified using the GET or POST methods with the exception of blank location IDs,
+which must be specified as &quot;--&quot; in the POST body due to spaces being used as the field separator.
+
+<B>Example:</B>
+     <a href="/fdsnws/dataselect/1/query?net=BK&amp;sta=CMB&amp;loc=00&amp;cha=BHE&amp;start=2011-11-26T09:31:00&amp;end=2011-11-26T10:30:00">/fdsnws/dataselect/1/query?net=BK&amp;sta=CMB&amp;loc=00&amp;cha=BHE&amp;start=2011-11-26T09:31:00&amp;end=2011-11-26T10:30:00</a>
+
+Below is a full list of service parameters and their usage.
+</pre>
+</div>
+
+<table id="usagetable" class="usagetable" border="1" width="100%">
+	<tr>
+		<td colspan="3"><strong>Query:</strong> /fdsnws/dataselect/1/query?[query-parameters]</td>
+	</tr>
+	<tr>
+		<td valign="top" colspan="3"><b>where query-parameters:</b></td>
+	</tr>
+	<tr>
+		<td>net="network"</td>
+		<td>Required</td><td>Specify SEED network code, example net=BK. Wildcards and comma separated list are accepted.</td>
+	</tr>
+	<tr>
+		<td>sta="station"</td>
+		<td>Required</td><td>Specify SEED station code, example sta=CMB. Wildcards and comma separated list are accepted.</td>
+	</tr>
+	<tr>
+		<td>cha="channel"</td>
+		<td>Required</td><td>Specify SEED channel code mask, example: cha=BHE. Wildcards and comma separated list are accepted.</td>
+	</tr>
+	<tr>
+		<td valign="top">loc="location"</td>
+		<td>Required</td><td>Specify SEED location code mask, example: loc=00.  substitute dash characters for white space, example: loc=--. Wildcards and comma separated list are accepted.</td>
+	</tr>
+	<tr>
+		<td>start=YYYY-MM-DDThh:mm:ss[.sss]</td>
+		<td>Required</td><td>Specifies the start-time for the miniSEED data.</td>
+	</tr>
+	<tr>
+		<td>end=YYYY-MM-DDThh:mm:ss[.sss]</td>
+		<td>Required</td><td>Specifies the end-time for the miniSEED data.</td>
+	</tr>
+        <tr>
+                <td>nodata=204/404</td>
+		<td>Optional</td>
+                <td>Specify which HTML status code is returned when no data is found (Default is 204).</td>
+        </tr>
+
+</table>
+
+
+
+<div id="urlbuilder">
+<form action="" name="Azimuth Distance">
+
+<table width="100%">
+<tr bgcolor="#FFFFCC">
+		<td colspan="2"><STRONG>URL Builder</STRONG></td>
+	</tr>
+<tr>
+<td colspan="2">
+
+
+<fieldset>
+<legend><span>Station</span></legend>  
+<ol>
+<li><label for="net">net</label>
+<input type="text" name="net" id="net" value=""
+			class="form-target"></li>
+<li><label for="sta">sta</label>
+<input type="text" name="sta" id="sta" value=""
+			class="form-target"></li>
+<li><label for="cha">cha</label>
+<input type="text" name="cha" id="cha" value=""
+			class="form-target"></li>
+<li><label for="loc">loc</label>
+<input type="text" name="loc" id="loc" value="" class="form-target"></li>
+</ol>
+</fieldset>
+</td></tr><tr><td>
+
+</td></tr><tr><td colspan="2">
+<fieldset>
+<legend><span>Time</span></legend>  
+<ol>
+<li><label for="start">start</label>
+<input type="text" name="start" id="start" value=""
+			class="form-target"></li>
+
+<li><label for="end">end</label>
+<input type="text" name="end" id="end" value=""
+			class="form-target"></li>
+</ol>
+</fieldset> 
+
+</td>
+
+<td valign="top">
+
+
+</td>
+
+</tr>
+<tr bgcolor="#FFFFCC">
+		<td colspan="3"><b>URL:</b> <a href="/fdsnws/dataselect/1/query?" id="urlBuilderLink">/fdsnws/dataselect/1/query?</a></td>
+	</tr>
+
+</table>
+
+
+</form>
+
+</div>
+
+<br>
+<div>
+<hr>
+<table width="100%">
+<tr bgcolor="#FFFFCC">
+                <td colspan="2"><STRONG>Submission Form</STRONG></td>
+        </tr>
+<tr>
+<td colspan="2">
+
+<form id="form1"  name="form1" method="post" action="/fdsnws/dataselect/1/query" enctype="text/plain">
+
+        <div style="padding-left: 4em; padding-right: 4em; padding-top: 1em; padding-bottom: 1em;">
+<center>
+    <textarea name="selection" cols="54" rows="5"  id="selection" class="mytextarea">BK CMB -- BHZ 2009-10-16T00:00:00 2009-10-16T01:00:00
+BK CMB 00 BHZ 2011-09-02T10:00:00 2011-09-02T11:00:00</textarea>
+</center>
+        </div>
+<div style="padding-left: 4em; padding-right: 4em; padding-top: 0em; padding-bottom: 1em;">
+
+    <input type="submit" name="" value="Submit" id="Submit">
+</div>
+
+</form>
+
+</table>
+
+</div>
+
+
+<br>
+<div>
+<hr>
+
+<h3>WADL</h3>
+<p>
+Retrieve the <a href="http://www.w3.org/Submission/wadl/">WADL</a> associated with this service:
+<a href="application.wadl">application.wadl</a></p>
+<hr>
+
+</div>
+
+<br>
+<div id="version"><pre>Version: FDSN Dataselect Service:1.1.0
+
+
+</pre></div>
+</div>
+<!-- END of content --></div>
+</div>
+</div>
+</body>
+</html>

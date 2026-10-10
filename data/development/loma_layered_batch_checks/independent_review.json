@@ -1,0 +1,22 @@
+{
+  "scope": "Independent source review of full-geometry reference runner; no production solver or reference arithmetic change",
+  "review_findings": [
+    "All original input hashes checked before and after copying; complete724-by52 support has deterministic event-major order.",
+    "Inline metadata and JSONL mappings preserve arbitrary native strings, blank locations and epoch fields.",
+    "Coordinate and source-gradient permutations agree; finite x-only Cartesian grid and endpoint box checked.",
+    "Arithmetic failures retain blank time and explicit invalid status; exclusive output creation precedes work.",
+    "Four-worker ordered map preserves parent metadata pairing and a single writer; fresh process imports frozen primitive module."
+  ],
+  "material_issues_found": false,
+  "independent_reviewer": "earthscope_discovery",
+  "source_sha256": {
+    "run_loma_layered_full.py": "4a01438a8646000b77136e8e65f98aa154b6dd8c28ff6a53dda597e855327e39",
+    "check_loma_layered_batch.py": "94a46d3d85c35620bd4dd10ef4974433658cd20409b0c4e1f3ba8288e6a6eaf4"
+  },
+  "fixture_results_sha256": {
+    "001/results.json": "1eea1327c4474804acf8ae4388dace60d4fdae3e154fc2230ec49bbe99c555cc",
+    "002/results.json": "347da568485f8cc5f8d988f79069492cc6d8bdbb118f391c1fc9a86b457419be",
+    "003/results.json": "664ce0e447f02b5eadf53aa1c4d39cce82dae12dad8d93b89850d14583b15202"
+  },
+  "limitation": "This review and invented fixture parity do not substitute for final full-batch readback or scientific reference validity counts."
+}
