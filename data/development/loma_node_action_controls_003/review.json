@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "controls_summary_sha256": "7a158daefa4d93dd3d83239589a50f88a52b5c2217bfa10c69e0a254056bb29f",
+  "review_scope": "Independent read-only source/math and saved-control review; no native action calculation, new ray trace or optimizer run.",
+  "material_issue_found": false,
+  "controls_recorded_and_checked": 25,
+  "decimal_fd_saved_interval_checks": 12,
+  "input_source_sha256": {
+    "diagnostics/check_loma_node_action.py": "629c700eaa1c58398366ed1b11eafe0d1e269e12e8c803304292c9867d222dc0",
+    "diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2"
+  },
+  "artifact_sha256": {
+    "source/diagnostics/check_loma_node_action.py": "629c700eaa1c58398366ed1b11eafe0d1e269e12e8c803304292c9867d222dc0",
+    "source/diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "source/diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2"
+  },
+  "source_math_findings": [
+    "The coordinate permutation (x,y,z) to (z,x,y) is orthogonal and inverted correctly for gradient output; the middle-node derivative sums left.gb and right.ga.",
+    "The homogeneous triangle action is 2 s and its middle z derivative is 8/25 s/km; the smooth equal-depth example gives -1/27 s/km.",
+    "Reciprocal-affine slowness primitives and exact rational square-root/log enclosures are the unchanged reviewed sources. Decimal finite differences are consistency controls, not rigorous interval proofs.",
+    "Native probes alter only the selected middle-node depth; the two-segment action difference is consequently the whole fixed-polygon action difference. The original break-crossing probe is labeled separately from shrinking interior probes.",
+    "Exact rational and binary64-rounded coordinates and actual central spans remain explicit; collapsed rounded probes remain unchanged/inconclusive rather than being divided by zero."
+  ],
+  "native_input_review": [
+    "The reviewed observer summary and path/result/history/FD/grid hashes are required; copied native_context and identifier sidecar must match.",
+    "Source event/origin and receiver SEED/FDSN/epoch fields remain attached to every probe; the full native context preserves remaining metadata.",
+    "The selected saved row is exactly the declared 1e-6 km central probe among three original step sizes, with missing and duplicate selection controls.",
+    "The original false local flag is required and retained; frozen source hashes are rechecked against the hash-bound control review before native execution and after copying/evaluation."
+  ],
+  "selector_issue_preserved": "data/development/loma_node_action_controls_002/native_selection_issue.json",
+  "native_selected_fd": {
+    "run_id": "fmm_0.031250_1000",
+    "observation_index": "3426",
+    "node": "484",
+    "axis": "2",
+    "step_km": "9.9999999999999995e-07",
+    "scheme": "central",
+    "analytic_gradient": "1.0312081489734007e-05",
+    "numerical_gradient": "-1.5556445021047693e-05",
+    "error": "-2.58685265107817e-05"
+  },
+  "limitations": [
+    "Approval is for this isolated node 484 fixed-polygon action diagnostic only.",
+    "The original L-BFGS search direction/trial paths were not exported; new probe differences cannot replay that search or establish its failure cause.",
+    "No source derivative, stopping criterion, production direction, inversion acceptance or convergence flag is changed."
+  ]
+}

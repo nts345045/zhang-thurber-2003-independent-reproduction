@@ -1,0 +1,263 @@
+{
+  "checks": [
+    {
+      "name": "homogeneous_two_segment_action",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_axis_permutation_0",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_axis_permutation_1",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_axis_permutation_2",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_negative_z_has_certified_action_decrease",
+      "passed": true
+    },
+    {
+      "name": "affine_oblique_endpoint_reversal",
+      "passed": true
+    },
+    {
+      "name": "affine_oblique_independent_decimal_fd_0",
+      "passed": true
+    },
+    {
+      "name": "affine_oblique_independent_decimal_fd_1",
+      "passed": true
+    },
+    {
+      "name": "affine_oblique_independent_decimal_fd_2",
+      "passed": true
+    },
+    {
+      "name": "crossing_oblique_endpoint_reversal",
+      "passed": true
+    },
+    {
+      "name": "crossing_oblique_independent_decimal_fd_0",
+      "passed": true
+    },
+    {
+      "name": "crossing_oblique_independent_decimal_fd_1",
+      "passed": true
+    },
+    {
+      "name": "crossing_oblique_independent_decimal_fd_2",
+      "passed": true
+    },
+    {
+      "name": "near_plane_small_nonzero_depth_difference_endpoint_reversal",
+      "passed": true
+    },
+    {
+      "name": "near_plane_small_nonzero_depth_difference_independent_decimal_fd_0",
+      "passed": true
+    },
+    {
+      "name": "near_plane_small_nonzero_depth_difference_independent_decimal_fd_1",
+      "passed": true
+    },
+    {
+      "name": "near_plane_small_nonzero_depth_difference_independent_decimal_fd_2",
+      "passed": true
+    },
+    {
+      "name": "smooth_equal_depth_endpoint_reversal",
+      "passed": true
+    },
+    {
+      "name": "smooth_equal_depth_independent_decimal_fd_0",
+      "passed": true
+    },
+    {
+      "name": "smooth_equal_depth_independent_decimal_fd_1",
+      "passed": true
+    },
+    {
+      "name": "smooth_equal_depth_independent_decimal_fd_2",
+      "passed": true
+    },
+    {
+      "name": "equal_depth_closed_form",
+      "passed": true
+    },
+    {
+      "name": "select_declared_difference_among_three_saved_steps",
+      "passed": true
+    },
+    {
+      "name": "reject_missing_declared_difference",
+      "passed": true
+    },
+    {
+      "name": "reject_duplicate_declared_difference",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "case": "affine_oblique",
+      "axis": 0,
+      "gradient": {
+        "lower_rational": "9748794661422381190539686799430364297/340282366920938463463374607431768211456",
+        "upper_rational": "9748794661422381190539686799430364299/340282366920938463463374607431768211456",
+        "lower_display": 0.028649132629571212,
+        "upper_display": 0.028649132629571212
+      },
+      "decimal_central_difference": "0.02864913262957121030216401942267395005088406911568331615290989105066541998383896670680994378470563535861465699574124160673988900057861065968516199908225167358030796",
+      "h_rational": "1/100000000000000000000000000000000000"
+    },
+    {
+      "case": "affine_oblique",
+      "axis": 1,
+      "gradient": {
+        "lower_rational": "-21564511871849920330838696468062560459/340282366920938463463374607431768211456",
+        "upper_rational": "-21564511871849920330838696468062560457/340282366920938463463374607431768211456",
+        "lower_display": -0.06337240470899934,
+        "upper_display": -0.06337240470899934
+      },
+      "decimal_central_difference": "-0.063372404708999335311291808710475903413722814949573930085516602400497017966233245672976905925417812994255751217323356627262700358553502260874418822235009014677812575",
+      "h_rational": "1/100000000000000000000000000000000000"
+    },
+    {
+      "case": "affine_oblique",
+      "axis": 2,
+      "gradient": {
+        "lower_rational": "-30318482537403586831435034069374260795/340282366920938463463374607431768211456",
+        "upper_rational": "-3789810317175448353929379258671782599/42535295865117307932921825928971026432",
+        "lower_display": -0.08909801237055523,
+        "upper_display": -0.08909801237055523
+      },
+      "decimal_central_difference": "-0.08909801237055522360290384099050792593930081436349670311435960802536477733800059755735662741641191918876916591981434661260387193015111658599965734005677364408199150",
+      "h_rational": "1/100000000000000000000000000000000000"
+    },
+    {
+      "case": "crossing_oblique",
+      "axis": 0,
+      "gradient": {
+        "lower_rational": "1839366088871161294152049898596736755/85070591730234615865843651857942052864",
+        "upper_rational": "3678732177742322588304099797193473511/170141183460469231731687303715884105728",
+        "lower_display": 0.021621644465621356,
+        "upper_display": 0.021621644465621356
+      },
+      "decimal_central_difference": "0.02162164446562135736674491497098793968735495772987113760307987759859012944830901435441814710229704380184803723899046334859482743435569777792298420666876164504383121",
+      "h_rational": "1/100000000000000000000000000000000000"
+    },
+    {
+      "case": "crossing_oblique",
+      "axis": 1,
+      "gradient": {
+        "lower_rational": "-17101034292342515319248918584470473055/340282366920938463463374607431768211456",
+        "upper_rational": "-4275258573085628829812229646117618263/85070591730234615865843651857942052864",
+        "lower_display": -0.05025542300966711,
+        "upper_display": -0.05025542300966711
+      },
+      "decimal_central_difference": "-0.050255423009667104736259457237280765143285535948900269279646782351139096701296875253525695688487566057770669276239522590183415906541949637463594820432921370596243335",
+      "h_rational": "1/100000000000000000000000000000000000"
+    },
+    {
+      "case": "crossing_oblique",
+      "axis": 2,
+      "gradient": {
+        "lower_rational": "-24604540244179919631695534871650538681/340282366920938463463374607431768211456",
+        "upper_rational": "-24604540244179919631695534871650538679/340282366920938463463374607431768211456",
+        "lower_display": -0.0723062451540328,
+        "upper_display": -0.0723062451540328
+      },
+      "decimal_central_difference": "-0.07230624515403280498153844162838176354419187412544389012279945326060777588512925033101290358319527543623774006884274804367004276842128542358897069486291246707316930",
+      "h_rational": "1/100000000000000000000000000000000000"
+    },
+    {
+      "case": "near_plane_small_nonzero_depth_difference",
+      "axis": 0,
+      "gradient": {
+        "lower_rational": "106115664063141145532907592491/170141183460469231731687303715884105728",
+        "upper_rational": "26528916015785286383226898123/42535295865117307932921825928971026432",
+        "lower_display": 6.236918181998903e-10,
+        "upper_display": 6.236918181998903e-10
+      },
+      "decimal_central_difference": "6.236918181998902239269427907256929494965171927418693641493607355560402665017480323624020650361607995392956161505305376768023257745906209418719806354956484561E-10",
+      "h_rational": "1/100000000000000000000000000000000000"
+    },
+    {
+      "case": "near_plane_small_nonzero_depth_difference",
+      "axis": 1,
+      "gradient": {
+        "lower_rational": "2592745145862721592211053412188152473/21267647932558653966460912964485513216",
+        "upper_rational": "41483922333803545475376854595010439571/340282366920938463463374607431768211456",
+        "lower_display": 0.12191029088334149,
+        "upper_display": 0.12191029088334149
+      },
+      "decimal_central_difference": "0.12191029088334148208226371801490125168735375740194734514702323508127301003076332226519566210518106023054929617874549568573708972742905132321034608561753021178789581295",
+      "h_rational": "1/100000000000000000000000000000000000"
+    },
+    {
+      "case": "near_plane_small_nonzero_depth_difference",
+      "axis": 2,
+      "gradient": {
+        "lower_rational": "-47909086948776763013556826647537091/85070591730234615865843651857942052864",
+        "upper_rational": "-95818173897553526027113653295074181/170141183460469231731687303715884105728",
+        "lower_display": -0.0005631686106134086,
+        "upper_display": -0.0005631686106134086
+      },
+      "decimal_central_difference": "-0.00056316861061340868049892187278294227032504683072742297135145004244599506852651786653450021609604567884399033785128627865412382771453065447721969770980172664272706635",
+      "h_rational": "1/100000000000000000000000000000000000"
+    },
+    {
+      "case": "smooth_equal_depth",
+      "axis": 0,
+      "gradient": {
+        "lower_rational": "-1/340282366920938463463374607431768211456",
+        "upper_rational": "1/340282366920938463463374607431768211456",
+        "lower_display": -2.938735877055719e-39,
+        "upper_display": 2.938735877055719e-39
+      },
+      "decimal_central_difference": "5E-166",
+      "h_rational": "1/100000000000000000000000000000000000"
+    },
+    {
+      "case": "smooth_equal_depth",
+      "axis": 1,
+      "gradient": {
+        "lower_rational": "0",
+        "upper_rational": "0",
+        "lower_display": 0.0,
+        "upper_display": 0.0
+      },
+      "decimal_central_difference": "0E-165",
+      "h_rational": "1/100000000000000000000000000000000000"
+    },
+    {
+      "case": "smooth_equal_depth",
+      "axis": 2,
+      "gradient": {
+        "lower_rational": "-12603050626701424572717578053028452277/340282366920938463463374607431768211456",
+        "upper_rational": "-12603050626701424572717578053028452275/340282366920938463463374607431768211456",
+        "lower_display": -0.037037037037037035,
+        "upper_display": -0.037037037037037035
+      },
+      "decimal_central_difference": "-0.0370370370370370370370370370370370370370370370370370370370370370370370379858253315043438500228623685413808870598994055784179240983570593913529273378300695655773641845",
+      "h_rational": "1/100000000000000000000000000000000000"
+    }
+  ],
+  "scope": "Invented fixed-polygon arithmetic controls only; Decimal differences are consistency checks, not interval proofs",
+  "status": "passed_controls",
+  "input_source_sha256": {
+    "diagnostics/check_loma_node_action.py": "629c700eaa1c58398366ed1b11eafe0d1e269e12e8c803304292c9867d222dc0",
+    "diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2"
+  },
+  "elapsed_seconds": 0.7798192559275776,
+  "artifact_sha256": {
+    "source/diagnostics/check_loma_node_action.py": "629c700eaa1c58398366ed1b11eafe0d1e269e12e8c803304292c9867d222dc0",
+    "source/diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "source/diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2"
+  }
+}

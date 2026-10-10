@@ -1,0 +1,27 @@
+{
+  "command": [
+    "python3",
+    "diagnostics/check_loma_node_action.py",
+    "--native",
+    "--controls",
+    "data/development/loma_node_action_controls_003",
+    "--review",
+    "data/development/loma_node_action_controls_003/review.json",
+    "--output",
+    "data/development/loma_node_action_001"
+  ],
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "return_code": 0,
+  "result_status": "completed_native_two_segment_diagnostic",
+  "source_sha256": "629c700eaa1c58398366ed1b11eafe0d1e269e12e8c803304292c9867d222dc0",
+  "summary_sha256": "5b9383b2052a34a80e47e08d34b0a1fbc0ddf136eb4d028964ddc3c9b84dc597",
+  "consumed_controls_review_sha256": "16acd46c7d22e1550a165018c5fd9110bdc53c4d091ca03799c21d2b0b523717",
+  "probes": 40,
+  "review_revision_record": "data/development/loma_node_action_controls_003/review_revision.json",
+  "review_revision_record_sha256": "4d112cf433a0f96b143efe425877842c6f5b69c12508816fd87589c6b5d99409",
+  "ray_traces": 0,
+  "optimizer_runs": 0,
+  "original_flag_changed": false
+}
