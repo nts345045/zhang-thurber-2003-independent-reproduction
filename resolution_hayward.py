@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Absolute-arrival model resolution at the saved DD model, via block elimination."""
 import csv
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -85,15 +86,21 @@ def validate():
     return errors
 
 
-def run():
+def run(data_dir=DATA, config_path=ROOT / "configs/hayward.cfg"):
+    data_dir, config_path = Path(data_dir), Path(config_path)
+    if not data_dir.is_absolute():
+        data_dir = ROOT / data_dir
+    if not config_path.is_absolute():
+        config_path = ROOT / config_path
+    data_dir, config_path = data_dir.resolve(), config_path.resolve()
     checks = validate()
-    prefix = DATA / "dd_linearization"
+    prefix = data_dir / "dd_linearization"
     rows_path = Path(str(prefix) + "_rows.csv")
     matrix_path = Path(str(prefix) + "_matrix.csv")
     columns_path = Path(str(prefix) + "_columns.csv")
     rows, columns = read(rows_path), read(columns_path)
-    events = read(DATA / "dd_events.csv")
-    grid = read(DATA / "dd_grid.csv")
+    events = read(data_dir / "dd_events.csv")
+    grid = read(data_dir / "dd_grid.csv")
     ne, nv = len(events), len(grid)
     if len(columns) != 4 * ne + nv:
         raise ValueError("Unexpected linearization columns")
@@ -115,7 +122,7 @@ def run():
             raise ValueError("Event identities disagree with linearization rows")
     G = sparse.diags(weight) @ G
     settings = {}
-    for line in (ROOT / "configs/hayward.cfg").read_text().splitlines():
+    for line in config_path.read_text().splitlines():
         if line.strip() and not line.lstrip().startswith("#"):
             key, value = line.split()
             settings[key] = float(value)
@@ -146,15 +153,17 @@ def run():
                    resolution_diagonal=float(R[k, k]),
                    independent_pick_sigma_velocity_km_s=float(vp[k] * np.sqrt(max(0, diagonal[k]))))
               for k, r in enumerate(grid)]
-    with (DATA / "absolute_resolution.csv").open("w", newline="") as f:
+    with (data_dir / "absolute_resolution.csv").open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=list(result[0]))
         writer.writeheader()
         writer.writerows(result)
-    np.savez_compressed(str(DATA / "absolute_resolution_matrices.npz"),
+    np.savez_compressed(str(data_dir / "absolute_resolution_matrices.npz"),
                         log_slowness_resolution=R,
                         velocity_resolution=vp[:, None] * R / vp[None, :],
                         log_slowness_measurement_noise_covariance=covariance)
     manifest = {
+        "data_directory": str(data_dir.relative_to(ROOT)),
+        "configuration": str(config_path.relative_to(ROOT)),
         "linearization_point": "saved dd_events.csv and dd_grid.csv",
         "observations": "absolute catalog P picks only, independent reported picking errors assumed",
         "uncertainty_interpretation": "reported symmetric uncertainty interpreted as independent 1-sigma picking noise; confidence levels are not supplied, so calibration is an assumption",
@@ -177,12 +186,18 @@ def run():
         "source_mappings": {"rows": str(rows_path.relative_to(ROOT)), "columns": str(columns_path.relative_to(ROOT))},
         "analysis_script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "input_sha256": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
-                         for p in (rows_path, matrix_path, columns_path, DATA / "dd_events.csv", DATA / "dd_grid.csv",
-                                   ROOT / "configs/hayward.cfg")},
+                         for p in (rows_path, matrix_path, columns_path, data_dir / "dd_events.csv", data_dir / "dd_grid.csv",
+                                   config_path)},
     }
-    (DATA / "absolute_resolution_manifest.json").write_text(json.dumps(manifest, indent=2, allow_nan=False) + "\n")
+    (data_dir / "absolute_resolution_manifest.json").write_text(json.dumps(manifest, indent=2, allow_nan=False) + "\n")
     print(json.dumps({"validation": checks, "conditioning": condition}, indent=2))
 
 
 if __name__ == "__main__":
-    run()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--data-dir", type=Path, default=DATA,
+                        help="Saved field results, relative to the repository root (default: data/hayward)")
+    parser.add_argument("--config", type=Path, default=ROOT / "configs/hayward.cfg",
+                        help="Configuration used by this inversion (default: configs/hayward.cfg)")
+    args = parser.parse_args()
+    run(args.data_dir, args.config)

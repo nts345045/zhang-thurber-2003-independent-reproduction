@@ -183,4 +183,3 @@ Vec solve_cone_ray_metric(const Vec &weights,const Vec &gradient,
   stats.message="Quadratic active-set solve guard reached; no solution certificate";
   return direction;
 }
-

@@ -81,7 +81,14 @@ def setup(ax, x, y):
     ax.grid(alpha=.18)
 
 
-def main(geometry_only=False):
+def main(geometry_only=False, data_dir=DATA, figure_dir=FIG):
+    global DATA, FIG
+    DATA, FIG = Path(data_dir), Path(figure_dir)
+    if not DATA.is_absolute():
+        DATA = ROOT / DATA
+    if not FIG.is_absolute():
+        FIG = ROOT / FIG
+    DATA, FIG = DATA.resolve(), FIG.resolve()
     FIG.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.right": False})
     cohort = {mode: events(mode) for mode in (("initial",) if geometry_only else ("initial", "standard", "loc1d", "dd"))}
@@ -104,6 +111,7 @@ def main(geometry_only=False):
     ax.set_title("Figure 4 counterpart: authoritative subset and model grid")
     save(fig, "figure04_geometry")
     geometry = dict(events=len(initial), physical_stations=len({r["station_seed_id"] for r in station_rows}),
+                    data_directory=str(DATA.relative_to(ROOT)), figure_directory=str(FIG.relative_to(ROOT)),
                     receiver_positions=len(station_points), horizontal_model_nodes=len(xy),
                     status="partially reproduced: independently selected authoritative geometry, not the original manuscript cohort",
                     metadata_interpretation="Provider sensor elevations and the explicit CMW1 historical-ELEV assumption are documented in data/authoritative/stations/README.md",
@@ -239,6 +247,7 @@ def main(geometry_only=False):
     save(fig, "figure11_resolution")
 
     metric = {"catalog_zoom_events": len(zoom_ids), "zoom_common_coordinate_limits": zoom_limits,
+              "data_directory": str(DATA.relative_to(ROOT)), "figure_directory": str(FIG.relative_to(ROOT)),
               "section_geoid_depth_range_km": [zmin, zmax],
               "resolution_section_interpretation": "The resolution_diagonal and independent_pick_sigma_velocity_km_s columns interpolate nodal diagnostics for display; the latter is not sqrt(w^T C_v w) for interpolated velocity.",
               "modes": {}}
@@ -270,4 +279,9 @@ def main(geometry_only=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--geometry-only", action="store_true", help="Generate Figure 4 from identified inputs before inversion")
-    main(parser.parse_args().geometry_only)
+    parser.add_argument("--data-dir", type=Path, default=DATA,
+                        help="Saved field results, relative to the repository root (default: data/hayward)")
+    parser.add_argument("--figure-dir", type=Path, default=FIG,
+                        help="Figure output directory, relative to the repository root (default: figures/hayward)")
+    args = parser.parse_args()
+    main(args.geometry_only, args.data_dir, args.figure_dir)

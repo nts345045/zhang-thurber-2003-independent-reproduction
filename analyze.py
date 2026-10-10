@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Quantitative audit of saved results; emits machine-readable and LaTeX tables."""
 import csv
+import argparse
 import hashlib
 import json
 import sys
@@ -175,6 +176,39 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
             raise RuntimeError('Invalid {} convergence flags'.format(label))
         return int(np.sum(values == 1))
 
+    def initializer_audit(rows, prefix):
+        names = ['initialization_attempted', 'initialization_succeeded', 'selected_fmm_seed',
+                 'direct_seed_time', 'fmm_seed_time', 'field_time',
+                 'extraction_fallback_steps', 'extraction_message']
+        if not rows or not any(prefix+name in rows[0] for name in names):
+            return dict(available=False)
+        if any(prefix+name not in rows[0] for name in names):
+            raise RuntimeError('Incomplete initializer diagnostics: ' + prefix)
+        values = {name: np.array([float(r[prefix+name]) for r in rows]) for name in names[:-1]}
+        attempted, succeeded, selected = [values[name] for name in names[:3]]
+        for name in names[:3]:
+            flags(values[name], prefix+name)
+        if np.any(succeeded > attempted) or np.any(selected > succeeded):
+            raise RuntimeError('Inconsistent initializer flags: ' + prefix)
+        fallback = values['extraction_fallback_steps']
+        if np.any(~np.isfinite(fallback)) or np.any(fallback < 0) or np.any(fallback != np.floor(fallback)):
+            raise RuntimeError('Invalid initializer fallback count: ' + prefix)
+        for name in ['direct_seed_time', 'fmm_seed_time', 'field_time']:
+            value = values[name]
+            if np.any(np.isinf(value)):
+                raise RuntimeError('Infinite initializer diagnostic: ' + prefix+name)
+        if (np.any(~np.isfinite(values['direct_seed_time'][attempted == 1])) or
+                np.any(~np.isfinite(values['field_time'][succeeded == 1])) or
+                np.any(~np.isfinite(values['fmm_seed_time'][selected == 1]))):
+            raise RuntimeError('Missing time for a used initializer candidate: ' + prefix)
+        # A disabled initializer or an unavailable candidate has no finite time.
+        # Coincident endpoints also need no separately bent FMM candidate.
+        failures = [r for r, a, s in zip(rows, attempted, succeeded) if a and not s]
+        return dict(available=True, rows=len(rows), attempted=int(sum(attempted)),
+                    succeeded=int(sum(succeeded)), failed=len(failures),
+                    selected_fmm=int(sum(selected)), total_extraction_fallback_steps=int(sum(fallback)),
+                    failed_extraction_rows=failures)
+
     figures = finite_json('figure_metrics.json')
     resolution = finite_json('absolute_resolution_manifest.json')
     selection = finite_json('selection_manifest.json')
@@ -287,8 +321,13 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
                  geoid_depth_range_km=[float(min(events['z'])), float(max(events['z']))],
                  negative_geoid_depth_sources=int(np.sum(events['z'] < 0)),
                  velocity_range_km_per_s=[float(min(grid['v'])), float(max(grid['v']))])
-        _, ray = table(mode+'_ray_convergence.csv')
-        _, derivative = table(mode+'_ray_derivatives.csv', empty=True)
+        ray_rows, ray = table(mode+'_ray_convergence.csv',
+            ['event', 'station', 'diagnostic_row', 'production_time', 'refined_time', 'difference'] +
+            [setting+'_'+field for setting in ['production', 'refined']
+             for field in ['gradient', 'raw_gradient', 'iterations', 'converged', 'merged']])
+        derivative_rows, derivative = table(mode+'_ray_derivatives.csv',
+            ['event', 'station', 'axis', 'diagnostic_row', 'production_derivative',
+             'refined_derivative', 'finite_difference', 'production_error', 'refined_error'], empty=True)
         identifiers, _ = table(mode+'_ray_identifiers.csv', [])
         ray_keys = {(r['diagnostic_row'], r['event'], r['station']) for r in identifiers}
         expected_keys = {(str(int(q)), str(int(e)), str(int(s))) for q, e, s in zip(ray['diagnostic_row'], ray['event'], ray['station'])}
@@ -315,6 +354,37 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
                 max_iterations=int(max(ray[setting+'_iterations'])), total_merged_nodes=int(sum(ray[setting+'_merged'])),
                 source_derivative_error_seconds_per_km=summary(error),
                 source_derivative_components_over_existing_tolerance=int(np.sum(error > 0.003)))
+            check[setting]['initializer'] = initializer_audit(ray_rows, setting+'_')
+        perturbation = dict(available=bool(derivative_rows and 'plus_converged' in derivative_rows[0]))
+        if perturbation['available']:
+            for side in ['plus', 'minus']:
+                converged = flags(np.array([float(r[side+'_converged']) for r in derivative_rows]), mode+' '+side)
+                perturbation[side] = dict(converged=converged, unconverged=len(derivative_rows)-converged,
+                                          initializer=initializer_audit(derivative_rows, side+'_'))
+        check['perturbation_convergence'] = perturbation
+        spacing_names = ['production_path_spacing', 'refined_path_spacing',
+                         'production_requested_fmm_spacing', 'refined_requested_fmm_spacing']
+        if all(name in ray_rows[0] for name in spacing_names):
+            check['spacing_km'] = {}
+            for name in spacing_names:
+                value = np.array([float(r[name]) for r in ray_rows])
+                if np.any(~np.isfinite(value)) or np.any(value < 0):
+                    raise RuntimeError('Invalid ray spacing diagnostic: ' + name)
+                check['spacing_km'][name] = [float(min(value)), float(max(value))]
+        initializer_counts = ['ray_initialization_attempted_count', 'ray_initialization_succeeded_count', 'ray_selected_fmm_count']
+        if any(name in history for name in initializer_counts):
+            if not all(name in history for name in initializer_counts):
+                raise RuntimeError('Incomplete full-ray initializer history')
+            for name in initializer_counts:
+                value = history[name]
+                if np.any(value < 0) or np.any(value > n) or np.any(value != np.floor(value)):
+                    raise RuntimeError('Invalid full-ray initializer counts: ' + name)
+            attempted, succeeded, selected = [history[name] for name in initializer_counts]
+            if np.any(succeeded > attempted) or np.any(selected > succeeded):
+                raise RuntimeError('Inconsistent full-ray initializer counts')
+            m['all_ray_history']['initializer_iterations'] = [dict(iteration=int(h['iteration']),
+                attempted=int(a), succeeded=int(s), failed=int(a-s), selected_fmm=int(f))
+                for h, a, s, f in zip(history_rows, attempted, succeeded, selected)]
         m['final_sampled_rays'] = check
         result['modes'][mode] = m
         saved_events[mode], saved_grids[mode] = events, grid
@@ -327,18 +397,21 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
     _, resolution_values = table('absolute_resolution.csv')
     if np.any(resolution_values['independent_pick_sigma_velocity_km_s'] < 0):
         raise RuntimeError('Negative conditional velocity uncertainty')
-    _, linearization = table('dd_linearization_rows.csv', ['i', 'station', 'observed', 'predicted', 'residual', 'ray_converged', 'ray_projected_gradient', 'ray_raw_gradient', 'ray_time', 'ray_iterations'])
+    linearization_rows, linearization = table('dd_linearization_rows.csv', ['i', 'station', 'observed', 'predicted', 'residual', 'ray_converged', 'ray_projected_gradient', 'ray_raw_gradient', 'ray_time', 'ray_iterations'])
     _, unique = np.unique(np.column_stack([linearization['i'], linearization['station']]), axis=0, return_index=True)
     converged = flags(linearization['ray_converged'][unique], 'DD absolute linearization')
     result['resolution_linearization_rays'] = dict(unique_rays=len(unique), converged=converged,
         converged_percent=100.*converged/len(unique),
         projected_gradient_max_seconds_per_km=float(max(linearization['ray_projected_gradient'])),
         raw_gradient_max_seconds_per_km=float(max(linearization['ray_raw_gradient'])),
+        initializer=initializer_audit([linearization_rows[i] for i in unique], 'ray_'),
         scope='All unique absolute-data rays retraced at the final DD estimate; independent-pick noise calculation uses these derivatives.')
     result['ray_stopping_criterion'] = 'Projected gradient <1e-7 s/km, or time change <1e-11 s and projected gradient <1e-5 s/km.'
     result['ray_limits'] = ['Histories contain maxima over all used rays before each update, not final-model distributions.',
         'Final samples are deterministic and do not certify every production ray or globally earliest arrivals.',
-        'Derivative perturbation traces do not save their own convergence flags; refined traces are numerical comparisons, not exact references.',
+        ('Derivative perturbation stopping and initializer flags are recorded; a failed perturbation trace limits its finite-difference comparison.'
+         if all(result['modes'][mode]['final_sampled_rays']['perturbation_convergence']['available'] for mode in methods)
+         else 'Some saved derivative perturbation traces lack their own convergence flags; refined traces are numerical comparisons, not exact references.'),
         'The existing 0.003 s/km component tolerance is a diagnostic comparison, not an inversion-error bound.']
     record(Path(__file__))
     result['input_sha256'] = hashes
@@ -401,7 +474,7 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
             f.write('Across all {}--{} rays per recorded iteration, the largest projected/raw gradient norms are {:.3g}/{:.3g} s/km. '
                     'At the final model, production/refined convergence counts are {}/{} of {} sampled rays, '
                     'with maximum projected gradients {:.3g}/{:.3g} s/km and raw gradients {:.3g}/{:.3g} s/km. '
-                    'Halving the segment spacing changes sampled travel times by at most {:.3f} ms. '.format(
+                    'Halving the path spacing and any enabled auxiliary-field spacing changes sampled travel times by at most {:.3f} ms. '.format(
                         h['count_min'], h['count_max'], h['projected_gradient_max_seconds_per_km'], h['raw_gradient_max_seconds_per_km'],
                         p['converged'], r['converged'], q['rays'], p['projected_gradient_seconds_per_km']['max'],
                         r['projected_gradient_seconds_per_km']['max'], p['raw_gradient_seconds_per_km']['max'],
@@ -411,7 +484,18 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
                         '{}/{} components exceed the existing 0.003 s/km component tolerance. '.format(
                             q['derivative_components'], p['source_derivative_error_seconds_per_km']['max'], r['source_derivative_error_seconds_per_km']['max'],
                             p['source_derivative_components_over_existing_tolerance'], r['source_derivative_components_over_existing_tolerance']))
-            f.write('{} derivative components are omitted at domain boundaries.\n\n'.format(q['derivative_components_skipped_at_boundaries']))
+            f.write('{} derivative components are omitted at domain boundaries. '.format(q['derivative_components_skipped_at_boundaries']))
+            if p['initializer']['available']:
+                f.write('Production/refined initializer extractions fail for {}/{} sampled rays. '.format(
+                    p['initializer']['failed'], r['initializer']['failed']))
+            perturbation = q['perturbation_convergence']
+            if perturbation['available']:
+                f.write('The positive/negative finite-difference perturbations have {}/{} local-stopping failures. '.format(
+                    perturbation['plus']['unconverged'], perturbation['minus']['unconverged']))
+                if all(perturbation[side]['initializer']['available'] for side in ['plus', 'minus']):
+                    f.write('Their initializer extraction failures are {}/{}. '.format(
+                        perturbation['plus']['initializer']['failed'], perturbation['minus']['initializer']['failed']))
+            f.write('\n\n')
         if any(m['boundary_face_counts']['z_min'] for m in result['modes'].values()):
             f.write('Some source estimates reach the computational top, added to contain elevated receivers. '
                     'These constrained estimates do not establish source-depth recovery. '
@@ -447,7 +531,12 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
 
 
 if __name__ == '__main__' and '--hayward-only' in sys.argv[1:]:
-    review = analyze_hayward(required=True)
+    parser = argparse.ArgumentParser(description='Audit a completed, identified Hayward run.')
+    parser.add_argument('--hayward-only', action='store_true')
+    parser.add_argument('--data-dir', type=Path, default=Path('data/hayward'))
+    parser.add_argument('--report-dir', type=Path, default=Path('report'))
+    args = parser.parse_args()
+    review = analyze_hayward(args.data_dir, args.report_dir, required=True)
     print(json.dumps({'hayward': review['modes']}, indent=2, allow_nan=False))
     sys.exit(0)
 
