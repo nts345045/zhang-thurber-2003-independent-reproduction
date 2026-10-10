@@ -1,0 +1,88 @@
+{
+  "scope": "Structural memory probe only; every slot has NaN instead of a travel time; no observation file, ray, noise draw or inversion generated",
+  "geometry_status": "Exact copies of authoritative selected geometry with all native identifiers and provenance columns retained",
+  "snapshot_path_base": "Original provider-relative source_file paths retain their data/authoritative/loma_prieta base",
+  "compile_command": [
+    "c++",
+    "-O2",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-I",
+    "data/development/loma_specification/bounded_memory_001/input_snapshot/src",
+    "data/development/loma_specification/bounded_memory_001/input_snapshot/data/development/loma_specification/streaming_memory.cpp",
+    "-o",
+    "data/development/loma_specification/bounded_memory_001/streaming_memory"
+  ],
+  "run_command": [
+    "data/development/loma_specification/bounded_memory_001/streaming_memory",
+    "data/development/loma_specification/bounded_memory_001/input_snapshot/data/authoritative/loma_prieta/selected_events.csv",
+    "data/development/loma_specification/bounded_memory_001/input_snapshot/data/authoritative/loma_prieta/selected_channels.csv"
+  ],
+  "counts": {
+    "sources": 724,
+    "receivers": 52,
+    "strict_below_20km_pairs": 152834,
+    "row_slots": 15932384,
+    "numeric_datum_bytes": 40,
+    "numeric_capacity_bytes": 637295360,
+    "absolute_slots": 37648,
+    "catalog_slots": 7947368,
+    "precise_slots": 7947368,
+    "unique_ray_slots": 37648,
+    "event_identity_sides_checked": 31827120,
+    "closest_to_threshold_km": 8.109300895142724e-05,
+    "ordered_index_fnv1a64": "16047989350346566293",
+    "allocation_and_validation_seconds": 1.524056395,
+    "linux_peak_rss_kib": 628392
+  },
+  "csv_streaming_parser_used_for": "Only the small input geometry tables; this probe does not benchmark parsing a full observations CSV",
+  "fmm_component_memory_scenarios": [
+    {
+      "spacing_km": 0.5,
+      "auxiliary_nodes": 991935,
+      "one_field_persistent_array_bytes": 11903220,
+      "all_52_fields_persistent_array_bytes": 618967440,
+      "build_arrays_excluding_heap_bytes": 8927415
+    },
+    {
+      "spacing_km": 0.25,
+      "auxiliary_nodes": 7774989,
+      "one_field_persistent_array_bytes": 93299868,
+      "all_52_fields_persistent_array_bytes": 4851593136,
+      "build_arrays_excluding_heap_bytes": 69974901
+    },
+    {
+      "spacing_km": 0.125,
+      "auxiliary_nodes": 61562457,
+      "one_field_persistent_array_bytes": 738749484,
+      "all_52_fields_persistent_array_bytes": 38414973168,
+      "build_arrays_excluding_heap_bytes": 554062113
+    },
+    {
+      "spacing_km": 0.0625,
+      "auxiliary_nodes": 489958833,
+      "one_field_persistent_array_bytes": 5879505996,
+      "all_52_fields_persistent_array_bytes": 305734311792,
+      "build_arrays_excluding_heap_bytes": 4409629497
+    }
+  ],
+  "memory_limits": "Measured peak includes numeric slots and geometry/identity lookup, not rays, matrices, LSQR, FMM fields or generated CSV parsing. FMM scenarios count time/parent arrays and temporary slowness/accepted arrays only; heap and allocation overhead are additional.",
+  "input_sha256": {
+    "data/authoritative/loma_prieta/selected_events.csv": "d1cbc2fc8ef0c65cf58fd6cbcbd8c3486bdd6c80c6c6f4b2c8dbd8e59f5729c5",
+    "data/authoritative/loma_prieta/selected_channels.csv": "42d221cf7a03ac581739c882597dcb256d24769c1aab8114ccca9eab6efe072e",
+    "src/csv.hpp": "f3ec5080bd0234fc7d0d6731b66aadd9eae219353244c9d4ef1c157a67bfd4c0",
+    "src/main.cpp": "79db0d337e0220c2d574fb7e22609d7a1c4d70eaac55dec5dd7610f83e2a29a4",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "data/development/loma_specification/streaming_memory.cpp": "110bb68102ad4a2fddab9d469b59685e9a88d2159bc671390e1c904d59bfdf8b",
+    "data/development/loma_specification/run_streaming_memory.py": "539fee707597223bd446bdc5211c1ef1208b400fc5af074e5b3a013dec14243d"
+  },
+  "output_sha256": {
+    "data/development/loma_specification/bounded_memory_001/streaming_memory": "6e02a03accb43eac7a5db57db36221ed1b845b4bb22a4aa25e018bfa37f047eb",
+    "data/development/loma_specification/bounded_memory_001/stdout.txt": "d58b4e367dc8b38e3a52ae2c765f559625cf42e5e53988b45265804a67fae7d6",
+    "data/development/loma_specification/bounded_memory_001/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/development/loma_specification/bounded_memory_001/compile_stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/development/loma_specification/bounded_memory_001/compile_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
