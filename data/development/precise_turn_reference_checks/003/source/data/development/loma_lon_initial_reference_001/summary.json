@@ -1,0 +1,119 @@
+{
+  "status": "completed_with_unresolved_references",
+  "scope": "Independent continuous reference for complete saved perturbed initial geometry and depth-only initial grid; no observations, rays or inversion computed",
+  "source_count": 724,
+  "receiver_count": 52,
+  "expected_pairs": 37648,
+  "verified_pairs": 37648,
+  "reference_comparison_ready": false,
+  "reference_quality_basis": "Every reference complete and valid, no near-tied branches, and finite defined source derivatives for every pair; separate from execution completion",
+  "input_source_sha256": {
+    "data/loma_lon_analytic_001/initial_events.csv": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+    "data/loma_lon_analytic_001/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "data/loma_lon_analytic_001/initial_grid.csv": "121eb9afae309427db7dc579f951d1732ce6f28d674948889bde91ca88d5dcd0",
+    "data/loma_lon_analytic_001/run.cfg": "7295bfade7819f06b9f521ec0665b830c311b30b3748025f69e67b1e7c532b88",
+    "data/loma_lon_analytic_001/ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "data/loma_lon_analytic_001/preparation_manifest.json": "ae361697f110ae6886e9e6e16dae24ccc9b9db8dee2cbd191043ba6daea12411",
+    "data/loma_lon_analytic_001/analytic_truth_manifest.json": "64661c55d2a73b20841b83bafb35cdc0184f30bf4cbc00492869beb9863c46df",
+    "data/loma_lon_analytic_001/simulation_execution.json": "c209a4550dda670ddeaff018de744343148c677d6feaf6d7d80097e5ea80395f",
+    "data/loma_lon_analytic_001/simulation_run_manifest.json": "a2bc7f143b37837090f6f97ee175757d5400c9d9f9757d65745620e65c37594a",
+    "data/loma_lon_analytic_001/independent_simulation_review.json": "01483067c89c4df00f4807961eb2c8d7fddf4f8c2c6a368d9bff3c03213e0eff",
+    "data/development/loma_lon_initial_reference_plan_001/plan.json": "37e84168aa1bfce9535d94b6e55466725a8ded3a36c73b857fd780d7b50548d1",
+    "diagnostics/run_loma_initial_reference.py": "803baacdd49652c342b9d9ed56b6782ece5669d6f45f65ab4e7544893705cfb5",
+    "diagnostics/run_loma_layered_full.py": "4a01438a8646000b77136e8e65f98aa154b6dd8c28ff6a53dda597e855327e39",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  },
+  "profile_depth_velocity_km_km_s": [
+    [
+      -1.0,
+      2.53
+    ],
+    [
+      0.0,
+      2.53
+    ],
+    [
+      3.0,
+      5.50640625
+    ],
+    [
+      7.0,
+      6.03765625
+    ],
+    [
+      11.0,
+      6.345629139072848
+    ],
+    [
+      16.0,
+      6.478079470198676
+    ]
+  ],
+  "original_box_km": [
+    [
+      -35.0,
+      35.0
+    ],
+    [
+      -60.0,
+      40.0
+    ],
+    [
+      -1.0,
+      16.0
+    ]
+  ],
+  "coordinate_mapping": "Reference and saved source derivatives use original x,y,z axes; no permutation",
+  "source_time_included": false,
+  "source_time_basis": "Saved source_t is preserved native metadata, excluded from pure propagation travel time",
+  "finite_box_basis": "Every candidate remains within the finite depth profile; horizontal coordinates move monotonically between endpoints in the original convex rectangle",
+  "native_metadata_mapping": "Every source_/receiver_ field is preserved verbatim in references.csv.gz; exact input tables are frozen",
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/run_loma_initial_reference.py --data data/loma_lon_analytic_001 --output data/development/loma_lon_initial_reference_001 --plan data/development/loma_lon_initial_reference_plan_001/plan.json --workers 4",
+  "workers": 4,
+  "seconds": 415.99656640400644,
+  "limitations": [
+    "Only the saved horizontally uniform nondecreasing initial model is covered.",
+    "Time ordering uses ordinary floating point, not interval-certified minimum-time ranking.",
+    "Near ties retain branch-specific derivatives; no unique derivative is asserted at a tie.",
+    "Endpoint box flags are explicit; derivatives at boundary sources are branch derivatives and must not imply an out-of-domain centered perturbation.",
+    "Invalid/unresolved references keep all certificates and blank first-arrival values; no scientific gate is relaxed.",
+    "This does not certify the numerical forward operator or any inversion."
+  ],
+  "counts": {
+    "pairs": 37648,
+    "reference_complete": 37648,
+    "reference_valid": 37647,
+    "candidate_total": 37752,
+    "derivative_defined": 37647,
+    "branch_turning": 19651,
+    "branch_direct": 17982,
+    "branch_bottom_boundary": 13,
+    "branch_flat_direct": 1
+  },
+  "invalid_reference_pair_indices": [
+    8156
+  ],
+  "near_tie_pair_indices": [],
+  "time_range_s": [
+    0.6804097390270215,
+    15.2916922399137
+  ],
+  "output_sha256": {
+    "references.csv.gz": "526931695ec08c8fe0aa4c7c9ef82df9e21de8616f7f53c5838113e78c67eca5",
+    "certificates.jsonl.gz": "534ee802fa9d34beb755b045d44ea3d0736829a2b72e693db110f96012a60d68",
+    "inputs/initial_events.csv": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+    "inputs/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "inputs/initial_grid.csv": "121eb9afae309427db7dc579f951d1732ce6f28d674948889bde91ca88d5dcd0",
+    "inputs/run.cfg": "7295bfade7819f06b9f521ec0665b830c311b30b3748025f69e67b1e7c532b88",
+    "inputs/ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "inputs/preparation_manifest.json": "ae361697f110ae6886e9e6e16dae24ccc9b9db8dee2cbd191043ba6daea12411",
+    "inputs/analytic_truth_manifest.json": "64661c55d2a73b20841b83bafb35cdc0184f30bf4cbc00492869beb9863c46df",
+    "inputs/simulation_execution.json": "c209a4550dda670ddeaff018de744343148c677d6feaf6d7d80097e5ea80395f",
+    "inputs/simulation_run_manifest.json": "a2bc7f143b37837090f6f97ee175757d5400c9d9f9757d65745620e65c37594a",
+    "inputs/independent_simulation_review.json": "01483067c89c4df00f4807961eb2c8d7fddf4f8c2c6a368d9bff3c03213e0eff",
+    "inputs/inverse_plan.json": "37e84168aa1bfce9535d94b6e55466725a8ded3a36c73b857fd780d7b50548d1",
+    "source/run_loma_initial_reference.py": "803baacdd49652c342b9d9ed56b6782ece5669d6f45f65ab4e7544893705cfb5",
+    "source/run_loma_layered_full.py": "4a01438a8646000b77136e8e65f98aa154b6dd8c28ff6a53dda597e855327e39",
+    "source/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  }
+}

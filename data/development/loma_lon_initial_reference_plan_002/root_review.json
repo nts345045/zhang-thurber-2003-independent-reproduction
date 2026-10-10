@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "created_utc": "2026-10-10T04:15:18.775580+00:00",
+  "plan_sha256": "b371fd8c8c85a3435cb6d67559d3997b34b6be4cc5b61a45b91b81edfc6470d2",
+  "runner_sha256": "7a2cac0846d92359af1ac4dc73934f63efbc38c5841841951546969948612f80",
+  "runner_checks_summary_sha256": "e3298568bc202311d447a58577b1e9f5a78b4268841ced6c680d2617f08b2392",
+  "checks": {
+    "source_diff_reviewed": true,
+    "all_recorded_source_and_plan_hashes_verified": true,
+    "all_48_runner_controls_pass": true,
+    "unchanged_full_geometry_and_finite_domain": true,
+    "numerical_review_and_copied_source_hard_pins": true,
+    "original_failed_attempt_preserved": true
+  },
+  "decision": "Proceed with separately frozen complete LON initial-reference attempt002.",
+  "limitations": [
+    "This authorizes the reference computation, not numerical forward or inverse acceptance.",
+    "Review every validity, candidate-count, branch and time change against attempt001 after completion."
+  ]
+}

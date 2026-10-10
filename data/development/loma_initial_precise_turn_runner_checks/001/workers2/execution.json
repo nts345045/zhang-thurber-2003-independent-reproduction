@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T04:14:23.883494+00:00",
+  "pid": 104268,
+  "workers": 2,
+  "completed_pairs": 4,
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/run_loma_initial_precise_turn_reference.py --data data/development/loma_initial_precise_turn_runner_checks/001/invented_inputs --output data/development/loma_initial_precise_turn_runner_checks/001/workers2 --plan data/development/loma_initial_precise_turn_runner_checks/001/invented_plan.json --workers 2",
+  "expected_pairs": 4,
+  "input_source_sha256": {
+    "data/development/loma_initial_precise_turn_runner_checks/001/invented_inputs/initial_events.csv": "2d9f847e99a53fb7bb3eefb90cf1d41a4499e06e47497e251848ffdb6d745193",
+    "data/development/loma_initial_precise_turn_runner_checks/001/invented_inputs/stations.csv": "83f7aaf77d0090c667bd5e9e267e2286bfddd8db088f0cc63964eb560c00814d",
+    "data/development/loma_initial_precise_turn_runner_checks/001/invented_inputs/initial_grid.csv": "4b7a121984db055bba68a16bc9e94cd05b3ae7adfa50203ce4f7853f1bb0420e",
+    "data/development/loma_initial_precise_turn_runner_checks/001/invented_inputs/run.cfg": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "data/development/loma_initial_precise_turn_runner_checks/001/invented_inputs/ray_samples.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "data/development/loma_initial_precise_turn_runner_checks/001/invented_inputs/preparation_manifest.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "data/development/loma_initial_precise_turn_runner_checks/001/invented_inputs/analytic_truth_manifest.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "data/development/loma_initial_precise_turn_runner_checks/001/invented_inputs/simulation_execution.json": "7ec022037ef5a800969d5ad9e6c015466c9e3098f2b2781775532f241f06b731",
+    "data/development/loma_initial_precise_turn_runner_checks/001/invented_inputs/simulation_run_manifest.json": "455f90289f730cb78d24d5bde4507ece89fd373081e798754fbd77eac72f8542",
+    "data/development/loma_initial_precise_turn_runner_checks/001/invented_inputs/independent_simulation_review.json": "9c5ba64bfe75f3a9aca8ca36e3f9313c18af8a395eed7e37fc7824b86d6f74c1",
+    "data/development/loma_initial_precise_turn_runner_checks/001/invented_plan.json": "2c827581c5e919fce179e20808b884fe4e42a6dcae604546ae76ecf7f8477531",
+    "data/development/precise_turn_reference_checks/review_003.json": "11b6c57ed050588161e8f30801e644f67b04737188ab235a4df0a677e1d4a192",
+    "data/development/precise_turn_reference_checks/003/summary.json": "4bc542d3f4d2edb0a9e6ef82212db07f2d9d6dfd7f0bfbdff6af4d44e2dd24e6",
+    "diagnostics/run_loma_initial_precise_turn_reference.py": "7a2cac0846d92359af1ac4dc73934f63efbc38c5841841951546969948612f80",
+    "diagnostics/run_loma_layered_full.py": "4a01438a8646000b77136e8e65f98aa154b6dd8c28ff6a53dda597e855327e39",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2"
+  },
+  "python_version": "3.6.8",
+  "numpy_version": "1.19.5",
+  "scipy_version": "1.5.4",
+  "counts": {
+    "pairs": 4,
+    "reference_complete": 4,
+    "reference_valid": 4,
+    "candidate_total": 4,
+    "derivative_defined": 4,
+    "branch_flat_direct": 4
+  },
+  "seconds": 0.821745358989574,
+  "updated_utc": "2026-10-10T04:14:24.468284+00:00",
+  "result_status": "complete",
+  "finished_utc": "2026-10-10T04:14:24.705189+00:00",
+  "summary_sha256": "e8808e6290af5fecdf94d9aa1326b05cd8c1164eccd0a92b36233fb2556dd854"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "harness_startup_failure",
+  "error": "Python3.6 inspect.getsource(Interval) could not resolve the importlib-loaded module because it was not registered in sys.modules.",
+  "stage": "unchanged-source comparison before enclosure/native/regression controls",
+  "numerical_controls_executed": false,
+  "correction": "Register frozen modules in sys.modules for inspect; rerun under fresh variant002."
+}

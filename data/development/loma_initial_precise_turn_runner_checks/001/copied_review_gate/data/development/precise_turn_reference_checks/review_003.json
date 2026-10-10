@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "created_utc": "2026-10-10T04:11:57.936378+00:00",
+  "summary_sha256": "4bc542d3f4d2edb0a9e6ef82212db07f2d9d6dfd7f0bfbdff6af4d44e2dd24e6",
+  "variant_sha256": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+  "old_reference_sha256": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+  "checks": {
+    "all_source_and_result_hashes_verified": true,
+    "exact_scaled_enclosure_invariants_verified": true,
+    "root_interval_and_candidate_count_unchanged": true,
+    "physical_formulas_and_root_isolation_source_unchanged": true,
+    "closure_and_accuracy_limits_unchanged": true,
+    "failed_original_preserved": true,
+    "native_identity_and_empty_location_preserved": true,
+    "sampler_endpoints_preserved": true
+  },
+  "time_error_s": 1.91491267287347e-12,
+  "source_error_euclidean_norm_s_per_km": 3.496446946337351e-18,
+  "interpretation": "The candidate reconstruction preserves the isolated rational r midpoint through an exact rational enclosure of sqrt(u0^2+r^2). This removes the diagnosed rounding of turning speed without moving the isolated root or changing a numerical acceptance limit.",
+  "decision": "Eligible for a separately frozen full LON initial-reference attempt002 with unchanged geometry and gates; no inverse acceptance.",
+  "limitations": [
+    "Controls concern the numerical reference, not the production ray optimizer.",
+    "Full-cohort validity and candidate/time differences still require examination after attempt002."
+  ]
+}

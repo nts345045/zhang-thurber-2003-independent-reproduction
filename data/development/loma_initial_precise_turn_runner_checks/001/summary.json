@@ -1,0 +1,209 @@
+{
+  "status": "passed",
+  "scope": "Invented wrapper eligibility, metadata, ordering and readiness controls only; reviewed separate precise-turn numerical helper; legacy helper unchanged",
+  "checks": 48,
+  "failed": 0,
+  "results": [
+    {
+      "name": "reviewed numerical selection eligible",
+      "passed": true
+    },
+    {
+      "name": "copied reviewed selection eligible",
+      "passed": true
+    },
+    {
+      "name": "reject stale numerical evidence data/development/precise_turn_reference_checks/review_003.json",
+      "passed": true
+    },
+    {
+      "name": "reject stale numerical evidence data/development/precise_turn_reference_checks/003/summary.json",
+      "passed": true
+    },
+    {
+      "name": "reject stale numerical evidence diagnostics/first_arrival_1d_precise_turn_reference.py",
+      "passed": true
+    },
+    {
+      "name": "terminal reviewed input gate",
+      "passed": true
+    },
+    {
+      "name": "reject output identical to input",
+      "passed": true
+    },
+    {
+      "name": "reject output below input",
+      "passed": true
+    },
+    {
+      "name": "reject output ancestor of input",
+      "passed": true
+    },
+    {
+      "name": "complete z-only grid eligible",
+      "passed": true
+    },
+    {
+      "name": "nonzero source corrections preserved",
+      "passed": true
+    },
+    {
+      "name": "reject horizontal velocity dependence",
+      "passed": true
+    },
+    {
+      "name": "reject decreasing depth profile",
+      "passed": true
+    },
+    {
+      "name": "reject incomplete grid",
+      "passed": true
+    },
+    {
+      "name": "reject duplicate grid node",
+      "passed": true
+    },
+    {
+      "name": "reject outside initial source",
+      "passed": true
+    },
+    {
+      "name": "reject missing native origin",
+      "passed": true
+    },
+    {
+      "name": "reject inconsistent receiver identity",
+      "passed": true
+    },
+    {
+      "name": "reject truncated native cohort",
+      "passed": true
+    },
+    {
+      "name": "reject nonfinite source correction",
+      "passed": true
+    },
+    {
+      "name": "reject modified reviewed initial table",
+      "passed": true
+    },
+    {
+      "name": "reject failed simulation review",
+      "passed": true
+    },
+    {
+      "name": "reject live simulation",
+      "passed": true
+    },
+    {
+      "name": "source time excluded from complete references",
+      "passed": true
+    },
+    {
+      "name": "saved perturbed geometry used for travel time",
+      "passed": true
+    },
+    {
+      "name": "original xyz gradient axes retained",
+      "passed": true
+    },
+    {
+      "name": "exact endpoint boundary flags",
+      "passed": true
+    },
+    {
+      "name": "numerical root exhaustion retained unresolved",
+      "passed": true
+    },
+    {
+      "name": "nonfinite reference cannot become usable",
+      "passed": true
+    },
+    {
+      "name": "unique finite derivatives usable",
+      "passed": true
+    },
+    {
+      "name": "tied branch not labeled comparison ready",
+      "passed": true
+    },
+    {
+      "name": "undefined coincident derivative not comparison ready",
+      "passed": true
+    },
+    {
+      "name": "unresolved native support readback",
+      "passed": true
+    },
+    {
+      "name": "unresolved time and gradient blank",
+      "passed": true
+    },
+    {
+      "name": "full invented wrapper workers 1",
+      "passed": true
+    },
+    {
+      "name": "terminal ledger and all native rows workers 1",
+      "passed": true
+    },
+    {
+      "name": "terminal comparison quality workers 1",
+      "passed": true
+    },
+    {
+      "name": "full invented wrapper workers 2",
+      "passed": true
+    },
+    {
+      "name": "terminal ledger and all native rows workers 2",
+      "passed": true
+    },
+    {
+      "name": "terminal comparison quality workers 2",
+      "passed": true
+    },
+    {
+      "name": "deterministic ordered workers references.csv.gz",
+      "passed": true
+    },
+    {
+      "name": "deterministic ordered workers certificates.jsonl.gz",
+      "passed": true
+    },
+    {
+      "name": "exclusive existing-output guard",
+      "passed": true
+    },
+    {
+      "name": "legacy homogeneous wrapper completes",
+      "passed": true
+    },
+    {
+      "name": "legacy homogeneous byte parity references.csv.gz",
+      "passed": true
+    },
+    {
+      "name": "legacy homogeneous byte parity certificates.jsonl.gz",
+      "passed": true
+    },
+    {
+      "name": "frozen reviewed source selected workers 1",
+      "passed": true
+    },
+    {
+      "name": "frozen reviewed source selected workers 2",
+      "passed": true
+    }
+  ],
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/check_loma_initial_precise_turn_reference.py --output data/development/loma_initial_precise_turn_runner_checks/001",
+  "source_sha256": {
+    "diagnostics/check_loma_initial_precise_turn_reference.py": "0819ed1ddeb0a502d6de12b2f67fa95d39a1dae668929477397ebe69a521547e",
+    "diagnostics/run_loma_initial_precise_turn_reference.py": "7a2cac0846d92359af1ac4dc73934f63efbc38c5841841951546969948612f80",
+    "diagnostics/run_loma_layered_full.py": "4a01438a8646000b77136e8e65f98aa154b6dd8c28ff6a53dda597e855327e39",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "diagnostics/run_loma_initial_reference.py": "803baacdd49652c342b9d9ed56b6782ece5669d6f45f65ab4e7544893705cfb5"
+  }
+}
