@@ -1,0 +1,9 @@
+i,j,station,type,value,event_i_resource_id,event_j_resource_id,origin_i_resource_id,origin_j_resource_id,pick_i_resource_id,pick_j_resource_id,arrival_i_resource_id,arrival_j_resource_id,channel_seed_id,channel_fdsn_source_id,metadata_epoch_start,metadata_epoch_end,a_priori_weight,note,station_j,metadata_epoch_j_start,metadata_epoch_j_end,channel_source_sha256,channel_j_source_sha256,cross_metadata_epoch
+0,-1,0,0,0.33333333333333331,smi:fixture/event0,,smi:fixture/origin0,,smi:fixture/pick0_0,,smi:fixture/arrival0_0,,XX.TEST..HHZ,FDSN:XX_TEST__H_H_Z,1984-01-01T00:00:00Z,1990-01-01T00:00:00Z,0.25,"preserve, ""quoted""
+text",-1,,,invented-fixture-source-0,,0
+1,-1,0,0,0.37267799624996495,smi:fixture/event1,,smi:fixture/origin1,,smi:fixture/pick1_0,,smi:fixture/arrival1_0,,XX.TEST..HHZ,FDSN:XX_TEST__H_H_Z,1984-01-01T00:00:00Z,1990-01-01T00:00:00Z,0.25,"preserve, ""quoted""
+text",-1,,,invented-fixture-source-0,,0
+0,-1,1,0,0.33333333333333331,smi:fixture/event0,,smi:fixture/origin0,,smi:fixture/pick0_1,,smi:fixture/arrival0_1,,XX.TEST..HHZ,FDSN:XX_TEST__H_H_Z,1990-01-01T00:00:00Z,,0.25,"preserve, ""quoted""
+text",-1,,,invented-fixture-source-2,,0
+1,0,0,1,0.039344662916631634,smi:fixture/event1,smi:fixture/event0,smi:fixture/origin1,smi:fixture/origin0,smi:fixture/pick1_0,smi:fixture/pick0_1,smi:fixture/arrival1_0,smi:fixture/arrival0_1,XX.TEST..HHZ,FDSN:XX_TEST__H_H_Z,1984-01-01T00:00:00Z,1990-01-01T00:00:00Z,0.25,"preserve, ""quoted""
+text",1,1990-01-01T00:00:00Z,,invented-fixture-source-0,invented-fixture-source-2,1

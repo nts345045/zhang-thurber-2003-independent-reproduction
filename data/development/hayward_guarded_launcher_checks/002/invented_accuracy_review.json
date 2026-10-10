@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "decision": "eligible_for_guarded_dd_attempt",
+  "preflight_directory": "data/development/hayward_guarded_launcher_checks/002/invented_preflight",
+  "checks": {
+    "full_reference_controls_pass": true,
+    "sample_local_flags_pass": true,
+    "sample_accuracy_assessed": true,
+    "finite_difference_truncation_assessed": true
+  },
+  "interpretation": "Invented homogeneous fixture; exact reference errors pass and finite differences are only schema controls.",
+  "limitations": [
+    "Fixture reviews exercise lifecycle gates, not a claim of independent validation of real data."
+  ],
+  "sha256": {
+    "preflight_manifest": "0661ff4ada4dd1a5c6543d54e06b0b92c75524b2ba909e85a556c9282266d036",
+    "preflight_ledger": "470fe27a5fb403bfc7a22fc6210f5b43beef906ab4ad9a867d6b00de4d2ed9ec",
+    "preflight_checks": "bd378a40879a2af1543cd56516c967e256f609d318de8800733636ffd43cf911",
+    "full_reference_summary": "e21513651acd8e7c154333ff76ebc28f7d1557fd952ca0cdc2113445fe4cf63d",
+    "full_reference_review": "d29dd3106bde1c9bcc26e0e2bec8769e9d8cddb999d1ef9cb5fcab2ee55d017d"
+  },
+  "sampled_tables_sha256": {
+    "initial_ray_convergence.csv": "1b090a017218313e62545910195925fb5ac604905a71505824f6c7b3429b1236",
+    "initial_ray_derivatives.csv": "5c51fe1d261df17fdd7a4a6d47dbd74b480b0e98bcb12cffc11501b5f2beeb8e",
+    "initial_ray_identifiers.csv": "dc8bd2407f0ecfab65852488fc2b0735d2a23eb213612a76c0d5d463f54bd9ae"
+  }
+}

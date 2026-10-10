@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "created_utc": "2026-10-10T04:14:29.254624+00:00",
+  "source_sha256": "f9ca4ae89a706d4f1c92e0f0277b846766af35a73998c6ce890cfdaef65b2df3",
+  "suite_summary_sha256": "2744d0cd37d247f3e6de023ce60ba85c92b99eba753c4a31659bdd154c2db113",
+  "adoption_summary_sha256": "6893f3fd746d21a88878990d5af1bfb0a60107d13ae16be42ae0d049cb59f3ab",
+  "pinned_artifacts_verified": {
+    "data/development/hayward_guarded_launcher_checks/002": 706,
+    "data/development/hayward_guard_adoption_checks/001": 581
+  },
+  "source_review_scope": [
+    "Read complete launcher with exact004 input support and mathematical-setting checks.",
+    "Inspected terminal preflight, independent full-reference and hash-bound sampled-accuracy review prerequisites.",
+    "Verified copied source is rechecked against reviewed guard and O3 parity before building.",
+    "Inspected separate compiler, flags, binary, runtime-library and input provenance plus pre/post execution hash checks.",
+    "Inspected failed/interrupted process-group termination before freezing partial output hashes.",
+    "Inspected completed output finite/native/history checks and explicit pending final diagnostics status."
+  ],
+  "material_issue_found": false,
+  "decision": "Eligible launcher for a separately reviewed guarded DD attempt only after real004 scientific preflight gates pass.",
+  "limitations": [
+    "Invented end-to-end controls do not approve the still-running real preflight.",
+    "No real inversion is launched or accepted by this review.",
+    "Local ray flags remain insufficient to certify first arrival or nonlinear recovery in updated three-dimensional models."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "status": "source_review_passed",
+  "reviewer": "ray_math_review",
+  "method": "Read-only source, frozen-source hash and recorded fixture-summary inspection; no numerical rerun.",
+  "material_issue_found": false,
+  "source_path": "run_hayward_guarded_inversion.py",
+  "source_sha256": "f9ca4ae89a706d4f1c92e0f0277b846766af35a73998c6ce890cfdaef65b2df3",
+  "frozen_source_sha256": "f9ca4ae89a706d4f1c92e0f0277b846766af35a73998c6ce890cfdaef65b2df3",
+  "summary_sha256": "2744d0cd37d247f3e6de023ce60ba85c92b99eba753c4a31659bdd154c2db113",
+  "recorded_fixture_status": "passed",
+  "recorded_fixture_check_count": 30,
+  "recorded_fixture_failures": [],
+  "numerical_rerun": false,
+  "resolved_finding": {
+    "issue": "Source could change after eligibility validation and before snapshot copying, leaving a newly copied source set unrelated to the reviewed O3 parity inputs.",
+    "fix": "The launcher rechecks every frozen src/CMake member against the parity guarded-source map and pins the reviewed guard main before building.",
+    "remaining_issue": false
+  },
+  "checks": [
+    "Terminal preflight, full-reference and explicit accuracy-review hash links gate the one DD command.",
+    "Mathematical headers and CMake match frozen 004; the reviewed guard main, copied build records, compiler and O3 parity artifacts are pinned.",
+    "Exclusive output and atomic execution ledger retain subprocess status; process-group termination completes before failed-run hashes are finalized.",
+    "Native event/observation metadata, residual initializer flags, coverage, matrix dimensions and history ray/initializer counts are checked.",
+    "Completed outputs retain pending-final-diagnostics status and scientific_success=false."
+  ],
+  "limitations": [
+    "No real inversion, reference evaluation, ray tracing or numerical test was rerun for this review.",
+    "This source review does not certify first arrivals, final 3D accuracy or nonlinear convergence.",
+    "Recorded fixture results are distinguished from this independent source inspection."
+  ]
+}

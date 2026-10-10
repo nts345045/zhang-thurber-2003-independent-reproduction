@@ -1,0 +1,124 @@
+{
+  "status": "interrupted",
+  "mode": "dd",
+  "started_utc": "2026-10-10T04:09:05.035287+00:00",
+  "driver_pid": 99822,
+  "command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/run_hayward_guarded_inversion.py",
+    "--preflight",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/invented_preflight",
+    "--reference",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/invented_reference",
+    "--accuracy-review",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/invented_accuracy_review.json",
+    "--parity-review",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guard_adoption_checks/001/summary.json",
+    "--output",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/interrupted",
+    "--build",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/001/interrupted"
+  ],
+  "threads": 4,
+  "completed_commands": [
+    {
+      "stage": "cmake_version",
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/interrupted/cmake_version_resources.txt",
+        "cmake",
+        "--version"
+      ],
+      "pid": 99824,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T04:09:05.224493+00:00",
+      "maximum_resident_set_kbytes": 14548
+    },
+    {
+      "stage": "configure",
+      "command": [
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/001/interrupted/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/001/interrupted/compiled"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/interrupted/configure_resources.txt",
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/001/interrupted/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/001/interrupted/compiled"
+      ],
+      "pid": 99827,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T04:09:07.043166+00:00",
+      "maximum_resident_set_kbytes": 22800
+    },
+    {
+      "stage": "compiler_version",
+      "command": [
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/interrupted/compiler_version_resources.txt",
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "pid": 99879,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T04:09:07.159952+00:00",
+      "maximum_resident_set_kbytes": 2836
+    }
+  ],
+  "inherited_preflight": "data/development/hayward_guarded_launcher_checks/001/invented_preflight",
+  "scientific_success": false,
+  "scope": "One guarded DD attempt; no automatic other-mode cascade",
+  "current_stage": "compile",
+  "current_command": [
+    "cmake",
+    "--build",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/001/interrupted/compiled",
+    "-j",
+    "2"
+  ],
+  "current_child_pid": 99881,
+  "current_command_started_utc": "2026-10-10T04:09:07.189894+00:00",
+  "child_pid_semantics": "GNU time process-group leader",
+  "exception_child": {
+    "pid": 99881,
+    "return_code": -15,
+    "remaining_live_group_members": []
+  },
+  "finished_utc": "2026-10-10T04:09:07.785376+00:00",
+  "error": "143",
+  "return_code": 143,
+  "partial_output_sha256": {
+    "guarded_source.tar.gz": "6ef85008d1f22ea1e20c7cbf7d24a13c1b8b5d93af095be6fd0f1d42b04a0e0b",
+    "cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cmake_version_resources.txt": "b24566d0961baae6bda129686927818d81c505b431bfcf62a8bc01a2f9670332",
+    "configure_stdout.log": "acbf0ed910523e7b4fc81c15a6c3b7ed6a9544062eb7409fdae60aac14da900d",
+    "configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configure_resources.txt": "97da1e94bff14d08ac87c6225a0270c093709f1c7e6a994a26bc8a1d278a0599",
+    "compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compiler_version_resources.txt": "f11235361b6bee2bfa030c4961a4be41504447aa1456655e1f8df4f17fb5e556",
+    "compile_stdout.log": "02aac09017ea5307af56736889403a888e2dc1ca4da63e0435b45d375e44f8a8",
+    "compile_stderr.log": "f1cda33479430bc8e2b845f9bd2c8f686d880cc05e4304d189073387ace06d9c",
+    "compile_resources.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

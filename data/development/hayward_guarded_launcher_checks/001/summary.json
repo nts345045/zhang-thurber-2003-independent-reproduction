@@ -1,0 +1,302 @@
+{
+  "status": "passed",
+  "scope": "Invented geometry and review-schema fixtures; no real inversion or scientific acceptance",
+  "checks": [
+    {
+      "name": "actual_invented_reference_limits",
+      "passed": true
+    },
+    {
+      "name": "complete_invented_eligibility_contract",
+      "passed": true
+    },
+    {
+      "name": "running_ledger_rejected",
+      "passed": true
+    },
+    {
+      "name": "failed_ledger_rejected",
+      "passed": true
+    },
+    {
+      "name": "missing_successful_child_rejected",
+      "passed": true
+    },
+    {
+      "name": "preflight_failure_rejected",
+      "passed": true
+    },
+    {
+      "name": "unaccepted_accuracy_review_rejected",
+      "passed": true
+    },
+    {
+      "name": "stale_accuracy_review_rejected",
+      "passed": true
+    },
+    {
+      "name": "unassessed_fd_rejected",
+      "passed": true
+    },
+    {
+      "name": "stale_sample_review_rejected",
+      "passed": true
+    },
+    {
+      "name": "full_reference_failure_rejected",
+      "passed": true
+    },
+    {
+      "name": "wrong_source_limit_rejected",
+      "passed": true
+    },
+    {
+      "name": "failed_guard_parity_rejected",
+      "passed": true
+    },
+    {
+      "name": "changed_observations.csv_rejected",
+      "passed": true
+    },
+    {
+      "name": "changed_initial_events.csv_rejected",
+      "passed": true
+    },
+    {
+      "name": "changed_stations.csv_rejected",
+      "passed": true
+    },
+    {
+      "name": "changed_run.cfg_rejected",
+      "passed": true
+    },
+    {
+      "name": "completed_without_scientific_success",
+      "passed": true
+    },
+    {
+      "name": "one_DD_command_only",
+      "passed": true
+    },
+    {
+      "name": "all_output_and_copied_input_hashes",
+      "passed": true
+    },
+    {
+      "name": "original_fixture_unchanged",
+      "passed": true
+    },
+    {
+      "name": "interrupted_terminal_driver",
+      "passed": true
+    },
+    {
+      "name": "actual_descendants_terminated",
+      "passed": true
+    },
+    {
+      "name": "interruption_hashes_stable_after_descendants",
+      "passed": true
+    },
+    {
+      "name": "original_inputs_unchanged_after_interrupt",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "name": "initial_linearize",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guard_adoption_checks/001/baseline/dd",
+        "linearize",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/invented_preflight/run.cfg",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/invented_preflight",
+        "initial"
+      ],
+      "return_code": 0
+    },
+    {
+      "name": "initial_raycheck",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guard_adoption_checks/001/baseline/dd",
+        "raycheck",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/invented_preflight/run.cfg",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/invented_preflight",
+        "initial"
+      ],
+      "return_code": 0
+    },
+    {
+      "name": "launcher",
+      "command": [
+        "/usr/bin/python3",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/run_hayward_guarded_inversion.py",
+        "--preflight",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/invented_preflight",
+        "--reference",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/invented_reference",
+        "--accuracy-review",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/invented_accuracy_review.json",
+        "--parity-review",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guard_adoption_checks/001/summary.json",
+        "--output",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/run",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/001/run"
+      ],
+      "return_code": 0
+    },
+    {
+      "name": "duplicate_run_rejected",
+      "command": [
+        "/usr/bin/python3",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/run_hayward_guarded_inversion.py",
+        "--preflight",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/invented_preflight",
+        "--reference",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/invented_reference",
+        "--accuracy-review",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/invented_accuracy_review.json",
+        "--parity-review",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guard_adoption_checks/001/summary.json",
+        "--output",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/001/run",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/001/run"
+      ],
+      "return_code": 1
+    }
+  ],
+  "source_sha256": {
+    "run_hayward_guarded_inversion.py": "3ed71ee0e9794781e7d0b6ecce63f5a0506ffbcdf45a4105d8588c078ed20b4e",
+    "run_loma_initial_preflight.py": "f1acc19135c11edda106e3b8c7d8c1879d7d490db729d4ad55263b87022946f1",
+    "run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5",
+    "diagnostics/review_loma_analytic_simulation.py": "786c1ccc99cfa3d3677dde88f11a96f9677693966de874d40c15ca2972a76246",
+    "diagnostics/check_hayward_guarded_launcher.py": "ce2e5d7ca37ae92bb4b0f2eda3dd63099b4f73be751b74cb1965325254ae60c4"
+  },
+  "real_inversions_run": false,
+  "artifact_sha256": {
+    "initial_linearize_stdout.log": "0b3a266e9edaa1bb2a4e093c223dc925050a4e85fb652a497028d10c42b51f0c",
+    "initial_linearize_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "initial_raycheck_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "initial_raycheck_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_accuracy_review.json": "b6b25fe2f4e429e55275e649e389d9403af01848cdc87455bdb5ab295a40c467",
+    "launcher_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launcher_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "duplicate_run_rejected_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "duplicate_run_rejected_stderr.log": "8bf0dc02a1cbac4de8f8404933566389145ec9f6db26ab07a4763936db3c5eb3",
+    "interrupt_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupt_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_preflight/initial_events.csv": "b6b34101476e22e8bd363645d7413dd76013b2519af0b74d7193c5052cbd738b",
+    "invented_preflight/stations.csv": "9970b0a96271e46701f42b5c7659176fc36a9a48537c08b826872301501ba771",
+    "invented_preflight/initial_grid.csv": "4cab86766c8e22376011976355400864e67fea667964aa7431624d59972101c8",
+    "invented_preflight/observations.csv": "3be0d83e14508c08d72252d252facdc3d83896b04b1d247c2e902c3635f395ab",
+    "invented_preflight/run.cfg": "4ea19db2b7d47b400d825c05e92c3847faca4ea1637ca525124a29fa310d36c9",
+    "invented_preflight/selection_manifest.json": "d90393f73588ea2bc99ace15252d008333d658245ebe543194bb58c491a4d66a",
+    "invented_preflight/authoritative_ids_required": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "invented_preflight/event_pairs.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "invented_preflight/event_selection.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "invented_preflight/initial_geographic_events.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "invented_preflight/excluded_picks.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "invented_preflight/initial_linearization_matrix.csv": "dc5146cbf8c44ef16e0f9a601c6b75f2d524a4c649aac531fb8fcce909983551",
+    "invented_preflight/initial_linearization_rows.csv": "c52a65839d85cf95d3ba00d34dbf87728d73a476fc5c1e30d6b74a4b0d341bb4",
+    "invented_preflight/initial_linearization_columns.csv": "091d35257a3c2efcfd904a69ff63444768b23860e52f88bf5b0bfd3ac01d75cb",
+    "invented_preflight/initial_ray_convergence.csv": "1b090a017218313e62545910195925fb5ac604905a71505824f6c7b3429b1236",
+    "invented_preflight/initial_ray_derivatives.csv": "5c51fe1d261df17fdd7a4a6d47dbd74b480b0e98bcb12cffc11501b5f2beeb8e",
+    "invented_preflight/initial_ray_identifiers.csv": "dc8bd2407f0ecfab65852488fc2b0735d2a23eb213612a76c0d5d463f54bd9ae",
+    "invented_preflight/run_manifest.json": "7805889c2e4520a9eb91b3a8e9738470d6b01ca562002b3b68468967bf1ceb81",
+    "invented_preflight/preflight.json": "bd378a40879a2af1543cd56516c967e256f609d318de8800733636ffd43cf911",
+    "invented_preflight/preflight_execution.json": "470fe27a5fb403bfc7a22fc6210f5b43beef906ab4ad9a867d6b00de4d2ed9ec",
+    "invented_reference/analytic_comparison.csv": "83a76eb7d9a41a7960687b1a46d542b5758122b3db5754a46b9d0ac80d639c55",
+    "invented_reference/summary.json": "d8c7bfb84ae598b26d1a8d8f31afd97c87aeba0b8a552862c2b816e1e9adfc85",
+    "invented_reference/frozen_tables.tar.gz": "880e7e6e578624393d685df864c2343f2c30db2351858081a3375f06017e17a5",
+    "invented_reference/packaging.json": "0338a3bbd39c3be2a18584cdef2cf34151b513411e9c99503734b616a8a787d9",
+    "invented_reference/independent_review.json": "9cfe5888fbd0e7b3f46991a33cc38b599c5a5db3a57ed653115e1eeba315a9be",
+    "source/run_hayward_guarded_inversion.py": "3ed71ee0e9794781e7d0b6ecce63f5a0506ffbcdf45a4105d8588c078ed20b4e",
+    "source/run_loma_initial_preflight.py": "f1acc19135c11edda106e3b8c7d8c1879d7d490db729d4ad55263b87022946f1",
+    "source/run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5",
+    "source/diagnostics/review_loma_analytic_simulation.py": "786c1ccc99cfa3d3677dde88f11a96f9677693966de874d40c15ca2972a76246",
+    "source/diagnostics/check_hayward_guarded_launcher.py": "ce2e5d7ca37ae92bb4b0f2eda3dd63099b4f73be751b74cb1965325254ae60c4",
+    "run/dd_inversion_execution.json": "8a2ce384e34cbd5e60017ccf0348acaebc913ecead41e2ebdf5b7a1dc5f32fce",
+    "run/initial_events.csv": "b6b34101476e22e8bd363645d7413dd76013b2519af0b74d7193c5052cbd738b",
+    "run/initial_grid.csv": "4cab86766c8e22376011976355400864e67fea667964aa7431624d59972101c8",
+    "run/stations.csv": "9970b0a96271e46701f42b5c7659176fc36a9a48537c08b826872301501ba771",
+    "run/observations.csv": "3be0d83e14508c08d72252d252facdc3d83896b04b1d247c2e902c3635f395ab",
+    "run/selection_manifest.json": "d90393f73588ea2bc99ace15252d008333d658245ebe543194bb58c491a4d66a",
+    "run/authoritative_ids_required": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "run/event_pairs.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "run/event_selection.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "run/initial_geographic_events.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "run/excluded_picks.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "run/run.cfg": "4ea19db2b7d47b400d825c05e92c3847faca4ea1637ca525124a29fa310d36c9",
+    "run/guarded_source.tar.gz": "d790c50d7c7a5e380ac304edc3f53d24170735197aaf84533cdfc8b64fead365",
+    "run/cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "run/cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run/cmake_version_resources.txt": "8be949056849a69cb5e699fcc45b3f74e82f8dd7bd5380fb999febc9df0479ab",
+    "run/configure_stdout.log": "cfc9ca0af5696508aca380b0c21d541b630ffc1d77bb87371ab088f5570f2c18",
+    "run/configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run/configure_resources.txt": "804c52a80025eaae2aac80099a39f187fc0d3a2564fa7840a2d6eb2adc572875",
+    "run/compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "run/compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run/compiler_version_resources.txt": "5bb26ff5d0f711ef3565ce905993996a438b08bc4e4f59e28abbd070dc302782",
+    "run/compile_stdout.log": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+    "run/compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run/compile_resources.txt": "20c6063de640d1a7e8d972d6e482d2159bf4b84e373a80fdf3ca572dd01afb6c",
+    "run/runtime_libraries_stdout.log": "657b80110306a20550d6829535d7548dc62c1d1ae6aa43e20cf3f14170fdc188",
+    "run/runtime_libraries_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run/runtime_libraries_resources.txt": "d3006072c7be275aec9fe20a612816705e73618cb5fc18e8c80e2e912636aa13",
+    "run/dd_inversion_run_manifest.json": "1e68291bff13739c4e2783c49ce15bb1144517e7fa1c38b9bab53f84e5be2cd7",
+    "run/dd_invert_stdout.log": "d17ea2b389434fe8c87c6be0c4da7ddc74d34354b9757c9adb68c21f59b7dddd",
+    "run/dd_invert_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run/dd_invert_resources.txt": "79bffcc1045c1c538e70783ffc644daa478660c3ee9d2190763a99ac2d38b817",
+    "run/dd_history.csv": "4a7cf4923952379b5273ba1b33aa5bfa9dde8d8644d8b34933a740e5bd56e543",
+    "run/dd_matrix_preflight.csv": "82529e29cfe143d261a3853033f6fa0f55cb9fbb372b9327e2ba7d73104e30c6",
+    "run/dd_grid.csv": "4cab86766c8e22376011976355400864e67fea667964aa7431624d59972101c8",
+    "run/dd_events.csv": "1fcd5d711c59741c95cac42fced5c1b875f9236744eab7a600bd736ee46680ea",
+    "run/dd_coverage.csv": "336412996f5b1e9a0b06efdefc0aef5671763319fcf2ffc4addab58c17d6b53f",
+    "run/dd_residuals.csv": "1c8239f3260d671cf45c3dd7757302f839f046625f2508c48ab321f9c2889c36",
+    "run/dd_output_contract.json": "cb172b753734aab960dcf0e48804aaf96ab09381260795e0d7de107bf1fac45a",
+    "run/preflight_provenance/manifest.json": "7805889c2e4520a9eb91b3a8e9738470d6b01ca562002b3b68468967bf1ceb81",
+    "run/preflight_provenance/ledger.json": "470fe27a5fb403bfc7a22fc6210f5b43beef906ab4ad9a867d6b00de4d2ed9ec",
+    "run/preflight_provenance/checks.json": "bd378a40879a2af1543cd56516c967e256f609d318de8800733636ffd43cf911",
+    "run/preflight_provenance/reference_summary.json": "d8c7bfb84ae598b26d1a8d8f31afd97c87aeba0b8a552862c2b816e1e9adfc85",
+    "run/preflight_provenance/reference_review.json": "9cfe5888fbd0e7b3f46991a33cc38b599c5a5db3a57ed653115e1eeba315a9be",
+    "run/preflight_provenance/accuracy_review.json": "b6b25fe2f4e429e55275e649e389d9403af01848cdc87455bdb5ab295a40c467",
+    "run/preflight_provenance/parity_review.json": "6893f3fd746d21a88878990d5af1bfb0a60107d13ae16be42ae0d049cb59f3ab",
+    "run/build_provenance/CMakeCache.txt": "789d1f4d47dddcffd284de4a48b323fee11aa8c2137e864d852d9783ba413813",
+    "run/build_provenance/CMakeFiles/dd.dir/flags.make": "d56dc65ba833a0cd88231813d73aba646ad70d11d564c6ec0b6b36620c8bd485",
+    "run/build_provenance/CMakeFiles/dd.dir/link.txt": "7240bb26b9d3bdcb54faa96a09f9e0255f807b70f59ced1a8d904458bfca9c98",
+    "interrupted/dd_inversion_execution.json": "fbc86021fd334cd9a3c52431d01c01204d4507241ebbe1a70af25e41ec536c38",
+    "interrupted/initial_events.csv": "b6b34101476e22e8bd363645d7413dd76013b2519af0b74d7193c5052cbd738b",
+    "interrupted/initial_grid.csv": "4cab86766c8e22376011976355400864e67fea667964aa7431624d59972101c8",
+    "interrupted/stations.csv": "9970b0a96271e46701f42b5c7659176fc36a9a48537c08b826872301501ba771",
+    "interrupted/observations.csv": "3be0d83e14508c08d72252d252facdc3d83896b04b1d247c2e902c3635f395ab",
+    "interrupted/selection_manifest.json": "d90393f73588ea2bc99ace15252d008333d658245ebe543194bb58c491a4d66a",
+    "interrupted/authoritative_ids_required": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "interrupted/event_pairs.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "interrupted/event_selection.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "interrupted/initial_geographic_events.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "interrupted/excluded_picks.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "interrupted/run.cfg": "4ea19db2b7d47b400d825c05e92c3847faca4ea1637ca525124a29fa310d36c9",
+    "interrupted/guarded_source.tar.gz": "6ef85008d1f22ea1e20c7cbf7d24a13c1b8b5d93af095be6fd0f1d42b04a0e0b",
+    "interrupted/cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "interrupted/cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupted/cmake_version_resources.txt": "b24566d0961baae6bda129686927818d81c505b431bfcf62a8bc01a2f9670332",
+    "interrupted/configure_stdout.log": "acbf0ed910523e7b4fc81c15a6c3b7ed6a9544062eb7409fdae60aac14da900d",
+    "interrupted/configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupted/configure_resources.txt": "97da1e94bff14d08ac87c6225a0270c093709f1c7e6a994a26bc8a1d278a0599",
+    "interrupted/compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "interrupted/compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupted/compiler_version_resources.txt": "f11235361b6bee2bfa030c4961a4be41504447aa1456655e1f8df4f17fb5e556",
+    "interrupted/compile_stdout.log": "02aac09017ea5307af56736889403a888e2dc1ca4da63e0435b45d375e44f8a8",
+    "interrupted/compile_stderr.log": "f1cda33479430bc8e2b845f9bd2c8f686d880cc05e4304d189073387ace06d9c",
+    "interrupted/compile_resources.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupted/preflight_provenance/manifest.json": "7805889c2e4520a9eb91b3a8e9738470d6b01ca562002b3b68468967bf1ceb81",
+    "interrupted/preflight_provenance/ledger.json": "470fe27a5fb403bfc7a22fc6210f5b43beef906ab4ad9a867d6b00de4d2ed9ec",
+    "interrupted/preflight_provenance/checks.json": "bd378a40879a2af1543cd56516c967e256f609d318de8800733636ffd43cf911",
+    "interrupted/preflight_provenance/reference_summary.json": "d8c7bfb84ae598b26d1a8d8f31afd97c87aeba0b8a552862c2b816e1e9adfc85",
+    "interrupted/preflight_provenance/reference_review.json": "9cfe5888fbd0e7b3f46991a33cc38b599c5a5db3a57ed653115e1eeba315a9be",
+    "interrupted/preflight_provenance/accuracy_review.json": "b6b25fe2f4e429e55275e649e389d9403af01848cdc87455bdb5ab295a40c467",
+    "interrupted/preflight_provenance/parity_review.json": "6893f3fd746d21a88878990d5af1bfb0a60107d13ae16be42ae0d049cb59f3ab"
+  }
+}

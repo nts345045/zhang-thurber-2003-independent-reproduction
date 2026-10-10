@@ -1,0 +1,203 @@
+{
+  "status": "completed_pending_final_diagnostics",
+  "mode": "dd",
+  "started_utc": "2026-10-10T04:10:28.212987+00:00",
+  "driver_pid": 101347,
+  "command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/run_hayward_guarded_inversion.py",
+    "--preflight",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/invented_preflight",
+    "--reference",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/invented_reference",
+    "--accuracy-review",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/invented_accuracy_review.json",
+    "--parity-review",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/copied_adoption_controls/summary.json",
+    "--output",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/run",
+    "--build",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/002/run"
+  ],
+  "threads": 4,
+  "completed_commands": [
+    {
+      "stage": "cmake_version",
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/run/cmake_version_resources.txt",
+        "cmake",
+        "--version"
+      ],
+      "pid": 101349,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T04:10:28.388165+00:00",
+      "maximum_resident_set_kbytes": 13996
+    },
+    {
+      "stage": "configure",
+      "command": [
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/002/run/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/002/run/compiled"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/run/configure_resources.txt",
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/002/run/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/002/run/compiled"
+      ],
+      "pid": 101351,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T04:10:30.126620+00:00",
+      "maximum_resident_set_kbytes": 23024
+    },
+    {
+      "stage": "compiler_version",
+      "command": [
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/run/compiler_version_resources.txt",
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "pid": 101441,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T04:10:30.261371+00:00",
+      "maximum_resident_set_kbytes": 3100
+    },
+    {
+      "stage": "compile",
+      "command": [
+        "cmake",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/002/run/compiled",
+        "-j",
+        "2"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/run/compile_resources.txt",
+        "cmake",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/002/run/compiled",
+        "-j",
+        "2"
+      ],
+      "pid": 101443,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T04:10:59.057187+00:00",
+      "maximum_resident_set_kbytes": 344340
+    },
+    {
+      "stage": "runtime_libraries",
+      "command": [
+        "ldd",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/002/run/compiled/dd"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/run/runtime_libraries_resources.txt",
+        "ldd",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/002/run/compiled/dd"
+      ],
+      "pid": 102036,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T04:10:59.178185+00:00",
+      "maximum_resident_set_kbytes": 3108
+    },
+    {
+      "stage": "dd_invert",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/002/run/compiled/dd",
+        "invert",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/run/run.cfg",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/run",
+        "dd"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/run/dd_invert_resources.txt",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/002/run/compiled/dd",
+        "invert",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/run/run.cfg",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/run",
+        "dd"
+      ],
+      "pid": 102044,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T04:10:59.679225+00:00",
+      "maximum_resident_set_kbytes": 4996
+    }
+  ],
+  "inherited_preflight": "data/development/hayward_guarded_launcher_checks/002/invented_preflight",
+  "scientific_success": false,
+  "scope": "One guarded DD attempt; no automatic other-mode cascade",
+  "current_stage": "dd_invert",
+  "current_command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_launcher_checks/002/run/compiled/dd",
+    "invert",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/run/run.cfg",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_guarded_launcher_checks/002/run",
+    "dd"
+  ],
+  "current_child_pid": 102044,
+  "current_command_started_utc": "2026-10-10T04:10:59.488143+00:00",
+  "child_pid_semantics": "GNU time process-group leader",
+  "return_code": 0,
+  "finished_utc": "2026-10-10T04:10:59.849717+00:00",
+  "output_sha256": {
+    "guarded_source.tar.gz": "f652cf8145fe46713b47179f47367ce94a9656789eee22b3b1095c975292074c",
+    "cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cmake_version_resources.txt": "7043601587f995c58672049638850c7666171648b0436beec438e78b38df3a39",
+    "configure_stdout.log": "313624be8f5478885b5c4769ebb61119a4ad75d8503f17223e6d9ce975ced1cc",
+    "configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configure_resources.txt": "6a578cb1d084e4d52437e7f5e98f60149a7c1a069bf5308c406279650170e7f2",
+    "compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compiler_version_resources.txt": "f261b6e2157bde5eb91ac0a30f74b66c0ef8ff21fe04f18507aed869c889b226",
+    "compile_stdout.log": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+    "compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_resources.txt": "36485e9dff31eb235048e53b05114d4b8d9dcf54594b538c5ba52c4eb045fbb6",
+    "runtime_libraries_stdout.log": "387efae75abf884581e1c2a057e7f91f1496ae6df45c568f92d994c0c68c5dca",
+    "runtime_libraries_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime_libraries_resources.txt": "4783c5dccb323304ee74e8af046544d6feb9473cbe9275bd7b7d21f88d03722c",
+    "dd_inversion_run_manifest.json": "32e5598f6200e3be544ba10cd3f46128eb3c53353a512a8577aa340cdda36d12",
+    "dd_invert_stdout.log": "d17ea2b389434fe8c87c6be0c4da7ddc74d34354b9757c9adb68c21f59b7dddd",
+    "dd_invert_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dd_invert_resources.txt": "6cdab59c9258aeff9584aceb488de06c06afdbfd29ab0d4484d062e6aeb313c6",
+    "dd_history.csv": "4a7cf4923952379b5273ba1b33aa5bfa9dde8d8644d8b34933a740e5bd56e543",
+    "dd_matrix_preflight.csv": "82529e29cfe143d261a3853033f6fa0f55cb9fbb372b9327e2ba7d73104e30c6",
+    "dd_grid.csv": "4cab86766c8e22376011976355400864e67fea667964aa7431624d59972101c8",
+    "dd_events.csv": "1fcd5d711c59741c95cac42fced5c1b875f9236744eab7a600bd736ee46680ea",
+    "dd_coverage.csv": "336412996f5b1e9a0b06efdefc0aef5671763319fcf2ffc4addab58c17d6b53f",
+    "dd_residuals.csv": "1c8239f3260d671cf45c3dd7757302f839f046625f2508c48ab321f9c2889c36",
+    "dd_output_contract.json": "cb172b753734aab960dcf0e48804aaf96ab09381260795e0d7de107bf1fac45a"
+  },
+  "immutable_inputs_verified": true,
+  "original_preflight_verified": true
+}

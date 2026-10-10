@@ -1,0 +1,134 @@
+{
+  "status": "plan_only_no_inverse_launch",
+  "created_utc": "2026-10-10T03:59:18.878806+00:00",
+  "preflight": "data/hayward_first_arrival_004",
+  "preflight_binary": "tmp/hayward_runs/first_arrival_004/compiled/dd",
+  "preflight_manifest_sha256": "75631991144e76cf16731e0b73e396860ab78db386c556415f990968cb7cc00a",
+  "preflight_frozen_hashes_verified": {
+    "data/hayward_first_arrival_004/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward_first_arrival_004/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/hayward_first_arrival_004/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward_first_arrival_004/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/hayward_first_arrival_004/selection_manifest.json": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004",
+    "data/hayward_first_arrival_004/authoritative_ids_required": "00d86d4465702c0424ec511ef34eee9eb080977c55c21ac8af2106257760ba47",
+    "data/hayward_first_arrival_004/event_pairs.csv": "b678922c56c2c0841769aa882e98291631d3f7651a19661206c0433bfe9826ae",
+    "data/hayward_first_arrival_004/event_selection.csv": "d8563afe642aaaf719b9c92f0206bcd88003d256ad9067c08b0b40c60c3fb256",
+    "data/hayward_first_arrival_004/initial_geographic_events.csv": "7a7fba3e9f128a77dc2935d5a1a0a4926bd1442525ff4a477c45cba44c059a09",
+    "data/hayward_first_arrival_004/excluded_picks.csv": "93aab31ede96f61d65f4e363eb9bd8748b67014e477b12be12daee3ba09af0ca",
+    "data/hayward_first_arrival_004/run.cfg": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4",
+    "data/hayward_first_arrival_004/source_snapshot.tar.gz": "70735ea679cebcf3be385f76ec3674cc0c8136b96a3266df2b715d7b85630863",
+    "tmp/hayward_runs/first_arrival_004/compiled/dd": "951fa8bf5c43809bc4386bc41a6d6bdefccec33d7124fec2aacbd4e7bc7f13c8"
+  },
+  "guard_main_sha256": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+  "frozen_main_sha256": "9f1e6db7569aafe01277a9d01b45330b5d26e001659b978dff18020a6bad5bf3",
+  "mathematical_headers": {
+    "core.hpp": {
+      "frozen": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+      "guarded": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+      "byte_identical": true
+    },
+    "csv.hpp": {
+      "frozen": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+      "guarded": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+      "byte_identical": true
+    },
+    "first_arrival.hpp": {
+      "frozen": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+      "guarded": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+      "byte_identical": true
+    },
+    "forward.hpp": {
+      "frozen": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+      "guarded": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+      "byte_identical": true
+    },
+    "full_linearization.hpp": {
+      "frozen": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+      "guarded": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+      "byte_identical": true
+    },
+    "ray_checks.hpp": {
+      "frozen": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+      "guarded": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+      "byte_identical": true
+    },
+    "ray_metric.hpp": {
+      "frozen": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+      "guarded": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+      "byte_identical": true
+    }
+  },
+  "function_equivalence": {
+    "configured_trace": {
+      "byte_identical": true,
+      "frozen_sha256": "7b620800cc835747bccd5fb0542630d053bfcc0c60fcd0fd69aa7dfa2df92064",
+      "guarded_sha256": "7b620800cc835747bccd5fb0542630d053bfcc0c60fcd0fd69aa7dfa2df92064"
+    },
+    "prepare_receiver_fields": {
+      "byte_identical": true,
+      "frozen_sha256": "e30ab3b151b63ffda3336deb521665e895148bcd202bf953ca0170c810da9cc0",
+      "guarded_sha256": "e30ab3b151b63ffda3336deb521665e895148bcd202bf953ca0170c810da9cc0"
+    },
+    "rays": {
+      "byte_identical": true,
+      "frozen_sha256": "002797c98a882365ff177fa3ed470878335586fb2d7af95ad9dba31787acc1a2",
+      "guarded_sha256": "002797c98a882365ff177fa3ed470878335586fb2d7af95ad9dba31787acc1a2"
+    },
+    "read_events": {
+      "byte_identical": true,
+      "frozen_sha256": "36d5f5bb24f92fa6574764ac817c101daa188be5df50406920d42cbebbc51bb0",
+      "guarded_sha256": "36d5f5bb24f92fa6574764ac817c101daa188be5df50406920d42cbebbc51bb0"
+    },
+    "read_grid": {
+      "byte_identical": true,
+      "frozen_sha256": "d21a6b6fb4a6982a03c7715c06655880b7253a5bd644b91743bdae03f14098e6",
+      "guarded_sha256": "d21a6b6fb4a6982a03c7715c06655880b7253a5bd644b91743bdae03f14098e6"
+    },
+    "observations": {
+      "byte_identical": true,
+      "frozen_sha256": "16859596658edc012842cfe4e7c8140293d03c20315e2b7c63b5526f8d22442a",
+      "guarded_sha256": "16859596658edc012842cfe4e7c8140293d03c20315e2b7c63b5526f8d22442a"
+    },
+    "validate_identities": {
+      "byte_identical": true,
+      "frozen_sha256": "0d816f4948ff046510e20cb3772af9c2d4f107bfc6d014539b6000d09fd143ba",
+      "guarded_sha256": "0d816f4948ff046510e20cb3772af9c2d4f107bfc6d014539b6000d09fd143ba"
+    },
+    "linearize": {
+      "byte_identical": true,
+      "frozen_sha256": "acf11ab7ea9025aa93c50a475b538e841871f8fcb4df52f53fc362d8ac3b3047",
+      "guarded_sha256": "acf11ab7ea9025aa93c50a475b538e841871f8fcb4df52f53fc362d8ac3b3047"
+    },
+    "smooth": {
+      "byte_identical": true,
+      "frozen_sha256": "496e4b569f23359adf9532b3c6f083e5f7295aa50a0bd13670fc9283456e94b1",
+      "guarded_sha256": "496e4b569f23359adf9532b3c6f083e5f7295aa50a0bd13670fc9283456e94b1"
+    }
+  },
+  "cmake": {
+    "frozen_sha256": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "guarded_sha256": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7"
+  },
+  "new_uninvoked_header": {
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca"
+  },
+  "guard_fixture": "data/development/inversion_ray_gate_checks/004",
+  "guard_fixture_summary_sha256": "dc7fddb0c8d83f8ac97b7c245ad6a685230afdb25c356f50456592b92d146fad",
+  "remaining_requirements": [
+    "Hayward004 terminal sampled-ray checks and independent accuracy review.",
+    "A fresh guarded inverse directory/build/manifest; never replace the004 binary or invoke its old inversion phase.",
+    "Exact current source whitelist, byte-identical copied004 inputs/config,4threads and native identities.",
+    "Freeze current toolchain/compiler/link/runtime libraries; use original CMake options and preserve fresh binary hash.",
+    "Bounded CMake/O3 success and failure parity using exact004 versus guarded source before adopting historical mathematical evidence.",
+    "Exclusive detached lifecycle with bounded process-group cleanup and identified failure/accepted-state preservation.",
+    "Guard every actual current/trial/final forward call; any failed ray aborts before objective/Jacobian use.",
+    "No automatic first-arrival or3Daccuracy claim from initial1D reference; preserve final-model sample/refinement/source checks."
+  ],
+  "reuse_scope": "The unchanged mathematical functions support reuse of the initial1D accuracy evidence after artifact/toolchain/call-path checks. This is not certification of a different binary, later3Dmodel, or first-arrival branch completeness.",
+  "not_reusable_as_acceptance": [
+    "Historical ready_for_accuracy_review status without independent accuracy review",
+    "Historical old-binary inverse entry point",
+    "Initial-model 1D reference for updated 3D velocity",
+    "O2 guard fixture as proof that all O3 outputs are bitwise identical"
+  ]
+}

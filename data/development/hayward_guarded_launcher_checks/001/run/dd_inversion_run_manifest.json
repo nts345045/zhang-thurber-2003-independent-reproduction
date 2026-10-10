@@ -1,0 +1,104 @@
+{
+  "mode": "dd",
+  "base_commit": "b6a354ec3452c98bd59be5796ade098d0a6646d4",
+  "inherited_preflight": "data/development/hayward_guarded_launcher_checks/001/invented_preflight",
+  "inherited_evidence_sha256": {
+    "data/development/hayward_guarded_launcher_checks/001/invented_preflight/run_manifest.json": "7805889c2e4520a9eb91b3a8e9738470d6b01ca562002b3b68468967bf1ceb81",
+    "data/development/hayward_guarded_launcher_checks/001/invented_preflight/preflight_execution.json": "470fe27a5fb403bfc7a22fc6210f5b43beef906ab4ad9a867d6b00de4d2ed9ec",
+    "data/development/hayward_guarded_launcher_checks/001/invented_preflight/preflight.json": "bd378a40879a2af1543cd56516c967e256f609d318de8800733636ffd43cf911",
+    "data/development/hayward_guarded_launcher_checks/001/invented_reference/summary.json": "d8c7bfb84ae598b26d1a8d8f31afd97c87aeba0b8a552862c2b816e1e9adfc85",
+    "data/development/hayward_guarded_launcher_checks/001/invented_reference/independent_review.json": "9cfe5888fbd0e7b3f46991a33cc38b599c5a5db3a57ed653115e1eeba315a9be",
+    "data/development/hayward_guarded_launcher_checks/001/invented_reference/packaging.json": "0338a3bbd39c3be2a18584cdef2cf34151b513411e9c99503734b616a8a787d9",
+    "data/development/hayward_guarded_launcher_checks/001/invented_reference/frozen_tables.tar.gz": "880e7e6e578624393d685df864c2343f2c30db2351858081a3375f06017e17a5",
+    "data/development/hayward_guarded_launcher_checks/001/invented_accuracy_review.json": "b6b25fe2f4e429e55275e649e389d9403af01848cdc87455bdb5ab295a40c467",
+    "data/development/hayward_guard_adoption_checks/001/summary.json": "6893f3fd746d21a88878990d5af1bfb0a60107d13ae16be42ae0d049cb59f3ab",
+    "data/development/hayward_guarded_launcher_checks/001/invented_preflight/initial_ray_convergence.csv": "1b090a017218313e62545910195925fb5ac604905a71505824f6c7b3429b1236",
+    "data/development/hayward_guarded_launcher_checks/001/invented_preflight/initial_ray_derivatives.csv": "5c51fe1d261df17fdd7a4a6d47dbd74b480b0e98bcb12cffc11501b5f2beeb8e",
+    "data/development/hayward_guarded_launcher_checks/001/invented_preflight/initial_ray_identifiers.csv": "dc8bd2407f0ecfab65852488fc2b0735d2a23eb213612a76c0d5d463f54bd9ae"
+  },
+  "inherited_binary": "tmp/hayward_guard_adoption_checks/001/baseline/dd",
+  "inherited_binary_sha256": "951fa8bf5c43809bc4386bc41a6d6bdefccec33d7124fec2aacbd4e7bc7f13c8",
+  "source_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "run_hayward_guarded_inversion.py": "3ed71ee0e9794781e7d0b6ecce63f5a0506ffbcdf45a4105d8588c078ed20b4e",
+    "run_loma_initial_preflight.py": "f1acc19135c11edda106e3b8c7d8c1879d7d490db729d4ad55263b87022946f1",
+    "run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5",
+    "diagnostics/review_loma_analytic_simulation.py": "786c1ccc99cfa3d3677dde88f11a96f9677693966de874d40c15ca2972a76246",
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "source_archive_sha256": "d790c50d7c7a5e380ac304edc3f53d24170735197aaf84533cdfc8b64fead365",
+  "input_sha256": {
+    "initial_events.csv": "b6b34101476e22e8bd363645d7413dd76013b2519af0b74d7193c5052cbd738b",
+    "initial_grid.csv": "4cab86766c8e22376011976355400864e67fea667964aa7431624d59972101c8",
+    "stations.csv": "9970b0a96271e46701f42b5c7659176fc36a9a48537c08b826872301501ba771",
+    "observations.csv": "3be0d83e14508c08d72252d252facdc3d83896b04b1d247c2e902c3635f395ab",
+    "selection_manifest.json": "d90393f73588ea2bc99ace15252d008333d658245ebe543194bb58c491a4d66a",
+    "authoritative_ids_required": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "event_pairs.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "event_selection.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "initial_geographic_events.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "excluded_picks.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "run.cfg": "4ea19db2b7d47b400d825c05e92c3847faca4ea1637ca525124a29fa310d36c9"
+  },
+  "copied_provenance_sha256": {
+    "preflight_provenance/manifest.json": "7805889c2e4520a9eb91b3a8e9738470d6b01ca562002b3b68468967bf1ceb81",
+    "preflight_provenance/ledger.json": "470fe27a5fb403bfc7a22fc6210f5b43beef906ab4ad9a867d6b00de4d2ed9ec",
+    "preflight_provenance/checks.json": "bd378a40879a2af1543cd56516c967e256f609d318de8800733636ffd43cf911",
+    "preflight_provenance/reference_summary.json": "d8c7bfb84ae598b26d1a8d8f31afd97c87aeba0b8a552862c2b816e1e9adfc85",
+    "preflight_provenance/reference_review.json": "9cfe5888fbd0e7b3f46991a33cc38b599c5a5db3a57ed653115e1eeba315a9be",
+    "preflight_provenance/accuracy_review.json": "b6b25fe2f4e429e55275e649e389d9403af01848cdc87455bdb5ab295a40c467",
+    "preflight_provenance/parity_review.json": "6893f3fd746d21a88878990d5af1bfb0a60107d13ae16be42ae0d049cb59f3ab"
+  },
+  "build_provenance_sha256": {
+    "build_provenance/CMakeCache.txt": "789d1f4d47dddcffd284de4a48b323fee11aa8c2137e864d852d9783ba413813",
+    "build_provenance/CMakeFiles/dd.dir/flags.make": "d56dc65ba833a0cd88231813d73aba646ad70d11d564c6ec0b6b36620c8bd485",
+    "build_provenance/CMakeFiles/dd.dir/link.txt": "7240bb26b9d3bdcb54faa96a09f9e0255f807b70f59ced1a8d904458bfca9c98"
+  },
+  "binary": "tmp/hayward_guarded_launcher_checks/001/run/compiled/dd",
+  "binary_sha256": "c8c1b56a78fc55cbe3fbbf6c7370a799ce0819e9a90db34e6f931a2f895e6203",
+  "compiler": "/usr/bin/c++",
+  "compiler_sha256": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7",
+  "flags": "-std=gnu++17 -O3 -Wall -Wextra -Wpedantic -fopenmp",
+  "runtime_library_sha256": {
+    "/lib64/libgomp.so.1": "855c301ab3ac34c8d0e4f8ddd135993156a4dca42a2778133e9ccba199753d54",
+    "/lib64/libpthread.so.0": "8e757a6a1bfb17649d6f4cfb1ca1f4bac8c06588913ebaa1076ec0f6cd36b481",
+    "/lib64/libstdc++.so.6": "7657b5709008fa4c3c1cc062e15417e9dd1a9f37c82a3615cd79baae7827fdfd",
+    "/lib64/libm.so.6": "07dee3042cbebba9c6378266b15579edc7494acad1b7d1048c5db6d79d908bf4",
+    "/lib64/libgcc_s.so.1": "fc8572b6747ab823b40d75a2b759db2c12b5c256ede7fa0e5da6ae5f4b0e144d",
+    "/lib64/libc.so.6": "28d830c37bfd68d5165b3d2fd28a87dd737180df5255e1290d5015b0f9db0027",
+    "/lib64/libdl.so.2": "e34274941b0b4cff9f07896ecb0a56c108338aac1b3f8d21cc67c247094ad901",
+    "/lib64/ld-linux-x86-64.so.2": "4a06fb242c7d5a06a4fcd54fd0723d680c0a5828ebd4a2ebeb4dd1fd68705a12"
+  },
+  "cmake_sha256": "4fa637a1dafc403b26c89c39277699ec0cd17c88959f8c51a43a6c0600c5c62b",
+  "threads": 4,
+  "address_space_limit_GiB": 128,
+  "expected_counts": {
+    "observations": 4,
+    "rays": 3,
+    "observation_types": {
+      "0": 3,
+      "1": 1,
+      "2": 0
+    }
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "1",
+    "LC_ALL": "C",
+    "CXX": "/usr/bin/c++",
+    "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp"
+  },
+  "limitations": [
+    "Initial1Dreference applies only to the unchanged starting model and geometry.",
+    "Per-evaluation guard preserves existing flags; it is not global first-arrival certification.",
+    "Completion requires later final-model diagnostics and scientific output review."
+  ]
+}
