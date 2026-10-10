@@ -1,0 +1,106 @@
+{
+  "status": "completed_saved_sign_certificate",
+  "source_sha256": "9ce221a29b521ae76b8af608addaca7ba31082daf5c9e0e6c303e0556bff24b5",
+  "corollary_sha256": "c2eb0e46ae90f352bc9e9f72a5e7874d6c02eafe16ff2664ecdb25d4b7adc284",
+  "summary_sha256": "b26a38144856adc2367bc5b763fd2522819339f8cfba7b648f58517ff64a2662",
+  "verified_pins": 20,
+  "results": [
+    {
+      "event": "473",
+      "station": "2",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.BSL..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-08-25T19:45:00",
+      "receiver_metadata_epoch_end": "1990-09-10T19:20:00",
+      "polygon": "original",
+      "polygon_sha256": "6636cf7717010d99a2af9215f7fe4e001d8f476b584e5a20263ae3d35cea781a",
+      "affected_internal_knots": 1875,
+      "exact_zero_components": 1873,
+      "strictly_positive_lower_bounds": 2,
+      "strictly_negative_upper_bounds": 0,
+      "nonzero_components": [
+        {
+          "node": 88,
+          "lower_rational": "2645659134988020242335643228203/340282366920938463463374607431768211456",
+          "upper_rational": "661414783747005060583910807051/85070591730234615865843651857942052864"
+        },
+        {
+          "node": 1962,
+          "lower_rational": "2645659062893021371778692770143/340282366920938463463374607431768211456",
+          "upper_rational": "82676845715406917868084149067/10633823966279326983230456482242756608"
+        }
+      ],
+      "alpha_zero_minimum_norm_certified": true,
+      "certificate_status": "certified_by_nonnegative_components",
+      "original_local_flag": "0",
+      "stationarity_labeled": false
+    },
+    {
+      "event": "473",
+      "station": "2",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.BSL..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-08-25T19:45:00",
+      "receiver_metadata_epoch_end": "1990-09-10T19:20:00",
+      "polygon": "negative_support_midpoint",
+      "polygon_sha256": "a2376c16d4a0c0b4bf3be6d6d1821c958b1e2d9074c6a03e8d67b87904821d27",
+      "affected_internal_knots": 1873,
+      "exact_zero_components": 1871,
+      "strictly_positive_lower_bounds": 2,
+      "strictly_negative_upper_bounds": 0,
+      "nonzero_components": [
+        {
+          "node": 89,
+          "lower_rational": "1972243581054804312681685069731/170141183460469231731687303715884105728",
+          "upper_rational": "3944487162109608625363370139463/340282366920938463463374607431768211456"
+        },
+        {
+          "node": 1961,
+          "lower_rational": "123265220456940074557203956743/10633823966279326983230456482242756608",
+          "upper_rational": "3944487054622082385830526615777/340282366920938463463374607431768211456"
+        }
+      ],
+      "alpha_zero_minimum_norm_certified": true,
+      "certificate_status": "certified_by_nonnegative_components",
+      "original_local_flag": "0",
+      "stationarity_labeled": false
+    },
+    {
+      "event": "473",
+      "station": "2",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.BSL..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-08-25T19:45:00",
+      "receiver_metadata_epoch_end": "1990-09-10T19:20:00",
+      "polygon": "tangent_projection",
+      "polygon_sha256": "b7a5e4446845c68c44158e953848819a9c315fa450fdeb74322093a18632c1d6",
+      "affected_internal_knots": 1875,
+      "exact_zero_components": 1873,
+      "strictly_positive_lower_bounds": 0,
+      "strictly_negative_upper_bounds": 2,
+      "nonzero_components": [
+        {
+          "node": 88,
+          "lower_rational": "-1307457549768793511917169374793/340282366920938463463374607431768211456",
+          "upper_rational": "-163432193721099188989646171849/42535295865117307932921825928971026432"
+        },
+        {
+          "node": 1962,
+          "lower_rational": "-1307458196643564728601455212015/340282366920938463463374607431768211456",
+          "upper_rational": "-653729098321782364300727606007/170141183460469231731687303715884105728"
+        }
+      ],
+      "alpha_zero_minimum_norm_certified": false,
+      "certificate_status": "sign_criterion_inconclusive",
+      "original_local_flag": "0",
+      "stationarity_labeled": false
+    }
+  ],
+  "scope": "Exact saved interval signs and full convex moment sets; no numerical optimizer, action rerun or flag change."
+}

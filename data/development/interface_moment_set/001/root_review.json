@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "reviewer": "root proof, source and saved result review",
+  "reviewed_utc": "2026-10-10T05:03:49.406226+00:00",
+  "summary_sha256": "b26a38144856adc2367bc5b763fd2522819339f8cfba7b648f58517ff64a2662",
+  "sign_certificate_sha256": "aede2347a275ee8eb993b20f7392878d297c6c89a9bc183f6267c019c40181ea",
+  "verified_component_controls": 156,
+  "verified_input_hashes": 9,
+  "verified_artifact_hashes": 11,
+  "findings": [
+    "For c>0, the two quadratic inequalities imply nonnegative endpoint moments and mass at most c; c=0 is treated separately.",
+    "Left/right interval fillings attain moment extrema; convex mixtures construct every feasible pair including overlapping supports.",
+    "The full moment-set support equals the exact affine positive-part integral; no quadrature approximation is used.",
+    "Fixed-projection interval norm is a lower bound for every feasible normal support; endpoint constraints and full native IDs remain intact.",
+    "Nonnegative affected alpha0 components and nonnegative feasible moment increments prove minimum Euclidean support norm for original/full-step polygons.",
+    "The tangent-step sign result is explicitly inconclusive; corrected certification field preserves the original ambiguous record.",
+    "Saved directional secants are bounded directly from interval actions/derivatives and do not establish a Hessian spectrum or causal stiffness diagnosis."
+  ],
+  "limitations": [
+    "No new optimizer, step, source/model derivative, production edit or convergence flag.",
+    "Constant convex jump only; conclusions do not automatically transfer to variable jumps or coupled metric norms."
+  ]
+}
