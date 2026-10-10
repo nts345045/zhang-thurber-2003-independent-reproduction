@@ -1,0 +1,150 @@
+{
+  "commands": [
+    {
+      "child_reaped": true,
+      "command": [
+        "python3",
+        "data/development/hayward_accepted_update_delivery_001/package.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "launch_tool_chunk_id": "40996e",
+      "log_sha256": {
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "aa0b80499c150a1ea71c6664ba3489280df2fc4e80dd01fea7864beb84aeda25"
+      },
+      "return_code": 0,
+      "session_id": 66872,
+      "stage": "package",
+      "stderr": "",
+      "stdout": "{\"status\": \"verified_lossless\", \"members\": 54, \"archive_sha256\": \"db38545d8673b991fccd926c07adb7c781504aa09a29ef965fa1bcd33d2e6de8\", \"archive_bytes\": 9336687, \"packaging_sha256\": \"f7f04be580cfb5cc3bb315721e41b6a23b52d98d3c48d871ab3f6b0e1ccd417e\"}\n",
+      "terminal_tool_chunk_id": "98f99a"
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "python3",
+        "data/development/hayward_accepted_update_delivery_001/restore.py",
+        "--destination",
+        "tmp/hayward_accepted_update_restore_001"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "launch_tool_chunk_id": "c87b24",
+      "log_sha256": {
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "f0c135d2ae9c48d1c55ac85b5bc41283ed72b247ad5d6e8ddedf3c59b421f7cf"
+      },
+      "return_code": 0,
+      "session_id": 24195,
+      "stage": "restore",
+      "stderr": "",
+      "stdout": "{\"archive_sha256\": \"db38545d8673b991fccd926c07adb7c781504aa09a29ef965fa1bcd33d2e6de8\", \"destination\": \"/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_accepted_update_restore_001\", \"integration_calls\": 0, \"members\": 54, \"members_sha256\": \"80e9371bd09d9385e283a163ab4f3b77b0f2fbb64061505e38bd368e948c92f0\", \"overwrite_count\": 0, \"solver_calls\": 0, \"status\": \"verified_lossless_restore\"}\n",
+      "terminal_tool_chunk_id": "5e2c90"
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "tmp/waveform_env/bin/python",
+        "tmp/hayward_accepted_update_restore_001/tmp/hayward_accepted_update_replot_001/plot_accepted_update.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "launch_tool_chunk_id": "9bcf0b",
+      "log_sha256": {
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "9819fd392d1f5fa2f8c77cd1fb468b355b8f526acdd9e8995d349da4042b8a2a"
+      },
+      "return_code": 0,
+      "session_id": 35256,
+      "stage": "replot",
+      "stderr": "",
+      "stdout": "{\"status\": \"completed_saved_update_visualization\", \"summary_sha256\": \"c8574bd4678034aa6523159ff3ba3b2f0de173ea4e73cde4d261a807dd8fde90\", \"png_sha256\": \"027211f876c600801b1047bb5519c279213f0b1f32ba0d1678df042213bab326\", \"pdf_sha256\": \"7c7a5ae2796735032bd6ee7eae7aeb01641ce28e7d843d385273c62a71c1cb74\"}\n",
+      "terminal_tool_chunk_id": "55ffab"
+    }
+  ],
+  "compile_calls": 0,
+  "consumed_input_pins": 39,
+  "delivery_artifact_sha256": {
+    "data/development/hayward_accepted_update_delivery_001/README.md": "8cd5dfa43488a3bd75198563ff482c91adddb960cc30ee6d5261286a5462958c",
+    "data/development/hayward_accepted_update_delivery_001/evidence.tar.gz": "db38545d8673b991fccd926c07adb7c781504aa09a29ef965fa1bcd33d2e6de8",
+    "data/development/hayward_accepted_update_delivery_001/members.json": "80e9371bd09d9385e283a163ab4f3b77b0f2fbb64061505e38bd368e948c92f0",
+    "data/development/hayward_accepted_update_delivery_001/package.py": "2363e6382cf1c57f95f980db3b4e6570145ab57f585115f14f3eac83a3302b73",
+    "data/development/hayward_accepted_update_delivery_001/packaging.json": "f7f04be580cfb5cc3bb315721e41b6a23b52d98d3c48d871ab3f6b0e1ccd417e",
+    "data/development/hayward_accepted_update_delivery_001/restore.py": "6a0e25cddbcf89f637d2d51ec66cdeed41ce66aa8c57a4717956bbde820b5aa8",
+    "figures/hayward_accepted_update_001.pdf": "35b01c027c3a0a011143a754838d653c043548bd0ce233e8316035e4ebef301c",
+    "figures/hayward_accepted_update_001.pdf.identifiers.json": "43a12a5cce1b4200e36d69e405cc5408847967ceff93616d0747457ac5f82708",
+    "figures/hayward_accepted_update_001.png": "027211f876c600801b1047bb5519c279213f0b1f32ba0d1678df042213bab326",
+    "figures/hayward_accepted_update_001.png.identifiers.json": "65bb7f91cc10a2b9f88221f930eec6e867a92cd265e1ddf55695628a2ee92be8"
+  },
+  "field_calls": 0,
+  "figure_copies_byte_identical": true,
+  "integration_calls": 0,
+  "jacobian_calls": 0,
+  "member_count": 54,
+  "observed_utc": "2026-10-10T17:44:35.919704+00:00",
+  "original_and_restored_member_hashes_match": true,
+  "original_evidence_unchanged": true,
+  "original_file_writes": 0,
+  "original_plot_summary_sha256": "ffb29ff66bfb2fe3b51dd0fc0a3ef4a60f9c0806d02325fe996d479653c720b3",
+  "owner": "/root/scientific_audit/ray_math_review",
+  "packaging_sha256": "f7f04be580cfb5cc3bb315721e41b6a23b52d98d3c48d871ab3f6b0e1ccd417e",
+  "pdf_only_difference": {
+    "all_other_bytes_equal": true,
+    "field": "CreationDate",
+    "original": "/CreationDate (D:20261010103434-07'00')",
+    "replot": "/CreationDate (D:20261010104311-07'00')"
+  },
+  "preserved_identifier_counts": {
+    "catalog_rows": 58980,
+    "catalog_side_uses": 103698,
+    "channel_seed_ids": 62,
+    "events": 1092,
+    "native_pairs": 14262,
+    "receiver_epochs": 372
+  },
+  "replot_byte_equality": {
+    "accepted_update_1.pdf": false,
+    "accepted_update_1.pdf.identifiers.json": true,
+    "accepted_update_1.png": true,
+    "accepted_update_1.png.identifiers.json": true,
+    "catalog_row_side_refs.csv.gz": true,
+    "native_identifiers.json.gz": true,
+    "native_pairs.csv.gz": true,
+    "source_basis.cpp.txt": true,
+    "statistics.json": true
+  },
+  "replot_output_sha256": {
+    "accepted_update_1.pdf": "7c7a5ae2796735032bd6ee7eae7aeb01641ce28e7d843d385273c62a71c1cb74",
+    "accepted_update_1.pdf.identifiers.json": "d173b18da1d4d3e1bb0c338b7facdd03cc08990acc646b1a049267a7f159d0c6",
+    "accepted_update_1.png": "027211f876c600801b1047bb5519c279213f0b1f32ba0d1678df042213bab326",
+    "accepted_update_1.png.identifiers.json": "1800900723eb9714921dd9abb19814ae782c946b66dd9e5a854a519c82fe5772",
+    "catalog_row_side_refs.csv.gz": "55574feed9730ae12d67ab20ed877f5bd929bfe479af504af19dd19d13de1000",
+    "native_identifiers.json.gz": "871eeded97c8c057f498079dfbdaa444a2cb07618af7ae37a82b7749b9d791f4",
+    "native_pairs.csv.gz": "79c50821f6e2da9bbd185bc19903adfbb33b4685da47fba2b87add947fb89b60",
+    "source_basis.cpp.txt": "8a7b4db99acc931ba7c565c5116eecbe3ecf36f1c41017d44f5f96cc13691678",
+    "statistics.json": "218a1c2c82b0a95187db422147bfcf2efe40a91fd013813177c04d124692a556"
+  },
+  "replot_pid": 588865,
+  "replot_process_absent": true,
+  "replot_statistics_exactly_equal": true,
+  "replot_summary_sha256": "c8574bd4678034aa6523159ff3ba3b2f0de173ea4e73cde4d261a807dd8fde90",
+  "restore_receipt_sha256": "870fc82078ecc62589f3e09029af8a56ef2d96d85f9f668ab0b49722de428323",
+  "restored_input_pins_match": true,
+  "restored_scratch_root": "tmp/hayward_accepted_update_restore_001",
+  "scope": "Saved-only deterministic archive, fresh restore and replot; no solver/evaluator/integration/compile/push or report edits.",
+  "solver_calls": 0,
+  "source_review": {
+    "reviewer": "/root/scientific_audit",
+    "source_sha256": {
+      "README.md": "8cd5dfa43488a3bd75198563ff482c91adddb960cc30ee6d5261286a5462958c",
+      "package.py": "2363e6382cf1c57f95f980db3b4e6570145ab57f585115f14f3eac83a3302b73",
+      "restore.py": "6a0e25cddbcf89f637d2d51ec66cdeed41ce66aa8c57a4717956bbde820b5aa8"
+    },
+    "status": "passed_source_read"
+  },
+  "status": "passed"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "failed",
+  "observed_utc": "2026-10-10T17:48:06.563940Z",
+  "session_id": 28672,
+  "launch_tool_chunk_id": "ed0dd9",
+  "terminal_tool_chunk_id": "eb796c",
+  "tool_exit_code": 1,
+  "child_reaped": true,
+  "checker_sha256": "2f322564d0fa30ab0308a5598074dd08c572e13e773f2757bacf7684697b73d2",
+  "failure": "Final receipt construction used unresolved relative __file__ in pin(); Path.relative_to(ROOT) raised ValueError after all prior checks. No successful validation receipt was written.",
+  "correction": "Resolve __file__ before passing it to pin().",
+  "scientific_calls": 0
+}
