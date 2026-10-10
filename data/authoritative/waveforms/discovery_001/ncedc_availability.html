@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="keywords" content="web services">
+<meta name="description" content="NCEDC Web-Services">
+<title>NCEDC FDSN Availability Web Service</title>
+<LINK REL="STYLESHEET" HREF="/css/default-simple.css" TYPE="text/css" media="all">
+<!--[if IE]>
+                        <LINK REL="STYLESHEET" HREF="/css/ie7.css" TYPE="text/css">
+                        <script type="text/javascript" src="/js/ie_menu.js"></script>
+                <![endif]-->
+<!--[if lte IE 6]>
+                        <LINK REL="STYLESHEET" HREF="/css/ie6.css" TYPE="text/css">
+                <![endif]-->
+
+<LINK REL="STYLESHEET" HREF="/css/print.css" TYPE="text/css" MEDIA="print">
+<LINK REL="STYLESHEET" HREF="/css/main.css" TYPE="text/css" MEDIA="screen">
+
+<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+
+		$(".form-target").change(function() {
+			  var queryString = "";
+			  var stopBuilding = false;
+			  var first = true;
+			  
+			  
+			  if($("#endpoint").val() && $("#endpoint").val()!=""){
+                                  queryString = queryString+$("#endpoint").val()+"?";
+                          }
+ 
+			  if($("input#net").val() && $("input#net").val()!=""){
+				  queryString = queryString+"net="+$("input#net").val();
+				  first=false;
+			  }
+			  
+			  if($("input#sta").val() && $("input#sta").val()!=""){
+				  if(first){first=false;
+				  	queryString = queryString+"sta="+$("input#sta").val();}
+				  else{
+					  queryString = queryString+"&sta="+$("input#sta").val();
+				  }
+			  }
+			  
+			  
+			  if($("input#cha").val() && $("input#cha").val()!=""){
+				  if(first){first=false;
+				  queryString = queryString+"cha="+$("input#cha").val();}
+				  else{
+					  queryString = queryString+"&cha="+$("input#cha").val();
+				  }
+			  }
+			  
+			  if($("input#loc").val() && $("input#loc").val()!=""){
+				  if(first){first=false;
+				  queryString = queryString+"loc="+$("input#loc").val();}
+				  else{
+					  queryString = queryString+"&loc="+$("input#loc").val();
+				  }
+			  }
+			  
+			  if($("input#start").val() && $("input#start").val()!=""){
+				  if(first){first=false;
+				  queryString = queryString+"start="+$("input#start").val();}
+				  else{
+					  queryString = queryString+"&start="+$("input#start").val();
+				  }
+			  }
+
+                          if($("input#end").val() && $("input#end").val()!=""){
+                                  if(first){first=false;
+                                  queryString = queryString+"end="+$("input#end").val();}
+                                  else{
+                                          queryString = queryString+"&end="+$("input#end").val();
+                                  }
+                          }
+			  
+                          if($("#format").val() && $("#format").val()!=""){
+                                  if(first){first=false;
+                                  queryString = queryString+"format="+$("#format").val();}
+                                  else{
+                                          queryString = queryString+"&format="+$("#format").val();
+                                  }
+                          }
+
+			  if($("input#qual").val() && $("input#qual").val()!=""){
+                                  if(first){first=false;
+                                  queryString = queryString+"qual="+$("input#qual").val();}
+                                  else{
+                                          queryString = queryString+"&qual="+$("input#qual").val();
+                                  }
+                          }
+
+			  if($("input#mergegaps").val() && $("input#mergegaps").val()!=""){
+                                  if(first){first=false;
+                                  queryString = queryString+"mergegaps="+$("input#mergegaps").val();}
+                                  else{
+                                          queryString = queryString+"&mergegaps="+$("input#mergegaps").val();
+                                  }
+                          }
+
+			  var merge_values = [];
+      			  if ($("input#_merge_samplerate").val() && $("input#_merge_samplerate").val()!="" && _merge_samplerate.checked) {
+				  merge_values.push($("input#_merge_samplerate").val());
+      			  }
+
+			  if ($("input#_merge_quality").val() && $("input#_merge_quality").val()!="" && _merge_quality.checked) {
+                                  merge_values.push($("input#_merge_quality").val());
+                          }
+
+			  if ($("input#_merge_overlap").val() && $("input#_merge_overlap").val()!="" && _merge_overlap.checked) {
+                                  merge_values.push($("input#_merge_overlap").val());
+                          }
+
+			  merge_values.join(",");
+
+			  if (merge_values!="") {
+				if(first){first=false;
+                                  queryString = queryString+"merge="+merge_values;}
+                                  else{
+                                          queryString = queryString+"&merge="+merge_values;
+                                  }
+                          }
+
+
+
+			  $('#urlBuilderLink').attr("href", "/fdsnws/availability/1/"+queryString);
+			  $('#urlBuilderLink').text("/fdsnws/availability/1/"+queryString);
+			  
+			});
+
+	
+});
+
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40249211-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<center>
+<A HREF="https://service.ncedc.org"><IMG src="/images/WebServicesHeader.png"></A>
+</center>
+<div id="container">
+
+<div id="unknown">
+<center>
+<div id="LogoLink">
+</div>
+</center>
+</div>
+<div id="nav"><!-- --></div>
+<div id="belowNav"><!-- --></div>
+<div id="main">
+<div id="content">
+<div id="sub-content">
+<h1 class="style1">&nbsp;FDSN Availability Web Service</h1>
+<div id="breadCrumbs">&nbsp; &nbsp; <a href="http://ncedc.org">Home</a> &raquo;
+<a href="https://service.ncedc.org">NCEDC Web Services</a> &raquo; FDSN Availability</div>
+
+<BR>
+<a href="#description-box" class="classname">Description</a>
+<a href="#usagetable" class="classname">Usage</a>
+<a href="#urlbuilder" class="classname">URL Builder</a>
+<a href="https://service.ncedc.org/fdsnws/availability/help/index.html" class="classname">Help</a>
+
+
+
+<div id="description-box">
+The availability web service returns detailed time span information of what timeseries data are available at the NCEDC in JSON or text format.<BR>
+There are two service query methods:<BR>
+<B>/extent</B><BR>
+Produces lists of available time extents (earliest to latest) for selected channels (network, station, location and quality) and time ranges.<BR>
+<B>/query</B><BR>
+Produces lists of contiguous time spans for selected channels (network, station, location, channel and quality) and time ranges.
+<BR><BR>
+<B>Examples:</B>
+<ul class="connect">
+<li><a href="/fdsnws/availability/1/query?net=BK&amp;sta=MERC&amp;cha=HHE&amp;start=2024-01-01T00:00:00&amp;end=2024-02-01T00:00:00&amp;format=text">/fdsnws/availability/1/query?net=BK&amp;sta=MERC&amp;cha=HHE&amp;start=2024-01-01T00:00:00&amp;end=2024-02-01T00:00:00&amp;format=text</a></li>
+<li><a href="/fdsnws/availability/1/extent?net=BK&amp;sta=MERC,MOD&amp;cha=HHE&amp;start=2024-01-01T00:00:00&amp;end=2024-02-01T00:00:00&amp;format=json">/fdsnws/availability/1/extent?net=BK&amp;sta=MERC,MOD&amp;cha=HHE&amp;start=2024-01-01T00:00:00&amp;end=2024-02-01T00:00:00&amp;format=json</a></li>
+</ul>
+<br>
+
+<br>
+<pre>
+<B>POST Usage:</B>
+Alternately, instead of providing parameters-value pairs in the URL, a file containing a selection list can be POSTed to this service.
+For the POST method, all parameters must be submitted as part of the POST body.
+POST requests should be sent as plain text and should not be formatted as applcation/x-www-form-urlencoded or multipart/form-data.
+
+Time and channel constraints parameters should be repeated as many times as necessary following this pattern:<br>
+</pre>
+<table BORDER="1" cellspacing="5" bgcolor="#EEEEEE">
+<TR><TD>NET<TD>STA<TD>LOC<TD>CHA<TD>STARTTIME<TD>ENDTIME
+<TR><TD>NET<TD>STA<TD>LOC<TD>CHA<TD>STARTTIME<TD>ENDTIME
+<TR><TD>NET<TD>STA<TD>LOC<TD>CHA<TD>STARTTIME<TD>ENDTIME
+</TD></TR>
+</table>
+<pre>
+
+All rules for parameters apply equally whether specified using the GET or POST methods with the exception of blank location IDs,
+which must be specified as &quot;--&quot; in the POST body due to spaces being used as the field separator.
+
+Parameter-value pairs should be listed at the top of the file and are entirely optional.
+
+Below is a full list of service parameters and their usage.
+</div>
+
+<table id="usagetable" class="usagetable" border="1" width="100%">
+	<tr>
+		<td colspan="3"><strong>Query:</strong>/fdsnws/availability/1/query|extent?[query-parameters]</td>
+	</tr>
+	<tr>
+		<td valign="top" colspan="3"><b>where query-parameters:</b></td>
+	</tr>
+	<tr>
+		<td>net="network"</td>
+		<td>Optional</td>
+		<td>Specify SEED network code, example net=BK. Wildcards and lists accepted.</td>
+	</tr>
+	<tr>
+		<td>sta="station"</td>
+		<td>Optional</td>
+		<td>Specify SEED station code, example sta=CMB. Wildcards and lists accepted.</td>
+	</tr>
+	<tr>
+		<td>cha="channel"</td>
+		<td>Optional</td>
+		<td>Specify SEED channel code mask, example: cha=BHE. Wildcards and lists accepted.</td>
+	</tr>
+	<tr>
+		<td valign="top">loc="location"</td>
+		<td>Optional</td>
+		<td>Specify SEED location code mask, example: loc=00. Wildcards and lists accepted. Substitute dash characters for white space, example: loc=--.</td>
+	</tr>
+
+	<tr>
+		<td>start=YYYY-MM-DDThh:mm:ss[.sss]</td>
+		<td>Required</td>
+		<td>Specify channels operating after this date.</td>
+	</tr>
+
+	<tr>
+		<td>end=YYYY-MM-DDThh:mm:ss[.sss]</td>
+		<td>Required</td>
+		<td>Specify channels operating before this date.</td>
+	</tr>
+
+	<tr>
+		<td>qual="quality"</td>
+                <td>Optional</td>
+		<td>Select based on SEED quality codes D, M, Q, R. Comma separated lists are accepted.</td>
+	</tr>
+
+	<tr>
+		<td>merge="samplerate,quality,overlap"</td>
+		<td>Optional</td>
+                <td>Time spans from data with different sample rates/quality or that overlap will be merged together.</td>
+	</tr>
+
+	<tr>
+		<td>mergegaps="seconds"</td>
+		<td>Optional</td>
+                <td>Merge time spans that are separated by the specified tolerance in seconds (only applicable to query end point).</td>
+	</tr>
+
+        <tr>
+                <td>format=json/text</td>
+                <td>Optional</td>
+                <td>Specify output format (Default is json).</td>
+        </tr>
+
+        <tr>
+                <td>nodata=204/404</td>
+                <td>Optional</td>
+                <td>Specify which HTML status code is returned when no data is found (Default is 204).</td>
+        </tr>
+
+</table>
+
+
+
+<div id="urlbuilder">
+<form action="" name="Azimuth Distance">
+
+<table width="100%">
+<tr bgcolor="#FFFFCC">
+		<td colspan="2"><STRONG>URL Builder</STRONG></td>
+	</tr>
+<tr>
+<td colspan="2">
+
+<fieldset>
+<legend><span>End Point</span></legend>
+<ol>
+<li><label for=endpoint"></label>
+<select name="endpoint" id="endpoint" class="form-target">
+        <option selected>query</option>
+        <option>extent</option>
+</select></li>
+</ol>
+</fieldset>
+
+<fieldset>
+<legend><span>Channel</span></legend>  
+<ol>
+<li><label for="net">network</label>
+<input type="text" name="net" id="net" value="" class="form-target"></li>
+<li><label for="sta">station</label>
+<input type="text" name="sta" id="sta" value="" class="form-target"></li>
+<li><label for="cha">channel</label>
+<input type="text" name="cha" id="cha" value="" class="form-target"></li>
+<li><label for="loc">location</label>
+<input type="text" name="loc" id="loc" value="" class="form-target"></li>
+<li><label for="qual">quality</label>
+<input type="text" name="qual" id="qual" value="" class="form-target"></li>
+</ol>
+</fieldset>
+
+<fieldset>
+<legend><span>Time</span></legend>  
+<ol>
+<li><label for="start">start</label>
+<input type="text" name="start" id="start" value="" class="form-target"></li>
+
+<li><label for="end">end</label>
+<input type="text" name="end" id="end" value="" class="form-target"></li>
+			
+</ol>
+</fieldset> 
+</td></tr><tr><td colspan="2">
+<fieldset>
+<legend><span>Output</span></legend>
+<ol>
+<li><label for="format">Format</label>
+<select name="format" id="format" class="form-target">
+        <option selected>json</option>
+        <option>text</option>
+</select></li>
+</ol>
+</fieldset>
+
+</td></tr><tr><td>
+<fieldset>
+<legend><span>Merge Options</span></legend>  
+<ol>
+<li>
+<input type="checkbox" name="_merge_samplerate" id="_merge_samplerate" value="samplerate"> Samplerate
+<BR>
+<input type="checkbox" name="_merge_quality" id="_merge_quality" value="quality"> Quality
+<BR>
+<input type="checkbox" name="_merge_overlap" id="_merge_overlap" value="overlap"> Overlap
+<BR><HR><BR>
+<label for="mergegaps">Merge Gaps</label>
+<input type="text" name="mergegaps" id="mergegaps" value="" class="form-target">
+</ol>
+</fieldset>
+</td>
+
+<td valign="top">
+
+
+</td>
+
+</tr>
+<tr bgcolor="#FFFFCC">
+		<td colspan="3"><b>URL:</b> <a href="/fdsnws/availability/1/query?" id="urlBuilderLink">/fdsnws/availability/1/query?</a></td>
+	</tr>
+
+</table>
+
+
+</form>
+
+</div>
+
+<br>
+<div>
+<hr>
+<table width="100%">
+<tr bgcolor="#FFFFCC">
+                <td colspan="2"><STRONG>Query Submission Form</STRONG></td>
+        </tr>
+<tr>
+<td colspan="2">
+
+<form id="form1"  name="form1" method="post" action="/fdsnws/availability/1/query" enctype="text/plain">
+
+        <div style="padding-left: 4em; padding-right: 4em; padding-top: 1em; padding-bottom: 1em;">
+<center>
+    <textarea name="selection" cols="54" rows="5"  id="selection" class="mytextarea">format=text
+merge=overlap
+quality=Q,D
+BK S* 00 LHZ 2015-01-11T01:11:00 2015-01-12T02:22:00
+NC PM? * EHZ 2010-02-27T06:34:00 2010-02-27T08:00:00</textarea>
+</center>
+        </div>
+<div style="padding-left: 4em; padding-right: 4em; padding-top: 0em; padding-bottom: 1em;">
+
+    <input type="submit" name="" value="Submit" id="Submit">
+</div>
+
+</form>
+
+</table>
+
+</div>
+
+<br>
+<div>
+<hr>
+<table width="100%">
+<tr bgcolor="#FFFFCC">
+                <td colspan="2"><STRONG>Extent Submission Form</STRONG></td>
+        </tr>
+<tr>
+<td colspan="2">
+
+<form id="form1"  name="form1" method="post" action="/fdsnws/availability/1/extent" enctype="text/plain">
+
+        <div style="padding-left: 4em; padding-right: 4em; padding-top: 1em; padding-bottom: 1em;">
+<center>
+    <textarea name="selection" cols="54" rows="5"  id="selection" class="mytextarea">format=json
+quality=Q
+BK S* 00 LHZ 2015-01-11T01:11:00 2015-01-12T02:22:00
+NC PM? * EHZ 2010-02-27T06:34:00 2010-02-27T08:00:00</textarea>
+</center>
+        </div>
+<div style="padding-left: 4em; padding-right: 4em; padding-top: 0em; padding-bottom: 1em;">
+
+    <input type="submit" name="" value="Submit" id="Submit">
+</div>
+
+</form>
+
+</table>
+
+</div>
+
+<br>
+<div>
+<hr>
+
+<h3>WADL</h3>
+<p>
+Retrieve the <a href="http://www.w3.org/Submission/wadl/">WADL</a> associated with this service:
+<a href="application.wadl">application.wadl</a></p>
+<hr>
+
+</div>
+
+<br>
+<div id="version"><pre>Version: FDSN Availability Service:1.0
+
+
+</pre></div>
+</div>
+<!-- END of content --></div>
+</div>
+</div>
+</body>
+</html>

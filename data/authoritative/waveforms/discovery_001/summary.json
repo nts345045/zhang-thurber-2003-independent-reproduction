@@ -1,0 +1,92 @@
+{
+  "status": "minimal_availability_discovery_complete",
+  "scope": "Two previously selected picks forming an existing catalog differential observation; provider availability only, no waveform samples or correlation measurements",
+  "selected_absolute_support": 14262,
+  "selected_catalog_differences": 44718,
+  "archived_pick_waveform_resource_uris_present": 0,
+  "archived_selected_picks": 42236,
+  "retained_pre_March1984_absolute_picks": 89,
+  "retained_pre_March1984_events": 8,
+  "existing_differential_observation_index": 15108,
+  "verified_probes": [
+    {
+      "probe_role": "median_pick",
+      "raw_pick_hash_verified": true,
+      "raw_channel_hash_verified": true,
+      "unique_native_epoch": true
+    },
+    {
+      "probe_role": "partner",
+      "raw_pick_hash_verified": true,
+      "raw_channel_hash_verified": true,
+      "unique_native_epoch": true
+    }
+  ],
+  "raw_responses": 10,
+  "all_http_status200": true,
+  "limitations": [
+    "Availability metadata is not verification of waveform sample continuity, clipping, timing or correlation coherence.",
+    "The two picks use different native channel epochs; response equivalence has not been established.",
+    "Provider 1995 availability spans overlap; both are preserved.",
+    "No coverage fraction for all 14262 windows or 44718 selected differences is established.",
+    "Archive documentation begins March 1984; 89 selected picks from 8 earlier events remain preserved, with waveform availability not queried.",
+    "Taper, exact P-window placement, spectral smoothing, phase unwrapping and response preprocessing still need explicit measurement choices."
+  ],
+  "cached_response_metadata": {
+    "sample_rate_hz": 100,
+    "sensor_description": "L-4C VERTICAL,Velocity Sensor,SERCEL",
+    "instrument_sensitivity_counts_per_m_per_s": 99659800.0,
+    "sensitivity_frequency_hz": 10,
+    "full_response_stages_present": false,
+    "response_equivalence_established": false,
+    "source_file": "data/authoritative/stations/raw/ncedc_channels_NC_6d9c3e031439.xml",
+    "source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786"
+  },
+  "input_sha256": {
+    "data/hayward/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/authoritative/hayward/picks_selected.csv": "34e2f64f7a95b4fb6c63bafeffde833d6d02054ab83170a502edcf95f9b74044",
+    "data/authoritative/stations/channel_epochs.csv": "4f96d7480387c5349f1190e4a1e4e0be3a5fccce9821ae2856da8de73e063d7b"
+  },
+  "offline_verification_commands_passed": [
+    "discover.py docs",
+    "discover.py availability",
+    "discover.py partner-availability"
+  ],
+  "output_sha256": {
+    "README.md": "f30aaa3d13d83e61e0292d5d0dd1911d754f354a08bf474ad731e5e9dbab753f",
+    "discover.py": "59ef9c0d3fdad892867a2753fc1f671c95388c391e4da35f40bef6d9150bb669",
+    "earthscope_fedcatalog.html": "309576d8abf61ea4b6e0cd257b41bf3b708f88f62bfaba9a202fbd9892d7f1c3",
+    "earthscope_fedcatalog.html.identifiers.json": "007f89930a88d8a338b8139c5e9373158a952d43586168e9f93c6292ec163157",
+    "earthscope_fedcatalog.html.provenance.json": "36253c917e9fc395705c09bb5de1012b5b9346e20b4f6de894dccea6384c552f",
+    "earthscope_routing.txt": "4d5cf9910822ff7fc503c6b4fa603578e789dee95d258be1dd26729972c2a452",
+    "earthscope_routing.txt.identifiers.json": "44008b2cdc778421c8e8e790db7515de245eeae933af7cc6edcf40ecabcd2661",
+    "earthscope_routing.txt.provenance.json": "75dea5d026556e0a872b03694b8b62f76d220d8bf38ef01b62e816f7ae76cbc2",
+    "identified_probes.csv": "c52d9065caa83fbe0289ae340a3776a54ed55aa20ecd0ea17da69190ad6c4d1b",
+    "ncedc_availability.html": "2431522cf12689b97d895ba0de67346fa67794bfaab3d13aec7b972eca1e0ca6",
+    "ncedc_availability.html.identifiers.json": "eca59946fdc8312ebf27b246dabd757265e729843937aae1f14035d7ec1195ec",
+    "ncedc_availability.html.provenance.json": "5125825bea92fcc2d4a71028e44e01784be89a5bebedc5672854c16cdc684197",
+    "ncedc_availability.json": "c4d3bf52ebfd1622573a268b44c7348dfdf1ec5b4cbb022ca58a1ef6b315b1b6",
+    "ncedc_availability.json.identifiers.json": "0eec3bc776336f8cbc8a2133d78d0dbce4fc4c550341119740255a6a391da90f",
+    "ncedc_availability.json.provenance.json": "ae29e4e2286d5616b40024496dd6172af0b950cf726ee6856f6ff44a041ff4db",
+    "ncedc_dataselect.html": "0d4b49a1c455e44bf35fd459c1cf4bb5472aca2404667f41c42505c8c7831724",
+    "ncedc_dataselect.html.identifiers.json": "df7eb0ab4feca14c84f0cbe0bee1fee6ba05fa429558067494a529f909f4c8bd",
+    "ncedc_dataselect.html.provenance.json": "5efa066db3becb4e2cfb6474942f4e0b6933811ca853441946402b3e2266c2ac",
+    "ncedc_eventdata.html": "b0d0c04ef32adf27fcccd2585abe93e49e337a187eb6c94718d6f35ee74d02ca",
+    "ncedc_eventdata.html.identifiers.json": "c4a33f08acc9e283eb3bd72326f11e0216d3005edfa7e56485d38a06c9bbdd45",
+    "ncedc_eventdata.html.provenance.json": "4914957f3e54fb8107ae6358dff28b495b56e3baf8f8bf420248774005a408c8",
+    "ncedc_historical_archive.html": "d3fe366d32c9e642204a774b21581084829a7bb1cc74cd9093272840f650b68a",
+    "ncedc_historical_archive.html.identifiers.json": "f88c55fe65946bc9841e2c3bdeb83da1696047dd2b089bc4a1dbadc37c51fd1b",
+    "ncedc_historical_archive.html.provenance.json": "c1d1cd9288ec174f7ee253458f6f8bb73a0faff51539ab4188f40977394600d6",
+    "partner_earthscope_routing.txt": "6a8bdbd09027d57d5966fe6011e10cb44a5b5f162cd143728ee16a83804c8520",
+    "partner_earthscope_routing.txt.identifiers.json": "2ea754bf6452f8348e0e3c070c2fe190df23733440a799042fa24c20a03172c0",
+    "partner_earthscope_routing.txt.provenance.json": "2d600f48017e44902ca7a2f0fca73c6c7b9e630009d2a487e3bdc2bffffbf529",
+    "partner_ncedc_availability.json": "8f1a6c6d0b282ad1c0f968a4aa0e972ec1dfcd847e4447836deb4a9c2bc566f5",
+    "partner_ncedc_availability.json.identifiers.json": "bc9b6e85b89a4dffa2fb5d4ea2695e02958627aea825fdc1a4f5f45c64f381d1",
+    "partner_ncedc_availability.json.provenance.json": "49b6a8b910eff387992bec18cd57c07ea0522a7ca68ef1eb2f838e54561de7f7",
+    "partner_probe_identity.json": "716296f1e9b0847f7b2e181a6bab6444a77647cb6173f3c3c9874b702e5a2548",
+    "probe_identity.json": "524fe5d5efa97ad3ad926891e9d7e3461f2a0e0575273a61de7fd08e899dfd41",
+    "usgs_comcat.html": "73a236c6c3afbdb3c951f792b7ff9042e608756541911e9ec8210cf6c84fa14e",
+    "usgs_comcat.html.identifiers.json": "72fd84f8ca7a211e7057df66f5374e7977ea33c1c671b5a57e90add7155d88bb",
+    "usgs_comcat.html.provenance.json": "adda43ede28cd50a0a6a509517ad5ea2278097754f89551cff598232dc4ea70b"
+  }
+}
