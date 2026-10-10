@@ -1,0 +1,35 @@
+{
+  "changed_runner_scope": "Only ROOT depth, selected numerical-source directory, and new helper dependency/copy selection. All models, references, tolerances, initialization transform, execution and assessments are unchanged.",
+  "command": [
+    "python3",
+    "data/development/loma_boundary_endpoint_mesh_d_controls_001/run_endpoint_mesh_d.py",
+    "--output",
+    "data/development/loma_boundary_endpoint_mesh_d_controls_001/results",
+    "--build",
+    "tmp/loma_boundary_endpoint_mesh_d_controls_001"
+  ],
+  "input_sha256": {
+    "data/development/loma_boundary_endpoint_mesh_controls_001/source/diagnostics/run_endpoint_mesh.py": "6cd7ba09fcd1edb8755af256efe5f7fa0a7e50f91fdfa0da37d4b3ac3ed933d0",
+    "data/development/loma_boundary_endpoint_mesh_controls_001/summary.json": "534fa492a55bb167f6b751efdb46642c235369a806d8e308d490cca6afac622c",
+    "data/development/loma_boundary_endpoint_next_step/plan.json": "c932679eecd4d70bb33926ae08a2d3edd1d092ad713a748818f3e1103f2a3fa9",
+    "data/development/usable_curvature_integration_checks_001/summary.json": "10781ff9cb4ed52f845a2a0a7f6bf3ea14cd6d4475c43e75b60355b042176e41",
+    "data/development/usable_curvature_integration_prepared_001/after/src/core.hpp": "c9500361c5ca3ff55b2fbcec0aedfb3639d3f3b68a53431267e6849c3a933044",
+    "data/development/usable_curvature_integration_prepared_001/after/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "data/development/usable_curvature_integration_prepared_001/after/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "data/development/usable_curvature_integration_prepared_001/after/src/usable_ray_curvature.hpp": "5236f9df135dc2449662db70bb68aded36cae3f5ce23e7471caa02d45ce5daac",
+    "data/development/usable_curvature_integration_prepared_001/prepared.json": "9da308676201e909a7be446570f4529067b00f01d814f755905e53ecce6a48c1",
+    "data/development/usable_curvature_integration_review_001/review.json": "86402a18701380170a5c9c2e2cdf52e154fa0e48cce723de8bc439cbc656d587",
+    "diagnostics/check_endpoint_mesh.cpp": "4c836a3db11a61552ab56b324600543ef8dc84460324c7596e92bbdfa7789e62"
+  },
+  "no_native_geometry_execution": true,
+  "numerical_source": "data/development/usable_curvature_integration_prepared_001/after/src",
+  "optimizer_and_derivative_suffix_sha256": "2c8bbc496e8241148efa95e7348ed6fa0554baef0cdb93c1ff7faa9ca06e2b8b",
+  "output_sha256": {
+    "original_run_endpoint_mesh.py": "6cd7ba09fcd1edb8755af256efe5f7fa0a7e50f91fdfa0da37d4b3ac3ed933d0",
+    "preview_explicit_mesh_trace.hpp": "26c63f565458a7d4a6cabf4cbe47df200afbad2386dcea8e814654985f9fbf67",
+    "preview_initialization.diff": "afb9151c0e6849edb218b47175ad5e31904c1677545ecb63102712a43af00fea",
+    "run_endpoint_mesh_d.py": "4927c99c475d6afc1b95127c661325d6f8d87a61d168690df875d19bd50a5c91",
+    "runner.diff": "dc99dbaf1888555d6923af2826c9bbe8f9b318cadd25923caa072eb6303cabcc"
+  },
+  "status": "prepared_invented_only"
+}

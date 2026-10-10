@@ -1,0 +1,9 @@
+# Prepared production-source curvature candidate
+
+This package is prepared only. It has not modified, compiled or executed the maintained production source or any live binary. `candidate.patch` changes `src/core.hpp` and adds `src/usable_ray_curvature.hpp`; `before/` and `after/` retain the complete production source roster and CMake file. All other source bytes, configurations and data are unchanged.
+
+The numerical core is exactly the reviewed native D core, except that its helper include moves from the diagnostic directory into `src/`. The helper differs only in its opening descriptive comment. D combines the long-double outer path-action accumulator with positive finite usable-curvature/direction checks. Segment integration, gradients, bounds, resampling, cone fallback, exception semantics, Armijo acceptance and stopping remain unchanged.
+
+The prerequisite evidence is `usable_ray_curvature_controls_001` (183 invented checks per variant and four exact C/D trace comparisons), `loma_usable_curvature_native_001` (all five native C tables byte-identical), and `loma_usable_curvature_review_001` (independent saved-output/native/hash/stopping readback). `prepared.json` binds their source/input ancestry and this patch, including the native context. These existing results exercise the same numerical core; they do not establish arbitrary-model convergence or first-arrival completeness.
+
+`validation_plan.md` identifies bounded checks for a future separately frozen integration. No test or native replay was launched by this package. Current full preflights and the guarded Hayward inversion retain their original frozen kernels. Their outcomes must remain attributed to those kernels; this optimizer change prevents assuming that every old ray outcome will be identical. Boundary endpoint representation and nonsmooth-interface stationarity remain separate limitations.

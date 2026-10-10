@@ -1,0 +1,54 @@
+{
+  "started_utc": "2026-10-10T08:55:10.095049Z",
+  "previous_report_sha256": "9f02de9aeef61e55ee77c43c83c1fcc627aa181b705f03cd4caf2ba210fe14be",
+  "tex_source_sha256": {
+    "report/hayward_full_results_section.tex": "1ef7149792af3ba4ce5a8f9492bdaa5ced41d4117de654a2316306a7dcfc7e28",
+    "report/hayward_results.tex": "4722d2a9473bcc1be0b3671f7efe1b25b408d42d36e8938ffa6bbc6522420614",
+    "report/hayward_velocity_checkpoint.tex": "d2c1b70f84acf00729ff7aca23b8ad14ad98b06d49fe9fc4555152c2a126ec59",
+    "report/joint_findings.tex": "4e94b1553e76b20051e6195b1d0b71d8097ce7d892fd6b2879cd233f72e43ee6",
+    "report/metrics.tex": "1adf4e381d0a645cec73b919eb176e23ae55f33d4f253717630d5dd2b480077a",
+    "report/panel_details.tex": "30a7870babfa8731adee566fb3c8e7dca84c4434a4b11074f1bbd71dff8013af",
+    "report/panel_table.tex": "de7947141f6a64c80a686b2a04c44972ac171eee2e46b5b50ff31fbcb9bac316",
+    "report/ray_failure_checkpoint.tex": "c4e64d2b323c353b4bcb92f24adf0d0e2c5e024d187299237a464f0035cf112d",
+    "report/ray_findings.tex": "87e02479f0fbd6e43ae564965e2ea79ee7bdad4670cdd62bbca25115f22f4fad",
+    "report/recovery_checkpoint.tex": "8fc886173918926c6de2fe70e230dbd23f1dc20bca116b9c11cce8365fedbc48",
+    "report/report.tex": "289034e2eae49f6230f2d82c6e0005ab989af6e6443e1293382d6bcafd7f6efe",
+    "report/run_findings.tex": "c301712aeba4366c6b33a61d5939d2f3567a7dce0734aff2c62a2e936e37c28f",
+    "report/sensitivity_table.tex": "89e36d73e854c23e8baeb7436e33b7474c4fa82b318f6f39f26b3a26167aacfb",
+    "report/spatial_table.tex": "40139003a2d2ee5eae0a1ddd42af178bddc086642c8cd5687e617c399e873d9d",
+    "report/validation_table.tex": "2df4790edf0dfa6bf59fa64f9f42a943a75d77df7d0b6ffe4f061caaab08d343",
+    "report/velocity_metrics.tex": "9da0ab0e781f625c2abe70910c6ae0884a44adb5e8bf84ddbacec4bed8e45a62"
+  },
+  "commands": [
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "report.tex"
+      ],
+      "working_directory": "report",
+      "return_code": 0
+    },
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "report.tex"
+      ],
+      "working_directory": "report",
+      "return_code": 0
+    }
+  ],
+  "finished_utc": "2026-10-10T08:55:13.972658Z",
+  "report_sha256": "79291d65bc666b48d17424a99df9ed1c130f49af6045402eff2c26c131cad8a3",
+  "report_bytes": 2392743,
+  "output_sha256": {
+    "pass1_stdout.txt": "2e54d144fcaf0169277da95f7c31317f16a0ef30ecf34bb13f35a8fedc003d3c",
+    "pass2_stdout.txt": "2e54d144fcaf0169277da95f7c31317f16a0ef30ecf34bb13f35a8fedc003d3c",
+    "report.log": "e26c2ea544453c3da81b55862c870c0475307bb3eb9ccc69f79e198ab470d449",
+    "report.txt": "3e1718438891c606d29f24b77bc2073f128b6abd79a3e78fca69dc6aa27db181",
+    "pdfinfo.txt": "3be1b9412c89add5feaf624569ed8d95149957910581c8a74daa210833bfd304"
+  }
+}

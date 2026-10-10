@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "reviewed_utc": "2026-10-10T08:45:24.734893Z",
+  "summary_sha256": "0fac307f7973e08a26fe7e8e792468f189f763e29935ac19f8358511f3f68dd6",
+  "source_sha256": "a05f52960c4e09d0a11cad33ee7bdada550dbc20c222e28d4c473520434776bd",
+  "execution_receipt_sha256": "cbb2799a80694a27558620e6eae11284bca5bc595dd02ce0a8705d31d76b9ef8",
+  "correction_sha256": "79e5d66c07de5f980e04dfb4beacdf4ac4ded0a3781d4f33e7ad47095c5db8ee",
+  "README_sha256": "4cc63b827735ef2172addd1c5b0068d253ff1541a8317671bf942bddfd1b3457",
+  "method": "Independent source and saved-table readback; 30 pins, original 24 finite secants, 16 exact rational combinations, affine coefficient identity and five polygon partials reconstructed. No ODE, root, action or ray evaluator imported or rerun.",
+  "counts": {
+    "input_pins": 30,
+    "ladders": 8,
+    "raw_failures_retained": 24,
+    "extrapolates": 16,
+    "polygon_zero_update_cases": 5
+  },
+  "maximum_extrapolated_errors_s_per_km": [
+    3.4633558243513107e-09,
+    4.978695263465246e-08
+  ],
+  "findings": [
+    "The affine normal momentum integrates to the stated positive h^(3/2) inward action increment, giving a negative sqrt(h) outward secant and zero limiting normal momentum.",
+    "The mixed-field interpretation is explicitly conditional on smoothness, positive reaction, stable regular matching and a remaining guide; saved numerical diagnostics do not prove those assumptions.",
+    "Ratio-16 Richardson cancellation is exact only as a rational combination of saved binary64 secants, not as a continuous-action error enclosure. The finer pair worsens.",
+    "All 24 original comparisons remain failed; the 16 extrapolates are separate consistency calculations.",
+    "The fixed straight-element derivative -L*g/(2*v_b^2) is valid for that parameterized polygon. Its constant limiting offset is different from the sqrt(h) continuous-guide truncation term.",
+    "All five old epsilon-zero optimized polygon cases take zero updates; changing curvature retention cannot alter those initial stopping decisions.",
+    "002 changes only replay output scope and its documented path; all scientific fields exactly match preserved 001."
+  ],
+  "limitations": [
+    "No global branch certificate, native ray acceptance or uniform error bound is established.",
+    "This saved-value discriminator supports the truncation explanation but does not repair the polygon endpoint action or derivative.",
+    "Old endpoint mesh reruns require a separate stated purpose and do not themselves supply a consistent local curved action."
+  ]
+}

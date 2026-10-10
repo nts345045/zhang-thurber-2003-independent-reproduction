@@ -1,0 +1,208 @@
+--- before/src/core.hpp
++++ after/src/core.hpp
+@@ -216,7 +216,7 @@
+ double path_eval(const Grid &g, const std::vector<P> &p, Vec *grad = nullptr) {
+   if (grad)
+     grad->assign(3 * (p.size() - 2), 0);
+-  double T = 0;
++  long double T = 0;
+   for (size_t i = 1; i < p.size(); i++) {
+     P a{}, b{};
+     T += segment(g, p[i - 1], p[i], grad ? &a : nullptr, grad ? &b : nullptr);
+@@ -318,6 +318,8 @@
+     throw std::runtime_error("Cone metric lacks a strict descent direction for a nonstationary ray");
+   return direction;
+ }
++
++#include "usable_ray_curvature.hpp"
+ 
+ // Independently implemented limited-memory BFGS minimization of Fermat travel
+ // time. Retain feasible descent directions; replace clipped or non-descent
+@@ -370,28 +372,12 @@
+       converged = true;
+       break;
+     }
+-    Vec q = grad, alpha(S.size());
+-    for (int j = int(S.size()) - 1; j >= 0; j--) {
+-      alpha[j] = rho[j] * dot(S[j], q);
+-      for (size_t k = 0; k < q.size(); k++)
+-        q[k] -= alpha[j] * Y[j][k];
+-    }
+-    Vec weights = ray_metric_weights(g, p);
+-    double scale = S.empty() ? 1 : dot(S.back(), Y.back()) /
+-                                      dot(Y.back(), inverse_ray_metric(weights, Y.back()));
+-    q = inverse_ray_metric(weights, std::move(q));
+-    for (auto &v : q)
+-      v *= scale;
+-    for (size_t j = 0; j < S.size(); j++) {
+-      double beta = rho[j] * dot(Y[j], q);
+-      for (size_t k = 0; k < q.size(); k++)
+-        q[k] += S[j][k] * (alpha[j] - beta);
+-    }
+-    for (auto &v : q)
+-      v = -v;
++    Vec q;
++    const bool usable_memory = usable_lbfgs_ray_direction(
++        [&] { return ray_metric_weights(g, p); }, grad, S, Y, rho, q);
+     Vec feasible_direction = q;
+     project_ray_direction(g, p, feasible_direction);
+-    if (feasible_direction != q || !(dot(grad, q) < 0)) {
++    if (!usable_memory || feasible_direction != q || !(dot(grad, q) < 0)) {
+       q = cone_ray_direction(g, p, grad);
+       S.clear();
+       Y.clear();
+@@ -453,7 +439,8 @@
+         y[k] = ng[k] - grad[k];
+       }
+       double sy = dot(s, y);
+-      if (sy > 1e-14) {
++      double reciprocal = 0;
++      if (usable_ray_curvature(s, y, sy, reciprocal)) {
+         if (S.size() == 8) {
+           S.erase(S.begin());
+           Y.erase(Y.begin());
+@@ -461,7 +448,7 @@
+         }
+         S.push_back(s);
+         Y.push_back(y);
+-        rho.push_back(1 / sy);
++        rho.push_back(reciprocal);
+       }
+     }
+     p = std::move(trial);
+--- before/src/usable_ray_curvature.hpp
++++ after/src/usable_ray_curvature.hpp
+@@ -0,0 +1,111 @@
++#pragma once
++// Include after Vec, dot and inverse_ray_metric; checked L-BFGS arithmetic.
++// Keep the original arithmetic on usable states; no magnitude cutoff, floor,
++// clipping, new dot product or change to the Fermat action/stopping conditions.
++bool finite_curvature_vector(const Vec &values) {
++  return std::all_of(values.begin(), values.end(),
++                     [](double value) { return std::isfinite(value); });
++}
++
++// sy is the caller's unchanged computed dot(s,y), not an exact-sign certificate.
++bool usable_ray_curvature(const Vec &s, const Vec &y, double sy,
++                          double &reciprocal) {
++  if (s.empty() || s.size() != y.size() || !finite_curvature_vector(s) ||
++      !finite_curvature_vector(y) || !(sy > 0) || !std::isfinite(sy))
++    return false;
++  reciprocal = 1 / sy;
++  return reciprocal > 0 && std::isfinite(reciprocal);
++}
++
++// Validate exactly the coefficient/pivot recurrence used by the existing
++// inverse. Positive mathematical weights alone do not ensure representable
++// sums/pivots in binary64. This check does not change the inverse arithmetic.
++bool usable_curvature_metric(const Vec &weights) {
++  if (weights.size() < 2)
++    return false;
++  for (double value : weights)
++    if (!(value > 0) || !std::isfinite(value))
++      return false;
++  Vec diagonal(weights.size() - 1);
++  for (size_t i = 0; i < diagonal.size(); i++) {
++    diagonal[i] = weights[i] + weights[i + 1];
++    if (!std::isfinite(diagonal[i]))
++      return false;
++    if (i) {
++      double ratio = weights[i] / diagonal[i - 1];
++      if (!std::isfinite(ratio))
++        return false;
++      diagonal[i] -= weights[i] * ratio;
++    }
++    if (!(diagonal[i] > 0) || !std::isfinite(diagonal[i]))
++      return false;
++  }
++  return true;
++}
++
++// A false result means that the caller must use its existing cone-metric
++// fallback and clear memory. It does not mean local ray convergence.
++// Construct weights at their original point after the first loop. The callback
++// also lets invented controls supply a declared positive-definite metric.
++template <class MetricWeights>
++bool usable_lbfgs_ray_direction(MetricWeights metric_weights, const Vec &gradient,
++                               const std::vector<Vec> &S,
++                               const std::vector<Vec> &Y, const Vec &rho,
++                               Vec &q) {
++  q = gradient;
++  if (!finite_curvature_vector(gradient) ||
++      S.size() != Y.size() || S.size() != rho.size())
++    return false;
++  for (size_t j = 0; j < S.size(); j++)
++    if (S[j].size() != q.size() || Y[j].size() != q.size() ||
++        !finite_curvature_vector(S[j]) || !finite_curvature_vector(Y[j]) ||
++        !(rho[j] > 0) || !std::isfinite(rho[j]))
++      return false;
++  Vec alpha(S.size());
++  for (int j = int(S.size()) - 1; j >= 0; j--) {
++    alpha[j] = rho[j] * dot(S[j], q);
++    if (!std::isfinite(alpha[j]))
++      return false;
++    for (size_t k = 0; k < q.size(); k++)
++      q[k] -= alpha[j] * Y[j][k];
++    if (!finite_curvature_vector(q))
++      return false;
++  }
++  Vec weights = metric_weights();
++  if (!usable_curvature_metric(weights) ||
++      gradient.size() != 3 * (weights.size() - 1))
++    return false;
++  double scale = 1;
++  if (!S.empty()) {
++    const double numerator = dot(S.back(), Y.back());
++    const Vec inverse_y = inverse_ray_metric(weights, Y.back());
++    if (!(numerator > 0) || !std::isfinite(numerator) ||
++        !finite_curvature_vector(inverse_y))
++      return false;
++    const double denominator = dot(Y.back(), inverse_y);
++    if (!(denominator > 0) || !std::isfinite(denominator))
++      return false;
++    scale = numerator / denominator;
++    if (!(scale > 0) || !std::isfinite(scale))
++      return false;
++  }
++  q = inverse_ray_metric(weights, std::move(q));
++  if (!finite_curvature_vector(q))
++    return false;
++  for (auto &v : q)
++    v *= scale;
++  if (!finite_curvature_vector(q))
++    return false;
++  for (size_t j = 0; j < S.size(); j++) {
++    double beta = rho[j] * dot(Y[j], q);
++    if (!std::isfinite(beta) || !std::isfinite(alpha[j] - beta))
++      return false;
++    for (size_t k = 0; k < q.size(); k++)
++      q[k] += S[j][k] * (alpha[j] - beta);
++    if (!finite_curvature_vector(q))
++      return false;
++  }
++  for (auto &v : q)
++    v = -v;
++  return std::isfinite(dot(gradient, q));
++}
+--- before/diagnostics/run_fmm_initialization_audit.py
++++ after/diagnostics/run_fmm_initialization_audit.py
+@@ -34,7 +34,7 @@
+ os.environ["TMPDIR"] = str(ROOT / "tmp")
+ snapshot = BUILD / "source"
+ relative_sources = ["diagnostics/check_fmm_initialization.cpp", "diagnostics/first_arrival_fmm.hpp",
+-                    "src/first_arrival.hpp", "src/core.hpp", "src/ray_metric.hpp", "src/forward.hpp",
++                    "src/first_arrival.hpp", "src/core.hpp", "src/ray_metric.hpp", "src/usable_ray_curvature.hpp", "src/forward.hpp",
+                     "diagnostics/production_entry_checks.hpp", "diagnostics/run_fmm_initialization_audit.py",
+                     "diagnostics/seeded_bending.py"]
+ for relative in relative_sources:
+--- before/diagnostics/run_fmm_rotated_affine.py
++++ after/diagnostics/run_fmm_rotated_affine.py
+@@ -32,7 +32,7 @@
+ (ROOT / out).mkdir(parents=True)
+ snapshot = build / 'source'
+ sources = ['diagnostics/check_fmm_rotated_affine.cpp', 'diagnostics/first_arrival_fmm.hpp',
+-           'src/first_arrival.hpp', 'src/core.hpp', 'src/ray_metric.hpp', 'src/forward.hpp',
++           'src/first_arrival.hpp', 'src/core.hpp', 'src/ray_metric.hpp', 'src/usable_ray_curvature.hpp', 'src/forward.hpp',
+            'diagnostics/production_entry_checks.hpp', 'diagnostics/seeded_bending.py', 'diagnostics/run_fmm_rotated_affine.py']
+ for relative in sources:
+     destination = ROOT / snapshot / relative

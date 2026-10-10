@@ -238,13 +238,24 @@ The LOM matrix census has completed. A full comparison with its continuous
 initial-model references finds all 37,648 time errors below 25 microseconds,
 with maximum $2.8984$ microseconds. However, 48 source-vector errors exceed
 $3\times10^{-6}$ s/km, and one additional ray retains a false local flag.
-Only 37,599 rays pass all requirements. All derivative failures involve seven
+Only 37,599 rays pass all full-ray comparison criteria. All derivative failures involve seven
 sources at the 16 km bottom face and finite-bottom reference branches; their
 errors lie in the vertical component and reach $1.5851\times10^{-5}$ s/km.
 The complete identified comparison and its independent review are in
 \path{data/development/loma_lom_initial_accuracy_001/}.
-The LOM sampled checks and LON initial-forward calculation remain active at
-this checkpoint. No inverse calculation is accepted.
+The LON matrix census has also completed using its earlier frozen optimizer.
+All 37,648 local flags and time comparisons pass; the largest time error is
+4.877 microseconds. However, 50 source-vector errors exceed
+$3\times10^{-6}$ s/km, with maximum $9.8634\times10^{-6}$ s/km.
+Thirteen failures involve four bottom-boundary sources, whereas 37 involve
+12 interior sources on turning branches. All 50 have negative vertical error.
+The largest interior error is $4.8071\times10^{-6}$ s/km. Thus the LON
+failure set cannot be explained solely by the LOM bottom-boundary mechanism.
+Only 37,598 LON rays meet all full-ray comparison criteria. The complete identified comparison
+and independent readback are in
+\path{data/development/loma_lon_initial_accuracy_001/} and
+\path{data/development/loma_lon_initial_accuracy_review_001/}.
+Both sampled preflights remain active. No inverse calculation is accepted.
 
 Observation-only replays preserve both initializers and their original
 numerical results for the two distinct failures. Pair 3426, event
@@ -467,7 +478,27 @@ complete histories, paths, source derivatives, and cone diagnostics. This D
 result is saved in \path{data/development/loma_usable_curvature_native_001/}.
 Computed positive curvature is still not an exact-sign or information
 certificate; cancellation can reverse its sign. This diagnostic result does
-not validate a full ray cohort or change the production optimizer.
+not validate a full ray cohort.
+
+The same numerical correction subsequently passed a bounded integration test:
+48 core checks, the inversion-guard and external-input components, all 37
+declared finest-grid layered checks, 72 oblique checks, and 64 exact
+production-entry comparisons. At field/path spacing 0.0625/0.0625 km, the
+largest layered time and source-vector errors are 1.798 microseconds and
+$4.43\times10^{-7}$ s/km. A retained coarser 0.125/0.125 km comparison at
+14.68 km offset has source-vector error $3.24035\times10^{-6}$ s/km,
+exceeding the unchanged $3\times10^{-6}$ target. The declared accuracy gates
+apply to the finest grid, so their success does not remove this coarse failure.
+
+The \texttt{first-arrival-integration} branch now adopts the exact tested
+outer accumulator and usable-curvature helper. Segment actions, derivatives,
+line search, fallback, stopping rules and configurations remain unchanged.
+The running Hayward inversion and LOM/LON preflights retain their earlier
+frozen binaries. Their eventual results cannot validate the new optimizer.
+The bounded tests and adoption record are in
+\path{data/development/usable_curvature_integration_checks_001/} and
+\path{data/development/usable_curvature_adoption_001/}.
+No new full-cohort validation or corrected inverse result follows from adoption.
 
 \begin{figure}[ht]
 \centering
@@ -512,6 +543,16 @@ secant. These preserved controls in
 \path{data/development/loma_boundary_endpoint_mesh_controls_001/} therefore
 do not support refinement with unchanged stopping as a sufficient correction.
 The proposed native extension is not executed.
+
+Repeating the same invented mesh roster with the reviewed D optimizer leaves
+all 240 non-time evaluation records and all 5,058 final path rows unchanged.
+All 836 analytical checks and 18 parity comparisons pass, while the two false
+local flags and 32 source-accuracy failures remain. Only 85 reported action
+totals change, by at most $1.12\times10^{-16}$ s, from the altered outer sum.
+Intermediate histories were not captured, so this is a final-output comparison.
+The repeated evidence in
+\path{data/development/loma_boundary_endpoint_mesh_d_controls_001/}
+does not support another native mesh ladder as a remedy for this mechanism.
 
 A separate action-level comparison replaces the first straight element
 $S(a,x_1)$ by the constrained curved connector $G(a,x_1)$ in the same affine
@@ -590,6 +631,31 @@ it is preserved in
 \path{data/development/loma_endpoint_shooting_baselines_001/}.
 They provide a local action-consistent candidate, with no native-ray,
 full-path optimization, or production correction claimed.
+
+The boundary limit differs from an ordinary centered finite difference.
+For an affine layer with bottom speed $v_b$ at $z=B$ and positive depth gradient
+$g$, a branch retaining a positive guide has inward-displacement derivative
+$[(v_b-g h)^{-2}-v_b^{-2}]^{1/2}$ after an inward displacement $h$.
+Integrating this momentum gives
+\[
+ T(B-h)-T(B)=c h^{3/2}+O(h^{5/2}),\qquad
+ c=\frac{2\sqrt{2g}}{3v_b^{3/2}}.
+\]
+Thus $D(h)=[T(B)-T(B-h)]/h$ approaches its zero limiting normal derivative
+with a leading square-root term. For a smooth nonuniform field the analogous
+expansion is conditional on a regular, stable branch, positive normal reaction,
+and a remaining positive guide; it is not an exact mixed-field oracle.
+
+A saved-output calculation cancels that leading term using
+$E(h)=[4D(h/16)-D(h)]/3$. Across eight ladders, the largest discrepancy from
+limiting momentum is $3.47\times10^{-9}$ s/km for the first step pair and
+$4.98\times10^{-8}$ s/km for the finer pair. The finer result worsens,
+consistent with a numerical floor. These 16 extrapolates support the truncation
+interpretation but supply no certified error bound, global branch test, or
+replacement for the 24 failed raw comparisons. A fixed straight element's
+nonzero linear term, $L s'_z/2$, survives this cancellation. The derivation,
+complete saved ladders and unchanged raw failures are retained in
+\path{data/development/loma_endpoint_shooting_asymptotics_002/}.
 
 \begin{figure}[ht]
 \centering
@@ -717,6 +783,15 @@ The checked \texttt{dt.cc} export in \path{data/development/native_dt_cc_001/}
 retains a complete 44,718-row identity sidecar, event integer map, and receiver
 epochs. It preserves binary64 values, rejects ambiguous mappings, and leaves
 the running catalog-only calculation unchanged.
+
+A bounded test of NCEDC's documented event-gather route requested the original
+five-second windows for catalog pair 21796, events \texttt{NC12434} and
+\texttt{NC12437} at \texttt{NC.CMC..EHZ}. Both exact requests returned
+HTTP 204 with empty bodies. The requests, responses, event/pick/channel
+identities and authoritative epoch are retained in
+\path{data/authoritative/waveforms/eventdata_pilot_001/}.
+This adds no samples or differential times and does not establish historical
+absence. No alias, calibration correction, or catalog selection change follows.
 
 A separate prepared dataset in \path{data/hayward_catalog_cc_001/} preserves
 all 58,980 original catalog rows and appends the 98 waveform measurements,

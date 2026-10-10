@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "reviewed_utc": "2026-10-10T08:50:17.389315Z",
+  "summary_sha256": "f0f933c5b31c3746d945ad86ceed066b6bceafcfcae3495017befc98a14d03d4",
+  "comparison_sha256": "0a2097502fd1c0344e237a06e2ad7d13ef63fe514e18f8dd570fbf15f8aafeb8",
+  "preparation_sha256": "f8ae89ae793e169ac15f512d28d4a3e7e343041062068404bdb0971644cde882",
+  "execution_receipt_sha256": "3de41b9d50e8bc69272ae9c6cafa47b7e8e5275a3cf69f73096194d834f23f9a",
+  "comparison_source_sha256": "95fbd5d0aae94c49a1d6c90bf1b29a59cc7b3b5cd5e45dd537dca88ac3446cfd",
+  "README_sha256": "5835a068099338becf9559a9c1b41020c03f1122b50c7b77ca5764365749ac50",
+  "method": "Independent source/pin and complete saved-record comparison only; no ray, ODE, analytic-action or inverse rerun.",
+  "verified_counts": {
+    "comparison_input_pins": 91,
+    "analytical_checks": 836,
+    "ordinary_explicit_parities": 18,
+    "evaluation_rows": 240,
+    "changed_time_rows": 85,
+    "byte_identical_final_path_rows": 5058,
+    "retained_false_flags": 2,
+    "retained_source_failures": 32
+  },
+  "maximum_absolute_changed_time_s": 1.1102230246251565e-16,
+  "case_counts": [
+    {
+      "case": "positive_guide",
+      "optimized_rows": 25,
+      "false_local_flags": 2,
+      "source_failures": 24
+    },
+    {
+      "case": "homogeneous_oblique",
+      "optimized_rows": 25,
+      "false_local_flags": 0,
+      "source_failures": 0
+    },
+    {
+      "case": "near_zero_guide",
+      "optimized_rows": 30,
+      "false_local_flags": 0,
+      "source_failures": 8
+    }
+  ],
+  "findings": [
+    "Frozen core and helper exactly match the independently tested D integration candidate; C++ harness and all invented inputs are unchanged.",
+    "All saved row differences and column counts match the reported comparison. Every non-time evaluation field and all final-path/parity bytes are unchanged.",
+    "Two budget-exhausted local failures and 32 source-accuracy failures remain distinct from 836 passing arithmetic/parity checks.",
+    "Positive-guide epsilon-zero paths still stop without updates and retain the fixed-polygon first-element source partial; D cannot repair that representation by improving curvature arithmetic.",
+    "This bounded repeat supplies no evidence of a native benefit and does not justify repeating the native mesh ladder solely with D."
+  ],
+  "limitations": [
+    "D changes outer accumulation as well as usable curvature relative to old001; this is not a retention-only causal test.",
+    "Intermediate optimizer histories were not saved; final-table equality does not prove equality of every internal step.",
+    "Continuous local action consistency, finite-step truncation and global branch completeness remain separate questions."
+  ]
+}

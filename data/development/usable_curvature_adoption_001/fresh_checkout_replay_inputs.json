@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "started_utc": "2026-10-10T08:55:45.615297Z",
+  "source_index_tree": "c9e3f3617de446781aac520cb0fbb4ee2458aa48",
+  "scope": "Fresh prospective checkout; restore historical sentinel evidence and before-source prerequisites, verify bounded runner inputs. No compilation or numerical rerun.",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "data/development/terminal_lock_archive_001/restore.py",
+        "--scratch",
+        "tmp/curvature_integration_checkout_002"
+      ],
+      "return_code": 0,
+      "output": "{\n  \"status\": \"restored_historical_evidence\",\n  \"archive_sha256\": \"2df1c2b4a0ee49f1e5ee349f23cd73836b37ae2dc6efefd8331c1ec9dd23d282\",\n  \"scope\": \"Fresh scratch only; numeric PID text is historical evidence, never process authority\",\n  \"counts\": {\n    \"records\": 6,\n    \"lock_bytes\": 42,\n    \"lock_lookups\": 29,\n    \"terminal_evidence_files\": 32\n  },\n  \"restored_sha256\": {\n    \"data/development/loma_failed_search_3426_001/execution.lock\": \"b14538e0b5e9f57600f64891b62ae3aa75f695701e02a04848dba9861d735539\",\n    \"data/development/loma_outer_accumulation_native_001/execution.lock\": \"64cd6c56f9b9424abd35af74b9a163f1bcc06dad2e92bdc40eb8c4dbdb31a8e8\",\n    \"data/development/loma_curvature_capture_native_001/execution.lock\": \"e44c0fb8cb083b28199ff72731e6600dcb36af19206bdea9ad58c8a0fe638abb\",\n    \"data/development/loma_seed_loaded_b_native_001/execution.lock\": \"e9adec0c2cff74b7b6fab0b045be5fae6efc4211462c24f2773c97e08ab3a52e\",\n    \"data/development/loma_positive_curvature_native_001/execution.lock\": \"c6eabe68e3c1183066dabecc02503db42ed620d884746c3dc4f5b41db068692a\",\n    \"data/development/loma_usable_curvature_native_001/execution.lock\": \"0d112f7030f1420bfc9636db113bf214ab5db759c1afd9a3cb462a1a4e152ef7\"\n  }\n}\n"
+    },
+    {
+      "argv": [
+        "git",
+        "checkout-index",
+        "--stdin",
+        "-z",
+        "--prefix=tmp/curvature_integration_checkout_002/"
+      ],
+      "return_code": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "data/development/terminal_lock_archive_001/restore.py",
+        "--verify",
+        "tmp/curvature_integration_checkout_002"
+      ],
+      "return_code": 0,
+      "output": "{\n  \"status\": \"verified\",\n  \"records\": 6,\n  \"lock_bytes\": 42,\n  \"lock_lookups\": 29,\n  \"terminal_evidence_files\": 32\n}\n"
+    }
+  ],
+  "finished_utc": "2026-10-10T08:56:02.631084Z",
+  "overlay_tracked_file_count": 12072,
+  "restored_source_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/run_fmm_initialization_audit.py": "abb18baca21cae99abbf066d1e238af53b101755f686ca793bd1feeb9d752075",
+    "diagnostics/run_fmm_rotated_affine.py": "db1702b5b6c952937c0e4f053b88c38d48f5eb726dd6d685121eed7c1dfbc929"
+  },
+  "prepared_ancestry_inputs_verified": 982,
+  "bounded_launch_inputs_verified": 44,
+  "baseline_source_files_verified": 10,
+  "historical_sentinel_archive_sha256": "2df1c2b4a0ee49f1e5ee349f23cd73836b37ae2dc6efefd8331c1ec9dd23d282",
+  "prepared_sha256": "9da308676201e909a7be446570f4529067b00f01d814f755905e53ecce6a48c1",
+  "prior_validation_summary_sha256": "10781ff9cb4ed52f845a2a0a7f6bf3ea14cd6d4475c43e75b60355b042176e41",
+  "limitations": [
+    "The prospective index tree precedes this receipt and final validation/delivery manifest.",
+    "Only input closure and source reconstruction were exercised; earlier compiled checks remain separate evidence.",
+    "All source overwrites occurred only inside this newly created scratch destination."
+  ]
+}

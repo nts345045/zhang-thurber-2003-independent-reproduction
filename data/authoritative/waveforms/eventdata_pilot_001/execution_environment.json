@@ -1,0 +1,21 @@
+{
+  "python": "3.11.9",
+  "requests": "2.34.2",
+  "executable": "tmp/waveform_env/bin/python",
+  "command_prefix": [
+    "tmp/waveform_env/bin/python",
+    "data/authoritative/waveforms/eventdata_pilot_001/acquire.py"
+  ],
+  "executed_stages": [
+    "prepare",
+    "docs",
+    "fetch"
+  ],
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "MPLCONFIGDIR": "tmp/waveform_cache/mpl",
+    "XDG_CACHE_HOME": "tmp/waveform_cache/xdg",
+    "TMPDIR": "tmp/waveform_cache/tmp"
+  },
+  "note": "Exact interpreter and environment supplement to stage ledgers, whose command uses the generic python label. No decoder or signal-processing library was invoked."
+}

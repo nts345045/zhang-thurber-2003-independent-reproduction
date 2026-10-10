@@ -1,0 +1,9 @@
+diagnostic_row,event,station,observation_row,observation_event_side,observation_event_i_resource_id,observation_event_j_resource_id,observation_origin_i_resource_id,observation_origin_j_resource_id,observation_pick_i_resource_id,observation_pick_j_resource_id,observation_arrival_i_resource_id,observation_arrival_j_resource_id,observation_channel_seed_id,observation_channel_fdsn_source_id,observation_metadata_epoch_start,observation_metadata_epoch_end,observation_a_priori_weight,observation_note,source_event_resource_id,source_origin_resource_id,source_note,receiver_network_code,receiver_station_code,receiver_location_code,receiver_channel_code,receiver_channel_seed_id,receiver_channel_fdsn_source_id,receiver_metadata_epoch_start,receiver_metadata_epoch_end
+0,0,0,0,i,smi:fixture/event0,,smi:fixture/origin0,,smi:fixture/pick0,,smi:fixture/arrival0,,XX.TEST..HHZ,FDSN:XX_TEST__H_H_Z,1984-01-01T00:00:00Z,,0.25,"preserve, ""quoted""
+text",smi:fixture/event0,smi:fixture/origin0,"comma, quote "" and
+newline",XX,TEST,,HHZ,XX.TEST..HHZ,FDSN:XX_TEST__H_H_Z,1984-01-01T00:00:00Z,
+0,0,0,1,j,smi:fixture/event1,smi:fixture/event0,smi:fixture/origin1,smi:fixture/origin0,smi:fixture/pick1,smi:fixture/pick0,smi:fixture/arrival1,smi:fixture/arrival0,XX.TEST..HHZ,FDSN:XX_TEST__H_H_Z,1984-01-01T00:00:00Z,,0.25,"preserve, ""quoted""
+text",smi:fixture/event0,smi:fixture/origin0,"comma, quote "" and
+newline",XX,TEST,,HHZ,XX.TEST..HHZ,FDSN:XX_TEST__H_H_Z,1984-01-01T00:00:00Z,
+1,1,0,1,i,smi:fixture/event1,smi:fixture/event0,smi:fixture/origin1,smi:fixture/origin0,smi:fixture/pick1,smi:fixture/pick0,smi:fixture/arrival1,smi:fixture/arrival0,XX.TEST..HHZ,FDSN:XX_TEST__H_H_Z,1984-01-01T00:00:00Z,,0.25,"preserve, ""quoted""
+text",smi:fixture/event1,smi:fixture/origin1,,XX,TEST,,HHZ,XX.TEST..HHZ,FDSN:XX_TEST__H_H_Z,1984-01-01T00:00:00Z,

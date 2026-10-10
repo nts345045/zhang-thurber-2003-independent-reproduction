@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "reviewed_utc": "2026-10-10T08:51:02.949301Z",
+  "scope": "Independent saved source/request/native/outcome/hash readback only; no request, decoder or waveform correlation run.",
+  "acquisition_summary_sha256": "cf07b68980c62b60cf94d3b505099e9fdbff830230346ca12b38f94456531d0a",
+  "plan_sha256": "eef8b8f6f1a8b759f29f121c4136751bb1e0a3b863607bceb68672795b768cf2",
+  "readback_sha256": "60a1cb6ed69759490470ed2756d2ff5e56ffcdfc41a23e3d0c7f4d46fc04076f",
+  "source_sha256": "ecc9aa14c2987dd18fd2a9e8efcef5d748b2e4c038a668b42eeef3292dea65e6",
+  "readback_source_sha256": "460e943021a8bda07e145babf615546253aa19faf479be0fc257115de955ac21",
+  "README_sha256": "e0c72d350eb78cc241b9f23864a51615985e10e2664d7d89ecd715758e184196",
+  "raw_request_and_context_sha256": {
+    "current_eventdata.html": "b0d0c04ef32adf27fcccd2585abe93e49e337a187eb6c94718d6f35ee74d02ca",
+    "current_eventdata.html.provenance.json": "a4082c25d4f21a23605d49f77d779040168cfb2860a684f267fefec48036ae9e",
+    "current_eventdata.html.identifiers.json": "8eec924d004187ad49f885fd92c9acadd2c7e368539ce251262f4633a6324af0",
+    "current_eventdata.html.request.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current_eventdata.html.request.txt.identifiers.json": "21b147605ff809e8baaa25a37073471e05a92aa7bfe86ffbbe765f36d6b4afb8",
+    "event_12434.response": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "event_12434.response.provenance.json": "1a91c785a7fdc46643f371bc38646af6b6adb6950a6509ab8a9caf03a5b74b7d",
+    "event_12434.response.identifiers.json": "53d983c5059ce5d5cdb72ee16f36bfb0c9d54945b5dd76534ae84044cc11dece",
+    "event_12434.response.request.txt": "fc4644c6d0f7003fd6b3074448c981b43f4484197573b9418dd137973940eaa8",
+    "event_12434.response.request.txt.identifiers.json": "ee375e466f410e4cb646d044ad05708464cf550b1acb690913030d692248456b",
+    "event_12437.response": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "event_12437.response.provenance.json": "93dcd858878a3f91745d8442fe0a6f5dba44bed7620b707cf23f440d96f69e76",
+    "event_12437.response.identifiers.json": "0e1caa70005e27a61937909d965bf1ffa5ca2298f4205cecef51de9a95f11265",
+    "event_12437.response.request.txt": "aa26024c351f792b34ac757ef21c8fdb60f45a34d4fed7a5387e91749385956d",
+    "event_12437.response.request.txt.identifiers.json": "fe228c501ffc017f1f73019f6ac61f74a3c7ff73b0ddde1ad513317194ef602d"
+  },
+  "verified_original_input_pins": 16,
+  "verified_package_pins": 29,
+  "native_requests": [
+    {
+      "original_observation_index": "133",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/12434",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/1319364",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/11001454",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/11001454",
+      "channel_seed_id": "NC.CMC..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_CMC__E_H_Z",
+      "metadata_epoch_start": "1984-01-01T00:00:00",
+      "metadata_epoch_end": "1984-06-05T20:50:00",
+      "request_start_utc": "1984-03-27T03:48:40.030000Z",
+      "request_end_utc": "1984-03-27T03:48:45.030000Z"
+    },
+    {
+      "original_observation_index": "159",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/12437",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/1319394",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/11002359",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/11002359",
+      "channel_seed_id": "NC.CMC..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_CMC__E_H_Z",
+      "metadata_epoch_start": "1984-01-01T00:00:00",
+      "metadata_epoch_end": "1984-06-05T20:50:00",
+      "request_start_utc": "1984-03-27T04:10:42.850000Z",
+      "request_end_utc": "1984-03-27T04:10:47.850000Z"
+    }
+  ],
+  "outcomes": {
+    "event_http_statuses": [
+      204,
+      204
+    ],
+    "sample_bytes": 0,
+    "new_measurements": 0
+  },
+  "findings": [
+    "Both exact documented NCSS event/channel/time requests preserve the established authoritative event/origin/pick/arrival identities and native epoch.",
+    "All saved native CSVs, request contexts, source hashes, terminal ledgers and empty reply bytes reconcile.",
+    "Current plan bytes match the documentation-request context despite the maintained helper lacking that pre-request plan-binding guard; this actual execution is identified correctly."
+  ],
+  "limitations": [
+    "HTTP204 for these two exact requests does not prove historical waveform absence or exclude catalog observations.",
+    "A generalized future helper should bind plan.json to the earlier documentation context before retrieval.",
+    "No returned samples were available to establish decoder identity, continuity, correlation or coherence."
+  ]
+}
