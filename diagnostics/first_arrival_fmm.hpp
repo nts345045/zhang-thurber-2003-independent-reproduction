@@ -257,7 +257,14 @@ public:
     // A finite numerical guard reports failure; it is not a physical path limit.
     const std::size_t limit = 4 * node_count();
     for (std::size_t iteration = 0; iteration < limit; ++iteration) {
-      if (current == receiver_ || cell(current) == receiver_cell ||
+      // Include upper faces: a seeded corner can be a strict field minimum
+      // although the half-open interpolation lookup assigns it another cell.
+      bool in_receiver_cell = true;
+      for (int axis = 0; axis < 3; ++axis)
+        in_receiver_cell = in_receiver_cell &&
+            current[axis] >= axes_[axis][receiver_cell[axis]] &&
+            current[axis] <= axes_[axis][receiver_cell[axis] + 1];
+      if (current == receiver_ || in_receiver_cell ||
           norm(current - receiver_) <= step) {
         if (current != receiver_)
           result.path.push_back(receiver_);

@@ -1,0 +1,32 @@
+{
+  "command": "python3 diagnostics/check_fmm_failed_extraction.py",
+  "purpose": "Re-extract every previously failed identified ray with the closed receiver-cell correction",
+  "ray_count": 1,
+  "all_native_input_columns_preserved": true,
+  "all_previously_failed_extractions_now_succeed": true,
+  "reported_auxiliary_field_times_unchanged": true,
+  "maximum_action_reduction_s": 1.99840122228068e-07,
+  "selected_nonconverged": 0,
+  "limitations": [
+    "This tests receiver-cell extraction only, not global first-arrival selection.",
+    "The original 186-ray audit and its failed flags remain unchanged.",
+    "No production solver or inversion is modified."
+  ],
+  "sha256": {
+    "diagnostics/check_fmm_failed_extraction.py": "77741b92b55dcb72cb489c66b7fae30505e9e4480d45800027b27ecf8c1b10d0",
+    "diagnostics/check_fmm_hayward.cpp": "27b1e5afb87cc8f81f82a27cdf163715da8943d6af4933425bcadbc648125212",
+    "diagnostics/first_arrival_fmm.hpp": "90f3e5b66b1a3169ee646bd554258343bd0a39267fea67225a64775a29f8fbac",
+    "diagnostics/seeded_bending.py": "44c00fe5a9fc04da0ba3a9b82e750add019245eed62eabfa37454c31b2af2305",
+    "src/main.cpp": "79db0d337e0220c2d574fb7e22609d7a1c4d70eaac55dec5dd7610f83e2a29a4",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "src/csv.hpp": "f3ec5080bd0234fc7d0d6731b66aadd9eae219353244c9d4ef1c157a67bfd4c0",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "data/development/fmm_hayward_audit/results.csv": "9f0cba4a9409acb8dd5ab6906f82d05157ebe1bb70e7a70e664e6fdf5e4ddedc",
+    "data/development/hayward_dd_top_layer_rays.csv": "73e33f855cee4f50833660984fa22366bc5a2cff75316abd3f346a1ddf3b7902",
+    "data/hayward/dd_grid.csv": "13cdc7f9d201f9d73da7e3fedc21e542444c9a478cf4c0f4b08ce85a5a4a8596",
+    "data/development/fmm_field_checks/closed_cell_hayward/identified_inputs.csv": "b51ad7f2c8b5762afccb0ef4eff9d0417f623032e623ab04a26c6f01ec190ba1",
+    "data/development/fmm_field_checks/closed_cell_hayward/results.csv": "9c52ecffa1d5e931f7ce05fa96632d32f9cca7f88ee4e24cd3bf90b785c52f08",
+    "tmp/fmm_closed_cell_hayward/seeded_bending.hpp": "8b7295f04ffdf28c64ac9ce40ff5b32aa92210c7ec5c2661387388d5865790f6",
+    "tmp/fmm_closed_cell_hayward/check_fmm_hayward": "ff70165d273a14023727a93f0da26a4f6bc23771d81604bfc408c674695274f4"
+  }
+}

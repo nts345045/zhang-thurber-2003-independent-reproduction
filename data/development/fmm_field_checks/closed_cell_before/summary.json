@@ -1,0 +1,42 @@
+{
+  "reviewed_utc": "2026-10-10T00:00:45.169937Z",
+  "purpose": "Invented homogeneous closed receiver-cell extraction regression; no real-data coordinates, ray bending, or inversion.",
+  "command": "python3 data/development/fmm_field_checks/run_checks.py --variant closed_cell_before --suite closed-cell",
+  "suite": "closed-cell",
+  "run_command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/fmm_field_checks/closed_cell_before/check_fmm_field",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/data/development/fmm_field_checks/closed_cell_before/results.csv",
+    "closed-cell"
+  ],
+  "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp",
+  "compiler_command": [
+    "c++",
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "diagnostics/check_fmm_field.cpp",
+    "-o",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/fmm_field_checks/closed_cell_before/check_fmm_field"
+  ],
+  "exit_code": 1,
+  "stdout": "closed_receiver_cell cases=8 failures=7\n",
+  "stderr": "",
+  "status": "failed",
+  "sha256": {
+    "diagnostics/first_arrival_fmm.hpp": "31bc54dba1a3630023651f3e4eb6843127ae8275dd4f42aab83bb0ac5da2c165",
+    "diagnostics/check_fmm_field.cpp": "f3fb77c3df6deb12b8d1eb92fa5797f5ff8cf857cbb2f7761419e977af05cf24",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "data/development/fmm_field_checks/run_checks.py": "f9743025e653f501c53d2287f101e17ac8a26a4d6aa865c7a0d9f39eb1c1d71f",
+    "data/development/fmm_field_checks/closed_cell_before/results.csv": "68c2c80d8d1be75bb3338feb5ced395882f7600d7f2b68cec3ab78a1a1a8a6d3",
+    "tmp/fmm_field_checks/closed_cell_before/check_fmm_field": "e307e3d80768c2bb3e21c88bc5f6b1da7822e2deb0fd9ccc4d8aa075af86c594"
+  },
+  "limitations": [
+    "This regression tests exact connection within the seeded receiver cell, including its closed upper faces. It does not establish first-arrival branch completeness or bent-ray accuracy.",
+    "The 1e-12 second comparison allowance covers continuous homogeneous action roundoff; no ray convergence threshold is changed."
+  ],
+  "path_cases": 8,
+  "passed_cases": 1,
+  "header_baseline_commit": "2d662da"
+}

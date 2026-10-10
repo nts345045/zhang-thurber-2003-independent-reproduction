@@ -9,11 +9,47 @@ void require(bool condition, const char *message) {
 }
 
 int main(int argc, char **argv) {
-  if (argc != 2)
-    throw std::runtime_error("Usage: check_fmm_field OUTPUT.csv");
+  if (argc < 2 || argc > 3)
+    throw std::runtime_error("Usage: check_fmm_field OUTPUT.csv [closed-cell]");
   std::ofstream output(argv[1]);
   if (!output)
     throw std::runtime_error("Cannot open field-check output");
+  if (argc == 3) {
+    require(std::string(argv[2]) == "closed-cell", "Unknown field-check suite");
+    // Invented receiver near a seed-cell diagonal midpoint. Its closest
+    // corner is more than h/2 away; seven reflections lie on upper cell faces.
+    Grid g;
+    g.x = g.y = g.z = {0, 1, 2};
+    g.v.assign(g.size(), 4);
+    output << std::setprecision(17)
+           << "reflection,success,message,source_x,source_y,source_z,receiver_x,"
+              "receiver_y,receiver_z,field_time_s,exact_time_s,seed_action_s,"
+              "endpoint_error_km,path_nodes\n";
+    int failures = 0;
+    for (int reflection = 0; reflection < 8; ++reflection) {
+      P receiver{}, source{};
+      for (int axis = 0; axis < 3; ++axis) {
+        source[axis] = (reflection >> axis) & 1;
+        receiver[axis] = source[axis] ? .51 : .49;
+      }
+      first_arrival::Field field(g, receiver, 1);
+      auto candidate = field.candidate(source);
+      double exact = norm(source - receiver) / 4;
+      double action = candidate.success ? path_eval(g, candidate.path) : NAN;
+      double endpoint_error = norm(candidate.path.front() - source) +
+                              norm(candidate.path.back() - receiver);
+      bool passed = candidate.success && endpoint_error == 0 &&
+                    candidate.path.size() == 2 && std::abs(action - exact) <= 1e-12;
+      failures += !passed;
+      output << reflection << ',' << passed << ',' << candidate.message;
+      for (double x : source) output << ',' << x;
+      for (double x : receiver) output << ',' << x;
+      output << ',' << candidate.field_time << ',' << exact << ',' << action
+             << ',' << endpoint_error << ',' << candidate.path.size() << '\n';
+    }
+    std::cout << "closed_receiver_cell cases=8 failures=" << failures << '\n';
+    return failures ? 1 : 0;
+  }
   output << std::setprecision(15)
          << "case,spacing_km,nodes,build_seconds,source_x,source_y,source_z,"
             "receiver_x,receiver_y,receiver_z,field_time_s,seed_action_s,"

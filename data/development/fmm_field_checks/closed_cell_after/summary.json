@@ -1,0 +1,41 @@
+{
+  "reviewed_utc": "2026-10-10T00:01:16.463224Z",
+  "purpose": "Invented homogeneous closed receiver-cell extraction regression; no real-data coordinates, ray bending, or inversion.",
+  "command": "python3 data/development/fmm_field_checks/run_checks.py --variant closed_cell_after --suite closed-cell",
+  "suite": "closed-cell",
+  "run_command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/fmm_field_checks/closed_cell_after/check_fmm_field",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/data/development/fmm_field_checks/closed_cell_after/results.csv",
+    "closed-cell"
+  ],
+  "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp",
+  "compiler_command": [
+    "c++",
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "diagnostics/check_fmm_field.cpp",
+    "-o",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/fmm_field_checks/closed_cell_after/check_fmm_field"
+  ],
+  "exit_code": 0,
+  "stdout": "closed_receiver_cell cases=8 failures=0\n",
+  "stderr": "",
+  "status": "passed",
+  "sha256": {
+    "diagnostics/first_arrival_fmm.hpp": "90f3e5b66b1a3169ee646bd554258343bd0a39267fea67225a64775a29f8fbac",
+    "diagnostics/check_fmm_field.cpp": "f3fb77c3df6deb12b8d1eb92fa5797f5ff8cf857cbb2f7761419e977af05cf24",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "data/development/fmm_field_checks/run_checks.py": "f9743025e653f501c53d2287f101e17ac8a26a4d6aa865c7a0d9f39eb1c1d71f",
+    "data/development/fmm_field_checks/closed_cell_after/results.csv": "fe7b66a8dec94e86daa353af4e5762b9aff981e149c172477faf50b96e11cfd5",
+    "tmp/fmm_field_checks/closed_cell_after/check_fmm_field": "7b3be6a83462c4878fe7a66b6c42fbde6c163a196044166b3911e770ef297ad8"
+  },
+  "limitations": [
+    "This regression tests exact connection within the seeded receiver cell, including its closed upper faces. It does not establish first-arrival branch completeness or bent-ray accuracy.",
+    "The 1e-12 second comparison allowance covers continuous homogeneous action roundoff; no ray convergence threshold is changed."
+  ],
+  "path_cases": 8,
+  "passed_cases": 8
+}
