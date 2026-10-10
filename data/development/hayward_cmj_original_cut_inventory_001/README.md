@@ -1,0 +1,9 @@
+# Original CMJ cut inventory
+
+This saved-only diagnostic inventories the two original **old-kernel** CMJ polygons (events 981 and 987, receiver 160). It does not use the prescribed exact-face candidates or later tangent iterates. Both original false convergence flags, unevaluated source partials, native event/origin/receiver context and all 18 catalog uses remain attached.
+
+For each original edge and every recorded grid plane, exact rational arithmetic on the recorded binary64 endpoints determines whether the plane intersects the open segment. Independently, scalar binary64 operations replay the frozen `segment()` predicates: `L < 1e-12` skips the whole edge; `abs(d[k]) > 1e-12` enables that axis; a cut is inserted only for `t > 1e-10 && t < 1-1e-10`. The upper bound is the actual rounded binary64 subtraction, not an exact decimal complement. Differences, division and the left-associated dot product follow the source order; `math.sqrt` supplies the scalar length. No compiled evaluator is invoked.
+
+Every exact crossing or inserted cut is retained with its axis/plane, exact parameter, binary64 operands/parameter, omission reasons or spurious-cut status. The output also records exact squared length, the length cutoff decision, aligned planes, sorted cuts and duplicate binary cut counts. Rounding a retained parameter is distinguished from omitting a plane. Identified per-ray sidecars precede derived output creation.
+
+Source review is required before this inventory runs. It imports no project numerical code, integrates no action or derivative, and does not change a path, source, flag or running job. Even an empty omission roster would not certify quadrature accuracy, rounded sample-cell selection, ordinary gradients on the original polygons, or arbitrary future off-face trials.

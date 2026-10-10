@@ -196,7 +196,7 @@ Reusing each direction at half length gives action changes of
 $-1.9272\times10^{-11}$ and $-7.5767\times10^{-11}$ s, with enclosure
 widths below $6.0\times10^{-32}$ s. Both trials satisfy the same conservative
 Armijo check. Maximum node movements are 0.04553 and 0.02491 m, and these
-paths become the retained diagnostic state. The calculation uses no new
+paths supply the subsequent refinement's starting state. The calculation uses no new
 gradient or metric solve: it evaluates two rounded trials and 2,058 new
 edge actions. Independent saved readback confirms the geometry, action,
 acceptance and native identity joins. Both decreases still exceed the
@@ -256,6 +256,89 @@ The two available-vector errors are below $1.020\times10^{-15}$ s/km.
 This adds no evaluator or reference-integration call and leaves the frozen
 benchmark's original oracle inventory unchanged. Evidence is in
 \path{data/development/hayward_cmj_half_gradient_comparison_001/RESULTS.md}.
+
+A bounded iteration then relaxes the same available coordinates from the
+half-step paths. The existing edge metric supplies each direction, with
+the face-normal search mask unchanged. A paired sum of segment-action
+changes controls the finite-step Armijo decision; the actual rounded
+displacement must also have negative computed slope. The two paths accept
+16 and 38 updates in 32 and 152 trials, respectively. Every accepted fraction
+is $1/2$ for the first event and $1/8$ for the second. Their computed available
+norms reach $8.1821\times10^{-8}$ and $9.6184\times10^{-8}$ s/km.
+Independent saved readback reconstructs all 184 rounded trial geometries
+and decisions. Intermediate contractions and paired sums remain recorded
+evaluator quantities; this replay does not independently integrate each
+accepted step. The final continuous action and full coupled support require
+separate bounds. Original false flags and null candidate convergence remain
+unchanged. The complete iteration and its limitations are in
+\path{data/development/hayward_cmj_tangent_iteration_001/RESULTS.md}.
+
+The final audit bounds a complete supporting vector for the first variation
+on those exact final polygons. For each aligned face piece, write its edge parameter as
+$u=\ell+\delta t$, $0\leq t\leq1$, and let $h_0=1-u$ and $h_1=u$.
+The endpoint normal moments from either neighboring cell are
+\begin{equation}
+ M_j^{\pm}=-L\delta\int_0^1
+       \frac{h_j(t)v_{n,\pm}(t)}{v(t)^2}\,dt .
+\end{equation}
+Here $L$ is the complete edge length and $v$ is its continuous face velocity.
+Exact polynomial extrema establish a convex normal slowness jump over every
+one of the 65 face pieces. A single coefficient $0\leq\theta\leq1$ per piece
+mixes $(1-\theta)M_j^-+\theta M_j^+$ for both endpoints. This shared coefficient
+preserves their coupling. All ordinary contributions from adjacent edges,
+including the entry and exit normal terms, remain in the assembled vector.
+
+A bounded midpoint fit proposes the coefficients; exact promotion of those
+binary64 values and outward interval assembly determine the final bound.
+The first fit reaches its 10,000-sweep cap; the second stops after 1,894 sweeps
+with unchanged coefficients. Neither outcome certifies a minimum. Nevertheless,
+both assembled feasible vectors have norm upper bounds below $10^{-7}$ s/km
+(Table~\ref{tab:cmj_final_support}). For every fixed-endpoint displacement
+$d$, the supporting vector $G$ satisfies $D T[d]\geq G\cdot d$; a small
+$\lVert G\rVert$ therefore bounds the possible first-order decrease on this
+fixed polygon topology. No free coordinate lies on the physical box boundary.
+The same audit resolves a net action decrease from each accepted half-step
+path, with enclosure widths below $6.0\times10^{-32}$ s. It does not certify
+every intermediate approximate Armijo decision.
+
+\begin{table}[ht]
+\centering
+\caption{Final prescribed CMJ polygons. Available norms are rounded displays
+of interval bounds; the full-vector entries are conservative upper bounds.
+Action changes compare final and half-step geometry. These are fixed-polygon
+first-order results, not first-arrival or source-accuracy certificates.}
+\label{tab:cmj_final_support}
+\begin{tabular}{llll}
+\hline
+Event & Available norm & Full norm upper bound & $\Delta T$ (s) \\
+      & (s/km) & (s/km) & \\
+\hline
+\texttt{NC518943} & $8.1821\times10^{-8}$ & $8.1822\times10^{-8}$ & $-3.3921\times10^{-11}$ \\
+\texttt{NC519264} & $9.6184\times10^{-8}$ & $9.6185\times10^{-8}$ & $-5.8997\times10^{-11}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+Twenty invented controls test the moment formula, shared endpoint coupling,
+variable face velocity, convexity, ordinary terms and interval projection.
+Independent saved readback then passes 90,213 checks of the native geometry,
+identities, polynomial signs, moment scaling and full-vector assembly. Its
+primitive action and component intervals remain tied to their reviewed source
+and controls; the checker does not reintegrate them or repeat the fit.
+These results establish small feasible residuals on the prescribed face paths.
+They do not supply automatic contact discovery, source/model derivative
+accuracy or first-arrival selection, and the original false flags remain.
+The calculation and its complete limitations are in
+\path{data/development/hayward_cmj_final_tangent_support_001/RESULTS.md}.
+
+A separate exact inventory of the two original off-face polygons finds
+30 open-segment grid-plane crossings per path. Scalar replay of the frozen
+integration predicates inserts all 30 in each case, with no omitted or
+spurious cut, short-edge skip or duplicate cut. Thus these cutoff omissions
+do not explain the two saved original failures. Retained cut parameters are
+still rounded; this inventory does not assess quadrature, sampled-cell
+selection or arbitrary future off-face gradients. The identified records are
+in \path{data/development/hayward_cmj_original_cut_inventory_001/RESULTS.md}.
 
 \begin{table}[ht]
 \centering

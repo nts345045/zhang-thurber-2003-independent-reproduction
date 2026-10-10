@@ -1,0 +1,2171 @@
+{
+  "checks": [
+    {
+      "name": "constant_four_exact_moments",
+      "passed": true
+    },
+    {
+      "name": "fixed_endpoint_arrays_may_be_omitted",
+      "passed": true
+    },
+    {
+      "name": "shared_constant_fit",
+      "passed": true
+    },
+    {
+      "name": "ordinary_entry_exit_normals_retained",
+      "passed": true
+    },
+    {
+      "name": "restricted_family_residual_not_general_minimum",
+      "passed": true
+    },
+    {
+      "name": "nonconstant_density_cancels",
+      "passed": true
+    },
+    {
+      "name": "bounded_coordinate_clip",
+      "passed": true
+    },
+    {
+      "name": "true_zero_midpoint_column",
+      "passed": true
+    },
+    {
+      "name": "combined_action_closed_form",
+      "passed": true
+    },
+    {
+      "name": "nonzero_float_column_norm_underflow_is_not_zero",
+      "passed": true
+    },
+    {
+      "name": "oracle_radical_squared",
+      "passed": true
+    },
+    {
+      "name": "four_variable_face_log_moments",
+      "passed": true
+    },
+    {
+      "name": "reversed_endpoint_weights",
+      "passed": true
+    },
+    {
+      "name": "split_global_shape_functions",
+      "passed": true
+    },
+    {
+      "name": "positive_endpoints_do_not_prove_convex_jump",
+      "passed": true
+    },
+    {
+      "name": "out_of_range_theta",
+      "passed": true
+    },
+    {
+      "name": "zero_length_edge",
+      "passed": true
+    },
+    {
+      "name": "multiple_aligned_faces_explicitly_ineligible",
+      "passed": true
+    },
+    {
+      "name": "true_box_not_old_activity_band",
+      "passed": true
+    },
+    {
+      "name": "shared_node_binary64_interval_sum",
+      "passed": true
+    }
+  ],
+  "error": null,
+  "families": [
+    {
+      "base": {
+        "aligned_edges": {
+          "1": 0
+        },
+        "blocked_slots": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "components": [
+          null,
+          [
+            [
+              "1/3",
+              "1/3"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-1/3",
+              "-1/3"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          null
+        ],
+        "ordinary_contributions_in_blocked_slots": [
+          {
+            "axis": 0,
+            "contribution": [
+              "1/3",
+              "1/3"
+            ],
+            "edge": 0,
+            "node": 1,
+            "side": 1
+          },
+          {
+            "axis": 0,
+            "contribution": [
+              "-1/3",
+              "-1/3"
+            ],
+            "edge": 2,
+            "node": 2,
+            "side": 0
+          }
+        ]
+      },
+      "clipped_proposal": {
+        "coordinate_updates": 1,
+        "exact_zero_midpoint_columns": [],
+        "final_midpoint_objective": 8.0,
+        "initial_midpoint_objective": 18.0,
+        "interpretation": "Midpoint arithmetic only proposes a feasible constant mixture. No tolerance, rank cutoff or optimality claim; interval assembly is independent.",
+        "max_sweeps": 10000,
+        "reason": null,
+        "status": "bounded_midpoint_proposal",
+        "sweeps": 2,
+        "termination": "coefficients_unchanged",
+        "theta": [
+          1.0
+        ],
+        "theta_exact": [
+          "1"
+        ],
+        "theta_hex": [
+          "0x1.0000000000000p+0"
+        ]
+      },
+      "combined_constant": {
+        "action": [
+          "1",
+          "1"
+        ],
+        "blocked_axes": [
+          0
+        ],
+        "components": [
+          [
+            null,
+            [
+              "-1",
+              "-1"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            null,
+            [
+              "1",
+              "1"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ]
+        ]
+      },
+      "family": "constant_moments_and_coupling",
+      "homogeneous": {
+        "a_exact": [
+          "0",
+          "0",
+          "0"
+        ],
+        "b_exact": [
+          "0",
+          "1",
+          "0"
+        ],
+        "interpretation": "One shared constant theta per patch blends both endpoint moments; this is a restricted feasible support family.",
+        "length": [
+          "1",
+          "1"
+        ],
+        "normal_axis": 0,
+        "normal_patch_integrations": 1,
+        "patches": [
+          {
+            "a_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "b_exact": [
+              "0",
+              "1",
+              "0"
+            ],
+            "convex_normal_jump": true,
+            "exact_jump_range": [
+              "0",
+              "0"
+            ],
+            "inverse_square_integral_bounds": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "jump_numerator": [
+              "0"
+            ],
+            "minus": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "minus_cell": [
+              0,
+              0,
+              0
+            ],
+            "minus_velocity_normal_polynomial": [
+              "0"
+            ],
+            "minus_vertex_bounds": [
+              "1",
+              "1"
+            ],
+            "normal_axis": 0,
+            "normal_coordinate": "0",
+            "numerators": [
+              [
+                "0"
+              ],
+              [
+                "0"
+              ],
+              [
+                "0"
+              ],
+              [
+                "0"
+              ]
+            ],
+            "plus": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "plus_cell": [
+              1,
+              0,
+              0
+            ],
+            "plus_velocity_normal_polynomial": [
+              "0"
+            ],
+            "plus_vertex_bounds": [
+              "1",
+              "1"
+            ],
+            "tail_record": {
+              "inverse_square_tails": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "reciprocal_tail": "0",
+              "rho": "0",
+              "series_degree": 0,
+              "velocity_bounds": [
+                "1",
+                "1"
+              ]
+            },
+            "u": [
+              "0",
+              "1"
+            ],
+            "velocity_polynomial": [
+              "1"
+            ],
+            "velocity_vertex_bounds": [
+              "1",
+              "1"
+            ]
+          }
+        ],
+        "status": "bounded_convex_patch_moments",
+        "units": "s/km"
+      },
+      "moments": {
+        "a_exact": [
+          "0",
+          "0",
+          "0"
+        ],
+        "b_exact": [
+          "0",
+          "1",
+          "0"
+        ],
+        "interpretation": "One shared constant theta per patch blends both endpoint moments; this is a restricted feasible support family.",
+        "length": [
+          "1",
+          "1"
+        ],
+        "normal_axis": 0,
+        "normal_patch_integrations": 1,
+        "patches": [
+          {
+            "a_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "b_exact": [
+              "0",
+              "1",
+              "0"
+            ],
+            "convex_normal_jump": true,
+            "exact_jump_range": [
+              "4",
+              "4"
+            ],
+            "inverse_square_integral_bounds": [
+              [
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "1"
+              ],
+              [
+                "-1",
+                "-1"
+              ],
+              [
+                "-1",
+                "-1"
+              ]
+            ],
+            "jump_numerator": [
+              "4"
+            ],
+            "minus": [
+              [
+                "-1",
+                "-1"
+              ],
+              [
+                "-1",
+                "-1"
+              ]
+            ],
+            "minus_cell": [
+              0,
+              0,
+              0
+            ],
+            "minus_velocity_normal_polynomial": [
+              "2"
+            ],
+            "minus_vertex_bounds": [
+              "1/2",
+              "1"
+            ],
+            "normal_axis": 0,
+            "normal_coordinate": "0",
+            "numerators": [
+              [
+                "2",
+                "-2"
+              ],
+              [
+                "0",
+                "2"
+              ],
+              [
+                "-2",
+                "2"
+              ],
+              [
+                "0",
+                "-2"
+              ]
+            ],
+            "plus": [
+              [
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "1"
+              ]
+            ],
+            "plus_cell": [
+              1,
+              0,
+              0
+            ],
+            "plus_velocity_normal_polynomial": [
+              "-2"
+            ],
+            "plus_vertex_bounds": [
+              "1/2",
+              "1"
+            ],
+            "tail_record": {
+              "inverse_square_tails": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "reciprocal_tail": "0",
+              "rho": "0",
+              "series_degree": 0,
+              "velocity_bounds": [
+                "1",
+                "1"
+              ]
+            },
+            "u": [
+              "0",
+              "1"
+            ],
+            "velocity_polynomial": [
+              "1"
+            ],
+            "velocity_vertex_bounds": [
+              "1/2",
+              "1"
+            ]
+          }
+        ],
+        "status": "bounded_convex_patch_moments",
+        "units": "s/km"
+      },
+      "proposal": {
+        "coordinate_updates": 0,
+        "exact_zero_midpoint_columns": [],
+        "final_midpoint_objective": 0.2222222222222222,
+        "initial_midpoint_objective": 0.2222222222222222,
+        "interpretation": "Midpoint arithmetic only proposes a feasible constant mixture. No tolerance, rank cutoff or optimality claim; interval assembly is independent.",
+        "max_sweeps": 10000,
+        "reason": null,
+        "status": "bounded_midpoint_proposal",
+        "sweeps": 1,
+        "termination": "coefficients_unchanged",
+        "theta": [
+          0.5
+        ],
+        "theta_exact": [
+          "1/2"
+        ],
+        "theta_hex": [
+          "0x1.0000000000000p-1"
+        ]
+      },
+      "underflowed_norm_proposal": {
+        "coordinate_updates": 0,
+        "exact_zero_midpoint_columns": [],
+        "final_midpoint_objective": null,
+        "initial_midpoint_objective": null,
+        "interpretation": "Midpoint arithmetic only proposes a feasible constant mixture. No tolerance, rank cutoff or optimality claim; interval assembly is independent.",
+        "max_sweeps": 10000,
+        "reason": "Unusable positive midpoint denominator",
+        "status": "proposal_unusable",
+        "sweeps": 0,
+        "termination": "unusable_midpoint_arithmetic",
+        "theta": [
+          0.5
+        ],
+        "theta_exact": [
+          "1/2"
+        ],
+        "theta_hex": [
+          "0x1.0000000000000p-1"
+        ]
+      },
+      "witness": {
+        "interpretation": "Upper squared norm bounds this feasible full supporting vector. Neither its lower nor upper bound is the minimum over all supports. A large bound is inconclusive; no convergence or minimum claim.",
+        "norm": {
+          "activity_rule": "Exact physical box only; no 1e-10 activity band.",
+          "available_component_count": 6,
+          "exact_physical_boundary_component_count": 2,
+          "lower_squared": "2/9",
+          "threshold_scales": {
+            "combined_gradient_scale": {
+              "classification": "strictly_above",
+              "diagnostic_only": true,
+              "scale_squared": "1/10000000000"
+            },
+            "strict_gradient_scale": {
+              "classification": "strictly_above",
+              "diagnostic_only": true,
+              "scale_squared": "1/100000000000000"
+            }
+          },
+          "unavailable_component_count": 0,
+          "units": "s^2/km^2",
+          "upper_squared": "2/9"
+        },
+        "ordinary_contributions_in_blocked_slots": [
+          {
+            "axis": 0,
+            "contribution": [
+              "1/3",
+              "1/3"
+            ],
+            "edge": 0,
+            "node": 1,
+            "side": 1
+          },
+          {
+            "axis": 0,
+            "contribution": [
+              "-1/3",
+              "-1/3"
+            ],
+            "edge": 2,
+            "node": 2,
+            "side": 0
+          }
+        ],
+        "patch_contributions": [
+          {
+            "axis": 0,
+            "contribution": [
+              "0",
+              "0"
+            ],
+            "edge": 1,
+            "fixed_endpoint": false,
+            "node": 1,
+            "patch": 0,
+            "side": 0,
+            "theta_exact": "1/2"
+          },
+          {
+            "axis": 0,
+            "contribution": [
+              "0",
+              "0"
+            ],
+            "edge": 1,
+            "fixed_endpoint": false,
+            "node": 2,
+            "patch": 0,
+            "side": 1,
+            "theta_exact": "1/2"
+          }
+        ],
+        "projected_components": [
+          {
+            "axis": 0,
+            "component_bounds": [
+              "1/3",
+              "1/3"
+            ],
+            "coordinate_exact": "0",
+            "node": 1,
+            "physical_box_position": "interior",
+            "projected_bounds": [
+              "1/3",
+              "1/3"
+            ],
+            "squared_bounds": [
+              "1/9",
+              "1/9"
+            ]
+          },
+          {
+            "axis": 1,
+            "component_bounds": [
+              "0",
+              "0"
+            ],
+            "coordinate_exact": "0",
+            "node": 1,
+            "physical_box_position": "exact_lower",
+            "projected_bounds": [
+              "0",
+              "0"
+            ],
+            "squared_bounds": [
+              "0",
+              "0"
+            ]
+          },
+          {
+            "axis": 2,
+            "component_bounds": [
+              "0",
+              "0"
+            ],
+            "coordinate_exact": "0",
+            "node": 1,
+            "physical_box_position": "interior",
+            "projected_bounds": [
+              "0",
+              "0"
+            ],
+            "squared_bounds": [
+              "0",
+              "0"
+            ]
+          },
+          {
+            "axis": 0,
+            "component_bounds": [
+              "-1/3",
+              "-1/3"
+            ],
+            "coordinate_exact": "0",
+            "node": 2,
+            "physical_box_position": "interior",
+            "projected_bounds": [
+              "-1/3",
+              "-1/3"
+            ],
+            "squared_bounds": [
+              "1/9",
+              "1/9"
+            ]
+          },
+          {
+            "axis": 1,
+            "component_bounds": [
+              "0",
+              "0"
+            ],
+            "coordinate_exact": "1",
+            "node": 2,
+            "physical_box_position": "exact_upper",
+            "projected_bounds": [
+              "0",
+              "0"
+            ],
+            "squared_bounds": [
+              "0",
+              "0"
+            ]
+          },
+          {
+            "axis": 2,
+            "component_bounds": [
+              "0",
+              "0"
+            ],
+            "coordinate_exact": "0",
+            "node": 2,
+            "physical_box_position": "interior",
+            "projected_bounds": [
+              "0",
+              "0"
+            ],
+            "squared_bounds": [
+              "0",
+              "0"
+            ]
+          }
+        ],
+        "status": "feasible_constant_patch_support",
+        "theta_exact": [
+          "1/2"
+        ],
+        "vector": [
+          {
+            "components": [
+              [
+                "1/3",
+                "1/3"
+              ],
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "node": 1
+          },
+          {
+            "components": [
+              [
+                "-1/3",
+                "-1/3"
+              ],
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "node": 2
+          }
+        ]
+      },
+      "zero_column_proposal": {
+        "coordinate_updates": 0,
+        "exact_zero_midpoint_columns": [
+          0
+        ],
+        "final_midpoint_objective": 0.2222222222222222,
+        "initial_midpoint_objective": 0.2222222222222222,
+        "interpretation": "Midpoint arithmetic only proposes a feasible constant mixture. No tolerance, rank cutoff or optimality claim; interval assembly is independent.",
+        "max_sweeps": 10000,
+        "reason": null,
+        "status": "bounded_midpoint_proposal",
+        "sweeps": 1,
+        "termination": "coefficients_unchanged",
+        "theta": [
+          0.5
+        ],
+        "theta_exact": [
+          "1/2"
+        ],
+        "theta_hex": [
+          "0x1.0000000000000p-1"
+        ]
+      }
+    },
+    {
+      "family": "variable_face_log_oracle",
+      "minus_log_oracle": [
+        [
+          "-217783673910929357509438153608741508654038629119709833272094876290595951306400394079346087921392046462290475938929868419501887927190073658252171269268614223542003918273/17594283596396047184385946392647868931470112693959198007800288680362208343910573129294621229801604743916515191363297491568491655702512711443237664595981064917142187540480",
+          "-7155749285644821746738682190001506712918412099590569766413928740338081619109548143982517507529979630090492070871688947315048936188191881249359836100672105311484171275007/578097889595870121772681095758429979176875131372945077399152342354758274157061688533966126122052727300114070573365489008679011544511131947420666122439377847277529019187200"
+        ],
+        [
+          "-1381048109542018263223396890290624921827874132070699002711549594329245886304224384130962221053218990639921041972961598648221038143544728474628434232939422796852419081/132287846589443963792375536786826082191504606721497729381957057747084273262485512250335497968433118375312144295964642793748057561673027905588253117263015525692798402560",
+          "-2485074215934725804235512404352365668159686452925711991992127506606469517035781265634503651918373243826917277566648144340992221165186014241455764356400035008595650529237/238040307480652403082868686488765285543419171741800914223180376263723995241143048219868404873786417123576382000797554297691357694798701390114391932769155584173100184371200"
+        ]
+      ],
+      "moments": {
+        "a_exact": [
+          "0",
+          "0",
+          "0"
+        ],
+        "b_exact": [
+          "0",
+          "1",
+          "1"
+        ],
+        "interpretation": "One shared constant theta per patch blends both endpoint moments; this is a restricted feasible support family.",
+        "length": [
+          "240615969168004511545033772477625056927/170141183460469231731687303715884105728",
+          "481231938336009023090067544955250113855/340282366920938463463374607431768211456"
+        ],
+        "normal_axis": 0,
+        "normal_patch_integrations": 1,
+        "patches": [
+          {
+            "a_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "b_exact": [
+              "0",
+              "1",
+              "1"
+            ],
+            "convex_normal_jump": true,
+            "exact_jump_range": [
+              "24",
+              "40"
+            ],
+            "inverse_square_integral_bounds": [
+              [
+                "896056740758772253/102383250631896858624",
+                "896182859449326109/102383250631896858624"
+              ],
+              [
+                "1259483574872020139/170638751053161431040",
+                "3779501713704009217/511916253159484293120"
+              ],
+              [
+                "-896182859449326109/102383250631896858624",
+                "-896056740758772253/102383250631896858624"
+              ],
+              [
+                "-3779501713704009217/511916253159484293120",
+                "-1259483574872020139/170638751053161431040"
+              ]
+            ],
+            "jump_numerator": [
+              "24",
+              "14",
+              "2"
+            ],
+            "minus": [
+              [
+                "-4212327816264375557034454822483327429/340282366920938463463374607431768211456",
+                "-4211735020650434353292594746934296617/340282366920938463463374607431768211456"
+              ],
+              [
+                "-888239494450768688956191827874732505/85070591730234615865843651857942052864",
+                "-3551969985113172749588333852250545335/340282366920938463463374607431768211456"
+              ]
+            ],
+            "minus_cell": [
+              0,
+              0,
+              0
+            ],
+            "minus_velocity_normal_polynomial": [
+              "12",
+              "7",
+              "1"
+            ],
+            "minus_vertex_bounds": [
+              "12",
+              "40"
+            ],
+            "normal_axis": 0,
+            "normal_coordinate": "0",
+            "numerators": [
+              [
+                "12",
+                "-5",
+                "-6",
+                "-1"
+              ],
+              [
+                "0",
+                "12",
+                "7",
+                "1"
+              ],
+              [
+                "-12",
+                "5",
+                "6",
+                "1"
+              ],
+              [
+                "0",
+                "-12",
+                "-7",
+                "-1"
+              ]
+            ],
+            "plus": [
+              [
+                "4211735020650434353292594746934296617/340282366920938463463374607431768211456",
+                "4212327816264375557034454822483327429/340282366920938463463374607431768211456"
+              ],
+              [
+                "3551969985113172749588333852250545335/340282366920938463463374607431768211456",
+                "888239494450768688956191827874732505/85070591730234615865843651857942052864"
+              ]
+            ],
+            "plus_cell": [
+              1,
+              0,
+              0
+            ],
+            "plus_velocity_normal_polynomial": [
+              "-12",
+              "-7",
+              "-1"
+            ],
+            "plus_vertex_bounds": [
+              "12",
+              "40"
+            ],
+            "tail_record": {
+              "inverse_square_tails": [
+                "31/50331648",
+                "155/150994944",
+                "31/50331648",
+                "155/150994944"
+              ],
+              "reciprocal_tail": "1/6291456",
+              "rho": "1/4",
+              "series_degree": 8,
+              "velocity_bounds": [
+                "24",
+                "40"
+              ]
+            },
+            "u": [
+              "0",
+              "1"
+            ],
+            "velocity_polynomial": [
+              "24",
+              "14",
+              "2"
+            ],
+            "velocity_vertex_bounds": [
+              "12",
+              "40"
+            ]
+          }
+        ],
+        "status": "bounded_convex_patch_moments",
+        "units": "s/km"
+      },
+      "plus_log_oracle": [
+        [
+          "7155749285644821746738682190001506712918412099590569766413928740338081619109548143982517507529979630090492070871688947315048936188191881249359836100672105311484171275007/578097889595870121772681095758429979176875131372945077399152342354758274157061688533966126122052727300114070573365489008679011544511131947420666122439377847277529019187200",
+          "217783673910929357509438153608741508654038629119709833272094876290595951306400394079346087921392046462290475938929868419501887927190073658252171269268614223542003918273/17594283596396047184385946392647868931470112693959198007800288680362208343910573129294621229801604743916515191363297491568491655702512711443237664595981064917142187540480"
+        ],
+        [
+          "2485074215934725804235512404352365668159686452925711991992127506606469517035781265634503651918373243826917277566648144340992221165186014241455764356400035008595650529237/238040307480652403082868686488765285543419171741800914223180376263723995241143048219868404873786417123576382000797554297691357694798701390114391932769155584173100184371200",
+          "1381048109542018263223396890290624921827874132070699002711549594329245886304224384130962221053218990639921041972961598648221038143544728474628434232939422796852419081/132287846589443963792375536786826082191504606721497729381957057747084273262485512250335497968433118375312144295964642793748057561673027905588253117263015525692798402560"
+        ]
+      ],
+      "reversed": {
+        "a_exact": [
+          "0",
+          "1",
+          "1"
+        ],
+        "b_exact": [
+          "0",
+          "0",
+          "0"
+        ],
+        "interpretation": "One shared constant theta per patch blends both endpoint moments; this is a restricted feasible support family.",
+        "length": [
+          "240615969168004511545033772477625056927/170141183460469231731687303715884105728",
+          "481231938336009023090067544955250113855/340282366920938463463374607431768211456"
+        ],
+        "normal_axis": 0,
+        "normal_patch_integrations": 1,
+        "patches": [
+          {
+            "a_exact": [
+              "0",
+              "1",
+              "1"
+            ],
+            "b_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "convex_normal_jump": true,
+            "exact_jump_range": [
+              "24",
+              "40"
+            ],
+            "inverse_square_integral_bounds": [
+              [
+                "1259483574872020139/170638751053161431040",
+                "3779501713704009217/511916253159484293120"
+              ],
+              [
+                "896056740758772253/102383250631896858624",
+                "896182859449326109/102383250631896858624"
+              ],
+              [
+                "-3779501713704009217/511916253159484293120",
+                "-1259483574872020139/170638751053161431040"
+              ],
+              [
+                "-896182859449326109/102383250631896858624",
+                "-896056740758772253/102383250631896858624"
+              ]
+            ],
+            "jump_numerator": [
+              "40",
+              "-18",
+              "2"
+            ],
+            "minus": [
+              [
+                "-888239494450768688956191827874732505/85070591730234615865843651857942052864",
+                "-3551969985113172749588333852250545335/340282366920938463463374607431768211456"
+              ],
+              [
+                "-4212327816264375557034454822483327429/340282366920938463463374607431768211456",
+                "-4211735020650434353292594746934296617/340282366920938463463374607431768211456"
+              ]
+            ],
+            "minus_cell": [
+              0,
+              0,
+              0
+            ],
+            "minus_velocity_normal_polynomial": [
+              "20",
+              "-9",
+              "1"
+            ],
+            "minus_vertex_bounds": [
+              "12",
+              "40"
+            ],
+            "normal_axis": 0,
+            "normal_coordinate": "0",
+            "numerators": [
+              [
+                "20",
+                "-29",
+                "10",
+                "-1"
+              ],
+              [
+                "0",
+                "20",
+                "-9",
+                "1"
+              ],
+              [
+                "-20",
+                "29",
+                "-10",
+                "1"
+              ],
+              [
+                "0",
+                "-20",
+                "9",
+                "-1"
+              ]
+            ],
+            "plus": [
+              [
+                "3551969985113172749588333852250545335/340282366920938463463374607431768211456",
+                "888239494450768688956191827874732505/85070591730234615865843651857942052864"
+              ],
+              [
+                "4211735020650434353292594746934296617/340282366920938463463374607431768211456",
+                "4212327816264375557034454822483327429/340282366920938463463374607431768211456"
+              ]
+            ],
+            "plus_cell": [
+              1,
+              0,
+              0
+            ],
+            "plus_velocity_normal_polynomial": [
+              "-20",
+              "9",
+              "-1"
+            ],
+            "plus_vertex_bounds": [
+              "12",
+              "40"
+            ],
+            "tail_record": {
+              "inverse_square_tails": [
+                "155/150994944",
+                "31/50331648",
+                "155/150994944",
+                "31/50331648"
+              ],
+              "reciprocal_tail": "1/6291456",
+              "rho": "1/4",
+              "series_degree": 8,
+              "velocity_bounds": [
+                "24",
+                "40"
+              ]
+            },
+            "u": [
+              "0",
+              "1"
+            ],
+            "velocity_polynomial": [
+              "40",
+              "-18",
+              "2"
+            ],
+            "velocity_vertex_bounds": [
+              "12",
+              "40"
+            ]
+          }
+        ],
+        "status": "bounded_convex_patch_moments",
+        "units": "s/km"
+      },
+      "subdivided": {
+        "a_exact": [
+          "0",
+          "0",
+          "0"
+        ],
+        "b_exact": [
+          "0",
+          "1",
+          "1"
+        ],
+        "interpretation": "One shared constant theta per patch blends both endpoint moments; this is a restricted feasible support family.",
+        "length": [
+          "240615969168004511545033772477625056927/170141183460469231731687303715884105728",
+          "481231938336009023090067544955250113855/340282366920938463463374607431768211456"
+        ],
+        "normal_axis": 0,
+        "normal_patch_integrations": 2,
+        "patches": [
+          {
+            "a_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "b_exact": [
+              "0",
+              "1",
+              "1"
+            ],
+            "convex_normal_jump": true,
+            "exact_jump_range": [
+              "24",
+              "63/2"
+            ],
+            "inverse_square_integral_bounds": [
+              [
+                "3081035749824709701272827/222557602782737539138938480",
+                "3081036973954176986429077/222557602782737539138938480"
+              ],
+              [
+                "278182392417532170025967527/64096589601428411272014282240",
+                "278182623778001486920498777/64096589601428411272014282240"
+              ],
+              [
+                "-3081036973954176986429077/222557602782737539138938480",
+                "-3081035749824709701272827/222557602782737539138938480"
+              ],
+              [
+                "-278182623778001486920498777/64096589601428411272014282240",
+                "-278182392417532170025967527/64096589601428411272014282240"
+              ]
+            ],
+            "jump_numerator": [
+              "24",
+              "7",
+              "1/2"
+            ],
+            "minus": [
+              [
+                "-832758225579636313992139552039760867/85070591730234615865843651857942052864",
+                "-416378947357872407276975289376963755/42535295865117307932921825928971026432"
+              ],
+              [
+                "-522143081576297581675858489832773725/170141183460469231731687303715884105728",
+                "-1044285294634879977326470924790234887/340282366920938463463374607431768211456"
+              ]
+            ],
+            "minus_cell": [
+              0,
+              0,
+              0
+            ],
+            "minus_velocity_normal_polynomial": [
+              "12",
+              "7/2",
+              "1/4"
+            ],
+            "minus_vertex_bounds": [
+              "12",
+              "40"
+            ],
+            "normal_axis": 0,
+            "normal_coordinate": "0",
+            "numerators": [
+              [
+                "12",
+                "-5/2",
+                "-3/2",
+                "-1/8"
+              ],
+              [
+                "0",
+                "6",
+                "7/4",
+                "1/8"
+              ],
+              [
+                "-12",
+                "5/2",
+                "3/2",
+                "1/8"
+              ],
+              [
+                "0",
+                "-6",
+                "-7/4",
+                "-1/8"
+              ]
+            ],
+            "plus": [
+              [
+                "416378947357872407276975289376963755/42535295865117307932921825928971026432",
+                "832758225579636313992139552039760867/85070591730234615865843651857942052864"
+              ],
+              [
+                "1044285294634879977326470924790234887/340282366920938463463374607431768211456",
+                "522143081576297581675858489832773725/170141183460469231731687303715884105728"
+              ]
+            ],
+            "plus_cell": [
+              1,
+              0,
+              0
+            ],
+            "plus_velocity_normal_polynomial": [
+              "-12",
+              "-7/2",
+              "-1/4"
+            ],
+            "plus_vertex_bounds": [
+              "12",
+              "40"
+            ],
+            "tail_record": {
+              "inverse_square_tails": [
+                "634765625/230812049876056752",
+                "4443359375/2461995198677938688",
+                "634765625/230812049876056752",
+                "4443359375/2461995198677938688"
+              ],
+              "reciprocal_tail": "1953125/3119081755081848",
+              "rho": "5/37",
+              "series_degree": 8,
+              "velocity_bounds": [
+                "24",
+                "63/2"
+              ]
+            },
+            "u": [
+              "0",
+              "1/2"
+            ],
+            "velocity_polynomial": [
+              "24",
+              "7",
+              "1/2"
+            ],
+            "velocity_vertex_bounds": [
+              "12",
+              "40"
+            ]
+          },
+          {
+            "a_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "b_exact": [
+              "0",
+              "1",
+              "1"
+            ],
+            "convex_normal_jump": true,
+            "exact_jump_range": [
+              "63/2",
+              "40"
+            ],
+            "inverse_square_integral_bounds": [
+              [
+                "190488175818654608484868849/52024688464221061329054529215",
+                "21165356754689723688849006/5780520940469006814339392135"
+              ],
+              [
+                "68330091190894886343563769151/6555110746491853727460870681090",
+                "68330102382431815852290874751/6555110746491853727460870681090"
+              ],
+              [
+                "-21165356754689723688849006/5780520940469006814339392135",
+                "-190488175818654608484868849/52024688464221061329054529215"
+              ],
+              [
+                "-68330102382431815852290874751/6555110746491853727460870681090",
+                "-68330091190894886343563769151/6555110746491853727460870681090"
+              ]
+            ],
+            "jump_numerator": [
+              "63/2",
+              "8",
+              "1/2"
+            ],
+            "minus": [
+              [
+                "-440507255380951597582437610750716335/170141183460469231731687303715884105728",
+                "-440507174504010516005308271723720091/170141183460469231731687303715884105728"
+              ],
+              [
+                "-2508167206312543668013750461788333169/340282366920938463463374607431768211456",
+                "-2508166795509033412383887152444860185/340282366920938463463374607431768211456"
+              ]
+            ],
+            "minus_cell": [
+              0,
+              0,
+              0
+            ],
+            "minus_velocity_normal_polynomial": [
+              "63/4",
+              "4",
+              "1/4"
+            ],
+            "minus_vertex_bounds": [
+              "12",
+              "40"
+            ],
+            "normal_axis": 0,
+            "normal_coordinate": "0",
+            "numerators": [
+              [
+                "63/8",
+                "-47/8",
+                "-15/8",
+                "-1/8"
+              ],
+              [
+                "63/8",
+                "79/8",
+                "17/8",
+                "1/8"
+              ],
+              [
+                "-63/8",
+                "47/8",
+                "15/8",
+                "1/8"
+              ],
+              [
+                "-63/8",
+                "-79/8",
+                "-17/8",
+                "-1/8"
+              ]
+            ],
+            "plus": [
+              [
+                "440507174504010516005308271723720091/170141183460469231731687303715884105728",
+                "440507255380951597582437610750716335/170141183460469231731687303715884105728"
+              ],
+              [
+                "2508166795509033412383887152444860185/340282366920938463463374607431768211456",
+                "2508167206312543668013750461788333169/340282366920938463463374607431768211456"
+              ]
+            ],
+            "plus_cell": [
+              1,
+              0,
+              0
+            ],
+            "plus_velocity_normal_polynomial": [
+              "-63/4",
+              "-4",
+              "-1/4"
+            ],
+            "plus_vertex_bounds": [
+              "12",
+              "40"
+            ],
+            "tail_record": {
+              "inverse_square_tails": [
+                "151436718286669/450537473980567332733374",
+                "12114937462933520/14191930430387870981101281",
+                "151436718286669/450537473980567332733374",
+                "12114937462933520/14191930430387870981101281"
+              ],
+              "reciprocal_tail": "237175752994/1575305853078906757809",
+              "rho": "17/143",
+              "series_degree": 8,
+              "velocity_bounds": [
+                "63/2",
+                "40"
+              ]
+            },
+            "u": [
+              "1/2",
+              "1"
+            ],
+            "velocity_polynomial": [
+              "63/2",
+              "8",
+              "1/2"
+            ],
+            "velocity_vertex_bounds": [
+              "12",
+              "40"
+            ]
+          }
+        ],
+        "status": "bounded_convex_patch_moments",
+        "units": "s/km"
+      }
+    },
+    {
+      "box_components": [
+        {
+          "axis": 0,
+          "component_bounds": [
+            "2",
+            "2"
+          ],
+          "coordinate_exact": "-1",
+          "node": 1,
+          "physical_box_position": "exact_lower",
+          "projected_bounds": [
+            "0",
+            "0"
+          ],
+          "squared_bounds": [
+            "0",
+            "0"
+          ]
+        },
+        {
+          "axis": 1,
+          "component_bounds": [
+            "0",
+            "0"
+          ],
+          "coordinate_exact": 0,
+          "node": 1,
+          "physical_box_position": "interior",
+          "projected_bounds": [
+            "0",
+            "0"
+          ],
+          "squared_bounds": [
+            "0",
+            "0"
+          ]
+        },
+        {
+          "axis": 2,
+          "component_bounds": [
+            "0",
+            "0"
+          ],
+          "coordinate_exact": 0,
+          "node": 1,
+          "physical_box_position": "interior",
+          "projected_bounds": [
+            "0",
+            "0"
+          ],
+          "squared_bounds": [
+            "0",
+            "0"
+          ]
+        },
+        {
+          "axis": 0,
+          "component_bounds": [
+            "-2",
+            "-2"
+          ],
+          "coordinate_exact": "1",
+          "node": 2,
+          "physical_box_position": "exact_upper",
+          "projected_bounds": [
+            "0",
+            "0"
+          ],
+          "squared_bounds": [
+            "0",
+            "0"
+          ]
+        },
+        {
+          "axis": 1,
+          "component_bounds": [
+            "0",
+            "0"
+          ],
+          "coordinate_exact": 0,
+          "node": 2,
+          "physical_box_position": "interior",
+          "projected_bounds": [
+            "0",
+            "0"
+          ],
+          "squared_bounds": [
+            "0",
+            "0"
+          ]
+        },
+        {
+          "axis": 2,
+          "component_bounds": [
+            "0",
+            "0"
+          ],
+          "coordinate_exact": 0,
+          "node": 2,
+          "physical_box_position": "interior",
+          "projected_bounds": [
+            "0",
+            "0"
+          ],
+          "squared_bounds": [
+            "0",
+            "0"
+          ]
+        },
+        {
+          "axis": 0,
+          "component_bounds": [
+            "2",
+            "2"
+          ],
+          "coordinate_exact": "-999999999999/1000000000000",
+          "node": 3,
+          "physical_box_position": "interior",
+          "projected_bounds": [
+            "2",
+            "2"
+          ],
+          "squared_bounds": [
+            "4",
+            "4"
+          ]
+        },
+        {
+          "axis": 1,
+          "component_bounds": [
+            "0",
+            "0"
+          ],
+          "coordinate_exact": 0,
+          "node": 3,
+          "physical_box_position": "interior",
+          "projected_bounds": [
+            "0",
+            "0"
+          ],
+          "squared_bounds": [
+            "0",
+            "0"
+          ]
+        },
+        {
+          "axis": 2,
+          "component_bounds": [
+            "0",
+            "0"
+          ],
+          "coordinate_exact": 0,
+          "node": 3,
+          "physical_box_position": "interior",
+          "projected_bounds": [
+            "0",
+            "0"
+          ],
+          "squared_bounds": [
+            "0",
+            "0"
+          ]
+        }
+      ],
+      "box_norm": {
+        "activity_rule": "Exact physical box only; no 1e-10 activity band.",
+        "available_component_count": 9,
+        "exact_physical_boundary_component_count": 2,
+        "lower_squared": "4",
+        "threshold_scales": {
+          "combined_gradient_scale": {
+            "classification": "strictly_above",
+            "diagnostic_only": true,
+            "scale_squared": "1/10000000000"
+          },
+          "strict_gradient_scale": {
+            "classification": "strictly_above",
+            "diagnostic_only": true,
+            "scale_squared": "1/100000000000000"
+          }
+        },
+        "unavailable_component_count": 0,
+        "units": "s^2/km^2",
+        "upper_squared": "4"
+      },
+      "family": "eligibility_and_box",
+      "multiple_face": {
+        "a_exact": [
+          "0",
+          "0",
+          "0"
+        ],
+        "aligned": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "b_exact": [
+          "0",
+          "0",
+          "1"
+        ],
+        "patches": [],
+        "status": "ineligible_single_aligned_face_required"
+      },
+      "nonconvex": {
+        "a_exact": [
+          "0",
+          "0",
+          "0"
+        ],
+        "b_exact": [
+          "0",
+          "1",
+          "1"
+        ],
+        "length": [
+          "240615969168004511545033772477625056927/170141183460469231731687303715884105728",
+          "481231938336009023090067544955250113855/340282366920938463463374607431768211456"
+        ],
+        "normal_axis": 0,
+        "normal_patch_integrations": 0,
+        "patches": [
+          {
+            "a_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "b_exact": [
+              "0",
+              "1",
+              "1"
+            ],
+            "convex_normal_jump": false,
+            "exact_jump_range": [
+              "-1/16",
+              "3/16"
+            ],
+            "jump_numerator": [
+              "3/16",
+              "-1",
+              "1"
+            ],
+            "minus": null,
+            "minus_cell": [
+              0,
+              0,
+              0
+            ],
+            "minus_velocity_normal_polynomial": [
+              "3/16",
+              "-1",
+              "1"
+            ],
+            "minus_vertex_bounds": [
+              "93/16",
+              "12"
+            ],
+            "normal_axis": 0,
+            "normal_coordinate": "0",
+            "plus": null,
+            "plus_cell": [
+              1,
+              0,
+              0
+            ],
+            "plus_velocity_normal_polynomial": [
+              "0"
+            ],
+            "plus_vertex_bounds": [
+              "6",
+              "12"
+            ],
+            "tail_record": null,
+            "u": [
+              "0",
+              "1"
+            ],
+            "velocity_polynomial": [
+              "6",
+              "5",
+              "1"
+            ],
+            "velocity_vertex_bounds": [
+              "6",
+              "12"
+            ]
+          }
+        ],
+        "status": "ineligible_nonconvex_normal_jump"
+      },
+      "shared_node_interval_fixture": {
+        "expected_squared": [
+          "70537713399366331221905562013708949/4673067172681344865677446696298086400",
+          "1205956017416055458455351542710214293/4673067172681344865677446696298086400"
+        ],
+        "expected_vector": [
+          {
+            "components": [
+              [
+                "-270215977642229801/1080863910568919040",
+                "-90071992547409959/1080863910568919040"
+              ],
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "node": 1
+          },
+          {
+            "components": [
+              [
+                "-4159574655835251/11258999068426240",
+                "8319149311670497/22517998136852480"
+              ],
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "node": 2
+          },
+          {
+            "components": [
+              [
+                "39031196770544267/432345564227567616",
+                "105083991305311541/432345564227567616"
+              ],
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "node": 3
+          }
+        ],
+        "theta_exact": [
+          "6004799503160661/18014398509481984",
+          "6004799503160661/9007199254740992"
+        ],
+        "theta_hex": [
+          "0x1.5555555555555p-2",
+          "0x1.5555555555555p-1"
+        ],
+        "witness": {
+          "interpretation": "Upper squared norm bounds this feasible full supporting vector. Neither its lower nor upper bound is the minimum over all supports. A large bound is inconclusive; no convergence or minimum claim.",
+          "norm": {
+            "activity_rule": "Exact physical box only; no 1e-10 activity band.",
+            "available_component_count": 9,
+            "exact_physical_boundary_component_count": 0,
+            "lower_squared": "70537713399366331221905562013708949/4673067172681344865677446696298086400",
+            "threshold_scales": {
+              "combined_gradient_scale": {
+                "classification": "strictly_above",
+                "diagnostic_only": true,
+                "scale_squared": "1/10000000000"
+              },
+              "strict_gradient_scale": {
+                "classification": "strictly_above",
+                "diagnostic_only": true,
+                "scale_squared": "1/100000000000000"
+              }
+            },
+            "unavailable_component_count": 0,
+            "units": "s^2/km^2",
+            "upper_squared": "1205956017416055458455351542710214293/4673067172681344865677446696298086400"
+          },
+          "ordinary_contributions_in_blocked_slots": [
+            {
+              "axis": 0,
+              "contribution": [
+                "1/6",
+                "1/6"
+              ],
+              "edge": 0,
+              "node": 1,
+              "side": 1
+            },
+            {
+              "axis": 0,
+              "contribution": [
+                "-1/6",
+                "-1/6"
+              ],
+              "edge": 3,
+              "node": 3,
+              "side": 0
+            }
+          ],
+          "patch_contributions": [
+            {
+              "axis": 0,
+              "contribution": [
+                "-150119987579016547/360287970189639680",
+                "-90071992547409933/360287970189639680"
+              ],
+              "edge": 1,
+              "fixed_endpoint": false,
+              "node": 1,
+              "patch": 0,
+              "side": 0,
+              "theta_exact": "6004799503160661/18014398509481984"
+            },
+            {
+              "axis": 0,
+              "contribution": [
+                "-198158383604301837/360287970189639680",
+                "-42033596522124643/360287970189639680"
+              ],
+              "edge": 1,
+              "fixed_endpoint": false,
+              "node": 2,
+              "patch": 0,
+              "side": 1,
+              "theta_exact": "6004799503160661/18014398509481984"
+            },
+            {
+              "axis": 0,
+              "contribution": [
+                "13010398923514761/72057594037927936",
+                "35027997101770519/72057594037927936"
+              ],
+              "edge": 2,
+              "fixed_endpoint": false,
+              "node": 2,
+              "patch": 1,
+              "side": 0,
+              "theta_exact": "6004799503160661/9007199254740992"
+            },
+            {
+              "axis": 0,
+              "contribution": [
+                "37029596936157401/144115188075855872",
+                "59047195114413159/144115188075855872"
+              ],
+              "edge": 2,
+              "fixed_endpoint": false,
+              "node": 3,
+              "patch": 1,
+              "side": 1,
+              "theta_exact": "6004799503160661/9007199254740992"
+            }
+          ],
+          "projected_components": [
+            {
+              "axis": 0,
+              "component_bounds": [
+                "-270215977642229801/1080863910568919040",
+                "-90071992547409959/1080863910568919040"
+              ],
+              "coordinate_exact": 0,
+              "node": 1,
+              "physical_box_position": "interior",
+              "projected_bounds": [
+                "-270215977642229801/1080863910568919040",
+                "-90071992547409959/1080863910568919040"
+              ],
+              "squared_bounds": [
+                "8112963841460675195194319212381681/1168266793170336216419361674074521600",
+                "73016674573146035683920271292499601/1168266793170336216419361674074521600"
+              ]
+            },
+            {
+              "axis": 1,
+              "component_bounds": [
+                "0",
+                "0"
+              ],
+              "coordinate_exact": 0,
+              "node": 1,
+              "physical_box_position": "interior",
+              "projected_bounds": [
+                "0",
+                "0"
+              ],
+              "squared_bounds": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "axis": 2,
+              "component_bounds": [
+                "0",
+                "0"
+              ],
+              "coordinate_exact": 0,
+              "node": 1,
+              "physical_box_position": "interior",
+              "projected_bounds": [
+                "0",
+                "0"
+              ],
+              "squared_bounds": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "axis": 0,
+              "component_bounds": [
+                "-4159574655835251/11258999068426240",
+                "8319149311670497/22517998136852480"
+              ],
+              "coordinate_exact": 0,
+              "node": 2,
+              "physical_box_position": "interior",
+              "projected_bounds": [
+                "-4159574655835251/11258999068426240",
+                "8319149311670497/22517998136852480"
+              ],
+              "squared_bounds": [
+                "0",
+                "17302061317466946806024454233001/126765060022822940149670320537600"
+              ]
+            },
+            {
+              "axis": 1,
+              "component_bounds": [
+                "0",
+                "0"
+              ],
+              "coordinate_exact": 1,
+              "node": 2,
+              "physical_box_position": "interior",
+              "projected_bounds": [
+                "0",
+                "0"
+              ],
+              "squared_bounds": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "axis": 2,
+              "component_bounds": [
+                "0",
+                "0"
+              ],
+              "coordinate_exact": 0,
+              "node": 2,
+              "physical_box_position": "interior",
+              "projected_bounds": [
+                "0",
+                "0"
+              ],
+              "squared_bounds": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "axis": 0,
+              "component_bounds": [
+                "39031196770544267/432345564227567616",
+                "105083991305311541/432345564227567616"
+              ],
+              "coordinate_exact": 0,
+              "node": 3,
+              "physical_box_position": "interior",
+              "projected_bounds": [
+                "39031196770544267/432345564227567616",
+                "105083991305311541/432345564227567616"
+              ],
+              "squared_bounds": [
+                "1523434321340945217645131406567289/186922686907253794627097867851923456",
+                "11042645228654791546495399067794681/186922686907253794627097867851923456"
+              ]
+            },
+            {
+              "axis": 1,
+              "component_bounds": [
+                "0",
+                "0"
+              ],
+              "coordinate_exact": 2,
+              "node": 3,
+              "physical_box_position": "interior",
+              "projected_bounds": [
+                "0",
+                "0"
+              ],
+              "squared_bounds": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "axis": 2,
+              "component_bounds": [
+                "0",
+                "0"
+              ],
+              "coordinate_exact": 0,
+              "node": 3,
+              "physical_box_position": "interior",
+              "projected_bounds": [
+                "0",
+                "0"
+              ],
+              "squared_bounds": [
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "status": "feasible_constant_patch_support",
+          "theta_exact": [
+            "6004799503160661/18014398509481984",
+            "6004799503160661/9007199254740992"
+          ],
+          "vector": [
+            {
+              "components": [
+                [
+                  "-270215977642229801/1080863910568919040",
+                  "-90071992547409959/1080863910568919040"
+                ],
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0"
+                ]
+              ],
+              "node": 1
+            },
+            {
+              "components": [
+                [
+                  "-4159574655835251/11258999068426240",
+                  "8319149311670497/22517998136852480"
+                ],
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0"
+                ]
+              ],
+              "node": 2
+            },
+            {
+              "components": [
+                [
+                  "39031196770544267/432345564227567616",
+                  "105083991305311541/432345564227567616"
+                ],
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0"
+                ]
+              ],
+              "node": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "helper_sha256": "3f9ec9794a109d69cae43798a4992fce6d65f4cef5fc92d478990b502dc7731d",
+  "interpretation": "Invented moment, coupling and proposal/box controls. No native action, fit, support or stationarity result.",
+  "invented_only": true,
+  "native_calls": 0,
+  "primitive_sha256": "11659e76f56537dcfc29e1c6189bea6e3466bceef13c497448a53b11d9f69f73",
+  "ray_calls": 0,
+  "source_sha256": {
+    "data/development/hayward_cmj_final_tangent_support_001/aligned_face_support.py": "3f9ec9794a109d69cae43798a4992fce6d65f4cef5fc92d478990b502dc7731d",
+    "data/development/hayward_cmj_final_tangent_support_001/check_controls.py": "71143bb2fc4dd743fb5594409b18aec8fea423fb74e07b1fb6413f861af2c8f3",
+    "data/development/hayward_cmj_final_tangent_support_001/source/diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "data/development/hayward_cmj_final_tangent_support_001/source/diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+    "data/development/hayward_cmj_final_tangent_support_001/source/diagnostics/trilinear_action_bounds.py": "11659e76f56537dcfc29e1c6189bea6e3466bceef13c497448a53b11d9f69f73",
+    "data/development/hayward_cmj_post_step_zero_support_001/run.py": "8223688462bf10d4c619fc6adaffd1a0066de5dd80454d902b2364459b92d067"
+  },
+  "status": "passed"
+}
