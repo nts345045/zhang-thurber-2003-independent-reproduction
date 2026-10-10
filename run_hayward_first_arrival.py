@@ -19,9 +19,18 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--variant', required=True)
 parser.add_argument('--phase', required=True, choices=['preflight', 'invert'])
 parser.add_argument('--threads', type=int, default=4)
+parser.add_argument('--path-spacing', type=float,
+                    help='Preflight path spacing in km (default: baseline configuration)')
+parser.add_argument('--fmm-spacing', type=float,
+                    help='Preflight auxiliary field spacing in km (default: 0.5)')
 args = parser.parse_args()
 if not re.fullmatch('[a-zA-Z0-9_-]+', args.variant) or args.threads < 1:
     parser.error('Use a simple variant name and positive thread count')
+for value in (args.path_spacing, args.fmm_spacing):
+    if value is not None and (not math.isfinite(value) or value <= 0):
+        parser.error('Spacing must be finite and positive')
+if args.phase != 'preflight' and (args.path_spacing is not None or args.fmm_spacing is not None):
+    parser.error('Declare spacing during preflight; inversion uses the frozen configuration')
 out = ROOT/'data'/('hayward_'+args.variant)
 build = ROOT/'tmp/hayward_runs'/args.variant
 env = dict(os.environ, TMPDIR=str(ROOT/'tmp'), OMP_NUM_THREADS=str(args.threads),
@@ -42,6 +51,21 @@ def relative(path):
 
 def utc_now():
     return datetime.now(timezone.utc).isoformat()
+
+
+def run_configuration(baseline, path_spacing=None, fmm_spacing=None):
+    settings = {}
+    for line in baseline.splitlines():
+        fields = line.split()
+        if len(fields) >= 2 and not fields[0].startswith('#'):
+            settings[fields[0]] = float(fields[1])
+    path_spacing = settings['ray_spacing'] if path_spacing is None else path_spacing
+    fmm_spacing = 0.5 if fmm_spacing is None else fmm_spacing
+    if any(not math.isfinite(value) or value <= 0 for value in (path_spacing, fmm_spacing)):
+        raise ValueError('Spacing must be finite and positive')
+    config = baseline + '\n# Declared path and auxiliary-field discretizations; refinement is assessed separately.\n'
+    config += 'ray_initializer 1\nray_spacing {:.17g}\nfmm_spacing {:.17g}\n'.format(path_spacing, fmm_spacing)
+    return config, {'path_spacing_km': path_spacing, 'fmm_spacing_km': fmm_spacing}
 
 
 def write_execution():
@@ -117,9 +141,9 @@ if args.phase == 'preflight':
                  'event_selection.csv', 'initial_geographic_events.csv', 'excluded_picks.csv']
         for name in names:
             shutil.copyfile(ROOT/'data/hayward'/name, out/name)
-        config = (ROOT/'configs/hayward.cfg').read_text()
-        (out/'run.cfg').write_text(config+'\n# Assessed starting discretization; refinement is recorded separately.\n'
-                                 'ray_initializer 1\nfmm_spacing 0.5\n')
+        config, discretization = run_configuration((ROOT/'configs/hayward.cfg').read_text(),
+                                                   args.path_spacing, args.fmm_spacing)
+        (out/'run.cfg').write_text(config)
         sources = [Path('CMakeLists.txt'), Path(__file__).resolve().relative_to(ROOT),
                    *[p.relative_to(ROOT) for p in sorted((ROOT/'src').glob('*')) if p.is_file()]]
         for source in sources:
@@ -143,9 +167,10 @@ if args.phase == 'preflight':
             'base_commit': subprocess.check_output(['git','rev-parse','HEAD'], cwd=str(ROOT), universal_newlines=True).strip(),
             'scope': 'Same authoritative Hayward cohort and inverse settings; corrected ray initializer/optimizer',
             'baseline': 'data/hayward/run_manifest.json', 'threads': args.threads,
+            'discretization': discretization,
             'binary': relative(binary), 'source_sha256': {str(p):sha(snapshot/p) for p in sources},
             'sha256': {relative(p):sha(p) for p in tracked},
-            'limitations': ['0.5-km field/path spacing is a starting field discretization, not a universal first-arrival accuracy certificate.',
+            'limitations': ['Declared path/field spacings are assessed discretizations, not a universal first-arrival accuracy certificate.',
                             'The same 32-ray refinement/derivative sample and full initial absolute-ray support are inspected before inversion.',
                             'Changes combine the first-arrival initializer and constrained ray optimizer; they do not isolate either change.']}
         (out/'run_manifest.json').write_text(json.dumps(manifest, indent=2)+'\n')

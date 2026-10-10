@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "unchanged_defaults",
+      "passed": true
+    },
+    {
+      "name": "independent_path",
+      "passed": true
+    },
+    {
+      "name": "independent_field",
+      "passed": true
+    },
+    {
+      "name": "both_declared",
+      "passed": true
+    },
+    {
+      "name": "reject_0_0.0",
+      "passed": true
+    },
+    {
+      "name": "reject_1_0.0",
+      "passed": true
+    },
+    {
+      "name": "reject_0_-1.0",
+      "passed": true
+    },
+    {
+      "name": "reject_1_-1.0",
+      "passed": true
+    },
+    {
+      "name": "reject_0_nan",
+      "passed": true
+    },
+    {
+      "name": "reject_1_nan",
+      "passed": true
+    },
+    {
+      "name": "reject_0_inf",
+      "passed": true
+    },
+    {
+      "name": "reject_1_inf",
+      "passed": true
+    },
+    {
+      "name": "parser_rejection_--phase_preflight_--path-spacing_nan",
+      "passed": true
+    },
+    {
+      "name": "parser_rejection_--phase_preflight_--fmm-spacing_0",
+      "passed": true
+    },
+    {
+      "name": "parser_rejection_--phase_invert_--path-spacing_0.125",
+      "passed": true
+    },
+    {
+      "name": "complete_existing_preflight_validator_unchanged",
+      "passed": true
+    },
+    {
+      "name": "execution_guard_unchanged_start_execution",
+      "passed": true
+    },
+    {
+      "name": "execution_guard_unchanged_interrupted",
+      "passed": true
+    },
+    {
+      "name": "execution_guard_unchanged_record_failure",
+      "passed": true
+    },
+    {
+      "name": "execution_guard_unchanged_run",
+      "passed": true
+    },
+    {
+      "name": "execution_guard_unchanged_write_execution",
+      "passed": true
+    }
+  ],
+  "numerical_jobs_launched": 0,
+  "scope": "Configuration declarations and parser/guard controls only; no accuracy or convergence claim",
+  "source_sha256": {
+    "run_hayward_first_arrival.py": "da1ec48583484b7cbb47dbe1a808166911361feab6057f932a76da854b9fcad2",
+    "runner_before.py": "9baa6e40e2d7115963d17d87d5e90ff29aa73e011902484e1803af07b0c3175e",
+    "check_hayward_spacing.py": "8347d747f55c06a2b14052cd57994a6adc005d2ef92ed44deb4fa697b7e2cfdb"
+  }
+}
