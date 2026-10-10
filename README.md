@@ -7,9 +7,10 @@ Zhang and Thurber (2003), *BSSA* 93, 1875–1889,
 This is a research reproduction attempt, with explicit limits. The report
 retains a synthetic baseline using generated source/receiver geometry. The
 original task excluded source observations; a later authorized Hayward catalog
-DD inversion has now produced complete numerical outputs. Absolute-data
-tomography and fixed-model relocation remain active, so the field comparison
-figures and the full workflow are pending. This is a partial scientific
+DD inversion and absolute-data tomography have written numerical outputs.
+A partial Figure 10 counterpart now compares their saved velocity models.
+Fixed-model relocation and final ray diagnostics remain pending, and neither
+completed method establishes nonlinear convergence. This is a partial scientific
 checkpoint, not a completed manuscript reproduction.
 
 On 2026-10-09 the user revised that restriction: real station and earthquake
@@ -49,7 +50,9 @@ all 37 retained analytic checks at 0.0625-km grid/path spacing. This finite suit
 does not certify general first arrivals. A separate [oblique 3D affine check](data/development/fmm_rotated_affine_baseline/README.md)
 passes all 72 checks; branch completeness in arbitrary 3D media and field
 validation remain open.
-The prototype has not been integrated into the production inversions.
+The corrected initializer and feasible ray directions are integrated and tested
+on the `first-arrival-integration` branch. No completed corrected inversion
+result is available yet; the original running workflow retains its frozen solver.
 The [fixed-model field comparison](data/development/fmm_hayward_audit/README.md)
 finds two faster candidates exceeding 1 ms among 186 selected shallow-endpoint
 rays; it does not quantify the resulting inversion bias or certify first arrivals.
@@ -97,6 +100,12 @@ and exclusion records. It has not yet been simulated or inverted with this comma
 
 ## Where to inspect outputs
 
+This integration branch also provides an opt-in FMM initializer in the solver.
+Its [configuration, numerical checks, and identity-preserving output tests](diagnostics/FIRST_ARRIVAL.md)
+are documented separately. The PDF records the completed audit checkpoint;
+the saved full Hayward and synthetic inversions still use their documented
+earlier forward operators.
+
 - `data/synthetic/`: existing baseline inversions. `standard_grid.csv` and
   `dd_grid.csv` contain inferred P velocities; method-specific `*_events.csv`,
   `*_history.csv`, and `*_residuals.csv` contain source estimates, convergence
@@ -104,7 +113,8 @@ and exclusion records. It has not yet been simulated or inverted with this comma
 - [`data/hayward/`](data/hayward/README.md): authoritative inputs and current
   Hayward runs. The file guide distinguishes initial geometry, inversion
   products, and separate ray diagnostics. Missing method files mean that result
-  has not been produced.
+  has not been produced. `figure10_velocity_manifest.json` records the separate
+  velocity comparison, including its input/output hashes and numerical limitations.
 - `figures/` and `figures/hayward/`: plots generated from the saved numerical
   tables. `report/report.pdf` explains the experiments and reproduction limits.
 
@@ -117,6 +127,9 @@ and `listings` packages. No third-party tomography or optimization library
 is required. The formatter used during development is not a runtime dependency.
 The delivery environment is recorded in `reference/delivery_environment.json`.
 The Hayward plotting and resolution workflow also requires SciPy.
+To plot the completed standard/DD velocity tables before other methods finish,
+run `python3 plot_hayward.py --velocity-only`. This produces Figures 4 and 10
+and a separate Figure 10 manifest; it does not complete the full workflow.
 
 `./rebuild_hayward.sh` reuses the saved authoritative archive, prepares its
 identified subset, builds the solver, and runs absolute-data tomography,

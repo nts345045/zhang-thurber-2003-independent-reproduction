@@ -1,0 +1,92 @@
+\clearpage
+\section{Authoritative Hayward subset results}
+The following calculations use 1,092 catalog sources, 37 physical stations,
+14,262 absolute P observations, and 44,718 catalog differences. They contain
+no waveform-correlation observations. The same identified subset is used for
+absolute-data tomography, catalog DD tomography, and relocation in the fixed
+initial one-dimensional velocity model. Figures~\ref{fig:haywardlocations}--\ref{fig:haywardresolution}
+are partial counterparts to the manuscript figures because the observations,
+pairing, initial model, and numerical implementation differ. The ray
+branch-selection defect in Section~\ref{sec:firstarrival} remains unresolved
+in these runs; its effect on these field estimates has not been quantified.
+
+\input{hayward_results.tex}
+
+Rebuild this calculation from the saved authoritative responses with
+\begin{lstlisting}
+./rebuild_hayward.sh
+\end{lstlisting}
+Source, executable, configuration, and input hashes are recorded in
+\path{data/hayward/run_manifest.json}. The method-specific history and residual
+files retain numerical diagnostics and observational identities. Synthetic
+baseline results earlier in this report are a separate experiment and have not
+been replaced by these field inversions.
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.96\linewidth]{hayward/figure05_locations.pdf}
+\caption{Independent Figure 5 counterpart. All four maps retain the same
+catalog-selected events. Source movement measures change relative to the
+reference catalog, not location error against known truth. The fixed-model
+relocation uses absolute arrivals for anchoring as well as catalog differences.}
+\label{fig:haywardlocations}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.96\linewidth]{hayward/figure06_initial.pdf}
+\caption{Independent Figure 6 counterpart: catalog events within the documented
+geographic zoom window. Both depth views show all selected zoom events; the
+manuscript's undocumented AA$'$ and BB$'$ section-box memberships are not
+reconstructed. This same event subset and common coordinate limits are retained
+in the following three figures.}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.96\linewidth]{hayward/figure07_standard.pdf}
+\caption{Independent Figure 7 counterpart: the common zoom events after
+absolute-data tomography. Reference event and origin identifiers remain attached
+to the independently estimated coordinates.}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.96\linewidth]{hayward/figure08_loc1d.pdf}
+\caption{Independent Figure 8 counterpart: relocation in the fixed initial
+one-dimensional velocity model using catalog differences and absolute anchoring.
+The point set is fixed by the original catalog selection.}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.96\linewidth]{hayward/figure09_dd.pdf}
+\caption{Independent Figure 9 counterpart: catalog DD tomography for the common
+zoom events. No waveform-correlation observations enter this calculation.}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.98\linewidth,height=0.84\textheight,keepaspectratio]{hayward/figure10_velocity.pdf}
+\caption{Independent Figure 10 counterpart: seven across-strike sections of
+catalog DD velocity, absolute-data velocity, and their signed difference.
+Points lie within 5 km of each section. Interpolation displays the saved nodal
+model. The depth range includes the added elevated-receiver layer and shows
+source estimates at the computational top; ray coverage and smoothing do not
+by themselves establish resolution.}
+\label{fig:haywardvelocity}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.96\linewidth,height=0.84\textheight,keepaspectratio]{hayward/figure11_resolution.pdf}
+\caption{Independent Figure 11 counterpart: absolute-arrival model-resolution
+diagonal and propagated picking noise, linearized at the catalog DD solution.
+Reported symmetric uncertainties are assumed to represent independent
+one-standard-deviation errors. Values between grid nodes interpolate nodal
+diagnostics; they do not propagate covariance to interpolated velocity.
+The linear calculation treats source coordinates as unconstrained and omits
+the effect of active domain bounds. These conditional noise estimates also omit
+model, metadata, correlation, nonlinear, and regularization-bias contributions.}
+\label{fig:haywardresolution}
+\end{figure}

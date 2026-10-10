@@ -27,8 +27,9 @@ Hayward observations. A later authorized acquisition supplies an independently
 selected, identified geometry for a partial Figure 4 counterpart.
 \IfFileExists{hayward_results.tex}{The revised solver also generates partial
 counterparts to the Hayward relocation, velocity, and conditional resolution
-panels from catalog observations.}{The catalog DD inversion has completed;
-field comparison panels await the remaining methods and diagnostics.}
+panels from catalog observations.}{The catalog DD and absolute-data inversions
+have written numerical outputs. A partial velocity comparison is available;
+remaining methods and final diagnostics are pending.}
 All numerical figures in this report use saved output from this implementation.
 The result is a reproducible method investigation, not a recovery of the
 published Hayward velocity model.
@@ -500,8 +501,9 @@ geometry. Exact manuscript membership and waveform-correlation observations
 remain unmatched.
 \IfFileExists{hayward_results.tex}{The later field results use this independent
 subset and catalog differences only.}{The catalog DD calculation has produced
-complete numerical outputs. Absolute-data tomography and fixed-model relocation
-remain active at this checkpoint, so their comparisons are not yet reported.}
+numerical outputs, as has absolute-data tomography. Their velocity comparison
+is reported below. Fixed-model relocation and final ray diagnostics remain
+pending; the completed outputs do not establish nonlinear convergence.}
 
 \begin{figure}[htbp]
 \centering
@@ -840,100 +842,43 @@ These results isolate a direction-choice effect for one identified ray.
 They establish neither general optimizer accuracy nor a globally first
 arrival, and they have not changed the production inversions.
 
-\IfFileExists{hayward_results.tex}{
-\clearpage
-\section{Authoritative Hayward subset results}
-The following calculations use 1,092 catalog sources, 37 physical stations,
-14,262 absolute P observations, and 44,718 catalog differences. They contain
-no waveform-correlation observations. The same identified subset is used for
-absolute-data tomography, catalog DD tomography, and relocation in the fixed
-initial one-dimensional velocity model. Figures~\ref{fig:haywardlocations}--\ref{fig:haywardresolution}
-are partial counterparts to the manuscript figures because the observations,
-pairing, initial model, and numerical implementation differ. The ray
-branch-selection defect in Section~\ref{sec:firstarrival} remains unresolved
-in these runs; its effect on these field estimates has not been quantified.
+\subsection{Integrated ray correction and field preflights}
+The separate \texttt{first-arrival-integration} branch now combines the
+receiver-seeded first-arrival initializer with feasible constrained ray
+directions. When coordinate projection would change an L-BFGS direction,
+the method instead solves the positive-definite path-metric quadratic
+problem over directions allowed by the active model faces. It checks
+feasibility, multiplier signs, and descent before line search. This changes
+the numerical search direction; the travel-time action, domain, endpoints,
+quadrature, Armijo condition, and stopping rule remain fixed.
 
-\input{hayward_results.tex}
+For the previously slow identified Hayward boundary ray, the integrated
+initializer and constrained direction meet the unchanged combined stopping
+rule in four updates at both tested discretizations. The 186 retained field
+entry checks have no initialization or local-stopping failure. Two selected
+actions decrease relative to the preceding implementation, by at most
+$5.63\times10^{-9}$ s. Analytic layered and rotated-affine controls also pass
+at their assessed spacings. These checks support the implementation and
+isolate the boundary-direction defect; they do not certify all first
+arrivals or nonlinear field recovery. Full-cohort forward and inverse runs
+are separate requirements, and no completed corrected inverse result is
+available at this checkpoint.
 
-Rebuild this calculation from the saved authoritative responses with
-\begin{lstlisting}
-./rebuild_hayward.sh
-\end{lstlisting}
-Source, executable, configuration, and input hashes are recorded in
-\path{data/hayward/run_manifest.json}. The method-specific history and residual
-files retain numerical diagnostics and observational identities. Synthetic
-baseline results earlier in this report are a separate experiment and have not
-been replaced by these field inversions.
+The independently retrieved Loma Prieta geometry is also prepared for a
+replacement synthetic experiment: 724 catalog sources, 52 receiver positions,
+37,648 source--receiver rays, and all 152,834 event pairs within the stated
+20 km separation. The generator retains complete identified ray status and
+rejects failed rays before writing synthetic observations. The prepared
+full experiment has 15,932,384 observations, including both catalog and
+precise differences. LOM and LON starting profiles, source perturbations,
+and time-rounding differences are explicit assumptions in the preparation
+record. Geometry preparation and component checks are complete; the real
+geometry preflight is still running. None of these prepared inputs has yet
+replaced the synthetic inversion figures earlier in this report.
 
-\begin{figure}[p]
-\centering
-\includegraphics[width=0.96\linewidth]{hayward/figure05_locations.pdf}
-\caption{Independent Figure 5 counterpart. All four maps retain the same
-catalog-selected events. Source movement measures change relative to the
-reference catalog, not location error against known truth. The fixed-model
-relocation uses absolute arrivals for anchoring as well as catalog differences.}
-\label{fig:haywardlocations}
-\end{figure}
+\IfFileExists{hayward_results.tex}{}{\IfFileExists{../figures/hayward/figure10_velocity.pdf}{\input{hayward_velocity_checkpoint.tex}}{}}
 
-\begin{figure}[p]
-\centering
-\includegraphics[width=0.96\linewidth]{hayward/figure06_initial.pdf}
-\caption{Independent Figure 6 counterpart: catalog events within the documented
-geographic zoom window. Both depth views show all selected zoom events; the
-manuscript's undocumented AA$'$ and BB$'$ section-box memberships are not
-reconstructed. This same event subset and common coordinate limits are retained
-in the following three figures.}
-\end{figure}
-
-\begin{figure}[p]
-\centering
-\includegraphics[width=0.96\linewidth]{hayward/figure07_standard.pdf}
-\caption{Independent Figure 7 counterpart: the common zoom events after
-absolute-data tomography. Reference event and origin identifiers remain attached
-to the independently estimated coordinates.}
-\end{figure}
-
-\begin{figure}[p]
-\centering
-\includegraphics[width=0.96\linewidth]{hayward/figure08_loc1d.pdf}
-\caption{Independent Figure 8 counterpart: relocation in the fixed initial
-one-dimensional velocity model using catalog differences and absolute anchoring.
-The point set is fixed by the original catalog selection.}
-\end{figure}
-
-\begin{figure}[p]
-\centering
-\includegraphics[width=0.96\linewidth]{hayward/figure09_dd.pdf}
-\caption{Independent Figure 9 counterpart: catalog DD tomography for the common
-zoom events. No waveform-correlation observations enter this calculation.}
-\end{figure}
-
-\begin{figure}[p]
-\centering
-\includegraphics[width=0.98\linewidth,height=0.84\textheight,keepaspectratio]{hayward/figure10_velocity.pdf}
-\caption{Independent Figure 10 counterpart: seven across-strike sections of
-catalog DD velocity, absolute-data velocity, and their signed difference.
-Points lie within 5 km of each section. Interpolation displays the saved nodal
-model. The depth range includes the added elevated-receiver layer and shows
-source estimates at the computational top; ray coverage and smoothing do not
-by themselves establish resolution.}
-\label{fig:haywardvelocity}
-\end{figure}
-
-\begin{figure}[p]
-\centering
-\includegraphics[width=0.96\linewidth,height=0.84\textheight,keepaspectratio]{hayward/figure11_resolution.pdf}
-\caption{Independent Figure 11 counterpart: absolute-arrival model-resolution
-diagonal and propagated picking noise, linearized at the catalog DD solution.
-Reported symmetric uncertainties are assumed to represent independent
-one-standard-deviation errors. Values between grid nodes interpolate nodal
-diagnostics; they do not propagate covariance to interpolated velocity.
-The linear calculation treats source coordinates as unconstrained and omits
-the effect of active domain bounds. These conditional noise estimates also omit
-model, metadata, correlation, nonlinear, and regularization-bias contributions.}
-\label{fig:haywardresolution}
-\end{figure}
-}{ }
+\IfFileExists{hayward_results.tex}{\input{hayward_full_results_section.tex}}{}
 \clearpage
 \appendix
 \section{Numerical validation record}\label{sec:validation}

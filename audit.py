@@ -179,6 +179,28 @@ def field_run_limit(mode):
                           'Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.')
 
 
+# A separate velocity-only checkpoint can document attempted Figure 10
+# panels before relocation and final ray diagnostics have completed.
+velocity_manifest_path = field_data / 'figure10_velocity_manifest.json'
+velocity_manifest = json.loads(velocity_manifest_path.read_text()) if velocity_manifest_path.exists() else None
+velocity_issues = []
+if velocity_manifest is not None:
+    needed = ['initial_events.csv', 'stations.csv', 'initial_grid.csv', 'selection_manifest.json']
+    needed += [mode + '_' + quantity + '.csv' for mode in ('standard', 'dd')
+               for quantity in ('events', 'grid', 'history')]
+    recorded = velocity_manifest.get('input_sha256', {})
+    checks = [(field_data / name, recorded.get(name)) for name in needed]
+    recorded_outputs = velocity_manifest.get('output_sha256', {})
+    outputs = [field_data / 'vertical_sections.csv', field_figures / 'figure10_velocity.pdf',
+               field_figures / 'figure10_velocity.png']
+    checks += [(path, recorded_outputs.get(str(path))) for path in outputs]
+    checks += [(Path('plot_hayward.py'), velocity_manifest.get('plot_script_sha256'))]
+    for path, digest in checks:
+        if not path.is_file() or not digest or hashlib.sha256(path.read_bytes()).hexdigest() != digest:
+            velocity_issues.append('missing or changed velocity checkpoint artifact: ' + str(path))
+    if velocity_manifest.get('status') != 'partially reproduced':
+        velocity_issues.append('unexpected velocity checkpoint status')
+
 observed_counts = selection.get('observations_by_type', {})
 cohort_difference = ('Independent subset: {} events, {} physical stations, {} absolute P picks and {} catalog differences; '
                      'the manuscript reports 1489, 52, 20257 and 767127, respectively. '
@@ -244,6 +266,20 @@ for row in rows:
     for mode in modes:
         required.extend(field_mode_files(mode))
     required.extend(field_figures / (figure + suffix) for suffix in ('.pdf', '.png'))
+    if number == 10 and field_metrics is None and velocity_manifest is not None:
+        row['plot_command'] = 'python3 plot_hayward.py --velocity-only'
+        # These are attempted panels with explicit numerical failures, not a
+        # completed final-ray validation or all-method workflow checkpoint.
+        if velocity_issues:
+            row['limitation'] = '; '.join(velocity_issues) + '. ' + cohort_difference + limitation
+        else:
+            row['status'] = 'partially reproduced'
+            row['limitation'] = (cohort_difference + limitation +
+                ' Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. '
+                'The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. '
+                'The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. '
+                'These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.')
+        continue
     if field_metrics is None:
         row['limitation'] = ('Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. '
                              + cohort_difference + limitation)
@@ -276,4 +312,4 @@ with open('FIGURE_AUDIT.md', 'w') as f:
     f.write('## Supplementary figures\n\nNo supplement is listed for this article on the original SSA issue contents or article abstract page. No supplementary figures were identified. Direct primary links and the check are recorded in reference/specification_notes.md.\n')
 print('Wrote audit for {} panel/section entries.'.format(len(rows)))
 if field_metrics is None:
-    print('No completed Hayward figure metrics: field panels 5-11 remain pending.')
+    print('Full Hayward plot workflow pending; any separately verified Figure 10 checkpoint is recorded above.')

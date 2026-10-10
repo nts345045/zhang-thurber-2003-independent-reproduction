@@ -122,13 +122,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Catalog coordinates are provider preferred-origin estimates; this panel contains no inverse estimate.
 
 ## Panel 5b
 
@@ -138,13 +138,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 5c
 
@@ -154,13 +154,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward loc1d; ./build/dd raycheck configs/hayward.cfg data/hayward loc1d
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Fixed-model relocation uses catalog differences with absolute-data anchoring; it is an independent counterpart of the published DD-location experiment. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 5d
 
@@ -170,13 +170,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** 1489 earthquakes, 52 stations; 20257 absolute picks, 767127 catalog differences, 17955 precise differences
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 6a
 
@@ -186,13 +186,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Catalog coordinates are provider preferred-origin estimates; this panel contains no inverse estimate. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 6b
 
@@ -202,13 +202,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Catalog coordinates are provider preferred-origin estimates; this panel contains no inverse estimate. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 6c
 
@@ -218,13 +218,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Catalog coordinates are provider preferred-origin estimates; this panel contains no inverse estimate. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 6d
 
@@ -234,13 +234,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Catalog coordinates are provider preferred-origin estimates; this panel contains no inverse estimate. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 7a
 
@@ -250,13 +250,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 7b
 
@@ -266,13 +266,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 7c
 
@@ -282,13 +282,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 7d
 
@@ -298,13 +298,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 8a
 
@@ -314,13 +314,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward loc1d; ./build/dd raycheck configs/hayward.cfg data/hayward loc1d
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Fixed-model relocation uses catalog differences with absolute-data anchoring; it is an independent counterpart of the published DD-location experiment. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 8b
 
@@ -330,13 +330,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward loc1d; ./build/dd raycheck configs/hayward.cfg data/hayward loc1d
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Fixed-model relocation uses catalog differences with absolute-data anchoring; it is an independent counterpart of the published DD-location experiment. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 8c
 
@@ -346,13 +346,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward loc1d; ./build/dd raycheck configs/hayward.cfg data/hayward loc1d
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Fixed-model relocation uses catalog differences with absolute-data anchoring; it is an independent counterpart of the published DD-location experiment. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 8d
 
@@ -362,13 +362,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward loc1d; ./build/dd raycheck configs/hayward.cfg data/hayward loc1d
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Fixed-model relocation uses catalog differences with absolute-data anchoring; it is an independent counterpart of the published DD-location experiment. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 9a
 
@@ -378,13 +378,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 9b
 
@@ -394,13 +394,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 9c
 
@@ -410,13 +410,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 9d
 
@@ -426,13 +426,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Center 37.72 N, 122.06 W; 35-degree anticlockwise rotation; map selection 37.83..37.91 N, -122.26..-122.18 E
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Zoom membership is fixed by the provider catalog coordinates within the written geographic window. AA/BB section-box boundaries and fault traces were not recovered or digitized; both depth views include every selected zoom event, with common coordinate limits across methods.
 
 ## Panel 10a (y=-30)
 
@@ -442,13 +442,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-30 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10a (y=-20)
 
@@ -458,13 +458,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-20 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10a (y=-10)
 
@@ -474,13 +474,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-10 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10a (y=0)
 
@@ -490,13 +490,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=0 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10a (y=10)
 
@@ -506,13 +506,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=10 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10a (y=20)
 
@@ -522,13 +522,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=20 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10a (y=30)
 
@@ -538,13 +538,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=30 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10b (y=-30)
 
@@ -554,13 +554,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-30 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10b (y=-20)
 
@@ -570,13 +570,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-20 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10b (y=-10)
 
@@ -586,13 +586,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-10 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10b (y=0)
 
@@ -602,13 +602,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=0 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10b (y=10)
 
@@ -618,13 +618,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=10 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10b (y=20)
 
@@ -634,13 +634,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=20 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10b (y=30)
 
@@ -650,13 +650,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=30 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10c (y=-30)
 
@@ -666,13 +666,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-30 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10c (y=-20)
 
@@ -682,13 +682,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-20 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10c (y=-10)
 
@@ -698,13 +698,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=-10 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10c (y=0)
 
@@ -714,13 +714,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=0 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10c (y=10)
 
@@ -730,13 +730,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=10 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10c (y=20)
 
@@ -746,13 +746,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=20 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 10c (y=30)
 
@@ -762,13 +762,13 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Parameters:** Published Hayward grid; smoothing weight 10; y=30 km; hypocenters within 5 km
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward standard; ./build/dd raycheck configs/hayward.cfg data/hayward standard; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py --velocity-only
 
-**Status:** not reproduced
+**Status:** partially reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched.
+**Limitation:** Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. Absolute-data tomography uses the independently adapted continuous starting profile and numerical settings. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs. Velocity-only checkpoint: final model ray diagnostics and fixed-model relocation remain pending. The original standard solve stopped after a rejected line search, with 572 of 14262 rays failing its last pre-update local stopping check. The DD run exhausted its 18 configured updates; its last accepted maximum source-coordinate change was 2.7614 km. These panels visualize saved calculations without establishing nonlinear convergence or model accuracy.
 
 ## Panel 11a (y=-30)
 
@@ -776,15 +776,15 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=-30 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=-30
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 11a (y=-20)
 
@@ -792,15 +792,15 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=-20 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=-20
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 11a (y=-10)
 
@@ -808,15 +808,15 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=-10 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=-10
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 11a (y=0)
 
@@ -824,15 +824,15 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=0 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=0
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 11a (y=10)
 
@@ -840,15 +840,15 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=10 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=10
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 11a (y=20)
 
@@ -856,15 +856,15 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=20 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=20
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 11a (y=30)
 
@@ -872,127 +872,127 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=30 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=30
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 11b (y=-30)
 
-**Quantity:** Hayward one-sigma velocity uncertainty
+**Quantity:** Hayward interpolated nodal conditional velocity noise from independent picks
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=-30 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=-30
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 11b (y=-20)
 
-**Quantity:** Hayward one-sigma velocity uncertainty
+**Quantity:** Hayward interpolated nodal conditional velocity noise from independent picks
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=-20 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=-20
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 11b (y=-10)
 
-**Quantity:** Hayward one-sigma velocity uncertainty
+**Quantity:** Hayward interpolated nodal conditional velocity noise from independent picks
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=-10 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=-10
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 11b (y=0)
 
-**Quantity:** Hayward one-sigma velocity uncertainty
+**Quantity:** Hayward interpolated nodal conditional velocity noise from independent picks
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=0 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=0
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 11b (y=10)
 
-**Quantity:** Hayward one-sigma velocity uncertainty
+**Quantity:** Hayward interpolated nodal conditional velocity noise from independent picks
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=10 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=10
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 11b (y=20)
 
-**Quantity:** Hayward one-sigma velocity uncertainty
+**Quantity:** Hayward interpolated nodal conditional velocity noise from independent picks
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=20 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=20
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Panel 11b (y=30)
 
-**Quantity:** Hayward one-sigma velocity uncertainty
+**Quantity:** Hayward interpolated nodal conditional velocity noise from independent picks
 
 **Documentation:** Velocity Structure pp.1884,1886; caption 11 p.1888
 
-**Parameters:** Absolute-data standard-tomography linearization at the DD velocity model; y=30 km
+**Parameters:** Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; independent log-slowness smoothing and column-scaled damping; y=30
 
-**Data command:** Prepared authoritative inputs; pending field inversion: python3 prepare_hayward.py; ./build/dd invert configs/hayward.cfg data/hayward MODE; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
+**Data command:** python3 prepare_hayward.py --selection reproduction; ./build/dd invert configs/hayward.cfg data/hayward dd; ./build/dd raycheck configs/hayward.cfg data/hayward dd; ./build/dd linearize configs/hayward.cfg data/hayward dd; OPENBLAS_NUM_THREADS=1 python3 resolution_hayward.py
 
-**Plot command:** python3 plot_hayward.py (requires completed field outputs)
+**Plot command:** python3 plot_hayward.py # complete field pipeline: ./rebuild_hayward.sh
 
 **Status:** not reproduced
 
-**Limitation:** Authoritative inputs now have complete metadata identities and documented elevation interpretations. No corresponding inverse result yet. The manuscript cohort and waveform differences remain unmatched. The independent absolute-data resolution/noise algebra passes a small joint-matrix check; it has not been applied to a field model. Reported symmetric pick errors are interpreted as 1-sigma only as a declared assumption.
+**Limitation:** Completed field figure metrics are not available yet; this panel has not been promoted to a completed counterpart. Independent subset: 1092 events, 37 physical stations, 14262 absolute P picks and 44718 catalog differences; the manuscript reports 1489, 52, 20257 and 767127, respectively. Its exact cohort remains unidentified, and its 17955 waveform differences are absent here. The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. It is not a full DD resolution matrix or the original simul2000 calculation. Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. Unconstrained source elimination omits the effect of active source-coordinate bounds. It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. Small conditional noise does not establish small total velocity error. Joint catalog-DD tomography uses catalog differences with absolute-data anchoring and preserves both native channel epochs. Catalog displacement is not location error against independent truth. Source-derivative and ray-refinement checks sample the saved model; they do not establish all-ray or nonlinear inverse convergence. Residual reduction alone does not establish recovery or unchanged timing calibration across metadata epochs.
 
 ## Supplementary figures
 

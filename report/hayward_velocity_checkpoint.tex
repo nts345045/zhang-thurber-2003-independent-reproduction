@@ -1,0 +1,51 @@
+\clearpage
+\section{Hayward velocity comparison before final diagnostics}
+Figure~\ref{fig:haywardvelocitycheckpoint} displays the saved standard and
+catalog-DD velocity models for the authoritative subset of 1,092 events and
+37 physical stations. Both use 14,262 absolute picks; the DD inversion also
+uses 44,718 catalog differences. The calculation contains no waveform-derived
+differences. These 21 section panels are partial counterparts to Figure 10,
+with the cohort, pairing, initial model, and numerical differences retained.
+
+The standard inversion accepted 12 updates and then rejected all line-search
+steps at iteration 12. Its absolute and differential residual RMS values are
+0.07869 and 0.07162 s. At that iteration, 572 of 14,262 ray calculations failed
+the local stopping rule. The DD inversion reached its 18 configured updates;
+its final accepted maximum source-coordinate change was 2.7614 km. Thus neither
+termination establishes nonlinear convergence. The histories describe
+pre-update rays; independent final-model ray diagnostics remain pending.
+The plotted results retain the original straight-seed ray algorithm. The
+validated initializer and constrained-direction corrections have not yet
+produced a completed replacement inversion.
+
+The color limits remain fixed across sections and methods. Standard velocity
+falls below the 3.5 km/s display limit at three nodes. Across the 83,895 sampled
+section points, 1,136 DD-minus-standard values are below $-0.8$ km/s and
+1,265 exceed $0.8$ km/s; the full difference range is
+$[-1.16214,1.37544]$ km/s. Triangular colorbar extensions expose saturation.
+These differences compare two regularized estimates, not error relative to
+independent velocity truth.
+
+Regenerate these panels from the saved models with
+\begin{lstlisting}
+python3 plot_hayward.py --velocity-only
+python3 audit.py
+python3 analyze.py
+\end{lstlisting}
+The source and output hashes, event identities, stopping histories, and
+section ranges are linked by
+\path{data/hayward/figure10_velocity_manifest.json}.
+The separate full-figure completion record is not written by this command.
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.98\linewidth,height=0.83\textheight,keepaspectratio]{hayward/figure10_velocity.pdf}
+\caption{Partial Figure 10 counterpart from the saved original field runs:
+catalog-DD P velocity, absolute-data P velocity, and DD minus absolute-data
+velocity at seven written section locations. Hypocenters are within 5 km
+of each section. The full computational depth interval includes the layer
+above the geoid needed to contain elevated receivers. Colorbar extensions
+mark values outside the common display limits. These numerical outputs
+retain unresolved ray and inverse-problem convergence limitations.}
+\label{fig:haywardvelocitycheckpoint}
+\end{figure}

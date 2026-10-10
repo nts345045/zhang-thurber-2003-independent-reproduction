@@ -1,0 +1,39 @@
+{
+  "scope": "Publication of original standard/DD Figure10 checkpoint; no corrected inverse result claimed",
+  "created_utc": "2026-10-10T01:30:20.556606+00:00",
+  "commands": [
+    "OPENBLAS_NUM_THREADS=1 python3 plot_hayward.py --velocity-only",
+    "python3 audit.py",
+    "OPENBLAS_NUM_THREADS=1 python3 analyze.py",
+    "cd report && pdflatex -interaction=nonstopmode -halt-on-error report.tex (two passes; repo-local TEXMFVAR/TEXMFCONFIG/TMPDIR)"
+  ],
+  "validation": {
+    "plot_process_exit": 0,
+    "audit_process_exit": 0,
+    "analysis_process_exit": 0,
+    "latex_second_pass_no_undefined_references_or_errors": true,
+    "pdf_pages": 92,
+    "generated_figure10_panels": 21,
+    "statuses": {
+      "independently_reproduced": 1,
+      "partially_reproduced": 27,
+      "not_reproduced": 34
+    },
+    "figure10_png_visually_inspected": true,
+    "conditional_latex_sections": "Moved to input files so listings are parsed outside conditional macro arguments.",
+    "pdf_figure10_page_visually_inspected": true,
+    "heatmap_rendering": "Rasterized heatmap layers at300dpi remove PDF cell seams; velocities, point tables, section arrays and common color limits are unchanged."
+  },
+  "sha256": {
+    "plot_hayward.py": "f0b65aa8db41c77c02657409a6cdddd6af4976a906a17f72acb7a2c0c461a906",
+    "audit.py": "9b44eb47066c69ed78438533917872e633660b99d6131989b8dbdd670a371874",
+    "report/report.tex": "24ae4d6d24a80160194ecd963944354abb7d6e78178bfe3f201bdf8af29115d2",
+    "report/hayward_velocity_checkpoint.tex": "d2c1b70f84acf00729ff7aca23b8ad14ad98b06d49fe9fc4555152c2a126ec59",
+    "report/hayward_full_results_section.tex": "f2e554e4cac24ba48180a9ec16b1ecc2a0971e73433ff4f68c3b0c94992813c4",
+    "report/panel_table.tex": "6b6a8fb737b5714e21fa4a40e4de2b9d0f8a62a5ee47c4bd28b8f1b2b7c11cd2",
+    "report/panel_details.tex": "b4697c812ea6a5ee46d1d21b7e396257dbb61d45aa442575f9521f8a83ab9395",
+    "report/report.pdf": "efdd95046ab5846c1fe1c1faa1d0bd4e5784619d4de8a74c03acd76dfcb546c6",
+    "data/hayward/figure10_velocity_manifest.json": "b6da08c144644fdc3c64ec42611c18298ef1e86ad047ec944c082f25e857cf9e",
+    "data/panel_audit.json": "6b88fdf7169ebd5ff2a67849eb2857bffb0d9d4475706d277e623b6cfbe1dab4"
+  }
+}
