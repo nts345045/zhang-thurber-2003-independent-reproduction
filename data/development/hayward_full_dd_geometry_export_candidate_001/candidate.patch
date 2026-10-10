@@ -1,0 +1,39 @@
+--- before/src/full_linearization.hpp
++++ after/src/full_linearization.hpp
+@@ -18,6 +18,28 @@
+   const auto used = observed_rays(data, ne, stations);
+   if (traced.size() != events.size() * stations.size())
+     throw std::runtime_error("Incomplete full-linearization ray array");
++  // Preserve geometry from these same rays, including failed returned rays,
++  // before the existing finite/dimension checks. No ray is evaluated again.
++  require_new_outputs(prefix, {"_ray_geometry.csv", "_ray_paths.csv"});
++  write_ray_status(prefix + "_ray_geometry.csv", events, stations, traced,
++                   &used, &g, 17, true);
++  auto paths = output(prefix + "_ray_paths.csv");
++  paths << std::setprecision(17) << "event,station,node,x,y,z";
++  csv_metadata_header(paths, events.front().metadata, "source_");
++  csv_metadata_header(paths, stations.front().metadata, "receiver_");
++  paths << '\n';
++  for (int index : used) {
++    const int event = index / ns, station = index % ns;
++    const auto &path = traced[index].path;
++    for (size_t node = 0; node < path.size(); ++node) {
++      paths << event << ',' << station << ',' << node;
++      for (double coordinate : path[node]) paths << ',' << coordinate;
++      csv_metadata_values(paths, events[event].metadata);
++      csv_metadata_values(paths, stations[station].metadata);
++      paths << '\n';
++    }
++  }
++  finish_output(paths, prefix + "_ray_paths.csv");
+   for (int index : used)
+     if (!finite_ray(traced[index]) || traced[index].dv.size() != g.v.size() ||
+         traced[index].length.size() != g.v.size())
+@@ -163,6 +185,7 @@
+ void linearize_full(const Config &c, const std::string &dir, const std::string &mode,
+                     int explicit_stage = -1) {
+   const std::string prefix = dir + "/" + mode + "_full_linearization";
++  require_new_outputs(prefix, {"_ray_geometry.csv", "_ray_paths.csv"});
+   for (const char *suffix : {"_matrix.csv", "_rows.csv", "_suppressed.csv", "_columns.csv",
+                             "_smoothing_matrix.csv", "_smoothing_rows.csv", "_rays.csv", "_info.csv"})
+     if (std::filesystem::exists(prefix + suffix))

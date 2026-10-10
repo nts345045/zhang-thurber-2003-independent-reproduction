@@ -1,0 +1,41 @@
+{
+  "adoption_sha256": "1c57a65365a792e3c41074ed2895f8796deeae49a5efc14d6d9075c4f1d02d1b",
+  "binary": "tmp/full_dd_geometry_adoption_002/dd",
+  "binary_sha256": "10bc8b7b563eab8dbaa44fb16a27b9c32415456211bd20525cad3b5d150a7352",
+  "cmake_sha256": "4fa637a1dafc403b26c89c39277699ec0cd17c88959f8c51a43a6c0600c5c62b",
+  "commands": [
+    {
+      "argv": [
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_adoption_002/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/full_dd_geometry_adoption_002"
+      ],
+      "log": "compile_0.log",
+      "log_sha256": "63539bcadcf5b52a21feaec2c8120bc5c713d8d49f991e5dafb8c61058b4b61c",
+      "reaped": true,
+      "return_code": 0
+    },
+    {
+      "argv": [
+        "cmake",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/full_dd_geometry_adoption_002",
+        "-j",
+        "2"
+      ],
+      "log": "compile_1.log",
+      "log_sha256": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+      "reaped": true,
+      "return_code": 0
+    }
+  ],
+  "compiler_sha256": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7",
+  "finished_utc": "2026-10-10T11:19:36.536600Z",
+  "native_evaluations": 0,
+  "reader_syntax_passed": true,
+  "script_sha256": "aa88093f5d689123bfc2a9c1b82c47d126043eb8c77d4d1998502273ee5765de",
+  "started_utc": "2026-10-10T11:19:06.766711Z",
+  "status": "passed"
+}

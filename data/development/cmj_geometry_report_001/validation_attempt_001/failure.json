@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "data/development/cmj_geometry_report_001/validate.py"
+  ],
+  "correction": "Permit only this known first-pass unresolved reference and its summary; require the final pass to resolve all references. No PDF recompile needed.",
+  "finding": "Pass1 contains the expected new tab:cmj_face_action undefined-reference warning and summary. Pass2 has no undefined reference, error or overfull box. No validation.json was written.",
+  "reaped": true,
+  "recorded_utc": "2026-10-10T11:39:00.330320Z",
+  "return_code": 1,
+  "source_sha256": "1839f5cb17c4c6701a69066d90ebcc2bf7838fd7bcc3861ebba147811110b34a",
+  "status": "failed",
+  "terminal_error": "AssertionError at main line120: assert not errors and not undefined"
+}

@@ -1,0 +1,109 @@
+--- 001/prepare.py
++++ 002/prepare.py
+@@ -34,6 +34,8 @@
+     assert review['prepared_sha256'] == sha(CANDIDATE / 'prepared.json')
+     original = {str((CANDIDATE / name).relative_to(ROOT)): sha(CANDIDATE / name)
+                 for name in ('prepared.json', 'root_source_review.json', 'CONTROL_PLAN.md')}
++    previous = ROOT / 'data/development/hayward_full_dd_geometry_export_controls_001/prepared.json'
++    original[str(previous.relative_to(ROOT))] = sha(previous)
+     for variant in ('before', 'after'):
+         for path in sorted((CANDIDATE / variant).rglob('*')):
+             if not path.is_file():
+@@ -103,7 +105,11 @@
+                           'false_domain','false_evaluated','false_finite','false_local','initializer_failed',
+                           'initializer_missing','bad_node_native','legacy_coordinate','legacy_flag','observed_value',
+                           'observation_metadata','second_epoch','matrix_partial','missing_matrix_source',
+-                          'duplicate_header','bad_initializer_config','info_count','missing_original_file'],
++                          'duplicate_header','bad_initializer_config','info_count','missing_original_file',
++                          'coordinated_absolute_event','coordinated_absolute_origin','coordinated_dd_event_j',
++                          'coordinated_dd_origin_j','coordinated_absent_event_j','coordinated_absent_origin_j',
++                          'coordinated_absolute_seed','coordinated_absolute_fdsn','coordinated_absolute_location',
++                          'coordinated_absolute_epoch_start','coordinated_absolute_epoch_end'],
+       'preservation_cases': ['cli_geometry_regular','cli_geometry_dangling','cli_paths_regular','cli_paths_dangling',
+                              'array_geometry_regular','array_geometry_dangling','array_paths_regular','array_paths_dangling'],
+       'actual_ray_calls': 'Two identical tiny full exports, before and after; each traces only three used invented native pairs.',
+--- 001/run.py
++++ 002/run.py
+@@ -217,6 +217,21 @@
+             elif case=='info_count':
+                 for entry in info:
+                     if entry['key']=='observed_rays':entry['value']='4'
++            elif case.startswith('coordinated_'):
++                q,key={
++                    'coordinated_absolute_event':(0,'event_i_resource_id'),
++                    'coordinated_absolute_origin':(0,'origin_i_resource_id'),
++                    'coordinated_dd_event_j':(2,'event_j_resource_id'),
++                    'coordinated_dd_origin_j':(2,'origin_j_resource_id'),
++                    'coordinated_absent_event_j':(0,'event_j_resource_id'),
++                    'coordinated_absent_origin_j':(0,'origin_j_resource_id'),
++                    'coordinated_absolute_seed':(0,'channel_seed_id'),
++                    'coordinated_absolute_fdsn':(0,'channel_fdsn_source_id'),
++                    'coordinated_absolute_location':(0,'location_code'),
++                    'coordinated_absolute_epoch_start':(0,'metadata_epoch_start'),
++                    'coordinated_absolute_epoch_end':(0,'metadata_epoch_end')}[case]
++                obs=rows(path/'observations.csv');obs[q][key]+=':changed';write_table(path/'observations.csv',obs)
++                r[q]['observation_'+key]=obs[q][key]
+             elif case not in ('duplicate_header','missing_original_file'):raise RuntimeError('Unknown mutation')
+             for key,table in tables.items():write_table(path/(PREFIX+names[key]+'.csv'),table)
+             if case=='duplicate_header':
+@@ -243,6 +258,8 @@
+                 error=(HERE/'logs'/('preserve_'+case+'.stderr.log')).read_text() if action=='cli' else rows(path/'writer_outcome.csv')[0]['error']
+                 check('Refusing prior failure/audit artifact' in error,'Refusal did not precede input/assembly work')
+                 check(not (path/(PREFIX+'matrix.csv')).exists(),'Assembly happened after prior-file refusal')
++                other='ray_paths' if target.name.endswith('_ray_geometry.csv') else 'ray_geometry'
++                check(not (path/(PREFIX+other+'.csv')).exists(),'Another new diagnostic was written before prior-file refusal')
+                 return {'kind':kind,'error':error,'artifact_unchanged':True,
+                         'original_link_target':original if kind=='dangling' else None}
+             record('preserve_'+case,preserved)
+--- 001/review_geometry.py
++++ 002/review_geometry.py
+@@ -110,14 +110,19 @@
+                 -1 <= second < len(stations) and (j >= 0 or second == -1), 'invalid observation indices')
+         require(not ('station_j' in row and j >= 0 and second < 0), 'missing explicit second epoch')
+         second = -1 if j < 0 else k if second < 0 else second
++        for side, event in (('i', i), ('j', j)):
++            for name in ('event', 'origin'):
++                expected = '' if event < 0 else events[event][name + '_resource_id']
++                require(row[name + '_' + side + '_resource_id'] == expected,
++                        'observation event/origin association changed')
++        for name in identities[1]:
++            require(row[name] == stations[k][name], 'observation first channel/epoch changed')
+         pair = (i, k); support.add(pair)
+         if j >= 0:
+             left, right = stations[k], stations[second]
+             require(all(float(left[a]) == float(right[a]) for a in 'xyz') and
+                     all(left[a] == right[a] for a in identities[1][:6]), 'different DD channel/position')
+             if 'station_j' in row or 'metadata_epoch_j_start' in row or 'metadata_epoch_j_end' in row:
+-                for name in ('channel_seed_id', 'channel_fdsn_source_id', 'metadata_epoch_start', 'metadata_epoch_end'):
+-                    require(row[name] == left[name], 'observation first epoch/channel changed')
+                 for edge in ('start', 'end'):
+                     require(row['metadata_epoch_j_' + edge] == right['metadata_epoch_' + edge],
+                             'observation second epoch changed')
+--- 001/README.md
++++ 002/README.md
+@@ -7,9 +7,9 @@
+ owns and reaps each compiler or fixture child, retains return codes and logs,
+ and preserves failed checks rather than changing their expectation.
+ 
+-The planned 71 checks comprise eight original-file byte comparisons, an actual
++The planned 82 checks comprise eight original-file byte comparisons, an actual
+ geometry readback, zero-prior-only native support, the parsed saved-model point,
+-17 supplied-Ray cases, 33 malformed saved-table cases, eight new-export-path
++17 supplied-Ray cases, 44 malformed saved-table cases, eight new-export-path
+ preservation cases, and two reader-output preservation cases. `cases.json`
+ lists the case names before execution. Compilation uses the exact pinned
+ absolute compiler and original `-O3`, OpenMP, assertion-enabled flags.
+@@ -67,3 +67,13 @@
+ Following independent source/harness review, the bounded execution command is
+ `PYTHONDONTWRITEBYTECODE=1 python3 run.py`. Preserve this package after either
+ success or failure; repeats require a fresh package.
++
++The source-reviewed `../hayward_full_dd_geometry_export_controls_001` remains
++unexecuted. Its reader compared observation metadata with exported rows but
++missed direct native joins for event/origin associations and absolute channel
++epochs. This variant joins both event/origin sides (absent j remains blank)
++and every first-channel/epoch field on all rows. Eleven additional controls
++change both the original observation and its exported metadata together, so
++they cannot pass merely through mutual agreement. Pick/arrival strings remain
++preserved provenance; this reader does not invent external pick associations.
++`correction.patch` records the source-only correction before execution.

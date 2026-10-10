@@ -1,0 +1,16 @@
+[ 50%] Building CXX object CMakeFiles/dd.dir/src/main.cpp.o
+In file included from /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_adoption_001/source/src/main.cpp:1710:
+/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_adoption_001/source/src/full_linearization.hpp: In function ‘FullLinearizationCounts write_full_linearization(const Config&, const string&, const string&, int, const string&, const std::vector<Event>&, const std::vector<Event>&, const ObservationSet&, const Grid&, const std::vector<Ray>&)’:
+/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_adoption_001/source/src/full_linearization.hpp:23:3: error: ‘require_new_outputs’ was not declared in this scope
+   require_new_outputs(prefix, {"_ray_geometry.csv", "_ray_paths.csv"});
+   ^~~~~~~~~~~~~~~~~~~
+/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_adoption_001/source/src/full_linearization.hpp:42:3: error: ‘finish_output’ was not declared in this scope
+   finish_output(paths, prefix + "_ray_paths.csv");
+   ^~~~~~~~~~~~~
+/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_adoption_001/source/src/full_linearization.hpp: In function ‘void linearize_full(const Config&, const string&, const string&, int)’:
+/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_adoption_001/source/src/full_linearization.hpp:188:3: error: ‘require_new_outputs’ was not declared in this scope
+   require_new_outputs(prefix, {"_ray_geometry.csv", "_ray_paths.csv"});
+   ^~~~~~~~~~~~~~~~~~~
+gmake[2]: *** [CMakeFiles/dd.dir/build.make:76: CMakeFiles/dd.dir/src/main.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/dd.dir/all] Error 2
+gmake: *** [Makefile:91: all] Error 2

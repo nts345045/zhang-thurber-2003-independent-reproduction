@@ -1,0 +1,32 @@
+{
+  "child_reaped": true,
+  "command": [
+    "/usr/libexec/platform-python3.6",
+    "diagnostics/check_trilinear_action_bounds.py",
+    "--output",
+    "data/development/trilinear_action_controls_001"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "finished_utc": "2026-10-10T11:04:07.658055Z",
+  "native_calls": 0,
+  "output_sha256": {
+    "checks.json": "4832a4261256eff207e7e68feda02b53fd8a3439fd0964f02bea36358de26692",
+    "results.json": "03da8dfb49b9ad6e4e386fd623d472217215f820dcfe141c980a7bd5333bfdc3",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary.json": "e1778eb08b5c3937a77d085f803f10005cfc27d6c898c0e1665a1baddfd5aedb"
+  },
+  "owner": "root owned exec session; direct Python command with shell wait/reaping",
+  "prelaunch_review_sha256": "e034c9126ba37879021f38b5776b750f4bc8e788546431079253392d3f65404e",
+  "prepared_sha256": "32130c8bfe195de54d0ffefea8032f210adc36acf9524682ad60a6f186939b3b",
+  "python_sha256": "64c7391db4c0e069b875bb1cb358627cf4064c6ab3a343d3b5d2bf73d3ecca53",
+  "return_code": 0,
+  "started_utc": "2026-10-10T11:03:37.103683Z",
+  "status": "completed",
+  "summary_status": "passed",
+  "tool_session_id": 12848
+}

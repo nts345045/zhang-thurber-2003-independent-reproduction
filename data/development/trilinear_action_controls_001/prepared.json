@@ -1,0 +1,72 @@
+{
+  "control_settings": {
+    "bits": 128,
+    "subdivisions": 4,
+    "terms": 32
+  },
+  "created_utc": "2026-10-10T11:02:37.973538Z",
+  "declared_invented_families": 6,
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "input_sha256": {
+    "data/development/cmj_face_action_design_001/README.md": "9092829b398f4419c9d883c46fa882e305cd1bed7e8f4939858a008bddcc6a44",
+    "data/development/cmj_face_action_design_001/input_pins.json": "168610bee8448ab568aff4fa87fd93e2d45a46b9e763b8952b4581e0ce8efdd9",
+    "data/development/cmj_face_action_design_001/root_review.json": "757a9bbd0b766a4545a52707db1baa5941b700fdf302e7770e46393939310cfe",
+    "diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "diagnostics/check_trilinear_action_bounds.py": "3e24c71ea003160020059fc4436eb4d8b0995fe6703ac9dedec032558f60bfe8",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+    "diagnostics/trilinear_action_bounds.py": "c3ea236e9f234659061eec6c44c55bacc83ee45313b2d8488061eb5405f103da"
+  },
+  "limitations": [
+    "Source-only preparation; no claimed control outcomes.",
+    "Fixed positive-length polygons only; multiple aligned faces per edge have no first-variation implementation.",
+    "No native coordinates, optimizer, dual solve, production status, or source/model derivative."
+  ],
+  "native_calls": 0,
+  "numerical_execution": false,
+  "optimizer_calls": 0,
+  "output_sha256": {
+    "README.md": "b4279fca7b9310e04a95b8b0b1fc0ded810062ee8276b855251cf42109a995f4",
+    "design/README.md": "9092829b398f4419c9d883c46fa882e305cd1bed7e8f4939858a008bddcc6a44",
+    "design/input_pins.json": "168610bee8448ab568aff4fa87fd93e2d45a46b9e763b8952b4581e0ce8efdd9",
+    "design/root_review.json": "757a9bbd0b766a4545a52707db1baa5941b700fdf302e7770e46393939310cfe",
+    "source/diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "source/diagnostics/check_trilinear_action_bounds.py": "3e24c71ea003160020059fc4436eb4d8b0995fe6703ac9dedec032558f60bfe8",
+    "source/diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+    "source/diagnostics/trilinear_action_bounds.py": "c3ea236e9f234659061eec6c44c55bacc83ee45313b2d8488061eb5405f103da"
+  },
+  "planned_command": [
+    "python3",
+    "diagnostics/check_trilinear_action_bounds.py",
+    "--output",
+    "data/development/trilinear_action_controls_001"
+  ],
+  "python": {
+    "executable": "/usr/libexec/platform-python3.6",
+    "executable_sha256": "64c7391db4c0e069b875bb1cb358627cf4064c6ab3a343d3b5d2bf73d3ecca53",
+    "version": "3.6.8 (default, Sep 24 2024, 09:44:46) \n[GCC 8.5.0 20210514 (Red Hat 8.5.0-22)]"
+  },
+  "ray_calls": 0,
+  "required_review": {
+    "binds": "prepared_sha256",
+    "file": "prelaunch_review.json",
+    "status": "passed"
+  },
+  "source_sha256": {
+    "diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "diagnostics/check_trilinear_action_bounds.py": "3e24c71ea003160020059fc4436eb4d8b0995fe6703ac9dedec032558f60bfe8",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+    "diagnostics/trilinear_action_bounds.py": "c3ea236e9f234659061eec6c44c55bacc83ee45313b2d8488061eb5405f103da"
+  },
+  "static_validation": {
+    "method": "ast.parse without module import or arithmetic execution",
+    "source_files": [
+      "diagnostics/trilinear_action_bounds.py",
+      "diagnostics/check_trilinear_action_bounds.py",
+      "diagnostics/check_native_interface_support.py",
+      "diagnostics/first_arrival_1d_precise_turn_reference.py"
+    ]
+  },
+  "status": "prepared_unexecuted"
+}

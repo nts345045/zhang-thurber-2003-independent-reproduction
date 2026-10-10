@@ -1,0 +1,846 @@
+{
+  "cases": [
+    {
+      "action_bounds": {
+        "candidate": [
+          "1982591193824381206448797927355035799763/340282366920938463463374607431768211456",
+          "1982591193824381206448797927355045993969/340282366920938463463374607431768211456"
+        ],
+        "candidate_minus_original": [
+          "-1866896453902304524043535485/42535295865117307932921825928971026432",
+          "-3733792907804609048087039059/85070591730234615865843651857942052864"
+        ],
+        "original": [
+          "991295596919658189040008181773692021367/170141183460469231731687303715884105728",
+          "991295596919658189040008181773697095557/170141183460469231731687303715884105728"
+        ]
+      },
+      "action_classification": "decreased",
+      "all_single_face_patches_convex": true,
+      "candidate_flag": null,
+      "changed_edges": 32,
+      "event": 981,
+      "minimum_jump_numerator": "7330248687615038483144122548605388381496271249/26760894238236747769842861927178033807176499200",
+      "multiple_face_edges": 0,
+      "native_context": {
+        "event": 981,
+        "native_flat_index": 365092,
+        "original_status": {
+          "event": "981",
+          "ray_converged": "0",
+          "ray_derivatives_evaluated": "0",
+          "ray_direct_seed_time": "5.8263118784510874",
+          "ray_exact_receiver_endpoint": "1",
+          "ray_exact_source_endpoint": "1",
+          "ray_extraction_fallback_steps": "0",
+          "ray_extraction_message": "Exact endpoints connected by a descending FMM seed",
+          "ray_field_time": "5.8245497390603855",
+          "ray_finite": "1",
+          "ray_fmm_seed_time": "5.8263118708703301",
+          "ray_initialization_attempted": "1",
+          "ray_initialization_succeeded": "1",
+          "ray_iterations": "1000",
+          "ray_merged_nodes": "0",
+          "ray_path_in_domain": "1",
+          "ray_path_points": "1029",
+          "ray_projected_gradient": "0.00049649035047086309",
+          "ray_raw_gradient": "0.00049649035047086309",
+          "ray_selected_fmm_seed": "1",
+          "ray_time": "5.8263118708703301",
+          "receiver_channel_code": "EHZ",
+          "receiver_channel_epoch_end": "1998-06-09T19:30:00",
+          "receiver_channel_epoch_start": "1996-11-12T23:45:00",
+          "receiver_channel_fdsn_source_id": "FDSN:NC_CMJ__E_H_Z",
+          "receiver_channel_seed_id": "NC.CMJ..EHZ",
+          "receiver_channel_sensor_elevation_m": "479.0",
+          "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "receiver_epoch_basis": "",
+          "receiver_format_source_file": "",
+          "receiver_format_source_sha256": "",
+          "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "receiver_latitude": "",
+          "receiver_latitude_datum": "WGS84 (StationXML default)",
+          "receiver_latitude_deg": "37.520237",
+          "receiver_location_code": "",
+          "receiver_location_status_definition": "",
+          "receiver_longitude": "",
+          "receiver_longitude_datum": "WGS84 (StationXML default)",
+          "receiver_longitude_deg": "-121.873314",
+          "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "receiver_metadata_epoch_end": "1998-06-09T19:30:00",
+          "receiver_metadata_epoch_start": "1996-11-12T23:45:00",
+          "receiver_metadata_source_kind": "StationXML channel metadata",
+          "receiver_network_code": "NC",
+          "receiver_provider_channel_resource_ids_json": "[]",
+          "receiver_provider_channel_source_id": "",
+          "receiver_provider_data_use_end_date": "",
+          "receiver_provider_data_use_start_date": "",
+          "receiver_provider_elevation_m": "",
+          "receiver_provider_end_date": "",
+          "receiver_provider_end_hm": "",
+          "receiver_provider_location_code": "",
+          "receiver_provider_location_status": "",
+          "receiver_provider_network_resource_ids_json": "[]",
+          "receiver_provider_resource_id": "",
+          "receiver_provider_start_date": "",
+          "receiver_provider_start_hm": "",
+          "receiver_provider_station_resource_ids_json": "[]",
+          "receiver_provider_usgs_channel_code": "",
+          "receiver_retrieved_utc": "2026-10-09T21:26:26.325950Z",
+          "receiver_sensor_depth_below_ground_m": "0.0",
+          "receiver_sensor_z_geoid_km": "-0.479",
+          "receiver_source_document_metadata_index": "460",
+          "receiver_source_file": "../authoritative/stations/raw/ncedc_channels_NC_987aa2b70b3c.xml",
+          "receiver_source_line": "",
+          "receiver_source_sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833",
+          "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&sta=CAC%2CCAD%2CCAI%2CCAL%2CCAO%2CCBK%2CCBLG%2CCBR%2CCBS%2CCBW%2CCCH1%2CCCO%2CCCY%2CCDA%2CCDO%2CCDU%2CCDV%2CCGP%2CCGP1%2CCLC%2CCMC%2CCMH%2CCMJ%2CCML%2CCMM&start=1984-01-13T06%3A19%3A16.750000&end=1998-12-28T06%3A23%3A19.520000&cha=EHZ%2CELN%2CELZ%2CEP2%2CEP3%2CHN1%2CHN2%2CHN3%2CHV1&level=channel&format=xml",
+          "receiver_station_code": "CMJ",
+          "receiver_station_elevation_m": "479.0",
+          "receiver_station_epoch_end": "2017-05-05T21:13:00",
+          "receiver_station_epoch_start": "1972-07-01T00:00:00",
+          "receiver_station_fdsn_source_id": "FDSN:NC_CMJ",
+          "receiver_station_seed_id": "NC.CMJ",
+          "receiver_stationxml_schema_version": "1.2",
+          "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "receiver_x": "0.8110964733584467",
+          "receiver_y": "-27.614272174304624",
+          "receiver_z": "-0.47899999999999998",
+          "receiver_z_if_ground_elevation_km": "-0.479",
+          "receiver_z_if_sensor_elevation_km": "-0.479",
+          "source_catalog_geoid_depth_km": "8.401",
+          "source_catalog_latitude_deg": "37.7358333",
+          "source_catalog_longitude_deg": "-122.0916667",
+          "source_catalog_magnitude": "1.77",
+          "source_catalog_magnitude_type": "Md",
+          "source_coordinate_basis": "independent failed forward evaluation at recorded coordinates; see companion context for evaluation phase",
+          "source_dx": "",
+          "source_dy": "",
+          "source_dz": "",
+          "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/518943",
+          "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/2493829",
+          "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/4251144",
+          "source_origin_resource_id_basis": "provider reference origin; t is a correction in seconds",
+          "source_reference_origin_time_utc": "1997-08-28T00:12:33.360000Z",
+          "source_source_file": "../authoritative/hayward/raw/summaries_1997_00001.xml",
+          "source_source_sha256": "b752fbde045c0793506f392b90fa682eefb3f01b6053fb34698c835c38b6fef0",
+          "source_t": "0.038599415483628441",
+          "source_x": "-1.6642691740138478",
+          "source_y": "2.4612367003634659",
+          "source_z": "7.9775246718367478",
+          "station": "160"
+        },
+        "receiver_native": {
+          "channel_code": "EHZ",
+          "channel_epoch_end": "1998-06-09T19:30:00",
+          "channel_epoch_start": "1996-11-12T23:45:00",
+          "channel_fdsn_source_id": "FDSN:NC_CMJ__E_H_Z",
+          "channel_seed_id": "NC.CMJ..EHZ",
+          "channel_sensor_elevation_m": "479.0",
+          "elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "epoch_basis": "",
+          "format_source_file": "",
+          "format_source_sha256": "",
+          "id": "160",
+          "identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "latitude": "",
+          "latitude_datum": "WGS84 (StationXML default)",
+          "latitude_deg": "37.520237",
+          "location_code": "",
+          "location_status_definition": "",
+          "longitude": "",
+          "longitude_datum": "WGS84 (StationXML default)",
+          "longitude_deg": "-121.873314",
+          "metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "metadata_epoch_end": "1998-06-09T19:30:00",
+          "metadata_epoch_start": "1996-11-12T23:45:00",
+          "metadata_source_kind": "StationXML channel metadata",
+          "network_code": "NC",
+          "provider_channel_resource_ids_json": "[]",
+          "provider_channel_source_id": "",
+          "provider_data_use_end_date": "",
+          "provider_data_use_start_date": "",
+          "provider_elevation_m": "",
+          "provider_end_date": "",
+          "provider_end_hm": "",
+          "provider_location_code": "",
+          "provider_location_status": "",
+          "provider_network_resource_ids_json": "[]",
+          "provider_resource_id": "",
+          "provider_start_date": "",
+          "provider_start_hm": "",
+          "provider_station_resource_ids_json": "[]",
+          "provider_usgs_channel_code": "",
+          "retrieved_utc": "2026-10-09T21:26:26.325950Z",
+          "sensor_depth_below_ground_m": "0.0",
+          "sensor_z_geoid_km": "-0.479",
+          "source_document_metadata_index": "460",
+          "source_file": "../authoritative/stations/raw/ncedc_channels_NC_987aa2b70b3c.xml",
+          "source_line": "",
+          "source_sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833",
+          "source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&sta=CAC%2CCAD%2CCAI%2CCAL%2CCAO%2CCBK%2CCBLG%2CCBR%2CCBS%2CCBW%2CCCH1%2CCCO%2CCCY%2CCDA%2CCDO%2CCDU%2CCDV%2CCGP%2CCGP1%2CCLC%2CCMC%2CCMH%2CCMJ%2CCML%2CCMM&start=1984-01-13T06%3A19%3A16.750000&end=1998-12-28T06%3A23%3A19.520000&cha=EHZ%2CELN%2CELZ%2CEP2%2CEP3%2CHN1%2CHN2%2CHN3%2CHV1&level=channel&format=xml",
+          "station_code": "CMJ",
+          "station_elevation_m": "479.0",
+          "station_epoch_end": "2017-05-05T21:13:00",
+          "station_epoch_start": "1972-07-01T00:00:00",
+          "station_fdsn_source_id": "FDSN:NC_CMJ",
+          "station_seed_id": "NC.CMJ",
+          "stationxml_schema_version": "1.2",
+          "t": "0",
+          "vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "x": "0.8110964733584467",
+          "y": "-27.614272174304624",
+          "z": "-0.479",
+          "z_if_ground_elevation_km": "-0.479",
+          "z_if_sensor_elevation_km": "-0.479"
+        },
+        "source_native": {
+          "catalog_geoid_depth_km": "8.401",
+          "catalog_latitude_deg": "37.7358333",
+          "catalog_longitude_deg": "-122.0916667",
+          "catalog_magnitude": "1.77",
+          "catalog_magnitude_type": "Md",
+          "coordinate_basis": "independent failed line_search_trial forward evaluation; not a final inversion result",
+          "event_resource_id": "quakeml:NC.anss.org/Event/NC/518943",
+          "id": "981",
+          "magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/2493829",
+          "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/4251144",
+          "origin_resource_id_basis": "provider reference origin; t is a correction in seconds",
+          "reference_origin_time_utc": "1997-08-28T00:12:33.360000Z",
+          "source_file": "../authoritative/hayward/raw/summaries_1997_00001.xml",
+          "source_sha256": "b752fbde045c0793506f392b90fa682eefb3f01b6053fb34698c835c38b6fef0",
+          "t": "0.038599415483628441",
+          "x": "-1.6642691740138478",
+          "y": "2.4612367003634659",
+          "z": "7.9775246718367478"
+        },
+        "station": 160
+      },
+      "original_flag": "0",
+      "single_face_edges": 30,
+      "station": 160,
+      "tangent_projected_norm": {
+        "activity_rule": "Exact physical boundary only; no 1e-10 activity band.",
+        "available_component_count": 3050,
+        "exact_physical_boundary_component_count": 0,
+        "informational_binary64_sqrt": [
+          3.4636652037706155e-05,
+          3.4636652037706155e-05
+        ],
+        "interpretation": "Lower bound for any coupled support residual sharing these fixed tangent components; existence and eligibility remain separate. No stopping decision.",
+        "lower_squared": "138915499011820074457924149266257407999354108624365813288064705225935/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "sqrt_units": "s/km",
+        "threshold_scales": {
+          "combined_gradient_scale": {
+            "classification": "strictly_above",
+            "diagnostic_only": true,
+            "scale_squared": "1/10000000000"
+          },
+          "strict_gradient_scale": {
+            "classification": "strictly_above",
+            "diagnostic_only": true,
+            "scale_squared": "1/100000000000000"
+          }
+        },
+        "unavailable_face_normal_count": 31,
+        "units": "s^2/km^2",
+        "upper_squared": "138915499011820074457924149318751611711332682562295884661052026223997/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+      },
+      "tangent_witness": {
+        "axis": "x",
+        "choice": "First sign-resolved physically feasible tangent component in node/axis order; one direction only.",
+        "descent_magnitude_bounds": [
+          "2319019660654793660191955302909/340282366920938463463374607431768211456",
+          "2319019660654793660191955302911/340282366920938463463374607431768211456"
+        ],
+        "direction_euclidean_norm_exact": "1",
+        "distance_in_node_indices_to_selected_set": 723,
+        "exactly_zero_other_edge_count": 1026,
+        "feasible_positive_step_bound": "676746111835996375188292610568657406125/43556142965880123323311949751266331066368",
+        "full_directional": {
+          "contains_zero": false,
+          "exact_rational_bounds": [
+            "-2319019660654793660191955302911/340282366920938463463374607431768211456",
+            "-2319019660654793660191955302909/340282366920938463463374607431768211456"
+          ],
+          "rounded_binary64_display_only": [
+            -6.81498627636382e-09,
+            -6.81498627636382e-09
+          ],
+          "units": "s per dimensionless perturbation"
+        },
+        "incident_to_exact_face_edge": false,
+        "limitation": "No step taken; no alternative direction if the full interval remains unresolved.",
+        "node": 1,
+        "nonzero_direction": [
+          "1",
+          "0",
+          "0"
+        ],
+        "nonzero_edge_terms": [
+          {
+            "edge": 0,
+            "record": {
+              "aligned": [],
+              "derivative": [
+                "1339333113460335996268674315202974937/170141183460469231731687303715884105728",
+                "2678666226920671992537348630405949875/340282366920938463463374607431768211456"
+              ],
+              "pieces": [
+                {
+                  "cell": [
+                    5,
+                    3,
+                    2
+                  ],
+                  "inverse_square_tails": [
+                    "117895266539215164909424522190674351943155977815484017783659093085965462417100732306278729014509861804842016130408618975734826559215010958950077216683695676773754839906455318341012121977956075936817000907659514429472578844676588953796559481694782832618242589562201347237751842655017272129801657759328028879085180960756150297889334579996002113919775635897920991743870806689533771446955063146133982388011633949189795897276500290125274651948653298105198326626694515802710977606852095491576273397586573884217279115777775665652525654879238225590005671928017162361960667344345879587814799201883482236312175559849514836593017778941711453579905655324533191762053542013804330562730203188576003907296462844723200000000000/342759922290824843993252587245718263462380025855176110295192205404586361989554085289181404181120444443748505383013282207966243628411086405235895482779710689542532080481813221828812252102474180763303021104916137392526703670867478910711244828788008976548359490306055674668779040110445854716537818596906648744808092899034078617353615610452163232827901584222278140912274817079512294121136014391849324777888355036416600968086953040826681260730669145228818210293775713576021760789308692722476585666094269981536617779513361554799060261250923337851806105625809181500554020620351972783138888261154550869412142074579552187204577554860110850767770519023395914225834614552810501865668864299092652542884530559736090548526798021637898085054394636077963919301272640720929"
+                  ],
+                  "numerator": [
+                    "0",
+                    "-18766690388154539607538746332335103675014126967/342539446249430371453988632667878832731859189760",
+                    "-13215201011266096991193100477196208293187881/342539446249430371453988632667878832731859189760",
+                    "1990374116559744145209301155097066732293/28544953854119197621165719388989902727654932480"
+                  ],
+                  "reciprocal_tail": "3045720568394531738250135354151030987602437147181681756164654342756777147342312923258300869876350238137780622925886064606087804207304016599935424589531682747886602635717139846740292788683483890467773434252893658999182609901436122276384837435183846621576130804238016271002093664555296173411264734860240205060639955964213069964013375201744451235976576838168895010731098429242076131227987443289271667136879858698713859115882776028908695382050325500307528365866569382332615130103736832872828369906474819837028391861010507670847957377789143751006959940410265761583202729786951598080000000000/852268779671638950617687979269499357824363253818704033689752579347998618761094387594396897212987564225996833482282160526781019872635802102889494351688811920104958281834937566054243229070175851114556562472029587185727051836175186260172864952244185484139751303540116406536024604565867717563930088022091137351669426233910385210064944532997234340560141257366387049637802521232879050468517739099404187262664988378536542919932412413916961366151809412843553113095988446194735465857984514295158170985299162478484101448766831825810931149867986207235543725280703299326837886485602969158017098256239371021461661069146717915276482747427823377",
+                  "rho": "15352574540849145716817514155541853515717141013637109697870/1098424953530768972295776635740463227051381662284985699303237601",
+                  "series_degree": 8,
+                  "u": [
+                    "0",
+                    "1"
+                  ],
+                  "velocity_bounds": [
+                    "1098409600956228123150059818226307685197865945143972062193539731/192832565311078833065035451080939512302664359253935140236165120",
+                    "1098440306105309821441493453254618768904897379425999336412935471/192832565311078833065035451080939512302664359253935140236165120"
+                  ],
+                  "velocity_polynomial": [
+                    "1098409600956228123150059818226307685197865945143972062193539731/192832565311078833065035451080939512302664359253935140236165120",
+                    "122902304990628923146741364164655980619734834939350660191017/771330261244315332260141804323758049210657437015740560944660480",
+                    "-27261118423930688099009066509154882856537899414290262679/257110087081438444086713934774586016403552479005246853648220160",
+                    "1244857267244201596271320105202576198447799818136333/12855504354071922204335696738729300820177623950262342682411008"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "edge": 1,
+            "record": {
+              "aligned": [],
+              "derivative": [
+                "-2678668545940332647331008822361252785/340282366920938463463374607431768211456",
+                "-167416784121270790458188051397578299/21267647932558653966460912964485513216"
+              ],
+              "pieces": [
+                {
+                  "cell": [
+                    5,
+                    3,
+                    2
+                  ],
+                  "inverse_square_tails": [
+                    "869999592320045938862176623262651611571692828951532056210241284486366942745519647216484737421366469196292672489853677466364366086609287447277076086143689656828498986632965579701541278323865566055350753766994647860697447370550245763284813367016546179238015632969665062164514736770084684096373131746085510822910397398876845263533684567183568981480004942646419174314619673869768885045165265653533672517501493064449400447077614615184837284320756285169938006784085634350329825555516102801480252386931454670189618335276061998116312330680621592193999356209807169339992700893951152815971510138157767371915227259225245508124708271410409997448085601295424354711545046825369791416318895403970526302858909223750943072447365120/3159924466228515600013304013563899271677391893970362109386837620919812944027714555782894477291532240993088736173136512093536500485084793451115662865975168338357968542393694045546961782495357260285644430257502050908881562594561934902415366318792029196870897154170259628181707719900490174141828356368866628787794970733641909844633772421087643465305012096175878616096519996290491213863008100822309401905661608861499489430152188456479193540233263333640673466012545625451006483186986281435494647730402559386373570113398964354781971414374173578704964608526630482456753480079974121120762236314416568038345066303153050755458259137835544552278739743950926826813224480664187382538897575428404092109721722867844495238785289366642152418145946499622746079900011962007999241"
+                  ],
+                  "numerator": [
+                    "-4694970426169101746900049230299609679626631833/85634861562357592863497158166969708182964797440",
+                    "6255529312790880315380748506756572622292731357/114179815416476790484662877555959610910619729920",
+                    "3329296095746224599293473629193988565673463/85634861562357592863497158166969708182964797440",
+                    "-23418079218856939222493588055102634360591/342539446249430371453988632667878832731859189760"
+                  ],
+                  "reciprocal_tail": "3745841189944814895242547376834881972592476041734949922043615869822841996535535928917293070602764963250184674102332178305201426543476800340126243618590086292037673430555984837720611032087985814420820214305481172556077906870760606585495422895391060619943585213344113489773596020080278010399311388065109850099809458124260190820920288617615158147433051415532726446014681658067835865123417581453970619936841189791997462232297492137483944092954262006560340230529514117516191081150638407872135944217954749436039541909166871272564448107086012908639503560879588826571274406209096780382810553712640/1309446812942088321022178004597362362060861385823716137108271519061121468934014419803727858949569449201418716919308963212859235611228395644385515636840166954439582336929466338511747973976235092144028373018881618511889563599583672182608895079728097197248367132344394227540563203426785135283189856999391012506782383477622137104492309550268824950041835653655554049118427206609269935211755068240485776695628810933930074323559090743595569128774273556217097944776246204087765634957477911697433871136220168169149778058432102359426527644129787817423426823070150774075091857077166939000423083053493811065698659597399864290993394390967555680269",
+                  "rho": "29956111778867483666933253624318521888871782335083514210117/2196910568322398510366653839762861856331683630634333756340081059",
+                  "series_degree": 8,
+                  "u": [
+                    "0",
+                    "1"
+                  ],
+                  "velocity_bounds": [
+                    "1098440306105309821441493453254618768904897379425999336412935471/192832565311078833065035451080939512302664359253935140236165120",
+                    "91539188518090724077096698875686923952232187600694534993928799/16069380442589902755419620923411626025222029937827928353013760"
+                  ],
+                  "velocity_polynomial": [
+                    "1098440306105309821441493453254618768904897379425999336412935471/192832565311078833065035451080939512302664359253935140236165120",
+                    "7993721269508811854706404448934227390576495775353933838481/51422017416287688817342786954917203280710495801049370729644032",
+                    "-20361413265615193975226539181153452347445722709502845807/192832565311078833065035451080939512302664359253935140236165120",
+                    "73725900217623037853919985290506229475600863060646481/771330261244315332260141804323758049210657437015740560944660480"
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "selected_near_face_node": false,
+        "sign": 1,
+        "status": "negative_tangent_witness"
+      },
+      "unchanged_edges": 996
+    },
+    {
+      "action_bounds": {
+        "candidate": [
+          "993099190931847774514991812931160716715/170141183460469231731687303715884105728",
+          "993099190931847774514991812931165740753/170141183460469231731687303715884105728"
+        ],
+        "candidate_minus_original": [
+          "-27783893173034151380587278539/340282366920938463463374607431768211456",
+          "-27783893173034151380587167585/340282366920938463463374607431768211456"
+        ],
+        "original": [
+          "1986198381891479442203017777242908686131/340282366920938463463374607431768211456",
+          "1986198381891479442203017777242918674929/340282366920938463463374607431768211456"
+        ]
+      },
+      "action_classification": "decreased",
+      "all_single_face_patches_convex": true,
+      "candidate_flag": null,
+      "changed_edges": 33,
+      "event": 987,
+      "minimum_jump_numerator": "2433174596304928334942011722066567607164316763/8920298079412249256614287309059344602392166400",
+      "multiple_face_edges": 0,
+      "native_context": {
+        "event": 987,
+        "native_flat_index": 367324,
+        "original_status": {
+          "event": "987",
+          "ray_converged": "0",
+          "ray_derivatives_evaluated": "0",
+          "ray_direct_seed_time": "5.8369124533465948",
+          "ray_exact_receiver_endpoint": "1",
+          "ray_exact_source_endpoint": "1",
+          "ray_extraction_fallback_steps": "0",
+          "ray_extraction_message": "Exact endpoints connected by a descending FMM seed",
+          "ray_field_time": "5.8350425989357051",
+          "ray_finite": "1",
+          "ray_fmm_seed_time": "5.8369124438144935",
+          "ray_initialization_attempted": "1",
+          "ray_initialization_succeeded": "1",
+          "ray_iterations": "836",
+          "ray_merged_nodes": "0",
+          "ray_path_in_domain": "1",
+          "ray_path_points": "1031",
+          "ray_projected_gradient": "0.00049378622676222908",
+          "ray_raw_gradient": "0.00049378622676222908",
+          "ray_selected_fmm_seed": "1",
+          "ray_time": "5.8369124438144935",
+          "receiver_channel_code": "EHZ",
+          "receiver_channel_epoch_end": "1998-06-09T19:30:00",
+          "receiver_channel_epoch_start": "1996-11-12T23:45:00",
+          "receiver_channel_fdsn_source_id": "FDSN:NC_CMJ__E_H_Z",
+          "receiver_channel_seed_id": "NC.CMJ..EHZ",
+          "receiver_channel_sensor_elevation_m": "479.0",
+          "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "receiver_epoch_basis": "",
+          "receiver_format_source_file": "",
+          "receiver_format_source_sha256": "",
+          "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "receiver_latitude": "",
+          "receiver_latitude_datum": "WGS84 (StationXML default)",
+          "receiver_latitude_deg": "37.520237",
+          "receiver_location_code": "",
+          "receiver_location_status_definition": "",
+          "receiver_longitude": "",
+          "receiver_longitude_datum": "WGS84 (StationXML default)",
+          "receiver_longitude_deg": "-121.873314",
+          "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "receiver_metadata_epoch_end": "1998-06-09T19:30:00",
+          "receiver_metadata_epoch_start": "1996-11-12T23:45:00",
+          "receiver_metadata_source_kind": "StationXML channel metadata",
+          "receiver_network_code": "NC",
+          "receiver_provider_channel_resource_ids_json": "[]",
+          "receiver_provider_channel_source_id": "",
+          "receiver_provider_data_use_end_date": "",
+          "receiver_provider_data_use_start_date": "",
+          "receiver_provider_elevation_m": "",
+          "receiver_provider_end_date": "",
+          "receiver_provider_end_hm": "",
+          "receiver_provider_location_code": "",
+          "receiver_provider_location_status": "",
+          "receiver_provider_network_resource_ids_json": "[]",
+          "receiver_provider_resource_id": "",
+          "receiver_provider_start_date": "",
+          "receiver_provider_start_hm": "",
+          "receiver_provider_station_resource_ids_json": "[]",
+          "receiver_provider_usgs_channel_code": "",
+          "receiver_retrieved_utc": "2026-10-09T21:26:26.325950Z",
+          "receiver_sensor_depth_below_ground_m": "0.0",
+          "receiver_sensor_z_geoid_km": "-0.479",
+          "receiver_source_document_metadata_index": "460",
+          "receiver_source_file": "../authoritative/stations/raw/ncedc_channels_NC_987aa2b70b3c.xml",
+          "receiver_source_line": "",
+          "receiver_source_sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833",
+          "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&sta=CAC%2CCAD%2CCAI%2CCAL%2CCAO%2CCBK%2CCBLG%2CCBR%2CCBS%2CCBW%2CCCH1%2CCCO%2CCCY%2CCDA%2CCDO%2CCDU%2CCDV%2CCGP%2CCGP1%2CCLC%2CCMC%2CCMH%2CCMJ%2CCML%2CCMM&start=1984-01-13T06%3A19%3A16.750000&end=1998-12-28T06%3A23%3A19.520000&cha=EHZ%2CELN%2CELZ%2CEP2%2CEP3%2CHN1%2CHN2%2CHN3%2CHV1&level=channel&format=xml",
+          "receiver_station_code": "CMJ",
+          "receiver_station_elevation_m": "479.0",
+          "receiver_station_epoch_end": "2017-05-05T21:13:00",
+          "receiver_station_epoch_start": "1972-07-01T00:00:00",
+          "receiver_station_fdsn_source_id": "FDSN:NC_CMJ",
+          "receiver_station_seed_id": "NC.CMJ",
+          "receiver_stationxml_schema_version": "1.2",
+          "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "receiver_x": "0.8110964733584467",
+          "receiver_y": "-27.614272174304624",
+          "receiver_z": "-0.47899999999999998",
+          "receiver_z_if_ground_elevation_km": "-0.479",
+          "receiver_z_if_sensor_elevation_km": "-0.479",
+          "source_catalog_geoid_depth_km": "8.288",
+          "source_catalog_latitude_deg": "37.735",
+          "source_catalog_longitude_deg": "-122.0891667",
+          "source_catalog_magnitude": "1.64",
+          "source_catalog_magnitude_type": "Md",
+          "source_coordinate_basis": "independent failed forward evaluation at recorded coordinates; see companion context for evaluation phase",
+          "source_dx": "",
+          "source_dy": "",
+          "source_dz": "",
+          "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/519264",
+          "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/2494589",
+          "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/4252064",
+          "source_origin_resource_id_basis": "provider reference origin; t is a correction in seconds",
+          "source_reference_origin_time_utc": "1997-08-31T00:29:35.670000Z",
+          "source_source_file": "../authoritative/hayward/raw/summaries_1997_00001.xml",
+          "source_source_sha256": "b752fbde045c0793506f392b90fa682eefb3f01b6053fb34698c835c38b6fef0",
+          "source_t": "0.03346911400507608",
+          "source_x": "-1.6445460735726742",
+          "source_y": "2.5164888177449365",
+          "source_z": "7.875832460827211",
+          "station": "160"
+        },
+        "receiver_native": {
+          "channel_code": "EHZ",
+          "channel_epoch_end": "1998-06-09T19:30:00",
+          "channel_epoch_start": "1996-11-12T23:45:00",
+          "channel_fdsn_source_id": "FDSN:NC_CMJ__E_H_Z",
+          "channel_seed_id": "NC.CMJ..EHZ",
+          "channel_sensor_elevation_m": "479.0",
+          "elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "epoch_basis": "",
+          "format_source_file": "",
+          "format_source_sha256": "",
+          "id": "160",
+          "identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "latitude": "",
+          "latitude_datum": "WGS84 (StationXML default)",
+          "latitude_deg": "37.520237",
+          "location_code": "",
+          "location_status_definition": "",
+          "longitude": "",
+          "longitude_datum": "WGS84 (StationXML default)",
+          "longitude_deg": "-121.873314",
+          "metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "metadata_epoch_end": "1998-06-09T19:30:00",
+          "metadata_epoch_start": "1996-11-12T23:45:00",
+          "metadata_source_kind": "StationXML channel metadata",
+          "network_code": "NC",
+          "provider_channel_resource_ids_json": "[]",
+          "provider_channel_source_id": "",
+          "provider_data_use_end_date": "",
+          "provider_data_use_start_date": "",
+          "provider_elevation_m": "",
+          "provider_end_date": "",
+          "provider_end_hm": "",
+          "provider_location_code": "",
+          "provider_location_status": "",
+          "provider_network_resource_ids_json": "[]",
+          "provider_resource_id": "",
+          "provider_start_date": "",
+          "provider_start_hm": "",
+          "provider_station_resource_ids_json": "[]",
+          "provider_usgs_channel_code": "",
+          "retrieved_utc": "2026-10-09T21:26:26.325950Z",
+          "sensor_depth_below_ground_m": "0.0",
+          "sensor_z_geoid_km": "-0.479",
+          "source_document_metadata_index": "460",
+          "source_file": "../authoritative/stations/raw/ncedc_channels_NC_987aa2b70b3c.xml",
+          "source_line": "",
+          "source_sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833",
+          "source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&sta=CAC%2CCAD%2CCAI%2CCAL%2CCAO%2CCBK%2CCBLG%2CCBR%2CCBS%2CCBW%2CCCH1%2CCCO%2CCCY%2CCDA%2CCDO%2CCDU%2CCDV%2CCGP%2CCGP1%2CCLC%2CCMC%2CCMH%2CCMJ%2CCML%2CCMM&start=1984-01-13T06%3A19%3A16.750000&end=1998-12-28T06%3A23%3A19.520000&cha=EHZ%2CELN%2CELZ%2CEP2%2CEP3%2CHN1%2CHN2%2CHN3%2CHV1&level=channel&format=xml",
+          "station_code": "CMJ",
+          "station_elevation_m": "479.0",
+          "station_epoch_end": "2017-05-05T21:13:00",
+          "station_epoch_start": "1972-07-01T00:00:00",
+          "station_fdsn_source_id": "FDSN:NC_CMJ",
+          "station_seed_id": "NC.CMJ",
+          "stationxml_schema_version": "1.2",
+          "t": "0",
+          "vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "x": "0.8110964733584467",
+          "y": "-27.614272174304624",
+          "z": "-0.479",
+          "z_if_ground_elevation_km": "-0.479",
+          "z_if_sensor_elevation_km": "-0.479"
+        },
+        "source_native": {
+          "catalog_geoid_depth_km": "8.288",
+          "catalog_latitude_deg": "37.735",
+          "catalog_longitude_deg": "-122.0891667",
+          "catalog_magnitude": "1.64",
+          "catalog_magnitude_type": "Md",
+          "coordinate_basis": "independent failed line_search_trial forward evaluation; not a final inversion result",
+          "event_resource_id": "quakeml:NC.anss.org/Event/NC/519264",
+          "id": "987",
+          "magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/2494589",
+          "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/4252064",
+          "origin_resource_id_basis": "provider reference origin; t is a correction in seconds",
+          "reference_origin_time_utc": "1997-08-31T00:29:35.670000Z",
+          "source_file": "../authoritative/hayward/raw/summaries_1997_00001.xml",
+          "source_sha256": "b752fbde045c0793506f392b90fa682eefb3f01b6053fb34698c835c38b6fef0",
+          "t": "0.03346911400507608",
+          "x": "-1.6445460735726742",
+          "y": "2.5164888177449365",
+          "z": "7.875832460827211"
+        },
+        "station": 160
+      },
+      "original_flag": "0",
+      "single_face_edges": 31,
+      "station": 160,
+      "tangent_projected_norm": {
+        "activity_rule": "Exact physical boundary only; no 1e-10 activity band.",
+        "available_component_count": 3055,
+        "exact_physical_boundary_component_count": 0,
+        "informational_binary64_sqrt": [
+          4.130621674458865e-05,
+          4.130621674458865e-05
+        ],
+        "interpretation": "Lower bound for any coupled support residual sharing these fixed tangent components; existence and eligibility remain separate. No stopping decision.",
+        "lower_squared": "197564872763449262545903714374550830475399792180086623031856113949517/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "sqrt_units": "s/km",
+        "threshold_scales": {
+          "combined_gradient_scale": {
+            "classification": "strictly_above",
+            "diagnostic_only": true,
+            "scale_squared": "1/10000000000"
+          },
+          "strict_gradient_scale": {
+            "classification": "strictly_above",
+            "diagnostic_only": true,
+            "scale_squared": "1/100000000000000"
+          }
+        },
+        "unavailable_face_normal_count": 32,
+        "units": "s^2/km^2",
+        "upper_squared": "98782436381724631272951857214799470597475302914495062706038165459895/57896044618658097711785492504343953926634992332820282019728792003956564819968"
+      },
+      "tangent_witness": {
+        "axis": "x",
+        "choice": "First sign-resolved physically feasible tangent component in node/axis order; one direction only.",
+        "descent_magnitude_bounds": [
+          "2652496162260610227531061798715/340282366920938463463374607431768211456",
+          "2652496162260610227531061798717/340282366920938463463374607431768211456"
+        ],
+        "direction_euclidean_norm_exact": "1",
+        "distance_in_node_indices_to_selected_set": 725,
+        "exactly_zero_other_edge_count": 1028,
+        "feasible_positive_step_bound": "675700935821100854251845309973242340787/43556142965880123323311949751266331066368",
+        "full_directional": {
+          "contains_zero": false,
+          "exact_rational_bounds": [
+            "-2652496162260610227531061798717/340282366920938463463374607431768211456",
+            "-2652496162260610227531061798715/340282366920938463463374607431768211456"
+          ],
+          "rounded_binary64_display_only": [
+            -7.794985635787862e-09,
+            -7.794985635787862e-09
+          ],
+          "units": "s per dimensionless perturbation"
+        },
+        "incident_to_exact_face_edge": false,
+        "limitation": "No step taken; no alternative direction if the full interval remains unresolved.",
+        "node": 1,
+        "nonzero_direction": [
+          "-1",
+          "0",
+          "0"
+        ],
+        "nonzero_edge_terms": [
+          {
+            "edge": 0,
+            "record": {
+              "aligned": [],
+              "derivative": [
+                "-2556184432957828337809434293560895357/340282366920938463463374607431768211456",
+                "-639046108239457084452358573390223839/85070591730234615865843651857942052864"
+              ],
+              "pieces": [
+                {
+                  "cell": [
+                    5,
+                    3,
+                    2
+                  ],
+                  "inverse_square_tails": [
+                    "271430254021128452020230422454764875686440479736080032647568537925247784826098787998080169477584865228828914008961436277515989831534270278918740293773963040698480882766985552976878625221970429662190315573278116002936795994510208124791219504763547194208044992598764667363030719044038869802695403069448719480772587174778082281013411327852759564932595946909213061561867942025241021131103824297996043414860488096614922034825626082747521685620859306483008055189642882989478898698305071890886324598092358037224220776745678979119798807942466585505406325979059352347358286852584712816108222055973820512794885708266610573029312701873057649314350372436068677190761536069437973855527691923438548773235715485990912/1072481756940943231146777670779291130939356290019107169491460030631676538132103373745104373146202891649709500604481861451233071763922050750400992746286632182822533679981476918895006501228545052795757336446477467177314882700604767442072773107666429377044894847985572734993305878160722489836415110766030797363948830476602112946870244803262056382436739154427239901813585995619096896688118098141901806697781150801790712106678774826204760591207167350572719598765577763329172938214080704955153630344159452313670508226068058680757881955204076517304526178187650725159574047456123995858852203179525933915781125218125269329782063586566219987849597376394319235508621264678397080377685131138465125071412663236644961383435764263522196760809301204731824324005"
+                  ],
+                  "numerator": [
+                    "0",
+                    "642639020637742404681623633967775440248577893/11417981541647679048466287755595961091061972992",
+                    "1458632164315220877094707788411935264465187/57089907708238395242331438777979805455309864960",
+                    "-12001881966746164398370695462107937148357/85634861562357592863497158166969708182964797440"
+                  ],
+                  "reciprocal_tail": "82148176150914338637703706240430139100349197749906090644416293514392359875348583016153852228698850509248225030792916719131092446100489544727120308525106206604557773941568475430754688448483343270787457118761559577352470119929916984341114882377322745032816198070809028155284773148031297491265126026394273519367477211231274152143359887868847646282170944228588063883372867713146821743097061162296609741948788308425800245811500556650110342335290206404013101611401364293770907167622746814447920618086957912548717470161137349361310172803268610382920898556869335252823488514792206893056/32171032253679546513861473461188745262770924574351669955749264305865113863475154245149889899521803787610230589710656288124107649587043897270733306687928762437200132065905734463257608936934558672360839870094264904918812384543879416740320252319854501968718957740713677389874615936856694467838444107897305344781116862610384916689033043821239743801917360378537922821301669536397367859028933069946700140058622109745428786264223297452913361760087927991429889972131164346224333382699747682915023007438882940706049851524110442382091083025422817551832324724642710989953989498798045352974276175045277541630287380690238248733705521",
+                  "rho": "10589959594876201812017097056263544683423689892864004757303/365173077632322108789056953706957416128863028104011524593103268",
+                  "series_degree": 8,
+                  "u": [
+                    "0",
+                    "1"
+                  ],
+                  "velocity_bounds": [
+                    "73032497534545446517448987321980230516835920882823732117669193/12855504354071922204335696738729300820177623950262342682411008",
+                    "365183667591916984990868970804013679673546451793904388597860571/64277521770359611021678483693646504100888119751311713412055040"
+                  ],
+                  "velocity_polynomial": [
+                    "73032497534545446517448987321980230516835920882823732117669193/12855504354071922204335696738729300820177623950262342682411008",
+                    "42377345771513515056221562915363889762106639073330227358649/128555043540719222043356967387293008201776239502623426824110080",
+                    "-52593490545976676244828398757177010587788186826168887897/385665130622157666130070902161879024605328718507870280472330240",
+                    "35657259926625892652163914021962676074840601771949793/192832565311078833065035451080939512302664359253935140236165120"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "edge": 1,
+            "record": {
+              "aligned": [],
+              "derivative": [
+                "39940340319713532456237605664048385/5316911983139663491615228241121378304",
+                "2556181780461666077199206762499096641/340282366920938463463374607431768211456"
+              ],
+              "pieces": [
+                {
+                  "cell": [
+                    5,
+                    3,
+                    2
+                  ],
+                  "inverse_square_tails": [
+                    "3826985638545347508813756480261334481820507859320669151542677778360508835916096775099999407855168789037441983801405793808615511314242978572636170154687773578535419870819980155012538162378561202826895308675370011600120983147256558133815450772630013480576595450820694954332921931696885821827291058835855460542287536924578820841966334447764129500782258511965666032817741977842161283570740161428796409798135951237105342602984987457025169537165290873032548031544642346785564013330126013678384406048451313219678772103473754771569703975256160033694942633138811730223530924931866095653267993287367763831199353774595772543212104209400147510522864335864054005122745085592900395659210179187587873464917373747200000000000/16880364650300622266329988444898894439091431766318991617867893127634080596087047344874342059900428636862998699796762954477022857994278445839770567386252626733852358038774768640960440599351432392699310966706930642907307730784540150038078510554174588114454387625272007299955443427266052248434139721926626406481300264869573346183206452339597537243607617722837339827310662672117208182975896195577686279968470584274094401715188158464132387804297313005987097216567700331940907705862840579219406976009775611949095011013176732794104428383921090998429642742573963103706517436702156555508207677400475303083465742874712742525190187255539562313606159031826477474650035026220568205903702649590441714630326125761694146029913905288382246605685659473320495576180241323"
+                  ],
+                  "numerator": [
+                    "4821968601147574120263420945745471596823883621/85634861562357592863497158166969708182964797440",
+                    "-9639546542707323164764560327595508937845055037/171269723124715185726994316333939416365929594880",
+                    "-1471477074147126181954744349687881667047161/57089907708238395242331438777979805455309864960",
+                    "3961939102717130597111525604898199738213/28544953854119197621165719388989902727654932480"
+                  ],
+                  "reciprocal_tail": "96513948909310310360521600854482399318119134512778128366381424987154448777100945347936059124909649102587461812153046814361997237152472099764323318578964996155014681405094235719272584532248888312464278400494685662247492974174838592751071964998533535176307057435528713504883034321207122690992598291452029871051795274358569586962856284794618031639579644447252929692383470761520278652277377702449525422928605527239926357422574251382388596464262059128384081149698943748028794916026695221926501413694084144276137952588691225225896068894280469077454928481240062932180528383949537280000000000/42191545642891889191705734758423910823541210430879855456886950165534699165548234713234163832805429075091627748260528517132382027087798800124652271688264927292761852206545415571052319608891001816538101603725987198986017255019232416070212462456359316620855240241914506881693715028961125169825288536434422797963093676513023384372553546268415888452678890386497654968544243521623132918804238588929814570853222299095361293149283007891618536647719552683725586046123365945125289809178612127786384687701073523044293826792935304091526412938363929645316973698450561487063329392411204998114435122575467043872837643523252663029146580385131",
+                  "rho": "10461996038543796017346375815127864933524845920606145578070/365194129587955528786886317179828807538479976639824994743438641",
+                  "series_degree": 8,
+                  "u": [
+                    "0",
+                    "1"
+                  ],
+                  "velocity_bounds": [
+                    "365183667591916984990868970804013679673546451793904388597860571/64277521770359611021678483693646504100888119751311713412055040",
+                    "365204591583994072582903663555643935403413501485745600889016711/64277521770359611021678483693646504100888119751311713412055040"
+                  ],
+                  "velocity_polynomial": [
+                    "365183667591916984990868970804013679673546451793904388597860571/64277521770359611021678483693646504100888119751311713412055040",
+                    "41865386659762560024737607461148910644672210285792393892969/128555043540719222043356967387293008201776239502623426824110080",
+                    "-17426218319933149939949484251262658005339862872824718063/128555043540719222043356967387293008201776239502623426824110080",
+                    "11856366278597293922641806905873716256629752506568687/64277521770359611021678483693646504100888119751311713412055040"
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "selected_near_face_node": false,
+        "sign": -1,
+        "status": "negative_tangent_witness"
+      },
+      "unchanged_edges": 997
+    }
+  ],
+  "check_counts": {
+    "action_alignment": 2123,
+    "action_sign_classification": 2,
+    "cache_unique_geometry": 2,
+    "candidate_eligibility_preserved": 2,
+    "candidate_node_join": 2060,
+    "complete_single_face_jump_inventory": 2,
+    "complete_two_case_readback": 1,
+    "complete_witness_edge_sum": 2,
+    "controller_source_binding": 1,
+    "cubic_velocity_degree": 2187,
+    "declared_environment": 1,
+    "declared_series_degree": 2187,
+    "deterministic_witness_selection": 2,
+    "edge_blocked_normal_axes": 2058,
+    "edge_geometry_mapping": 2058,
+    "edge_record_inventory": 2,
+    "exact_action_sums": 6,
+    "exact_changed_edge_cancellation": 2,
+    "exact_executed_command": 1,
+    "exact_length_enclosure": 2123,
+    "exact_piece_partition": 2123,
+    "execution_prelaunch_binding": 2,
+    "execution_prepared_binding": 2,
+    "file_sha256": 139,
+    "fixed_budget": 1,
+    "fixed_components_omitted": 4,
+    "fixed_exact_endpoints": 2,
+    "flags_unmodified": 2,
+    "free_node_inventory": 2,
+    "fresh_review": 1,
+    "full_adjacent_edge_component_sum": 2056,
+    "full_metadata": 2,
+    "full_native_context": 2,
+    "independent_jump_coefficients": 65,
+    "interval_order": 32927,
+    "jump_piece_join": 65,
+    "model_axes": 1,
+    "model_binary64_provenance": 1848,
+    "model_native_context": 1,
+    "model_node_inventory": 1,
+    "model_raw_file": 1,
+    "native_roster": 2,
+    "no_solver_or_step": 1,
+    "normal_slot_availability": 12336,
+    "original_positive_contained_geometry": 2,
+    "path_binary64_provenance": 6180,
+    "path_native_join": 2060,
+    "path_point_count": 2,
+    "piece_in_closed_cell": 4374,
+    "positive_complete_grid": 1,
+    "positive_geometric_step_bound": 2,
+    "positive_velocity_bound": 2187,
+    "prelaunch_binding": 1,
+    "python_runtime_binding": 1,
+    "quadratic_degree": 65,
+    "reciprocal_tail_formula": 2187,
+    "reported_counts": 2,
+    "selected_node_inventory": 2,
+    "selected_raw_join": 63,
+    "single_face_jump_inventory": 61,
+    "summary_full_result_join": 24,
+    "tangent_edge_inventory": 2,
+    "terminal_calculation": 1,
+    "terminal_owned_execution": 1,
+    "two_case_inventories": 1,
+    "two_nonzero_edges": 2,
+    "unit_coordinate_direction": 2,
+    "whole_piece_jump_extrema": 65,
+    "witness_magnitude": 2,
+    "witness_positive_edge_length_guarantee": 4,
+    "witness_sign_preserved": 2,
+    "witness_spatial_context": 2,
+    "witness_true_box_feasibility": 2
+  },
+  "checker_sha256": "a6dd49f783594b9e44619376d590d19286d743b2a97520cbfd38506fd3eb110c",
+  "controller_sha256": "55c672a3fdd095b549a8155cf9f04e6670ca0fd8541b8c1dce2eee38654bbb02",
+  "execution_sha256": "c3655f6e72c7c99eeca6dc3724be4978d5bcd48ddc9773f035bfa7b373c4c933",
+  "limits": [
+    "Saved interval arithmetic and provenance review only; no reciprocal action or directional integral recomputed.",
+    "Jump coefficients checked by independent exact trilinear slope algebra at three points per quadratic piece.",
+    "Projected tangent norm uses the true physical box and excludes unavailable internal-face normals.",
+    "Norm comparisons are diagnostic scales, not a stopping rule or status promotion."
+  ],
+  "prelaunch_review_sha256": "1ce2a61a1156b31f56405f929578bee783f89780c1d8adf75c753c6aa21804fb",
+  "prepared_sha256": "b76991263bddbaaaa75fd90b858f800fb4ec5339e40782b6aff8cf94f117ec08",
+  "reviewer": "ray_math_review",
+  "status": "passed",
+  "summary_sha256": "56c51845fa8ee9a2cefe1be09c78819b7eef6e79b4f7c0b4f7ca2b3580fe77d9",
+  "tangent_norms_sha256": "72b0c6cc9ce3dcb5acd15c537bbc6076a13361537e92a1ed9d5f1ccc6c70eaa0"
+}

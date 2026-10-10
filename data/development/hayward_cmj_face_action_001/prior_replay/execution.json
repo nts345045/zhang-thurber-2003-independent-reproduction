@@ -1,0 +1,104 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T09:49:08.457002+00:00",
+  "prepared_sha256": "b83f9691eb0fc58d2580e269dded1a70d069daa560d716999139460ee6a8f159",
+  "prelaunch_review_sha256": "21c72fe0b3feef7525efaa6bb666ba5f04443965083f1b0dcf8eab6dd39b09f6",
+  "commands": [
+    {
+      "stage": "compile_old",
+      "command": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/driver.cpp",
+        "-I/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/source/old",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/build/trace_old",
+        "-lstdc++fs"
+      ],
+      "started_utc": "2026-10-10T09:49:08.459199+00:00",
+      "pid": 317673,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T09:49:39.519207+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "forward_old",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/build/trace_old",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/inputs",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/results/old",
+        "old",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/results/old"
+      ],
+      "started_utc": "2026-10-10T09:49:42.370624+00:00",
+      "pid": 318079,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T09:53:51.561817+00:00",
+      "stdout_sha256": "74999f4262dd10a2f25327a57c7ed37cfaacbd25b5512579dbe560c45a9985df",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "compile_D",
+      "command": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/driver.cpp",
+        "-I/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/source/D",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/build/trace_D",
+        "-lstdc++fs"
+      ],
+      "started_utc": "2026-10-10T09:53:52.524491+00:00",
+      "pid": 320573,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T09:54:22.486550+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "forward_D",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/build/trace_D",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/inputs",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/results/D",
+        "D",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/results/old"
+      ],
+      "started_utc": "2026-10-10T09:54:25.250213+00:00",
+      "pid": 320880,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T09:54:48.867870+00:00",
+      "stdout_sha256": "e5f4aa1aaa1ddf178452c2eba34b80c94c1d3bbfb5fee12cdc770b812c219bc0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "trace_subcalls_planned": 8,
+  "configured_evaluations_planned": 4,
+  "field_constructions_planned": 1,
+  "environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "1",
+    "LC_ALL": "C",
+    "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "address_space_limit_GiB": 16,
+  "current_stage": "forward_D",
+  "return_code": 0,
+  "finished_utc": "2026-10-10T09:54:52.152104+00:00",
+  "summary_sha256": "6c14dc7c6c655ab384a86618cfd1d9b07b0353c32a436ded7db0c0b77b5c8131",
+  "configured_evaluations_completed": 4,
+  "trace_subcalls_completed": 8,
+  "field_constructions_completed": 1
+}

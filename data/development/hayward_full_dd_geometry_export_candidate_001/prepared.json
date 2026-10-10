@@ -1,0 +1,128 @@
+{
+  "changed_source_files": [
+    "src/full_linearization.hpp"
+  ],
+  "compiler": "/usr/bin/c++",
+  "created_utc": "2026-10-10T11:00:15Z",
+  "flags": "-std=gnu++17 -O3 -Wall -Wextra -Wpedantic -fopenmp",
+  "input_sha256": {
+    "data/development/full_dd_resolution_ray_input_checks_001/review.json": "dfbc34bc023db6b2cb181dff777ca7a2cf9c804866739f75a3b5806607d9ecbe",
+    "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/main.cpp": "a10dcdc300d9a4e43f6ae0cba2e354d7cec549438319cf411b577790b2373058",
+    "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "data/development/hayward_old_kernel_trial_backtracking_candidate_001/prepared.json": "5bb45c57b3f594485abbaf144da3b540f2c7f8d42dc783837976fbe33b5d96dd",
+    "diagnostics/check_full_linearization.cpp": "d21c06b2f11e91b48cab03b6d1e62e77973d8786256ab43672d8ffb06dc46ab9",
+    "resolution_full_hayward.py": "64315e341200cbac98be78e45a03de81eb040e96d265ab1adb15c9d08b907d43"
+  },
+  "insertion_only_diff": [
+    {
+      "after_start_line": 21,
+      "before_line": 21,
+      "line_count": 22
+    },
+    {
+      "after_start_line": 188,
+      "before_line": 166,
+      "line_count": 1
+    }
+  ],
+  "limitations": [
+    "Byte equality of the original eight output files remains to be tested; only source preservation is checked here.",
+    "The new files describe the parsed saved 12-digit model evaluated by this command, not the earlier in-memory inversion state.",
+    "Required initialization must be checked against the pinned saved config; the status writer records unchanged attempted/succeeded flags.",
+    "Geometry/local/dimension flags do not certify first-arrival selection or final source/model derivative accuracy.",
+    "No field or covariance eligibility follows from this uncompiled candidate."
+  ],
+  "new_suffixes": [
+    "_ray_geometry.csv",
+    "_ray_paths.csv"
+  ],
+  "original_eight_suffixes": [
+    "_matrix.csv",
+    "_rows.csv",
+    "_suppressed.csv",
+    "_columns.csv",
+    "_smoothing_matrix.csv",
+    "_smoothing_rows.csv",
+    "_rays.csv",
+    "_info.csv"
+  ],
+  "output_sha256": {
+    "CONTROL_PLAN.md": "f6f87edbe745a2f0bba6652b8746de61e23aa3a9508b13729588af6a52ae0d18",
+    "README.md": "40c357b6082d3f15a80984a175f7f03e373673723cee37cd49d712f7d44d2d0a",
+    "after/CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "after/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "after/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "after/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "after/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "after/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "after/src/full_linearization.hpp": "107ce4a71f83652225ad412b259e065fe7c684547abb75c1d874fa93b2711977",
+    "after/src/main.cpp": "a10dcdc300d9a4e43f6ae0cba2e354d7cec549438319cf411b577790b2373058",
+    "after/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "after/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "before/CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "before/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "before/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "before/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "before/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "before/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "before/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "before/src/main.cpp": "a10dcdc300d9a4e43f6ae0cba2e354d7cec549438319cf411b577790b2373058",
+    "before/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "before/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "candidate.patch": "8a8c937a549ef9dc4cf68a5d164c71bc1753d1975cedbb885c6c1012302df717"
+  },
+  "planned_control_reference": "diagnostics/check_full_linearization.cpp",
+  "runtime_sha256": {
+    "/lib64/ld-linux-x86-64.so.2": "4a06fb242c7d5a06a4fcd54fd0723d680c0a5828ebd4a2ebeb4dd1fd68705a12",
+    "/lib64/libc.so.6": "28d830c37bfd68d5165b3d2fd28a87dd737180df5255e1290d5015b0f9db0027",
+    "/lib64/libdl.so.2": "e34274941b0b4cff9f07896ecb0a56c108338aac1b3f8d21cc67c247094ad901",
+    "/lib64/libgcc_s.so.1": "fc8572b6747ab823b40d75a2b759db2c12b5c256ede7fa0e5da6ae5f4b0e144d",
+    "/lib64/libgomp.so.1": "855c301ab3ac34c8d0e4f8ddd135993156a4dca42a2778133e9ccba199753d54",
+    "/lib64/libm.so.6": "07dee3042cbebba9c6378266b15579edc7494acad1b7d1048c5db6d79d908bf4",
+    "/lib64/libpthread.so.0": "8e757a6a1bfb17649d6f4cfb1ca1f4bac8c06588913ebaa1076ec0f6cd36b481",
+    "/lib64/libstdc++.so.6": "7657b5709008fa4c3c1cc062e15417e9dd1a9f37c82a3615cd79baae7827fdfd",
+    "/usr/bin/c++": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7"
+  },
+  "scope": "Two additional same-Ray geometry/path files for full linearization; source-only isolated candidate.",
+  "source_checks": {
+    "all_other_nine_source_files_byte_identical": true,
+    "all_ten_before_files_match_frozen_old_candidate_after": true,
+    "compiled": false,
+    "field_exports": 0,
+    "git_mutations": false,
+    "inverse_calls": 0,
+    "original_eight_writer_lines_unmodified": true,
+    "ray_calls": 0,
+    "removing_two_insertions_recovers_exact_original_header": true
+  },
+  "source_verification_attempts": [
+    {
+      "reason": "The initial inline source reconstruction attempted to join lists rather than joined text chunks; no C++ or numerical execution occurred.",
+      "status": "failed_before_manifest"
+    },
+    {
+      "correction": "Flatten unchanged line chunks before exact original-header comparison.",
+      "status": "passed"
+    }
+  ],
+  "status": "source_prepared_not_compiled_or_executed",
+  "unchanged_source_files": [
+    "CMakeLists.txt",
+    "src/analytic_truth.hpp",
+    "src/core.hpp",
+    "src/csv.hpp",
+    "src/first_arrival.hpp",
+    "src/forward.hpp",
+    "src/main.cpp",
+    "src/ray_checks.hpp",
+    "src/ray_metric.hpp"
+  ]
+}

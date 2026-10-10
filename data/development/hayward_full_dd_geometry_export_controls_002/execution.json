@@ -1,0 +1,626 @@
+{
+  "all_direct_children_reaped": true,
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "-I/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/source/before/src",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/fixture.cpp",
+        "-lstdc++fs",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/before"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:12:58.056579+00:00",
+      "label": "compile_before",
+      "pid": 370521,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:12:26.970648+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "-I/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/source/after/src",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/fixture.cpp",
+        "-lstdc++fs",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:13:30.627063+00:00",
+      "label": "compile_after",
+      "pid": 370698,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:12:58.057771+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "-I/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/source/after_io/src",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/fixture.cpp",
+        "-lstdc++fs",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after_io"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:03.116268+00:00",
+      "label": "compile_after_io",
+      "pid": 370935,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:13:30.628710+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:03.242616+00:00",
+      "label": "compiler_version",
+      "pid": 371174,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:03.117515+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a"
+    },
+    {
+      "argv": [
+        "ldd",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:03.376855+00:00",
+      "label": "runtime_libraries",
+      "pid": 371175,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:03.243897+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6f94e40b264e01fd5078a5fb8505fa58e2574204d963b3c36a29ceffce09aca3"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/before",
+        "cli",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/actual_before",
+        "actual"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:03.538204+00:00",
+      "label": "actual_before",
+      "pid": 371180,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:03.381167+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e46162a8b33a15a4864bc060340169907611047489c884c460c81c7130650e87"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "cli",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/actual_after",
+        "actual"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:03.698237+00:00",
+      "label": "actual_after",
+      "pid": 371192,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:03.539621+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e46162a8b33a15a4864bc060340169907611047489c884c460c81c7130650e87"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_valid",
+        "valid"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:03.844640+00:00",
+      "label": "array_valid",
+      "pid": 371196,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:03.716055+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_unattempted",
+        "unattempted"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:03.990079+00:00",
+      "label": "array_unattempted",
+      "pid": 371197,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:03.859566+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_missing_required",
+        "missing_required"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:04.135904+00:00",
+      "label": "array_missing_required",
+      "pid": 371198,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:04.004996+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_local",
+        "local"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:04.271577+00:00",
+      "label": "array_local",
+      "pid": 371199,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:04.144185+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_initializer_failed",
+        "initializer_failed"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:04.422295+00:00",
+      "label": "array_initializer_failed",
+      "pid": 371200,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:04.280137+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_outside",
+        "outside"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:04.560092+00:00",
+      "label": "array_outside",
+      "pid": 371201,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:04.431280+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_source_endpoint",
+        "source_endpoint"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:04.695368+00:00",
+      "label": "array_source_endpoint",
+      "pid": 371202,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:04.568683+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_receiver_endpoint",
+        "receiver_endpoint"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:04.831938+00:00",
+      "label": "array_receiver_endpoint",
+      "pid": 371203,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:04.704034+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_empty",
+        "empty"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:04.964249+00:00",
+      "label": "array_empty",
+      "pid": 371204,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:04.840484+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_nan_path",
+        "nan_path"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:05.104133+00:00",
+      "label": "array_nan_path",
+      "pid": 371205,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:04.972092+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_nan_time",
+        "nan_time"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:05.245326+00:00",
+      "label": "array_nan_time",
+      "pid": 371209,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:05.112386+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_nan_source",
+        "nan_source"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:05.395278+00:00",
+      "label": "array_nan_source",
+      "pid": 371221,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:05.253250+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_short_dv",
+        "short_dv"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:05.533720+00:00",
+      "label": "array_short_dv",
+      "pid": 371249,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:05.404040+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_short_length",
+        "short_length"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:05.670254+00:00",
+      "label": "array_short_length",
+      "pid": 371278,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:05.542273+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_wrong_array",
+        "wrong_array"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:05.812662+00:00",
+      "label": "array_wrong_array",
+      "pid": 371279,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:05.678917+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after_io",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_io_geometry",
+        "io_geometry"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:05.943704+00:00",
+      "label": "array_io_geometry",
+      "pid": 371280,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:05.817300+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after_io",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/array_io_paths",
+        "io_paths"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:06.097805+00:00",
+      "label": "array_io_paths",
+      "pid": 371281,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:05.948180+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "cli",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/preserve_cli_geometry_regular",
+        "valid"
+      ],
+      "expected_return_code": 1,
+      "finished_utc": "2026-10-10T11:14:07.324139+00:00",
+      "label": "preserve_cli_geometry_regular",
+      "pid": 371282,
+      "reaped": true,
+      "return_code": 1,
+      "started_utc": "2026-10-10T11:14:07.192860+00:00",
+      "stderr_sha256": "4113a71bd9b9139bea69a38527a0fd2175f4991dfb7ef127b5ff1a03bd6116f6",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "cli",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/preserve_cli_geometry_dangling",
+        "valid"
+      ],
+      "expected_return_code": 1,
+      "finished_utc": "2026-10-10T11:14:07.451316+00:00",
+      "label": "preserve_cli_geometry_dangling",
+      "pid": 371284,
+      "reaped": true,
+      "return_code": 1,
+      "started_utc": "2026-10-10T11:14:07.328874+00:00",
+      "stderr_sha256": "e1d5f2539620e389fcd206f3a56d6b4049144324bc507cedc3c1fc4417a41dad",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "cli",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/preserve_cli_paths_regular",
+        "valid"
+      ],
+      "expected_return_code": 1,
+      "finished_utc": "2026-10-10T11:14:07.575598+00:00",
+      "label": "preserve_cli_paths_regular",
+      "pid": 371285,
+      "reaped": true,
+      "return_code": 1,
+      "started_utc": "2026-10-10T11:14:07.455849+00:00",
+      "stderr_sha256": "1afcbf0cd77a8cbc710c04b28adb80b389b8b9a3edd10320b4da0eadce56289a",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "cli",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/preserve_cli_paths_dangling",
+        "valid"
+      ],
+      "expected_return_code": 1,
+      "finished_utc": "2026-10-10T11:14:07.705816+00:00",
+      "label": "preserve_cli_paths_dangling",
+      "pid": 371287,
+      "reaped": true,
+      "return_code": 1,
+      "started_utc": "2026-10-10T11:14:07.580700+00:00",
+      "stderr_sha256": "c06bae24e652eeb7d1611d74411c3f63a2ddbb171f23db07690eff95d1482dbf",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/preserve_array_geometry_regular",
+        "valid"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:07.835320+00:00",
+      "label": "preserve_array_geometry_regular",
+      "pid": 371288,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:07.710780+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/preserve_array_geometry_dangling",
+        "valid"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:07.962066+00:00",
+      "label": "preserve_array_geometry_dangling",
+      "pid": 371289,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:07.840623+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/preserve_array_paths_regular",
+        "valid"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:08.090315+00:00",
+      "label": "preserve_array_paths_regular",
+      "pid": 371290,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:07.967580+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/build/after",
+        "arrays",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/preserve_array_paths_dangling",
+        "valid"
+      ],
+      "expected_return_code": 0,
+      "finished_utc": "2026-10-10T11:14:08.216488+00:00",
+      "label": "preserve_array_paths_dangling",
+      "pid": 371291,
+      "reaped": true,
+      "return_code": 0,
+      "started_utc": "2026-10-10T11:14:08.095911+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/usr/libexec/platform-python3.6",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/review_geometry.py",
+        "--data-dir",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/absent",
+        "--config",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/absent.cfg",
+        "--output",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/prior_review_regular.json"
+      ],
+      "expected_return_code": 1,
+      "finished_utc": "2026-10-10T11:14:08.467427+00:00",
+      "label": "reader_preserve_regular",
+      "pid": 371292,
+      "reaped": true,
+      "return_code": 1,
+      "started_utc": "2026-10-10T11:14:08.220682+00:00",
+      "stderr_sha256": "6a74e3dd513f79de92e6940d2c43fadd43382385ce138e69580f47f94add689a",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/usr/libexec/platform-python3.6",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/review_geometry.py",
+        "--data-dir",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/absent",
+        "--config",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/absent.cfg",
+        "--output",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_full_dd_geometry_export_controls_002/results/prior_review_dangling.json"
+      ],
+      "expected_return_code": 1,
+      "finished_utc": "2026-10-10T11:14:08.707177+00:00",
+      "label": "reader_preserve_dangling",
+      "pid": 371297,
+      "reaped": true,
+      "return_code": 1,
+      "started_utc": "2026-10-10T11:14:08.471242+00:00",
+      "stderr_sha256": "6a74e3dd513f79de92e6940d2c43fadd43382385ce138e69580f47f94add689a",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "driver_pid": 370519,
+  "environment": {
+    "LC_ALL": "C",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp"
+  },
+  "finished_utc": "2026-10-10T11:14:08.958683+00:00",
+  "prelaunch_review_sha256": "2b127dcf79caf6aa39fb4e0af729bafcc2d5bd464e245b2a743c7c3853f17d57",
+  "prepared_sha256": "833201e5c9b6156d34940208972508a94c36b21c6b56b5a3d3f6d0febe4243bb",
+  "return_code": 0,
+  "started_utc": "2026-10-10T11:12:26.969099+00:00",
+  "status": "completed",
+  "summary_sha256": "f090766ef2bafd6aeaeb049506800d566386fffaac2e2feacd6762f94a1428a2"
+}

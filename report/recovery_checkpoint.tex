@@ -104,6 +104,56 @@ trilinear face formula applies piecewise between other grid-plane crossings.
 It is not a continuous certificate for general paths, and these exact-face
 controls cannot relabel the merely nearby native nodes.
 
+Within each grid cell, velocity along a straight edge is a polynomial of
+degree at most three. For positive nodal velocities, exact grid-plane splitting
+and bounded polynomial sums enclose reciprocal-velocity action and its first variation; an
+aligned-face variation uses the incident cell selected by its normal motion.
+All 80 invented checks pass: 65 mathematical checks and 15 source/file hash
+checks. Independent saved readback verifies 18 exact comparisons, including
+both adjacent edges of a tangent variation. The controls retain coupled
+descent missed by coordinate probes and deliberately unresolved bounds.
+No native geometry, trace or optimizer was evaluated by this suite, and no
+production flag changes. Results are in
+\path{data/development/trilinear_action_controls_001/RESULTS.md}.
+
+The completed native calculation forms two separately identified candidates
+by setting only the previously selected 31 or 32 node $x$ coordinates to
+exact zero. All other coordinates, node order and endpoints remain fixed.
+Bounded continuous integration resolves a decrease in action for each
+candidate (Table~\ref{tab:cmj_face_action}). The 30 and 31 aligned edges split
+into 32 and 33 face pieces; independent quadratic extrema give positive
+normal slowness jumps over every complete piece. However, both candidates
+retain ordinary tangent descent. The complete available tangent components,
+including both edges incident on each free node, have norm lower bounds
+above $10^{-5}$ s/km. No free coordinate lies exactly on the physical box
+boundary. These subset lower bounds apply to any full coupled support
+residual sharing the tangent components; their upper bounds do not bound
+that unknown full residual. Thus face alignment alone does not meet either
+existing gradient scale. The first prescribed coordinate witness is at node
+one, far from the modified nodes, so that witness does not localize the cause
+of the original failure. No displacement step or optimizer was run, and no
+endpoint/model derivative, stationary path or first arrival is certified.
+Original flags remain false; candidate convergence is unevaluated. Full native
+identities, rational bounds and independent saved readback are in
+\path{data/development/hayward_cmj_face_action_001/RESULTS.md} and
+\path{data/development/hayward_cmj_face_action_review_001/}.
+
+\begin{table}[ht]
+\centering
+\caption{Prescribed face candidates for \texttt{NC.CMJ..EHZ}. Values are rounded displays of
+rational enclosures for the recorded binary64 model. The tangent norm omits
+31 or 32 unavailable face-normal components; it is not a full stopping test.}
+\label{tab:cmj_face_action}
+\begin{tabular}{lll}
+\hline
+Event & $\Delta T$ (s) & Tangent norm (s/km) \\
+\hline
+\texttt{NC518943} & $-4.3891\times10^{-11}$ & $3.4637\times10^{-5}$ \\
+\texttt{NC519264} & $-8.1650\times10^{-11}$ & $4.1306\times10^{-5}$ \\
+\hline
+\end{tabular}
+\end{table}
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\textwidth]{../figures/diagnostics/hayward_full_initial_accuracy.pdf}
@@ -881,12 +931,14 @@ headers. Its 62 checks include the actual saved eligibility assessment of
 58,980 observations and 14,262 native rays, and five process-lifecycle
 cases. The latter exercise normal and failed exits, surviving writers and
 interruption; no compiler, ray or inverse calculation runs in this suite.
-The original unexecuted test draft remains preserved. No new field inversion
-has started at this checkpoint. A successful execution would still await
+The original unexecuted test draft remains preserved. This launcher validation
+preceded the separate field attempt. A successful execution would still await
 final ray, derivative and scientific assessment. The launcher evidence is in
 \path{data/development/hayward_old_kernel_backtracking_launcher_checks_002/};
 the lossless archive and restoration instructions are in
 \path{data/development/trial_backtracking_evidence_001/README.md}.
+The catalog-only attempt began at 10:52 UTC on 10 October 2026. At the
+11:21 UTC snapshot it remained in its initial evaluation, with no accepted update.
 
 \subsection{Historical waveform metadata and identified correlations}
 The existing Hayward catalog pair at differential row 15108 links events
@@ -1050,9 +1102,26 @@ It refuses incomplete or failed inputs and preserves existing resolution files.
 All 56 invented input controls pass; the preceding 39 covariance-control records
 remain exactly unchanged. These checks are saved in
 \path{data/development/full_dd_resolution_ray_input_checks_001/}.
-The exported status table lacks path-domain, endpoint and source-partial fields;
+The original 12-digit status table lacks path-domain, endpoint and source-partial fields;
 unattempted initialization remains explicitly allowed. Passing this input check
 therefore does not certify first arrivals or final-model derivative accuracy.
+
+A separate geometry export now writes identified 17-digit status and complete
+paths from the same ray array used for the full matrix, including pairs used
+only by zero-weight observations. Its reader checks native support and both
+receiver epochs, path order, endpoints, box membership, configured
+initialization and signed source-matrix entries. All 82 invented controls
+pass on the frozen old-kernel source, with the original eight export files
+byte-identical. The evaluation point is the parsed saved 12-digit model,
+not an asserted copy of the earlier
+internal state. Integration adoption compiled successfully after adding the
+reviewed checked-I/O helpers; the first compile-only failure is preserved.
+Neither adoption attempt evaluated rays. Source, controls and independent
+readback are retained in
+\path{data/development/hayward_full_dd_geometry_adoption_002/}
+and the lossless
+\path{data/development/geometry_export_evidence_001/README.md}.
+These diagnostics establish no field accuracy or covariance acceptance.
 No new field resolution has been calculated. Fixed weights, independent
 one-sigma pick errors, and unconstrained sources remain assumptions; active
 bounds, model and ray errors, nonlinear effects, and waveform noise are outside

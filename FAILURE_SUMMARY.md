@@ -42,6 +42,18 @@ set can still hide descent at a slow face. Their coupled endpoint directions
 cannot be checked independently. These controls do not project or relabel
 the nearby native paths; see the [ridge calculation](data/development/internal_ridge_stationarity_controls_001/README.md).
 
+The [trilinear action controls](data/development/trilinear_action_controls_001/RESULTS.md)
+now bound reciprocal-velocity integrals and side-dependent first variations
+after exact grid-plane splitting. All 80 checks pass (65 mathematical and
+15 hash checks), with 18 independent exact comparisons. Coupled descent and
+unresolved bounds remain explicit. The [native CMJ calculation](data/development/hayward_cmj_face_action_001/RESULTS.md)
+now shows that placing the selected nodes exactly on the face lowers the
+continuous trilinear action by 4.3891e-11 and 8.1650e-11 s. Nevertheless, the
+remaining tangent norms are 3.4637e-5 and 4.1306e-5 s/km, with lower bounds
+above both existing gradient scales. Face alignment alone does not resolve
+these two paths; ordinary tangent descent remains. Both original failed
+flags are preserved, and no optimized path or first arrival is claimed.
+
 The original guard also stopped before trying a smaller inverse step. A
 [separate old-kernel candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)
 now distinguishes a pure local-stopping trial rejection from fatal current,
@@ -54,11 +66,24 @@ They do not establish recovery of the failed Hayward trial, later-model
 accuracy or a complete final-table launcher test.
 The [separate launcher checks](data/development/hayward_old_kernel_backtracking_launcher_checks_002/review.json)
 pass all 62 cases, including five process-lifecycle cases, and verify the
-exact source changes against the original initial-model evidence. These are
-saved-evidence and controller checks; no new field inversion has started.
+exact source changes against the original initial-model evidence. These
+saved-evidence and controller checks preceded the separate field attempt.
 Final scientific assessment remains necessary after any successful execution.
+The catalog-only attempt began at 10:52 UTC on 10 October 2026; the 11:21 UTC
+snapshot still showed its initial evaluation, with no accepted update.
 The [evidence archive](data/development/trial_backtracking_evidence_001/README.md)
 preserves both successful controls and earlier failed or unexecuted variants.
+
+Final-model evidence also needs the paths used by the full-DD matrix. The
+[geometry exporter and reader](data/development/hayward_full_dd_geometry_adoption_002/README.md)
+now preserve and check identified 17-digit paths, endpoints, box membership,
+configured initialization and source-matrix joins. All 82 invented controls
+pass on the frozen old-kernel source, and the original eight export files
+remain byte-identical. Integration adoption compiled successfully after a
+preserved compile-only failure; neither
+attempt evaluated rays. The [archive](data/development/geometry_export_evidence_001/README.md)
+retains the source, both control preparations and reviews. These checks concern
+the parsed saved model and establish no field accuracy or covariance acceptance.
 
 Bounded LON tests also show that early stopping affects source derivatives:
 additional optimization improves one failing ray while worsening a passing
