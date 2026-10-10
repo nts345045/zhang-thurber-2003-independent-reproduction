@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "command": [
+    "tmp/waveform_env/bin/python",
+    "data/authoritative/waveforms/cohort_samples_002/acquire.py",
+    "--record-no-samples",
+    "--batches",
+    "1",
+    "--summary",
+    "samples_001.json"
+  ],
+  "explicit_environment": {
+    "MPLCONFIGDIR": "tmp/waveform_cache/mpl",
+    "XDG_CACHE_HOME": "tmp/waveform_cache/xdg",
+    "TMPDIR": "tmp/waveform_cache/tmp",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "scope": "Cached first response only; --fetch absent; no requests",
+  "started_utc": "2026-10-10T04:54:58.999971+00:00",
+  "source_sha256": "228d1cfd7e7ef6e90dc21e4914a5aaf2f4eadd3769d3b01f1b3d831708fefb36",
+  "returncode": 0,
+  "elapsed_seconds": 7.233584979898296,
+  "ended_utc": "2026-10-10T04:55:06.233554+00:00",
+  "output_sha256": {
+    "offline_reuse_stdout.log": "53b95d15b372cc985fca7b241797e7aa41630c4b5e5f82ce99281b8fe354f2b9",
+    "offline_reuse_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "offline_reuse_resources.txt": "6b90301cdd02952ca2aec097a190b27e9f697648f9a362454386328c2d9341d7",
+    "samples_001.json": "1390533fa05acd26aacb3e83c3f9c37a85d1e564d81f57f03ef7b7e35558bc59",
+    "samples_001.picks.csv.gz": "73cf117b234177b051fdedd46dbfd784b6d13e05874ee260068d4aa238546bc4"
+  }
+}
