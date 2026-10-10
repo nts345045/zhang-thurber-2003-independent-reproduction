@@ -58,8 +58,18 @@ One subsequent [prescribed tangent step](data/development/hayward_cmj_tangent_st
 per face candidate lowers the action by another 2.4666e-10 and 4.6728e-10 s,
 with maximum node movements of 0.05169 and 0.14095 m. Both complete rounded
 displacements have certified negative slopes and pass the fixed Armijo check.
-Independent saved readback passes. Post-step stationarity is unevaluated;
-these decreases do not resolve convergence or the source-derivative failures.
+Independent saved readback passes. The separate
+[post-step gradient calculation](data/development/hayward_cmj_post_step_tangent_001/RESULTS.md)
+gives available tangent norms of 3.1087e-6 and 1.2717e-5 s/km. Both retain
+resolved tangent residuals above 1e-7, and the second remains above 1e-5.
+Neither preceding accepted change is below 1e-11 s. These measured reductions
+do not yet resolve convergence or the source-derivative failures.
+
+The [next full-size tangent trials](data/development/hayward_cmj_tangent_step_002/RESULTS.md)
+increase action by 3.0212e-10 and 2.7020e-10 s and are rejected. Their initial
+slopes are negative, so the finite step is too large for decrease. This
+supports testing a smaller fraction along the same directions. The first
+accepted paths and their checked gradients remain in place.
 
 The original guard also stopped before trying a smaller inverse step. A
 [separate old-kernel candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)

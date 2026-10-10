@@ -1,0 +1,224 @@
+--- data/development/hayward_cmj_tangent_step_001/run.py
++++ data/development/hayward_cmj_tangent_step_002/run.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Two reviewed saved polygons: one metric direction/at most one trial each.
++"""One further tangent trial on each of two reviewed saved first trials.
+ 
+ No compilation, tangent integration, trace, field or iterative optimizer.
+ The native loader uses only stdlib exact joins; numerical imports occur only
+@@ -24,6 +24,10 @@
+ N=ROOT/'data/development/hayward_cmj_face_action_001'
+ R=ROOT/'data/development/hayward_cmj_face_action_review_001'
+ C=ROOT/'data/development/cmj_tangent_step_source_002'
++STEP=ROOT/'data/development/hayward_cmj_tangent_step_001'
++STEP_REVIEW=ROOT/'data/development/hayward_cmj_tangent_step_review_001'
++POST=ROOT/'data/development/hayward_cmj_post_step_tangent_001'
++POST_REVIEW=ROOT/'data/development/hayward_cmj_post_step_tangent_review_001'
+ SETTINGS=dict(terms=8,subdivisions=1,bits=128)
+ ROSTER={981:(1029,724,754,12568,'49639104'),987:(1031,726,757,12672,'49654119')}
+ USES={981:[(12568,'i'),(15081,'j'),(16943,'i'),(17559,'j'),(17871,'i'),(19525,'i'),(25283,'i'),(28675,'i'),(40595,'i')],
+@@ -75,7 +79,7 @@
+ def xyz(row):return tuple(Q(float(row[k])) for k in 'xyz')
+ 
+ 
+-def load_inputs():
++def load_initial_inputs():
+     """Attest the already saved geometry/intervals; no new integration."""
+     contexts=read(N/'inputs/native_context.json')
+     context={c['event']:c for c in contexts}
+@@ -211,6 +215,148 @@
+     return grid,results
+ 
+ 
++def load_inputs():
++    """Saved first-trial geometry/action plus raw post-step component bounds.
++
++    The loader is not imported or called during preparation. The post-step
++    files and independent review must retain their terminal, pinned state.
++    No interval integration or numerical helper is called by this loader.
++    """
++    grid,cases=load_initial_inputs()
++    first_review=read(STEP_REVIEW/'review.json')
++    require(first_review['status']=='passed' and first_review['native_summary_sha256']==sha(STEP/'summary.json')
++            and first_review['native_execution_sha256']==sha(STEP/'execution.json')
++            and first_review['outer_reaping_sha256']==sha(STEP/'outer_reaping.json'),'Reviewed first-trial terminal chain')
++    identities=read(STEP/'native_contexts.json')
++    post_review=read(POST_REVIEW/'review.json');receipt=read(POST_REVIEW/'execution_receipt.json')
++    require(post_review['status']=='passed','Passed independent post-step review')
++    for field,name in (('native_prepared_sha256','prepared.json'),('native_summary_sha256','summary.json'),
++                       ('native_execution_sha256','execution.json'),('outer_reaping_sha256','outer_reaping.json')):
++        require(post_review[field]==sha(POST/name),'Post-step review bound to '+name)
++    require(receipt['status']=='completed_and_reaped' and receipt['tool_exit_code']==0
++            and receipt['review_sha256']==sha(POST_REVIEW/'review.json')
++            and receipt['checker_sha256']==post_review['checker_sha256']==sha(POST_REVIEW/'check.py'),
++            'Post-step review checker/terminal receipt')
++    require([dict(event=v['event'],station=v['station'],native_context=v['native_context'],catalog_uses=v['catalog_uses'])
++             for v in post_review['cases']]==identities,'Both complete post-step review contexts and catalog uses')
++    reviewed={v['event']:v for v in post_review['cases']}
++    require(all(v['original_convergence_flag']=='0' and v['candidate_convergence_status'] is None for v in reviewed.values()),
++            'Post-step review preserves false/null flags')
++    for base,status in ((STEP,'completed_bounded_diagnostic'),(POST,'completed_bounded_tangent_diagnostic')):
++        summary=read(base/'summary.json');execution=read(base/'execution.json');outer=read(base/'outer_reaping.json')
++        require(summary['status']==execution['status']==status and execution['return_code']==0
++                and summary.get('error') is None,'Completed prior calculation')
++        require(outer['status']=='completed_and_reaped' and outer['tool_exit_code']==0
++                and outer['execution_sha256']==sha(base/'execution.json') and outer['summary_sha256']==sha(base/'summary.json'),
++                'Reaped prior calculation')
++        require(summary['native_contexts']==execution['native_contexts']==identities,'Complete inherited contexts')
++        require(summary['settings']==SETTINGS and summary['output_sha256']==execution['output_sha256'],'Prior settings/output inventory')
++        for name,digest in summary['output_sha256'].items():require(sha(base/name)==digest,'Changed terminal output: '+name)
++    require(read(POST/'native_contexts.json')==identities,'Post-step complete identities')
++    for case in cases:
++        event=case['event'];folder=STEP/('event_'+str(event));prior=read(folder/'result.json.gz');value=prior['result']
++        post_path=POST/('event_'+str(event)+'.json.gz');post=read(post_path)
++        rounded=read(folder/'round/stdout.json')
++        with (folder/'round/stdout.json').open() as stream:tokens=json.load(stream,parse_float=str,parse_int=str)
++        for record in (prior,post):
++            require(record['event']==event and record['station']==160 and record['native_context']==case['native_context']
++                    and record['catalog_uses']==case['catalog_uses'],'First/post-step full native and nine-use joins')
++            require(record['candidate_convergence_status'] is None and record['settings']==SETTINGS,'No new convergence/status or budget')
++        require(prior['original_status']==case['original_status'] and value['status']=='diagnostic_trial_accepted'
++                and value['new_convergence_status'] is None and not value['original_status_changed'],'Preserved original status/accepted first trial')
++        require(post['original_convergence_flag']=='0' and post['status']=='completed_available_tangent_bounds'
++                and post['ineligibility']==[] and post['prior_result_sha256']==sha(folder/'result.json.gz'),'Eligible reviewed post-step geometry')
++        for file in (folder/'result.json.gz',folder/'round/stdout.json',post_path):
++            sidecar=read(Path(str(file)+'.identifiers.json'))
++            require(sidecar['native_context']==case['native_context'] and sidecar['catalog_uses']==case['catalog_uses']
++                    and sidecar['expected_file']==str(file.relative_to(ROOT)),'Inherited numeric-file identifiers')
++        require(prior['coordinate_provenance']==case['coordinate_provenance'] and prior['starting_edge_record_ids']==case['candidate_edge_record_ids']
++                and prior['starting_candidate_action']==case['candidate_action'],'Original starting geometry/action provenance')
++        path=[tuple(map(Q,p)) for p in value['trial']];before=case['path'];count=len(before)
++        require(len(path)==count and rounded==value['rounded_record'] and len(rounded['trial'])==len(rounded['trial_hex'])==3*count,'First rounded coordinate roster')
++        coordinates=post['coordinate_provenance'];require(len(coordinates)==count,'Complete post-step coordinates')
++        for node,(p,record) in enumerate(zip(path,coordinates)):
++            require(record['node']==node and tuple(map(Q,record['exact_rational']))==p,'Post-step exact coordinate join')
++            require(record['decimal_tokens']==tokens['trial'][3*node:3*node+3] and record['binary64_hex']==rounded['trial_hex'][3*node:3*node+3],
++                    'Preserved original decimal tokens/hex')
++            for axis,x in enumerate(p):
++                slot=3*node+axis;a=float(rounded['trial'][slot]);b=float.fromhex(rounded['trial_hex'][slot])
++                require(a.hex()==b.hex() and float(tokens['trial'][slot]).hex()==a.hex() and Q(a)==x,'First rounded binary64 mapping')
++        require(path[0]==before[0] and path[-1]==before[-1] and all(a!=b for a,b in zip(path,path[1:])),'Fixed endpoints/positive edges')
++        axes=grid['axes']
++        require(all(axes[k][0]<=p[k]<=axes[k][-1] for p in path for k in range(3))
++                and all(axes[k][0]<p[k]<axes[k][-1] for p in path[1:-1] for k in range(3)),
++                'Unchanged strict interior eligibility for free nodes')
++        # Reconstruct the complete ordered first-trial action cache. Repeated
++        # original edges use their LAST original index, exactly as the helper.
++        action=value['action'];cache={};starting_sum=(Q(0),Q(0));total=(Q(0),Q(0));paired=(Q(0),Q(0))
++        for edge,(a,b,record) in enumerate(zip(before,before[1:],case['starting_edges'])):
++            bounds=interval(record['action']);key=(a,b)
++            if key in cache:require(cache[key]['action']==bounds,'Identical original edges agree')
++            cache[key]=dict(action=bounds,source='saved_start',edge=edge);starting_sum=add(starting_sum,bounds)
++        require(starting_sum==interval(action['starting_action']),'First-trial complete initial action')
++        new=action['new_edge_records'];joins=action['edge_joins'];used=0;starting=[];sources=[]
++        require(len(joins)==count-1,'Complete first-trial edge join inventory')
++        for edge,(a,b,c,d) in enumerate(zip(before,before[1:],path,path[1:])):
++            key=(c,d)
++            if key not in cache:
++                record=new[used]
++                require(record['record_id']==used and tuple(map(Q,record['a']))==c and tuple(map(Q,record['b']))==d,'New ordered first-trial action record')
++                bounds=interval(record['record']['action']);require(bounds[0]>0,'Positive saved first-trial edge action')
++                cache[key]=dict(action=bounds,source='new_trial',record_id=used);used+=1
++            record=cache[key];join=joins[edge];old=interval(case['starting_edges'][edge]['action'])
++            difference=(Q(0),Q(0)) if (a,b)==key else (record['action'][0]-old[1],record['action'][1]-old[0])
++            require(join['edge']==edge and join['identical']==((a,b)==key) and interval(join['difference'])==difference,'First-trial ordered cancellation')
++            require(encoded(record)==join['trial_record'],'Exact reused/new cache reference and action')
++            total=add(total,record['action']);paired=add(paired,difference)
++            source={k:v for k,v in record.items() if k!='action'};sources.append(source)
++            starting.append(dict(action=record['action'],cache_id=source))
++        require(used==len(new)==action['action_edge_evaluations']==value['action_edge_evaluations'],'No unused first-trial action records')
++        require(total==interval(action['trial_action'])==interval(post['saved_trial_action']) and paired==interval(action['paired_difference'])
++                and (total[0]-starting_sum[1],total[1]-starting_sum[0])==interval(action['full_difference']),
++                'Complete new starting action and inherited paired/full differences')
++        # Only RAW components enter the solve. Projected norm entries are
++        # diagnostic summaries, never substitutes for the action derivative.
++        edges=post['tangent_edge_records'];full=post['free_node_components'];aligned=[];blocked=set()
++        require([r['edge'] for r in edges]==list(range(count-1)) and [r['node'] for r in full]==list(range(1,count-1)),'Complete post-step tangent inventory')
++        require(post['attempted_tangent_edges']==post['completed_tangent_edges']==count-1,'Exactly one prior tangent evaluation per edge')
++        for edge,(a,b,record) in enumerate(zip(path,path[1:],edges)):
++            faces=[[k,axis.index(a[k])] for k,axis in enumerate(axes) if a[k]==b[k] and a[k] in axis[1:-1]]
++            require(len(faces)<=1 and record['endpoint_nodes']==[edge,edge+1] and record['blocked_axes']==[k for k,index in faces],
++                    'Actual-geometry single-face tangent eligibility')
++            aligned.append(dict(edge=edge,aligned_internal_faces=faces))
++            for k,index in faces:blocked.update((node,k) for node in (edge,edge+1) if 0<node<count-1)
++        require(aligned==post['aligned_edge_inventory'] and sorted(blocked)==[tuple(v) for v in post['geometric_blocked_slots']],
++                'Re-derived availability mask; no inherited mask assumption')
++        require(edges[0]['components'][0] is None and edges[-1]['components'][1] is None,'Fixed endpoint omission')
++        components=[None]
++        for node,row in enumerate(full,1):
++            require(len(row['components'])==3,'All free-node axes');joined=[]
++            for axis,value in enumerate(row['components']):
++                left=edges[node-1]['components'][1][axis];right=edges[node]['components'][0][axis]
++                bounds=None if left is None or right is None else add(interval(left),interval(right))
++                require((bounds is None)==((node,axis) in blocked),'Incident-edge/geometry availability')
++                require((value is None and bounds is None) or (value is not None and bounds is not None and interval(value)==bounds),
++                        'Complete two-incident RAW component sum')
++                joined.append(bounds)
++            components.append(joined)
++        components.append(None)
++        audit=reviewed[event]
++        require(interval(audit['post_squared_bounds'])==(Q(post['post_step_norm']['lower_squared']),Q(post['post_step_norm']['upper_squared']))
++                and interval(audit['pre_squared_bounds'])==(Q(post['pre_step_norm']['lower_squared']),Q(post['pre_step_norm']['upper_squared']))
++                and audit['same_available_mask']==post['comparison']['same_available_mask'],
++                'Exact independently reviewed pre/post norm evidence')
++        case.update(path=path,components=components,starting_edges=starting,coordinate_provenance=coordinates,
++                    candidate_action=dict(exact_rational_bounds=total,basis='First accepted rounded trial action; not reevaluated'),
++                    candidate_edge_record_ids=sources,starting_action_record_joins=joins,
++                    prior_starting_coordinate_provenance=prior['coordinate_provenance'],post_step_comparison=post['comparison'],
++                    unavailable_slots=sorted(blocked),chain_provenance=dict(first_trial_result_sha256=sha(folder/'result.json.gz'),
++                    first_trial_round_stdout_sha256=sha(folder/'round/stdout.json'),post_step_result_sha256=sha(post_path),
++                    first_trial_summary_sha256=sha(STEP/'summary.json'),post_step_summary_sha256=sha(POST/'summary.json'),
++                    post_step_review_sha256=sha(POST_REVIEW/'review.json'),post_step_review_receipt_sha256=sha(POST_REVIEW/'execution_receipt.json')))
++    return grid,cases
++
++
+ def group_members(pgid):
+     result=[]
+     for entry in Path('/proc').iterdir():
+@@ -243,6 +389,12 @@
+             for name,digest in pins.items():require(sha(base/name)==digest,'Changed pinned file: '+name)
+         for name,digest in prepared['runtime_sha256'].items():require(sha(name)==digest,'Changed runtime: '+name)
+     verify()
++    # This separate fixed trial was selected after the terminal reviewed
++    # reduction left available-tangent obstructions. It is not an automatic loop.
++    require(prepared.get('second_step_condition_confirmed') is True,'Conditional follow-up has not been authorized from terminal reviewed evidence')
++    post_review_file=str((POST_REVIEW/'review.json').relative_to(ROOT))
++    require(post_review_file==prepared['post_step_review_file'] and post_review_file in prepared['input_sha256'],
++            'Specific independent post-step review must be pinned')
+     controls=read(C/'summary.json');control_review=read(C/'review.json')
+     require(controls['status']==control_review['status']=='passed' and control_review['summary_sha256']==sha(C/'summary.json')
+             and control_review['binary_sha256']==sha(C/'build/metric_step'),'Reviewed binary/controls')
+@@ -276,16 +428,21 @@
+             current=HERE/('event_'+str(case['event']));current.mkdir()
+             identity=dict(event=case['event'],station=160,native_context=case['native_context'],catalog_uses=case['catalog_uses'],
+                 original_status=case['original_status'],candidate_convergence_status=None,
+-                coordinate_basis='Saved failed-state exact-face candidate, not provider catalog coordinates',
++                coordinate_basis='Exact saved rounded first diagnostic trial, not original failed path or provider catalog coordinates',
++                chain_provenance=case['chain_provenance'],unavailable_slots=case['unavailable_slots'],
+                 node_count=len(case['path']),node_order='Source 0 through fixed receiver n-1; physical xyz',
+                 interior_slot_order='node 1..n-2, then x,y,z; only saved unavailable normals fixed',
+                 edge_order='edge e is ordered node e to e+1',selected_near_face_nodes=case['selected_near_face_nodes'],
++                selected_near_face_role='Historical original selection only; current availability is independently geometry-derived',
+                 evidence_sha256=prepared['input_sha256'],prepared_sha256=sha(HERE/'prepared.json'))
+             result_path=current/'result.json.gz'
+             save(current/'result.json.gz.identifiers.json',dict(identity,expected_file=str(result_path.relative_to(ROOT)),file_sha256=None,
+                  role='Complete diagnostic result or preserved failure; terminal bytes bound only after reap'))
+             answer=dict(identity,coordinate_provenance=case['coordinate_provenance'],starting_candidate_action=case['candidate_action'],
+-                        starting_edge_record_ids=case['candidate_edge_record_ids'],settings=SETTINGS,result=None)
++                        starting_edge_record_ids=case['candidate_edge_record_ids'],settings=SETTINGS,result=None,
++                        starting_action_record_joins=case['starting_action_record_joins'],
++                        prior_starting_coordinate_provenance=case['prior_starting_coordinate_provenance'],
++                        post_step_comparison=case['post_step_comparison'])
+             calls=[]
+             def helper(mode,text):
+                 require(mode in ('solve','round') and mode not in calls and (mode!='round' or calls==['solve']),'Single metric/round inventory')
+@@ -346,7 +503,7 @@
+         summary=dict(status=ledger['status'],error=ledger.get('error'),cases=completed,native_contexts=identifiers,settings=SETTINGS,
+                      budget=dict(metric_solves_maximum=2,rounded_trials_maximum=2,new_action_edges_maximum=2058),
+                      native_trace_calls=0,field_calls=0,tangent_integrals=0,optimizer_iterations=0,
+-                     interpretation='One diagnostic direction/trial per prescribed polygon; no original flag, endpoint/source derivative or first-arrival promotion.',
++                     interpretation='One further diagnostic direction/trial per saved first trial; no continuation loop or original flag, endpoint/source derivative or first-arrival promotion.',
+                      prepared_sha256=sha(HERE/'prepared.json'),prelaunch_review_sha256=sha(HERE/'prelaunch_review.json'),output_sha256=outputs)
+         save(HERE/'summary.json',summary)
+         ledger.update(return_code=code,finished_utc=now(),outputs_stable=stable,unsettled_groups=unsettled,

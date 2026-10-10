@@ -148,9 +148,19 @@ A [single prescribed tangent step](data/development/hayward_cmj_tangent_step_001
 from each exact-face candidate decreases the action by a further 2.4666e-10
 and 4.6728e-10 s. The maximum node movements are 0.05169 and 0.14095 m.
 Both steps satisfy the fixed slope and Armijo checks, with all identifiers
-preserved. The saved-output review passes. Post-step gradients have not yet
-been evaluated, so this establishes descent without certifying stationarity,
-source accuracy or convergence. The original failed flags remain unchanged.
+preserved. The saved-output review passes. A separate
+[post-step gradient calculation](data/development/hayward_cmj_post_step_tangent_001/RESULTS.md)
+reduces the available tangent norms to 3.1087e-6 and 1.2717e-5 s/km, with
+unchanged masks. Both remain above the strict 1e-7 scale; the second also
+exceeds 1e-5. Neither preceding action change is below the combined stop's
+1e-11 s scale. Stationarity, source accuracy and convergence remain unresolved,
+and the original failed flags remain unchanged.
+
+A [second full-size tangent trial](data/development/hayward_cmj_tangent_step_002/RESULTS.md)
+is rejected for each ray: action increases by 3.0212e-10 and 2.7020e-10 s,
+despite negative initial slopes. Exact saved readback confirms both increases
+and the rejection decisions. The first accepted paths remain the current
+state; shorter steps along the new directions have not yet been evaluated.
 
 A [bounded backtracking candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)
 retains the original, initially validated ray kernel and changes only the
