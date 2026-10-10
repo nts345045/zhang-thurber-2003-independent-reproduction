@@ -168,6 +168,14 @@ source derivatives fail and one additional ray fails local stopping. The
 [observed failures](data/development/loma_initial_failure_review_001/README.md)
 separate an exhausted line search from a
 [boundary endpoint discretization effect](data/development/loma_boundary_endpoint_001/README.md).
+An [exact-action comparison](data/development/loma_failed_trial_exact_001/README.md)
+now finds that all 24 actual rounded trials in the failed search satisfy the
+original decrease requirement, despite rejection by the binary64 evaluation.
+The first exact decrease is 6.76 femtoseconds; its recorded value instead
+increases by 12.43 femtoseconds. The independently reviewed
+[saved replay](data/development/loma_failed_search_3426_001/README.md) preserves
+all original numerical results and flags. This diagnoses an arithmetic failure
+for that search; no corrected optimizer or inversion is accepted yet.
 Only 37,599 rays pass all checks. LOM sampled checks and the LON initial-ray
 preflight remain active; neither performs an inverse update. A separate
 [one-sided curvature calculation](data/development/native_interface_conditioning/README.md)

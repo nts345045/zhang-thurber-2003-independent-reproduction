@@ -242,6 +242,59 @@ histories, native identities and independent saved-record reviews are in
 \path{data/development/loma_initial_failure_review_001/} and the two linked
 observer directories.
 
+An exact calculation on the two segments adjacent to node 484 confirms its
+vertical partial derivative, $1.03120815\times10^{-5}$ s/km, to within
+$4.59\times10^{-21}$ s/km. The earlier $10^{-6}$ km central difference
+crosses the 7 km velocity-gradient break and has the opposite sign.
+Within-piece displacements recover the derivative and include certified
+decreases. This saved-node calculation is retained in
+\path{data/development/loma_node_action_001/}; it does not change the path.
+
+A second neutral replay captures all 24 actual rounded trial polygons from
+the failed search. Its five original numerical tables remain byte-identical.
+Reciprocal-affine action enclosures then show that every trial satisfies the
+original Armijo condition, although the binary64 calculation rejects all of
+them (Figure~\ref{fig:loma-failed-trials}). The first trial decreases the exact
+action by $6.76195\times10^{-15}$ s, while the recorded action increases by
+$1.24345\times10^{-14}$ s. Even the last rounded path has a certified decrease
+of $3.36321\times10^{-22}$ s. Both the recorded and independently enclosed
+directional derivatives give the same classifications. The maximum difference
+between recorded and enclosed gradient components is $1.17\times10^{-16}$ s/km.
+An independent 80- and 100-digit calculation of the first and last trials
+agrees with the enclosures. The replay, exact intervals, native identities
+and independent reviews are in
+\path{data/development/loma_failed_search_3426_001/} and
+\path{data/development/loma_failed_trial_exact_001/}.
+This identifies false numerical rejection in this captured search. It does
+not establish convergence of a corrected optimizer or validate an inversion.
+
+Further evaluation of the same saved paths isolates arithmetic contributions.
+Exact summation of the original binary64 segment values recovers 17 of the
+24 decrease decisions, including the first full step. Reevaluating segments
+and accumulating their paired differences with a 64-bit significand gives
+21 approximate passing comparisons; the last three changes remain zero or
+positive despite their certified decreases. All original
+double segment values and path totals are reproduced exactly by this
+diagnostic. Outer accumulation therefore explains the first false rejection,
+while local segment arithmetic also limits the smallest steps. The saved
+comparison in \path{data/development/loma_trial_accumulation_001/} changes
+neither the optimizer nor any stopping flag.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.91\linewidth]{../figures/diagnostics/loma_failed_trials.pdf}
+\caption{Travel-time changes for the 24 saved LOM trial polygons of pair 3426,
+using the unchanged depth-only initial velocity model. Positive values are
+increases from the original binary64 evaluation; negative values are decreases
+enclosed by rational integration of the same rounded coordinates. The vertical
+axis is symmetric logarithmic, with a linear interval within
+$\pm10^{-22}$ s. Enclosure widths are smaller than the symbols. All exact
+comparisons pass the original Armijo requirement, and all original numerical
+evaluations reject it. This diagnostic figure does not promote a manuscript
+panel or change the original false local-convergence flag.}
+\label{fig:loma-failed-trials}
+\end{figure}
+
 For the captured boundary ray, the first segment is horizontal at 16 km.
 Let $L$ be its length and $s'_z$ the local depth derivative of slowness.
 Holding its other endpoint fixed gives
@@ -256,6 +309,20 @@ subdivision alone is not a correction to an optimized travel-time derivative.
 Twenty-five closed-form controls and all five native subdivision levels are
 retained in \path{data/development/loma_boundary_endpoint_001/}.
 No production source derivative or convergence flag has changed.
+
+An isolated extension retains explicit endpoint meshes while leaving the
+optimizer equations unchanged. Invented affine-bottom-guide, homogeneous
+oblique-ray and near-transition cases pass 836 action, derivative and
+initialization-parity checks. However, their 80 optimized records retain
+two false local flags and 32 source-vector accuracy failures. In the smallest
+positive-guide perturbation, projected gradients near $3.3\times10^{-9}$ s/km
+produce zero updates despite inaccurate endpoint sensitivities. Near a branch
+transition, additional descent after source displacement changes the forward
+error more than the true travel-time increment, invalidating a small-step
+secant. These preserved controls in
+\path{data/development/loma_boundary_endpoint_mesh_controls_001/} therefore
+do not support refinement with unchanged stopping as a sufficient correction.
+The proposed native extension is not executed.
 
 \subsection{Rejecting unsupported forward evaluations during inversion}
 The preceding inversion code recorded local ray failures but could still use
