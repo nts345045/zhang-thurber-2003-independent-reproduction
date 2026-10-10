@@ -1,0 +1,53 @@
+{
+  "created_utc": "2026-10-10T01:18:28.975801+00:00",
+  "status": "passed",
+  "scope": "Prepared inputs and invented fixtures only; no real ray run",
+  "checks": {
+    "python_ast_parses": 4,
+    "frozen_fixture_hashes": {
+      "gate_001": {
+        "summary_sha256": "0d2699157dfd8022f2cf9e992f0f54f038395ed6cfd25d3bbeea93d9686ca60b",
+        "verified_output_hashes": 56
+      },
+      "gate_002": {
+        "summary_sha256": "1fd36412e58a627ea4bd826edd52d34720501afc0a9f1a7140d479cac54c84f7",
+        "verified_output_hashes": 56
+      },
+      "gate_003": {
+        "summary_sha256": "66b2dcf40833fe469ca432c0b5d771026acf521399b84806f0ad139adbc149fb",
+        "verified_output_hashes": 66
+      },
+      "gate_004": {
+        "summary_sha256": "7e42766c7f47df0aa6c635282233816172255a88af81d2463cb1fb84cff0f2ca",
+        "verified_output_hashes": 67
+      }
+    },
+    "final_current_source_matches_gate_004": true,
+    "prepared_metadata_and_hashes": {
+      "lom": {
+        "manifest_sha256": "eca3bfb01d15ddc8b0850486a82669cf48a85594814c5e5e43dea3b9226552e9",
+        "native_metadata_cells_verified": 21992,
+        "diagnostic_rows_verified": 104,
+        "raw_provider_responses_unchanged_vs_HEAD": 2,
+        "input_and_output_hashes_verified": 15
+      },
+      "lon": {
+        "manifest_sha256": "f4475ba273ea8b76d48cf74c2a5ee575fc7872f09a11b5a53559d3a4079f2dd9",
+        "native_metadata_cells_verified": 21992,
+        "diagnostic_rows_verified": 104,
+        "raw_provider_responses_unchanged_vs_HEAD": 2,
+        "input_and_output_hashes_verified": 15
+      }
+    },
+    "authored_text_private_absolute_path_scan_files": 16,
+    "readme_relative_links_exist": true
+  },
+  "source_sha256": {
+    "src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "prepare_loma.py": "aa20437d490ba5f611737ceffe4f8c8fa4aff91857424457b35ede7e08acb1dd",
+    "diagnostics/check_simulation_gate.cpp": "a84b63e2760bac9024345f46fe99a4d27a4da4d0b3f746c33a9a433048108995",
+    "diagnostics/run_simulation_gate_checks.py": "37e8b9e6fabb062578db47908d52e54f87bd3310b53ad4ca779fc125a77b533b",
+    "diagnostics/run_streaming_checks.py": "58c0ed7ea779fdb5a9a4b68c4b38bbacffaf1eaf2712a0972dcc933a09cdaa21",
+    "data/development/loma_specification/run_streaming_memory.py": "47a3198a90137d9c31d9d8613ba2cecc041ecad1b15ecb67db779779c0d6f685"
+  }
+}

@@ -156,11 +156,27 @@ Ray configured_trace(const Grid &g, P source, P receiver, const Config &c,
   return trace_first_arrival(g, source, receiver, c.get("ray_spacing"),
                             c.get("ray_iterations"), deriv, field);
 }
+std::string ray_identity_context(const std::vector<Event> &events,
+                                 const std::vector<Event> &stations, int i, int k) {
+  std::ostringstream message;
+  message << "event " << i;
+  for (const auto *name : {"event_resource_id", "origin_resource_id"})
+    if (const auto *value = metadata_value(events[i].metadata, name))
+      message << ' ' << name << '=' << *value;
+  message << "; native receiver " << k;
+  for (const auto *name : {"channel_seed_id", "channel_fdsn_source_id",
+                          "metadata_epoch_start", "metadata_epoch_end"})
+    if (const auto *value = metadata_value(stations[k].metadata, name))
+      message << ' ' << name << '=' << *value;
+  return message.str();
+}
 std::vector<Ray> rays(const Grid &g, const std::vector<Event> &e,
                       const std::vector<Event> &s, const Config &c,
                       bool deriv = true, const std::vector<int> *used = nullptr,
-                      ForwardFields *saved_fields = nullptr) {
+                      ForwardFields *saved_fields = nullptr,
+                      bool require_initialization = true) {
   std::vector<Ray> r(e.size() * s.size());
+  std::vector<std::string> errors(r.size());
   const int count = used ? int(used->size()) : int(r.size());
   ForwardFields local_fields;
   auto &cache = saved_fields ? *saved_fields : local_fields;
@@ -171,26 +187,41 @@ std::vector<Ray> rays(const Grid &g, const std::vector<Event> &e,
   if (aux > 0)
     for (int q = 0; q < count; ++q) {
       int n = used ? (*used)[q] : q, k = n % s.size();
-      if (!fields[k]) fields[k] = &cache.get(g, s[k].p, aux);
+      if (!fields[k]) {
+        try { fields[k] = &cache.get(g, s[k].p, aux); }
+        catch (const std::exception &error) {
+          throw std::runtime_error("Receiver-field construction failed for " +
+              ray_identity_context(e, s, n / s.size(), k) + ": " + error.what());
+        }
+      }
     }
 #pragma omp parallel for schedule(dynamic)
   for (int q = 0; q < count; q++) {
     int n = used ? (*used)[q] : q;
     int i = n / s.size(), k = n % s.size();
-    r[n] = aux > 0 ? trace_first_arrival(g, e[i].p, s[k].p, c.get("ray_spacing"),
-                                        c.get("ray_iterations"), deriv, *fields[k]) :
-                    trace(g, e[i].p, s[k].p, c.get("ray_spacing"),
-                          c.get("ray_iterations"), deriv);
+    try {
+      r[n] = aux > 0 ? trace_first_arrival(g, e[i].p, s[k].p, c.get("ray_spacing"),
+                                          c.get("ray_iterations"), deriv, *fields[k]) :
+                      trace(g, e[i].p, s[k].p, c.get("ray_spacing"),
+                            c.get("ray_iterations"), deriv);
+    } catch (const std::exception &error) {
+      // Exceptions cannot cross an OpenMP worker boundary. Preserve the native
+      // index and message, then report outside the parallel loop.
+      errors[n] = error.what();
+      r[n].time = r[n].gradient = r[n].raw_gradient = NAN;
+      r[n].initializer_message = "Ray evaluation exception: " + errors[n];
+    }
   }
-  // An unavailable alternative must not silently become a straight-seed
-  // inversion. Diagnostic configured_trace calls retain the failure flag.
-  if (aux > 0)
+  // Simulation deliberately retains every failed record for its full-support
+  // status table and gate. Other callers receive an identified exception.
+  if (require_initialization)
     for (int q = 0; q < count; ++q) {
       int n = used ? (*used)[q] : q;
-      if (!r[n].initialization_succeeded)
-        throw std::runtime_error("FMM extraction failed for event " +
-            std::to_string(n / s.size()) + ", native station " +
-            std::to_string(n % s.size()) + ": " + r[n].initializer_message);
+      const auto context = [&]() { return ray_identity_context(e, s, n / s.size(), n % s.size()); };
+      if (!errors[n].empty())
+        throw std::runtime_error("Ray evaluation failed for " + context() + ": " + errors[n]);
+      if (aux > 0 && !r[n].initialization_succeeded)
+        throw std::runtime_error("FMM extraction failed for " + context() + ": " + r[n].initializer_message);
     }
   return r;
 }
@@ -259,6 +290,76 @@ Metadata simulation_metadata(const std::vector<Event> &events,
   return result;
 }
 
+bool finite_ray(const Ray &ray) {
+  if (!std::isfinite(ray.time) || ray.time < 0 || !std::isfinite(ray.gradient) ||
+      !std::isfinite(ray.raw_gradient) || ray.path.empty())
+    return false;
+  for (const auto &point : ray.path)
+    for (double value : point)
+      if (!std::isfinite(value)) return false;
+  for (double value : ray.source)
+    if (!std::isfinite(value)) return false;
+  for (const auto *values : {&ray.dv, &ray.length})
+    for (double value : *values)
+      if (!std::isfinite(value)) return false;
+  return true;
+}
+void ray_status_header(std::ostream &out) {
+  out << ",ray_converged,ray_finite,ray_projected_gradient,ray_raw_gradient,"
+         "ray_iterations,ray_merged_nodes";
+  initializer_header(out, "ray_");
+}
+void ray_status_values(std::ostream &out, const Ray &ray) {
+  out << ',' << ray.converged << ',' << finite_ray(ray) << ',' << ray.gradient
+      << ',' << ray.raw_gradient << ',' << ray.iterations << ',' << ray.merged_nodes;
+  initializer_values(out, ray);
+}
+// Save all native identities and coordinates before travel-time rounding and
+// observation-noise draws (source initialization draws have already occurred).
+// This check accepts local convergence only; it does not certify a first arrival.
+std::pair<size_t, size_t> write_ray_status(const std::string &path,
+                         const std::vector<Event> &events, const std::vector<Event> &stations,
+                         const std::vector<Ray> &rr, const std::vector<int> *used = nullptr) {
+  if (rr.size() != events.size() * stations.size())
+    throw std::runtime_error("Incomplete ray array");
+  auto out = output(path);
+  out << "event,station,source_x,source_y,source_z,receiver_x,receiver_y,receiver_z,ray_time";
+  ray_status_header(out);
+  csv_metadata_header(out, events.front().metadata, "source_");
+  csv_metadata_header(out, stations.front().metadata, "receiver_");
+  out << '\n';
+  size_t failures = 0, first = 0;
+  const size_t count = used ? used->size() : rr.size();
+  for (size_t q = 0; q < count; ++q) {
+    size_t n = used ? (*used)[q] : q;
+    size_t i = n / stations.size(), k = n % stations.size();
+    const auto &ray = rr[n];
+    out << i << ',' << k;
+    for (double value : events[i].p) out << ',' << value;
+    for (double value : stations[k].p) out << ',' << value;
+    out << ',' << ray.time;
+    ray_status_values(out, ray);
+    csv_metadata_values(out, events[i].metadata);
+    csv_metadata_values(out, stations[k].metadata);
+    out << '\n';
+    if (!finite_ray(ray) || !ray.converged ||
+        (ray.initialization_attempted && !ray.initialization_succeeded)) {
+      if (failures == 0) first = n;
+      ++failures;
+    }
+  }
+  out.close();
+  return {failures, first};
+}
+void simulation_ray_gate(const std::string &dir, const std::vector<Event> &events,
+                         const std::vector<Event> &stations, const std::vector<Ray> &rr) {
+  auto status = write_ray_status(dir + "/simulation_ray_status.csv", events, stations, rr);
+  if (status.first)
+    throw std::runtime_error("Simulation truth-ray gate rejected " + std::to_string(status.first) +
+        " rays before travel-time rounding/observation noise; see simulation_ray_status.csv; first: " +
+        ray_identity_context(events, stations, status.second / stations.size(), status.second % stations.size()));
+}
+
 // Shared noise generation preserves the original generator's random-number order.
 void synthetic_observations(const Config &c, const std::string &dir,
                             const std::vector<Event> &events,
@@ -275,6 +376,7 @@ void synthetic_observations(const Config &c, const std::string &dir,
   raw << "event,station,true_time,rounded_time,station_bias,pick_noise,absolute_time";
   if (identified_geometry)
     csv_metadata_header(raw, simulation_metadata(events, stations, 0, -1, 0, 0));
+  ray_status_header(raw);
   raw << '\n';
   for (int i = 0; i < ne; i++)
     for (int k = 0; k < ns; k++) {
@@ -288,6 +390,7 @@ void synthetic_observations(const Config &c, const std::string &dir,
           << bias[k] << ',' << noise << ',' << abs_t[n];
       if (identified_geometry)
         csv_metadata_values(raw, simulation_metadata(events, stations, i, -1, k, 0));
+      ray_status_values(raw, rr[n]);
       raw << '\n';
     }
   auto f = output(dir + "/observations.csv");
@@ -624,6 +727,11 @@ void validate_identities(const std::vector<Event> &events,
 void simulate(const Config &c, const std::string &dir) {
   if (!authoritative_geometry(c, dir) || authoritative_input(c, dir))
     throw std::runtime_error("simulate requires authoritative_geometry, not authoritative_ids_required");
+  for (const auto *name : {"arrivals.csv", "observations.csv", "initial_events.csv",
+                            "simulation_ray_status.csv"})
+    if (std::filesystem::exists(dir + "/" + name))
+      throw std::runtime_error(std::string("Preserve existing simulation output ") + name +
+                               "; prepare a fresh run directory");
   auto events = read_events(dir + "/truth_events.csv");
   auto stations = read_events(dir + "/stations.csv");
   validate_geometry(events, stations);
@@ -656,7 +764,8 @@ void simulate(const Config &c, const std::string &dir) {
   // Calculate all requested synthetic rays from the supplied truth grid.
   // Stations retain their archived geometry/epoch identities, but these are
   // simulated receiver placements, not claims of an observed pick at each pair.
-  auto rr = rays(truth, events, stations, c, false);
+  auto rr = rays(truth, events, stations, c, false, nullptr, nullptr, false);
+  simulation_ray_gate(dir, events, stations, rr);
   write_events(events, dir + "/truth_events.csv");
   write_events(initial, dir + "/initial_events.csv");
   synthetic_observations(c, dir, events, stations, rr, gen, u, normal, true);
@@ -773,7 +882,17 @@ void invert(const Config &c, std::string dir, std::string mode) {
                "damped_rows,damped_entries,csr_payload_bytes,numeric_observation_bytes,"
                "residual_weight_bytes,lsqr_row_workspace_bound_bytes\n";
   for (int it = 0; it < int(c.get("iterations")); it++) {
-    auto r = rays(g, e, stations, c, true, &used, &fields);
+    const bool preflight_only = setting(c, "matrix_preflight_only", 0) != 0;
+    auto r = rays(g, e, stations, c, true, &used, &fields, !preflight_only);
+    if (preflight_only) {
+      write_ray_status(dir + "/" + mode + "_preflight_ray_status.csv", e, stations, r, &used);
+      for (int index : used)
+        if (!finite_ray(r[index]) ||
+            (r[index].initialization_attempted && !r[index].initialization_succeeded) ||
+            r[index].dv.size() != g.v.size() || r[index].length.size() != g.v.size())
+          throw std::runtime_error("Preflight ray evaluation failed; see identified status table; " +
+                                   ray_identity_context(e, stations, index / ns, index % ns));
+    }
     size_t ray_converged = 0, attempted = 0, succeeded = 0, selected_fmm = 0;
     double ray_projected_max = 0, ray_raw_max = 0;
     for (int index : used) {
@@ -854,7 +973,7 @@ void invert(const Config &c, std::string dir, std::string mode) {
     preflight.flush();
     std::cout << "Matrix preflight: " << total_rows << " rows, " << total_entries
               << " ordered entries, " << bytes << " CSR payload bytes" << std::endl;
-    if (setting(c, "matrix_preflight_only", 0) != 0)
+    if (preflight_only)
       return; // Report actual current rows; do not allocate or solve the matrix.
     A.reserve(total_rows, total_entries);
     for (size_t q = 0; q < data.size(); ++q)
@@ -1090,17 +1209,28 @@ void validate(std::string dir) {
     throw std::runtime_error(std::to_string(failures) +
                              " validation checks failed");
 }
-void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
+void raycheck(const Config &c, std::string dir, std::string mode = "truth",
+              bool geometry_only = false) {
   auto e = read_events(dir + "/" + mode + "_events.csv");
   auto stations = read_events(dir + "/stations.csv");
-  auto data = observations(dir + "/observations.csv", e, stations,
-                           !authoritative_input(c, dir) && authoritative_geometry(c, dir));
-  auto used = observed_rays(data, e.size(), stations);
+  ObservationSet data;
+  std::vector<int> used;
   const bool authoritative = authoritative_input(c, dir);
-  if (authoritative)
-    validate_identities(e, stations, data);
-  else if (authoritative_geometry(c, dir))
-    validate_identities(e, stations, data, true);
+  if (geometry_only) {
+    validate_geometry(e, stations);
+    if (e.size() * stations.size() > size_t(std::numeric_limits<int>::max()))
+      throw std::runtime_error("Too many geometry ray indices");
+    used.resize(e.size() * stations.size());
+    std::iota(used.begin(), used.end(), 0);
+  } else {
+    data = observations(dir + "/observations.csv", e, stations,
+                        !authoritative && authoritative_geometry(c, dir));
+    used = observed_rays(data, e.size(), stations);
+    if (authoritative)
+      validate_identities(e, stations, data);
+    else if (authoritative_geometry(c, dir))
+      validate_identities(e, stations, data, true);
+  }
   std::vector<int> samples;
   const int ns = stations.size();
   const std::string sample_path = dir + "/ray_samples.csv";
@@ -1110,7 +1240,7 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
       int i = csv_int(row[0]), k = csv_int(row[1]);
       if (i < 0 || i >= int(e.size()) || k < 0 || k >= ns ||
           !std::binary_search(used.begin(), used.end(), i * ns + k))
-        throw std::runtime_error("Ray sample must identify an observed event/channel pair");
+        throw std::runtime_error("Ray sample must identify an available event/channel pair");
       if (std::find(samples.begin(), samples.end(), i * ns + k) != samples.end())
         throw std::runtime_error("Duplicate ray sample");
       samples.push_back(i * ns + k);
@@ -1134,7 +1264,8 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
   const double aux = auxiliary_spacing(c);
   if (aux > 0) refined.v["fmm_spacing"] = aux / 2;
   ForwardFields production_fields, refined_fields;
-  std::string prefix = mode == "truth" ? "ray" : mode + "_ray";
+  std::string prefix = geometry_only ? "geometry_" + mode + "_ray" :
+                                      (mode == "truth" ? "ray" : mode + "_ray");
   auto f = output(dir + "/" + prefix + "_convergence.csv");
   f << "event,station,production_time,refined_time,difference,production_"
        "gradient,refined_gradient,production_raw_gradient,refined_raw_gradient,"
@@ -1155,13 +1286,26 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
   // Both diagnostic tables refer to this zero-based sample key. Each mapping
   // row identifies an original observations.csv row and its i/j event side.
   auto identifiers = output(dir + "/" + prefix + "_identifiers.csv");
-  identifiers << "diagnostic_row,event,station,observation_row,observation_event_side";
-  data.write_header(identifiers, "observation_");
+  identifiers << "diagnostic_row,event,station";
+  if (geometry_only)
+    identifiers << ",source_x,source_y,source_z,receiver_x,receiver_y,receiver_z";
+  else {
+    identifiers << ",observation_row,observation_event_side";
+    data.write_header(identifiers, "observation_");
+  }
   csv_metadata_header(identifiers, e.front().metadata, "source_");
   csv_metadata_header(identifiers, stations.front().metadata, "receiver_");
   identifiers << '\n';
   for (size_t n = 0; n < samples.size(); n++) {
     int i = samples[n] / ns, k = samples[n] % ns;
+    if (geometry_only) {
+      identifiers << n << ',' << i << ',' << k;
+      for (double value : e[i].p) identifiers << ',' << value;
+      for (double value : stations[k].p) identifiers << ',' << value;
+      csv_metadata_values(identifiers, e[i].metadata);
+      csv_metadata_values(identifiers, stations[k].metadata);
+      identifiers << '\n';
+    }
     for (size_t q = 0; q < data.size(); q++)
       if ((data[q].i == i && data[q].k == k) ||
           (data[q].j == i && second_station(data[q]) == k)) {
@@ -1304,7 +1448,8 @@ int main(int argc, char **argv) {
     if (argc < 4)
       throw std::runtime_error("Usage: dd validate OUT | dd generate CONFIG "
                                "OUT | dd simulate CONFIG OUT | dd invert CONFIG OUT MODE | "
-                               "dd raycheck CONFIG OUT [MODE] | dd linearize CONFIG OUT MODE");
+                               "dd raycheck CONFIG OUT [MODE] | dd geometrycheck CONFIG OUT [MODE] | "
+                               "dd linearize CONFIG OUT MODE");
     Config c(argv[2]);
     std::string cmd = argv[1];
     if (cmd == "generate")
@@ -1313,6 +1458,8 @@ int main(int argc, char **argv) {
       simulate(c, argv[3]);
     else if (cmd == "raycheck")
       raycheck(c, argv[3], argc == 5 ? argv[4] : "truth");
+    else if (cmd == "geometrycheck")
+      raycheck(c, argv[3], argc == 5 ? argv[4] : "truth", true);
     else if (cmd == "invert" && argc == 5)
       invert(c, argv[3], argv[4]);
     else if (cmd == "linearize" && argc == 5)
