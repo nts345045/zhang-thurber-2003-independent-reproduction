@@ -1,0 +1,95 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T09:08:24.220928+00:00",
+  "prepared_sha256": "9b61082fb9b5c46966fa5e5c9673ba8d1e58c038875ed9c63888ac36ab830dac",
+  "prelaunch_review_sha256": "9dc0dc21a93b39a65e01da8bc4defa86a2d0c4a7bc11761e67b5bcfd88c2831d",
+  "commands": [
+    {
+      "stage": "compile_old",
+      "command": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_straight_curvature_replay_001/driver.cpp",
+        "-I/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_straight_curvature_replay_001/source/old",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_straight_curvature_replay_001/build/trace_old",
+        "-lstdc++fs"
+      ],
+      "started_utc": "2026-10-10T09:08:24.223601+00:00",
+      "pid": 293801,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T09:08:53.384601+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "trace_old",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_straight_curvature_replay_001/build/trace_old",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_straight_curvature_replay_001/inputs",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_straight_curvature_replay_001/results/old"
+      ],
+      "started_utc": "2026-10-10T09:08:53.675578+00:00",
+      "pid": 293960,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T09:08:55.108101+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "compile_D",
+      "command": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_straight_curvature_replay_001/driver.cpp",
+        "-I/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_straight_curvature_replay_001/source/D",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_straight_curvature_replay_001/build/trace_D",
+        "-lstdc++fs"
+      ],
+      "started_utc": "2026-10-10T09:08:55.438154+00:00",
+      "pid": 294001,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T09:09:26.121536+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "trace_D",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_straight_curvature_replay_001/build/trace_D",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_straight_curvature_replay_001/inputs",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_lon_straight_curvature_replay_001/results/D"
+      ],
+      "started_utc": "2026-10-10T09:09:26.411092+00:00",
+      "pid": 294811,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T09:09:27.856649+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "native_calls_planned": 4,
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "LC_ALL": "C",
+    "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "current_stage": "trace_D",
+  "return_code": 0,
+  "finished_utc": "2026-10-10T09:09:28.534962+00:00",
+  "summary_sha256": "ee14057bc05c7747f30eda6df9670b0f89e26a777390668d9d78f20b03523bde",
+  "native_calls_completed": 4
+}

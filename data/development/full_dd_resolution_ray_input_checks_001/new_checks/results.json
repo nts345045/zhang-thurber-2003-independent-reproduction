@@ -1,0 +1,594 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "cross_epoch_blank_quoted_and_12_digit_metadata",
+      "expected": "accepted",
+      "actual": "accepted",
+      "passed": true,
+      "error": "",
+      "result": {
+        "unique_native_rays": 3,
+        "unattempted_initialization_rays": 0,
+        "coordinate_significant_digits": 12,
+        "scope": "Exact native support/metadata and recorded finite/local/initializer status only",
+        "limitations": [
+          "Unattempted initialization is allowed; no first-arrival claim follows.",
+          "This export has no path-domain, exact-endpoint or source-partial fields.",
+          "Final-model ray and derivative accuracy require separate acceptance."
+        ]
+      }
+    },
+    {
+      "name": "ray_row_permutation",
+      "expected": "accepted",
+      "actual": "accepted",
+      "passed": true,
+      "error": "",
+      "result": {
+        "unique_native_rays": 3,
+        "unattempted_initialization_rays": 0,
+        "coordinate_significant_digits": 12,
+        "scope": "Exact native support/metadata and recorded finite/local/initializer status only",
+        "limitations": [
+          "Unattempted initialization is allowed; no first-arrival claim follows.",
+          "This export has no path-domain, exact-endpoint or source-partial fields.",
+          "Final-model ray and derivative accuracy require separate acceptance."
+        ]
+      }
+    },
+    {
+      "name": "unattempted_legacy_with_nonfinite_unused_seed_diagnostics",
+      "expected": "accepted",
+      "actual": "accepted",
+      "passed": true,
+      "error": "",
+      "result": {
+        "unique_native_rays": 3,
+        "unattempted_initialization_rays": 3,
+        "coordinate_significant_digits": 12,
+        "scope": "Exact native support/metadata and recorded finite/local/initializer status only",
+        "limitations": [
+          "Unattempted initialization is allowed; no first-arrival claim follows.",
+          "This export has no path-domain, exact-endpoint or source-partial fields.",
+          "Final-model ray and derivative accuracy require separate acceptance."
+        ]
+      }
+    },
+    {
+      "name": "absent_station_j_legacy_fallback",
+      "expected": "accepted",
+      "actual": "accepted",
+      "passed": true,
+      "error": "",
+      "result": {
+        "unique_native_rays": 2,
+        "unattempted_initialization_rays": 0,
+        "coordinate_significant_digits": 12,
+        "scope": "Exact native support/metadata and recorded finite/local/initializer status only",
+        "limitations": [
+          "Unattempted initialization is allowed; no first-arrival claim follows.",
+          "This export has no path-domain, exact-endpoint or source-partial fields.",
+          "Final-model ray and derivative accuracy require separate acceptance."
+        ]
+      }
+    },
+    {
+      "name": "missing_omitted_row_only_ray",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Incomplete native ray support",
+      "result": null
+    },
+    {
+      "name": "duplicate_ray",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Unexpected/duplicate native ray pair: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "unexpected_pair",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Unexpected/duplicate native ray pair: (2, 0)",
+      "result": null
+    },
+    {
+      "name": "negative_ray_index",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Unexpected/duplicate native ray pair: (-1, 0)",
+      "result": null
+    },
+    {
+      "name": "out_of_range_observation",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Invalid observation event/receiver indices",
+      "result": null
+    },
+    {
+      "name": "negative_observation_index",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Invalid observation event/receiver indices",
+      "result": null
+    },
+    {
+      "name": "nonconsecutive_event_id",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Native IDs or metadata schema changed",
+      "result": null
+    },
+    {
+      "name": "nonconsecutive_receiver_id",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Native IDs or metadata schema changed",
+      "result": null
+    },
+    {
+      "name": "blank_present_station_j",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Differential observation has an empty/negative station_j",
+      "result": null
+    },
+    {
+      "name": "negative_present_station_j",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Differential observation has an empty/negative station_j",
+      "result": null
+    },
+    {
+      "name": "incorrect_second_epoch_index",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Exported observation event/receiver indices changed",
+      "result": null
+    },
+    {
+      "name": "cross_epoch_position_changed",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Differential receiver channel/position changed",
+      "result": null
+    },
+    {
+      "name": "changed_source_event_resource_id",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray native metadata mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "changed_source_origin_resource_id",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray native metadata mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "changed_source_note",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray native metadata mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "changed_receiver_network_code",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray native metadata mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "changed_receiver_station_code",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray native metadata mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "changed_receiver_location_code",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray native metadata mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "changed_receiver_channel_code",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray native metadata mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "changed_receiver_channel_seed_id",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray native metadata mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "changed_receiver_channel_fdsn_source_id",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray native metadata mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "changed_receiver_metadata_epoch_start",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray native metadata mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "changed_receiver_metadata_epoch_end",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray native metadata mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "changed_receiver_source_sha256",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray native metadata mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "unrounded_receiver_coordinate",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray coordinate serialization mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "last_recorded_coordinate_digit_changed",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray coordinate serialization mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "nonfinite_coordinate",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray coordinate serialization mismatch: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "invalid_ray_time_nan",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Invalid displayed ray value: ray_time",
+      "result": null
+    },
+    {
+      "name": "invalid_ray_time_inf",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Invalid displayed ray value: ray_time",
+      "result": null
+    },
+    {
+      "name": "invalid_ray_time_-1",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Invalid displayed ray value: ray_time",
+      "result": null
+    },
+    {
+      "name": "invalid_ray_projected_gradient_nan",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Invalid displayed ray value: ray_projected_gradient",
+      "result": null
+    },
+    {
+      "name": "invalid_ray_projected_gradient_inf",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Invalid displayed ray value: ray_projected_gradient",
+      "result": null
+    },
+    {
+      "name": "invalid_ray_projected_gradient_-1",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Invalid displayed ray value: ray_projected_gradient",
+      "result": null
+    },
+    {
+      "name": "invalid_ray_raw_gradient_nan",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Invalid displayed ray value: ray_raw_gradient",
+      "result": null
+    },
+    {
+      "name": "invalid_ray_raw_gradient_inf",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Invalid displayed ray value: ray_raw_gradient",
+      "result": null
+    },
+    {
+      "name": "invalid_ray_raw_gradient_-1",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Invalid displayed ray value: ray_raw_gradient",
+      "result": null
+    },
+    {
+      "name": "failed_ray_converged",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Failed recorded local/initializer ray status: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "failed_ray_finite",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Failed recorded local/initializer ray status: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "failed_ray_initialization_succeeded",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Failed recorded local/initializer ray status: (0, 0)",
+      "result": null
+    },
+    {
+      "name": "malformed_flag",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Invalid ray status flag",
+      "result": null
+    },
+    {
+      "name": "stale_failure_count",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Ray failure count disagrees with recorded rows",
+      "result": null
+    },
+    {
+      "name": "stale_ray_count",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Incomplete native ray support",
+      "result": null
+    },
+    {
+      "name": "duplicate_csv_header",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Missing/duplicate ray columns",
+      "result": null
+    },
+    {
+      "name": "missing_csv_column",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Missing/duplicate ray columns",
+      "result": null
+    },
+    {
+      "name": "truncated_csv_row",
+      "expected": "rejected",
+      "actual": "rejected",
+      "passed": true,
+      "error": "Incomplete ray CSV row",
+      "result": null
+    },
+    {
+      "name": "real_run_rejects_failed_ray_before_matrix_assembly",
+      "passed": true
+    },
+    {
+      "name": "preserve_existing_output.csv",
+      "passed": true
+    },
+    {
+      "name": "preserve_existing_output_picks.csv",
+      "passed": true
+    },
+    {
+      "name": "preserve_existing_output_matrices.npz",
+      "passed": true
+    },
+    {
+      "name": "preserve_existing_output_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_dangling_output_symlink",
+      "passed": true
+    },
+    {
+      "name": "maintained_source_unchanged",
+      "passed": true
+    }
+  ],
+  "scope": "Invented native records and malformed CSVs only; no ray trace, matrix solve or field data",
+  "command": [
+    "diagnostics/check_full_dd_resolution_rays.py",
+    "--output",
+    "data/development/full_dd_resolution_ray_input_checks_001/new_checks"
+  ],
+  "source_sha256": {
+    "resolution_full_hayward.py": "64315e341200cbac98be78e45a03de81eb040e96d265ab1adb15c9d08b907d43",
+    "check_full_dd_resolution_rays.py": "74026a5085e7b6db987f058e6783ebdde6ab021f7e355645b8b1a7b4006b3411"
+  },
+  "artifacts_sha256": {
+    "cases/absent_station_j_legacy_fallback/native_inputs.json": "2a083e514710fbe15f7b5f2c44b7000a62051a05532c5d83c9606bd55f607afe",
+    "cases/absent_station_j_legacy_fallback/rays.csv": "3fc0742bc11492756ab83ca35c69b70034a73008f6929cb5f08d05b927287b0c",
+    "cases/blank_present_station_j/native_inputs.json": "9ffe91865885a2aebd0653805f0798355982ca6cc3730f803b598af70ea7fbcb",
+    "cases/blank_present_station_j/rays.csv": "39729ed8e2eb4b79c63093b15d4de3a805a6d5dede82f457d9d61d6a3c25f2c4",
+    "cases/changed_receiver_channel_code/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/changed_receiver_channel_code/rays.csv": "a45adfdbcdb652a74f6d754fa8e28a7bbb4fe67db8cfe4d8af785cc11c6ac6d8",
+    "cases/changed_receiver_channel_fdsn_source_id/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/changed_receiver_channel_fdsn_source_id/rays.csv": "851c0dbf25be868e3be625824d2ea1f50f47c808bf6bfdc1582d6b3aa4cbf330",
+    "cases/changed_receiver_channel_seed_id/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/changed_receiver_channel_seed_id/rays.csv": "680feae82d57fd9ade04779ca59ad0829a782f4f247d9b9f3ce32db469d17610",
+    "cases/changed_receiver_location_code/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/changed_receiver_location_code/rays.csv": "dbefe320bfd7cebe08389ea81331793653c805871752ddaa418632d9ea37f1a1",
+    "cases/changed_receiver_metadata_epoch_end/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/changed_receiver_metadata_epoch_end/rays.csv": "79b6e4d1b18b20da7de696ca73989f6930ab34fb0da2ff954f4c214790a0a602",
+    "cases/changed_receiver_metadata_epoch_start/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/changed_receiver_metadata_epoch_start/rays.csv": "282825eca709a89e89656a9baddbd32d8692b051ad3238ca3fe4eda7cca89e41",
+    "cases/changed_receiver_network_code/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/changed_receiver_network_code/rays.csv": "f0ae33a83c790a906aeeb498da9fda520b50aee434e239c33072f1ad68daf390",
+    "cases/changed_receiver_source_sha256/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/changed_receiver_source_sha256/rays.csv": "7375c809eb3345b69fff394c6b37d069fcedee1c92565c7540c7a22ff426f0c8",
+    "cases/changed_receiver_station_code/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/changed_receiver_station_code/rays.csv": "cc7877a3fb407582a199360861d1ab92d03fdffa31237a4d35b21a5ab3f22395",
+    "cases/changed_source_event_resource_id/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/changed_source_event_resource_id/rays.csv": "83b5dd6426c233908a19b015f0ce6089ce0129b537b3c6dbbeee752ec0b8123b",
+    "cases/changed_source_note/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/changed_source_note/rays.csv": "b5495814196d634c0d11ca71375e5c55e7ee3b2569e3f2abf29ce4c23393b796",
+    "cases/changed_source_origin_resource_id/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/changed_source_origin_resource_id/rays.csv": "dee73322f7b1c8796c1f2e0e5da1cf569ba082f626c479c56da49acdccb77a74",
+    "cases/cross_epoch_blank_quoted_and_12_digit_metadata/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/cross_epoch_blank_quoted_and_12_digit_metadata/rays.csv": "39729ed8e2eb4b79c63093b15d4de3a805a6d5dede82f457d9d61d6a3c25f2c4",
+    "cases/cross_epoch_position_changed/native_inputs.json": "0bd392e5c1eb8ee43c91212f1a371b36798431ca5a60743542328d22a1e97558",
+    "cases/cross_epoch_position_changed/rays.csv": "39729ed8e2eb4b79c63093b15d4de3a805a6d5dede82f457d9d61d6a3c25f2c4",
+    "cases/duplicate_csv_header/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/duplicate_csv_header/rays.csv": "3c58863e69571fd34731de9e936ae9895a59c565e589824e12b8c84d1a5bc1c9",
+    "cases/duplicate_ray/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/duplicate_ray/rays.csv": "57dbc508b6530cbf2bc240f12dcfae6195ff7bf62965a2be0b78e60f0b10d380",
+    "cases/failed_ray_converged/native_inputs.json": "269995ffe07d0c2677cd6b8058c85a9074f7f0317c57a22194b0ec3b18bc2a1e",
+    "cases/failed_ray_converged/rays.csv": "07275a1d8db72f08e16c961580c304899fe22aff9974dd6db3a3629b94b7d1bc",
+    "cases/failed_ray_finite/native_inputs.json": "269995ffe07d0c2677cd6b8058c85a9074f7f0317c57a22194b0ec3b18bc2a1e",
+    "cases/failed_ray_finite/rays.csv": "86010ce8df5071f0c2c3af67e35477b53e5d94f9374010ce0a43ee980b554708",
+    "cases/failed_ray_initialization_succeeded/native_inputs.json": "269995ffe07d0c2677cd6b8058c85a9074f7f0317c57a22194b0ec3b18bc2a1e",
+    "cases/failed_ray_initialization_succeeded/rays.csv": "cc0c913a5927240725c3c5681e88a941124273f9ca572b2312623f2fbe05c438",
+    "cases/incorrect_second_epoch_index/native_inputs.json": "1d3995cf00dc0cf468916e33a278890ffad89f893adb82f40cf31448f0feb369",
+    "cases/incorrect_second_epoch_index/rays.csv": "39729ed8e2eb4b79c63093b15d4de3a805a6d5dede82f457d9d61d6a3c25f2c4",
+    "cases/invalid_ray_projected_gradient_-1/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/invalid_ray_projected_gradient_-1/rays.csv": "a742c82c98c1ada82a7323779f8228444c60d14861ffafd313c3288d2fb0299a",
+    "cases/invalid_ray_projected_gradient_inf/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/invalid_ray_projected_gradient_inf/rays.csv": "500e81bf6d89d3f231c60177a836bd131402925d3882efb342f2fe3fb7c89156",
+    "cases/invalid_ray_projected_gradient_nan/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/invalid_ray_projected_gradient_nan/rays.csv": "13556a909cb1c0b0b0bd7297ee80f35c4b5a92dd784b816a574a6c8b1592b31b",
+    "cases/invalid_ray_raw_gradient_-1/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/invalid_ray_raw_gradient_-1/rays.csv": "16cce28e4af9a55b59fb9c2d55d4104c01d2e16c5317204ca1be318ac0f659f0",
+    "cases/invalid_ray_raw_gradient_inf/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/invalid_ray_raw_gradient_inf/rays.csv": "348ec0b1314ee44c45c9bce080217002d2287e7f65d6d9046fc601882d10643e",
+    "cases/invalid_ray_raw_gradient_nan/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/invalid_ray_raw_gradient_nan/rays.csv": "cbcd999d78a230773253293cf845c1a6ab5f7a51f9ec68978dd4a8ab99712b68",
+    "cases/invalid_ray_time_-1/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/invalid_ray_time_-1/rays.csv": "6c454e322f44f55c2ab7da67f16819174860bffd63956e30d3e8df9fa196f0ad",
+    "cases/invalid_ray_time_inf/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/invalid_ray_time_inf/rays.csv": "ac4d52413fda6b6dcc5f12809756c1259a49d13c62270e0bcddb79c673c1b893",
+    "cases/invalid_ray_time_nan/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/invalid_ray_time_nan/rays.csv": "04d5f4fea07d689f2045c1781fa34289a4d78da176a6a5ca78251d00c1942978",
+    "cases/last_recorded_coordinate_digit_changed/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/last_recorded_coordinate_digit_changed/rays.csv": "3454f64448edab506b7eef98e89323797757e391a61a5843758b643244fec422",
+    "cases/malformed_flag/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/malformed_flag/rays.csv": "d9767888b65ae6c551f58c35956cfdd06c4784c508046ad4d42529e3c6fb3cb6",
+    "cases/missing_csv_column/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/missing_csv_column/rays.csv": "ca54c95dfee873f15657e4b3f22bb9142a5787fd8a4fc8aea75243397d08c098",
+    "cases/missing_omitted_row_only_ray/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/missing_omitted_row_only_ray/rays.csv": "be38e2636ec6d0157f86d7dbab7206554c41c924980ed57e551298e3d81eda30",
+    "cases/negative_observation_index/native_inputs.json": "4f7682800d23ea75dc11acc7322d1e073de38d59200de936fe0d4de2ca76f4c1",
+    "cases/negative_observation_index/rays.csv": "39729ed8e2eb4b79c63093b15d4de3a805a6d5dede82f457d9d61d6a3c25f2c4",
+    "cases/negative_present_station_j/native_inputs.json": "fce00c77bd96bcc81b18c849a658dbaf0d119765f73e6e50dedf38429eac9762",
+    "cases/negative_present_station_j/rays.csv": "39729ed8e2eb4b79c63093b15d4de3a805a6d5dede82f457d9d61d6a3c25f2c4",
+    "cases/negative_ray_index/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/negative_ray_index/rays.csv": "1ae7101d0d623dee4f9008c90e8fd5bb5decf986d91fc1fa68794184416667f0",
+    "cases/nonconsecutive_event_id/native_inputs.json": "b2f585eec71295b9370a3af7268fa1d917722d7838d1374cb92e30009184e7fc",
+    "cases/nonconsecutive_event_id/rays.csv": "39729ed8e2eb4b79c63093b15d4de3a805a6d5dede82f457d9d61d6a3c25f2c4",
+    "cases/nonconsecutive_receiver_id/native_inputs.json": "eb3d9b254a16c5a82a19a01de44d6c3e0630d234bef6ef5716129e50f999273a",
+    "cases/nonconsecutive_receiver_id/rays.csv": "39729ed8e2eb4b79c63093b15d4de3a805a6d5dede82f457d9d61d6a3c25f2c4",
+    "cases/nonfinite_coordinate/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/nonfinite_coordinate/rays.csv": "f6a3629896ff2a57a35aa7e0dded5e0559ba8e00dbd6d254298e8be8bef1f3e9",
+    "cases/out_of_range_observation/native_inputs.json": "65a198fa9851e3c70b1ad4f8bb1c28e1015b0acfc19993f4c8ef6b700f4533c0",
+    "cases/out_of_range_observation/rays.csv": "39729ed8e2eb4b79c63093b15d4de3a805a6d5dede82f457d9d61d6a3c25f2c4",
+    "cases/ray_row_permutation/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/ray_row_permutation/rays.csv": "43d19bfb0c201345d0f3aea0fe4b9dcc4c63aa4c89ecf7b784aa6b484f21e993",
+    "cases/stale_failure_count/native_inputs.json": "269995ffe07d0c2677cd6b8058c85a9074f7f0317c57a22194b0ec3b18bc2a1e",
+    "cases/stale_failure_count/rays.csv": "39729ed8e2eb4b79c63093b15d4de3a805a6d5dede82f457d9d61d6a3c25f2c4",
+    "cases/stale_ray_count/native_inputs.json": "6ffc5ade34bbb0d399756f0444612ea0040408ecce42927fcc3962e98652b779",
+    "cases/stale_ray_count/rays.csv": "39729ed8e2eb4b79c63093b15d4de3a805a6d5dede82f457d9d61d6a3c25f2c4",
+    "cases/truncated_csv_row/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/truncated_csv_row/rays.csv": "c9b6d71896b167057776ff40bf4cfa00fc8b0d4c31da7435fe6d88e54ae901a7",
+    "cases/unattempted_legacy_with_nonfinite_unused_seed_diagnostics/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/unattempted_legacy_with_nonfinite_unused_seed_diagnostics/rays.csv": "6dc4856b5afcbb904bd6299b5b83b8ec47d5748f0281e2cd5870701394ea0cb6",
+    "cases/unexpected_pair/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/unexpected_pair/rays.csv": "afa490d22b7239e7e28a7ca450efa991372f6c19337306782b31727aaaae3fb1",
+    "cases/unrounded_receiver_coordinate/native_inputs.json": "cc01c18b08e012ba2f5c5132beb8847f8c06159d4f74bac9a762f37140bc730e",
+    "cases/unrounded_receiver_coordinate/rays.csv": "0e1c7474f0985ae6a5da3e5c48c8d81b2d69a410d70ac2f81fcdc32a6339253b",
+    "existing_output__csv/dd_full_resolution.csv": "28573cc63a30898bcf0c3e8df6fec6219716a62a0845807a1cca1788f4aa617f",
+    "existing_output__manifest_json/dd_full_resolution_manifest.json": "28573cc63a30898bcf0c3e8df6fec6219716a62a0845807a1cca1788f4aa617f",
+    "existing_output__matrices_npz/dd_full_resolution_matrices.npz": "28573cc63a30898bcf0c3e8df6fec6219716a62a0845807a1cca1788f4aa617f",
+    "existing_output__picks_csv/dd_full_resolution_picks.csv": "28573cc63a30898bcf0c3e8df6fec6219716a62a0845807a1cca1788f4aa617f",
+    "run_rejects_failed_ray/dd_events.csv": "c6be9cb0cd7f84b806d084e373a6b22fdf63c2fcf6bd4c5412bc5eee3a332c2e",
+    "run_rejects_failed_ray/dd_full_linearization_columns.csv": "695728f443965932bba3eee28df6152e05ddb1d8f1fcfe4803fc1ce108dacef0",
+    "run_rejects_failed_ray/dd_full_linearization_info.csv": "cc033ca9fdd1424af7fc253b3223d061c2a19e96736c223df8211b8032930f4b",
+    "run_rejects_failed_ray/dd_full_linearization_rays.csv": "07275a1d8db72f08e16c961580c304899fe22aff9974dd6db3a3629b94b7d1bc",
+    "run_rejects_failed_ray/dd_full_linearization_rows.csv": "e60b8eefc93b5940a519956ecad9a901bc0a39c9eb2f81c8e3af48d19a351a78",
+    "run_rejects_failed_ray/dd_grid.csv": "3117602a004187ac8b4b68ce675bb7bdaa57fbb9fa81e96d4b87ecdf7ff008a8",
+    "run_rejects_failed_ray/observations.csv": "37b4765b211ba2b68e0e8917bab342f18dc1c699575d4f14d32a70f4807b1b6c",
+    "run_rejects_failed_ray/stations.csv": "310ded0b496325cae383371e049622ddf54baf5d94e5445d4002a842bf983110",
+    "source/check_full_dd_resolution_rays.py": "74026a5085e7b6db987f058e6783ebdde6ab021f7e355645b8b1a7b4006b3411",
+    "source/resolution_full_hayward.py": "64315e341200cbac98be78e45a03de81eb040e96d265ab1adb15c9d08b907d43"
+  },
+  "limitations": [
+    "No path/domain/exact-endpoint/source-partial fields exist in this exporter schema.",
+    "Passing recorded local flags does not certify first-arrival or final-model accuracy.",
+    "Unattempted initialization is explicitly allowed; unused seed diagnostics may be nonfinite."
+  ]
+}

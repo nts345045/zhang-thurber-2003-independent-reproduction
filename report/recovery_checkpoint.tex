@@ -515,6 +515,51 @@ retention rule or validate an inversion.}
 \label{fig:loma-retention}
 \end{figure}
 
+A bounded LON replay tests the adopted D correction on the worst interior
+failure, pair 8670 at \texttt{NC.JHL..EHZ}, and a passing control, pair 8674 at
+\texttt{NC.JRG..EHZ}. Both use event \texttt{NC/10090456}; both were selected
+from straight initialization in the original census. The archived public trace first reproduces all
+100 recorded physical, status and native fields per pair at their original
+12-significant-digit precision. No receiver field is rebuilt. The old and D
+calculations then produce byte-identical complete final paths and model
+partials, with unchanged source vectors, local flags and 178/207 updates.
+Their source-vector errors remain $4.80706\times10^{-6}$ and
+$1.05998\times10^{-6}$ s/km: the first still fails and the control still passes.
+Only the outer action totals change, by less than $9\times10^{-16}$ s.
+The evidence in
+\path{data/development/loma_lon_straight_curvature_replay_001/}
+shows no sensitivity to this adopted correction on these two cases. It does
+not isolate all optimization or stopping effects, explain the remaining
+interior failures, or establish full-cohort accuracy.
+
+The saved first edge permits a separate integration check with its other
+endpoint held fixed. Both edges lie entirely within the same affine layer,
+$v(z)=v_0+gz$, between 0 and 3 km depth. Let $\mathbf a$ be the source,
+$\mathbf b$ the first saved knot, $L=|\mathbf b-\mathbf a|$,
+$v_a=v(\mathbf a)$ and $v_b=v(\mathbf b)$. The exact straight and curved
+connector actions are
+\begin{equation}
+ T_s=L\frac{\log(v_b/v_a)}{v_b-v_a},\qquad
+ T_c=\frac{2}{|g|}\operatorname{asinh}
+ \left(\frac{|g|L}{2\sqrt{v_av_b}}\right).
+\end{equation}
+Exact geometric checks place both curved arcs inside the affine layer and
+finite model box. Differentiating $T_s$ with respect to $\mathbf a$ recovers
+the saved source partials within $1.63\times10^{-17}$ s/km. Replacing that
+partial by the derivative of $T_c$ slightly increases the discrepancy from
+the full layered reference: $(4.80706\to4.84264)\times10^{-6}$ s/km
+for pair 8670 and $(1.05998\to1.06845)\times10^{-6}$ s/km for pair 8674.
+The local action decreases by only 2.52 and 1.39 ns, respectively.
+Four formula controls and an independent calculation support these values;
+80/120-digit agreement checks arithmetic sensitivity, not a rigorous
+transcendental-roundoff bound. The identified inputs, component vectors and
+review are saved in
+\path{data/development/loma_lon_first_edge_decomposition_001/}.
+This excludes a material integration error in these saved first edges.
+It does not reoptimize the first knot or the remaining polygon, replace model
+sensitivities, or distinguish residual optimization error from approximation
+elsewhere along the path.
+
 For the captured boundary ray, the first segment is horizontal at 16 km.
 Let $L$ be its length and $s'_z$ the local depth derivative of slowness.
 Holding its other endpoint fixed gives
@@ -846,6 +891,17 @@ Six direct comparisons with the maintained sparse implementation agree within
 $9.44\times10^{-16}$. The maintained calculation also rejects a nonfinite
 unmasked response or conditioning diagnostic; 39 controls include finite-input
 overflow cases and preserve the original 34 results.
+The reader also checks the full exported ray inventory against every original
+observation before matrix assembly. It verifies native source/channel identities,
+both receiver epochs, serialized coordinates, and the recorded local and
+initializer flags, including rays used only by observations omitted by weights.
+It refuses incomplete or failed inputs and preserves existing resolution files.
+All 56 invented input controls pass; the preceding 39 covariance-control records
+remain exactly unchanged. These checks are saved in
+\path{data/development/full_dd_resolution_ray_input_checks_001/}.
+The exported status table lacks path-domain, endpoint and source-partial fields;
+unattempted initialization remains explicitly allowed. Passing this input check
+therefore does not certify first arrivals or final-model derivative accuracy.
 No new field resolution has been calculated. Fixed weights, independent
 one-sigma pick errors, and unconstrained sources remain assumptions; active
 bounds, model and ray errors, nonlinear effects, and waveform noise are outside

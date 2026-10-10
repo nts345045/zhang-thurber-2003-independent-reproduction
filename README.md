@@ -252,7 +252,15 @@ passes all 37,648 local and time checks but retains 50 source-vector failures:
 13 at bottom sources and 37 at interior sources. Both sampled preflights remain
 active; neither performs an inverse update. These results use the earlier
 frozen optimizer. Repeating the invented endpoint-mesh controls with D preserves
-their two false local flags and 32 derivative failures. A separate
+their two false local flags and 32 derivative failures. A [bounded LON replay](data/development/loma_lon_straight_curvature_replay_001/RESULTS.md)
+also preserves the worst interior failure and a passing same-event control:
+source-vector errors remain 4.8071e-6 and 1.0600e-6 s/km. Their final paths and
+model partials are byte-identical with the old and D optimizers. This rules out
+the adopted correction as a remedy for that failure, without resolving other
+optimization or path-representation effects. A [saved first-edge calculation](data/development/loma_lon_first_edge_decomposition_001/README.md)
+matches the recorded source partials within 1.63e-17 s/km. Curving that edge
+while fixing its other endpoint slightly worsens both reference discrepancies;
+it does not repair the failing ray. A separate
 [one-sided curvature calculation](data/development/native_interface_conditioning/README.md)
 assesses a saved interface direction, without changing production optimization
 or promoting any failed flag.
@@ -263,6 +271,12 @@ before Jacobian, trial-objective, or final-output use. It preserves identified
 failed paths and model states separately from the last accepted state. Controlled
 checks preserve successful inversion outputs byte for byte; this is failure
 handling, not a first-arrival or nonlinear-convergence certificate.
+The [full-DD resolution reader](data/development/full_dd_resolution_ray_input_checks_001/README.md)
+now verifies its complete native ray inventory, metadata, coordinates and
+recorded local status before matrix assembly, and preserves existing outputs.
+All 56 new input controls pass; the 39 preceding covariance controls retain
+identical results. Final-model ray and derivative accuracy still require
+separate acceptance. No new field resolution has been calculated.
 Run these newer diagnostic and simulation commands from the
 [`first-arrival-integration` branch](https://github.com/nts345045/zhang-thurber-2003-independent-reproduction/tree/first-arrival-integration).
 

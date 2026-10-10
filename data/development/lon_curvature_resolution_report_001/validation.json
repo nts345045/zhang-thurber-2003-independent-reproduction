@@ -1,0 +1,78 @@
+{
+  "all_tex_literal_paths_checked": 106,
+  "canonical_panel_inventory_sha256": {
+    "data/panel_audit.csv": "ee85a21eb3764b59cd7da9868baf57e948be65d0c2056ec152d53ccba5664931",
+    "data/panel_audit.json": "bda6631c088b5699407078710ec25de2ce63cd72361a0ccca326c814eca0fbf6"
+  },
+  "checked_utc": "2026-10-10T09:23:20.724174Z",
+  "checker_sha256": "2d8fa9e332407dfa99b44f11e030dd0720362a42500cf1307d7c6fae20a6602f",
+  "compile_log_findings": {
+    "1": {
+      "errors_undefined_overfull": [],
+      "warnings": [
+        "LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right."
+      ]
+    },
+    "2": {
+      "errors_undefined_overfull": [],
+      "warnings": []
+    }
+  },
+  "compile_output_files_checked": 7,
+  "compile_passes": 2,
+  "compile_receipt_sha256": "e9dce19b4d23073e87d0455852d0e421b1ffc874a94a275151e137238a87ca11",
+  "contextually_abbreviated_paths": 7,
+  "document_change": "Clarified that10^-6 applies to both endpoints of each first-edge error range; no other document edits by this compiler.",
+  "external_markdown_links_not_requested": 2,
+  "figure_references_checked": 26,
+  "first_edge_result_scope": "Fixed first knot and unchanged remainder; exact straight derivative agrees at roundoff, local curving does not remedy the failed global source criterion.",
+  "literal_recovery_paths_checked": 62,
+  "markdown_links_checked": 75,
+  "missing_paths": [],
+  "native_replay_calls_already_completed": 4,
+  "new_ray_input_controls_passed": 56,
+  "path_inventory_sha256": "7b49aa6d545a52355678a2702d012040fa4214a4d16ae747134953a93984285d",
+  "pdf_bytes": 2397866,
+  "pdf_pages": 115,
+  "prior_covariance_controls_unchanged": 39,
+  "readme_sha256": "8bbbfceee52ebd465d7963fc390caaf69b9b1effcacb64a3df18aae5e433719c",
+  "recovery_checkpoint_sha256": "37c4abcaddcb4ab9c14dc0b1d6091e76b308179ec33ddad997d247373fd4db13",
+  "report_sha256": "8ba3cfb62d10d1511d4a35a6aee2d12fc42fa25adaa19bc21e3546230c0e8e39",
+  "reviewed_evidence_sha256": {
+    "data/development/full_dd_resolution_ray_input_checks_001/new_checks/results.json": "e53c72076edcf91fd4d7742f7dd95069d245eb8a9f2dcbe516f927f313437486",
+    "data/development/full_dd_resolution_ray_input_checks_001/prior39_comparison.json": "e71cdba87443acfa50789317eb90c3739b54ddc354e23b5fe5deccba65fe523c",
+    "data/development/full_dd_resolution_ray_input_checks_001/review.json": "dfbc34bc023db6b2cb181dff777ca7a2cf9c804866739f75a3b5806607d9ecbe",
+    "data/development/loma_lon_first_edge_decomposition_001/calculation/summary.json": "1745f57df97be938a1beff82bb3bd61d1aa367346f199f841724863a72618825",
+    "data/development/loma_lon_first_edge_decomposition_001/review.json": "c4fc2be7c4b9bc48be0e0b567fe74b747ce6e24d9f0019483089aa7ac0b20a2f",
+    "data/development/loma_lon_straight_curvature_replay_001/execution.json": "a92ae592a8e068204ec2e3dea3228a7eb6af3119cbe40d47cbf590e0a16f8618",
+    "data/development/loma_lon_straight_curvature_replay_001/review.json": "3e9d14d95c435d242ac8a241f452d712e8ea1beda066b1d645fa0b0f30c725a9",
+    "data/development/loma_lon_straight_curvature_replay_001/summary.json": "ee14057bc05c7747f30eda6df9670b0f89e26a777390668d9d78f20b03523bde"
+  },
+  "scope": "Current documents/compiled PDF and saved reviewed evidence only; no numerical rerun or new ray/inverse acceptance.",
+  "status": "passed",
+  "tex_source_files_checked": 16,
+  "unchanged_panel_counts": {
+    "independently reproduced": 1,
+    "partially reproduced": 61
+  },
+  "unchanged_panel_tex_compared_to": "usable_curvature_adoption_report_003",
+  "visual_render_command": [
+    "pdftoppm",
+    "-f",
+    "34",
+    "-l",
+    "41",
+    "-scale-to",
+    "1600",
+    "-png",
+    "report/report.pdf",
+    "tmp/lon_curvature_resolution_report_visual_001/page"
+  ],
+  "visual_review_basis": "Final PDF pages rendered at1600pixel maximum dimension with pdftoppm and inspected; no clipping/overlap or malformed equations; adjoining figure/caption readable.",
+  "visual_review_pages": [
+    35,
+    36,
+    40,
+    41
+  ]
+}

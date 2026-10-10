@@ -1,0 +1,127 @@
+{
+  "affine_layer_km": [
+    0,
+    3
+  ],
+  "closed_form_controls_passed": 4,
+  "command": [
+    "/usr/bin/python3",
+    "data/development/loma_lon_first_edge_decomposition_001/check.py",
+    "--output",
+    "data/development/loma_lon_first_edge_decomposition_001/calculation"
+  ],
+  "executed_utc": "2026-10-10T09:16:39.025589Z",
+  "gradient_exact_per_s": "6702271039201609/6755399441055744",
+  "grid_dimensions": [
+    8,
+    6,
+    6
+  ],
+  "grid_is_depth_only": true,
+  "input_interpretation": "Exact real values represented by the saved binary64 coordinates and grid nodes; transcendental expressions evaluated at 80 and 120 Decimal digits",
+  "limitations": [
+    "Exact rational geometric containment does not bound Decimal transcendental roundoff; 80/120 comparison is sensitivity evidence.",
+    "The local connector holds the first saved knot fixed; the rest of the polygon was neither changed nor reoptimized.",
+    "No whole-path stationary source derivative, updated native flag, or first-arrival/global-minimum claim follows.",
+    "No original-grid model derivatives are replaced; the analytic affine component is a diagnostic, not a dispatch rule for arbitrary trilinear models.",
+    "The authoritative channel epochs describe declared simulation station placements, not event-time waveform observations."
+  ],
+  "native_fields_checked": 82698,
+  "native_pairs": [
+    8670,
+    8674
+  ],
+  "old_D_paths_byte_identical": true,
+  "old_D_source_vectors_exactly_equal": true,
+  "old_source_limit_s_per_km": 3e-06,
+  "original_sha256": {
+    "data/development/loma_lon_straight_curvature_replay_001/execution.json": "a92ae592a8e068204ec2e3dea3228a7eb6af3119cbe40d47cbf590e0a16f8618",
+    "data/development/loma_lon_straight_curvature_replay_001/inputs/initial_events.csv": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+    "data/development/loma_lon_straight_curvature_replay_001/inputs/initial_grid.csv": "121eb9afae309427db7dc579f951d1732ce6f28d674948889bde91ca88d5dcd0",
+    "data/development/loma_lon_straight_curvature_replay_001/inputs/native_context.json": "fe3f7683fa43e875bcff80a6d76f45338c8d888ed9170582fc86603d575ec193",
+    "data/development/loma_lon_straight_curvature_replay_001/inputs/reference_execution.json": "369bc74b2769f02ed7a25b2cd3b0f82567af894ee16fc499116bac0f24bf3baa",
+    "data/development/loma_lon_straight_curvature_replay_001/inputs/reference_independent_review.json": "835d14f3e45fab516db9a31666cefb859ee94e0cee280162f8986229a3b95c40",
+    "data/development/loma_lon_straight_curvature_replay_001/inputs/reference_review.json": "9660c489b6f3dfe78789d73416c07446ed33fb22bae2ec35a162847ed71c24e4",
+    "data/development/loma_lon_straight_curvature_replay_001/inputs/reference_summary.json": "6933ca71c17a9795c137884581a44fc82047735a5021fb3ab9815dbc573ffebf",
+    "data/development/loma_lon_straight_curvature_replay_001/inputs/selected_reference.csv": "73bda584a592318912fbb6fb45cdfccb38c643ba5777ef0ce81d767943d270c3",
+    "data/development/loma_lon_straight_curvature_replay_001/inputs/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "data/development/loma_lon_straight_curvature_replay_001/old_parity.json": "cf814d41677865f69e21341c3103cc58e5a887dd836ee77b3255ff5b4f520e2b",
+    "data/development/loma_lon_straight_curvature_replay_001/prelaunch_review.json": "9dc0dc21a93b39a65e01da8bc4defa86a2d0c4a7bc11761e67b5bcfd88c2831d",
+    "data/development/loma_lon_straight_curvature_replay_001/prepared_v3.json": "9b61082fb9b5c46966fa5e5c9673ba8d1e58c038875ed9c63888ac36ab830dac",
+    "data/development/loma_lon_straight_curvature_replay_001/results/D/paths.csv": "35a88164ad2758244596a24b05eb9eec1bf9a03bb86e8cddaf3127aa7bad1067",
+    "data/development/loma_lon_straight_curvature_replay_001/results/D/scalars_17.csv": "4b884da70e0bea191bf46ee32df556fd0ed7a87adad03e8eb7afd0eeb2d50474",
+    "data/development/loma_lon_straight_curvature_replay_001/results/old/paths.csv": "35a88164ad2758244596a24b05eb9eec1bf9a03bb86e8cddaf3127aa7bad1067",
+    "data/development/loma_lon_straight_curvature_replay_001/results/old/scalars_17.csv": "2ce921c5e88084b909402677331a2b7c894527cfa1e2a1534f0f5b4cb1013fe6",
+    "data/development/loma_lon_straight_curvature_replay_001/review.json": "3e9d14d95c435d242ac8a241f452d712e8ea1beda066b1d645fa0b0f30c725a9",
+    "data/development/loma_lon_straight_curvature_replay_001/source/D/src/core.hpp": "c9500361c5ca3ff55b2fbcec0aedfb3639d3f3b68a53431267e6849c3a933044",
+    "data/development/loma_lon_straight_curvature_replay_001/source/old/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "data/development/loma_lon_straight_curvature_replay_001/summary.json": "ee14057bc05c7747f30eda6df9670b0f89e26a777390668d9d78f20b03523bde"
+  },
+  "output_sha256": {
+    "comparison.csv": "e60ea71574b266d8d5cc45f8deb29f248b99d59cc08dd3d74c82f65f6b00fa50",
+    "components.json": "063e336eea7dc14709f203fe300c9cd62b5595a3bc9ab24b2ee351a2d240b8ef",
+    "controls.json": "f2df95fa5638951309a05b48ebfc8a1c928b3c238f2bd8ebca949052aaa46d23",
+    "snapshot/execution.json": "a92ae592a8e068204ec2e3dea3228a7eb6af3119cbe40d47cbf590e0a16f8618",
+    "snapshot/inputs/initial_events.csv": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+    "snapshot/inputs/initial_grid.csv": "121eb9afae309427db7dc579f951d1732ce6f28d674948889bde91ca88d5dcd0",
+    "snapshot/inputs/native_context.json": "fe3f7683fa43e875bcff80a6d76f45338c8d888ed9170582fc86603d575ec193",
+    "snapshot/inputs/reference_execution.json": "369bc74b2769f02ed7a25b2cd3b0f82567af894ee16fc499116bac0f24bf3baa",
+    "snapshot/inputs/reference_independent_review.json": "835d14f3e45fab516db9a31666cefb859ee94e0cee280162f8986229a3b95c40",
+    "snapshot/inputs/reference_review.json": "9660c489b6f3dfe78789d73416c07446ed33fb22bae2ec35a162847ed71c24e4",
+    "snapshot/inputs/reference_summary.json": "6933ca71c17a9795c137884581a44fc82047735a5021fb3ab9815dbc573ffebf",
+    "snapshot/inputs/selected_reference.csv": "73bda584a592318912fbb6fb45cdfccb38c643ba5777ef0ce81d767943d270c3",
+    "snapshot/inputs/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "snapshot/old_parity.json": "cf814d41677865f69e21341c3103cc58e5a887dd836ee77b3255ff5b4f520e2b",
+    "snapshot/prelaunch_review.json": "9dc0dc21a93b39a65e01da8bc4defa86a2d0c4a7bc11761e67b5bcfd88c2831d",
+    "snapshot/prepared_v3.json": "9b61082fb9b5c46966fa5e5c9673ba8d1e58c038875ed9c63888ac36ab830dac",
+    "snapshot/results/D/paths.csv": "35a88164ad2758244596a24b05eb9eec1bf9a03bb86e8cddaf3127aa7bad1067",
+    "snapshot/results/D/scalars_17.csv": "4b884da70e0bea191bf46ee32df556fd0ed7a87adad03e8eb7afd0eeb2d50474",
+    "snapshot/results/old/paths.csv": "35a88164ad2758244596a24b05eb9eec1bf9a03bb86e8cddaf3127aa7bad1067",
+    "snapshot/results/old/scalars_17.csv": "2ce921c5e88084b909402677331a2b7c894527cfa1e2a1534f0f5b4cb1013fe6",
+    "snapshot/review.json": "3e9d14d95c435d242ac8a241f452d712e8ea1beda066b1d645fa0b0f30c725a9",
+    "snapshot/source/D/src/core.hpp": "c9500361c5ca3ff55b2fbcec0aedfb3639d3f3b68a53431267e6849c3a933044",
+    "snapshot/source/old/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "snapshot/summary.json": "ee14057bc05c7747f30eda6df9670b0f89e26a777390668d9d78f20b03523bde",
+    "source/check.py": "d55465cc1bf0c0c9db1bdcdd7632e5c65124f9d9cb7bf18e02ec23d79ca06a37"
+  },
+  "python_version": "3.6.8",
+  "results": [
+    {
+      "curved_minus_straight_time_s": "-2.52281270705607216569521577619401050823695945700572929145472088725340031205444604633215445120687766021423843418091E-9",
+      "local_curved_component_meets_same_numeric_limit": false,
+      "pair_index": 8670,
+      "receiver_channel_seed_id": "NC.JHL..EHZ",
+      "receiver_metadata_epoch_end": "1990-08-21T18:35:00",
+      "receiver_metadata_epoch_start": "1989-10-19T20:40:00",
+      "saved_source_meets_original_limit": false,
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/10090456",
+      "vector_norms_s_per_km": {
+        "curved_minus_reference": "0.00000484263682350434772528119350040237615682846807732054669537178287069907925054876133668377798989288131820628409069999348257",
+        "saved_minus_reference": "0.00000480706012183572221563108323049550247101181034310696835894768304903821268068632743792972379626222059291770966463661154807",
+        "saved_minus_straight": "9.29537184874357262119842409230722871912540782320507776100138131292646863506756192068163676903246148793432885084071048186E-18",
+        "straight_minus_curved": "3.51257114161329788018540605457603589639233901517789030266792049135372076498024391485936760344981299406485353527561653189E-7"
+      }
+    },
+    {
+      "curved_minus_straight_time_s": "-1.39068066311812629449430075773950843642937665727344534302109093856833634521221358256149453751372791502047123808988E-9",
+      "local_curved_component_meets_same_numeric_limit": true,
+      "pair_index": 8674,
+      "receiver_channel_seed_id": "NC.JRG..EHZ",
+      "receiver_metadata_epoch_end": "1990-08-07T20:50:00",
+      "receiver_metadata_epoch_start": "1989-03-24T22:55:00",
+      "saved_source_meets_original_limit": true,
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/10090456",
+      "vector_norms_s_per_km": {
+        "curved_minus_reference": "0.00000106844698954570620663556805126765669614132930691182967832864656864507165004983449836534135040738278159291258086359367170",
+        "saved_minus_reference": "0.00000105997629855664213896334492022026163713488590398415830390712774203828629684437397247174144850346434374702450380770236483",
+        "saved_minus_straight": "1.62948188964229614958187223611467068868279263817730624413504129447574628091163433971685207175657261666064585889997740938E-17",
+        "straight_minus_curved": "2.36014910443454637771802943507641407756703249363255778411316660739019251849103886456615802095810479730994182014550729328E-7"
+      }
+    }
+  ],
+  "scope": "Two saved first-edge components only; no native ray, optimizer, FMM, reference enumeration, observational retrieval or inverse call",
+  "source_sha256": "d55465cc1bf0c0c9db1bdcdd7632e5c65124f9d9cb7bf18e02ec23d79ca06a37",
+  "status": "completed_saved_component_calculation",
+  "v_at_0_exact_km_per_s": "5697053528623677/2251799813685248",
+  "v_at_3_exact_km_per_s": "6199662283912643/1125899906842624"
+}

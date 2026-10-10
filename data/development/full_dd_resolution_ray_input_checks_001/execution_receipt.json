@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "recorded_utc": "2026-10-10T09:08:51.904807Z",
+  "scope": "Invented input validation and the unchanged 39 algebra controls only; no field export, ray trace, inversion, covariance calculation on observations or Git mutation.",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "diagnostics/check_full_dd_resolution_rays.py",
+        "--output",
+        "data/development/full_dd_resolution_ray_input_checks_001/new_checks"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "observed_return_code": 0,
+      "checks": 56,
+      "result_sha256": "e53c72076edcf91fd4d7742f7dd95069d245eb8a9f2dcbe516f927f313437486"
+    },
+    {
+      "argv": [
+        "python3",
+        "diagnostics/check_full_dd_resolution.py",
+        "--output",
+        "data/development/full_dd_resolution_ray_input_checks_001/prior39"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "observed_return_code": 0,
+      "checks": 39,
+      "result_sha256": "b0d2534838ed7aa0399c8bf80d03c9167062b51417b630b6621ecbea76794dd3"
+    }
+  ],
+  "maintained_analysis_sha256": "64315e341200cbac98be78e45a03de81eb040e96d265ab1adb15c9d08b907d43",
+  "new_controls_source_sha256": "74026a5085e7b6db987f058e6783ebdde6ab021f7e355645b8b1a7b4006b3411",
+  "preserved_before_source_sha256": "8f773ca30f4280e75bd45694b9ad62788e2751e6395d797d617666215cfb6b15",
+  "changes_patch_sha256": "1dfa54713b31feb1405b2b4a82336f09b0d640ddf3686b5090a9046518707a36",
+  "prior39_comparison_sha256": "e71cdba87443acfa50789317eb90c3739b54ddc354e23b5fe5deccba65fe523c",
+  "independent_review_status": "pending"
+}
