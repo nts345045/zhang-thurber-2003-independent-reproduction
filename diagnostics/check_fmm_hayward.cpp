@@ -7,8 +7,13 @@
 #include <chrono>
 
 int main(int argc, char **argv) {
-  if (argc != 5)
-    throw std::runtime_error("Usage: check_fmm_hayward GRID.csv RAYS.csv OUTPUT.csv AUX_SPACING");
+  if (argc != 5 && argc != 7)
+    throw std::runtime_error("Usage: check_fmm_hayward GRID.csv RAYS.csv OUTPUT.csv AUX_SPACING [1|2 original|closed]");
+  const int order = argc == 7 ? std::stoi(argv[5]) : 1;
+  const std::string rule = argc == 7 ? argv[6] : "original";
+  if ((order != 1 && order != 2) || (rule != "original" && rule != "closed"))
+    throw std::runtime_error("Invalid FMM order or receiver seed rule");
+  const bool closed_seed_cells = rule == "closed";
   const Grid g = read_grid(argv[1]);
   const auto inputs = csv_table(argv[2]);
   const double spacing = csv_double(argv[4]);
@@ -32,11 +37,14 @@ int main(int argc, char **argv) {
        "fmm_bent_time_s,fmm_bent_converged,fmm_bent_gradient,"
        "selected_action_s,action_reduction_s,selected_converged,"
        "source_derivative_change_s_per_km,selected_max_depth_km,"
-       "selected_outside_nodes,selected_endpoint_error_km\n";
+       "selected_outside_nodes,selected_endpoint_error_km,order,closed_seed_cells,seed_nodes,"
+       "first_order_direction_evaluations,second_order_direction_evaluations,second_order_ineligible,"
+       "causal_fallback_updates,root_bisection_updates,second_neighbor_revisits,"
+       "baseline_ray_iterations,fmm_bent_iterations,selected_iterations\n";
   size_t done=0;
   for (const auto &group:receivers) {
     auto start=std::chrono::steady_clock::now();
-    const first_arrival::Field field(g,group.first,spacing);
+    const first_arrival::Field field(g,group.first,spacing,order,closed_seed_cells);
     const double seconds=std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();
     for (size_t index:group.second) {
       const auto &input=inputs.rows[index];
@@ -63,7 +71,13 @@ int main(int argc, char **argv) {
         << (seed.success ? bent.gradient : NAN) << ',' << selected.time << ','
         << original.time-selected.time << ',' << selected.converged << ','
         << norm(selected.source-original.source) << ',' << maxdepth << ',' << outside << ','
-        << norm(selected.path.front()-a)+norm(selected.path.back()-b) << std::endl;
+        << norm(selected.path.front()-a)+norm(selected.path.back()-b) << ','
+        << field.order() << ',' << field.closed_seed_cells() << ',' << field.stats.seed_nodes << ','
+        << field.stats.first_order_direction_evaluations << ',' << field.stats.second_order_direction_evaluations << ','
+        << field.stats.second_order_ineligible << ',' << field.stats.causal_fallback_updates << ','
+        << field.stats.root_bisection_updates << ',' << field.stats.second_neighbor_revisits << ','
+        << original.iterations << ',' << (seed.success ? bent.iterations : 0) << ','
+        << selected.iterations << std::endl;
     }
     std::cout << "receiver " << ++done << '/' << receivers.size() << " rays "
               << group.second.size() << " field_seconds " << seconds << std::endl;

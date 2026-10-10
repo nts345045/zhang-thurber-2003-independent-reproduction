@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "checks": 560,
+  "failures": [],
+  "groups": {
+    "dense_principal_matrix": {
+      "checks": 256,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "no_bound_inverse": {
+      "checks": 6,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "feasible_cone": {
+      "checks": 96,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "negative_slope": {
+      "checks": 96,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "free_equation": {
+      "checks": 96,
+      "failures": 0,
+      "maximum_error": 4.440892098500626e-16
+    },
+    "no_release_limitation_recorded": {
+      "checks": 1,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "no_release_still_descent": {
+      "checks": 1,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "no_bound_affine_unchanged": {
+      "checks": 4,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "no_bound_affine_converged": {
+      "checks": 4,
+      "failures": 0,
+      "maximum_error": 0
+    }
+  },
+  "compile_command": [
+    "c++",
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-I",
+    "tmp/ray_stopping/i775_reduced_fallback/source/diagnostics",
+    "diagnostics/check_reduced_ray_metric.cpp",
+    "-o",
+    "tmp/ray_stopping/check_reduced_ray_metric"
+  ],
+  "run_command": [
+    "tmp/ray_stopping/check_reduced_ray_metric"
+  ],
+  "TMPDIR": "tmp",
+  "source_sha256": {
+    "diagnostics/check_reduced_ray_metric.cpp": "643c30157cdb48eb48ad69aae5237b8acc6ce6cb5dac7dece2ab52590a69d68d",
+    "diagnostics/reduced_ray_metric.hpp": "b5dfefaec537fd5f83fae7dddba3ba0d71fc6ff6352dc64aa6201d5ceaa51b9d",
+    "diagnostics/control_optimizer.hpp": "e17e5ffc4a976f0bbe7626866501dd659f0690db69998b0d52575519ca2bb261",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63"
+  },
+  "sha256": {
+    "data/development/reduced_ray_metric_checks/results.csv": "30e9a29c29c7ac67d56ccfa915db131d2754a0b86ff87b2a972cbc1a9a2ae388",
+    "data/development/reduced_ray_metric_checks/stderr.txt": "cab587abf83775ddd3f2d9f5a7cbd0846fb55a9f5b2b71ae48a11d1270c4bfca",
+    "data/development/reduced_ray_metric_checks/source_snapshot.tar.gz": "480c6214e27ae7740787228dddad0681caf58c6a0676af54ebf553e5f9e5c25b",
+    "tmp/ray_stopping/check_reduced_ray_metric": "8c88983c21ae894b00d5a828505df04af15997a09d3e4ae17913622a49640c46"
+  },
+  "scope": "Invented component matrices and smooth affine rays; not observational data or first-arrival certification. Floating-point algebra comparison tolerances are not ray stopping tolerances.",
+  "control_optimizer": "Generated reduced-fallback variant; no-bound smooth ray outputs compared exactly against unchanged production trace."
+}

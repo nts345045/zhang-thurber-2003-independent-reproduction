@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "checks": 564,
+  "failures": [],
+  "groups": {
+    "dense_principal_matrix": {
+      "checks": 256,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "no_bound_inverse": {
+      "checks": 6,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "feasible_cone": {
+      "checks": 96,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "negative_slope": {
+      "checks": 96,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "free_equation": {
+      "checks": 96,
+      "failures": 0,
+      "maximum_error": 4.440892098500626e-16
+    },
+    "no_release_limitation_recorded": {
+      "checks": 1,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "no_release_still_descent": {
+      "checks": 1,
+      "failures": 0,
+      "maximum_error": 0
+    },
+    "no_bound_affine_exact_time": {
+      "checks": 4,
+      "failures": 0,
+      "maximum_error": 1.3414081996288019e-06
+    },
+    "no_bound_affine_exact_source": {
+      "checks": 4,
+      "failures": 0,
+      "maximum_error": 3.0933733246402757e-07
+    },
+    "no_bound_affine_converged": {
+      "checks": 4,
+      "failures": 0,
+      "maximum_error": 0
+    }
+  },
+  "compile_command": [
+    "c++",
+    "-DAUDIT_REDUCED_ALL",
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-I",
+    "tmp/ray_stopping/i775_reduced_all/source/diagnostics",
+    "diagnostics/check_reduced_ray_metric.cpp",
+    "-o",
+    "tmp/ray_stopping/check_reduced_ray_metric_all"
+  ],
+  "run_command": [
+    "tmp/ray_stopping/check_reduced_ray_metric_all"
+  ],
+  "TMPDIR": "tmp",
+  "source_sha256": {
+    "diagnostics/check_reduced_ray_metric.cpp": "486201fddc0404b230c5c590225df4c4d6ebba1aa5c9aba4e31a271ea6f3e585",
+    "diagnostics/reduced_ray_metric.hpp": "b5dfefaec537fd5f83fae7dddba3ba0d71fc6ff6352dc64aa6201d5ceaa51b9d",
+    "diagnostics/control_optimizer.hpp": "9c58dbccf453c652343f27e446cdf2061170ec7352d5eceb50385c7e2d2fdb50",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63"
+  },
+  "sha256": {
+    "data/development/reduced_ray_metric_checks/pure_metric/results.csv": "c9ff33cf972b5892c95accdc39c4a46b86de7bf8b63501af20807a394c823caf",
+    "data/development/reduced_ray_metric_checks/pure_metric/stderr.txt": "a9376b7313d1bb77d32abdd91ca4f470ecd4ae9539e0077e13670027d66f7cc9",
+    "data/development/reduced_ray_metric_checks/pure_metric/source_snapshot.tar.gz": "5f0a4719ec6aa6a5dde43627223c989d827dcfd739d666713e5a37593f34792d",
+    "tmp/ray_stopping/check_reduced_ray_metric_all": "cffddc13433c45b31ae47ab76827970afb584e922d3aeee7b7c49b34244824fd"
+  },
+  "scope": "Same invented component matrices; pure reduced-metric smooth affine rays are compared with analytic time and endpoint derivatives using existing 2.5e-5 s / 3e-6 s/km tolerances. No observations or production integration."
+}

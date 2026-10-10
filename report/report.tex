@@ -697,6 +697,52 @@ These smooth affine cases do not establish branch completeness in arbitrary
 three-dimensional media. Field validation remains necessary, and the
 production inversions have not changed.
 
+\subsection{Independent reference for the initial one-dimensional model}
+An independent Snell-law calculation enumerates rays in a positive,
+nondecreasing, continuous piecewise-linear velocity profile. It uses the
+saved initial Hayward grid within its finite depth interval, $-1\leq z\leq20$
+km; the profile is not extrapolated below the model. The candidates include
+monotone direct rays, all admissible downward turns, tangent paths along
+accessible constant-velocity intervals, and tangent paths along the finite
+bottom boundary. Rational coefficients from the binary64 inputs and
+outward-rounded interval bounds cover the turning parameters. Unresolved
+roots, tangencies, or boundary membership withhold the first-arrival result.
+Travel-time ordering still uses ordinary floating-point arithmetic; near ties
+are retained, and no interval-certified minimum-time gap is claimed.
+
+The reference passes 250 original component checks and 106 added regressions.
+The added cases exposed and corrected cancellation in nearly flat-layer
+travel times and circular-path samples, and an incorrectly admitted root
+immediately beyond the finite bottom. The original 39 failed regression
+checks remain archived. Stable logarithmic and half-angle formulas remove
+the cancellation; ambiguous boundary membership now remains unresolved.
+These corrections change the reference times for the saved 32-ray Hayward
+sample by at most $8.9\times10^{-15}$ s, with branches, source derivatives,
+and native identity mappings unchanged.
+
+All 32 initial sampled rays have complete enumeration and distance closure
+within $7.3\times10^{-12}$ km. Each has one candidate: 20 direct and 12
+turning rays, with no near ties at the recorded $10^{-9}$-s scale.
+The comparison preserves all 210 observation-to-ray identity associations.
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+Numerical time minus reference ($\mu$s) & Minimum & Median & Maximum\\
+\midrule
+Production spacing & 3.82 & 38.87 & 143.95\\
+Refined spacing & 1.32 & 11.79 & 37.48\\
+\bottomrule
+\end{tabular}
+\end{center}
+For the 24 saved source-derivative components, the maximum absolute
+differences are $3.44\times10^{-5}$ and $1.26\times10^{-5}$ s/km at the
+production and refined spacings. These differences can contain path
+discretization and local optimization errors; they do not identify one
+mechanism. This initial sample does not show millisecond branch errors, but
+it does not validate every field ray or any updated three-dimensional model.
+The reference, checks, preserved failures, and identified comparisons are in
+\path{data/development/first_arrival_1d_enumeration/}.
+
 \subsection{Completed DD outputs and a targeted path comparison}
 \IfFileExists{hayward_results.tex}{The following path comparison uses the saved
 DD model from the field calculation below.}{The catalog DD run has completed
@@ -732,6 +778,67 @@ its outputs and exits with failure status. Observation identities and native
 epochs are preserved in \path{data/development/fmm_hayward_audit/}.
 The unchanged production inversions remain separate; this comparison
 does not establish the cause of source displacement.
+
+A controlled follow-up repeats the same 186 identified rays with the
+second-order stencil, closed-cell seeding option, and separately tested
+extraction correction, still at 0.5-km auxiliary and path spacings. All
+extractions succeed, but one selected ray still misses local stopping and
+22 selected direct paths retain strict endpoint failures below
+$3.56\times10^{-15}$ km. The failed checks remain recorded. Selected times
+change by at most 0.675 microseconds relative to the historical comparison;
+two admissible improvements over the straight seed remain above 1 ms,
+at 3.6916 and 2.2390 ms. All 30 physical receiver groups retain eight seed
+vertices, so the closed-cell option does not enlarge these seed sets.
+This comparison combines stencil and extraction changes; it does not isolate
+one correction. The complete evidence is in
+\path{data/development/fmm_hayward_order2_closed/}.
+
+The remaining local-stopping failure has a measurable boundary bottleneck.
+An isolated audit retains the saved DD ray joining event index 775 to
+receiver epoch 184, channel \texttt{NC.CMO..EHZ}; its source lies on the
+artificial model top at $z=-1$ km. Instrumented and original functions give
+identical results in all 12 budget/spacing comparisons. Extending the update
+budget reaches the unchanged combined stopping rule after 1,249/1,155
+updates at 0.5-km spacing and 3,009/2,703 updates at 0.25-km spacing
+(straight/FMM initialization). This rule requires an accepted action decrease
+below $10^{-11}$ s and projected gradient below $10^{-5}$ s/km; these paths
+do not meet the separate $10^{-7}$-s/km gradient threshold.
+
+More than 97\% of accepted updates, including all of the final 200 updates
+in each extended run, follow the same fallback: projecting a full-space quasi-Newton direction at
+active faces makes it non-descending, so the code clears its curvature memory
+and uses the unpreconditioned projected negative gradient. No segments merge
+or line searches fail. Thus the boundary handling repeatedly discards the
+conditioning improvement measured in the interior tests. Extending the coarse
+budget changes travel times by only 2--4 ns, while source derivatives change
+by $2.1$--$3.4\times10^{-6}$ s/km. Path refinement changes derivatives by
+up to $1.1\times10^{-5}$ s/km. Meeting local stopping alone therefore does
+not establish derivative accuracy or a first arrival. The original thresholds,
+failed runs, identities, and direction histories remain in
+\path{data/development/ray_stopping_i775_budget_path/}; the production
+inversions are unchanged.
+
+An isolated direction control solves the principal weighted-Laplacian system
+on free coordinates, retaining the stiffness of edges adjoining fixed
+coordinates. Replacing only the original non-descent fallback still fails
+three of four runs: subsequent retained quasi-Newton directions exhaust
+the unchanged line-search limit. Using the reduced direction at every update
+reaches the original stopping rule in all four cases, after 12/12 updates at
+0.5 km and 20/21 at 0.25 km (straight/FMM). All 65 directions have negative
+slope, and all 65 accepted updates strictly decrease the action with one
+line-search evaluation. Three runs meet the strict projected-gradient
+criterion; the coarse FMM run meets the combined criterion.
+
+The reduced method does not release coordinates within a direction solve.
+Wrong-sign quadratic multipliers remain in 10 of 12 coarse and 20 of 21 fine
+FMM directions, so this method is not the exact tangent-cone quadratic
+minimizer. Independent matrix, feasibility, and affine-ray controls pass
+560 fallback-variant and 564 pure-metric checks. Artifacts are saved under
+\path{data/development/}: \path{ray_stopping_i775_reduced_fallback/},
+\path{ray_stopping_i775_reduced_all/}, and \path{reduced_ray_metric_checks/}.
+These results isolate a direction-choice effect for one identified ray.
+They establish neither general optimizer accuracy nor a globally first
+arrival, and they have not changed the production inversions.
 
 \IfFileExists{hayward_results.tex}{
 \clearpage
