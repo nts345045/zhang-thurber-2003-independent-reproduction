@@ -1,0 +1,184 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "complete_pinned_fixture",
+      "passed": true,
+      "rejected": false
+    },
+    {
+      "name": "changed_run_configuration",
+      "passed": true,
+      "rejected": true,
+      "message": "Pinned artifact changed: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/analytic_simulation_launcher_002/invented_simulation/run.cfg"
+    },
+    {
+      "name": "changed_native_station_metadata",
+      "passed": true,
+      "rejected": true,
+      "message": "Pinned artifact changed: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/analytic_simulation_launcher_002/invented_simulation/stations.csv"
+    },
+    {
+      "name": "changed_reference_table",
+      "passed": true,
+      "rejected": true,
+      "message": "Pinned artifact changed: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/analytic_simulation_launcher_002/invented_simulation/analytic_truth/references.csv"
+    },
+    {
+      "name": "unprepared_status",
+      "passed": true,
+      "rejected": true,
+      "message": "Require an explicitly prepared continuous-reference bundle"
+    },
+    {
+      "name": "wrong_truth_mode",
+      "passed": true,
+      "rejected": true,
+      "message": "Require an explicitly prepared continuous-reference bundle"
+    },
+    {
+      "name": "missing_review_pin",
+      "passed": true,
+      "rejected": true,
+      "message": "Missing pinned geometry, configuration, reference, or review"
+    },
+    {
+      "name": "wrong_cartesian_count",
+      "passed": true,
+      "rejected": true,
+      "message": "Invalid prepared Cartesian support"
+    },
+    {
+      "name": "escaped_prepared_path",
+      "passed": true,
+      "rejected": true,
+      "message": "'/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/analytic_simulation_launcher_002/outside' does not start with '/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/analytic_simulation_launcher_002/invented_simulation'"
+    },
+    {
+      "name": "real_frozen_build_and_cli_writes_eight_identified_synthetic_rows",
+      "passed": true
+    },
+    {
+      "name": "original_mutable_inputs_preserved_exactly",
+      "passed": true
+    },
+    {
+      "name": "completed_simulation_cannot_be_reused",
+      "passed": true,
+      "rejected": true
+    },
+    {
+      "name": "driver_signal_records_interruption_and_reaped_child",
+      "passed": true
+    },
+    {
+      "name": "interrupted_build_preserves_all_prepared_input_bytes",
+      "passed": true
+    }
+  ],
+  "scope": "Invented constant-speed fixture only; no actual Loma simulation",
+  "command": [
+    "/usr/bin/python3",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/run_loma_analytic_simulation.py",
+    "--data",
+    "data/development/analytic_simulation_launcher_002/invented_simulation",
+    "--build",
+    "tmp/analytic_simulation_launcher_002",
+    "--threads",
+    "2"
+  ],
+  "fixture_source": "data/development/analytic_truth_preparation_checks_001/invented_reference",
+  "output_sha256": {
+    "launcher_stdout.log": "8eca01f7d75caa183b15743cdd5358f6db5e2d9421724fca66f34b0a34f84162",
+    "launcher_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interruption_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interruption_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/truth_events.csv": "5f936b391fb206d48ed68f30f5caf4ff8fb6da23593292e6b048bcbb784d7310",
+    "invented_simulation/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "invented_simulation/truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "invented_simulation/initial_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "invented_simulation/run.cfg": "1daef9a5ab261fecdf2123479f5e2cd05ea2f87f96d7b47ef0b476513b2d3c83",
+    "invented_simulation/authoritative_geometry": "13952d674c3c41253c5943b0d457ae9f16eb88a17fc5c057bee727467c90d166",
+    "invented_simulation/preparation_manifest.json": "a6ad37cf62cd0bead46e999b129cf935eeea1db384067cdd2ad112e49625a75e",
+    "invented_simulation/analytic_truth_manifest.json": "50c5bf093545545bf1681704b5f1212e1dc27057d086365ba9be87a43e28ca41",
+    "invented_simulation/simulation_execution.json": "642fc73c985373dc68d965281145ab57615dfe72cc135e7e7602a4ca9dcace85",
+    "invented_simulation/simulation_source.tar.gz": "1b9d7f6695c3924cf523ee4c89cfed2a81cea407485cbf38cccf9857134c4d8d",
+    "invented_simulation/simulation_cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "invented_simulation/simulation_cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/simulation_configure_stdout.log": "0bb906076b0649e8020ec6f7964662ba072b9db930f9f70afa74ba547761e9b5",
+    "invented_simulation/simulation_configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/simulation_compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "invented_simulation/simulation_compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/simulation_compile_stdout.log": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+    "invented_simulation/simulation_compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/simulation_runtime_libraries_stdout.log": "d86f5549cd129b3d1ab4fce39fffeb7cbb292005c03c5e5ebd7ebef70ef7897d",
+    "invented_simulation/simulation_runtime_libraries_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/simulation_run_manifest.json": "c9b37996d3b33fa7651a9be88a0f2e7dba87b3158b4f9dea4cc77a90f4fe48ed",
+    "invented_simulation/simulate_stdout.log": "326e8cf3c81f0a46f8d1dc7c84ddbc3e42a3ad7b78ce01ca45ff9eeeb3e3aa41",
+    "invented_simulation/simulate_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_simulation/simulation_truth_status.csv": "8bf2e77aba8fa69bcdd3a1745036c4a94487845f7b0b550dd49801b710c365a5",
+    "invented_simulation/simulation_truth_mode.txt": "f1a9a5dec8eaa6c2f51b484ef730768ec312b74a2bebe001244bfc1d7d5ff7d5",
+    "invented_simulation/initial_events.csv": "63e62e60e422c9a48b5818c2eeb70a6a626d6fb9528b00534dfe15306e254f9f",
+    "invented_simulation/arrivals.csv": "c37288fd68409c93ddcc3263eaaeaae4e8cefee05e57983e7eef96b7c435c2a9",
+    "invented_simulation/observations.csv": "ef7c62ddb2917550812432b5ac9df7c6c11e08ea5e0ea14befc1e132b41b8091",
+    "invented_simulation/analytic_truth/references.csv": "1036ac00a716d3f0e794fb8efeb43c68753faf6afe28bfbc09a9214983f18c2f",
+    "invented_simulation/analytic_truth/inputs/truth_events.csv": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+    "invented_simulation/analytic_truth/inputs/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "invented_simulation/analytic_truth/inputs/truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "invented_simulation/analytic_truth/provenance/summary.json": "bcabde525387e6a3d77fc825130ca8fd2da8176a183a3d65f08d4c22b8370f1f",
+    "invented_simulation/analytic_truth/provenance/execution.json": "b4c1b66e45389167aad38882a1eea13ed4c4bf7609268b953ed6020b7144be3a",
+    "invented_simulation/analytic_truth/provenance/review.json": "de6d089820e059edcdf360c672722fdee86a8a0f489dcd4cf7957269473e469a",
+    "invented_simulation/analytic_truth/provenance/independent_review.json": "76fad46da42cad502722514401f659da7fa119587a4fbce1adf802a3173f32db",
+    "invented_simulation/analytic_truth/provenance/certificates.jsonl.gz": "43f88b5ad8b32b11781ba8371809dc1866413c203073f5a7ec5e9591666bb3e7",
+    "invented_simulation/inputs_before_simulation/authoritative_geometry": "b0ce8a108f4346cb5ae60d8cab9c58f48e5c7d4cd4c6c47821b6d25bc3c9f8af",
+    "invented_simulation/inputs_before_simulation/truth_events.csv": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+    "prepared_before_launch/truth_events.csv": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+    "prepared_before_launch/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "prepared_before_launch/truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "prepared_before_launch/initial_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "prepared_before_launch/run.cfg": "1daef9a5ab261fecdf2123479f5e2cd05ea2f87f96d7b47ef0b476513b2d3c83",
+    "prepared_before_launch/authoritative_geometry": "b0ce8a108f4346cb5ae60d8cab9c58f48e5c7d4cd4c6c47821b6d25bc3c9f8af",
+    "prepared_before_launch/preparation_manifest.json": "a6ad37cf62cd0bead46e999b129cf935eeea1db384067cdd2ad112e49625a75e",
+    "prepared_before_launch/analytic_truth_manifest.json": "50c5bf093545545bf1681704b5f1212e1dc27057d086365ba9be87a43e28ca41",
+    "prepared_before_launch/analytic_truth/references.csv": "1036ac00a716d3f0e794fb8efeb43c68753faf6afe28bfbc09a9214983f18c2f",
+    "prepared_before_launch/analytic_truth/inputs/truth_events.csv": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+    "prepared_before_launch/analytic_truth/inputs/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "prepared_before_launch/analytic_truth/inputs/truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "prepared_before_launch/analytic_truth/provenance/summary.json": "bcabde525387e6a3d77fc825130ca8fd2da8176a183a3d65f08d4c22b8370f1f",
+    "prepared_before_launch/analytic_truth/provenance/execution.json": "b4c1b66e45389167aad38882a1eea13ed4c4bf7609268b953ed6020b7144be3a",
+    "prepared_before_launch/analytic_truth/provenance/review.json": "de6d089820e059edcdf360c672722fdee86a8a0f489dcd4cf7957269473e469a",
+    "prepared_before_launch/analytic_truth/provenance/independent_review.json": "76fad46da42cad502722514401f659da7fa119587a4fbce1adf802a3173f32db",
+    "prepared_before_launch/analytic_truth/provenance/certificates.jsonl.gz": "43f88b5ad8b32b11781ba8371809dc1866413c203073f5a7ec5e9591666bb3e7",
+    "interrupted_simulation/truth_events.csv": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+    "interrupted_simulation/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "interrupted_simulation/truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "interrupted_simulation/initial_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "interrupted_simulation/run.cfg": "1daef9a5ab261fecdf2123479f5e2cd05ea2f87f96d7b47ef0b476513b2d3c83",
+    "interrupted_simulation/authoritative_geometry": "b0ce8a108f4346cb5ae60d8cab9c58f48e5c7d4cd4c6c47821b6d25bc3c9f8af",
+    "interrupted_simulation/preparation_manifest.json": "a6ad37cf62cd0bead46e999b129cf935eeea1db384067cdd2ad112e49625a75e",
+    "interrupted_simulation/analytic_truth_manifest.json": "50c5bf093545545bf1681704b5f1212e1dc27057d086365ba9be87a43e28ca41",
+    "interrupted_simulation/simulation_execution.json": "5b8ff2c4498a59099a73a6c94f920911f02d5c27f7be60b566846e402d482ecb",
+    "interrupted_simulation/simulation_source.tar.gz": "87609cf36ca6832908425c22df051596cbe1a10055a303d0791f12363da299aa",
+    "interrupted_simulation/simulation_cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "interrupted_simulation/simulation_cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupted_simulation/simulation_configure_stdout.log": "99f956a9bd54fe7c10e01a05fe56813fb62e8a8a9e33acf146324b3f5247b33b",
+    "interrupted_simulation/simulation_configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupted_simulation/simulation_compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "interrupted_simulation/simulation_compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupted_simulation/simulation_compile_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interrupted_simulation/simulation_compile_stderr.log": "afe3497718abc8c209a4eb59717f1c5d257855da4b4ac020bba7fd2284170a51",
+    "interrupted_simulation/analytic_truth/references.csv": "1036ac00a716d3f0e794fb8efeb43c68753faf6afe28bfbc09a9214983f18c2f",
+    "interrupted_simulation/analytic_truth/inputs/truth_events.csv": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+    "interrupted_simulation/analytic_truth/inputs/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "interrupted_simulation/analytic_truth/inputs/truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "interrupted_simulation/analytic_truth/provenance/summary.json": "bcabde525387e6a3d77fc825130ca8fd2da8176a183a3d65f08d4c22b8370f1f",
+    "interrupted_simulation/analytic_truth/provenance/execution.json": "b4c1b66e45389167aad38882a1eea13ed4c4bf7609268b953ed6020b7144be3a",
+    "interrupted_simulation/analytic_truth/provenance/review.json": "de6d089820e059edcdf360c672722fdee86a8a0f489dcd4cf7957269473e469a",
+    "interrupted_simulation/analytic_truth/provenance/independent_review.json": "76fad46da42cad502722514401f659da7fa119587a4fbce1adf802a3173f32db",
+    "interrupted_simulation/analytic_truth/provenance/certificates.jsonl.gz": "43f88b5ad8b32b11781ba8371809dc1866413c203073f5a7ec5e9591666bb3e7",
+    "interrupted_simulation/inputs_before_simulation/authoritative_geometry": "b0ce8a108f4346cb5ae60d8cab9c58f48e5c7d4cd4c6c47821b6d25bc3c9f8af",
+    "interrupted_simulation/inputs_before_simulation/truth_events.csv": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+    "source/check_analytic_simulation_launcher.py": "d05f15f92ace22ea00661b9017a2068d20190b82a5eddc4e947e35d1ebbcd602",
+    "source/run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5"
+  }
+}
