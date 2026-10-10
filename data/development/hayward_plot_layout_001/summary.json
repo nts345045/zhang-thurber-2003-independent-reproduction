@@ -1,0 +1,145 @@
+{
+  "status": "passed",
+  "finished_utc": "2026-10-10T07:47:52.098268+00:00",
+  "scope": "Postprocessing-only longitude tick layout revision after the original Hayward workflow completed; no numerical input or solver change.",
+  "before_record_sha256": "f69ac0569e1e28441cecd25d203fc22fe77e646461250df0f4ba2f7c8af03350",
+  "source_before_sha256": "f0b65aa8db41c77c02657409a6cdddd6af4976a906a17f72acb7a2c0c461a906",
+  "source_after_sha256": "261aabff68404181e2574d1059546182164e897075a81050d8cf8264cab5c4ef",
+  "all_48_numerical_and_identified_csv_bytes_unchanged": true,
+  "numerical_review_bytes_unchanged": true,
+  "figure_metrics_bytes_unchanged": true,
+  "frozen_run_manifest_bytes_unchanged": true,
+  "geometry_manifest_only_plot_script_hash_changed": true,
+  "coordinate_limits_unchanged": {
+    "estimated_longitude_deg": [
+      -122.27916633778716,
+      -122.18610315534347
+    ],
+    "estimated_latitude_deg": [
+      37.80663944801912,
+      37.91019037054224
+    ],
+    "x": [
+      -8.03025404274356,
+      2.83353398957474
+    ],
+    "y": [
+      17.11345390578767,
+      25.136925586458958
+    ],
+    "z": [
+      -0.08625022411040006,
+      13.6517334718624
+    ]
+  },
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "plot_hayward.py"
+      ],
+      "cwd": ".",
+      "return_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "plot_hayward.py"
+      ],
+      "cwd": ".",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "return_code": 0
+    },
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-output-directory",
+        "report",
+        "report/report.tex"
+      ],
+      "cwd": ".",
+      "return_code": 1,
+      "interpretation": "Initial layout rebuild command used wrong working directory; failed missing relative figure path, no PDF produced; logs preserved."
+    },
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "report.tex"
+      ],
+      "cwd": "report",
+      "return_codes": [
+        0,
+        0
+      ]
+    }
+  ],
+  "visual_review": {
+    "figures": "All Figures5\u201311 viewed as contact sheet; revised Figure6 and report page41 viewed individually.",
+    "finding": "Longitude labels no longer overlap; common limits and all plotted values/identities unchanged.",
+    "pdf_pages": 109,
+    "latex_warnings": [
+      "Existing Underfull vbox badness10000 atline21; no final undefined-reference or overfull warnings."
+    ]
+  },
+  "after_sha256": {
+    "plot_hayward.py": "261aabff68404181e2574d1059546182164e897075a81050d8cf8264cab5c4ef",
+    "report/report.pdf": "1a66f1acb76ff8f2c25d38126e27be00e05729fc39dc41e87517b5cd72e654c8",
+    "report/report.log": "47a22d857951ee39d73e67d96e046e27180b947cd1edf695757170774bd66f42",
+    "data/hayward/figure04_geometry_manifest.json": "d97da9ad20a86475fe6b699b58a8957091a95b3a0bd00072725953f2d3e405bf",
+    "data/hayward/figure_metrics.json": "4932468be0c5a2734fb4239fc6357b4710a2f01fb3ce72cbaebe86d68696e4ba",
+    "data/hayward/numerical_review.json": "83b4ae13c7320536fcbdd739570927a015173b0ccba80c0f70fed31e3541577d",
+    "figures/hayward/figure04_geometry.pdf": "5364bc445bb22550aaa07327fb1adfa1cc355ff8ba21513ad8beea36c8d2b1d0",
+    "figures/hayward/figure04_geometry.png": "652254b2edb0edc787e42f232145a5191bda258ce577faaf48566676d76fe9cf",
+    "figures/hayward/figure05_locations.pdf": "957e56fa0dd7437ab661d5e1db7f467708fa9fb2005a331098ebde49d504dee0",
+    "figures/hayward/figure05_locations.png": "f117eda737968edc22c064672b975bf9ac8ba6842e4e7ac9cc7c890166231ab2",
+    "figures/hayward/figure06_initial.pdf": "5e2a694f547ee7c394f18a769dadc1b7ec8418933dd141a3e01f683cb093c8d9",
+    "figures/hayward/figure06_initial.png": "60aa693fd24477e0570d9c5055dee9cc5da6a637f3fb2f8aff011943d3a0869f",
+    "figures/hayward/figure07_standard.pdf": "243b4b3509da067b456da997f0542ff32b7d7cc962c677109fa8fc197d90aa10",
+    "figures/hayward/figure07_standard.png": "b4b824f317392e2cfb5ae5bb2208fb807d263bd370b8da01e3edcfd038e07b1b",
+    "figures/hayward/figure08_loc1d.pdf": "26871100a9a8a0dfe8e0811b6645f9df6a929a8be92e42645756437b82bfa3f7",
+    "figures/hayward/figure08_loc1d.png": "24f700a53451d9fb8352e3dd8cae3fb012ed774ded52608c15031314eb00e00c",
+    "figures/hayward/figure09_dd.pdf": "e906a5c3ca1d7edac17fc419551781d444e82a174316d4271ff1932ca5f8871e",
+    "figures/hayward/figure09_dd.png": "e0178b343e80e2f4614bf6434819709ceb6c5bab3abfd08871243f5a2fe67143",
+    "figures/hayward/figure10_velocity.pdf": "63544c179821713dfa5f9d6c363e80662f883de1dfed9d12ab12308e4ac6e0e9",
+    "figures/hayward/figure10_velocity.png": "b6f2c05d71f9ade3af626e875c0fc4281532b5a2fc41cc30785791a3a128777e",
+    "figures/hayward/figure11_resolution.pdf": "ab2f7ac5ee84c68e0e7a2329ce43cbd1d7d8b43264724c446bbee3b20e3cc943",
+    "figures/hayward/figure11_resolution.png": "f462ae6bb2eaf91d177e63612ca8ae72d673ccd46205604e9b4fcee022c507a1"
+  },
+  "limitations": [
+    "This is a presentation-only revision of the completed original unguarded Hayward baseline. Process completion is not numerical or scientific convergence.",
+    "No inverse, raytrace, reference evaluation, resolution calculation, or observation selection was rerun.",
+    "Historical run_manifest.json is unchanged. The original executed plotting source is preserved under before/plot_hayward.py."
+  ],
+  "after_snapshot_sha256": {
+    "after/plot_hayward.py": "261aabff68404181e2574d1059546182164e897075a81050d8cf8264cab5c4ef",
+    "after/report/report.pdf": "1a66f1acb76ff8f2c25d38126e27be00e05729fc39dc41e87517b5cd72e654c8",
+    "after/report/report.log": "47a22d857951ee39d73e67d96e046e27180b947cd1edf695757170774bd66f42",
+    "after/data/hayward/figure04_geometry_manifest.json": "d97da9ad20a86475fe6b699b58a8957091a95b3a0bd00072725953f2d3e405bf",
+    "after/data/hayward/figure_metrics.json": "4932468be0c5a2734fb4239fc6357b4710a2f01fb3ce72cbaebe86d68696e4ba",
+    "after/data/hayward/numerical_review.json": "83b4ae13c7320536fcbdd739570927a015173b0ccba80c0f70fed31e3541577d",
+    "after/figures/hayward/figure04_geometry.pdf": "5364bc445bb22550aaa07327fb1adfa1cc355ff8ba21513ad8beea36c8d2b1d0",
+    "after/figures/hayward/figure04_geometry.png": "652254b2edb0edc787e42f232145a5191bda258ce577faaf48566676d76fe9cf",
+    "after/figures/hayward/figure05_locations.pdf": "957e56fa0dd7437ab661d5e1db7f467708fa9fb2005a331098ebde49d504dee0",
+    "after/figures/hayward/figure05_locations.png": "f117eda737968edc22c064672b975bf9ac8ba6842e4e7ac9cc7c890166231ab2",
+    "after/figures/hayward/figure06_initial.pdf": "5e2a694f547ee7c394f18a769dadc1b7ec8418933dd141a3e01f683cb093c8d9",
+    "after/figures/hayward/figure06_initial.png": "60aa693fd24477e0570d9c5055dee9cc5da6a637f3fb2f8aff011943d3a0869f",
+    "after/figures/hayward/figure07_standard.pdf": "243b4b3509da067b456da997f0542ff32b7d7cc962c677109fa8fc197d90aa10",
+    "after/figures/hayward/figure07_standard.png": "b4b824f317392e2cfb5ae5bb2208fb807d263bd370b8da01e3edcfd038e07b1b",
+    "after/figures/hayward/figure08_loc1d.pdf": "26871100a9a8a0dfe8e0811b6645f9df6a929a8be92e42645756437b82bfa3f7",
+    "after/figures/hayward/figure08_loc1d.png": "24f700a53451d9fb8352e3dd8cae3fb012ed774ded52608c15031314eb00e00c",
+    "after/figures/hayward/figure09_dd.pdf": "e906a5c3ca1d7edac17fc419551781d444e82a174316d4271ff1932ca5f8871e",
+    "after/figures/hayward/figure09_dd.png": "e0178b343e80e2f4614bf6434819709ceb6c5bab3abfd08871243f5a2fe67143",
+    "after/figures/hayward/figure10_velocity.pdf": "63544c179821713dfa5f9d6c363e80662f883de1dfed9d12ab12308e4ac6e0e9",
+    "after/figures/hayward/figure10_velocity.png": "b6f2c05d71f9ade3af626e875c0fc4281532b5a2fc41cc30785791a3a128777e",
+    "after/figures/hayward/figure11_resolution.pdf": "ab2f7ac5ee84c68e0e7a2329ce43cbd1d7d8b43264724c446bbee3b20e3cc943",
+    "after/figures/hayward/figure11_resolution.png": "f462ae6bb2eaf91d177e63612ca8ae72d673ccd46205604e9b4fcee022c507a1"
+  }
+}

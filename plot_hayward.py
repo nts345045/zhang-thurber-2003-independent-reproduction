@@ -13,6 +13,7 @@ os.environ.setdefault("MPLCONFIGDIR", str(ROOT / "tmp/matplotlib"))
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 import numpy as np
 from scipy.interpolate import RegularGridInterpolator
 
@@ -188,6 +189,7 @@ def main(geometry_only=False, data_dir=DATA, figure_dir=FIG, velocity_only=False
                 if yfield == "z":
                     ax.invert_yaxis()
             axes[0, 0].set_aspect(1 / np.cos(np.deg2rad(37.72)))
+            axes[0, 0].xaxis.set_major_locator(MaxNLocator(nbins=3))
             fig.suptitle("Figure {} counterpart: {}; {} common zoom events".format(number, names[mode], len(rows)))
             fig.tight_layout(rect=(0, 0, 1, .95))
             save(fig, "figure{:02d}_{}".format(number, mode))

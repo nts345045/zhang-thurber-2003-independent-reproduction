@@ -1,0 +1,362 @@
+#!/usr/bin/env python3
+"""Plot independently inferred Hayward results, retaining identified point tables."""
+import argparse
+import csv
+import hashlib
+import json
+import os
+from datetime import timedelta
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+os.environ.setdefault("MPLCONFIGDIR", str(ROOT / "tmp/matplotlib"))
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
+import numpy as np
+from scipy.interpolate import RegularGridInterpolator
+
+from data.authoritative.hayward.acquire import horizontal_coordinates, parse_time
+
+DATA = ROOT / "data/hayward"
+FIG = ROOT / "figures/hayward"
+
+
+def read(name):
+    with (DATA / name).open(newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def write(name, rows):
+    with (DATA / name).open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def inverse_xy(x, y, lat, lon):
+    # Numerically invert the same zero-height ellipsoid/tangent projection.
+    # These coordinates are estimates; original provider coordinates remain in
+    # separate catalog_* fields and retain the reference origin resource ID.
+    for _ in range(8):
+        xy = np.array(horizontal_coordinates(lat, lon)[2:])
+        error = np.array([x, y]) - xy
+        if np.linalg.norm(error) < 1e-8:
+            return lat, lon
+        h = 1e-5
+        jac = np.column_stack([(np.array(horizontal_coordinates(lat + h, lon)[2:]) - xy) / h,
+                               (np.array(horizontal_coordinates(lat, lon + h)[2:]) - xy) / h])
+        step = np.linalg.solve(jac, error)
+        lat += step[0]
+        lon += step[1]
+    raise ValueError("Projection inverse failed to converge")
+
+
+def events(mode):
+    rows = read(mode + "_events.csv")
+    for row in rows:
+        lat, lon = inverse_xy(float(row["x"]), float(row["y"]),
+                              float(row["catalog_latitude_deg"]), float(row["catalog_longitude_deg"]))
+        row["estimated_latitude_deg"] = lat
+        row["estimated_longitude_deg"] = lon
+        row["estimated_origin_time_utc"] = (parse_time(row["reference_origin_time_utc"]) +
+                                             timedelta(seconds=float(row["t"]))).isoformat().replace("+00:00", "Z")
+    write(mode + "_geographic_events.csv", rows)
+    return rows
+
+
+def values(rows, field):
+    return np.array([float(r[field]) for r in rows])
+
+
+def color_range(samples, lower, upper):
+    samples = np.asarray(samples, dtype=float)
+    if not samples.size or not np.all(np.isfinite(samples)):
+        raise ValueError("Color ranges require finite plotted values")
+    below, above = int(np.sum(samples < lower)), int(np.sum(samples > upper))
+    extend = "both" if below and above else "min" if below else "max" if above else "neither"
+    return dict(color_limits=[float(lower), float(upper)],
+                actual_min_max=[float(samples.min()), float(samples.max())],
+                sampled_points=int(samples.size), below_limit=below, above_limit=above,
+                extend=extend)
+
+
+def save(fig, name):
+    fig.savefig(str(FIG / (name + ".pdf")), dpi=300, bbox_inches="tight")
+    fig.savefig(str(FIG / (name + ".png")), dpi=160, bbox_inches="tight")
+    plt.close(fig)
+
+
+def setup(ax, x, y):
+    ax.set_xlabel(x)
+    ax.set_ylabel(y)
+    ax.grid(alpha=.18)
+
+
+def main(geometry_only=False, data_dir=DATA, figure_dir=FIG, velocity_only=False):
+    global DATA, FIG
+    DATA, FIG = Path(data_dir), Path(figure_dir)
+    if not DATA.is_absolute():
+        DATA = ROOT / DATA
+    if not FIG.is_absolute():
+        FIG = ROOT / FIG
+    DATA, FIG = DATA.resolve(), FIG.resolve()
+    FIG.mkdir(parents=True, exist_ok=True)
+    plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.right": False})
+    modes = (("initial",) if geometry_only else ("initial", "standard", "dd") if velocity_only
+             else ("initial", "standard", "loc1d", "dd"))
+    cohort = {mode: events(mode) for mode in modes}
+    identifiers = [(r["event_resource_id"], r["origin_resource_id"]) for r in cohort["initial"]]
+    if any([(r["event_resource_id"], r["origin_resource_id"]) for r in result] != identifiers
+           for result in cohort.values()):
+        raise ValueError("Field plots require the same ordered native event/origin identities")
+    initial = cohort["initial"]
+    station_rows = read("stations.csv")
+    station_points = {(float(r["longitude_deg"]), float(r["latitude_deg"])) for r in station_rows}
+    fig, ax = plt.subplots(figsize=(7, 6))
+    ax.scatter(values(initial, "estimated_longitude_deg"), values(initial, "estimated_latitude_deg"),
+               s=4, c="0.25", alpha=.6, label="Selected earthquakes ({})".format(len(initial)))
+    sx, sy = zip(*sorted(station_points))
+    ax.scatter(sx, sy, marker="^", facecolors="none", edgecolors="#b34723", s=35,
+               label="Receiver positions ({})".format(len(station_points)))
+    grid = read("initial_grid.csv")
+    xy = sorted(set((float(r["x"]), float(r["y"])) for r in grid))
+    ll = [inverse_xy(x, y, 37.72, -122.06) for x, y in xy]
+    ax.scatter([p[1] for p in ll], [p[0] for p in ll], marker="+", s=20, c="#397aa2", label="Model nodes")
+    setup(ax, "Longitude (degrees east)", "Latitude (degrees north)")
+    ax.set_aspect(1 / np.cos(np.deg2rad(37.72)))
+    ax.legend(fontsize=8)
+    ax.set_title("Figure 4 counterpart: authoritative subset and model grid")
+    save(fig, "figure04_geometry")
+    geometry = dict(events=len(initial), physical_stations=len({r["station_seed_id"] for r in station_rows}),
+                    data_directory=str(DATA.relative_to(ROOT)), figure_directory=str(FIG.relative_to(ROOT)),
+                    receiver_positions=len(station_points), horizontal_model_nodes=len(xy),
+                    status="partially reproduced: independently selected authoritative geometry, not the original manuscript cohort",
+                    metadata_interpretation="Provider sensor elevations and the explicit CMW1 historical-ELEV assumption are documented in data/authoritative/stations/README.md",
+                    inputs={name: hashlib.sha256((DATA / name).read_bytes()).hexdigest()
+                            for name in ("initial_events.csv", "stations.csv", "initial_grid.csv", "selection_manifest.json")},
+                    plot_script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
+    (DATA / "figure04_geometry_manifest.json").write_text(json.dumps(geometry, indent=2) + "\n")
+    if geometry_only:
+        print(json.dumps(geometry, indent=2))
+        return
+
+    if not velocity_only:
+        names = {"initial": "Catalog", "standard": "Absolute-data tomography",
+                 "loc1d": "Fixed 1D model relocation", "dd": "Catalog DD tomography"}
+        fig, axes = plt.subplots(2, 2, figsize=(9, 8), sharex=True, sharey=True)
+        for label, mode, ax in zip("abcd", cohort, axes.flat):
+            rows = cohort[mode]
+            ax.scatter(values(rows, "estimated_longitude_deg"), values(rows, "estimated_latitude_deg"), s=3, c="0.2", alpha=.65)
+            setup(ax, "Longitude (degrees east)", "Latitude (degrees north)")
+            ax.set_title("({}) {}".format(label, names[mode]))
+            ax.set_aspect(1 / np.cos(np.deg2rad(37.72)))
+        fig.suptitle("Figure 5 counterpart: common selected events; catalog data only")
+        fig.tight_layout(rect=(0, 0, 1, .96))
+        save(fig, "figure05_locations")
+
+        # Selection is fixed by original catalog coordinates, so movement does not
+        # change membership between methods. Section-box endpoints are not given
+        # in the written specification; show all selected zoom events in both views.
+        zoom_ids = {r["event_resource_id"] for r in initial
+                    if 37.83 <= float(r["catalog_latitude_deg"]) <= 37.91 and
+                    -122.26 <= float(r["catalog_longitude_deg"]) <= -122.18}
+        zoom = {mode: [r for r in rows if r["event_resource_id"] in zoom_ids]
+                for mode, rows in cohort.items()}
+        if not zoom_ids:
+            raise ValueError("No catalog-selected events in manuscript zoom region")
+        zoom_limits = {}
+        for field in ["estimated_longitude_deg", "estimated_latitude_deg", "x", "y", "z"]:
+            samples = [float(r[field]) for rows in zoom.values() for r in rows]
+            lo, hi = min(samples), max(samples)
+            padding = .05 * max(hi - lo, 1e-6)
+            zoom_limits[field] = [lo - padding, hi + padding]
+        for number, mode in zip(range(6, 10), cohort):
+            rows = zoom[mode]
+            write(mode + "_zoom_events.csv", rows)
+            fig, axes = plt.subplots(2, 2, figsize=(9, 7))
+            for ax, xfield, yfield, xlabel, ylabel, label in zip(
+                    axes.flat, ["estimated_longitude_deg", "x", "x", "y"],
+                    ["estimated_latitude_deg", "y", "z", "z"],
+                    ["Longitude (degrees east)", "X northeast (km)", "X northeast (km)", "Y northwest (km)"],
+                    ["Latitude (degrees north)", "Y northwest (km)", "Geoid depth (km)", "Geoid depth (km)"], "abcd"):
+                ax.scatter(values(rows, xfield), values(rows, yfield), s=7, c="0.2", alpha=.65)
+                setup(ax, xlabel, ylabel)
+                ax.set_xlim(*zoom_limits[xfield])
+                ax.set_ylim(*zoom_limits[yfield])
+                ax.set_title("({})".format(label), loc="left")
+                if yfield == "z":
+                    ax.invert_yaxis()
+            axes[0, 0].set_aspect(1 / np.cos(np.deg2rad(37.72)))
+            axes[0, 0].xaxis.set_major_locator(MaxNLocator(nbins=3))
+            fig.suptitle("Figure {} counterpart: {}; {} common zoom events".format(number, names[mode], len(rows)))
+            fig.tight_layout(rect=(0, 0, 1, .95))
+            save(fig, "figure{:02d}_{}".format(number, mode))
+
+    def model(mode, field="v", filename=None):
+        rows = read(filename or mode + "_grid.csv")
+        ax = [np.array(sorted(set(float(r[k]) for r in rows))) for k in ("x", "y", "z")]
+        array = np.zeros(tuple(len(a) for a in ax))
+        for r in rows:
+            index = tuple(int(np.searchsorted(a, float(r[k]))) for a, k in zip(ax, ("x", "y", "z")))
+            array[index] = float(r[field])
+        return RegularGridInterpolator(tuple(ax), array, bounds_error=True)
+
+    # Include the elevated-receiver layer so source estimates on its upper
+    # boundary remain visible. This is the saved computational domain, not a
+    # reconstructed manuscript section extent.
+    zmin, zmax = min(float(r["z"]) for r in grid), max(float(r["z"]) for r in grid)
+    x, z = np.linspace(-35, 35, 141), np.linspace(zmin, zmax, int(round((zmax - zmin) / .25)) + 1)
+    xx, zz = np.meshgrid(x, z)
+    standard, dd = model("standard"), model("dd")
+    sections, velocity_panel_ranges = [], []
+    fig, axes = plt.subplots(7, 3, figsize=(11, 15), sharex=True, sharey=True)
+    for row, y in enumerate(range(-30, 31, 10)):
+        points = np.column_stack([xx.ravel(), np.full(xx.size, y), zz.ravel()])
+        vs, vd = standard(points).reshape(xx.shape), dd(points).reshape(xx.shape)
+        velocity_panel_ranges.append(dict(y_km=y, standard_velocity=color_range(vs, 3.5, 7),
+            dd_velocity=color_range(vd, 3.5, 7), dd_minus_standard=color_range(vd - vs, -.8, .8)))
+        for index, (xv, zv, sv, dv) in enumerate(zip(xx.ravel(), zz.ravel(), vs.ravel(), vd.ravel())):
+            sections.append(dict(x=xv, y=y, z=zv, standard_v=sv, dd_v=dv, dd_minus_standard=dv - sv))
+        for col, vv, mode in ((0, vd, "dd"), (1, vs, "standard"), (2, vd - vs, "dd")):
+            ax = axes[row, col]
+            if col < 2:
+                im = ax.pcolormesh(xx, zz, vv, cmap="viridis", vmin=3.5, vmax=7, shading="auto", rasterized=True)
+            else:
+                diff = ax.pcolormesh(xx, zz, vv, cmap="RdBu_r", vmin=-.8, vmax=.8, shading="auto", rasterized=True)
+            near = [r for r in cohort[mode] if abs(float(r["y"]) - y) <= 5]
+            ax.scatter(values(near, "x"), values(near, "z"), s=1.5, c="k", alpha=.45, clip_on=False)
+            ax.set_ylim(zmax, zmin)
+            ax.set_xlim(-35, 35)
+            if col == 0:
+                ax.set_ylabel("Y={} km\nGeoid depth (km)".format(y))
+            if row == 6:
+                ax.set_xlabel("X northeast (km)")
+    for ax, title in zip(axes[0], ["(a) Catalog DD", "(b) Absolute only", "(c) DD minus absolute"]):
+        ax.set_title(title)
+    velocity_colors = dict(
+        standard_velocity=color_range(values(sections, "standard_v"), 3.5, 7),
+        dd_velocity=color_range(values(sections, "dd_v"), 3.5, 7),
+        shared_velocity_colorbar=color_range(np.concatenate([values(sections, "standard_v"), values(sections, "dd_v")]), 3.5, 7),
+        dd_minus_standard=color_range(values(sections, "dd_minus_standard"), -.8, .8),
+        sections=velocity_panel_ranges)
+    fig.colorbar(im, ax=axes[:, :2].ravel().tolist(), label="P velocity (km/s)", shrink=.7, pad=.02,
+                 extend=velocity_colors["shared_velocity_colorbar"]["extend"])
+    fig.colorbar(diff, ax=axes[:, 2].ravel().tolist(), label="Velocity difference (km/s)", shrink=.7, pad=.02,
+                 extend=velocity_colors["dd_minus_standard"]["extend"])
+    fig.suptitle("Figure 10 counterpart: independent subset; points within 5 km of each section")
+    write("vertical_sections.csv", sections)
+    save(fig, "figure10_velocity")
+
+    if velocity_only:
+        # This checkpoint requires only completed standard/DD tables. It does
+        # not create the all-figures completion metrics used by the full run.
+        inputs = ["initial_events.csv", "stations.csv", "initial_grid.csv", "selection_manifest.json"]
+        histories = {}
+        for mode in ("standard", "dd"):
+            inputs.extend(mode + suffix for suffix in ("_events.csv", "_grid.csv", "_history.csv"))
+            history = read(mode + "_history.csv")
+            last = history[-1]
+            histories[mode] = dict(history_rows=len(history),
+                accepted_updates=sum(float(r["step_fraction"]) > 0 for r in history),
+                last_preupdate_ray_count=int(last["ray_count"]),
+                last_preupdate_ray_converged_count=int(last["ray_converged_count"]),
+                last_history_row=last)
+        manifest = dict(scope="Figure 10 only, from saved standard/DD results; this command does not establish full workflow completion",
+            status="partially reproduced", source_identity_count=len(identifiers),
+            color_saturation=velocity_colors, histories=histories,
+            section_geoid_depth_range_km=[zmin, zmax],
+            limitations=["Independent authoritative subset and catalog differences only; exact manuscript cohort and waveform differences are absent.",
+                "Assess ray initialization, local stopping, and nonlinear convergence from this run's histories and diagnostics; these plots certify none of them.",
+                "This plotting mode does not require final model ray diagnostics; history flags describe the last pre-update trace.",
+                "Sections interpolate saved nodal velocities; smoothing and coverage do not establish accuracy or resolution.",
+                "Event and origin identities remain in the plotted method-specific geographic event tables."],
+            plot_script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+            input_sha256={name: hashlib.sha256((DATA / name).read_bytes()).hexdigest() for name in inputs},
+            output_sha256={str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
+                for path in [DATA / "vertical_sections.csv", FIG / "figure10_velocity.pdf", FIG / "figure10_velocity.png"]})
+        (DATA / "figure10_velocity_manifest.json").write_text(json.dumps(manifest, indent=2, allow_nan=False) + "\n")
+        print(json.dumps({"scope": manifest["scope"], "histories": histories}, indent=2))
+        return
+
+    resolution = model("", "resolution_diagonal", "absolute_resolution.csv")
+    uncertainty = model("", "independent_pick_sigma_velocity_km_s", "absolute_resolution.csv")
+    fig, axes = plt.subplots(7, 2, figsize=(9, 15), sharex=True, sharey=True)
+    resolution_sections = []
+    for row, y in enumerate(range(-30, 31, 10)):
+        points = np.column_stack([xx.ravel(), np.full(xx.size, y), zz.ravel()])
+        rr, ss = resolution(points).reshape(xx.shape), uncertainty(points).reshape(xx.shape)
+        for xv, zv, rv, sv in zip(xx.ravel(), zz.ravel(), rr.ravel(), ss.ravel()):
+            resolution_sections.append(dict(x=xv, y=y, z=zv, resolution_diagonal=rv, independent_pick_sigma_velocity_km_s=sv))
+        rim = axes[row, 0].pcolormesh(xx, zz, rr, cmap="viridis", vmin=0, vmax=1, shading="auto", rasterized=True)
+        sim = axes[row, 1].pcolormesh(xx, zz, ss, cmap="magma", shading="auto", rasterized=True)
+        for ax in axes[row]:
+            ax.set_ylim(zmax, zmin)
+            if row == 6:
+                ax.set_xlabel("X northeast (km)")
+        axes[row, 0].set_ylabel("Y={} km\nGeoid depth (km)".format(y))
+    axes[0, 0].set_title("(a) Nodal resolution (interpolated)")
+    axes[0, 1].set_title("(b) Nodal pick noise (interpolated)")
+    # Share an uncertainty scale across all sections.
+    max_sigma = max(r["independent_pick_sigma_velocity_km_s"] for r in resolution_sections)
+    for ax in axes[:, 1]:
+        ax.collections[0].set_clim(0, max_sigma)
+    resolution_colors = dict(
+        resolution=color_range(values(resolution_sections, "resolution_diagonal"), 0, 1),
+        noise=color_range(values(resolution_sections, "independent_pick_sigma_velocity_km_s"), 0, max_sigma),
+        sections=[dict(y_km=y,
+            resolution=color_range([r["resolution_diagonal"] for r in resolution_sections if r["y"] == y], 0, 1),
+            noise=color_range([r["independent_pick_sigma_velocity_km_s"] for r in resolution_sections if r["y"] == y], 0, max_sigma))
+            for y in range(-30, 31, 10)])
+    fig.colorbar(rim, ax=axes[:, 0].tolist(), label="Interpolated nodal resolution diagonal", shrink=.7, pad=.02,
+                 extend=resolution_colors["resolution"]["extend"])
+    fig.colorbar(sim, ax=axes[:, 1].tolist(), label="Interpolated nodal velocity noise (km/s)", shrink=.7, pad=.02,
+                 extend=resolution_colors["noise"]["extend"])
+    fig.suptitle("Figure 11 counterpart: absolute-data linearization at the catalog DD solution")
+    write("resolution_sections.csv", resolution_sections)
+    save(fig, "figure11_resolution")
+
+    metric = {"catalog_zoom_events": len(zoom_ids), "zoom_common_coordinate_limits": zoom_limits,
+              "data_directory": str(DATA.relative_to(ROOT)), "figure_directory": str(FIG.relative_to(ROOT)),
+              "section_geoid_depth_range_km": [zmin, zmax],
+              "color_saturation": dict(figure10=velocity_colors, figure11=resolution_colors,
+                  interpretation="Counts refer to sampled section interpolation points, not model nodes. Triangular colorbar extensions mark values beyond the declared common limits; limits are unchanged."),
+              "resolution_section_interpretation": "The resolution_diagonal and independent_pick_sigma_velocity_km_s columns interpolate nodal diagnostics for display; the latter is not sqrt(w^T C_v w) for interpolated velocity.",
+              "modes": {}}
+    p0 = np.column_stack([values(initial, k) for k in ("x", "y", "z")])
+    for mode, rows in cohort.items():
+        p = np.column_stack([values(rows, k) for k in ("x", "y", "z")])
+        result = {"centroid_xyz_km": p.mean(axis=0).tolist(),
+                  "median_displacement_from_catalog_km": float(np.median(np.linalg.norm(p - p0, axis=1))),
+                  "depth_min_max_km": [float(p[:, 2].min()), float(p[:, 2].max())],
+                  "interpretation": "displacement from catalog is not location error against truth"}
+        if mode != "initial":
+            residuals = read(mode + "_residuals.csv")
+            result["unweighted_rms_s"] = {str(t): float(np.sqrt(np.mean([float(r["residual"]) ** 2 for r in residuals if int(r["type"]) == t]))) for t in (0, 1)}
+            history = read(mode + "_history.csv")
+            result["accepted_updates"] = sum(float(r["step_fraction"]) > 0 for r in history)
+            result["failed_linear_solves"] = sum(int(r["lsqr_converged"]) == 0 for r in history)
+        metric["modes"][mode] = result
+    metric["figure_deviations"] = ["common independently selected current catalog cohort",
+        "no waveform-correlation observations in these runs", "no digitized fault trace or section-box boundaries",
+        "zoom cross sections include all catalog-selected zoom events, not undocumented AA/BB boxes",
+        "fixed-model relocation retains absolute-data anchoring", "resolution uncertainty assumes reported symmetric uncertainties are independent 1-sigma picking errors; provider confidence levels are absent"]
+    metric["figure_deviations"].append("velocity and resolution sections include the full computational depth range, including the elevated-receiver layer")
+    metric["input_sha256"] = {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+                              for p in sorted(DATA.glob("*.csv")) if "geographic" not in p.name and "zoom" not in p.name}
+    (DATA / "figure_metrics.json").write_text(json.dumps(metric, indent=2, allow_nan=False) + "\n")
+    print(json.dumps(metric["modes"], indent=2))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    subset = parser.add_mutually_exclusive_group()
+    subset.add_argument("--geometry-only", action="store_true", help="Generate Figure 4 from identified inputs before inversion")
+    subset.add_argument("--velocity-only", action="store_true", help="Generate Figures 4 and 10 from completed standard/DD outputs")
+    parser.add_argument("--data-dir", type=Path, default=DATA,
+                        help="Saved field results, relative to the repository root (default: data/hayward)")
+    parser.add_argument("--figure-dir", type=Path, default=FIG,
+                        help="Figure output directory, relative to the repository root (default: figures/hayward)")
+    args = parser.parse_args()
+    main(args.geometry_only, args.data_dir, args.figure_dir, args.velocity_only)

@@ -1,0 +1,782 @@
+{
+  "catalog_zoom_events": 159,
+  "zoom_common_coordinate_limits": {
+    "estimated_longitude_deg": [
+      -122.27916633778716,
+      -122.18610315534347
+    ],
+    "estimated_latitude_deg": [
+      37.80663944801912,
+      37.91019037054224
+    ],
+    "x": [
+      -8.03025404274356,
+      2.83353398957474
+    ],
+    "y": [
+      17.11345390578767,
+      25.136925586458958
+    ],
+    "z": [
+      -0.08625022411040006,
+      13.6517334718624
+    ]
+  },
+  "data_directory": "data/hayward",
+  "figure_directory": "figures/hayward",
+  "section_geoid_depth_range_km": [
+    -1.0,
+    20.0
+  ],
+  "color_saturation": {
+    "figure10": {
+      "standard_velocity": {
+        "color_limits": [
+          3.5,
+          7.0
+        ],
+        "actual_min_max": [
+          3.32591082435,
+          6.2875244009
+        ],
+        "sampled_points": 83895,
+        "below_limit": 20,
+        "above_limit": 0,
+        "extend": "min"
+      },
+      "dd_velocity": {
+        "color_limits": [
+          3.5,
+          7.0
+        ],
+        "actual_min_max": [
+          4.4267516858,
+          5.61768460984
+        ],
+        "sampled_points": 83895,
+        "below_limit": 0,
+        "above_limit": 0,
+        "extend": "neither"
+      },
+      "shared_velocity_colorbar": {
+        "color_limits": [
+          3.5,
+          7.0
+        ],
+        "actual_min_max": [
+          3.32591082435,
+          6.2875244009
+        ],
+        "sampled_points": 167790,
+        "below_limit": 20,
+        "above_limit": 0,
+        "extend": "min"
+      },
+      "dd_minus_standard": {
+        "color_limits": [
+          -0.8,
+          0.8
+        ],
+        "actual_min_max": [
+          -1.1621390339,
+          1.3754362593699998
+        ],
+        "sampled_points": 83895,
+        "below_limit": 1136,
+        "above_limit": 1265,
+        "extend": "both"
+      },
+      "sections": [
+        {
+          "y_km": -30,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.38890348961,
+              5.99927750784
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.89286048048,
+              5.43846682003
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -0.8962711347199992,
+              0.5710527761400002
+            ],
+            "sampled_points": 11985,
+            "below_limit": 25,
+            "above_limit": 0,
+            "extend": "min"
+          }
+        },
+        {
+          "y_km": -20,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.50531172307,
+              6.22799762115
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.65289461019,
+              5.48281978642
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -0.8784194356399997,
+              1.1475828871199996
+            ],
+            "sampled_points": 11985,
+            "below_limit": 15,
+            "above_limit": 210,
+            "extend": "both"
+          }
+        },
+        {
+          "y_km": -10,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.53843707996,
+              6.2875244009
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.4267516858,
+              5.61539962448
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -1.1621390339,
+              0.8883146058400002
+            ],
+            "sampled_points": 11985,
+            "below_limit": 722,
+            "above_limit": 86,
+            "extend": "both"
+          }
+        },
+        {
+          "y_km": 0,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.49980187067,
+              6.19125671727
+            ],
+            "sampled_points": 11985,
+            "below_limit": 1,
+            "above_limit": 0,
+            "extend": "min"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.59038877716,
+              5.61768460984
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -1.0753891395900004,
+              1.0905869064900005
+            ],
+            "sampled_points": 11985,
+            "below_limit": 357,
+            "above_limit": 228,
+            "extend": "both"
+          }
+        },
+        {
+          "y_km": 10,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.32591082435,
+              5.9999254601
+            ],
+            "sampled_points": 11985,
+            "below_limit": 19,
+            "above_limit": 0,
+            "extend": "min"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.70134708372,
+              5.54495211875
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -0.9064947728300004,
+              1.3754362593699998
+            ],
+            "sampled_points": 11985,
+            "below_limit": 17,
+            "above_limit": 189,
+            "extend": "both"
+          }
+        },
+        {
+          "y_km": 20,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.85318778073,
+              5.64779593474
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.61381019516,
+              5.52036954854
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -0.6756153772899998,
+              0.9524880649999998
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 188,
+            "extend": "max"
+          }
+        },
+        {
+          "y_km": 30,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.83503167679,
+              5.30778552784
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.80048528088,
+              5.40946034178
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -0.09428782418999937,
+              0.9654536040900004
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 364,
+            "extend": "max"
+          }
+        }
+      ]
+    },
+    "figure11": {
+      "resolution": {
+        "color_limits": [
+          0.0,
+          1.0
+        ],
+        "actual_min_max": [
+          -0.00010958881117748049,
+          0.83758741757928
+        ],
+        "sampled_points": 83895,
+        "below_limit": 35,
+        "above_limit": 0,
+        "extend": "min"
+      },
+      "noise": {
+        "color_limits": [
+          0.0,
+          0.03304436661523842
+        ],
+        "actual_min_max": [
+          0.004065138797708169,
+          0.03304436661523842
+        ],
+        "sampled_points": 83895,
+        "below_limit": 0,
+        "above_limit": 0,
+        "extend": "neither"
+      },
+      "sections": [
+        {
+          "y_km": -30,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              0.0,
+              0.5594679753849412
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              0.03304436661523842
+            ],
+            "actual_min_max": [
+              0.004065138797708169,
+              0.03146070281240146
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": -20,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              -0.00010958881117748049,
+              0.7376076334191468
+            ],
+            "sampled_points": 11985,
+            "below_limit": 1,
+            "above_limit": 0,
+            "extend": "min"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              0.03304436661523842
+            ],
+            "actual_min_max": [
+              0.004663276942708582,
+              0.025663107974913082
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": -10,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              0.0,
+              0.83758741757928
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              0.03304436661523842
+            ],
+            "actual_min_max": [
+              0.0052208642020454,
+              0.03304436661523842
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": 0,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              -1.1733141833499628e-07,
+              0.8311484360242599
+            ],
+            "sampled_points": 11985,
+            "below_limit": 30,
+            "above_limit": 0,
+            "extend": "min"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              0.03304436661523842
+            ],
+            "actual_min_max": [
+              0.005442069759416098,
+              0.0318083328663264
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": 10,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              0.0,
+              0.8130477234290192
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              0.03304436661523842
+            ],
+            "actual_min_max": [
+              0.005419368868124036,
+              0.030532045506070547
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": 20,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              0.0,
+              0.695848331906124
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              0.03304436661523842
+            ],
+            "actual_min_max": [
+              0.005030267360421517,
+              0.027643590546493926
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": 30,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              -4.150479853406271e-05,
+              0.5143111818550605
+            ],
+            "sampled_points": 11985,
+            "below_limit": 4,
+            "above_limit": 0,
+            "extend": "min"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              0.03304436661523842
+            ],
+            "actual_min_max": [
+              0.004290675792181971,
+              0.025920040702161154
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        }
+      ]
+    },
+    "interpretation": "Counts refer to sampled section interpolation points, not model nodes. Triangular colorbar extensions mark values beyond the declared common limits; limits are unchanged."
+  },
+  "resolution_section_interpretation": "The resolution_diagonal and independent_pick_sigma_velocity_km_s columns interpolate nodal diagnostics for display; the latter is not sqrt(w^T C_v w) for interpolated velocity.",
+  "modes": {
+    "initial": {
+      "centroid_xyz_km": [
+        0.290901053278011,
+        -0.9251241254084078,
+        7.474493589743585
+      ],
+      "median_displacement_from_catalog_km": 0.0,
+      "depth_min_max_km": [
+        0.748,
+        16.739
+      ],
+      "interpretation": "displacement from catalog is not location error against truth"
+    },
+    "standard": {
+      "centroid_xyz_km": [
+        -0.22996060648001135,
+        -0.8214470936652802,
+        6.97482114683686
+      ],
+      "median_displacement_from_catalog_km": 1.1002294079080244,
+      "depth_min_max_km": [
+        -0.959903449476,
+        16.4944994652
+      ],
+      "interpretation": "displacement from catalog is not location error against truth",
+      "unweighted_rms_s": {
+        "0": 0.0786892283877239,
+        "1": 0.07161649800131777
+      },
+      "accepted_updates": 12,
+      "failed_linear_solves": 0
+    },
+    "loc1d": {
+      "centroid_xyz_km": [
+        -1.5851957366618818,
+        -1.116234353020229,
+        5.87261101454506
+      ],
+      "median_displacement_from_catalog_km": 2.6383003942063947,
+      "depth_min_max_km": [
+        -1.0,
+        15.2823917552
+      ],
+      "interpretation": "displacement from catalog is not location error against truth",
+      "unweighted_rms_s": {
+        "0": 0.2918814778544448,
+        "1": 0.25423395717620717
+      },
+      "accepted_updates": 10,
+      "failed_linear_solves": 0
+    },
+    "dd": {
+      "centroid_xyz_km": [
+        -0.3252413855241253,
+        -0.9404179548294767,
+        6.924972670767202
+      ],
+      "median_displacement_from_catalog_km": 1.1780277490375548,
+      "depth_min_max_km": [
+        -1.0,
+        17.2436279282
+      ],
+      "interpretation": "displacement from catalog is not location error against truth",
+      "unweighted_rms_s": {
+        "0": 0.16063749728704327,
+        "1": 0.06159809397816271
+      },
+      "accepted_updates": 18,
+      "failed_linear_solves": 0
+    }
+  },
+  "figure_deviations": [
+    "common independently selected current catalog cohort",
+    "no waveform-correlation observations in these runs",
+    "no digitized fault trace or section-box boundaries",
+    "zoom cross sections include all catalog-selected zoom events, not undocumented AA/BB boxes",
+    "fixed-model relocation retains absolute-data anchoring",
+    "resolution uncertainty assumes reported symmetric uncertainties are independent 1-sigma picking errors; provider confidence levels are absent",
+    "velocity and resolution sections include the full computational depth range, including the elevated-receiver layer"
+  ],
+  "input_sha256": {
+    "absolute_resolution.csv": "36129bab42a4df2093008b5404dbce5bbdc0b668dd50e9c36e8555c2c88dc4b7",
+    "dd_coverage.csv": "8180c8905163b076473e5f0426bda2c6dc93aea2a78bf329e94e8123698d6dc2",
+    "dd_events.csv": "c48e6b3a56710450ee309b119e36340705f53759e1e99520a898f241e17480be",
+    "dd_grid.csv": "13cdc7f9d201f9d73da7e3fedc21e542444c9a478cf4c0f4b08ce85a5a4a8596",
+    "dd_history.csv": "63d0a04c79b9a24fd21adb6270c90c8c1925da7ccd5ba2ca487cbbca15ba5d43",
+    "dd_linearization_columns.csv": "c422afaf68c7c356e7f9ec225c0190f9c4147851aaad27ab8c40c8b112e63bd2",
+    "dd_linearization_matrix.csv": "5985bb1ac235af2024b8431737a40d85dbac4688bd33b7ff67f8936206c31214",
+    "dd_linearization_rows.csv": "fd01a12b2b0d39510fb4d2755ad3e1f349639f6fd7cfbaa209f9e335d8be7583",
+    "dd_ray_convergence.csv": "1ee0909e378c1919ebef0a6d8b2b3d07a43ef25a517f764e96a278886f777e9d",
+    "dd_ray_derivatives.csv": "b0bb5e4bb58f48868608cf1e72c999d4f0ad4372018d94e522991ba50841bc15",
+    "dd_ray_identifiers.csv": "9da74a6cf6e8bbfd3a6b359a2c3ef62bd6dea272d62a527fd74e31ed6c39edca",
+    "dd_residuals.csv": "5f8cbecc39903a64604dbf7de4e49704c8de6adacdce13af24f3d5240bc2fb84",
+    "event_pairs.csv": "b678922c56c2c0841769aa882e98291631d3f7651a19661206c0433bfe9826ae",
+    "event_selection.csv": "d8563afe642aaaf719b9c92f0206bcd88003d256ad9067c08b0b40c60c3fb256",
+    "excluded_picks.csv": "93aab31ede96f61d65f4e363eb9bd8748b67014e477b12be12daee3ba09af0ca",
+    "initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "initial_ray_convergence.csv": "8c68f00240926e95d7e55be9f3ac2ed79a0c695d565ed286fd3cb56bcb909d8e",
+    "initial_ray_derivatives.csv": "7674e7c07dd07b964630ed6bc5aa27149dc445b29074b41979dead3e1aa312fe",
+    "initial_ray_identifiers.csv": "f4aabb2de29ec88ae70b1de5b6a370ba06917427ebef1e4bf7f0a8a8cfa7b3eb",
+    "loc1d_coverage.csv": "fe267ca474cccc826e934083d3e04a107cdc0ddf5ca482ba5d15272cf142a2bd",
+    "loc1d_events.csv": "a55291313d06ed5e48719221ee95b462912bfb60572922905a94429bcc94f4c5",
+    "loc1d_grid.csv": "1bff02e73bb76baaeb937970566f06c06b81c360eb22e7be5478ad8162182275",
+    "loc1d_history.csv": "a64f4ac377942d15aa5ee40c831337d630e7d75412164752433f50e7fe7e8f87",
+    "loc1d_ray_convergence.csv": "b24c6c2ff099ce5a59d009aae290a4088c01cf08a12ec1d6c55534bc89323361",
+    "loc1d_ray_derivatives.csv": "50c5360d01dc11de424bb457981f39db692ee1c9d5829cc085712822fb297872",
+    "loc1d_ray_identifiers.csv": "e248080b0c69c0bce4d9083864596581ae9ff81b76ea94a0c56aad8abf2a2482",
+    "loc1d_residuals.csv": "e0498b0b11919df409f9d4263be4f59298da0a2b7e8f958dcc26d6ebd85512c7",
+    "observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "resolution_sections.csv": "a89e96e57227f9ab724a83d9064df66294a25f532aa296f364dd805e719fd644",
+    "standard_coverage.csv": "180f698404084799e432062c115b8e34c9fe5bb06c4659896a3e266f44e0deb3",
+    "standard_events.csv": "4e213a5e5c61366e1e69da30e1897e1b0633ac616eba074f372cd4b014cf1bf9",
+    "standard_grid.csv": "0d3e215f215a74b101813e9dd651518e35e501996720a602b86aa400ac3a655f",
+    "standard_history.csv": "b15496b0e8c90bc6c5b10518cb391b5fb5ad4340d6ca15ce880427ed47f6bdba",
+    "standard_ray_convergence.csv": "7cd564f606e33eeb5d85818e0377b05fb8eea8f599512d51182ed1957e9926bc",
+    "standard_ray_derivatives.csv": "762d6819e087214995debb444309a6730449fb8545159d3353cf501f84823b29",
+    "standard_ray_identifiers.csv": "693323be7a87275954716c8ca1c21abb642b7642e4e0a8ecf4667eec69aededd",
+    "standard_residuals.csv": "15606fd283bcd01c71f32f3743fb5fa2d77ec6fd7dad0da2d6d18a38d4a48cb0",
+    "stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "vertical_sections.csv": "c6d73fbdeb7e4b3b471b9ac329460cf0e61b86047df8eb2c1881b7b8b02185ad"
+  }
+}

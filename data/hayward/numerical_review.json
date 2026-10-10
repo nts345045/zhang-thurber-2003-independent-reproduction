@@ -1,0 +1,1106 @@
+{
+  "dataset": "independent authoritative Hayward subset",
+  "finite_modeled_results": true,
+  "observation_counts": {
+    "0": 14262,
+    "1": 44718,
+    "2": 0
+  },
+  "modes": {
+    "standard": {
+      "final_residual_rms_seconds": {
+        "0": 0.0786892283877239,
+        "1": 0.07161649800131777,
+        "2": null
+      },
+      "initial_residual_rms_seconds": {
+        "0": 0.391630290997,
+        "1": 0.0934009886868,
+        "2": null
+      },
+      "iterations_recorded": 13,
+      "accepted_updates": 12,
+      "zero_updates": 1,
+      "last_max_source_coordinate_step_km": 0.0,
+      "largest_max_source_coordinate_step_km": 4.10549276352,
+      "last_max_log_slowness_step": 0.0,
+      "nonlinear_termination_interpretation": "The configured iteration limit and line-search failure are stopping rules, not tests of nonlinear stationarity or small source updates.",
+      "accepted_objective_increases_raw": 0,
+      "accepted_objective_increases_above_audit_tolerance": 0,
+      "largest_accepted_objective_increase": 0.0,
+      "objective_interpretation": "Frozen-weight objective is compared within each accepted update, not between weight stages.",
+      "lsqr": {
+        "solves": 13,
+        "converged": 13,
+        "unconverged": 0,
+        "max_iterations": 200,
+        "worst_relative_normal_residual": 5.13914905913e-09,
+        "tolerance": 1e-08
+      },
+      "all_ray_history": {
+        "count_min": 14262,
+        "count_max": 14262,
+        "converged_count_min": 13656,
+        "converged_count_max": 14040,
+        "minimum_converged_percent": 95.75094657130838,
+        "last_preupdate_converged_percent": 95.98934230823167,
+        "projected_gradient_max_seconds_per_km": 0.00576708592836,
+        "raw_gradient_max_seconds_per_km": 0.00576708592836,
+        "iterations": [
+          {
+            "iteration": 0,
+            "rays": 14262,
+            "converged": 14040,
+            "projected_gradient_max_seconds_per_km": 0.00264819876035,
+            "raw_gradient_max_seconds_per_km": 0.00264819876035
+          },
+          {
+            "iteration": 1,
+            "rays": 14262,
+            "converged": 14036,
+            "projected_gradient_max_seconds_per_km": 0.00386861722562,
+            "raw_gradient_max_seconds_per_km": 0.00386861722562
+          },
+          {
+            "iteration": 2,
+            "rays": 14262,
+            "converged": 13702,
+            "projected_gradient_max_seconds_per_km": 0.00451462617612,
+            "raw_gradient_max_seconds_per_km": 0.00451462617612
+          },
+          {
+            "iteration": 3,
+            "rays": 14262,
+            "converged": 13658,
+            "projected_gradient_max_seconds_per_km": 0.00521052943797,
+            "raw_gradient_max_seconds_per_km": 0.00521052943797
+          },
+          {
+            "iteration": 4,
+            "rays": 14262,
+            "converged": 13673,
+            "projected_gradient_max_seconds_per_km": 0.00543910802214,
+            "raw_gradient_max_seconds_per_km": 0.00543910802214
+          },
+          {
+            "iteration": 5,
+            "rays": 14262,
+            "converged": 13656,
+            "projected_gradient_max_seconds_per_km": 0.00493734340943,
+            "raw_gradient_max_seconds_per_km": 0.00493734340943
+          },
+          {
+            "iteration": 6,
+            "rays": 14262,
+            "converged": 13672,
+            "projected_gradient_max_seconds_per_km": 0.00499383430912,
+            "raw_gradient_max_seconds_per_km": 0.00499383430912
+          },
+          {
+            "iteration": 7,
+            "rays": 14262,
+            "converged": 13680,
+            "projected_gradient_max_seconds_per_km": 0.00576708592836,
+            "raw_gradient_max_seconds_per_km": 0.00576708592836
+          },
+          {
+            "iteration": 8,
+            "rays": 14262,
+            "converged": 13682,
+            "projected_gradient_max_seconds_per_km": 0.00482573206072,
+            "raw_gradient_max_seconds_per_km": 0.00482573206072
+          },
+          {
+            "iteration": 9,
+            "rays": 14262,
+            "converged": 13684,
+            "projected_gradient_max_seconds_per_km": 0.00504595157146,
+            "raw_gradient_max_seconds_per_km": 0.00504595157146
+          },
+          {
+            "iteration": 10,
+            "rays": 14262,
+            "converged": 13683,
+            "projected_gradient_max_seconds_per_km": 0.00468060183662,
+            "raw_gradient_max_seconds_per_km": 0.00468060183662
+          },
+          {
+            "iteration": 11,
+            "rays": 14262,
+            "converged": 13691,
+            "projected_gradient_max_seconds_per_km": 0.00523707115521,
+            "raw_gradient_max_seconds_per_km": 0.00523707115521
+          },
+          {
+            "iteration": 12,
+            "rays": 14262,
+            "converged": 13690,
+            "projected_gradient_max_seconds_per_km": 0.00491268048477,
+            "raw_gradient_max_seconds_per_km": 0.00491268048477
+          }
+        ]
+      },
+      "catalog_displacement_3d_km": {
+        "mean": 1.1844760337409146,
+        "median": 1.1002294079080244,
+        "std": 0.6076300307837278,
+        "rms": 1.3312391704035913,
+        "max": 5.9563827646084135,
+        "count": 1092,
+        "min": 0.11722871074898986
+      },
+      "catalog_displacement_components_km": {
+        "x": {
+          "mean": -0.5208616597580231,
+          "median": -0.5017389776174763,
+          "std": 0.5508264105259274,
+          "rms": 0.7580940595590763,
+          "max": 2.1333051168278665,
+          "count": 1092,
+          "min": -3.4648055559859894
+        },
+        "y": {
+          "mean": 0.10367703174312616,
+          "median": 0.04876492222130313,
+          "std": 0.4461994691754263,
+          "rms": 0.45808611985465947,
+          "max": 1.8499007757865193,
+          "count": 1092,
+          "min": -1.3142538499848726
+        },
+        "z": {
+          "mean": -0.49967244290672735,
+          "median": -0.4882822702550005,
+          "std": 0.8590551101496388,
+          "rms": 0.993804926771137,
+          "max": 2.56925671056,
+          "count": 1092,
+          "min": -5.496903449476
+        }
+      },
+      "origin_time_correction_from_catalog_seconds": {
+        "mean": 0.08421853128216637,
+        "median": 0.07950631398355,
+        "std": 0.13891147648734178,
+        "rms": 0.16244740475371883,
+        "max": 0.52974677493,
+        "count": 1092,
+        "min": -0.411353742347
+      },
+      "boundary_sources": 3,
+      "boundary_face_counts": {
+        "x_min": 0,
+        "x_max": 0,
+        "y_min": 1,
+        "y_max": 2,
+        "z_min": 0,
+        "z_max": 0
+      },
+      "outside_grid_sources": 0,
+      "geoid_depth_range_km": [
+        -0.959903449476,
+        16.4944994652
+      ],
+      "negative_geoid_depth_sources": 1,
+      "velocity_range_km_per_s": [
+        3.32591082435,
+        6.2875244009
+      ],
+      "final_sampled_rays": {
+        "rays": 32,
+        "identifier_associations": 210,
+        "identifier_mapping": "data/hayward/standard_ray_identifiers.csv",
+        "time_refinement_seconds": {
+          "mean": 2.491204514491875e-05,
+          "median": 1.6560369637350002e-05,
+          "std": 2.189862358456078e-05,
+          "rms": 3.3168655507885024e-05,
+          "max": 0.000101494036623,
+          "count": 32,
+          "min": 2.65261432286e-06
+        },
+        "derivative_components": 24,
+        "derivative_components_skipped_at_boundaries": 0,
+        "derivative_half_step_km": 0.01,
+        "derivative_diagnostic_tolerance_seconds_per_km": 0.003,
+        "production": {
+          "converged": 31,
+          "unconverged": 1,
+          "converged_percent": 96.875,
+          "projected_gradient_seconds_per_km": {
+            "mean": 1.7790569335369933e-05,
+            "median": 1.200884829015e-06,
+            "std": 8.48371666649198e-05,
+            "rms": 8.668246192285947e-05,
+            "max": 0.000489900021384,
+            "count": 32,
+            "min": 4.49295799746e-07
+          },
+          "raw_gradient_seconds_per_km": {
+            "mean": 1.7790569335369933e-05,
+            "median": 1.200884829015e-06,
+            "std": 8.48371666649198e-05,
+            "rms": 8.668246192285947e-05,
+            "max": 0.000489900021384,
+            "count": 32,
+            "min": 4.49295799746e-07
+          },
+          "max_iterations": 725,
+          "total_merged_nodes": 0,
+          "source_derivative_error_seconds_per_km": {
+            "mean": 5.737032540378834e-06,
+            "median": 3.3837527576599998e-06,
+            "std": 6.3852479018743035e-06,
+            "rms": 8.583992843528925e-06,
+            "max": 2.88350007543e-05,
+            "count": 24,
+            "min": 1.04248250976e-07
+          },
+          "source_derivative_components_over_existing_tolerance": 0
+        },
+        "refined": {
+          "converged": 31,
+          "unconverged": 1,
+          "converged_percent": 96.875,
+          "projected_gradient_seconds_per_km": {
+            "mean": 1.3728553491371157e-05,
+            "median": 1.246168300765e-06,
+            "std": 6.912188749233027e-05,
+            "rms": 7.047204063646662e-05,
+            "max": 0.000398564227611,
+            "count": 32,
+            "min": 1.20924228069e-07
+          },
+          "raw_gradient_seconds_per_km": {
+            "mean": 1.3728553491371157e-05,
+            "median": 1.246168300765e-06,
+            "std": 6.912188749233027e-05,
+            "rms": 7.047204063646662e-05,
+            "max": 0.000398564227611,
+            "count": 32,
+            "min": 1.20924228069e-07
+          },
+          "max_iterations": 744,
+          "total_merged_nodes": 0,
+          "source_derivative_error_seconds_per_km": {
+            "mean": 3.5993848069087604e-06,
+            "median": 4.7166187084800003e-07,
+            "std": 5.385154723377547e-06,
+            "rms": 6.477303635226708e-06,
+            "max": 2.16077180961e-05,
+            "count": 24,
+            "min": 6.25552377259e-10
+          },
+          "source_derivative_components_over_existing_tolerance": 0
+        }
+      }
+    },
+    "dd": {
+      "final_residual_rms_seconds": {
+        "0": 0.16063749728704327,
+        "1": 0.06159809397816271,
+        "2": null
+      },
+      "initial_residual_rms_seconds": {
+        "0": 0.391630290997,
+        "1": 0.0934009886868,
+        "2": null
+      },
+      "iterations_recorded": 18,
+      "accepted_updates": 18,
+      "zero_updates": 0,
+      "last_max_source_coordinate_step_km": 2.76143975404,
+      "largest_max_source_coordinate_step_km": 6.24705614897,
+      "last_max_log_slowness_step": 0.00540667351364,
+      "nonlinear_termination_interpretation": "The configured iteration limit and line-search failure are stopping rules, not tests of nonlinear stationarity or small source updates.",
+      "accepted_objective_increases_raw": 0,
+      "accepted_objective_increases_above_audit_tolerance": 0,
+      "largest_accepted_objective_increase": 0.0,
+      "objective_interpretation": "Frozen-weight objective is compared within each accepted update, not between weight stages.",
+      "lsqr": {
+        "solves": 18,
+        "converged": 18,
+        "unconverged": 0,
+        "max_iterations": 200,
+        "worst_relative_normal_residual": 6.96587884917e-09,
+        "tolerance": 1e-08
+      },
+      "all_ray_history": {
+        "count_min": 14262,
+        "count_max": 14262,
+        "converged_count_min": 13657,
+        "converged_count_max": 14259,
+        "minimum_converged_percent": 95.75795821062964,
+        "last_preupdate_converged_percent": 99.97896508203618,
+        "projected_gradient_max_seconds_per_km": 0.005441269159,
+        "raw_gradient_max_seconds_per_km": 0.005441269159,
+        "iterations": [
+          {
+            "iteration": 0,
+            "rays": 14262,
+            "converged": 14040,
+            "projected_gradient_max_seconds_per_km": 0.00264819876035,
+            "raw_gradient_max_seconds_per_km": 0.00264819876035
+          },
+          {
+            "iteration": 1,
+            "rays": 14262,
+            "converged": 14038,
+            "projected_gradient_max_seconds_per_km": 0.00481696868479,
+            "raw_gradient_max_seconds_per_km": 0.00481696868479
+          },
+          {
+            "iteration": 2,
+            "rays": 14262,
+            "converged": 13715,
+            "projected_gradient_max_seconds_per_km": 0.00476420018411,
+            "raw_gradient_max_seconds_per_km": 0.00476420018411
+          },
+          {
+            "iteration": 3,
+            "rays": 14262,
+            "converged": 13659,
+            "projected_gradient_max_seconds_per_km": 0.00496746736251,
+            "raw_gradient_max_seconds_per_km": 0.00496746736251
+          },
+          {
+            "iteration": 4,
+            "rays": 14262,
+            "converged": 13671,
+            "projected_gradient_max_seconds_per_km": 0.00516623794262,
+            "raw_gradient_max_seconds_per_km": 0.00516623794262
+          },
+          {
+            "iteration": 5,
+            "rays": 14262,
+            "converged": 13657,
+            "projected_gradient_max_seconds_per_km": 0.00464364101319,
+            "raw_gradient_max_seconds_per_km": 0.00464364101319
+          },
+          {
+            "iteration": 6,
+            "rays": 14262,
+            "converged": 13672,
+            "projected_gradient_max_seconds_per_km": 0.005441269159,
+            "raw_gradient_max_seconds_per_km": 0.005441269159
+          },
+          {
+            "iteration": 7,
+            "rays": 14262,
+            "converged": 14219,
+            "projected_gradient_max_seconds_per_km": 0.00109855047422,
+            "raw_gradient_max_seconds_per_km": 0.00109855047422
+          },
+          {
+            "iteration": 8,
+            "rays": 14262,
+            "converged": 14246,
+            "projected_gradient_max_seconds_per_km": 0.000808025175698,
+            "raw_gradient_max_seconds_per_km": 0.000808025175698
+          },
+          {
+            "iteration": 9,
+            "rays": 14262,
+            "converged": 14253,
+            "projected_gradient_max_seconds_per_km": 0.000911932583076,
+            "raw_gradient_max_seconds_per_km": 0.000911932583076
+          },
+          {
+            "iteration": 10,
+            "rays": 14262,
+            "converged": 14259,
+            "projected_gradient_max_seconds_per_km": 0.000280976522665,
+            "raw_gradient_max_seconds_per_km": 0.000280976522665
+          },
+          {
+            "iteration": 11,
+            "rays": 14262,
+            "converged": 14259,
+            "projected_gradient_max_seconds_per_km": 0.000166721190576,
+            "raw_gradient_max_seconds_per_km": 0.000166721190576
+          },
+          {
+            "iteration": 12,
+            "rays": 14262,
+            "converged": 14259,
+            "projected_gradient_max_seconds_per_km": 0.000287072126929,
+            "raw_gradient_max_seconds_per_km": 0.000287072126929
+          },
+          {
+            "iteration": 13,
+            "rays": 14262,
+            "converged": 14256,
+            "projected_gradient_max_seconds_per_km": 0.000467898682882,
+            "raw_gradient_max_seconds_per_km": 0.000467898682882
+          },
+          {
+            "iteration": 14,
+            "rays": 14262,
+            "converged": 14257,
+            "projected_gradient_max_seconds_per_km": 0.000112528020062,
+            "raw_gradient_max_seconds_per_km": 0.000841838771719
+          },
+          {
+            "iteration": 15,
+            "rays": 14262,
+            "converged": 14257,
+            "projected_gradient_max_seconds_per_km": 0.000360203227359,
+            "raw_gradient_max_seconds_per_km": 0.000360203227359
+          },
+          {
+            "iteration": 16,
+            "rays": 14262,
+            "converged": 14258,
+            "projected_gradient_max_seconds_per_km": 0.000133442129444,
+            "raw_gradient_max_seconds_per_km": 0.00013966490936
+          },
+          {
+            "iteration": 17,
+            "rays": 14262,
+            "converged": 14259,
+            "projected_gradient_max_seconds_per_km": 8.65112654618e-05,
+            "raw_gradient_max_seconds_per_km": 0.00067276928502
+          }
+        ]
+      },
+      "catalog_displacement_3d_km": {
+        "mean": 1.3776821180443328,
+        "median": 1.1780277490375548,
+        "std": 0.8372847236009329,
+        "rms": 1.6121580960794786,
+        "max": 8.79947813078228,
+        "count": 1092,
+        "min": 0.21532412874462076
+      },
+      "catalog_displacement_components_km": {
+        "x": {
+          "mean": -0.6161424388021371,
+          "median": -0.5654527362759327,
+          "std": 0.5118032334618993,
+          "rms": 0.800983180020093,
+          "max": 1.2305124728278667,
+          "count": 1092,
+          "min": -5.841001975234439
+        },
+        "y": {
+          "mean": -0.01529382942106962,
+          "median": -0.05571692728060196,
+          "std": 0.5527753409156425,
+          "rms": 0.5529868703167965,
+          "max": 7.874850772486518,
+          "count": 1092,
+          "min": -4.318434673626907
+        },
+        "z": {
+          "mean": -0.5495209189764022,
+          "median": -0.5493767026450005,
+          "std": 1.1617710415327427,
+          "rms": 1.2851790510807215,
+          "max": 5.5268298942000005,
+          "count": 1092,
+          "min": -5.700651972545
+        }
+      },
+      "origin_time_correction_from_catalog_seconds": {
+        "mean": 0.1085238340461309,
+        "median": 0.13393191595850001,
+        "std": 0.18488996253128573,
+        "rms": 0.21438684847931416,
+        "max": 0.676272187488,
+        "count": 1092,
+        "min": -1.40980908907
+      },
+      "boundary_sources": 15,
+      "boundary_face_counts": {
+        "x_min": 0,
+        "x_max": 0,
+        "y_min": 0,
+        "y_max": 2,
+        "z_min": 13,
+        "z_max": 0
+      },
+      "outside_grid_sources": 0,
+      "geoid_depth_range_km": [
+        -1.0,
+        17.2436279282
+      ],
+      "negative_geoid_depth_sources": 19,
+      "velocity_range_km_per_s": [
+        4.4267516858,
+        5.61768460984
+      ],
+      "final_sampled_rays": {
+        "rays": 32,
+        "identifier_associations": 210,
+        "identifier_mapping": "data/hayward/dd_ray_identifiers.csv",
+        "time_refinement_seconds": {
+          "mean": 1.848488446220647e-06,
+          "median": 1.076807547355e-06,
+          "std": 1.9466976174861017e-06,
+          "rms": 2.684500167580044e-06,
+          "max": 8.45791287141e-06,
+          "count": 32,
+          "min": 9.63763846507e-08
+        },
+        "derivative_components": 24,
+        "derivative_components_skipped_at_boundaries": 0,
+        "derivative_half_step_km": 0.01,
+        "derivative_diagnostic_tolerance_seconds_per_km": 0.003,
+        "production": {
+          "converged": 32,
+          "unconverged": 0,
+          "converged_percent": 100.0,
+          "projected_gradient_seconds_per_km": {
+            "mean": 3.133223197544656e-07,
+            "median": 2.64421752161e-07,
+            "std": 2.1897224815630213e-07,
+            "rms": 3.822560941554036e-07,
+            "max": 8.08052839672e-07,
+            "count": 32,
+            "min": 1.91169494429e-08
+          },
+          "raw_gradient_seconds_per_km": {
+            "mean": 3.133223197544656e-07,
+            "median": 2.64421752161e-07,
+            "std": 2.1897224815630213e-07,
+            "rms": 3.822560941554036e-07,
+            "max": 8.08052839672e-07,
+            "count": 32,
+            "min": 1.91169494429e-08
+          },
+          "max_iterations": 95,
+          "total_merged_nodes": 0,
+          "source_derivative_error_seconds_per_km": {
+            "mean": 2.230290094100877e-07,
+            "median": 5.38342503979e-08,
+            "std": 3.5915705430697046e-07,
+            "rms": 4.227714851984523e-07,
+            "max": 1.52243696409e-06,
+            "count": 24,
+            "min": 7.86928959495e-10
+          },
+          "source_derivative_components_over_existing_tolerance": 0
+        },
+        "refined": {
+          "converged": 32,
+          "unconverged": 0,
+          "converged_percent": 100.0,
+          "projected_gradient_seconds_per_km": {
+            "mean": 9.77771913614328e-08,
+            "median": 7.555159126485e-08,
+            "std": 7.81407901007999e-08,
+            "rms": 1.2516533956374472e-07,
+            "max": 2.76929216736e-07,
+            "count": 32,
+            "min": 6.84939826655e-09
+          },
+          "raw_gradient_seconds_per_km": {
+            "mean": 9.77771913614328e-08,
+            "median": 7.555159126485e-08,
+            "std": 7.81407901007999e-08,
+            "rms": 1.2516533956374472e-07,
+            "max": 2.76929216736e-07,
+            "count": 32,
+            "min": 6.84939826655e-09
+          },
+          "max_iterations": 7,
+          "total_merged_nodes": 0,
+          "source_derivative_error_seconds_per_km": {
+            "mean": 2.4292209978333914e-08,
+            "median": 1.4730742809599999e-08,
+            "std": 2.7259498674651505e-08,
+            "rms": 3.6512898181667164e-08,
+            "max": 1.23602587138e-07,
+            "count": 24,
+            "min": 1.48756937324e-10
+          },
+          "source_derivative_components_over_existing_tolerance": 0
+        }
+      }
+    },
+    "loc1d": {
+      "final_residual_rms_seconds": {
+        "0": 0.2918814778544448,
+        "1": 0.25423395717620717,
+        "2": null
+      },
+      "initial_residual_rms_seconds": {
+        "0": 0.391630290997,
+        "1": 0.0934009886868,
+        "2": null
+      },
+      "iterations_recorded": 13,
+      "accepted_updates": 10,
+      "zero_updates": 3,
+      "last_max_source_coordinate_step_km": 0.0,
+      "largest_max_source_coordinate_step_km": 10.8102643383,
+      "last_max_log_slowness_step": 0.0,
+      "nonlinear_termination_interpretation": "The configured iteration limit and line-search failure are stopping rules, not tests of nonlinear stationarity or small source updates.",
+      "accepted_objective_increases_raw": 0,
+      "accepted_objective_increases_above_audit_tolerance": 0,
+      "largest_accepted_objective_increase": 0.0,
+      "objective_interpretation": "Frozen-weight objective is compared within each accepted update, not between weight stages.",
+      "lsqr": {
+        "solves": 13,
+        "converged": 13,
+        "unconverged": 0,
+        "max_iterations": 180,
+        "worst_relative_normal_residual": 9.39698375095e-09,
+        "tolerance": 1e-08
+      },
+      "all_ray_history": {
+        "count_min": 14262,
+        "count_max": 14262,
+        "converged_count_min": 13967,
+        "converged_count_max": 14040,
+        "minimum_converged_percent": 97.93156640022437,
+        "last_preupdate_converged_percent": 98.05777590800729,
+        "projected_gradient_max_seconds_per_km": 0.00795318983617,
+        "raw_gradient_max_seconds_per_km": 0.00795318983617,
+        "iterations": [
+          {
+            "iteration": 0,
+            "rays": 14262,
+            "converged": 14040,
+            "projected_gradient_max_seconds_per_km": 0.00264819876035,
+            "raw_gradient_max_seconds_per_km": 0.00264819876035
+          },
+          {
+            "iteration": 1,
+            "rays": 14262,
+            "converged": 14001,
+            "projected_gradient_max_seconds_per_km": 0.0062392056473,
+            "raw_gradient_max_seconds_per_km": 0.0062392056473
+          },
+          {
+            "iteration": 2,
+            "rays": 14262,
+            "converged": 13991,
+            "projected_gradient_max_seconds_per_km": 0.0067006620995,
+            "raw_gradient_max_seconds_per_km": 0.0067006620995
+          },
+          {
+            "iteration": 3,
+            "rays": 14262,
+            "converged": 13978,
+            "projected_gradient_max_seconds_per_km": 0.00646847673788,
+            "raw_gradient_max_seconds_per_km": 0.00646847673788
+          },
+          {
+            "iteration": 4,
+            "rays": 14262,
+            "converged": 13981,
+            "projected_gradient_max_seconds_per_km": 0.00556768873035,
+            "raw_gradient_max_seconds_per_km": 0.00556768873035
+          },
+          {
+            "iteration": 5,
+            "rays": 14262,
+            "converged": 13977,
+            "projected_gradient_max_seconds_per_km": 0.00619353201631,
+            "raw_gradient_max_seconds_per_km": 0.00619353201631
+          },
+          {
+            "iteration": 6,
+            "rays": 14262,
+            "converged": 13977,
+            "projected_gradient_max_seconds_per_km": 0.00619353201631,
+            "raw_gradient_max_seconds_per_km": 0.00619353201631
+          },
+          {
+            "iteration": 7,
+            "rays": 14262,
+            "converged": 13995,
+            "projected_gradient_max_seconds_per_km": 0.00593836576511,
+            "raw_gradient_max_seconds_per_km": 0.00593836576511
+          },
+          {
+            "iteration": 8,
+            "rays": 14262,
+            "converged": 13973,
+            "projected_gradient_max_seconds_per_km": 0.00509289327575,
+            "raw_gradient_max_seconds_per_km": 0.00509289327575
+          },
+          {
+            "iteration": 9,
+            "rays": 14262,
+            "converged": 13967,
+            "projected_gradient_max_seconds_per_km": 0.00458902088828,
+            "raw_gradient_max_seconds_per_km": 0.00458902088828
+          },
+          {
+            "iteration": 10,
+            "rays": 14262,
+            "converged": 13969,
+            "projected_gradient_max_seconds_per_km": 0.0058659654791,
+            "raw_gradient_max_seconds_per_km": 0.0058659654791
+          },
+          {
+            "iteration": 11,
+            "rays": 14262,
+            "converged": 13985,
+            "projected_gradient_max_seconds_per_km": 0.00795318983617,
+            "raw_gradient_max_seconds_per_km": 0.00795318983617
+          },
+          {
+            "iteration": 12,
+            "rays": 14262,
+            "converged": 13985,
+            "projected_gradient_max_seconds_per_km": 0.00795318983617,
+            "raw_gradient_max_seconds_per_km": 0.00795318983617
+          }
+        ]
+      },
+      "catalog_displacement_3d_km": {
+        "mean": 2.746126956392813,
+        "median": 2.6383003942063947,
+        "std": 1.042186967459102,
+        "rms": 2.937237977380936,
+        "max": 8.349683046156098,
+        "count": 1092,
+        "min": 0.35853680436772883
+      },
+      "catalog_displacement_components_km": {
+        "x": {
+          "mean": -1.876096789939893,
+          "median": -1.9088698048644877,
+          "std": 0.623954880911108,
+          "rms": 1.9771340011834215,
+          "max": 1.245801947227866,
+          "count": 1092,
+          "min": -4.2348208307950905
+        },
+        "y": {
+          "mean": -0.19111022761182145,
+          "median": -0.15874385836000737,
+          "std": 0.6870070096576241,
+          "rms": 0.7130930867821907,
+          "max": 2.8064722104890603,
+          "count": 1092,
+          "min": -4.476237532939738
+        },
+        "z": {
+          "mean": -1.6018825751985302,
+          "median": -1.5199609926500002,
+          "std": 1.2820992715043786,
+          "rms": 2.0517812570341736,
+          "max": 5.1135904098000005,
+          "count": 1092,
+          "min": -7.1907964197480005
+        }
+      },
+      "origin_time_correction_from_catalog_seconds": {
+        "mean": 0.16353319390385487,
+        "median": 0.1548531340625,
+        "std": 0.1880611507980301,
+        "rms": 0.249218983923527,
+        "max": 0.672999057605,
+        "count": 1092,
+        "min": -0.51844977935
+      },
+      "boundary_sources": 8,
+      "boundary_face_counts": {
+        "x_min": 0,
+        "x_max": 0,
+        "y_min": 0,
+        "y_max": 1,
+        "z_min": 7,
+        "z_max": 0
+      },
+      "outside_grid_sources": 0,
+      "geoid_depth_range_km": [
+        -1.0,
+        15.2823917552
+      ],
+      "negative_geoid_depth_sources": 23,
+      "velocity_range_km_per_s": [
+        3.77,
+        7.18
+      ],
+      "final_sampled_rays": {
+        "rays": 32,
+        "identifier_associations": 210,
+        "identifier_mapping": "data/hayward/loc1d_ray_identifiers.csv",
+        "time_refinement_seconds": {
+          "mean": 4.770079726624977e-05,
+          "median": 3.45625235041e-05,
+          "std": 4.072631935092247e-05,
+          "rms": 6.272160032803041e-05,
+          "max": 0.000164251598759,
+          "count": 32,
+          "min": 3.5527136788e-15
+        },
+        "derivative_components": 24,
+        "derivative_components_skipped_at_boundaries": 0,
+        "derivative_half_step_km": 0.01,
+        "derivative_diagnostic_tolerance_seconds_per_km": 0.003,
+        "production": {
+          "converged": 32,
+          "unconverged": 0,
+          "converged_percent": 100.0,
+          "projected_gradient_seconds_per_km": {
+            "mean": 2.967718154805922e-06,
+            "median": 2.1097902534350003e-06,
+            "std": 2.545115188271223e-06,
+            "rms": 3.909598747689273e-06,
+            "max": 9.31536938516e-06,
+            "count": 32,
+            "min": 8.31080033195e-15
+          },
+          "raw_gradient_seconds_per_km": {
+            "mean": 2.967718154805922e-06,
+            "median": 2.1097902534350003e-06,
+            "std": 2.545115188271223e-06,
+            "rms": 3.909598747689273e-06,
+            "max": 9.31536938516e-06,
+            "count": 32,
+            "min": 8.31080033195e-15
+          },
+          "max_iterations": 763,
+          "total_merged_nodes": 0,
+          "source_derivative_error_seconds_per_km": {
+            "mean": 2.741471180278108e-05,
+            "median": 2.7664805511899998e-05,
+            "std": 2.6042460987630497e-05,
+            "rms": 3.781238153729279e-05,
+            "max": 0.000120699048151,
+            "count": 24,
+            "min": 4.68131156166e-07
+          },
+          "source_derivative_components_over_existing_tolerance": 0
+        },
+        "refined": {
+          "converged": 32,
+          "unconverged": 0,
+          "converged_percent": 100.0,
+          "projected_gradient_seconds_per_km": {
+            "mean": 2.5977342657423967e-06,
+            "median": 2.3009527676e-06,
+            "std": 1.7669251806763726e-06,
+            "rms": 3.14169506946814e-06,
+            "max": 9.83891609109e-06,
+            "count": 32,
+            "min": 2.17116930477e-14
+          },
+          "raw_gradient_seconds_per_km": {
+            "mean": 2.5977342657423967e-06,
+            "median": 2.3009527676e-06,
+            "std": 1.7669251806763726e-06,
+            "rms": 3.14169506946814e-06,
+            "max": 9.83891609109e-06,
+            "count": 32,
+            "min": 2.17116930477e-14
+          },
+          "max_iterations": 471,
+          "total_merged_nodes": 0,
+          "source_derivative_error_seconds_per_km": {
+            "mean": 2.2201959598814445e-05,
+            "median": 2.396087583175e-05,
+            "std": 2.242928332206559e-05,
+            "rms": 3.155946387961745e-05,
+            "max": 8.83194188858e-05,
+            "count": 24,
+            "min": 1.28856571455e-08
+          },
+          "source_derivative_components_over_existing_tolerance": 0
+        }
+      }
+    }
+  },
+  "resolution": {
+    "linearization_point": "saved dd_events.csv and dd_grid.csv",
+    "observations": "absolute catalog P picks only, independent reported picking errors assumed",
+    "uncertainty_interpretation": "reported symmetric uncertainty interpreted as independent 1-sigma picking noise; confidence levels are not supplied, so calibration is an assumption",
+    "weights": "0.05s / reported sigma; no residual-biweight factor",
+    "parameterization": "source x,y,z,t then q=delta log(slowness); sigma_v=v*sigma_q",
+    "regularization": "first-difference log-slowness smoothing plus column-scaled LSQR damping, linearized with fixed weights",
+    "column_scaling_fallback": "same as C++: squared column norm<=1e-20 uses scale1, otherwise inverse square root",
+    "resolution": "velocity block diagonal of H_joint^-1 G_weighted^T G_weighted; source parameters eliminated analytically",
+    "uncertainty": "frequentist propagation through damped estimator, 0.05^2 H_joint^-1 G_weighted^T G_weighted H_joint^-1",
+    "source_coordinate_constraints": "This local linear estimator treats source coordinates as unconstrained. Its covariance does not account for active source-domain bounds and is not the covariance of the bound-constrained nonlinear estimator.",
+    "section_display": "Figure 11 interpolates nodal resolution diagonals and nodal standard errors. Interpolated standard errors are not covariance propagation to intermediate spatial points.",
+    "limitations": [
+      "not a full DD resolution calculation",
+      "not the manuscript's simul2000 parameterization or exact dataset",
+      "excludes correlated station/model errors, nonlinear and ray errors, selection effects, and regularization bias",
+      "excludes active source-domain constraints from the linear covariance",
+      "small propagated noise does not imply small total model error"
+    ],
+    "validation": {
+      "block_vs_full_resolution": 2.220446049250313e-16,
+      "block_vs_full_noise_covariance": 2.7755575615628914e-17
+    },
+    "conditioning": {
+      "minimum_source_normal_eigenvalue": 3.388197162835524e-05,
+      "model_schur_condition_number": 2805.0469881645186,
+      "inverse_relative_residual": 4.0089098254847865e-15
+    },
+    "resolution_diagonal_min_max": [
+      -0.00010958881117748049,
+      0.83758741757928
+    ],
+    "velocity_sigma_min_max_km_s": [
+      0.004065138797708169,
+      0.03304436661523842
+    ],
+    "source_mappings": {
+      "rows": "data/hayward/dd_linearization_rows.csv",
+      "columns": "data/hayward/dd_linearization_columns.csv"
+    },
+    "analysis_script_sha256": "07f1669e6053ebfd6ed95493ff7812c23d40bfd5c16660d6a30d4a771a2d93e1",
+    "input_sha256": {
+      "data/hayward/dd_linearization_rows.csv": "fd01a12b2b0d39510fb4d2755ad3e1f349639f6fd7cfbaa209f9e335d8be7583",
+      "data/hayward/dd_linearization_matrix.csv": "5985bb1ac235af2024b8431737a40d85dbac4688bd33b7ff67f8936206c31214",
+      "data/hayward/dd_linearization_columns.csv": "c422afaf68c7c356e7f9ec225c0190f9c4147851aaad27ab8c40c8b112e63bd2",
+      "data/hayward/dd_events.csv": "c48e6b3a56710450ee309b119e36340705f53759e1e99520a898f241e17480be",
+      "data/hayward/dd_grid.csv": "13cdc7f9d201f9d73da7e3fedc21e542444c9a478cf4c0f4b08ce85a5a4a8596",
+      "configs/hayward.cfg": "cd7a922200f9811994d9fe4d7b66c48cbe1c9ff5f0dae2eef8ca85f6234aedb2"
+    }
+  },
+  "boundary_tolerance_km": 1e-06,
+  "objective_audit_tolerance": 1e-08,
+  "history_scope": "Ray and residual diagnostics precede each saved update; the last history row is not generally the final model.",
+  "precise_rms_interpretation": "No type-2 waveform-correlation observations; NaN history precise_rms is an empty category, represented by null here.",
+  "displacement_interpretation": "Change from reference catalog coordinates is not location error against truth.",
+  "resolution_active_boundary_limitation": "The linear covariance eliminates unconstrained source parameters; it does not model the nonlinear estimator with source coordinates active at domain bounds.",
+  "resolution_section_interpretation": "Sections linearly interpolate nodal resolution and nodal noise standard deviations; they do not compute resolution or sqrt(w^T C_v w) for the interpolated velocity.",
+  "uncertainty_interpretation": "reported symmetric uncertainty is interpreted as independent one-standard-deviation picking noise for conditional propagation; the selected provider records do not supply confidence levels or establish this calibration",
+  "differential_weight_assumption": "0.05s/sigma; difference sigma=sqrt(sigma_i^2+sigma_j^2); correlations among differences are not whitened",
+  "pair_graph_component_sizes": [
+    1058,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "unlinked_events": 34,
+  "cross_metadata_epoch_differences": 28576,
+  "timing_calibration_caveat": "Matching NSLC and reported receiver position permits shared geometric ray paths across response/gain epochs; it does not establish unchanged timing calibration. Both epoch identities and source hashes are preserved, and cross_metadata_epoch flags these observations for residual and sensitivity comparisons.",
+  "dd_minus_standard": {
+    "nodal_velocity_km_per_s": {
+      "mean": -0.02134962151844159,
+      "median": -0.007927372824999779,
+      "std": 0.41580308426572593,
+      "rms": 0.4163508270964177,
+      "max": 1.3754362593699998,
+      "count": 462,
+      "min": -1.1621390339
+    },
+    "absolute_nodal_velocity_difference_km_per_s": {
+      "mean": 0.3310924591740693,
+      "median": 0.295348974785,
+      "std": 0.2524396852753908,
+      "rms": 0.4163508270964177,
+      "max": 1.3754362593699998,
+      "count": 462,
+      "min": 0.0021161164299998703
+    },
+    "source_separation_3d_km": {
+      "mean": 0.7991034750779119,
+      "median": 0.6232455837658073,
+      "std": 0.6787400882634262,
+      "rms": 1.0484533710649409,
+      "max": 6.4827518901896495,
+      "count": 1092,
+      "min": 0.05445133145449941
+    },
+    "final_residual_rms_difference_seconds": {
+      "0": 0.08194826889931937,
+      "1": -0.010018404023155056,
+      "2": null
+    },
+    "interpretation": "Signed differences and source separations compare estimates; no field truth is supplied."
+  },
+  "resolution_linearization_rays": {
+    "unique_rays": 14262,
+    "converged": 14260,
+    "converged_percent": 99.98597672135746,
+    "projected_gradient_max_seconds_per_km": 2.95434839687e-05,
+    "raw_gradient_max_seconds_per_km": 0.000161716605551,
+    "scope": "All unique absolute-data rays retraced at the final DD estimate; independent-pick noise calculation uses these derivatives."
+  },
+  "ray_stopping_criterion": "Projected gradient <1e-7 s/km, or time change <1e-11 s and projected gradient <1e-5 s/km.",
+  "ray_limits": [
+    "Histories contain maxima over all used rays before each update, not final-model distributions.",
+    "Final samples are deterministic and do not certify every production ray or globally earliest arrivals.",
+    "Derivative perturbation traces do not save their own convergence flags; refined traces are numerical comparisons, not exact references.",
+    "The existing 0.003 s/km component tolerance is a diagnostic comparison, not an inversion-error bound."
+  ],
+  "input_sha256": {
+    "data/hayward/figure_metrics.json": "4932468be0c5a2734fb4239fc6357b4710a2f01fb3ce72cbaebe86d68696e4ba",
+    "data/hayward/absolute_resolution_manifest.json": "bf69bee396c0405ee1dd7b866028922a0cfdfd1c47217384d7f87bcd4ab86780",
+    "data/hayward/selection_manifest.json": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004",
+    "data/hayward/absolute_resolution.csv": "36129bab42a4df2093008b5404dbce5bbdc0b668dd50e9c36e8555c2c88dc4b7",
+    "data/hayward/dd_coverage.csv": "8180c8905163b076473e5f0426bda2c6dc93aea2a78bf329e94e8123698d6dc2",
+    "data/hayward/dd_events.csv": "c48e6b3a56710450ee309b119e36340705f53759e1e99520a898f241e17480be",
+    "data/hayward/dd_grid.csv": "13cdc7f9d201f9d73da7e3fedc21e542444c9a478cf4c0f4b08ce85a5a4a8596",
+    "data/hayward/dd_history.csv": "63d0a04c79b9a24fd21adb6270c90c8c1925da7ccd5ba2ca487cbbca15ba5d43",
+    "data/hayward/dd_linearization_columns.csv": "c422afaf68c7c356e7f9ec225c0190f9c4147851aaad27ab8c40c8b112e63bd2",
+    "data/hayward/dd_linearization_matrix.csv": "5985bb1ac235af2024b8431737a40d85dbac4688bd33b7ff67f8936206c31214",
+    "data/hayward/dd_linearization_rows.csv": "fd01a12b2b0d39510fb4d2755ad3e1f349639f6fd7cfbaa209f9e335d8be7583",
+    "data/hayward/dd_ray_convergence.csv": "1ee0909e378c1919ebef0a6d8b2b3d07a43ef25a517f764e96a278886f777e9d",
+    "data/hayward/dd_ray_derivatives.csv": "b0bb5e4bb58f48868608cf1e72c999d4f0ad4372018d94e522991ba50841bc15",
+    "data/hayward/dd_ray_identifiers.csv": "9da74a6cf6e8bbfd3a6b359a2c3ef62bd6dea272d62a527fd74e31ed6c39edca",
+    "data/hayward/dd_residuals.csv": "5f8cbecc39903a64604dbf7de4e49704c8de6adacdce13af24f3d5240bc2fb84",
+    "data/hayward/event_pairs.csv": "b678922c56c2c0841769aa882e98291631d3f7651a19661206c0433bfe9826ae",
+    "data/hayward/event_selection.csv": "d8563afe642aaaf719b9c92f0206bcd88003d256ad9067c08b0b40c60c3fb256",
+    "data/hayward/excluded_picks.csv": "93aab31ede96f61d65f4e363eb9bd8748b67014e477b12be12daee3ba09af0ca",
+    "data/hayward/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/hayward/initial_ray_convergence.csv": "8c68f00240926e95d7e55be9f3ac2ed79a0c695d565ed286fd3cb56bcb909d8e",
+    "data/hayward/initial_ray_derivatives.csv": "7674e7c07dd07b964630ed6bc5aa27149dc445b29074b41979dead3e1aa312fe",
+    "data/hayward/initial_ray_identifiers.csv": "f4aabb2de29ec88ae70b1de5b6a370ba06917427ebef1e4bf7f0a8a8cfa7b3eb",
+    "data/hayward/loc1d_coverage.csv": "fe267ca474cccc826e934083d3e04a107cdc0ddf5ca482ba5d15272cf142a2bd",
+    "data/hayward/loc1d_events.csv": "a55291313d06ed5e48719221ee95b462912bfb60572922905a94429bcc94f4c5",
+    "data/hayward/loc1d_grid.csv": "1bff02e73bb76baaeb937970566f06c06b81c360eb22e7be5478ad8162182275",
+    "data/hayward/loc1d_history.csv": "a64f4ac377942d15aa5ee40c831337d630e7d75412164752433f50e7fe7e8f87",
+    "data/hayward/loc1d_ray_convergence.csv": "b24c6c2ff099ce5a59d009aae290a4088c01cf08a12ec1d6c55534bc89323361",
+    "data/hayward/loc1d_ray_derivatives.csv": "50c5360d01dc11de424bb457981f39db692ee1c9d5829cc085712822fb297872",
+    "data/hayward/loc1d_ray_identifiers.csv": "e248080b0c69c0bce4d9083864596581ae9ff81b76ea94a0c56aad8abf2a2482",
+    "data/hayward/loc1d_residuals.csv": "e0498b0b11919df409f9d4263be4f59298da0a2b7e8f958dcc26d6ebd85512c7",
+    "data/hayward/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/hayward/resolution_sections.csv": "a89e96e57227f9ab724a83d9064df66294a25f532aa296f364dd805e719fd644",
+    "data/hayward/standard_coverage.csv": "180f698404084799e432062c115b8e34c9fe5bb06c4659896a3e266f44e0deb3",
+    "data/hayward/standard_events.csv": "4e213a5e5c61366e1e69da30e1897e1b0633ac616eba074f372cd4b014cf1bf9",
+    "data/hayward/standard_grid.csv": "0d3e215f215a74b101813e9dd651518e35e501996720a602b86aa400ac3a655f",
+    "data/hayward/standard_history.csv": "b15496b0e8c90bc6c5b10518cb391b5fb5ad4340d6ca15ce880427ed47f6bdba",
+    "data/hayward/standard_ray_convergence.csv": "7cd564f606e33eeb5d85818e0377b05fb8eea8f599512d51182ed1957e9926bc",
+    "data/hayward/standard_ray_derivatives.csv": "762d6819e087214995debb444309a6730449fb8545159d3353cf501f84823b29",
+    "data/hayward/standard_ray_identifiers.csv": "693323be7a87275954716c8ca1c21abb642b7642e4e0a8ecf4667eec69aededd",
+    "data/hayward/standard_residuals.csv": "15606fd283bcd01c71f32f3743fb5fa2d77ec6fd7dad0da2d6d18a38d4a48cb0",
+    "data/hayward/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward/vertical_sections.csv": "c6d73fbdeb7e4b3b471b9ac329460cf0e61b86047df8eb2c1881b7b8b02185ad",
+    "configs/hayward.cfg": "cd7a922200f9811994d9fe4d7b66c48cbe1c9ff5f0dae2eef8ca85f6234aedb2",
+    "analyze.py": "dfea3b91fcbd273f9d99255e6e8dbb85431977a556a0dc0a538f4c5511520308"
+  }
+}
