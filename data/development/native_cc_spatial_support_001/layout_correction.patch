@@ -1,0 +1,11 @@
+--- result/plot_source.py
++++ plot_cc_spatial_support.py
+@@ -188,7 +188,7 @@
+     from matplotlib.patches import Rectangle
+     plt.rcParams.update({'font.size': 9, 'axes.spines.top': False, 'axes.spines.right': False, 'pdf.fonttype': 42, 'ps.fonttype': 42})
+     fig, axes = plt.subplots(1, 2, figsize=(9.5, 7.6), gridspec_kw={'width_ratios': [1.5, 1]})
+-    fig.subplots_adjust(left=.08, right=.97, bottom=.23, top=.88, wspace=.24)
++    fig.subplots_adjust(left=.08, right=.97, bottom=.285, top=.88, wspace=.24)
+     for ax in axes:
+         ax.scatter([float(e['x']) for e in events], [float(e['y']) for e in events], s=5, c='.75', alpha=.7, edgecolors='none', zorder=1)
+         for channel, color in zip(CHANNELS, COLORS):

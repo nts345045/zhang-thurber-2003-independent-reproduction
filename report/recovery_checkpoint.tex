@@ -1371,6 +1371,25 @@ source--receiver rays, with no additional pair. The CC graph has 32 connected
 components and a largest component of seven events; these counts do not
 determine the rank of the combined inverse problem.
 
+Figure~\ref{fig:cc_spatial_support} places these accepted pairs within the
+unchanged catalog geometry. The plot reads only closed identified tables;
+both event/pick identities and all 22 used receiver epochs remain in its
+companion records. No new measurement or inversion is performed.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\linewidth]{../data/development/native_cc_spatial_support_001/render_002/cc_spatial_support.pdf}
+\caption{Observed spatial support of the 98 accepted normalized waveform
+differences. Gray points show all 1,092 catalog events; black points identify
+the 103 events in accepted pairs. Colored segments join event pairs, and
+triangles locate the four receiving channels. Panel (b) enlarges the dashed
+northern region in (a), using the same saved local coordinates in km.
+The companion tables preserve both epochs of 38 cross-epoch pairs.
+This input-support diagnostic establishes neither rank, resolution nor
+inversion accuracy; the combined catalog-plus-CC input remains uninverted.}
+\label{fig:cc_spatial_support}
+\end{figure}
+
 The adopted empirical prior is literal $\mathrm{CC}^2$ as a multiplier of
 both residual and Jacobian row. It therefore contributes $\mathrm{CC}^4$
 to the squared data objective before the other squared weighting factors.

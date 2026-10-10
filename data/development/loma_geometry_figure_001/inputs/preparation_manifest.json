@@ -1,0 +1,96 @@
+{
+  "created_utc": "2026-10-10T03:04:41.546034+00:00",
+  "scope": "Authoritative geometry/model preparation only; no rays, synthetic picks or inverse model generated",
+  "profile": "LOM",
+  "profile_source": "USGS OFR 93-578 Table 4, pp.17-18, documented gradient adaptation attributed to Dietz and Ellsworth; not verified target start",
+  "profile_depth_km": [
+    0,
+    2,
+    6.7,
+    24,
+    26
+  ],
+  "profile_vp_km_s": [
+    3,
+    4.95,
+    5.94,
+    6.64,
+    8
+  ],
+  "sampled_grid_depth_km": [
+    -1.0,
+    0,
+    3,
+    7,
+    11,
+    16
+  ],
+  "sampled_grid_vp_km_s": [
+    3,
+    3,
+    5.160638297872341,
+    5.9521387283237,
+    6.113988439306358,
+    6.316300578034682
+  ],
+  "model_assumptions": "Sample tabulated gradient adaptation at target inversion depths; interpolate between these samples in solver; extend its surface velocity constantly above z=0. This resampling does not retain every original gradient break.",
+  "counts": {
+    "events": 724,
+    "receivers": 52,
+    "unique_rays": 37648,
+    "strict_below_20km_pairs": 152834,
+    "absolute_rows": 37648,
+    "catalog_rows": 7947368,
+    "precise_rows": 7947368,
+    "total_rows": 15932384,
+    "diagnostic_sample_rays": 104
+  },
+  "event_order": "Unchanged selected_events.csv order",
+  "station_order": "Unchanged selected_channels.csv order; native NSLC and epoch preserved",
+  "authoritative_raw_source_sha256": {
+    "raw/events_00001.xml": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+    "raw/ncedc_channel_epochs.xml": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034"
+  },
+  "initialization": "simulate creates initial_events.csv with independent Gaussian 0.6 km errors on each coordinate, clamped to the finite grid, plus independent 0.05 s origin corrections. These values are independent assumptions, not recovered target inputs.",
+  "random_sequence": "std::mt19937 seed 2003; C++ normal/uniform distributions; all source xyz/time perturbation draws precede station bias and pick-noise draws. Library/compiler build must be frozen for replay.",
+  "timing_definition": "T=continuous selected local ray action; Q=0.01*round(T/0.01), C++ halfway away from zero; A=Q+Uniform_station(-0.3,0.3)+Normal_pick(0,0.04). Absolute A; catalog A_i-A_j; precise Q_i-Q_j. Precise rounding difference error can approach 0.01 s, not 0.005 s.",
+  "ray_candidate_settings": {
+    "path_spacing_km": 0.5,
+    "ray_iterations": 1000,
+    "fmm_spacing_km": 0.5,
+    "fmm_order": 2,
+    "closed_receiver_seed_cells": true,
+    "diagnostic_refinement_spacing_km": 0.25
+  },
+  "accuracy_status": "Candidate settings require geometry and full-support local flags plus refinement review; known layered near-critical cases can need FMM spacing 0.0625 km. No sufficiency or global-first-arrival claim.",
+  "runtime_plan": {
+    "OMP_NUM_THREADS": 4,
+    "address_space_limit_GiB": 128
+  },
+  "mutable_by_simulate": [
+    "truth_events.csv (numeric precision and explicit simulation labels)",
+    "initial_events.csv (created only after truth-ray gate succeeds)",
+    "arrivals.csv (created only after truth-ray gate succeeds)",
+    "observations.csv (created only after truth-ray gate succeeds)"
+  ],
+  "input_sha256": {
+    "data/authoritative/loma_prieta/selected_events.csv": "d1cbc2fc8ef0c65cf58fd6cbcbd8c3486bdd6c80c6c6f4b2c8dbd8e59f5729c5",
+    "data/authoritative/loma_prieta/selected_channels.csv": "42d221cf7a03ac581739c882597dcb256d24769c1aab8114ccca9eab6efe072e",
+    "configs/loma_lom.cfg": "d28f691c27559c0fd45f99c5e107f35a343c15e4bf371065716814102352a6b2",
+    "prepare_loma.py": "aa20437d490ba5f611737ceffe4f8c8fa4aff91857424457b35ede7e08acb1dd",
+    "reference/specification_notes.md": "c5ef255cd73ba79cde915f14eec876d8e6493a7402329f2be5bff159554d3fcf",
+    "src/main.cpp": "df472d1152302b685232cbfaf73587d472cab0c1a342938edbdd676e622057af",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed"
+  },
+  "prepared_sha256": {
+    "authoritative_geometry": "a80bab4f2cb737add7a2a6a437decfc18869c1bff22c364e3a0f6131f1d4d817",
+    "initial_grid.csv": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+    "preflight.cfg": "3264c2c3976793a7b4acb7e917790a0ef1a96994f786feaa998a8f3a907a7867",
+    "ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "run.cfg": "d28f691c27559c0fd45f99c5e107f35a343c15e4bf371065716814102352a6b2",
+    "stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "truth_events.csv": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3",
+    "truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47"
+  },
+  "native_source_path_base": "Provider source_file values retain their original data/authoritative/loma_prieta-relative base; original raw response files are unchanged."
+}

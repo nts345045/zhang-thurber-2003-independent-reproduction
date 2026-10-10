@@ -1,0 +1,23 @@
+{
+  "data_readback": {
+    "accepted_rows_all_original_fields_exact": 98,
+    "derived_table_identical_between_renders": true,
+    "full_catalog_events": 1092,
+    "used_receiver_epochs": 22
+  },
+  "findings": [
+    "Both full-map and northern-detail panels inspected; axis labels, native channel labels, legends and scope statements are legible.",
+    "Initial label/legend overlap is resolved; no clipped catalog or channel coordinate lies outside the full-map limits.",
+    "Colored links are explicitly event-pair edges, not rays; no rank, resolution or inverse-accuracy claim."
+  ],
+  "pdf_preview_sha256": "19047613dfd5339976b45535433a65f3d6975063991bfc8b53b06a2fae540810",
+  "pdf_render_command": "pdftoppm -f 1 -singlefile -scale-to 1600 -png data/development/native_cc_spatial_support_001/render_002/cc_spatial_support.pdf tmp/native_cc_spatial_support_execution_002/pdf_preview",
+  "pdf_sha256": "0ee7e204cbab96d693607a8785ad66e9a831198ea3a5451b6074884b187355c7",
+  "png_sha256": "9ed61eabf8f8d24f199fc511839e9f69d6004c60c7e4f97946e94476868c548c",
+  "prior_layout_receipt_sha256": "4b27778d28b6c82ab18da20180bafb2f056f6de130aeeaba61f62db5e23fedaa",
+  "render_exit_code": 0,
+  "render_terminal_chunk_id": "a50d1b",
+  "reviewed_png_and_pdf_page": 1,
+  "reviewer": "earthscope_discovery",
+  "status": "passed"
+}

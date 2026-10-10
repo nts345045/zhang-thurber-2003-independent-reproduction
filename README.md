@@ -475,6 +475,15 @@ These diagnostics supply no field, derivative-accuracy or covariance acceptance.
 Run these newer diagnostic and simulation commands from the
 [`first-arrival-integration` branch](https://github.com/nts345045/zhang-thurber-2003-independent-reproduction/tree/first-arrival-integration).
 
+The [Figure 2 geometry replacement](data/development/loma_geometry_figure_001/figure02_authoritative_geometry_candidate.pdf)
+now shows 724 catalog-derived Loma Prieta sources, 52 identified receivers, and
+the manuscript's 48 horizontal grid nodes. The [small input package and replot
+command](data/development/loma_geometry_figure_001/README.md) preserve complete
+identities and rebuild the plot without the simulation archive. Figure 2 remains
+partial because the exact study cohort, projection and layout are unknown.
+The historical Figure 3 recovery panels still use the earlier random geometry;
+replacement recovery results remain unfinished.
+
 The [authoritative waveform pilot](data/authoritative/waveforms/pilot_001/README.md)
 retrieved two five-second records and their historical instrument responses.
 The [fixed pair fails the written coherence screen](data/development/waveform_correlation_pilot_001/README.md):
@@ -509,6 +518,13 @@ The separately [prepared catalog-plus-CC inputs](data/hayward_catalog_cc_001/REA
 retain all 58,980 catalog rows and append the 98 waveform differences. Both
 receiver epochs remain attached, including 38 pairs across metadata epochs;
 the combined input uses exactly the same 14,262 native forward pairs.
+The [CC spatial-support map](data/development/native_cc_spatial_support_001/render_002/cc_spatial_support.pdf)
+places the 98 accepted pairs and their 103 events within the full 1,092-event
+catalog geometry, with four identified receiving channels. Its
+[saved identifiers and replot instructions](data/development/native_cc_spatial_support_001/REPLAY.md)
+retain all 22 used receiver epochs. This is an input-support diagnostic;
+the combined dataset remains uninverted, and the map establishes neither
+resolution nor inversion accuracy.
 The [adopted empirical weighting](data/development/catalog_cc_weight_adoption_001/README.md)
 uses literal CC squared as a residual/Jacobian row multiplier, hence CC to the
 fourth power in the squared objective before other factors. Timing uncertainty

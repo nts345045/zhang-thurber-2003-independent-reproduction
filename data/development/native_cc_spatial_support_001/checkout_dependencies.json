@@ -1,0 +1,78 @@
+{
+  "all_consumed_inputs_closed_no_live_run_files": true,
+  "consumed_summary_sha256": "ae46b96cc708e78c60d9aab4dfe54ca284afb130e807bcdb3ca9e788b9d57aea",
+  "created_utc": "2026-10-10T20:38:20.749126+00:00",
+  "git_HEAD": "9f0b3930b0bd128b7f366af6e4f033503e68d57c",
+  "missing_native_inputs": [],
+  "new_package_authored_dependencies": {
+    "data/development/native_cc_spatial_support_001/README.md": "2de6242bdf1d4d56fe9c65670dad7495716bd0df8fcbabb58ddcaee759931aac",
+    "data/development/native_cc_spatial_support_001/plot_cc_spatial_support.py": "69b7a30118afdde41ee1cf451020c8177b86161982b0cbd508844107f4a8a05a"
+  },
+  "plot_source_sha256": "69b7a30118afdde41ee1cf451020c8177b86161982b0cbd508844107f4a8a05a",
+  "software": "Python 3.11 and Matplotlib 3.11.2; rendered environment had NumPy 2.4.6. Python packages are external dependencies, not files supplied by a checkout.",
+  "status": "passed_source_and_data_checkout_closure",
+  "tracked_external_input_count": 12,
+  "tracked_external_inputs": {
+    "data/development/native_cc_connectivity_001/accepted_measurements.csv.gz": {
+      "bytes": 25187,
+      "present_byte_exact_in_recorded_HEAD": true,
+      "sha256": "9f9977b62b2808df09e6b6753443bc45a8d81ae68e0e23eafe6744ede5b94780"
+    },
+    "data/development/native_cc_connectivity_001/event_membership.csv": {
+      "bytes": 10323,
+      "present_byte_exact_in_recorded_HEAD": true,
+      "sha256": "0ccfcf46cbe03a04e8c77aafabbe75ca3fbb6ebde8964e015812313a595c6712"
+    },
+    "data/development/native_cc_connectivity_001/review.json": {
+      "bytes": 2931,
+      "present_byte_exact_in_recorded_HEAD": true,
+      "sha256": "9f4f46b13efa79c624db89eb9ecbf855e783a7ad5ad1a00fa1881f35ebc2feb9"
+    },
+    "data/development/native_cc_connectivity_001/summary.json": {
+      "bytes": 2189,
+      "present_byte_exact_in_recorded_HEAD": true,
+      "sha256": "2fb98b78c31ec8902012f2cf0eb96674c9913220bcd77edb22810623c05df48b"
+    },
+    "data/development/native_waveform_cc_001/independent_measurement_review.json": {
+      "bytes": 164008,
+      "present_byte_exact_in_recorded_HEAD": true,
+      "sha256": "4a91262cf8d64a6cee233b08465f34b885e40f7cb0d2dc82cd575bcf9719e97b"
+    },
+    "data/development/native_waveform_cc_001/summary.json": {
+      "bytes": 160788,
+      "present_byte_exact_in_recorded_HEAD": true,
+      "sha256": "8a97e3c31d4a8db25c2c63b448addbfbfe258d94a17ecfa1663e5facb5772021"
+    },
+    "data/hayward_catalog_cc_001/catalog_provenance/observations.csv": {
+      "bytes": 46415956,
+      "present_byte_exact_in_recorded_HEAD": true,
+      "sha256": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c"
+    },
+    "data/hayward_catalog_cc_001/execution.json": {
+      "bytes": 1801,
+      "present_byte_exact_in_recorded_HEAD": true,
+      "sha256": "21d01bbc4898d2ebf933566421ea8852d65dd0232665cf9d25c14ad4cfe8f7ec"
+    },
+    "data/hayward_catalog_cc_001/independent_review.json": {
+      "bytes": 165911,
+      "present_byte_exact_in_recorded_HEAD": true,
+      "sha256": "f7991cadfdab0d08efe8321c9595e09820ea092233a48264ea39a36cec0b850d"
+    },
+    "data/hayward_catalog_cc_001/initial_events.csv": {
+      "bytes": 438756,
+      "present_byte_exact_in_recorded_HEAD": true,
+      "sha256": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05"
+    },
+    "data/hayward_catalog_cc_001/preparation_manifest.json": {
+      "bytes": 163384,
+      "present_byte_exact_in_recorded_HEAD": true,
+      "sha256": "63e909d134182a2dc116c73a20c2d204284f77baf5b333ffde54a820f04944a0"
+    },
+    "data/hayward_catalog_cc_001/stations.csv": {
+      "bytes": 505739,
+      "present_byte_exact_in_recorded_HEAD": true,
+      "sha256": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652"
+    }
+  },
+  "verification_scope": "Compared Git HEAD blob bytes for all 12 existing inputs; did not create a fresh checkout, install software or rerun the plot. New package files must be included in delivery."
+}

@@ -1,0 +1,30 @@
+{
+  "status": "completed_and_reaped",
+  "owner": "/root/earthscope_discovery",
+  "observed_utc": "2026-10-10T20:45:47.410499Z",
+  "tool_session_id": 44705,
+  "launch_tool_chunk_id": "b1a49e",
+  "terminal_tool_chunk_id": "519af8",
+  "observed_command_exit_code": 0,
+  "return_code": 0,
+  "child_reaped": true,
+  "command": [
+    "/usr/libexec/platform-python3.6",
+    "-B",
+    "data/development/authoritative_geometry_cc_report_001/compile.py"
+  ],
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp",
+    "TEXMFVAR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/authoritative_geometry_cc_tex/texmf-var",
+    "TEXMFCONFIG": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/authoritative_geometry_cc_tex/texmf-config"
+  },
+  "compile_source_sha256": "d51d2bc32daa4c6aaf30a0722579f3406f022d4bb816cd759ff0e932ccd963a1",
+  "compile_sha256": "d1569a85629f8341c96e68c145398a6ebf0a1dd47ab3ec060e57abe5e43c3f0d",
+  "report_sha256": "be24ec48fa83c23a3ad3f6f5689050aaa59368d271f60ceee2c39aecfda58fc5",
+  "output_sha256": {
+    "compile_stdout.txt": "6db426fff34109a5b20e3a277760d4d5fc6af3f60d7a8e0c561a715084471efc",
+    "compile_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "scope": "Exactly two successful pdflatex passes, pdftotext and pdfinfo; no numerical or solver calls."
+}

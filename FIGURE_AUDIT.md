@@ -24,15 +24,15 @@ Written-specification and input-availability audit. Numerical statuses must also
 
 **Documentation:** Caption 2, p.1879
 
-**Parameters:** Published 8x6x5 inversion grid; 120 independent sources and 32 independent stations, seed 2003
+**Parameters:** 724 catalog-defined sources, 52 identified NC EHZ receiver epochs; documented 8x6 horizontal grid, five depth levels extended by z=-1 km
 
-**Data command:** ./build/dd generate configs/synthetic.cfg data/synthetic
+**Data command:** python3 diagnostics/plot_loma_geometry.py --output tmp/FRESH_loma_geometry
 
-**Plot command:** python3 plot.py --figure 2
+**Plot command:** python3 diagnostics/plot_loma_geometry.py --output tmp/FRESH_loma_geometry
 
 **Status:** partially reproduced
 
-**Limitation:** The saved baseline uses random geometry. A documented authoritative Loma Prieta subset is authorized; it has not yet replaced this experiment. No digitization used.
+**Limitation:** The authoritative subset replaces the random geometry in this panel. Exact manuscript cohort, projection and layout are unknown; selection, receiver snapshot and rotation are disclosed independent choices. The extra -1 km grid level contains the receivers. All native identities and epochs are preserved; no digitization used. The one command copies verified saved native tables and creates both plots; it runs no inversion. This is input geometry, not recovery. Figure 3 retains the historical random-layout calculations.
 
 ## Panel 3a
 
