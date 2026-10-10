@@ -54,6 +54,13 @@ above both existing gradient scales. Face alignment alone does not resolve
 these two paths; ordinary tangent descent remains. Both original failed
 flags are preserved, and no optimized path or first arrival is claimed.
 
+One subsequent [prescribed tangent step](data/development/hayward_cmj_tangent_step_001/RESULTS.md)
+per face candidate lowers the action by another 2.4666e-10 and 4.6728e-10 s,
+with maximum node movements of 0.05169 and 0.14095 m. Both complete rounded
+displacements have certified negative slopes and pass the fixed Armijo check.
+Independent saved readback passes. Post-step stationarity is unevaluated;
+these decreases do not resolve convergence or the source-derivative failures.
+
 The original guard also stopped before trying a smaller inverse step. A
 [separate old-kernel candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)
 now distinguishes a pure local-stopping trial rejection from fatal current,

@@ -1,0 +1,54 @@
+--- 001/source/diagnostics/tangent_metric_step.cpp
++++ 002/source/diagnostics/tangent_metric_step.cpp
+@@ -34,7 +34,11 @@
+ }
+ void array_json(const Vec &v) {
+   std::cout << '[';
+-  for (std::size_t i=0;i<v.size();++i) {if(i)std::cout<<',';std::cout<<v[i];}
++  for (std::size_t i=0;i<v.size();++i) {
++    if(i)std::cout<<',';
++    if(v[i]==0)std::cout<<(std::signbit(v[i])?"-0.0":"0.0");
++    else std::cout<<v[i];
++  }
+   std::cout << ']';
+ }
+ void hex_json(const Vec &v) {
+--- 001/source/diagnostics/check_tangent_metric_step.py
++++ 002/source/diagnostics/check_tangent_metric_step.py
+@@ -182,6 +182,12 @@
+         old=[dict(action=t.mul(t.point(Q(1,4)),length)) for unused in range(2)]
+         experiment=m.single_trial(t,g,path,components,old,settings,
+             lambda text:call('homogeneous_bent','solve',text),lambda text:call('homogeneous_trial','round',text))
++        results['homogeneous_trial']=dict(start=path,components=components,experiment=experiment)
++        zero_values=experiment['metric']['direction'];zero_hex=experiment['metric']['direction_hex']
++        check('homogeneous_signed_zero_decimal_hex_roundtrip',
++              all(type(zero_values[k]) is float and zero_values[k]==0 and
++                  zero_values[k].hex()==float.fromhex(zero_hex[k]).hex() for k in (0,2)) and
++              math.copysign(1,zero_values[0])==-1 and math.copysign(1,zero_values[2])==1)
+         check('single_direction_single_trial_acceptance',experiment['status']=='diagnostic_trial_accepted' and
+               experiment['metric_solves']==experiment['rounded_trials']==1)
+         direction=experiment['direction'];slope=experiment['nominal_slope']
+@@ -202,7 +208,7 @@
+         check('homogeneous_conservative_armijo',action['conservative_nominal_armijo'] and action['strict_decrease'])
+         check('armijo_rhs_exact_saved_arithmetic',action['nominal_armijo_rhs_lower']==Q(float('1e-4'))*Q(alpha)*slope[0])
+         check('changed_action_budget_two_edges',action['action_edge_evaluations']==2)
+-        results['homogeneous_trial']=dict(start=path,components=components,experiment=experiment,oracle_delta=oracle_delta,
++        results['homogeneous_trial'].update(oracle_delta=oracle_delta,
+             ideal_radical_oracle=dict(start_action='sqrt(5)/8',gradient_y='1/(2*sqrt(5))',weight='1/sqrt(5)',
+                 direction_y='-1/4',metric_energy='1/(8*sqrt(5))',full_step_action='1/4',
+                 full_step_difference='(2-sqrt(5))/8',
+@@ -214,9 +220,13 @@
+         def no_round(unused):raise AssertionError('A stationary fixture must not generate a trial')
+         stationary=m.single_trial(t,flat_grid,flat,zeros,[dict(action=(Q(1),Q(1)))]*2,settings,
+                                   lambda text:call('stationary','solve',text),no_round)
++        results['stationary']=stationary
++        zero_values=stationary['metric']['direction'];zero_hex=stationary['metric']['direction_hex']
++        check('stationary_signed_zero_decimal_hex_roundtrip',
++              all(type(v) is float and v==0 and v.hex()==float.fromhex(h).hex()
++                  for v,h in zip(zero_values,zero_hex)) and any(math.copysign(1,v)==-1 for v in zero_values))
+         check('stationary_no_descent_or_trial',stationary['status']=='nominal_slope_unresolved' and
+               stationary['nominal_slope']==(0,0) and stationary['rounded_trials']==stationary['action_edge_evaluations']==0)
+-        results['stationary']=stationary
+         wide=[None,[(Q(0),Q(0)),(Q(-1),Q(2)),None],None]
+         uncertain=m.contraction(wide,direction)
+         check('unresolved_interval_not_declared_descent',uncertain[0]<0<uncertain[1])

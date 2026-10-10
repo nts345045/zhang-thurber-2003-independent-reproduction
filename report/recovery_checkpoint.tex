@@ -154,6 +154,41 @@ Event & $\Delta T$ (s) & Tangent norm (s/km) \\
 \end{tabular}
 \end{table}
 
+One subsequent prescribed tangent step from each face candidate gives a
+further resolved action decrease (Table~\ref{tab:cmj_tangent_step}). The
+direction uses the existing positive edge metric and a principal system
+with unavailable face-normal displacements set to zero. This defines a
+search subspace, not a physical constraint or a reduced stopping test.
+All available tangent components enter the nominal slope bound and the
+separate bound for the actual rounded displacement. Both steps have
+dimensionless length one and satisfy the fixed conservative Armijo check.
+The full trilinear action uses the same degree-eight, one-subdivision,
+128-bit enclosure as the preceding calculation. The run evaluates 2,058
+new edge actions, two metric solves and two rounded trials. Independent
+saved readback verifies the exact accounting and complete native identities.
+No post-step gradient has yet been evaluated. The small action decreases
+therefore establish descent but do not certify stationarity, source accuracy
+or convergence. The original false flags and null candidate convergence
+are preserved. Results and the preserved signed-zero serialization control
+failure are documented in
+\path{data/development/hayward_cmj_tangent_step_001/RESULTS.md}.
+
+\begin{table}[ht]
+\centering
+\caption{One tangent step from each exact-face candidate at
+\texttt{NC.CMJ..EHZ}. The action change is relative to that candidate,
+not to the original failed path. Displayed values round rational bounds.}
+\label{tab:cmj_tangent_step}
+\begin{tabular}{lll}
+\hline
+Event & $\Delta T$ (s) & Maximum node movement (m) \\
+\hline
+\texttt{NC518943} & $-2.4666\times10^{-10}$ & $0.05169$ \\
+\texttt{NC519264} & $-4.6728\times10^{-10}$ & $0.14095$ \\
+\hline
+\end{tabular}
+\end{table}
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\textwidth]{../figures/diagnostics/hayward_full_initial_accuracy.pdf}

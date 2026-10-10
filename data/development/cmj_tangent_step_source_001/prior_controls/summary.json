@@ -1,0 +1,36 @@
+{
+  "control_settings": {
+    "bits": 128,
+    "subdivisions": 4,
+    "terms": 32
+  },
+  "controls_passed": 80,
+  "controls_total": 80,
+  "declared_families": 6,
+  "elapsed_seconds": 19.782652378082275,
+  "error": null,
+  "input_sha256": {
+    "data/development/cmj_face_action_design_001/README.md": "9092829b398f4419c9d883c46fa882e305cd1bed7e8f4939858a008bddcc6a44",
+    "data/development/cmj_face_action_design_001/input_pins.json": "168610bee8448ab568aff4fa87fd93e2d45a46b9e763b8952b4581e0ce8efdd9",
+    "data/development/cmj_face_action_design_001/root_review.json": "757a9bbd0b766a4545a52707db1baa5941b700fdf302e7770e46393939310cfe",
+    "diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "diagnostics/check_trilinear_action_bounds.py": "3e24c71ea003160020059fc4436eb4d8b0995fe6703ac9dedec032558f60bfe8",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+    "diagnostics/trilinear_action_bounds.py": "c3ea236e9f234659061eec6c44c55bacc83ee45313b2d8488061eb5405f103da"
+  },
+  "limitations": [
+    "Finite integration budgets leave intervals unresolved when necessary.",
+    "No all-direction stationarity, first-arrival, source/model derivative, or native status claim."
+  ],
+  "native_evaluations": 0,
+  "numerical_scope": "Invented fixed-polygon rational integrals and directional witnesses only.",
+  "optimizer_calls": 0,
+  "output_sha256": {
+    "checks.json": "4832a4261256eff207e7e68feda02b53fd8a3439fd0964f02bea36358de26692",
+    "results.json": "03da8dfb49b9ad6e4e386fd623d472217215f820dcfe141c980a7bd5333bfdc3"
+  },
+  "prelaunch_review_sha256": "e034c9126ba37879021f38b5776b750f4bc8e788546431079253392d3f65404e",
+  "prepared_sha256": "32130c8bfe195de54d0ffefea8032f210adc36acf9524682ad60a6f186939b3b",
+  "ray_calls": 0,
+  "status": "passed"
+}

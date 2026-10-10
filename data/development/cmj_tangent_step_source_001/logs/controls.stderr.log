@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "diagnostics/check_tangent_metric_step.py", line 281, in <module>
+    if __name__=='__main__':main()
+  File "diagnostics/check_tangent_metric_step.py", line 186, in main
+    experiment['metric_solves']==experiment['rounded_trials']==1)
+  File "diagnostics/check_tangent_metric_step.py", line 110, in check
+    if not ok:raise AssertionError(name)
+AssertionError: single_direction_single_trial_acceptance

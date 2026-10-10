@@ -1,0 +1,239 @@
+{
+  "binary_sha256": "bb637be19c82175afac2bc1d99036f1f11efb4f629834d2d57d24a5bbc2dbb9f",
+  "checks": 50,
+  "commands": [
+    {
+      "child_reaped": true,
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/build/metric_step",
+        "weights",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/cases/principal/input.txt"
+      ],
+      "name": "principal",
+      "pid": 396235,
+      "return_code": 0
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/build/metric_step",
+        "weights",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/cases/zero_weight/input.txt"
+      ],
+      "name": "zero_weight",
+      "pid": 396236,
+      "return_code": 1
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/build/metric_step",
+        "weights",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/cases/negative_weight/input.txt"
+      ],
+      "name": "negative_weight",
+      "pid": 396237,
+      "return_code": 1
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/build/metric_step",
+        "weights",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/cases/nonfinite_weight/input.txt"
+      ],
+      "name": "nonfinite_weight",
+      "pid": 396238,
+      "return_code": 1
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/build/metric_step",
+        "weights",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/cases/nonfinite_rhs/input.txt"
+      ],
+      "name": "nonfinite_rhs",
+      "pid": 396239,
+      "return_code": 1
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/build/metric_step",
+        "weights",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/cases/diagonal_overflow/input.txt"
+      ],
+      "name": "diagonal_overflow",
+      "pid": 396240,
+      "return_code": 1
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/build/metric_step",
+        "weights",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/cases/cancelled_pivot/input.txt"
+      ],
+      "name": "cancelled_pivot",
+      "pid": 396241,
+      "return_code": 1
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/build/metric_step",
+        "weights",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/cases/eliminated_rhs_overflow/input.txt"
+      ],
+      "name": "eliminated_rhs_overflow",
+      "pid": 396242,
+      "return_code": 1
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/build/metric_step",
+        "weights",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/cases/solution_overflow/input.txt"
+      ],
+      "name": "solution_overflow",
+      "pid": 396243,
+      "return_code": 1
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/build/metric_step",
+        "solve",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/cases/homogeneous_bent/input.txt"
+      ],
+      "name": "homogeneous_bent",
+      "pid": 396244,
+      "return_code": 0
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/build/metric_step",
+        "round",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/cases/homogeneous_trial/input.txt"
+      ],
+      "name": "homogeneous_trial",
+      "pid": 396245,
+      "return_code": 0
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/build/metric_step",
+        "solve",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/cases/stationary/input.txt"
+      ],
+      "name": "stationary",
+      "pid": 396246,
+      "return_code": 0
+    },
+    {
+      "child_reaped": true,
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/build/metric_step",
+        "round",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/cmj_tangent_step_source_002/cases/rounded_zero_displacement/input.txt"
+      ],
+      "name": "rounded_zero_displacement",
+      "pid": 396247,
+      "return_code": 0
+    }
+  ],
+  "elapsed_seconds": 0.1634964942932129,
+  "error": null,
+  "field_calls": 0,
+  "native_evaluations": 0,
+  "optimizer_calls": 0,
+  "output_sha256": {
+    "cases/cancelled_pivot/input.txt": "9e6c570f81ce2d81a25e54d66cf35b3013f603ee6b09d4e2916481cb181d1792",
+    "cases/cancelled_pivot/stderr.log": "e6545c30c2485fc80db3c96ea14f536cb86f22d8ece4b2d7d4a610b81d3bccd4",
+    "cases/cancelled_pivot/stdout.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cases/diagonal_overflow/input.txt": "ca591e1ce6bc31617aba838fa972db04516a44868ef867f88f67d91d2f50e6be",
+    "cases/diagonal_overflow/stderr.log": "b7e36889f78457a857b443a6587f5d821cf302464b462291c7d4d36478f915c3",
+    "cases/diagonal_overflow/stdout.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cases/eliminated_rhs_overflow/input.txt": "212f0bc8a87f768e6547efd9aec487716b8b29b2df6a24c6cd4ee13411f0eef8",
+    "cases/eliminated_rhs_overflow/stderr.log": "a7c7b6342793b359766de9206927b75ba9f95fb396211c39bf093087bb4671f6",
+    "cases/eliminated_rhs_overflow/stdout.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cases/homogeneous_bent/input.txt": "fa488c1a4842040d3296189ff95b8a39dfe293aa4e9ec13cb8955113f3379d3e",
+    "cases/homogeneous_bent/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cases/homogeneous_bent/stdout.json": "97afef3dbc861db18d9acca31ebde6e14fdd786b16c6ae6173df20d3031a6bad",
+    "cases/homogeneous_trial/input.txt": "1b3e678742bec6c331af495c331e6580365253b49e7b80a29027bba25801532c",
+    "cases/homogeneous_trial/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cases/homogeneous_trial/stdout.json": "dad7f3b0490674fe6bec8ef76ffd6580b89be23a90c7e294cb7d138b80c8708a",
+    "cases/invented_pin.txt": "559e6fd29cb80418c44fc43d5adfc3661e3cfdc0c6e2e75ed71849c4f419e473",
+    "cases/negative_weight/input.txt": "6c95abe775a999b0a143be0d01482fd38d27cbcd5bf3092b8bc33b673c7c9334",
+    "cases/negative_weight/stderr.log": "af5d0ca42ba3abcbb8b9572f99b7dd851dcf36911e04a14dc5263bdcbe861207",
+    "cases/negative_weight/stdout.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cases/nonfinite_rhs/input.txt": "cca8fde34307d3b5e3021e3c272a8325083913d736ad60e3be4e726a7a36b665",
+    "cases/nonfinite_rhs/stderr.log": "7a3005772d065bb6e7155375f54f503e4a527bb131bfdf9494d82748bb36f76d",
+    "cases/nonfinite_rhs/stdout.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cases/nonfinite_weight/input.txt": "f181a69168adf46a7d170e9e705dc4672c8a0a913ea45f87e506dea1a23f8e8a",
+    "cases/nonfinite_weight/stderr.log": "7a3005772d065bb6e7155375f54f503e4a527bb131bfdf9494d82748bb36f76d",
+    "cases/nonfinite_weight/stdout.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cases/principal/input.txt": "e83da487030cb6f39ce7bc811e33e6b3b84763a3e00a7ad6704d508a194a8ccb",
+    "cases/principal/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cases/principal/stdout.json": "a3964c062374a975c98ba8dab791bbaf82c16def085b135390dc68f1f3f27757",
+    "cases/rounded_zero_displacement/input.txt": "2f148120815cacb3a07065d4f0e644309b3869e9422507da610b3e6ec20f8acc",
+    "cases/rounded_zero_displacement/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cases/rounded_zero_displacement/stdout.json": "a82bf90ffcc774417186f892de23d75fc7d8312b6f1a252d797cf9b5b22d311d",
+    "cases/solution_overflow/input.txt": "0d3b7b0558d806e8037d8faf5199d1dae77836af2a229e7f5e731fd91c3b1254",
+    "cases/solution_overflow/stderr.log": "0b76a2ed59c8cbc6c5922fd8a73d8fb38ec92ddc7e38c01a45946f053e251f14",
+    "cases/solution_overflow/stdout.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cases/stationary/input.txt": "25510b08c5938ac608cefe4888d558e46549666cb7c34e12104aaa296619e673",
+    "cases/stationary/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cases/stationary/stdout.json": "5c0f90d831c89fc748d01882ab14e9dcebdb230876cb8f79b601bcb7796261d3",
+    "cases/zero_weight/input.txt": "4b884c04c22d516cdd2e20d197ef0f6b4b5f351a1ece5b439a3b9c088f7415c2",
+    "cases/zero_weight/stderr.log": "af5d0ca42ba3abcbb8b9572f99b7dd851dcf36911e04a14dc5263bdcbe861207",
+    "cases/zero_weight/stdout.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks.json": "1316659f40ed0362a7b84d73737f839f81a7d478a5fda0bcb86a7485fa7ccc77",
+    "results.json": "d901a5e5a56495f4f20e3e9b9be98261df305dbdaf05d830a0a8b6a1c2129bd2"
+  },
+  "passed": 50,
+  "prelaunch_review_sha256": "9663a30e356d05c57cdfb385f852c82ba053d508741376fc7f166ece02a06160",
+  "prepared_sha256": "f712c478bd2ee3f557fc465a6978f7e149c2d70ca1a23e02c07c4ee21a64ee9f",
+  "ray_calls": 0,
+  "scope": "Invented metric/interval/rounding/action controls only; no native direction or trial.",
+  "source_sha256": {
+    "data/development/cmj_tangent_step_plan_001/README.md": "d0cc467da8e4d597f45e9b7e9a2d3b90f648afbe9099c4f1fc1e8f3aace2460d",
+    "data/development/cmj_tangent_step_plan_001/provenance.json": "0f96724f68b0858c8df05871c8e867d92ab92ce780e3e540b87f813a43f385e8",
+    "data/development/cmj_tangent_step_source_001/controller.py": "d6a2b9943740652ce6b1a947d477b90fc9f251fbebd5af365a9f3a782bf8263b",
+    "data/development/cmj_tangent_step_source_001/execution.json": "c369fc6b5ab72c4b0586a7a16401d6148271b22d091f632abcbbe5349b2b778b",
+    "data/development/cmj_tangent_step_source_001/prepared.json": "141aed67b048a02909855f2ddad45e6a025aa28b9c0001b3d5f06bfc64192c12",
+    "data/development/cmj_tangent_step_source_001/root_failure_review.json": "902563d39403b5c43a42853cddf8a58b183e16d5ef1cd3755689624c8aa31e1c",
+    "data/development/cmj_tangent_step_source_001/source/diagnostics/check_tangent_metric_step.py": "996a23b31a191a88449369385a87bd040dd480fd23f5749975466502c4665658",
+    "data/development/cmj_tangent_step_source_001/source/diagnostics/tangent_metric_step.cpp": "dc2dc89e4b1d171c29e948d6328f8b3e5c3704e9c71744b66f2ec54985c0a876",
+    "data/development/cmj_tangent_step_source_001/summary.json": "8fde18534881c98f153650146a894cf1306bdf1e5c54b0a4767e4b41c0f97b95",
+    "data/development/hayward_cmj_face_action_001/event_981.json.gz": "365f7c9b338404203335bacc7c46db59389b1d45df64ea51ab4be812bfd5819d",
+    "data/development/hayward_cmj_face_action_001/event_987.json.gz": "800763cae8c46d1d41a8e6d6bf9998a631f8f3a7c183f72ddf5012bae4e5ddf4",
+    "data/development/hayward_cmj_face_action_001/execution.json": "c3655f6e72c7c99eeca6dc3724be4978d5bcd48ddc9773f035bfa7b373c4c933",
+    "data/development/hayward_cmj_face_action_001/model_provenance.json": "b2aaf8e17597cdcd00db18df0d50cc95502d34f1d81f7443d39b438823fb520c",
+    "data/development/hayward_cmj_face_action_001/prelaunch_review.json": "1ce2a61a1156b31f56405f929578bee783f89780c1d8adf75c753c6aa21804fb",
+    "data/development/hayward_cmj_face_action_001/prepared.json": "b76991263bddbaaaa75fd90b858f800fb4ec5339e40782b6aff8cf94f117ec08",
+    "data/development/hayward_cmj_face_action_001/review.json": "447091d4ec796691e7c3cfe8f852d0ae23a11cc7be74e11fcded101f6a37afc2",
+    "data/development/hayward_cmj_face_action_001/summary.json": "56c51845fa8ee9a2cefe1be09c78819b7eef6e79b4f7c0b4f7ca2b3580fe77d9",
+    "data/development/hayward_cmj_face_action_review_001/tangent_norms.json": "72b0c6cc9ce3dcb5acd15c537bbc6076a13361537e92a1ed9d5f1ccc6c70eaa0",
+    "data/development/hayward_trial_cmj_old_D_replay_001/prepared.json": "b83f9691eb0fc58d2580e269dded1a70d069daa560d716999139460ee6a8f159",
+    "data/development/hayward_trial_cmj_old_D_replay_001/source/old/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "data/development/hayward_trial_cmj_old_D_replay_001/source/old/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "data/development/loma_lon_straight_curvature_replay_001/run_v3.py": "89a9380bf33945dfb9e1330bc9eb4cc548138f0ff8280f2211e6b1c9e051773d",
+    "data/development/trilinear_action_controls_001/execution.json": "ddc4e06b7447fd507b28dd46d605a91f44d983104086810e321a83dc38f8b5ed",
+    "data/development/trilinear_action_controls_001/prepared.json": "32130c8bfe195de54d0ffefea8032f210adc36acf9524682ad60a6f186939b3b",
+    "data/development/trilinear_action_controls_001/review.json": "033cc56252dbcb34ea86ae0ac73679f36913fbd25a89a9e79e4877d4006342c3",
+    "data/development/trilinear_action_controls_001/summary.json": "e1778eb08b5c3937a77d085f803f10005cfc27d6c898c0e1665a1baddfd5aedb",
+    "diagnostics/check_cmj_face_action.py": "2cece5d0bbad7bbf6387be91683aea130775f087ef0b09eb312b875f3add7764",
+    "diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "diagnostics/check_tangent_metric_step.py": "b3a6d064c3719bb2614059c81c86b5f4972cfe8eb9458c40782db37c172646b7",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+    "diagnostics/tangent_metric_step.cpp": "7821c977158364c40b542a1145c764e0738054e61f6cdb8a5d7de0a909104f30",
+    "diagnostics/tangent_metric_step.py": "48134b5781ca7de4eee3ce45378f1e39d66c417730395365cf1ea444df412821",
+    "diagnostics/trilinear_action_bounds.py": "c3ea236e9f234659061eec6c44c55bacc83ee45313b2d8488061eb5405f103da"
+  },
+  "status": "passed"
+}

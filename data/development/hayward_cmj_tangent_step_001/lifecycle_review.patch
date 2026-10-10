@@ -1,0 +1,29 @@
+--- unexecuted_draft
++++ run.py
+@@ -232,7 +232,7 @@
+         if not group_members(child.pid):break
+     try:child.wait(timeout=10)
+     except subprocess.TimeoutExpired:pass
+-    return dict(live_members=group_members(child.pid),child_reaped=child.poll() is not None)
++    return dict(pgid=child.pid,live_members=group_members(child.pid),child_reaped=child.poll() is not None)
+ 
+ 
+ def main():
+@@ -307,7 +307,8 @@
+                     except BaseException:
+                         signal.pthread_sigmask(signal.SIG_SETMASK,old_mask);raise
+                     try:
+-                        signal.pthread_sigmask(signal.SIG_SETMASK,old_mask);item['pid']=child.pid;update()
++                        item['pid']=child.pid
++                        signal.pthread_sigmask(signal.SIG_SETMASK,old_mask);update()
+                         returned=child.wait()
+                         if returned!=0 or group_members(child.pid):raise RuntimeError('Helper failed or left live writers')
+                     except BaseException:
+@@ -332,6 +333,7 @@
+         require(sum(v['action_edge_evaluations'] for v in completed)<=2058,'Total action budget')
+         ledger['status']='completed_bounded_diagnostic';code=0
+     except BaseException as exc:
++        if isinstance(exc,SystemExit) and isinstance(exc.code,int):code=exc.code
+         ledger.update(status='failed_preserved',error=dict(type=type(exc).__name__,message=str(exc)))
+         if current is not None and answer is not None and not (current/'result.json.gz').exists():
+             answer['wrapper_failure']=ledger['error'];save(current/'result.json.gz',answer)
