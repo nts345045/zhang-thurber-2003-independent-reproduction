@@ -1,0 +1,196 @@
+{
+  "status": "passed",
+  "scope": "Invented extraction/CC/screen controls; never reads real waveform records.",
+  "checks": [
+    {
+      "name": "known_delay_-17_0_0",
+      "passed": true,
+      "status": "accepted_discrete_measurement",
+      "expected_delay_s": -0.17
+    },
+    {
+      "name": "direct_local_-17_0_0",
+      "passed": true,
+      "maximum_error": 5.551115123125783e-17
+    },
+    {
+      "name": "known_delay_-17_3000000_-2000000",
+      "passed": true,
+      "status": "accepted_discrete_measurement",
+      "expected_delay_s": -0.17500000000000002
+    },
+    {
+      "name": "direct_local_-17_3000000_-2000000",
+      "passed": true,
+      "maximum_error": 3.3306690738754696e-16
+    },
+    {
+      "name": "known_delay_0_0_0",
+      "passed": true,
+      "status": "accepted_discrete_measurement",
+      "expected_delay_s": 0.0
+    },
+    {
+      "name": "direct_local_0_0_0",
+      "passed": true,
+      "maximum_error": 2.220446049250313e-16
+    },
+    {
+      "name": "known_delay_0_3000000_-2000000",
+      "passed": true,
+      "status": "accepted_discrete_measurement",
+      "expected_delay_s": -0.005
+    },
+    {
+      "name": "direct_local_0_3000000_-2000000",
+      "passed": true,
+      "maximum_error": 2.220446049250313e-16
+    },
+    {
+      "name": "known_delay_16_0_0",
+      "passed": true,
+      "status": "accepted_discrete_measurement",
+      "expected_delay_s": 0.16
+    },
+    {
+      "name": "direct_local_16_0_0",
+      "passed": true,
+      "maximum_error": 2.220446049250313e-16
+    },
+    {
+      "name": "known_delay_16_3000000_-2000000",
+      "passed": true,
+      "status": "accepted_discrete_measurement",
+      "expected_delay_s": 0.155
+    },
+    {
+      "name": "direct_local_16_3000000_-2000000",
+      "passed": true,
+      "maximum_error": 5.551115123125783e-17
+    },
+    {
+      "name": "biased_picks_recover_known_true_difference",
+      "passed": true
+    },
+    {
+      "name": "gain_offset_1e-12_0",
+      "passed": true
+    },
+    {
+      "name": "gain_offset_1000000000000.0_0",
+      "passed": true
+    },
+    {
+      "name": "gain_offset_7_100000.0",
+      "passed": true
+    },
+    {
+      "name": "nearest_sample_-500000000_-995000000",
+      "passed": true
+    },
+    {
+      "name": "nearest_sample_-500000000_-994999999",
+      "passed": true
+    },
+    {
+      "name": "nearest_sample_-500000000_-995000001",
+      "passed": true
+    },
+    {
+      "name": "nearest_sample_-500000000_-495000000",
+      "passed": true
+    },
+    {
+      "name": "incomplete_entire_support_template",
+      "passed": true
+    },
+    {
+      "name": "incomplete_entire_support_search",
+      "passed": true
+    },
+    {
+      "name": "unsupported_rate_retained",
+      "passed": true
+    },
+    {
+      "name": "constant_template_rejected",
+      "passed": true
+    },
+    {
+      "name": "constant_search_rejected",
+      "passed": true
+    },
+    {
+      "name": "nonfinite_rejected",
+      "passed": true
+    },
+    {
+      "name": "masked_gap_rejected",
+      "passed": true
+    },
+    {
+      "name": "reversed_polarity_not_absolute_peak",
+      "passed": true
+    },
+    {
+      "name": "boundary_peak_25",
+      "passed": true
+    },
+    {
+      "name": "boundary_peak_75",
+      "passed": true
+    },
+    {
+      "name": "multiple_peaks_rejected",
+      "passed": true
+    },
+    {
+      "name": "unrelated_screen_fails",
+      "passed": true
+    },
+    {
+      "name": "zero_power_screen_unresolved",
+      "passed": true
+    },
+    {
+      "name": "spectral_delay_smoothing_0.05",
+      "passed": true,
+      "expected_squared_coherence": 0.9702335007997046
+    },
+    {
+      "name": "spectral_delay_smoothing_0.1",
+      "passed": true,
+      "expected_squared_coherence": 0.8850689031642209
+    },
+    {
+      "name": "spectral_delay_smoothing_0.25",
+      "passed": true,
+      "expected_squared_coherence": 0.43796582755763686
+    },
+    {
+      "name": "sample_spacing_not_sigma",
+      "passed": true
+    }
+  ],
+  "versions": {
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "obspy": "1.5.1"
+  },
+  "source_sha256": {
+    "diagnostics/check_normalized_waveform_measurement.py": "61f943dd90b7e7a46d7ed7f717bc91aac7793c56138c8ee632515b59d2fd1742",
+    "diagnostics/normalized_waveform_cc.py": "58849c65415e73862764f121c6962fe15c0e958b36699e730ebdc4adfa4cd48f",
+    "data/development/normalized_correlation_specification/README.md": "fb656f2eddefb0c7fd2641e0d88367800d4742f475a0c0a2163b0596c30e8845"
+  },
+  "output_sha256": {
+    "invented_arrays.npz": "6ddb1de28822d872b1ed01f52944f03ad1611f32089edc5c4e5933640f981697",
+    "check_normalized_waveform_measurement.py": "61f943dd90b7e7a46d7ed7f717bc91aac7793c56138c8ee632515b59d2fd1742",
+    "normalized_waveform_cc.py": "58849c65415e73862764f121c6962fe15c0e958b36699e730ebdc4adfa4cd48f",
+    "README.md": "fb656f2eddefb0c7fd2641e0d88367800d4742f475a0c0a2163b0596c30e8845"
+  },
+  "limitations": [
+    "Invented arrays only; authoritative decoding, native joins and export are separate.",
+    "Discrete lag and empirical coherence screen do not establish a timing uncertainty."
+  ]
+}
