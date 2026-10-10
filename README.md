@@ -136,7 +136,10 @@ finds that supplying the correct earliest guide branch still leaves 39 of 40
 optimized paths failing their local stopping rule. The finest paths can have
 accurate times and source derivatives while ordinary gradients at the
 velocity-gradient interface remain unsuitable for the stopping test. A
-separate [complete continuous layered reference](data/development/loma_layered_full_002/README.md)
+subsequent [directional diagnostic](data/development/interface_directional/001/README.md)
+also finds a small tangential descent in the retained finest row-5
+polygon. Relabeling its local flag would hide that residual optimization error.
+A separate [complete continuous layered reference](data/development/loma_layered_full_002/README.md)
 now passes all 37,648 pairs and an independent native-identity review. It supplies
 an explicit alternative source of synthetic truth. The integration branch provides a
 [reviewed-reference exporter](data/development/analytic_truth_preparation_checks_001/README.md)
@@ -149,6 +152,20 @@ streaming audit passes every row, including identities and timing arithmetic.
 The [verified lossless publication](data/published/loma_lom_analytic_001/README.md)
 retains the complete run in ten archive parts totaling 504 MB, with readable
 geometry, manifests, and reviews. No Loma inversion result is implied.
+The second, [LON-profile simulation](data/published/loma_lon_analytic_001/README.md)
+also passes its complete audit. Actual
+file comparison confirms identical simulated observations and perturbed sources,
+while all 288 starting velocity values differ. The complete LOM starting-model
+reference passes; the separate LON reference preserves one distance-closure
+failure with its selected time and derivatives blank. The full LOM initial-ray
+and matrix-census preflight is active.
+
+A new [inversion forward guard](data/development/inversion_ray_gate_checks/README.md)
+on the integration branch rejects locally unconverged or otherwise invalid rays
+before Jacobian, trial-objective, or final-output use. It preserves identified
+failed paths and model states separately from the last accepted state. Controlled
+checks preserve successful inversion outputs byte for byte; this is failure
+handling, not a first-arrival or nonlinear-convergence certificate.
 Run these newer diagnostic and simulation commands from the
 [`first-arrival-integration` branch](https://github.com/nts345045/zhang-thurber-2003-independent-reproduction/tree/first-arrival-integration).
 
@@ -159,7 +176,11 @@ only 2 of 20 frequency bins pass, where 10 are required. No waveform difference
 was added. An [offline full-cohort metadata audit](data/authoritative/waveforms/cohort_plan_001/README.md)
 preserves every catalog observation and identifies a calibration gap for 117
 NC.CMW1 picks from 1995–1998; saved StationXML responses begin in 2000.
-Further retrieval is paused for clarification. Provider orientation metadata,
+The user clarified that normalized waveform cross-correlation should produce
+dt.cc inputs without requiring calibration corrections. Retrieval may proceed
+using the documented EQcorrscan workflow as a reference; missing response
+metadata remain explicit and the rejected pilot remains preserved.
+Provider orientation metadata,
 rather than channel-name suffixes, distinguish vertical channels from other
 orientations. These audit categories establish no study exclusion.
 

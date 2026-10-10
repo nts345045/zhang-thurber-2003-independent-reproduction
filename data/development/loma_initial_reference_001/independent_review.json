@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "reviewer": "earthscope_discovery",
+  "reviewed_utc": "2026-10-10T03:38:20.260838Z",
+  "scope": "Independent terminal artifact, native identity, original-axis derivative and finite-domain readback; no reference recomputation or numerical forward/inverse solve",
+  "summary_sha256": "f6f646d397b804a8bcc83889efb01c5c8ccb5c9296073706051ddf0c9117abf3",
+  "execution_sha256": "7b89d3d77842bfd7e9354900bac1201302de85efe2f6ac0719f87c6fe7b7387e",
+  "verified_pairs": 37648,
+  "invalid_reference_count": 0,
+  "candidate_count": 37750,
+  "native_metadata_fields_all_match": true,
+  "ordered_indices_complete": true,
+  "source_derivative_xyz_matches": true,
+  "source_derivative_coordinate_mapping": "Original x,y,z axes; no permutation",
+  "source_time_metadata_preserved_and_excluded_from_saved_propagation_time": true,
+  "pairs_with_nonzero_preserved_source_t": 37648,
+  "source_indices_on_box_faces": [
+    31,
+    246,
+    287,
+    318,
+    411,
+    433,
+    463,
+    467,
+    507
+  ],
+  "boundary_flags_all_match_native_geometry": true,
+  "finite_box_and_depth_only_profile_verified": true,
+  "output_hashes_verified_before_and_after": 16,
+  "original_input_and_source_hashes_verified": 14,
+  "candidate_distance_closure_max_km": 4.26530277763959e-09,
+  "horizontal_derivative_direction_error_max_s_per_km": 5.551115123125783e-17,
+  "branch_counts": {
+    "turning": 19367,
+    "direct": 18221,
+    "bottom_boundary": 59,
+    "flat_direct": 1
+  },
+  "reference_comparison_ready": true,
+  "material_issue_found": false,
+  "limitations": [
+    "This is an independent artifact/identity/coordinate audit, not an independent rederivation of the reference equations.",
+    "The saved monotone reference retains ordinary floating-point minimum-time ordering and its stated boundary-derivative limitations.",
+    "A valid reference batch does not establish numerical forward-ray or inverse accuracy."
+  ]
+}

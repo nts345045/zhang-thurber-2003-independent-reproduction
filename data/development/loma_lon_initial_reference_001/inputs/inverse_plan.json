@@ -1,0 +1,91 @@
+{
+  "status": "reference_only_plan",
+  "scope": "Independent full initial-z references for the saved LON model; no forward solver or inverse launch",
+  "actual_run": "data/loma_lon_analytic_001",
+  "input_sha256": {
+    "initial_events.csv": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+    "stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "initial_grid.csv": "121eb9afae309427db7dc579f951d1732ce6f28d674948889bde91ca88d5dcd0",
+    "run.cfg": "7295bfade7819f06b9f521ec0665b830c311b30b3748025f69e67b1e7c532b88",
+    "ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "preparation_manifest.json": "ae361697f110ae6886e9e6e16dae24ccc9b9db8dee2cbd191043ba6daea12411",
+    "analytic_truth_manifest.json": "64661c55d2a73b20841b83bafb35cdc0184f30bf4cbc00492869beb9863c46df",
+    "simulation_execution.json": "c209a4550dda670ddeaff018de744343148c677d6feaf6d7d80097e5ea80395f",
+    "simulation_run_manifest.json": "a2bc7f143b37837090f6f97ee175757d5400c9d9f9757d65745620e65c37594a",
+    "independent_simulation_review.json": "01483067c89c4df00f4807961eb2c8d7fddf4f8c2c6a368d9bff3c03213e0eff"
+  },
+  "source_sha256": {
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "diagnostics/run_loma_initial_reference.py": "803baacdd49652c342b9d9ed56b6782ece5669d6f45f65ab4e7544893705cfb5",
+    "data/development/loma_lon_initial_reference_plan_001/prepare.py": "f1ed02300a13a1ab90118faf9038a5b1484ab1a047fe2162ac75ad16c7b08d40"
+  },
+  "expected_pairs": 37648,
+  "source_count": 724,
+  "receiver_count": 52,
+  "initial_profile_depth_velocity": [
+    [
+      -1.0,
+      2.53
+    ],
+    [
+      0.0,
+      2.53
+    ],
+    [
+      3.0,
+      5.50640625
+    ],
+    [
+      7.0,
+      6.03765625
+    ],
+    [
+      11.0,
+      6.345629139072848
+    ],
+    [
+      16.0,
+      6.478079470198676
+    ]
+  ],
+  "original_box_km": [
+    [
+      -35.0,
+      35.0
+    ],
+    [
+      -60.0,
+      40.0
+    ],
+    [
+      -1.0,
+      16.0
+    ]
+  ],
+  "initial_nodes": 288,
+  "source_time_included": false,
+  "shared_geometry_and_distinct_grid": {
+    "initial_events.csv": {
+      "lom": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+      "lon": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+      "byte_identical": true
+    },
+    "stations.csv": {
+      "lom": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+      "lon": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+      "byte_identical": true
+    },
+    "initial_grid.csv": {
+      "lom": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+      "lon": "121eb9afae309427db7dc579f951d1732ce6f28d674948889bde91ca88d5dcd0",
+      "byte_identical": false
+    }
+  },
+  "reviewed_observation_sha256_equal": true,
+  "observation_hash_basis": "The two passed exhaustive audits bind these hashes; observations are not reread or reused by this reference calculation.",
+  "limitations": [
+    "Only geometry may be byte identical to LOM; the initial velocity profile differs and every LON reference is recomputed.",
+    "Existing root/closure gates, native identities and finite box remain unchanged.",
+    "This is not a request or acceptance for LON numerical forward or inverse calculations."
+  ]
+}

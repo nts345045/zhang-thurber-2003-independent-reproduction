@@ -1,0 +1,44 @@
+{
+  "scope": "Normalized waveform workflow clarification, reviewed LON simulation publication, interface directional diagnosis and guarded inverse failure handling; corrected inversion remains pending",
+  "created_utc": "2026-10-10T04:08:07.830299+00:00",
+  "evidence_commit": "9a85707bd071ec24db17ed1beaaed5bd12e8cb2c",
+  "validation": {
+    "pdf_pages": 99,
+    "pdf_bytes": 1763630,
+    "pdflatex_exit": 0,
+    "no_undefined_references_errors_or_overfull_boxes": true,
+    "new_report_pages_visually_inspected": [
+      27,
+      28,
+      29,
+      30
+    ],
+    "panel_statuses": {
+      "independently reproduced": 1,
+      "partially reproduced": 27,
+      "not reproduced": 34
+    }
+  },
+  "sha256": {
+    "README.md": "767958376a32031820d83c0939b687460e250fe43395857b7c427ffd1066dc0c",
+    "report/report.tex": "289034e2eae49f6230f2d82c6e0005ab989af6e6443e1293382d6bcafd7f6efe",
+    "report/recovery_checkpoint.tex": "5277a859085ede9be28941f5f8e17b7d638f2254221f5f2ed231fbcc6ec6d25a",
+    "report/report.pdf": "77a24d322ffc8a4bb81c2ef94d6a293927a842d44e84c858a3c66f037c04a0ab",
+    "data/panel_audit.csv": "e8b115d93a4db2a1a12ab58f160aa68496ba6c1c06f4eb31b9538f0ed6d55a03",
+    "data/published/loma_lon_analytic_001/manifest.json": "9ccab3cb28abe7d6480b4b0c88ef88e31f487bdf183687b22c4ef1485ef13093",
+    "data/development/loma_variant_comparison_001/overlay_review.json": "428f1ca35dff917309996a7ad90b0f734d634962f04a4ad54c1343273b845428",
+    "data/development/interface_directional/001/summary.json": "581907db8552db102c47e2cae2812fc07b05307f11b7b316af9205eec755c88e",
+    "data/development/interface_directional/001/review/summary.json": "8bcb9873fa800af14a4986bfee2cf277c51c67c9885c2c4af16d59569f5b7573",
+    "data/development/inversion_ray_gate_checks/004/summary.json": "dc7fddb0c8d83f8ac97b7c245ad6a685230afdb25c356f50456592b92d146fad",
+    "data/development/inversion_ray_gate_checks/independent_review.json": "09115e5963971d3dc6bec134ccb1fc1381d9d654c8b6ce83f998858e86575652",
+    "data/development/loma_initial_reference_001/summary.json": "f6f646d397b804a8bcc83889efb01c5c8ccb5c9296073706051ddf0c9117abf3",
+    "data/development/loma_lon_initial_reference_001/summary.json": "754fac2f78bb23952fa44af22ac0d59267e43ca5a2ccca1f9965ffce628ffa1b"
+  },
+  "limits": [
+    "Hayward sampled refinement and LOM initial-forward preflight remain active at this checkpoint.",
+    "LON initial-reference attempt001 retains one invalid reference with blank selected time and derivatives.",
+    "Guard controls validate rejection and preservation of invalid forward states; they do not establish global arrival or inverse accuracy.",
+    "Missing historical responses no longer gate normalized correlation retrieval; no new waveform differential observation is adopted at this checkpoint.",
+    "Original main-worktree source, inputs and executable remain frozen while the baseline run is live."
+  ]
+}

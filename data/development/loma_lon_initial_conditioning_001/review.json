@@ -1,0 +1,39 @@
+{
+  "status": "passed_for_diagnostic_evidence_only",
+  "scope": "Saved-table/source/hash review; original invalid reference is not promoted",
+  "summary_sha256": "8b26f7ec57179cb73faf4290c6af870524c7ef1c53127640fb39b816ae1d1096",
+  "diagnostic_source_sha256": "95be9906d1c287114c67560b8dc18f6220a4ff70dcf064de0deea9626d6b4ad5",
+  "native_identity": {
+    "pair_index": "8156",
+    "event": "156",
+    "station": "44",
+    "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/255127",
+    "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2644594",
+    "receiver_channel_seed_id": "NC.JSC..EHZ",
+    "receiver_channel_fdsn_source_id": "FDSN:NC_JSC__E_H_Z",
+    "receiver_metadata_epoch_start": "1989-05-10T21:40:00",
+    "receiver_metadata_epoch_end": "1990-10-04T20:15:00"
+  },
+  "all_recorded_artifact_hashes_match": true,
+  "original_failed_gate_preserved": true,
+  "nearby_parameter_count": 27,
+  "identifier_mapping": "Every nearby_parameters.csv row joins to summary.json.native_row; one fixed native pair only",
+  "arithmetic_decomposition": {
+    "original_double_leg_minus_independent_same_u_closure_km": "1.138524257171001380579377336800616972912700888229136003739068015236732869887668788848E-14",
+    "original_u_minus_retained_midpoint_closure_km": "1.079602996087867181888009690938479103070384826606318661125631441612349430223431915352257446E-8",
+    "original_candidate_minus_independent_root_action_s": "1.699419846523946150241750350108167594672749078392812332715772744590987701525868196636526877E-9",
+    "root_action_80_100_difference_s": "1.644445314416156880698474131803363473123E-60",
+    "root_r_80_100_difference": "2.1070675841991519141064410379138397270336284E-61"
+  },
+  "independent_arithmetic_review": {
+    "reviewer": "earthscope_discovery",
+    "method": "Read-only source and completed result inspection; no rerun",
+    "material_issue_found": false,
+    "findings": "Reciprocal-affine Snell legs, partial turning additions, source signs and fixed binary64 geometry target are consistent. Exact original replay isolates rounded-u reconstruction. Retained midpoint meets existing closure without changing the gate; 80/100-digit results agree. Scope remains one pre-isolated branch with no replacement."
+  },
+  "limitations": [
+    "No directed-rounding high-precision certificate or new branch completeness proof.",
+    "Neighbouring values demonstrate conditioning, not a proposed ad hoc nextafter selection rule.",
+    "Any arithmetic correction requires separate implementation/regression/finite-boundary and derivative validation."
+  ]
+}

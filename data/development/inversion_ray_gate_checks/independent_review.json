@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "reviewer": "independent ray-math/source review",
+  "scope": "Read-only source/fixture/artifact review; no solver or test rerun by reviewer",
+  "variant": "004",
+  "summary_sha256": "dc7fddb0c8d83f8ac97b7c245ad6a685230afdb25c356f50456592b92d146fad",
+  "reviewed_source_sha256": {
+    "src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "diagnostics/check_inversion_ray_gate.cpp": "be0370a1f1c364555479dcf246e7b2ba133c1f44bc6dc5d51eb2987f2e76a9fc",
+    "diagnostics/run_inversion_ray_gate_checks.py": "5abb1cb1a3782191b4610652a59f58b4b5c685a3bdf5228f586d4c55caab6370"
+  },
+  "all_recorded_source_and_artifact_hashes_match": true,
+  "artifact_hash_count": 190,
+  "findings": {
+    "current_rays_checked_before_residual_and_jacobian": true,
+    "trial_rays_checked_before_objective": true,
+    "final_rays_checked_before_conventional_final_outputs": true,
+    "failed_candidate_distinct_from_last_accepted_or_initial_state": true,
+    "existing_flags_are_tested_without_relabeling": true,
+    "finite_domain_endpoint_initializer_and_dimension_checks": true,
+    "failed_status_reasons_and_path_vertices_preserve_native_ids_and_epochs": true,
+    "failure_state_and_path_serialization_uses_17_significant_digits": true,
+    "source_partials_blank_for_action_only_and_caught_empty_worker_rays": true,
+    "derivatives_requested_distinguished_from_returned_derivative_arrays": true,
+    "failed_coordinate_metadata_labels_only_copies": true,
+    "default_status_writer_and_preflight_bytes_unchanged": true,
+    "seven_successful_loc1d_outputs_byte_identical_to_parent": [
+      "loc1d_coverage.csv",
+      "loc1d_events.csv",
+      "loc1d_grid.csv",
+      "loc1d_history.csv",
+      "loc1d_matrix_preflight.csv",
+      "loc1d_residuals.csv",
+      "loc1d_slices.csv"
+    ],
+    "parent_unconverged_ray_use_reproduced_in_invented_fixture": true,
+    "material_issue_found": false
+  },
+  "limitations": [
+    "Passing existing local convergence and initializer flags is not a global first-arrival or continuous time/source accuracy certificate.",
+    "An invalid line-search forward evaluation aborts with its failed candidate and last accepted state; it is not an adaptive backtracking or restart implementation.",
+    "Only failed-ray vertices are saved; an empty ray is explicit in status and contributes no vertex rows. Exceptions before a ray array exists retain state/context rather than inventing per-ray evaluations.",
+    "Returned derivative dimensions distinguish requested/unevaluated arrays; finite-ray checks remain separate from the metadata flag.",
+    "The tested paths use fresh output directories. This change does not implement cleanup or provenance reconciliation of unrelated pre-existing final files.",
+    "No real inversion was run in this review or component evidence."
+  ]
+}
