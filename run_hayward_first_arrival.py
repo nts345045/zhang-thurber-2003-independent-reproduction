@@ -61,7 +61,7 @@ if args.phase == 'preflight':
     config = (ROOT/'configs/hayward.cfg').read_text()
     (out/'run.cfg').write_text(config+'\n# Assessed starting discretization; refinement is recorded separately.\n'
                              'ray_initializer 1\nfmm_spacing 0.5\n')
-    sources = [Path('CMakeLists.txt'), Path(__file__).relative_to(ROOT),
+    sources = [Path('CMakeLists.txt'), Path(__file__).resolve().relative_to(ROOT),
                *[p.relative_to(ROOT) for p in sorted((ROOT/'src').glob('*')) if p.is_file()]]
     for source in sources:
         target = snapshot/source
