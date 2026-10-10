@@ -1,0 +1,13 @@
+# One old-kernel catalog-DD attempt, prepared only
+
+`plan.json` specifies one fresh attempt in `data/hayward_old_kernel_backtracking_001`, with a separate build at `tmp/hayward_old_kernel_backtracking_runs/001`. The command uses the reviewed separately named launcher. It retains all 58,980 catalog observations and 14,262 native event/receiver pairs from Hayward004; it does not import the separately prepared CC rows.
+
+The exact old mathematical kernel and main-only backtracking candidate are selected by their source hashes and published source-adoption bridge. The maintained D kernel and original failed attempt are unchanged. The initial model, event/channel identities, weighting, eighteen iterations, six-iteration stages, path spacing0.03125km, FMM spacing0.125km and 1000 local-ray update budget are unchanged. Execution is limited to four OpenMP threads and128GiB address space.
+
+Preparation consumed passed source, scientific-accuracy, actual-loop/core/external/guard and launcher lifecycle reviews. The reviewed base Git commit is provenance only. Eligibility depends on exact code, data, evidence, compiler and runtime bytes; a publication commit adding documentation does not invalidate those byte-level gates. The actual controller and inversion manifests separately record their execution commits and freshly built binary.
+
+`controller.py` requires a final hash-bound `launch_review.json` and fresh output/build/controller directories. Its stdout/stderr and lifecycle ledger live outside numerical output at `tmp/hayward_old_kernel_backtracking_controllers/001`. It owns/reaps the launcher and records the actual return code. Interruption first allows the tested launcher to settle its numerical process group. An unexpectedly orphaned recorded group is settled and retained as failure; logs are not hashed while recorded writers remain. The controller does not label a successful process exit as scientific success.
+
+The completed launcher and evidence packages must be restored to their original paths before execution; neither this controller nor the launcher downloads, recreates, or silently substitutes missing evidence. Current source/runtime/input pins are verified again at launch. This preparation has not executed the inverse. The final launch review and publication are separate requirements.
+
+Even a terminal zero-exit inversion remains pending final-model diagnostics and independent scientific review. Initial one-dimensional reference accuracy does not establish updated three-dimensional accuracy or global first arrival. The unchanged final guard is enforced by the pinned binary but emits no standalone all-success ray table. No other inversion mode, CC experiment, or Loma inverse runs automatically.

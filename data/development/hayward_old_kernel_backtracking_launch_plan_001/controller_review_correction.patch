@@ -1,0 +1,51 @@
+--- reviewed_controller6c3d4bd4
++++ controller.py
+@@ -48,6 +48,14 @@
+             require(inner['driver_pid']==process.pid,'Inner ledger belongs to another launcher')
+             return inner.get('current_child_pid')
+         return None
++    def cleanup_group():
++        try:return recorded_inner_group()
++        except Exception as error:
++            # Keep the original failure; a malformed ledger cannot identify a
++            # process group safely and must not permit partial-output hashing.
++            ledger.setdefault('cleanup_errors',[]).append(type(error).__name__+': '+str(error))
++            ledger['group_inventory_unresolved']=True
++            return None
+     def stop_group(group):
+         if group is None:return
+         for sig in (signal.SIGTERM,signal.SIGKILL):
+@@ -85,8 +93,8 @@
+             process.send_signal(signal.SIGTERM)
+             try:process.wait(timeout=35)  # Allow the tested launcher to settle its inner group first.
+             except subprocess.TimeoutExpired:
+-                stop_group(recorded_inner_group());process.kill();process.wait()
+-        group=recorded_inner_group();stop_group(group)
++                stop_group(cleanup_group());process.kill();process.wait()
++        group=cleanup_group();stop_group(group)
+         remaining=live_group_members(group) if group is not None else []
+         ledger.update(status='interrupted' if isinstance(error,(SystemExit,KeyboardInterrupt)) else 'failed_preserved',
+                       error=str(error),return_code=getattr(error,'code',1),
+@@ -94,15 +102,19 @@
+                       launcher_return_code=process.returncode if process is not None else None,
+                       remaining_live_group_members=remaining)
+     ledger['finished_utc']=utc()
+-    if ledger.get('remaining_live_group_members'):
+-        ledger['partial_hash_status']='withheld: live owned process-group writers remain'
++    if ledger.get('remaining_live_group_members') or ledger.get('group_inventory_unresolved'):
++        ledger['partial_hash_status']='withheld: live or unidentified owned process-group writers may remain'
+     else:
+         ledger['log_sha256']={name:sha(logs/name) for name in ('driver_stdout.log','driver_stderr.log') if (logs/name).exists()}
+         inner_path=out/'dd_inversion_execution.json'
+         if inner_path.exists():ledger['inner_execution_sha256']=sha(inner_path)
+         ledger['partial_hash_status']='Only closed controller logs and the saved launcher ledger after recorded groups settle are pinned here; its original status is preserved and numerical outputs belong to that ledger.'
+     atomic_json(state,ledger)
+-    raise SystemExit(0 if ledger['status']=='launcher_reaped' else 1)
++    exit_code=ledger.get('return_code',1)
++    if ledger['status']=='launcher_reaped':exit_code=0
++    elif not isinstance(exit_code,int) or exit_code==0:exit_code=1
++    elif exit_code<0:exit_code=128-exit_code
++    raise SystemExit(exit_code)
+ 
+ 
+ if __name__=='__main__':main()

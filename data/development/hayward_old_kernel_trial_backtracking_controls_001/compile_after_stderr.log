@@ -1,0 +1,7 @@
+/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_controls_001/source/diagnostics/check_trial_backtracking.cpp: In constructor 'Fixture::Fixture(std::__cxx11::string, double, int)':
+/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_controls_001/source/diagnostics/check_trial_backtracking.cpp:111:5: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+     for (const auto &v:c.v) cfg << v.first << ' ' << v.second << '\n'; cfg.close();
+     ^~~
+/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_controls_001/source/diagnostics/check_trial_backtracking.cpp:111:72: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'for'
+     for (const auto &v:c.v) cfg << v.first << ' ' << v.second << '\n'; cfg.close();
+                                                                        ^~~

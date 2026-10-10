@@ -1,0 +1,48 @@
+{
+  "status": "completed_and_reaped",
+  "recorded_utc": "2026-10-10T10:18:26.160455+00:00",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 data/development/internal_ridge_stationarity_controls_001/run.py",
+  "owned_exec_session": 38974,
+  "terminal_tool_chunk": "d5f262",
+  "observed_command_exit_code": 0,
+  "summary_sha256": "8b094968da699480af6ddbbb18f12c5a67b9bb6f1451525c759c5cb2de500dfc",
+  "execution_sha256": "594dd7106770446769c4aed73dbdcb4da084070c58cde57fdef1573ee157692f",
+  "child_commands": [
+    {
+      "stage": "compiler_version",
+      "pid": 339865,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:17:21.020559+00:00"
+    },
+    {
+      "stage": "compile",
+      "pid": 339866,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:17:27.861552+00:00"
+    },
+    {
+      "stage": "runtime_libraries",
+      "pid": 339953,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:17:28.101936+00:00"
+    },
+    {
+      "stage": "observe",
+      "pid": 339958,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:17:28.335817+00:00"
+    },
+    {
+      "stage": "exact_and_saved_checks",
+      "pid": 339959,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:17:28.672471+00:00"
+    }
+  ],
+  "live_child_group_members_at_readback": [],
+  "output_sha256": {
+    "RESULTS.md": "7442c0347cbbdce08dc8caa8866545f1a0fb6641303dda84304bc71f3156981a",
+    "read_saved.py": "f04c77deb56a78ef482ac5c7bbd1af2c3861050316f2f289568bc125d07f1134",
+    "saved_readback.json": "2f62b6e5eb191aea9a85c64f77a52b0f3dc9bfe9c7c605763b55c3c74bac0caa"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "status": "completed",
+  "prepared_sha256": "bf8a826e91b9d7554a74fca1e9c0c99d4b23c0b623c372a3d2048f786b63321c",
+  "commands": [
+    {
+      "name": "compile_before",
+      "argv": [
+        "/usr/bin/g++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "-I",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_backtracking_controls_002/source/before/src",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_backtracking_controls_002/source/diagnostics/check_trial_backtracking.cpp",
+        "-lstdc++fs",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/trial_backtracking_checks/002/before"
+      ],
+      "status": "completed",
+      "return_code": 0,
+      "seconds": 31.745234514935873
+    },
+    {
+      "name": "before",
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/trial_backtracking_checks/002/before",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_backtracking_controls_002/results/before"
+      ],
+      "status": "completed",
+      "return_code": 0,
+      "seconds": 0.012244181940332055
+    },
+    {
+      "name": "compile_after",
+      "argv": [
+        "/usr/bin/g++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "-DCANDIDATE",
+        "-I",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_backtracking_controls_002/source/after/src",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_backtracking_controls_002/source/diagnostics/check_trial_backtracking.cpp",
+        "-lstdc++fs",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/trial_backtracking_checks/002/after"
+      ],
+      "status": "completed",
+      "return_code": 0,
+      "seconds": 37.737168538966216
+    },
+    {
+      "name": "after",
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/trial_backtracking_checks/002/after",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_backtracking_controls_002/results/after"
+      ],
+      "status": "completed",
+      "return_code": 0,
+      "seconds": 0.24189220392145216
+    }
+  ],
+  "return_code": 0
+}

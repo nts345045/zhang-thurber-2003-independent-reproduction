@@ -1,0 +1,112 @@
+
+
+CANDIDATE = 'hayward_old_kernel_trial_backtracking_candidate_001'
+ACTUAL = 'hayward_old_kernel_trial_backtracking_controls_001'
+INTEGRATION = 'hayward_old_kernel_trial_backtracking_integration_checks_002'
+COMPLETION = 'hayward_trial_completion_candidate_002'
+COMPLETION_CHECKS = 'hayward_trial_completion_checks_002'
+COMPLETION_HELPER = '8406148ed92afa18c43bf96693aaa78185f7961e99e567e4f8aced6d1d858392'
+SOURCE_REVIEWS = {
+    CANDIDATE+'/prepared.json':'5bb45c57b3f594485abbaf144da3b540f2c7f8d42dc783837976fbe33b5d96dd',
+    CANDIDATE+'/root_source_review.json':'c168b6c54018015399608e4d0b28e1854af34020e2cd1a00b78f99e0a466ee54',
+    ACTUAL+'/review.json':'fc750af56ea2d2333c7c1c2856a629181ca96a233fec2fd831ee5fd82b5bad5f',
+    ACTUAL+'/math_review.json':'f5822b254f0f5404153a6ae1ca69e78a569bfe2cc40907417f1e62068e994e4e',
+    INTEGRATION+'/review.json':'7faa22a6bb009a3c8c5470ffb4e7cff6dddf02987dfb3c18db032f7e362fdda6',
+    COMPLETION_CHECKS+'/review.json':'e975435edc021696f0e8766e6e7bcb15a45c8bfa2d09e09388ad4e35e2e7374c'}
+
+
+def compiler_from_cache(text):
+    entries=[line for line in text.splitlines() if line.startswith(('CMAKE_CXX_COMPILER:', 'CMAKE_CXX_COMPILER='))]
+    require(len(entries)==1 and ':' in entries[0] and '=' in entries[0],
+            'Require one well-formed CMake compiler cache key')
+    compiler=entries[0].split('=',1)[1]
+    require(bool(compiler), 'Require a nonempty CMake compiler cache value')
+    return compiler
+
+
+def source_adoption(parity, preflight):
+    """Explicit restored-file bridge; no retrieval, recomputation, or maintained source substitution."""
+    development=ROOT/'data/development'; evidence={}
+    def pinned(base, mapping):
+        for name,digest in mapping.items():
+            raw=base/name
+            require(not Path(name).is_absolute() and '..' not in Path(name).parts and not raw.is_symlink(),
+                    'Unsafe or symlink reviewed evidence path: '+str(raw))
+            path=inside(ROOT,raw)
+            require(path==raw and path.is_file(),
+                    'Missing regular reviewed evidence; restore the published evidence archive: '+str(path))
+            require(sha(path)==digest, 'Changed reviewed evidence: '+str(path))
+            evidence[str(path.relative_to(ROOT))]=digest
+    def document(base,name):
+        path=base/name
+        require(path.is_file() and not path.is_symlink(), 'Missing restored review document: '+str(path))
+        pinned(base,{name:sha(path)})
+        return load(path)
+    pinned(development,SOURCE_REVIEWS)
+    candidate=development/CANDIDATE
+    prepared=document(candidate,'prepared.json')
+    pinned(ROOT,prepared['input_sha256']);pinned(candidate,prepared['output_sha256'])
+    review=document(candidate,'root_source_review.json')
+    require(review['status']=='passed_source_review' and review['prepared_sha256']==sha(candidate/'prepared.json'),
+            'Source adoption review does not bind the candidate')
+    require(prepared['changed_source_files']==['src/main.cpp'], 'Old-kernel candidate changed more than main')
+    selected={name:candidate/'after'/name for name in prepared['original_sha256']}
+    before=prepared['original_sha256'];after={name:sha(path) for name,path in selected.items()}
+    require(before=={name:parity['guarded_source_sha256'].get(name) for name in before}, 'Candidate before-source differs from reviewed guard bridge')
+    require(before['src/main.cpp']==REVIEWED_GUARD_MAIN and after['src/main.cpp']==TRIAL_MAIN,
+            'Unexpected main in004-to-guard-to-backtracking bridge')
+    require(all(after[name]==digest for name,digest in before.items() if name!='src/main.cpp'),
+            'A mathematical kernel or CMake file changed')
+    require(prepared['bridge']['preflight_main_sha256']==preflight['source_sha256']['src/main.cpp'],
+            'Candidate bridge starts from another preflight main')
+    for name,digest in prepared['bridge']['identical_shared_kernel_and_cmake_sha256'].items():
+        require(preflight['source_sha256'][name]==after[name]==digest, 'Initial mathematical kernel changed: '+name)
+    for dirname in (ACTUAL,INTEGRATION,COMPLETION_CHECKS):
+        directory=development/dirname
+        summary=document(directory,'summary.json');execution=document(directory,'execution.json')
+        checked=document(directory,'review.json');plan=document(directory,'prepared.json')
+        require(summary['status']==checked['status']=='passed' and execution['status']=='completed' and
+                execution['return_code']==0, 'Required reviewed suite did not complete successfully: '+dirname)
+        summary_key='controls_summary_sha256' if dirname==COMPLETION_CHECKS else 'summary_sha256'
+        require(checked[summary_key]==sha(directory/'summary.json') and
+                checked['execution_sha256']==sha(directory/'execution.json'), 'Stale suite review: '+dirname)
+        require(summary['prepared_sha256']==sha(directory/'prepared.json'), 'Stale suite preparation')
+        for key in ('artifact_sha256','output_sha256','source_sha256'):
+            if isinstance(summary.get(key),dict):pinned(directory,summary[key])
+        if dirname!=COMPLETION_CHECKS:
+            require(plan['candidate_prepared_sha256']==sha(candidate/'prepared.json'), 'Suite used another candidate')
+            pinned(ROOT,plan.get('input_sha256',plan.get('original_sha256',{})))
+            pinned(directory,plan['output_sha256'])
+            source_root=directory/('source/after' if dirname==ACTUAL else 'source')
+            require({name:sha(source_root/name) for name in after}==after, 'Suite mathematical source differs')
+        else:
+            pinned(ROOT,plan['input_sha256']);pinned(directory,plan['prepared_sha256'])
+            require(summary['controls_passed']==summary['controls_total']==190, 'Incomplete completion controls')
+            for name in ('run_loma_analytic_simulation.py','run_loma_initial_preflight.py',
+                         'diagnostics/review_loma_analytic_simulation.py'):
+                require(sha(ROOT/name)==plan['prepared_sha256']['source/'+name],
+                        'Shared launcher dependency differs from completion controls: '+name)
+                pinned(ROOT,{name:sha(ROOT/name)})
+            for name,target in summary.get('intentional_symlinks',{}).items():
+                require((directory/name).is_symlink() and os.readlink(str(directory/name))==target,
+                        'Intentional negative-fixture symlink changed')
+    completion=development/COMPLETION
+    completion_plan=document(completion,'prepared.json')
+    pinned(ROOT,completion_plan['input_sha256']);pinned(completion,completion_plan['output_sha256'])
+    helper=completion/'after/diagnostics/review_trial_completion.py'
+    require(sha(helper)==COMPLETION_HELPER==sha(ROOT/'diagnostics/review_old_kernel_trial_completion.py'),
+            'Completion helper differs from reviewed candidate002 bytes')
+    require(prepared['compiler']==parity['compiler'] and prepared['flags']==parity['flags'],
+            'Compiler selection or flags differ from the original guard bridge')
+    for name,digest in prepared['runtime_sha256'].items():
+        require(sha(Path(name))==digest, 'Old-kernel compiler/runtime changed: '+name)
+    receipt=dict(candidate_directory=str(candidate.relative_to(ROOT)),candidate_prepared_sha256=sha(candidate/'prepared.json'),
+                 bridge=prepared['bridge'],candidate_source_sha256=after,
+                 source_mapping={name:str(path.relative_to(ROOT)) for name,path in selected.items()},
+                 review_sha256=SOURCE_REVIEWS,completion_helper_sha256=COMPLETION_HELPER,
+                 runtime_library_sha256={n:h for n,h in prepared['runtime_sha256'].items() if n!=prepared['compiler']},
+                 evidence_scope='Exact old kernel; main-only trial rejection with fixed weights and original halving. No maintained-source replacement.',
+                 limitations=['The004-to-guard main change is supported by prior controls, not byte equality.',
+                              'Saved completion helper positives and initializer/source-prefix tests do not constitute a full positive controller test with first-arrival residual metadata.',
+                              'Initial1Daccuracy does not certify later3Dmodels; final diagnostics and scientific review remain required.'])
+    return selected,receipt,evidence

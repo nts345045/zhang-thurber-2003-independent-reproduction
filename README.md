@@ -117,6 +117,34 @@ the cause of either failure or certify the paths.
 A [fixed-path gradient decomposition](data/development/hayward_cmj_saved_gradient_001/README.md)
 reproduces all four saved norms and places 99.29–99.64% of their squared values
 in normal components at those near-face nodes. All failed flags remain.
+A separate [invented ridge control](data/development/internal_ridge_stationarity_controls_001/README.md)
+shows why an ordinary branch gradient can remain nonzero at a true face minimum.
+Its slow-face counterexample also shows that zero in the convex hull of branch
+gradients can coexist with descent. The 37 exact rational and 62 numerical
+checks do not establish stationarity of the nearby CMJ paths or replace their flags.
+
+A [bounded backtracking candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)
+retains the original, initially validated ray kernel and changes only the
+inverse control flow. A pure local-stopping failure at a trial rejects that
+fraction; the existing halving, original increment and fixed weights continue.
+Current/final, mixed, unexpected and output-write failures remain fatal.
+The [invented loop controls](data/development/hayward_old_kernel_trial_backtracking_controls_001/README.md)
+preserve 28 all-valid files byte for byte. Separate
+[integration checks](data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/README.md)
+complete a tiny joint-DD fixture after 20 local rejections, accepting fractions
+1/512 and 1/2048. The [190 saved completion checks](data/development/hayward_trial_completion_checks_002/RESULTS.md)
+close three preserved bookkeeping gaps, but their launcher test covers only
+the child/source prefix; complete final-table integration remains separate.
+These controls supply no accepted field update or new scientific stopping criterion.
+A [separate launcher](data/development/hayward_old_kernel_backtracking_launcher_001/README.md)
+binds the exact source changes to the original initial-model evidence.
+Its [62 reviewed checks](data/development/hayward_old_kernel_backtracking_launcher_checks_002/review.json)
+include a saved eligibility assessment of all 58,980 observations and 14,262
+native rays, plus five process-lifecycle cases with no compiler or numerical
+calls. No new field inversion has started at this checkpoint. Any future
+successful execution still requires final scientific diagnostics.
+The [lossless evidence archive](data/development/trial_backtracking_evidence_001/README.md)
+retains the completed controls, failed attempts and unexecuted drafts.
 
 The revised solver preserves identities in event/residual CSV files and ray
 diagnostic mappings, traces observed pairs only, and exports an unweighted

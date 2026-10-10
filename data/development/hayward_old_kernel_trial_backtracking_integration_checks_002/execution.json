@@ -1,0 +1,164 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T10:17:49.407405+00:00",
+  "prepared_sha256": "ee44a4801fe42a50e394cffdb49f3e58d84a7ab15badfccf9e863fed9c76aa03",
+  "prelaunch_review_sha256": "387a8299a12e03254114b19aa69dbf021475d5cc72688010ddf9247163473163",
+  "commands": [
+    {
+      "stage": "cmake_configure",
+      "command": [
+        "/usr/bin/cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/build/cmake",
+        "-DCMAKE_CXX_COMPILER=/usr/bin/c++"
+      ],
+      "started_utc": "2026-10-10T10:17:49.408860+00:00",
+      "pid": 340180,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:17:51.001129+00:00",
+      "stdout_sha256": "8a677b8a453025a49cd630b0d6fcb12e5674e7d6f518ea47f0a921b7debfa047",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "cmake_build",
+      "command": [
+        "/usr/bin/cmake",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/build/cmake",
+        "-j",
+        "2"
+      ],
+      "started_utc": "2026-10-10T10:17:51.002126+00:00",
+      "pid": 340232,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:18:22.997666+00:00",
+      "stdout_sha256": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "compiler_version",
+      "command": [
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "started_utc": "2026-10-10T10:18:23.007471+00:00",
+      "pid": 340403,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:18:23.236781+00:00",
+      "stdout_sha256": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "runtime_libraries",
+      "command": [
+        "ldd",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/build/cmake/dd"
+      ],
+      "started_utc": "2026-10-10T10:18:23.237934+00:00",
+      "pid": 340404,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:18:23.476818+00:00",
+      "stdout_sha256": "a4213cf6a6845c63416138fec611e2476d89ecb13a9d17bc71f4f8b11b4f94f3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "core_validate",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/build/cmake/dd",
+        "validate",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/results/core"
+      ],
+      "started_utc": "2026-10-10T10:18:23.478059+00:00",
+      "pid": 340409,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:18:26.883938+00:00",
+      "stdout_sha256": "065e88c1b9b37e9e8a5d0dff8978299f83cde1c9c410f823f09afd24f52a90e7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "compile_external_input",
+      "command": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/source/diagnostics/check_external_inputs.cpp",
+        "-lstdc++fs",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/build/external_input"
+      ],
+      "started_utc": "2026-10-10T10:18:26.885274+00:00",
+      "pid": 340453,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:18:58.867129+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "external_input",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/build/external_input",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/results/external_input.json",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/results/external_input"
+      ],
+      "started_utc": "2026-10-10T10:18:58.868443+00:00",
+      "pid": 340583,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:18:59.107566+00:00",
+      "stdout_sha256": "bd17756b34d0879ac25aa04fc257c63125d4db60558f8a79871d3ccea9d94d0f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "compile_inversion_gate",
+      "command": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/source/diagnostics/check_inversion_ray_gate.cpp",
+        "-lstdc++fs",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/build/inversion_gate"
+      ],
+      "started_utc": "2026-10-10T10:18:59.109067+00:00",
+      "pid": 340587,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:19:34.161891+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "inversion_gate",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/build/inversion_gate",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/results/inversion_gate"
+      ],
+      "started_utc": "2026-10-10T10:19:34.163540+00:00",
+      "pid": 340908,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:19:34.447984+00:00",
+      "stdout_sha256": "a73c9b53c876e09aa126e65a0f31be0e8d9c96d366fc846921955354103d8a9b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Invented core/external/guard fixtures only; no authoritative rays, cohort or inversion.",
+  "environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "1",
+    "LC_ALL": "C",
+    "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "current_stage": "inversion_gate",
+  "return_code": 0,
+  "finished_utc": "2026-10-10T10:19:34.652423+00:00",
+  "summary_sha256": "fb3912457ca0753d0cf3595f255ee246185e5b85b6cd1b1325580eefa3ca27d0"
+}

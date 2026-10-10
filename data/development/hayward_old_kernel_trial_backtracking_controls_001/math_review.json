@@ -1,0 +1,113 @@
+{
+  "status": "passed",
+  "reviewer": "ray_math_review",
+  "scope": "Independent saved-only source bridge, 28-file parity, selected objective arithmetic and fatal-outcome review; no compiler, action, ray or inverse reevaluation.",
+  "summary_sha256": "deb1c4379029456366b388e22c01ac3a3c4c879c11d17507c7f5d5bda836fb1c",
+  "execution_sha256": "2cc91b09fd7fd97144c684ecbbbdbefec66af208cc5b51fc550d7b02d149f217",
+  "prior_review_sha256": "fc750af56ea2d2333c7c1c2856a629181ca96a233fec2fd831ee5fd82b5bad5f",
+  "candidate_prepared_sha256": "5bb45c57b3f594485abbaf144da3b540f2c7f8d42dc783837976fbe33b5d96dd",
+  "checker_sha256": "3e714bc2cdfdab064726ab0b962389eb6e8f605f4ac936aa1977a88f47d2b6ad",
+  "checker_initial_failure_sha256": "daa853e29914c507d3a001f6b1200acb0ac7d8f1a590bf371e2d494f3a4b1840",
+  "checker_initial_source_sha256": "6ac2204c04f980b207b82275c5e3c62db5b7105d2d44623d09d427e54e30229e",
+  "source_bridge": {
+    "changed_production_files": [
+      "src/main.cpp"
+    ],
+    "old_kernel_sha256": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "candidate003_patch_identical": true,
+    "frozen_archive_source_members_verified": 10,
+    "fixture_seams": "Exact declarations and three output/gate/solve call substitutions only."
+  },
+  "verified_unique_pins": 1020,
+  "executed_artifact_pins": 960,
+  "all_valid_byte_identical_files": 28,
+  "saved_assertion_counts": {
+    "before": 4,
+    "after": 1102
+  },
+  "independent_objective_reconstructions": [
+    {
+      "case": "half",
+      "trial": 1,
+      "step": 0.5,
+      "saved_and_reconstructed_objective": 1.1732957585310766e-32,
+      "saved_before": 0.025446381722154902,
+      "reconstructed_binary64_residuals": [
+        1.1102230246251565e-16,
+        0.0,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16
+      ],
+      "exact_arithmetic_on_saved_rounded_residuals": "308906162839764469455535883868545/26328072917139296674479506920917608079723773850137277813577744384"
+    },
+    {
+      "case": "quarter",
+      "trial": 2,
+      "step": 0.25,
+      "saved_and_reconstructed_objective": 1.1732957585310766e-32,
+      "saved_before": 0.025446381722154902,
+      "reconstructed_binary64_residuals": [
+        1.1102230246251565e-16,
+        0.0,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16
+      ],
+      "exact_arithmetic_on_saved_rounded_residuals": "308906162839764469455535883868545/26328072917139296674479506920917608079723773850137277813577744384"
+    },
+    {
+      "case": "worse",
+      "trial": 1,
+      "step": 0.5,
+      "saved_and_reconstructed_objective": 0.10178552688861958,
+      "saved_before": 0.025446381722154902,
+      "reconstructed_binary64_residuals": [
+        0.20000000000000007,
+        0.39999999999999997,
+        -0.1999999999999999,
+        0.20000000000000007
+      ],
+      "exact_arithmetic_on_saved_rounded_residuals": "10719267095332075631353556468119368188002226225936389800512930313/105312291668557186697918027683670432318895095400549111254310977536"
+    }
+  ],
+  "failure_outcomes": {
+    "all": {
+      "phase": "no_objective_evaluable_trial",
+      "trial_rows": 12
+    },
+    "mixed_invalid": {
+      "phase": "no_objective_evaluable_trial",
+      "trial_rows": 12
+    },
+    "state": {
+      "phase": "no_objective_evaluable_trial",
+      "trial_rows": 12
+    },
+    "current": {
+      "phase": "current_model",
+      "trial_rows": 0
+    },
+    "final": {
+      "phase": "final_model",
+      "trial_rows": 1
+    },
+    "mixed": {
+      "phase": "fatal_mixed_trial",
+      "trial_rows": 0
+    },
+    "unexpected": {
+      "phase": "fatal_unexpected_trial",
+      "trial_rows": 0
+    }
+  },
+  "findings": [
+    "Both sides retain the unchanged old7111 kernel; only the candidate main.cpp policy changes outside the declared test seams.",
+    "Half and quarter recovery use the prescribed fixture increments, not a claim that the actual LSQR solve produced those increments; both are separately saved.",
+    "Saved ray times, fixed original weights and source-time increments reproduce the selected nonzero and near-zero objectives exactly in binary64 arithmetic.",
+    "Pure local trial rejection has no objective; current/final/mixed/unexpected failures remain fatal and distinct from no-evaluable-trial exhaustion."
+  ],
+  "limitations": [
+    "The 1102 after assertions include repeated fieldwise checks, not independent scientific cases.",
+    "This review reconstructs three objective rows; the separate existing nonzero-objective review covers all 11 worse rows.",
+    "No native recovery, production adoption, source/model derivative accuracy or global first-arrival assertion follows."
+  ]
+}

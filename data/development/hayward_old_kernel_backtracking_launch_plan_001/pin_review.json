@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "plan_sha256": "ad426b135b988ae044ebe70773e2316aea4fe6dd084ee27ea5f412ca1967e63c",
+  "controller_sha256": "cebe0e1caba5935c89308e32d604605995912f3b7da28c40269720a0afdd5fea",
+  "previous_reviewed_controller_sha256": "6c3d4bd4b40f7a3107fce5e7aea47f0e13fca3a8f56cbbf978efc5d865d6c2dd",
+  "controller_correction_sha256": "8b9dface90be8b1105b8366baf51b1d92ddb55a48b91c708e30b4db2451947a7",
+  "current_source_sha256": {
+    "run_hayward_old_kernel_backtracking.py": "8a6ebe8e401f4b83f34ea935a73719cc9de8ca97244a4574bdb9af125d81bd01",
+    "diagnostics/review_old_kernel_trial_completion.py": "8406148ed92afa18c43bf96693aaa78185f7961e99e567e4f8aced6d1d858392"
+  },
+  "checks_by_category": {
+    "plan_inputs": 8190,
+    "mapped_sources": 15,
+    "runtimes": 9,
+    "python": 1,
+    "numerical_inputs": 11
+  },
+  "independent_pin_checks": 8226,
+  "independent_pin_auditor": "earthscope_discovery",
+  "pin_audit_method": "Independent inline read-only full pin check reported8226matches, followed by source review of the final narrow controller change. This receipt verifies exact old/new controller and plan identities without duplicating the full hash sweep.",
+  "final_controller_findings": [
+    "SIGINT/SIGTERM controller exits preserve130/143; negative child status maps to128+signal.",
+    "Malformed or mismatched cleanup-ledger ownership records cleanup_errors/unresolvedgroup and withholds hashes; original exception remains.",
+    "Source/input/runtime/configuration eligibility unchanged."
+  ],
+  "fresh_paths": [
+    "data/hayward_old_kernel_backtracking_001",
+    "tmp/hayward_old_kernel_backtracking_runs/001",
+    "tmp/hayward_old_kernel_backtracking_controllers/001"
+  ],
+  "original_controller_and_maintained_D_unchanged": true,
+  "inverse_launched": false,
+  "numerical_calls": 0,
+  "review_source_sha256": "4e9aa040e8ebf9070db9fa610a4f9deff110935a813668e63f86a5099ea58857",
+  "limitations": [
+    "Counts are8226checks across overlapping mappings, not8226unique files.",
+    "Recorded process-group ownership cannot cover an abrupt death before the inner PID is recorded.",
+    "Final review is conditional on publication, a fresh pin recheck and explicit root launch GO; no HEAD equality requirement."
+  ]
+}

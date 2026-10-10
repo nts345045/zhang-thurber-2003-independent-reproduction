@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/trial_backtracking_evidence_001/restore.py", line 106, in <module>
+    restore(parser.parse_args().destination)
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/trial_backtracking_evidence_001/restore.py", line 83, in restore
+    require(matches(path, item), 'Refusing to overwrite different evidence: ' + member.name)
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/trial_backtracking_evidence_001/restore.py", line 25, in require
+    raise RuntimeError(message)
+RuntimeError: Refusing to overwrite different evidence: data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/main.cpp

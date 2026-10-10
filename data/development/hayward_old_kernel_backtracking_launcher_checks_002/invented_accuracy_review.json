@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "finite_difference_truncation_assessed": true,
+    "full_reference_controls_pass": true,
+    "sample_accuracy_assessed": true,
+    "sample_local_flags_pass": true
+  },
+  "decision": "eligible_for_guarded_dd_attempt",
+  "interpretation": "Invented homogeneous fixture; exact reference errors pass and finite differences are only schema controls.",
+  "limitations": [
+    "Fixture reviews exercise lifecycle gates, not a claim of independent validation of real data."
+  ],
+  "preflight_directory": "data/development/hayward_old_kernel_backtracking_launcher_checks_002/invented_preflight",
+  "sampled_tables_sha256": {
+    "initial_ray_convergence.csv": "1b090a017218313e62545910195925fb5ac604905a71505824f6c7b3429b1236",
+    "initial_ray_derivatives.csv": "5c51fe1d261df17fdd7a4a6d47dbd74b480b0e98bcb12cffc11501b5f2beeb8e",
+    "initial_ray_identifiers.csv": "dc8bd2407f0ecfab65852488fc2b0735d2a23eb213612a76c0d5d463f54bd9ae"
+  },
+  "sha256": {
+    "full_reference_review": "1624a60764dd96e36474774b0dfae449936fb605a5b515db54f302e16497303a",
+    "full_reference_summary": "6e84d95daad63d02f0b9dd3f76ea322eadf92c26a49e338e71990ab0ce4f93a7",
+    "preflight_checks": "bd378a40879a2af1543cd56516c967e256f609d318de8800733636ffd43cf911",
+    "preflight_ledger": "470fe27a5fb403bfc7a22fc6210f5b43beef906ab4ad9a867d6b00de4d2ed9ec",
+    "preflight_manifest": "a97f6f73f39e80376bf211d17936a7ca6372b0f5f496fb8116557c0d2e7f52b4"
+  },
+  "status": "passed"
+}

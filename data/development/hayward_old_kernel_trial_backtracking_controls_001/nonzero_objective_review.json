@@ -1,0 +1,95 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "source_sha256": "1d3d113492aa5fc8348f4782de8fa420b67ec31174aa71b39e25e588c9d2d9dd",
+  "input_sha256": {
+    "results/after/worse/loc1d_iteration_0_solve_context.csv": "864b6eae0a8217b06afc47b8109053e61653ea4452dc62e21d6c38818d5dca70",
+    "results/after/worse/loc1d_iteration_0_solve_delta.csv": "a4d0f70f9f155aacdebd5c1ceb46be3898ed8ded2b4854e7a4e18d6fd0a26c4c",
+    "results/after/worse/loc1d_iteration_0_solve_weights.csv": "52bbc3934a3ced521b1192d0a360e22f0c442eaa55cc2cbdfb83ceed2d3a172b",
+    "results/after/worse/loc1d_iteration_0_trials.csv": "6322269842e77351c8a1025cf719a1192e6f56bd4e4df9ea26b6f50ddfc24855",
+    "summary.json": "deb1c4379029456366b388e22c01ac3a3c4c879c11d17507c7f5d5bda836fb1c",
+    "review.json": "fc750af56ea2d2333c7c1c2856a629181ca96a233fec2fd831ee5fd82b5bad5f"
+  },
+  "scope": "Saved invented fixture only; fixed row multipliers and original time increments; no solver rerun.",
+  "floating_comparison": "64 binary64 eps times positive objective scale, not a scientific accuracy threshold.",
+  "results": [
+    {
+      "trial": 1,
+      "step_fraction": 0.5,
+      "saved_objective": 0.10178552688861958,
+      "reconstructed_objective": 0.10178552688861958,
+      "absolute_difference": 0.0
+    },
+    {
+      "trial": 2,
+      "step_fraction": 0.25,
+      "saved_objective": 0.05725435887484851,
+      "reconstructed_objective": 0.05725435887484851,
+      "absolute_difference": 0.0
+    },
+    {
+      "trial": 3,
+      "step_fraction": 0.125,
+      "saved_objective": 0.03975997144086705,
+      "reconstructed_objective": 0.03975997144086703,
+      "absolute_difference": 2.0816681711721685e-17
+    },
+    {
+      "trial": 4,
+      "step_fraction": 0.0625,
+      "saved_objective": 0.032205576867102306,
+      "reconstructed_objective": 0.0322055768671023,
+      "absolute_difference": 6.938893903907228e-18
+    },
+    {
+      "trial": 5,
+      "step_fraction": 0.03125,
+      "saved_objective": 0.02872657936602642,
+      "reconstructed_objective": 0.028726579366026433,
+      "absolute_difference": 1.3877787807814457e-17
+    },
+    {
+      "trial": 6,
+      "step_fraction": 0.015625,
+      "saved_objective": 0.027061630561940116,
+      "reconstructed_objective": 0.027061630561940126,
+      "absolute_difference": 1.0408340855860843e-17
+    },
+    {
+      "trial": 7,
+      "step_fraction": 0.0078125,
+      "saved_objective": 0.026247793646509886,
+      "reconstructed_objective": 0.026247793646509875,
+      "absolute_difference": 1.0408340855860843e-17
+    },
+    {
+      "trial": 8,
+      "step_fraction": 0.00390625,
+      "saved_objective": 0.02584553456044799,
+      "reconstructed_objective": 0.025845534560447976,
+      "absolute_difference": 1.3877787807814457e-17
+    },
+    {
+      "trial": 9,
+      "step_fraction": 0.001953125,
+      "saved_objective": 0.025645569860330328,
+      "reconstructed_objective": 0.025645569860330338,
+      "absolute_difference": 1.0408340855860843e-17
+    },
+    {
+      "trial": 10,
+      "step_fraction": 0.0009765625,
+      "saved_objective": 0.02554587872099984,
+      "reconstructed_objective": 0.025545878720999844,
+      "absolute_difference": 3.469446951953614e-18
+    },
+    {
+      "trial": 11,
+      "step_fraction": 0.00048828125,
+      "saved_objective": 0.025496105954016694,
+      "reconstructed_objective": 0.02549610595401668,
+      "absolute_difference": 1.3877787807814457e-17
+    }
+  ],
+  "maximum_absolute_difference": 2.0816681711721685e-17
+}

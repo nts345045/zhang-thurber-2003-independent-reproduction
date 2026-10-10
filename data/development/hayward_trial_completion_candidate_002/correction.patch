@@ -1,0 +1,28 @@
+--- candidate001/after/diagnostics/review_trial_completion.py
++++ candidate002/after/diagnostics/review_trial_completion.py
+@@ -120,6 +120,8 @@
+         required_files.update(prefix + '_' + name + '.csv' for name in SOLVE_FILES)
+         basis = 'independent accepted inversion state at iteration ' + str(it) + '; original unscaled solve recorded separately'
+         accepted, model = state(prefix+'_accepted_events.csv', prefix+'_accepted_grid.csv', basis)
++        if it == 0:
++            same_state(accepted, model, events, grid)
+         context = table(prefix+'_context.csv')
+         require(len(context) == 1, 'Solve context row count differs')
+         c = context[0]
+@@ -239,6 +241,7 @@
+     latest = None; expected_iteration = 0
+     for h in history:
+         it, stage = integer(h['iteration']), integer(h['stage'])
++        require(it < int(config['iterations']), 'History exceeds configured iteration bound')
+         require(it == expected_iteration and stage == min(2, int(it/config['stage_length'])), 'Iteration/stage progression differs')
+         ledger_name = mode+'_iteration_'+str(it)+'_trials.csv'; required_files.add(ledger_name)
+         ledger = table(ledger_name)
+@@ -275,6 +278,8 @@
+             for ls in quality:
+                 latest, failures, nodes = rejected(it, ls, math.ldexp(1., -ls), ae, ag, delta)
+                 quality_count += 1; failure_count += failures; node_count += nodes
++        if not accepted_trial and stage == 2:
++            require(it == iterations[-1], 'History continues after stage-2 no-update termination')
+         expected_iteration = it+1 if accepted_trial else ((stage+1)*int(config['stage_length']))
+     require(expected_iteration >= int(config['iterations']) or (not accepted_trial and stage == 2),
+             'History ends before the configured loop finishes')

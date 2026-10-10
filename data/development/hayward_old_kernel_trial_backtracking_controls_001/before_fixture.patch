@@ -1,0 +1,36 @@
+--- before/src/main.cpp
++++ before/src/fixture_main.cpp
+@@ -57,8 +57,14 @@
+       out << ',' << csv_quote(shared_value(rows[q], field));
+   }
+ };
++// Test-only seams: actual invert body and arithmetic are retained.
++std::string fixture_output(const std::string &);
++Vec fixture_solve(Matrix, double, LSQRInfo *);
++void fixture_gate(const std::string &, const Grid &, const std::vector<Event> &,
++                  const std::vector<Event> &, const std::vector<Ray> &,
++                  const std::vector<int> &, bool, bool);
+ std::ofstream output(std::string p) {
+-  std::ofstream f(p);
++  std::ofstream f(fixture_output(p));
+   if (!f)
+     throw std::runtime_error("Cannot write " + p);
+   f << std::setprecision(12);
+@@ -1073,7 +1079,7 @@
+     const std::string prefix = dir + "/" + mode + "_failed_forward";
+     try {
+       auto result = rays(model, sources, stations, c, derivatives, &used, &fields, false);
+-      inversion_ray_gate(prefix, model, sources, stations, result, used,
++      fixture_gate(prefix, model, sources, stations, result, used,
+                          auxiliary_spacing(c) > 0, derivatives);
+       return result;
+     } catch (const std::exception &error) {
+@@ -1196,7 +1202,7 @@
+         A.values.size() + size_t(n) != total_entries)
+       throw std::runtime_error("Matrix assembly differs from preflight count");
+     LSQRInfo linear_info;
+-    Vec delta = solve(std::move(A), c.get("damping"), &linear_info);
++    Vec delta = fixture_solve(std::move(A), c.get("damping"), &linear_info);
+     auto objective = [&](const Grid &gg, const std::vector<Event> &ee,
+                          const std::vector<Ray> &rr) {
+       double value = 0;

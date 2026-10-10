@@ -36,6 +36,29 @@ Fixed-path reevaluation localizes more than 99% of both old and revised
 squared gradient norms to normal motion near that face. This identifies
 where the ordinary gradient remains large; a valid nonsmooth stopping
 test is still unresolved.
+Invented exact-face controls explain two necessary distinctions: a branch
+gradient can be nonzero at a true minimum, and zero in a convexified gradient
+set can still hide descent at a slow face. Their coupled endpoint directions
+cannot be checked independently. These controls do not project or relabel
+the nearby native paths; see the [ridge calculation](data/development/internal_ridge_stationarity_controls_001/README.md).
+
+The original guard also stopped before trying a smaller inverse step. A
+[separate old-kernel candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)
+now distinguishes a pure local-stopping trial rejection from fatal current,
+final, mixed and I/O failures. It retains the original solve increment,
+fixed weights and halving rule. Invented controls demonstrate smaller
+accepted steps and exact all-valid output parity; the
+[190 saved completion checks](data/development/hayward_trial_completion_checks_002/RESULTS.md)
+verify evidence closure after correcting three preserved bookkeeping gaps.
+They do not establish recovery of the failed Hayward trial, later-model
+accuracy or a complete final-table launcher test.
+The [separate launcher checks](data/development/hayward_old_kernel_backtracking_launcher_checks_002/review.json)
+pass all 62 cases, including five process-lifecycle cases, and verify the
+exact source changes against the original initial-model evidence. These are
+saved-evidence and controller checks; no new field inversion has started.
+Final scientific assessment remains necessary after any successful execution.
+The [evidence archive](data/development/trial_backtracking_evidence_001/README.md)
+preserves both successful controls and earlier failed or unexecuted variants.
 
 Bounded LON tests also show that early stopping affects source derivatives:
 additional optimization improves one failing ray while worsening a passing

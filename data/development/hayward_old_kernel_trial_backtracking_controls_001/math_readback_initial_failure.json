@@ -1,0 +1,7 @@
+{
+  "status": "saved_only_checker_assertion",
+  "source_sha256": "6ac2204c04f980b207b82275c5e3c62db5b7105d2d44623d09d427e54e30229e",
+  "assertion": "final[i][axis] == initial[i][axis] as text",
+  "reason": "The existing initial snapshot uses 17 significant digits and final output uses 12; literal strings such as 0.20000000000000001 versus 0.2 differ while parsed binary64 coordinates agree.",
+  "correction": "Compare parsed numeric coordinates for these exact simple invented coordinates; no scientific artifact/source/output changes or numerical solver rerun."
+}
