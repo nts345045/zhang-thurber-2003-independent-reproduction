@@ -1,0 +1,1045 @@
+{
+  "status": "passed",
+  "scope": "Fixed-scale color saturation reporting; no inversion or baseline plot regeneration",
+  "helper_edge_cases": 8,
+  "identical_helper_in_both_scripts": true,
+  "input_sha256": {
+    "data/hayward/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/hayward/standard_grid.csv": "0d3e215f215a74b101813e9dd651518e35e501996720a602b86aa400ac3a655f",
+    "data/hayward/dd_grid.csv": "13cdc7f9d201f9d73da7e3fedc21e542444c9a478cf4c0f4b08ce85a5a4a8596"
+  },
+  "source_sha256": {
+    "baseline/plot_hayward.py": "48eabc71e292eed49010aac5c237607a0c1b11c534c8aca652dc430057cbee9b",
+    "integration/plot_hayward.py": "1c9a19c111472d8ba5beee43dc035be29b8be36d826664d8ad22ca9ea3be4497",
+    "check_saturation.py": "ce1d2389ee24b7c512d75f2ae53fea1a5a66deefffb8418c1487ca3bba0ac2e0"
+  },
+  "actual_baseline_figure10_sections": {
+    "standard_velocity": {
+      "color_limits": [
+        3.5,
+        7.0
+      ],
+      "actual_min_max": [
+        3.32591082435,
+        6.2875244009
+      ],
+      "sampled_points": 83895,
+      "below_limit": 20,
+      "above_limit": 0,
+      "extend": "min"
+    },
+    "dd_velocity": {
+      "color_limits": [
+        3.5,
+        7.0
+      ],
+      "actual_min_max": [
+        4.4267516858,
+        5.61768460984
+      ],
+      "sampled_points": 83895,
+      "below_limit": 0,
+      "above_limit": 0,
+      "extend": "neither"
+    },
+    "shared_velocity_colorbar": {
+      "color_limits": [
+        3.5,
+        7.0
+      ],
+      "actual_min_max": [
+        3.32591082435,
+        6.2875244009
+      ],
+      "sampled_points": 167790,
+      "below_limit": 20,
+      "above_limit": 0,
+      "extend": "min"
+    },
+    "dd_minus_standard": {
+      "color_limits": [
+        -0.8,
+        0.8
+      ],
+      "actual_min_max": [
+        -1.1621390339,
+        1.3754362593699998
+      ],
+      "sampled_points": 83895,
+      "below_limit": 1136,
+      "above_limit": 1265,
+      "extend": "both"
+    },
+    "sections": [
+      {
+        "y_km": -30,
+        "standard_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            4.38890348961,
+            5.99927750784
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 0,
+          "extend": "neither"
+        },
+        "dd_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            4.89286048048,
+            5.43846682003
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 0,
+          "extend": "neither"
+        },
+        "dd_minus_standard": {
+          "color_limits": [
+            -0.8,
+            0.8
+          ],
+          "actual_min_max": [
+            -0.8962711347199992,
+            0.5710527761400002
+          ],
+          "sampled_points": 11985,
+          "below_limit": 25,
+          "above_limit": 0,
+          "extend": "min"
+        }
+      },
+      {
+        "y_km": -20,
+        "standard_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            3.50531172307,
+            6.22799762115
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 0,
+          "extend": "neither"
+        },
+        "dd_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            4.65289461019,
+            5.48281978642
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 0,
+          "extend": "neither"
+        },
+        "dd_minus_standard": {
+          "color_limits": [
+            -0.8,
+            0.8
+          ],
+          "actual_min_max": [
+            -0.8784194356399997,
+            1.1475828871199996
+          ],
+          "sampled_points": 11985,
+          "below_limit": 15,
+          "above_limit": 210,
+          "extend": "both"
+        }
+      },
+      {
+        "y_km": -10,
+        "standard_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            3.53843707996,
+            6.2875244009
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 0,
+          "extend": "neither"
+        },
+        "dd_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            4.4267516858,
+            5.61539962448
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 0,
+          "extend": "neither"
+        },
+        "dd_minus_standard": {
+          "color_limits": [
+            -0.8,
+            0.8
+          ],
+          "actual_min_max": [
+            -1.1621390339,
+            0.8883146058400002
+          ],
+          "sampled_points": 11985,
+          "below_limit": 722,
+          "above_limit": 86,
+          "extend": "both"
+        }
+      },
+      {
+        "y_km": 0,
+        "standard_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            3.49980187067,
+            6.19125671727
+          ],
+          "sampled_points": 11985,
+          "below_limit": 1,
+          "above_limit": 0,
+          "extend": "min"
+        },
+        "dd_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            4.59038877716,
+            5.61768460984
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 0,
+          "extend": "neither"
+        },
+        "dd_minus_standard": {
+          "color_limits": [
+            -0.8,
+            0.8
+          ],
+          "actual_min_max": [
+            -1.0753891395900004,
+            1.0905869064900005
+          ],
+          "sampled_points": 11985,
+          "below_limit": 357,
+          "above_limit": 228,
+          "extend": "both"
+        }
+      },
+      {
+        "y_km": 10,
+        "standard_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            3.32591082435,
+            5.9999254601
+          ],
+          "sampled_points": 11985,
+          "below_limit": 19,
+          "above_limit": 0,
+          "extend": "min"
+        },
+        "dd_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            4.70134708372,
+            5.54495211875
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 0,
+          "extend": "neither"
+        },
+        "dd_minus_standard": {
+          "color_limits": [
+            -0.8,
+            0.8
+          ],
+          "actual_min_max": [
+            -0.9064947728300004,
+            1.3754362593699998
+          ],
+          "sampled_points": 11985,
+          "below_limit": 17,
+          "above_limit": 189,
+          "extend": "both"
+        }
+      },
+      {
+        "y_km": 20,
+        "standard_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            3.85318778073,
+            5.64779593474
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 0,
+          "extend": "neither"
+        },
+        "dd_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            4.61381019516,
+            5.52036954854
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 0,
+          "extend": "neither"
+        },
+        "dd_minus_standard": {
+          "color_limits": [
+            -0.8,
+            0.8
+          ],
+          "actual_min_max": [
+            -0.6756153772899998,
+            0.9524880649999998
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 188,
+          "extend": "max"
+        }
+      },
+      {
+        "y_km": 30,
+        "standard_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            3.83503167679,
+            5.30778552784
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 0,
+          "extend": "neither"
+        },
+        "dd_velocity": {
+          "color_limits": [
+            3.5,
+            7.0
+          ],
+          "actual_min_max": [
+            4.80048528088,
+            5.40946034178
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 0,
+          "extend": "neither"
+        },
+        "dd_minus_standard": {
+          "color_limits": [
+            -0.8,
+            0.8
+          ],
+          "actual_min_max": [
+            -0.09428782418999937,
+            0.9654536040900004
+          ],
+          "sampled_points": 11985,
+          "below_limit": 0,
+          "above_limit": 364,
+          "extend": "max"
+        }
+      }
+    ]
+  },
+  "fixture_export_counts_and_ranges_verified": true,
+  "actual_model_colorbar_extensions_verified": [
+    "min",
+    "both"
+  ],
+  "actual_ranges_from": "Saved standard/DD grid interpolation at the same seven Y sections and X/Z sampling as Figure 10",
+  "interpretation": "Counts describe sampled display points, not independent observations or nodal counts. Fixed color limits are unchanged.",
+  "fixture_metrics_sha256": "24b3789d1e9124ebd813935bbf372ca9503dd1a11c792a3f8106b4face3bf6ab",
+  "fixture_display_extensions": {
+    "figure10": {
+      "standard_velocity": {
+        "color_limits": [
+          3.5,
+          7.0
+        ],
+        "actual_min_max": [
+          3.7699999999999996,
+          7.180000000000001
+        ],
+        "sampled_points": 83895,
+        "below_limit": 0,
+        "above_limit": 5922,
+        "extend": "max"
+      },
+      "dd_velocity": {
+        "color_limits": [
+          3.5,
+          7.0
+        ],
+        "actual_min_max": [
+          3.7699999999999996,
+          7.180000000000001
+        ],
+        "sampled_points": 83895,
+        "below_limit": 0,
+        "above_limit": 5922,
+        "extend": "max"
+      },
+      "shared_velocity_colorbar": {
+        "color_limits": [
+          3.5,
+          7.0
+        ],
+        "actual_min_max": [
+          3.7699999999999996,
+          7.180000000000001
+        ],
+        "sampled_points": 167790,
+        "below_limit": 0,
+        "above_limit": 11844,
+        "extend": "max"
+      },
+      "dd_minus_standard": {
+        "color_limits": [
+          -0.8,
+          0.8
+        ],
+        "actual_min_max": [
+          0.0,
+          0.0
+        ],
+        "sampled_points": 83895,
+        "below_limit": 0,
+        "above_limit": 0,
+        "extend": "neither"
+      },
+      "sections": [
+        {
+          "y_km": -30,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              0.0,
+              0.0
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": -20,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              0.0,
+              0.0
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": -10,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              0.0,
+              0.0
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": 0,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              0.0,
+              0.0
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": 10,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              0.0,
+              0.0
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": 20,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              0.0,
+              0.0
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": 30,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.7699999999999996,
+              7.180000000000001
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 846,
+            "extend": "max"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              0.0,
+              0.0
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        }
+      ]
+    },
+    "figure11": {
+      "resolution": {
+        "color_limits": [
+          0.0,
+          1.0
+        ],
+        "actual_min_max": [
+          0.0,
+          0.0002286556379908852
+        ],
+        "sampled_points": 83895,
+        "below_limit": 0,
+        "above_limit": 0,
+        "extend": "neither"
+      },
+      "noise": {
+        "color_limits": [
+          0.0,
+          7.241558807723199e-05
+        ],
+        "actual_min_max": [
+          1.7723620419300356e-07,
+          7.241558807723199e-05
+        ],
+        "sampled_points": 83895,
+        "below_limit": 0,
+        "above_limit": 0,
+        "extend": "neither"
+      },
+      "sections": [
+        {
+          "y_km": -30,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              0.0,
+              0.0
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              7.241558807723199e-05
+            ],
+            "actual_min_max": [
+              1.7723620419300356e-07,
+              2.062507653540149e-06
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": -20,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              0.0,
+              0.0
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              7.241558807723199e-05
+            ],
+            "actual_min_max": [
+              3.1464818762529546e-07,
+              2.815311922880809e-06
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": -10,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              0.0,
+              0.0
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              7.241558807723199e-05
+            ],
+            "actual_min_max": [
+              5.388995195515451e-07,
+              4.9221701297016936e-06
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": 0,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              0.0,
+              0.0
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              7.241558807723199e-05
+            ],
+            "actual_min_max": [
+              8.540080614201474e-07,
+              9.159672346004256e-06
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": 10,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              0.0,
+              0.0
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              7.241558807723199e-05
+            ],
+            "actual_min_max": [
+              1.2656301924787757e-06,
+              1.90231998773317e-05
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": 20,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              0.0,
+              0.0002286556379908852
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              7.241558807723199e-05
+            ],
+            "actual_min_max": [
+              1.6484589611334808e-06,
+              7.241558807723199e-05
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        },
+        {
+          "y_km": 30,
+          "resolution": {
+            "color_limits": [
+              0.0,
+              1.0
+            ],
+            "actual_min_max": [
+              0.0,
+              1.2574327187585975e-05
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "noise": {
+            "color_limits": [
+              0.0,
+              7.241558807723199e-05
+            ],
+            "actual_min_max": [
+              1.7984751840139786e-06,
+              3.138098316945279e-05
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          }
+        }
+      ]
+    },
+    "interpretation": "Counts refer to sampled section interpolation points, not model nodes. Triangular colorbar extensions mark values beyond the declared common limits; limits are unchanged."
+  },
+  "created_utc": "2026-10-10T01:18:39Z",
+  "commands": [
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 plot_hayward.py --data-dir tmp/hayward_variant_checks/data --figure-dir tmp/hayward_variant_checks/figures",
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 tmp/hayward_variant_checks/check_saturation.py"
+  ],
+  "visual_review": "Inspected Figure 10 and Figure 11 fixture PNGs and the display check of saved standard/DD sections. Lower, upper, both-ended, and absent colorbar extensions were consistent with their plotted arrays; figure layouts remained legible.",
+  "limitations": [
+    "The fixture reuses one initial model for all method labels and is not an inversion.",
+    "The baseline full figure workflow has not run; saved standard/DD sections were interpolated read-only, and no baseline model or input was changed.",
+    "Resolution limits were exercised by the fixture; the final baseline resolution calculation remains pending.",
+    "Fixed color limits intentionally saturate out-of-range values; this change reports that saturation rather than expanding the scales."
+  ],
+  "source_snapshot_sha256": "17b9ee3e44fed281c153ef0c05994fae913d5cd2aea8b0eca36e3ff63138f955",
+  "snapshot_member_sha256": {
+    "baseline/plot_hayward.py": "48eabc71e292eed49010aac5c237607a0c1b11c534c8aca652dc430057cbee9b",
+    "integration/plot_hayward.py": "1c9a19c111472d8ba5beee43dc035be29b8be36d826664d8ad22ca9ea3be4497",
+    "check_saturation.py": "ce1d2389ee24b7c512d75f2ae53fea1a5a66deefffb8418c1487ca3bba0ac2e0",
+    "fixture_construction.json": "b817b608f06117571dcc77c39a8c8a4ff8d2abd9cc2cadbd8f621bde2e98c8e5"
+  }
+}

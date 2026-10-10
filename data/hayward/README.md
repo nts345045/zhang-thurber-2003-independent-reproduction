@@ -1,14 +1,23 @@
 # Authoritative Hayward inputs and results
 
-At this partial checkpoint the DD inversion has written all five numerical
-output files below, with all 1,092 event identities and 58,980 observation
-mappings verified. Absolute-data tomography and fixed-model relocation remain
-active. Their incomplete histories do not constitute finished results; final
-ray checks, resolution, comparison figures, and the full workflow completion
-record are pending. The DD residual decrease does not establish nonlinear
-convergence: its final accepted maximum source-coordinate change is 2.7614 km.
-The separate [output review](../development/hayward_final_output_review.json)
-records checks and limitations without marking the entire workflow complete.
+At this partial checkpoint DD and absolute-data tomography (`standard`) have
+written all five numerical output files below. Both preserve all 1,092 event
+identities and 58,980 observation mappings. Fixed-model relocation (`loc1d`)
+remains active; its incomplete history is not a finished result. Final ray
+checks, resolution, comparison figures, and the full workflow completion
+record are pending.
+
+Standard tomography stopped at iteration 12 after 12 accepted updates because
+its next line search accepted no step. Its final absolute and catalog-difference
+RMS residuals are 0.07869 and 0.07162 s. The last pre-update ray calculation
+met the stopping rule for 13,690 of 14,262 rays; 572 failed. This termination
+does not establish nonlinear convergence. Neither does the DD residual
+decrease: its final accepted maximum source-coordinate change is 2.7614 km.
+The [standard output review](../development/hayward_standard_output_review.json)
+records exact identity, finite-value, domain, coverage, termination, and original
+run-hash checks. The [earlier DD output review](../development/hayward_final_output_review.json)
+preserves the preceding checkpoint. These audits do not mark the full workflow
+complete or establish source/model accuracy.
 
 `selection_manifest.json` defines the independently selected cohort and records
 input hashes, station policy, differences from the manuscript, and graph
