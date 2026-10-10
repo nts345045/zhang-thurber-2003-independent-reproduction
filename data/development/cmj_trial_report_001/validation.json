@@ -1,0 +1,156 @@
+{
+  "all_tex_literal_paths_checked": 112,
+  "archive_members_verified": 61,
+  "canonical_panel_inventory_sha256": {
+    "data/panel_audit.csv": "ee85a21eb3764b59cd7da9868baf57e948be65d0c2056ec152d53ccba5664931",
+    "data/panel_audit.json": "bda6631c088b5699407078710ec25de2ce63cd72361a0ccca326c814eca0fbf6"
+  },
+  "checked_utc": "2026-10-10T10:06:10.807700Z",
+  "checker_sha256": "d5c0c1d9be39bc9ae55e53c6d58fbd69ddd93570becd1c008856a3b0ee73ce50",
+  "cmj_gradient_normal_squared_norm_fractions": [
+    {
+      "event": 981,
+      "fraction": 0.9951324731646493,
+      "variant": "old"
+    },
+    {
+      "event": 987,
+      "fraction": 0.9929490051662863,
+      "variant": "old"
+    },
+    {
+      "event": 981,
+      "fraction": 0.9944619988996208,
+      "variant": "D"
+    },
+    {
+      "event": 987,
+      "fraction": 0.9963837748613252,
+      "variant": "D"
+    }
+  ],
+  "compile_log_findings": {
+    "1": {
+      "errors_overfull": [],
+      "existing_page_group_warning": "location_errors.pdf, page14; visually inspected in prior checkpoint",
+      "first_pass_new_figure_reference_resolved_in_second_pass": true,
+      "undefined": [
+        "LaTeX Warning: Reference `fig:cmj_trial_geometry' on page 26 undefined on input",
+        "LaTeX Warning: There were undefined references."
+      ],
+      "warnings": [
+        "pdfTeX warning: pdflatex (file ../figures/location_errors.pdf): PDF inclusion: ",
+        "LaTeX Warning: Reference `fig:cmj_trial_geometry' on page 26 undefined on input",
+        "LaTeX Warning: There were undefined references.",
+        "LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right."
+      ]
+    },
+    "2": {
+      "errors_overfull": [],
+      "existing_page_group_warning": "location_errors.pdf, page14; visually inspected in prior checkpoint",
+      "first_pass_new_figure_reference_resolved_in_second_pass": false,
+      "undefined": [],
+      "warnings": [
+        "pdfTeX warning: pdflatex (file ../figures/location_errors.pdf): PDF inclusion: "
+      ]
+    }
+  },
+  "compile_output_files_checked": 7,
+  "compile_passes": 2,
+  "compile_receipt_sha256": "57dcf972784863b7e9eea7e3551ce274e78b68dc594699955f66bd891fc380dc",
+  "contextually_abbreviated_paths": 7,
+  "document_change": "Recorded matched failed CMJ old/D replay, saved near-face geometry and fixed-path gradient localization; no panel promotion or maintained solver change.",
+  "external_markdown_links_not_requested": 2,
+  "figure_references_checked": 27,
+  "first_edge_result_scope": "Fixed first knot and unchanged remainder; exact straight derivative agrees at roundoff, local curving does not remedy the failed global source criterion.",
+  "hayward_guarded_outcome": {
+    "accepted_updates": 0,
+    "failed_rays": 181,
+    "status": "failed_before_first_trial_objective"
+  },
+  "literal_recovery_paths_checked": 68,
+  "markdown_links_checked": 82,
+  "missing_paths": [],
+  "native_replay_calls_already_completed": 4,
+  "new_ray_input_controls_passed": 56,
+  "path_inventory_sha256": "ca2bfd14372224226649c06ddafabb3e5e4a0e2614f5e6f0cc0b2cfc64cbc214",
+  "pdf_bytes": 2422314,
+  "pdf_pages": 116,
+  "prior_covariance_controls_unchanged": 39,
+  "readme_sha256": "abc012472b9d196511fc59d64b198570b7d99c5645c9016189dc43c49f8a16b7",
+  "recovery_checkpoint_sha256": "ce6b45679443842f9cc21eaf6b75e5c94f51f1525fd13224782ac603c5b8889b",
+  "report_sha256": "2fb13ddd00e353bd422b3c23260eac9162a8dfa4bb8d0cef66b09ae4a5022d25",
+  "reviewed_evidence_sha256": {
+    "data/development/full_dd_resolution_ray_input_checks_001/new_checks/results.json": "e53c72076edcf91fd4d7742f7dd95069d245eb8a9f2dcbe516f927f313437486",
+    "data/development/full_dd_resolution_ray_input_checks_001/prior39_comparison.json": "e71cdba87443acfa50789317eb90c3739b54ddc354e23b5fe5deccba65fe523c",
+    "data/development/full_dd_resolution_ray_input_checks_001/review.json": "dfbc34bc023db6b2cb181dff777ca7a2cf9c804866739f75a3b5806607d9ecbe",
+    "data/development/hayward_cmj_interface_geometry_001/plot_receipt.json": "66d647fe9c3fdf6909ade27a007dba0724ac9bf049f0039c5b03d67a6510b0a4",
+    "data/development/hayward_cmj_interface_geometry_001/review.json": "ac70ef2460106de3f16cef474e328a8a2bd9bac1bf8489ecbda87e500d601f7b",
+    "data/development/hayward_cmj_interface_geometry_001/summary.json": "ed35de2f89fbd3999db3788be2a71750209897314839763147cffcc8984c39fd",
+    "data/development/hayward_cmj_saved_gradient_001/execution.json": "2100bfd714cf151fa1ace4cf5266bc9a57e1d2e375da77e0af816baf20b6e59d",
+    "data/development/hayward_cmj_saved_gradient_001/review.json": "54b80d74fa5060f2c552849104ad0ed3b19e923488d850d122ba1e336d8360cd",
+    "data/development/hayward_cmj_saved_gradient_001/summary.json": "3b108eda629ae4f8b8b7389b40fe13eddf857ed5211085970e6d844a3fbc01c7",
+    "data/development/hayward_guarded_failure_001/archive_verification.json": "f25e8d8da6e9c232e36b0e17441d6ec77588b19c40f46d3fe3a2449d2055700b",
+    "data/development/hayward_guarded_failure_001/classification/summary.json": "438c9d783240f0b1979de8103f2d821327d9928728de6386ca0511305356ef6a",
+    "data/development/hayward_guarded_failure_001/independent_archive_review.json": "e721298f1564974071eb8adb07e0a9308cd78442f4553d7d19ed15ee467d6b55",
+    "data/development/hayward_guarded_failure_001/manifest.json": "4016d24f72362dc733bcc42fef3def5d2ad1e4dc25b893e0a02105867f6ea1c6",
+    "data/development/hayward_guarded_failure_001/restore_check.json": "ddb5302f3c3b6ada7ad8ebdfc3ba00c1b3bb0a8e18d03fb85876b23012566df6",
+    "data/development/hayward_trial_cmj_old_D_replay_001/execution.json": "5c8c1f59f9c8f12cf838b874771a823f5b5a25a88da04547b2a9bfbfd2cf835f",
+    "data/development/hayward_trial_cmj_old_D_replay_001/replay_input_closure.json": "f8329630a42ad00a8df010b4c1968f8dc1ccecc02ca56bdf8a1e566c247063ca",
+    "data/development/hayward_trial_cmj_old_D_replay_001/review.json": "9f8f69021ef47ed775026ffd7f3b9fb3da3cd5cc73750dae4e0f4b9e75fbc2c5",
+    "data/development/hayward_trial_cmj_old_D_replay_001/summary.json": "6c14dc7c6c655ab384a86618cfd1d9b07b0353c32a436ded7db0c0b77b5c8131",
+    "data/development/loma_lon_first_edge_decomposition_001/calculation/summary.json": "1745f57df97be938a1beff82bb3bd61d1aa367346f199f841724863a72618825",
+    "data/development/loma_lon_first_edge_decomposition_001/review.json": "c4fc2be7c4b9bc48be0e0b567fe74b747ce6e24d9f0019483089aa7ac0b20a2f",
+    "data/development/loma_lon_straight_curvature_replay_001/execution.json": "a92ae592a8e068204ec2e3dea3228a7eb6af3119cbe40d47cbf590e0a16f8618",
+    "data/development/loma_lon_straight_curvature_replay_001/review.json": "3e9d14d95c435d242ac8a241f452d712e8ea1beda066b1d645fa0b0f30c725a9",
+    "data/development/loma_lon_straight_curvature_replay_001/summary.json": "ee14057bc05c7747f30eda6df9670b0f89e26a777390668d9d78f20b03523bde",
+    "data/development/loma_lon_strict_straight_4000_replay_001/execution.json": "561e35952122e2da4795e40fffdd39db21586b8e38d4e3f5e7d41c1a6d8a7127",
+    "data/development/loma_lon_strict_straight_4000_replay_001/review.json": "0b9b681ad01c92d78b69c242548134863b50280809854eeadca87747e2c2ca19",
+    "data/development/loma_lon_strict_straight_4000_replay_001/summary.json": "ed4a337bd47acb08965eb9bbd9a3fefa5a6c4488bb434177919d7a80664aa1b5",
+    "data/development/loma_lon_strict_straight_replay_001/execution.json": "4645a403634415d341ff71ac0066852b05c7395a61f81802779fcfba606c135c",
+    "data/development/loma_lon_strict_straight_replay_001/review.json": "981487f2a95910d63790f7415ccb64da25f796c11093cf0d303e8858f1e71af0",
+    "data/development/loma_lon_strict_straight_replay_001/summary.json": "363886801314b87e7e3cf5d1869180c7f25f2124594c16a92f3276fdf9678da2"
+  },
+  "scope": "Current documents/compiled PDF and saved reviewed evidence only; no numerical rerun or new ray/inverse acceptance.",
+  "status": "passed",
+  "strict_diagnostics": [
+    {
+      "cap": 1000,
+      "local_flags": [
+        0,
+        0
+      ],
+      "source_errors_s_per_km": [
+        2.5116706023300852e-06,
+        1.6103645968115247e-06
+      ]
+    },
+    {
+      "cap": 4000,
+      "local_flags": [
+        0,
+        0
+      ],
+      "source_errors_s_per_km": [
+        1.780506959443313e-06,
+        1.8823643876347278e-06
+      ]
+    }
+  ],
+  "tex_source_files_checked": 16,
+  "unchanged_panel_counts": {
+    "independently reproduced": 1,
+    "partially reproduced": 61
+  },
+  "unchanged_panel_tex_compared_to": "usable_curvature_adoption_report_003",
+  "visual_render_receipt": "data/development/cmj_trial_report_001/visual_review.json",
+  "visual_render_receipt_sha256": "51caef6cb5e91890364cd1ea04b63ec668d7418f91cf11b9388467e5adf35cd2",
+  "visual_review_basis": "Root inspected final PDF pages rendered at1400pixel maximum dimension; new CMJ replay, geometry and fixed-gradient text, figure/caption and retained strict-stopping text have no clipping or overlap.",
+  "visual_review_pages": [
+    26,
+    27,
+    28,
+    36,
+    37
+  ]
+}

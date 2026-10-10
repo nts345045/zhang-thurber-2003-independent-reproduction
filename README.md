@@ -106,6 +106,17 @@ of 14,262 rays failed local stopping. No inverse update was accepted. The
 [failure archive](data/development/hayward_guarded_failure_001/README.md)
 preserves the trial and last accepted states separately.
 Passing the initial depth-dependent model does not validate subsequent 3D models.
+A [matched CMJ replay](data/development/hayward_trial_cmj_old_D_replay_001/RESULTS.md)
+exactly reproduces two original failed rays before applying the adopted optimizer.
+Both revised rays still fail local stopping after 1,000 updates. Their original
+paths contain clusters near an internal velocity ridge; a separate
+[saved-geometry calculation](data/development/hayward_cmj_interface_geometry_001/README.md)
+and [diagnostic plot](data/development/hayward_cmj_interface_geometry_001/PLOT.md)
+identify a normal cusp in reciprocal velocity there. This does not establish
+the cause of either failure or certify the paths.
+A [fixed-path gradient decomposition](data/development/hayward_cmj_saved_gradient_001/README.md)
+reproduces all four saved norms and places 99.29–99.64% of their squared values
+in normal components at those near-face nodes. All failed flags remain.
 
 The revised solver preserves identities in event/residual CSV files and ray
 diagnostic mappings, traces observed pairs only, and exports an unweighted

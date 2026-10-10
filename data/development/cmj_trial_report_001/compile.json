@@ -1,0 +1,59 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T10:01:53.728997Z",
+  "previous_report_sha256": "2e4f3969746425396c5ff0c1dc9cf89b855e577e1f4c0b7f39e87140a14bd281",
+  "tex_source_sha256": {
+    "report/hayward_full_results_section.tex": "1ef7149792af3ba4ce5a8f9492bdaa5ced41d4117de654a2316306a7dcfc7e28",
+    "report/hayward_results.tex": "4722d2a9473bcc1be0b3671f7efe1b25b408d42d36e8938ffa6bbc6522420614",
+    "report/hayward_velocity_checkpoint.tex": "d2c1b70f84acf00729ff7aca23b8ad14ad98b06d49fe9fc4555152c2a126ec59",
+    "report/joint_findings.tex": "4e94b1553e76b20051e6195b1d0b71d8097ce7d892fd6b2879cd233f72e43ee6",
+    "report/metrics.tex": "1adf4e381d0a645cec73b919eb176e23ae55f33d4f253717630d5dd2b480077a",
+    "report/panel_details.tex": "30a7870babfa8731adee566fb3c8e7dca84c4434a4b11074f1bbd71dff8013af",
+    "report/panel_table.tex": "de7947141f6a64c80a686b2a04c44972ac171eee2e46b5b50ff31fbcb9bac316",
+    "report/ray_failure_checkpoint.tex": "c4e64d2b323c353b4bcb92f24adf0d0e2c5e024d187299237a464f0035cf112d",
+    "report/ray_findings.tex": "87e02479f0fbd6e43ae564965e2ea79ee7bdad4670cdd62bbca25115f22f4fad",
+    "report/recovery_checkpoint.tex": "ce6b45679443842f9cc21eaf6b75e5c94f51f1525fd13224782ac603c5b8889b",
+    "report/report.tex": "289034e2eae49f6230f2d82c6e0005ab989af6e6443e1293382d6bcafd7f6efe",
+    "report/run_findings.tex": "c301712aeba4366c6b33a61d5939d2f3567a7dce0734aff2c62a2e936e37c28f",
+    "report/sensitivity_table.tex": "89e36d73e854c23e8baeb7436e33b7474c4fa82b318f6f39f26b3a26167aacfb",
+    "report/spatial_table.tex": "40139003a2d2ee5eae0a1ddd42af178bddc086642c8cd5687e617c399e873d9d",
+    "report/validation_table.tex": "2df4790edf0dfa6bf59fa64f9f42a943a75d77df7d0b6ffe4f061caaab08d343",
+    "report/velocity_metrics.tex": "9da0ab0e781f625c2abe70910c6ae0884a44adb5e8bf84ddbacec4bed8e45a62"
+  },
+  "readme_sha256": "abc012472b9d196511fc59d64b198570b7d99c5645c9016189dc43c49f8a16b7",
+  "compile_source_sha256": "2ada08cea06951d7885abfb5c64718c1a31138c0256c71a26a161c396acfee38",
+  "commands": [
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "report.tex"
+      ],
+      "working_directory": "report",
+      "return_code": 0
+    },
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "report.tex"
+      ],
+      "working_directory": "report",
+      "return_code": 0
+    }
+  ],
+  "finished_utc": "2026-10-10T10:01:57.682035Z",
+  "report_sha256": "2fb13ddd00e353bd422b3c23260eac9162a8dfa4bb8d0cef66b09ae4a5022d25",
+  "report_bytes": 2422314,
+  "output_sha256": {
+    "pass1_stdout.txt": "42ac616b946d854df29bc7f392b83f41a2bd130c0c686443fe340343aa271d82",
+    "pass1_report.log": "f88c571836cef249a6fa5d93b8965ec832de8a1b91a62983487337d485745d9a",
+    "pass2_stdout.txt": "0137dc0f896fb66f0e9322b27216763be2a3c02be6f02d308d57245c8c439346",
+    "pass2_report.log": "d78461ea682730bca0e5ded2f97a429cbcf015a212c97782d9fc221cfd9cbdbf",
+    "report.log": "d78461ea682730bca0e5ded2f97a429cbcf015a212c97782d9fc221cfd9cbdbf",
+    "report.txt": "48bc32e67de1939ed0d09e9fc105c9fc08b6988f4b3ad631d86931b44827ca6f",
+    "pdfinfo.txt": "0340ba4635b815cd134c78c9e44ec0616ea2f69827fee565736c1249e3551b8e"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T09:59:54.617037+00:00",
+  "prepared_sha256": "8f399d98e1d2ce90f87ba0422f489762b8270eff5878cce9b8a6b66551f51971",
+  "prelaunch_review_sha256": "5dc5b1b1c18357984cc98f6dadd58ece3d558f4d0347d4e08820b16048e99495",
+  "commands": [
+    {
+      "stage": "compile_old",
+      "command": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_cmj_saved_gradient_001/gradient.cpp",
+        "-I/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/source/old",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_cmj_saved_gradient_001/build/gradient_old",
+        "-lstdc++fs"
+      ],
+      "started_utc": "2026-10-10T09:59:54.618589+00:00",
+      "pid": 324734,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:00:24.717607+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "evaluate_old",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_cmj_saved_gradient_001/build/gradient_old",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/inputs/trial_grid.csv",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/results/old/paths.csv",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/results/old/status.csv",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_cmj_saved_gradient_001/results/old",
+        "old"
+      ],
+      "started_utc": "2026-10-10T10:00:24.846291+00:00",
+      "pid": 325175,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:00:25.286195+00:00",
+      "stdout_sha256": "4d7ff3f031b8e7f8ae0115f7a76d3ebf710de35e7a81aa5f80af754e08c9bd64",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "compile_D",
+      "command": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_cmj_saved_gradient_001/gradient.cpp",
+        "-I/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/source/D",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_cmj_saved_gradient_001/build/gradient_D",
+        "-lstdc++fs"
+      ],
+      "started_utc": "2026-10-10T10:00:26.814390+00:00",
+      "pid": 325217,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:00:59.575926+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "evaluate_D",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_cmj_saved_gradient_001/build/gradient_D",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/inputs/trial_grid.csv",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/results/D/paths.csv",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_trial_cmj_old_D_replay_001/results/D/status.csv",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_cmj_saved_gradient_001/results/D",
+        "D"
+      ],
+      "started_utc": "2026-10-10T10:00:59.693363+00:00",
+      "pid": 325541,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:01:00.128194+00:00",
+      "stdout_sha256": "4d7ff3f031b8e7f8ae0115f7a76d3ebf710de35e7a81aa5f80af754e08c9bd64",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "planned_fixed_path_evaluations": 4,
+  "trace_calls": 0,
+  "field_constructions": 0,
+  "environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "1",
+    "LC_ALL": "C",
+    "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "current_stage": "evaluate_D",
+  "return_code": 0,
+  "finished_utc": "2026-10-10T10:01:01.670712+00:00",
+  "summary_sha256": "3b108eda629ae4f8b8b7389b40fe13eddf857ed5211085970e6d844a3fbc01c7",
+  "fixed_path_evaluations_completed": 4
+}
