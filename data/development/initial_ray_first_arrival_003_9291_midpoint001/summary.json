@@ -1,0 +1,81 @@
+{
+  "scope": "Exact curve-preserving midpoint depth perturbations; no optimizer or production change",
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-fopenmp",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/initial_ray_first_arrival_003_9291_midpoint001/source/diagnostics/check_initial_ray_refinement.cpp",
+        "-lstdc++fs",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/initial_midpoint001/check"
+      ],
+      "pid": 4185801,
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 23.347650051116943
+    },
+    {
+      "name": "midpoints",
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/initial_midpoint001/check",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/initial_ray_first_arrival_003_9291_midpoint001/initial_grid.csv",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/initial_ray_first_arrival_003_9291_midpoint001/input_paths.csv",
+        "fmm_0.500000_1000",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/initial_ray_first_arrival_003_9291_midpoint001/midpoints.csv"
+      ],
+      "pid": 4185957,
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 0.04882335662841797
+    }
+  ],
+  "input_sha256": {
+    "identified_ray.csv": "5f5b51b6a66518f6302bce673b519f8c962f34a973cdfaf11b2145c87087fd85",
+    "initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "input_paths.csv": "f9a0b07336bc1312afd15096e9c4606867ca4c0894fa508afb540016859716f5",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "source/src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/diagnostics/check_ray_stopping.cpp": "8e0088b01318f0dceadc502b700014412d19d623b089da512034b9e15489f238",
+    "source/diagnostics/run_ray_stopping.py": "b39f64a35ab3920d57be3336a3234a0ecda1f91b0a9147d900ae069eb7deb3ec",
+    "source/diagnostics/first_arrival_fmm.hpp": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+    "source/diagnostics/observed_optimizer.hpp": "34638c1996feaec7c0bc5df2da3b826e36ea1088c431a3d025d4de4e1ddebcf3",
+    "source/diagnostics/run_initial_ray_diagnosis.py": "a27596f6d617d1fa6cd1a31de277fc3b8d400a2650eee4015ee777c5672c1923",
+    "source/diagnostics/check_initial_ray_refinement.cpp": "ecfff0e22d63a908b72db3b389fb82c8da6c39e0558c5da02a86d750cc2492b3",
+    "source/diagnostics/loma_path_checks.hpp": "479c44abd9d422b35d5cdee1ace6dd706829182246dfebc3f590b612c135e739"
+  },
+  "status": "complete",
+  "binary_sha256": "7ce6e88d11949fce9516536f853d3a0004d76bb4d599414dde2a5077f2edcf0c",
+  "output_sha256": {
+    "identified_ray.csv": "5f5b51b6a66518f6302bce673b519f8c962f34a973cdfaf11b2145c87087fd85",
+    "initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "input_paths.csv": "f9a0b07336bc1312afd15096e9c4606867ca4c0894fa508afb540016859716f5",
+    "compile_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "midpoints_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "midpoints_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "midpoints.csv": "0a3215c8c9eac57a4cff36469c5a5d733b88c8f62045972f15e6c5fa6e8120b2",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "source/src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/diagnostics/check_ray_stopping.cpp": "8e0088b01318f0dceadc502b700014412d19d623b089da512034b9e15489f238",
+    "source/diagnostics/run_ray_stopping.py": "b39f64a35ab3920d57be3336a3234a0ecda1f91b0a9147d900ae069eb7deb3ec",
+    "source/diagnostics/first_arrival_fmm.hpp": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+    "source/diagnostics/observed_optimizer.hpp": "34638c1996feaec7c0bc5df2da3b826e36ea1088c431a3d025d4de4e1ddebcf3",
+    "source/diagnostics/run_initial_ray_diagnosis.py": "a27596f6d617d1fa6cd1a31de277fc3b8d400a2650eee4015ee777c5672c1923",
+    "source/diagnostics/check_initial_ray_refinement.cpp": "ecfff0e22d63a908b72db3b389fb82c8da6c39e0558c5da02a86d750cc2492b3",
+    "source/diagnostics/loma_path_checks.hpp": "479c44abd9d422b35d5cdee1ace6dd706829182246dfebc3f590b612c135e739"
+  }
+}

@@ -1,0 +1,70 @@
+--- check_ray_stopping.cpp
++++ loma_check_ray_stopping.cpp
+@@ -84,6 +84,8 @@
+ }
+ #include "observed_optimizer.hpp"
+ 
++#include "loma_path_checks.hpp"
++
+ Vec values(const std::string &text) {
+   Vec result;
+   std::istringstream stream(text);
+@@ -92,7 +94,7 @@
+   return result;
+ }
+ int main(int argc,char **argv) {
+-  if(argc!=6)throw std::runtime_error("Usage: check_ray_stopping GRID.csv IDENTIFIED_RAY.csv OUT BUDGETS SPACINGS");
++  if(argc!=7)throw std::runtime_error("Usage: check_ray_stopping GRID.csv IDENTIFIED_RAY.csv OUT BUDGETS SPACINGS AUX_SPACING");
+   Grid g=read_grid(argv[1]);
+   auto input=csv_table(argv[2]);
+   if(input.rows.size()!=1)throw std::runtime_error("Exactly one identified ray is required");
+@@ -100,8 +102,8 @@
+   for(std::size_t i=0;i<input.header.size();++i)cols[input.header[i]]=i;
+   const auto &record=input.rows[0];
+   auto pos=[&](const std::string &prefix) {return P{csv_double(record[cols.at(prefix+"x_km")]),csv_double(record[cols.at(prefix+"y_km")]),csv_double(record[cols.at(prefix+"z_km")])};};
+-  P a=pos("dd_source_"),b=pos("receiver_");
+-  audit_observation=record[cols.at("observation_index")];
++  P a=pos("source_"),b=pos("receiver_");
++  audit_observation=record[cols.at("diagnostic_row")];
+   std::string out=argv[3];
+   std::ofstream results(out+"/results.csv"),history(out+"/history.csv"),paths(out+"/paths.csv"),fd(out+"/path_gradient_checks.csv");
+   if(!results||!history||!paths||!fd)throw std::runtime_error("Cannot open ray-stopping audit files");
+@@ -115,19 +117,22 @@
+   if(!metric)throw std::runtime_error("Cannot open reduced metric audit");
+   metric<<std::setprecision(17);
+ #ifdef AUDIT_CONE_METRIC
+-  metric<<"run_id,observation_index,success,solves,releases,blocks,initial_fixed,final_fixed,free_equation_max_error,primal_violation,dual_violation,complementarity_max_error,slope,kkt_roundoff_tolerance,free_equation_relative_backward_error,maximum_arithmetic_scale\n";
++  metric<<"run_id,diagnostic_row,success,solves,releases,blocks,initial_fixed,final_fixed,free_equation_max_error,primal_violation,dual_violation,complementarity_max_error,slope,kkt_roundoff_tolerance,free_equation_relative_backward_error,maximum_arithmetic_scale\n";
+ #else
+-  metric<<"run_id,observation_index,initial_fixed,added_fixed,solves,free_equation_max_error,slope,inward_multiplier_violations,most_negative_signed_multiplier\n";
++  metric<<"run_id,diagnostic_row,initial_fixed,added_fixed,solves,free_equation_max_error,slope,inward_multiplier_violations,most_negative_signed_multiplier\n";
+ #endif
+   audit_metric_file=&metric;
+-  results<<"run_id,observation_index,initialization,path_spacing_km,max_updates,updates,converged,time_s,projected_gradient,raw_gradient,merged_nodes,path_nodes,source_dx,source_dy,source_dz,logged_matches_unobserved_variant\n";
++  results<<"run_id,diagnostic_row,initialization,path_spacing_km,max_updates,updates,converged,time_s,projected_gradient,raw_gradient,merged_nodes,path_nodes,source_dx,source_dy,source_dz,logged_matches_unobserved_variant\n";
+ #else
+-  results<<"run_id,observation_index,initialization,path_spacing_km,max_updates,updates,converged,time_s,projected_gradient,raw_gradient,merged_nodes,path_nodes,source_dx,source_dy,source_dz,logged_matches_unmodified\n";
++  results<<"run_id,diagnostic_row,initialization,path_spacing_km,max_updates,updates,converged,time_s,projected_gradient,raw_gradient,merged_nodes,path_nodes,source_dx,source_dy,source_dz,logged_matches_unmodified\n";
+ #endif
+-  history<<"run_id,observation_index,phase,iteration,updates,time_s,projected_gradient,raw_gradient,action_change_s,accepted_step,feasible_initial_step,directional_slope,line_search_evaluations,memory_pairs,gradient_fallback,merged_nodes,curvature_pair_accepted,max_node_step_km,path_nodes,min_segment_km,max_segment_km,tangential_gradient_norm,normal_gradient_norm,min_internal_grid_plane_distance_km,x_min_active,x_max_active,y_min_active,y_max_active,z_min_active,z_max_active\n";
+-  paths<<"run_id,observation_index,node,x,y,z,gradient_x,gradient_y,gradient_z\n";
+-  fd<<"run_id,observation_index,node,axis,step_km,scheme,analytic_gradient,numerical_gradient,error\n";
+-  first_arrival::Field field(g,b,.5,2,true);
++  history<<"run_id,diagnostic_row,phase,iteration,updates,time_s,projected_gradient,raw_gradient,action_change_s,accepted_step,feasible_initial_step,directional_slope,line_search_evaluations,memory_pairs,gradient_fallback,merged_nodes,curvature_pair_accepted,max_node_step_km,path_nodes,min_segment_km,max_segment_km,tangential_gradient_norm,normal_gradient_norm,min_internal_grid_plane_distance_km,x_min_active,x_max_active,y_min_active,y_max_active,z_min_active,z_max_active\n";
++  paths<<"run_id,diagnostic_row,node,x,y,z,gradient_x,gradient_y,gradient_z\n";
++  fd<<"run_id,diagnostic_row,node,axis,step_km,scheme,analytic_gradient,numerical_gradient,error\n";
++  std::ofstream integration(out+"/integration_checks.csv");
++  integration<<std::setprecision(21);
++  integration<<"run_id,diagnostic_row,node,axis,step_km,analytic_gradient,node_x,nearest_velocity_kink_x,node_distance_to_kink_km,previous_node_x,next_node_x,strict_segment_kink_crossings,exact_interface_aligned_segments,near_interface_aligned_segments_1e_minus8_km,quadrature_time_s,exact_x_time_s,quadrature_action_error_s,quadrature_forward,quadrature_backward,quadrature_central,exact_forward,exact_backward,exact_central\n";
++  first_arrival::Field field(g,b,std::stod(argv[6]),2,true);
+   auto seed=field.candidate(a);
+   if(!seed.success)throw std::runtime_error(seed.message);
+   for(double spacing:values(argv[5]))for(double budget_value:values(argv[4]))for(bool fmm:{false,true}) {
+@@ -181,6 +186,7 @@
+       fd<<audit_run<<','<<audit_observation<<','<<node<<','<<axis<<','<<h<<','<<scheme<<','
+         <<gradient[worst]<<','<<derivative<<','<<derivative-gradient[worst]<<'\n';
+     }
++    loma_path_checks(integration,g,ray,gradient,audit_run,audit_observation);
+     std::cout<<audit_run<<" converged="<<ray.converged<<" updates="<<ray.iterations
+              <<" gradient="<<ray.gradient<<" observed_matches="<<matches<<std::endl;
+   }

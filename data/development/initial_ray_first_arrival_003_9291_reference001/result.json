@@ -1,0 +1,292 @@
+{
+  "scope": "Continuous finite-depth 1D reference versus eight saved paths; no ray optimization or inversion",
+  "identified_observation_row": 9291,
+  "source_km": [
+    -2.1135403353562054,
+    -26.395708510486486,
+    2.024
+  ],
+  "receiver_km": [
+    -12.968576108976636,
+    -13.742289982961784,
+    -0.021
+  ],
+  "full_native_metadata": {
+    "row": "9291",
+    "observation_row": "9291",
+    "i": "747",
+    "station": "60",
+    "observed": "3.14",
+    "predicted": "3.64567450081",
+    "residual": "-0.505674500809",
+    "ray_converged": "0",
+    "ray_projected_gradient": "0.00279900228301",
+    "ray_iterations": "208",
+    "ray_time": "3.64567450081",
+    "ray_raw_gradient": "0.00279900228301",
+    "ray_initialization_attempted": "1",
+    "ray_initialization_succeeded": "1",
+    "ray_selected_fmm_seed": "1",
+    "ray_direct_seed_time": "3.6457268187",
+    "ray_fmm_seed_time": "3.64567450081",
+    "ray_field_time": "3.6897104185",
+    "ray_extraction_fallback_steps": "0",
+    "ray_extraction_message": "Exact endpoints connected by a descending FMM seed",
+    "station_j": "-1",
+    "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/390228",
+    "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/3655699",
+    "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/41814994",
+    "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/41814994",
+    "pick_i_time_utc": "1994-01-02T23:05:12.770000Z",
+    "pick_i_uncertainty_s": "0.03",
+    "pick_i_uncertainty_confidence_level": "",
+    "pick_i_source_sha256": "96ed9d723a8c3db381929ee4f71ad15d3ba6b09bdf0242f9ac2d12cb9e522d69",
+    "arrival_i_time_weight": "0.29",
+    "event_j_resource_id": "",
+    "origin_j_resource_id": "",
+    "arrival_j_resource_id": "",
+    "pick_j_resource_id": "",
+    "pick_j_time_utc": "",
+    "pick_j_uncertainty_s": "",
+    "pick_j_uncertainty_confidence_level": "",
+    "pick_j_source_sha256": "",
+    "arrival_j_time_weight": "",
+    "network_code": "NC",
+    "station_code": "CCY",
+    "location_code": "",
+    "channel_code": "EHZ",
+    "channel_seed_id": "NC.CCY..EHZ",
+    "channel_fdsn_source_id": "FDSN:NC_CCY__E_H_Z",
+    "metadata_epoch_start": "1992-11-06T17:40:00",
+    "metadata_epoch_end": "1994-01-04T20:40:00",
+    "channel_source_sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833",
+    "metadata_epoch_j_start": "",
+    "metadata_epoch_j_end": "",
+    "channel_j_source_sha256": "",
+    "cross_metadata_epoch": "0",
+    "uncertainty_s": "0.03",
+    "a_priori_weight": "1.6666666666666667",
+    "observation_basis": "catalog P pick minus reference origin",
+    "observation_index": "9291",
+    "source_id": "747",
+    "source_x": "-2.1135403353562054",
+    "source_y": "-26.395708510486486",
+    "source_z": "2.024",
+    "source_t": "0",
+    "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/390228",
+    "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/3655699",
+    "source_reference_origin_time_utc": "1994-01-02T23:05:09.630000Z",
+    "source_catalog_latitude_deg": "37.5141667",
+    "source_catalog_longitude_deg": "-121.9083333",
+    "source_catalog_geoid_depth_km": "2.024",
+    "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/2026774",
+    "source_catalog_magnitude": "1.73",
+    "source_catalog_magnitude_type": "Md",
+    "source_origin_resource_id_basis": "provider reference origin; t is a correction in seconds",
+    "source_source_file": "../authoritative/hayward/raw/summaries_1994_00001.xml",
+    "source_source_sha256": "fdf7a6c8e91d99244a82948d7e8baf3d142722d656f9e2fb60521755864bd8eb",
+    "source_x_km": "-2.1135403353562054",
+    "source_y_km": "-26.395708510486486",
+    "source_z_km": "2.024",
+    "receiver_id": "60",
+    "receiver_x": "-12.968576108976636",
+    "receiver_y": "-13.742289982961784",
+    "receiver_z": "-0.021",
+    "receiver_t": "0",
+    "receiver_network_code": "NC",
+    "receiver_station_code": "CCY",
+    "receiver_station_seed_id": "NC.CCY",
+    "receiver_station_fdsn_source_id": "FDSN:NC_CCY",
+    "receiver_location_code": "",
+    "receiver_channel_code": "EHZ",
+    "receiver_channel_seed_id": "NC.CCY..EHZ",
+    "receiver_channel_fdsn_source_id": "FDSN:NC_CCY__E_H_Z",
+    "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+    "receiver_latitude_deg": "37.551552",
+    "receiver_longitude_deg": "-122.091019",
+    "receiver_channel_sensor_elevation_m": "21.0",
+    "receiver_sensor_depth_below_ground_m": "0.0",
+    "receiver_station_elevation_m": "21.0",
+    "receiver_metadata_epoch_start": "1992-11-06T17:40:00",
+    "receiver_metadata_epoch_end": "1994-01-04T20:40:00",
+    "receiver_channel_epoch_start": "1992-11-06T17:40:00",
+    "receiver_channel_epoch_end": "1994-01-04T20:40:00",
+    "receiver_station_epoch_start": "1975-05-01T00:00:00",
+    "receiver_station_epoch_end": "2004-04-21T18:19:00",
+    "receiver_provider_channel_source_id": "",
+    "receiver_provider_channel_resource_ids_json": "[]",
+    "receiver_provider_station_resource_ids_json": "[]",
+    "receiver_provider_network_resource_ids_json": "[]",
+    "receiver_latitude_datum": "WGS84 (StationXML default)",
+    "receiver_longitude_datum": "WGS84 (StationXML default)",
+    "receiver_sensor_z_geoid_km": "-0.021",
+    "receiver_z_if_sensor_elevation_km": "-0.021",
+    "receiver_z_if_ground_elevation_km": "-0.021",
+    "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+    "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+    "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+    "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+    "receiver_metadata_source_kind": "StationXML channel metadata",
+    "receiver_stationxml_schema_version": "1.2",
+    "receiver_source_document_metadata_index": "278",
+    "receiver_source_file": "../authoritative/stations/raw/ncedc_channels_NC_987aa2b70b3c.xml",
+    "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&sta=CAC%2CCAD%2CCAI%2CCAL%2CCAO%2CCBK%2CCBLG%2CCBR%2CCBS%2CCBW%2CCCH1%2CCCO%2CCCY%2CCDA%2CCDO%2CCDU%2CCDV%2CCGP%2CCGP1%2CCLC%2CCMC%2CCMH%2CCMJ%2CCML%2CCMM&start=1984-01-13T06%3A19%3A16.750000&end=1998-12-28T06%3A23%3A19.520000&cha=EHZ%2CELN%2CELZ%2CEP2%2CEP3%2CHN1%2CHN2%2CHN3%2CHV1&level=channel&format=xml",
+    "receiver_source_sha256": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833",
+    "receiver_retrieved_utc": "2026-10-09T21:26:26.325950Z",
+    "receiver_epoch_basis": "",
+    "receiver_provider_start_date": "",
+    "receiver_provider_start_hm": "",
+    "receiver_provider_end_date": "",
+    "receiver_provider_end_hm": "",
+    "receiver_provider_data_use_start_date": "",
+    "receiver_provider_data_use_end_date": "",
+    "receiver_latitude": "",
+    "receiver_longitude": "",
+    "receiver_provider_elevation_m": "",
+    "receiver_provider_location_status": "",
+    "receiver_location_status_definition": "",
+    "receiver_provider_usgs_channel_code": "",
+    "receiver_provider_location_code": "",
+    "receiver_provider_resource_id": "",
+    "receiver_source_line": "",
+    "receiver_format_source_file": "",
+    "receiver_format_source_sha256": "",
+    "receiver_x_km": "-12.968576108976636",
+    "receiver_y_km": "-13.742289982961784",
+    "receiver_z_km": "-0.021"
+  },
+  "profile_depth_velocity_km_km_s": [
+    [
+      -1.0,
+      3.77
+    ],
+    [
+      0.0,
+      3.77
+    ],
+    [
+      4.0,
+      5.476666666666667
+    ],
+    [
+      8.0,
+      5.8675
+    ],
+    [
+      12.0,
+      6.1025
+    ],
+    [
+      20.0,
+      7.18
+    ]
+  ],
+  "original_box_km": {
+    "x": [
+      -35.0,
+      35.0
+    ],
+    "y": [
+      -30.0,
+      30.0
+    ],
+    "z": [
+      -1.0,
+      20.0
+    ]
+  },
+  "reference": {
+    "complete": true,
+    "reference_valid": true,
+    "candidates": [
+      {
+        "kind": "turning",
+        "time_s": 3.6454799943574034,
+        "p_s_per_km": 0.1825897921734342,
+        "source_derivative_s_per_km": [
+          0.11888624224965007,
+          -0.1385824433674606,
+          -0.11505469286353431
+        ],
+        "distance_residual_km": 3.076650045841234e-12,
+        "turning_depth_km": 4.000928869091735,
+        "certificate": "interval_monotonicity_and_sign_change",
+        "layer": 2,
+        "root_interval": [
+          0.03152956725383896,
+          0.031529567254796484
+        ]
+      }
+    ],
+    "unresolved": [],
+    "root_tolerance": 1e-12,
+    "distance_tolerance_km": 1e-08,
+    "isolation_boxes": 6,
+    "max_isolation_boxes_per_layer": 20000,
+    "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+    "near_tie_time_tolerance_s": 1e-09,
+    "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+    "first_arrival": {
+      "kind": "turning",
+      "time_s": 3.6454799943574034,
+      "p_s_per_km": 0.1825897921734342,
+      "source_derivative_s_per_km": [
+        0.11888624224965007,
+        -0.1385824433674606,
+        -0.11505469286353431
+      ],
+      "distance_residual_km": 3.076650045841234e-12,
+      "turning_depth_km": 4.000928869091735,
+      "certificate": "interval_monotonicity_and_sign_change",
+      "layer": 2,
+      "root_interval": [
+        0.03152956725383896,
+        0.031529567254796484
+      ]
+    },
+    "best_enumerated_candidate": {
+      "kind": "turning",
+      "time_s": 3.6454799943574034,
+      "p_s_per_km": 0.1825897921734342,
+      "source_derivative_s_per_km": [
+        0.11888624224965007,
+        -0.1385824433674606,
+        -0.11505469286353431
+      ],
+      "distance_residual_km": 3.076650045841234e-12,
+      "turning_depth_km": 4.000928869091735,
+      "certificate": "interval_monotonicity_and_sign_change",
+      "layer": 2,
+      "root_interval": [
+        0.03152956725383896,
+        0.031529567254796484
+      ]
+    },
+    "near_ties": [
+      0
+    ]
+  },
+  "frozen_sha256": {
+    "inputs/identified_ray.csv": "5f5b51b6a66518f6302bce673b519f8c962f34a973cdfaf11b2145c87087fd85",
+    "inputs/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "inputs/spacing050_results.csv": "4965571826c0dd0068641a1b77696d8734d85f96e9d1dce00898b416983d9281",
+    "inputs/spacing025_results.csv": "478a8a26ea2d27302ad086abf590a5699c6c2e4b099891c171048683b960a95e",
+    "source/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "inputs/audit_summary.json": "65cbc237b07786d2ddb7cc49f6f49ef824f78b8012e9152dc6ab6d76b563de63"
+  },
+  "helper_sha256": "cacf84c22a1d383556a4a0288dba72aa9e77cf3a1ed9b02720e4ff90f57dd06f",
+  "comparison_sha256": "6d99cd08d5814a61f97d06ff5079c23ca5e1120324e07cc5027224511a2ec6cd",
+  "checks": {
+    "all_saved_controls_preserved": true,
+    "all_observation_hooks_match": true,
+    "finite_comparisons": true,
+    "complete_reference": true,
+    "reference_valid": true
+  },
+  "limitations": [
+    "Time ordering uses floating point; branch enumeration and distance closure have the reference module certificates.",
+    "This monotone initial 1D model result is not a claim about updated three-dimensional models.",
+    "Existing local convergence flags are retained; no new field threshold is imposed.",
+    "Source derivatives refer to the selected exact branch; near ties remain explicit."
+  ]
+}

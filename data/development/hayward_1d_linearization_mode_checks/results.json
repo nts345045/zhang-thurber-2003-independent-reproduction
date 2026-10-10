@@ -1,0 +1,97 @@
+{
+  "scope": "Invented readiness and immutable-ledger controls only",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 data/development/hayward_1d_linearization_mode_checks/check.py",
+  "source_sha256": {
+    "data/development/hayward_1d_linearization_mode_checks/check.py": "7d5aad262a28d217387671d010725c348823209999ee8813bd6b14d03b85ce88",
+    "diagnostics/compare_hayward_1d_support.py": "1e3beaea6985899bfb556510c1388a9cf84238c5176b839b14d673fd14215243",
+    "data/development/hayward_1d_linearization_mode_checks/fixture/initial_events.csv": "f3c40ac3729b1e85c1683835d2ed219f060820fe562fb7b6aa1f56968b811440",
+    "data/development/hayward_1d_linearization_mode_checks/fixture/stations.csv": "254723d9ac83ca1bef15cb777317138968f0e3bc09d763c52c862f36ef39193c",
+    "data/development/hayward_1d_linearization_mode_checks/fixture/initial_grid.csv": "f94fa49b6446e79067666eefe9095823d2dc4328b81a48b0e8bd4c96d5409f16",
+    "data/development/hayward_1d_linearization_mode_checks/fixture/observations.csv": "c9243a1fdaa7bb09e1f8234bf9a893e463bd3343ddec73ff9121bca8f835850e",
+    "data/development/hayward_1d_linearization_mode_checks/fixture/initial_linearization_rows.csv": "897c99b25179e879f871f2c989a2bbc7826c78a3bdaa699bd647a12863295294",
+    "data/development/hayward_1d_linearization_mode_checks/fixture/initial_linearization_columns.csv": "f9b9ebbea43e9e92b6b5d30157f951b7cf63fcc0c50a1f918695a9c3f5b6e66d",
+    "data/development/hayward_1d_linearization_mode_checks/fixture/initial_linearization_matrix.csv": "1ecaa86c563b2680606ad5af5040e9caac65f98fd17b50ed6d9b62db05abed34"
+  },
+  "checks": [
+    {
+      "name": "valid_running_preflight",
+      "passed": true,
+      "command": [
+        "python3",
+        "diagnostics/compare_hayward_1d_support.py",
+        "--data",
+        "tmp/hayward_1d_linearization_mode_checks/valid_running_preflight",
+        "--output",
+        "tmp/hayward_1d_linearization_mode_checks/valid_running_preflight_output",
+        "--completed-linearization-only"
+      ],
+      "return_code": 0,
+      "stdout": "{\n  \"status\": \"complete\",\n  \"rays\": 2,\n  \"reference_counts\": {\n    \"branch_flat_direct\": 2,\n    \"reference_complete\": 2,\n    \"reference_valid\": 2,\n    \"near_ties\": 0,\n    \"saved_nonconverged\": 0\n  },\n  \"production_minus_reference_s\": {\n    \"count\": 2,\n    \"minimum\": -3.0309088572266774e-14,\n    \"maximum\": 3.241851231905457e-14,\n    \"median\": 1.0547118733938987e-15,\n    \"mean\": 1.0547118733938987e-15,\n    \"rms\": 3.13815295282289e-14,\n    \"maximum_absolute\": 3.241851231905457e-14\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "failed_command",
+      "passed": true,
+      "command": [
+        "python3",
+        "diagnostics/compare_hayward_1d_support.py",
+        "--data",
+        "tmp/hayward_1d_linearization_mode_checks/failed_command",
+        "--output",
+        "tmp/hayward_1d_linearization_mode_checks/failed_command_output",
+        "--completed-linearization-only"
+      ],
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"diagnostics/compare_hayward_1d_support.py\", line 309, in <module>\n    main()\n  File \"diagnostics/compare_hayward_1d_support.py\", line 81, in main\n    raise ValueError('No matching successful completed initial linearization command')\nValueError: No matching successful completed initial linearization command\n"
+    },
+    {
+      "name": "wrong_command",
+      "passed": true,
+      "command": [
+        "python3",
+        "diagnostics/compare_hayward_1d_support.py",
+        "--data",
+        "tmp/hayward_1d_linearization_mode_checks/wrong_command",
+        "--output",
+        "tmp/hayward_1d_linearization_mode_checks/wrong_command_output",
+        "--completed-linearization-only"
+      ],
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"diagnostics/compare_hayward_1d_support.py\", line 309, in <module>\n    main()\n  File \"diagnostics/compare_hayward_1d_support.py\", line 81, in main\n    raise ValueError('No matching successful completed initial linearization command')\nValueError: No matching successful completed initial linearization command\n"
+    },
+    {
+      "name": "changed_input",
+      "passed": true,
+      "command": [
+        "python3",
+        "diagnostics/compare_hayward_1d_support.py",
+        "--data",
+        "tmp/hayward_1d_linearization_mode_checks/changed_input",
+        "--output",
+        "tmp/hayward_1d_linearization_mode_checks/changed_input_output",
+        "--completed-linearization-only"
+      ],
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"diagnostics/compare_hayward_1d_support.py\", line 309, in <module>\n    main()\n  File \"diagnostics/compare_hayward_1d_support.py\", line 86, in main\n    raise ValueError('Frozen run manifest mismatch: ' + name)\nValueError: Frozen run manifest mismatch: tmp/hayward_1d_linearization_mode_checks/changed_input/observations.csv\n"
+    },
+    {
+      "name": "default_completed_preflight",
+      "passed": true,
+      "command": [
+        "python3",
+        "diagnostics/compare_hayward_1d_support.py",
+        "--data",
+        "tmp/hayward_1d_linearization_mode_checks/default_completed_preflight",
+        "--output",
+        "tmp/hayward_1d_linearization_mode_checks/default_completed_preflight_output"
+      ],
+      "return_code": 0,
+      "stdout": "{\n  \"status\": \"complete\",\n  \"rays\": 2,\n  \"reference_counts\": {\n    \"branch_flat_direct\": 2,\n    \"reference_complete\": 2,\n    \"reference_valid\": 2,\n    \"near_ties\": 0,\n    \"saved_nonconverged\": 0\n  },\n  \"production_minus_reference_s\": {\n    \"count\": 2,\n    \"minimum\": -3.0309088572266774e-14,\n    \"maximum\": 3.241851231905457e-14,\n    \"median\": 1.0547118733938987e-15,\n    \"mean\": 1.0547118733938987e-15,\n    \"rms\": 3.13815295282289e-14,\n    \"maximum_absolute\": 3.241851231905457e-14\n  }\n}\n",
+      "stderr": ""
+    }
+  ],
+  "passed": true
+}

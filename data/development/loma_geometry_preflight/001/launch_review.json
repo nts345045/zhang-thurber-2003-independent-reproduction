@@ -1,0 +1,23 @@
+{
+  "review_result": "No material cohort/identity/support defect found",
+  "command": [
+    "python3",
+    "diagnostics/run_loma_geometry_preflight.py",
+    "--commit",
+    "bff2a451640a40bfdb73c92c536ef354c3c55c08",
+    "--variant",
+    "001"
+  ],
+  "actual_sample_indices_in_range": true,
+  "python_debug_checks_active": true,
+  "python_optimization_environment_disabled": true,
+  "run_snapshot_unchanged": true,
+  "frozen_runner_sha256": "f4225dd9d665b0d69477a555ae82e68b06f398466bdcd6d2b5950ba9165cf810",
+  "maintained_runner_sha256": "901a9674353a3e6436c0258b614f97d6a573d122e4a19c1cb3accce750692476",
+  "future_launcher_improvements": [
+    "Reject Python optimization that disables assertions",
+    "Reject negative/out-of-range indices before native table lookup",
+    "Write child command before subprocess starts"
+  ],
+  "interpretation": "The maintained runner changed after run001 reached compilation. Run001 uses its original saved runner; full committed inputs are valid, command and actual optimization/index checks are recorded here. No running source or input was edited."
+}

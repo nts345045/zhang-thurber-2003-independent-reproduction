@@ -1,0 +1,74 @@
+{
+  "phase": "preflight",
+  "status": "failed_checks_preserved",
+  "started_utc": "2026-10-10T01:28:18.630510+00:00",
+  "driver_pid": 4169552,
+  "threads": 4,
+  "return_code": 1,
+  "completed_commands": [
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "tmp/hayward_runs/first_arrival_003/source",
+        "-B",
+        "tmp/hayward_runs/first_arrival_003/compiled"
+      ],
+      "stage": "configure",
+      "pid": 4169554,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T01:28:20.336700+00:00"
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "tmp/hayward_runs/first_arrival_003/compiled",
+        "-j",
+        "2"
+      ],
+      "stage": "compile",
+      "pid": 4169648,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T01:28:48.059281+00:00"
+    },
+    {
+      "command": [
+        "tmp/hayward_runs/first_arrival_003/compiled/dd",
+        "linearize",
+        "data/hayward_first_arrival_003/run.cfg",
+        "data/hayward_first_arrival_003",
+        "initial"
+      ],
+      "stage": "initial_linearize",
+      "pid": 4169993,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T01:49:24.277186+00:00"
+    },
+    {
+      "command": [
+        "tmp/hayward_runs/first_arrival_003/compiled/dd",
+        "raycheck",
+        "data/hayward_first_arrival_003/run.cfg",
+        "data/hayward_first_arrival_003",
+        "initial"
+      ],
+      "stage": "initial_raycheck",
+      "pid": 4182307,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T01:59:17.805847+00:00"
+    }
+  ],
+  "current_command": [
+    "tmp/hayward_runs/first_arrival_003/compiled/dd",
+    "raycheck",
+    "data/hayward_first_arrival_003/run.cfg",
+    "data/hayward_first_arrival_003",
+    "initial"
+  ],
+  "current_stage": "initial_raycheck",
+  "current_command_started_utc": "2026-10-10T01:49:24.278499+00:00",
+  "current_child_pid": 4182307,
+  "current_command_return_code": 0,
+  "finished_utc": "2026-10-10T01:59:30.950553+00:00"
+}
