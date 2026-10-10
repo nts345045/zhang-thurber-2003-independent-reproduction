@@ -1,0 +1,29 @@
+{
+  "status": "completed",
+  "command": [
+    "python3",
+    "diagnostics/export_identified_dt_cc.py",
+    "--measurements-summary",
+    "data/development/native_waveform_cc_001/summary.json",
+    "--measurements-review",
+    "data/development/native_waveform_cc_001/independent_measurement_review.json",
+    "--epochs",
+    "data/authoritative/waveforms/cohort_plan_001/identified_used_epochs.csv.gz",
+    "--output",
+    "data/development/native_dt_cc_001"
+  ],
+  "explicit_environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "started_utc": "2026-10-10T05:04:14.710993+00:00",
+  "finished_utc": "2026-10-10T05:04:46.250397+00:00",
+  "elapsed_s": 31.539422390051186,
+  "return_code": 0,
+  "source_sha256": "256d11036f5273d26ec8a7159671d08f1375e1be02b6dc98fd89a2240849dd44",
+  "network_requests": 0,
+  "log_sha256": {
+    "export_stdout.log": "5a173394ab3caa3fba4cd09fbff7b4710ae7225dd0959f6e75ff2e17c1c2d012",
+    "export_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "summary_sha256": "dba733887df96456993fdc5972f66f96dad62705f6f30f3e510f2f45786e1213"
+}

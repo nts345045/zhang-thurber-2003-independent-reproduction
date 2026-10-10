@@ -1,0 +1,34 @@
+{
+  "status": "completed_identified_dt_cc_export",
+  "created_utc": "2026-10-10T05:01:33.686928+00:00",
+  "input_source_sha256": {
+    "data/development/identified_dt_cc_export_checks/001/valid_input/epochs.csv.gz": "860b2fe084c79385516a01af59ce3b605bd8cdd7478c2ba9233c11f29efe3e06",
+    "data/development/identified_dt_cc_export_checks/001/valid_input/identified_measurements.csv.gz": "021e21877023699eb15cf9307c190002ccdd27f8c0f9eaebc2aecf1590559541",
+    "data/development/identified_dt_cc_export_checks/001/valid_input/summary.json": "b231d03c94565d4ee216ed15c5da820a48f5bf8f3801eba962fe0cdc30ae2424",
+    "data/development/identified_dt_cc_export_checks/001/valid_input/review.json": "e346ccc91f272dea13dd3c795de61a9932225a784e34ecd39dd49cabfe4982b8",
+    "data/development/identified_dt_cc_export_checks/001/valid_input/execution.json": "48c70dadb455917ea98ec564c275fb8d42d7adb3f6c99805abafceb4df6e0a87",
+    "diagnostics/export_identified_dt_cc.py": "256d11036f5273d26ec8a7159671d08f1375e1be02b6dc98fd89a2240849dd44"
+  },
+  "retained_original_catalog_pairs": 3,
+  "exported_observations": 2,
+  "preserved_unexported_observations": 1,
+  "event_integer_mapping": "Original nonnegative event index plus one; provider resource/origin IDs preserved in event_id_map.csv.",
+  "relative_weight": "CC squared, not formal inverse variance. No solver row weighting is selected.",
+  "differential_convention": "Travel time i minus travel time j; zero additional origin-time correction.",
+  "source_documentation": "https://eqcorrscan.readthedocs.io/en/latest/_modules/eqcorrscan/utils/catalog_to_dd.html",
+  "numeric_serialization": "17 significant digits preserve stored binary64 values; no new decimal rounding or measurement.",
+  "solver_observations_added": 0,
+  "original_catalog_values_changed": false,
+  "limitations": [
+    "Legacy station field cannot carry full NSLC/epochs: keep both sidecars with dt.cc.",
+    "No station/channel collisions, duplicate pair/station/phase observations, or origin ambiguities are silently collapsed.",
+    "An exported measurement is not a calibrated timing uncertainty or validated tomography input."
+  ],
+  "output_sha256": {
+    "dt.cc": "2cca399c3852d4e6f5ce2c601dce891e2981cc19a513ad078ff9e65740f82c52",
+    "dt.cc.identifiers.csv.gz": "a669599ed94667f7828f55246976edbcc6adc52e1854bea3089424c3a7af7dfa",
+    "event_id_map.csv": "e3bdd2a5dd1b03dd21a47c53e3b6fbd1c1cbbc484d73ddbf3108d3f23b57a54d",
+    "receiver_epochs.csv.gz": "0c1d4e76aa0a17c2363ecdab4bd970e49dcb9612621aeb6466e259b2b5db0487",
+    "source/export_identified_dt_cc.py": "256d11036f5273d26ec8a7159671d08f1375e1be02b6dc98fd89a2240849dd44"
+  }
+}
