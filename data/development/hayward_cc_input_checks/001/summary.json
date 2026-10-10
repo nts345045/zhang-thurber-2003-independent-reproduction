@@ -1,0 +1,421 @@
+{
+  "status": "passed",
+  "scope": "Independent invented Python adapter plus actual C++ loader/weight/Matrix controls; no real import, ray trace or inverse solve.",
+  "checks": [
+    {
+      "name": "three original rows unchanged in every field/order",
+      "passed": true
+    },
+    {
+      "name": "only one reviewed type2 appended",
+      "passed": true
+    },
+    {
+      "name": "original extra fields blank",
+      "passed": true
+    },
+    {
+      "name": "derived sign literal square and blank sigma",
+      "passed": true
+    },
+    {
+      "name": "unestimated role and objective power explicit",
+      "passed": true
+    },
+    {
+      "name": "every exported field retained exactly",
+      "passed": true
+    },
+    {
+      "name": "distinct epochs empty location and quoted metadata retained",
+      "passed": true
+    },
+    {
+      "name": "reject changed exact source field event_i_resource_id",
+      "passed": true,
+      "error": "Full original catalog row differs"
+    },
+    {
+      "name": "reject changed exact source field origin_j_resource_id",
+      "passed": true,
+      "error": "Full original catalog row differs"
+    },
+    {
+      "name": "reject changed exact source field pick_i_resource_id",
+      "passed": true,
+      "error": "Full original catalog row differs"
+    },
+    {
+      "name": "reject changed exact source field arrival_j_resource_id",
+      "passed": true,
+      "error": "Full original catalog row differs"
+    },
+    {
+      "name": "reject changed exact source field channel_seed_id",
+      "passed": true,
+      "error": "Full original catalog row differs"
+    },
+    {
+      "name": "reject changed exact source field channel_fdsn_source_id",
+      "passed": true,
+      "error": "Full original catalog row differs"
+    },
+    {
+      "name": "reject changed exact source field location_code",
+      "passed": true,
+      "error": "Full original catalog row differs"
+    },
+    {
+      "name": "reject changed exact source field metadata_epoch_start",
+      "passed": true,
+      "error": "Full original catalog row differs"
+    },
+    {
+      "name": "reject changed exact source field metadata_epoch_j_start",
+      "passed": true,
+      "error": "Full original catalog row differs"
+    },
+    {
+      "name": "reject changed exact source field channel_j_source_sha256",
+      "passed": true,
+      "error": "Full original catalog row differs"
+    },
+    {
+      "name": "reject changed exact source field value",
+      "passed": true,
+      "error": "Full original catalog row differs"
+    },
+    {
+      "name": "reject changed exact source field a_priori_weight",
+      "passed": true,
+      "error": "Full original catalog row differs"
+    },
+    {
+      "name": "reject changed exact source field note",
+      "passed": true,
+      "error": "Full original catalog row differs"
+    },
+    {
+      "name": "reject wrong original row index",
+      "passed": true,
+      "error": "CC source row must be a catalog differential"
+    },
+    {
+      "name": "reject duplicate original sidecar row",
+      "passed": true,
+      "error": "Missing/duplicate original catalog row"
+    },
+    {
+      "name": "reject wrong event origin in native table",
+      "passed": true,
+      "error": "Catalog event/origin identity mismatch"
+    },
+    {
+      "name": "reject wrong second receiver epoch",
+      "passed": true,
+      "error": "Catalog receiver epoch mismatch"
+    },
+    {
+      "name": "reject different physical second receiver",
+      "passed": true,
+      "error": "Paired receiver positions differ"
+    },
+    {
+      "name": "reject missing pick identity",
+      "passed": true,
+      "error": "Missing native pick identity"
+    },
+    {
+      "name": "reject existing catalog type2",
+      "passed": true,
+      "error": "Invalid catalog row indices/type"
+    },
+    {
+      "name": "reject negative catalog prior",
+      "passed": true,
+      "error": "Negative catalog row multiplier"
+    },
+    {
+      "name": "reject extra native event map",
+      "passed": true,
+      "error": "Exported native mapping inventory differs"
+    },
+    {
+      "name": "reject replaced native origin map",
+      "passed": true,
+      "error": "Export event/origin map differs"
+    },
+    {
+      "name": "reject missing second epoch mapping",
+      "passed": true,
+      "error": "Missing exported receiver epoch"
+    },
+    {
+      "name": "reject changed full receiver field",
+      "passed": true,
+      "error": "Exported full native receiver epoch differs"
+    },
+    {
+      "name": "reject accepted row without diagnostics",
+      "passed": true,
+      "error": "Accepted row lacks diagnostics"
+    },
+    {
+      "name": "reject invented CC sigma",
+      "passed": true,
+      "error": "CC timing uncertainty is not established"
+    },
+    {
+      "name": "reject unsquared prior reinterpretation",
+      "passed": true,
+      "error": "Expected literal positive CC squared prior"
+    },
+    {
+      "name": "reject nonfinite accepted coefficient",
+      "passed": true,
+      "error": "Nonfinite numerical value"
+    },
+    {
+      "name": "reject wrong measured delay sign",
+      "passed": true,
+      "error": "CC differential-time sign/value differs"
+    },
+    {
+      "name": "reject nonzero additional origin correction",
+      "passed": true,
+      "error": "Legacy phase/station/origin convention differs"
+    },
+    {
+      "name": "reject legacy wrong value",
+      "passed": true,
+      "error": "Legacy value/weight readback differs"
+    },
+    {
+      "name": "reject legacy wrong prior",
+      "passed": true,
+      "error": "Legacy value/weight readback differs"
+    },
+    {
+      "name": "reject legacy extra unassociated line",
+      "passed": true,
+      "error": "Legacy file has unidentified lines"
+    },
+    {
+      "name": "reject reversed legacy header",
+      "passed": true,
+      "error": "Legacy pair header differs"
+    },
+    {
+      "name": "reject accepted status disagreement",
+      "passed": true,
+      "error": "Measurement/export acceptance differs"
+    },
+    {
+      "name": "reject metadata field collision",
+      "passed": true,
+      "error": "Derived metadata collides with catalog columns"
+    },
+    {
+      "name": "unaccepted measurement remains provenance not solver row",
+      "passed": true
+    },
+    {
+      "name": "invented run prepares exact counts without config or solver",
+      "passed": true
+    },
+    {
+      "name": "original catalog bytes and geometry preserved",
+      "passed": true
+    },
+    {
+      "name": "reject existing output",
+      "passed": true,
+      "error": "Use a fresh output disjoint from original catalog inputs"
+    },
+    {
+      "name": "reject output beneath original inputs",
+      "passed": true,
+      "error": "Use a fresh output disjoint from original catalog inputs"
+    },
+    {
+      "name": "reject output beneath export evidence",
+      "passed": true,
+      "error": "Output overlaps export evidence"
+    },
+    {
+      "name": "reject stale independent export review",
+      "passed": true,
+      "error": "Require independent hash-bound export review"
+    },
+    {
+      "name": "reject reviewed failed export execution",
+      "passed": true,
+      "error": "Require terminal offline export execution"
+    },
+    {
+      "name": "reject changed original catalog bytes",
+      "passed": true,
+      "error": "Original catalog input is not bound to export: observations.csv"
+    },
+    {
+      "name": "reject changed legacy payload bytes",
+      "passed": true,
+      "error": "Export artifact changed: dt.cc"
+    },
+    {
+      "name": "all invented pinned input bytes restored",
+      "passed": true
+    },
+    {
+      "name": "compile returned zero",
+      "passed": true
+    },
+    {
+      "name": "component returned zero",
+      "passed": true
+    },
+    {
+      "name": "actual loader Matrix objective and metadata component passes",
+      "passed": true
+    },
+    {
+      "name": "source unchanged prepare_hayward_cc.py",
+      "passed": true
+    },
+    {
+      "name": "source unchanged diagnostics/check_hayward_cc_input.py",
+      "passed": true
+    },
+    {
+      "name": "source unchanged diagnostics/check_hayward_cc_input.cpp",
+      "passed": true
+    },
+    {
+      "name": "source unchanged src/main.cpp",
+      "passed": true
+    },
+    {
+      "name": "source unchanged src/analytic_truth.hpp",
+      "passed": true
+    },
+    {
+      "name": "source unchanged src/core.hpp",
+      "passed": true
+    },
+    {
+      "name": "source unchanged src/csv.hpp",
+      "passed": true
+    },
+    {
+      "name": "source unchanged src/first_arrival.hpp",
+      "passed": true
+    },
+    {
+      "name": "source unchanged src/forward.hpp",
+      "passed": true
+    },
+    {
+      "name": "source unchanged src/full_linearization.hpp",
+      "passed": true
+    },
+    {
+      "name": "source unchanged src/ray_checks.hpp",
+      "passed": true
+    },
+    {
+      "name": "source unchanged src/ray_metric.hpp",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "prepare_hayward_cc.py": "01e0707098bf63456a911a91bc5cde31418fb491901c38b88b0445f9be9ba641",
+    "diagnostics/check_hayward_cc_input.py": "f033b201c901da060e8f738b5703c1b7f31df48c8df1141e5525a592f1c9c297",
+    "diagnostics/check_hayward_cc_input.cpp": "fe36124fd36dd9f484c2b9a968b2ad8ea99a585ddf61c5d035aa88558cc5adb1",
+    "src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-fopenmp",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_cc_input_checks/001/source/diagnostics/check_hayward_cc_input.cpp",
+        "-lstdc++fs",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_cc_input_checks/001/component"
+      ],
+      "return_code": 0
+    },
+    {
+      "name": "component",
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_cc_input_checks/001/component",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_cc_input_checks/001/fixtures/prepared",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_cc_input_checks/001/component_result.json"
+      ],
+      "return_code": 0
+    }
+  ],
+  "binary_sha256": "699360953085e2662f1e4a544ea292e45555a39ea7635d8f82243dcd6d1a894e",
+  "component": {
+    "status": "passed",
+    "checks": 34,
+    "invented_geometry_only": true,
+    "ray_traces": 0,
+    "inverse_solves": 0,
+    "cc": 0.5,
+    "prior": 0.25,
+    "conditional_objective_ratio": 0.0625
+  },
+  "output_sha256": {
+    "compile.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "component.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "component.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "component_result.json": "6f7c1d0a6bbfe9df9c4d1789cd602a0392a2714e56397fbebb46f278cb5c9c13",
+    "source/prepare_hayward_cc.py": "01e0707098bf63456a911a91bc5cde31418fb491901c38b88b0445f9be9ba641",
+    "source/diagnostics/check_hayward_cc_input.py": "f033b201c901da060e8f738b5703c1b7f31df48c8df1141e5525a592f1c9c297",
+    "source/diagnostics/check_hayward_cc_input.cpp": "fe36124fd36dd9f484c2b9a968b2ad8ea99a585ddf61c5d035aa88558cc5adb1",
+    "source/src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "source/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "source/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "fixtures/catalog/observations.csv": "e4cb7998e1041165cb3f27e059f9a33b6d58d27bc69b53abcce12ff5dc56a74e",
+    "fixtures/catalog/initial_events.csv": "518fab06cc847ed4f1371fc2deba5a3ab590d56fc9dc801a8b2d14e27f784d78",
+    "fixtures/catalog/stations.csv": "e8271a4e80385481111bbff40067f9bcb2a354788f5a75d991ffce365e9b9720",
+    "fixtures/catalog/initial_grid.csv": "8ad94c017445c85d6743f618ea799c6785794df4964876672a180c2ffec1c2e2",
+    "fixtures/catalog/authoritative_ids_required": "4bc78d8ef562688140b922edd3745416a08bdca9077ce0bf59a5d37a285d065c",
+    "fixtures/export/dt.cc.identifiers.csv.gz": "76168462adb63c3aca19b9f1e6acbdd8cb06745635c9682c5898ea2d5d57919f",
+    "fixtures/export/event_id_map.csv": "e896d5a38154215052b3d09c8f4a38e5beb07cdbd7dd5b5fd6878b32cb2a6510",
+    "fixtures/export/receiver_epochs.csv.gz": "c2f5b6dc431643faa6f59eafac3fffd5b718f54c75f251d5b94b88a63aa2318e",
+    "fixtures/export/dt.cc": "b5399b1ec9d4900fea156fb98dbc62bcd038ef8526a1c8efbc0a999f8a0048b1",
+    "fixtures/export/summary.json": "6fa88e719d356bc4295b5e28530091b560d93352c1a5d6ab9091f96313dc10f7",
+    "fixtures/export/execution.json": "67447584745f02d32788eb2f8049ecac3e124bd7c3746940afbc205571ff1123",
+    "fixtures/export/review.json": "387d006eb701d32148011bf6d287f303ad621e1a30a13a70dce0359137c68359",
+    "fixtures/prepared/initial_events.csv": "518fab06cc847ed4f1371fc2deba5a3ab590d56fc9dc801a8b2d14e27f784d78",
+    "fixtures/prepared/initial_grid.csv": "8ad94c017445c85d6743f618ea799c6785794df4964876672a180c2ffec1c2e2",
+    "fixtures/prepared/stations.csv": "e8271a4e80385481111bbff40067f9bcb2a354788f5a75d991ffce365e9b9720",
+    "fixtures/prepared/authoritative_ids_required": "4bc78d8ef562688140b922edd3745416a08bdca9077ce0bf59a5d37a285d065c",
+    "fixtures/prepared/observations.csv": "0f6460973d25313893327b16e15d2702b8b91fdae408f717f78efa2ea28dc44d",
+    "fixtures/prepared/preparation_manifest.json": "e625ef3cd7d284ab6c9c86584e5e049bdd4ab27c68d8fd77b413012dd40a4c3f",
+    "fixtures/prepared/component.cfg": "58fde49a9dc7898e31f439a80841964b74f4fa0e0a2f512c47eb2e9603759255",
+    "fixtures/prepared/component_roundtrip.csv": "0f6460973d25313893327b16e15d2702b8b91fdae408f717f78efa2ea28dc44d",
+    "fixtures/prepared/source/prepare_hayward_cc.py": "01e0707098bf63456a911a91bc5cde31418fb491901c38b88b0445f9be9ba641",
+    "fixtures/prepared/catalog_provenance/observations.csv": "e4cb7998e1041165cb3f27e059f9a33b6d58d27bc69b53abcce12ff5dc56a74e"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "reviewer": "root source and independently authored fixture review",
+  "created_utc": "2026-10-10T05:26:48Z",
+  "controls_summary_sha256": "7a7130a5f4b8cb2b12855a925ed3070a5808bd41eebd03a9104199368afdc745",
+  "source_sha256": {
+    "prepare_hayward_cc.py": "01e0707098bf63456a911a91bc5cde31418fb491901c38b88b0445f9be9ba641",
+    "diagnostics/check_hayward_cc_input.py": "f033b201c901da060e8f738b5703c1b7f31df48c8df1141e5525a592f1c9c297",
+    "diagnostics/check_hayward_cc_input.cpp": "57f20690aa2e317925e008da7f1c809490908ab34e920d593cbf7be53aacc956",
+    "src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "python_controls": 70,
+  "actual_cpp_controls": 36,
+  "artifact_hashes_verified": 39,
+  "findings": [
+    "Complete original catalog fields and order are retained, including pick uncertainty strings and all native identities.",
+    "Both receiver epochs and empty SEED location survive the real-input C++ loader and metadata roundtrip.",
+    "The actual C++ prediction and Jacobian use both receiver indices and the i minus j sign.",
+    "CC=.5 uses the literal .25 prior; actual assembled residual/Jacobian yield .0625 objective ratio relative to unit prior, explicitly CC to the fourth.",
+    "The added nonunit stage and distance control exercises the complete row multiplier in actual Matrix assembly.",
+    "Appending a correlation to its existing catalog pair adds no unique forward rays.",
+    "Native source/epoch mismatches, stale reviews and altered export artifacts are rejected by independent controls."
+  ],
+  "limitations": [
+    "Invented component controls establish preparation/assembly consistency, not waveform timing variance or inverse-model accuracy.",
+    "No actual catalog-plus-CC preparation or inverse had been performed at this review."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T05:28:51.209560+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "prepare_hayward_cc.py",
+    "--catalog-dir",
+    "data/hayward",
+    "--export-summary",
+    "data/development/native_dt_cc_001/summary.json",
+    "--export-review",
+    "data/development/native_dt_cc_001/independent_export_review.json",
+    "--output",
+    "data/hayward_catalog_cc_001"
+  ],
+  "source_sha256": "01e0707098bf63456a911a91bc5cde31418fb491901c38b88b0445f9be9ba641",
+  "controller_source_sha256": "ea39dff35f4847100be0bd1f37e1ca4a735947d883a5708a92c3721baeb62897",
+  "reviewed_controls_sha256": {
+    "data/development/hayward_cc_input_checks/002/summary.json": "7a7130a5f4b8cb2b12855a925ed3070a5808bd41eebd03a9104199368afdc745",
+    "data/development/hayward_cc_input_checks/002/root_review.json": "f3c3ca27716fbc3d3258b05301ee614544f89e211e1d353e3e0f2ba1b3cee8d9"
+  },
+  "python_version": "3.6.8 (default, Sep 24 2024, 09:44:46) \n[GCC 8.5.0 20210514 (Red Hat 8.5.0-22)]",
+  "network_requests": 0,
+  "solver_invocations": 0,
+  "run_configuration_created": false,
+  "return_code": 0,
+  "child_pid": 154363,
+  "preparation_manifest_sha256": "63e909d134182a2dc116c73a20c2d204284f77baf5b333ffde54a820f04944a0",
+  "finished_utc": "2026-10-10T05:29:41.335887+00:00",
+  "log_sha256": {
+    "execution_logs/stdout.log": "c87443038203352ee385f127bdc135a703a26ad98913ad237cc51cc0f57b6445",
+    "execution_logs/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "preserved_initial_launch_sha256": {
+    "execution_logs/initial_launch_source.py": "4d74a7e5679faaec093afdf035418b4549d6d55c062112a2dd9771dfe03391f3",
+    "execution_logs/initial_launch_failure.json": "802f7d311c6c9b52079f5af489c320a27e34c524fb6c62c856860d66326b815b"
+  }
+}
