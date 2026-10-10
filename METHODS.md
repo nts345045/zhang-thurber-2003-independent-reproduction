@@ -74,7 +74,7 @@ provider's shared geoid convention for elevations and earthquake depths is
 retained without a guessed ellipsoid conversion. Conflicting BSL wellhead tables
 and their datum labels are documented alongside USGS terrain checks.
 
-The proposed field grid retains the written horizontal and depth nodes, with
+The field grid retains the written horizontal and depth nodes, with
 one additional level above the geoid to contain elevated receivers. The starting
 profile is a continuous-gradient adaptation of Waldhauser and Ellsworth (2002),
 Table 1: depths 0, 1, 3, 6, 14, 25 km and velocities 3.77, 4.64, 5.34, 5.75,
@@ -179,9 +179,15 @@ pairs are computed with OpenMP.
 
 The numerical correction and analytic isolation experiments are recorded in
 `data/development/ray_optimizer_audit/README.md`. All 48 current component
-checks pass. Forward retracing of the frozen initial models improves but does
-not eliminate nonconvergence. No inversion has been rerun with this correction;
-existing inversion metrics and manuscript panels retain their baseline status.
+checks pass. Forward retracing of the frozen baseline models improves but does
+not eliminate nonconvergence. The saved synthetic inversions have not been
+regenerated with this correction. The independent Hayward DD inversion uses
+the revised kernel and has complete numerical outputs; the absolute-data and
+fixed-model runs and the full comparison workflow remain pending at this
+checkpoint. Local stationarity also fails to identify the earliest branch in
+the constant-layer/gradient counterexample in
+`data/development/first_arrival_audit/`. An experimental FMM initializer improves
+some cases but retains near-crossing failures and is not part of these inversions.
 
 The sparse joint system is solved by an independently implemented LSQR
 bidiagonalization. Columns are normalized before adding damping equations.
@@ -202,7 +208,9 @@ A residual biweight uses [1-(residual/cutoff)^2]^2 below the cutoff, zero
 above. The cutoff is six times 1.4826 times the median absolute residual
 for each data type, with a 0.01 s minimum. These robust weights multiply
 rows directly, rather than being interpreted as inverse variances. Within
-a data type all measurement quality weights are one. Shared-station noise
+a data type, the synthetic baseline uses unit measurement quality weights;
+the authoritative Hayward subset uses the uncertainty multipliers stated above.
+Shared-station noise
 and the correlation among catalog differences are not whitened. Reported
 residual RMS values are unweighted for comparability across stages.
 

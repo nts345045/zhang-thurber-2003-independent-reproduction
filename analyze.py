@@ -206,8 +206,13 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
                   history_scope='Ray and residual diagnostics precede each saved update; the last history row is not generally the final model.',
                   precise_rms_interpretation=('No type-2 waveform-correlation observations; NaN history precise_rms is an empty category, represented by null here.' if counts['2'] == 0 else 'Type-2 observations are present.'),
                   displacement_interpretation='Change from reference catalog coordinates is not location error against truth.',
+                  resolution_active_boundary_limitation='The linear covariance eliminates unconstrained source parameters; it does not model the nonlinear estimator with source coordinates active at domain bounds.',
+                  resolution_section_interpretation='Sections linearly interpolate nodal resolution and nodal noise standard deviations; they do not compute resolution or sqrt(w^T C_v w) for the interpolated velocity.',
                   uncertainty_interpretation=selection.get('uncertainty_interpretation'),
                   differential_weight_assumption=selection.get('uncertainty_weight'),
+                  pair_graph_component_sizes=selection.get('pair_graph_component_sizes', []),
+                  unlinked_events=selection.get('unlinked_events'),
+                  cross_metadata_epoch_differences=selection.get('cross_metadata_epoch_differences'),
                   timing_calibration_caveat=selection.get('timing_calibration_caveat'))
     saved_events, saved_grids = {}, {}
     for mode in methods:
@@ -242,11 +247,22 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
         increase = history['objective_after'] - history['objective_before']
         displacement = np.sqrt(sum((events[k]-initial[k])**2 for k in ['x', 'y', 'z']))
         boundary = np.zeros(len(event_rows), dtype=bool)
+        outside = np.zeros(len(event_rows), dtype=bool)
+        boundary_faces = {}
         for k in ['x', 'y', 'z']:
-            boundary |= (events[k] <= min(grid[k])+1e-6) | (events[k] >= max(grid[k])-1e-6)
+            lower = events[k] <= min(grid[k])+1e-6
+            upper = events[k] >= max(grid[k])-1e-6
+            boundary |= lower | upper
+            boundary_faces[k+'_min'] = int(np.sum(lower))
+            boundary_faces[k+'_max'] = int(np.sum(upper))
+            outside |= (events[k] < min(grid[k])-1e-6) | (events[k] > max(grid[k])+1e-6)
         m = dict(final_residual_rms_seconds={str(t): (stats(residual['residual'][types == t])['rms'] if counts[str(t)] else None) for t in range(3)},
                  initial_residual_rms_seconds={str(t): (float(history[name+'_rms'][0]) if counts[str(t)] else None) for t, name in enumerate(['absolute', 'catalog', 'precise'])},
                  iterations_recorded=nsolves, accepted_updates=int(np.sum(accepted)), zero_updates=int(np.sum(~accepted)),
+                 last_max_source_coordinate_step_km=float(history['location_step'][-1]),
+                 largest_max_source_coordinate_step_km=float(max(history['location_step'])),
+                 last_max_log_slowness_step=float(history['velocity_step'][-1]),
+                 nonlinear_termination_interpretation='The configured iteration limit and line-search failure are stopping rules, not tests of nonlinear stationarity or small source updates.',
                  accepted_objective_increases_raw=int(np.sum(accepted & (increase > 0))),
                  accepted_objective_increases_above_audit_tolerance=int(np.sum(accepted & (increase > 1e-8))),
                  largest_accepted_objective_increase=max(0., float(np.max(increase[accepted]))) if np.any(accepted) else 0.,
@@ -266,6 +282,10 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
                  catalog_displacement_components_km={k: summary(events[k]-initial[k]) for k in ['x', 'y', 'z']},
                  origin_time_correction_from_catalog_seconds=summary(events['t']-initial['t']),
                  boundary_sources=int(np.sum(boundary)),
+                 boundary_face_counts=boundary_faces,
+                 outside_grid_sources=int(np.sum(outside)),
+                 geoid_depth_range_km=[float(min(events['z'])), float(max(events['z']))],
+                 negative_geoid_depth_sources=int(np.sum(events['z'] < 0)),
                  velocity_range_km_per_s=[float(min(grid['v'])), float(max(grid['v']))])
         _, ray = table(mode+'_ray_convergence.csv')
         _, derivative = table(mode+'_ray_derivatives.csv', empty=True)
@@ -331,7 +351,15 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
                 'Residuals below are unweighted final residuals; standard tomography fits absolute picks only, '
                 'so its catalog-difference RMS is an additional diagnostic. '
                 'Catalog displacement measures relocation, not error against known source positions.\n\n')
+        components = result['pair_graph_component_sizes']
+        if components:
+            f.write('The selected pair graph has {} connected components; the largest contains {} events, and {} events have no differential links. '
+                    'Unlinked events remain in the inversion with absolute observations. '
+                    '{} catalog differences span metadata epochs at identical NSLC and receiver coordinates; this geometry match does not establish unchanged timing calibration.\n\n'.format(
+                        len(components), max(components), result['unlinked_events'], result['cross_metadata_epoch_differences']))
         f.write(r'\begin{center}\begin{tabular}{lrrrrr}\toprule Method & $R_{\rm abs}$ (s) & $R_{\rm cat}$ (s) & Updates & LSQR & Min. rays (\%)\\\midrule'+'\n')
+        initial_rms = result['modes']['standard']['initial_residual_rms_seconds']
+        f.write('Initial & {:.5f} & {:.5f} & -- & -- & --\\\\\n'.format(initial_rms['0'], initial_rms['1']))
         for mode in methods:
             m = result['modes'][mode]
             f.write('{} & {:.5f} & {:.5f} & {}/{} & {}/{} & {:.2f}\\\\\n'.format(
@@ -339,10 +367,12 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
                 m['accepted_updates'], m['iterations_recorded'], m['lsqr']['converged'], m['lsqr']['solves'],
                 m['all_ray_history']['minimum_converged_percent']))
         f.write(r'\bottomrule\end{tabular}\end{center}'+'\n')
-        f.write('Updates counts accepted steps; LSQR counts solves meeting the existing relative normal-residual tolerance of $10^{-8}$. '
+        f.write('The initial row uses the first pre-update forward prediction. '
+                'Updates counts accepted steps; LSQR counts solves meeting the existing relative normal-residual tolerance of $10^{-8}$. '
                 'The last column is the minimum converged fraction over all used rays in any saved pre-update history row. '
                 'These history entries precede their update and do not represent the final model. '
-                'Frozen-weight objectives are compared within each update; weights can change between iterations.\n\n')
+                'Frozen-weight objectives are compared within each update; weights can change between iterations. '
+                'The solver stops at its iteration limit or when no line-search step is accepted; it does not test nonlinear stationarity or a small-source-update criterion.\n\n')
         if counts['2'] == 0:
             f.write('No waveform-correlation observations are included. The history column for precise-difference RMS is therefore empty (NaN), not a nonfinite modeled residual.\n\n')
         for mode in methods:
@@ -356,6 +386,18 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
                         esc(mode), m['catalog_displacement_3d_km']['median'], m['catalog_displacement_3d_km']['max'],
                         m['boundary_sources'], *m['velocity_range_km_per_s'], m['zero_updates'],
                         m['accepted_objective_increases_above_audit_tolerance'], m['lsqr']['worst_relative_normal_residual']))
+            f.write('The final recorded iteration changes a source coordinate by at most {:.3f} km and nodal log slowness by at most {:.3g}. '.format(
+                m['last_max_source_coordinate_step_km'], m['last_max_log_slowness_step']))
+            f.write('Geoid depths span {:.3f} to {:.3f} km, with {} negative-depth estimates and {} estimates outside the grid beyond the boundary tolerance. '.format(
+                *m['geoid_depth_range_km'], m['negative_geoid_depth_sources'], m['outside_grid_sources']))
+            face_details = []
+            for k in ['x', 'y', 'z']:
+                for side, bound in [('min', min(initial_grid[k])), ('max', max(initial_grid[k]))]:
+                    count = m['boundary_face_counts'][k+'_'+side]
+                    if count:
+                        face_details.append('{} at ${}={:g}$ km'.format(count, k, bound))
+            if face_details:
+                f.write('Boundary counts by face are {}; a source on intersecting faces contributes to each count. '.format('; '.join(face_details)))
             f.write('Across all {}--{} rays per recorded iteration, the largest projected/raw gradient norms are {:.3g}/{:.3g} s/km. '
                     'At the final model, production/refined convergence counts are {}/{} of {} sampled rays, '
                     'with maximum projected gradients {:.3g}/{:.3g} s/km and raw gradients {:.3g}/{:.3g} s/km. '
@@ -370,6 +412,11 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
                             q['derivative_components'], p['source_derivative_error_seconds_per_km']['max'], r['source_derivative_error_seconds_per_km']['max'],
                             p['source_derivative_components_over_existing_tolerance'], r['source_derivative_components_over_existing_tolerance']))
             f.write('{} derivative components are omitted at domain boundaries.\n\n'.format(q['derivative_components_skipped_at_boundaries']))
+        if any(m['boundary_face_counts']['z_min'] for m in result['modes'].values()):
+            f.write('Some source estimates reach the computational top, added to contain elevated receivers. '
+                    'These constrained estimates do not establish source-depth recovery. '
+                    'Negative geoid depth means elevation above the geoid, not necessarily above local terrain. '
+                    'The velocity sections show the complete computational depth range so these estimates remain visible.\n\n')
         d = result['dd_minus_standard']
         f.write('Over the saved model nodes, DD minus standard velocity has mean {:.4f} km/s, RMS {:.4f} km/s, and maximum absolute difference {:.4f} km/s. '
                 'The median separation between their source estimates is {:.3f} km. '
@@ -390,6 +437,8 @@ def analyze_hayward(directory=Path('data/hayward'), report=Path('report'), requi
         f.write('This is a conditional absolute-data calculation, not full DD resolution. '
                 'Reported symmetric pick uncertainties are interpreted as independent one-standard-deviation errors; provider confidence levels are absent. '
                 'Propagation through the damped estimator excludes correlated station/model errors, regularization bias, and nonlinear or ray errors. '
+                'It eliminates unconstrained source parameters and does not represent the active domain bounds on some inferred source coordinates. '
+                'The plotted sections interpolate nodal resolution and nodal noise standard deviations; they do not propagate covariance to interpolated velocity. '
                 'Small propagated noise therefore does not establish small total velocity error. '
                 'Ray convergence means a projected gradient below $10^{-7}$ s/km, or a travel-time change below $10^{-11}$ s with gradient below $10^{-5}$ s/km. '
                 'The source finite-difference half-step is 0.01 km. Small spacing changes alone do not establish derivative convergence or globally earliest arrivals, '

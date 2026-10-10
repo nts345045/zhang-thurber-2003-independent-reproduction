@@ -1,0 +1,341 @@
+{
+  "created_utc": "2026-10-09T23:59:51Z",
+  "command": "python3 diagnostics/check_1d_reference.py",
+  "scope": "Analytic leg and selected-branch formula checks; no global root enumeration or FMM validation",
+  "geometry_status": "All endpoints and leg examples are invented numerical geometry, not station/event records; no provider identities are assigned",
+  "model_input": "data/hayward/initial_grid.csv",
+  "profile_depth_velocity_km_km_s": [
+    [
+      -1.0,
+      3.77
+    ],
+    [
+      0.0,
+      3.77
+    ],
+    [
+      4.0,
+      5.476666666666667
+    ],
+    [
+      8.0,
+      5.8675
+    ],
+    [
+      12.0,
+      6.1025
+    ],
+    [
+      20.0,
+      7.18
+    ]
+  ],
+  "flat_direct_example_time_s": 3.183023872679045,
+  "finite_difference_step_km": 1e-05,
+  "quadrature": "SciPy quad, epsabs=epsrel=1e-12; square-root variable removes turning-endpoint singularity",
+  "versions": {
+    "python": "3.6.8",
+    "scipy": "1.5.4"
+  },
+  "sha256": {
+    "data/hayward/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/development/first_arrival_1d_reference.md": "464648e90231fb7a0be4975af517abe9a9dc285fa01ff900e7126a34c914b3f8",
+    "diagnostics/check_1d_reference.py": "e67b0318288af78a1a0dc3574a4284cc23f45420ef1cc11277a4332733451d8a"
+  },
+  "examples": [
+    {
+      "name": "gradient",
+      "depths_km": [
+        4.0,
+        8.0
+      ],
+      "p_s_per_km": 0.12,
+      "quadrature_reported_absolute_errors": [
+        4.1298783588471223e-14,
+        1.0694134338578138e-14,
+        6.430253942902704e-13
+      ]
+    },
+    {
+      "name": "vertical",
+      "depths_km": [
+        4.0,
+        8.0
+      ],
+      "p_s_per_km": 0.0,
+      "quadrature_reported_absolute_errors": [
+        0.0,
+        7.83248438240841e-15,
+        2.5189110057037095e-13
+      ]
+    },
+    {
+      "name": "flat",
+      "depths_km": [
+        -0.75,
+        -0.25
+      ],
+      "p_s_per_km": 0.12,
+      "quadrature_reported_absolute_errors": [
+        2.8159697848500465e-15,
+        1.6510645170057053e-15,
+        2.950509822606202e-14
+      ]
+    },
+    {
+      "distance_km": 12.000000000000002,
+      "time_s": 3.195177588151359,
+      "turn_depth_km": 0.04169816000252485,
+      "p_s_per_km": 0.2640061036250426,
+      "w_cotangent": 0.09726551668196344,
+      "name": "shallow_turn",
+      "source_xyz_km": [
+        0.0,
+        0.0,
+        -0.5
+      ],
+      "receiver_xyz_km": [
+        12.0,
+        0.0,
+        -0.5
+      ],
+      "source_derivative_s_per_km": [
+        -0.2640061036250426,
+        0.0,
+        -0.025678690076281558
+      ],
+      "quadrature_reported_time_error_s": 3.547359726131954e-14
+    },
+    {
+      "distance_km": 12.000000000000002,
+      "time_s": 3.120313726236902,
+      "turn_depth_km": 1.3865490172845314,
+      "p_s_per_km": 0.22927396343708617,
+      "w_cotangent": 0.5817795761562329,
+      "name": "deeper_turn",
+      "source_xyz_km": [
+        0.0,
+        0.0,
+        -0.5
+      ],
+      "receiver_xyz_km": [
+        12.0,
+        0.0,
+        -0.5
+      ],
+      "source_derivative_s_per_km": [
+        -0.22927396343708617,
+        0.0,
+        -0.13338690927208763
+      ],
+      "quadrature_reported_time_error_s": 3.4642441429221264e-14
+    },
+    {
+      "name": "bottom_boundary_candidate",
+      "source_depth_km": 8.0,
+      "receiver_depth_km": -0.2,
+      "horizontal_distance_km": 90.0,
+      "p_s_per_km": 0.1392757660167131,
+      "tangent_distance_km": 76.9951681437228,
+      "tangent_time_s": 13.485174158614175,
+      "boundary_time_s": 1.811257918701561,
+      "total_time_s": 15.296432077315735,
+      "quadrature_reported_absolute_errors": [
+        8.548180845804642e-13,
+        1.4971550841973635e-13
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "gradient_X",
+      "formula": 3.719863727597875,
+      "independent": 3.7198637275978754,
+      "absolute_error": 4.440892098500626e-16,
+      "tolerance": 1e-10,
+      "units": "km",
+      "passed": true
+    },
+    {
+      "name": "gradient_T",
+      "formula": 0.9632419884454095,
+      "independent": 0.9632419884454106,
+      "absolute_error": 1.1102230246251565e-15,
+      "tolerance": 1e-10,
+      "units": "s",
+      "passed": true
+    },
+    {
+      "name": "gradient_dX_dp",
+      "formula": 57.91857852230859,
+      "independent": 57.918578522308565,
+      "absolute_error": 2.842170943040401e-14,
+      "tolerance": 1e-10,
+      "units": "km^2/s",
+      "passed": true
+    },
+    {
+      "name": "vertical_X",
+      "formula": 0.0,
+      "independent": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "km",
+      "passed": true
+    },
+    {
+      "name": "vertical_T",
+      "formula": 0.7054874749199939,
+      "independent": 0.705487474919995,
+      "absolute_error": 1.1102230246251565e-15,
+      "tolerance": 1e-10,
+      "units": "s",
+      "passed": true
+    },
+    {
+      "name": "vertical_dX_dp",
+      "formula": 22.688333333333333,
+      "independent": 22.688333333333336,
+      "absolute_error": 3.552713678800501e-15,
+      "tolerance": 1e-10,
+      "units": "km^2/s",
+      "passed": true
+    },
+    {
+      "name": "flat_X",
+      "formula": 0.2536400094747449,
+      "independent": 0.2536400094747449,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "km",
+      "passed": true
+    },
+    {
+      "name": "flat_T",
+      "formula": 0.14871467087103085,
+      "independent": 0.14871467087103085,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s",
+      "passed": true
+    },
+    {
+      "name": "flat_dX_dp",
+      "formula": 2.6575829875284556,
+      "independent": 2.657582987528456,
+      "absolute_error": 4.440892098500626e-16,
+      "tolerance": 1e-10,
+      "units": "km^2/s",
+      "passed": true
+    },
+    {
+      "name": "shallow_turn_X",
+      "formula": 12.000000000000002,
+      "independent": 12.000000000000135,
+      "absolute_error": 1.3322676295501878e-13,
+      "tolerance": 1e-10,
+      "units": "km",
+      "passed": true
+    },
+    {
+      "name": "shallow_turn_T",
+      "formula": 3.195177588151359,
+      "independent": 3.1951775881513944,
+      "absolute_error": 3.552713678800501e-14,
+      "tolerance": 1e-10,
+      "units": "s",
+      "passed": true
+    },
+    {
+      "name": "shallow_turn_source_derivative_x",
+      "formula": -0.2640061036250426,
+      "independent": -0.26400610364518684,
+      "absolute_error": 2.0144219625706228e-11,
+      "tolerance": 5e-09,
+      "units": "s/km",
+      "passed": true
+    },
+    {
+      "name": "shallow_turn_source_derivative_y",
+      "formula": 0.0,
+      "independent": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 5e-09,
+      "units": "s/km",
+      "passed": true
+    },
+    {
+      "name": "shallow_turn_source_derivative_z",
+      "formula": -0.025678690076281558,
+      "independent": -0.025678690063202222,
+      "absolute_error": 1.3079336225185756e-11,
+      "tolerance": 5e-09,
+      "units": "s/km",
+      "passed": true
+    },
+    {
+      "name": "deeper_turn_X",
+      "formula": 12.000000000000002,
+      "independent": 11.999999999999998,
+      "absolute_error": 3.552713678800501e-15,
+      "tolerance": 1e-10,
+      "units": "km",
+      "passed": true
+    },
+    {
+      "name": "deeper_turn_T",
+      "formula": 3.120313726236902,
+      "independent": 3.1203137262369025,
+      "absolute_error": 4.440892098500626e-16,
+      "tolerance": 1e-10,
+      "units": "s",
+      "passed": true
+    },
+    {
+      "name": "deeper_turn_source_derivative_x",
+      "formula": -0.22927396343708617,
+      "independent": -0.22927396345906456,
+      "absolute_error": 2.1978391329113833e-11,
+      "tolerance": 5e-09,
+      "units": "s/km",
+      "passed": true
+    },
+    {
+      "name": "deeper_turn_source_derivative_y",
+      "formula": 0.0,
+      "independent": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 5e-09,
+      "units": "s/km",
+      "passed": true
+    },
+    {
+      "name": "deeper_turn_source_derivative_z",
+      "formula": -0.13338690927208763,
+      "independent": -0.13338690925124297,
+      "absolute_error": 2.084465933194224e-11,
+      "tolerance": 5e-09,
+      "units": "s/km",
+      "passed": true
+    },
+    {
+      "name": "bottom_tangent_X",
+      "formula": 76.9951681437228,
+      "independent": 76.9951681437228,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "km",
+      "passed": true
+    },
+    {
+      "name": "bottom_tangent_T",
+      "formula": 13.485174158614175,
+      "independent": 13.485174158614178,
+      "absolute_error": 3.552713678800501e-15,
+      "tolerance": 1e-10,
+      "units": "s",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

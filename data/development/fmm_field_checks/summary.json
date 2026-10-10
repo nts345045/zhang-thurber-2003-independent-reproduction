@@ -1,0 +1,41 @@
+{
+  "reviewed_utc": "2026-10-09T23:50:46.642238Z",
+  "purpose": "Invented FMM field/extraction fixtures only; no real data, ray bending, or inversion.",
+  "command": "python3 data/development/fmm_field_checks/run_checks.py",
+  "compiler_command": [
+    "c++",
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "diagnostics/check_fmm_field.cpp",
+    "-o",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/fmm_field_checks/check_fmm_field"
+  ],
+  "exit_code": 0,
+  "stdout": "PASS paths=39 invalid_sources=18 invalid_fields=8 full_domain_nodes=733623 full_domain_seconds=1.9113\n",
+  "stderr": "",
+  "status": "passed",
+  "sha256": {
+    "diagnostics/first_arrival_fmm.hpp": "31bc54dba1a3630023651f3e4eb6843127ae8275dd4f42aab83bb0ac5da2c165",
+    "diagnostics/check_fmm_field.cpp": "d51d4a95c9ae3303e20b12c2495dde96c8d70b87bd229209e23bf9f169d10c49",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "data/development/fmm_field_checks/run_checks.py": "c3a34bc69fcdb3c3b1a1cffa952d4e2a779a72e49dc94d151699fc12c8ce4214",
+    "data/development/fmm_field_checks/results.csv": "4794a64fe1bd5b3c692531f40789c1251a4d8e2c6350826c15c47106d5eb7f7f",
+    "tmp/fmm_field_checks/check_fmm_field": "ea6907624a8b66614200cfe2c2ed9d07b4e463e97770d69ab44d3c69539c8025"
+  },
+  "limitations": [
+    "These tests establish endpoint preservation, decreasing auxiliary field times, feasible homogeneous action bounds, and explicit invalid-input failure.",
+    "They do not establish first-arrival branch completeness or final bent-ray accuracy. The independent first-arrival audit records near-crossover branch failures of this first-order initializer.",
+    "The 36 homogeneous cases include nine coincident source/receiver cases; three additional synthetic full-domain paths test extraction at practical field size.",
+    "Timing is a single measurement while other authorized processes are active, not a performance guarantee.",
+    "The 1e-12 second homogeneous lower-bound allowance covers floating-point path-action roundoff and is not a ray-convergence tolerance."
+  ],
+  "path_cases": 39,
+  "full_domain_build_seconds": 1.91129642,
+  "full_domain_nodes": 733623,
+  "maximum_endpoint_error_km": 0.0,
+  "nondecreasing_field_steps": 0,
+  "extraction_fallback_steps": 0
+}

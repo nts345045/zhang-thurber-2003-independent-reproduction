@@ -4,10 +4,13 @@ Independent C++/OpenMP implementation of the ray-based inverse problem in
 Zhang and Thurber (2003), *BSSA* 93, 1875–1889,
 [doi:10.1785/0120020190](https://doi.org/10.1785/0120020190).
 
-This is a research reproduction attempt, with explicit limits. The existing
-report records the first attempt: its synthetic inversion panels use generated
-source/receiver geometry and are partial reproductions; Hayward field-data
-panels were not computed. The original task excluded source observations.
+This is a research reproduction attempt, with explicit limits. The report
+retains a synthetic baseline using generated source/receiver geometry. The
+original task excluded source observations; a later authorized Hayward catalog
+DD inversion has now produced complete numerical outputs. Absolute-data
+tomography and fixed-model relocation remain active, so the field comparison
+figures and the full workflow are pending. This is a partial scientific
+checkpoint, not a completed manuscript reproduction.
 
 On 2026-10-09 the user revised that restriction: real station and earthquake
 data, including metadata, must now come from authoritative sources, starting
@@ -36,8 +39,14 @@ documented study exclusions for a later additional-data comparison.
 Independent ray-kernel corrections now improve quadrature accuracy and
 optimizer conditioning. [The numerical audit](data/development/ray_optimizer_audit/README.md)
 records 48 passing component checks and remaining failures when retracing
-frozen baseline models. The saved inversions remain from the initial code;
-the complete inversion rebuild has not been rerun with these corrections.
+frozen baseline models. The saved synthetic inversions retain their original
+kernel; the Hayward runs use the revised kernel. A separate
+[first-arrival audit](data/development/first_arrival_audit/README.md) shows that
+local ray stationarity can select a late branch. The experimental FMM
+initializer still fails near a branch crossing and has not been integrated
+into the production inversions. The [fixed-model field comparison](data/development/fmm_hayward_audit/README.md)
+finds two faster candidates exceeding 1 ms among 186 selected shallow-endpoint
+rays; it does not quantify the resulting inversion bias or certify first arrivals.
 
 The revised solver preserves identities in event/residual CSV files and ray
 diagnostic mappings, traces observed pairs only, and exports an unweighted
@@ -46,8 +55,10 @@ identified field inputs, `resolution_hayward.py` implements conditional
 resolution/noise propagation, and `plot_hayward.py` plots saved field results.
 The Hayward input review checks all 58,980 observations and both native epochs
 of each differential observation. All 32 sampled initial rays converge at the
-configured and refined spacings. Later model convergence must be assessed from
-the method-specific histories and final diagnostics. The resolution block algebra
+configured and refined spacings, but the first full trace converges for only
+14,040 of 14,262 rays: 222 fail the configured stopping rule. Later model
+convergence must be assessed from the method-specific histories and final
+diagnostics. The resolution block algebra
 has been checked against a direct joint-matrix calculation, including an unsensed
 source column; this component check does not establish field-data resolution.
 

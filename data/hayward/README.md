@@ -1,5 +1,15 @@
 # Authoritative Hayward inputs and results
 
+At this partial checkpoint the DD inversion has written all five numerical
+output files below, with all 1,092 event identities and 58,980 observation
+mappings verified. Absolute-data tomography and fixed-model relocation remain
+active. Their incomplete histories do not constitute finished results; final
+ray checks, resolution, comparison figures, and the full workflow completion
+record are pending. The DD residual decrease does not establish nonlinear
+convergence: its final accepted maximum source-coordinate change is 2.7614 km.
+The separate [output review](../development/hayward_final_output_review.json)
+records checks and limitations without marking the entire workflow complete.
+
 `selection_manifest.json` defines the independently selected cohort and records
 input hashes, station policy, differences from the manuscript, and graph
 connectivity. `initial_events.csv`, `stations.csv`, `initial_grid.csv`, and

@@ -1,0 +1,140 @@
+{
+  "status": "in_progress",
+  "reviewed_utc": "2026-10-09T23:21:28.391468Z",
+  "all_methods_verified": false,
+  "required_methods": [
+    "standard",
+    "dd",
+    "loc1d"
+  ],
+  "pending_methods": [
+    "standard",
+    "loc1d"
+  ],
+  "scope": "Read-only exhaustive preservation and finite-value checks of completed method event/grid/residual files; no solver, ray trace, or production analyze.py run.",
+  "methods": {
+    "dd": {
+      "pid": 4018950,
+      "process_state": "absent",
+      "raw_exit_status": null,
+      "events": 1092,
+      "grid_nodes": 462,
+      "residuals": 58980,
+      "event_metadata_columns_preserved": 12,
+      "observation_columns_preserved": 39,
+      "complete_event_identity_and_metadata_match": true,
+      "complete_residual_identity_and_metadata_match": true,
+      "modeled_values_finite": true,
+      "positive_velocities": true,
+      "velocity_min_max_km_s": [
+        4.4267516858,
+        5.61768460984
+      ],
+      "boundary_sources": 15,
+      "boundary_tolerance_km": 1e-06,
+      "source_positions_outside_domain": 0,
+      "plot_fixed_velocity_range_km_s": [
+        3.5,
+        7
+      ],
+      "nodes_below_plot_range": 0,
+      "nodes_above_plot_range": 0,
+      "sha256": {
+        "data/hayward/dd_events.csv": "c48e6b3a56710450ee309b119e36340705f53759e1e99520a898f241e17480be",
+        "data/hayward/dd_grid.csv": "13cdc7f9d201f9d73da7e3fedc21e542444c9a478cf4c0f4b08ce85a5a4a8596",
+        "data/hayward/dd_residuals.csv": "5f8cbecc39903a64604dbf7de4e49704c8de6adacdce13af24f3d5240bc2fb84"
+      },
+      "input_sha256": {
+        "data/hayward/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+        "data/hayward/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+        "data/hayward/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c"
+      },
+      "ray_scope": "Final residuals were retraced, but this audit does not establish final-ray convergence; pipeline raychecks are still pending.",
+      "catalog_displacement_3d_km": {
+        "median": 1.1780277490375548,
+        "maximum": 8.79947813078228
+      },
+      "boundary_axis_counts": {
+        "x": {
+          "lower": 0,
+          "upper": 0
+        },
+        "y": {
+          "lower": 0,
+          "upper": 2
+        },
+        "z": {
+          "lower": 13,
+          "upper": 0
+        }
+      },
+      "geoid_depth_min_max_km": [
+        -1.0,
+        17.2436279282
+      ],
+      "negative_geoid_depth_sources": 19,
+      "final_unweighted_residuals": {
+        "0": {
+          "count": 14262,
+          "rms_s": 0.16063749728704316
+        },
+        "1": {
+          "count": 44718,
+          "rms_s": 0.06159809397816264
+        },
+        "2": {
+          "count": 0,
+          "rms_s": null
+        }
+      },
+      "status": "verified_complete_outputs",
+      "checks": [
+        "All event IDs and all original event metadata strings equal their initial-event records.",
+        "All residual row indices and observation metadata strings equal the corresponding input observation, excluding the observed value replaced by residual.",
+        "Both native receiver indices, epoch fields, provider IDs, and provenance hashes are preserved through the exact observation-column comparison.",
+        "All event x/y/z/t, residual numeric prefix and station_j values, and grid x/y/z/v are finite.",
+        "Every final grid coordinate equals its initial grid coordinate; velocities are positive.",
+        "Boundary and out-of-domain counts use the declared rectangular domain; the existing boundary-count tolerance is 1e-6 km."
+      ]
+    }
+  },
+  "axis_bounds_km": {
+    "x": [
+      -35.0,
+      35.0
+    ],
+    "y": [
+      -30.0,
+      30.0
+    ],
+    "z": [
+      -1.0,
+      20.0
+    ]
+  },
+  "dd_minus_standard_nodal_velocity_difference_km_s": null,
+  "generating_source_and_executable_sha256": {
+    "src/main.cpp": "79db0d337e0220c2d574fb7e22609d7a1c4d70eaac55dec5dd7610f83e2a29a4",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "src/csv.hpp": "f3ec5080bd0234fc7d0d6731b66aadd9eae219353244c9d4ef1c157a67bfd4c0",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "configs/hayward.cfg": "cd7a922200f9811994d9fe4d7b66c48cbe1c9ff5f0dae2eef8ca85f6234aedb2",
+    "build/dd": "1be4bbcd4965082b59b5c3dbbed406d1a3253c89493ae30b80ba703585b7032a"
+  },
+  "run_manifest_sha256": "3dfad91dedf1db7ff49cb9320aedcd7902a8eff27c8c3ecdef98a047beee6a41",
+  "reference_input_sha256": {
+    "data/hayward/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/hayward/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c"
+  },
+  "checks_execution": "Completed-output comparisons were performed with Python csv.DictReader and numeric finite checks in this agent session. Previously checked files were hash-verified before this record was written.",
+  "limitations": [
+    "This record remains incomplete until all three named methods have complete, verified outputs.",
+    "A process already reaped by the parent has no directly available exit status here; the parent pipeline owns exit-status verification.",
+    "Provider/native metadata preservation is checked against the prepared authoritative inputs; upstream provider interpretation is documented separately.",
+    "Catalog displacement is not location error against truth. Negative geoid depth does not by itself establish a source above local terrain.",
+    "Boundary counts are properties of constrained estimates, not evidence of source-depth recovery.",
+    "Final-ray stationarity and nonlinear convergence are not established by finite outputs or residual reduction. Automatic final raychecks remain a separate pipeline step."
+  ]
+}

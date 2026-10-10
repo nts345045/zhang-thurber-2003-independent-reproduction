@@ -27,7 +27,8 @@ Hayward observations. A later authorized acquisition supplies an independently
 selected, identified geometry for a partial Figure 4 counterpart.
 \IfFileExists{hayward_results.tex}{The revised solver also generates partial
 counterparts to the Hayward relocation, velocity, and conditional resolution
-panels from catalog observations.}{Field inversion panels remain uncomputed.}
+panels from catalog observations.}{The catalog DD inversion has completed;
+field comparison panels await the remaining methods and diagnostics.}
 All numerical figures in this report use saved output from this implementation.
 The result is a reproducible method investigation, not a recovery of the
 published Hayward velocity model.
@@ -435,13 +436,14 @@ are confined to the project directory.
 
 For the baseline delivery, the complete clean procedure finished successfully on
 9 October 2026 in 801 seconds, with all 32 implementation consistency checks
-passing and both PDF compilation passes completing. The numerical results
-come from that run. \path{reference/delivery_environment.json} records the
+passing and both PDF compilation passes completing. The synthetic baseline
+numerical results come from that run. \path{reference/delivery_environment.json} records the
 compiler, Python packages, TeX version, and parallel settings.
 Interpretation and plot-label revisions were compiled afterward from those
-same numerical outputs. The subsequent ray-kernel changes described below
-have not been followed by a complete inversion rebuild. The 801-second
-record therefore verifies the baseline, not the revised kernel.
+same numerical outputs. Those synthetic inversions have not been regenerated
+with the subsequent ray-kernel corrections. The later Hayward runs use the
+revised kernel and have separate provenance; the 801-second record verifies
+only the synthetic baseline.
 
 Requirements are a C++17 compiler, CMake, OpenMP, Python with NumPy and
 Matplotlib, and pdfLaTeX with standard packages. No tomography, optimization,
@@ -497,7 +499,9 @@ observations. Figure~\ref{fig:haywardgeometry} shows this independently selected
 geometry. Exact manuscript membership and waveform-correlation observations
 remain unmatched.
 \IfFileExists{hayward_results.tex}{The later field results use this independent
-subset and catalog differences only.}{No new field inversion is claimed here.}
+subset and catalog differences only.}{The catalog DD calculation has produced
+complete numerical outputs. Absolute-data tomography and fixed-model relocation
+remain active at this checkpoint, so their comparisons are not yet reported.}
 
 \begin{figure}[htbp]
 \centering
@@ -576,6 +580,96 @@ comparisons, source hashes, all 48 checks, and frozen-model ray tables are in
 python3 diagnostics/run_ray_optimizer_audit.py
 \end{lstlisting}
 
+\subsection{A stationary ray can arrive later}\label{sec:firstarrival}
+An isolated analytic test identifies a remaining branch-selection failure.
+The invented medium has $v=4$ km/s for $-1\leq z\leq0$ km and
+$v=4+0.2z$ km/s below zero. Both endpoints lie at $z=-0.5$ km.
+At horizontal separations of 20 and 40 km, the production tracer returns
+the straight path in the constant-velocity layer and declares convergence
+without an optimizer update. Its projected gradients are below
+$3\times10^{-16}$ s/km. Explicit diving rays obtained from Snell's law
+arrive 0.0810 and 1.0106 s earlier, respectively. Fine polygonal evaluations
+of those diving paths agree with their analytic travel times within
+0.9 microseconds. Thus the discrepancy concerns the selected ray branch,
+not the stopping tolerance or a small quadrature error.
+
+Local stationarity therefore does not establish a first arrival, and a
+derivative consistent with the selected direct branch need not describe the
+first-arrival travel time. The field starting profile also has a constant
+above-geoid layer. The current Hayward inversions retain this tracer;
+the analytic counterexample does not quantify the error of any particular
+field ray or attribute the inferred source displacements to this mechanism.
+The test definition, numerical results, and source hashes are saved in
+\path{data/development/first_arrival_audit/}. No observational data enter
+this diagnostic, and it does not modify the field calculations.
+
+Figure~\ref{fig:firstarrivalaudit} tests an experimental first-order fast-marching
+method (FMM) initializer followed by the unchanged continuous ray bending.
+The original auxiliary-grid audit fails 10 of 61 acceptance checks across
+72 cases. Independent refinement of the auxiliary grid and continuous path
+spacing to 0.0625 km reduces the travel-time errors at 20 and 40 km to less
+than 1.8 microseconds. However, 4 of 37 checks still fail in the 44-case
+refinement experiment. At separations 14.68 and 15 km, immediately beyond
+the 14.6604-km branch crossing, it retains the late direct ray. The time
+errors are 0.1765 and 3.1896 ms, and the corresponding source-gradient
+errors are 0.0673 and 0.0699 s/km. Every selected ray in these analytic
+experiments meets the local stopping rule. Refining local optimization
+therefore does not, by itself, resolve branch selection. The prototype
+remains outside the production solver; all failures and the unchanged
+acceptance thresholds are retained in
+\path{data/development/fmm_initialization_refinement/}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.94\linewidth]{diagnostics/first_arrival_audit.pdf}
+\caption{Independent forward-solver diagnostic, not a manuscript counterpart.
+The medium has $v=4$ km/s for $-1\leq z\leq0$ km and $v=4+0.2z$ below;
+both endpoints have $z=-0.5$ km. Left: the stationary straight ray and a
+faster FMM-seeded, continuously bent path at 40-km separation.
+Right: travel-time error relative to the analytic earliest branch, with the
+indicated auxiliary-grid/path spacings. The dotted line marks the branch
+crossing; the dashed line is the unchanged 0.025-ms tolerance. The symmetric
+logarithmic scale is linear within $\pm0.001$ ms. Both spacings miss the
+earlier branch near the crossing.}
+\label{fig:firstarrivalaudit}
+\end{figure}
+
+\subsection{Completed DD outputs and a targeted path comparison}
+\IfFileExists{hayward_results.tex}{The following path comparison uses the saved
+DD model from the field calculation below.}{The catalog DD run has completed
+its 18 configured updates; the other methods and full diagnostic workflow
+remain pending. Its outputs retain all 1,092 event identities and 58,980
+observation mappings. Absolute/catalog-difference RMS residuals decrease
+from 0.3916/0.0934 s initially to 0.1606/0.0616 s finally. All 18 linear
+solves satisfy their stopping rule, but the final accepted maximum
+source-coordinate change is 2.7614 km; nonlinear convergence is not
+established. Thirteen sources reach $z=-1$ km and two reach $y=30$ km.
+Nineteen have negative geoid depth, which does not establish position
+relative to local terrain. The DD output audit is in
+\path{data/development/hayward_final_output_review.json}.}
+
+A separate fixed-model diagnostic examines every saved DD absolute ray
+whose source and receiver depths both lie within $[-1,0]$ km. This selection
+contains 186 rays and is not representative of all field paths. With auxiliary
+and continuous path spacings of 0.5 km, the prototype finds two admissible
+candidates more than 1 ms faster than the original paths: the reductions
+are 3.6916 and 2.2385 ms. A third is 0.0725 ms faster. A lower feasible action
+establishes a late original path in this fixed model; agreement does not
+certify a first arrival, and this experiment does not quantify source or
+velocity bias.
+
+The comparison retains its failures. One FMM extraction has no descending
+step (solver event index 1043, receiver index 284); its original direct-seed
+candidate is retained with an explicit failure flag. One selected ray
+misses the existing local stopping rule. All selected paths stay within
+the model domain, but 21 original direct paths fail the strict exact-endpoint
+check at arithmetic roundoff, with maximum discrepancy
+$3.56\times10^{-15}$ km. Without relaxing a threshold, the diagnostic saves
+its outputs and exits with failure status. Observation identities and native
+epochs are preserved in \path{data/development/fmm_hayward_audit/}.
+The unchanged production inversions remain separate; this comparison
+does not establish the cause of source displacement.
+
 \IfFileExists{hayward_results.tex}{
 \clearpage
 \section{Authoritative Hayward subset results}
@@ -585,7 +679,9 @@ no waveform-correlation observations. The same identified subset is used for
 absolute-data tomography, catalog DD tomography, and relocation in the fixed
 initial one-dimensional velocity model. Figures~\ref{fig:haywardlocations}--\ref{fig:haywardresolution}
 are partial counterparts to the manuscript figures because the observations,
-pairing, initial model, and numerical implementation differ.
+pairing, initial model, and numerical implementation differ. The ray
+branch-selection defect in Section~\ref{sec:firstarrival} remains unresolved
+in these runs; its effect on these field estimates has not been quantified.
 
 \input{hayward_results.tex}
 
@@ -615,7 +711,8 @@ relocation uses absolute arrivals for anchoring as well as catalog differences.}
 \caption{Independent Figure 6 counterpart: catalog events within the documented
 geographic zoom window. Both depth views show all selected zoom events; the
 manuscript's undocumented AA$'$ and BB$'$ section-box memberships are not
-reconstructed. This same event subset is retained in the following three figures.}
+reconstructed. This same event subset and common coordinate limits are retained
+in the following three figures.}
 \end{figure}
 
 \begin{figure}[p]
@@ -647,7 +744,9 @@ zoom events. No waveform-correlation observations enter this calculation.}
 \caption{Independent Figure 10 counterpart: seven across-strike sections of
 catalog DD velocity, absolute-data velocity, and their signed difference.
 Points lie within 5 km of each section. Interpolation displays the saved nodal
-model; ray coverage and smoothing do not by themselves establish resolution.}
+model. The depth range includes the added elevated-receiver layer and shows
+source estimates at the computational top; ray coverage and smoothing do not
+by themselves establish resolution.}
 \label{fig:haywardvelocity}
 \end{figure}
 
@@ -657,8 +756,11 @@ model; ray coverage and smoothing do not by themselves establish resolution.}
 \caption{Independent Figure 11 counterpart: absolute-arrival model-resolution
 diagonal and propagated picking noise, linearized at the catalog DD solution.
 Reported symmetric uncertainties are assumed to represent independent
-one-standard-deviation errors. These conditional noise estimates omit model,
-metadata, correlation, nonlinear, and regularization-bias contributions.}
+one-standard-deviation errors. Values between grid nodes interpolate nodal
+diagnostics; they do not propagate covariance to interpolated velocity.
+The linear calculation treats source coordinates as unconstrained and omits
+the effect of active domain bounds. These conditional noise estimates also omit
+model, metadata, correlation, nonlinear, and regularization-bias contributions.}
 \label{fig:haywardresolution}
 \end{figure}
 }{ }

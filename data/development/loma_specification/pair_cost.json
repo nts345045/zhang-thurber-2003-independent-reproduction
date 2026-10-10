@@ -1,0 +1,75 @@
+{
+  "created_utc": "2026-10-09T23:38:31.371021Z",
+  "scope": "Read-only geometry/pair counting and arithmetic storage estimate; no travel times, observations, or inverse models generated",
+  "selection": "All unordered event pairs with Euclidean 3-D distance strictly below 20 km; every selected receiver is used by the existing synthetic generator",
+  "sources": 724,
+  "receivers": 52,
+  "unique_rays": 37648,
+  "possible_event_pairs": 261726,
+  "selected_event_pairs": 152834,
+  "absolute_rows": 37648,
+  "catalog_difference_rows": 7947368,
+  "precise_difference_rows": 7947368,
+  "total_observation_rows": 15932384,
+  "degree_min_median_max": [
+    47,
+    428.5,
+    586
+  ],
+  "closest_distance_to_threshold_km": 8.109300895142724e-05,
+  "csv": {
+    "exact_bytes_excluding_value_field": 6650014057,
+    "estimates_by_mean_value_field_characters": {
+      "8": 6777473129,
+      "12": 6841202665,
+      "16": 6904932201
+    },
+    "interpretation": "All index/identifier/epoch/label/separator bytes are counted analytically; value-field lengths remain unknown before ray/noise generation"
+  },
+  "memory": {
+    "layout_probe": {
+      "string": 32,
+      "metadata_pair": 64,
+      "metadata_capacity": 32,
+      "datum": 64,
+      "vector": 24,
+      "entry": 16
+    },
+    "loaded_datum_payload_lower_bound_bytes": 43924932516,
+    "raw_csv_table_payload_lower_bound_bytes": 17907349444,
+    "coexistence_payload_lower_bound_bytes": 61832281960,
+    "interpretation": "64-bit libstdc++ lower bounds include actual repeated identity strings and metadata keys, 32-entry metadata vector capacity, and simultaneous raw CSV table plus Datum storage. Exclude allocator overhead, outer vector spare capacity, numeric-string heaps, rays, matrix/LSQR work, residuals, and other output. Not a peak RSS measurement.",
+    "matrix_entry_scenarios_bytes": {
+      "32": 8157380608,
+      "64": 16314761216,
+      "128": 32629522432
+    },
+    "matrix_scenario_interpretation": "Assumes every row remains active; listed average entries per row are scenarios only, excluding row objects/capacity/allocator and solver copies"
+  },
+  "existing_file_compression": [
+    {
+      "file": "data/hayward/observations.csv",
+      "source_sha256": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+      "bytes": 46415956,
+      "gzip_level6_bytes": 3792173,
+      "compressed_fraction": 0.08169977151822533
+    },
+    {
+      "file": "data/synthetic/observations.csv",
+      "source_sha256": "ebaabb691d203b99e07a2c57239918192c871c68d930aee9c47260f8cab6f315",
+      "bytes": 3530130,
+      "gzip_level6_bytes": 1196619,
+      "compressed_fraction": 0.3389730689804625
+    }
+  ],
+  "compression_interpretation": "Measured existing-file ratios are analogues, not predictions for the ungenerated Loma data. Lossless gzip preserves selection but current C++ input requires plain CSV and still materializes all rows.",
+  "input_sha256": {
+    "data/authoritative/loma_prieta/selected_events.csv": "d1cbc2fc8ef0c65cf58fd6cbcbd8c3486bdd6c80c6c6f4b2c8dbd8e59f5729c5",
+    "data/authoritative/loma_prieta/selected_channels.csv": "42d221cf7a03ac581739c882597dcb256d24769c1aab8114ccca9eab6efe072e",
+    "src/main.cpp": "79db0d337e0220c2d574fb7e22609d7a1c4d70eaac55dec5dd7610f83e2a29a4",
+    "src/csv.hpp": "f3ec5080bd0234fc7d0d6731b66aadd9eae219353244c9d4ef1c157a67bfd4c0",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "data/development/loma_specification/count_cost.py": "66281b8838a29870d417add4c49491f101a512567af578b67c76fb8167d5a245",
+    "data/development/loma_specification/memory_layout.cpp": "e5c82774ab11e43f30a1b3fa7a9f277060fd941d77c29a640b9bb57b008c607c"
+  }
+}

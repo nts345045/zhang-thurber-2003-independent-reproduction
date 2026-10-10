@@ -1,0 +1,39 @@
+{
+  "purpose": "Feasible path comparison at the saved DD model; no reinversion and no first-arrival certificate",
+  "command": "python3 diagnostics/run_fmm_hayward_audit.py",
+  "selection": "Every saved absolute ray whose final-DD source and receiver depths are both within [-1,0] km",
+  "ray_count": 186,
+  "all_input_columns_and_native_identities_preserved": true,
+  "auxiliary_spacing_km": 0.5,
+  "path_spacing_km": 0.5,
+  "extraction_failures": 1,
+  "selected_nonconverged": 1,
+  "exact_endpoint_check_failures": 21,
+  "maximum_endpoint_error_km": 3.55314733320295e-15,
+  "maximum_action_reduction_s": 0.00369156070806476,
+  "rays_with_action_reduction_over_1_ms": 2,
+  "limitations": [
+    "First-order FMM missed known near-crossover branches in the independent analytic audit.",
+    "A smaller feasible action disproves optimality of a prior path; agreement does not prove a first arrival.",
+    "Source derivative comparisons require stationarity and path refinement.",
+    "Nonzero endpoint discrepancies from the original direct-path arithmetic remain recorded failures, even when at roundoff scale.",
+    "This targeted shallow-endpoint set is not representative of all field rays."
+  ],
+  "sha256": {
+    "diagnostics/check_fmm_hayward.cpp": "27b1e5afb87cc8f81f82a27cdf163715da8943d6af4933425bcadbc648125212",
+    "diagnostics/first_arrival_fmm.hpp": "31bc54dba1a3630023651f3e4eb6843127ae8275dd4f42aab83bb0ac5da2c165",
+    "diagnostics/seeded_bending.py": "44c00fe5a9fc04da0ba3a9b82e750add019245eed62eabfa37454c31b2af2305",
+    "src/main.cpp": "79db0d337e0220c2d574fb7e22609d7a1c4d70eaac55dec5dd7610f83e2a29a4",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/csv.hpp": "f3ec5080bd0234fc7d0d6731b66aadd9eae219353244c9d4ef1c157a67bfd4c0",
+    "diagnostics/run_fmm_hayward_audit.py": "ee0555f57b0e3ecb17c7580b2cc26b27a85f494d25ff5aab3f509019eb773161",
+    "tmp/fmm_hayward_audit/seeded_bending.hpp": "8b7295f04ffdf28c64ac9ce40ff5b32aa92210c7ec5c2661387388d5865790f6",
+    "tmp/fmm_hayward_audit/check_fmm_hayward": "dfe6a2bf1e3d335e32b227d5bf075ff98aabe8d849982903f11f63ea6cc733e3",
+    "data/development/hayward_dd_top_layer_rays.csv": "73e33f855cee4f50833660984fa22366bc5a2cff75316abd3f346a1ddf3b7902",
+    "data/hayward/dd_grid.csv": "13cdc7f9d201f9d73da7e3fedc21e542444c9a478cf4c0f4b08ce85a5a4a8596",
+    "data/hayward/dd_events.csv": "c48e6b3a56710450ee309b119e36340705f53759e1e99520a898f241e17480be",
+    "data/hayward/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/development/fmm_hayward_audit/results.csv": "9f0cba4a9409acb8dd5ab6906f82d05157ebe1bb70e7a70e664e6fdf5e4ddedc"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "reviewed_utc": "2026-10-09T23:41:00.386969Z",
+  "scope": "Written prose/captions only; no author code, datasets, outputs or graphical digitization",
+  "sources": [
+    {
+      "id": "doi:10.1785/0120020190",
+      "citation": "Zhang and Thurber (2003), BSSA 93(5), 1875-1889",
+      "url": "https://www.researchgate.net/publication/215754286_Double-Difference_Tomography_The_Method_and_Its_Application_to_the_Hayward_Fault_California",
+      "access": "Author-posted manuscript text read through web browser tool; direct PDF response saved separately is HTTP 403, not paper content",
+      "locators": [
+        "p. 1877 Synthetic Test, first and noise paragraphs",
+        "pp. 1877-1878 Synthetic Test, initialization and inversion paragraphs",
+        "p. 1879 Figure 2 caption",
+        "p. 1880 Application to Hayward Fault: Event Locations"
+      ],
+      "literal_quotes_total_words": 13
+    },
+    {
+      "id": "doi:10.1029/93JB03138",
+      "citation": "Kissling et al. (1994), JGR 99(B10), 19635-19646",
+      "url": "https://www.scribd.com/document/784538798/Kissling-et-al-GRL-1994",
+      "access": "Primary paper reprint text viewed through web browser; hosting page title is inaccurate, manuscript title/authors/DOI/pages identify the paper",
+      "crosscheck_url": "https://citeseerx.ist.psu.edu/document?doi=a1c2f0f1c9bfd916a15e1efd7c8f21ceaf28d2bb&repid=rep1&type=pdf",
+      "crosscheck": "Search index independently supplies primary-text passage with199 earthquakes and12,000 source-receiver paths; direct URL returned HTTP 404 after redirect to archived page in requests, and HTTP 403 in web open",
+      "locators": [
+        "p. 19638 Performance of a Minimum 1-D Model as Initial Reference Model for 3-D Local Earthquake Tomography",
+        "p. 19639 Figure 3 caption"
+      ],
+      "limits": "No station count or tabulated exact numerical initial profile established; no graphics digitized"
+    },
+    {
+      "id": "doi:10.1029/GL017i009p01417",
+      "citation": "Dietz and Ellsworth (1990), GRL 17(9), 1417-1420",
+      "url": "https://pubs.usgs.gov/publication/70242141",
+      "access": "USGS bibliographic record saved; p. 1417 primary article prose read via indexed manuscript text, not from the abstract alone",
+      "primary_text_url": "https://citeseerx.ist.psu.edu/document?doi=fa395488f3942b2234cde943b9b20de93b7ba493&repid=rep1&type=pdf",
+      "locators": [
+        "p. 1417 Data and Analysis"
+      ],
+      "limits": "Two 9-layer/halfspace profiles described in prose; exact numerical values not established without graphical extraction"
+    },
+    {
+      "id": "doi:10.1029/2000JB000084",
+      "citation": "Waldhauser and Ellsworth (2002), JGR 107(B3), ESE 3-1-ESE 3-15",
+      "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2000JB000084",
+      "access": "Publisher primary fulltext and author-hosted primary manuscript PDF",
+      "locators": [
+        "section 2.1 paragraph 14 p. ESE 3-3",
+        "section 2.2 paragraph 16 pp. ESE 3-3-ESE3-4",
+        "section 2.3 paragraph 18 pp. ESE 3-4-ESE 3-5"
+      ],
+      "local_source": "waldhauser_ellsworth_2002.pdf",
+      "limits": "No waveforms or tabulated event/station records extracted as observational data"
+    }
+  ],
+  "raw_response_provenance": [
+    "dietz_ellsworth_1990_usgs.provenance.json",
+    "kissling_1994.provenance.json",
+    "waldhauser_ellsworth_2002.provenance.json",
+    "zhang_thurber_2003.provenance.json"
+  ],
+  "checks": {
+    "independent_pair_count_scipy_pdist": 152834,
+    "saved_pair_count_agreement": true,
+    "input_hashes_match_at_validation": true,
+    "compiler_first_line": "g++ (GCC) 8.5.0 20210514 (Red Hat 8.5.0-28)"
+  }
+}

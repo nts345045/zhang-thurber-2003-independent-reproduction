@@ -103,7 +103,11 @@ void row(std::ofstream &f, std::string name, double aux, double spacing,
 }
 
 int main(int argc, char **argv) {
-  if (argc != 2) throw std::runtime_error("Usage: check_fmm_initialization OUT_DIR");
+  if (argc < 2 || argc > 3 || (argc == 3 && std::string(argv[2]) != "refine"))
+    throw std::runtime_error("Usage: check_fmm_initialization OUT_DIR [refine]");
+  const bool refine = argc == 3;
+  const Vec auxiliary = refine ? Vec{.125,.0625} : Vec{1.,.5,.25};
+  const Vec path_spacing = refine ? Vec{.125,.0625} : Vec{.5,.25};
   const std::string out = argv[1];
   std::ofstream f(out+"/results.csv"), paths(out+"/paths.csv"), checks(out+"/consistency.csv");
   if (!f || !paths || !checks) throw std::runtime_error("Cannot open audit files");
@@ -129,11 +133,11 @@ int main(int argc, char **argv) {
     const P b{20, .13, flat ? -.5 : 0.};
     const std::string name = flat ? "constant_top_gradient" : "constant_gradient";
     const Vec distances = flat ? Vec{4,12,14,14.64,14.68,15,16,20,40} : Vec{10,40};
-    for (double aux : {1., .5, .25}) {
+    for (double aux : auxiliary) {
       auto start = Clock::now();
       const first_arrival::Field field(g,b,aux);
       const double field_seconds = elapsed(start);
-      for (double spacing : {.5,.25})
+      for (double spacing : path_spacing)
         for (double distance : distances) {
           const P a{b[0]-distance,b[1],b[2]};
           const double B=20, radius=std::sqrt(B*B+distance*distance/4);
@@ -141,7 +145,7 @@ int main(int argc, char **argv) {
             Reference{10*std::asinh(distance/40), {-B/(4*radius),0,-distance/(8*radius)}, "diving"};
           const auto c = compare(g,field,a,b,spacing);
           row(f,name,aux,spacing,distance,field.node_count(),field_seconds,g,a,b,ref,c);
-          if (aux==.25 && spacing==.25) {
+          if (aux==auxiliary.back() && spacing==path_spacing.back()) {
             write_paths(paths,name,aux,spacing,distance,c);
             // Existing analytic-ray tolerances retained. Layer-interface cases
             // may expose additional failures; do not weaken these gates.
@@ -168,6 +172,7 @@ int main(int argc, char **argv) {
     }
   }
 
+  if (refine) return 0; // Off-grid homogeneous checks are in the baseline audit.
   Grid homogeneous;
   homogeneous.x={-10,0,10}; homogeneous.y={-8,0,8}; homogeneous.z={-1,0,15};
   homogeneous.v.assign(homogeneous.size(),6);

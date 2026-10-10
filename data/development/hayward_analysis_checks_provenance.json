@@ -25,5 +25,18 @@
     "Fixture resource IDs are explicitly invented and do not identify provider records.",
     "Fixture-generated numerical_review.json and hayward_results.tex exercise the real report template with invented numbers and are not field results.",
     "The LaTeX check validates generated text and formatting substitutions; it does not run a TeX compiler."
+  ],
+  "subsequent_validation": [
+    {
+      "recorded_utc": "2026-10-09T23:27:20.242860Z",
+      "command": "python3 diagnostics/check_hayward_analysis.py",
+      "exit_code": 0,
+      "checks_passed": 9,
+      "scope": "Invented-fixture validation after field reporting and display clarifications; no real field analysis or inversion run.",
+      "tested_analysis_source_sha256": "dfea3b91fcbd273f9d99255e6e8dbb85431977a556a0dc0a538f4c5511520308",
+      "helper_sha256": "797d47a0882aea0085c332ea1d7a73feffa625a9a470295a969dfc5bd52b13c0",
+      "result_sha256": "8bee771a06d761918ea6e3e5dfc5ebef345bfd3981ca9b60ea3b9da97871877b",
+      "result_matches_preserved_result": true
+    }
   ]
 }

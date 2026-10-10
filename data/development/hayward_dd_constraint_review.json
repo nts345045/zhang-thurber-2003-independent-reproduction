@@ -1,0 +1,280 @@
+{
+  "reviewed_utc": "2026-10-09T23:39:19.588490Z",
+  "command": "python3 data/development/hayward_dd_constraint_review.py",
+  "event_rows": 1092,
+  "final_stage_row_multipliers": [
+    0.1,
+    1.0
+  ],
+  "reconstructed_final_residual_cutoff_s": {
+    "0": 0.6579317703737924,
+    "1": 0.1250876783006953
+  },
+  "reconstructed_final_weight_counts": {
+    "absolute_residual_cutoff_zero": 28,
+    "catalog_residual_cutoff_zero": 2634,
+    "catalog_distance_cutoff_zero": 243,
+    "absolute_active": 14234,
+    "catalog_active": 41886
+  },
+  "input_component_sizes": [
+    1058,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "final_active_component_sizes": [
+    1057,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "groups": {
+    "all": {
+      "events": 1092,
+      "displacement_median_km": 1.1780277490375548,
+      "displacement_maximum_km": 8.79947813078228,
+      "negative_geoid_depths": 19,
+      "top_boundary_sources": 13,
+      "input_unlinked": 34,
+      "final_active_unlinked": 35
+    },
+    "input_unlinked": {
+      "events": 34,
+      "displacement_median_km": 2.5889977308193757,
+      "displacement_maximum_km": 8.79947813078228,
+      "negative_geoid_depths": 4,
+      "top_boundary_sources": 3,
+      "input_unlinked": 34,
+      "final_active_unlinked": 34
+    },
+    "input_linked": {
+      "events": 1058,
+      "displacement_median_km": 1.165017294224765,
+      "displacement_maximum_km": 5.904487640092107,
+      "negative_geoid_depths": 15,
+      "top_boundary_sources": 10,
+      "input_unlinked": 0,
+      "final_active_unlinked": 1
+    },
+    "negative_geoid_depth": {
+      "events": 19,
+      "displacement_median_km": 3.8854315048548633,
+      "displacement_maximum_km": 5.904487640092107,
+      "negative_geoid_depths": 19,
+      "top_boundary_sources": 13,
+      "input_unlinked": 4,
+      "final_active_unlinked": 5
+    },
+    "top_boundary": {
+      "events": 13,
+      "displacement_median_km": 3.679735653641989,
+      "displacement_maximum_km": 5.904487640092107,
+      "negative_geoid_depths": 13,
+      "top_boundary_sources": 13,
+      "input_unlinked": 3,
+      "final_active_unlinked": 4
+    },
+    "upper_y_boundary": {
+      "events": 2,
+      "displacement_median_km": 5.677828763061436,
+      "displacement_maximum_km": 8.79947813078228,
+      "negative_geoid_depths": 0,
+      "top_boundary_sources": 0,
+      "input_unlinked": 1,
+      "final_active_unlinked": 1
+    }
+  },
+  "descriptive_correlations": {
+    "input_pair_degree": {
+      "available_events": 1092,
+      "spearman_rho_with_displacement": -0.2538558848034129
+    },
+    "final_active_pair_degree": {
+      "available_events": 1092,
+      "spearman_rho_with_displacement": -0.2557239659843559
+    },
+    "absolute_row_count": {
+      "available_events": 1092,
+      "spearman_rho_with_displacement": -0.21950213696415688
+    },
+    "absolute_final_active_row_count": {
+      "available_events": 1092,
+      "spearman_rho_with_displacement": -0.22103948254591316
+    },
+    "initial_azimuthal_gap_deg": {
+      "available_events": 1092,
+      "spearman_rho_with_displacement": 0.18276395431082684
+    },
+    "initial_horizontal_distance_min_km": {
+      "available_events": 1092,
+      "spearman_rho_with_displacement": 0.13309316154489562
+    },
+    "initial_direction_z_std": {
+      "available_events": 1092,
+      "spearman_rho_with_displacement": -0.026865965929064737
+    },
+    "initial_direction_time_singular_ratio": {
+      "available_events": 1092,
+      "spearman_rho_with_displacement": -0.14343114182186756
+    },
+    "provider_depth_uncertainty_m": {
+      "available_events": 1092,
+      "spearman_rho_with_displacement": 0.09086535159967735
+    },
+    "provider_horizontal_uncertainty_m": {
+      "available_events": 1092,
+      "spearman_rho_with_displacement": 0.11048379434270979
+    },
+    "provider_ellipsoid_major_axis_m": {
+      "available_events": 1092,
+      "spearman_rho_with_displacement": 0.10019760758244226
+    }
+  },
+  "per_event_csv": "data/development/hayward_dd_event_constraints.csv",
+  "sha256": {
+    "data/hayward/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/hayward/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/hayward/dd_events.csv": "c48e6b3a56710450ee309b119e36340705f53759e1e99520a898f241e17480be",
+    "data/hayward/dd_grid.csv": "13cdc7f9d201f9d73da7e3fedc21e542444c9a478cf4c0f4b08ce85a5a4a8596",
+    "data/hayward/dd_residuals.csv": "5f8cbecc39903a64604dbf7de4e49704c8de6adacdce13af24f3d5240bc2fb84",
+    "data/hayward/dd_history.csv": "63d0a04c79b9a24fd21adb6270c90c8c1925da7ccd5ba2ca487cbbca15ba5d43",
+    "data/hayward/selection_manifest.json": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004",
+    "data/hayward/run_manifest.json": "3dfad91dedf1db7ff49cb9320aedcd7902a8eff27c8c3ecdef98a047beee6a41",
+    "src/main.cpp": "79db0d337e0220c2d574fb7e22609d7a1c4d70eaac55dec5dd7610f83e2a29a4",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "configs/hayward.cfg": "cd7a922200f9811994d9fe4d7b66c48cbe1c9ff5f0dae2eef8ca85f6234aedb2",
+    "data/development/hayward_dd_constraint_review.py": "90629c8018c1bd9676405f6ab2b63fd17087c16ab360f7c55dabc8f9394624cf",
+    "data/development/hayward_dd_event_constraints.csv": "ebb2646b43f64579e92e15627afe8ef7d7c0fea6ecc894bef89a657afa19fd49",
+    "data/development/hayward_dd_top_layer_rays.csv": "73e33f855cee4f50833660984fa22366bc5a2cff75316abd3f346a1ddf3b7902",
+    "data/hayward/../authoritative/hayward/raw/summaries_1984_00001.xml": "16c32263c9ce0936afcca7dbb83544edc72b0089d79c41bedd35475abd2ee881",
+    "data/hayward/../authoritative/hayward/raw/summaries_1985_00001.xml": "e58d515cf2cdcfc4a31b1f7805311d3ec19e3bad89c4e02fd53b51ed56f8a127",
+    "data/hayward/../authoritative/hayward/raw/summaries_1986_00001.xml": "6d34856129e91e8309ab36b63872cf6ee1ec27b180c4adb0f74efc26cf24f99a",
+    "data/hayward/../authoritative/hayward/raw/summaries_1987_00001.xml": "faaa3972b31b1715b0c883720c2825f74429ac410395f65b3985cc9cbd0e8ec4",
+    "data/hayward/../authoritative/hayward/raw/summaries_1988_00001.xml": "d04935b31cb98ead67169c12df3b6c5d8986bf9a597ed212c5f04a56b15cf848",
+    "data/hayward/../authoritative/hayward/raw/summaries_1989_00001.xml": "32136a742e24a4ee3d1d7ddcc5601bff3d338cc045a26bc0a298221d131c0079",
+    "data/hayward/../authoritative/hayward/raw/summaries_1990_00001.xml": "4ae2f662de593f63fe694ce7215e4e9045ab8340a41abbf710df808b7ec0b886",
+    "data/hayward/../authoritative/hayward/raw/summaries_1991_00001.xml": "378cdcfeb8dd0031c83d286832257b3178e92e07f9bdffa30bc0e28162a810c2",
+    "data/hayward/../authoritative/hayward/raw/summaries_1992_00001.xml": "68ad9da6062abf539d48b50b98eb62e55f1315945900aa01da86f2b142d18476",
+    "data/hayward/../authoritative/hayward/raw/summaries_1993_00001.xml": "ce4fbc6a828fae33c67148437da6ec7dadbbdc9861c38f8a95ae4797dc2fe917",
+    "data/hayward/../authoritative/hayward/raw/summaries_1994_00001.xml": "fdf7a6c8e91d99244a82948d7e8baf3d142722d656f9e2fb60521755864bd8eb",
+    "data/hayward/../authoritative/hayward/raw/summaries_1995_00001.xml": "1aa0f84b7eec59719518c304fba1ca0c6cf76d7be7fba8a463a336b5bc5de2f1",
+    "data/hayward/../authoritative/hayward/raw/summaries_1996_00001.xml": "840e07ceed8dda3abb703ece046a5f0c21dffefe2b57c4b681f8cbebb4eefe87",
+    "data/hayward/../authoritative/hayward/raw/summaries_1997_00001.xml": "b752fbde045c0793506f392b90fa682eefb3f01b6053fb34698c835c38b6fef0",
+    "data/hayward/../authoritative/hayward/raw/summaries_1998_00001.xml": "91b1e8df147f6af764081770c185f9dc931f797b099a0c18bb702edd23f4722c"
+  },
+  "top_layer": {
+    "initial_both_endpoints_absolute_rays": 0,
+    "dd_final_both_endpoints_absolute_rays": 186,
+    "dd_final_events": 19,
+    "dd_final_native_receiver_epochs": 120,
+    "grids": {
+      "initial": {
+        "vertical_node_pairs": 77,
+        "exactly_equal_velocity_pairs": 77,
+        "v_at_zero_minus_v_at_minus1_min_max_km_s": [
+          0.0,
+          0.0
+        ]
+      },
+      "dd": {
+        "vertical_node_pairs": 77,
+        "exactly_equal_velocity_pairs": 0,
+        "v_at_zero_minus_v_at_minus1_min_max_km_s": [
+          -0.015864512349999416,
+          0.014714762349999688
+        ]
+      }
+    },
+    "identified_ray_csv": "data/development/hayward_dd_top_layer_rays.csv"
+  },
+  "largest_displacement_event_indices": [
+    518,
+    4,
+    930,
+    690,
+    185,
+    144,
+    945,
+    294,
+    65,
+    420
+  ],
+  "limitations": [
+    "Final weights are reconstructed at the saved final model; they are the weights a further final-stage solve would form, not the unavailable pre-update weights of the last accepted step.",
+    "Active uses the existing solver threshold weight >= 1e-12. Boundary counts use the existing 1e-6 km reporting tolerance; no new selection or physical constraint is applied.",
+    "Straight source-to-receiver direction SVDs are dimensionless geometric proxies using unique receiver coordinates. They are not heterogeneous ray derivatives, covariance, or a rank certification of the coupled DD matrix.",
+    "The 186 final-DD top-layer endpoint geometries identify candidates for a first-arrival branch comparison. The DD top layer is not exactly constant, so the flat-layer counterexample alone does not prove their traced arrivals are wrong.",
+    "Spearman coefficients and group summaries describe associations and establish no causal explanation for displacement.",
+    "Catalog displacement is not location error against truth. Negative geoid depth does not establish height relative to local terrain.",
+    "Archived provider uncertainties and their stated confidence fields are preserved without assuming Gaussian calibration or comparable confidence levels.",
+    "No intermediate event checkpoints were saved, so individual events responsible for each history maximum coordinate step cannot be identified from final outputs alone.",
+    "No solver run, ray tracing, observational query, production analysis, or active source/input/configuration mutation was performed."
+  ]
+}

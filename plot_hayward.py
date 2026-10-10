@@ -134,10 +134,18 @@ def main(geometry_only=False):
     zoom_ids = {r["event_resource_id"] for r in initial
                 if 37.83 <= float(r["catalog_latitude_deg"]) <= 37.91 and
                 -122.26 <= float(r["catalog_longitude_deg"]) <= -122.18}
+    zoom = {mode: [r for r in rows if r["event_resource_id"] in zoom_ids]
+            for mode, rows in cohort.items()}
+    if not zoom_ids:
+        raise ValueError("No catalog-selected events in manuscript zoom region")
+    zoom_limits = {}
+    for field in ["estimated_longitude_deg", "estimated_latitude_deg", "x", "y", "z"]:
+        samples = [float(r[field]) for rows in zoom.values() for r in rows]
+        lo, hi = min(samples), max(samples)
+        padding = .05 * max(hi - lo, 1e-6)
+        zoom_limits[field] = [lo - padding, hi + padding]
     for number, mode in zip(range(6, 10), cohort):
-        rows = [r for r in cohort[mode] if r["event_resource_id"] in zoom_ids]
-        if not rows:
-            raise ValueError("No catalog-selected events in manuscript zoom region")
+        rows = zoom[mode]
         write(mode + "_zoom_events.csv", rows)
         fig, axes = plt.subplots(2, 2, figsize=(9, 7))
         for ax, xfield, yfield, xlabel, ylabel, label in zip(
@@ -147,6 +155,8 @@ def main(geometry_only=False):
                 ["Latitude (degrees north)", "Y northwest (km)", "Geoid depth (km)", "Geoid depth (km)"], "abcd"):
             ax.scatter(values(rows, xfield), values(rows, yfield), s=7, c="0.2", alpha=.65)
             setup(ax, xlabel, ylabel)
+            ax.set_xlim(*zoom_limits[xfield])
+            ax.set_ylim(*zoom_limits[yfield])
             ax.set_title("({})".format(label), loc="left")
             if yfield == "z":
                 ax.invert_yaxis()
@@ -164,7 +174,11 @@ def main(geometry_only=False):
             array[index] = float(r[field])
         return RegularGridInterpolator(tuple(ax), array, bounds_error=True)
 
-    x, z = np.linspace(-35, 35, 141), np.linspace(0, 20, 81)
+    # Include the elevated-receiver layer so source estimates on its upper
+    # boundary remain visible. This is the saved computational domain, not a
+    # reconstructed manuscript section extent.
+    zmin, zmax = min(float(r["z"]) for r in grid), max(float(r["z"]) for r in grid)
+    x, z = np.linspace(-35, 35, 141), np.linspace(zmin, zmax, int(round((zmax - zmin) / .25)) + 1)
     xx, zz = np.meshgrid(x, z)
     standard, dd = model("standard"), model("dd")
     sections = []
@@ -181,11 +195,11 @@ def main(geometry_only=False):
             else:
                 diff = ax.pcolormesh(xx, zz, vv, cmap="RdBu_r", vmin=-.8, vmax=.8, shading="auto")
             near = [r for r in cohort[mode] if abs(float(r["y"]) - y) <= 5]
-            ax.scatter(values(near, "x"), values(near, "z"), s=1.5, c="k", alpha=.45)
-            ax.set_ylim(20, 0)
+            ax.scatter(values(near, "x"), values(near, "z"), s=1.5, c="k", alpha=.45, clip_on=False)
+            ax.set_ylim(zmax, zmin)
             ax.set_xlim(-35, 35)
             if col == 0:
-                ax.set_ylabel("Y={} km\nDepth (km)".format(y))
+                ax.set_ylabel("Y={} km\nGeoid depth (km)".format(y))
             if row == 6:
                 ax.set_xlabel("X northeast (km)")
     for ax, title in zip(axes[0], ["(a) Catalog DD", "(b) Absolute only", "(c) DD minus absolute"]):
@@ -208,23 +222,26 @@ def main(geometry_only=False):
         rim = axes[row, 0].pcolormesh(xx, zz, rr, cmap="viridis", vmin=0, vmax=1, shading="auto")
         sim = axes[row, 1].pcolormesh(xx, zz, ss, cmap="magma", shading="auto")
         for ax in axes[row]:
-            ax.set_ylim(20, 0)
+            ax.set_ylim(zmax, zmin)
             if row == 6:
                 ax.set_xlabel("X northeast (km)")
-        axes[row, 0].set_ylabel("Y={} km\nDepth (km)".format(y))
-    axes[0, 0].set_title("(a) Model resolution diagonal")
-    axes[0, 1].set_title("(b) Independent-pick noise propagation")
+        axes[row, 0].set_ylabel("Y={} km\nGeoid depth (km)".format(y))
+    axes[0, 0].set_title("(a) Nodal resolution (interpolated)")
+    axes[0, 1].set_title("(b) Nodal pick noise (interpolated)")
     # Share an uncertainty scale across all sections.
     max_sigma = max(r["independent_pick_sigma_velocity_km_s"] for r in resolution_sections)
     for ax in axes[:, 1]:
         ax.collections[0].set_clim(0, max_sigma)
-    fig.colorbar(rim, ax=axes[:, 0].tolist(), label="Resolution diagonal", shrink=.7, pad=.02)
-    fig.colorbar(sim, ax=axes[:, 1].tolist(), label="Conditional velocity noise (km/s)", shrink=.7, pad=.02)
+    fig.colorbar(rim, ax=axes[:, 0].tolist(), label="Interpolated nodal resolution diagonal", shrink=.7, pad=.02)
+    fig.colorbar(sim, ax=axes[:, 1].tolist(), label="Interpolated nodal velocity noise (km/s)", shrink=.7, pad=.02)
     fig.suptitle("Figure 11 counterpart: absolute-data linearization at the catalog DD solution")
     write("resolution_sections.csv", resolution_sections)
     save(fig, "figure11_resolution")
 
-    metric = {"catalog_zoom_events": len(zoom_ids), "modes": {}}
+    metric = {"catalog_zoom_events": len(zoom_ids), "zoom_common_coordinate_limits": zoom_limits,
+              "section_geoid_depth_range_km": [zmin, zmax],
+              "resolution_section_interpretation": "The resolution_diagonal and independent_pick_sigma_velocity_km_s columns interpolate nodal diagnostics for display; the latter is not sqrt(w^T C_v w) for interpolated velocity.",
+              "modes": {}}
     p0 = np.column_stack([values(initial, k) for k in ("x", "y", "z")])
     for mode, rows in cohort.items():
         p = np.column_stack([values(rows, k) for k in ("x", "y", "z")])
@@ -243,6 +260,7 @@ def main(geometry_only=False):
         "no waveform-correlation observations in these runs", "no digitized fault trace or section-box boundaries",
         "zoom cross sections include all catalog-selected zoom events, not undocumented AA/BB boxes",
         "fixed-model relocation retains absolute-data anchoring", "resolution uncertainty assumes reported symmetric uncertainties are independent 1-sigma picking errors; provider confidence levels are absent"]
+    metric["figure_deviations"].append("velocity and resolution sections include the full computational depth range, including the elevated-receiver layer")
     metric["input_sha256"] = {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
                               for p in sorted(DATA.glob("*.csv")) if "geographic" not in p.name and "zoom" not in p.name}
     (DATA / "figure_metrics.json").write_text(json.dumps(metric, indent=2, allow_nan=False) + "\n")

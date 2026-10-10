@@ -206,13 +206,13 @@ for row in rows:
         extra_files = [field_data / (mode + '_zoom_events.csv')]
         limitation = field_run_limit(mode) + (' Zoom membership is fixed by the provider catalog coordinates within the written geographic window. '
                                               'AA/BB section-box boundaries and fault traces were not recovered or digitized; '
-                                              'both depth views include every selected zoom event.')
+                                              'both depth views include every selected zoom event, with common coordinate limits across methods.')
     elif number == 10:
         modes = ['standard', 'dd']
         figure = 'figure10_velocity'
         extra_files = [field_data / 'vertical_sections.csv']
         limitation = ('Seven written y sections are generated from the saved standard and catalog-DD models, with hypocenters within 5 km. '
-                      'The model grid extends above the geoid to include receivers. ' +
+                      'Sections include the full saved depth range, including the above-geoid layer added to contain receivers and any source estimates at its top. ' +
                       field_run_limit('standard') + ' ' + field_run_limit('dd'))
     elif number == 11:
         modes = ['dd']
@@ -223,10 +223,12 @@ for row in rows:
         row['parameters'] = ('Absolute catalog-P Jacobian at saved DD sources/velocity; source parameters eliminated; '
                              'independent log-slowness smoothing and column-scaled damping; ' + row['panel'].split('(', 1)[1].rstrip(')'))
         if label == 'b':
-            row['quantity'] = 'Hayward conditional velocity noise from independent picks'
+            row['quantity'] = 'Hayward interpolated nodal conditional velocity noise from independent picks'
         limitation = ('The generated resolution is the absolute-data velocity block at the catalog-DD estimate, with source parameters included in the joint algebra. '
                       'It is not a full DD resolution matrix or the original simul2000 calculation. '
                       'Noise propagation assumes reported symmetric pick uncertainties are independent 1-sigma errors; provider confidence levels are absent. '
+                      'Sections interpolate nodal diagnostics; they do not propagate covariance to interpolated velocity. '
+                      'Unconstrained source elimination omits the effect of active source-coordinate bounds. '
                       'It omits correlated station/model errors, ray and nonlinear errors, selection effects and regularization bias. '
                       'Small conditional noise does not establish small total velocity error. ' + field_run_limit('dd'))
     else:
