@@ -1,0 +1,579 @@
+{
+  "status": "completed_standard_outputs_verified_workflow_in_progress",
+  "reviewed_utc": "2026-10-10T01:12:36Z",
+  "scope": "Exhaustive read-only checks of the original standard inversion outputs; no ray tracing, reinversion, plot generation, or full analysis.",
+  "original_workflow_session": 14145,
+  "original_parent_pid": 4017480,
+  "standard_pid": 4018949,
+  "standard_process_state": "absent",
+  "raw_exit_status": null,
+  "workflow_completion_marker_present": false,
+  "pending_method": "loc1d",
+  "counts": {
+    "events": 1092,
+    "native_receiver_epochs": 372,
+    "grid_nodes": 462,
+    "coverage_rows": 462,
+    "residuals": 58980,
+    "history_rows": 13,
+    "accepted_updates": 12,
+    "event_metadata_columns_preserved_excluding_id": 12,
+    "observation_columns_preserved": 39
+  },
+  "checks": {
+    "all_event_identities_and_metadata_exact": true,
+    "all_residual_observation_indices_and_metadata_exact": true,
+    "both_receiver_indices_and_native_epochs_preserved": true,
+    "all_modeled_numbers_finite": true,
+    "empty_precise_rms_category_is_nan": true,
+    "all_velocity_nodes_positive": true,
+    "grid_coordinates_unchanged": true,
+    "coverage_finite_nonnegative_and_complete": true,
+    "accepted_within_step_objective_increases_above_1e_8": 0,
+    "source_input_configuration_and_executable_hashes_match_original_manifest": true
+  },
+  "termination": {
+    "interpretation": "Line-search rejection at iteration 12, after 12 accepted updates; not a nonlinear convergence test.",
+    "last_history_row": {
+      "iteration": "12",
+      "stage": "2",
+      "absolute_rms": "0.0786892283877",
+      "catalog_rms": "0.0716164980013",
+      "precise_rms": "nan",
+      "velocity_step": "0",
+      "location_step": "0",
+      "step_fraction": "0",
+      "objective_before": "38.8919355503",
+      "objective_after": "38.8919355503",
+      "lsqr_iterations": "200",
+      "lsqr_relative_normal_residual": "2.67986036698e-09",
+      "lsqr_converged": "1",
+      "ray_count": "14262",
+      "ray_converged_count": "13690",
+      "ray_projected_gradient_max": "0.00491268048477",
+      "ray_raw_gradient_max": "0.00491268048477"
+    },
+    "last_accepted_history_row": {
+      "iteration": "11",
+      "stage": "1",
+      "absolute_rms": "0.0786879834075",
+      "catalog_rms": "0.0716155122452",
+      "precise_rms": "nan",
+      "velocity_step": "1.28682234985e-05",
+      "location_step": "0.000725755709853",
+      "step_fraction": "0.0009765625",
+      "objective_before": "38.8931294138",
+      "objective_after": "38.8928938198",
+      "lsqr_iterations": "200",
+      "lsqr_relative_normal_residual": "2.57948513992e-09",
+      "lsqr_converged": "1",
+      "ray_count": "14262",
+      "ray_converged_count": "13691",
+      "ray_projected_gradient_max": "0.00523707115521",
+      "ray_raw_gradient_max": "0.00523707115521"
+    },
+    "linear_solves": 13,
+    "linear_solves_converged": 13,
+    "worst_relative_normal_residual": 5.13914905913e-09
+  },
+  "ray_history": {
+    "scope": "Pre-update flags from the original straight-seed bending solver; final raychecks are still pending.",
+    "rays_per_iteration": 14262,
+    "converged_count_min": 13656,
+    "converged_count_max": 14040,
+    "last_converged": 13690,
+    "last_failed": 572,
+    "last_projected_gradient_max_s_per_km": 0.00491268048477,
+    "largest_projected_gradient_max_s_per_km": 0.00576708592836
+  },
+  "final_unweighted_residuals": {
+    "0": {
+      "count": 14262,
+      "rms_s": 0.0786892283877238
+    },
+    "1": {
+      "count": 44718,
+      "rms_s": 0.07161649800131764
+    },
+    "2": {
+      "count": 0,
+      "rms_s": null
+    }
+  },
+  "catalog_displacement_3d_km": {
+    "min": 0.11722871074898986,
+    "median": 1.1002294079080244,
+    "mean": 1.1844760337409146,
+    "max": 5.9563827646084135,
+    "rms": 1.3312391704035913
+  },
+  "axis_bounds_km": {
+    "x": [
+      -35.0,
+      35.0
+    ],
+    "y": [
+      -30.0,
+      30.0
+    ],
+    "z": [
+      -1.0,
+      20.0
+    ]
+  },
+  "boundary_tolerance_km": 1e-06,
+  "boundary_sources": 3,
+  "boundary_axis_counts": {
+    "x": {
+      "lower": 0,
+      "upper": 0
+    },
+    "y": {
+      "lower": 1,
+      "upper": 2
+    },
+    "z": {
+      "lower": 0,
+      "upper": 0
+    }
+  },
+  "source_positions_outside_domain": 0,
+  "geoid_depth_min_max_km": [
+    -0.959903449476,
+    16.4944994652
+  ],
+  "negative_geoid_depth_sources": 1,
+  "velocity_min_max_km_s": [
+    3.32591082435,
+    6.2875244009
+  ],
+  "plot_range_check": {
+    "absolute_velocity_range_km_s": [
+      3.5,
+      7
+    ],
+    "absolute_nodes_below_range": 3,
+    "absolute_nodes_above_range": 0,
+    "dd_minus_standard_fixed_difference_range_km_s": [
+      -0.8,
+      0.8
+    ],
+    "difference_nodes_outside_range": 27,
+    "dd_minus_standard_nodal_km_s": {
+      "min": -1.1621390339,
+      "median": -0.007927372824999779,
+      "mean": -0.02134962151844157,
+      "max": 1.3754362593699998,
+      "rms": 0.41635082709641785
+    },
+    "interpretation": "Nodal and read-only interpolated-section range checks; fixed plotting limits are unchanged. Explicit colorbar extensions and per-section counts are now verified in the plotting fixture. The original complete field figure workflow remains pending.",
+    "actual_figure10_sections": {
+      "standard_velocity": {
+        "color_limits": [
+          3.5,
+          7.0
+        ],
+        "actual_min_max": [
+          3.32591082435,
+          6.2875244009
+        ],
+        "sampled_points": 83895,
+        "below_limit": 20,
+        "above_limit": 0,
+        "extend": "min"
+      },
+      "dd_velocity": {
+        "color_limits": [
+          3.5,
+          7.0
+        ],
+        "actual_min_max": [
+          4.4267516858,
+          5.61768460984
+        ],
+        "sampled_points": 83895,
+        "below_limit": 0,
+        "above_limit": 0,
+        "extend": "neither"
+      },
+      "shared_velocity_colorbar": {
+        "color_limits": [
+          3.5,
+          7.0
+        ],
+        "actual_min_max": [
+          3.32591082435,
+          6.2875244009
+        ],
+        "sampled_points": 167790,
+        "below_limit": 20,
+        "above_limit": 0,
+        "extend": "min"
+      },
+      "dd_minus_standard": {
+        "color_limits": [
+          -0.8,
+          0.8
+        ],
+        "actual_min_max": [
+          -1.1621390339,
+          1.3754362593699998
+        ],
+        "sampled_points": 83895,
+        "below_limit": 1136,
+        "above_limit": 1265,
+        "extend": "both"
+      },
+      "sections": [
+        {
+          "y_km": -30,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.38890348961,
+              5.99927750784
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.89286048048,
+              5.43846682003
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -0.8962711347199992,
+              0.5710527761400002
+            ],
+            "sampled_points": 11985,
+            "below_limit": 25,
+            "above_limit": 0,
+            "extend": "min"
+          }
+        },
+        {
+          "y_km": -20,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.50531172307,
+              6.22799762115
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.65289461019,
+              5.48281978642
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -0.8784194356399997,
+              1.1475828871199996
+            ],
+            "sampled_points": 11985,
+            "below_limit": 15,
+            "above_limit": 210,
+            "extend": "both"
+          }
+        },
+        {
+          "y_km": -10,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.53843707996,
+              6.2875244009
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.4267516858,
+              5.61539962448
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -1.1621390339,
+              0.8883146058400002
+            ],
+            "sampled_points": 11985,
+            "below_limit": 722,
+            "above_limit": 86,
+            "extend": "both"
+          }
+        },
+        {
+          "y_km": 0,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.49980187067,
+              6.19125671727
+            ],
+            "sampled_points": 11985,
+            "below_limit": 1,
+            "above_limit": 0,
+            "extend": "min"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.59038877716,
+              5.61768460984
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -1.0753891395900004,
+              1.0905869064900005
+            ],
+            "sampled_points": 11985,
+            "below_limit": 357,
+            "above_limit": 228,
+            "extend": "both"
+          }
+        },
+        {
+          "y_km": 10,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.32591082435,
+              5.9999254601
+            ],
+            "sampled_points": 11985,
+            "below_limit": 19,
+            "above_limit": 0,
+            "extend": "min"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.70134708372,
+              5.54495211875
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -0.9064947728300004,
+              1.3754362593699998
+            ],
+            "sampled_points": 11985,
+            "below_limit": 17,
+            "above_limit": 189,
+            "extend": "both"
+          }
+        },
+        {
+          "y_km": 20,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.85318778073,
+              5.64779593474
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.61381019516,
+              5.52036954854
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -0.6756153772899998,
+              0.9524880649999998
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 188,
+            "extend": "max"
+          }
+        },
+        {
+          "y_km": 30,
+          "standard_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              3.83503167679,
+              5.30778552784
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_velocity": {
+            "color_limits": [
+              3.5,
+              7.0
+            ],
+            "actual_min_max": [
+              4.80048528088,
+              5.40946034178
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 0,
+            "extend": "neither"
+          },
+          "dd_minus_standard": {
+            "color_limits": [
+              -0.8,
+              0.8
+            ],
+            "actual_min_max": [
+              -0.09428782418999937,
+              0.9654536040900004
+            ],
+            "sampled_points": 11985,
+            "below_limit": 0,
+            "above_limit": 364,
+            "extend": "max"
+          }
+        }
+      ]
+    },
+    "validation_evidence": "data/development/hayward_plot_saturation_checks/checks.json"
+  },
+  "output_sha256": {
+    "data/hayward/standard_events.csv": "4e213a5e5c61366e1e69da30e1897e1b0633ac616eba074f372cd4b014cf1bf9",
+    "data/hayward/standard_grid.csv": "0d3e215f215a74b101813e9dd651518e35e501996720a602b86aa400ac3a655f",
+    "data/hayward/standard_residuals.csv": "15606fd283bcd01c71f32f3743fb5fa2d77ec6fd7dad0da2d6d18a38d4a48cb0",
+    "data/hayward/standard_history.csv": "b15496b0e8c90bc6c5b10518cb391b5fb5ad4340d6ca15ce880427ed47f6bdba",
+    "data/hayward/standard_coverage.csv": "180f698404084799e432062c115b8e34c9fe5bb06c4659896a3e266f44e0deb3"
+  },
+  "comparison_dd_grid_sha256": "13cdc7f9d201f9d73da7e3fedc21e542444c9a478cf4c0f4b08ce85a5a4a8596",
+  "original_run_manifest_sha256": "3dfad91dedf1db7ff49cb9320aedcd7902a8eff27c8c3ecdef98a047beee6a41",
+  "original_manifest_sha256_verified": {
+    "configs/hayward.cfg": "cd7a922200f9811994d9fe4d7b66c48cbe1c9ff5f0dae2eef8ca85f6234aedb2",
+    "prepare_hayward.py": "d3197c79d54ed9fcd756c26091674850b07060e38690559fb253f97f1752ed34",
+    "rebuild_hayward.sh": "c655bcd1ea4f983d61213a5b25bc51349720fa76c7886475c92fed37208ed1d6",
+    "build/dd": "1be4bbcd4965082b59b5c3dbbed406d1a3253c89493ae30b80ba703585b7032a",
+    "src/core.hpp": "c35b76b0739ac934f7cb375606f6ca3c0778c65a6c69c083535338c430b27a63",
+    "src/csv.hpp": "f3ec5080bd0234fc7d0d6731b66aadd9eae219353244c9d4ef1c157a67bfd4c0",
+    "src/main.cpp": "79db0d337e0220c2d574fb7e22609d7a1c4d70eaac55dec5dd7610f83e2a29a4",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "data/hayward/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/hayward/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/hayward/selection_manifest.json": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004"
+  },
+  "limitations": [
+    "The original fixed-model relocation remains active and automatic final raychecks, resolution, comparison figures, and full workflow status are pending.",
+    "The parent workflow owns process exit-status verification; no raw exit status is inferred here.",
+    "This audit does not reconstruct travel-time predictions or certify nonlinear stationarity, source accuracy, or globally earliest arrivals.",
+    "Within-step objectives use frozen weights; comparisons across iteration rows do not define one fixed objective.",
+    "Catalog displacement is not error against true source positions; negative geoid depths and active box bounds do not establish recovered source depth.",
+    "The corrected FMM/cone implementation and any later inversions are separate from this preserved original run."
+  ]
+}
