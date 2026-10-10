@@ -1,0 +1,33 @@
+{
+  "assembly_cases": 9,
+  "ordered_entries_checked": 458,
+  "bitwise_matrix_rhs_column_scale_equal": true,
+  "all_native_metadata_equal": true,
+  "cli_explicit_and_history_stages": true,
+  "existing_export_rejected": true,
+  "scope": "invented arrays plus tiny homogeneous CLI fixture; all stages and DD/standard/fixed-model modes",
+  "commands": [
+    "TMPDIR=\"$PWD/tmp\" g++ -std=c++17 -O2 -fopenmp diagnostics/check_full_linearization.cpp -lstdc++fs -o tmp/full_linearization_checks/check",
+    "OMP_NUM_THREADS=2 tmp/full_linearization_checks/check tmp/full_linearization_checks/fixture_002"
+  ],
+  "source_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "diagnostics/check_full_linearization.cpp": "d21c06b2f11e91b48cab03b6d1e62e77973d8786256ab43672d8ffb06dc46ab9",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "b1b0853552563257f9f72516a60b8f3123612860fee698d8c0ee8aa1a209363e",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "baseline_source_sha256": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+  "source_snapshot_sha256": "546be66cc0ff654936e17f1febc11d49e40f31f9bf991bce5d71dcb59fef28cb",
+  "binary_sha256": "371fd03e2c4d218e4dcd4deaad48718777dc44d5fba62a345c8af9fa7549a994",
+  "limitations": [
+    "Invented assembly and homogeneous CLI fixtures only; no field full-Jacobian export or resolution calculation performed.",
+    "Saved-state weights are recomputed, not asserted equal to the preceding nonlinear solve weights.",
+    "Numerical convergence and first-arrival derivative accuracy are separate requirements."
+  ]
+}

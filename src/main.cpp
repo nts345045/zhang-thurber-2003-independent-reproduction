@@ -802,6 +802,51 @@ double prediction(const Datum &d, const std::vector<Ray> &r,
   return t;
 }
 
+std::array<double, 3> residual_cutoffs(const ObservationSet &data,
+                                      const Vec &residual) {
+  Vec bytype[3];
+  for (size_t q = 0; q < data.size(); ++q)
+    bytype[data[q].type].push_back(std::abs(residual[q]));
+  std::array<double, 3> cutoff;
+  for (int type = 0; type < 3; ++type) {
+    auto &a = bytype[type];
+    if (a.empty()) {
+      cutoff[type] = 1;
+      continue;
+    }
+    std::nth_element(a.begin(), a.begin() + a.size() / 2, a.end());
+    cutoff[type] = std::max(0.01, 6 * 1.4826 * a[a.size() / 2]);
+  }
+  return cutoff;
+}
+
+struct ObservationWeight {
+  double stage, prior, robust, distance, event_distance, combined;
+  const char *omission;
+  bool active() const { return omission[0] == '\0'; }
+};
+ObservationWeight observation_weight(const Config &c, const std::string &mode,
+                                     const StageWeights &weights, int stage,
+                                     const Datum &d, double residual, double cutoff,
+                                     const std::vector<Event> &events) {
+  ObservationWeight w;
+  w.stage = mode == "standard" ? 1 : weights[stage][d.type];
+  w.prior = d.a_priori_weight;
+  double z = residual / cutoff;
+  w.robust = std::pow(std::max(0., 1 - z * z), 2);
+  w.event_distance = d.j >= 0 ? norm(events[d.i].p - events[d.j].p) : 0;
+  w.distance = d.j >= 0 ? std::pow(std::max(0.,
+      1 - std::pow(w.event_distance / c.get("pair_distance"), 2)), 2) : 1;
+  // Keep the multiplication order of the inversion's original assembly.
+  w.combined = w.stage;
+  w.combined *= w.prior;
+  w.combined *= w.robust;
+  if (d.j >= 0) w.combined *= w.distance;
+  w.omission = mode == "standard" && d.type != 0 ? "mode_excludes_differential" :
+               w.combined < 1e-12 ? "weight_below_1e-12" : "";
+  return w;
+}
+
 Row observation_row(const Datum &d, const std::vector<Ray> &r, const Grid &g,
                     int ne, int ns, bool locate) {
   Row row;
@@ -910,23 +955,10 @@ void invert(const Config &c, std::string dir, std::string mode) {
     // Residual scale is estimated separately for each data type; a 0.01 s floor
     // avoids eliminating the rounded, nearly exact synthetic differential
     // times.
-    Vec bytype[3];
     for (size_t q = 0; q < data.size(); q++) {
       residual[q] = data[q].value - prediction(data[q], r, e, ns);
-      bytype[data[q].type].push_back(std::abs(residual[q]));
     }
-    double cutoff[3];
-    for (int t = 0; t < 3; t++) {
-      auto &a = bytype[t];
-      if (a.empty()) {
-        cutoff[t] = 1;
-        continue;
-      }
-      std::nth_element(a.begin(), a.begin() + a.size() / 2, a.end());
-      cutoff[t] = std::max(0.01, 6 * 1.4826 * a[a.size() / 2]);
-    }
-    for (auto &a : bytype)
-      Vec().swap(a);
+    const auto cutoff = residual_cutoffs(data, residual);
     size_t active_rows = 0, entries = 0;
     for (size_t q = 0; q < data.size(); q++) {
       const auto &d = data[q];
@@ -935,19 +967,11 @@ void invert(const Config &c, std::string dir, std::string mode) {
       count[d.type]++;
       if (mode == "standard" && d.type != 0)
         continue;
-      double weight = mode == "standard" ? 1 : weights[stage][d.type];
-      weight *= d.a_priori_weight;
-      double z = res / cutoff[d.type];
-      weight *= std::pow(std::max(0., 1 - z * z), 2);
-      if (d.j >= 0) {
-        double distance = norm(e[d.i].p - e[d.j].p);
-        weight *= std::pow(
-            std::max(0., 1 - std::pow(distance / c.get("pair_distance"), 2)),
-            2);
-      }
-      if (weight < 1e-12)
+      const auto weight = observation_weight(c, mode, weights, stage, d, res,
+                                             cutoff[d.type], e);
+      if (!weight.active())
         continue;
-      w[q] = weight;
+      w[q] = weight.combined;
       size_t row_entries = observation_row(d, r, g, ne, ns, locate).size();
       if (row_entries > std::numeric_limits<size_t>::max() - entries)
         throw std::runtime_error("Observation matrix entry count overflow");
@@ -1439,6 +1463,8 @@ void linearize(const Config &c, const std::string &dir, const std::string &mode)
             << " columns, " << used.size() << " observed rays at " << mode << '\n';
 }
 
+#include "full_linearization.hpp"
+
 int main(int argc, char **argv) {
   try {
     if (argc >= 3 && std::string(argv[1]) == "validate") {
@@ -1449,7 +1475,8 @@ int main(int argc, char **argv) {
       throw std::runtime_error("Usage: dd validate OUT | dd generate CONFIG "
                                "OUT | dd simulate CONFIG OUT | dd invert CONFIG OUT MODE | "
                                "dd raycheck CONFIG OUT [MODE] | dd geometrycheck CONFIG OUT [MODE] | "
-                               "dd linearize CONFIG OUT MODE");
+                               "dd linearize CONFIG OUT MODE | "
+                               "dd linearize_full CONFIG OUT MODE [STAGE]");
     Config c(argv[2]);
     std::string cmd = argv[1];
     if (cmd == "generate")
@@ -1464,6 +1491,8 @@ int main(int argc, char **argv) {
       invert(c, argv[3], argv[4]);
     else if (cmd == "linearize" && argc == 5)
       linearize(c, argv[3], argv[4]);
+    else if (cmd == "linearize_full" && (argc == 5 || argc == 6))
+      linearize_full(c, argv[3], argv[4], argc == 6 ? csv_int(argv[5]) : -1);
     else
       throw std::runtime_error("Unknown command");
   } catch (const std::exception &e) {
