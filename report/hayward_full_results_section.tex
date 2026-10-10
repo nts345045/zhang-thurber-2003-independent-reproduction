@@ -10,12 +10,24 @@ pairing, initial model, and numerical implementation differ. The ray
 branch-selection defect in Section~\ref{sec:firstarrival} remains unresolved
 in these runs; its effect on these field estimates has not been quantified.
 
+The complete original workflow exits successfully after 33,712 s, including
+the final checks and report build. This completion record does not establish
+scientific convergence. Fixed-velocity relocation increases catalog-difference
+RMS from 0.09340 to 0.25423 s, while the last DD update moves a source coordinate
+by 2.761 km. The final absolute-data resolution uses two rays with false local
+flags. These results therefore remain diagnostic comparisons. Independent
+readback verifies the complete native identities, geographic and zoom joins,
+and saved resolution interpolation in
+\path{data/development/hayward_completed_baseline_review_001/}.
+
 \input{hayward_results.tex}
 
 Rebuild this calculation from the saved authoritative responses with
 \begin{lstlisting}
 ./rebuild_hayward.sh
 \end{lstlisting}
+For the recorded baseline, use the frozen solver and inputs preserved at
+commit \texttt{3b674ba}; the integration branch contains later forward changes.
 Source, executable, configuration, and input hashes are recorded in
 \path{data/hayward/run_manifest.json}. The method-specific history and residual
 files retain numerical diagnostics and observational identities. Synthetic

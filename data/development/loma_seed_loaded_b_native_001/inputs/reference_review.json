@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "scope": "Independent saved-table/native/error/hash readback only; no reference enumeration, ray tracing, inversion or sampled-stage assessment",
+  "summary_sha256": "72ed25dbde4bc14b1e0967f6a1880ff396683735c723b41f633e081a085fe6bb",
+  "execution_sha256": "233514005b91b6e25694eb3cf0d6713e118468b39f173aa4a68b915fa105132c",
+  "comparison_sha256": "4199956147f8d4cfbf44feef54950ceb243a2aae5ea2b9ceb70ae603ee68fb04",
+  "comparer_source_sha256": "1712d8ab9f55739aea26c58fd3fb5efb561078b1e184943979331d0e03fb8faf",
+  "review_helper_sha256": "130c10f5cf63f1a7bac314c640301cd1a9ca10e5b2dd350d51cf1731966d9106",
+  "verified_output_hashes": 37,
+  "verified_original_and_frozen_input_hashes": 35,
+  "decompressed_full_ray_hash_matches": true,
+  "verified_pairs": 37648,
+  "all_raw_status_fields_preserved": true,
+  "all_native_source_receiver_fields_match": true,
+  "ordered_indices_complete": true,
+  "reference_flags_candidate_counts_and_xyz_gradients_match_certificates": true,
+  "boundary_flags_match_exact_saved_geometry": true,
+  "pure_time_and_euclidean_source_error_arithmetic_matches": true,
+  "source_time_offsets_preserved_and_excluded": true,
+  "nonzero_source_time_rows": 37648,
+  "counts": {
+    "reference_eligible": 37648,
+    "modeled_values_finite": 37648,
+    "numerically_compared": 37648,
+    "time_limit_pass": 37648,
+    "source_vector_limit_pass": 37600,
+    "original_flags_and_path_pass": 37647,
+    "scientific_pass": 37599,
+    "saved_local_converged": 37647
+  },
+  "maximum_absolute_time_error_s": 2.8983983377806055e-06,
+  "maximum_source_error_norm_s_per_km": 1.5850655663200005e-05,
+  "scientific_pass": false,
+  "all_failed_rows_preserved": true,
+  "source_failures": {
+    "count": 48,
+    "all_source_z_16": true,
+    "all_bottom_boundary": true,
+    "unique_source_events": 7,
+    "max_absolute_error_xyz": [
+      4.826694599557868e-14,
+      4.961309141293668e-13,
+      1.58506556632e-05
+    ],
+    "minimum_z_error": -1.58506556632e-05,
+    "maximum_z_error": -1.58176219029e-05
+  },
+  "local_failure_comparison_rows": [
+    3426
+  ],
+  "failure_join": "summary.json failures and comparison.csv.gz retain event/origin/channel/epoch identifiers for every failure",
+  "material_issue_found": false,
+  "limitations": [
+    "Review success validates preserved evidence, not numerical acceptance;49 rows still fail a check.",
+    "The boundary-only error pattern is descriptive and does not establish causality.",
+    "The captured overall preflight was still running; only its completed full matrix stage is assessed.",
+    "No high-precision action or reference arithmetic was rerun."
+  ]
+}

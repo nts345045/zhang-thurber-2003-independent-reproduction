@@ -7,11 +7,11 @@ Zhang and Thurber (2003), *BSSA* 93, 1875–1889,
 This is a research reproduction attempt, with explicit limits. The report
 retains a synthetic baseline using generated source/receiver geometry. The
 original task excluded source observations; a later authorized Hayward catalog
-DD inversion and absolute-data tomography have written numerical outputs.
-A partial Figure 10 counterpart now compares their saved velocity models.
-Fixed-model relocation and final ray diagnostics remain pending, and neither
-completed method establishes nonlinear convergence. This is a partial scientific
-checkpoint, not a completed manuscript reproduction.
+workflow has now completed absolute-data tomography, catalog-DD tomography,
+and fixed-velocity catalog-DD relocation. Figures 4–11 provide independently
+generated partial counterparts. Their saved diagnostics retain unresolved ray
+and nonlinear-convergence failures. A separate corrected catalog-only inversion
+is active. This remains a partial scientific checkpoint.
 
 On 2026-10-09 the user revised that restriction: real station and earthquake
 data, including metadata, must now come from authoritative sources, starting
@@ -52,7 +52,7 @@ passes all 72 checks; branch completeness in arbitrary 3D media and field
 validation remain open.
 The corrected initializer and feasible ray directions are integrated and tested
 on the `first-arrival-integration` branch. No completed corrected inversion
-result is available yet; the original running workflow retains its frozen solver.
+result is available yet; the completed original workflow retains its frozen solver.
 The [fixed-model field comparison](data/development/fmm_hayward_audit/README.md)
 finds two faster candidates exceeding 1 ms among 186 selected shallow-endpoint
 rays; it does not quantify the resulting inversion bias or certify first arrivals.
@@ -96,7 +96,11 @@ now passes both unchanged accuracy limits and all local/initializer flags for
 all 14,262 rays. Maximum time and source-vector errors are 0.959 microseconds
 and 1.782e-6 s/km. The [full-cohort error distributions](figures/diagnostics/hayward_full_initial_accuracy.pdf)
 retain the same native observations and references. The separate sampled
-refinement has not yet completed accuracy review; no corrected inversion has been launched.
+refinement also passes [independent accuracy review](data/development/hayward_sampled_accuracy_004_002/README.md).
+All 32 travel times and eight source vectors satisfy the same reference limits.
+A separately [reviewed guarded DD attempt](data/development/hayward_guarded_dd_launch_plan_001/README.md)
+started on 2026-10-10 at 07:37 UTC. It remains active at this checkpoint.
+Passing the initial depth-dependent model does not validate subsequent 3D models.
 
 The revised solver preserves identities in event/residual CSV files and ray
 diagnostic mappings, traces observed pairs only, and exports an unweighted
@@ -198,12 +202,25 @@ supporting-vector norm of 5.579e-6 s/km. An independent readback checks all
 also retains the action increase when only vertex 485 is moved. This explains
 why the nonsmooth interface needs explicit treatment; it does not provide a
 general optimizer correction or change the original false flag.
+A [controlled retention replay](data/development/loma_positive_curvature_native_001/README.md)
+then changes only the cutoff from `s*y > 1e-14` to `s*y > 0` after a byte-identical
+saved-initializer replay. It satisfies the unchanged combined local stop after
+145 updates, with time error 0.861 microseconds and source-vector error
+3.18e-8 s/km. The [history comparison](figures/diagnostics/loma_retention.pdf)
+supports a role for discarded curvature in this case. Positive subnormal and
+infinite curvature remain unsafe in invented controls; no general optimizer
+change is adopted.
 A separate [boundary component calculation](data/development/loma_endpoint_connector_native_001/README.md)
 replaces the first straight element by a constrained curved connector in the
 saved affine layer. It retains the same local action, removes the demonstrated
 source-normal term, and preserves the neighboring vertex's second-element
 reaction. The reviewed calculation supplies no general trilinear connector
 or model Jacobian and does not produce a new inverse result.
+A later [invented scalar contact calculation](data/development/loma_endpoint_scalar_contact_controls_001/README.md)
+uses one trilinear action for original-node perturbations. Its correct limiting
+source derivative coexists with a 6.066% error in the leading excess action.
+The perturbed-family minima and derivative error bounds remain uncertified;
+the receiver derivative remains biased. This supplies no native correction.
 Only 37,599 rays pass all checks. LOM sampled checks and the LON initial-ray
 preflight remain active; neither performs an inverse update. A separate
 [one-sided curvature calculation](data/development/native_interface_conditioning/README.md)
@@ -246,7 +263,7 @@ The [identified dt.cc export](data/development/native_dt_cc_001/README.md)
 preserves both event/pick identities, both metadata epochs, every rejected or
 unattempted pair, and explicit event-to-integer mappings. CC squared is a
 relative weight, with no formal timing uncertainty inferred. These measurements
-have not entered the running catalog-only inversion; its saved results retain
+have not entered either catalog-only inversion; the original saved results retain
 their original inputs and limitations.
 
 The separately [prepared catalog-plus-CC inputs](data/hayward_catalog_cc_001/README.md)
@@ -275,10 +292,14 @@ earlier forward operators.
   `*_history.csv`, and `*_residuals.csv` contain source estimates, convergence
   histories, and observation residuals. These inversions predate the ray fixes.
 - [`data/hayward/`](data/hayward/README.md): authoritative inputs and current
-  Hayward runs. The file guide distinguishes initial geometry, inversion
-  products, and separate ray diagnostics. Missing method files mean that result
-  has not been produced. `figure10_velocity_manifest.json` records the separate
-  velocity comparison, including its input/output hashes and numerical limitations.
+  completed baseline. Inspect `standard_*`, `dd_*`, and `loc1d_*` for each
+  method's model, events, history, residuals, coverage, and final sampled ray
+  checks. `numerical_review.json` and the independent completed-baseline review
+  record failures. `absolute_resolution*` is conditional on absolute picks
+  at the saved DD model; it is not full-DD resolution.
+- `data/hayward_first_arrival_guarded_001/`: separate active corrected catalog-DD
+  attempt in the integration worktree. Its manifest and execution records
+  identify the frozen inputs and solver. It has no accepted final result yet.
 - `figures/` and `figures/hayward/`: plots generated from the saved numerical
   tables. `report/report.pdf` explains the experiments and reproduction limits.
 - `data/development/`: numerical diagnostics and frozen failure evidence.
@@ -311,9 +332,8 @@ and `listings` packages. No third-party tomography or optimization library
 is required. The formatter used during development is not a runtime dependency.
 The delivery environment is recorded in `reference/delivery_environment.json`.
 The Hayward plotting and resolution workflow also requires SciPy.
-To plot the completed standard/DD velocity tables before other methods finish,
-run `python3 plot_hayward.py --velocity-only`. This produces Figures 4 and 10
-and a separate Figure 10 manifest; it does not complete the full workflow.
+Run `python3 plot_hayward.py` to plot the completed baseline tables. The optional
+`--velocity-only` mode produces Figures 4 and 10 and a separate Figure 10 manifest.
 
 `./rebuild_hayward.sh` reuses the saved authoritative archive, prepares its
 identified subset, builds the solver, and runs absolute-data tomography,

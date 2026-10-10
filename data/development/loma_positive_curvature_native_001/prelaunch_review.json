@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "prepared_sha256": "79562a3f2485633c84342571a77fd94f39d32e4a6d7e64247808a82ef628e60f",
+  "launcher_sha256": "a15355fed9b1bee795e06bc7f53e8a04783d10f7e9bfaf982ca7d43c67173982",
+  "checker_sha256": "f903c200cdef7273589f25f233e8fd9a2ac3d58209c157267358c99f177ddd18",
+  "input_pins_verified": 674,
+  "prepared_pins_verified": 55,
+  "source_pins_verified": 20,
+  "full_native_context_fields": 199,
+  "changed_source_files": [
+    "diagnostics/extracted_retention.hpp",
+    "diagnostics/observed_optimizer.hpp",
+    "src/core.hpp"
+  ],
+  "mathematical_change": "Two original/observed retention literals only; the third changed header is the unused control predicate.",
+  "unchanged_seed_loader_and_settings": true,
+  "unchanged_accuracy_limits": true,
+  "safe_general_retention_rule_claimed": false,
+  "scope": "Concrete frozen-source, baseline-parity and metadata review only; no compilation or native execution."
+}

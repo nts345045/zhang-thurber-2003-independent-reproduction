@@ -1,0 +1,19 @@
+{
+  "status": "completed_execution_receipt",
+  "driver_return_code": 0,
+  "execution_tool_session": 91561,
+  "command": [
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "OPENBLAS_NUM_THREADS=1",
+    "python3",
+    "diagnostics/review_hayward_sampled_preflight.py",
+    "--output",
+    "data/development/hayward_sampled_accuracy_004_002"
+  ],
+  "source_sha256": "71f6b0dbdc7b8412a0e18e1309d6630ed53f96dd423ea76efcf6c29e586773be",
+  "summary_sha256": "66d48c6df173068fc0cf404414387a02e6d08a34ab02ebb5a0dbdfd880aedaca",
+  "execution_sha256": "565347334ca8017102c90497ee031422601cb2d7f7941d7d2f9ad47f840cb569",
+  "independent_review_sha256": "376f88cec5f59498ec4629ee98320744a6df8b1c30c71e19e9c61055a16dff0c",
+  "note": "Command receipt supplements the terminal execution record without modifying consumed source, reference results, summary or review; no solver was invoked."
+}

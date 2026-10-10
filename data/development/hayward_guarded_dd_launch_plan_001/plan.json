@@ -1,0 +1,136 @@
+{
+  "status": "prepared_launch_plan_not_executed",
+  "created_utc": "2026-10-10T07:31:09Z",
+  "mode": "dd",
+  "preflight": "data/hayward_first_arrival_004",
+  "output": "data/hayward_first_arrival_guarded_001",
+  "build": "tmp/hayward_guarded_runs/001",
+  "command": [
+    "python3",
+    "run_hayward_guarded_inversion.py",
+    "--preflight",
+    "data/hayward_first_arrival_004",
+    "--reference",
+    "data/development/hayward_first_arrival_004_1d_support",
+    "--accuracy-review",
+    "data/development/hayward_sampled_accuracy_004_002/accuracy_review.json",
+    "--parity-review",
+    "data/development/hayward_guard_adoption_checks/001/summary.json",
+    "--output",
+    "data/hayward_first_arrival_guarded_001",
+    "--build",
+    "tmp/hayward_guarded_runs/001"
+  ],
+  "pending_gates": [
+    "Independent saved sample/reference/FD readback",
+    "Root final accuracy_review.json and explicit launch review",
+    "Immediate immutable hash and compiler checks by tested launcher"
+  ],
+  "input_sha256": {
+    "initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "selection_manifest.json": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004",
+    "authoritative_ids_required": "00d86d4465702c0424ec511ef34eee9eb080977c55c21ac8af2106257760ba47",
+    "event_pairs.csv": "b678922c56c2c0841769aa882e98291631d3f7651a19661206c0433bfe9826ae",
+    "event_selection.csv": "d8563afe642aaaf719b9c92f0206bcd88003d256ad9067c08b0b40c60c3fb256",
+    "initial_geographic_events.csv": "7a7fba3e9f128a77dc2935d5a1a0a4926bd1442525ff4a477c45cba44c059a09",
+    "excluded_picks.csv": "93aab31ede96f61d65f4e363eb9bd8748b67014e477b12be12daee3ba09af0ca",
+    "run.cfg": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4"
+  },
+  "source_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "run_hayward_guarded_inversion.py": "f9ca4ae89a706d4f1c92e0f0277b846766af35a73998c6ce890cfdaef65b2df3",
+    "run_loma_initial_preflight.py": "f1acc19135c11edda106e3b8c7d8c1879d7d490db729d4ad55263b87022946f1",
+    "run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5",
+    "diagnostics/review_loma_analytic_simulation.py": "786c1ccc99cfa3d3677dde88f11a96f9677693966de874d40c15ca2972a76246",
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "preflight_manifest_sha256": "75631991144e76cf16731e0b73e396860ab78db386c556415f990968cb7cc00a",
+  "preflight_ledger_sha256": "8c51039a6fe28c3972cea0971b93346ee5cc2ed0cd021c6af14b28aff1ea8859",
+  "preflight_checks_sha256": "55a09aa9adda173043cc1baa713d55a3ab73e1705d6ddc533a4aa5547d0631e8",
+  "adoption_summary_sha256": "6893f3fd746d21a88878990d5af1bfb0a60107d13ae16be42ae0d049cb59f3ab",
+  "launcher_controls_summary_sha256": "2744d0cd37d247f3e6de023ce60ba85c92b99eba753c4a31659bdd154c2db113",
+  "launcher_root_review_sha256": "e69a9455561c7978eac617172a39214aa33782c860d4eac6c5407d4b3285944b",
+  "expected": {
+    "events": 1092,
+    "native_receiver_epochs": 372,
+    "physical_receiver_coordinate_keys": 37,
+    "observations": 58980,
+    "ray_support": 14262,
+    "observation_types": {
+      "0": 14262,
+      "1": 44718,
+      "2": 0
+    }
+  },
+  "numerical_settings": {
+    "path_spacing_km": 0.03125,
+    "fmm_spacing_km": 0.125,
+    "ray_updates": 1000,
+    "iterations": 18,
+    "stage_length": 6,
+    "smoothing": 10,
+    "damping": 0.1,
+    "pair_distance_km": 10,
+    "catalog_only_dd": 1,
+    "stage_row_factors": [
+      [
+        1,
+        0.1,
+        0
+      ],
+      [
+        0.1,
+        1,
+        0
+      ],
+      [
+        0.1,
+        1,
+        0
+      ]
+    ],
+    "threads": 4,
+    "address_space_limit_GiB": 128
+  },
+  "compiler": {
+    "path": "/usr/bin/c++",
+    "sha256": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7",
+    "flags": "-std=gnu++17 -O3 -Wall -Wextra -Wpedantic -fopenmp"
+  },
+  "scientific_success": false,
+  "inverse_launched": false,
+  "limitations": [
+    "The exact initial depth-only reference does not validate later3Dmodels.",
+    "Per-evaluation unchanged finite/domain/endpoint/initializer/local flags are hard gates before Jacobian/objective use; no global first-arrival certificate.",
+    "Final output requires separate final-model ray/refinement/source checks and native/nonlinear/LSQR review.",
+    "All58,980 catalog observations retained; the separately prepared98CCrows are excluded from this unchanged catalog-only run."
+  ],
+  "output_sha256": {
+    "proposed_run.cfg": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4",
+    "source/CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "source/run_hayward_guarded_inversion.py": "f9ca4ae89a706d4f1c92e0f0277b846766af35a73998c6ce890cfdaef65b2df3",
+    "source/run_loma_initial_preflight.py": "f1acc19135c11edda106e3b8c7d8c1879d7d490db729d4ad55263b87022946f1",
+    "source/run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5",
+    "source/diagnostics/review_loma_analytic_simulation.py": "786c1ccc99cfa3d3677dde88f11a96f9677693966de874d40c15ca2972a76246",
+    "source/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "source/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "source/src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  }
+}

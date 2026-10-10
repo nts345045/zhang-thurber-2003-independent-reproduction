@@ -1,11 +1,18 @@
 # Authoritative Hayward inputs and results
 
-At this partial checkpoint DD and absolute-data tomography (`standard`) have
-written all five numerical output files below. Both preserve all 1,092 event
-identities and 58,980 observation mappings. Fixed-model relocation (`loc1d`)
-remains active; its incomplete history is not a finished result. Final ray
-checks, resolution, comparison figures, and the full workflow completion
-record are pending.
+The original baseline workflow completed with exit code 0 after 33,712 seconds.
+All three methods have written the numerical files below, final sampled ray
+checks, conditional resolution, and Figures 4–11. Each retains all 1,092 event
+identities and 58,980 observations: 14,262 absolute picks and 44,718 catalog
+differences. These outputs preserve the original straight-initialized solver;
+the separate guarded attempt is in `../hayward_first_arrival_guarded_001/` in
+the integration worktree. Process completion does not establish convergence.
+
+| Method | Accepted updates | Final absolute RMS (s) | Final catalog-DD RMS (s) |
+| --- | ---: | ---: | ---: |
+| `standard`: absolute-data tomography | 12 | 0.07869 | 0.07162 |
+| `dd`: catalog-DD tomography | 18 | 0.16064 | 0.06160 |
+| `loc1d`: fixed-velocity catalog-DD relocation | 10 | 0.29188 | 0.25423 |
 
 Standard tomography stopped at iteration 12 after 12 accepted updates because
 its next line search accepted no step. Its final absolute and catalog-difference
@@ -13,11 +20,18 @@ RMS residuals are 0.07869 and 0.07162 s. The last pre-update ray calculation
 met the stopping rule for 13,690 of 14,262 rays; 572 failed. This termination
 does not establish nonlinear convergence. Neither does the DD residual
 decrease: its final accepted maximum source-coordinate change is 2.7614 km.
-The [standard output review](../development/hayward_standard_output_review.json)
-records exact identity, finite-value, domain, coverage, termination, and original
-run-hash checks. The [earlier DD output review](../development/hayward_final_output_review.json)
-preserves the preceding checkpoint. These audits do not mark the full workflow
-complete or establish source/model accuracy.
+Fixed-velocity relocation uses staged catalog-DD weights with absolute
+anchoring. Its catalog-DD RMS worsens from the initial 0.09340 s to 0.25423 s;
+three attempted updates accept no step. The final deterministic 32-ray samples
+have 31 passing flags for `standard` and 32 for `dd` and `loc1d`, at each spacing.
+Passing that sample does not validate every ray: two of 14,262 rays fail the
+final DD linearization, and 277 fail the last pre-update `loc1d` trace.
+The [completed independent audit](../development/hayward_completed_baseline_review_001/README.md)
+checks native identities, finite values, domain membership, termination,
+geographic/zoom joins, resolution interpolation, and original run hashes.
+`numerical_review.json` retains the workflow's detailed numerical diagnostics.
+The earlier [standard](../development/hayward_standard_output_review.json) and
+[DD](../development/hayward_final_output_review.json) reviews remain preserved.
 
 `selection_manifest.json` defines the independently selected cohort and records
 input hashes, station policy, differences from the manuscript, and graph
@@ -57,11 +71,17 @@ inferred model. A process exit status does not by itself establish ray or
 inverse-problem convergence; inspect the numerical diagnostic columns.
 
 `figure04_geometry_manifest.json` records the independently generated geometry
-panel's inputs. Figures are written to `../../figures/hayward/`. When completed,
-the full plot command also writes `METHOD_geographic_events.csv` with estimated
-latitude, longitude, and origin times, and `figure_metrics.json`; resolution outputs
-come from `dd linearize` and `resolution_hayward.py`. Missing method files mean
-that result has not been produced. The synthetic baseline outputs are in
+panel's inputs. Figures are written to `../../figures/hayward/`. The full plot
+command writes `METHOD_geographic_events.csv` with estimated latitude, longitude,
+and origin times, `METHOD_zoom_events.csv` with the common catalog-selected
+subset, and `figure_metrics.json`. Resolution outputs come from `dd linearize`
+and `resolution_hayward.py`: inspect `dd_linearization_{rows,columns,matrix}.csv`,
+`absolute_resolution.csv`, `absolute_resolution_manifest.json`,
+`absolute_resolution_matrices.npz`, and `resolution_sections.csv` together.
+This is an absolute-pick linear calculation at the DD model, with independent
+one-sigma pick noise assumed, unconstrained source elimination, and fixed
+regularization. It is not full-DD resolution and excludes ray error, model
+error, bias, and active source bounds. The synthetic baseline outputs are in
 `../synthetic/` and predate the later ray-kernel corrections.
 
 The additional-data station selection writes a separate

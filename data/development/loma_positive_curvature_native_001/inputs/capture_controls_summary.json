@@ -1,0 +1,162 @@
+{
+  "binary": "tmp/curvature_capture_invented_001/check_curvature_capture",
+  "binary_sha256": "101254d02632c911c883c888ba2e5350568ac6faaa6518dd0c32e47286af9a4a",
+  "check_count": 38,
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "-DAUDIT_PRODUCTION_HYBRID",
+        "-DAUDIT_CONE_METRIC",
+        "-Idata/development/curvature_capture_controls_001/source/diagnostics",
+        "data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp",
+        "-o",
+        "tmp/curvature_capture_invented_001/check_curvature_capture",
+        "-lstdc++fs"
+      ],
+      "label": "compile",
+      "return_code": 0
+    },
+    {
+      "command": [
+        "tmp/curvature_capture_invented_001/check_curvature_capture",
+        "data/development/curvature_capture_controls_001/results"
+      ],
+      "label": "invented_controls",
+      "return_code": 0
+    }
+  ],
+  "compiler": "/usr/bin/c++",
+  "compiler_sha256": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7",
+  "completed_utc": "2026-10-10T07:00:53.158991Z",
+  "invented_ray_cases": 6,
+  "limitations": [
+    "Logging parity is not a first-arrival, accuracy or convergence certificate.",
+    "Manual telemetry records intentionally need not satisfy ray dynamics.",
+    "The frozen unused renamed driver main may produce a return-type warning; it is never called."
+  ],
+  "output_sha256": {
+    "fixture/check_curvature_capture.cpp": "cead7858db2fd799f1cd5719613046590ccaaf57cd2a332686bc575fd185a738",
+    "fixture/compile_stderr.log": "123ad2b6d7509cadfc90229f663779fb4ef2544999d35980598618f7368fa20a",
+    "fixture/compile_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fixture/invented_controls_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fixture/invented_controls_stdout.log": "3b894f5a908909c28033dc7321580591c7bf16610145a9705c1d7aecf88b7125",
+    "fixture/run_curvature_capture_controls.py": "fe5df12a8e03757b20f4c58e68103031cbb99fdac147075f10ee8894a2d12b65",
+    "results/capture/curvature_components.csv": "caedd4099d882eda3e8ec17a2e0a13512ca75f57dc6482ea3b4a6914fff24b3a",
+    "results/capture/curvature_initialization.csv": "7643f5c362cffe4422b25f3f1e7157ba2a2fda3269ac474aeeec6ffe21a4a9e7",
+    "results/capture/curvature_memory_events.csv": "ac494ddf514f909e93b153e156e2fdddf0b587fd5f65e530f2cb24f80f1204e3",
+    "results/capture/curvature_pairs.csv": "d829994e4a384e56d6b4693213707ccdcf401124f45458a005ff4c1fb493af67",
+    "results/capture/curvature_seed_metadata.csv": "82f768cf83b4c730280c22d8d5581a3727d82329ca66d9248f1effe5a052c615",
+    "results/capture/curvature_selected_cuts.csv": "3eae6eae94ed12d81ace8f1730f549c1daccc6f25768a8b13f258f3d98d80685",
+    "results/capture/curvature_selected_geometry.csv": "e98948236f73036d54250ec8f25f34815b39eefbe5a23e89adc1969686dbc166",
+    "results/checks.csv": "7a8dd93cf3a5fc1408581ca44dd884bbc436fb703a9523097a4348c31f34856d",
+    "results/invented_ray_parity.csv": "214fb6240b120c6d9f19790af99053240a549e4fe39329728a97a07f702d6e39"
+  },
+  "passed_count": 38,
+  "prepared_sha256": "02cf75763e372b8007ac5d95669e9b18ff93a3c69ca973ad967f457fb6d69f1d",
+  "ray_results": [
+    {
+      "bitwise_equal": "1",
+      "converged": "1",
+      "gradient": "2.2463161964190524e-16",
+      "iterations": "0",
+      "model": "0",
+      "path_points": "9",
+      "run_id": "invented_ray_0_straight",
+      "seeded": "0",
+      "time_s": "0.7362064927722386"
+    },
+    {
+      "bitwise_equal": "1",
+      "converged": "1",
+      "gradient": "2.1228933251263786e-16",
+      "iterations": "1",
+      "model": "0",
+      "path_points": "9",
+      "run_id": "invented_ray_0_seeded",
+      "seeded": "1",
+      "time_s": "0.7362064927722386"
+    },
+    {
+      "bitwise_equal": "1",
+      "converged": "1",
+      "gradient": "4.0666760422928649e-07",
+      "iterations": "3",
+      "model": "1",
+      "path_points": "9",
+      "run_id": "invented_ray_1_straight",
+      "seeded": "0",
+      "time_s": "0.73544515584366776"
+    },
+    {
+      "bitwise_equal": "1",
+      "converged": "1",
+      "gradient": "1.2462556682704101e-06",
+      "iterations": "4",
+      "model": "1",
+      "path_points": "9",
+      "run_id": "invented_ray_1_seeded",
+      "seeded": "1",
+      "time_s": "0.73544518010178705"
+    },
+    {
+      "bitwise_equal": "1",
+      "converged": "1",
+      "gradient": "4.0160007127625963e-07",
+      "iterations": "48",
+      "model": "2",
+      "path_points": "9",
+      "run_id": "invented_ray_2_straight",
+      "seeded": "0",
+      "time_s": "0.72740385923953743"
+    },
+    {
+      "bitwise_equal": "1",
+      "converged": "1",
+      "gradient": "4.0495766552943979e-07",
+      "iterations": "42",
+      "model": "2",
+      "path_points": "9",
+      "run_id": "invented_ray_2_seeded",
+      "seeded": "1",
+      "time_s": "0.7274038595931378"
+    }
+  ],
+  "scope": "Invented telemetry and six small invented homogeneous/affine/kink rays; no authoritative ray or production mutation",
+  "source_sha256": {
+    "data/development/curvature_capture_controls_001/fixture/check_curvature_capture.cpp": "cead7858db2fd799f1cd5719613046590ccaaf57cd2a332686bc575fd185a738",
+    "data/development/curvature_capture_controls_001/fixture/run_curvature_capture_controls.py": "fe5df12a8e03757b20f4c58e68103031cbb99fdac147075f10ee8894a2d12b65",
+    "data/development/curvature_capture_controls_001/source/diagnostics/check_outer_accumulation.cpp": "2794e2ea5d575f5b66e618c361fd23a8523a70605a493755cc25ad6cc823fed0",
+    "data/development/curvature_capture_controls_001/source/diagnostics/check_ray_stopping.cpp": "4f32ef6389e1150b92a83ebf8df01f5726fb59cf6d83555bb3719e3234495fdc",
+    "data/development/curvature_capture_controls_001/source/diagnostics/curvature_capture.hpp": "86466d11f0c176ca7d00e022b5cc09b8835ce347583b64672eadcc4047a9e52b",
+    "data/development/curvature_capture_controls_001/source/diagnostics/first_arrival_fmm.hpp": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+    "data/development/curvature_capture_controls_001/source/diagnostics/fixture_driver.hpp": "f990a060d7b7f46ebd6ae19e9da02638bb074ee59a0da457e5859c5dca379030",
+    "data/development/curvature_capture_controls_001/source/diagnostics/observe_loma_initial_failure.py": "c6090c788f9f061a0d21458dbc410f930058782e048730d1eebbe3e22d74b6aa",
+    "data/development/curvature_capture_controls_001/source/diagnostics/observed_optimizer.hpp": "3445a6179cd2c9bbe7cb74a7d17773cb76ef01f1a1d1e061e2c041373261f539",
+    "data/development/curvature_capture_controls_001/source/diagnostics/original_path_eval.hpp": "b9596439ed7806697b28011a9c9e4f1bbb79dd7070072f22a8cacf345227cf81",
+    "data/development/curvature_capture_controls_001/source/diagnostics/prepare_curvature_capture.py": "b1b6192bfb83e90642a001a8271d54a5d5c2579cb113805c807732b508acd102",
+    "data/development/curvature_capture_controls_001/source/diagnostics/prepare_outer_accumulation.py": "50b3c2d56020bbe12b27babed3235a4272cdb26bb2ba43a8235e6bf1a13b26d0",
+    "data/development/curvature_capture_controls_001/source/diagnostics/run_ray_stopping.py": "b39f64a35ab3920d57be3336a3234a0ecda1f91b0a9147d900ae069eb7deb3ec",
+    "data/development/curvature_capture_controls_001/source/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "data/development/curvature_capture_controls_001/source/src/core.hpp": "ca405f21bd6d2236d0775262688b4c2cde0a7817676bf67a4c770c33be903f6e",
+    "data/development/curvature_capture_controls_001/source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "data/development/curvature_capture_controls_001/source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "data/development/curvature_capture_controls_001/source/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "data/development/curvature_capture_controls_001/source/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "data/development/curvature_capture_controls_001/source/src/main.cpp": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+    "data/development/curvature_capture_controls_001/source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "data/development/curvature_capture_controls_001/source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_curvature_capture.cpp": "cead7858db2fd799f1cd5719613046590ccaaf57cd2a332686bc575fd185a738",
+    "diagnostics/curvature_capture.hpp": "86466d11f0c176ca7d00e022b5cc09b8835ce347583b64672eadcc4047a9e52b",
+    "diagnostics/run_curvature_capture_controls.py": "fe5df12a8e03757b20f4c58e68103031cbb99fdac147075f10ee8894a2d12b65"
+  },
+  "started_utc": "2026-10-10T07:00:15.496573Z",
+  "status": "passed",
+  "verified_prepared_pins": 113
+}

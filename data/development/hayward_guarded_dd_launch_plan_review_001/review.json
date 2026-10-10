@@ -1,0 +1,73 @@
+{
+  "status": "passed_concrete_plan_review",
+  "material_issue_found": false,
+  "plan_sha256": "271a02a4ee019eb92193306c264e661550fcce0e658b06b46e144e87fcb2e7e3",
+  "readme_sha256": "fc6d32d3b0bcc1a29ca0851c57c29d9ce56674270ca537dab0732ca384bb605c",
+  "proposed_config_sha256": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4",
+  "accuracy_review_sha256": "d1012da3b7a3504db3394bc97892769ca8219836b23437e824aca4a5a91cc448",
+  "launcher_readonly_gate_passed": true,
+  "actual_support": {
+    "observations": 58980,
+    "rays": 14262,
+    "observation_types": {
+      "0": 14262,
+      "1": 44718,
+      "2": 0
+    }
+  },
+  "events": 1092,
+  "native_receiver_epochs": 372,
+  "exact_receiver_coordinate_keys": 37,
+  "frozen_input_pins": 11,
+  "frozen_source_pins": 14,
+  "current_and_copied_sources_match": true,
+  "fresh_disjoint_output_and_build": true,
+  "mathematical_headers_and_CMake_match_frozen004": true,
+  "compiler_and_O3_parity_match": true,
+  "source_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "run_hayward_guarded_inversion.py": "f9ca4ae89a706d4f1c92e0f0277b846766af35a73998c6ce890cfdaef65b2df3",
+    "run_loma_initial_preflight.py": "f1acc19135c11edda106e3b8c7d8c1879d7d490db729d4ad55263b87022946f1",
+    "run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5",
+    "diagnostics/review_loma_analytic_simulation.py": "786c1ccc99cfa3d3677dde88f11a96f9677693966de874d40c15ca2972a76246",
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "reviewed_launcher_evidence_sha256": {
+    "data/hayward_first_arrival_004/run_manifest.json": "75631991144e76cf16731e0b73e396860ab78db386c556415f990968cb7cc00a",
+    "data/hayward_first_arrival_004/preflight_execution.json": "8c51039a6fe28c3972cea0971b93346ee5cc2ed0cd021c6af14b28aff1ea8859",
+    "data/hayward_first_arrival_004/preflight.json": "55a09aa9adda173043cc1baa713d55a3ab73e1705d6ddc533a4aa5547d0631e8",
+    "data/development/hayward_first_arrival_004_1d_support/summary.json": "a1fc5194c83a65019a62add7b6ec5d10478be87dd5f6c8d7ffb9e6eab535ad7d",
+    "data/development/hayward_first_arrival_004_1d_support/independent_review.json": "29e95b53bbaaedccb1d98c8d24f41561fd5f0b5886d1e972789ba4858c5ef325",
+    "data/development/hayward_first_arrival_004_1d_support/packaging.json": "d461e7efcdb7be71cd515036824edd7b5b81d9b65ce34b3e76846ae5004df063",
+    "data/development/hayward_first_arrival_004_1d_support/frozen_tables.tar.gz": "47d31cd8bbd823a4375d7e73127415058dc88080759434b9ee09eb76f35eff3f",
+    "data/development/hayward_sampled_accuracy_004_002/accuracy_review.json": "d1012da3b7a3504db3394bc97892769ca8219836b23437e824aca4a5a91cc448",
+    "data/development/hayward_guard_adoption_checks/001/summary.json": "6893f3fd746d21a88878990d5af1bfb0a60107d13ae16be42ae0d049cb59f3ab",
+    "data/hayward_first_arrival_004/initial_ray_convergence.csv": "94c066425481b2a6bd17921efddbf3d07d7d259f18194c7531cc78d6d1b036ea",
+    "data/hayward_first_arrival_004/initial_ray_derivatives.csv": "77be66b9caa186b4519671a14d49277b56312b8216517ec857159d39cff7bbff",
+    "data/hayward_first_arrival_004/initial_ray_identifiers.csv": "f4aabb2de29ec88ae70b1de5b6a370ba06917427ebef1e4bf7f0a8a8cfa7b3eb"
+  },
+  "checker_sha256": "e7be9eb2f10d873cb6dcadf06a6504d720a5ea1341d1207a96bba08213d5d025",
+  "no_compile_launch_ray_or_reference_evaluation": true,
+  "source_review_findings": [
+    "catalog_only_dd stage factors and all inherited inverse/discretization settings are unchanged.",
+    "checked_rays gates current, trial and final rays before objective/Jacobian/final use.",
+    "Rejected rays retain identified failure paths and distinct candidate/last-accepted states.",
+    "Fresh source/binary/build/runtime snapshots are reverified against reviewed adoption evidence.",
+    "Completion remains pending final-model diagnostics and scientific_success=false."
+  ],
+  "limitations": [
+    "The initial depth-only reference does not establish accuracy or global earliest arrivals in later3Dmodels.",
+    "Existing local stopping flags may pass without an independently accurate first arrival; the guard preserves that limitation.",
+    "Accepted-step, LSQR, nonlinear, final-ray/refinement/source and native-output reviews remain required.",
+    "The durable detached controller is a launch-time artifact; this review does not assert its execution or exit status.",
+    "Only the catalog-only DD attempt is assessed; no additional modes or CC rows are selected."
+  ]
+}

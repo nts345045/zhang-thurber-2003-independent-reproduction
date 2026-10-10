@@ -1,0 +1,96 @@
+{
+  "status": "passed",
+  "decision": "launch_one_guarded_catalog_only_dd_attempt",
+  "reviewed_utc": "2026-10-10T07:36:06Z",
+  "evidence_sha256": {
+    "plan": "271a02a4ee019eb92193306c264e661550fcce0e658b06b46e144e87fcb2e7e3",
+    "plan_review": "b84cb528429c2754876d32c410d3f7891de19183c23d3ffa87f7fc5e2586b430",
+    "accuracy_review": "d1012da3b7a3504db3394bc97892769ca8219836b23437e824aca4a5a91cc448"
+  },
+  "evidence_paths": {
+    "plan": "data/development/hayward_guarded_dd_launch_plan_001/plan.json",
+    "plan_review": "data/development/hayward_guarded_dd_launch_plan_review_001/review.json",
+    "accuracy_review": "data/development/hayward_sampled_accuracy_004_002/accuracy_review.json"
+  },
+  "command": [
+    "python3",
+    "run_hayward_guarded_inversion.py",
+    "--preflight",
+    "data/hayward_first_arrival_004",
+    "--reference",
+    "data/development/hayward_first_arrival_004_1d_support",
+    "--accuracy-review",
+    "data/development/hayward_sampled_accuracy_004_002/accuracy_review.json",
+    "--parity-review",
+    "data/development/hayward_guard_adoption_checks/001/summary.json",
+    "--output",
+    "data/hayward_first_arrival_guarded_001",
+    "--build",
+    "tmp/hayward_guarded_runs/001"
+  ],
+  "expected": {
+    "events": 1092,
+    "native_receiver_epochs": 372,
+    "physical_receiver_coordinate_keys": 37,
+    "observations": 58980,
+    "ray_support": 14262,
+    "observation_types": {
+      "0": 14262,
+      "1": 44718,
+      "2": 0
+    }
+  },
+  "numerical_settings": {
+    "path_spacing_km": 0.03125,
+    "fmm_spacing_km": 0.125,
+    "ray_updates": 1000,
+    "iterations": 18,
+    "stage_length": 6,
+    "smoothing": 10,
+    "damping": 0.1,
+    "pair_distance_km": 10,
+    "catalog_only_dd": 1,
+    "stage_row_factors": [
+      [
+        1,
+        0.1,
+        0
+      ],
+      [
+        0.1,
+        1,
+        0
+      ],
+      [
+        0.1,
+        1,
+        0
+      ]
+    ],
+    "threads": 4,
+    "address_space_limit_GiB": 128
+  },
+  "original_baseline_protected_hashes": {
+    "configs/hayward.cfg": true,
+    "prepare_hayward.py": true,
+    "rebuild_hayward.sh": true,
+    "build/dd": true,
+    "src/core.hpp": true,
+    "src/csv.hpp": true,
+    "src/main.cpp": true,
+    "src/ray_checks.hpp": true,
+    "data/hayward/initial_events.csv": true,
+    "data/hayward/initial_grid.csv": true,
+    "data/hayward/stations.csv": true,
+    "data/hayward/observations.csv": true,
+    "data/hayward/selection_manifest.json": true
+  },
+  "root_source_review": "Complete maintained launcher, proposed configuration and plan reviewed; independent read-only eligibility check passed.",
+  "scientific_success": false,
+  "limitations": [
+    "The exact initial depth-only reference does not validate later3Dmodels.",
+    "Per-evaluation unchanged finite/domain/endpoint/initializer/local flags are hard gates before Jacobian/objective use; no global first-arrival certificate.",
+    "Final output requires separate final-model ray/refinement/source checks and native/nonlinear/LSQR review.",
+    "All58,980 catalog observations retained; the separately prepared98CCrows are excluded from this unchanged catalog-only run."
+  ]
+}

@@ -1,0 +1,11 @@
+--- seed_loaded_B/src/core.hpp
++++ positive_curvature/src/core.hpp
+@@ -453,7 +453,7 @@
+         y[k] = ng[k] - grad[k];
+       }
+       double sy = dot(s, y);
+-      if (sy > 1e-14) {
++      if (sy > 0) {
+         if (S.size() == 8) {
+           S.erase(S.begin());
+           Y.erase(Y.begin());

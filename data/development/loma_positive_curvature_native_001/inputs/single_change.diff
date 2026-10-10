@@ -1,0 +1,11 @@
+--- frozen_original_core.hpp
++++ outer_extended_core.hpp
+@@ -216,7 +216,7 @@
+ double path_eval(const Grid &g, const std::vector<P> &p, Vec *grad = nullptr) {
+   if (grad)
+     grad->assign(3 * (p.size() - 2), 0);
+-  double T = 0;
++  long double T = 0;
+   for (size_t i = 1; i < p.size(); i++) {
+     P a{}, b{};
+     T += segment(g, p[i - 1], p[i], grad ? &a : nullptr, grad ? &b : nullptr);

@@ -1,0 +1,20 @@
+case,computed_sy,sy_bits,expected_old,expected_positive,actual_keep,reciprocal,reciprocal_bits,reciprocal_finite,interpretation
+negative,-1,bff0000000000000,0,0,0,-1,bff0000000000000,1,negative curvature rejected
+negative_zero,-0,8000000000000000,0,0,0,-inf,fff0000000000000,0,zero rejected; reciprocal remains negative infinity
+positive_zero,0,0000000000000000,0,0,0,inf,7ff0000000000000,0,zero rejected; reciprocal remains positive infinity
+below_old,9.9999999999999984e-15,3d06849b86a12b9a,0,1,1,100000000000000.02,42d6bcc41e900001,1,adjacent binary64 below old cutoff
+at_old,1e-14,3d06849b86a12b9b,0,1,1,100000000000000,42d6bcc41e900000,1,strict old cutoff
+above_old,1.0000000000000002e-14,3d06849b86a12b9c,1,1,1,99999999999999.984,42d6bcc41e8fffff,1,adjacent binary64 above old cutoff
+unit,1,3ff0000000000000,1,1,1,1,3ff0000000000000,1,finite positive curvature
+minimum_normal,2.2250738585072014e-308,0010000000000000,0,1,1,4.4942328371557898e+307,7fd0000000000000,1,positive normal; reciprocal finite
+minimum_subnormal,4.9406564584124654e-324,0000000000000001,0,1,1,inf,7ff0000000000000,0,failed generalization: positive retention permits reciprocal overflow
+positive_infinity,inf,7ff0000000000000,1,1,1,0,0000000000000000,1,both predicates admit infinity; not a safe retention rule
+negative_infinity,-inf,fff0000000000000,0,0,0,-0,8000000000000000,1,negative infinity rejected
+nan,nan,7ff8000000000000,0,0,0,nan,7ff8000000000000,0,unordered comparison rejects NaN
+scaled_dot_-30,8.6736173798840355e-19,3c30000000000000,0,1,1,1.152921504606847e+18,43b0000000000000,1,same positive geometry under scaling; absolute cutoff is not scale invariant
+scaled_dot_0,1,3ff0000000000000,1,1,1,1,3ff0000000000000,1,same positive geometry under scaling; absolute cutoff is not scale invariant
+scaled_dot_30,1.152921504606847e+18,43b0000000000000,1,1,1,8.6736173798840355e-19,3c30000000000000,1,same positive geometry under scaling; absolute cutoff is not scale invariant
+cancelled_dot,0,0000000000000000,0,0,0,inf,7ff0000000000000,0,exact real dot is one; binary64 sequential sum is zero
+reordered_dot,1,3ff0000000000000,1,1,1,1,3ff0000000000000,1,same exact dot; different binary64 addition order
+underflowed_dot,0,0000000000000000,0,0,0,inf,7ff0000000000000,0,exact positive 2^-1200 underflows to zero
+overflowed_dot,inf,7ff0000000000000,1,1,1,0,0000000000000000,1,finite operands overflow to accepted infinite dot

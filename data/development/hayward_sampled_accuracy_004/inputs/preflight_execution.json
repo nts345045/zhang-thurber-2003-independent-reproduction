@@ -1,0 +1,74 @@
+{
+  "phase": "preflight",
+  "status": "ready_for_accuracy_review",
+  "started_utc": "2026-10-10T02:34:57.130102+00:00",
+  "driver_pid": 24536,
+  "threads": 4,
+  "return_code": 0,
+  "completed_commands": [
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "tmp/hayward_runs/first_arrival_004/source",
+        "-B",
+        "tmp/hayward_runs/first_arrival_004/compiled"
+      ],
+      "stage": "configure",
+      "pid": 24538,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T02:34:58.609301+00:00"
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "tmp/hayward_runs/first_arrival_004/compiled",
+        "-j",
+        "2"
+      ],
+      "stage": "compile",
+      "pid": 24588,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T02:35:25.190914+00:00"
+    },
+    {
+      "command": [
+        "tmp/hayward_runs/first_arrival_004/compiled/dd",
+        "linearize",
+        "data/hayward_first_arrival_004/run.cfg",
+        "data/hayward_first_arrival_004",
+        "initial"
+      ],
+      "stage": "initial_linearize",
+      "pid": 24994,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:18:00.522923+00:00"
+    },
+    {
+      "command": [
+        "tmp/hayward_runs/first_arrival_004/compiled/dd",
+        "raycheck",
+        "data/hayward_first_arrival_004/run.cfg",
+        "data/hayward_first_arrival_004",
+        "initial"
+      ],
+      "stage": "initial_raycheck",
+      "pid": 58109,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T07:21:24.786647+00:00"
+    }
+  ],
+  "current_command": [
+    "tmp/hayward_runs/first_arrival_004/compiled/dd",
+    "raycheck",
+    "data/hayward_first_arrival_004/run.cfg",
+    "data/hayward_first_arrival_004",
+    "initial"
+  ],
+  "current_stage": "initial_raycheck",
+  "current_command_started_utc": "2026-10-10T03:18:00.524428+00:00",
+  "current_child_pid": 58109,
+  "current_command_return_code": 0,
+  "finished_utc": "2026-10-10T07:21:39.070550+00:00"
+}

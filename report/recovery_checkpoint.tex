@@ -14,10 +14,27 @@ initial geometry, model, observation tables, and numerical reference source
 has been verified. The original native identities, branch certificates,
 and local flags are retained in
 \path{data/development/hayward_first_arrival_004_1d_support/}.
-This passes the full initial-model comparison. The separate sampled
-refinement has not yet completed accuracy review at this checkpoint; no corrected
-inversion is accepted or launched. The initial depth-dependent reference
-does not establish accuracy for later three-dimensional velocity models.
+The separate sampled refinement also passes its independent accuracy review.
+All 32 production and refined travel times satisfy the same reference limit;
+their maximum errors are 0.717 and 0.181 microseconds. All eight sampled
+source vectors pass, with maximum errors of $8.55\times10^{-8}$ and
+$1.83\times10^{-8}$ s/km. Reference evaluations at the 48 displaced sources
+separate finite-difference truncation from tracing error; the largest
+truncation is $3.13\times10^{-6}$ s/km, whereas the largest saved-minus-reference
+finite-difference discrepancy is $3.27\times10^{-8}$ s/km.
+These checks are retained in
+\path{data/development/hayward_sampled_accuracy_004_002/}.
+
+The reviewed configuration starts a separate guarded catalog-DD attempt on
+10 October 2026 at 07:37 UTC. It retains all 58,980 catalog observations and
+uses no waveform differences. The launch record is in
+\path{data/development/hayward_guarded_dd_launch_plan_001/}; numerical output
+belongs to \path{data/hayward_first_arrival_guarded_001/}. At this checkpoint
+the attempt remains active and supplies no accepted final model. The initial
+depth-dependent reference does not establish accuracy for later
+three-dimensional velocity models. Every subsequent forward evaluation must
+pass the local guard; final accuracy and nonlinear convergence require
+separate assessment.
 
 \begin{figure}[ht]
 \centering
@@ -414,6 +431,45 @@ or ordinary gradients. No convergence flag or manuscript panel status changes.}
 \label{fig:loma-interface-candidate}
 \end{figure}
 
+An isolated replay tests the role of the absolute curvature cutoff without
+repeating field initialization. Loading the complete saved initializer first
+reproduces all five B numerical tables byte for byte. A second replay changes
+only $s^T y>10^{-14}$ s to $s^T y>0$ in the actual and observed optimizers.
+The action accumulation, gradients, resampling, line search, stopping rules,
+and update budget remain unchanged. This C replay retains all 145 curvature
+pairs and satisfies the existing combined stopping rule after 145 updates
+(Figure~\ref{fig:loma-retention}). Its final projected gradient is
+$9.734\times10^{-6}$ s/km and its last action change is
+$7.86\times10^{-13}$ s; it does not meet the separate $10^{-7}$ s/km gradient
+condition. Its travel-time and source-vector errors are 0.861 microseconds
+and $3.18\times10^{-8}$ s/km. The straight-initialized result remains unchanged
+at 54 updates.
+
+This comparison supports a role for the fixed cutoff in this ray's stagnation.
+It does not justify general adoption of positivity alone. Invented controls
+retain reciprocal overflow for positive subnormal curvature and acceptance
+of positive infinity by both predicates. The C history also contains 72 equal
+recorded action totals, whose exact action changes were not classified.
+The experiment changes no production source or manuscript panel status.
+The identified replays and independent reviews are in
+\path{data/development/loma_seed_loaded_b_native_001/} and
+\path{data/development/loma_positive_curvature_native_001/}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.94\linewidth]{../figures/diagnostics/loma_retention.pdf}
+\caption{Isolated curvature-retention comparison for LOM initial ray 3426,
+event \texttt{NC/10090782} at \texttt{NC.JSJ..EHZ}. Both runs use the same saved
+FMM initializer and extended outer action sum. Top: projected gradient norm;
+the dashed line is the gradient bound of the combined stopping rule, which
+also requires a small action change. Bottom: cumulative retained pairs.
+The original cutoff exhausts 1,000 updates; positive retention satisfies
+the unchanged combined rule at 145. The horizontal axis is logarithmic
+beyond one update. This single-ray result does not establish a safe general
+retention rule or validate an inversion.}
+\label{fig:loma-retention}
+\end{figure}
+
 For the captured boundary ray, the first segment is horizontal at 16 km.
 Let $L$ be its length and $s'_z$ the local depth derivative of slowness.
 Holding its other endpoint fixed gives
@@ -470,6 +526,25 @@ its accuracy flags. A production correction would require one connector
 definition in the actual trilinear medium, with consistent endpoint and
 nodal-model derivatives throughout inversion. The affine calculation alone
 does not supply that definition or Jacobian.
+
+A restricted two-segment family tests part of that requirement in an invented
+eight-node trilinear cell. An interior source connects through one movable
+bottom contact to a fixed bottom receiver. All nodal perturbations use the
+same reciprocal-velocity action and original eight nodal sensitivities.
+For the unperturbed affine profile, the optimized family has the correct
+zero inward derivative limit, but its leading excess action is
+$3/(2\sqrt{2})=1.06066$ times the leading excess action of the continuous
+curved path. A correct
+boundary derivative limit therefore does not establish the correct local
+action. Eighty- and 120-digit calculations pass 87 recorded controls;
+the largest fixed-curve and reoptimized-candidate model-column discrepancies
+are $1.44\times10^{-11}$ s at the tested finite differences.
+These are agreement checks, not certified error bounds. All 192 perturbed
+interior-source envelope comparisons and 224 derivative-error certificates
+remain unresolved, and the fixed receiver's normal partial remains biased.
+The controls in
+\path{data/development/loma_endpoint_scalar_contact_controls_001/}
+provide no native-ray or production correction.
 
 \subsection{Rejecting unsupported forward evaluations during inversion}
 The preceding inversion code recorded local ray failures but could still use
