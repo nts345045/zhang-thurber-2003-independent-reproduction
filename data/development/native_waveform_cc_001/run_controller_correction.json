@@ -1,0 +1,16 @@
+{
+  "status": "metadata_correction_preserving_original_record",
+  "reviewed_utc": "2026-10-10T05:01:58.026601+00:00",
+  "original_run_controller_sha256": "1517653fd63e44f2c3ed471d10509239cde9c2b9204b30c108a498756ce4c02a",
+  "field": "samples_summary_sha256",
+  "original_value": "48ce35efd1cbec40bb03e4df5235cecc8f892e8111c0847f84ea0c86846ba6ab",
+  "correct_value": "b4724589fd77061b33e75aa8450110b555db6f04ca130471f8cec93a2320e874",
+  "samples_review_sha256_unchanged": "48ce35efd1cbec40bb03e4df5235cecc8f892e8111c0847f84ea0c86846ba6ab",
+  "reason": "The external launch bookkeeping script used command argument index5 (the review path) when labeling the summary hash. The command itself used the correct separate summary and review paths. The reviewed numerical runner independently verified and recorded both correct hashes.",
+  "numerical_summary_sha256": "8a97e3c31d4a8db25c2c63b448addbfbfe258d94a17ecfa1663e5facb5772021",
+  "numerical_execution_sha256": "65a4e39b43b437f0060b008248198646369e1bc49f9a3190ad785e48e3fe3e5d",
+  "command_unchanged": true,
+  "numerical_inputs_or_results_changed": false,
+  "frozen_controller_source_file": "run_controller_source.py",
+  "frozen_controller_source_sha256": "7e303fa8ddb7d1f86920596f247adf6345e57e568fa5cd2fe48349649cb79108"
+}
