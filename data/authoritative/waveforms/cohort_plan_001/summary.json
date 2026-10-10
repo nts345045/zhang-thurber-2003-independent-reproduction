@@ -1,0 +1,95 @@
+{
+  "status": "offline plan complete; observational retrieval paused for user clarification",
+  "network_requests": 0,
+  "retained_events": 1092,
+  "retained_picks": 14262,
+  "retained_catalog_differences": 44718,
+  "used_nslcs": 62,
+  "used_native_epochs": 372,
+  "affected_counts": {
+    "historical_cmw1_response_gap": {
+      "picks": 117,
+      "catalog_differences": 199
+    },
+    "before_documented_march_1984_archive": {
+      "picks": 89,
+      "catalog_differences": 542
+    },
+    "non_z_channel_name": {
+      "picks": 398,
+      "catalog_differences": 512
+    }
+  },
+  "all_pick_orientation_counts": {
+    "provider-declared vertical": 14091,
+    "provider-declared nonvertical": 54,
+    "not supplied by historical operation record": 117
+  },
+  "non_z_pick_orientation_counts": {
+    "provider-declared nonvertical": 54,
+    "provider-declared vertical": 227,
+    "not supplied by historical operation record": 117
+  },
+  "historical_response_gap_evidence": [
+    {
+      "file": "data/authoritative/stations/investigation/cmw1_earthscope_station_all_epochs.xml",
+      "source_url": "https://service.earthscope.org/fdsnws/station/1/query?network=NC&station=CMW1&level=channel&format=xml",
+      "sha256": "f45757ca33cb5bb7b0bbfbe827fb919a8c1dd73ee928ef711f53c95fdbf45b6f",
+      "earliest_channel_epoch": "2000-09-24T15:00:00.0000",
+      "returned_channel_epochs": 69
+    },
+    {
+      "file": "data/authoritative/stations/investigation/cmw1_ncedc_station_all_epochs.xml",
+      "source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&sta=CMW1&level=channel&format=xml",
+      "sha256": "589c360b023f9c53f8ae840cf7d546bad2e02c5e0a313eee274660f111dc89a3",
+      "earliest_channel_epoch": "2000-09-24T15:00:00",
+      "returned_channel_epochs": 60
+    }
+  ],
+  "batch_counts": {
+    "routing_station": 15,
+    "responses": 15,
+    "routing_dataselect": 15,
+    "availability": 143,
+    "waveforms": 143
+  },
+  "planned_batch_manifest": "planned_batches.json.gz",
+  "input_sha256": {
+    "data/hayward/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/hayward/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward/selection_manifest.json": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004",
+    "data/authoritative/stations/raw/ncedc_channels_NC_987aa2b70b3c.xml": "7a945872756357cd0ab803fe14623e70e16fda7293cafacb2019f00def43f833",
+    "data/authoritative/stations/raw/ncedc_channels_NC_26a85a0b6a04.xml": "4b0695ac0d52481455d8de5e0f8693a2bd14e8d30dd47e1f7fdf9b2fc1aa9f88",
+    "data/authoritative/stations/raw/ncedc_channels_NC_6d9c3e031439.xml": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+    "data/authoritative/stations/raw/ncedc_channels_NC_8b2f04bb49e0.xml": "bde23190969bf134cbe4196439d646741c0db281da45461163405c8d9e55997a",
+    "data/authoritative/stations/investigation/cmw1_ncsn_historical_stations.txt": "ae8165b4adc28ceb18dbf0b7386bbd53e86d27dfbb2463c2db0ce632da7ddc0a",
+    "data/authoritative/stations/investigation/cmw1_earthscope_station_all_epochs.xml": "f45757ca33cb5bb7b0bbfbe827fb919a8c1dd73ee928ef711f53c95fdbf45b6f",
+    "data/authoritative/stations/investigation/cmw1_earthscope_station_all_epochs.xml.provenance.json": "91127da761e8d3edd93868510489f995f08455c2440ba89eb35db8ff3d5cf235",
+    "data/authoritative/stations/investigation/cmw1_earthscope_station_all_epochs.xml.identifiers.json": "ccffd42d3458741c62624ff5bc909311267feb90562ab7dec7b48a2252dd9c31",
+    "data/authoritative/stations/investigation/cmw1_ncedc_station_all_epochs.xml": "589c360b023f9c53f8ae840cf7d546bad2e02c5e0a313eee274660f111dc89a3",
+    "data/authoritative/stations/investigation/cmw1_ncedc_station_all_epochs.xml.provenance.json": "7ef6353f6b5893104ebbeef994ffef38882e5349d8fcc80c119f04cec883bbf2",
+    "data/authoritative/stations/investigation/cmw1_ncedc_station_all_epochs.xml.identifiers.json": "9251b564f9c1821a43c8d18029524f30e20a438c33d78439d6cd6cf6b24b3c89",
+    "data/authoritative/waveforms/discovery_001/usgs_comcat.html": "73a236c6c3afbdb3c951f792b7ff9042e608756541911e9ec8210cf6c84fa14e",
+    "data/authoritative/waveforms/discovery_001/usgs_comcat.html.provenance.json": "adda43ede28cd50a0a6a509517ad5ea2278097754f89551cff598232dc4ea70b",
+    "data/authoritative/waveforms/discovery_001/earthscope_fedcatalog.html": "309576d8abf61ea4b6e0cd257b41bf3b708f88f62bfaba9a202fbd9892d7f1c3",
+    "data/authoritative/waveforms/discovery_001/earthscope_fedcatalog.html.provenance.json": "36253c917e9fc395705c09bb5de1012b5b9346e20b4f6de894dccea6384c552f",
+    "data/authoritative/waveforms/discovery_001/ncedc_availability.html": "2431522cf12689b97d895ba0de67346fa67794bfaab3d13aec7b972eca1e0ca6",
+    "data/authoritative/waveforms/discovery_001/ncedc_availability.html.provenance.json": "5125825bea92fcc2d4a71028e44e01784be89a5bebedc5672854c16cdc684197",
+    "data/authoritative/waveforms/discovery_001/ncedc_dataselect.html": "0d4b49a1c455e44bf35fd459c1cf4bb5472aca2404667f41c42505c8c7831724",
+    "data/authoritative/waveforms/discovery_001/ncedc_dataselect.html.provenance.json": "5efa066db3becb4e2cfb6474942f4e0b6933811ca853441946402b3e2266c2ac",
+    "data/authoritative/waveforms/discovery_001/ncedc_historical_archive.html": "d3fe366d32c9e642204a774b21581084829a7bb1cc74cd9093272840f650b68a",
+    "data/authoritative/waveforms/discovery_001/ncedc_historical_archive.html.provenance.json": "c1d1cd9288ec174f7ee253458f6f8bb73a0faff51539ab4188f40977394600d6"
+  },
+  "selections_changed": false,
+  "waveform_measurements_added": 0,
+  "scope": "Full original cohort preserved; request planning is not availability or calibration validation",
+  "source_sha256": "00400fe7a6d5a610ed271c91913e4808d32a23e8cd834794fdb191566d5df40e",
+  "output_sha256": {
+    "identified_catalog_differences.csv.gz": "a975f43bd33f6f042ff5ab0dcecdedd252a428b128f8377067cc258d73948e7c",
+    "identified_picks.csv.gz": "1b1424877392a689fd51aaa706d9e4821a713cdf7bf38a1b47cfa818056d0c22",
+    "identified_used_epochs.csv.gz": "ab826a031707be6b5a68ed5ac0430eb11df884a70a12861d708b32bc2d4637d0",
+    "planned_batches.json.gz": "09364b94d5ae65442b6dde8852813a2146b136bcd4541769a248031e011aadb4",
+    "prepare.py": "00400fe7a6d5a610ed271c91913e4808d32a23e8cd834794fdb191566d5df40e"
+  }
+}
