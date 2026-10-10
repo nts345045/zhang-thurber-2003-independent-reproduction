@@ -51,12 +51,50 @@ def stats(values):
                 maximum_absolute=max(abs(v) for v in values))
 
 
+def cached_references(cache, data, source):
+    """Reuse certified candidates only for byte-identical geometry and observations."""
+    summary = json.loads((cache / 'summary.json').read_text())
+    if summary['status'] != 'complete':
+        raise ValueError('Reference cache has unresolved cases')
+    names = ['initial_events.csv', 'stations.csv', 'initial_grid.csv', 'observations.csv']
+    verified = {cache / 'summary.json': sha(cache / 'summary.json')}
+    for name in names:
+        old = cache / 'inputs' / name
+        expected = summary['input_sha256'][str(old.relative_to(ROOT))]
+        if sha(old) != expected or sha(data / name) != expected:
+            raise ValueError('Reference cache geometry/observation mismatch: ' + name)
+        verified[old] = expected
+    module = cache / 'source' / source.name
+    expected = summary['output_sha256'][str(module.relative_to(ROOT))]
+    if sha(module) != expected or sha(source) != expected:
+        raise ValueError('Reference cache and maintained mathematical module differ')
+    verified[module] = expected
+    path = cache / 'references.jsonl'
+    expected = summary['output_sha256'][str(path.relative_to(ROOT))]
+    if sha(path) != expected:
+        raise ValueError('Reference candidate cache hash mismatch')
+    verified[path] = expected
+    with path.open() as stream:
+        entries = [json.loads(line) for line in stream]
+    for entry in entries:
+        ref = entry['reference']
+        if (not ref['complete'] or not ref['reference_valid'] or
+                not ref.get('first_arrival') or len(ref.get('near_ties', [])) != 1 or
+                ref['first_arrival']['source_derivative_s_per_km'] is None):
+            raise ValueError('Reference cache must have unique valid complete arrivals')
+    if len(entries) != summary['rays']:
+        raise ValueError('Reference cache count mismatch')
+    return entries, verified
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--data', required=True, help='Repository-relative frozen run directory')
     parser.add_argument('--output', required=True, help='Fresh repository-relative evidence directory')
     parser.add_argument('--completed-linearization-only', action='store_true',
                         help='Freeze a successful completed linearize command without asserting overall preflight completion')
+    parser.add_argument('--reference-cache',
+                        help='Completed reference directory for identical native geometry/model/observations; optional')
     args = parser.parse_args()
     data, out = (ROOT / args.data).resolve(), (ROOT / args.output).resolve()
     for path in (data, out):
@@ -104,6 +142,11 @@ def main():
     files = [data / name for name in names]
     module = ROOT / 'diagnostics/first_arrival_1d_reference.py'
     sources = [Path(__file__).resolve(), module]
+    cache_entries, cache_hashes = None, {}
+    if args.reference_cache:
+        cache = (ROOT / args.reference_cache).resolve()
+        cache.relative_to(ROOT)
+        cache_entries, cache_hashes = cached_references(cache, data, module)
     hashes = {str(p.relative_to(ROOT)): sha(p) for p in files + sources}
     manifest = json.loads((data / 'run_manifest.json').read_text())
     preflight = None if args.completed_linearization_only else json.loads((data / 'preflight.json').read_text())
@@ -156,6 +199,8 @@ def main():
     expected = {str(n): r for n, r in enumerate(observations) if r['type'] == '0'}
     if len(rays) != len(expected) or set(r['observation_row'] for r in rays) != set(expected):
         raise ValueError('Absolute observation support is incomplete')
+    if cache_entries is not None and len(cache_entries) != len(rays):
+        raise ValueError('Reference cache support count differs from current rays')
     support = set((r['i'], r['station']) for r in observations)
     support.update((r['j'], r['station_j']) for r in observations if int(r['j']) >= 0)
     if support != set((r['i'], r['station']) for r in rays):
@@ -236,7 +281,14 @@ def main():
         for n, ray in enumerate(rays):
             source = [float(events[ray['i']][key]) for key in 'xyz']
             receiver = [float(stations[ray['station']][key]) for key in 'xyz']
-            reference = enumerate_arrivals(depths, speeds, source, receiver)
+            if cache_entries is None:
+                reference = enumerate_arrivals(depths, speeds, source, receiver)
+            else:
+                cached = cache_entries[n]
+                if any(cached[a] != ray[b] for a, b in [('row', 'row'), ('observation_row', 'observation_row'),
+                                                       ('event', 'i'), ('station', 'station')]):
+                    raise ValueError('Reference cache native index join changed at row ' + str(n))
+                reference = cached['reference']
             first = reference.get('first_arrival')
             item = dict(ray)
             item.update(reference_complete=int(reference['complete']), reference_valid=int(reference['reference_valid']),
@@ -279,9 +331,24 @@ def main():
     for path, expected in original_hashes.items():
         if sha(path) != expected:
             raise ValueError('Original completed linearization/input changed during comparison: ' + str(path.relative_to(ROOT)))
+    for path, expected in cache_hashes.items():
+        if sha(path) != expected:
+            raise ValueError('Reference cache changed during comparison: ' + str(path.relative_to(ROOT)))
+    accuracy = {}
+    for label, subset in [('all', saved), ('local_flag_true', [r for r in saved if r['ray_converged'] == '1']),
+                          ('local_flag_false', [r for r in saved if r['ray_converged'] != '1'])]:
+        valid = [r for r in subset if r['reference_valid'] == '1' and r['reference_complete'] == '1' and
+                 r['reference_near_tie_count'] == '1' and all(r['reference_source_d' + a] != '' for a in 'xyz')]
+        error = [abs(float(r['production_minus_reference_s'])) for r in valid]
+        norms = [math.sqrt(sum(float(r['production_source_d' + a + '_minus_reference']) ** 2 for a in 'xyz')) for r in valid]
+        accuracy[label] = dict(count=len(subset), compared_unique_references=len(valid),
+            absolute_time_error_s=stats(error), source_error_euclidean_norm_s_per_km=stats(norms),
+            time_limit_pass=sum(t <= 2.5e-5 for t in error),
+            source_vector_limit_pass=sum(e <= 3e-6 for e in norms),
+            both_limits_pass=sum(t <= 2.5e-5 and e <= 3e-6 for t, e in zip(error, norms)))
     outputs = [out / 'comparison.csv', out / 'references.jsonl'] + list(snapshot.iterdir())
     summary = dict(status='complete' if counts['reference_valid'] == len(rays) else 'unresolved_cases_preserved',
-                   command='PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/compare_hayward_1d_support.py --data ' + str(original_data.relative_to(ROOT)) + ' --output ' + str(out.relative_to(ROOT)) + (' --completed-linearization-only' if args.completed_linearization_only else ''),
+                   command='PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/compare_hayward_1d_support.py --data ' + str(original_data.relative_to(ROOT)) + ' --output ' + str(out.relative_to(ROOT)) + (' --completed-linearization-only' if args.completed_linearization_only else '') + (' --reference-cache ' + str(cache.relative_to(ROOT)) if args.reference_cache else ''),
                    scope='Continuous 1D reference versus saved full initial absolute support; no solver or inversion rerun',
                    rays=len(rays), unique_native_pairs=len(support), source_derivative_components=len(gradient_errors),
                    elapsed_reference_seconds=time.time() - started, reference_counts=dict(counts),
@@ -289,6 +356,10 @@ def main():
                    readiness_basis='completed_linearization_ledger_and_frozen_inputs' if args.completed_linearization_only else 'completed_preflight_hashes',
                    overall_preflight_assessed=False if args.completed_linearization_only else True,
                    original_reverified_sha256={str(p.relative_to(ROOT)): h for p, h in original_hashes.items()},
+                   reused_reference_sha256={str(p.relative_to(ROOT)): h for p, h in cache_hashes.items()},
+                   accuracy_control_limits=dict(absolute_time_s=2.5e-5, source_euclidean_norm_s_per_km=3e-6,
+                       basis='Unchanged analytic component limits; original preflight flags preserved'),
+                   accuracy=accuracy,
                    original_columns_preserved=row_names, identity_join=['row', 'observation_row', 'i', 'station'],
                    candidate_join='references.jsonl row/observation_row/event/station join comparison.csv row/observation_row/i/station',
                    production_minus_reference_s=stats(times), production_source_derivative_minus_reference_s_per_km=stats(gradient_errors),
