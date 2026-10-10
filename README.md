@@ -608,7 +608,9 @@ Matplotlib, and pdfLaTeX with the `fontenc`, `lmodern`, `geometry`, `amsmath`,
 and `listings` packages. No third-party tomography or optimization library
 is required. The formatter used during development is not a runtime dependency.
 The delivery environment is recorded in `reference/delivery_environment.json`.
-The Hayward plotting and resolution workflow also requires SciPy.
+The Hayward plotting and resolution workflow also requires SciPy. Hayward
+preparation requires Requests, including when reading the saved archive
+without web-service queries.
 Run `python3 plot_hayward.py` to plot the completed baseline tables. The optional
 `--velocity-only` mode produces Figures 4 and 10 and a separate Figure 10 manifest.
 
