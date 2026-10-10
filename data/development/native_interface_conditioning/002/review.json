@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "scope": "Read-only source/formula review and independent saved-table/hash/native/interval-sum checks; no new path, solve or numerical reference calculation",
+  "summary_sha256": "5907b33c6f75a45961d17f7ada8f4570ab9df1f4b96190d44a5bf9ec69fcd86f",
+  "maintained_source_sha256": "5a8c959322b81fa593c783fb11b0a02cc24062de6e03b1f57b1e00431b112d42",
+  "review_checker_sha256": "d79207d2b1b67f0e5542a5e5255519a592d67b1f9ca7ff0dd48a68b417c290cc",
+  "verified_artifact_hashes": 18,
+  "verified_original_and_frozen_source_hashes": 15,
+  "native_edges": 2704,
+  "unchanged_previously_eligible_edges": 2696,
+  "newly_eligible_transverse_edges": 8,
+  "passing_checks": 56,
+  "native_ids_and_original_false_flag_preserved": true,
+  "exact_rational_contribution_sums_match": true,
+  "saved_secant_rows": 20,
+  "total_one_sided_curvature": {
+    "lower_rational": "1561288019519413260553777169568116635353/340282366920938463463374607431768211456",
+    "upper_rational": "390322004879853315138444292392029159513/85070591730234615865843651857942052864",
+    "lower_display": 4.588213117378969,
+    "upper_display": 4.588213117378969
+  },
+  "findings": [
+    "For nonzero signed delta-x, the primitive quotient derivatives and direction-selected endpoint slowness slopes give the h-to-zero-positive second derivative.",
+    "Aligned moving cusps remain ineligible; no arbitrary side, smoothing, snapping or convergence relabeling was introduced.",
+    "All previously eligible edge values are byte-identical; eight formerly ineligible transverse edges are now covered.",
+    "Finite x-piece, domain and zero-length events are recorded separately; the saved secants are not all in the same local piece."
+  ],
+  "limitations": [
+    "One scalar one-sided curvature is not a full two-sided Hessian, spectrum or convergence-rate explanation.",
+    "Decimal finite-difference controls are consistency checks; they do not independently prove all interval bounds.",
+    "The preconditioner comparison is for this saved direction and continuous exact-coordinate metric, not a bitwise production metric replay.",
+    "No original local flag, source derivative, production implementation or inverse acceptance changed."
+  ]
+}

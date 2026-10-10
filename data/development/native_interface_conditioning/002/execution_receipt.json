@@ -1,0 +1,12 @@
+{
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/check_native_interface_curvature.py --directional-kink-endpoints --output data/development/native_interface_conditioning/002",
+  "return_code": 0,
+  "result_status": "completed_scalar_curvature_diagnostic",
+  "full_curvature_available": true,
+  "summary_sha256": "5907b33c6f75a45961d17f7ada8f4570ab9df1f4b96190d44a5bf9ec69fcd86f",
+  "run_log_sha256": "394436bd2436e7d5e963c5519160feb26ef571ad7f8e47c756516cc328d7d156",
+  "source_sha256": "5a8c959322b81fa593c783fb11b0a02cc24062de6e03b1f57b1e00431b112d42",
+  "input_source_hashes_reverified": 15,
+  "artifact_hashes_reverified": 18,
+  "interpretation": "Complete one-sided scalar curvature along the unchanged saved direction. No new direction, step, solve, optimizer, stopping flag or production change."
+}

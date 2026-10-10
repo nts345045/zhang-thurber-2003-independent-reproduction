@@ -1,0 +1,9 @@
+{
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/check_native_interface_curvature.py --output data/development/native_interface_conditioning/001",
+  "return_code": 0,
+  "result_status": "completed_scalar_curvature_diagnostic",
+  "full_curvature_available": false,
+  "summary_sha256": "458edaed586a5321ca5b6d975afe385ec94ae0d0ec3fbd039659b3d3b5e5aeb1",
+  "run_log_sha256": "e6c99877768be9c1e05eeaca19311e37e072ac80084a883215012f308bd0b079",
+  "interpretation": "Calculation completed with eight explicitly ineligible kink-endpoint edges; partial sums are not the native full curvature."
+}
