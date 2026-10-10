@@ -1,0 +1,39 @@
+{
+  "reviewer": "ray_math_review",
+  "scope": "Independent read-only source, recorded fixture and hash review; no solver or simulation rerun",
+  "material_issue_found": false,
+  "checks_passed": 55,
+  "verified_output_hashes": 80,
+  "verified_source_hashes": 19,
+  "legacy_byte_identical_files": [
+    "arrivals.csv",
+    "observations.csv",
+    "initial_events.csv",
+    "truth_events.csv",
+    "simulation_ray_status.csv",
+    "authoritative_geometry"
+  ],
+  "analytic_vs_ordinary_observations_and_initial_perturbations_identical": true,
+  "all_four_arrivals_preserve_numeric_native_prefix": true,
+  "all_ray_status_fields_blank_in_analytic_mode": true,
+  "all_reference_and_native_fields_preserved_in_truth_status": true,
+  "source_findings": [
+    "Model axes and complete snapshot grid are validated before use; native geometry/metadata/zero times match the current inputs.",
+    "Full ordered Cartesian pair indices, complete/valid/unique flags, branch fields and signed finite derivatives are validated.",
+    "Analytic times replace only the truth-time source; station bias, rounding, noise and differential observation order are unchanged.",
+    "Invalid input is rejected before arrival or initial-event output; existing simulation outputs are protected.",
+    "The actual CLI option and default ordinary behavior are exercised, with six original outputs byte-identical to the frozen prechange implementation."
+  ],
+  "limitations": [
+    "The invented homogeneous fixture tests the consumer contract and noise sequence, not arbitrary layered-reference mathematics.",
+    "The consumer explicitly does not verify cryptographic provenance. The execution wrapper must verify the prepared bundle hashes immediately before simulation.",
+    "No actual Loma simulation, inverse forward acceptance, or production inversion is established by these checks."
+  ],
+  "summary_sha256": "b4e9b62826ae2bc0850868aff2880420c390bf276ad21b1cf35db785533d19e8",
+  "reviewed_source_sha256": {
+    "source/src/main.cpp": "df472d1152302b685232cbfaf73587d472cab0c1a342938edbdd676e622057af",
+    "source/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "source/diagnostics/check_analytic_truth.cpp": "24ea4eea859fcf123d7f19a11ee9c849823f93aba1718b2d913db5bd221839ca",
+    "source/diagnostics/run_analytic_truth_checks.py": "b3d98609ec9437c2f91178257c5ac452119218615ceb3704af708aa029fa4251"
+  }
+}

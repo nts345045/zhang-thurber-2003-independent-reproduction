@@ -388,9 +388,13 @@ void synthetic_observations(const Config &c, const std::string &dir,
                             const std::vector<Ray> &rr, std::mt19937 &gen,
                             std::uniform_real_distribution<double> &u,
                             std::normal_distribution<double> &normal,
-                            bool identified_geometry = false) {
+                            bool identified_geometry = false,
+                            const Vec *analytic_times = nullptr) {
   const int ne = events.size(), ns = stations.size();
-  Vec true_t(rr.size()), abs_t(rr.size()), rounded(rr.size()), bias(ns);
+  const size_t count=analytic_times ? analytic_times->size() : rr.size();
+  if (count!=size_t(ne)*ns || (analytic_times && (!identified_geometry || !rr.empty())))
+    throw std::runtime_error("Synthetic travel-time inventory or explicit truth mode differs");
+  Vec true_t(count), abs_t(count), rounded(count), bias(ns);
   for (auto &v : bias)
     v = (2 * u(gen) - 1) * c.get("station_noise");
   auto raw = output(dir + "/arrivals.csv");
@@ -398,11 +402,17 @@ void synthetic_observations(const Config &c, const std::string &dir,
   if (identified_geometry)
     csv_metadata_header(raw, simulation_metadata(events, stations, 0, -1, 0, 0));
   ray_status_header(raw);
+  if (analytic_times)
+    raw<<",truth_mode,reference_pair_index,reference_complete,reference_valid,reference_near_tie_count";
   raw << '\n';
+  std::ostringstream ray_header;
+  ray_status_header(ray_header);
+  const std::string ray_fields=ray_header.str();
+  const std::string absent_ray_fields(std::count(ray_fields.begin(),ray_fields.end(),','),',');
   for (int i = 0; i < ne; i++)
     for (int k = 0; k < ns; k++) {
       int n = i * ns + k;
-      true_t[n] = rr[n].time;
+      true_t[n] = analytic_times ? (*analytic_times)[n] : rr[n].time;
       double quantum = setting(c, "time_quantum", 0.01);
       rounded[n] = quantum > 0 ? std::round(true_t[n] / quantum) * quantum : true_t[n];
       double noise = c.get("noise") * normal(gen);
@@ -411,7 +421,10 @@ void synthetic_observations(const Config &c, const std::string &dir,
           << bias[k] << ',' << noise << ',' << abs_t[n];
       if (identified_geometry)
         csv_metadata_values(raw, simulation_metadata(events, stations, i, -1, k, 0));
-      ray_status_values(raw, rr[n]);
+      if (analytic_times)
+        raw<<absent_ray_fields<<",continuous_layered_snell_reference,"<<n<<",1,1,1";
+      else
+        ray_status_values(raw, rr[n]);
       raw << '\n';
     }
   auto f = output(dir + "/observations.csv");
@@ -745,11 +758,14 @@ void validate_identities(const std::vector<Event> &events,
   }
 }
 
-void simulate(const Config &c, const std::string &dir) {
+#include "analytic_truth.hpp"
+
+void simulate(const Config &c, const std::string &dir, const std::string &analytic_bundle = "") {
   if (!authoritative_geometry(c, dir) || authoritative_input(c, dir))
     throw std::runtime_error("simulate requires authoritative_geometry, not authoritative_ids_required");
   for (const auto *name : {"arrivals.csv", "observations.csv", "initial_events.csv",
-                            "simulation_ray_status.csv"})
+                            "simulation_ray_status.csv", "simulation_truth_status.csv",
+                            "simulation_truth_mode.txt"})
     if (std::filesystem::exists(dir + "/" + name))
       throw std::runtime_error(std::string("Preserve existing simulation output ") + name +
                                "; prepare a fresh run directory");
@@ -758,6 +774,9 @@ void simulate(const Config &c, const std::string &dir) {
   validate_geometry(events, stations);
   Grid truth = read_grid(dir + "/truth_grid.csv");
   Grid start = read_grid(dir + "/initial_grid.csv");
+  AnalyticTruth analytic;
+  if (!analytic_bundle.empty())
+    analytic=read_analytic_truth(analytic_bundle,truth,events,stations);
   for (auto &event : events) {
     if (!truth.contains(event.p) || !start.contains(event.p))
       throw std::runtime_error("Catalog simulation source lies outside supplied grids");
@@ -785,11 +804,17 @@ void simulate(const Config &c, const std::string &dir) {
   // Calculate all requested synthetic rays from the supplied truth grid.
   // Stations retain their archived geometry/epoch identities, but these are
   // simulated receiver placements, not claims of an observed pick at each pair.
-  auto rr = rays(truth, events, stations, c, false, nullptr, nullptr, false);
-  simulation_ray_gate(dir, events, stations, rr);
+  std::vector<Ray> rr;
+  if (analytic_bundle.empty()) {
+    rr=rays(truth, events, stations, c, false, nullptr, nullptr, false);
+    simulation_ray_gate(dir, events, stations, rr);
+  } else {
+    write_analytic_truth_status(dir,analytic);
+  }
   write_events(events, dir + "/truth_events.csv");
   write_events(initial, dir + "/initial_events.csv");
-  synthetic_observations(c, dir, events, stations, rr, gen, u, normal, true);
+  synthetic_observations(c, dir, events, stations, rr, gen, u, normal, true,
+                         analytic_bundle.empty()?nullptr:&analytic.times);
   auto marker = output(dir + "/authoritative_geometry");
   marker << "Catalog event/origin and channel epoch IDs describe geometry; all arrivals are synthetic.\n";
   std::cout << "Simulated " << events.size() << " catalog-defined truth sources and "
@@ -1498,7 +1523,7 @@ int main(int argc, char **argv) {
     }
     if (argc < 4)
       throw std::runtime_error("Usage: dd validate OUT | dd generate CONFIG "
-                               "OUT | dd simulate CONFIG OUT | dd invert CONFIG OUT MODE | "
+                               "OUT | dd simulate CONFIG OUT [--analytic-truth BUNDLE] | dd invert CONFIG OUT MODE | "
                                "dd raycheck CONFIG OUT [MODE] | dd geometrycheck CONFIG OUT [MODE] | "
                                "dd linearize CONFIG OUT MODE | "
                                "dd linearize_full CONFIG OUT MODE [STAGE]");
@@ -1506,8 +1531,8 @@ int main(int argc, char **argv) {
     std::string cmd = argv[1];
     if (cmd == "generate")
       generate(c, argv[3]);
-    else if (cmd == "simulate")
-      simulate(c, argv[3]);
+    else if (cmd == "simulate" && (argc==4 || (argc==6 && std::string(argv[4])=="--analytic-truth")))
+      simulate(c, argv[3],argc==6?argv[5]:"");
     else if (cmd == "raycheck")
       raycheck(c, argv[3], argc == 5 ? argv[4] : "truth");
     else if (cmd == "geometrycheck")
