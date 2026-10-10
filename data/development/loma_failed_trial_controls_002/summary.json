@@ -1,0 +1,85 @@
+{
+  "status": "passed_controls",
+  "checks": [
+    {
+      "name": "homogeneous_action_two_seconds",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_whole_direction_derivative",
+      "passed": true
+    },
+    {
+      "name": "identical_segments_cancel_exactly",
+      "passed": true
+    },
+    {
+      "name": "unchanged_trial_rejects_negative_armijo",
+      "passed": true
+    },
+    {
+      "name": "resolved_exact_descent",
+      "passed": true
+    },
+    {
+      "name": "resolved_exact_armijo",
+      "passed": true
+    },
+    {
+      "name": "resolved_reversed_difference",
+      "passed": true
+    },
+    {
+      "name": "sub_binary64_action_exact_descent",
+      "passed": true
+    },
+    {
+      "name": "sub_binary64_action_exact_armijo",
+      "passed": true
+    },
+    {
+      "name": "sub_binary64_action_reversed_difference",
+      "passed": true
+    },
+    {
+      "name": "action_decrease_hidden_by_binary64_rounding",
+      "passed": true
+    },
+    {
+      "name": "rounded_coordinate_collapse_is_explicit",
+      "passed": true
+    },
+    {
+      "name": "depth_axis_permutation_action",
+      "passed": true
+    },
+    {
+      "name": "depth_axis_permutation_nodal_gradient",
+      "passed": true
+    },
+    {
+      "name": "positive_interval_fails",
+      "passed": true
+    },
+    {
+      "name": "zero_boundary_passes",
+      "passed": true
+    },
+    {
+      "name": "overlapping_interval_unresolved",
+      "passed": true
+    }
+  ],
+  "scope": "Invented closed-form actions, derivatives, cancellation, coordinate rounding and exact Armijo comparisons",
+  "input_sha256": {
+    "diagnostics/check_loma_failed_trials.py": "a44942af240472c21f7ae8ce6283b75a1ddd35d3d656de378e542e154c850a29",
+    "diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2"
+  },
+  "elapsed_seconds": 0.023708090069703758,
+  "artifact_sha256": {
+    "source/diagnostics/check_loma_failed_trials.py": "a44942af240472c21f7ae8ce6283b75a1ddd35d3d656de378e542e154c850a29",
+    "source/diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "source/diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2"
+  }
+}

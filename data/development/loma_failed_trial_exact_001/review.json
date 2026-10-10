@@ -1,0 +1,47 @@
+{
+  "status": "passed_saved_evidence_review",
+  "material_issue_found": false,
+  "summary_sha256": "dd15716206c0d09abdecdaa3bd008fa836f3f5a7aed1b4a604a66c9ea85584c7",
+  "execution_sha256": "896bf3bf33763b4911a24f883f341c4365a166806404bea9ca3959b2778e1702",
+  "neutral_replay_review_sha256": "2bc6060c7c4d19161b7ffedbae3fd3455ccebefcd2160f7874c56de1b9321f16",
+  "checker_path": "data/development/loma_failed_trial_exact_review_001/review_saved_result.py",
+  "checker_sha256": "fc833e9927f744989ed1b31ef0e8ea51f27e97d06b662acf8653e05c9fb66803",
+  "decimal_checks_path": "data/development/loma_failed_trial_exact_review_001/decimal_checks.json",
+  "decimal_checks_sha256": "8aa132546d59b6e2d6582cb9c7e8c3db0406db1043efa8cb8b841be4ddcb411c",
+  "input_hashes_verified": 15,
+  "artifact_hashes_verified": 15,
+  "controller_input_hashes_verified": 5,
+  "native_identifiers": {
+    "event": "65",
+    "station": "46",
+    "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/10090782",
+    "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642854",
+    "receiver_channel_seed_id": "NC.JSJ..EHZ",
+    "receiver_channel_fdsn_source_id": "FDSN:NC_JSJ__E_H_Z",
+    "receiver_metadata_epoch_start": "1989-05-02T15:00:00",
+    "receiver_metadata_epoch_end": "1990-09-14T21:50:00"
+  },
+  "all_native_context_and_sidecars_match": true,
+  "original_local_flag_preserved": "0",
+  "verified_trials": 24,
+  "saved_slope_classifications": {
+    "certified_pass": 24
+  },
+  "exact_gradient_classifications": {
+    "certified_pass": 24
+  },
+  "every_saved_rational_interval_relation_and_classification_verified": true,
+  "selected_decimal_trials": [
+    0,
+    23
+  ],
+  "decimal_enclosure_membership_checks_passed": 4,
+  "scope": "Saved classifications/native/hash readback plus two selected independent high-precision action checks; no ray solve.",
+  "limitations": [
+    "Rational binary64 inputs and all grid-plane splits are preserved.",
+    "Decimal rounding is not an outward-error bound; enclosure membership and two precisions provide numerical consistency only.",
+    "No path optimization, ray tracing, idealized trial substitution or production acceptance occurs.",
+    "Classifications concern fixed saved rounded polygons, not optimized first arrivals.",
+    "No stopping tolerance, scientific accuracy gate, convergence flag or production rule is changed."
+  ]
+}
