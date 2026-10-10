@@ -1,0 +1,71 @@
+{
+  "status": "completed_identified_connectivity_audit",
+  "input_source_sha256": {
+    "data/development/native_waveform_cc_001/summary.json": "8a97e3c31d4a8db25c2c63b448addbfbfe258d94a17ecfa1663e5facb5772021",
+    "data/development/native_waveform_cc_001/independent_measurement_review.json": "4a91262cf8d64a6cee233b08465f34b885e40f7cb0d2dc82cd575bcf9719e97b",
+    "data/development/native_waveform_cc_001/identified_measurements.csv.gz": "51fc174cd413e4e3f4ab6619e018ccb6901a49139d1ec789fdaad3803fc95f3f",
+    "diagnostics/check_native_cc_connectivity.py": "8ca3487a65a5bb1adbef6ee818800080d8372ad2d90d602db05b4e4f1bc63ddc"
+  },
+  "retained_original_catalog_pairs": 44718,
+  "accepted_measurements": 98,
+  "unique_event_pairs": 98,
+  "accepted_event_count": 103,
+  "accepted_measurements_per_pair_distribution": {
+    "1": 98
+  },
+  "component_count": 32,
+  "component_event_counts_descending": [
+    7,
+    7,
+    7,
+    6,
+    5,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    3,
+    3,
+    3,
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "maximum_unique_pair_degree": 6,
+  "accepted_channel_counts": {
+    "NC.CBR.10.EHZ | FDSN:NC_CBR_10_E_H_Z": 19,
+    "NC.JPR.02.EHZ | FDSN:NC_JPR_02_E_H_Z": 75,
+    "NC.JSF.10.EHZ | FDSN:NC_JSF_10_E_H_Z": 1,
+    "NC.JSB.10.EHZ | FDSN:NC_JSB_10_E_H_Z": 3
+  },
+  "all_accepted_rows_preserved_exactly": true,
+  "new_filters_or_thresholds": false,
+  "measurements_or_solver_inputs_changed": false,
+  "limitations": [
+    "CC-only undirected event graph, not the combined catalog-plus-CC graph or a Jacobian rank test.",
+    "One receiver per accepted pair does not establish independent three-dimensional relative-location constraints.",
+    "Local component labels are derived identifiers, not provider resource IDs."
+  ],
+  "output_sha256": {
+    "accepted_measurements.csv.gz": "9f9977b62b2808df09e6b6753443bc45a8d81ae68e0e23eafe6744ede5b94780",
+    "event_membership.csv": "0ccfcf46cbe03a04e8c77aafabbe75ca3fbb6ebde8964e015812313a595c6712",
+    "source/check_native_cc_connectivity.py": "8ca3487a65a5bb1adbef6ee818800080d8372ad2d90d602db05b4e4f1bc63ddc"
+  }
+}

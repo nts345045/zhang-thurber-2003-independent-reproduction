@@ -1,0 +1,43 @@
+{
+  "status": "read_only_proposed_contract",
+  "reviewed_utc": "2026-10-10T05:07:48.866191+00:00",
+  "code_changes": false,
+  "observations_imported": 0,
+  "inversions_launched": 0,
+  "source_sha256": {
+    "src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "prepare_hayward.py": "d3197c79d54ed9fcd756c26091674850b07060e38690559fb253f97f1752ed34",
+    "resolution_full_hayward.py": "f0de3144d6130cd308a89681cc2c50355cd4a48e43b3b408e2338516401d7bd9",
+    "data/development/native_waveform_cc_001/summary.json": "8a97e3c31d4a8db25c2c63b448addbfbfe258d94a17ecfa1663e5facb5772021",
+    "data/development/native_waveform_cc_001/independent_measurement_review.json": "4a91262cf8d64a6cee233b08465f34b885e40f7cb0d2dc82cd575bcf9719e97b",
+    "data/development/normalized_correlation_specification/README.md": "fb656f2eddefb0c7fd2641e0d88367800d4742f475a0c0a2163b0596c30e8845",
+    "data/authoritative/stations/investigation/membership_waldhauser_ellsworth_2002.txt": "5fe20004100d36656a6d38dfda90bad5d562027de208ad84f5a670cc7aa1176f"
+  },
+  "independent_code_review": {
+    "reviewer": "ray_math_review",
+    "row_multiplier_confirmed": true,
+    "uncertainty_metadata_only_confirmed": true,
+    "nuance": "Prior changes also affect column normalization and the physical effect of scaled damping."
+  },
+  "written_sources": [
+    {
+      "title": "Zhang and Thurber (2003), p.1877",
+      "url": "https://www.researchgate.net/publication/215754286_Double-Difference_Tomography_The_Method_and_Its_Application_to_the_Hayward_Fault_California",
+      "accessed_utc": "2026-10-10",
+      "scope": "Written manuscript equations/prose only"
+    },
+    {
+      "title": "Waldhauser and Ellsworth (2002), section2.3 paragraph18",
+      "url": "https://www.ldeo.columbia.edu/~felixw/papers/Waldhauser_Ellsworth_JGR2002.pdf",
+      "scope": "Previously archived written manuscript text"
+    },
+    {
+      "title": "EQcorrscan write_correlations documentation",
+      "url": "https://eqcorrscan.readthedocs.io/en/latest/submodules/autogen/eqcorrscan.utils.catalog_to_dd.write_correlations.html",
+      "accessed_utc": "2026-10-10",
+      "scope": "Official method and file-format documentation"
+    }
+  ],
+  "document_sha256": "9dea64d34180e6f21e84275825d521c16ee7dfbb8a5a575f421ac824319b2bcf"
+}
