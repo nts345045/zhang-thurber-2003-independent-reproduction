@@ -1,0 +1,131 @@
+{
+  "status": "passed",
+  "scope": "Invented wrapper eligibility, metadata, ordering and readiness controls only; unchanged numerical helper",
+  "checks": 29,
+  "failed": 0,
+  "results": [
+    {
+      "name": "terminal reviewed input gate",
+      "passed": true
+    },
+    {
+      "name": "complete z-only grid eligible",
+      "passed": true
+    },
+    {
+      "name": "nonzero source corrections preserved",
+      "passed": true
+    },
+    {
+      "name": "reject horizontal velocity dependence",
+      "passed": true
+    },
+    {
+      "name": "reject decreasing depth profile",
+      "passed": true
+    },
+    {
+      "name": "reject incomplete grid",
+      "passed": true
+    },
+    {
+      "name": "reject duplicate grid node",
+      "passed": true
+    },
+    {
+      "name": "reject outside initial source",
+      "passed": true
+    },
+    {
+      "name": "reject missing native origin",
+      "passed": true
+    },
+    {
+      "name": "reject inconsistent receiver identity",
+      "passed": true
+    },
+    {
+      "name": "reject truncated native cohort",
+      "passed": true
+    },
+    {
+      "name": "reject nonfinite source correction",
+      "passed": true
+    },
+    {
+      "name": "reject modified reviewed initial table",
+      "passed": true
+    },
+    {
+      "name": "reject failed simulation review",
+      "passed": true
+    },
+    {
+      "name": "reject live simulation",
+      "passed": true
+    },
+    {
+      "name": "source time excluded from complete references",
+      "passed": true
+    },
+    {
+      "name": "saved perturbed geometry used for travel time",
+      "passed": true
+    },
+    {
+      "name": "original xyz gradient axes retained",
+      "passed": true
+    },
+    {
+      "name": "exact endpoint boundary flags",
+      "passed": true
+    },
+    {
+      "name": "numerical root exhaustion retained unresolved",
+      "passed": true
+    },
+    {
+      "name": "unresolved native support readback",
+      "passed": true
+    },
+    {
+      "name": "unresolved time and gradient blank",
+      "passed": true
+    },
+    {
+      "name": "full invented wrapper workers 1",
+      "passed": true
+    },
+    {
+      "name": "terminal ledger and all native rows workers 1",
+      "passed": true
+    },
+    {
+      "name": "full invented wrapper workers 2",
+      "passed": true
+    },
+    {
+      "name": "terminal ledger and all native rows workers 2",
+      "passed": true
+    },
+    {
+      "name": "deterministic ordered workers references.csv.gz",
+      "passed": true
+    },
+    {
+      "name": "deterministic ordered workers certificates.jsonl.gz",
+      "passed": true
+    },
+    {
+      "name": "exclusive existing-output guard",
+      "passed": true
+    }
+  ],
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/check_loma_initial_reference.py --output data/development/loma_initial_reference_checks/001",
+  "source_sha256": {
+    "diagnostics/check_loma_initial_reference.py": "c5b8999ca9b4f9e2378cf91984c6344106eac560e1b2449651dfae5b793de6c6",
+    "diagnostics/run_loma_initial_reference.py": "c03dcb3d9bbdc655c0a1e58bfeac8abe6da70516ea3b33a0bc8c40d16589a79c",
+    "diagnostics/run_loma_layered_full.py": "4a01438a8646000b77136e8e65f98aa154b6dd8c28ff6a53dda597e855327e39",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  }
+}
