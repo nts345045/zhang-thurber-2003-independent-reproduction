@@ -70,6 +70,42 @@ def main():
     close('maintained_two_pick_covariance', covariance, .05 ** 2 * np.eye(2))
     close('maintained_two_pick_unmasked_response', physical, np.eye(2))
 
+    # Finite input and ordinary outputs do not ensure a representable optional
+    # response. Here H_model=1e-300 and its finite cross term is 1e158, so the
+    # physical response overflows while R=1 and covariance=0 remain finite.
+    tiny_A = np.diag([1., 1e-150])
+    R, covariance, _, _ = module.joint_resolution(
+        tiny_A, np.zeros((0, 2)), 1, np.zeros(2), np.zeros((2, 1)))
+    close('overflow_control_ordinary_resolution_finite', R, [[1.]])
+    close('overflow_control_ordinary_covariance_finite', covariance, [[0.]])
+    try:
+        module.joint_resolution(tiny_A, np.zeros((0, 2)), 1, np.zeros(2),
+                                np.zeros((2, 1)), [[0.], [1e308]])
+    except ValueError as error:
+        rejected = str(error) == 'Nonfinite full-DD result'
+    else:
+        rejected = False
+    truth('reject_overflowed_unmasked_response_from_finite_inputs', rejected)
+
+    # A positive-definite diagonal Schur matrix can have an unrepresentable
+    # condition number even though its solved resolution and covariance are
+    # finite. Reject this diagnostic before the caller can write any result.
+    # Retain a nearby finite (but very large) condition: no accuracy cutoff is
+    # introduced by this representability guard.
+    for label, scale, expect_rejection in [('nonfinite', 1e-155, True),
+                                           ('finite', 1e-150, False)]:
+        try:
+            result = module.joint_resolution(np.diag([1., 1., scale]),
+                np.zeros((0, 3)), 1, np.zeros(3), np.zeros((3, 1)))
+        except ValueError as error:
+            passed = expect_rejection and str(error) == 'Nonfinite full-DD conditioning diagnostics'
+        else:
+            passed = (not expect_rejection and np.all(np.isfinite(result[0])) and
+                      np.all(np.isfinite(result[1])) and
+                      np.isfinite(result[3]['model_schur_condition_number']) and
+                      result[3]['model_schur_condition_number'] > 1e299)
+        truth(label + '_condition_number_representability', passed)
+
     # Three events, two picks each, source x/y/z/t and three model parameters.
     # This fixture contains source coupling, unequal uncertainties, fixed row
     # weights, one omitted row, two masked DD model coefficients and smoothing.

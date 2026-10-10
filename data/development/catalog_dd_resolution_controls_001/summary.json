@@ -1,0 +1,171 @@
+{
+  "scope": "Invented linear-algebra controls only; no native data or inversion",
+  "independent_pick_noise_assumption": true,
+  "uncertainty_scope": "Frozen weights, unconstrained source parameters; no nonlinear/robust-weight derivative, ray error, model error, bias or waveform-noise assumption",
+  "numpy_version": "1.19.5",
+  "scipy_version": "1.5.4",
+  "comparison_tolerance": 1e-10,
+  "checks": [
+    {
+      "check": "exact_fit_resolution_0_differences",
+      "maximum_absolute_difference": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "exact_fit_covariance_0_differences",
+      "maximum_absolute_difference": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "exact_fit_pick_response_0_differences",
+      "maximum_absolute_difference": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "exact_fit_resolution_1_differences",
+      "maximum_absolute_difference": 4.440892098500626e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "exact_fit_covariance_1_differences",
+      "maximum_absolute_difference": 6.938893903907228e-17,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "exact_fit_pick_response_1_differences",
+      "maximum_absolute_difference": 4.440892098500626e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "exact_fit_resolution_7_differences",
+      "maximum_absolute_difference": 1.1102230246251565e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "exact_fit_covariance_7_differences",
+      "maximum_absolute_difference": 4.163336342344337e-17,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "exact_fit_pick_response_7_differences",
+      "maximum_absolute_difference": 1.1102230246251565e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "duplicate_scalar_variance",
+      "maximum_absolute_difference": 1.7763568394002505e-15,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "duplicate_scalar_resolution",
+      "maximum_absolute_difference": 2.220446049250313e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "duplicate_scalar_response",
+      "maximum_absolute_difference": 2.220446049250313e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "independent_duplicate_assumption_is_distinct",
+      "shared_pick_variance": 3.9999999999999982,
+      "wrong_independent_variance": 2.0,
+      "passed": true
+    },
+    {
+      "check": "coupled_source_resolution_vs_full_joint",
+      "maximum_absolute_difference": 6.661338147750939e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "shared_pick_covariance_vs_full_joint",
+      "maximum_absolute_difference": 2.4936649967166602e-18,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "source_eliminated_resolution_from_pick_response",
+      "maximum_absolute_difference": 5.828670879282072e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "covariance_symmetry",
+      "maximum_absolute_difference": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "shared_pick_covariance_is_singular",
+      "rank": 12,
+      "observations": 18,
+      "independent_picks": 12,
+      "passed": true
+    },
+    {
+      "check": "propagated_covariance_positive",
+      "minimum_eigenvalue": 2.6138832436760578e-05,
+      "passed": true
+    },
+    {
+      "check": "row_permutation_resolution",
+      "maximum_absolute_difference": 4.440892098500626e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "row_permutation_covariance",
+      "maximum_absolute_difference": 7.589415207398531e-19,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "reversing_differences_resolution",
+      "maximum_absolute_difference": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "reversing_differences_covariance",
+      "maximum_absolute_difference": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "absolute_only_resolution_limit",
+      "maximum_absolute_difference": 6.661338147750939e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "absolute_only_covariance_limit",
+      "maximum_absolute_difference": 3.5236570605778894e-19,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check": "unidentified_undamped_source_rejected",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "files": {
+    "catalog_dd_resolution.py": "197edee80ea852dab43be1fb31326f5efd6941aae9bc9bee6693e456f6ae933e",
+    "check_catalog_dd_resolution.py": "e2d42ebfbbed517d5b543b0b1706350f741009888f37f292c450bb8ff5d857e2",
+    "invented_matrices.npz": "a4be4114e2b4e5df4c09b27a0e130f4ff8c1982aa85bc0be28b7707b32d198a9",
+    "resolution_hayward.py": "241b7226df090ab32356f983b764c06823fdadb551a5dec6ab48165fcfb6f320"
+  }
+}

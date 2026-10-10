@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "reviewed_utc": "2026-10-10T08:32:48.584847Z",
+  "scope": "Read-only source and saved-artifact review; no controls, restoration, solver, process signalling, data acquisition or Git action rerun. Only this review record was authored.",
+  "archive_sha256": "2df1c2b4a0ee49f1e5ee349f23cd73836b37ae2dc6efefd8331c1ec9dd23d282",
+  "check_results_sha256": "f98acd4d266bc9493a6b8ca6c3d4b0445c234d4fe3a636a5c03c59dbfe715a08",
+  "source_and_document_sha256": {
+    "capture.py": "d870803a9dfac759dc9c37ffa327ab4cf5138816672afc8b632de0b3296c2915",
+    "restore.py": "f61ec95b858ecadf956481209e3a22c135f389c411662fa5122919d4f90d1ae7",
+    "check.py": "d09fd9b32c8a170880cc1dd6292deb67ac3abca41fe968db81424444eded0600",
+    "README.md": "79c85ac5e6d2ba2c757812a037258357bf2442ca8d07455ac3da9849c258f6b6"
+  },
+  "verified_counts": {
+    "saved_checks": 15,
+    "historical_records": 6,
+    "historical_bytes": 42,
+    "actual_dependency_lookups": 29,
+    "terminal_native_packaging_pins": 32,
+    "unchanged_original_pins": 38
+  },
+  "findings": [
+    "All recorded checks passed, and current source/result/input hashes match the saved controls.",
+    "Six archived sentinel bytes match original and fresh-scratch files, their PID-ledger and summary/prepared joins, and full saved native identity fields; restored files have no write permission.",
+    "All 29 actual prepared/summary/publication lock lookups resolve to the exact archived records.",
+    "The restorer validates before creating an exclusive fresh destination, refuses existing/symlink paths, and neither queries nor signals historical PIDs.",
+    "The outer-accumulation receipt still explicitly records an unreaped detached driver and a null driver return code; no stronger claim is introduced."
+  ],
+  "limitations": [
+    "The 15 controls use a metadata-only checkout fixture; the documented full published-commit overlay still needs its own replay check.",
+    "This archive closes only six sentinel dependencies, not every source/data/runtime dependency.",
+    "Historical sentinel bytes do not establish current process liveness or authorize resuming old output directories."
+  ]
+}

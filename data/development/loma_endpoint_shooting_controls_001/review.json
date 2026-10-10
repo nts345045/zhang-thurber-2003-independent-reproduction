@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "reviewer": "/root/scientific_audit/ray_math_review",
+  "method": "Complete source/math read plus independent saved-table, finite-array, sampled-state and hash checks; no evaluator import, ODE, root search, action reintegration or native calculation.",
+  "checker_sha256": "5b4534798b6db441b858dbbf153f88410e23b001c3870513b3355b9c64c6f201",
+  "material_issue_found": false,
+  "sampled_phase_space_points_rechecked": 10096,
+  "maximum_saved_sample_domain_violation_km": 0.0,
+  "maximum_reconstructed_sample_invariant_error": 9.992007221626409e-16,
+  "maximum_original_node_kernel_action_identity_error_s": 4.163336342344337e-17,
+  "numerical_comparison_tolerances": {
+    "saved_vector_norm_reconstruction": 1e-26,
+    "kernel_action_identity_s": 1e-13
+  },
+  "limitations": [
+    "One root per topology and numerical sampled admissibility; no global root completeness, exact envelope or continuous-domain certificate.",
+    "Original 24 raw bottom-normal finite-step discrepancies remain failures; no extrapolation or flag promotion.",
+    "The four-baseline supplement repeats the same numerical implementation and is not an independent ODE validation.",
+    "No native correction, production ray behavior or inverse acceptance follows."
+  ],
+  "summary_sha256": "0ca944a3fa240721e62b193b7db6361604137d40f34bccabca8566ddf5e61945",
+  "execution_sha256": "d6ea437afbdb3858bd428d9870601a2d886e8e0903fc98c555e92a6b206d34b9",
+  "source_sha256": "f10e59a44a2c27d5b568d704194eee926ffd959674e676b3d312c6b1e3c0e367",
+  "original_input_pins": 3,
+  "original_output_pins": 8,
+  "input_sha256": {
+    "data/development/loma_endpoint_shooting_controls_001/summary.json": "0ca944a3fa240721e62b193b7db6361604137d40f34bccabca8566ddf5e61945",
+    "diagnostics/check_endpoint_shooting.py": "f10e59a44a2c27d5b568d704194eee926ffd959674e676b3d312c6b1e3c0e367",
+    "diagnostics/endpoint_connector.py": "c5848169606ae0f49071e8067dd88029e7ba83756fd700700059182c5ce28857",
+    "data/development/loma_endpoint_connector_next_step_001/shooting_control.md": "9c85218a847eaf94d68ec8b7bd2c17df19d1358b363dd153c2efa354912140bc",
+    "data/development/loma_endpoint_shooting_controls_001/baseline_results.json": "1c352d8a38391d2731eb1c0523c7aa9377d4a1c230684b69e2c2ec564128e376",
+    "data/development/loma_endpoint_shooting_controls_001/comparisons.json": "3843ce9c97a92e55c7e72e29900ca48eb8d3c130f0f4786f9b8705fc74301e6b",
+    "data/development/loma_endpoint_shooting_controls_001/execution.json": "d6ea437afbdb3858bd428d9870601a2d886e8e0903fc98c555e92a6b206d34b9",
+    "data/development/loma_endpoint_shooting_controls_001/invented_inputs.json": "4136942ca995741e6d792cfa45441ac06a6f6d5832261a1d003128eb9a40cb69",
+    "data/development/loma_endpoint_shooting_controls_001/perturbations.json": "66a3e3eba57e694244b0ccb7399d15786feff03c38287607e07261d6a781fe26",
+    "data/development/loma_endpoint_shooting_controls_001/source/check_endpoint_shooting.py": "f10e59a44a2c27d5b568d704194eee926ffd959674e676b3d312c6b1e3c0e367",
+    "data/development/loma_endpoint_shooting_controls_001/source/endpoint_connector.py": "c5848169606ae0f49071e8067dd88029e7ba83756fd700700059182c5ce28857",
+    "data/development/loma_endpoint_shooting_controls_001/source/shooting_control.md": "9c85218a847eaf94d68ec8b7bd2c17df19d1358b363dd153c2efa354912140bc",
+    "data/development/loma_endpoint_shooting_controls_001/README.md": "409bf89e4fe4f515180a52fa861540ddb0cf42aa5752b9fec448b3223fa044b1"
+  },
+  "baseline_comparisons": 40,
+  "baseline_accuracy_passes": 40,
+  "baseline_selected_topologies": {
+    "both_zero_caps": 2,
+    "zero_last_cap": 12,
+    "zero_first_cap": 12,
+    "two_caps": 4,
+    "direct": 10
+  },
+  "perturbation_comparisons": 160,
+  "comparison_classes": {
+    "model": 80,
+    "central": 56,
+    "boundary": 24
+  },
+  "maximum_affine_time_error_s": 1.9653403904307254e-11,
+  "maximum_affine_source_norm_s_per_km": 1.0229664714373473e-13,
+  "maximum_affine_receiver_norm_s_per_km": 1.0229577978202866e-13,
+  "maximum_model_fd_discrepancy_s": 6.579948981511041e-10,
+  "maximum_central_endpoint_discrepancy_s_per_km": 6.131308809081103e-08,
+  "raw_boundary_failures": 24,
+  "boundary_error_reduction_factors": [
+    3.962300188058298,
+    4.015311604584527
+  ],
+  "math_review": [
+    "Hamiltonian full off-shell equations, positive action and original-node kernels have consistent signs.",
+    "Backward first-cap action and kernels enter with a minus sign; endpoint momenta keep the physical forward orientation.",
+    "Reduced zero-cap matching systems, tangential momentum matching and nonnegative bottom reaction are consistent for z<=B.",
+    "Strictly negative bilinear bottom reaction precheck rejects only an everywhere-negative face; mixed signs are tested on the candidate.",
+    "Original-node log-slowness columns are -v_j K_j. Affine oracles are separate; all trial models use the same trilinear action."
+  ],
+  "original_retention_gap": "Four mixed baselines were absent from original outputs; the separately pinned supplement supplies them without changing original results.",
+  "supplemental_summary_sha256": "616ff5cb6ff2e0150faf546802ea8ae4b7edd54074928f894af02552fa60fbd1"
+}

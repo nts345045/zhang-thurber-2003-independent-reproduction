@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "reviewed_utc": "2026-10-10T07:00:54.891675Z",
+  "summary_sha256": "538f0fad76bd28949d67bd769987732a463c64f2f23f7c91469479e40090d07b",
+  "source_sha256": {
+    "diagnostics/reconstruct_curvature_capture.py": "ed880bf7214a987fc9c83f7877d2b5beaeb291b7504a516ed00f49bd27ddf330",
+    "diagnostics/check_curvature_rational.py": "eeaa80dcff60ed84444af6c541b22528f9b9ea25ae2add5940c3fc48fcde5198"
+  },
+  "verified_source_count": 2,
+  "verified_artifact_count": 10,
+  "recorded_controls": 27,
+  "independent_saved_cases": 9,
+  "material_issue_found": false,
+  "method": "Read maintained/frozen numerical and control sources; rehash all declared sources/artifacts; independently reconstruct saved s dot y, actual-displacement dot y, displacement-difference squared, and exact declared recorded-total Armijo margins with Fraction.from_float. No control rerun, action evaluation or ray trace.",
+  "findings": [
+    "Exact rational sums retain the binary64 component values and row/axis order; actual computed sy and strict threshold decisions stay distinct.",
+    "Step times direction and actual rounded coordinate displacement remain separate.",
+    "Identity/node-order/dimension/nonfinite/retention gates and CLI group/order guards are consistent.",
+    "Saved action totals and the binary64 coefficient 1e-4 enter the declared exact algebra without reinterpretation as a continuous Fermat action.",
+    "The frozen 002 result removes generated-bytecode packaging while leaving reconstruction arithmetic unchanged."
+  ],
+  "limitations": [
+    "Exact fractions certify algebra of saved doubles only, not continuum curvature, informative L-BFGS memory or global/local ray stationarity.",
+    "Rounded dot reconstruction is compared numerically; signed zero representation is not a distinct Fraction value.",
+    "No native postprocessor run is assessed."
+  ]
+}

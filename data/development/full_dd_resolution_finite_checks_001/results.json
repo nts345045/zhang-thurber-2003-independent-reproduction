@@ -1,0 +1,283 @@
+{
+  "scope": "Invented linear algebra and identity controls only; no field inference or solver execution",
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/check_full_dd_resolution.py --output data/development/full_dd_resolution_finite_checks_001",
+  "passed": true,
+  "checks": [
+    {
+      "name": "redundant_two_pick_exact_covariance",
+      "passed": true,
+      "maximum_absolute_error": 1.734723475976807e-18,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "independent_DD_wrong_result_exhibited",
+      "passed": true,
+      "maximum_absolute_error": 2.168404344971009e-19,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "maintained_two_pick_resolution",
+      "passed": true,
+      "maximum_absolute_error": 2.220446049250313e-16,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "maintained_two_pick_covariance",
+      "passed": true,
+      "maximum_absolute_error": 2.168404344971009e-18,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "maintained_two_pick_unmasked_response",
+      "passed": true,
+      "maximum_absolute_error": 2.220446049250313e-16,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "overflow_control_ordinary_resolution_finite",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "overflow_control_ordinary_covariance_finite",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "reject_overflowed_unmasked_response_from_finite_inputs",
+      "passed": true
+    },
+    {
+      "name": "nonfinite_condition_number_representability",
+      "passed": true
+    },
+    {
+      "name": "finite_condition_number_representability",
+      "passed": true
+    },
+    {
+      "name": "ordered_duplicate_operator",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "ordered_duplicate_norms",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 3.068580498384232e-11
+    },
+    {
+      "name": "duplicate_norm_differs_from_coalesced_gram",
+      "passed": true
+    },
+    {
+      "name": "coupled_Schur_resolution_vs_joint_dense",
+      "passed": true,
+      "maximum_absolute_error": 1.27675647831893e-15,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "coupled_Schur_covariance_vs_joint_dense",
+      "passed": true,
+      "maximum_absolute_error": 4.2012834183813297e-19,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "coupled_Schur_unmasked_response_vs_joint_dense",
+      "passed": true,
+      "maximum_absolute_error": 4.468647674116255e-15,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "masked_resolution_differs_from_unmasked_response_control",
+      "passed": true,
+      "maximum_absolute_error": 3.191891195797325e-15,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "mask_control_changes_response",
+      "passed": true
+    },
+    {
+      "name": "source_blocks_are_coupled",
+      "passed": true
+    },
+    {
+      "name": "origin_and_model_are_coupled",
+      "passed": true
+    },
+    {
+      "name": "full_resolution_has_model_response_to_source",
+      "passed": true
+    },
+    {
+      "name": "single_pick_0_signed_linearity",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "single_pick_1_signed_linearity",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "single_pick_2_signed_linearity",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "single_pick_3_signed_linearity",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "single_pick_4_signed_linearity",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "single_pick_5_signed_linearity",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "deterministic_signed_pick_injection_covariance",
+      "passed": true,
+      "maximum_absolute_error": 1.5924219408380846e-18,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "independent_DD_noise_is_detectably_wrong",
+      "passed": true
+    },
+    {
+      "name": "DD_annihilates_shared_origin_shift",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "absolute_retains_shared_origin_shift",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "DD_annihilates_shared_pick_shift",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "native_shared_pick_incidence",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "arithmetic_tolerance": 2e-11
+    },
+    {
+      "name": "native_pick_IDs_and_blank_fields_preserved",
+      "passed": true
+    },
+    {
+      "name": "reject_inconsistent_native_sigma",
+      "passed": true
+    },
+    {
+      "name": "reject_inconsistent_native_epoch",
+      "passed": true
+    },
+    {
+      "name": "reject_inconsistent_native_arrival",
+      "passed": true
+    },
+    {
+      "name": "reject_inconsistent_native_type2",
+      "passed": true
+    },
+    {
+      "name": "maintained_source_unchanged_during_checks",
+      "passed": true
+    }
+  ],
+  "exact_two_pick_covariance": [
+    [
+      0.0025000000000000005,
+      0.0
+    ],
+    [
+      0.0,
+      0.0025000000000000005
+    ]
+  ],
+  "wrong_independent_DD_covariance": [
+    [
+      0.0018750000000000004,
+      0.0006249999999999999
+    ],
+    [
+      0.0006249999999999999,
+      0.0018750000000000001
+    ]
+  ],
+  "coupled_fixture": {
+    "events": 3,
+    "source_coordinates_per_event": 4,
+    "model_parameters": 3,
+    "primitive_picks": 6,
+    "observation_rows": 12,
+    "sigmas_s": [
+      0.03,
+      0.05,
+      0.07,
+      0.04,
+      0.06,
+      0.09
+    ],
+    "row_multipliers": [
+      0.8333333333333334,
+      0.4,
+      0.14285714285714288,
+      0.5625,
+      0.2916666666666667,
+      0.2777777777777778,
+      0.5692133864468973,
+      0.19912154640797278,
+      0.7412565345411802,
+      0.0,
+      0.6638072009250879,
+      0.20713061768725832
+    ],
+    "full_normal_condition_number": 470361.21758679464,
+    "diagnostics": {
+      "source_normal_rows": 12,
+      "source_solve_relative_residual": 2.6611198715841917e-16,
+      "model_schur_condition_number": 14.012380090683516,
+      "resolution_equation_relative_residual": 7.257134041686689e-16,
+      "noise_transfer_relative_residual": 5.66888763880862e-16
+    }
+  },
+  "source_sha256": {
+    "resolution_full_hayward.py": "8f773ca30f4280e75bd45694b9ad62788e2751e6395d797d617666215cfb6b15",
+    "check_full_dd_resolution.py": "f8c0df72c635effa279d022608f42eef9b7ff15f121427ed72d7bd47b1cf3ab8"
+  },
+  "versions": {
+    "python": "3.6.8",
+    "numpy": "1.19.5",
+    "scipy": "1.5.4"
+  },
+  "limitations": [
+    "Frozen linear design, row weights, masks, smoothing and column scaling.",
+    "Damping uses the exported entry norms, not a recomputed coalesced Gram diagonal.",
+    "Primitive pick sigmas are already in U; no extra 0.05 squared factor is used.",
+    "The algebra tests do not assess ray accuracy, nonlinear convergence or active source bounds."
+  ]
+}

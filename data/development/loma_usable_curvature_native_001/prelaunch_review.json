@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "reviewed_utc": "2026-10-10T08:12:35.870594Z",
+  "prepared_sha256": "cc395d02e117567dc7168d1616a82fab2ab7a4789969b841eb771d092da38d3c",
+  "launcher_sha256": "7ee792c4b0aa8326ce99cc43c30f7ec88f3400c0761809ca22215c0d6131050d",
+  "source_review_sha256": "fffb9485c50d38ae15dc9601a9e5bb63ba7f4ca9606a0151bcbed6a182c38f36",
+  "verified_original_pins": 882,
+  "verified_prepared_pins": 61,
+  "authorized_scope": "One isolated D native saved-Candidate replay at the unchanged reviewed C settings, with actual/observed parity and explicit five-table C comparison; no FMM construction, production source change or inversion.",
+  "findings": [
+    "Read the concrete wrapper diff, execution and cleanup path, shared helper, core diff and independent source review.",
+    "Actual finite trajectory neutrality is an output comparison, not an assumed condition. Different results remain saved.",
+    "The same full native identities and seed inputs remain pinned.",
+    "Fallback preserves existing failure semantics; computed positive curvature is not an exact-sign certificate."
+  ]
+}

@@ -72,9 +72,13 @@ def joint_resolution(A, L, source_columns, damping_coefficients, U,
         "noise_transfer_relative_residual": float(np.linalg.norm(Hq @ transfer - V) /
                                                   max(np.linalg.norm(V), 1e-300)),
     }
-    for result in (resolution, covariance):
+    for result in (resolution, covariance, physical_response):
+        if result is None:
+            continue
         if not np.all(np.isfinite(result)):
             raise ValueError("Nonfinite full-DD result")
+    if not all(np.isfinite(value) for value in diagnostics.values()):
+        raise ValueError("Nonfinite full-DD conditioning diagnostics")
     return resolution, covariance, physical_response, diagnostics
 
 

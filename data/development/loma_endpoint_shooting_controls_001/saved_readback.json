@@ -1,0 +1,1176 @@
+{
+  "status": "saved_arithmetic_readback_passed",
+  "summary_sha256": "0ca944a3fa240721e62b193b7db6361604137d40f34bccabca8566ddf5e61945",
+  "execution_sha256": "d6ea437afbdb3858bd428d9870601a2d886e8e0903fc98c555e92a6b206d34b9",
+  "source_sha256": "a346f77a101fcf7a05b6a1e9a3d5803df9a17d1e2028dcaf6f65eab353c2528d",
+  "input_pins": 3,
+  "output_pins": 8,
+  "saved_row_arithmetic_checks": 160,
+  "affine_comparisons": 40,
+  "affine_accuracy_passes": 40,
+  "max_affine_time_error_s": 1.9653403904307254e-11,
+  "max_affine_source_error_s_per_km": 1.0229664714373473e-13,
+  "max_affine_receiver_error_s_per_km": 1.0229577978202866e-13,
+  "model_comparisons": 80,
+  "max_model_discrepancy_s": 6.579948981511041e-10,
+  "model_discrepancy_by_h": [
+    {
+      "h": 1.52587890625e-05,
+      "comparisons": 32,
+      "maximum_absolute_discrepancy_s": 1.603825096267749e-12
+    },
+    {
+      "h": 9.5367431640625e-07,
+      "comparisons": 48,
+      "maximum_absolute_discrepancy_s": 6.579948981511041e-10
+    }
+  ],
+  "central_endpoint_comparisons": 56,
+  "max_central_endpoint_discrepancy_s_per_km": 6.131308809081103e-08,
+  "boundary_comparisons": 24,
+  "boundary_trends": [
+    {
+      "setting": "base",
+      "mixed": false,
+      "both_bottom": false,
+      "side": 1,
+      "h_km": [
+        9.5367431640625e-07,
+        5.960464477539063e-08,
+        3.725290298461914e-09
+      ],
+      "absolute_secant_discrepancies_s_per_km": [
+        6.264652620302513e-05,
+        1.5661236830055714e-05,
+        3.900378942489624e-06
+      ],
+      "successive_error_ratios": [
+        4.000100814694229,
+        4.015311604584527
+      ],
+      "smallest_step_raw_pass_3e_minus_6": false
+    },
+    {
+      "setting": "base",
+      "mixed": true,
+      "both_bottom": false,
+      "side": 1,
+      "h_km": [
+        9.5367431640625e-07,
+        5.960464477539063e-08,
+        3.725290298461914e-09
+      ],
+      "absolute_secant_discrepancies_s_per_km": [
+        6.265068077482283e-05,
+        1.566181890666485e-05,
+        3.917142748832703e-06
+      ],
+      "successive_error_ratios": [
+        4.000217417158487,
+        3.998276271992392
+      ],
+      "smallest_step_raw_pass_3e_minus_6": false
+    },
+    {
+      "setting": "base",
+      "mixed": true,
+      "both_bottom": true,
+      "side": 0,
+      "h_km": [
+        9.5367431640625e-07,
+        5.960464477539063e-08,
+        3.725290298461914e-09
+      ],
+      "absolute_secant_discrepancies_s_per_km": [
+        6.278237560763955e-05,
+        1.5696976333856583e-05,
+        3.959983587265015e-06
+      ],
+      "successive_error_ratios": [
+        3.99964772019342,
+        3.9638993414863593
+      ],
+      "smallest_step_raw_pass_3e_minus_6": false
+    },
+    {
+      "setting": "base",
+      "mixed": true,
+      "both_bottom": true,
+      "side": 1,
+      "h_km": [
+        9.5367431640625e-07,
+        5.960464477539063e-08,
+        3.725290298461914e-09
+      ],
+      "absolute_secant_discrepancies_s_per_km": [
+        6.26508190180175e-05,
+        1.5664263628423214e-05,
+        3.948807716369629e-06
+      ],
+      "successive_error_ratios": [
+        3.9996019285793913,
+        3.966833726415094
+      ],
+      "smallest_step_raw_pass_3e_minus_6": false
+    },
+    {
+      "setting": "tight",
+      "mixed": false,
+      "both_bottom": false,
+      "side": 1,
+      "h_km": [
+        9.5367431640625e-07,
+        5.960464477539063e-08,
+        3.725290298461914e-09
+      ],
+      "absolute_secant_discrepancies_s_per_km": [
+        6.264652620302513e-05,
+        1.5661236830055714e-05,
+        3.900378942489624e-06
+      ],
+      "successive_error_ratios": [
+        4.000100814694229,
+        4.015311604584527
+      ],
+      "smallest_step_raw_pass_3e_minus_6": false
+    },
+    {
+      "setting": "tight",
+      "mixed": true,
+      "both_bottom": false,
+      "side": 1,
+      "h_km": [
+        9.5367431640625e-07,
+        5.960464477539063e-08,
+        3.725290298461914e-09
+      ],
+      "absolute_secant_discrepancies_s_per_km": [
+        6.265068077482283e-05,
+        1.566181890666485e-05,
+        3.917142748832703e-06
+      ],
+      "successive_error_ratios": [
+        4.000217417158487,
+        3.998276271992392
+      ],
+      "smallest_step_raw_pass_3e_minus_6": false
+    },
+    {
+      "setting": "tight",
+      "mixed": true,
+      "both_bottom": true,
+      "side": 0,
+      "h_km": [
+        9.5367431640625e-07,
+        5.960464477539063e-08,
+        3.725290298461914e-09
+      ],
+      "absolute_secant_discrepancies_s_per_km": [
+        6.278236833168194e-05,
+        1.5698024071753025e-05,
+        3.961846232414246e-06
+      ],
+      "successive_error_ratios": [
+        3.99938030701917,
+        3.962300188058298
+      ],
+      "smallest_step_raw_pass_3e_minus_6": false
+    },
+    {
+      "setting": "tight",
+      "mixed": true,
+      "both_bottom": true,
+      "side": 1,
+      "h_km": [
+        9.5367431640625e-07,
+        5.960464477539063e-08,
+        3.725290298461914e-09
+      ],
+      "absolute_secant_discrepancies_s_per_km": [
+        6.265085539780557e-05,
+        1.5665311366319656e-05,
+        3.95067036151886e-06
+      ],
+      "successive_error_ratios": [
+        3.999336746826789,
+        3.965228665723715
+      ],
+      "smallest_step_raw_pass_3e_minus_6": false
+    }
+  ],
+  "boundary_raw_failures_3e_minus_6": 24,
+  "maximum_model_fd_precision_change_s": 2.1827872842550278e-11,
+  "maximum_endpoint_fd_precision_change_s_per_km": 1.862645149230957e-09,
+  "precision_comparisons": [
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 0,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 0,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 1,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 1,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 2,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 2,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 3,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 3,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 4,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 4,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 5,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 5,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 6,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 6,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 7,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": false,
+        "both_bottom": false,
+        "node": 7,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": false,
+        "both_bottom": false,
+        "side": 0,
+        "axis": 0,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": false,
+        "both_bottom": false,
+        "side": 0,
+        "axis": 0,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": false,
+        "both_bottom": false,
+        "side": 0,
+        "axis": 1,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": false,
+        "both_bottom": false,
+        "side": 0,
+        "axis": 1,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": false,
+        "both_bottom": false,
+        "side": 0,
+        "axis": 2,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": false,
+        "both_bottom": false,
+        "side": 0,
+        "axis": 2,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": false,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 0,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": false,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 0,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": false,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 1,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": false,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 1,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": false,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 2,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": false,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 2,
+        "h": 5.960464477539063e-08
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": false,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 2,
+        "h": 3.725290298461914e-09
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 0,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 0,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 1,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 1,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 2,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 2,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 3,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 3,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 4,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 4,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 5,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 5,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 6,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 6,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 7,
+        "h": 1.52587890625e-05
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": false,
+        "node": 7,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": false,
+        "side": 0,
+        "axis": 0,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": false,
+        "side": 0,
+        "axis": 0,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": false,
+        "side": 0,
+        "axis": 1,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": false,
+        "side": 0,
+        "axis": 1,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": false,
+        "side": 0,
+        "axis": 2,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": false,
+        "side": 0,
+        "axis": 2,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 0,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 0,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 1,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 1,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 2,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 2,
+        "h": 5.960464477539063e-08
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": false,
+        "side": 1,
+        "axis": 2,
+        "h": 3.725290298461914e-09
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": true,
+        "node": 0,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": true,
+        "node": 1,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": true,
+        "node": 2,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": true,
+        "node": 3,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 0.0
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": true,
+        "node": 4,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 1.0913936421275139e-11
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": true,
+        "node": 5,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 2.1827872842550278e-11
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": true,
+        "node": 6,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 7.275957614183426e-12
+    },
+    {
+      "key": {
+        "kind": "model",
+        "mixed": true,
+        "both_bottom": true,
+        "node": 7,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s",
+      "absolute_change": 1.8189894035458565e-11
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 0,
+        "axis": 0,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 5.4569682106375694e-12
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 0,
+        "axis": 0,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 7.275957614183426e-12
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 0,
+        "axis": 1,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 1.3642420526593924e-12
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 0,
+        "axis": 1,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 1.8189894035458565e-12
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 0,
+        "axis": 2,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 7.275957614183426e-12
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 0,
+        "axis": 2,
+        "h": 5.960464477539063e-08
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 1.0477378964424133e-09
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 0,
+        "axis": 2,
+        "h": 3.725290298461914e-09
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 1.862645149230957e-09
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 1,
+        "axis": 0,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 4.547473508864641e-13
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 1,
+        "axis": 0,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 9.094947017729282e-12
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 1,
+        "axis": 1,
+        "h": 7.62939453125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 2.2737367544323206e-12
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 1,
+        "axis": 1,
+        "h": 1.9073486328125e-06
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 9.094947017729282e-12
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 1,
+        "axis": 2,
+        "h": 9.5367431640625e-07
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 3.637978807091713e-11
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 1,
+        "axis": 2,
+        "h": 5.960464477539063e-08
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 1.0477378964424133e-09
+    },
+    {
+      "key": {
+        "kind": "endpoint",
+        "mixed": true,
+        "both_bottom": true,
+        "side": 1,
+        "axis": 2,
+        "h": 3.725290298461914e-09
+      },
+      "quantity": "finite_difference_s_per_km",
+      "absolute_change": 1.862645149230957e-09
+    }
+  ],
+  "affine_excess_ratios": [
+    {
+      "setting": "base",
+      "case": "scalar_regime_8",
+      "oracle_excess_s": 1.5666218809527008e-05,
+      "observed_excess_s": 1.566621880952357e-05,
+      "ratio": 0.9999999999997805
+    },
+    {
+      "setting": "base",
+      "case": "scalar_regime_12",
+      "oracle_excess_s": 2.4471742463991646e-07,
+      "observed_excess_s": 2.447174246578143e-07,
+      "ratio": 1.0000000000731368
+    },
+    {
+      "setting": "base",
+      "case": "scalar_regime_16",
+      "oracle_excess_s": 3.823644120929797e-09,
+      "observed_excess_s": 3.823644137423976e-09,
+      "ratio": 1.0000000043137327
+    },
+    {
+      "setting": "tight",
+      "case": "scalar_regime_8",
+      "oracle_excess_s": 1.5666218809527008e-05,
+      "observed_excess_s": 1.566621880952357e-05,
+      "ratio": 0.9999999999997805
+    },
+    {
+      "setting": "tight",
+      "case": "scalar_regime_12",
+      "oracle_excess_s": 2.4471742463991646e-07,
+      "observed_excess_s": 2.447174246578143e-07,
+      "ratio": 1.0000000000731368
+    },
+    {
+      "setting": "tight",
+      "case": "scalar_regime_16",
+      "oracle_excess_s": 3.823644120929797e-09,
+      "observed_excess_s": 3.8236441096684e-09,
+      "ratio": 0.9999999970548
+    }
+  ],
+  "limitations": [
+    "No shooting, ODE, root search or native calculation was rerun.",
+    "Mixed unperturbed branch trajectories/actions were not saved; stored baseline kernels/momenta and secants are source-audited outputs, not independently reintegrated here.",
+    "Finite differences do not certify derivatives or global branch selection.",
+    "All raw boundary discrepancies are retained; none are relabeled as numerical accuracy passes."
+  ]
+}

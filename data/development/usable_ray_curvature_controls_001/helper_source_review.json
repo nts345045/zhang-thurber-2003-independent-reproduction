@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "reviewer": "ray_math_review",
+  "method": "Read-only helper/preparer/caller-diff source review and terminal saved-file hash readback; authored invented controls are not presented as an independent review of themselves.",
+  "summary_sha256": "ae70b7270161fa42f5fb4ea4b0046effb0a54291d139ad60d0a4e3197d12f6db",
+  "execution_sha256": "a195194fb7c8266f5b1c9b5585541e67061def8016b1241be6ffe92ca5250167",
+  "prepared_sha256": "eff5bffcb2f37e38e6bc646bc5aa425201b30b93de542ec8430ec2e1b341f524",
+  "source_sha256": {
+    "diagnostics/usable_ray_curvature.hpp": "78bfacf51dba07e466ad42117dcaf20fde529eeb4f2877f1a261672c0e7b65db",
+    "diagnostics/prepare_usable_ray_curvature.py": "314b6b6c4c3b14af0696eb2edda567fe5547184de7b5a8d4aa9488d29fa366db",
+    "diagnostics/check_usable_ray_curvature.cpp": "acb562b8d5f2b485684a51dc9e658c8a359c76d80171a48e0d93c5e6655e682c",
+    "diagnostics/run_usable_ray_curvature_checks.py": "19d73c9c4feef2bb741e27fea6da17dbf1cab0e11801d50c04424fe76c1e1844"
+  },
+  "verified_pins": {
+    "inputs": 71,
+    "source": 45,
+    "output": 74
+  },
+  "checks_per_variant": {
+    "C": 183,
+    "D": 183
+  },
+  "exact_parity_files": 11,
+  "findings": [
+    "No material helper/caller sign, indexing, operation-order, or fallback exception defect found in the reviewed scope.",
+    "Metric construction remains after the original first loop; accepted finite arithmetic preserves the old expressions.",
+    "Zero/positive finite slope is not claimed strict descent; the original caller decides fallback.",
+    "Invalid memory uses the existing cone fallback and clear; invalid fallback and final strict-descent failure still throw.",
+    "No Fermat action, gradient, Armijo, stopping threshold, budget, production source, or native geometry change."
+  ],
+  "limitations": [
+    "Computed positive dot and finite reciprocal do not certify an exact positive curvature sign or an informative secant.",
+    "The C/D native diagnostic has not been executed by this package.",
+    "Independent review of the authored controls and terminal evidence is still required before a native replay.",
+    "Both compile logs preserve the warning in the unused renamed frozen native main."
+  ]
+}

@@ -1,0 +1,223 @@
+--- diagnostics/run_positive_curvature.py
++++ diagnostics/run_usable_curvature_native.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Freeze the reviewed isolated positive-curvature retention experiment."""
++"""Freeze and replay the reviewed isolated usable-curvature diagnostic."""
+ import argparse
+ import csv
+ import gzip
+@@ -70,22 +70,27 @@
+ 
+ 
+ def prepare(args, out):
+-    controls, capture, build = [local(v) for v in (args.controls, args.capture, args.build)]
+-    baseline = local(args.baseline)
++    controls, baseline, build = [local(v) for v in (args.controls, args.baseline, args.build)]
+     for a in (out, build):
+         need(not a.exists(), 'Fresh output/build required')
+-        for b in (controls, capture, baseline, build if a == out else out):
++        for b in (controls, baseline, build if a == out else out):
+             need(a != b and a not in b.parents and b not in a.parents, 'Disjoint paths required')
+-    tests, tests_review = [load(controls / n) for n in ('summary.json', 'review.json')]
+-    native, native_review = [load(capture / n) for n in ('summary.json', 'review.json')]
++    tests, tests_review, tests_ledger, helper_review = [load(controls / n) for n in
++        ('summary.json', 'review.json', 'execution.json', 'helper_source_review.json')]
++    native, native_review, native_ledger = [load(baseline / n) for n in ('summary.json', 'review.json', 'execution.json')]
+     need(tests['status'] == tests_review['status'] == 'passed' and
+          tests_review['summary_sha256'] == sha(controls / 'summary.json'), 'Missing/stale invented control review')
+-    need(native['status'] == 'completed_neutral_curvature_capture' and native_review['status'] == 'passed_saved_capture_review' and
+-         native_review['summary_sha256'] == sha(capture / 'summary.json'), 'Missing/stale native capture review')
+-    need(native['old_tables_byte_identical'] and native['observed_paths_and_arrays_match_unobserved_variant'],
+-         'Capture did not preserve original B outputs')
++    need(tests_ledger['status'] == 'completed' and tests_ledger['return_code'] == 0 and
++         helper_review['status'] == 'passed' and helper_review['summary_sha256'] == sha(controls / 'summary.json') and
++         helper_review['execution_sha256'] == sha(controls / 'execution.json'), 'Missing/stale terminal helper review')
++    need(native['status'] == 'completed_positive_curvature_diagnostic' and native_review['status'] == 'passed' and
++         native_review['summary_sha256'] == sha(baseline / 'summary.json') and
++         native_ledger['status'] == 'completed' and native_ledger['return_code'] == 0 and
++         native_ledger['summary_sha256'] == sha(baseline / 'summary.json'), 'Missing/stale terminal C review')
++    need(native['observed_paths_and_arrays_match_unobserved_variant'], 'C observation neutrality missing')
+     need((native['path_spacing_km'], native['field_spacing_km'], native['maximum_updates'], native['threads']) ==
+-         (.03125, .125, 1000, 1), 'Changed B settings')
++         (.03125, .125, 1000, 1), 'Changed C settings')
++    need((native['time_limit_s'], native['source_vector_limit_s_per_km']) == (2.5e-5, 3e-6), 'Changed accuracy limits')
+     pins = {}
+ 
+     def pin(path, expected=None):
+@@ -94,81 +99,76 @@
+         pins[str(path.relative_to(ROOT))] = actual
+ 
+     for name, digest in tests['input_sha256'].items():
++        pin(local(name), digest)
++    for name, digest in tests['source_sha256'].items():
+         pin(local(name), digest)
+     for name, digest in tests['output_sha256'].items():
+         pin(controls / name, digest)
+     for name, digest in native['input_sha256'].items():
+         pin(local(name), digest)
+     for name, digest in native['output_sha256'].items():
+-        pin(capture / name, digest)
+-    for directory in (controls, capture):
++        pin(baseline / name, digest)
++    for directory in (controls, baseline):
+         for name in ('summary.json', 'review.json', 'execution.json'):
+             pin(directory / name)
+-    for name in ('controller_completion.json', 'packaging_receipt.json'):
+-        pin(capture / name)
++    pin(controls / 'helper_source_review.json')
++    pin(baseline / 'controller_completion.json')
+     pin(Path(__file__).resolve())
+-    b_summary, b_review, b_ledger = [load(baseline / n) for n in ('summary.json', 'review.json', 'execution.json')]
+-    need(b_summary['status'] == 'completed_seed_loaded_B_neutrality' and b_review['status'] == 'passed' and
+-         b_review['summary_sha256'] == sha(baseline / 'summary.json') and b_ledger['status'] == 'completed' and
+-         b_ledger['return_code'] == 0 and b_summary['original_five_tables_byte_identical'], 'Missing reviewed seed-loaded B parity')
+-    need(b_summary['native_context'] == native['native_context'], 'B/capture native context differs')
+-    for name in ('summary.json', 'review.json', 'execution.json', 'prepared.json', 'controller_completion.json'):
+-        pin(baseline / name)
+-    for name, digest in b_summary['output_sha256'].items():
+-        pin(baseline / name, digest)
+-    for name in TABLES:
+-        need(sha(baseline / name) == native['expected_old_table_sha256'][name], 'B original-table parity changed')
+-    source = controls / 'source/positive_curvature'
+-    expected_source = {name[len('positive_curvature/'):]: digest for name, digest in tests['source_sha256'].items()
+-                       if name.startswith('positive_curvature/')}
+-    need(expected_source and set(expected_source) ==
++    source = controls / 'source/D'
++    prefix = str(source.relative_to(ROOT)) + '/'
++    expected_source = {name[len(prefix):]: digest for name, digest in tests['source_sha256'].items()
++                       if name.startswith(prefix)}
++    need(len(expected_source) == 21 and set(expected_source) ==
+          {str(p.relative_to(source)) for p in source.rglob('*') if p.is_file()}, 'Source inventory mismatch')
++    baseline_source = native['source_sha256']
++    need(len(baseline_source) == 20 and set(expected_source) - set(baseline_source) ==
++         {'diagnostics/usable_ray_curvature.hpp'} and not set(baseline_source) - set(expected_source), 'Unexpected source roster')
++    changed = set()
+     for name, digest in expected_source.items():
+         pin(source / name, digest)
+-    for name in ('src/core.hpp', 'diagnostics/observed_optimizer.hpp'):
+-        before = (baseline / 'source' / name).read_text()
+-        after = (source / name).read_text()
+-        marker = '      if (sy > 1e-14) {'
+-        need(before.count(marker) == 1 and after == before.replace(marker, '      if (sy > 0) {', 1),
+-             'Not exactly the reviewed one-literal retention change: ' + name)
+-    for name in expected_source:
+-        if name not in ('src/core.hpp', 'diagnostics/observed_optimizer.hpp', 'diagnostics/extracted_retention.hpp'):
+-            need(sha(source / name) == sha(baseline / 'source' / name), 'Other source changed: ' + name)
+-    need(sha(Path(native['compiler'])) == native['compiler_sha256'], 'Compiler changed')
++        if name in baseline_source:
++            pin(baseline / 'source' / name, baseline_source[name])
++            need(sha(controls / 'source/C' / name) == baseline_source[name], 'Invented C differs from native C')
++            if digest != baseline_source[name]:
++                changed.add(name)
++    need(changed == {'src/core.hpp', 'diagnostics/observed_optimizer.hpp'}, 'Unexpected C/D change')
++    need(tests['prepared_sha256'] == 'eff5bffcb2f37e38e6bc646bc5aa425201b30b93de542ec8430ec2e1b341f524',
++         'Unexpected reviewed source preparation')
++    source_plan = ROOT / 'data/development/usable_ray_curvature_prepared_001'
++    need(sha(source_plan / 'prepared.json') == tests['prepared_sha256'], 'Source plan changed')
++    source_manifest = load(source_plan / 'prepared.json')
++    for name, digest in expected_source.items():
++        need(source_manifest['source_sha256']['D/' + name] == digest, 'Candidate source differs from reviewed preparation')
++    need(sha(Path(native['compiler'])) == native['compiler_sha256'] == tests['compiler_sha256'], 'Compiler changed')
+     context = native['native_context']
+-    need(rows(capture / 'identified_ray.csv') == [context], 'Native context differs')
++    need(len(context) == 199 and rows(baseline / 'identified_ray.csv') == [context], 'Native context differs')
+     for name in ('curvature_initialization.csv', 'curvature_seed_metadata.csv'):
+-        sidecar = load(capture / (name + '.identifiers.json'))
+-        need(sidecar['file_sha256'] == sha(capture / name) and sidecar['native_context'] == context and
+-             sidecar['context_sha256'] == sha(capture / 'identified_ray.csv'), 'Saved seed identity/hash mismatch')
++        sidecar = load(baseline / 'inputs' / (name + '.identifiers.json'))
++        need(sidecar['file_sha256'] == sha(baseline / 'inputs' / name) and sidecar['native_context'] == context and
++             sidecar['context_sha256'] == sha(baseline / 'identified_ray.csv'), 'Saved seed identity/hash mismatch')
++    expected = {name: sha(baseline / name) for name in TABLES}
++    need(expected == native_review['diagnostic_C_table_sha256'], 'Reviewed C tables changed')
+     out.mkdir(parents=True); build.mkdir(parents=True)
+     shutil.copytree(str(source), str(out / 'source'))
+-    shutil.copytree(str(capture / 'inputs'), str(out / 'inputs'))
++    shutil.copytree(str(baseline / 'inputs'), str(out / 'inputs'))
+     shutil.copyfile(str(Path(__file__).resolve()), str(out / 'launcher.py'))
+-    shutil.copyfile(str(capture / 'identified_ray.csv'), str(out / 'identified_ray.csv'))
+-    for name in ('curvature_initialization.csv', 'curvature_seed_metadata.csv'):
+-        for suffix in ('', '.identifiers.json'):
+-            shutil.copyfile(str(capture / (name + suffix)), str(out / 'inputs' / (name + suffix)))
+-    for directory, label in ((controls, 'controls'), (capture, 'capture'), (baseline, 'seed_loaded_B')):
++    shutil.copyfile(str(baseline / 'identified_ray.csv'), str(out / 'identified_ray.csv'))
++    for directory, label in ((controls, 'usable_controls'), (baseline, 'positive_C')):
+         for name in ('summary.json', 'review.json', 'execution.json'):
+             shutil.copyfile(str(directory / name), str(out / 'inputs' / (label + '_' + name)))
+-    prepared_source = ROOT / 'data/development/seeded_retention_prepared_001'
+-    pin(prepared_source / 'seed_loader_driver.diff')
+-    shutil.copyfile(str(prepared_source / 'seed_loader_driver.diff'), str(out / 'seed_loader_driver.diff'))
+-    for name in ('core.hpp.retention.diff', 'observed_optimizer.hpp.retention.diff'):
+-        pin(prepared_source / name)
+-        shutil.copyfile(str(prepared_source / name), str(out / name))
+-    expected = {name: sha(capture / name) for name in TABLES}
+-    need(expected == native['expected_old_table_sha256'], 'Original B outputs differ from neutral capture')
+-    result = dict(status='prepared_positive_curvature_diagnostic', prepared_utc=utc(), native_context=context,
++    for name in ('core.hpp.diff', 'observed_optimizer.hpp.diff'):
++        pin(source_plan / name, source_manifest['source_sha256'][name])
++        shutil.copyfile(str(source_plan / name), str(out / name))
++    result = dict(status='prepared_usable_curvature_diagnostic', prepared_utc=utc(), native_context=context,
+         input_sha256=pins, source_sha256=expected_source, launcher_sha256=sha(Path(__file__).resolve()),
+         compiler=native['compiler'], compiler_sha256=native['compiler_sha256'], build=str(build.relative_to(ROOT)),
+         path_spacing_km=.03125, field_spacing_km=.125, maximum_updates=1000, threads=1,
+         expected_old_table_sha256=expected, time_limit_s=2.5e-5, source_vector_limit_s_per_km=3e-6,
+-        candidate_basis='Full raw Candidate and metadata from reviewed neutral B capture; original trace performs its unchanged resampling',
+-        baseline_retention_predicate='sy > 1e-14', diagnostic_retention_predicate='sy > 0',
+-        seed_loaded_B_directory=str(baseline.relative_to(ROOT)), seed_loaded_B_review_sha256=sha(baseline / 'review.json'),
+-        safe_general_retention_rule_claimed=False, baseline_results=b_summary['results'])
++        candidate_basis='Same full raw Candidate and metadata used in reviewed C; original trace performs unchanged resampling; no FMM field is constructed',
++        baseline_directory=str(baseline.relative_to(ROOT)), baseline_review_sha256=sha(baseline / 'review.json'),
++        baseline_retention_predicate='sy > 0', diagnostic_retention_predicate='finite positive computed sy and reciprocal; usable current-metric two-loop arithmetic',
++        inherited_action_accumulator='long double outer sum, returning double, from baseline C',
++        exact_curvature_sign_claimed=False, production_adoption=False, baseline_results=native['results'])
+     result['prepared_file_sha256'] = {str(p.relative_to(out)): sha(p) for p in out.rglob('*') if p.is_file()}
+     save(out / 'prepared.json', result)
+     print(str(out / 'prepared.json'), flush=True)
+@@ -176,7 +176,7 @@
+ 
+ def run(out):
+     prepared, review = load(out / 'prepared.json'), load(out / 'prelaunch_review.json')
+-    need(prepared['status'] == 'prepared_positive_curvature_diagnostic' and review['status'] == 'passed' and
++    need(prepared['status'] == 'prepared_usable_curvature_diagnostic' and review['status'] == 'passed' and
+          review['prepared_sha256'] == sha(out / 'prepared.json') and
+          review['launcher_sha256'] == prepared['launcher_sha256'] == sha(Path(__file__).resolve()), 'Stale launch review')
+ 
+@@ -273,16 +273,18 @@
+                  context_sha256=sha(out / 'identified_ray.csv'),
+                  basis='Synthetic initial geometry retains provider event/origin/channel identities; no observed pick is invented'))
+         verify()
+-        summary.update(status='completed_positive_curvature_diagnostic', results=values, continuous_reference_comparison=comparisons,
++        summary.update(status='completed_usable_curvature_diagnostic', results=values, continuous_reference_comparison=comparisons,
+                        selected_run_id=min(values, key=lambda r: float(r['time_s']))['run_id'],
+                        observed_paths_and_arrays_match_unobserved_variant=True,
+                        baseline_table_equalities={name: sha(out / name) == digest for name, digest in prepared['expected_old_table_sha256'].items()},
+                        production_adoption=False, scientific_success=False,
+-                       limitations=['Only two retention literals in actual/observed trace changed from sy>1e-14 to sy>0.',
+-                                    'Same B outer action sum, gradients, raw saved seed, resampling, Armijo, stopping and1000-update budget.',
+-                                    'Seed loading separately preserves all five original B tables byte-for-byte.',
+-                                    'Positive curvature alone is unsafe generally: invented controls preserve subnormal reciprocal overflow and positive infinity admission.',
+-                                    'Native completion or local stopping does not establish informative curvature, global first arrival, general convergence or inversion readiness.'])
++                       limitations=['Shared usable-curvature helper changes admission and checks current-metric two-loop arithmetic in actual/observed C source only.',
++                                    'Same C long-double outer action sum, gradients, raw saved seed, resampling, Armijo, stopping and 1000-update budget.',
++                                    'Every C numerical table is compared by full byte hash; differences, if any, remain explicit and are not relabeled neutral.',
++                                    'Positive finite computed curvature is not an exact-sign or informative-curvature certificate; cancellation can change the sign.',
++                                    'Unusable memory uses the existing cone fallback; an unusable fallback preserves its exception, with no accepted/converged Ray.',
++                                    'Native completion or local stopping does not establish global first arrival, general convergence, production adoption or inversion readiness.'])
++        summary['native_C_neutrality_pass'] = all(summary['baseline_table_equalities'].values())
+         execution.update(status='completed', return_code=0)
+     except BaseException as error:
+         if child is not None:
+@@ -319,10 +321,9 @@
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument('--phase', choices=('prepare', 'run'), required=True)
+     parser.add_argument('--output', required=True)
+-    parser.add_argument('--controls', default='data/development/seeded_retention_controls_001')
+-    parser.add_argument('--capture', default='data/development/loma_curvature_capture_native_001')
++    parser.add_argument('--controls', default='data/development/usable_ray_curvature_controls_001')
+     parser.add_argument('--build')
+-    parser.add_argument('--baseline', default='data/development/loma_seed_loaded_b_native_001')
++    parser.add_argument('--baseline', default='data/development/loma_positive_curvature_native_001')
+     args = parser.parse_args()
+     os.chdir(str(ROOT)); out = local(args.output)
+     if args.phase == 'prepare':

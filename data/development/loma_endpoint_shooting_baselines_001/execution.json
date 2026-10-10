@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "command": [
+    "diagnostics/replay_endpoint_shooting_baselines.py",
+    "--output",
+    "data/development/loma_endpoint_shooting_baselines_001"
+  ],
+  "input_sha256": {
+    "diagnostics/replay_endpoint_shooting_baselines.py": "ac00f9671d62f36b7e5a2e539eb9a5c147e8964936a1e96f3a58047f28dc6a84",
+    "data/development/loma_endpoint_shooting_controls_001/source/check_endpoint_shooting.py": "f10e59a44a2c27d5b568d704194eee926ffd959674e676b3d312c6b1e3c0e367",
+    "data/development/loma_endpoint_shooting_controls_001/invented_inputs.json": "4136942ca995741e6d792cfa45441ac06a6f6d5832261a1d003128eb9a40cb69",
+    "data/development/loma_endpoint_shooting_controls_001/perturbations.json": "66a3e3eba57e694244b0ccb7399d15786feff03c38287607e07261d6a781fe26",
+    "data/development/loma_endpoint_shooting_controls_001/execution.json": "d6ea437afbdb3858bd428d9870601a2d886e8e0903fc98c555e92a6b206d34b9",
+    "data/development/loma_endpoint_shooting_controls_001/summary.json": "0ca944a3fa240721e62b193b7db6361604137d40f34bccabca8566ddf5e61945"
+  },
+  "environment": {
+    "python": "3.11.9 (main, Sep 24 2024, 09:39:15) [GCC 8.5.0 20210514 (Red Hat 8.5.0-22)]",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1"
+  },
+  "started_utc": "2026-10-10T08:22:08Z",
+  "scope": "Only omitted mixed unperturbed baselines; no perturbed/native calculations",
+  "return_code": 0,
+  "finished_utc": "2026-10-10T08:22:14Z"
+}

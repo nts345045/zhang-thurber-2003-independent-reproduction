@@ -1,0 +1,1376 @@
+{
+  "scope": "Completed safeguarded curvature, endpoint-shooting and covariance controls; failure summary, report and historical replay closure. No production ray-optimizer adoption or newly accepted field inversion.",
+  "created_utc": "2026-10-10T08:37:27.832518Z",
+  "predecessor_main": "b560c2eed85f2ab89d4bfe4b68fde920d42c22e0",
+  "predecessor_integration": "b4a7473c0cdfff34aead146fc7d32332d2f9060f",
+  "validation": {
+    "status": "passed",
+    "report_sha256": "d61c637c2f45a3ee0405f8ef64e46285d83201c245da5e5c68f0d88859c93902",
+    "compile_passes": 2,
+    "final_tex_warnings": [],
+    "local_links_checked": 134,
+    "missing_paths": [],
+    "visual_review_pages": [
+      34,
+      36,
+      38,
+      39
+    ],
+    "visual_review_basis": "Page34 unchanged from preceding compile; pages36/38/39 rendered and inspected from the final PDF. No clipping or overlap in the added figure, formulas or result text.",
+    "unchanged_panel_counts": {
+      "independently_reproduced": 1,
+      "partially_reproduced": 61
+    },
+    "scope": "Completed component experiments and conditional covariance error handling. No new accepted field inversion or panel-status promotion.",
+    "pdf_pages": 112,
+    "pdf_bytes": 2386483,
+    "finite_covariance_checks": 39,
+    "independent_dense_controls": 35,
+    "sparse_dense_comparisons": 6,
+    "usable_curvature_checks_per_variant": 183,
+    "native_C_D_tables_byte_identical": 5,
+    "affine_shooting_baseline_checks_passed": 40,
+    "boundary_endpoint_secant_failures_retained": 24,
+    "shooting_supplement_exact_components": 102,
+    "shooting_supplement_exact_boundary_secants": 18,
+    "fresh_checkout_D_prepare_inputs_verified": 882
+  },
+  "exclusions": [
+    "Live inversion/preflight outputs and current runtime locks",
+    "Prepared production optimizer adoption and integration test packages, pending subsequent checkpoint",
+    "Python caches and temporary full scratch checkout",
+    "No figure-panel promotion; 1 independently reproduced and 61 partial"
+  ],
+  "files": {
+    "FAILURE_SUMMARY.md": {
+      "sha256": "6c6f3690762fa87e69a113b6ec15a6cc171d846230bcec5562744228c8a88aa4",
+      "bytes": 5094
+    },
+    "README.md": {
+      "sha256": "1389228ec8aa51c9c40c4ccd2e693211d1ae1d8dd0c97176da44e53bdadc7e53",
+      "bytes": 28878
+    },
+    "data/development/catalog_dd_resolution_controls_001/catalog_dd_resolution.py": {
+      "sha256": "197edee80ea852dab43be1fb31326f5efd6941aae9bc9bee6693e456f6ae933e",
+      "bytes": 3793
+    },
+    "data/development/catalog_dd_resolution_controls_001/check_catalog_dd_resolution.py": {
+      "sha256": "e2d42ebfbbed517d5b543b0b1706350f741009888f37f292c450bb8ff5d857e2",
+      "bytes": 8560
+    },
+    "data/development/catalog_dd_resolution_controls_001/invented_matrices.npz": {
+      "sha256": "a4be4114e2b4e5df4c09b27a0e130f4ff8c1982aa85bc0be28b7707b32d198a9",
+      "bytes": 9474
+    },
+    "data/development/catalog_dd_resolution_controls_001/resolution_hayward.py": {
+      "sha256": "241b7226df090ab32356f983b764c06823fdadb551a5dec6ab48165fcfb6f320",
+      "bytes": 11133
+    },
+    "data/development/catalog_dd_resolution_controls_001/summary.json": {
+      "sha256": "0d4b37f6af0dbcb9038e7164b7b40c5f3d21cb2783d7ac824690259b2aeed8f6",
+      "bytes": 5083
+    },
+    "data/development/catalog_dd_resolution_controls_002/README.md": {
+      "sha256": "31e5f5775c9f641f6e4adf536f4d69c8b0f015f1da176f21c00016edd9b2c1fa",
+      "bytes": 3773
+    },
+    "data/development/catalog_dd_resolution_controls_002/catalog_dd_resolution.py": {
+      "sha256": "2e45e8f09a263eb3489e427058f11d5aa372032f3cb76ccbcf23f9561f7885f8",
+      "bytes": 4693
+    },
+    "data/development/catalog_dd_resolution_controls_002/check_catalog_dd_resolution.py": {
+      "sha256": "5ea2f0a977f0ff85660962d8a3747be55ed9e68e728b2031bd534c13afadd5e1",
+      "bytes": 10178
+    },
+    "data/development/catalog_dd_resolution_controls_002/invented_matrices.npz": {
+      "sha256": "7228ceb03df7250fa14e43bf17fdbb7a863987adf2f93549967728c51e4d5d4a",
+      "bytes": 12685
+    },
+    "data/development/catalog_dd_resolution_controls_002/resolution_hayward.py": {
+      "sha256": "241b7226df090ab32356f983b764c06823fdadb551a5dec6ab48165fcfb6f320",
+      "bytes": 11133
+    },
+    "data/development/catalog_dd_resolution_controls_002/summary.json": {
+      "sha256": "0ba18eb5faf9f6b2291753319f986f086ef0f8f01faf83bd9247a03223b40e26",
+      "bytes": 5957
+    },
+    "data/development/catalog_dd_resolution_controls_003/README.md": {
+      "sha256": "270a05fddf0479367cad589e7f22b28f8885c22cd4dd94bc8390b8eed1d0c5df",
+      "bytes": 5063
+    },
+    "data/development/catalog_dd_resolution_controls_003/catalog_dd_resolution.py": {
+      "sha256": "3761db6b4de5af78055e3eaed7a7daf10d75bb37284018e24d6f7b1b0608b45d",
+      "bytes": 5389
+    },
+    "data/development/catalog_dd_resolution_controls_003/check_catalog_dd_resolution.py": {
+      "sha256": "a043ab95e35989e69f2cd66811dba2af7a02bda0321e5f5bc112f346ed11fa7a",
+      "bytes": 11268
+    },
+    "data/development/catalog_dd_resolution_controls_003/compare_maintained.py": {
+      "sha256": "3bbd30b16399a1084c3db20b258956c44f0c7067c6a96a90cec0a4342b8f5a90",
+      "bytes": 5059
+    },
+    "data/development/catalog_dd_resolution_controls_003/invented_matrices.npz": {
+      "sha256": "7228ceb03df7250fa14e43bf17fdbb7a863987adf2f93549967728c51e4d5d4a",
+      "bytes": 12685
+    },
+    "data/development/catalog_dd_resolution_controls_003/maintained_comparison.json": {
+      "sha256": "7b659b48ff83dab0854a2f1b3848a87b16b8395470112625d635cfe1d3c20ea0",
+      "bytes": 5212
+    },
+    "data/development/catalog_dd_resolution_controls_003/resolution_hayward.py": {
+      "sha256": "241b7226df090ab32356f983b764c06823fdadb551a5dec6ab48165fcfb6f320",
+      "bytes": 11133
+    },
+    "data/development/catalog_dd_resolution_controls_003/summary.json": {
+      "sha256": "f271eb8433b88d5b184d6871905940b17a5c70a38ce6304af9a5fa90259fb6f9",
+      "bytes": 6773
+    },
+    "data/development/full_dd_resolution_finite_checks_001/README.md": {
+      "sha256": "95dd122213797cfdff8b23b4f8a5ba16b5ce7ada31d3630a8d882d4af9255a68",
+      "bytes": 2050
+    },
+    "data/development/full_dd_resolution_finite_checks_001/execution_receipt.json": {
+      "sha256": "304a9e5f34005b3befc58e6a6e84d989d220eea7d0e3dc040999f56091cdeadc",
+      "bytes": 2170
+    },
+    "data/development/full_dd_resolution_finite_checks_001/invented_matrix.csv": {
+      "sha256": "60f7f4ec9f1b6137170679744662ce78c89324cf68b1f8417b3a3e314ec89678",
+      "bytes": 2500
+    },
+    "data/development/full_dd_resolution_finite_checks_001/readback.json": {
+      "sha256": "d771c1bde0cc32a5fd5ac5f3d8247f4010f2bf076fa0962324c864fb7b0683cc",
+      "bytes": 2023
+    },
+    "data/development/full_dd_resolution_finite_checks_001/readback.py": {
+      "sha256": "9e5f3c717658c99acb8c842ab1e1dca8234d28a45156342f2d7f013e43b895c0",
+      "bytes": 3714
+    },
+    "data/development/full_dd_resolution_finite_checks_001/results.json": {
+      "sha256": "cad1b396ddd84ef3647eca4b1493275df48f66bc3a5db63cbca52fa34a28a7cc",
+      "bytes": 7671
+    },
+    "data/development/full_dd_resolution_finite_checks_001/source/check_full_dd_resolution.py": {
+      "sha256": "f8c0df72c635effa279d022608f42eef9b7ff15f121427ed72d7bd47b1cf3ab8",
+      "bytes": 14828
+    },
+    "data/development/full_dd_resolution_finite_checks_001/source/resolution_full_hayward.py": {
+      "sha256": "8f773ca30f4280e75bd45694b9ad62788e2751e6395d797d617666215cfb6b15",
+      "bytes": 19587
+    },
+    "data/development/loma_endpoint_connector_next_step_001/shooting_control.md": {
+      "sha256": "9c85218a847eaf94d68ec8b7bd2c17df19d1358b363dd153c2efa354912140bc",
+      "bytes": 7836
+    },
+    "data/development/loma_endpoint_shooting_baselines_001/README.md": {
+      "sha256": "43da88dd425269258aa076f0ab86fd1affa2bfc70341cc8e8fe2a5dd4a1aded6",
+      "bytes": 2259
+    },
+    "data/development/loma_endpoint_shooting_baselines_001/baseline_candidates.json": {
+      "sha256": "26dba5372876bbed5faa607ac9e7a979ebf67ada1cef5a0973eebe0cbc4f9cde",
+      "bytes": 553335
+    },
+    "data/development/loma_endpoint_shooting_baselines_001/comparison.json": {
+      "sha256": "25ffbd86c84d0e483216a22a5b4f91ac3acc1ef02679b2305c6d14561c1a2b6f",
+      "bytes": 30488
+    },
+    "data/development/loma_endpoint_shooting_baselines_001/execution.json": {
+      "sha256": "dca5e6b9c8772eb39b83b8290e34f398085bb58df18885ff82859efdab6bfcf2",
+      "bytes": 1426
+    },
+    "data/development/loma_endpoint_shooting_baselines_001/inputs/execution.json": {
+      "sha256": "d6ea437afbdb3858bd428d9870601a2d886e8e0903fc98c555e92a6b206d34b9",
+      "bytes": 831
+    },
+    "data/development/loma_endpoint_shooting_baselines_001/inputs/invented_inputs.json": {
+      "sha256": "4136942ca995741e6d792cfa45441ac06a6f6d5832261a1d003128eb9a40cb69",
+      "bytes": 7792
+    },
+    "data/development/loma_endpoint_shooting_baselines_001/inputs/perturbations.json": {
+      "sha256": "66a3e3eba57e694244b0ccb7399d15786feff03c38287607e07261d6a781fe26",
+      "bytes": 2710818
+    },
+    "data/development/loma_endpoint_shooting_baselines_001/inputs/summary.json": {
+      "sha256": "0ca944a3fa240721e62b193b7db6361604137d40f34bccabca8566ddf5e61945",
+      "bytes": 2194
+    },
+    "data/development/loma_endpoint_shooting_baselines_001/review.json": {
+      "sha256": "99ee570710877a0fc224795356e3adfef38ce0205490686203a2e314698ac380",
+      "bytes": 4405
+    },
+    "data/development/loma_endpoint_shooting_baselines_001/source/check_endpoint_shooting.py": {
+      "sha256": "f10e59a44a2c27d5b568d704194eee926ffd959674e676b3d312c6b1e3c0e367",
+      "bytes": 24338
+    },
+    "data/development/loma_endpoint_shooting_baselines_001/source/replay_endpoint_shooting_baselines.py": {
+      "sha256": "ac00f9671d62f36b7e5a2e539eb9a5c147e8964936a1e96f3a58047f28dc6a84",
+      "bytes": 7505
+    },
+    "data/development/loma_endpoint_shooting_baselines_001/summary.json": {
+      "sha256": "616ff5cb6ff2e0150faf546802ea8ae4b7edd54074928f894af02552fa60fbd1",
+      "bytes": 2494
+    },
+    "data/development/loma_endpoint_shooting_controls_001/README.md": {
+      "sha256": "409bf89e4fe4f515180a52fa861540ddb0cf42aa5752b9fec448b3223fa044b1",
+      "bytes": 5439
+    },
+    "data/development/loma_endpoint_shooting_controls_001/baseline_results.json": {
+      "sha256": "1c352d8a38391d2731eb1c0523c7aa9377d4a1c230684b69e2c2ec564128e376",
+      "bytes": 6723881
+    },
+    "data/development/loma_endpoint_shooting_controls_001/comparisons.json": {
+      "sha256": "3843ce9c97a92e55c7e72e29900ca48eb8d3c130f0f4786f9b8705fc74301e6b",
+      "bytes": 24161
+    },
+    "data/development/loma_endpoint_shooting_controls_001/execution.json": {
+      "sha256": "d6ea437afbdb3858bd428d9870601a2d886e8e0903fc98c555e92a6b206d34b9",
+      "bytes": 831
+    },
+    "data/development/loma_endpoint_shooting_controls_001/independent_readback.py": {
+      "sha256": "5b4534798b6db441b858dbbf153f88410e23b001c3870513b3355b9c64c6f201",
+      "bytes": 14699
+    },
+    "data/development/loma_endpoint_shooting_controls_001/invented_inputs.json": {
+      "sha256": "4136942ca995741e6d792cfa45441ac06a6f6d5832261a1d003128eb9a40cb69",
+      "bytes": 7792
+    },
+    "data/development/loma_endpoint_shooting_controls_001/perturbations.json": {
+      "sha256": "66a3e3eba57e694244b0ccb7399d15786feff03c38287607e07261d6a781fe26",
+      "bytes": 2710818
+    },
+    "data/development/loma_endpoint_shooting_controls_001/plot_attempt_001/loma_endpoint_shooting.json": {
+      "sha256": "2b67f0f7e79a426322da23413316f0f952e992d5b0bbdbf10f504c919663ac45",
+      "bytes": 27189
+    },
+    "data/development/loma_endpoint_shooting_controls_001/plot_attempt_001/loma_endpoint_shooting.pdf": {
+      "sha256": "5dc40d0c100f805cdbebfde500481b8c0ee94d176e2b8fc04eb6ee21ad1d7641",
+      "bytes": 35062
+    },
+    "data/development/loma_endpoint_shooting_controls_001/plot_attempt_001/loma_endpoint_shooting.png": {
+      "sha256": "e27f6af644d320d10224da759b6f12493aa32150a556bc8236c3cfbb5137917c",
+      "bytes": 250512
+    },
+    "data/development/loma_endpoint_shooting_controls_001/plot_attempt_001/plot_endpoint_shooting.py": {
+      "sha256": "cc48324f1acdac9c07c94469515965424b872730b664310f69da96d7d874079a",
+      "bytes": 9410
+    },
+    "data/development/loma_endpoint_shooting_controls_001/plot_attempt_001/plot_receipt.json": {
+      "sha256": "5c8878d53649fe3246d6a5b1265838f0bd5ac403e23613d6e3b8dd327e066638",
+      "bytes": 523
+    },
+    "data/development/loma_endpoint_shooting_controls_001/plot_attempt_002/loma_endpoint_shooting.json": {
+      "sha256": "a48c157205c188321db8f9f61f8d0338bbc1f8b8bc09a9d61df98a5394e46d43",
+      "bytes": 27189
+    },
+    "data/development/loma_endpoint_shooting_controls_001/plot_attempt_002/loma_endpoint_shooting.pdf": {
+      "sha256": "08c5330463120ff7ad7fb09be43e82879ba49d47c11f6d54a5def0bbe2f75539",
+      "bytes": 35063
+    },
+    "data/development/loma_endpoint_shooting_controls_001/plot_attempt_002/loma_endpoint_shooting.png": {
+      "sha256": "c4cf3957debdfc79851efd104ca5003d951e159554c03ab8450ba7bfda633136",
+      "bytes": 250843
+    },
+    "data/development/loma_endpoint_shooting_controls_001/plot_attempt_002/plot_endpoint_shooting.py": {
+      "sha256": "ac3cc4fd87045032f441808c0e3a52a5b4425df7bb686dcdee72029353923553",
+      "bytes": 9410
+    },
+    "data/development/loma_endpoint_shooting_controls_001/plot_attempt_002/plot_receipt.json": {
+      "sha256": "2c81d8c23ead27a2770318c50ec2c67f479a55f72535b45128ea7bd51015ff68",
+      "bytes": 523
+    },
+    "data/development/loma_endpoint_shooting_controls_001/plot_receipt.json": {
+      "sha256": "e9f7b4c43c62c79f75aad793ab6c968a5a4378a8b37adceff7addf7f5a04a2a2",
+      "bytes": 523
+    },
+    "data/development/loma_endpoint_shooting_controls_001/read_saved.py": {
+      "sha256": "a346f77a101fcf7a05b6a1e9a3d5803df9a17d1e2028dcaf6f65eab353c2528d",
+      "bytes": 6740
+    },
+    "data/development/loma_endpoint_shooting_controls_001/review.json": {
+      "sha256": "c98d0f04d25c50bee8e079284a6dde33af096cd9d27ef691908df46ae7a3e9d2",
+      "bytes": 5190
+    },
+    "data/development/loma_endpoint_shooting_controls_001/saved_readback.json": {
+      "sha256": "a8256736bf432a222255986de552aea8d1799399db9ff90d9a91ed06f26af09f",
+      "bytes": 27645
+    },
+    "data/development/loma_endpoint_shooting_controls_001/source/check_endpoint_shooting.py": {
+      "sha256": "f10e59a44a2c27d5b568d704194eee926ffd959674e676b3d312c6b1e3c0e367",
+      "bytes": 24338
+    },
+    "data/development/loma_endpoint_shooting_controls_001/source/endpoint_connector.py": {
+      "sha256": "c5848169606ae0f49071e8067dd88029e7ba83756fd700700059182c5ce28857",
+      "bytes": 4273
+    },
+    "data/development/loma_endpoint_shooting_controls_001/source/shooting_control.md": {
+      "sha256": "9c85218a847eaf94d68ec8b7bd2c17df19d1358b363dd153c2efa354912140bc",
+      "bytes": 7836
+    },
+    "data/development/loma_endpoint_shooting_controls_001/summary.json": {
+      "sha256": "0ca944a3fa240721e62b193b7db6361604137d40f34bccabca8566ddf5e61945",
+      "bytes": 2194
+    },
+    "data/development/loma_usable_curvature_native_001/README.md": {
+      "sha256": "a6cd4208a2cee94643bf82794842bddd3b526304824a4658b99ae209bc1b9529",
+      "bytes": 3588
+    },
+    "data/development/loma_usable_curvature_native_001/compile_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "data/development/loma_usable_curvature_native_001/compile_stdout.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "data/development/loma_usable_curvature_native_001/cone_metric.csv": {
+      "sha256": "aa55ac410a6a59908c1b2f5c57963efe6655117e8a259e607907fa61b5306920",
+      "bytes": 256
+    },
+    "data/development/loma_usable_curvature_native_001/cone_metric.csv.identifiers.json": {
+      "sha256": "6e71e8ff588abebe32ab7e4710a2749b8173b04fd150f48cce723f5f7f1dbf79",
+      "bytes": 12342
+    },
+    "data/development/loma_usable_curvature_native_001/controller.py": {
+      "sha256": "c91596491e331307a8f6597487185ac2c9d1c89079eaabf45ca92e6ecda896fd",
+      "bytes": 2608
+    },
+    "data/development/loma_usable_curvature_native_001/controller_completion.json": {
+      "sha256": "529913b3999790db9bd784c1c373529f82351a76d826e4befdc45562e970512b",
+      "bytes": 818
+    },
+    "data/development/loma_usable_curvature_native_001/controller_logs/controller_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "data/development/loma_usable_curvature_native_001/controller_logs/controller_stdout.log": {
+      "sha256": "889dd59b4b6a3b43063be9a515eb376b88329698c06f6cd9f78e3014b1a2799e",
+      "bytes": 139
+    },
+    "data/development/loma_usable_curvature_native_001/core.hpp.diff": {
+      "sha256": "2b01c70983025f199ec2bc5b4d8ea4c51f356edb85dd9c9be3ee18300c270219",
+      "bytes": 2109
+    },
+    "data/development/loma_usable_curvature_native_001/execution.json": {
+      "sha256": "42463b2fab6af74da8f02031e66eb810504a71c6c16e8e16375c7d5336f795dc",
+      "bytes": 236
+    },
+    "data/development/loma_usable_curvature_native_001/history.csv": {
+      "sha256": "c7a61194a89f0e59e9954f6b42471c9c5d386d97b75490a2fe1d26e079239fc2",
+      "bytes": 63109
+    },
+    "data/development/loma_usable_curvature_native_001/history.csv.identifiers.json": {
+      "sha256": "23958c55e1b1e933a6d5b8a117233a73108ec8e00855dfe9c7578e1a95baa961",
+      "bytes": 12338
+    },
+    "data/development/loma_usable_curvature_native_001/identified_ray.csv": {
+      "sha256": "7f78d161abf7e3360e299021d27b4e8e8b2d499edc22640b9ac3e3608fc2d6b1",
+      "bytes": 9913
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/baseline_execution.json": {
+      "sha256": "626be8b868b7054a8b26fe43d1bfc21bde7624f7fd03e3d0ac9c4576d1b0d1de",
+      "bytes": 236
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/baseline_review.json": {
+      "sha256": "962364b9101fbe9ce92d51537b79d1fd6c7d76e6664e3c6dab9ec6dfc925b4db",
+      "bytes": 29556
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/baseline_summary.json": {
+      "sha256": "9f0da46e9fe1e93f9f0287bc87affb6b56063040a2c5624548519657473dd92c",
+      "bytes": 89059
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/capture_controls_review.json": {
+      "sha256": "88e9cd5b7ca8ac5f6b8594b73503264c1b961aaaa758841c035a82dddfd6a956",
+      "bytes": 2337
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/capture_controls_summary.json": {
+      "sha256": "a9212cf9ec2332903ae5558ebf948b9d22f7e956b02534514c7c0e96f2c8b566",
+      "bytes": 9122
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/capture_execution.json": {
+      "sha256": "7ffa5a2365db1771879efd3c9ff75c36eabbc4b20b2d3ddee3bd66d0abacd3c8",
+      "bytes": 236
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/capture_prepared.json": {
+      "sha256": "02cf75763e372b8007ac5d95669e9b18ff93a3c69ca973ad967f457fb6d69f1d",
+      "bytes": 28097
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/capture_review.json": {
+      "sha256": "da473c5a5d7aef33a2360957bcdf63141e09fff9bdee241584385da285a79592",
+      "bytes": 16219
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/capture_summary.json": {
+      "sha256": "eeef9a9fd5d34831921b50818276eb427e5326b16225d1045b35d7d90dfb26f5",
+      "bytes": 55877
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/controls_execution.json": {
+      "sha256": "ea5e69ec636c0db056d7a7218252db8aa1b63b081bd8e0985d6e4708dcf4adf7",
+      "bytes": 2857
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/controls_review.json": {
+      "sha256": "c443b3ec43a1278413e089fa63f54d60c18d19c571e6dffade3c2c43e8d3deb5",
+      "bytes": 1778
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/controls_summary.json": {
+      "sha256": "7168b73438d57ad0db0de6c9f974794db93f122008a224a4c247494b5aba7273",
+      "bytes": 59709
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/curvature_initialization.csv": {
+      "sha256": "a44f96d978a8792123afde8d3ef3273044d61e335155743e77edf6bfdc7f1a4a",
+      "bytes": 179320
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/curvature_initialization.csv.identifiers.json": {
+      "sha256": "ade3b8e813b4364682a0e3b35ddbccd8a2b6fa1cae58c25497b7cffa2b2db757",
+      "bytes": 12355
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/curvature_seed_metadata.csv": {
+      "sha256": "2442a5a9563b9d756298413086b99b264ad6842e4280117ffb6ffb4ab3b2f343",
+      "bytes": 184
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/curvature_seed_metadata.csv.identifiers.json": {
+      "sha256": "611cd0d53a054029ae1363e2ab9e1b34744889e13856f8d580c53fd935dc52cd",
+      "bytes": 12354
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/identified_ray.csv": {
+      "sha256": "7f78d161abf7e3360e299021d27b4e8e8b2d499edc22640b9ac3e3608fc2d6b1",
+      "bytes": 9913
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/initial_grid.csv": {
+      "sha256": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+      "bytes": 6128
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/neutral_replay_summary.json": {
+      "sha256": "cea7edf20c157cffd9e830eb730662dba20e991f5d60e44b7e5cd05521735c46",
+      "bytes": 36394
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/original_observer_summary.json": {
+      "sha256": "2112ce334c8725e6c3497c00ab1c12b96aa82828a44289b7dc8b2ef31a05c26e",
+      "bytes": 23371
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/positive_C_execution.json": {
+      "sha256": "1ae4af743d7899566442935d79a002458443075396526e7059712387c161193a",
+      "bytes": 236
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/positive_C_review.json": {
+      "sha256": "2db46c310cba7c2276765fc2278e41d6215b7d56f1a9fb564b165fa108098a89",
+      "bytes": 31100
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/positive_C_summary.json": {
+      "sha256": "b3b62eb763f3fe6a6d7dffbdd6592fcbd0130c2a49a4df227381e818adb6e87c",
+      "bytes": 173232
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/rational_review.json": {
+      "sha256": "c75bbf94e593ef3381574f692f221f808ae30a6878ec2f7f0864d250158cec28",
+      "bytes": 1879
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/rational_summary.json": {
+      "sha256": "538f0fad76bd28949d67bd769987732a463c64f2f23f7c91469479e40090d07b",
+      "bytes": 4006
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/reference_execution.json": {
+      "sha256": "233514005b91b6e25694eb3cf0d6713e118468b39f173aa4a68b915fa105132c",
+      "bytes": 5499
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/reference_review.json": {
+      "sha256": "d48209e9397cfd528c1f2e6f0145415daaf82a5398382f8c6f076ec69d8a83d2",
+      "bytes": 2645
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/reference_row.json": {
+      "sha256": "d2ad56ee6d04200b43e33af641f3d6dbf258843de33f4f57d19bb9b86d382910",
+      "bytes": 7577
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/reference_summary.json": {
+      "sha256": "72ed25dbde4bc14b1e0967f6a1880ff396683735c723b41f633e081a085fe6bb",
+      "bytes": 47277
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/seed_loaded_B_execution.json": {
+      "sha256": "e05512836570c4dd05f00c1308e76893c5c22b9aab89f4c9de45f7b56da1504b",
+      "bytes": 236
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/seed_loaded_B_review.json": {
+      "sha256": "c49e9ab30fca87597df9ac7a8f5f70536383e8c3be6d4b694e58d73ebdeb5155",
+      "bytes": 14740
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/seed_loaded_B_summary.json": {
+      "sha256": "7e0f2b7cf435794af124f35e55d1c6faa2faa0d850150ecb631be0d818bfcc59",
+      "bytes": 158945
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/single_change.diff": {
+      "sha256": "68400a74c4d739a00b780837c2f48d28fb4ef1cc0c8be200dcca01eff2b79628",
+      "bytes": 392
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/usable_controls_execution.json": {
+      "sha256": "a195194fb7c8266f5b1c9b5585541e67061def8016b1241be6ffe92ca5250167",
+      "bytes": 3180
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/usable_controls_review.json": {
+      "sha256": "595e2fa75719d1aec444edfc9101ce51d46973ff6ff9fdc1ce0a9177ba134992",
+      "bytes": 2817
+    },
+    "data/development/loma_usable_curvature_native_001/inputs/usable_controls_summary.json": {
+      "sha256": "ae70b7270161fa42f5fb4ea4b0046effb0a54291d139ad60d0a4e3197d12f6db",
+      "bytes": 31441
+    },
+    "data/development/loma_usable_curvature_native_001/launch.json": {
+      "sha256": "56a50d8366805eb1a96cbf477776fed93492ba08b4c2e1f32a2ca28c26c681a9",
+      "bytes": 711
+    },
+    "data/development/loma_usable_curvature_native_001/launch_plan.md": {
+      "sha256": "56e3056d5bfed53a7b44ec207bb797b23108b61119eb9ad464ca880212d19885",
+      "bytes": 2540
+    },
+    "data/development/loma_usable_curvature_native_001/launcher.py": {
+      "sha256": "7ee792c4b0aa8326ce99cc43c30f7ec88f3400c0761809ca22215c0d6131050d",
+      "bytes": 20366
+    },
+    "data/development/loma_usable_curvature_native_001/observe_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "data/development/loma_usable_curvature_native_001/observe_stdout.log": {
+      "sha256": "faceecf12b60a573469ff4dc03d1a100b13e3f34386ac69e4fb6b5d287edbbc6",
+      "bytes": 168
+    },
+    "data/development/loma_usable_curvature_native_001/observed_optimizer.hpp.diff": {
+      "sha256": "b6433ef4b2fc372af9606ea9905d556e5e0537edd98081fea9e6455e903fb5d7",
+      "bytes": 1887
+    },
+    "data/development/loma_usable_curvature_native_001/path_gradient_checks.csv": {
+      "sha256": "83af4d142ee1e44089bee261a96b8613a950f1f4ba2008a8415886de32f6c1d3",
+      "bytes": 856
+    },
+    "data/development/loma_usable_curvature_native_001/path_gradient_checks.csv.identifiers.json": {
+      "sha256": "81ab8ae47ef4fd8117069bcb80081d9278e9c6aa9863255792b37f53c6ca6499",
+      "bytes": 12351
+    },
+    "data/development/loma_usable_curvature_native_001/paths.csv": {
+      "sha256": "78ac3d9189b743fbfa3eded7920e5b135437fb26ce68ea9addf8f4a23d1f559b",
+      "bytes": 341226
+    },
+    "data/development/loma_usable_curvature_native_001/paths.csv.identifiers.json": {
+      "sha256": "8a59db24cf4fe2007bdae33bf27e2311e7f4033d9371b8fb95e6c92db59d6e8e",
+      "bytes": 12336
+    },
+    "data/development/loma_usable_curvature_native_001/prelaunch_review.json": {
+      "sha256": "df18a8170f6a64c191adedca36957c150daf5a217c74c78d697541f90f3e4b01",
+      "bytes": 1122
+    },
+    "data/development/loma_usable_curvature_native_001/prepared.json": {
+      "sha256": "cc395d02e117567dc7168d1616a82fab2ab7a4789969b841eb771d092da38d3c",
+      "bytes": 164827
+    },
+    "data/development/loma_usable_curvature_native_001/results.csv": {
+      "sha256": "06927cd5b5a00331c2a10dac7920f94b1c77b8252324dcf3d39285de5fc6c8f8",
+      "bytes": 592
+    },
+    "data/development/loma_usable_curvature_native_001/results.csv.identifiers.json": {
+      "sha256": "5c2706d7144c6cdaa48f25bfe7e381e951f5ab30021df52480852cacffe3268c",
+      "bytes": 12338
+    },
+    "data/development/loma_usable_curvature_native_001/review.json": {
+      "sha256": "7ef94f9efc691718de70214c60b35cebb52ac09d0cc172b1dcd840db5855e6ba",
+      "bytes": 17753
+    },
+    "data/development/loma_usable_curvature_native_001/runtime_libraries_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "data/development/loma_usable_curvature_native_001/runtime_libraries_stdout.log": {
+      "sha256": "ded994ba63728381765fac598573f769e10dba14f4a09cf2c7bcfdbe60fd0251",
+      "bytes": 490
+    },
+    "data/development/loma_usable_curvature_native_001/source/diagnostics/check_outer_accumulation.cpp": {
+      "sha256": "2794e2ea5d575f5b66e618c361fd23a8523a70605a493755cc25ad6cc823fed0",
+      "bytes": 4758
+    },
+    "data/development/loma_usable_curvature_native_001/source/diagnostics/check_ray_stopping.cpp": {
+      "sha256": "2ffb07d02f9279aeb015ba400e6ab9b317375bf42e545e317b873b2a391b2c74",
+      "bytes": 11321
+    },
+    "data/development/loma_usable_curvature_native_001/source/diagnostics/extracted_retention.hpp": {
+      "sha256": "15778d408f037c9ea5bbf38b41492ebc1b27ebc5c9b437540af177b4997f8c59",
+      "bytes": 55
+    },
+    "data/development/loma_usable_curvature_native_001/source/diagnostics/first_arrival_fmm.hpp": {
+      "sha256": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+      "bytes": 116
+    },
+    "data/development/loma_usable_curvature_native_001/source/diagnostics/fixture_driver.hpp": {
+      "sha256": "9b6dd490f2bef31027ed1aaf80074d0c037c6c0d5c78afd57804327e710ec68f",
+      "bytes": 11340
+    },
+    "data/development/loma_usable_curvature_native_001/source/diagnostics/observe_loma_initial_failure.py": {
+      "sha256": "c6090c788f9f061a0d21458dbc410f930058782e048730d1eebbe3e22d74b6aa",
+      "bytes": 13232
+    },
+    "data/development/loma_usable_curvature_native_001/source/diagnostics/observed_optimizer.hpp": {
+      "sha256": "0a6d4575931f4fcce0f99db0f822aaef2223568dcc7bb3d4cddaad89c4d6c4a5",
+      "bytes": 6427
+    },
+    "data/development/loma_usable_curvature_native_001/source/diagnostics/original_path_eval.hpp": {
+      "sha256": "b9596439ed7806697b28011a9c9e4f1bbb79dd7070072f22a8cacf345227cf81",
+      "bytes": 507
+    },
+    "data/development/loma_usable_curvature_native_001/source/diagnostics/prepare_outer_accumulation.py": {
+      "sha256": "50b3c2d56020bbe12b27babed3235a4272cdb26bb2ba43a8235e6bf1a13b26d0",
+      "bytes": 10204
+    },
+    "data/development/loma_usable_curvature_native_001/source/diagnostics/run_ray_stopping.py": {
+      "sha256": "b39f64a35ab3920d57be3336a3234a0ecda1f91b0a9147d900ae069eb7deb3ec",
+      "bytes": 17130
+    },
+    "data/development/loma_usable_curvature_native_001/source/diagnostics/saved_candidate.hpp": {
+      "sha256": "735083ed30cd3dba636ee3404ee837443a8b5a7348adaa622917020ccef45ed9",
+      "bytes": 3298
+    },
+    "data/development/loma_usable_curvature_native_001/source/diagnostics/usable_ray_curvature.hpp": {
+      "sha256": "78bfacf51dba07e466ad42117dcaf20fde529eeb4f2877f1a261672c0e7b65db",
+      "bytes": 4254
+    },
+    "data/development/loma_usable_curvature_native_001/source/src/analytic_truth.hpp": {
+      "sha256": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+      "bytes": 7397
+    },
+    "data/development/loma_usable_curvature_native_001/source/src/core.hpp": {
+      "sha256": "151a0824513337f31115569823366f62c6d8fe11392dc0a6d80d87b97ebc7939",
+      "bytes": 22120
+    },
+    "data/development/loma_usable_curvature_native_001/source/src/csv.hpp": {
+      "sha256": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+      "bytes": 5103
+    },
+    "data/development/loma_usable_curvature_native_001/source/src/first_arrival.hpp": {
+      "sha256": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+      "bytes": 21152
+    },
+    "data/development/loma_usable_curvature_native_001/source/src/forward.hpp": {
+      "sha256": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+      "bytes": 4861
+    },
+    "data/development/loma_usable_curvature_native_001/source/src/full_linearization.hpp": {
+      "sha256": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+      "bytes": 11670
+    },
+    "data/development/loma_usable_curvature_native_001/source/src/main.cpp": {
+      "sha256": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+      "bytes": 75410
+    },
+    "data/development/loma_usable_curvature_native_001/source/src/ray_checks.hpp": {
+      "sha256": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+      "bytes": 12002
+    },
+    "data/development/loma_usable_curvature_native_001/source/src/ray_metric.hpp": {
+      "sha256": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+      "bytes": 8817
+    },
+    "data/development/loma_usable_curvature_native_001/source_review.json": {
+      "sha256": "fffb9485c50d38ae15dc9601a9e5bb63ba7f4ca9606a0151bcbed6a182c38f36",
+      "bytes": 18664
+    },
+    "data/development/loma_usable_curvature_native_001/summary.json": {
+      "sha256": "a37bc49a78d58fe29a5064dc7117f9eef5edfcf441487c6d3f3e34866f77d815",
+      "bytes": 207552
+    },
+    "data/development/loma_usable_curvature_native_001/wrapper.diff": {
+      "sha256": "a992cd1d458dc3ac4f486b8ac6b5217fd48ca3b1931c3ceb89f14307aae6a3e5",
+      "bytes": 17366
+    },
+    "data/development/loma_usable_curvature_review_001/README.md": {
+      "sha256": "4c8569920b49c4b898d4d680ddd4d7d9364fb0afad3586c47f432acb9c110f2f",
+      "bytes": 1601
+    },
+    "data/development/loma_usable_curvature_review_001/check.py": {
+      "sha256": "ef99e2351e356fc41c533516082ae3a66d76ff48650e1a264c3d5d3858c37ee8",
+      "bytes": 14695
+    },
+    "data/development/loma_usable_curvature_review_001/execution_receipt.json": {
+      "sha256": "a6c39782a9ef0a3f1c2fd441c84dd77b8a0c0931ddd84f40220af9032636872d",
+      "bytes": 735
+    },
+    "data/development/loma_usable_curvature_review_001/stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "data/development/loma_usable_curvature_review_001/stdout.json": {
+      "sha256": "7ef94f9efc691718de70214c60b35cebb52ac09d0cc172b1dcd840db5855e6ba",
+      "bytes": 17753
+    },
+    "data/development/terminal_lock_archive_001/README.md": {
+      "sha256": "79c85ac5e6d2ba2c757812a037258357bf2442ca8d07455ac3da9849c258f6b6",
+      "bytes": 4324
+    },
+    "data/development/terminal_lock_archive_001/archive.json": {
+      "sha256": "2df1c2b4a0ee49f1e5ee349f23cd73836b37ae2dc6efefd8331c1ec9dd23d282",
+      "bytes": 20773
+    },
+    "data/development/terminal_lock_archive_001/capture.py": {
+      "sha256": "d870803a9dfac759dc9c37ffa327ab4cf5138816672afc8b632de0b3296c2915",
+      "bytes": 3371
+    },
+    "data/development/terminal_lock_archive_001/check.py": {
+      "sha256": "d09fd9b32c8a170880cc1dd6292deb67ac3abca41fe968db81424444eded0600",
+      "bytes": 5598
+    },
+    "data/development/terminal_lock_archive_001/check_results.json": {
+      "sha256": "f98acd4d266bc9493a6b8ca6c3d4b0445c234d4fe3a636a5c03c59dbfe715a08",
+      "bytes": 8706
+    },
+    "data/development/terminal_lock_archive_001/fresh_checkout_prepare.json": {
+      "sha256": "eec61fcf050db17c38312a383f3f9a71590f8f0bb8e77425a911c8be938b346f",
+      "bytes": 4136
+    },
+    "data/development/terminal_lock_archive_001/restore.py": {
+      "sha256": "f61ec95b858ecadf956481209e3a22c135f389c411662fa5122919d4f90d1ae7",
+      "bytes": 7609
+    },
+    "data/development/terminal_lock_archive_001/review.json": {
+      "sha256": "d9ff1cb9fefed1f059449a05de8700de28a7fb319fad87c3b457cf97b093762c",
+      "bytes": 2200
+    },
+    "data/development/usable_curvature_covariance_report_001/compile.json": {
+      "sha256": "845b0b661253298d6d47ed1ab82987494474f35b12feff40f46165976f97e187",
+      "bytes": 2875
+    },
+    "data/development/usable_curvature_covariance_report_001/pass1_stdout.txt": {
+      "sha256": "93902b62ed04d84ac9c479f3555c50d2aecac0a36fe5928c02e6a16341fe3c3d",
+      "bytes": 8347
+    },
+    "data/development/usable_curvature_covariance_report_001/pass2_stdout.txt": {
+      "sha256": "051efcd50fe13e488b6a9cc6f192ab9a9edd16d1e6a9e2be13365a38b2f79f24",
+      "bytes": 8265
+    },
+    "data/development/usable_curvature_covariance_report_001/pdfinfo.txt": {
+      "sha256": "4d239fbbbd68461bb31026252729cf2cab6252e54a501ef648773a1c93537ba5",
+      "bytes": 550
+    },
+    "data/development/usable_curvature_covariance_report_001/report.log": {
+      "sha256": "a75bb215a09b46cf02038df954652480aefabeddd6cf3dc3d7bf60e0c03eab80",
+      "bytes": 35585
+    },
+    "data/development/usable_curvature_covariance_report_001/report.txt": {
+      "sha256": "7059a969af15d9d88186355dbfb2feb6e2633d46eb3cc976ab6409cbb39a1efc",
+      "bytes": 382926
+    },
+    "data/development/usable_curvature_covariance_report_001/report_initial_layout.pdf": {
+      "sha256": "1d7f9c30b1ed203673c0b91ff205e7fa1efbd3add56c6f47f6c04b57659eb871",
+      "bytes": 2353923
+    },
+    "data/development/usable_curvature_covariance_report_002/compile.json": {
+      "sha256": "989847f7c3ca46e2f30bedd5048b66993b9a2ceb02cb7de9c0ced8da631e19c2",
+      "bytes": 2875
+    },
+    "data/development/usable_curvature_covariance_report_002/pass1_stdout.txt": {
+      "sha256": "beaace1dcbfa9a7a616b07b803cb8a8742caa4d63fff6be0ac24a331bb925d62",
+      "bytes": 7783
+    },
+    "data/development/usable_curvature_covariance_report_002/pass2_stdout.txt": {
+      "sha256": "beaace1dcbfa9a7a616b07b803cb8a8742caa4d63fff6be0ac24a331bb925d62",
+      "bytes": 7783
+    },
+    "data/development/usable_curvature_covariance_report_002/pdfinfo.txt": {
+      "sha256": "a109d850d344db7358587ac8c65784dc53e88c9b9eb04a48fb14462f22992a0b",
+      "bytes": 550
+    },
+    "data/development/usable_curvature_covariance_report_002/report.log": {
+      "sha256": "2e18f3dbae485478d7f143d7e616ab0a90e5a74594a1cb1eb9598417da707ec1",
+      "bytes": 35093
+    },
+    "data/development/usable_curvature_covariance_report_002/report.txt": {
+      "sha256": "00678a422b0c7fa684895118f5b97f644561b429b3ef412b45c8959767e1ee6b",
+      "bytes": 382945
+    },
+    "data/development/usable_curvature_covariance_report_002/report_intermediate.pdf": {
+      "sha256": "b83cf299e6651325caaacfc5f5ec972d9da43219fb9a9dc6bdf85cf97efe821b",
+      "bytes": 2353985
+    },
+    "data/development/usable_curvature_covariance_report_003/compile.json": {
+      "sha256": "ccbec7d8f9f73e5f4ec8ff25ce2412682beccef0568d46a9de549ebe8b366831",
+      "bytes": 2875
+    },
+    "data/development/usable_curvature_covariance_report_003/pass1_stdout.txt": {
+      "sha256": "425adced289ca1ba10b4bf94d8a91b2d0bd8a5a5c2b2161a66f18dc085f81d96",
+      "bytes": 8065
+    },
+    "data/development/usable_curvature_covariance_report_003/pass2_stdout.txt": {
+      "sha256": "f8a66df9c50b71f64683d2635aec86401b83765099b1d23db55c595760d8da22",
+      "bytes": 7843
+    },
+    "data/development/usable_curvature_covariance_report_003/pdfinfo.txt": {
+      "sha256": "80a65b19f421ce25a1455786d52999289849707c89e2f8c4f521e5ec36bbff0e",
+      "bytes": 550
+    },
+    "data/development/usable_curvature_covariance_report_003/report.log": {
+      "sha256": "686fb8d028817c651eb984c191ab20293372f7469529b60cf33eaa0c6b44a33a",
+      "bytes": 35601
+    },
+    "data/development/usable_curvature_covariance_report_003/report.txt": {
+      "sha256": "faaec6fdc4b14d1bad7a7fb7fc6f6df1c5a3b61bd582aa37fca8e4a4200e1863",
+      "bytes": 390077
+    },
+    "data/development/usable_curvature_covariance_report_003/validation.json": {
+      "sha256": "0af2054c47a12f637e69a127f5a9da954580b08689408f2d064de2d561823af1",
+      "bytes": 723
+    },
+    "data/development/usable_ray_curvature_controls_001/C/affine_direct_history.csv": {
+      "sha256": "821680f14241af1e1767ff60ec4135b0baab49e21ef89f9cab429cb6198c061d",
+      "bytes": 1273
+    },
+    "data/development/usable_ray_curvature_controls_001/C/affine_direct_ray_bits.txt": {
+      "sha256": "2c86d310ee1d48fe36bab14d530c374681a381e51a25abc7ffa9e064d45ca7f8",
+      "bytes": 1930
+    },
+    "data/development/usable_ray_curvature_controls_001/C/affine_seeded_history.csv": {
+      "sha256": "310220c7ee90fe4ca13f5f771503746d47c630c0d2391198ebaff7bdd34359f0",
+      "bytes": 1896
+    },
+    "data/development/usable_ray_curvature_controls_001/C/affine_seeded_ray_bits.txt": {
+      "sha256": "4b6d77c4819a275b3d146538be0749f0658a93a8cd6f0e82af69abc0fb1565d6",
+      "bytes": 1982
+    },
+    "data/development/usable_ray_curvature_controls_001/C/checks.csv": {
+      "sha256": "4242d7b02c83ce60e550e0590657a66842adf2bc9807af5653cf7091eb4977a3",
+      "bytes": 6423
+    },
+    "data/development/usable_ray_curvature_controls_001/C/homogeneous_direct_history.csv": {
+      "sha256": "aae6222b1b246137d2d31aa149263f7428d894d0b96ef3d47c0e51a5d12ae6a5",
+      "bytes": 948
+    },
+    "data/development/usable_ray_curvature_controls_001/C/homogeneous_direct_ray_bits.txt": {
+      "sha256": "ed14c4ae222be457819bbb27fe7a9ae4904bafc333af184c64931e246e66dc3e",
+      "bytes": 1930
+    },
+    "data/development/usable_ray_curvature_controls_001/C/homogeneous_seeded_history.csv": {
+      "sha256": "3653098d5ea81cdd72da9b9823cd779b82469b25ad9f30ce1222306ff8e84c9f",
+      "bytes": 1287
+    },
+    "data/development/usable_ray_curvature_controls_001/C/homogeneous_seeded_ray_bits.txt": {
+      "sha256": "fd1901f21c2590be0cc876970427a689d828fa8e17f36b98c96e6f917eacee94",
+      "bytes": 1982
+    },
+    "data/development/usable_ray_curvature_controls_001/C/pair_cases.csv": {
+      "sha256": "0c75b829d763bf63efbb4dd9598e52f19b03c01cc38d6b00de254f816031bc9a",
+      "bytes": 2615
+    },
+    "data/development/usable_ray_curvature_controls_001/C/rays.csv": {
+      "sha256": "1b13dfa43af84b90a37ce4c8a2ba1eef6ba0e73b02e6d4517d6b800a6366a6ce",
+      "bytes": 398
+    },
+    "data/development/usable_ray_curvature_controls_001/D/affine_direct_history.csv": {
+      "sha256": "821680f14241af1e1767ff60ec4135b0baab49e21ef89f9cab429cb6198c061d",
+      "bytes": 1273
+    },
+    "data/development/usable_ray_curvature_controls_001/D/affine_direct_ray_bits.txt": {
+      "sha256": "2c86d310ee1d48fe36bab14d530c374681a381e51a25abc7ffa9e064d45ca7f8",
+      "bytes": 1930
+    },
+    "data/development/usable_ray_curvature_controls_001/D/affine_seeded_history.csv": {
+      "sha256": "310220c7ee90fe4ca13f5f771503746d47c630c0d2391198ebaff7bdd34359f0",
+      "bytes": 1896
+    },
+    "data/development/usable_ray_curvature_controls_001/D/affine_seeded_ray_bits.txt": {
+      "sha256": "4b6d77c4819a275b3d146538be0749f0658a93a8cd6f0e82af69abc0fb1565d6",
+      "bytes": 1982
+    },
+    "data/development/usable_ray_curvature_controls_001/D/checks.csv": {
+      "sha256": "4242d7b02c83ce60e550e0590657a66842adf2bc9807af5653cf7091eb4977a3",
+      "bytes": 6423
+    },
+    "data/development/usable_ray_curvature_controls_001/D/homogeneous_direct_history.csv": {
+      "sha256": "aae6222b1b246137d2d31aa149263f7428d894d0b96ef3d47c0e51a5d12ae6a5",
+      "bytes": 948
+    },
+    "data/development/usable_ray_curvature_controls_001/D/homogeneous_direct_ray_bits.txt": {
+      "sha256": "ed14c4ae222be457819bbb27fe7a9ae4904bafc333af184c64931e246e66dc3e",
+      "bytes": 1930
+    },
+    "data/development/usable_ray_curvature_controls_001/D/homogeneous_seeded_history.csv": {
+      "sha256": "3653098d5ea81cdd72da9b9823cd779b82469b25ad9f30ce1222306ff8e84c9f",
+      "bytes": 1287
+    },
+    "data/development/usable_ray_curvature_controls_001/D/homogeneous_seeded_ray_bits.txt": {
+      "sha256": "fd1901f21c2590be0cc876970427a689d828fa8e17f36b98c96e6f917eacee94",
+      "bytes": 1982
+    },
+    "data/development/usable_ray_curvature_controls_001/D/pair_cases.csv": {
+      "sha256": "0c75b829d763bf63efbb4dd9598e52f19b03c01cc38d6b00de254f816031bc9a",
+      "bytes": 2615
+    },
+    "data/development/usable_ray_curvature_controls_001/D/rays.csv": {
+      "sha256": "1b13dfa43af84b90a37ce4c8a2ba1eef6ba0e73b02e6d4517d6b800a6366a6ce",
+      "bytes": 398
+    },
+    "data/development/usable_ray_curvature_controls_001/README.md": {
+      "sha256": "b4c7c67c3f798941eb2fda30a68f1379f32a85ee5b814d4b833ff1ccaa32719e",
+      "bytes": 3829
+    },
+    "data/development/usable_ray_curvature_controls_001/compile_C.log": {
+      "sha256": "b9c4761be2fd0a3604a2925757552c4e9ec095e1cbd633c70f63f7ccb02f5895",
+      "bytes": 497
+    },
+    "data/development/usable_ray_curvature_controls_001/compile_D.log": {
+      "sha256": "b1321b870e07d0793f45c4e27139e9ea605bd270900c8df66cc757d0b2f857b2",
+      "bytes": 497
+    },
+    "data/development/usable_ray_curvature_controls_001/compiler_version.log": {
+      "sha256": "f4895a731c57603df3662adff9f5d69ae764d6147b226f4028f324c8f6088dd2",
+      "bytes": 246
+    },
+    "data/development/usable_ray_curvature_controls_001/execution.json": {
+      "sha256": "a195194fb7c8266f5b1c9b5585541e67061def8016b1241be6ffe92ca5250167",
+      "bytes": 3180
+    },
+    "data/development/usable_ray_curvature_controls_001/helper_source_review.json": {
+      "sha256": "d084f7d9f17b255794f7777c36d0c417e1e034af65e206e76f1fbb561e588006",
+      "bytes": 2216
+    },
+    "data/development/usable_ray_curvature_controls_001/prepared_input.json": {
+      "sha256": "eff5bffcb2f37e38e6bc646bc5aa425201b30b93de542ec8430ec2e1b341f524",
+      "bytes": 7857
+    },
+    "data/development/usable_ray_curvature_controls_001/review.json": {
+      "sha256": "595e2fa75719d1aec444edfc9101ce51d46973ff6ff9fdc1ce0a9177ba134992",
+      "bytes": 2817
+    },
+    "data/development/usable_ray_curvature_controls_001/run_C.log": {
+      "sha256": "9add7079fe9d4f9f3ed7981f220b3b31fb3db9b0fe7bf5df83a0b2a34c2fdb61",
+      "bytes": 66
+    },
+    "data/development/usable_ray_curvature_controls_001/run_D.log": {
+      "sha256": "9add7079fe9d4f9f3ed7981f220b3b31fb3db9b0fe7bf5df83a0b2a34c2fdb61",
+      "bytes": 66
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/diagnostics/check_outer_accumulation.cpp": {
+      "sha256": "2794e2ea5d575f5b66e618c361fd23a8523a70605a493755cc25ad6cc823fed0",
+      "bytes": 4758
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/diagnostics/check_ray_stopping.cpp": {
+      "sha256": "2ffb07d02f9279aeb015ba400e6ab9b317375bf42e545e317b873b2a391b2c74",
+      "bytes": 11321
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/diagnostics/extracted_retention.hpp": {
+      "sha256": "15778d408f037c9ea5bbf38b41492ebc1b27ebc5c9b437540af177b4997f8c59",
+      "bytes": 55
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/diagnostics/first_arrival_fmm.hpp": {
+      "sha256": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+      "bytes": 116
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/diagnostics/fixture_driver.hpp": {
+      "sha256": "9b6dd490f2bef31027ed1aaf80074d0c037c6c0d5c78afd57804327e710ec68f",
+      "bytes": 11340
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/diagnostics/observe_loma_initial_failure.py": {
+      "sha256": "c6090c788f9f061a0d21458dbc410f930058782e048730d1eebbe3e22d74b6aa",
+      "bytes": 13232
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/diagnostics/observed_optimizer.hpp": {
+      "sha256": "da35f0c8572de4e5e9d2e5d941895626cb2a3772b0fcd99e1212a840cb4e084a",
+      "bytes": 6917
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/diagnostics/original_path_eval.hpp": {
+      "sha256": "b9596439ed7806697b28011a9c9e4f1bbb79dd7070072f22a8cacf345227cf81",
+      "bytes": 507
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/diagnostics/prepare_outer_accumulation.py": {
+      "sha256": "50b3c2d56020bbe12b27babed3235a4272cdb26bb2ba43a8235e6bf1a13b26d0",
+      "bytes": 10204
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/diagnostics/run_ray_stopping.py": {
+      "sha256": "b39f64a35ab3920d57be3336a3234a0ecda1f91b0a9147d900ae069eb7deb3ec",
+      "bytes": 17130
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/diagnostics/saved_candidate.hpp": {
+      "sha256": "735083ed30cd3dba636ee3404ee837443a8b5a7348adaa622917020ccef45ed9",
+      "bytes": 3298
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/src/analytic_truth.hpp": {
+      "sha256": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+      "bytes": 7397
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/src/core.hpp": {
+      "sha256": "9abe5a475e3fa81e055346949d449e4f29c2cd609187263e3d0aa4001b6ffd0e",
+      "bytes": 22558
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/src/csv.hpp": {
+      "sha256": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+      "bytes": 5103
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/src/first_arrival.hpp": {
+      "sha256": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+      "bytes": 21152
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/src/forward.hpp": {
+      "sha256": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+      "bytes": 4861
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/src/full_linearization.hpp": {
+      "sha256": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+      "bytes": 11670
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/src/main.cpp": {
+      "sha256": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+      "bytes": 75410
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/src/ray_checks.hpp": {
+      "sha256": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+      "bytes": 12002
+    },
+    "data/development/usable_ray_curvature_controls_001/source/C/src/ray_metric.hpp": {
+      "sha256": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+      "bytes": 8817
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/diagnostics/check_outer_accumulation.cpp": {
+      "sha256": "2794e2ea5d575f5b66e618c361fd23a8523a70605a493755cc25ad6cc823fed0",
+      "bytes": 4758
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/diagnostics/check_ray_stopping.cpp": {
+      "sha256": "2ffb07d02f9279aeb015ba400e6ab9b317375bf42e545e317b873b2a391b2c74",
+      "bytes": 11321
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/diagnostics/extracted_retention.hpp": {
+      "sha256": "15778d408f037c9ea5bbf38b41492ebc1b27ebc5c9b437540af177b4997f8c59",
+      "bytes": 55
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/diagnostics/first_arrival_fmm.hpp": {
+      "sha256": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+      "bytes": 116
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/diagnostics/fixture_driver.hpp": {
+      "sha256": "9b6dd490f2bef31027ed1aaf80074d0c037c6c0d5c78afd57804327e710ec68f",
+      "bytes": 11340
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/diagnostics/observe_loma_initial_failure.py": {
+      "sha256": "c6090c788f9f061a0d21458dbc410f930058782e048730d1eebbe3e22d74b6aa",
+      "bytes": 13232
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/diagnostics/observed_optimizer.hpp": {
+      "sha256": "0a6d4575931f4fcce0f99db0f822aaef2223568dcc7bb3d4cddaad89c4d6c4a5",
+      "bytes": 6427
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/diagnostics/original_path_eval.hpp": {
+      "sha256": "b9596439ed7806697b28011a9c9e4f1bbb79dd7070072f22a8cacf345227cf81",
+      "bytes": 507
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/diagnostics/prepare_outer_accumulation.py": {
+      "sha256": "50b3c2d56020bbe12b27babed3235a4272cdb26bb2ba43a8235e6bf1a13b26d0",
+      "bytes": 10204
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/diagnostics/run_ray_stopping.py": {
+      "sha256": "b39f64a35ab3920d57be3336a3234a0ecda1f91b0a9147d900ae069eb7deb3ec",
+      "bytes": 17130
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/diagnostics/saved_candidate.hpp": {
+      "sha256": "735083ed30cd3dba636ee3404ee837443a8b5a7348adaa622917020ccef45ed9",
+      "bytes": 3298
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/diagnostics/usable_ray_curvature.hpp": {
+      "sha256": "78bfacf51dba07e466ad42117dcaf20fde529eeb4f2877f1a261672c0e7b65db",
+      "bytes": 4254
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/src/analytic_truth.hpp": {
+      "sha256": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+      "bytes": 7397
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/src/core.hpp": {
+      "sha256": "151a0824513337f31115569823366f62c6d8fe11392dc0a6d80d87b97ebc7939",
+      "bytes": 22120
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/src/csv.hpp": {
+      "sha256": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+      "bytes": 5103
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/src/first_arrival.hpp": {
+      "sha256": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+      "bytes": 21152
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/src/forward.hpp": {
+      "sha256": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+      "bytes": 4861
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/src/full_linearization.hpp": {
+      "sha256": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+      "bytes": 11670
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/src/main.cpp": {
+      "sha256": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+      "bytes": 75410
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/src/ray_checks.hpp": {
+      "sha256": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+      "bytes": 12002
+    },
+    "data/development/usable_ray_curvature_controls_001/source/D/src/ray_metric.hpp": {
+      "sha256": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+      "bytes": 8817
+    },
+    "data/development/usable_ray_curvature_controls_001/source/fixture/check_usable_ray_curvature.cpp": {
+      "sha256": "acb562b8d5f2b485684a51dc9e658c8a359c76d80171a48e0d93c5e6655e682c",
+      "bytes": 14847
+    },
+    "data/development/usable_ray_curvature_controls_001/source/fixture/extracted_usable_caller.hpp": {
+      "sha256": "432b9bc4bfe6bda1c533c88beef98433680a40213677aab638a59cf57f0e35e5",
+      "bytes": 1444
+    },
+    "data/development/usable_ray_curvature_controls_001/source/fixture/run_usable_ray_curvature_checks.py": {
+      "sha256": "19d73c9c4feef2bb741e27fea6da17dbf1cab0e11801d50c04424fe76c1e1844",
+      "bytes": 12092
+    },
+    "data/development/usable_ray_curvature_controls_001/source/fixture/usable_ray_curvature.hpp": {
+      "sha256": "78bfacf51dba07e466ad42117dcaf20fde529eeb4f2877f1a261672c0e7b65db",
+      "bytes": 4254
+    },
+    "data/development/usable_ray_curvature_controls_001/summary.json": {
+      "sha256": "ae70b7270161fa42f5fb4ea4b0046effb0a54291d139ad60d0a4e3197d12f6db",
+      "bytes": 31441
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/diagnostics/check_outer_accumulation.cpp": {
+      "sha256": "2794e2ea5d575f5b66e618c361fd23a8523a70605a493755cc25ad6cc823fed0",
+      "bytes": 4758
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/diagnostics/check_ray_stopping.cpp": {
+      "sha256": "2ffb07d02f9279aeb015ba400e6ab9b317375bf42e545e317b873b2a391b2c74",
+      "bytes": 11321
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/diagnostics/extracted_retention.hpp": {
+      "sha256": "15778d408f037c9ea5bbf38b41492ebc1b27ebc5c9b437540af177b4997f8c59",
+      "bytes": 55
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/diagnostics/first_arrival_fmm.hpp": {
+      "sha256": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+      "bytes": 116
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/diagnostics/fixture_driver.hpp": {
+      "sha256": "9b6dd490f2bef31027ed1aaf80074d0c037c6c0d5c78afd57804327e710ec68f",
+      "bytes": 11340
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/diagnostics/observe_loma_initial_failure.py": {
+      "sha256": "c6090c788f9f061a0d21458dbc410f930058782e048730d1eebbe3e22d74b6aa",
+      "bytes": 13232
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/diagnostics/observed_optimizer.hpp": {
+      "sha256": "da35f0c8572de4e5e9d2e5d941895626cb2a3772b0fcd99e1212a840cb4e084a",
+      "bytes": 6917
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/diagnostics/original_path_eval.hpp": {
+      "sha256": "b9596439ed7806697b28011a9c9e4f1bbb79dd7070072f22a8cacf345227cf81",
+      "bytes": 507
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/diagnostics/prepare_outer_accumulation.py": {
+      "sha256": "50b3c2d56020bbe12b27babed3235a4272cdb26bb2ba43a8235e6bf1a13b26d0",
+      "bytes": 10204
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/diagnostics/run_ray_stopping.py": {
+      "sha256": "b39f64a35ab3920d57be3336a3234a0ecda1f91b0a9147d900ae069eb7deb3ec",
+      "bytes": 17130
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/diagnostics/saved_candidate.hpp": {
+      "sha256": "735083ed30cd3dba636ee3404ee837443a8b5a7348adaa622917020ccef45ed9",
+      "bytes": 3298
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/src/analytic_truth.hpp": {
+      "sha256": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+      "bytes": 7397
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/src/core.hpp": {
+      "sha256": "9abe5a475e3fa81e055346949d449e4f29c2cd609187263e3d0aa4001b6ffd0e",
+      "bytes": 22558
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/src/csv.hpp": {
+      "sha256": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+      "bytes": 5103
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/src/first_arrival.hpp": {
+      "sha256": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+      "bytes": 21152
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/src/forward.hpp": {
+      "sha256": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+      "bytes": 4861
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/src/full_linearization.hpp": {
+      "sha256": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+      "bytes": 11670
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/src/main.cpp": {
+      "sha256": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+      "bytes": 75410
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/src/ray_checks.hpp": {
+      "sha256": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+      "bytes": 12002
+    },
+    "data/development/usable_ray_curvature_prepared_001/C/src/ray_metric.hpp": {
+      "sha256": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+      "bytes": 8817
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/diagnostics/check_outer_accumulation.cpp": {
+      "sha256": "2794e2ea5d575f5b66e618c361fd23a8523a70605a493755cc25ad6cc823fed0",
+      "bytes": 4758
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/diagnostics/check_ray_stopping.cpp": {
+      "sha256": "2ffb07d02f9279aeb015ba400e6ab9b317375bf42e545e317b873b2a391b2c74",
+      "bytes": 11321
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/diagnostics/extracted_retention.hpp": {
+      "sha256": "15778d408f037c9ea5bbf38b41492ebc1b27ebc5c9b437540af177b4997f8c59",
+      "bytes": 55
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/diagnostics/first_arrival_fmm.hpp": {
+      "sha256": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+      "bytes": 116
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/diagnostics/fixture_driver.hpp": {
+      "sha256": "9b6dd490f2bef31027ed1aaf80074d0c037c6c0d5c78afd57804327e710ec68f",
+      "bytes": 11340
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/diagnostics/observe_loma_initial_failure.py": {
+      "sha256": "c6090c788f9f061a0d21458dbc410f930058782e048730d1eebbe3e22d74b6aa",
+      "bytes": 13232
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/diagnostics/observed_optimizer.hpp": {
+      "sha256": "0a6d4575931f4fcce0f99db0f822aaef2223568dcc7bb3d4cddaad89c4d6c4a5",
+      "bytes": 6427
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/diagnostics/original_path_eval.hpp": {
+      "sha256": "b9596439ed7806697b28011a9c9e4f1bbb79dd7070072f22a8cacf345227cf81",
+      "bytes": 507
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/diagnostics/prepare_outer_accumulation.py": {
+      "sha256": "50b3c2d56020bbe12b27babed3235a4272cdb26bb2ba43a8235e6bf1a13b26d0",
+      "bytes": 10204
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/diagnostics/run_ray_stopping.py": {
+      "sha256": "b39f64a35ab3920d57be3336a3234a0ecda1f91b0a9147d900ae069eb7deb3ec",
+      "bytes": 17130
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/diagnostics/saved_candidate.hpp": {
+      "sha256": "735083ed30cd3dba636ee3404ee837443a8b5a7348adaa622917020ccef45ed9",
+      "bytes": 3298
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/diagnostics/usable_ray_curvature.hpp": {
+      "sha256": "78bfacf51dba07e466ad42117dcaf20fde529eeb4f2877f1a261672c0e7b65db",
+      "bytes": 4254
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/src/analytic_truth.hpp": {
+      "sha256": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+      "bytes": 7397
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/src/core.hpp": {
+      "sha256": "151a0824513337f31115569823366f62c6d8fe11392dc0a6d80d87b97ebc7939",
+      "bytes": 22120
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/src/csv.hpp": {
+      "sha256": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+      "bytes": 5103
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/src/first_arrival.hpp": {
+      "sha256": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+      "bytes": 21152
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/src/forward.hpp": {
+      "sha256": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+      "bytes": 4861
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/src/full_linearization.hpp": {
+      "sha256": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+      "bytes": 11670
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/src/main.cpp": {
+      "sha256": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+      "bytes": 75410
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/src/ray_checks.hpp": {
+      "sha256": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+      "bytes": 12002
+    },
+    "data/development/usable_ray_curvature_prepared_001/D/src/ray_metric.hpp": {
+      "sha256": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+      "bytes": 8817
+    },
+    "data/development/usable_ray_curvature_prepared_001/core.hpp.diff": {
+      "sha256": "2b01c70983025f199ec2bc5b4d8ea4c51f356edb85dd9c9be3ee18300c270219",
+      "bytes": 2109
+    },
+    "data/development/usable_ray_curvature_prepared_001/observed_optimizer.hpp.diff": {
+      "sha256": "b6433ef4b2fc372af9606ea9905d556e5e0537edd98081fea9e6455e903fb5d7",
+      "bytes": 1887
+    },
+    "data/development/usable_ray_curvature_prepared_001/prepare.py": {
+      "sha256": "314b6b6c4c3b14af0696eb2edda567fe5547184de7b5a8d4aa9488d29fa366db",
+      "bytes": 5063
+    },
+    "data/development/usable_ray_curvature_prepared_001/prepared.json": {
+      "sha256": "eff5bffcb2f37e38e6bc646bc5aa425201b30b93de542ec8430ec2e1b341f524",
+      "bytes": 7857
+    },
+    "diagnostics/catalog_dd_resolution.py": {
+      "sha256": "3761db6b4de5af78055e3eaed7a7daf10d75bb37284018e24d6f7b1b0608b45d",
+      "bytes": 5389
+    },
+    "diagnostics/check_catalog_dd_resolution.py": {
+      "sha256": "a043ab95e35989e69f2cd66811dba2af7a02bda0321e5f5bc112f346ed11fa7a",
+      "bytes": 11268
+    },
+    "diagnostics/check_endpoint_shooting.py": {
+      "sha256": "f10e59a44a2c27d5b568d704194eee926ffd959674e676b3d312c6b1e3c0e367",
+      "bytes": 24338
+    },
+    "diagnostics/check_full_dd_resolution.py": {
+      "sha256": "f8c0df72c635effa279d022608f42eef9b7ff15f121427ed72d7bd47b1cf3ab8",
+      "bytes": 14828
+    },
+    "diagnostics/check_usable_ray_curvature.cpp": {
+      "sha256": "acb562b8d5f2b485684a51dc9e658c8a359c76d80171a48e0d93c5e6655e682c",
+      "bytes": 14847
+    },
+    "diagnostics/prepare_usable_ray_curvature.py": {
+      "sha256": "314b6b6c4c3b14af0696eb2edda567fe5547184de7b5a8d4aa9488d29fa366db",
+      "bytes": 5063
+    },
+    "diagnostics/replay_endpoint_shooting_baselines.py": {
+      "sha256": "ac00f9671d62f36b7e5a2e539eb9a5c147e8964936a1e96f3a58047f28dc6a84",
+      "bytes": 7505
+    },
+    "diagnostics/run_usable_curvature_native.py": {
+      "sha256": "7ee792c4b0aa8326ce99cc43c30f7ec88f3400c0761809ca22215c0d6131050d",
+      "bytes": 20366
+    },
+    "diagnostics/run_usable_ray_curvature_checks.py": {
+      "sha256": "19d73c9c4feef2bb741e27fea6da17dbf1cab0e11801d50c04424fe76c1e1844",
+      "bytes": 12092
+    },
+    "diagnostics/usable_ray_curvature.hpp": {
+      "sha256": "78bfacf51dba07e466ad42117dcaf20fde529eeb4f2877f1a261672c0e7b65db",
+      "bytes": 4254
+    },
+    "figures/diagnostics/loma_endpoint_shooting.json": {
+      "sha256": "85e0cc261d5bf28de0172bb344350842b7ef9195f83c7a6880cb50aedf149ffa",
+      "bytes": 27189
+    },
+    "figures/diagnostics/loma_endpoint_shooting.pdf": {
+      "sha256": "93656adb5e6029d6aabaf91e20e4407f021931c4245f70d5c7396e26a1965947",
+      "bytes": 35056
+    },
+    "figures/diagnostics/loma_endpoint_shooting.png": {
+      "sha256": "ec5067bf6a168f404a43556d8bff2e590bb67637630937d410480deb01e77d9b",
+      "bytes": 250126
+    },
+    "plot_endpoint_shooting.py": {
+      "sha256": "2435b0970b79e6fccee70db3dee4d250afa76621c4b3fda96874b59148c809ec",
+      "bytes": 9410
+    },
+    "report/recovery_checkpoint.tex": {
+      "sha256": "cdba8cc8ff2d4b2cbfc3ef224052804953751a6d64339c07e9afda5cb23ad15b",
+      "bytes": 49058
+    },
+    "report/report.pdf": {
+      "sha256": "d61c637c2f45a3ee0405f8ef64e46285d83201c245da5e5c68f0d88859c93902",
+      "bytes": 2386483
+    },
+    "resolution_full_hayward.py": {
+      "sha256": "8f773ca30f4280e75bd45694b9ad62788e2751e6395d797d617666215cfb6b15",
+      "bytes": 19587
+    }
+  },
+  "file_count": 332,
+  "total_bytes": 26220659
+}

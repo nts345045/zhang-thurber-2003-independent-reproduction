@@ -115,6 +115,12 @@ convergence must be assessed from the method-specific histories and final
 diagnostics. The resolution block algebra
 has been checked against a direct joint-matrix calculation, including an unsensed
 source column; this component check does not establish field-data resolution.
+The prepared full-DD analysis in `resolution_full_hayward.py` propagates shared
+catalog-pick errors and distinguishes the masked estimator from unmasked model
+derivatives. An [independent algebra check](data/development/catalog_dd_resolution_controls_003/README.md)
+passes 35 controls, including repeated picks and ordered-entry column scaling.
+Applying it to a corrected saved model still requires that model's full export;
+the published field maps remain the conditional absolute-pick calculation.
 
 `dd simulate CONFIG DIR` can generate synthetic observations from supplied
 identified catalog geometry and supplied true/initial grids. Its observations
@@ -210,6 +216,14 @@ saved-initializer replay. It satisfies the unchanged combined local stop after
 supports a role for discarded curvature in this case. Positive subnormal and
 infinite curvature remain unsafe in invented controls; no general optimizer
 change is adopted.
+A [usable-curvature replay](data/development/loma_usable_curvature_native_001/README.md)
+rejects nonfinite or unrepresentable memory operations and preserves the existing
+fallback. It reproduces all five native C tables byte for byte after 183 invented
+checks per variant. This supports the safeguard on the tested case; it remains
+an isolated diagnostic and does not repair the separate endpoint-action failure.
+Historical replays use the [inert sentinel archive](data/development/terminal_lock_archive_001/README.md)
+to restore omitted terminal evidence into a fresh scratch checkout; existing
+run directories and runtime locks are preserved.
 A separate [boundary component calculation](data/development/loma_endpoint_connector_native_001/README.md)
 replaces the first straight element by a constrained curved connector in the
 saved affine layer. It retains the same local action, removes the demonstrated
@@ -221,6 +235,11 @@ uses one trilinear action for original-node perturbations. Its correct limiting
 source derivative coexists with a 6.066% error in the leading excess action.
 The perturbed-family minima and derivative error bounds remain uncertified;
 the receiver derivative remains biased. This supplies no native correction.
+A [trilinear shooting experiment](data/development/loma_endpoint_shooting_controls_001/README.md)
+uses curved candidates and the same action for all original-node perturbations.
+All 40 affine reference comparisons pass, while all 24 inward boundary secants
+retain finite-step failures and the expected square-root truncation trend.
+This supplies an action-consistent local candidate, with no native adoption.
 Only 37,599 rays pass all checks. LOM sampled checks and the LON initial-ray
 preflight remain active; neither performs an inverse update. A separate
 [one-sided curvature calculation](data/development/native_interface_conditioning/README.md)
@@ -278,6 +297,8 @@ do not create a configuration or inversion result.
 
 [Read the PDF report](report/report.pdf) or the
 [panel-by-panel audit](FIGURE_AUDIT.md).
+The [failure summary](FAILURE_SUMMARY.md) connects the input, forward-model,
+inversion, and uncertainty deficiencies to the remaining partial reproductions.
 
 ## Where to inspect outputs
 
