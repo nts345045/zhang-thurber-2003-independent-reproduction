@@ -1,0 +1,7 @@
+{
+  "status": "reviewer_schema_assertion_corrected",
+  "previous_checker_sha256": "629b379e5c7aea799fb94b1ed5282790d82bc6309621e9036577b73a0e36dd4f",
+  "previous_assertion": "near_tie_count == 0",
+  "corrected_assertion": "near_tie_count == 1",
+  "reason": "This reference format includes the winning candidate in near_ties; each selected record has one total candidate and one near_tie entry. No numerical source, input, reference or result changed."
+}

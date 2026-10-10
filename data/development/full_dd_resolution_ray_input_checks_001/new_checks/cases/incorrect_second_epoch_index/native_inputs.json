@@ -1,0 +1,145 @@
+{
+  "events": [
+    {
+      "id": "0",
+      "x": "0.123456789012345",
+      "y": "0",
+      "z": "1",
+      "t": "0",
+      "event_resource_id": "smi:invented/event/0",
+      "origin_resource_id": "smi:invented/origin/0",
+      "note": "comma, quote \" and\nnewline"
+    },
+    {
+      "id": "1",
+      "x": "1.123456789012345",
+      "y": "0",
+      "z": "1",
+      "t": "0",
+      "event_resource_id": "smi:invented/event/1",
+      "origin_resource_id": "smi:invented/origin/1",
+      "note": "comma, quote \" and\nnewline"
+    },
+    {
+      "id": "2",
+      "x": "2.123456789012345",
+      "y": "0",
+      "z": "1",
+      "t": "0",
+      "event_resource_id": "smi:invented/event/2",
+      "origin_resource_id": "smi:invented/origin/2",
+      "note": "comma, quote \" and\nnewline"
+    }
+  ],
+  "stations": [
+    {
+      "id": "0",
+      "x": "12.3456789012345",
+      "y": "-0.125",
+      "z": "0",
+      "t": "0",
+      "network_code": "XX",
+      "station_code": "MOCK",
+      "location_code": "",
+      "channel_code": "HHZ",
+      "channel_seed_id": "XX.MOCK..HHZ",
+      "channel_fdsn_source_id": "FDSN:XX_MOCK__H_H_Z",
+      "metadata_epoch_start": "2000-01-01",
+      "metadata_epoch_end": "2005-01-01",
+      "source_sha256": "invented_metadata_document"
+    },
+    {
+      "id": "1",
+      "x": "12.3456789012345",
+      "y": "-0.125",
+      "z": "0",
+      "t": "0",
+      "network_code": "XX",
+      "station_code": "MOCK",
+      "location_code": "",
+      "channel_code": "HHZ",
+      "channel_seed_id": "XX.MOCK..HHZ",
+      "channel_fdsn_source_id": "FDSN:XX_MOCK__H_H_Z",
+      "metadata_epoch_start": "2005-01-01",
+      "metadata_epoch_end": "",
+      "source_sha256": "invented_metadata_document"
+    }
+  ],
+  "observations": [
+    {
+      "i": "0",
+      "j": "-1",
+      "station": "0",
+      "type": "0",
+      "value": "0",
+      "station_j": ""
+    },
+    {
+      "i": "1",
+      "j": "-1",
+      "station": "1",
+      "type": "0",
+      "value": "0",
+      "station_j": ""
+    },
+    {
+      "i": "0",
+      "j": "1",
+      "station": "0",
+      "type": "1",
+      "value": "0",
+      "station_j": "1"
+    },
+    {
+      "i": "2",
+      "j": "0",
+      "station": "1",
+      "type": "1",
+      "value": "0",
+      "station_j": "0"
+    }
+  ],
+  "rows": [
+    {
+      "i": "0",
+      "j": "-1",
+      "station": "0",
+      "type": "0",
+      "station_j_index": "-1",
+      "observation_row": "0",
+      "active": "1"
+    },
+    {
+      "i": "1",
+      "j": "-1",
+      "station": "1",
+      "type": "0",
+      "station_j_index": "-1",
+      "observation_row": "1",
+      "active": "1"
+    },
+    {
+      "i": "0",
+      "j": "1",
+      "station": "0",
+      "type": "1",
+      "station_j_index": "0",
+      "observation_row": "2",
+      "active": "1"
+    },
+    {
+      "i": "2",
+      "j": "0",
+      "station": "1",
+      "type": "1",
+      "station_j_index": "0",
+      "observation_row": "3",
+      "active": "0"
+    }
+  ],
+  "info": {
+    "observed_rays": "3",
+    "ray_status_failures": "0",
+    "observations": "4"
+  }
+}

@@ -1,0 +1,148 @@
+--- before/resolution_full_hayward.py
++++ after/resolution_full_hayward.py
+@@ -163,8 +163,121 @@
+     return matrix
+ 
+ 
++def validate_exported_rays(path, observations, rows, events, stations, info):
++    """Check native support and recorded local status, not first-arrival accuracy."""
++    def integer(value, label):
++        number = float(value)
++        if not np.isfinite(number) or number != np.floor(number) or not -2**31 <= number < 2**31:
++            raise ValueError("Invalid integer " + label)
++        return int(number)
++
++    identity_fields = (("event_resource_id", "origin_resource_id"),
++                       ("network_code", "station_code", "location_code", "channel_code",
++                        "channel_seed_id", "channel_fdsn_source_id",
++                        "metadata_epoch_start", "metadata_epoch_end"))
++    metadata = []
++    for table, required in zip((events, stations), identity_fields):
++        if not table:
++            raise ValueError("Empty native event/receiver table")
++        fields = set(table[0]) - {"id", "x", "y", "z", "t"}
++        if not set(required) <= fields:
++            raise ValueError("Missing native event/receiver identity columns")
++        for index, row in enumerate(table):
++            if integer(row["id"], "native id") != index or set(row) != set(table[0]):
++                raise ValueError("Native IDs or metadata schema changed")
++            for key in required:
++                if not row[key] and key not in ("location_code", "metadata_epoch_end"):
++                    raise ValueError("Empty native identity: " + key)
++            if any(not np.isfinite(float(row[axis])) for axis in "xyz"):
++                raise ValueError("Nonfinite native coordinate")
++        metadata.append(fields)
++
++    if len(observations) != len(rows):
++        raise ValueError("Original observation support changed")
++    expected = set()
++    for original, exported in zip(observations, rows):
++        i, j, k, kind = [integer(original[key], key) for key in ("i", "j", "station", "type")]
++        second = -1
++        if "station_j" in original:
++            if original["station_j"] != "":
++                second = integer(original["station_j"], "station_j")
++            if j >= 0 and second < 0:
++                raise ValueError("Differential observation has an empty/negative station_j")
++        if (not 0 <= i < len(events) or not 0 <= k < len(stations) or kind not in (0, 1, 2) or
++                (j != -1 if kind == 0 else not 0 <= j < len(events) or i == j) or
++                not -1 <= second < len(stations) or (j < 0 and second != -1)):
++            raise ValueError("Invalid observation event/receiver indices")
++        second_index = -1 if j < 0 else k if second < 0 else second
++        if (any(integer(exported[key], key) != value for key, value in
++                (("i", i), ("j", j), ("station", k), ("type", kind))) or
++                integer(exported["station_j_index"], "station_j_index") != second_index):
++            raise ValueError("Exported observation event/receiver indices changed")
++        expected.add((i, k))
++        if j >= 0:
++            first, last = stations[k], stations[second_index]
++            if (any(float(first[axis]) != float(last[axis]) for axis in "xyz") or
++                    any(first[key] != last[key] for key in identity_fields[1][:6])):
++                raise ValueError("Differential receiver channel/position changed")
++            expected.add((j, second_index))
++
++    flags = ("ray_finite", "ray_converged", "ray_initialization_attempted", "ray_initialization_succeeded")
++    required = {"event", "station", "ray_time", "ray_projected_gradient", "ray_raw_gradient"} | set(flags)
++    for prefix, fields in zip(("source_", "receiver_"), metadata):
++        required.update(prefix + field for field in fields | set("xyz"))
++    seen, failed, unattempted = set(), [], 0
++    with Path(path).open(newline="") as stream:
++        reader = csv.DictReader(stream)
++        header = reader.fieldnames or []
++        if len(header) != len(set(header)) or not required <= set(header):
++            raise ValueError("Missing/duplicate ray columns")
++        for ray in reader:
++            if None in ray or any(value is None for value in ray.values()):
++                raise ValueError("Incomplete ray CSV row")
++            pair = (integer(ray["event"], "ray event"), integer(ray["station"], "ray station"))
++            if pair not in expected or pair in seen:
++                raise ValueError("Unexpected/duplicate native ray pair: " + str(pair))
++            seen.add(pair)
++            for prefix, native, fields in zip(("source_", "receiver_"),
++                                             (events[pair[0]], stations[pair[1]]), metadata):
++                if any(ray[prefix + key] != native[key] for key in fields):
++                    raise ValueError("Ray native metadata mismatch: " + str(pair))
++                # write_full_linearization uses write_ray_status's default
++                # precision=12; metadata strings are copied without rounding.
++                for axis in "xyz":
++                    value = float(ray[prefix + axis])
++                    if not np.isfinite(value) or value != float(format(float(native[axis]), ".12g")):
++                        raise ValueError("Ray coordinate serialization mismatch: " + str(pair))
++            for key in ("ray_time", "ray_projected_gradient", "ray_raw_gradient"):
++                value = float(ray[key])
++                if not np.isfinite(value) or value < 0:
++                    raise ValueError("Invalid displayed ray value: " + key)
++            finite, converged, attempted, succeeded = [integer(ray[key], key) for key in flags]
++            if any(value not in (0, 1) for value in (finite, converged, attempted, succeeded)):
++                raise ValueError("Invalid ray status flag")
++            if not finite or not converged or (attempted and not succeeded):
++                failed.append(pair)
++            unattempted += not attempted
++    if seen != expected or integer(info["observed_rays"], "observed_rays") != len(expected):
++        raise ValueError("Incomplete native ray support")
++    if integer(info["ray_status_failures"], "ray_status_failures") != len(failed):
++        raise ValueError("Ray failure count disagrees with recorded rows")
++    if failed:
++        raise ValueError("Failed recorded local/initializer ray status: " + str(failed[0]))
++    return {"unique_native_rays": len(seen), "unattempted_initialization_rays": unattempted,
++            "coordinate_significant_digits": 12,
++            "scope": "Exact native support/metadata and recorded finite/local/initializer status only",
++            "limitations": ["Unattempted initialization is allowed; no first-arrival claim follows.",
++                            "This export has no path-domain, exact-endpoint or source-partial fields.",
++                            "Final-model ray and derivative accuracy require separate acceptance."]}
++
++
+ def run(data_dir, mode):
+     data_dir = Path(data_dir).resolve()
++    output_prefix = data_dir / (mode + "_full_resolution")
++    for suffix in (".csv", "_picks.csv", "_matrices.npz", "_manifest.json"):
++        path = Path(str(output_prefix) + suffix)
++        if path.exists() or path.is_symlink():
++            raise ValueError("Preserve existing full-resolution output: " + str(path))
+     prefix = data_dir / (mode + "_full_linearization")
+     paths = {suffix: Path(str(prefix) + "_" + suffix + ".csv") for suffix in
+              ("rows", "matrix", "columns", "suppressed", "smoothing_rows", "smoothing_matrix", "rays", "info")}
+@@ -183,6 +296,7 @@
+         raise ValueError("Parameter indices are not consecutive")
+     if len(observations) != len(rows):
+         raise ValueError("Original observation support changed")
++    ray_validation = validate_exported_rays(paths["rays"], observations, rows, events, stations, info)
+     active = 0
+     for q, row in enumerate(rows):
+         original = observations[q]
+@@ -264,7 +378,6 @@
+     if not np.all(np.isfinite(velocity)) or np.any(velocity <= 0):
+         raise ValueError("Invalid saved velocity")
+     sigma = velocity * np.sqrt(np.maximum(0., np.diag(covariance)))
+-    output_prefix = data_dir / (mode + "_full_resolution")
+     with Path(str(output_prefix) + ".csv").open("w", newline="") as stream:
+         fields = ["node", "x", "y", "z", "v", "masked_resolution_diagonal",
+                   "unmasked_model_response_diagonal", "shared_pick_sigma_velocity_km_s"]
+@@ -294,6 +407,7 @@
+         "unmasked_response": "Velocity/model block of H^-1 A^T W J_unmasked, conditional on the exported ray derivatives",
+         "noise_covariance": "Model block of H^-1 A^T W P Sigma_pick P^T W A H^-1; no extra 0.05^2 factor",
+         "ray_status_failures": int(info["ray_status_failures"]),
++        "ray_input_validation": ray_validation,
+         "limitations": ["Conditional on fixed robust/distance weights, kernel masks, column scales, and computed ray branches.",
+                         "Source-domain bounds and their active sets are omitted; this is not the covariance of the constrained nonlinear estimator.",
+                         "Reference catalog origin baselines are held fixed; source-coordinate and origin-time parameters remain jointly coupled in the local estimator.",

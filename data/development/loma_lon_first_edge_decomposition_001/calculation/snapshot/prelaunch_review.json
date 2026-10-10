@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "prepared_sha256": "9b61082fb9b5c46966fa5e5c9673ba8d1e58c038875ed9c63888ac36ab830dac",
+  "checker_sha256": "7dbe96758d731a1d34741302629e6cdcead0b81668447bcaabba7132ea7b44de",
+  "checked_hash_counts": {
+    "original_sha256": 22,
+    "runtime_sha256": 9,
+    "output_sha256": 62,
+    "source_sha256": 27
+  },
+  "archived_source_members": 13,
+  "native_pairs": [
+    8670,
+    8674
+  ],
+  "native_context_sha256": "fe3f7683fa43e875bcff80a6d76f45338c8d888ed9170582fc86603d575ec193",
+  "terminal_accuracy_review_sha256": "0c6cefebc86747e5bfd0b4b48dd78b593361bb7b80105d8c0afd78830fdbd3d9",
+  "scope": "Independent saved source/input/hash/native joins; no compiler, ray, reference or network execution.",
+  "reviewer": "scientific_audit",
+  "reviewed_utc": "2026-10-10T09:08:08.111895Z",
+  "runner": "run_v3.py",
+  "runner_sha256": "89a9380bf33945dfb9e1330bc9eb4cc548138f0ff8280f2211e6b1c9e051773d",
+  "driver_sha256": "ab33ef6c4171ebaa502e28ab4fcd96e910fc9ca04cc67a226e9d06a24fd93a60",
+  "readback_sha256": "380111d6d94d580868526a1dcf21d9c3d125ded7b8247947cef921e49d36dcaf",
+  "manual_source_checks": [
+    "Driver uses archived readers and exactly two public straight trace calls per variant with null seed, spacing0.03125km,1000updates and full derivatives.",
+    "Old physical scalars/status/counts/native108-minus8 columns must match saved12digit strings before D compilation and execution; saved-only FMM metadata is explicitly excluded and retained separately.",
+    "D differs only by exact tested core plus usable-curvature header; no other archived source changes.",
+    "Full17digit final paths and model arrays preserve native event/origin/channel/epoch metadata; full geometry, finite values, ordered support, endpoints and domain checks are retained.",
+    "Process-group cleanup encloses post-Popen bookkeeping, tolerates vanished groups, reaps direct child, waits for non-zombie descendants and withholds stable partial hashes if any remain.",
+    "Source/error gates and status flags remain distinct; no first-arrival/full-cohort/inverse certificate or single-change causal attribution."
+  ],
+  "authorization_scope": "Parent authorized exactly four old/D straight replays after this review; no FMM construction, added ray cases or live-job changes.",
+  "limitations": [
+    "Lifecycle review is source inspection; no new interruption fixture executed here.",
+    "Old12digit parity remains an execution gate, not yet an observed result.",
+    "No optimizer histories are captured by this uninstrumented four-call diagnostic."
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "reviewer": "earthscope_discovery",
+  "reviewed_utc": "2026-10-10T04:24:18.212038Z",
+  "scope": "Independent saved-table/hash/native-identity/original-axis derivative audit and old/new candidate-signature comparison; no reference enumeration or numerical forward/inverse solve",
+  "summary_sha256": "6933ca71c17a9795c137884581a44fc82047735a5021fb3ab9815dbc573ffebf",
+  "execution_sha256": "369bc74b2769f02ed7a25b2cd3b0f82567af894ee16fc499116bac0f24bf3baa",
+  "verified_pairs": 37648,
+  "invalid_reference_count": 0,
+  "candidate_count": 37752,
+  "native_metadata_fields_all_match": true,
+  "ordered_indices_complete": true,
+  "source_derivative_xyz_matches": true,
+  "source_derivative_coordinate_mapping": "Original x,y,z; no permutation",
+  "source_time_metadata_preserved_and_excluded_from_saved_propagation_time": true,
+  "pairs_with_nonzero_preserved_source_t": 37648,
+  "source_indices_on_box_faces": [
+    31,
+    246,
+    287,
+    318,
+    411,
+    433,
+    463,
+    467,
+    507
+  ],
+  "boundary_flags_all_match_native_geometry": true,
+  "finite_box_and_depth_only_profile_verified": true,
+  "output_hashes_verified_before_and_after": 18,
+  "original_input_and_source_hashes_verified_before_and_after": 16,
+  "all_old_new_pinned_files_verified_before_and_after": 57,
+  "candidate_distance_closure_max_km": 9.651941468291625e-10,
+  "horizontal_derivative_direction_error_max_s_per_km": 3.469446951953614e-18,
+  "branch_counts": {
+    "turning": 19652,
+    "direct": 17982,
+    "bottom_boundary": 13,
+    "flat_direct": 1
+  },
+  "reference_comparison_ready": true,
+  "exact_turning_enclosures_verified": 19705,
+  "prior_attempt_comparison": {
+    "original_invalid_pair_indices": [
+      8156
+    ],
+    "newly_valid_pair_indices": [
+      8156
+    ],
+    "all_candidate_signature_and_isolation_fields_unchanged": true,
+    "all_nonturning_candidate_dictionaries_unchanged": true,
+    "maximum_absolute_candidate_time_change_s": 1.7013341846450203e-09,
+    "maximum_candidate_source_gradient_change_norm_s_per_km": 1.3201001325412918e-13,
+    "original_summary_sha256": "754fac2f78bb23952fa44af22ac0d59267e43ca5a2ccca1f9965ffce628ffa1b",
+    "original_execution_sha256": "587eb195af6b18fd04a0a2e8aa9ef1a7fd0f76e8483223691de859863289ae74",
+    "original_failed_attempt_preserved": true
+  },
+  "material_issue_found": false,
+  "limitations": [
+    "This audits saved evidence and algebraic enclosure invariants, not an independent derivation or rerun of the reference equations.",
+    "Minimum-time ordering is ordinary floating-point comparison, not an interval-certified ordering.",
+    "Boundary and near-tie derivatives retain their documented branch interpretation.",
+    "No forward-ray or inversion acceptance follows from this artifact audit."
+  ]
+}
