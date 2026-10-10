@@ -32,7 +32,7 @@ if (ROOT / build).exists() or (ROOT / out).exists():
 (ROOT / out).mkdir(parents=True)
 snapshot = build / 'source'
 sources = ['diagnostics/check_fmm_rotated_affine.cpp', 'diagnostics/first_arrival_fmm.hpp',
-           'src/first_arrival.hpp', 'src/core.hpp', 'src/ray_metric.hpp', 'src/forward.hpp',
+           'src/first_arrival.hpp', 'src/core.hpp', 'src/ray_metric.hpp', 'src/usable_ray_curvature.hpp', 'src/forward.hpp',
            'diagnostics/production_entry_checks.hpp', 'diagnostics/seeded_bending.py', 'diagnostics/run_fmm_rotated_affine.py']
 for relative in sources:
     destination = ROOT / snapshot / relative
