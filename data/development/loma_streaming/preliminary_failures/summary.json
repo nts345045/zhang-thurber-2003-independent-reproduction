@@ -1,0 +1,11 @@
+{
+  "baseline_commit": "deeae0e",
+  "failure": "Existing external-input assertion requires diagnostic_row as final column; integrated first-arrival columns follow it. Numerical/data checks had not failed.",
+  "exit_code": 134,
+  "correction": "Retain row count; require named column presence instead of final-column position. The final comparison applies the same correction to legacy and current fixtures.",
+  "other_preliminary_attempt": "An initial parallel compile of the legacy forward driver raced its copy and reported no such file; source copying was completed before the successful retry. No binary ran in that failed invocation.",
+  "sha256": {
+    "legacy_external_stderr.log": "017b04c281ee5946e0814105c4efd5f60d8c76ae87da80d670eb35cd7dbca8c8",
+    "legacy_external_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

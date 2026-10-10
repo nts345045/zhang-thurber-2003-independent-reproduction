@@ -60,33 +60,49 @@ bool csv_record(std::istream &in, Strings &row) {
   return started;
 }
 
+Strings csv_header(std::istream &f, const std::string &path,
+                   const Strings &prefix = {}) {
+  Strings header;
+  if (!csv_record(f, header))
+    throw std::runtime_error("Missing CSV header: " + path);
+  for (size_t i = 0; i < header.size(); i++) {
+    if (header[i].empty())
+      throw std::runtime_error("Empty CSV column name: " + path);
+    for (size_t j = 0; j < i; j++)
+      if (header[i] == header[j])
+        throw std::runtime_error("Duplicate CSV column: " + header[i]);
+  }
+  if (header.size() < prefix.size())
+    throw std::runtime_error("Missing numeric CSV columns: " + path);
+  for (size_t i = 0; i < prefix.size(); i++)
+    if (header[i] != prefix[i])
+      throw std::runtime_error("Expected CSV column " + prefix[i] + " in " + path);
+  return header;
+}
+
+bool csv_row(std::istream &f, Strings &row, size_t width,
+             const std::string &path) {
+  while (csv_record(f, row)) {
+    if (row.size() == 1 && row[0].empty())
+      continue;
+    if (row.size() != width)
+      throw std::runtime_error("Wrong CSV row width: " + path);
+    return true;
+  }
+  if (f.bad())
+    throw std::runtime_error("CSV read failed: " + path);
+  return false;
+}
+
 CsvTable csv_table(const std::string &path, const Strings &prefix = {}) {
   std::ifstream f(path);
   if (!f)
     throw std::runtime_error("Cannot read " + path);
   CsvTable table;
-  if (!csv_record(f, table.header))
-    throw std::runtime_error("Missing CSV header: " + path);
-  for (size_t i = 0; i < table.header.size(); i++) {
-    if (table.header[i].empty())
-      throw std::runtime_error("Empty CSV column name: " + path);
-    for (size_t j = 0; j < i; j++)
-      if (table.header[i] == table.header[j])
-        throw std::runtime_error("Duplicate CSV column: " + table.header[i]);
-  }
-  if (table.header.size() < prefix.size())
-    throw std::runtime_error("Missing numeric CSV columns: " + path);
-  for (size_t i = 0; i < prefix.size(); i++)
-    if (table.header[i] != prefix[i])
-      throw std::runtime_error("Expected CSV column " + prefix[i] + " in " + path);
+  table.header = csv_header(f, path, prefix);
   Strings row;
-  while (csv_record(f, row)) {
-    if (row.size() == 1 && row[0].empty())
-      continue;
-    if (row.size() != table.header.size())
-      throw std::runtime_error("Wrong CSV row width: " + path);
+  while (csv_row(f, row, table.header.size(), path))
     table.rows.push_back(row);
-  }
   return table;
 }
 
@@ -104,11 +120,14 @@ int csv_int(const std::string &value) {
     throw std::runtime_error("Invalid CSV integer: " + value);
   return int(x);
 }
-Metadata csv_metadata(const CsvTable &table, const Strings &row, size_t start) {
+Metadata csv_metadata(const Strings &header, const Strings &row, size_t start) {
   Metadata result;
-  for (size_t i = start; i < table.header.size(); i++)
-    result.push_back({table.header[i], row[i]});
+  for (size_t i = start; i < header.size(); i++)
+    result.push_back({header[i], row[i]});
   return result;
+}
+Metadata csv_metadata(const CsvTable &table, const Strings &row, size_t start) {
+  return csv_metadata(table.header, row, start);
 }
 std::string csv_quote(const std::string &value) {
   if (value.find_first_of(",\"\r\n") == std::string::npos)
