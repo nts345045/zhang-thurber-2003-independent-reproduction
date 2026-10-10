@@ -295,6 +295,51 @@ panel or change the original false local-convergence flag.}
 \label{fig:loma-failed-trials}
 \end{figure}
 
+A subsequent experiment changes only the outer path-action accumulator from
+\texttt{double} to \texttt{long double}; the function still returns a
+binary64 total. Segment evaluation, gradients, initialization, line search,
+curvature-pair acceptance and both stopping rules remain unchanged.
+The two frozen builds pass 182 homogeneous and saved-path checks, and both
+modified native runs agree numerically with their unobserved counterparts.
+This change removes the early line-search termination but does not establish
+convergence (Figure~\ref{fig:loma-outer-accumulation}). The FMM start accepts
+all 1,000 permitted updates and retains a false local flag, with final
+projected gradient $4.7200\times10^{-5}$ s/km. Its travel-time error is
+$0.860614$ microseconds and its source-vector error is
+$1.41175\times10^{-7}$ s/km; both accuracy limits pass. The straight start
+retains a true combined-stopping flag after 54 updates, with errors
+$1.36618$ microseconds and $4.67852\times10^{-8}$ s/km. Its later arrival does
+not replace the selected FMM result.
+
+The modified FMM history contains 436 strict decreases and 564 equal values
+of the recorded binary64 action. It accepts 40 curvature pairs, with the last
+at update 435, and retains eight pairs thereafter. The original run accepted
+34 pairs before its failed search. These records motivate a separate
+conditioning diagnosis; they do not establish that rejected curvature pairs
+cause the remaining failure. Equal recorded totals also do not establish
+equal continuous actions. The single-change source diff, controls, complete
+histories, native identifiers and independent terminal review are retained in
+\path{data/development/loma_outer_accumulation_001/} and
+\path{data/development/loma_outer_accumulation_native_001/}.
+Neither the update budget nor the false stopping flag is relaxed, and no
+modified inversion is accepted.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.91\linewidth]{../figures/diagnostics/loma_outer_accumulation.pdf}
+\caption{Original and modified-accumulator FMM histories for LOM initial
+pair 3426, event \texttt{NC/10090782} at \texttt{NC.JSJ..EHZ}. Upper panel:
+projected gradient norm after each accepted update. The dashed horizontal
+line is the gradient bound in the combined stopping rule, which also
+requires a sufficiently small recorded action change. Lower panel:
+cumulative accepted curvature pairs. The horizontal axis is logarithmic
+above one update. The original search fails after 53 updates; extended outer
+summation reaches the unchanged 1,000-update budget with a false flag.
+Overlapping curves retain both saved histories. The action sum changes
+arithmetic accuracy, but this experiment does not resolve local stationarity.}
+\label{fig:loma-outer-accumulation}
+\end{figure}
+
 For the captured boundary ray, the first segment is horizontal at 16 km.
 Let $L$ be its length and $s'_z$ the local depth derivative of slowness.
 Holding its other endpoint fixed gives

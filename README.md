@@ -176,6 +176,14 @@ increases by 12.43 femtoseconds. The independently reviewed
 [saved replay](data/development/loma_failed_search_3426_001/README.md) preserves
 all original numerical results and flags. This diagnoses an arithmetic failure
 for that search; no corrected optimizer or inversion is accepted yet.
+A [single-change replay](data/development/loma_outer_accumulation_native_001/README.md)
+using an extended outer action sum avoids the early rejection but exhausts
+the unchanged 1,000-update budget with a false local flag. Its travel time
+and source derivative still pass their reference limits. The
+[saved histories](figures/diagnostics/loma_outer_accumulation.pdf) show that
+this arithmetic change is insufficient to resolve stationarity; 564 accepted
+updates have equal recorded binary64 actions. All original results remain
+preserved, and no stopping threshold is relaxed.
 Only 37,599 rays pass all checks. LOM sampled checks and the LON initial-ray
 preflight remain active; neither performs an inverse update. A separate
 [one-sided curvature calculation](data/development/native_interface_conditioning/README.md)

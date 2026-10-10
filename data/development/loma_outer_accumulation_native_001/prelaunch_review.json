@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit/ray_math_review",
+  "prepared_sha256": "05bdd5014457debacc51a9c097a4f588e80ca94d27c2a80d76399f6769f9149a",
+  "launcher_sha256": "a4da6d3722dec8fd19f4cc627b08e5a729391ccb4bc0fd776f535656a3534957",
+  "controls_summary_sha256": "eb4fa507e993f8c6d918a9be3a66afd6b831771944dff0cd14c04eceea0d1196",
+  "controls_review_sha256": "1840e04fbe0099f6d96b4ce3e93933304ecdb30379061f93bdccab317493a4ee",
+  "reference_summary_sha256": "72ed25dbde4bc14b1e0967f6a1880ff396683735c723b41f633e081a085fe6bb",
+  "reference_review_sha256": "d48209e9397cfd528c1f2e6f0145415daaf82a5398382f8c6f076ec69d8a83d2",
+  "reference_execution_sha256": "233514005b91b6e25694eb3cf0d6713e118468b39f173aa4a68b915fa105132c",
+  "reference_row_sha256": "d2ad56ee6d04200b43e33af641f3d6dbf258843de33f4f57d19bb9b86d382910",
+  "candidate_core_sha256": "ca405f21bd6d2236d0775262688b4c2cde0a7817676bf67a4c770c33be903f6e",
+  "observer_sha256": "34638c1996feaec7c0bc5df2da3b826e36ea1088c431a3d025d4de4e1ddebcf3",
+  "driver_sha256": "17e422fa51e41e686935966d46e47e66419a44ba6d7c3031b1f76289fee54577",
+  "input_hashes_verified": 208,
+  "prepared_file_hashes_verified": 30,
+  "candidate_source_hashes_verified": 17,
+  "native_event_fields_verified": 35,
+  "native_receiver_fields_verified": 52,
+  "native_identifiers": {
+    "event": "65",
+    "station": "46",
+    "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/10090782",
+    "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642854",
+    "receiver_channel_seed_id": "NC.JSJ..EHZ",
+    "receiver_channel_fdsn_source_id": "FDSN:NC_JSJ__E_H_Z",
+    "receiver_location_code": "",
+    "receiver_metadata_epoch_start": "1989-05-02T15:00:00",
+    "receiver_metadata_epoch_end": "1990-09-14T21:50:00"
+  },
+  "scope": "Read-only launcher/source/diff, prepared snapshots, reviewed-control linkage, saved continuous-reference/native joins and hash verification. Only this prelaunch review was written; no compilation, control rerun, ray trace, staging or production mutation.",
+  "findings": [
+    "All208 original pins,30 prepared files,17 candidate source files and compiler SHA verified. Copied launcher matches the maintained launcher. No execution lock or native-run output existed at review.",
+    "Candidate core is exactly the reviewed baseline with path_eval accumulator double T=0 changed to long double T=0; public return type remains double. The entire observer, driver, FMM source, gradients, source/model extraction, Armijo rule, stopping rules and update budget remain the reviewed source copies.",
+    "Prepared source map equals the passed182-control review candidate map. Frozen original-A result records equal the reviewed original observer summary and remain separate from candidate B.",
+    "Row3426 is the unique extracted comparison row for event65/receiver46 and one eligible turning reference candidate. Its grid hash equals the candidate initial grid; exact source/receiver coordinates agree. All original source and station metadata fields, full IDs/epochs and valid empty channel location are retained.",
+    "The comparison uses pure ray time without adding source_t and uses the Euclidean source-vector error against the saved reference. The25microsecond and3e-6s/km limits are unchanged.",
+    "Within candidate B, the driver independently runs observed_trace and unobserved trace on each identical straight/FMM seed. It compares action, path, projected/raw gradients, source derivatives, iterations, convergence flag, dv, length and merged-node count; the wrapper rejects any mismatch. It deliberately does not require B to equal earlier A.",
+    "The wrapper verifies settings, finite result fields, ordered native path nodes, model bounds, exact endpoints, history/table row joins and full native sidecars, then rechecks frozen and original hashes before terminal completion. Local flags and accuracy results are reported separately from diagnostic completion.",
+    "The exclusive execution lock prevents a repeated run; command failures and caught signals are recorded as failed/interrupted, with process-group termination and reaping. No interruption or lifecycle test was performed in this source review."
+  ],
+  "limitations": [
+    "The unchanged C++ observer uses exact numeric operator== comparisons, not representation-bit comparisons: signed zeros compare equal. This is the declared parity scope; no bitwise claim is made.",
+    "The output name original_local_convergence_flag means candidate B's unmodified reported flag. It does not mean the pre-change A flag, which is retained separately in original_results.",
+    "Outer long-double accumulation still consumes unchanged binary64 segment values and returns binary64. This prelaunch review neither certifies action signs nor predicts convergence or source-derivative improvement.",
+    "Reference arithmetic is reused from already reviewed saved evidence; no reference re-enumeration or independent action integration was performed here.",
+    "This authorizes only the reviewed isolated diagnostic scope. One native ray cannot establish general convergence, first-arrival completeness, production promotion or inversion readiness."
+  ],
+  "material_issue_found": false,
+  "ray_traces_performed_by_reviewer": 0
+}

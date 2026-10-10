@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "reviewed_utc": "2026-10-10T05:54:22Z",
+  "summary_sha256": "f218f4d208a605230fd12ccc12a87b2f51cf30d2a48551ea51dcc5fc30763b25",
+  "source_sha256": {
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "diagnostics/failed_search_capture.hpp": "f546ce81c2c3b73dfb5e04d23ddcdf541bd600ee08f5285505d19cf69953809b",
+    "diagnostics/check_failed_search_capture.cpp": "2f88ee8b781f8b54e4effa59d95423ec3ef184ad3a2b03f840793e89892fca75",
+    "diagnostics/run_failed_search_capture_checks.py": "bcc887cc91eefab6ac875f9f7ba46462595b526d49a9d91a9b8238a3908b34d2"
+  },
+  "artifact_count": 17,
+  "controls": 22,
+  "scope": "Read-only review of header, invented C++ fixture, frozen runner, all source/artifact hashes and saved control tables; no trace or numerical rerun.",
+  "findings": [
+    "Capture owns trial coordinate copies, retains binary64 scalars at 17 digits, leaves endpoint gradients blank, and distinguishes the last evaluated step from the post-loop halved value.",
+    "The 24-trial fixture checks buffer reset, two invalid records, signed zero/tiny value roundtrip, topology/identical-path metadata, deep copies, and rejection without overwrite.",
+    "Reevaluation occurs only in capture_failed; trial actions in these component controls are explicit invented scalars."
+  ],
+  "limitations": [
+    "These controls verify recording semantics, not numerical neutrality of the actual replay. Both original in-process controls and all five prior numerical CSV byte hashes remain mandatory.",
+    "Internal run labels are declared delimiter-free; provider identifiers belong in the wrapper native sidecars."
+  ]
+}

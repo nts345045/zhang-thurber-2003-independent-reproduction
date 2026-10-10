@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit/ray_math_review",
+  "delivery_sha256": "5e5565824988625d97814f9cddb5d97da1d621b2bbdb939e2ba22f14df2c6ef0",
+  "checks_sha256": "0fb840a12be13f6aabbf0c287759fdca7703b832c81e930e996b5b478547f3ea",
+  "check_source_sha256": "f7e6026ebb8dd1ff236b22d3ce2685fd627391f4b1b6f03e4fff47a2e8e5c9b7",
+  "native_review_sha256": "962364b9101fbe9ce92d51537b79d1fd6c7d76e6664e3c6dab9ec6dfc925b4db",
+  "publication_members_verified": 147,
+  "plot_input_hashes_verified": 8,
+  "plotted_records_verified": {
+    "Original": 54,
+    "Extended outer sum": 1001
+  },
+  "pdf_sha256": "e2d1c753eb045df6dc1b9e24beb909f8913ee91ebc43750eac5d1ec97d0d3dfd",
+  "pdf_pages": 104,
+  "pdf_bytes": 1819469,
+  "panel_counts": {
+    "independently reproduced": 1,
+    "partially reproduced": 27,
+    "not reproduced": 34
+  },
+  "panel_statuses_unchanged": true,
+  "local_readme_links_verified": 53,
+  "report_evidence_paths_verified": 34,
+  "visual_review": {
+    "figure_png": "figures/diagnostics/loma_outer_accumulation.png",
+    "compiled_pdf_pages": [
+      31,
+      32
+    ],
+    "result": "Readable labels, axes, legend, curves and caption; no clipping or missing figure reference observed"
+  },
+  "findings": [
+    "All147 delivery members and the eight plot inputs match their frozen hashes; both figure files and plot source match provenance. No live capture, connector or production-source edit is included in the delivery.",
+    "Independently reconstructed every plotted update, projected-gradient value and cumulative curvature count from the two saved FMM histories. Their complete native contexts match, including event/origin IDs, NSLC/FDSN IDs, metadata epochs and empty location. Both plotted local flags remain false.",
+    "The plot contains initial update0 and all accepted updates through53 and1000. Logarithmic gradient and symmetric-log update axes are labeled correctly; the1e-5 line is explicitly only the gradient part of the combined stopping condition.",
+    "New report and README claims match the reviewed B record: FMM1000 updates/false flag,4.7200e-5s/km projected norm,436 strict recorded decreases/564 equal totals,40 accepted curvature pairs with last at update435. Straight54 updates uses the combined stopping condition and does not replace the lower-time FMM result.",
+    "Reported errors match seconds-to-microseconds conversion and Euclidean source norms: FMM0.860614microseconds/1.41175e-7s/km; straight1.36618microseconds/4.67852e-8s/km. Both saved accuracy limits pass separately from local flags.",
+    "Text correctly limits182 controls to homogeneous/saved-path checks, calls same-variant matches numeric equality, preserves the binary64 return, and does not claim rejected curvature pairs cause the remaining failure. Equal recorded actions are not labeled equal continuous actions.",
+    "Compiled104-page PDF hash/size, both successful LaTeX return codes,53 local README links,34 report evidence paths and unchanged62-panel counts verify. Pass1 has expected new-reference warnings; pass2 is clean and Figure14 resolves.",
+    "The publication diagnoses an arithmetic failure in the earlier captured search and a negative single-change B experiment. It makes no general convergence, first-arrival completeness, stopping-rule relaxation, or accepted-inversion claim."
+  ],
+  "limitations": [
+    "This is saved-file/source/claim/visual review; no ray, numerical control, plot generator or reference calculation was rerun.",
+    "Visual inspection covers the new diagnostic PNG and compiled PDF pages31\u201332; it is not a new review of every older report page.",
+    "Passing publication review validates the evidence and its presentation, not the failed B local-stopping flag."
+  ],
+  "material_issue_found": false,
+  "ray_runs_by_reviewer": 0,
+  "artifact_sha256": {
+    "report_page-031.png": "6cee179054a19e76fb592eba3ae7abf1375f0cce16a12b57177b8f0a0fc2c951",
+    "report_page-032.png": "4c07be5f6b41e5006e6a7e9ae5ee70ed25228a468cec9fc078a669be31a2e6ec",
+    "check.py": "f7e6026ebb8dd1ff236b22d3ce2685fd627391f4b1b6f03e4fff47a2e8e5c9b7",
+    "README.md": "8fb64c4460e4de81abe9f04c045d620b5bb394432e55f19b589079eb7805aa56",
+    "initial_checker_schema_error.log": "f8d353f1eef73dff9bd8be1d6ee94103f921abd5a5166166afd9ecf98ab3c072",
+    "initial_checker_empty_stdout.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "initial_checker_latex_expectation.log": "8724e5fad5b6699acca1e19c15efc7671cce1898a9eade2b9aa702b39f33b755",
+    "initial_latex_check_empty_stdout.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks.json": "0fb840a12be13f6aabbf0c287759fdca7703b832c81e930e996b5b478547f3ea",
+    "check_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

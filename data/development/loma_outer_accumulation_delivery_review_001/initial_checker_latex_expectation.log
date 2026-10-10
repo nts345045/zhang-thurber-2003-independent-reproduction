@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "data/development/loma_outer_accumulation_delivery_review_001/check.py", line 125, in <module>
+    print(json.dumps(check(), indent=2, allow_nan=False))
+  File "data/development/loma_outer_accumulation_delivery_review_001/check.py", line 100, in check
+    need(not critical_messages, 'LaTeX warning/error in saved log')
+  File "data/development/loma_outer_accumulation_delivery_review_001/check.py", line 26, in need
+    raise ValueError(message)
+ValueError: LaTeX warning/error in saved log

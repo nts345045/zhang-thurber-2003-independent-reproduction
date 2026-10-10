@@ -1,0 +1,25 @@
+{
+  "status": "launched_detached",
+  "started_utc": "2026-10-10T06:31:33Z",
+  "driver_pid": 190113,
+  "command": [
+    "/usr/bin/python3",
+    "diagnostics/run_outer_accumulation.py",
+    "--phase",
+    "run",
+    "--output",
+    "data/development/loma_outer_accumulation_native_001"
+  ],
+  "launcher_sha256": "a4da6d3722dec8fd19f4cc627b08e5a729391ccb4bc0fd776f535656a3534957",
+  "prepared_sha256": "05bdd5014457debacc51a9c097a4f588e80ca94d27c2a80d76399f6769f9149a",
+  "prelaunch_review_sha256": "580d423c88dbb5f95d84979ec7eb9ed5f5436a7a2c2a0b7ed54448822626ac42",
+  "python_executable": "/usr/bin/python3",
+  "python_executable_sha256": "64c7391db4c0e069b875bb1cb358627cf4064c6ab3a343d3b5d2bf73d3ecca53",
+  "environment_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "TMPDIR": "tmp"
+  },
+  "stdout_file": "tmp/loma_outer_accumulation_controllers/001/stdout.log",
+  "stderr_file": "tmp/loma_outer_accumulation_controllers/001/stderr.log",
+  "scope": "Single isolated modified-accumulator ray, original 1000-update budget and two starts; no inversion"
+}
