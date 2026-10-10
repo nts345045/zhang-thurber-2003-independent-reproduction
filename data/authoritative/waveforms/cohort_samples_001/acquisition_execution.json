@@ -1,0 +1,42 @@
+{
+  "status": "failed",
+  "started_utc": "2026-10-10T04:46:33.175984+00:00",
+  "controller_pid": 123540,
+  "scope": "Reported-available non-CMW1 windows only; no measurements; all native catalog rows preserved",
+  "source_sha256": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+  "inventory_review_sha256": "87816ce428d238b9fbc6a1f4b288539a7bfa246bc96126a26c70f8ed932e8f03",
+  "stages": [
+    {
+      "stage": "samples_001",
+      "status": "failed",
+      "started_utc": "2026-10-10T04:46:33.177121+00:00",
+      "command": [
+        "tmp/waveform_env/bin/python",
+        "data/authoritative/waveforms/cohort_samples_001/acquire.py",
+        "--fetch",
+        "--batches",
+        "1",
+        "--summary",
+        "samples_001.json"
+      ],
+      "explicit_environment": {
+        "MPLCONFIGDIR": "tmp/waveform_cache/mpl",
+        "XDG_CACHE_HOME": "tmp/waveform_cache/xdg",
+        "TMPDIR": "tmp/waveform_cache/tmp",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "supervised_pid": 123541,
+      "returncode": 1,
+      "ended_utc": "2026-10-10T04:46:44.070192+00:00",
+      "output_sha256": {
+        "samples_001_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "samples_001_stderr.log": "85a68f4f7176c6e589c422df5b0143d4286d75fd1eebe1d70fa362e499932600",
+        "samples_001_resources.txt": "a135a39d4ef94e7e3da67e326e87a4cb7e4ebd57faae0c3172205707de0bf01e"
+      }
+    }
+  ],
+  "ended_utc": "2026-10-10T04:46:44.071235+00:00",
+  "error_type": "RuntimeError",
+  "error": "Acquisition stopped; inspect saved raw/request evidence and stderr"
+}

@@ -1,0 +1,69 @@
+{
+  "scope": "Supported bulk-protocol control on exactly the two previously retrieved windows; no replacement measurement pair",
+  "status": "passed",
+  "http_status": 200,
+  "raw_file": "raw/pilot_post_control_000.json",
+  "raw_sha256": "1fef6ca1b236ec459e99e19460a67759b2f3acf3ad2a72dbc61d24c4acf1eceb",
+  "parsed": {
+    "records": [
+      {
+        "source_json_pointer": "/datasources/0",
+        "channel_seed_id": "NC.JPR.02.EHZ",
+        "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+        "identifier_basis": "FDSN source ID derived from returned SEED codes; no waveform public ID supplied",
+        "provider_waveform_resource_id": null,
+        "quality": "D",
+        "sample_rate_hz": 100.0,
+        "provider_timespans": [
+          [
+            "1991/11/22 16:07:01.5800",
+            "1991/11/22 16:08:28.8600"
+          ]
+        ]
+      },
+      {
+        "source_json_pointer": "/datasources/1",
+        "channel_seed_id": "NC.JPR.02.EHZ",
+        "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+        "identifier_basis": "FDSN source ID derived from returned SEED codes; no waveform public ID supplied",
+        "provider_waveform_resource_id": null,
+        "quality": "D",
+        "sample_rate_hz": 100.0,
+        "provider_timespans": [
+          [
+            "1995/09/08 01:21:27.0800",
+            "1995/09/08 16:01:26.8200"
+          ],
+          [
+            "1995/09/08 04:15:09.0900",
+            "1995/09/08 04:16:24.3300"
+          ]
+        ]
+      }
+    ],
+    "pick_coverage": [
+      {
+        "original_observation_index": "7136",
+        "event_resource_id": "quakeml:NC.anss.org/Event/NC/238035",
+        "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/36225834",
+        "channel_seed_id": "NC.JPR.02.EHZ",
+        "covering_provider_record_indices": [
+          0
+        ]
+      },
+      {
+        "original_observation_index": "11142",
+        "event_resource_id": "quakeml:NC.anss.org/Event/NC/30083101",
+        "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/45479094",
+        "channel_seed_id": "NC.JPR.02.EHZ",
+        "covering_provider_record_indices": [
+          1
+        ]
+      }
+    ],
+    "missing_pick_rows": [],
+    "scope": "Reported contiguous spans; overlaps, quality and sample-grid identity remain for standard waveform decoding"
+  },
+  "source_sha256": "0f54e4d8f3776856184dae624a78362d17efd0aeed6fef684467ec43ed99403f",
+  "acquisition_source_sha256": "a603915b1e7a250896d08383e7b8b3412071a5978feef8f023e030f673b88c69"
+}

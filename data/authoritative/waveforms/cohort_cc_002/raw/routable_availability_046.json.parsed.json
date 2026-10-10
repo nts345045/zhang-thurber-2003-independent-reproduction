@@ -1,0 +1,873 @@
+{
+  "records": [
+    {
+      "source_json_pointer": "/datasources/0",
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+      "identifier_basis": "FDSN source ID derived from returned SEED codes; no waveform public ID supplied",
+      "provider_waveform_resource_id": null,
+      "quality": "D",
+      "sample_rate_hz": 100.0,
+      "provider_timespans": [
+        [
+          "1988/12/06 00:07:27.7300",
+          "1988/12/06 00:09:11.7200"
+        ]
+      ]
+    },
+    {
+      "source_json_pointer": "/datasources/1",
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+      "identifier_basis": "FDSN source ID derived from returned SEED codes; no waveform public ID supplied",
+      "provider_waveform_resource_id": null,
+      "quality": "D",
+      "sample_rate_hz": 100.0,
+      "provider_timespans": [
+        [
+          "1989/01/10 17:57:07.4900",
+          "1989/01/10 17:58:39.2800"
+        ]
+      ]
+    },
+    {
+      "source_json_pointer": "/datasources/2",
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+      "identifier_basis": "FDSN source ID derived from returned SEED codes; no waveform public ID supplied",
+      "provider_waveform_resource_id": null,
+      "quality": "D",
+      "sample_rate_hz": 100.0,
+      "provider_timespans": [
+        [
+          "1989/01/10 22:29:10.1500",
+          "1989/01/10 22:31:06.1400"
+        ]
+      ]
+    },
+    {
+      "source_json_pointer": "/datasources/3",
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+      "identifier_basis": "FDSN source ID derived from returned SEED codes; no waveform public ID supplied",
+      "provider_waveform_resource_id": null,
+      "quality": "D",
+      "sample_rate_hz": 100.0,
+      "provider_timespans": [
+        [
+          "1989/01/12 12:24:30.3100",
+          "1989/01/12 12:26:18.3000"
+        ]
+      ]
+    }
+  ],
+  "pick_coverage": [
+    {
+      "original_observation_index": "4600",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/128103",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/26859794",
+      "channel_seed_id": "NC.CVA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4601",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/128103",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/26859669",
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "covering_provider_record_indices": [
+        0
+      ]
+    },
+    {
+      "original_observation_index": "4602",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/128103",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/26859709",
+      "channel_seed_id": "NC.JSA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4603",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/128103",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/26859769",
+      "channel_seed_id": "NC.JSF..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4604",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129056",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/26979274",
+      "channel_seed_id": "NC.CCY..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4605",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129056",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/26979339",
+      "channel_seed_id": "NC.CLC..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4606",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129056",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/26979119",
+      "channel_seed_id": "NC.CMJ..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4607",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129056",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/26979209",
+      "channel_seed_id": "NC.CMN..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4608",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129056",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/26979229",
+      "channel_seed_id": "NC.CPL..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4609",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129056",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/26979169",
+      "channel_seed_id": "NC.CVA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4610",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129056",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/26979159",
+      "channel_seed_id": "NC.CVL..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4611",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129056",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/26979364",
+      "channel_seed_id": "NC.JSF..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4612",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075464",
+      "channel_seed_id": "NC.CBR..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4613",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075504",
+      "channel_seed_id": "NC.CBW..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4614",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075544",
+      "channel_seed_id": "NC.CCY..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4615",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075524",
+      "channel_seed_id": "NC.CDO..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4616",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075559",
+      "channel_seed_id": "NC.CDU..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4617",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075474",
+      "channel_seed_id": "NC.CLC..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4618",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075484",
+      "channel_seed_id": "NC.CMC..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4619",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075584",
+      "channel_seed_id": "NC.CMJ..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4620",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075599",
+      "channel_seed_id": "NC.CMN..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4621",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075534",
+      "channel_seed_id": "NC.CMO..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4622",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075514",
+      "channel_seed_id": "NC.CPL..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4623",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075579",
+      "channel_seed_id": "NC.CSA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4624",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075494",
+      "channel_seed_id": "NC.CSH..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4625",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075574",
+      "channel_seed_id": "NC.CVA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4626",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075554",
+      "channel_seed_id": "NC.CVL..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4627",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075604",
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "covering_provider_record_indices": [
+        1
+      ]
+    },
+    {
+      "original_observation_index": "4628",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129766",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27075609",
+      "channel_seed_id": "NC.JSA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4629",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076714",
+      "channel_seed_id": "NC.CBR..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4630",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076754",
+      "channel_seed_id": "NC.CBW..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4631",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076804",
+      "channel_seed_id": "NC.CCY..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4632",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076829",
+      "channel_seed_id": "NC.CDA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4633",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076779",
+      "channel_seed_id": "NC.CDO..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4634",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076819",
+      "channel_seed_id": "NC.CDU..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4635",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076724",
+      "channel_seed_id": "NC.CLC..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4636",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076734",
+      "channel_seed_id": "NC.CMC..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4637",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076864",
+      "channel_seed_id": "NC.CMJ..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4638",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076884",
+      "channel_seed_id": "NC.CMN..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4639",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076784",
+      "channel_seed_id": "NC.CMO..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4640",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076764",
+      "channel_seed_id": "NC.CPL..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4641",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076854",
+      "channel_seed_id": "NC.CSA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4642",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076744",
+      "channel_seed_id": "NC.CSH..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4643",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076844",
+      "channel_seed_id": "NC.CVA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4644",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076794",
+      "channel_seed_id": "NC.CVL..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4645",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076909",
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "covering_provider_record_indices": [
+        2
+      ]
+    },
+    {
+      "original_observation_index": "4646",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076919",
+      "channel_seed_id": "NC.JSA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4647",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129781",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27076969",
+      "channel_seed_id": "NC.JSF..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4648",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129812",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27077459",
+      "channel_seed_id": "NC.CBR..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4649",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129812",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27077499",
+      "channel_seed_id": "NC.CBW..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4650",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129812",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27077514",
+      "channel_seed_id": "NC.CCY..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4651",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129812",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27077469",
+      "channel_seed_id": "NC.CLC..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4652",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129812",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27077534",
+      "channel_seed_id": "NC.CMJ..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4653",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129812",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27077509",
+      "channel_seed_id": "NC.CPL..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4654",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129812",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27077489",
+      "channel_seed_id": "NC.CSH..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4655",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129812",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27077529",
+      "channel_seed_id": "NC.CVA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4656",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129812",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27077519",
+      "channel_seed_id": "NC.CVL..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4657",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27083839",
+      "channel_seed_id": "NC.CBW..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4658",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27083854",
+      "channel_seed_id": "NC.CCY..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4659",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27083764",
+      "channel_seed_id": "NC.CLC..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4660",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27083814",
+      "channel_seed_id": "NC.CMC..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4661",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27083884",
+      "channel_seed_id": "NC.CMJ..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4662",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27083894",
+      "channel_seed_id": "NC.CMN..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4663",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27083794",
+      "channel_seed_id": "NC.CPL..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4664",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27083874",
+      "channel_seed_id": "NC.CSA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4665",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27083784",
+      "channel_seed_id": "NC.CSH..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4666",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27083864",
+      "channel_seed_id": "NC.CVA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4667",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27083824",
+      "channel_seed_id": "NC.CVL..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4668",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27084004",
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "covering_provider_record_indices": [
+        3
+      ]
+    },
+    {
+      "original_observation_index": "4669",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27083989",
+      "channel_seed_id": "NC.JSA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4670",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27083954",
+      "channel_seed_id": "NC.JSF..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4671",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129837",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27084054",
+      "channel_seed_id": "NC.JTR..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4672",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090774",
+      "channel_seed_id": "NC.CBR..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4673",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090844",
+      "channel_seed_id": "NC.CBW..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4674",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090829",
+      "channel_seed_id": "NC.CCY..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4675",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090794",
+      "channel_seed_id": "NC.CDO..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4676",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090894",
+      "channel_seed_id": "NC.CDU..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4677",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090754",
+      "channel_seed_id": "NC.CLC..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4678",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090799",
+      "channel_seed_id": "NC.CMC..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4679",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090859",
+      "channel_seed_id": "NC.CMJ..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4680",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090874",
+      "channel_seed_id": "NC.CMN..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4681",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090809",
+      "channel_seed_id": "NC.CMO..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4682",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090784",
+      "channel_seed_id": "NC.CPL..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4683",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090869",
+      "channel_seed_id": "NC.CSA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4684",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090764",
+      "channel_seed_id": "NC.CSH..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4685",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090849",
+      "channel_seed_id": "NC.CVA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4686",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090819",
+      "channel_seed_id": "NC.CVL..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4687",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129892",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27090939",
+      "channel_seed_id": "NC.JSA..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4688",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129924",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27096129",
+      "channel_seed_id": "NC.CBR..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4689",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129924",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27096169",
+      "channel_seed_id": "NC.CBW..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4690",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129924",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27096214",
+      "channel_seed_id": "NC.CCY..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4691",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129924",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27096239",
+      "channel_seed_id": "NC.CDU..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4692",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129924",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27096139",
+      "channel_seed_id": "NC.CLC..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4693",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129924",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27096149",
+      "channel_seed_id": "NC.CMC..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4694",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129924",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27096274",
+      "channel_seed_id": "NC.CMJ..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4695",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129924",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27096289",
+      "channel_seed_id": "NC.CMN..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4696",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129924",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27096204",
+      "channel_seed_id": "NC.CMO..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4697",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129924",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27096179",
+      "channel_seed_id": "NC.CPL..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4698",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129924",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27096194",
+      "channel_seed_id": "NC.CRP..EHZ",
+      "covering_provider_record_indices": []
+    },
+    {
+      "original_observation_index": "4699",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/129924",
+      "pick_resource_id": "quakeml:NC.anss.org/Arrival/NC/27096269",
+      "channel_seed_id": "NC.CSA..EHZ",
+      "covering_provider_record_indices": []
+    }
+  ],
+  "missing_pick_rows": [
+    "4600",
+    "4602",
+    "4603",
+    "4604",
+    "4605",
+    "4606",
+    "4607",
+    "4608",
+    "4609",
+    "4610",
+    "4611",
+    "4612",
+    "4613",
+    "4614",
+    "4615",
+    "4616",
+    "4617",
+    "4618",
+    "4619",
+    "4620",
+    "4621",
+    "4622",
+    "4623",
+    "4624",
+    "4625",
+    "4626",
+    "4628",
+    "4629",
+    "4630",
+    "4631",
+    "4632",
+    "4633",
+    "4634",
+    "4635",
+    "4636",
+    "4637",
+    "4638",
+    "4639",
+    "4640",
+    "4641",
+    "4642",
+    "4643",
+    "4644",
+    "4646",
+    "4647",
+    "4648",
+    "4649",
+    "4650",
+    "4651",
+    "4652",
+    "4653",
+    "4654",
+    "4655",
+    "4656",
+    "4657",
+    "4658",
+    "4659",
+    "4660",
+    "4661",
+    "4662",
+    "4663",
+    "4664",
+    "4665",
+    "4666",
+    "4667",
+    "4669",
+    "4670",
+    "4671",
+    "4672",
+    "4673",
+    "4674",
+    "4675",
+    "4676",
+    "4677",
+    "4678",
+    "4679",
+    "4680",
+    "4681",
+    "4682",
+    "4683",
+    "4684",
+    "4685",
+    "4686",
+    "4687",
+    "4688",
+    "4689",
+    "4690",
+    "4691",
+    "4692",
+    "4693",
+    "4694",
+    "4695",
+    "4696",
+    "4697",
+    "4698",
+    "4699"
+  ],
+  "scope": "Reported contiguous spans; overlaps, quality and sample-grid identity remain for standard waveform decoding"
+}

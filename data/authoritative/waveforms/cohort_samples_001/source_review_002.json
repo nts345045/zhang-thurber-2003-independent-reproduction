@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "reviewed_utc": "2026-10-10T04:44:08.542178+00:00",
+  "scope": "Corrected full-request-interval ambiguity check; no network request",
+  "sha256": {
+    "acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "check_decode.py": "13764c9abf31f7aec6ddaac4f1721a6e4fd41651171f92b77a9b3a0db2a09bfc",
+    "decode_checks_002.json": "889bba4210dc90ce62ffaa9e532c55accb75ac2ffb3df990db2184f9f3a7d392",
+    "pilot_decode_checks_002.json": "59ec4a6bc005b7c36607eba226249c4fe667891775389958ee695fc0b6c68d7a",
+    "edge_counterexample_001.json": "f5e3d1e8235e2dafad045ca36a4157b4396b6fba406b3ce9fbe5a32c536f0c1c",
+    "edge_correction_review.json": "23d9e41c58b2a7ab709ddebf38790e4bf88af2f3df9f321c1bd1b7bd184457d7"
+  },
+  "preserved_old_acquisition_source": "data/authoritative/waveforms/cohort_samples_001/source/acquire_before_edge_fix.py",
+  "invented_controls": 17,
+  "prior_source_review_sha256": "75de953a4fc612f11099cbf8f32d1991dc24f9756b8231c3e62682f93727d3d8",
+  "findings": [
+    "The earlier check used chosen trace sample endpoints and missed alternate-grid samples within the leading/trailing request margins.",
+    "The corrected rational ceil-index intersection tests the entire requested half-open interval [a,b), excluding b exactly.",
+    "Both counterexamples now reject; the original control suite and two original identified pilot decodes remain unchanged in meaning.",
+    "All other request/native provenance and terminal inventory prerequisites retain the earlier reviewed behavior."
+  ],
+  "limits": [
+    "Actual provider sample coverage and quality remain unverified until retrieval.",
+    "The pending CMW1 access decision still prevents its sample requests."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "status": "stopped_for_access_or_identity_clarification",
+  "stage": "cmw1_availability",
+  "requested_session_batches": 2,
+  "total_planned_batches": 2,
+  "results": [
+    {
+      "batch": 0,
+      "raw_file": "raw/cmw1_availability_000.json",
+      "raw_sha256": "cf4da5770caf8389ec71af2f134b34276b800526218564559d101d1083955b42",
+      "parsed_file": "raw/cmw1_availability_000.json.parsed.json",
+      "parsed_sha256": "9e57c9d0067a1d1b5da1f10e6af8c2135fb716453b18f95f15a04a34c866c9f6"
+    }
+  ],
+  "error": {
+    "type": "ValueError",
+    "message": "Missing identified provider coverage; stop for clarification without removing records"
+  },
+  "complete_original_picks": 14262,
+  "complete_original_catalog_differences": 44718,
+  "selection_changed": false,
+  "observations_added": 0,
+  "response_calibration_required": false,
+  "known_cmw1_routing_gap_authorized": false,
+  "plan_sha256": "09364b94d5ae65442b6dde8852813a2146b136bcd4541769a248031e011aadb4",
+  "source_sha256": "a603915b1e7a250896d08383e7b8b3412071a5978feef8f023e030f673b88c69"
+}

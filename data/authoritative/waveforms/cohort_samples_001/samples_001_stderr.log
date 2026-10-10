@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/authoritative/waveforms/cohort_samples_001/acquire.py", line 249, in <module>
+    main()
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/authoritative/waveforms/cohort_samples_001/acquire.py", line 209, in main
+    result, decoded = request_batch(n, selected[100*n:100*(n+1)], args.fetch, pinned)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/authoritative/waveforms/cohort_samples_001/acquire.py", line 166, in request_batch
+    decoded = decode(raw.read_bytes(), native)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/authoritative/waveforms/cohort_samples_001/acquire.py", line 102, in decode
+    require(len(eligible) == 1, 'Native window lacks unique continuous sample support; do not merge gaps or select overlapping qualities')
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/authoritative/waveforms/cohort_samples_001/acquire.py", line 24, in require
+    raise ValueError(message)
+ValueError: Native window lacks unique continuous sample support; do not merge gaps or select overlapping qualities

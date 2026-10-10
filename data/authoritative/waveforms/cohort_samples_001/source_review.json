@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "reviewed_utc": "2026-10-10T04:39:26.802853+00:00",
+  "scope": "Read-only source, native decoder controls, pilot-record hashes and prerequisites review; no provider request",
+  "sha256": {
+    "acquire.py": "3ea8ab17437846b82ac280790e08d07aee2dcc50c4d5f13156382ff4e2eb2944",
+    "check_decode.py": "e1ba9a502da3217bfe4132fd1800a06d7681bb4438def26d168b5fdb56b5beb2",
+    "decode_checks.json": "8b6b94f75e6ed30d82af9d5cda9939fe9ab9fa8a0cd4f55af4dbf19f853ca72e",
+    "pilot_decode_checks.json": "b2f0a07638a07c18f71d14759f9856723d4eaa466863858aaef0acc2a9c8b972",
+    "environment.json": "300be36a60b76f7dac2f6cdc44eca7095264bf4654745cbda1e9e809b4356790"
+  },
+  "invented_controls": 15,
+  "existing_pilot_records": 2,
+  "findings": [
+    "Terminal inventory plus independent review of its exact summary hash is required before requests.",
+    "Only originally identified non-CMW1 reported-covering windows may be requested; all other catalog rows remain.",
+    "Raw bytes, exact request and full native-identity sidecars precede standard miniSEED decoding.",
+    "Rational sample indexing retains native grid offsets and enforces full half-open support within the native epoch.",
+    "Gaps, overlapping trace qualities, identity or rate mismatches are retained as stopped failures.",
+    "No calibration prerequisite, resampling or correlation is introduced."
+  ],
+  "limits": [
+    "Readiness review does not establish actual returned sample coverage or waveform quality.",
+    "CMW1 waveform requests remain paused for the pending access clarification."
+  ]
+}
