@@ -181,12 +181,27 @@ was added. An [offline full-cohort metadata audit](data/authoritative/waveforms/
 preserves every catalog observation and identifies a calibration gap for 117
 NC.CMW1 picks from 1995–1998; saved StationXML responses begin in 2000.
 The user clarified that normalized waveform cross-correlation should produce
-dt.cc inputs without requiring calibration corrections. Retrieval may proceed
-using the documented EQcorrscan workflow as a reference; missing response
+dt.cc inputs without requiring calibration corrections. The
+[declared method](data/development/normalized_correlation_specification/README.md)
+uses the documented EQcorrscan workflow as a reference; missing response
 metadata remain explicit and the rejected pilot remains preserved.
 Provider orientation metadata,
 rather than channel-name suffixes, distinguish vertical channels from other
 orientations. These audit categories establish no study exclusion.
+
+The [completed sample acquisition](data/authoritative/waveforms/cohort_samples_002/README.md)
+assesses all 464 windows with reported covering spans: 459 return complete
+native samples and five return none. All 14,262 original picks and 44,718
+catalog pairs remain identified. The
+[audited normalized correlations](data/development/native_waveform_cc_001/README.md)
+attempt 1,195 eligible pairs and accept 98 under the declared coherence and
+peak checks. They span 103 events and four full SEED channel identities.
+The [identified dt.cc export](data/development/native_dt_cc_001/README.md)
+preserves both event/pick identities, both metadata epochs, every rejected or
+unattempted pair, and explicit event-to-integer mappings. CC squared is a
+relative weight, with no formal timing uncertainty inferred. These measurements
+have not entered the running catalog-only inversion; its saved results retain
+their original inputs and limitations.
 
 [Read the PDF report](report/report.pdf) or the
 [panel-by-panel audit](FIGURE_AUDIT.md).
@@ -216,6 +231,12 @@ earlier forward operators.
   reference comparison. `hayward_initial_failure_refinement_*` contains identified follow-up
   ray calculations. These directories contain forward checks, not new inversion
   models. Corrected numerical code is maintained on `first-arrival-integration`.
+- `data/development/native_dt_cc_001/`: 98 waveform-derived differential
+  inputs in `dt.cc`, with `dt.cc.identifiers.csv.gz`, `event_id_map.csv`, and
+  `receiver_epochs.csv.gz`. Keep these identity mappings with the legacy file.
+  The full measurement roster and attempted lag/coherence arrays are in
+  `data/development/native_waveform_cc_001/`. These directories contain inputs,
+  not an additional inversion result.
 - [`data/published/loma_lom_analytic_001/`](data/published/loma_lom_analytic_001/README.md):
   complete, audited synthetic observations and authoritative geometry, with
   verified archive restoration instructions. These are inputs for the corrected

@@ -76,6 +76,31 @@ justifies changing the original failed stopping flag. The identified paths,
 directions, and reviewed classification are saved in
 \path{data/development/interface_directional/001/}.
 
+An interval supporting-vector calculation bounds the continuous first variation
+for every displacement of the retained interior knots:
+$F(d)\geq-B\lVert d\rVert$, with $B\leq6.825849\times10^{-6}$ s/km;
+the arithmetic interval-radius norm is below $2.444\times10^{-37}$ s/km.
+Reciprocal-affine segment primitives and rational arithmetic bounds replace
+fixed quadrature. A feasible convex-guide support removes the incident-cell
+normal artifact, while the saved tangent still has strictly negative first
+variation. Proofs, controls, and independent reviews are retained in
+\path{data/development/interface_stationarity_bound/} and
+\path{data/development/native_interface_support/}.
+
+Two isolated steps test the complete first variation, including its convex-cusp
+term, before interval Armijo acceptance. The negative supporting-vector
+direction and its tangent projection first pass after 19 halvings. Action
+decreases by about $4.673\times10^{-12}$ s, but new support-norm bounds increase
+to about $1.842\times10^{-5}$ s/km. All 40 trials, identified rational polygons,
+and original false flag remain in
+\path{data/development/native_interface_step/001/}.
+Exact endpoint-moment analysis shows that the selected support already minimizes
+the Euclidean norm for the original and full-step polygons; changing normal
+support cannot remove their smooth residual. The tangent-step sign criterion
+is inconclusive. The proof and 156 controls are in
+\path{data/development/interface_moment_set/}. No production stopping rule,
+optimizer, or first-arrival certificate follows from these isolated results.
+
 Continuous layered enumeration was then extended to all 37,648 pairs in
 the prepared 724-source, 52-receiver geometry. The first attempt completed
 every candidate enumeration, but eleven direct candidates failed the
@@ -198,7 +223,7 @@ saved in \path{data/development/inversion_ray_gate_checks/}, establish failure
 handling rather than global first-arrival accuracy or nonlinear recovery.
 No live executable was replaced, and no corrected inverse result is claimed.
 
-\subsection{Historical waveform metadata and a rejected pilot pair}
+\subsection{Historical waveform metadata and identified correlations}
 The existing Hayward catalog pair at differential row 15108 links events
 \texttt{NC/238035} and \texttt{NC/30083101} at
 \texttt{NC.JPR.02.EHZ}. EarthScope routing identifies NCEDC as the archive
@@ -237,7 +262,7 @@ categories remove no catalog observations and establish no study exclusion.
 Full native rows and the original unsubmitted requests are saved in
 \path{data/authoritative/waveforms/cohort_plan_001/}.
 
-Normalized waveform correlation will supply differential times without
+Normalized waveform correlation supplies differential times without
 calibration corrections, as clarified by the user. Missing historical responses
 remain metadata gaps rather than retrieval prerequisites.
 EQcorrscan documents local-window normalization, pick-relative extraction,
@@ -245,5 +270,47 @@ and \texttt{dt.cc} identifier and sign conventions.\footnote{EQcorrscan document
 \href{https://eqcorrscan.readthedocs.io/en/latest/submodules/utils.correlate.html}{normalized correlation};
 \href{https://eqcorrscan.readthedocs.io/en/latest/submodules/autogen/eqcorrscan.utils.catalog_to_dd.write_correlations.html}{correlation-derived differential times}.}
 Differential time is travel time for event 1 minus that for event 2.
-Preprocessing and acceptance choices require declaration. The failed pilot
-remains preserved, with no accepted waveform observation.
+The failed spectral pilot remains preserved as a separate calculation.
+
+NCEDC reports covering spans for 464 pick windows; 13,798 have no reported span,
+which does not establish historical absence. Five sample batches provide 459
+complete windows of 500 native samples at 100 Hz and five identified zero-sample
+outcomes, all at \texttt{NC.JPR.02.EHZ}. The unchanged first response is reused;
+no omitted window is re-requested, and partial or overlapping support is not
+accepted. The complete identified inventory, raw replies, and sample audit are in
+\path{data/authoritative/waveforms/cohort_cc_002/} and
+\path{data/authoritative/waveforms/cohort_samples_002/}.
+The first decoding failure remains in
+\path{data/authoritative/waveforms/cohort_samples_001/}.
+No catalog observation or station is removed.
+
+The declared method correlates 256 native samples over the complete
+$\pm0.25$ s search. The template starts nearest to 0.5 s before its pick,
+with half-sample ties resolved earlier. Direct local centering and scaling
+evaluates signed Pearson correlation; 41 controls include large-amplitude
+cancellation cases. No response removal, extra filter, resampling, or
+fractional interpolation is used. Nonpositive, tied, and boundary maxima
+are rejected. After discrete alignment, the declared Hann-window and five-bin
+spectral screen requires at least ten of twenty 2--10 Hz bins to have squared
+coherence strictly above 0.9. Actual native sample offsets determine the sign:
+\[
+\Delta t_{ij}^{\rm cc}=\Delta t_{ij}^{\rm catalog}
+                      -\mathrm{delay}_{j-i}.
+\]
+Native-input controls check both epochs, origins, sample hashes, and timing.
+
+Of the original 44,718 pairs, 1,195 have eligible samples on both sides.
+The calculation accepts 98; 1,086 fail coherence, ten peak at the boundary,
+and one has a nonpositive peak. The other 43,523 remain unattempted.
+The 98 accepted event pairs each have one accepted channel and span 103 events:
+75 are at \texttt{NC.JPR.02.EHZ}, 19 at \texttt{NC.CBR.10.EHZ}, three at
+\texttt{NC.JSB.10.EHZ}, and one at \texttt{NC.JSF.10.EHZ}.
+The complete identified roster and all attempted lag/coherence arrays remain in
+\path{data/development/native_waveform_cc_001/}.
+These new subset observations are not identified copies of the manuscript's
+17,955 waveform differences and have not entered an inversion. Neither squared
+correlation nor the 10 ms sample spacing is a formal timing uncertainty.
+The checked \texttt{dt.cc} export in \path{data/development/native_dt_cc_001/}
+retains a complete 44,718-row identity sidecar, event integer map, and receiver
+epochs. It preserves binary64 values, rejects ambiguous mappings, and leaves
+solver weighting and the running catalog-only calculation unchanged.

@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "reviewer": "earthscope_discovery",
+  "created_utc": "2026-10-10T05:14:11.065574+00:00",
+  "scope": "Read-only final factual, local-link and compile-log review of the new normalized-CC delivery and continuous-interface paragraphs; no measurements, numerical reruns or report edits.",
+  "material_issue_found": false,
+  "sha256": {
+    "README.md": "9462c5ae7dc5103350b578b1119faafa4cfd9ebfd9a12079075dbafc2b16a89b",
+    "report/recovery_checkpoint.tex": "039d9ca6ccd25fc0a0881afd46b2a25be5906367631896335c10edd9f8dca21a",
+    "data/development/native_dt_cc_001/README.md": "66e10c99d38bf27fc90caff451e4cb62ddb11502808b2a83e095898ea99e6740",
+    "report/report.pdf": "28a948a7d12a2b328e35fdfb8b957ab53e6ed9b2f3b82a7efc0e5fbeb05de803",
+    "tmp/normalized_cc_report_compile_003/execution.json": "a9857599de0fe825b3fafea405747639bc0d69b639d05c0deca540b0cbf1afd1",
+    "tmp/normalized_cc_report_compile_003/pass_1.log": "881212005ec65b3ae52c309c4c153462d8fc08d3fb7c7f267333d240bc885623",
+    "tmp/normalized_cc_report_compile_003/pass_2.log": "925c6d9115a891c8773be720a7cfea08371e0f809069c0f63cd338c34feb7813",
+    "data/development/normalized_cc_delivery.json": "1d48e717facbfbb7b84b4416fa2865f792539e486a1534433ed839ba05e05c12",
+    "data/development/native_interface_support/001/summary.json": "4ab53a668bda8332b16259af18dd667ac3fff88382c6d38bf0ef61c02c43dbd1",
+    "data/development/native_interface_step/001/summary.json": "167bfd760019f461bdfcf373ce699575739bcc0704874c3ffde94044eedc23eb",
+    "data/development/interface_moment_set/001/summary.json": "b26a38144856adc2367bc5b763fd2522819339f8cfba7b648f58517ff64a2662",
+    "data/development/normalized_waveform_measurement_checks/002/summary.json": "5b034057f723db1de26a3f938b0ef82f846d2e6ac5624b5c9edf52b5c5a26b02",
+    "data/development/identified_dt_cc_export_checks/001/summary.json": "8ba00e3dd38d58d34e4bf087aaadbd6ab02cf04ef4c60de725e290d34c8c55a3",
+    "report/report.tex": "289034e2eae49f6230f2d82c6e0005ab989af6e6443e1293382d6bcafd7f6efe",
+    "data/panel_audit.csv": "e8b115d93a4db2a1a12ab58f160aa68496ba6c1c06f4eb31b9538f0ed6d55a03",
+    "data/authoritative/waveforms/cohort_cc_002/inventory_summary.json": "ffb0fac1b04380f94cbc31b3fcca265c31af7e8a2e531e92aacd4953c7e32c3e",
+    "data/authoritative/waveforms/cohort_cc_002/independent_inventory_review.json": "87816ce428d238b9fbc6a1f4b288539a7bfa246bc96126a26c70f8ed932e8f03",
+    "data/authoritative/waveforms/cohort_samples_002/samples_002.json": "b4724589fd77061b33e75aa8450110b555db6f04ca130471f8cec93a2320e874",
+    "data/authoritative/waveforms/cohort_samples_002/independent_samples_review.json": "48ce35efd1cbec40bb03e4df5235cecc8f892e8111c0847f84ea0c86846ba6ab",
+    "data/development/native_waveform_cc_001/summary.json": "8a97e3c31d4a8db25c2c63b448addbfbfe258d94a17ecfa1663e5facb5772021",
+    "data/development/native_waveform_cc_001/independent_measurement_review.json": "4a91262cf8d64a6cee233b08465f34b885e40f7cb0d2dc82cd575bcf9719e97b",
+    "data/development/native_dt_cc_001/summary.json": "dba733887df96456993fdc5972f66f96dad62705f6f30f3e510f2f45786e1213",
+    "data/development/native_dt_cc_001/independent_export_review.json": "7c9c82847bc54a4e8b93274616f3827b4055c86700f729832ebbd08c792c40bc",
+    "data/development/native_waveform_cc_checks/002/root_review.json": "c4b8252ba4c30b674c4b045c6c472f4a541a6e5e9714487ec35022a689e94848",
+    "data/development/identified_dt_cc_export_checks/001/root_review.json": "7f992c31f73ac48823862a5c1a2819255076403607881d161a92cf87fe50881e",
+    "data/development/native_interface_step/001/root_review.json": "1234ad66fafe90e5f8c19d68f301844382d40e035f31896b4c6c8bf131f1891a",
+    "data/development/interface_moment_set/001/root_review.json": "0bc18ed1cada7ef7c3f6ad19dd4d185f87721ee9ce3526c4a5279a0748679f95"
+  },
+  "local_link_or_path_counts": {
+    "README.md": 42,
+    "report/recovery_checkpoint.tex": 22,
+    "data/development/native_dt_cc_001/README.md": 3
+  },
+  "all_checked_local_targets_exist": true,
+  "pdf": {
+    "pages": 100,
+    "bytes": 1770897,
+    "both_compile_passes_returned_zero": true,
+    "no_errors_undefined_references_overfull_boxes_or_rerun_warning": true,
+    "remaining_warnings": [
+      "Existing pdfTeX multiple-page-group warning for figures/location_errors.pdf",
+      "Existing underfull vbox at the validation table"
+    ],
+    "visual_review": "Parent independently inspected final page 30; this review checks the final PDF hash and compiler logs."
+  },
+  "factual_checks": [
+    "464 reported covering spans and 13,798 no-span results are distinguished from decoded coverage and historical absence.",
+    "459 complete native windows and five identified zero-sample outcomes retain all 14,262 catalog picks; the original failed decode is linked to cohort_samples_001.",
+    "All 44,718 pair rows remain: 1,195 attempted, 98 accepted, 1,086 coherence failures, ten boundary peaks, one nonpositive peak and 43,523 unattempted.",
+    "The 98 accepted rows are distinct event pairs with one accepted channel each, spanning 103 events; channel counts are JPR 75, CBR 19, JSB 3 and JSF 1.",
+    "Extraction, signed local normalization, post-alignment coherence threshold and native timing sign match the frozen declared method; 41 numerical controls and 45 export controls are reported accurately.",
+    "Export descriptions match the reviewed 98 headers/rows, full 44,718-row sidecar, 1,058-event map and 22 native epoch rows; CC squared is relative weight, not formal inverse variance or a chosen solver multiplier.",
+    "Rounded supporting-vector and interval-radius bounds, two 19-halving steps, action decreases, increased support norms and 156 moment controls match frozen reviewed evidence; no production convergence or first-arrival claim is made."
+  ],
+  "limitations": [
+    "Existing report sections outside the changed delivery paragraphs were not re-audited in full.",
+    "External official documentation links were not fetched again in this local review.",
+    "The normalized-CC subset is not the manuscript original waveform-difference dataset and has not entered an inversion."
+  ]
+}

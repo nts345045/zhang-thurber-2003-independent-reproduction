@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "reviewed_utc": "2026-10-10T05:02:45.766179+00:00",
+  "reviewer": "root review of independently authored serialization controls and peer source findings",
+  "controls_summary_sha256": "8ba00e3dd38d58d34e4bf087aaadbd6ab02cf04ef4c60de725e290d34c8c55a3",
+  "source_sha256": {
+    "diagnostics/check_identified_dt_cc_export.py": "26b3b275ef324a7cae6639d8c1ba72b808a6c5adcadf13a75a16f8a4c43856a7",
+    "diagnostics/export_identified_dt_cc.py": "256d11036f5273d26ec8a7159671d08f1375e1be02b6dc98fd89a2240849dd44"
+  },
+  "verified_controls": 45,
+  "verified_artifact_hashes": 69,
+  "findings": [
+    "TT_i minus TT_j and zero added origin correction follow documented EQcorrscan legacy convention.",
+    "17-digit values read back identically, including positive and negative differences and CC squared relative weights.",
+    "Positive event integer mapping preserves original indices and native event/origin identity; ambiguous origins are rejected.",
+    "Complete original rows survive the identifier sidecar, including rejected rows and original catalog sigmas.",
+    "Both native epochs and valid empty locations are retained; station/channel/physical-position collisions are rejected.",
+    "Duplicate and reversed pair/station/phase rows reject, rather than silently collapse.",
+    "Fresh output and terminal offline hash-bound reviewed measurement stage are required.",
+    "Default Python3.6 syntax and runtime exercised by independent controls; station ASCII predicate corrected before freeze."
+  ],
+  "limitations": [
+    "No real export has yet been run.",
+    "No timing sigma, solver weighting or inverse accuracy is established by serialization."
+  ]
+}

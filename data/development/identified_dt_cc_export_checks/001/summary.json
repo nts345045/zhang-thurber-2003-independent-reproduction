@@ -1,0 +1,295 @@
+{
+  "status": "passed",
+  "scope": "Invented serialization and file-I/O controls; never exports real observations.",
+  "checks": [
+    {
+      "name": "exact_pair_header_zero_origin_correction",
+      "passed": true
+    },
+    {
+      "name": "sign_and_binary64_readback_0",
+      "passed": true
+    },
+    {
+      "name": "sign_and_binary64_readback_1",
+      "passed": true
+    },
+    {
+      "name": "both_positive_and_negative_differentials",
+      "passed": true
+    },
+    {
+      "name": "all_rows_and_original_fields_preserved",
+      "passed": true
+    },
+    {
+      "name": "rejected_row_retained_without_legacy_line",
+      "passed": true
+    },
+    {
+      "name": "line_maps_exact",
+      "passed": true
+    },
+    {
+      "name": "event_origin_bijection",
+      "passed": true
+    },
+    {
+      "name": "both_native_epochs_empty_location",
+      "passed": true
+    },
+    {
+      "name": "original_sigma_not_used_as_cc_weight",
+      "passed": true
+    },
+    {
+      "name": "all_rejected_roster_preserved",
+      "passed": true
+    },
+    {
+      "name": "reject_event_index_collision",
+      "passed": true,
+      "error": "Event/resource/origin mapping is not one to one"
+    },
+    {
+      "name": "reject_event_origin_ambiguity",
+      "passed": true,
+      "error": "Event/resource/origin mapping is not one to one"
+    },
+    {
+      "name": "reject_negative_event_index",
+      "passed": true,
+      "error": "Missing or invalid event identity"
+    },
+    {
+      "name": "reject_missing_native_pick",
+      "passed": true,
+      "error": "Missing native pick/association identity"
+    },
+    {
+      "name": "reject_changed_native_epoch",
+      "passed": true,
+      "error": "Receiver epoch mismatch"
+    },
+    {
+      "name": "reject_changed_metadata_hash",
+      "passed": true,
+      "error": "Receiver metadata source mismatch"
+    },
+    {
+      "name": "reject_paired_moved_receiver",
+      "passed": true,
+      "error": "Paired physical receiver positions differ"
+    },
+    {
+      "name": "reject_nonfinite_position",
+      "passed": true,
+      "error": "Nonfinite receiver position"
+    },
+    {
+      "name": "reject_duplicate_measurement_id",
+      "passed": true,
+      "error": "Duplicate original observation or measurement ID"
+    },
+    {
+      "name": "reject_rejected_row_accepted_value",
+      "passed": true,
+      "error": "Rejected row has an accepted value/weight"
+    },
+    {
+      "name": "reject_wrong_dt_sign",
+      "passed": true,
+      "error": "Differential-time sign or value changed"
+    },
+    {
+      "name": "reject_formal_sigma_fabricated",
+      "passed": true,
+      "error": "No formal timing uncertainty is established"
+    },
+    {
+      "name": "reject_wrong_cc_weight",
+      "passed": true,
+      "error": "Accepted relative weight is not finite positive CC squared"
+    },
+    {
+      "name": "reject_nan_dt",
+      "passed": true,
+      "error": "Accepted relative weight is not finite positive CC squared"
+    },
+    {
+      "name": "reject_impossible_normalized_cc",
+      "passed": true,
+      "error": "Accepted relative weight is not finite positive CC squared"
+    },
+    {
+      "name": "reject_duplicate_pair_station_phase",
+      "passed": true,
+      "error": "Duplicate or reversed legacy pair/station/phase observation"
+    },
+    {
+      "name": "reject_reversed_pair_station_phase",
+      "passed": true,
+      "error": "Duplicate or reversed legacy pair/station/phase observation"
+    },
+    {
+      "name": "reject_station_channel_collapse",
+      "passed": true,
+      "error": "Legacy station field would collapse distinct channels or positions"
+    },
+    {
+      "name": "reject_station_position_collapse",
+      "passed": true,
+      "error": "Legacy station field would collapse distinct channels or positions"
+    },
+    {
+      "name": "reject_ambiguous_station_token",
+      "passed": true,
+      "error": "Station cannot be serialized losslessly in the legacy station field"
+    },
+    {
+      "name": "run_exact_text_and_sidecar",
+      "passed": true
+    },
+    {
+      "name": "run_source_and_output_hashes",
+      "passed": true
+    },
+    {
+      "name": "run_no_solver_import",
+      "passed": true
+    },
+    {
+      "name": "fresh_export_directory",
+      "passed": true,
+      "error": "Use a fresh output directory"
+    },
+    {
+      "name": "all_rejected_file_io",
+      "passed": true
+    },
+    {
+      "name": "run_reject_stale_review",
+      "passed": true,
+      "error": "Require a hash-bound independent measurement review"
+    },
+    {
+      "name": "run_reject_incomplete_execution",
+      "passed": true,
+      "error": "Require the terminal offline measurement execution ledger"
+    },
+    {
+      "name": "run_reject_stale_execution",
+      "passed": true,
+      "error": "Require the terminal offline measurement execution ledger"
+    },
+    {
+      "name": "run_reject_nonoffline_execution",
+      "passed": true,
+      "error": "Require the terminal offline measurement execution ledger"
+    },
+    {
+      "name": "run_reject_changed_epoch",
+      "passed": true,
+      "error": "Receiver epochs are not bound to measurements"
+    },
+    {
+      "name": "run_reject_changed_roster",
+      "passed": true,
+      "error": "Measurement output changed: identified_measurements.csv.gz"
+    },
+    {
+      "name": "run_reject_wrong_count",
+      "passed": true,
+      "error": "Full measurement roster differs"
+    },
+    {
+      "name": "run_reject_wrong_counts",
+      "passed": true,
+      "error": "Full measurement roster differs"
+    },
+    {
+      "name": "run_reject_changed_catalog_flag",
+      "passed": true,
+      "error": "Measurements are not a completed isolated stage"
+    }
+  ],
+  "source_sha256": {
+    "diagnostics/check_identified_dt_cc_export.py": "26b3b275ef324a7cae6639d8c1ba72b808a6c5adcadf13a75a16f8a4c43856a7",
+    "diagnostics/export_identified_dt_cc.py": "256d11036f5273d26ec8a7159671d08f1375e1be02b6dc98fd89a2240849dd44"
+  },
+  "output_sha256": {
+    "source/check_identified_dt_cc_export.py": "26b3b275ef324a7cae6639d8c1ba72b808a6c5adcadf13a75a16f8a4c43856a7",
+    "source/export_identified_dt_cc.py": "256d11036f5273d26ec8a7159671d08f1375e1be02b6dc98fd89a2240849dd44",
+    "valid_input/epochs.csv.gz": "860b2fe084c79385516a01af59ce3b605bd8cdd7478c2ba9233c11f29efe3e06",
+    "valid_input/identified_measurements.csv.gz": "021e21877023699eb15cf9307c190002ccdd27f8c0f9eaebc2aecf1590559541",
+    "valid_input/summary.json": "b231d03c94565d4ee216ed15c5da820a48f5bf8f3801eba962fe0cdc30ae2424",
+    "valid_input/review.json": "e346ccc91f272dea13dd3c795de61a9932225a784e34ecd39dd49cabfe4982b8",
+    "valid_input/execution.json": "48c70dadb455917ea98ec564c275fb8d42d7adb3f6c99805abafceb4df6e0a87",
+    "valid_output/dt.cc": "2cca399c3852d4e6f5ce2c601dce891e2981cc19a513ad078ff9e65740f82c52",
+    "valid_output/dt.cc.identifiers.csv.gz": "a669599ed94667f7828f55246976edbcc6adc52e1854bea3089424c3a7af7dfa",
+    "valid_output/event_id_map.csv": "e3bdd2a5dd1b03dd21a47c53e3b6fbd1c1cbbc484d73ddbf3108d3f23b57a54d",
+    "valid_output/receiver_epochs.csv.gz": "0c1d4e76aa0a17c2363ecdab4bd970e49dcb9612621aeb6466e259b2b5db0487",
+    "valid_output/summary.json": "322e3dd259ce94a6b7f3bacf9c1af6338a9b7746e1bc55ac9fb2db92b4062b2c",
+    "valid_output/source/export_identified_dt_cc.py": "256d11036f5273d26ec8a7159671d08f1375e1be02b6dc98fd89a2240849dd44",
+    "empty_input/epochs.csv.gz": "860b2fe084c79385516a01af59ce3b605bd8cdd7478c2ba9233c11f29efe3e06",
+    "empty_input/identified_measurements.csv.gz": "c769a3a6e774bc36e4bca22670505c90d8d1219e933f5b7eb4b6bd957bb52126",
+    "empty_input/summary.json": "2d8550aa850f83793b90fbc454689cf79a0a48fb498bae93444a2f56137683c9",
+    "empty_input/review.json": "ecb2945f116b3f67ec0e429e9bad034ff41ce3a8a0a370066fc100993bbbad21",
+    "empty_input/execution.json": "60fba66198b0a200f4658f63e369ec426a59b0e90834259ca89a7662d1e52ad1",
+    "empty_output/dt.cc": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "empty_output/dt.cc.identifiers.csv.gz": "a2cb2347dab0ba7721325179d6deb74df1e39b6f6198fe2f11d3082ea70ea729",
+    "empty_output/event_id_map.csv": "e3bdd2a5dd1b03dd21a47c53e3b6fbd1c1cbbc484d73ddbf3108d3f23b57a54d",
+    "empty_output/receiver_epochs.csv.gz": "5205f005d8b2b0ed48fc4e4d75d53727d42f782069129f4da9e55483dd5ae973",
+    "empty_output/summary.json": "d952594292cbbd0f4bdeacc880bac6748d6205654edcd1f06fb389c8904707aa",
+    "empty_output/source/export_identified_dt_cc.py": "256d11036f5273d26ec8a7159671d08f1375e1be02b6dc98fd89a2240849dd44",
+    "stale_review_input/epochs.csv.gz": "860b2fe084c79385516a01af59ce3b605bd8cdd7478c2ba9233c11f29efe3e06",
+    "stale_review_input/identified_measurements.csv.gz": "021e21877023699eb15cf9307c190002ccdd27f8c0f9eaebc2aecf1590559541",
+    "stale_review_input/summary.json": "5216cd295bdb7eb2589c586e472ad993e8eac4691d0b5cc8161cda19d5867824",
+    "stale_review_input/review.json": "5683780d2ce4154cf6bc148e68439b0f83cc42e858510c0f1b8165e559ec97ca",
+    "stale_review_input/execution.json": "a74191218fdc3981b2f1327f586907deb99eb2a587bda4cead3b9832aaaffd31",
+    "incomplete_execution_input/epochs.csv.gz": "860b2fe084c79385516a01af59ce3b605bd8cdd7478c2ba9233c11f29efe3e06",
+    "incomplete_execution_input/identified_measurements.csv.gz": "021e21877023699eb15cf9307c190002ccdd27f8c0f9eaebc2aecf1590559541",
+    "incomplete_execution_input/summary.json": "6826b40ff478d7849734ff6528641f42fb43a0de16b26b0befcd33191709cd4d",
+    "incomplete_execution_input/review.json": "932afa2c49ad9737a9f8466fe4318e66d01ba03fadf366837a06f60614111c3e",
+    "incomplete_execution_input/execution.json": "9359853657201f49c5ca1800ca0751768f2814198b26686cfa61024e0b3f9b3d",
+    "stale_execution_input/epochs.csv.gz": "860b2fe084c79385516a01af59ce3b605bd8cdd7478c2ba9233c11f29efe3e06",
+    "stale_execution_input/identified_measurements.csv.gz": "021e21877023699eb15cf9307c190002ccdd27f8c0f9eaebc2aecf1590559541",
+    "stale_execution_input/summary.json": "297b5e8c61edcc58f16a94509cd8f923c08f792eaf5723f14499be49fd1ec41f",
+    "stale_execution_input/review.json": "6a6dc2ca976496dc979f583930e6f0cb2f83c45add7837aa7678c51c3e8e5be2",
+    "stale_execution_input/execution.json": "64f9ee34e4cb1f22112d9e08cd789cd61c1753280a6d15a6deb492d561f2fb15",
+    "nonoffline_execution_input/epochs.csv.gz": "860b2fe084c79385516a01af59ce3b605bd8cdd7478c2ba9233c11f29efe3e06",
+    "nonoffline_execution_input/identified_measurements.csv.gz": "021e21877023699eb15cf9307c190002ccdd27f8c0f9eaebc2aecf1590559541",
+    "nonoffline_execution_input/summary.json": "d418a19f2d7ab00fe9a728b03f6743e776fc685a778cbe857f0847a4a6eef005",
+    "nonoffline_execution_input/review.json": "c703e03b956fc39d9f17f0c9e93c33c25a7caf66e30fa206ea7bf72baade27f0",
+    "nonoffline_execution_input/execution.json": "fa4ddc4177a4f29a3eac968ac9b046ee1cf8fc2b9e1e847e8714f595dd8f583c",
+    "changed_epoch_input/epochs.csv.gz": "dc1769b9cb67908e1eb05c68eb24d969f644db9021737eefe7afa66a33a2e3db",
+    "changed_epoch_input/identified_measurements.csv.gz": "021e21877023699eb15cf9307c190002ccdd27f8c0f9eaebc2aecf1590559541",
+    "changed_epoch_input/summary.json": "dc61bde7d30a12b8ca1f3049d6f3939268bbff80af602ab8cc9273512df595a2",
+    "changed_epoch_input/review.json": "90edbe3576cb11a0479b1cba05ca3c80bb5fd82b132d063da8c4928c06cf4fdd",
+    "changed_epoch_input/execution.json": "9d6ee07c3cfee3d11bfeed84a52056a557009eb279e91211f474050b0629da7c",
+    "changed_roster_input/epochs.csv.gz": "860b2fe084c79385516a01af59ce3b605bd8cdd7478c2ba9233c11f29efe3e06",
+    "changed_roster_input/identified_measurements.csv.gz": "c064708a1973eb1902d56405ee6a617feb5c767f575b53738b09d033c644d57c",
+    "changed_roster_input/summary.json": "c2e42acdb86d98ddf798cf8ce2a2de2667ae1dcd5f4b034a1db5958e2390deac",
+    "changed_roster_input/review.json": "39006e8dca3ee8b3750b9710d45f3b1a9f09693f75262a02042a68f5fe1f11dc",
+    "changed_roster_input/execution.json": "30d4e421070177707003b9ed65ae32a26aa7e55c61062e0ccc3d57f792f4aa21",
+    "wrong_count_input/epochs.csv.gz": "860b2fe084c79385516a01af59ce3b605bd8cdd7478c2ba9233c11f29efe3e06",
+    "wrong_count_input/identified_measurements.csv.gz": "021e21877023699eb15cf9307c190002ccdd27f8c0f9eaebc2aecf1590559541",
+    "wrong_count_input/summary.json": "dcd15e4db15829542c5e7e2408a401c39abb9fb1adde2e3c495a57e39ec2d767",
+    "wrong_count_input/review.json": "cd8583cbb1cadb01d31a0da04a55dbb27cc686a43899de4fb756b7015d8f500a",
+    "wrong_count_input/execution.json": "64493d7077ca9fddbf0c6d10b160fe3a2a6c6afd4026a74774e22ebcee4f8e15",
+    "wrong_counts_input/epochs.csv.gz": "860b2fe084c79385516a01af59ce3b605bd8cdd7478c2ba9233c11f29efe3e06",
+    "wrong_counts_input/identified_measurements.csv.gz": "021e21877023699eb15cf9307c190002ccdd27f8c0f9eaebc2aecf1590559541",
+    "wrong_counts_input/summary.json": "710db8b8305e18bdacdad859fc6cc7d137c6759fb50c16fc2ed7ddcb7beee900",
+    "wrong_counts_input/review.json": "b3ecaa7bf707864f1f65d9fcacb53810ce860bc7bdf3eeed5ef382c9ea1ce650",
+    "wrong_counts_input/execution.json": "3a53c920523ae7fd88ef1580044dbe2b8726f9f88397cb3cca38498ec10c5bc3",
+    "changed_catalog_flag_input/epochs.csv.gz": "860b2fe084c79385516a01af59ce3b605bd8cdd7478c2ba9233c11f29efe3e06",
+    "changed_catalog_flag_input/identified_measurements.csv.gz": "021e21877023699eb15cf9307c190002ccdd27f8c0f9eaebc2aecf1590559541",
+    "changed_catalog_flag_input/summary.json": "ad184d4b24d9b25e67a18380348bfdfb772970c0b018eaf5b020f59174f83e28",
+    "changed_catalog_flag_input/review.json": "6aa6aecbc07d03b0c34ba7c07941c01ce6a8370f0c90599fbae734dd73585b15",
+    "changed_catalog_flag_input/execution.json": "b78a1475e0d96c84092ecc4cd21cd2be3ab67162520d93688a8da52fbd256ecb"
+  },
+  "limitations": [
+    "Invented serialized values and native identities; no real waveform processing/export or solver import.",
+    "Independent measurement review remains required before any real export."
+  ]
+}
