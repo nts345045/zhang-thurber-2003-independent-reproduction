@@ -1,0 +1,42 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T02:24:24.384664+00:00",
+  "pid": 17619,
+  "workers": 4,
+  "completed_pairs": 37648,
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/run_loma_layered_full.py --output data/development/loma_layered_full_001 --workers 4",
+  "expected_pairs": 37648,
+  "input_source_sha256": {
+    "data/loma_lom_001/authoritative_geometry": "a80bab4f2cb737add7a2a6a437decfc18869c1bff22c364e3a0f6131f1d4d817",
+    "data/loma_lom_001/initial_grid.csv": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+    "data/loma_lom_001/preflight.cfg": "3264c2c3976793a7b4acb7e917790a0ef1a96994f786feaa998a8f3a907a7867",
+    "data/loma_lom_001/preparation_manifest.json": "eca3bfb01d15ddc8b0850486a82669cf48a85594814c5e5e43dea3b9226552e9",
+    "data/loma_lom_001/ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "data/loma_lom_001/run.cfg": "d28f691c27559c0fd45f99c5e107f35a343c15e4bf371065716814102352a6b2",
+    "data/loma_lom_001/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "data/loma_lom_001/truth_events.csv": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3",
+    "data/loma_lom_001/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "diagnostics/run_loma_layered_full.py": "4a01438a8646000b77136e8e65f98aa154b6dd8c28ff6a53dda597e855327e39",
+    "diagnostics/first_arrival_layered_reference.py": "f0d715938ef089de10908249bbbb69f875ede81a94f4d10df9c997203e144aff",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "data/development/loma_geometry_preflight/001/summary.json": "57d8b30ba3b9a053de9842cdd2cb63834b615575050046bf7ce862bbd9d32be0"
+  },
+  "python_version": "3.6.8",
+  "numpy_version": "1.19.5",
+  "scipy_version": "1.5.4",
+  "counts": {
+    "pairs": 37648,
+    "reference_complete": 37648,
+    "reference_valid": 37637,
+    "candidate_total": 66302,
+    "branch_turning": 5951,
+    "branch_direct": 25713,
+    "branch_critical_maximum_or_plateau": 5474,
+    "branch_flat_direct": 499
+  },
+  "seconds": 730.7724206519779,
+  "updated_utc": "2026-10-10T02:36:21.262559+00:00",
+  "result_status": "completed_with_unresolved_references",
+  "finished_utc": "2026-10-10T02:36:35.212399+00:00",
+  "summary_sha256": "3ad877e5d083fdba8489db304352359f11da490e8f691c85786a306e0fd4ae30"
+}
