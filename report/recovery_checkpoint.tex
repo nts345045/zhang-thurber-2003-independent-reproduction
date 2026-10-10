@@ -1226,8 +1226,40 @@ final ray, derivative and scientific assessment. The launcher evidence is in
 \path{data/development/hayward_old_kernel_backtracking_launcher_checks_002/};
 the lossless archive and restoration instructions are in
 \path{data/development/trial_backtracking_evidence_001/README.md}.
-The catalog-only attempt began at 10:52 UTC on 10 October 2026. At the
-11:21 UTC snapshot it remained in its initial evaluation, with no accepted update.
+The catalog-only attempt began at 10:52 UTC on 10 October 2026. Its first
+update is accepted at inverse step fraction $1/8$, after three larger trials
+fail local ray stopping. The fixed-weight inversion objective, including
+data residuals and log-slowness smoothing, falls from $1812.15659$ to
+$1409.16490$. The closed iteration-1 starting-state snapshot
+contains the result of this iteration-0 update, retaining all 1,092 event
+identities and their station, channel, epoch and observation mappings.
+
+Figure~\ref{fig:hayward_accepted_update} compares this saved state with the
+original identified inputs. At the actual grid depth of 8 km, the 77 nodal
+velocity changes range from $-0.25806$ to $+0.07275$ km/s. Horizontal event
+movements range from 0.00181 to 0.33425 km; the largest three-dimensional
+movement is 0.55600 km. No spatial interpolation is used in this comparison.
+The run remains incomplete. Its recorded history RMS describes the preupdate
+state, and updated-model first-arrival and source-derivative accuracy remain
+unestablished. The saved state also lacks the complete Jacobian export needed
+for full-DD resolution. These results do not change the manuscript panel
+classifications. Exact saved values, full identities, source and restoration
+instructions are in
+\path{data/development/hayward_accepted_update_delivery_001/README.md}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{hayward_accepted_update_001.pdf}
+\caption{First accepted Hayward update from the separate catalog-only
+backtracking attempt; the run is incomplete. Left: accepted minus initial
+velocity at the 77 saved grid nodes at 8 km depth, in km/s. Centre: native
+horizontal positions of all 1,092 events and their displacements. Right:
+the indicated 4 km by 4 km window contains 125 events. Grey points denote
+initial positions; arrows show horizontal movement without amplification,
+and their colours give its magnitude in km. This saved-state comparison
+does not report post-update RMS, final convergence or manuscript reproduction.}
+\label{fig:hayward_accepted_update}
+\end{figure}
 
 \subsection{Historical waveform metadata and identified correlations}
 The existing Hayward catalog pair at differential row 15108 links events

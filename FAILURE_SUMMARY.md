@@ -160,8 +160,14 @@ pass all 62 cases, including five process-lifecycle cases, and verify the
 exact source changes against the original initial-model evidence. These
 saved-evidence and controller checks preceded the separate field attempt.
 Final scientific assessment remains necessary after any successful execution.
-The catalog-only attempt began at 10:52 UTC on 10 October 2026; the 11:21 UTC
-snapshot still showed its initial evaluation, with no accepted update.
+The catalog-only attempt began at 10:52 UTC on 10 October 2026. Its first update
+was accepted at fraction 1/8 after three larger trials failed local ray stopping.
+The fixed-weight inversion objective, including data residuals and
+log-slowness smoothing, fell from 1812.15659 to 1409.16490. The
+[closed accepted-state snapshot](data/development/hayward_accepted_update_delivery_001/README.md)
+and [figure](figures/hayward_accepted_update_001.pdf) preserve this intermediate
+result. The run remains incomplete, and updated-model first-arrival and source
+accuracy remain unestablished. The history RMS describes the preupdate state.
 The [evidence archive](data/development/trial_backtracking_evidence_001/README.md)
 preserves both successful controls and earlier failed or unexecuted variants.
 

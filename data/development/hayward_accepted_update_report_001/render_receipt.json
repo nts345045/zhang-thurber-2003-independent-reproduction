@@ -1,0 +1,48 @@
+{
+  "status": "completed",
+  "observed_utc": "2026-10-10T17:45:53.235169Z",
+  "commands": [
+    {
+      "command": [
+        "pdftoppm",
+        "-f",
+        "44",
+        "-l",
+        "44",
+        "-r",
+        "110",
+        "-png",
+        "-singlefile",
+        "report/report.pdf",
+        "tmp/hayward_accepted_update_report_visual_001/page_44"
+      ],
+      "return_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "pdftoppm",
+        "-f",
+        "49",
+        "-l",
+        "49",
+        "-r",
+        "110",
+        "-png",
+        "-singlefile",
+        "report/report.pdf",
+        "tmp/hayward_accepted_update_report_visual_001/page_49"
+      ],
+      "return_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "report_sha256": "f52e73a132f225b0a37eea5373fb6e8fb9736050e97e88f9e355a475b32d3f20",
+  "output_sha256": {
+    "tmp/hayward_accepted_update_report_visual_001/page_44.png": "07ee069bfe6231f07d84edbe90a400fa611a10895823fa649ccc6fc288386b7c",
+    "tmp/hayward_accepted_update_report_visual_001/page_49.png": "15e86f38b34d7b6599ace43b54e25672484cb0d5ea23dcbae6ee054d10e17297"
+  },
+  "visual_review_pending": true
+}

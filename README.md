@@ -14,6 +14,12 @@ and nonlinear-convergence failures. A separate guarded catalog-only inversion
 stopped at its first trial model, before accepting any update. This remains a
 partial scientific checkpoint.
 
+A separate catalog-only backtracking attempt has now saved its first accepted
+update. The [intermediate-state plot](figures/hayward_accepted_update_001.pdf)
+shows velocity changes and event movements from the identified starting model.
+The run remains incomplete; this update does not establish final convergence
+or updated-model ray and source-derivative accuracy.
+
 On 2026-10-09 the user revised that restriction: real station and earthquake
 data, including metadata, must now come from authoritative sources, starting
 with USGS and EarthScope web services. All saved records must retain SEED
@@ -262,8 +268,14 @@ include a saved eligibility assessment of all 58,980 observations and 14,262
 native rays, plus five process-lifecycle cases with no compiler or numerical
 calls. This launcher validation preceded the separate field attempt; successful
 execution still requires final scientific diagnostics.
-The catalog-only attempt began at 10:52 UTC on 10 October 2026. At the
-11:21 UTC snapshot it remained in its initial evaluation, with no accepted update.
+The catalog-only attempt began at 10:52 UTC on 10 October 2026. Its closed
+iteration-1 starting-state snapshot now records the first accepted update,
+at inverse step fraction 1/8. The fixed-weight inversion objective, including
+data residuals and log-slowness smoothing, fell from 1812.15659 to 1409.16490.
+The [saved-state figure and reproducible archive](data/development/hayward_accepted_update_delivery_001/README.md)
+preserve the accepted grid, all 1,092 event identities and their observation
+mappings. This is an intermediate state; the recorded history RMS describes
+the preupdate state, and final scientific diagnostics remain pending.
 The [lossless evidence archive](data/development/trial_backtracking_evidence_001/README.md)
 retains the completed controls, failed attempts and unexecuted drafts.
 
@@ -534,6 +546,14 @@ earlier forward operators.
   first trial; `dd_last_accepted_*` preserves the initial state. Its history
   contains only a header. The [failure archive](data/development/hayward_guarded_failure_001/README.md)
   preserves identified outputs and execution evidence. There is no accepted final model.
+- `data/hayward_old_kernel_backtracking_001/`: separate catalog-DD attempt
+  in the integration worktree. Its closed
+  `dd_iteration_1_solve_accepted_grid.csv` and
+  `dd_iteration_1_solve_accepted_events.csv` contain the first accepted update.
+  The [saved snapshot archive](data/development/hayward_accepted_update_delivery_001/README.md)
+  includes these files, identified starting inputs, the plotting script and
+  [intermediate-state figure](figures/hayward_accepted_update_001.pdf).
+  The ongoing run has no accepted final model or full-DD resolution result.
 - `figures/` and `figures/hayward/`: plots generated from the saved numerical
   tables. `report/report.pdf` explains the experiments and reproduction limits.
 - `data/development/`: numerical diagnostics and frozen failure evidence.
