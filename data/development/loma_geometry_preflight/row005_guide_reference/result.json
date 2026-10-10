@@ -1,0 +1,199 @@
+{
+  "scope": "Declared bounded x=0 plateau-grazing candidate for identified Loma sample row 5; not a complete first-arrival reference",
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 data/development/loma_geometry_preflight/row005_guide_reference/check.py --data data/loma_lom_001 --output data/development/loma_geometry_preflight/row005_guide_reference",
+  "diagnostic_row": 5,
+  "event": 473,
+  "station": 2,
+  "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+  "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+  "channel_seed_id": "NC.BSL..EHZ",
+  "channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+  "metadata_epoch_start": "1989-08-25T19:45:00",
+  "metadata_epoch_end": "1990-09-10T19:20:00",
+  "source_xyz_km": [
+    1.1448300320121945,
+    24.539244432017355,
+    14.115
+  ],
+  "receiver_xyz_km": [
+    13.158700251044163,
+    -53.71987480818031,
+    -0.142
+  ],
+  "original_domain_km": {
+    "x": [
+      -35.0,
+      35.0
+    ],
+    "y": [
+      -60.0,
+      40.0
+    ],
+    "z": [
+      -1.0,
+      16.0
+    ]
+  },
+  "profile_x_velocity_km_km_s": [
+    [
+      -35.0,
+      6.0
+    ],
+    [
+      -15.0,
+      6.0
+    ],
+    [
+      0.0,
+      6.0
+    ],
+    [
+      1.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      4.0,
+      4.0
+    ],
+    [
+      5.0,
+      4.0
+    ],
+    [
+      6.0,
+      5.0
+    ],
+    [
+      20.0,
+      5.4375
+    ],
+    [
+      35.0,
+      5.90625
+    ]
+  ],
+  "candidate_time_s": 15.127837995735218,
+  "transverse_distance_km": 79.5471670975873,
+  "guide_length_km": 58.53645265847271,
+  "legs_transverse_distance_km_and_time_s": [
+    [
+      2.3656078962048848,
+      0.5297892945740141
+    ],
+    [
+      18.645106542909712,
+      4.841973258082419
+    ]
+  ],
+  "candidate_x_range_km": [
+    0,
+    13.158700251044163
+  ],
+  "domain_reason": "Each Snell leg stays between x=0 and its endpoint; the guide stays at x=0. Positive transverse slowness makes (y,z) advance monotonically along the endpoint line, inside the original convex rectangle.",
+  "source_derivative_s_per_km": [
+    0.18633899812498247,
+    0.16396795782848875,
+    0.029871166420692517
+  ],
+  "source_eikonal_residual_s2_per_km2": 0.0,
+  "source_derivative_finite_differences": [
+    {
+      "axis": "x",
+      "step_km": 0.0001,
+      "analytic_s_per_km": 0.18633899812498247,
+      "numerical_s_per_km": 0.18633899812492416,
+      "signed_error_s_per_km": -5.831446436843635e-14
+    },
+    {
+      "axis": "x",
+      "step_km": 1e-05,
+      "analytic_s_per_km": 0.18633899812498247,
+      "numerical_s_per_km": 0.18633899809827878,
+      "signed_error_s_per_km": -2.670369481094781e-11
+    },
+    {
+      "axis": "x",
+      "step_km": 1e-06,
+      "analytic_s_per_km": 0.18633899812498247,
+      "numerical_s_per_km": 0.18633899756537176,
+      "signed_error_s_per_km": -5.596107188754473e-10
+    },
+    {
+      "axis": "y",
+      "step_km": 0.0001,
+      "analytic_s_per_km": 0.16396795782848875,
+      "numerical_s_per_km": 0.16396795783357732,
+      "signed_error_s_per_km": 5.088568455491327e-12
+    },
+    {
+      "axis": "y",
+      "step_km": 1e-05,
+      "analytic_s_per_km": 0.16396795782848875,
+      "numerical_s_per_km": 0.16396795787798624,
+      "signed_error_s_per_km": 4.949748944049759e-11
+    },
+    {
+      "axis": "y",
+      "step_km": 1e-06,
+      "analytic_s_per_km": 0.16396795782848875,
+      "numerical_s_per_km": 0.16396795743389703,
+      "signed_error_s_per_km": -3.9459172040956503e-10
+    },
+    {
+      "axis": "z",
+      "step_km": 0.0001,
+      "analytic_s_per_km": 0.029871166420692517,
+      "numerical_s_per_km": 0.0298711664292739,
+      "signed_error_s_per_km": 8.581382132666349e-12
+    },
+    {
+      "axis": "z",
+      "step_km": 1e-05,
+      "analytic_s_per_km": 0.029871166420692517,
+      "numerical_s_per_km": 0.029871166429273895,
+      "signed_error_s_per_km": 8.581378663219397e-12
+    },
+    {
+      "axis": "z",
+      "step_km": 1e-06,
+      "analytic_s_per_km": 0.029871166420692517,
+      "numerical_s_per_km": 0.02987116687336311,
+      "signed_error_s_per_km": 4.5267059198272896e-10
+    }
+  ],
+  "saved_production_minus_candidate_s": 0.0004481410647816375,
+  "saved_refined_minus_candidate_s": 0.00013609286478200033,
+  "interface_slowness_dx_left_s_per_km2": 0,
+  "interface_slowness_dx_right_s_per_km2": 0.05555555555555555,
+  "input_sha256": {
+    "data/loma_lom_001/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "data/loma_lom_001/truth_events.csv": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3",
+    "data/loma_lom_001/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "data/loma_lom_001/ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "data/loma_lom_001/geometry_truth_ray_convergence.csv": "dace709a4bb69ca2475ca55f56edc093fb2b75cd6728caa1c29286ac435290aa",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "data/development/loma_geometry_preflight/row005_guide_reference/check.py": "b7a0b895b81141d5c6ee71ebaecb5f5875234aae8e7d0d730de4567876950e06",
+    "data/development/loma_geometry_preflight/001/source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "data/development/loma_geometry_preflight/001/source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "data/development/loma_geometry_preflight/001/source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "data/development/loma_geometry_preflight/001/source/src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "data/development/loma_geometry_preflight/001/source/src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "data/development/loma_geometry_preflight/001/source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "data/development/loma_geometry_preflight/001/source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "output_sha256": {
+    "identified_ray.csv": "34740757d39f4d6421b97214dbe77bab6a813f3a2d82515561f36095bd06e94c",
+    "saved_ray_result.csv": "9d24d6afe7ca7c09af7b7d79e00b93c09d98d74755e63d25e5413e27b2f78255"
+  },
+  "limitations": [
+    "The full monotone-profile enumerator rejects this sandwich. Only this explicitly constructed candidate is evaluated; no global branch-completeness or first-arrival claim is made.",
+    "No model continuation outside the saved finite box, new data selection, ray trace or inversion is used.",
+    "Source derivatives belong to this candidate. They do not certify derivatives of a nonconverged saved path or of a tied first-arrival minimum.",
+    "The active preflight may append further rows to its convergence table. saved_ray_result.csv preserves the complete selected row and its original-table hash at capture; it does not assert completion of that run.",
+    "A sustained interface path has unequal one-sided normal derivatives. This possible stopping mechanism requires inspection of the actual optimizer paths before attribution."
+  ]
+}
