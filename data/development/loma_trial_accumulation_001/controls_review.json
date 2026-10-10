@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit/ray_math_review",
+  "controls_execution_sha256": "bf425ebb49cad7135bc51e657f6d58c20fe10f190f16c29961f31e2ff604b559",
+  "source_sha256": {
+    "data/development/loma_failed_search_3426_001/source/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "data/development/loma_failed_search_3426_001/source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "data/development/loma_failed_search_3426_001/source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "data/development/loma_failed_search_3426_001/source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "data/development/loma_failed_search_3426_001/source/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "data/development/loma_failed_search_3426_001/source/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "data/development/loma_failed_search_3426_001/source/src/main.cpp": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+    "data/development/loma_failed_search_3426_001/source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "data/development/loma_failed_search_3426_001/source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_saved_trial_accumulation.cpp": "90b174a35aec30a7945e7ce180e215275d56ef8a3ca96510fcd1d2f8d658fcb7"
+  },
+  "frozen_source_sha256": {
+    "source/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "source/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "source/src/main.cpp": "8db76850f3a9b81a6255ef5d3cf99fc3d610e2b9ed0297c6de29c619ad8531cd",
+    "source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/diagnostics/check_saved_trial_accumulation.cpp": "90b174a35aec30a7945e7ce180e215275d56ef8a3ca96510fcd1d2f8d658fcb7"
+  },
+  "compiler_sha256": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7",
+  "binary_sha256": "9f8cf32445df224b1bf4f94bd417091705208d28ecbb608a181a829baf605784",
+  "source_hashes_verified": 10,
+  "artifact_hashes_verified": 15,
+  "recorded_controls_passed": 9,
+  "scope": "Read-only C++ source, mathematical interpretation and recorded-control/hash review. No controls, native paths or optimizer rerun.",
+  "findings": [
+    "The double specialization preserves the original segment length, split thresholds, cut ordering, eight Gauss nodes/weights, point construction, trilinear cell lookup and value accumulation algebra. Native execution explicitly requires equality with the original function for every segment and with path_eval for every total.",
+    "All coefficients and threshold expressions remain the original binary64 values when converted to long double. Extended local arithmetic recomputes cuts, interpolation coordinates and cell comparisons in that type; it is a precision experiment using the same declared formulas, not an identical set of rounded quadrature points.",
+    "Outer long-double accumulation consumes the identical original double segment values. The paired-original variant converts both segment values to long double before subtracting; unchanged edges cancel exactly. The paired-extended variant compares the separately extended segment evaluations.",
+    "The reader requires the identified run and observation3426, ordered native nodes, all24 ordered evaluated steps, equal topology/endpoints and model-domain membership. Full provider identities are supplied by the hash-bound launcher sidecars and prior neutral replay review.",
+    "Original binary64 segments and totals, extended totals, paired changes and mantissa widths are written separately. The launcher additionally uses exact Fraction sums of original segment values, avoiding interpretation of rounded extended output as an exact sum.",
+    "The nine recorded homogeneous, affine/reversal and cancellation controls pass; compile warnings are empty. The small constant-speed bias from frozen Gauss weights remains visible and is not removed.",
+    "The exact-trial README identifies the continuous reciprocal-affine action, actual rounded polygons and unchanged flags. Its false numerical rejection statement is bounded to this saved search; it does not identify which local or accumulation operation causes the discrepancy."
+  ],
+  "limitations": [
+    "The native double-specialization and recorded-total equality checks are mandatory future gates; these nine controls alone do not establish native parity.",
+    "Long double is finite precision, preserves rounded binary64 quadrature coefficients and retains quadrature error. Its signs and errors are approximate comparisons, not certified enclosures.",
+    "Changing precision can change near-threshold split/cell decisions as well as local arithmetic. No global optimizer, first-arrival, source-derivative or inversion conclusion follows.",
+    "No new native arithmetic execution, trace, production edit, stopping threshold or flag change was performed by this review."
+  ],
+  "material_issue_found": false
+}
