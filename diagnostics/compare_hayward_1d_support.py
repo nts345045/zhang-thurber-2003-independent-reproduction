@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Compare frozen initial absolute rays with the existing continuous 1D reference.
 
-No solver, inversion, provider request, or input edit occurs. The completed
-preflight hashes establish that all linearization tables are ready to read.
+No solver, inversion, provider request, or input edit occurs. Readiness comes
+from completed preflight hashes or an explicit completed-linearization ledger
+record. The latter mode freezes its inputs and does not assess overall preflight.
 """
 import argparse
 import collections
@@ -54,26 +55,64 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--data', required=True, help='Repository-relative frozen run directory')
     parser.add_argument('--output', required=True, help='Fresh repository-relative evidence directory')
+    parser.add_argument('--completed-linearization-only', action='store_true',
+                        help='Freeze a successful completed linearize command without asserting overall preflight completion')
     args = parser.parse_args()
     data, out = (ROOT / args.data).resolve(), (ROOT / args.output).resolve()
     for path in (data, out):
         path.relative_to(ROOT)
     if out.exists():
         parser.error('Choose a fresh output directory; preserve prior evidence')
+    original_data = data
     names = ['initial_events.csv', 'stations.csv', 'initial_grid.csv', 'observations.csv',
              'initial_linearization_rows.csv', 'initial_linearization_columns.csv',
-             'initial_linearization_matrix.csv', 'run_manifest.json', 'preflight.json']
+             'initial_linearization_matrix.csv', 'run_manifest.json']
+    original_hashes = {}
+    if args.completed_linearization_only:
+        manifest = json.loads((data / 'run_manifest.json').read_text())
+        ledger_bytes = (data / 'preflight_execution.json').read_bytes()
+        ledger = json.loads(ledger_bytes.decode('utf-8'))
+        completed = [r for r in ledger['completed_commands'] if r['stage'] == 'initial_linearize']
+        expected_command = [manifest['binary'], 'linearize',
+                            str((data / 'run.cfg').relative_to(ROOT)), str(data.relative_to(ROOT)), 'initial']
+        if (len(completed) != 1 or completed[0]['return_code'] != 0 or
+                completed[0]['command'] != expected_command or ledger['phase'] != 'preflight' or
+                ledger['threads'] != manifest['threads'] or ledger.get('current_stage') == 'initial_linearize'):
+            raise ValueError('No matching successful completed initial linearization command')
+        for name, expected in manifest['sha256'].items():
+            path = (ROOT / name).resolve()
+            path.relative_to(ROOT)
+            if sha(path) != expected:
+                raise ValueError('Frozen run manifest mismatch: ' + name)
+            original_hashes[path] = expected
+        original_hashes.update({data / name: sha(data / name) for name in names})
+        snapshot_names = set(names)
+        snapshot_names.update(str(p.relative_to(data)) for p in original_hashes
+                              if p.parent == data)
+        out.mkdir(parents=True)
+        frozen = out / 'inputs'
+        frozen.mkdir()
+        for name in sorted(snapshot_names):
+            shutil.copyfile(str(data / name), str(frozen / name))
+            if sha(frozen / name) != original_hashes[data / name]:
+                raise ValueError('Input changed during snapshot: ' + name)
+        (frozen / 'preflight_execution_at_capture.json').write_bytes(ledger_bytes)
+        names = sorted(snapshot_names) + ['preflight_execution_at_capture.json']
+        data = frozen
+    else:
+        names.append('preflight.json')
     files = [data / name for name in names]
     module = ROOT / 'diagnostics/first_arrival_1d_reference.py'
     sources = [Path(__file__).resolve(), module]
     hashes = {str(p.relative_to(ROOT)): sha(p) for p in files + sources}
     manifest = json.loads((data / 'run_manifest.json').read_text())
-    preflight = json.loads((data / 'preflight.json').read_text())
+    preflight = None if args.completed_linearization_only else json.loads((data / 'preflight.json').read_text())
     for name in ['initial_events.csv', 'stations.csv', 'initial_grid.csv', 'observations.csv']:
         path = str((data / name).relative_to(ROOT))
-        if hashes[path] != manifest['sha256'][path]:
+        original_path = str((original_data / name).relative_to(ROOT))
+        if hashes[path] != manifest['sha256'][original_path]:
             raise ValueError('Geometry/observations differ from the frozen run: ' + name)
-    for name in names:
+    for name in names if preflight is not None else []:
         if name.startswith('initial_') and name.endswith('.csv'):
             if hashes[str((data / name).relative_to(ROOT))] != preflight['sha256'][name]:
                 raise ValueError('Linearization/geometry differs from completed preflight: ' + name)
@@ -172,7 +211,8 @@ def main():
                     derivatives[row][col - base] = value
     if len(origin_columns) != len(rays):
         raise ValueError('Missing absolute origin-time columns')
-    out.mkdir(parents=True)
+    if not args.completed_linearization_only:
+        out.mkdir(parents=True)
     snapshot = out / 'source'
     snapshot.mkdir()
     for source in sources:
@@ -207,7 +247,7 @@ def main():
                         production_minus_reference_s=float(ray['ray_time']) - first['time_s'] if first else '',
                         reference_distance_closure_max_km=max([abs(c['distance_residual_km']) for c in reference['candidates']] or [0.]),
                         reference_isolation_boxes=reference['isolation_boxes'],
-                        preserved_metadata_path_base=str(data.relative_to(ROOT)))
+                        preserved_metadata_path_base=str(original_data.relative_to(ROOT)))
             if first:
                 times.append(item['production_minus_reference_s'])
                 counts['branch_' + first['kind']] += 1
@@ -236,13 +276,19 @@ def main():
     for path in files + sources:
         if sha(path) != hashes[str(path.relative_to(ROOT))]:
             raise ValueError('Frozen input or reference source changed during comparison')
+    for path, expected in original_hashes.items():
+        if sha(path) != expected:
+            raise ValueError('Original completed linearization/input changed during comparison: ' + str(path.relative_to(ROOT)))
     outputs = [out / 'comparison.csv', out / 'references.jsonl'] + list(snapshot.iterdir())
     summary = dict(status='complete' if counts['reference_valid'] == len(rays) else 'unresolved_cases_preserved',
-                   command='PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/compare_hayward_1d_support.py --data ' + str(data.relative_to(ROOT)) + ' --output ' + str(out.relative_to(ROOT)),
+                   command='PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/compare_hayward_1d_support.py --data ' + str(original_data.relative_to(ROOT)) + ' --output ' + str(out.relative_to(ROOT)) + (' --completed-linearization-only' if args.completed_linearization_only else ''),
                    scope='Continuous 1D reference versus saved full initial absolute support; no solver or inversion rerun',
                    rays=len(rays), unique_native_pairs=len(support), source_derivative_components=len(gradient_errors),
                    elapsed_reference_seconds=time.time() - started, reference_counts=dict(counts),
-                   profile_depth_velocity_km_km_s=levels, preflight_status=preflight['status'],
+                   profile_depth_velocity_km_km_s=levels, preflight_status=preflight['status'] if preflight else None,
+                   readiness_basis='completed_linearization_ledger_and_frozen_inputs' if args.completed_linearization_only else 'completed_preflight_hashes',
+                   overall_preflight_assessed=False if args.completed_linearization_only else True,
+                   original_reverified_sha256={str(p.relative_to(ROOT)): h for p, h in original_hashes.items()},
                    original_columns_preserved=row_names, identity_join=['row', 'observation_row', 'i', 'station'],
                    candidate_join='references.jsonl row/observation_row/event/station join comparison.csv row/observation_row/i/station',
                    production_minus_reference_s=stats(times), production_source_derivative_minus_reference_s_per_km=stats(gradient_errors),

@@ -40,3 +40,13 @@ paths and hashes are in `provenance.json`. Time ranking uses ordinary floating
 point; the reference's completeness and distance certificates are retained
 in `result.json`. This reference applies to the saved monotone 1D initial
 model and does not establish results for later three-dimensional models.
+
+The later `fine_path_review.json` compares four saved controls with the same
+reference and native identities. The FMM field stays at 0.5 km while path
+spacing changes to 0.125 and 0.0625 km. Selected FMM time errors are 13.0745
+and 3.26671 microseconds, with source-component errors 2.10691e-6 and
+5.93061e-7 s/km; both satisfy the existing analytic controls. The 0.125 km
+straight start has source error 3.29718e-6 s/km and does not satisfy that
+control, despite its true local flag. All four unchanged optimizer-parity
+checks pass. Reproduce these comparisons with `check_fine_paths.py`; no
+ray optimization occurs.
