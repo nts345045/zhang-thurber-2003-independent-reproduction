@@ -1,0 +1,69 @@
+{
+  "status": "passed_derived_identity_and_display_readback",
+  "input_sha256": {
+    "data/hayward/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward/standard_events.csv": "4e213a5e5c61366e1e69da30e1897e1b0633ac616eba074f372cd4b014cf1bf9",
+    "data/hayward/dd_events.csv": "c48e6b3a56710450ee309b119e36340705f53759e1e99520a898f241e17480be",
+    "data/hayward/loc1d_events.csv": "a55291313d06ed5e48719221ee95b462912bfb60572922905a94429bcc94f4c5",
+    "data/hayward/dd_grid.csv": "13cdc7f9d201f9d73da7e3fedc21e542444c9a478cf4c0f4b08ce85a5a4a8596",
+    "data/hayward/absolute_resolution.csv": "36129bab42a4df2093008b5404dbce5bbdc0b668dd50e9c36e8555c2c88dc4b7",
+    "data/hayward/resolution_sections.csv": "a89e96e57227f9ab724a83d9064df66294a25f532aa296f364dd805e719fd644",
+    "data/hayward/absolute_resolution_manifest.json": "bf69bee396c0405ee1dd7b866028922a0cfdfd1c47217384d7f87bcd4ab86780",
+    "data/hayward/dd_linearization_rows.csv": "fd01a12b2b0d39510fb4d2755ad3e1f349639f6fd7cfbaa209f9e335d8be7583",
+    "data/hayward/dd_linearization_columns.csv": "c422afaf68c7c356e7f9ec225c0190f9c4147851aaad27ab8c40c8b112e63bd2",
+    "data/hayward/figure_metrics.json": "4932468be0c5a2734fb4239fc6357b4710a2f01fb3ce72cbaebe86d68696e4ba",
+    "data/hayward/initial_geographic_events.csv": "7a7fba3e9f128a77dc2935d5a1a0a4926bd1442525ff4a477c45cba44c059a09",
+    "data/hayward/initial_zoom_events.csv": "7ab909c273e8c76b4f74fa408b7aa242ea19297d390bebf7d168b57e7a9795da",
+    "data/hayward/standard_geographic_events.csv": "607dbd0f6c5bd5aba16fd377afdf929d65e8e27743b51fea5dc9c43c0064f66d",
+    "data/hayward/standard_zoom_events.csv": "831143af96db756ac4c1af35d224f1add6ccb1ea71951e3d5881e75e8259029e",
+    "data/hayward/dd_geographic_events.csv": "84328238ae270d9a583f5846c596ec618180318e5186749f2a8bee4d038c40bd",
+    "data/hayward/dd_zoom_events.csv": "d36b329113853b7be7c2a5a773c6a2eec69eeb5e0fbdc67249df0b728a15f6f7",
+    "data/hayward/loc1d_geographic_events.csv": "322b483c44b032d88925ebc3f00e57a1927c5483dfe86882da6e21a156d7cb81",
+    "data/hayward/loc1d_zoom_events.csv": "c85f899f5a0c1c57e88c816b235b7bdec6d11bf0ad3231daf9a67cc96adf1e7c",
+    "data/development/hayward_completed_baseline_review_001/check.py": "9d2df70c5ff07061b089f7b59d0e85b1bdfed6378ddd55d9146d7ecd52a90a94",
+    "data/development/hayward_completed_baseline_review_001/check_derived.py": "6c240dae6bf94caf7efeccbe91cedff1dda12699ef17ba22331922ba6ea4cd8c",
+    "data/development/hayward_completed_baseline_review_001/review.json": "d1f25a040de2edbfaa38c0d925fd4059ab8537b69e56a806558c14d258095af6",
+    "data/hayward/dd_linearization_matrix.csv": "5985bb1ac235af2024b8431737a40d85dbac4688bd33b7ff67f8936206c31214",
+    "configs/hayward.cfg": "cd7a922200f9811994d9fe4d7b66c48cbe1c9ff5f0dae2eef8ca85f6234aedb2"
+  },
+  "main_review_sha256": "d1f25a040de2edbfaa38c0d925fd4059ab8537b69e56a806558c14d258095af6",
+  "modes": {
+    "initial": {
+      "geographic_rows": 1092,
+      "zoom_rows": 159,
+      "all_original_fields_and_native_identifiers_exact": true,
+      "zoom_exact_catalog_selected_subsequence": true
+    },
+    "standard": {
+      "geographic_rows": 1092,
+      "zoom_rows": 159,
+      "all_original_fields_and_native_identifiers_exact": true,
+      "zoom_exact_catalog_selected_subsequence": true
+    },
+    "dd": {
+      "geographic_rows": 1092,
+      "zoom_rows": 159,
+      "all_original_fields_and_native_identifiers_exact": true,
+      "zoom_exact_catalog_selected_subsequence": true
+    },
+    "loc1d": {
+      "geographic_rows": 1092,
+      "zoom_rows": 159,
+      "all_original_fields_and_native_identifiers_exact": true,
+      "zoom_exact_catalog_selected_subsequence": true
+    }
+  },
+  "resolution_node_count": 462,
+  "resolution_section_count": 83895,
+  "maximum_independent_interpolation_difference": [
+    0.0,
+    0.0
+  ],
+  "resolution_identity_chain": "Model nodes and section interpolation points are derived quantities, not station/event records. The pinned manifest maps the estimator to fully identified absolute-data rows and event/model columns; those native mappings passed the main review.",
+  "limits": [
+    "No covariance recomputation, optimizer, ray trace or first-arrival reference was run.",
+    "Resolution sections interpolate nodal standard deviations; they are not propagated covariance at interpolated points.",
+    "Geographic additions are finite estimates; this check verifies preservation and selection, not an independent geographic-projection or timestamp calculation.",
+    "No figure, plot source, PDF or Figure 4 manifest is consumed."
+  ]
+}

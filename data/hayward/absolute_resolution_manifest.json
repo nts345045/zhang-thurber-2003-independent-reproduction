@@ -1,0 +1,50 @@
+{
+  "linearization_point": "saved dd_events.csv and dd_grid.csv",
+  "observations": "absolute catalog P picks only, independent reported picking errors assumed",
+  "uncertainty_interpretation": "reported symmetric uncertainty interpreted as independent 1-sigma picking noise; confidence levels are not supplied, so calibration is an assumption",
+  "weights": "0.05s / reported sigma; no residual-biweight factor",
+  "parameterization": "source x,y,z,t then q=delta log(slowness); sigma_v=v*sigma_q",
+  "regularization": "first-difference log-slowness smoothing plus column-scaled LSQR damping, linearized with fixed weights",
+  "column_scaling_fallback": "same as C++: squared column norm<=1e-20 uses scale1, otherwise inverse square root",
+  "resolution": "velocity block diagonal of H_joint^-1 G_weighted^T G_weighted; source parameters eliminated analytically",
+  "uncertainty": "frequentist propagation through damped estimator, 0.05^2 H_joint^-1 G_weighted^T G_weighted H_joint^-1",
+  "source_coordinate_constraints": "This local linear estimator treats source coordinates as unconstrained. Its covariance does not account for active source-domain bounds and is not the covariance of the bound-constrained nonlinear estimator.",
+  "section_display": "Figure 11 interpolates nodal resolution diagonals and nodal standard errors. Interpolated standard errors are not covariance propagation to intermediate spatial points.",
+  "limitations": [
+    "not a full DD resolution calculation",
+    "not the manuscript's simul2000 parameterization or exact dataset",
+    "excludes correlated station/model errors, nonlinear and ray errors, selection effects, and regularization bias",
+    "excludes active source-domain constraints from the linear covariance",
+    "small propagated noise does not imply small total model error"
+  ],
+  "validation": {
+    "block_vs_full_resolution": 2.220446049250313e-16,
+    "block_vs_full_noise_covariance": 2.7755575615628914e-17
+  },
+  "conditioning": {
+    "minimum_source_normal_eigenvalue": 3.388197162835524e-05,
+    "model_schur_condition_number": 2805.0469881645186,
+    "inverse_relative_residual": 4.0089098254847865e-15
+  },
+  "resolution_diagonal_min_max": [
+    -0.00010958881117748049,
+    0.83758741757928
+  ],
+  "velocity_sigma_min_max_km_s": [
+    0.004065138797708169,
+    0.03304436661523842
+  ],
+  "source_mappings": {
+    "rows": "data/hayward/dd_linearization_rows.csv",
+    "columns": "data/hayward/dd_linearization_columns.csv"
+  },
+  "analysis_script_sha256": "07f1669e6053ebfd6ed95493ff7812c23d40bfd5c16660d6a30d4a771a2d93e1",
+  "input_sha256": {
+    "data/hayward/dd_linearization_rows.csv": "fd01a12b2b0d39510fb4d2755ad3e1f349639f6fd7cfbaa209f9e335d8be7583",
+    "data/hayward/dd_linearization_matrix.csv": "5985bb1ac235af2024b8431737a40d85dbac4688bd33b7ff67f8936206c31214",
+    "data/hayward/dd_linearization_columns.csv": "c422afaf68c7c356e7f9ec225c0190f9c4147851aaad27ab8c40c8b112e63bd2",
+    "data/hayward/dd_events.csv": "c48e6b3a56710450ee309b119e36340705f53759e1e99520a898f241e17480be",
+    "data/hayward/dd_grid.csv": "13cdc7f9d201f9d73da7e3fedc21e542444c9a478cf4c0f4b08ce85a5a4a8596",
+    "configs/hayward.cfg": "cd7a922200f9811994d9fe4d7b66c48cbe1c9ff5f0dae2eef8ca85f6234aedb2"
+  }
+}
