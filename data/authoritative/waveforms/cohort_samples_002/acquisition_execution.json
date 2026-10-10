@@ -1,0 +1,37 @@
+{
+  "status": "completed",
+  "command": [
+    "tmp/waveform_env/bin/python",
+    "data/authoritative/waveforms/cohort_samples_002/acquire.py",
+    "--fetch",
+    "--record-no-samples",
+    "--batches",
+    "5",
+    "--summary",
+    "samples_002.json"
+  ],
+  "explicit_environment": {
+    "MPLCONFIGDIR": "tmp/waveform_cache/mpl",
+    "XDG_CACHE_HOME": "tmp/waveform_cache/xdg",
+    "TMPDIR": "tmp/waveform_cache/tmp",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "scope": "Reuse the first response without requesting it; retrieve only the remaining four bounded batches; retain all zero-sample and catalog rows; no measurements",
+  "started_utc": "2026-10-10T04:55:44.392420+00:00",
+  "controller_pid": 128483,
+  "source_sha256": "228d1cfd7e7ef6e90dc21e4914a5aaf2f4eadd3769d3b01f1b3d831708fefb36",
+  "source_review_sha256": "251fa9f4bf7ab759ee7c64027bbdfd8956a515f96ba6564c420f2b6153d6290c",
+  "cached_first_response_sha256": "340f3ae2c7aaf44be7759a1c32c40f1d9fd3406c6b739e1f32f0c0d6e2a57bd3",
+  "supervised_pid": 128484,
+  "returncode": 0,
+  "elapsed_seconds": 50.10173378302716,
+  "ended_utc": "2026-10-10T04:56:34.494156+00:00",
+  "output_sha256": {
+    "samples_002_stdout.log": "1eabfd7c2da0fe17e664c40ea3ddfb31a623b382bb7d4c7aa0cb72d0e7f8750f",
+    "samples_002_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples_002_resources.txt": "6fa8ee8d48a307cbef6ee70b2c25e855f0949feeb883fe42faa4e477f3a288b9",
+    "samples_002.json": "b4724589fd77061b33e75aa8450110b555db6f04ca130471f8cec93a2320e874",
+    "samples_002.picks.csv.gz": "c9caa5adfaf9e21985441581e0cebd15c0db52595aa369f835482b67e1e7c516"
+  }
+}

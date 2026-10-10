@@ -1,0 +1,22 @@
+{
+  "status": "passed_read_only_source_review",
+  "reviewer": "ray_math_review",
+  "file_sha256": {
+    "acquire.py": "228d1cfd7e7ef6e90dc21e4914a5aaf2f4eadd3769d3b01f1b3d831708fefb36",
+    "check_decode.py": "8509bee254bafc049b81c8c55aa6af1bace6999edccf966944c49f2d05b647a0",
+    "decode_checks_001.json": "e92b5bd4e67bc015107ced7077fc60fc1cc5dbcba83fc6dd399e08841715a182"
+  },
+  "material_issue_found": false,
+  "recorded_controls": 40,
+  "findings": [
+    "Explicit missing status requires no complete eligible trace and no exact same-NSLC sample-index intersection with [a,b). A single returned sample or partial/gapped/overlapping support still rejects.",
+    "The half-open endpoint conventions are unchanged: a is included and b excluded.",
+    "Missing rows preserve the full native pick and original index; the main output retains every original row and keeps decoded versus missing keys disjoint.",
+    "All 40 recorded expected outcomes and both source hashes matched.",
+    "Assessed windows and acquired windows remain distinct. No returned samples describes this response, not historical archive absence."
+  ],
+  "limitations": [
+    "Read-only code/recorded-control review; no decoder rerun or network query.",
+    "The final cached-response manifest and no-fetch runtime artifacts were outside this initial source review."
+  ]
+}
