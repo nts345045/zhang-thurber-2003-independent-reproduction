@@ -166,25 +166,46 @@ The full trilinear action uses the same degree-eight, one-subdivision,
 128-bit enclosure as the preceding calculation. The run evaluates 2,058
 new edge actions, two metric solves and two rounded trials. Independent
 saved readback verifies the exact accounting and complete native identities.
-No post-step gradient has yet been evaluated. The small action decreases
-therefore establish descent but do not certify stationarity, source accuracy
-or convergence. The original false flags and null candidate convergence
-are preserved. Results and the preserved signed-zero serialization control
-failure are documented in
+A separate evaluation of all 2,058 tangent edges reduces the available
+gradient norms by about 91\% and 69\%, with unchanged availability masks.
+Both lower bounds remain above $10^{-7}$ s/km; the second also remains
+above $10^{-5}$ s/km. No choice of unavailable normal supports can remove
+these tangent components. Neither preceding accepted action change is below
+the combined stop's $10^{-11}$ s scale. Independent saved readback verifies
+the complete incident-edge sums, projections and exact squared-norm bounds.
+The original false flags and null candidate convergence are preserved;
+stationarity, source accuracy and first arrival remain unresolved.
+Results and the preserved signed-zero serialization control failure are in
 \path{data/development/hayward_cmj_tangent_step_001/RESULTS.md}.
+The subsequent gradient calculation and its independent review are documented
+in \path{data/development/hayward_cmj_post_step_tangent_001/RESULTS.md}.
+
+The next prescribed full-size trials are rejected. Their complete nominal
+slopes are $-3.7906\times10^{-10}$ and $-5.5922\times10^{-10}$ s per
+dimensionless step, but their finite action changes are
+$+3.0212\times10^{-10}$ and $+2.7020\times10^{-10}$ s. The action enclosures
+have widths below $6.0\times10^{-32}$ s, so the increases are resolved.
+Negative first variation does not guarantee decrease at unit step length;
+these results motivate a smaller fraction along each saved direction.
+The first accepted paths remain the retained state. Independent saved
+readback confirms the exact cache, slope, rounding, action and rejection
+accounting in
+\path{data/development/hayward_cmj_tangent_step_002/RESULTS.md}.
 
 \begin{table}[ht]
 \centering
 \caption{One tangent step from each exact-face candidate at
 \texttt{NC.CMJ..EHZ}. The action change is relative to that candidate,
-not to the original failed path. Displayed values round rational bounds.}
+not to the original failed path. Displayed values round rational bounds.
+The final column is the subsequent available tangent norm, not a full
+stationarity test.}
 \label{tab:cmj_tangent_step}
-\begin{tabular}{lll}
+\begin{tabular}{llll}
 \hline
-Event & $\Delta T$ (s) & Maximum node movement (m) \\
+Event & $\Delta T$ (s) & Maximum move (m) & Tangent norm (s/km) \\
 \hline
-\texttt{NC518943} & $-2.4666\times10^{-10}$ & $0.05169$ \\
-\texttt{NC519264} & $-4.6728\times10^{-10}$ & $0.14095$ \\
+\texttt{NC518943} & $-2.4666\times10^{-10}$ & $0.05169$ & $3.1087\times10^{-6}$ \\
+\texttt{NC519264} & $-4.6728\times10^{-10}$ & $0.14095$ & $1.2717\times10^{-5}$ \\
 \hline
 \end{tabular}
 \end{table}

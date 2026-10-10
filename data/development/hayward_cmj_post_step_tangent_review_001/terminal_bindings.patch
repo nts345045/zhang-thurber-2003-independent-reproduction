@@ -1,0 +1,19 @@
+--- check_before_terminal_bindings.py
++++ check.py
+@@ -71,6 +71,8 @@
+     for key,file in [('execution_sha256','execution.json'),('summary_sha256','summary.json'),('prepared_sha256','prepared.json'),('prelaunch_review_sha256','prelaunch_review.json')]:
+         require(outer[key]==sha(RUN/file),'Outer receipt binding')
+     approval=read(RUN/'prelaunch_review.json');require(approval['status']=='passed' and approval['prepared_sha256']==EXPECTED,'Native prelaunch gate')
++    for record in (execution,summary):require(record['prepared_sha256']==EXPECTED and record['prelaunch_review_sha256']==sha(RUN/'prelaunch_review.json'),'Terminal preparation binding')
++    require(execution['input_sha256']==prepared['input_sha256'] and execution['environment']==prepared['environment'],'Executed inputs/environment')
+     identities=read(RUN/'native_contexts.json')
+     require(identities==execution['native_contexts']==summary['native_contexts']==outer['native_contexts']==read(STEP/'native_contexts.json'),'Full native contexts')
+     require([v['event'] for v in identities]==[981,987] and [v['event'] for v in summary['cases']]==[981,987],'Two-ray roster')
+@@ -83,6 +85,7 @@
+     old={v['event']:v for v in read(PRE/'tangent_norms.json')['cases']};reports=[];edge_count=0
+     for identity,brief in zip(identities,summary['cases']):
+         event=identity['event'];p=RUN/brief['result_file'];full=read(p);prior=read(STEP/('event_'+str(event))/'result.json.gz')
++        require(old[event]['native_context']==identity['native_context'] and old[event]['station']==identity['station'],'Pre-step norm native identity')
+         require(sha(p)==brief['result_sha256'] and full['status']==brief['status']=='completed_available_tangent_bounds','Complete identified result')
+         for record in [full,brief]:
+             require(all(record[k]==identity[k] for k in ['event','station','native_context','catalog_uses']) and len(record['catalog_uses'])==9,'Native/catalog record joins')

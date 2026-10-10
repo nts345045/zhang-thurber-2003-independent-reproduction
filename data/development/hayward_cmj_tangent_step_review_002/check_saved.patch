@@ -1,0 +1,214 @@
+--- data/development/hayward_cmj_tangent_step_review_001/check_saved.py
++++ data/development/hayward_cmj_tangent_step_review_002/check_saved.py
+@@ -11,7 +11,11 @@
+ 
+ HERE=Path(__file__).resolve().parent
+ ROOT=HERE.parents[2]
+-RUN=ROOT/'data/development/hayward_cmj_tangent_step_001'
++RUN=ROOT/'data/development/hayward_cmj_tangent_step_002'
++FIRST=ROOT/'data/development/hayward_cmj_tangent_step_001'
++FIRST_REVIEW=ROOT/'data/development/hayward_cmj_tangent_step_review_001'
++POST=ROOT/'data/development/hayward_cmj_post_step_tangent_001'
++POST_REVIEW=ROOT/'data/development/hayward_cmj_post_step_tangent_review_001'
+ START=ROOT/'data/development/hayward_cmj_face_action_001'
+ CONTROL=ROOT/'data/development/cmj_tangent_step_source_002'
+ CHECKS={}
+@@ -106,6 +110,81 @@
+         lo,hi=bounds(p['velocity_bounds']);rho=Q(p['rho'])
+         check('saved_positive_velocity_and_series',0<lo<=hi and rho==(hi-lo)/(hi+lo) and 0<=rho<1 and p['series_degree']==(0 if rho==0 else 8))
+     value=bounds(record['action']);check('positive_action_bound',value[0]>0);return value
++
++
++def starting_evidence(saved,first,post,full,axes):
++    """Independently resolve saved first-trial references, without integration."""
++    before=[tuple(map(Q,p['candidate_exact_rational'])) for p in saved['coordinate_provenance']]
++    prior=first['result'];path=[tuple(map(Q,p)) for p in prior['trial']];geometry(path,axes)
++    check('eligible_second_start',len(path)==len(before) and path[0]==before[0] and path[-1]==before[-1]
++          and all(axes[k][0]<p[k]<axes[k][-1] for p in path[1:-1] for k in range(3)))
++    check('first_trial_reviewed_outcome',prior['status']=='diagnostic_trial_accepted' and prior['new_convergence_status'] is None
++          and not prior['original_status_changed'] and post['status']=='completed_available_tangent_bounds' and post['ineligibility']==[])
++    folder=FIRST/('event_'+str(first['event']));rounded=read(folder/'round/stdout.json')
++    with (folder/'round/stdout.json').open() as stream:tokens=json.load(stream,parse_float=str,parse_int=str)
++    check('first_round_output_join',rounded==prior['rounded_record'])
++    flat=emitted(rounded['trial'],rounded['trial_hex'])
++    check('first_round_exact_coordinates',flat==[x for p in path for x in p])
++    coordinates=post['coordinate_provenance']
++    check('second_start_coordinate_inventory',len(coordinates)==len(path) and full['coordinate_provenance']==coordinates
++          and full['prior_starting_coordinate_provenance']==first['coordinate_provenance']==saved['coordinate_provenance'])
++    for i,(p,row) in enumerate(zip(path,coordinates)):
++        check('post_coordinate_identity',row['node']==i and tuple(map(Q,row['exact_rational']))==p
++              and row['decimal_tokens']==tokens['trial'][3*i:3*i+3] and row['binary64_hex']==rounded['trial_hex'][3*i:3*i+3])
++    # Resolve each recorded first-trial reference directly. Do not evaluate an
++    # action or import the native loader/cache implementation.
++    original={v['cache_id']:v for v in saved['unique_action_edge_records']};ids=saved['candidate_edge_record_ids']
++    old=[];last={}
++    for i,identity in enumerate(ids):
++        record=original[identity];key=(before[i],before[i+1])
++        check('original_action_geometry',tuple(map(Q,record['a_exact']))==key[0] and tuple(map(Q,record['b_exact']))==key[1])
++        value=bounds(record['record']['action']);old.append(value)
++        if key in last:check('original_duplicate_action',old[last[key]]==value)
++        last[key]=i
++    action=prior['action'];new=action['new_edge_records'];new_keys=[]
++    for i,row in enumerate(new):
++        key=(tuple(map(Q,row['a'])),tuple(map(Q,row['b'])))
++        check('first_new_record_inventory',row['record_id']==i and key not in last)
++        new_keys.append(key)
++    check('first_unique_new_geometries',len(set(new_keys))==len(new_keys))
++    total=point(0);old_total=point(0);paired=point(0);edges=[];sources=[];used=set()
++    check('complete_first_edge_references',len(action['edge_joins'])==len(path)-1==len(old))
++    for i,join in enumerate(action['edge_joins']):
++        ref=join['trial_record'];key=(path[i],path[i+1]);source=ref['source']
++        if source=='saved_start':
++            index=ref['edge'];check('first_saved_start_last_index',key in last and index==last[key]);value=old[index]
++        else:
++            check('known_first_record_source',source=='new_trial');index=ref['record_id'];used.add(index)
++            check('first_new_record_geometry',0<=index<len(new) and new_keys[index]==key)
++            value=action_record(new[index]['record'],key[0],key[1],axes)
++        check('first_reference_action',bounds(ref['action'])==value)
++        change=point(0) if key==(before[i],before[i+1]) else sub(value,old[i])
++        check('first_exact_ordered_cancellation',join['edge']==i and join['identical']==(key==(before[i],before[i+1]))
++              and bounds(join['difference'])==change)
++        total=add(total,value);old_total=add(old_total,old[i]);paired=add(paired,change);edges.append(value)
++        sources.append({k:v for k,v in ref.items() if k!='action'})
++    check('complete_first_action_sums',used==set(range(len(new))) and len(new)==action['action_edge_evaluations']==prior['action_edge_evaluations']
++          and old_total==bounds(action['starting_action'])==bounds(saved['candidate_action']['exact_rational_bounds'])
++          and total==bounds(action['trial_action'])==bounds(post['saved_trial_action'])
++          and paired==bounds(action['paired_difference']) and sub(total,old_total)==bounds(action['full_difference']))
++    check('complete_second_starting_action',full['starting_edge_record_ids']==sources and full['starting_action_record_joins']==action['edge_joins']
++          and bounds(full['starting_candidate_action']['exact_rational_bounds'])==total)
++    edge_components=post['tangent_edge_records'];nodes=post['free_node_components'];blocked=set();aligned=[]
++    check('post_full_component_inventory',[v['edge'] for v in edge_components]==list(range(len(path)-1))
++          and [v['node'] for v in nodes]==list(range(1,len(path)-1)))
++    for i,(a,b,row) in enumerate(zip(path,path[1:],edge_components)):
++        faces=[[k,axis.index(a[k])] for k,axis in enumerate(axes) if a[k]==b[k] and a[k] in axis[1:-1]]
++        check('post_actual_single_face_mask',len(faces)<=1 and row['endpoint_nodes']==[i,i+1] and row['blocked_axes']==[k for k,index in faces])
++        aligned.append(dict(edge=i,aligned_internal_faces=faces))
++        for k,index in faces:blocked.update((node,k) for node in (i,i+1) if 0<node<len(path)-1)
++    check('post_geometry_inventory',aligned==post['aligned_edge_inventory'] and sorted(blocked)==[tuple(v) for v in post['geometric_blocked_slots']]
++          and full['unavailable_slots']==post['geometric_blocked_slots'])
++    components=[None]+[[None if v is None else bounds(v) for v in p['components']] for p in nodes]+[None]
++    check('post_fixed_endpoint_omission',edge_components[0]['components'][0] is None and edge_components[-1]['components'][1] is None)
++    for i,row in enumerate(components[1:-1],1):
++        check('post_raw_physical_axes',len(row)==3)
++        for k,value in enumerate(row):check('post_geometric_slot_availability',(value is None)==((i,k) in blocked))
++    return path,components,edge_components,edges,total
+ 
+ 
+ def main():
+@@ -134,6 +213,18 @@
+     check('fixed_settings',summary['settings']==prepared['settings']==dict(terms=8,subdivisions=1,bits=128))
+     identities=read(RUN/'native_contexts.json')
+     check('complete_terminal_contexts',summary['native_contexts']==execution['native_contexts']==outer['native_contexts']==identities)
++    first_review=read(FIRST_REVIEW/'review.json');post_review=read(POST_REVIEW/'review.json')
++    for base,review in ((FIRST,first_review),(POST,post_review)):
++        check('passed_inherited_review',review['status']=='passed')
++        for field,name in (('native_prepared_sha256','prepared.json'),('native_summary_sha256','summary.json'),
++                           ('native_execution_sha256','execution.json'),('outer_reaping_sha256','outer_reaping.json')):
++            check('inherited_review_terminal_hash',review[field]==sha(base/name))
++        check('inherited_review_contexts',[dict(event=v['event'],station=v['station'],native_context=v['native_context'],catalog_uses=v['catalog_uses'])
++              for v in review['cases']]==identities)
++    receipt=read(POST_REVIEW/'execution_receipt.json')
++    check('inherited_review_reaped',receipt['status']=='completed_and_reaped' and receipt['tool_exit_code']==0
++          and receipt['review_sha256']==sha(POST_REVIEW/'review.json')
++          and receipt['checker_sha256']==post_review['checker_sha256']==sha(POST_REVIEW/'check.py'))
+     original_context={x['event']:x for x in read(START/'inputs/native_context.json')}
+     catalog=rows(ROOT/'data/hayward/observations.csv');stations=rows(START/'inputs/stations.csv');events=rows(START/'inputs/trial_events.csv')
+     model=read(START/'model_provenance.json');axes=tuple(tuple(map(Q,v)) for v in model['axes_exact_rational'])
+@@ -144,6 +235,21 @@
+     for identity,short in zip(identities,summary['cases']):
+         event=identity['event'];folder=RUN/('event_'+str(event));saved=read(START/('event_'+str(event)+'.json.gz'))
+         full=read(folder/'result.json.gz');value=full['result'];context=identity['native_context']
++        first_path=FIRST/('event_'+str(event))/'result.json.gz';first=read(first_path)
++        post_path=POST/('event_'+str(event)+'.json.gz');post=read(post_path)
++        chain=dict(first_trial_result_sha256=sha(first_path),first_trial_round_stdout_sha256=sha(first_path.parent/'round/stdout.json'),
++                   post_step_result_sha256=sha(post_path),first_trial_summary_sha256=sha(FIRST/'summary.json'),
++                   post_step_summary_sha256=sha(POST/'summary.json'),post_step_review_sha256=sha(POST_REVIEW/'review.json'),
++                   post_step_review_receipt_sha256=sha(POST_REVIEW/'execution_receipt.json'))
++        check('second_step_exact_chain',full['chain_provenance']==chain and post['prior_result_sha256']==sha(first_path))
++        check('inherited_case_identity',first['event']==post['event']==event and first['station']==post['station']==160
++              and first['native_context']==post['native_context']==context
++              and first['catalog_uses']==post['catalog_uses']==identity['catalog_uses'])
++        check('inherited_post_flags',post['original_convergence_flag']=='0' and post['candidate_convergence_status'] is None)
++        check('post_comparison_preserved',full['post_step_comparison']==post['comparison'])
++        audit=next(v for v in post_review['cases'] if v['event']==event)
++        check('reviewed_post_norm_bounds',bounds(audit['post_squared_bounds'])==(Q(post['post_step_norm']['lower_squared']),Q(post['post_step_norm']['upper_squared']))
++              and bounds(audit['pre_squared_bounds'])==(Q(post['pre_step_norm']['lower_squared']),Q(post['pre_step_norm']['upper_squared'])))
+         check('full_original_native_context',context==original_context[event]==saved['native_context']==full['native_context']==short['native_context'])
+         check('full_catalog_context',identity['catalog_uses']==full['catalog_uses']==short['catalog_uses'] and len(identity['catalog_uses'])==9)
+         for use in identity['catalog_uses']:
+@@ -159,11 +265,8 @@
+               and context['original_status']['ray_derivatives_evaluated']=='0' and all(context['original_status']['source_d'+k]=='' for k in 'xyz')
+               and full['candidate_convergence_status'] is None and short['candidate_convergence_status'] is None
+               and value['new_convergence_status'] is None and not value['original_status_changed'])
+-        check('coordinate_provenance_unchanged',full['coordinate_provenance']==saved['coordinate_provenance'])
+-        path=[tuple(map(Q,p['candidate_exact_rational'])) for p in saved['coordinate_provenance']];geometry(path,axes)
++        path,components,edge_components,starting_edges,starting_total=starting_evidence(saved,first,post,full,axes)
+         check('fixed_current_state_endpoints',path[0]==xyz(context['source_native']) and path[-1]==xyz(context['receiver_native']))
+-        components=[None]+[[None if v is None else bounds(v) for v in p['components']] for p in saved['candidate_free_node_tangent_components']]+[None]
+-        edge_components=saved['candidate_edge_tangent_records']
+         rhs=[];fixed=[]
+         check('full_midpoint_inventory',len(value['midpoint_mapping'])==3*(len(path)-2))
+         for i in range(1,len(path)-1):
+@@ -231,15 +334,12 @@
+             if actual[1]>=0:
+                 check('unresolved_actual_no_action',value['status']=='actual_displacement_slope_unresolved' and value['action_edge_evaluations']==0)
+             else:
+-                action=value['action'];old_records={r['cache_id']:r for r in saved['unique_action_edge_records']}
+-                ids=saved['candidate_edge_record_ids'];cache={};starting=point(0)
+-                check('starting_action_id_binding',full['starting_edge_record_ids']==ids and full['starting_candidate_action']==saved['candidate_action'])
+-                for e,identity_id in enumerate(ids):
+-                    row=old_records[identity_id];key=(path[e],path[e+1]);a=bounds(row['record']['action'])
+-                    check('starting_ordered_edge',tuple(map(Q,row['a_exact']))==key[0] and tuple(map(Q,row['b_exact']))==key[1])
++                action=value['action'];cache={};starting=point(0)
++                for e,a in enumerate(starting_edges):
++                    key=(path[e],path[e+1])
+                     if key in cache:check('identical_starting_bounds',cache[key][0]==a)
+                     cache[key]=(a,'saved_start',e);starting=add(starting,a)
+-                check('starting_full_sum',starting==bounds(saved['candidate_action']['exact_rational_bounds'])==bounds(action['starting_action']))
++                check('starting_full_sum',starting==starting_total==bounds(action['starting_action']))
+                 new=action['new_edge_records'];used=0;total=point(0);paired=point(0);same=0
+                 check('complete_trial_edge_joins',len(action['edge_joins'])==len(path)-1)
+                 for e,(a,b,c,d) in enumerate(zip(path,path[1:],trial,trial[1:])):
+@@ -247,7 +347,7 @@
+                     if key not in cache:
+                         row=new[used];check('new_edge_ordered_geometry',row['record_id']==used and tuple(map(Q,row['a']))==c and tuple(map(Q,row['b']))==d)
+                         value_bound=action_record(row['record'],c,d,axes);cache[key]=(value_bound,'new_trial',used);used+=1
+-                    after,source,index=cache[key];before=bounds(old_records[ids[e]]['record']['action'])
++                    after,source,index=cache[key];before=starting_edges[e]
+                     change=point(0) if (a,b)==key else sub(after,before);paired=add(paired,change);total=add(total,after)
+                     join=action['edge_joins'][e];record=join['trial_record'];same+=int((a,b)==key)
+                     check('exact_ordered_edge_cancellation',join['edge']==e and join['identical']==((a,b)==key) and bounds(join['difference'])==change)
+@@ -274,17 +374,20 @@
+             for name in ('input.txt','stdout.json','stderr.log'):
+                 attached=read(d/(name+'.identifiers.json'))
+                 check('helper_identifiers',attached['native_context']==context and attached['catalog_uses']==identity['catalog_uses'] and attached['candidate_convergence_status'] is None)
+-                check('helper_evidence_binding',attached['evidence_sha256']==prepared['input_sha256'] and attached['prepared_sha256']==sha(RUN/'prepared.json'))
++                check('helper_evidence_binding',attached['evidence_sha256']==prepared['input_sha256'] and attached['prepared_sha256']==sha(RUN/'prepared.json')
++                      and attached['chain_provenance']==chain and attached['unavailable_slots']==full['unavailable_slots'])
+                 check('declared_file_binding',attached['expected_file']==str((d/name).relative_to(ROOT)) and attached['input_file']==str((d/'input.txt').relative_to(ROOT))
+                       and attached['input_file_sha256']==sha(d/'input.txt') and attached['file_sha256']==(sha(d/'input.txt') if name=='input.txt' else None))
+         attached=read(folder/'result.json.gz.identifiers.json')
+         check('result_identifiers',attached['native_context']==context and attached['catalog_uses']==identity['catalog_uses'] and attached['evidence_sha256']==prepared['input_sha256']
+-              and attached['file_sha256'] is None and attached['expected_file']==str((folder/'result.json.gz').relative_to(ROOT)))
++              and attached['file_sha256'] is None and attached['expected_file']==str((folder/'result.json.gz').relative_to(ROOT))
++              and attached['chain_provenance']==chain and attached['unavailable_slots']==full['unavailable_slots'])
+         reports.append(dict(event=event,station=160,native_context=context,catalog_uses=identity['catalog_uses'],status=value['status'],
+                             original_convergence_flag='0',candidate_convergence_status=None,nominal_slope=slope,actual_displacement_slope=actual,
+                             alpha=value.get('alpha'),alpha_hex=value.get('alpha_hex'),exact_emitted_metric_energy=energy,
+                             units=dict(nominal_slope='s per dimensionless step',actual_displacement_slope='s',metric_energy='s',action='s'),
+-                            action=action,metric_solves=1,rounded_trials=len(modes)-1))
++                            action=action,metric_solves=1,rounded_trials=len(modes)-1,chain_provenance=chain,
++                            starting_post_step_comparison=post['comparison']))
+     check('exact_command_inventory',[(v['event'],v['mode']) for v in commands]==expected_commands and len(commands)<=4)
+     check('outer_helper_count',outer['helper_calls_reaped']==len(commands))
+     check('bounded_action_inventory',new_total<=2058)
+@@ -293,7 +396,8 @@
+     pins(ROOT,prepared['input_sha256']);pins(RUN,prepared['output_sha256']);pins(RUN,summary['output_sha256'])
+     review=dict(status='passed',reviewer='ray_math_review',checker_sha256=sha(Path(__file__)),source_review_sha256=sha(HERE/'source_review.json'),
+                 native_prepared_sha256=sha(RUN/'prepared.json'),native_summary_sha256=sha(RUN/'summary.json'),native_execution_sha256=sha(RUN/'execution.json'),
+-                outer_reaping_sha256=sha(RUN/'outer_reaping.json'),
++                outer_reaping_sha256=sha(RUN/'outer_reaping.json'),first_step_review_sha256=sha(FIRST_REVIEW/'review.json'),
++                post_step_review_sha256=sha(POST_REVIEW/'review.json'),
+                 check_counts=CHECKS,cases=reports,total_new_action_edges=new_total,
+                 limitations=['Saved-output exact rational/binary64 algebra only; no action, tangent or metric recalculation.',
+                              'Before-launch sidecar ordering is established by the frozen reviewed source; saved files alone do not establish creation times.',
