@@ -1,0 +1,332 @@
+{
+  "comparison": "second accepted minus first accepted",
+  "field_calls": 0,
+  "fit_or_interpolation_calls": 0,
+  "integration_calls": 0,
+  "jacobian_calls": 0,
+  "output_sha256": {
+    "accepted_update_2_minus_1.pdf": "1dda86cc97cbf5a0947881156b08f809b1ed41d4e9aa2ad3feb7b119b1b23fd6",
+    "accepted_update_2_minus_1.pdf.identifiers.json": "0b006a7507f454997258d8b88c2b8f00d7d16248b7f7079abfdfe3565883851c",
+    "accepted_update_2_minus_1.png": "5a61229cc3cf2b1161f7f6cd161de1712bc97c8959ca051302bfb3379e3713d1",
+    "accepted_update_2_minus_1.png.identifiers.json": "475cabadb9c76c9b3f2a5346ba2ac34d4d0fbf0bb63a3a9f5a371b798568cdb5",
+    "native_identifiers.json.gz": "e79cb1583365a1cfe326886ce91ac1ff6eac7978cf1ece85d722922083660ad8",
+    "statistics.json": "d7039440b4bda3284a1b1635585065b7d424d63a76a5247f8f57028f18a62a7a"
+  },
+  "plot_source_sha256": "0277ccb5a75d92e5120de2f39cea84968f2df92cb19eb7535949dc68c026920e",
+  "readme_sha256": "9bf7b17d039b3606b64c73020cf731a209f584825e3e3348fe62e384b01377fe",
+  "runtime_versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.4.6",
+    "python": "3.11.9"
+  },
+  "scientific_manifest_sha256": "4073752162ecac5173a118319c0ea102eb5f0872fa45dceda29de18bb9f3a97e",
+  "scope": [
+    "Saved grid nodes only; no interpolation or solver calls.",
+    "No post-update RMS, final convergence, first-arrival or recovery claim."
+  ],
+  "solver_calls": 0,
+  "statistics": {
+    "catalog_rows": 58980,
+    "catalog_side_uses": 103698,
+    "channel_seed_ids": 62,
+    "comparison": "second accepted minus first accepted",
+    "detail_event_ids": [
+      55,
+      57,
+      85,
+      90,
+      91,
+      92,
+      94,
+      104,
+      106,
+      110,
+      124,
+      126,
+      149,
+      176,
+      177,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      247,
+      252,
+      305,
+      308,
+      309,
+      316,
+      341,
+      360,
+      361,
+      370,
+      434,
+      443,
+      444,
+      472,
+      508,
+      519,
+      523,
+      526,
+      535,
+      545,
+      547,
+      564,
+      570,
+      580,
+      591,
+      595,
+      597,
+      598,
+      602,
+      603,
+      604,
+      605,
+      607,
+      608,
+      611,
+      621,
+      633,
+      634,
+      650,
+      653,
+      660,
+      661,
+      674,
+      697,
+      698,
+      700,
+      707,
+      711,
+      712,
+      714,
+      721,
+      736,
+      737,
+      741,
+      751,
+      765,
+      769,
+      771,
+      772,
+      778,
+      826,
+      828,
+      916,
+      917,
+      933,
+      941,
+      942,
+      948,
+      958,
+      967,
+      972,
+      978,
+      988,
+      1012,
+      1016,
+      1033,
+      1037,
+      1048,
+      1061,
+      1065,
+      1066,
+      1075,
+      1076,
+      1079
+    ],
+    "detail_window_km": [
+      -4,
+      0,
+      20,
+      24
+    ],
+    "empty_location_epochs": 349,
+    "event_count": 1092,
+    "event_delta": {
+      "t": {
+        "maximum": {
+          "display": 0.02276430079929534,
+          "exact_binary64_rational": "820170372776451/36028797018963968",
+          "row": 544
+        },
+        "minimum": {
+          "display": -0.028258209902521925,
+          "exact_binary64_rational": "-127263663587155/4503599627370496",
+          "row": 859
+        },
+        "unit": "s",
+        "zero_count": 0
+      },
+      "x": {
+        "maximum": {
+          "display": 0.06949887576796066,
+          "exact_binary64_rational": "39124388876407/562949953421312",
+          "row": 862
+        },
+        "minimum": {
+          "display": -0.12050059223450749,
+          "exact_binary64_rational": "-135671605571313/1125899906842624",
+          "row": 572
+        },
+        "unit": "km",
+        "zero_count": 0
+      },
+      "y": {
+        "maximum": {
+          "display": 0.15595944521220773,
+          "exact_binary64_rational": "43898681208913/281474976710656",
+          "row": 859
+        },
+        "minimum": {
+          "display": -0.058799492951578713,
+          "exact_binary64_rational": "-2068823238643/35184372088832",
+          "row": 131
+        },
+        "unit": "km",
+        "zero_count": 0
+      },
+      "z": {
+        "maximum": {
+          "display": 0.19520492862280125,
+          "exact_binary64_rational": "219781210951633/1125899906842624",
+          "row": 385
+        },
+        "minimum": {
+          "display": -0.20408315590448955,
+          "exact_binary64_rational": "-459554412442027/2251799813685248",
+          "row": 294
+        },
+        "unit": "km",
+        "zero_count": 0
+      }
+    },
+    "grid_axes_km_exact": {
+      "x": [
+        "-35",
+        "-20",
+        "-10",
+        "-5",
+        "-4",
+        "-3",
+        "0",
+        "5",
+        "10",
+        "20",
+        "35"
+      ],
+      "y": [
+        "-30",
+        "-20",
+        "-10",
+        "0",
+        "10",
+        "20",
+        "30"
+      ],
+      "z": [
+        "-1",
+        "0",
+        "4",
+        "8",
+        "12",
+        "20"
+      ]
+    },
+    "grid_delta_v_all": {
+      "maximum": {
+        "display": 0.08060203944636601,
+        "exact_binary64_rational": "90749828703989/1125899906842624",
+        "row": 77
+      },
+      "minimum": {
+        "display": -0.16773550405691662,
+        "exact_binary64_rational": "-188853388391883/1125899906842624",
+        "row": 461
+      },
+      "unit": "km/s",
+      "zero_count": 0
+    },
+    "grid_delta_v_layer": {
+      "maximum": {
+        "display": 0.03189071499638807,
+        "exact_binary64_rational": "17952876521789/562949953421312",
+        "row": 255
+      },
+      "minimum": {
+        "display": -0.10693279912512832,
+        "exact_binary64_rational": "-120395628573403/1125899906842624",
+        "row": 306
+      },
+      "unit": "km/s",
+      "zero_count": 0
+    },
+    "grid_nodes": 462,
+    "grid_shape_xyz": [
+      11,
+      7,
+      6
+    ],
+    "horizontal_displacement_display_km": [
+      0.0020562815292467394,
+      0.15602028275469657
+    ],
+    "horizontal_displacement_squared": {
+      "maximum": {
+        "display": 0.024342328630855465,
+        "exact_binary64_rational": "123430269999426966643476030905/5070602400912917605986812821504",
+        "row": 859
+      },
+      "minimum": {
+        "display": 4.228293727521309e-06,
+        "exact_binary64_rational": "167499971301051372275965/39614081257132168796771975168",
+        "row": 814
+      },
+      "unit": "km^2",
+      "zero_count": 0
+    },
+    "native_pairs": 14262,
+    "plotted_depth_km_exact": "8",
+    "plotted_nodes": 77,
+    "receiver_epochs": 372,
+    "spatial_displacement_display_km": [
+      0.005360905393929378,
+      0.2178023480877728
+    ],
+    "spatial_displacement_squared": {
+      "maximum": {
+        "display": 0.04743786283254734,
+        "exact_binary64_rational": "30067317646611525344549353657/633825300114114700748351602688",
+        "row": 385
+      },
+      "minimum": {
+        "display": 2.8739306642661096e-05,
+        "exact_binary64_rational": "582902389051399666843106165/20282409603651670423947251286016",
+        "row": 45
+      },
+      "unit": "km^2",
+      "zero_count": 0
+    }
+  },
+  "status": "completed_saved_update_visualization",
+  "title": "Accepted update 2; run incomplete"
+}
