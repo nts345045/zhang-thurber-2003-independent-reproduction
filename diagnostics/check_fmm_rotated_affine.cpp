@@ -1,7 +1,10 @@
 // Invented 3-D affine-velocity fields; no production solver or real observations.
 #include "first_arrival_fmm.hpp"
 #include "seeded_bending.hpp"
+#include "production_entry_checks.hpp"
 #include <chrono>
+
+ProductionEntryChecks entry_checks;
 
 constexpr double velocity0 = 6;
 using Clock = std::chrono::steady_clock;
@@ -95,11 +98,14 @@ Comparison compare(const Grid &g,const first_arrival::Field &field,P a,P b,doubl
     c.bent=bend_seed(g,c.seed.path,spacing,1000);
     if(c.bent.time<c.best.time) { c.best=c.bent; c.fmm_selected=true; }
   }
+  entry_checks.compare(g,field,a,b,spacing,c.seed,c.direct,c.bent,c.best,c.fmm_selected);
   return c;
 }
 int main(int argc,char **argv) {
-  if(argc!=3) throw std::runtime_error("Usage: check_fmm_rotated_affine OUTPUT_DIR baseline|field_refine|path_refine");
+  if((argc!=3 && argc!=4) || (argc==4 && std::string(argv[3])!="--production-entry"))
+    throw std::runtime_error("Usage: check_fmm_rotated_affine OUTPUT_DIR baseline|field_refine|path_refine [--production-entry]");
   std::string out=argv[1], level=argv[2];
+  if(argc==4) entry_checks.open(out+"/entry_parity.csv");
   if(level!="baseline" && level!="field_refine" && level!="path_refine")
     throw std::runtime_error("Unknown refinement level");
   double aux=level=="field_refine"?.25:.5;
@@ -203,4 +209,5 @@ int main(int argc,char **argv) {
     check(name,"both","fmm_bent_reciprocity",comparisons[0].seed.success&&comparisons[1].seed.success?
           std::abs(comparisons[0].bent.time-comparisons[1].bent.time):NAN,2e-5);
   }
+  return entry_checks.failures ? 1 : 0;
 }

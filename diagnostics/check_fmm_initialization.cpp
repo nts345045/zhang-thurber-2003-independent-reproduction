@@ -1,7 +1,10 @@
 // Isolated first-arrival initialization audit. No production solver is changed.
 #include "first_arrival_fmm.hpp"
 #include "seeded_bending.hpp"
+#include "production_entry_checks.hpp"
 #include <chrono>
+
+ProductionEntryChecks entry_checks;
 
 using Clock = std::chrono::steady_clock;
 double elapsed(Clock::time_point start) {
@@ -57,6 +60,8 @@ Comparison compare(const Grid &g, const first_arrival::Field &field, P a, P b,
       c.selected = "fmm_seed";
     }
   }
+  entry_checks.compare(g, field, a, b, spacing, c.seed, c.direct, c.bent,
+                       c.best, c.selected == "fmm_seed");
   c.seconds = elapsed(start);
   return c;
 }
@@ -111,16 +116,18 @@ void row(std::ofstream &f, std::string name, double aux, double spacing,
 }
 
 int main(int argc, char **argv) {
-  if (argc != 5 || (std::string(argv[2]) != "baseline" && std::string(argv[2]) != "refine") ||
+  if ((argc != 5 && argc != 6) || (argc == 6 && std::string(argv[5]) != "--production-entry") ||
+      (std::string(argv[2]) != "baseline" && std::string(argv[2]) != "refine") ||
       (std::string(argv[3]) != "1" && std::string(argv[3]) != "2") ||
       (std::string(argv[4]) != "original" && std::string(argv[4]) != "closed"))
-    throw std::runtime_error("Usage: check_fmm_initialization OUT_DIR baseline|refine 1|2 original|closed");
+    throw std::runtime_error("Usage: check_fmm_initialization OUT_DIR baseline|refine 1|2 original|closed [--production-entry]");
   const bool refine = std::string(argv[2]) == "refine";
   const int order = std::stoi(argv[3]);
   const bool closed_seed_cells = std::string(argv[4]) == "closed";
   const Vec auxiliary = refine ? Vec{.125,.0625} : Vec{1.,.5,.25};
   const Vec path_spacing = refine ? Vec{.125,.0625} : Vec{.5,.25};
   const std::string out = argv[1];
+  if (argc == 6) entry_checks.open(out + "/entry_parity.csv");
   std::ofstream f(out+"/results.csv"), paths(out+"/paths.csv"), checks(out+"/consistency.csv");
   if (!f || !paths || !checks) throw std::runtime_error("Cannot open audit files");
   f << std::setprecision(15);
@@ -186,7 +193,7 @@ int main(int argc, char **argv) {
     }
   }
 
-  if (refine) return 0; // Off-grid homogeneous checks are in the baseline audit.
+  if (refine) return entry_checks.failures ? 1 : 0; // Homogeneous checks are in the baseline audit.
   Grid homogeneous;
   homogeneous.x={-10,0,10}; homogeneous.y={-8,0,8}; homogeneous.z={-1,0,15};
   homogeneous.v.assign(homogeneous.size(),6);
@@ -212,4 +219,5 @@ int main(int argc, char **argv) {
         check(name,aux,.25,"seed_not_faster_than_exact",std::max(0.,ref.time-path_eval(homogeneous,c.seed.path)),1e-10);
     }
   }
+  return entry_checks.failures ? 1 : 0;
 }

@@ -154,6 +154,14 @@ struct Ray {
   double gradient = 0;
   double raw_gradient = 0;
   bool converged = false;
+  bool initialization_attempted = false;
+  bool initialization_succeeded = false;
+  bool selected_fmm_seed = false;
+  double direct_seed_time = NAN;
+  double fmm_seed_time = NAN;
+  double initializer_field_time = NAN;
+  int initializer_fallback_steps = 0;
+  std::string initializer_message;
 };
 // Eight-point Gauss integration on each piece split at grid-plane intersections.
 // Both travel time and its continuous variational derivatives must be accurately
@@ -295,15 +303,40 @@ Vec inverse_ray_metric(const Vec &weights, Vec rhs) {
 // time. Fixed endpoints; directions at active boundaries are projected onto
 // feasible tangents, and other trial paths outside the model are rejected.
 Ray trace(const Grid &g, P a, P b, double spacing = 1, int maxit = 180,
-          bool deriv = true) {
+          bool deriv = true, const std::vector<P> *seed = nullptr) {
   if (!(spacing > 0) || !std::isfinite(spacing))
     throw std::runtime_error("Ray spacing must be finite and positive");
   if (!g.contains(a) || !g.contains(b))
     throw std::runtime_error("Ray endpoints must lie inside the model domain");
-  int n = std::max(2, int(std::ceil(norm(b - a) / spacing)));
-  std::vector<P> p(n + 1);
-  for (int i = 0; i <= n; i++)
-    p[i] = a + (b - a) * (double(i) / n);
+  std::vector<P> p;
+  if (seed) {
+    if (seed->size() < 2 || seed->front() != a || seed->back() != b)
+      throw std::runtime_error("Seeded ray must preserve both exact endpoints");
+    Vec arc(seed->size(), 0);
+    for (size_t i = 0; i < seed->size(); ++i) {
+      if (!g.contains((*seed)[i]))
+        throw std::runtime_error("Seeded ray must stay inside the model domain");
+      if (i) arc[i] = arc[i-1] + norm((*seed)[i] - (*seed)[i-1]);
+    }
+    if (!(arc.back() > 0) || !std::isfinite(arc.back()))
+      throw std::runtime_error("Seeded ray has zero or nonfinite length");
+    int n = std::max(2, int(std::ceil(arc.back() / spacing)));
+    p.resize(n + 1);
+    size_t next = 1;
+    for (int i = 1; i < n; ++i) {
+      double distance = arc.back() * i / n;
+      while (next + 1 < arc.size() && arc[next] <= distance) ++next;
+      double fraction = (distance - arc[next-1]) / (arc[next] - arc[next-1]);
+      p[i] = (*seed)[next-1] + ((*seed)[next] - (*seed)[next-1]) * fraction;
+    }
+  } else {
+    int n = std::max(2, int(std::ceil(norm(b - a) / spacing)));
+    p.resize(n + 1);
+    for (int i = 1; i < n; ++i)
+      p[i] = a + (b - a) * (double(i) / n);
+  }
+  p.front() = a;
+  p.back() = b;
   int merged = merge_close_nodes(p), updates = 0;
   Vec grad;
   double T = path_eval(g, p, &grad);

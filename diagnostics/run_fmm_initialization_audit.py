@@ -20,6 +20,7 @@ parser.add_argument("--variant", required=True, help="New output suffix; existin
 parser.add_argument("--refine", action="store_true")
 parser.add_argument("--order", type=int, choices=(1, 2), default=1)
 parser.add_argument("--closed-seed-cells", action="store_true")
+parser.add_argument("--production-entry", action="store_true", help="Test production seeded/selected rays with exact prototype parity")
 args = parser.parse_args()
 if not re.fullmatch(r"[a-zA-Z0-9_-]+", args.variant):
     parser.error("Variant must contain only letters, digits, underscores, or hyphens")
@@ -33,7 +34,8 @@ OUT.mkdir(parents=True)
 os.environ["TMPDIR"] = str(ROOT / "tmp")
 snapshot = BUILD / "source"
 relative_sources = ["diagnostics/check_fmm_initialization.cpp", "diagnostics/first_arrival_fmm.hpp",
-                    "src/core.hpp", "diagnostics/run_fmm_initialization_audit.py",
+                    "src/first_arrival.hpp", "src/core.hpp", "src/forward.hpp",
+                    "diagnostics/production_entry_checks.hpp", "diagnostics/run_fmm_initialization_audit.py",
                     "diagnostics/seeded_bending.py"]
 for relative in relative_sources:
     target = snapshot / relative
@@ -58,24 +60,46 @@ source = snapshot / "diagnostics/check_fmm_initialization.cpp"
 binary = BUILD / "check_fmm_initialization"
 command = ["c++", "-O3", "-std=c++17", "-Wall", "-Wextra", "-Wpedantic",
            str(source), "-o", str(binary)]
-subprocess.check_call(command, cwd=str(ROOT))
-subprocess.check_call([str(binary), str(OUT), "refine" if refine else "baseline", str(args.order),
-                       "closed" if args.closed_seed_cells else "original"], cwd=str(ROOT))
+compiled = subprocess.run(command, cwd=str(ROOT), stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                          universal_newlines=True)
+(OUT / "compile_stdout.txt").write_text(compiled.stdout)
+(OUT / "compile_stderr.txt").write_text(compiled.stderr)
+if compiled.returncode:
+    print(compiled.stderr, end="")
+    raise SystemExit(compiled.returncode)
+run_command = [str(binary), str(OUT), "refine" if refine else "baseline", str(args.order),
+               "closed" if args.closed_seed_cells else "original"]
+if args.production_entry:
+    run_command.append("--production-entry")
+result = subprocess.run(run_command, cwd=str(ROOT), stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                        universal_newlines=True)
+(OUT / "stdout.txt").write_text(result.stdout)
+(OUT / "stderr.txt").write_text(result.stderr)
 with (OUT / "results.csv").open() as f:
     rows = list(csv.DictReader(f))
 with (OUT / "consistency.csv").open() as f:
     checks = list(csv.DictReader(f))
 files = [binary, OUT / "source_snapshot.tar.gz"] + list(sorted(OUT.glob("*.csv")))
+files += sorted(OUT.glob("*.txt"))
+parity = []
+if args.production_entry:
+    with (OUT / "entry_parity.csv").open() as f:
+        parity = list(csv.DictReader(f))
 summary = {
-    "purpose": "Independent FMM candidate paths followed by unchanged continuous variational bending; prototype only",
+    "purpose": "Independent FMM candidate paths followed by continuous variational bending, with optional exact production-entry parity",
     "real_observations_used": False,
     "production_solver_changed": False,
     "command": "PYTHONDONTWRITEBYTECODE=1 python3 diagnostics/run_fmm_initialization_audit.py " +
                " ".join(shlex.quote(arg) for arg in sys.argv[1:]),
     "order": args.order,
     "closed_seed_cells": args.closed_seed_cells,
+    "production_entry": args.production_entry,
+    "entry_parity_calls": len(parity),
+    "entry_parity_failures": [r for r in parity if r["passed"] != "1"],
+    "return_code": result.returncode,
     "refinement": refine,
     "compile_command": [arg.replace(str(ROOT) + "/", "") for arg in command],
+    "run_command": [arg.replace(str(ROOT) + "/", "") for arg in run_command],
     "source_sha256": {relative: hashlib.sha256((snapshot / relative).read_bytes()).hexdigest()
                       for relative in relative_sources},
     "cases": len(rows),
@@ -91,5 +115,6 @@ summary = {
 }
 (OUT / "summary.json").write_text(json.dumps(summary, indent=2, allow_nan=False) + "\n")
 print(json.dumps({k:summary[k] for k in ("cases","checks","failed_checks")}, indent=2))
-raise SystemExit(1 if summary["failed_checks"] or summary["extraction_failures"] or
-                summary["selected_nonconverged"] else 0)
+raise SystemExit(1 if result.returncode or summary["failed_checks"] or summary["extraction_failures"] or
+                summary["selected_nonconverged"] or summary["entry_parity_failures"] or
+                (args.production_entry and not parity) else 0)

@@ -1,4 +1,5 @@
 #include "core.hpp"
+#include "forward.hpp"
 #include "ray_checks.hpp"
 #include "csv.hpp"
 #include <filesystem>
@@ -91,22 +92,78 @@ std::vector<Event> read_events(std::string path) {
     throw std::runtime_error("No events/stations in " + path);
   return e;
 }
-std::vector<Ray> rays(const Grid &g, const std::vector<Event> &e,
-                      const std::vector<Event> &s, const Config &c,
-                      bool deriv = true, const std::vector<int> *used = nullptr) {
-  std::vector<Ray> r(e.size() * s.size());
-  const int count = used ? int(used->size()) : int(r.size());
-#pragma omp parallel for schedule(dynamic)
-  for (int q = 0; q < count; q++) {
-    int n = used ? (*used)[q] : q;
-    r[n] = trace(g, e[n / s.size()].p, s[n % s.size()].p, c.get("ray_spacing"),
-                 c.get("ray_iterations"), deriv);
-  }
-  return r;
-}
 double setting(const Config &c, const std::string &key, double fallback) {
   auto it = c.v.find(key);
   return it == c.v.end() ? fallback : it->second;
+}
+double auxiliary_spacing(const Config &c) {
+  double mode = setting(c, "ray_initializer", 0);
+  if (mode == 0) return 0;
+  if (mode != 1)
+    throw std::runtime_error("ray_initializer must be 0 (straight) or 1 (FMM)");
+  double spacing = c.get("fmm_spacing");
+  if (!(spacing > 0) || !std::isfinite(spacing))
+    throw std::runtime_error("fmm_spacing must be finite and positive");
+  return spacing;
+}
+Ray configured_trace(const Grid &g, P source, P receiver, const Config &c,
+                     ForwardFields &cache, bool deriv = true) {
+  double aux = auxiliary_spacing(c);
+  if (aux == 0)
+    return trace(g, source, receiver, c.get("ray_spacing"), c.get("ray_iterations"), deriv);
+  const auto &field = cache.get(g, receiver, aux);
+  return trace_first_arrival(g, source, receiver, c.get("ray_spacing"),
+                            c.get("ray_iterations"), deriv, field);
+}
+std::vector<Ray> rays(const Grid &g, const std::vector<Event> &e,
+                      const std::vector<Event> &s, const Config &c,
+                      bool deriv = true, const std::vector<int> *used = nullptr,
+                      ForwardFields *saved_fields = nullptr) {
+  std::vector<Ray> r(e.size() * s.size());
+  const int count = used ? int(used->size()) : int(r.size());
+  ForwardFields local_fields;
+  auto &cache = saved_fields ? *saved_fields : local_fields;
+  double aux = auxiliary_spacing(c);
+  std::vector<const first_arrival::Field *> fields(s.size(), nullptr);
+  // Construct/cache fields serially, then use only const access while bending
+  // rays in parallel. Native station indices are never combined or renumbered.
+  if (aux > 0)
+    for (int q = 0; q < count; ++q) {
+      int n = used ? (*used)[q] : q, k = n % s.size();
+      if (!fields[k]) fields[k] = &cache.get(g, s[k].p, aux);
+    }
+#pragma omp parallel for schedule(dynamic)
+  for (int q = 0; q < count; q++) {
+    int n = used ? (*used)[q] : q;
+    int i = n / s.size(), k = n % s.size();
+    r[n] = aux > 0 ? trace_first_arrival(g, e[i].p, s[k].p, c.get("ray_spacing"),
+                                        c.get("ray_iterations"), deriv, *fields[k]) :
+                    trace(g, e[i].p, s[k].p, c.get("ray_spacing"),
+                          c.get("ray_iterations"), deriv);
+  }
+  // An unavailable alternative must not silently become a straight-seed
+  // inversion. Diagnostic configured_trace calls retain the failure flag.
+  if (aux > 0)
+    for (int q = 0; q < count; ++q) {
+      int n = used ? (*used)[q] : q;
+      if (!r[n].initialization_succeeded)
+        throw std::runtime_error("FMM extraction failed for event " +
+            std::to_string(n / s.size()) + ", native station " +
+            std::to_string(n % s.size()) + ": " + r[n].initializer_message);
+    }
+  return r;
+}
+void initializer_header(std::ostream &out, const std::string &prefix) {
+  for (const char *name : {"initialization_attempted", "initialization_succeeded",
+       "selected_fmm_seed", "direct_seed_time", "fmm_seed_time", "field_time",
+       "extraction_fallback_steps", "extraction_message"})
+    out << ',' << prefix << name;
+}
+void initializer_values(std::ostream &out, const Ray &r) {
+  out << ',' << r.initialization_attempted << ',' << r.initialization_succeeded
+      << ',' << r.selected_fmm_seed << ',' << r.direct_seed_time << ','
+      << r.fmm_seed_time << ',' << r.initializer_field_time << ','
+      << r.initializer_fallback_steps << ',' << csv_quote(r.initializer_message);
 }
 double true_velocity(const Config &c, double x) {
   return setting(c, "truth_model", 0) == 1 ? 6.0 : sandwich(x);
@@ -568,17 +625,23 @@ void invert(const Config &c, std::string dir, std::string mode) {
     g = read_grid(dir + "/truth_grid.csv");
   int ne = e.size(), ns = stations.size(), off = 4 * ne,
       n = off + (locate ? 0 : g.size());
+  ForwardFields fields;
   auto log = output(dir + "/" + mode + "_history.csv");
   log << "iteration,stage,absolute_rms,catalog_rms,precise_rms,velocity_step,"
          "location_step,step_fraction,objective_before,objective_after,lsqr_"
          "iterations,lsqr_relative_normal_residual,lsqr_converged,ray_count,"
-         "ray_converged_count,ray_projected_gradient_max,ray_raw_gradient_max\n";
+         "ray_converged_count,ray_projected_gradient_max,ray_raw_gradient_max,"
+         "ray_initialization_attempted_count,ray_initialization_succeeded_count,"
+         "ray_selected_fmm_count\n";
   for (int it = 0; it < int(c.get("iterations")); it++) {
-    auto r = rays(g, e, stations, c, true, &used);
-    size_t ray_converged = 0;
+    auto r = rays(g, e, stations, c, true, &used, &fields);
+    size_t ray_converged = 0, attempted = 0, succeeded = 0, selected_fmm = 0;
     double ray_projected_max = 0, ray_raw_max = 0;
     for (int index : used) {
       ray_converged += r[index].converged;
+      attempted += r[index].initialization_attempted;
+      succeeded += r[index].initialization_succeeded;
+      selected_fmm += r[index].selected_fmm_seed;
       ray_projected_max = std::max(ray_projected_max, r[index].gradient);
       ray_raw_max = std::max(ray_raw_max, r[index].raw_gradient);
     }
@@ -667,7 +730,7 @@ void invert(const Config &c, std::string dir, std::string mode) {
         }
       if (!valid)
         continue;
-      auto nr = rays(ng, ee, stations, c, false, &used);
+      auto nr = rays(ng, ee, stations, c, false, &used, &fields);
       after = objective(ng, ee, nr);
       if (after <= before) {
         accepted = true;
@@ -695,7 +758,8 @@ void invert(const Config &c, std::string dir, std::string mode) {
         << ',' << dx << ',' << step << ',' << before << ',' << after << ','
         << linear_info.iterations << ',' << linear_info.relative_normal_residual
         << ',' << linear_info.converged << ',' << used.size() << ','
-        << ray_converged << ',' << ray_projected_max << ',' << ray_raw_max << '\n';
+        << ray_converged << ',' << ray_projected_max << ',' << ray_raw_max << ','
+        << attempted << ',' << succeeded << ',' << selected_fmm << '\n';
     log.flush();
     std::cout << mode << " iteration " << it << " stage " << stage << " rms "
               << (count[0] > 0 ? std::sqrt(ss[0] / count[0]) : NAN) << ' '
@@ -717,7 +781,7 @@ void invert(const Config &c, std::string dir, std::string mode) {
       set_metadata(event.metadata, "coordinate_basis",
                    "independent " + mode + " inversion estimate; provider IDs identify reference catalog records");
   write_events(e, dir + "/" + mode + "_events.csv");
-  auto rr = rays(g, e, stations, c, true, &used);
+  auto rr = rays(g, e, stations, c, true, &used, &fields);
   auto coverage = output(dir + "/" + mode + "_coverage.csv");
   coverage << "node,path_length\n";
   for (int k = 0; k < g.size(); k++) {
@@ -729,11 +793,18 @@ void invert(const Config &c, std::string dir, std::string mode) {
   auto f = output(dir + "/" + mode + "_residuals.csv");
   f << "i,j,station,type,residual";
   csv_metadata_header(f, data.front().metadata);
+  initializer_header(f, "i_");
+  initializer_header(f, "j_");
   f << '\n';
   for (const auto &d : data) {
     f << d.i << ',' << d.j << ',' << d.k << ',' << d.type << ','
       << d.value - prediction(d, rr, e, ns);
     csv_metadata_values(f, d.metadata);
+    initializer_values(f, rr[d.i * ns + d.k]);
+    if (d.j >= 0)
+      initializer_values(f, rr[d.j * ns + second_station(d)]);
+    else
+      for (int k = 0; k < 8; ++k) f << ',';
     f << '\n';
   }
   // Real data have no synthetic sandwich truth; plot their saved grid separately.
@@ -881,15 +952,30 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
       samples.push_back(used[count == 1 ? 0 : n * (used.size() - 1) / (count - 1)]);
   }
   Grid g = read_grid(dir + "/" + mode + "_grid.csv");
+  Config refined = c;
+  refined.v["ray_spacing"] = c.get("ray_spacing") / 2;
+  refined.v["ray_iterations"] = std::max(1000., c.get("ray_iterations"));
+  const double aux = auxiliary_spacing(c);
+  if (aux > 0) refined.v["fmm_spacing"] = aux / 2;
+  ForwardFields production_fields, refined_fields;
   std::string prefix = mode == "truth" ? "ray" : mode + "_ray";
   auto f = output(dir + "/" + prefix + "_convergence.csv");
   f << "event,station,production_time,refined_time,difference,production_"
        "gradient,refined_gradient,production_raw_gradient,refined_raw_gradient,"
        "production_iterations,refined_iterations,production_converged,refined_"
-       "converged,production_merged,refined_merged,diagnostic_row\n";
+       "converged,production_merged,refined_merged,diagnostic_row,"
+       "production_path_spacing,refined_path_spacing,production_requested_fmm_spacing,"
+       "refined_requested_fmm_spacing";
+  initializer_header(f, "production_");
+  initializer_header(f, "refined_");
+  f << '\n';
   auto df = output(dir + "/" + prefix + "_derivatives.csv");
   df << "event,station,axis,production_derivative,refined_derivative,finite_"
-        "difference,production_error,refined_error,diagnostic_row\n";
+        "difference,production_error,refined_error,diagnostic_row,"
+        "plus_converged,minus_converged";
+  initializer_header(df, "plus_");
+  initializer_header(df, "minus_");
+  df << '\n';
   // Both diagnostic tables refer to this zero-based sample key. Each mapping
   // row identifies an original observations.csv row and its i/j event side.
   auto identifiers = output(dir + "/" + prefix + "_identifiers.csv");
@@ -910,14 +996,18 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
         csv_metadata_values(identifiers, stations[k].metadata);
         identifiers << '\n';
       }
-    Ray a = trace(g, e[i].p, stations[k].p, c.get("ray_spacing"),
-                  c.get("ray_iterations"));
-    Ray b = trace(g, e[i].p, stations[k].p, c.get("ray_spacing") / 2, 1000);
+    Ray a = configured_trace(g, e[i].p, stations[k].p, c, production_fields);
+    Ray b = configured_trace(g, e[i].p, stations[k].p, refined, refined_fields);
     f << i << ',' << k << ',' << a.time << ',' << b.time << ','
       << a.time - b.time << ',' << a.gradient << ',' << b.gradient << ','
       << a.raw_gradient << ',' << b.raw_gradient << ',' << a.iterations << ','
       << b.iterations << ',' << a.converged << ',' << b.converged << ','
-      << a.merged_nodes << ',' << b.merged_nodes << ',' << n << '\n';
+      << a.merged_nodes << ',' << b.merged_nodes << ',' << n << ','
+      << c.get("ray_spacing") << ',' << refined.get("ray_spacing") << ','
+      << aux << ',' << auxiliary_spacing(refined);
+    initializer_values(f, a);
+    initializer_values(f, b);
+    f << '\n';
     if (n < 8)
       for (int axis = 0; axis < 3; axis++) {
         double h = 0.01;
@@ -926,15 +1016,16 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
         am[axis] -= h;
         if (!g.contains(ap) || !g.contains(am))
           continue;
-        double fd =
-            (trace(g, ap, stations[k].p, c.get("ray_spacing") / 2, 1000, false)
-                 .time -
-             trace(g, am, stations[k].p, c.get("ray_spacing") / 2, 1000, false)
-                 .time) /
-            (2 * h);
+        Ray plus = configured_trace(g, ap, stations[k].p, refined, refined_fields, false);
+        Ray minus = configured_trace(g, am, stations[k].p, refined, refined_fields, false);
+        double fd = (plus.time - minus.time) / (2 * h);
         df << i << ',' << k << ',' << axis << ',' << a.source[axis] << ','
            << b.source[axis] << ',' << fd << ',' << a.source[axis] - fd << ','
-           << b.source[axis] - fd << ',' << n << '\n';
+           << b.source[axis] - fd << ',' << n << ',' << plus.converged << ','
+           << minus.converged;
+        initializer_values(df, plus);
+        initializer_values(df, minus);
+        df << '\n';
       }
   }
 }
@@ -966,6 +1057,7 @@ void linearize(const Config &c, const std::string &dir, const std::string &mode)
   auto rows = output(dir + "/" + mode + "_linearization_rows.csv");
   rows << "row,observation_row,i,station,observed,predicted,residual,"
           "ray_converged,ray_projected_gradient,ray_iterations,ray_time,ray_raw_gradient";
+  initializer_header(rows, "ray_");
   csv_metadata_header(rows, data.front().metadata);
   const bool prior_column = metadata_value(data.front().metadata, "a_priori_weight");
   if (!prior_column)
@@ -990,6 +1082,7 @@ void linearize(const Config &c, const std::string &dir, const std::string &mode)
     rows << row << ',' << q << ',' << d.i << ',' << d.k << ',' << d.value << ','
          << predicted << ',' << d.value - predicted << ',' << ray.converged << ','
          << ray.gradient << ',' << ray.iterations << ',' << ray.time << ',' << ray.raw_gradient;
+    initializer_values(rows, ray);
     csv_metadata_values(rows, d.metadata);
     if (!prior_column)
       rows << ',' << d.a_priori_weight;

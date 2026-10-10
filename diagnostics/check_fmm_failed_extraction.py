@@ -51,6 +51,7 @@ for old in selected:
     assert float(new["selected_endpoint_error_km"]) == 0
     assert new["field_time_s"] == failed[old["observation_index"]]["field_time_s"]
 files = [Path(__file__).resolve(),source,ROOT/"diagnostics/first_arrival_fmm.hpp",
+         ROOT/"src/first_arrival.hpp",ROOT/"src/forward.hpp",
          ROOT/"diagnostics/seeded_bending.py",ROOT/"src/main.cpp",ROOT/"src/core.hpp",
          ROOT/"src/csv.hpp",ROOT/"src/ray_checks.hpp",baseline,inputs,grid,subset,output,header,binary]
 summary = {

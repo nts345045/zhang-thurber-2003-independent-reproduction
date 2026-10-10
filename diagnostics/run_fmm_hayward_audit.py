@@ -60,7 +60,8 @@ for before in inputs:
         raise ValueError("Selected ray violates the model domain")
     if float(after["action_reduction_s"]) < 0:
         raise ValueError("Candidate selection increased the action")
-files = [source,ROOT/"diagnostics/first_arrival_fmm.hpp",ROOT/"diagnostics/seeded_bending.py",
+files = [source,ROOT/"diagnostics/first_arrival_fmm.hpp",ROOT/"src/first_arrival.hpp",
+         ROOT/"src/forward.hpp",ROOT/"diagnostics/seeded_bending.py",
          ROOT/"src/main.cpp",ROOT/"src/core.hpp",ROOT/"src/ray_checks.hpp",ROOT/"src/csv.hpp",
          Path(__file__).resolve(),header,binary,input_path,grid_path,events_path,stations_path,output_path]
 summary = {

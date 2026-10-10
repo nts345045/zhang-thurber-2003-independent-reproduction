@@ -1,0 +1,112 @@
+{
+  "scope": "Production wiring and metadata tests; not a manuscript inversion or global first-arrival certificate",
+  "commands": [
+    [
+      "c++",
+      "-O3",
+      "-std=c++17",
+      "-fopenmp",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "tmp/forward_integration/baseline/source/diagnostics/check_forward_integration.cpp",
+      "-lstdc++fs",
+      "-o",
+      "tmp/forward_integration/baseline/check_forward"
+    ],
+    [
+      "tmp/forward_integration/baseline/check_forward",
+      "data/development/forward_integration_baseline/invented"
+    ],
+    [
+      "tmp/forward_integration/baseline/check_forward",
+      "--solver",
+      "raycheck",
+      "data/development/forward_integration_baseline/identified_hayward/fixture.cfg",
+      "data/development/forward_integration_baseline/identified_hayward",
+      "initial"
+    ],
+    [
+      "tmp/forward_integration/baseline/check_forward",
+      "--solver",
+      "linearize",
+      "data/development/forward_integration_baseline/identified_hayward/fixture.cfg",
+      "data/development/forward_integration_baseline/identified_hayward",
+      "initial"
+    ]
+  ],
+  "source_sha256": {
+    "src/core.hpp": "92c1fd4a28e012eea6aeb847751a5f1e0675fe40182b118f8a217e94ec1fba4d",
+    "src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/main.cpp": "ffa423513f0bf25cea16ac7684f340ba90427d9d5aab66a8f3786d045baafca2",
+    "src/csv.hpp": "f3ec5080bd0234fc7d0d6731b66aadd9eae219353244c9d4ef1c157a67bfd4c0",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "diagnostics/check_forward_integration.cpp": "56aeed9cc59746dcedb3c3a1cc8b8dd74eb2369304c7f69085c7103ca42ee24b",
+    "diagnostics/run_forward_integration.py": "a4fd356e986ec5b045d12c2c90557899b5d48fe3d6a43cee846402b4ec4ae522"
+  },
+  "invented_checks": 26,
+  "failed_checks": [],
+  "real_observed_rays": 2,
+  "real_identity_associations": 4,
+  "real_linearized_absolute_rows": 2,
+  "cross_native_epoch_dd_preserved": true,
+  "original_inputs_unchanged": true,
+  "identified_ray_local_flags": [
+    {
+      "event": "0",
+      "station": "0",
+      "production_converged": "1",
+      "refined_converged": "1"
+    },
+    {
+      "event": "1",
+      "station": "1",
+      "production_converged": "1",
+      "refined_converged": "1"
+    }
+  ],
+  "sha256": {
+    "compile_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "identified_hayward/authoritative_ids_required": "50955bc6357aca4cdea7a1e3b6f9232e59bd1ce03ad3717a4f23207a0e4aa887",
+    "identified_hayward/fixture.cfg": "7c3e8d87033d0dd161fd1f1c45f755dd60fe6d6f8b2f913057871114621e2359",
+    "identified_hayward/initial_events.csv": "4461eac5b0b0f68f83e63668a030087ef36ee490bd25a39822ca44275e05f6d1",
+    "identified_hayward/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "identified_hayward/initial_linearization_columns.csv": "8d492d98de0cc8739a1d0c456c3f8a69f5d3ebd2040637ca13be2e7a7b34426a",
+    "identified_hayward/initial_linearization_matrix.csv": "e79069404a5029170a71b456ad4ef2c4503d19493b0a49eb87914b01234520dd",
+    "identified_hayward/initial_linearization_rows.csv": "b5a245ac753b9c6636d1fa69274cc9f81f3684213e30238b4f8f36a798c0a503",
+    "identified_hayward/initial_ray_convergence.csv": "06fc2678c9974317b5a4336438d608c2c2f142c6362eda6683c159acae067df1",
+    "identified_hayward/initial_ray_derivatives.csv": "4fcc7359300584653545d1cca7164af6d8953f3e73bf6f2909fa542a17e76c72",
+    "identified_hayward/initial_ray_identifiers.csv": "d412fdb875e359fb37479688ba9ebe90b56ddb1eaf2d12f596d8be6b3b536042",
+    "identified_hayward/observations.csv": "43941f4bcb07fbf94fb42378816596f0dd0fba41011abc5a3afa70edd716803f",
+    "identified_hayward/selection_manifest.json": "37c715c2101700c3ce869c812e746175450ac774ee2822854e0848c5d31a0041",
+    "identified_hayward/stations.csv": "b2b23994052a4516220c6ef864e7082ce3c90b9cd18c6c5976d61b71a4ab00e3",
+    "identified_linearize_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "identified_linearize_stdout.txt": "134d16ce7b106ab834c7b34fe089b17acb6b70b90bbd5139576e63f828ac1ef1",
+    "identified_raycheck_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "identified_raycheck_stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented/checks.csv": "69d39a4bfa680ff7e03a108f1d92a5ddf9bf5cb0e7d82a993c2c9ea0740a2c2f",
+    "invented/fixture.cfg": "284af15024afdf560fd78bd731f82126250b8f2fe774e87a2d516191e7e51ce5",
+    "invented/initial_events.csv": "a3f0b7ef6e753c28c9a1f9261d80d508a2d64937d57cfb8127fc5eb6fe6e1504",
+    "invented/initial_grid.csv": "850c780b91fb954dbfe86bfa9eceaaf698182b9789e4a233da1ba3d88355bfb5",
+    "invented/initial_ray_convergence.csv": "f9b685da141741f05a3f5121b5da9cde358f67b96b068ac28937678ddf33b310",
+    "invented/initial_ray_derivatives.csv": "db33b2f927c8df4c3b0c9f763035663205b387f1711aca02dda9800b9d74630b",
+    "invented/initial_ray_identifiers.csv": "1e29055b4e84b4b16bcedb22b6f45e70ffbb128eca2aef77ab03862437d27f53",
+    "invented/observations.csv": "9484d45c83f8e6e90985f958e15cbfe7dcd66b313283236254fe675e7c0ab598",
+    "invented/standard_coverage.csv": "f253465366ccbed657f1fccadf2b24ab55d281b577308d50ae5de5a1c14b7bd9",
+    "invented/standard_events.csv": "62f0acbff6bb6772189080479ec0ec26bc395d583216da8186327ca554bbe0ed",
+    "invented/standard_grid.csv": "55ada8aae3dac84fcb063d0b0f0beeed2d9f6e9e63ccfd7fdfd9b570a600cf0d",
+    "invented/standard_history.csv": "993bd6d270cdee5c8c6e2ab2e0d660575ecf1e7320b0543078eed2d62ee52155",
+    "invented/standard_linearization_columns.csv": "fe2fcda8d571d862803fef4e83e1fd4676119f3d31629e073d12b733ab305694",
+    "invented/standard_linearization_matrix.csv": "a87f54c307c559501878ed6ee49590b2bb5edb7c90353e4f9af78ece8cc0e60b",
+    "invented/standard_linearization_rows.csv": "a5c5a8d3ff713c9cd2afbc0ab7fdd88e09d7a535f2389cdcdbc19ea1ddcfbbb5",
+    "invented/standard_residuals.csv": "d29489e03021e9154cb8f6e0204caa4f05a84b8097a65901475cc109f2ed1143",
+    "invented/stations.csv": "6ba96401dc03da0469358e4201412fc1986f0484ab92617bfd8c3cceeaace852",
+    "invented/truth_events.csv": "a3f0b7ef6e753c28c9a1f9261d80d508a2d64937d57cfb8127fc5eb6fe6e1504",
+    "invented/truth_grid.csv": "850c780b91fb954dbfe86bfa9eceaaf698182b9789e4a233da1ba3d88355bfb5",
+    "invented_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_stdout.txt": "40bd0fa7177c3240f5932af0be02a2bd7b874b5dd1588f65d429189e794ee5c4",
+    "source_snapshot.tar.gz": "52e88927f39270d69a139c16a490713a3e2bdfe986b055ddba2afcc646c9e183"
+  }
+}
