@@ -1,0 +1,22 @@
+--- original trace_first_arrival
++++ candidate-provider transport and returned-start capture
+@@ -1,12 +1,16 @@
+-Ray trace_first_arrival(const Grid &g, P source, P receiver, double spacing,
+-                        int maxit, bool deriv, const first_arrival::Field &field) {
++Ray replay_candidate(const Grid &g, P source, P receiver, double spacing,
++                        int maxit, bool deriv, const std::function<first_arrival::Candidate()> &provider, std::array<Ray, 2> &starts) {
++  ++replay_trace_calls;
+   Ray direct = trace(g, source, receiver, spacing, maxit, deriv);
+-  auto candidate = field.candidate(source);
++  starts[0] = direct;
++  auto candidate = provider();
+   Ray selected = direct;
+   double seeded_time = NAN;
+   bool used_seed = false;
+   if (candidate.success && source != receiver) {
++    ++replay_trace_calls;
+     Ray seeded = trace(g, source, receiver, spacing, maxit, deriv, &candidate.path);
++    starts[1] = seeded;
+     seeded_time = seeded.time;
+     if (seeded.time < selected.time) {
+       selected = std::move(seeded);

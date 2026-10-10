@@ -1,0 +1,72 @@
+--- old/core.hpp
++++ D/core.hpp
+@@ -216,7 +216,7 @@
+ double path_eval(const Grid &g, const std::vector<P> &p, Vec *grad = nullptr) {
+   if (grad)
+     grad->assign(3 * (p.size() - 2), 0);
+-  double T = 0;
++  long double T = 0;
+   for (size_t i = 1; i < p.size(); i++) {
+     P a{}, b{};
+     T += segment(g, p[i - 1], p[i], grad ? &a : nullptr, grad ? &b : nullptr);
+@@ -318,6 +318,8 @@
+     throw std::runtime_error("Cone metric lacks a strict descent direction for a nonstationary ray");
+   return direction;
+ }
++
++#include "usable_ray_curvature.hpp"
+ 
+ // Independently implemented limited-memory BFGS minimization of Fermat travel
+ // time. Retain feasible descent directions; replace clipped or non-descent
+@@ -370,28 +372,12 @@
+       converged = true;
+       break;
+     }
+-    Vec q = grad, alpha(S.size());
+-    for (int j = int(S.size()) - 1; j >= 0; j--) {
+-      alpha[j] = rho[j] * dot(S[j], q);
+-      for (size_t k = 0; k < q.size(); k++)
+-        q[k] -= alpha[j] * Y[j][k];
+-    }
+-    Vec weights = ray_metric_weights(g, p);
+-    double scale = S.empty() ? 1 : dot(S.back(), Y.back()) /
+-                                      dot(Y.back(), inverse_ray_metric(weights, Y.back()));
+-    q = inverse_ray_metric(weights, std::move(q));
+-    for (auto &v : q)
+-      v *= scale;
+-    for (size_t j = 0; j < S.size(); j++) {
+-      double beta = rho[j] * dot(Y[j], q);
+-      for (size_t k = 0; k < q.size(); k++)
+-        q[k] += S[j][k] * (alpha[j] - beta);
+-    }
+-    for (auto &v : q)
+-      v = -v;
++    Vec q;
++    const bool usable_memory = usable_lbfgs_ray_direction(
++        [&] { return ray_metric_weights(g, p); }, grad, S, Y, rho, q);
+     Vec feasible_direction = q;
+     project_ray_direction(g, p, feasible_direction);
+-    if (feasible_direction != q || !(dot(grad, q) < 0)) {
++    if (!usable_memory || feasible_direction != q || !(dot(grad, q) < 0)) {
+       q = cone_ray_direction(g, p, grad);
+       S.clear();
+       Y.clear();
+@@ -453,7 +439,8 @@
+         y[k] = ng[k] - grad[k];
+       }
+       double sy = dot(s, y);
+-      if (sy > 1e-14) {
++      double reciprocal = 0;
++      if (usable_ray_curvature(s, y, sy, reciprocal)) {
+         if (S.size() == 8) {
+           S.erase(S.begin());
+           Y.erase(Y.begin());
+@@ -461,7 +448,7 @@
+         }
+         S.push_back(s);
+         Y.push_back(y);
+-        rho.push_back(1 / sy);
++        rho.push_back(reciprocal);
+       }
+     }
+     p = std::move(trial);

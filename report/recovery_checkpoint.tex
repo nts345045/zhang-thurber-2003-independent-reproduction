@@ -46,6 +46,49 @@ local convergence at the first three-dimensional trial model. The guard
 prevented those failed rays from entering its trial objective. This attempt
 supplies no corrected field result or final-model resolution.
 
+A matched replay evaluates two rejected rays to \texttt{NC.CMJ..EHZ},
+events \texttt{NC518943} and \texttt{NC519264}, using the recorded trial model
+and coordinates. One original receiver field supplies both FMM starting
+paths. Before applying the adopted optimizer, the original implementation
+reproduces every recorded 17-digit status field and selected-path coordinate
+exactly. The adopted version then uses those same starting paths and retains
+the original lower-action selection. Both selected rays still fail local
+stopping after 1,000 updates; their projected-gradient norms are
+$4.96586\times10^{-4}$ and $5.54354\times10^{-4}$ s/km. All four starts in
+the adopted version exhaust that budget, with no merges. Reported selected
+actions change by $+5.53\times10^{-11}$ and $-2.19\times10^{-10}$ s;
+different outer summation arithmetic prevents interpreting these differences
+as certified physical action orderings. No endpoint or model derivatives
+were requested. The evidence in
+\path{data/development/hayward_trial_cmj_old_D_replay_001/}
+therefore excludes this optimizer change alone as a remedy for these two
+local failures, without diagnosing the other 179 rays.
+
+The two original paths contain 31 and 32 internal nodes within one millimetre
+of the internal plane $x=0$. At each node's projection onto that plane,
+exact rational interpolation of the saved binary64 grid gives positive
+left and negative right normal velocity slopes. Thus reciprocal velocity
+has a normal cusp minimum at the face (Figure~\ref{fig:cmj_trial_geometry}).
+The smallest saved normal offsets are $3.34\times10^{-11}$ and
+$1.54\times10^{-10}$ km. These describe numerical coordinates, not
+observational position accuracies. The one-millimetre inventory is
+descriptive: no point is moved and no stopping tolerance changes. The
+calculation in \path{data/development/hayward_cmj_interface_geometry_001/}
+identifies a nonsmooth model feature beside the failed paths, but does not
+establish causal attribution, polygon stationarity or first-arrival accuracy.
+
+Reevaluating each saved polygon's free-knot gradient reproduces every recorded
+raw and projected norm at 17 digits, without tracing or changing a path.
+The $x$ components of those 31 or 32 near-face nodes contribute
+99.513\% and 99.295\% of the original squared norms, and 99.446\% and
+99.638\% after the optimizer change. Exact rational sums of the exported
+binary64 components give these fractions; raw and box-projected results
+coincide. Thus the recorded ordinary gradient is concentrated in normal
+motion beside the face. This calculation, saved in
+\path{data/development/hayward_cmj_saved_gradient_001/}, localizes the norm
+but does not supply a nonsmooth stationarity test or justify changing a
+failed flag.
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\textwidth]{../figures/diagnostics/hayward_full_initial_accuracy.pdf}
@@ -57,6 +100,20 @@ the unchanged accuracy limits. Refining path spacing and the initialization
 field together brings every fourth-run ray within both limits. This diagnostic
 does not validate a recovered velocity model.}
 \label{fig:full-initial-accuracy}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{../data/development/hayward_cmj_interface_geometry_001/geometry.pdf}
+\caption{Geometry beside two failed rays in the rejected Hayward trial.
+Left: velocity sections at fixed $y,z$ through each path's closest saved
+node to $x=0$. The face is a strict normal velocity maximum in both
+sections. Right: all saved nodes within one millimetre of that plane,
+with a symmetric logarithmic vertical axis. Colors identify the same two
+events at \texttt{NC.CMJ..EHZ} in both panels. Numerical normal offsets
+are not observational accuracies. This diagnostic preserves both failed
+flags and supplies no accepted ray or inverse model.}
+\label{fig:cmj_trial_geometry}
 \end{figure}
 
 \subsection{Exact branch seeds and continuous synthetic truth}

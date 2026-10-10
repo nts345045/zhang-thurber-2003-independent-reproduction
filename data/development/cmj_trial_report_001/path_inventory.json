@@ -1,0 +1,930 @@
+{
+  "readme_local_links": [
+    "data/authoritative/discovery/README.md",
+    "data/authoritative/README.md",
+    "data/authoritative/stations/README.md",
+    "data/development/ray_optimizer_audit/README.md",
+    "data/development/first_arrival_audit/README.md",
+    "data/development/fmm_order_comparison.md",
+    "data/development/fmm_rotated_affine_baseline/README.md",
+    "data/development/fmm_hayward_audit/README.md",
+    "data/development/fmm_hayward_order2_closed/README.md",
+    "data/development/ray_stopping_i775_budget_path/README.md",
+    "data/development/first_arrival_1d_enumeration/README.md",
+    "data/development/hayward_first_arrival_003_review/README.md",
+    "data/development/hayward_initial_failure_refinement.md",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/README.md",
+    "data/development/initial_ray_first_arrival_003_14099_field0125001/README.md",
+    "figures/diagnostics/hayward_branch_failure.pdf",
+    "data/development/hayward_first_arrival_004_1d_support/README.md",
+    "figures/diagnostics/hayward_full_initial_accuracy.pdf",
+    "data/development/hayward_sampled_accuracy_004_002/README.md",
+    "data/development/hayward_guarded_dd_launch_plan_001/README.md",
+    "data/development/hayward_guarded_failure_001/README.md",
+    "data/development/hayward_trial_cmj_old_D_replay_001/RESULTS.md",
+    "data/development/hayward_cmj_interface_geometry_001/README.md",
+    "data/development/hayward_cmj_interface_geometry_001/PLOT.md",
+    "data/development/hayward_cmj_saved_gradient_001/README.md",
+    "data/development/catalog_dd_resolution_controls_003/README.md",
+    "data/authoritative/loma_prieta/README.md",
+    "data/development/loma_geometry_preflight/001/README.md",
+    "data/development/loma_geometry_preflight/layered_reference_001/README.md",
+    "data/development/loma_geometry_preflight/reference_seeds_001/README.md",
+    "data/development/interface_directional/001/README.md",
+    "data/development/loma_layered_full_002/README.md",
+    "data/development/analytic_truth_preparation_checks_001/README.md",
+    "data/development/analytic_simulation_launcher_002/README.md",
+    "data/published/loma_lom_analytic_001/README.md",
+    "data/published/loma_lon_analytic_001/README.md",
+    "data/development/loma_lon_initial_reference_002/README.md",
+    "data/development/loma_lom_initial_accuracy_001/README.md",
+    "data/development/loma_initial_failure_review_001/README.md",
+    "data/development/loma_boundary_endpoint_001/README.md",
+    "data/development/loma_failed_trial_exact_001/README.md",
+    "data/development/loma_failed_search_3426_001/README.md",
+    "data/development/loma_outer_accumulation_native_001/README.md",
+    "figures/diagnostics/loma_outer_accumulation.pdf",
+    "data/development/loma_curvature_capture_native_001/README.md",
+    "data/development/loma_candidate_support_001/README.md",
+    "figures/diagnostics/loma_interface_candidate.pdf",
+    "data/development/loma_positive_curvature_native_001/README.md",
+    "figures/diagnostics/loma_retention.pdf",
+    "data/development/loma_usable_curvature_native_001/README.md",
+    "data/development/usable_curvature_integration_checks_001/README.md",
+    "data/development/usable_curvature_adoption_001/README.md",
+    "data/development/terminal_lock_archive_001/README.md",
+    "data/development/loma_endpoint_connector_native_001/README.md",
+    "data/development/loma_endpoint_scalar_contact_controls_001/README.md",
+    "data/development/loma_endpoint_shooting_controls_001/README.md",
+    "data/development/loma_endpoint_shooting_asymptotics_002/README.md",
+    "data/development/loma_lon_initial_accuracy_001/README.md",
+    "data/development/loma_lon_straight_curvature_replay_001/RESULTS.md",
+    "data/development/loma_lon_first_edge_decomposition_001/README.md",
+    "data/development/loma_lon_strict_straight_replay_001/REPLAY.md",
+    "data/development/native_interface_conditioning/README.md",
+    "data/development/inversion_ray_gate_checks/README.md",
+    "data/development/full_dd_resolution_ray_input_checks_001/README.md",
+    "data/authoritative/waveforms/pilot_001/README.md",
+    "data/development/waveform_correlation_pilot_001/README.md",
+    "data/authoritative/waveforms/cohort_plan_001/README.md",
+    "data/development/normalized_correlation_specification/README.md",
+    "data/authoritative/waveforms/cohort_samples_002/README.md",
+    "data/development/native_waveform_cc_001/README.md",
+    "data/development/native_dt_cc_001/README.md",
+    "data/hayward_catalog_cc_001/README.md",
+    "data/development/catalog_cc_weight_adoption_001/README.md",
+    "report/report.pdf",
+    "FIGURE_AUDIT.md",
+    "FAILURE_SUMMARY.md",
+    "data/authoritative/waveforms/eventdata_pilot_001/README.md",
+    "diagnostics/FIRST_ARRIVAL.md",
+    "data/hayward/README.md",
+    "data/development/hayward_guarded_failure_001/README.md",
+    "data/hayward_catalog_cc_001/README.md",
+    "data/published/loma_lom_analytic_001/README.md"
+  ],
+  "tex_literal_paths": [
+    {
+      "document": "report/hayward_full_results_section.tex",
+      "literal": "data/development/hayward_completed_baseline_review_001/",
+      "resolved": "data/development/hayward_completed_baseline_review_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/hayward_full_results_section.tex",
+      "literal": "data/hayward/run_manifest.json",
+      "resolved": "data/hayward/run_manifest.json",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/hayward_velocity_checkpoint.tex",
+      "literal": "data/hayward/figure10_velocity_manifest.json",
+      "resolved": "data/hayward/figure10_velocity_manifest.json",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "data/development/hayward_first_arrival_003_review/",
+      "resolved": "data/development/hayward_first_arrival_003_review",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "data/development/hayward_first_arrival_003_1d_support/",
+      "resolved": "data/development/hayward_first_arrival_003_1d_support",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "data/development/initial_ray_first_arrival_003_9291_audit001/",
+      "resolved": "data/development/initial_ray_first_arrival_003_9291_audit001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "initial_ray_first_arrival_003_9291_midpoint001/",
+      "resolved": "data/development/initial_ray_first_arrival_003_9291_midpoint001",
+      "basis": "explicit data/development parent in adjoining prose"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "initial_ray_first_arrival_003_9291_reference001/",
+      "resolved": "data/development/initial_ray_first_arrival_003_9291_reference001",
+      "basis": "explicit data/development parent in adjoining prose"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "initial_ray_first_arrival_003_9291_fine_path001/",
+      "resolved": "data/development/initial_ray_first_arrival_003_9291_fine_path001",
+      "basis": "explicit data/development parent in adjoining prose"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "data/development/hayward_initial_failure_refinement_001/",
+      "resolved": "data/development/hayward_initial_failure_refinement_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "hayward_initial_failure_refinement_004_reference/",
+      "resolved": "data/development/hayward_initial_failure_refinement_004_reference",
+      "basis": "explicit data/development parent in adjoining prose"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "data/development/initial_ray_first_arrival_003_14099_audit001/",
+      "resolved": "data/development/initial_ray_first_arrival_003_14099_audit001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "data/development/initial_ray_first_arrival_003_8147_strict_comparison001/",
+      "resolved": "data/development/initial_ray_first_arrival_003_8147_strict_comparison001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "data/development/loma_geometry_preflight/all_guides_002/",
+      "resolved": "data/development/loma_geometry_preflight/all_guides_002",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "data/development/loma_geometry_preflight/layered_reference_001/",
+      "resolved": "data/development/loma_geometry_preflight/layered_reference_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "data/loma_lom_001/",
+      "resolved": "data/loma_lom_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "data/development/loma_geometry_preflight/001/",
+      "resolved": "data/development/loma_geometry_preflight/001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "data/development/interface_stationarity/",
+      "resolved": "data/development/interface_stationarity",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/hayward_first_arrival_004_1d_support/",
+      "resolved": "data/development/hayward_first_arrival_004_1d_support",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/hayward_sampled_accuracy_004_002/",
+      "resolved": "data/development/hayward_sampled_accuracy_004_002",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/hayward_guarded_dd_launch_plan_001/",
+      "resolved": "data/development/hayward_guarded_dd_launch_plan_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/hayward_first_arrival_guarded_001/",
+      "resolved": "data/hayward_first_arrival_guarded_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/hayward_guarded_failure_001/",
+      "resolved": "data/development/hayward_guarded_failure_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/hayward_trial_cmj_old_D_replay_001/",
+      "resolved": "data/development/hayward_trial_cmj_old_D_replay_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/hayward_cmj_interface_geometry_001/",
+      "resolved": "data/development/hayward_cmj_interface_geometry_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/hayward_cmj_saved_gradient_001/",
+      "resolved": "data/development/hayward_cmj_saved_gradient_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_geometry_preflight/reference_seeds_001/",
+      "resolved": "data/development/loma_geometry_preflight/reference_seeds_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/interface_directional/001/",
+      "resolved": "data/development/interface_directional/001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/interface_stationarity_bound/",
+      "resolved": "data/development/interface_stationarity_bound",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/native_interface_support/",
+      "resolved": "data/development/native_interface_support",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/native_interface_step/001/",
+      "resolved": "data/development/native_interface_step/001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/interface_moment_set/",
+      "resolved": "data/development/interface_moment_set",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/native_interface_conditioning/",
+      "resolved": "data/development/native_interface_conditioning",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_layered_full_001/",
+      "resolved": "data/development/loma_layered_full_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_layered_full_002/",
+      "resolved": "data/development/loma_layered_full_002",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/published/loma_lom_analytic_001/",
+      "resolved": "data/published/loma_lom_analytic_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_initial_reference_001/",
+      "resolved": "data/development/loma_initial_reference_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_lon_initial_reference_001/",
+      "resolved": "data/development/loma_lon_initial_reference_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_lon_initial_reference_002/",
+      "resolved": "data/development/loma_lon_initial_reference_002",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_lon_initial_preflight_adoption_001/",
+      "resolved": "data/development/loma_lon_initial_preflight_adoption_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_lom_initial_accuracy_001/",
+      "resolved": "data/development/loma_lom_initial_accuracy_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_lon_initial_accuracy_001/",
+      "resolved": "data/development/loma_lon_initial_accuracy_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_lon_initial_accuracy_review_001/",
+      "resolved": "data/development/loma_lon_initial_accuracy_review_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_initial_failure_review_001/",
+      "resolved": "data/development/loma_initial_failure_review_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_node_action_001/",
+      "resolved": "data/development/loma_node_action_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_failed_search_3426_001/",
+      "resolved": "data/development/loma_failed_search_3426_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_failed_trial_exact_001/",
+      "resolved": "data/development/loma_failed_trial_exact_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_trial_accumulation_001/",
+      "resolved": "data/development/loma_trial_accumulation_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_outer_accumulation_001/",
+      "resolved": "data/development/loma_outer_accumulation_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_outer_accumulation_native_001/",
+      "resolved": "data/development/loma_outer_accumulation_native_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_curvature_capture_native_001/",
+      "resolved": "data/development/loma_curvature_capture_native_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_curvature_capture_review_001/",
+      "resolved": "data/development/loma_curvature_capture_review_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_interface_candidates_002/",
+      "resolved": "data/development/loma_interface_candidates_002",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_candidate_support_001/",
+      "resolved": "data/development/loma_candidate_support_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_candidate_support_review_001/",
+      "resolved": "data/development/loma_candidate_support_review_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_seed_loaded_b_native_001/",
+      "resolved": "data/development/loma_seed_loaded_b_native_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_positive_curvature_native_001/",
+      "resolved": "data/development/loma_positive_curvature_native_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_usable_curvature_native_001/",
+      "resolved": "data/development/loma_usable_curvature_native_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/usable_curvature_integration_checks_001/",
+      "resolved": "data/development/usable_curvature_integration_checks_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/usable_curvature_adoption_001/",
+      "resolved": "data/development/usable_curvature_adoption_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_lon_straight_curvature_replay_001/",
+      "resolved": "data/development/loma_lon_straight_curvature_replay_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_lon_first_edge_decomposition_001/",
+      "resolved": "data/development/loma_lon_first_edge_decomposition_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_lon_strict_straight_replay_001/",
+      "resolved": "data/development/loma_lon_strict_straight_replay_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_lon_strict_straight_4000_replay_001/",
+      "resolved": "data/development/loma_lon_strict_straight_4000_replay_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_boundary_endpoint_001/",
+      "resolved": "data/development/loma_boundary_endpoint_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_boundary_endpoint_mesh_controls_001/",
+      "resolved": "data/development/loma_boundary_endpoint_mesh_controls_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_boundary_endpoint_mesh_d_controls_001/",
+      "resolved": "data/development/loma_boundary_endpoint_mesh_d_controls_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_endpoint_connector_native_001/",
+      "resolved": "data/development/loma_endpoint_connector_native_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_endpoint_connector_review_001/",
+      "resolved": "data/development/loma_endpoint_connector_review_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_endpoint_scalar_contact_controls_001/",
+      "resolved": "data/development/loma_endpoint_scalar_contact_controls_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_endpoint_shooting_controls_001/",
+      "resolved": "data/development/loma_endpoint_shooting_controls_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_endpoint_shooting_baselines_001/",
+      "resolved": "data/development/loma_endpoint_shooting_baselines_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/loma_endpoint_shooting_asymptotics_002/",
+      "resolved": "data/development/loma_endpoint_shooting_asymptotics_002",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/inversion_ray_gate_checks/",
+      "resolved": "data/development/inversion_ray_gate_checks",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/waveform_correlation_pilot_001/",
+      "resolved": "data/development/waveform_correlation_pilot_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/authoritative/waveforms/cohort_plan_001/",
+      "resolved": "data/authoritative/waveforms/cohort_plan_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/authoritative/waveforms/cohort_cc_002/",
+      "resolved": "data/authoritative/waveforms/cohort_cc_002",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/authoritative/waveforms/cohort_samples_002/",
+      "resolved": "data/authoritative/waveforms/cohort_samples_002",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/authoritative/waveforms/cohort_samples_001/",
+      "resolved": "data/authoritative/waveforms/cohort_samples_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/native_waveform_cc_001/",
+      "resolved": "data/development/native_waveform_cc_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/native_dt_cc_001/",
+      "resolved": "data/development/native_dt_cc_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/authoritative/waveforms/eventdata_pilot_001/",
+      "resolved": "data/authoritative/waveforms/eventdata_pilot_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/hayward_catalog_cc_001/",
+      "resolved": "data/hayward_catalog_cc_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "resolution_full_hayward.py",
+      "resolved": "resolution_full_hayward.py",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/catalog_dd_resolution_controls_003/",
+      "resolved": "data/development/catalog_dd_resolution_controls_003",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "data/development/full_dd_resolution_ray_input_checks_001/",
+      "resolved": "data/development/full_dd_resolution_ray_input_checks_001",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "reference/specification_notes.md",
+      "resolved": "reference/specification_notes.md",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "METHODS.md",
+      "resolved": "METHODS.md",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/development/",
+      "resolved": "data/development",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/development/",
+      "resolved": "data/development",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/rebuild_result.txt",
+      "resolved": "data/rebuild_result.txt",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/",
+      "resolved": "data",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "reference/delivery_environment.json",
+      "resolved": "reference/delivery_environment.json",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/authoritative/discovery/",
+      "resolved": "data/authoritative/discovery",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/authoritative/stations/investigation/",
+      "resolved": "data/authoritative/stations/investigation",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/development/ray_optimizer_audit/",
+      "resolved": "data/development/ray_optimizer_audit",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/development/first_arrival_audit/",
+      "resolved": "data/development/first_arrival_audit",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/development/fmm_initialization_refinement/",
+      "resolved": "data/development/fmm_initialization_refinement",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/development/fmm_order_comparison.json",
+      "resolved": "data/development/fmm_order_comparison.json",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/development/fmm_rotated_affine_baseline/",
+      "resolved": "data/development/fmm_rotated_affine_baseline",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/development/first_arrival_1d_enumeration/",
+      "resolved": "data/development/first_arrival_1d_enumeration",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/development/hayward_final_output_review.json",
+      "resolved": "data/development/hayward_final_output_review.json",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/development/fmm_hayward_audit/",
+      "resolved": "data/development/fmm_hayward_audit",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/development/fmm_hayward_order2_closed/",
+      "resolved": "data/development/fmm_hayward_order2_closed",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/development/ray_stopping_i775_budget_path/",
+      "resolved": "data/development/ray_stopping_i775_budget_path",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/development/",
+      "resolved": "data/development",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "ray_stopping_i775_reduced_fallback/",
+      "resolved": "data/development/ray_stopping_i775_reduced_fallback",
+      "basis": "explicit data/development parent in adjoining prose"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "ray_stopping_i775_reduced_all/",
+      "resolved": "data/development/ray_stopping_i775_reduced_all",
+      "basis": "explicit data/development parent in adjoining prose"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "reduced_ray_metric_checks/",
+      "resolved": "data/development/reduced_ray_metric_checks",
+      "basis": "explicit data/development parent in adjoining prose"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/panel_audit.csv",
+      "resolved": "data/panel_audit.csv",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "data/panel_audit.json",
+      "resolved": "data/panel_audit.json",
+      "basis": "repository root"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "FIGURE_AUDIT.md",
+      "resolved": "FIGURE_AUDIT.md",
+      "basis": "repository root"
+    }
+  ],
+  "tex_provider_resource_ids_not_files": [
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "provider_resource_id": "quakeml:NC.anss.org/Event/NC/390228"
+    }
+  ],
+  "figures": [
+    {
+      "document": "report/hayward_full_results_section.tex",
+      "literal": "hayward/figure05_locations.pdf",
+      "resolved": "figures/hayward/figure05_locations.pdf",
+      "sha256": "957e56fa0dd7437ab661d5e1db7f467708fa9fb2005a331098ebde49d504dee0"
+    },
+    {
+      "document": "report/hayward_full_results_section.tex",
+      "literal": "hayward/figure06_initial.pdf",
+      "resolved": "figures/hayward/figure06_initial.pdf",
+      "sha256": "5e2a694f547ee7c394f18a769dadc1b7ec8418933dd141a3e01f683cb093c8d9"
+    },
+    {
+      "document": "report/hayward_full_results_section.tex",
+      "literal": "hayward/figure07_standard.pdf",
+      "resolved": "figures/hayward/figure07_standard.pdf",
+      "sha256": "243b4b3509da067b456da997f0542ff32b7d7cc962c677109fa8fc197d90aa10"
+    },
+    {
+      "document": "report/hayward_full_results_section.tex",
+      "literal": "hayward/figure08_loc1d.pdf",
+      "resolved": "figures/hayward/figure08_loc1d.pdf",
+      "sha256": "26871100a9a8a0dfe8e0811b6645f9df6a929a8be92e42645756437b82bfa3f7"
+    },
+    {
+      "document": "report/hayward_full_results_section.tex",
+      "literal": "hayward/figure09_dd.pdf",
+      "resolved": "figures/hayward/figure09_dd.pdf",
+      "sha256": "e906a5c3ca1d7edac17fc419551781d444e82a174316d4271ff1932ca5f8871e"
+    },
+    {
+      "document": "report/hayward_full_results_section.tex",
+      "literal": "hayward/figure10_velocity.pdf",
+      "resolved": "figures/hayward/figure10_velocity.pdf",
+      "sha256": "63544c179821713dfa5f9d6c363e80662f883de1dfed9d12ab12308e4ac6e0e9"
+    },
+    {
+      "document": "report/hayward_full_results_section.tex",
+      "literal": "hayward/figure11_resolution.pdf",
+      "resolved": "figures/hayward/figure11_resolution.pdf",
+      "sha256": "ab2f7ac5ee84c68e0e7a2329ce43cbd1d7d8b43264724c446bbee3b20e3cc943"
+    },
+    {
+      "document": "report/hayward_velocity_checkpoint.tex",
+      "literal": "hayward/figure10_velocity.pdf",
+      "resolved": "figures/hayward/figure10_velocity.pdf",
+      "sha256": "63544c179821713dfa5f9d6c363e80662f883de1dfed9d12ab12308e4ac6e0e9"
+    },
+    {
+      "document": "report/ray_failure_checkpoint.tex",
+      "literal": "../figures/diagnostics/hayward_branch_failure.pdf",
+      "resolved": "figures/diagnostics/hayward_branch_failure.pdf",
+      "sha256": "c19d84c397d7b65fd91659cfc3fbdeb0ad656e0bf53fe7bed5bf5193e2c74d0c"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "../figures/diagnostics/hayward_full_initial_accuracy.pdf",
+      "resolved": "figures/diagnostics/hayward_full_initial_accuracy.pdf",
+      "sha256": "79410fa5f495704507a2222763b1a6eef62b32a637589693f171bbd9037507b4"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "../data/development/hayward_cmj_interface_geometry_001/geometry.pdf",
+      "resolved": "data/development/hayward_cmj_interface_geometry_001/geometry.pdf",
+      "sha256": "8484898b64ee5cbbda7cb30d9b62919071088ffa6c23f379d68657d5a92319b8"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "../figures/diagnostics/loma_failed_trials.pdf",
+      "resolved": "figures/diagnostics/loma_failed_trials.pdf",
+      "sha256": "39b803179f6a20e2fa0996c91765cea3b70200a01ef49bf77794191435b3852d"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "../figures/diagnostics/loma_outer_accumulation.pdf",
+      "resolved": "figures/diagnostics/loma_outer_accumulation.pdf",
+      "sha256": "1e854a1a6426a5c0ef04d0a119c55cd42488fb23631a0b70f18d27d2a920acdd"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "../figures/diagnostics/loma_interface_candidate.pdf",
+      "resolved": "figures/diagnostics/loma_interface_candidate.pdf",
+      "sha256": "4118926d1c0e66908e35a644d03787f11650f12060d35de0d5190b06a19c2dff"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "../figures/diagnostics/loma_retention.pdf",
+      "resolved": "figures/diagnostics/loma_retention.pdf",
+      "sha256": "12b5ae513102746410ffae0e6a5136102371498080d75c3357fa0272c7efdbe3"
+    },
+    {
+      "document": "report/recovery_checkpoint.tex",
+      "literal": "../figures/diagnostics/loma_endpoint_shooting.pdf",
+      "resolved": "figures/diagnostics/loma_endpoint_shooting.pdf",
+      "sha256": "93656adb5e6029d6aabaf91e20e4407f021931c4245f70d5c7396e26a1965947"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "figure01.pdf",
+      "resolved": "figures/figure01.pdf",
+      "sha256": "dbd6a8dea4ab734bd5548b5e4e4291361dcffbbc030aae0f37274366697d1f98"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "figure02.pdf",
+      "resolved": "figures/figure02.pdf",
+      "sha256": "bdfd02e3530203e1bc4c91e3d26d2b97cceacb4fb1f587a4b263b15dcd579c93"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "validation_ray.pdf",
+      "resolved": "figures/validation_ray.pdf",
+      "sha256": "f1583608f62e6655c78797317e342cec6f0e179337fa77a80e35e1c8361a95f3"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "figure03a.pdf",
+      "resolved": "figures/figure03a.pdf",
+      "sha256": "b46567f9e564dacce5420a25f44d96a15c581bf37780e60664fd1203fb8064db"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "figure03b.pdf",
+      "resolved": "figures/figure03b.pdf",
+      "sha256": "d1e6c086bbb1dab2e863183808f4979bfbfda72ed29e1b0b447b23e718037116"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "figure03c.pdf",
+      "resolved": "figures/figure03c.pdf",
+      "sha256": "e8b270a26108e95cb15dad143e04edb410f24eab59e227108b406ebe6dd7e90e"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "figure03d.pdf",
+      "resolved": "figures/figure03d.pdf",
+      "sha256": "acea59fa54c5838a6c4be9d3a00dcc66a01c6ed408c116655412dd3d4dacfccf"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "convergence.pdf",
+      "resolved": "figures/convergence.pdf",
+      "sha256": "03948a9f524af69cecec5ca386d008bd508fdf28824b330cf5a8f26a62066685"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "location_errors.pdf",
+      "resolved": "figures/location_errors.pdf",
+      "sha256": "2c10fe2c984e78827c8d409b622c6e6fddbe371ec5c3c3d77d926bf93429db6c"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "hayward/figure04_geometry.pdf",
+      "resolved": "figures/hayward/figure04_geometry.pdf",
+      "sha256": "5364bc445bb22550aaa07327fb1adfa1cc355ff8ba21513ad8beea36c8d2b1d0"
+    },
+    {
+      "document": "report/report.tex",
+      "literal": "diagnostics/first_arrival_audit.pdf",
+      "resolved": "figures/diagnostics/first_arrival_audit.pdf",
+      "sha256": "3fc4016c8891c12ffb8a755d055f7c75061d4372d48a252cb756191a2e5070f0"
+    }
+  ]
+}

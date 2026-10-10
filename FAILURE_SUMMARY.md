@@ -27,6 +27,15 @@ was accepted. The [failure archive](data/development/hayward_guarded_failure_001
 preserves the rejected trial, last accepted state, identified rays and execution
 evidence. Passing the initial one-dimensional model did not establish convergence
 in that first three-dimensional trial.
+A [matched replay](data/development/hayward_trial_cmj_old_D_replay_001/RESULTS.md)
+confirms that the adopted optimizer also fails on two of these rays. Their
+saved paths cluster near a grid face where velocity has a sharp maximum in
+the normal direction. This nonsmooth feature is independently checked, but
+its role in stopping and the other 179 failures remain unresolved.
+Fixed-path reevaluation localizes more than 99% of both old and revised
+squared gradient norms to normal motion near that face. This identifies
+where the ordinary gradient remains large; a valid nonsmooth stopping
+test is still unresolved.
 
 Bounded LON tests also show that early stopping affects source derivatives:
 additional optimization improves one failing ray while worsening a passing

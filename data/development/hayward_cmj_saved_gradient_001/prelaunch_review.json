@@ -1,0 +1,25 @@
+{
+  "checks": [
+    "Driver evaluates two ordered native paths in each old/D executable, then requires exact17digit raw/projected norm parity before exporting components.",
+    "All original per-node metadata, ordered coordinates and endpoints checked against saved statuses; fixed endpoints have blank free-gradient components.",
+    "Projected components reproduce the existing box-direction projection with original sign convention.",
+    "Exact rational squared-component aggregation operates on exported binary64 values, preserving false local flags and derivative-disabled status.",
+    "Runner uses fresh outputs, immutable pins, owned process groups and wait/reap lifecycle; prior replay terminal review gates entry."
+  ],
+  "limits": [
+    "No source/model partials or ray status changed.",
+    "Near-face threshold is descriptive only.",
+    "Decomposition localizes a stored norm; it is not causal, first-arrival or stationarity evidence."
+  ],
+  "pin_counts": {
+    "original_sha256": 41,
+    "output_sha256": 3,
+    "runtime_sha256": 9,
+    "source_sha256": 29
+  },
+  "prepared_sha256": "8f399d98e1d2ce90f87ba0422f489762b8270eff5878cce9b8a6b66551f51971",
+  "reviewed_utc": "2026-10-10T09:59:40.520167Z",
+  "reviewer": "root",
+  "scope": "Source, all53original/runtime/prepared pins and29source pins checked before execution. Fixed selected polygons only; no trace/field/inverse/optimizer call.",
+  "status": "passed"
+}
