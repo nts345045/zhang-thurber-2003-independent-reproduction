@@ -1,0 +1,299 @@
+{
+  "scope": "One explicit bounded x=0 guide candidate for each of 104 declared rays; no global first-arrival claim or generation gate override",
+  "captured_utc": "2026-10-10T01:52:50.274354+00:00",
+  "command": [
+    "python3",
+    "diagnostics/compare_loma_guides.py",
+    "--output",
+    "data/development/loma_geometry_preflight/all_guides_001"
+  ],
+  "status": "partial_comparison",
+  "expected_diagnostic_rays": 104,
+  "captured_compared_rays": 65,
+  "compared_diagnostic_rows": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64
+  ],
+  "candidate_counts": {
+    "candidate_status": {
+      "inapplicable": 66,
+      "applicable": 38
+    },
+    "candidate_reason": {
+      "transverse_distance_shorter_than_two_critical_legs": 43,
+      "explicit_bounded_critical_legs_and_nonnegative_guide": 38,
+      "negative_x_endpoint_has_no_finite_critical_leg_through_v6_plateau": 23
+    }
+  },
+  "compared_applicable_candidates": 23,
+  "input_geometry_unchanged": true,
+  "native_metadata_verified": true,
+  "no_rays_excluded": true,
+  "original_domain_km": {
+    "x": [
+      -35.0,
+      35.0
+    ],
+    "y": [
+      -60.0,
+      40.0
+    ],
+    "z": [
+      -1.0,
+      16.0
+    ]
+  },
+  "profile_x_velocity_km_km_s": [
+    [
+      -35.0,
+      6.0
+    ],
+    [
+      -15.0,
+      6.0
+    ],
+    [
+      0.0,
+      6.0
+    ],
+    [
+      1.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      4.0,
+      4.0
+    ],
+    [
+      5.0,
+      4.0
+    ],
+    [
+      6.0,
+      5.0
+    ],
+    [
+      20.0,
+      5.4375
+    ],
+    [
+      35.0,
+      5.90625
+    ]
+  ],
+  "controls": [
+    {
+      "name": "pure_interface_guide",
+      "passed": true
+    },
+    {
+      "name": "coincident_endpoints_derivative_undefined",
+      "passed": true
+    },
+    {
+      "name": "negative_x_not_removed_or_substituted",
+      "passed": true
+    },
+    {
+      "name": "short_offset_candidate_inapplicable",
+      "passed": true
+    },
+    {
+      "name": "flat_critical_leg_infinite",
+      "passed": true
+    },
+    {
+      "name": "unresolved_distance_sign_is_retained",
+      "passed": true
+    }
+  ],
+  "distance_sign_basis": "Exact binary64-derived rational input R=math.hypot(dy,dz), exact rational or outward interval leg distances; unresolved signs retained",
+  "finite_domain_reason": "Each leg remains between x=0 and its endpoint. Its transverse coordinates advance along the endpoint line; the guide follows that line at x=0. Nonnegative guide length keeps the path in the original convex box.",
+  "arithmetic_scope": "Candidate times and derivatives are ordinary floating-point evaluations, not interval bounds on minimum-time ordering",
+  "maximum_source_derivative_fd_error_s_per_km": 2.549806754625905e-10,
+  "derivative_check_rows": 114,
+  "captures": [
+    {
+      "path": "data/loma_lom_001/geometry_truth_ray_convergence.csv",
+      "bytes_at_capture": 24576,
+      "captured_bytes": 24369,
+      "complete_records": 65,
+      "captured_prefix_sha256": "8e3e0fdf3513854f9b464c69271f1265866d02b8e4b1773d7eff9938cb157328",
+      "raw_at_capture_sha256": "3ea7b3370177a63831730444d4ca477a6deff5dfdec1e149b8775c121b10bf72"
+    },
+    {
+      "path": "data/loma_lom_001/geometry_truth_ray_identifiers.csv",
+      "bytes_at_capture": 140281,
+      "captured_bytes": 139505,
+      "complete_records": 65,
+      "captured_prefix_sha256": "1062ffa8d64385afc162580e3c22ea98f69641d5f230804ae73915c0f5128b40",
+      "raw_at_capture_sha256": "8b0342dd272f81387a4388451f7dbff7b5581d6039f51c20bf93a70fd462e553"
+    }
+  ],
+  "run_source_commit": "bff2a451640a40bfdb73c92c536ef354c3c55c08",
+  "run_binary_sha256": "f3862ade72f15f0ce7f5125e089d4df33499cb252b42300427ab7f7dfdbfbae8",
+  "frozen_run_source_sha256": {
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "source_sha256": {
+    "diagnostics/compare_loma_guides.py": "2d1a86261d597142fe9e352a46dd292d8a94011d2b0eb66b8e5155336f89aea1",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  },
+  "input_sha256": {
+    "data/loma_lom_001/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "data/loma_lom_001/truth_events.csv": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3",
+    "data/loma_lom_001/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "data/loma_lom_001/ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05"
+  },
+  "limitations": [
+    "Candidate inapplicability does not make a diagnostic ray inadmissible or remove it from any cohort.",
+    "No exact-interface stopping diagnosis is assigned to these saved paths without inspecting their geometry.",
+    "Source derivatives refer only to this candidate family, not necessarily the optimized first arrival; ties require branch interpretation.",
+    "Production diagnostic times are saved with 12 significant digits. Comparisons inherit that rounding.",
+    "Local convergence and initializer flags remain unchanged. No observations or inversion are generated."
+  ],
+  "comparison": {
+    "production": {
+      "minimum_minus_candidate_s": -1.3673568935729339,
+      "maximum_minus_candidate_s": 0.025693171310729568,
+      "positive_gap_rows": [
+        1,
+        5,
+        9,
+        19,
+        21,
+        25,
+        29,
+        35,
+        37,
+        41,
+        43,
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57,
+        59
+      ],
+      "positive_gap_local_converged_rows": [
+        49,
+        57
+      ]
+    },
+    "refined": {
+      "minimum_minus_candidate_s": -1.3673671696729333,
+      "maximum_minus_candidate_s": 0.00018656906189207234,
+      "positive_gap_rows": [
+        1,
+        5,
+        9,
+        19,
+        21,
+        25,
+        29,
+        35,
+        37,
+        41,
+        43,
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57,
+        59
+      ],
+      "positive_gap_local_converged_rows": []
+    }
+  },
+  "output_sha256": {
+    "captured_convergence.csv": "8e3e0fdf3513854f9b464c69271f1265866d02b8e4b1773d7eff9938cb157328",
+    "captured_identifiers.csv": "1062ffa8d64385afc162580e3c22ea98f69641d5f230804ae73915c0f5128b40",
+    "identified_candidates.csv": "4b38487db09f63c035bc549e39accc8793d721055dc8c651c6614006bcbcad18",
+    "identified_comparison.csv": "2475f60f02ef7794e115000db3c084eec71fe3d16435618c88098ad71b4aa303",
+    "inputs/ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "inputs/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "inputs/truth_events.csv": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3",
+    "inputs/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "run_manifest_at_capture.json": "18252b0a710cc57fc9524f9e4dec37627ce350dde590c524ec36c5c3418ce07b",
+    "source/compare_loma_guides.py": "2d1a86261d597142fe9e352a46dd292d8a94011d2b0eb66b8e5155336f89aea1",
+    "source/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "source_derivative_checks.csv": "748d5ce759f481d5edb5cf83048a4608d8c812491d56b32474b285c7b32653a0"
+  }
+}
