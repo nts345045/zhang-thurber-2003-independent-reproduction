@@ -1,0 +1,262 @@
+--- before/src/main.cpp
++++ after/src/main.cpp
+@@ -64,6 +64,17 @@
+   f << std::setprecision(12);
+   return f;
+ }
++// Failure evidence must be fully written before a trial can be rejected safely.
++void finish_output(std::ofstream &stream, const std::string &path) {
++  stream.flush();
++  stream.close();
++  if (!stream) throw std::runtime_error("Cannot finish writing " + path);
++}
++void require_new_outputs(const std::string &prefix, const std::vector<std::string> &suffixes) {
++  for (const auto &suffix : suffixes)
++    if (std::filesystem::exists(std::filesystem::symlink_status(prefix + suffix)))
++      throw std::runtime_error("Refusing prior failure/audit artifact " + prefix + suffix);
++}
+ void write_grid(const Grid &g, std::string path, int precision = 12) {
+   auto f = output(path);
+   f << std::setprecision(precision);
+@@ -73,6 +84,7 @@
+       for (int i = 0; i < int(g.x.size()); i++)
+         f << g.x[i] << ',' << g.y[j] << ',' << g.z[k] << ','
+           << g.v[g.id(i, j, k)] << '\n';
++  finish_output(f, path);
+ }
+ void write_events(const std::vector<Event> &e, std::string path, int precision = 12) {
+   auto f = output(path);
+@@ -87,6 +99,7 @@
+     csv_metadata_values(f, e[i].metadata);
+     f << '\n';
+   }
++  finish_output(f, path);
+ }
+ std::vector<Vec> read_csv(std::string path) {
+   std::vector<Vec> r;
+@@ -401,7 +414,7 @@
+       ++failures;
+     }
+   }
+-  out.close();
++  finish_output(out, path);
+   return {failures, first};
+ }
+ void simulation_ray_gate(const std::string &dir, const std::vector<Event> &events,
+@@ -974,6 +987,11 @@
+ }
+ // An invalid forward evaluation must not enter an inverse Jacobian or objective.
+ // These are the existing local checks, not a global first-arrival certificate.
++struct InverseRayRejection : std::runtime_error {
++  bool only_local_stopping;
++  InverseRayRejection(const std::string &message, bool only_local)
++      : std::runtime_error(message), only_local_stopping(only_local) {}
++};
+ void inversion_ray_gate(const std::string &prefix, const Grid &g,
+                         const std::vector<Event> &events, const std::vector<Event> &stations,
+                         const std::vector<Ray> &rr, const std::vector<int> &used,
+@@ -1003,6 +1021,7 @@
+     if (!reasons.empty()) failed.emplace_back(n, std::move(reasons));
+   }
+   if (failed.empty()) return;
++  require_new_outputs(prefix, {"_ray_status.csv", "_ray_failures.csv", "_ray_paths.csv"});
+   auto identified_events = events;
+   for (auto &event : identified_events)
+     if (!event.metadata.empty())
+@@ -1023,7 +1042,7 @@
+     csv_metadata_values(out, stations[k].metadata);
+     out << '\n';
+   }
+-  out.close();
++  finish_output(out, prefix + "_ray_failures.csv");
+   auto paths = output(prefix + "_ray_paths.csv");
+   paths << std::setprecision(17) << "event,station,node,x,y,z";
+   csv_metadata_header(paths, identified_events.front().metadata, "source_");
+@@ -1040,12 +1059,76 @@
+       paths << '\n';
+     }
+   }
+-  paths.close();
+-  throw std::runtime_error("Inverse forward evaluation rejected " + std::to_string(failed.size()) +
++  finish_output(paths, prefix + "_ray_paths.csv");
++  const bool only_local = std::all_of(failed.begin(), failed.end(), [](const auto &failure) {
++    return failure.second == "local_stopping_failed";
++  });
++  throw InverseRayRejection("Inverse forward evaluation rejected " + std::to_string(failed.size()) +
+       " rays; see " + prefix + "_ray_status.csv; first: " +
+       ray_identity_context(events, stations, failed.front().first / stations.size(),
+-                           failed.front().first % stations.size()));
+-}
++                           failed.front().first % stations.size()), only_local);
++}
++// Save the exact original solve and fixed weights once per quality-rejected
++// iteration. Trial coordinates may have been clamped, so they do not determine
++// the unclamped LSQR increment. No Ray from a rejected trial is used here.
++void write_trial_solve(const std::string &prefix, const Config &c, const std::string &mode,
++                       int iteration, int stage, const Grid &g, const std::vector<Event> &events,
++                       const ObservationSet &data, const Vec &delta, const Vec &residual,
++                       const Vec &weights, const LSQRInfo &info, double before, bool locate) {
++  const size_t off = 4 * events.size(), n = off + (locate ? 0 : g.v.size());
++  if (delta.size() != n || residual.size() != data.size() || weights.size() != data.size())
++    throw std::runtime_error("Cannot preserve incomplete original solve");
++  require_new_outputs(prefix, {"_accepted_events.csv", "_accepted_grid.csv", "_delta.csv", "_weights.csv", "_context.csv"});
++  auto accepted = events;
++  for (auto &event : accepted)
++    if (!event.metadata.empty())
++      set_metadata(event.metadata, "coordinate_basis", "independent accepted inversion state at iteration " + std::to_string(iteration) + "; original unscaled solve recorded separately");
++  write_events(accepted, prefix + "_accepted_events.csv", 17);
++  write_grid(g, prefix + "_accepted_grid.csv", 17);
++  auto increments = output(prefix + "_delta.csv");
++  increments << std::setprecision(17) << "parameter_index,parameter_type,event,node,component,increment,reference_x,reference_y,reference_z,reference_t,reference_v";
++  csv_metadata_header(increments, accepted.front().metadata, "source_");
++  increments << '\n';
++  for (size_t index = 0; index < n; ++index) {
++    increments << index << ',';
++    if (index < off) {
++      size_t i = index / 4, component = index % 4;
++      increments << "source," << i << ",," << "xyzt"[component] << ',' << delta[index];
++      for (double value : events[i].p) increments << ',' << value;
++      increments << ',' << events[i].t << ',';
++      csv_metadata_values(increments, accepted[i].metadata);
++    } else {
++      size_t node = index - off, ix = node % g.x.size(), iy = (node / g.x.size()) % g.y.size(), iz = node / (g.x.size() * g.y.size());
++      increments << "model,," << node << ",log_slowness," << delta[index] << ','
++                 << g.x[ix] << ',' << g.y[iy] << ',' << g.z[iz] << ",," << g.v[node];
++      for (size_t field = 0; field < accepted.front().metadata.size(); ++field) increments << ',';
++    }
++    increments << '\n';
++  }
++  finish_output(increments, prefix + "_delta.csv");
++  auto frozen_weights = output(prefix + "_weights.csv");
++  frozen_weights << std::setprecision(17) << "observation_index,i,j,station,station_j,type,value,current_residual,fixed_row_multiplier";
++  data.write_header(frozen_weights, "original_");
++  frozen_weights << '\n';
++  for (size_t q = 0; q < data.size(); ++q) {
++    const auto &d = data[q];
++    frozen_weights << q << ',' << d.i << ',' << d.j << ',' << d.k << ',' << (d.j < 0 ? -1 : second_station(d))
++                   << ',' << d.type << ',' << d.value << ',' << residual[q] << ',' << weights[q];
++    data.write_metadata(frozen_weights, q);
++    frozen_weights << '\n';
++  }
++  finish_output(frozen_weights, prefix + "_weights.csv");
++  auto info_file = output(prefix + "_context.csv");
++  info_file << std::setprecision(17)
++      << "mode,iteration,stage,columns,source_columns,model_columns,lsqr_iterations,lsqr_relative_normal_residual,lsqr_converged,objective_before,smoothing_weight,damping_parameter,weight_basis,objective_basis\n"
++      << mode << ',' << iteration << ',' << stage << ',' << n << ',' << off << ',' << n - off << ','
++      << info.iterations << ',' << info.relative_normal_residual << ',' << info.converged << ',' << before << ','
++      << c.get("smoothing") << ',' << c.get("damping")
++      << ",stage/robust/distance/prior row multipliers computed at the accepted state and fixed through this line search"
++      << ",sum of squared fixed-weight data residuals plus final log-slowness smoothing; damping enters the solve only\n";
++  finish_output(info_file, prefix + "_context.csv");
++}
++
+ void invert(const Config &c, std::string dir, std::string mode) {
+   auto e = read_events(dir + "/initial_events.csv"),
+        stations = read_events(dir + "/stations.csv");
+@@ -1068,9 +1151,17 @@
+       n = off + (locate ? 0 : g.size());
+   ForwardFields fields;
+   int current_iteration = -1;
++  const auto failure_prefix = [&](const std::string &phase, int trial) {
++    return dir + "/" + mode + (phase == "line_search_trial" ?
++        "_rejected_trial_it_" + std::to_string(current_iteration) + "_ls_" + std::to_string(trial) :
++        "_failed_forward");
++  };
+   const auto checked_rays = [&](const Grid &model, const std::vector<Event> &sources,
+                                 bool derivatives, const std::string &phase, int trial) {
+-    const std::string prefix = dir + "/" + mode + "_failed_forward";
++    const std::string prefix = failure_prefix(phase, trial);
++    if (phase == "line_search_trial")
++      require_new_outputs(prefix, {"_ray_status.csv", "_ray_failures.csv", "_ray_paths.csv",
++          "_events.csv", "_grid.csv", "_context.csv", "_accepted_events.csv", "_accepted_grid.csv"});
+     try {
+       auto result = rays(model, sources, stations, c, derivatives, &used, &fields, false);
+       inversion_ray_gate(prefix, model, sources, stations, result, used,
+@@ -1090,10 +1181,15 @@
+       write_grid(model, prefix + "_grid.csv", 17);
+       write_events(accepted_sources, dir + "/" + mode + "_last_accepted_events.csv", 17);
+       write_grid(g, dir + "/" + mode + "_last_accepted_grid.csv", 17);
++      if (phase == "line_search_trial") {
++        write_events(accepted_sources, prefix + "_accepted_events.csv", 17);
++        write_grid(g, prefix + "_accepted_grid.csv", 17);
++      }
+       auto context = output(prefix + "_context.csv");
+       context << "mode,iteration,phase,line_search_trial,derivatives_requested,initialization_required,significant_digits,message\n"
+               << mode << ',' << current_iteration << ',' << phase << ',' << trial << ',' << derivatives
+               << ',' << (auxiliary_spacing(c) > 0) << ",17," << csv_quote(error.what()) << '\n';
++      finish_output(context, prefix + "_context.csv");
+       throw;
+     }
+   };
+@@ -1182,6 +1278,7 @@
+               << ',' << 2.L * data.size() * sizeof(double) << ','
+               << 3.L * total_rows * sizeof(double) << '\n';
+     preflight.flush();
++    if (!preflight) throw std::runtime_error("Cannot finish matrix preflight record");
+     std::cout << "Matrix preflight: " << total_rows << " rows, " << total_entries
+               << " ordered entries, " << bytes << " CSR payload bytes" << std::endl;
+     if (preflight_only)
+@@ -1215,6 +1312,19 @@
+     Grid ng;
+     std::vector<Event> ee;
+     bool accepted = false;
++    int quality_rejections = 0, objective_evaluations = 0;
++    const std::string solve_prefix = dir + "/" + mode + "_iteration_" + std::to_string(it) + "_solve";
++    const std::string trials_path = dir + "/" + mode + "_iteration_" + std::to_string(it) + "_trials.csv";
++    require_new_outputs(trials_path, {""});
++    auto trials = output(trials_path);
++    trials << std::setprecision(17) << "iteration,stage,trial,step_fraction,status,objective_evaluated,objective_before,objective_after,failure_prefix\n";
++    const auto record_trial = [&](int trial, const char *status, bool evaluated, const std::string &prefix = "") {
++      trials << it << ',' << stage << ',' << trial << ',' << step << ',' << status << ',' << evaluated << ',' << before << ',';
++      if (evaluated) trials << after;
++      trials << ',' << csv_quote(prefix) << '\n';
++      trials.flush();
++      if (!trials) throw std::runtime_error("Cannot finish trial record " + trials_path);
++    };
+     for (int ls = 0; ls < 12; ls++, step *= 0.5) {
+       ng = g;
+       ee = e;
+@@ -1232,15 +1342,33 @@
+           if (!std::isfinite(ng.v[k]) || ng.v[k] <= 0)
+             valid = false;
+         }
+-      if (!valid)
++      if (!valid) {
++        record_trial(ls, "invalid_trial_model", false);
+         continue;
+-      auto nr = checked_rays(ng, ee, false, "line_search_trial", ls);
++      }
++      std::vector<Ray> nr;
++      try {
++        nr = checked_rays(ng, ee, false, "line_search_trial", ls);
++      } catch (const InverseRayRejection &failure) {
++        if (!failure.only_local_stopping) throw;
++        if (quality_rejections == 0)
++          write_trial_solve(solve_prefix, c, mode, it, stage, g, e, data, delta,
++                            residual, w, linear_info, before, locate);
++        ++quality_rejections;
++        record_trial(ls, "local_stopping_rejected", false, failure_prefix("line_search_trial", ls));
++        continue; // Never evaluate or accept an unsupported forward objective.
++      }
++      ++objective_evaluations;
+       after = objective(ng, ee, nr);
++      record_trial(ls, after <= before ? "accepted" : "objective_rejected", true);
+       if (after <= before) {
+         accepted = true;
+         break;
+       }
+     }
++    finish_output(trials, trials_path);
++    if (quality_rejections > 0 && objective_evaluations == 0)
++      throw std::runtime_error("No objective-evaluable trial after local ray rejection; see " + trials_path);
+     double dv = 0, dx = 0;
+     if (!accepted) {
+       step = 0;
+@@ -1265,6 +1393,7 @@
+         << ray_converged << ',' << ray_projected_max << ',' << ray_raw_max << ','
+         << attempted << ',' << succeeded << ',' << selected_fmm << '\n';
+     log.flush();
++    if (!log) throw std::runtime_error("Cannot finish inverse history record");
+     std::cout << mode << " iteration " << it << " stage " << stage << " rms "
+               << (count[0] > 0 ? std::sqrt(ss[0] / count[0]) : NAN) << ' '
+               << (count[2] > 0 ? std::sqrt(ss[2] / count[2]) : NAN)

@@ -1,0 +1,51 @@
+{
+  "archive_sha256": "eebaeea7c90779f1f89ce38063ff0f747d889146345745526e0c044bd1685773",
+  "commands": [
+    {
+      "case": "fresh",
+      "result": {
+        "already_identical": 0,
+        "members": 14924,
+        "restored": 14924,
+        "status": "verified_lossless"
+      },
+      "return_code": 0
+    },
+    {
+      "case": "identical",
+      "result": {
+        "already_identical": 14924,
+        "members": 14924,
+        "restored": 0,
+        "status": "verified_lossless"
+      },
+      "return_code": 0
+    },
+    {
+      "case": "existing_same_bytes_different_mode",
+      "conflicting_mode": 484,
+      "original_mode": 420,
+      "probe": "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/main.cpp",
+      "refused_before_write": true,
+      "return_code": 1
+    }
+  ],
+  "created_utc": "2026-10-10T10:42:24.443673Z",
+  "log_sha256": {
+    "restore_fresh_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "restore_fresh_stdout.log": "238736dadb6453e2403dc287f61cfc8562f685c44189bf1df5e52826dcfc5408",
+    "restore_identical_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "restore_identical_stdout.log": "e607d5ae3c42f9bacedb78802c41bc10a8ec9d9868c51d0bf5f8c057de4c5466",
+    "restore_mode_conflict_stderr.log": "0a3a10b82fac19085135efe0d9ef9006bfa78764d2d4f1bc2589048ec3d0ae3a",
+    "restore_mode_conflict_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "members_sha256": "6753b1e37faa641f797c572fab02a247ad8360503a7731e7e465a89a9f61242f",
+  "packaging_sha256": "bfc30526c275bf8617f253a558ffc2401cd1deebd7f01fbfc9b3c16a1d56d21b",
+  "regular_file_bytes": 27730940,
+  "restore_script_sha256": "0427f73f66b99530e7ffdcd103297e99199ab1b61a1596a997bc31cb8f39fc36",
+  "restored_member_count": 14924,
+  "reviewer": "root",
+  "scope": "Fresh full file/mode/link readback, identical re-use and refusal of a changed mode in the restored fixture only. Original files remain unchanged; no numerical rerun.",
+  "status": "passed",
+  "symbolic_links": 14
+}

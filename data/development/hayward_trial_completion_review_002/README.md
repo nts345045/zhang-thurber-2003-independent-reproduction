@@ -1,0 +1,5 @@
+# Independent saved completion-control readback
+
+Run `PYTHONDONTWRITEBYTECODE=1 python3 data/development/hayward_trial_completion_review_002/check.py` from the integration worktree to reproduce the saved-only checks in a fresh copy without `hayward_trial_completion_checks_002/review.json`. The checker refuses to overwrite that review. It does not import the candidate reviewer or invoke a compiler, numerical ray, reference or inverse.
+
+The checker rehashes all prepared and executed inventories, preserves intentional malformed-fixture symlinks without following them, verifies unchanged prior recipes and all three repaired refusals, and independently reconstructs the actual joint-DD fixture's source/model updates and native path joins. It also compares the initial eligibility/configuration AST before and after and checks the actual completion helper call. Its executed review lives in the controls002 package. The seven launcher prefix tests do not establish full positive final-table integration; this limitation remains explicit.

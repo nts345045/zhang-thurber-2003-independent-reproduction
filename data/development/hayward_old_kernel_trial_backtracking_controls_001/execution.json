@@ -1,0 +1,70 @@
+{
+  "status": "completed",
+  "prepared_sha256": "dc39bd1205550c4d0a9ad72fcc88dc215317d6537628ca2a55dfbc63364d38b3",
+  "commands": [
+    {
+      "name": "compile_before",
+      "argv": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "-I",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_controls_001/source/before/src",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_controls_001/source/diagnostics/check_trial_backtracking.cpp",
+        "-lstdc++fs",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/old_kernel_trial_backtracking_checks/001/before"
+      ],
+      "status": "completed",
+      "return_code": 0,
+      "seconds": 30.22891912900377
+    },
+    {
+      "name": "before",
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/old_kernel_trial_backtracking_checks/001/before",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_controls_001/results/before"
+      ],
+      "status": "completed",
+      "return_code": 0,
+      "seconds": 0.012749194051139057
+    },
+    {
+      "name": "compile_after",
+      "argv": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "-DCANDIDATE",
+        "-I",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_controls_001/source/after/src",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_controls_001/source/diagnostics/check_trial_backtracking.cpp",
+        "-lstdc++fs",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/old_kernel_trial_backtracking_checks/001/after"
+      ],
+      "status": "completed",
+      "return_code": 0,
+      "seconds": 36.72772275295574
+    },
+    {
+      "name": "after",
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/old_kernel_trial_backtracking_checks/001/after",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_controls_001/results/after"
+      ],
+      "status": "completed",
+      "return_code": 0,
+      "seconds": 0.13784102199133486
+    }
+  ],
+  "return_code": 0
+}

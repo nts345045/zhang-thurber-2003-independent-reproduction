@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "prepared_sha256": "bdca8bf737e9c12d1f4e99c41c064b8d46341c2bdc4642d4c363afa99423440f",
+  "created_utc": "2026-10-10T10:17:10.225779Z",
+  "reviewer": "root",
+  "verified_original_pins": 9,
+  "verified_runtime_pins": 10,
+  "verified_prepared_pins": 12,
+  "source_read": [
+    "observe.cpp",
+    "check.py",
+    "run.py",
+    "README.md"
+  ],
+  "scope": "14 fixed invented path_eval calls and 2 direct segment calls, exact rational directional controls and separate80/100digit Decimal numerical comparisons. No trace, field, optimization or native input.",
+  "analytical_review": "Midpoint action is2*sqrt(h^2+x^2)*log((v+k*abs(x))/v)/(k*abs(x)); right-branch partial atzero=-k*h/v^2. Coupled absolute integral and selector moment conversion agree with prior exact proof.",
+  "limits": "Ordinary gradient at a merely nearby polygon is its true smooth derivative. Exact-face controls do not certify or relabel saved near-face native rays. No source/model derivative or optimizer correction established."
+}

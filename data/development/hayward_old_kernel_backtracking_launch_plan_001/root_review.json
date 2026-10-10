@@ -1,0 +1,31 @@
+{
+  "controller_sha256": "cebe0e1caba5935c89308e32d604605995912f3b7da28c40269720a0afdd5fea",
+  "independent_pin_checks": 8226,
+  "limits": [
+    "Outer controller review is source/pin inspection, not an executed outer-controller fault suite.",
+    "Ownership guarantee is limited to recorded child groups; abrupt death before an inner PID is saved is outside this guarantee.",
+    "Completion remains pending final-model ray/derivative and scientific diagnostics. No accepted field update or updated-model first-arrival accuracy claimed."
+  ],
+  "pin_categories": {
+    "evidence": 8190,
+    "mapped_sources": 15,
+    "native_inputs": 11,
+    "python": 1,
+    "runtime": 9
+  },
+  "plan_sha256": "ad426b135b988ae044ebe70773e2316aea4fe6dd084ee27ea5f412ca1967e63c",
+  "required_before_execution": [
+    "Publish the reviewed inventory and verify both remote branch tips.",
+    "Root sends explicit launch GO to scientific_audit; that agent owns and reaps the durable controller."
+  ],
+  "reviewed_utc": "2026-10-10T10:47:32.800972Z",
+  "reviewer": "root with independent Earthscope source and pin review",
+  "source_review": [
+    "Exact old7111ray kernel with maina10d trial-backtracking candidate; explicit004-to-guard-to-backtracking bridge.",
+    "58,980catalog observations/14,262native rays, zeroCC; unchanged initial-model eligibility and effective numerical configuration.",
+    "Controller owns/reaps its launcher, allows reviewed inner cleanup first, preserves recorded-orphan failure and withholds hashes for live or unresolved groups.",
+    "Terminal130/143and child signal normalization retained; malformed cleanup-ledger errors do not replace original failure.",
+    "No repeated numerical calculation in this review."
+  ],
+  "status": "passed"
+}

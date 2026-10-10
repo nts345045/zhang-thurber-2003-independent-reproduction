@@ -1,0 +1,81 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-10T10:44:17.375194Z",
+  "scope": "Saved document/compile/link/review-count readback only; no numerical calculation or real launch.",
+  "checker_sha256": "3355e01b8e2257b17e897afebb664789a1bf0436718b225b43c2de3369d9ce42",
+  "input_sha256": {
+    "data/development/trial_backtracking_report_001/compile.json": "d88a058f41217057b60379eb1706d59381842155c7e87788522a34dc5d3aae03",
+    "data/panel_audit.json": "bda6631c088b5699407078710ec25de2ce63cd72361a0ccca326c814eca0fbf6",
+    "data/development/usable_curvature_adoption_report_003/compile.json": "01c62ccdb3142c40a176a9c06c9d669f45435f87af98d80bc8f9874e2a72dbfa",
+    "data/development/hayward_old_kernel_trial_backtracking_controls_001/review.json": "fc750af56ea2d2333c7c1c2856a629181ca96a233fec2fd831ee5fd82b5bad5f",
+    "data/development/hayward_old_kernel_trial_backtracking_controls_001/summary.json": "deb1c4379029456366b388e22c01ac3a3c4c879c11d17507c7f5d5bda836fb1c",
+    "data/development/hayward_old_kernel_trial_backtracking_controls_001/execution.json": "2cc91b09fd7fd97144c684ecbbbdbefec66af208cc5b51fc550d7b02d149f217",
+    "data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/review.json": "7faa22a6bb009a3c8c5470ffb4e7cff6dddf02987dfb3c18db032f7e362fdda6",
+    "data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/summary.json": "fb3912457ca0753d0cf3595f255ee246185e5b85b6cd1b1325580eefa3ca27d0",
+    "data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/execution.json": "8c0d84b538ebb69023b56e8700f8a0cf5218dd843fdc64c1f161621aee774404",
+    "data/development/hayward_trial_completion_checks_002/review.json": "e975435edc021696f0e8766e6e7bcb15a45c8bfa2d09e09388ad4e35e2e7374c",
+    "data/development/hayward_trial_completion_checks_002/summary.json": "f199d8fe4f199852249474a30060b6c918b6577a632f0a6ad64c97f7bb9bf30f",
+    "data/development/hayward_trial_completion_checks_002/execution.json": "80a76ac2aac7394bf59a59db6e2a5ada6614b6d18be8f063ece3cc294214d748",
+    "data/development/internal_ridge_stationarity_controls_001/summary.json": "8b094968da699480af6ddbbb18f12c5a67b9bb6f1451525c759c5cb2de500dfc",
+    "data/development/internal_ridge_stationarity_controls_001/root_review.json": "e50ad3b89cb9908fc9aed91509b2fc85f326e007a38545c271da84a3bbacd6a7",
+    "data/development/hayward_old_kernel_backtracking_launcher_checks_002/review.json": "8ee63a3c7e825d5ce75d5d70de023b3f67d13fceea8ae5855583752d14848b22",
+    "data/development/hayward_old_kernel_backtracking_launcher_checks_002/summary.json": "f6bc71ae646670caccda9ca42aef0205dcb1517ac96754e62154d73219aed40c",
+    "data/development/hayward_old_kernel_backtracking_launcher_checks_002/execution.json": "63270b5bb3116602b11ad4c25f289705451af7a01029a4072ed8e45dbe7ff094",
+    "data/development/hayward_old_kernel_backtracking_launcher_001/prepared.json": "39593013076b06ce0ab5fac64d9ac4ec7d23f272762dbbdb6931fc002df8cf3d",
+    "data/development/hayward_old_kernel_backtracking_launcher_001/root_source_review.json": "658551b39b919cb85f332e212f366cada88d330ed80f24796a2b6ec41a48075f",
+    "data/development/trial_backtracking_evidence_001/packaging.json": "bfc30526c275bf8617f253a558ffc2401cd1deebd7f01fbfc9b3c16a1d56d21b",
+    "data/development/trial_backtracking_evidence_001/restore_review.json": "599a4cf78318005874a521c359ccf49389cf8777ab1b65b94c8b464f31bd6b22"
+  },
+  "compile_passes": 2,
+  "compile_log_findings": {
+    "1": {
+      "errors_or_overfull": [],
+      "undefined": [],
+      "case_insensitive_warnings": [
+        "pdfTeX warning: pdflatex (file ../figures/location_errors.pdf): PDF inclusion: ",
+        "LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right."
+      ],
+      "existing_warning": "location_errors.pdf page14; retained from prior checkpoint"
+    },
+    "2": {
+      "errors_or_overfull": [],
+      "undefined": [],
+      "case_insensitive_warnings": [
+        "pdfTeX warning: pdflatex (file ../figures/location_errors.pdf): PDF inclusion: "
+      ],
+      "existing_warning": "location_errors.pdf page14; retained from prior checkpoint"
+    }
+  },
+  "tex_sources": 16,
+  "readme_sha256": "b6edb5cc187b76f4d8c8a13200b7ce79b2ef98087cda890f9a3c402831f326ae",
+  "failure_summary_sha256": "5a4da014dd96ea591dbf0f670267268eb38fd31f1f97d06f0ba953b1b7882022",
+  "recovery_checkpoint_sha256": "a4b36c06a496ee8e6707d5c0cb8a713862733715854971e27128c5b4284d0396",
+  "report_sha256": "12df4779822a4d373dcc6763c8e47849c61e75884da58d518c10fd96f4fb6431",
+  "pdf_pages": 117,
+  "pdf_bytes": 2426191,
+  "markdown_links": 107,
+  "tex_literal_paths": 118,
+  "figures": 27,
+  "panel_counts": {
+    "independently reproduced": 1,
+    "partially reproduced": 61
+  },
+  "path_inventory_sha256": "9f5712e4b1127e66a3db16b12b03931838c2e9416e9dc4f2fe17e31ef7283c3e",
+  "new_counts": {
+    "loop_assertions": 1102,
+    "all_valid_files": 28,
+    "core_checks": 48,
+    "joint_local_rejections": 20,
+    "completion_checks": 190,
+    "ridge_exact": 37,
+    "ridge_numerical": 62,
+    "launcher_checks": 62,
+    "lifecycle_cases": 5
+  },
+  "visual_review": "Separate root visual review required; not claimed by this checker.",
+  "limits": [
+    "Initial source eligibility is not later-model accuracy.",
+    "No complete positive final-table launcher fixture; exact binary/return binds the final gate.",
+    "No native stopping flag, panel count or scientific acceptance is promoted."
+  ]
+}

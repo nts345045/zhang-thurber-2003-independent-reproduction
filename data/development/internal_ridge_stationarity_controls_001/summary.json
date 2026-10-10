@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "prepared_sha256": "bdca8bf737e9c12d1f4e99c41c064b8d46341c2bdc4642d4c363afa99423440f",
+  "exact_rational_checks": 37,
+  "numerical_consistency_checks": 62,
+  "path_evaluations": 14,
+  "direct_segment_evaluations": 2,
+  "trace_calls": 0,
+  "optimizer_calls": 0,
+  "scope": "Invented fixed paths and exact analytic directional components; no trace or optimization.",
+  "continuous_claim_basis": "Analytic derivation in README plus exact rational first-variation controls; binary64 quadrature is separately observed.",
+  "limitations": [
+    "The numerical consistency tolerances are control comparisons, not native stationarity or ray acceptance thresholds.",
+    "No native state, stopping criterion, optimizer or production source changed.",
+    "The false-box example is a declared directional component, not a reconstructed physical whole path.",
+    "Decimal agreement is not a rigorous interval enclosure; general trilinear variable-coefficient support is derived but not evaluated."
+  ],
+  "output_sha256": {
+    "build/observe": "d09e28bbffa24f7a4be3d6b79f0a7e65b199f1471d9888851f9e1dd1a30fa9ab",
+    "logs/compile.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compiler_version.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compiler_version.stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "logs/exact_and_saved_checks.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/exact_and_saved_checks.stdout.log": "a3e4d9ae7452e8ce48dac7de0cf64c95b24df32c11a3b0d6fce39f59e845b4e5",
+    "logs/observe.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/observe.stdout.log": "71b58477942cd0f681c74de9d5a5bd4d2cdbfbda081ea8e8d6a19daaa77f0aed",
+    "logs/runtime_libraries.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/runtime_libraries.stdout.log": "3d795b099c29e93f43847df9d2817a1b6454a5357cdde2466061b7080931f125",
+    "results/checks.json": "62c02df8797ffb8b2392d27a97a33bd66ef9acce7631ea212f32abe1de53c425",
+    "results/exact_controls.json": "158f6fdab9de126935971971100307cc372ab86c747a456db691cf6aa4ddb026",
+    "results/face_segments.csv": "a05c53ff5c98ff4cee87d3191ec5c4cbed716c36e890dea09eac7e28058f5336",
+    "results/paths.csv": "fd82a80042d4e289207c27ef9e7dac0d0846ef0f548aee83de197349e3c2fd26"
+  }
+}

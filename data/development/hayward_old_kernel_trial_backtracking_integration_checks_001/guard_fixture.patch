@@ -1,0 +1,141 @@
+--- original/check_inversion_ray_gate.cpp
++++ copied/check_inversion_ray_gate.cpp
+@@ -137,7 +137,125 @@
+   };
+   Config zero = c; zero.v["ray_iterations"] = 0;
+   failure("current_failure", gradient, zero, "current_model");
+-  failure("trial_failure", g, zero, "line_search_trial");
++  // Same original zero-update fixture: trial failure now permits the
++  // existing halved steps. Do not impose an unobserved exhaustion outcome.
++  int rejected_trial_count = 0, trial_ledger_count = 0;
++  bool trial_blocked = false;
++  const std::string trial_dir = fixture("trial_backtracking", g, zero);
++  std::string trial_error;
++  try { invert(zero, trial_dir, "dd"); }
++  catch (const std::exception &error) { trial_blocked = true; trial_error = error.what(); }
++  const bool trial_exhausted = trial_blocked &&
++      trial_error.find("No objective-evaluable trial after local ray rejection") != std::string::npos;
++  const bool later_guard_failure = std::filesystem::exists(trial_dir + "/dd_failed_forward_context.csv");
++  assert(!trial_blocked || trial_exhausted || later_guard_failure);
++  assert(!(trial_exhausted && later_guard_failure));
++  std::string trial_outcome = trial_exhausted ? "no_objective_evaluable_trial" : "completed";
++  int last_evaluable_count = -1;
++  for (int iteration = 0; iteration < int(zero.get("iterations")); ++iteration) {
++    const std::string ledger_name = trial_dir + "/dd_iteration_" + std::to_string(iteration) + "_trials.csv";
++    if (!std::filesystem::exists(ledger_name)) break;
++    const auto ledger = csv_table(ledger_name);
++    ++trial_ledger_count;
++    assert(!ledger.rows.empty() && ledger.rows.size() <= 12);
++    if (iteration == 0) assert(cell(ledger, 0, "status") == "local_stopping_rejected");
++    int evaluated_count = 0;
++    for (size_t row = 0; row < ledger.rows.size(); ++row) {
++      assert(csv_int(cell(ledger, row, "iteration")) == iteration);
++      assert(csv_int(cell(ledger, row, "trial")) == int(row));
++      assert(csv_double(cell(ledger, row, "step_fraction")) == std::ldexp(1., -int(row)));
++      const auto &status = cell(ledger, row, "status");
++      if (status == "local_stopping_rejected") {
++        ++rejected_trial_count;
++        assert(cell(ledger, row, "objective_evaluated") == "0" && cell(ledger, row, "objective_after").empty());
++        const std::string prefix = trial_dir + "/dd_rejected_trial_it_" + std::to_string(iteration) + "_ls_" + std::to_string(row);
++        assert(cell(ledger, row, "failure_prefix") == prefix);
++        const auto context = csv_table(prefix + "_context.csv");
++        assert(context.rows.size() == 1 && cell(context, 0, "phase") == "line_search_trial");
++        assert(cell(context, 0, "derivatives_requested") == "0");
++        const auto ray_status = csv_table(prefix + "_ray_status.csv");
++        const auto failures = csv_table(prefix + "_ray_failures.csv");
++        assert(ray_status.rows.size() == 4 && !failures.rows.empty());
++        for (size_t n = 0; n < failures.rows.size(); ++n)
++          assert(cell(failures, n, "reasons") == "local_stopping_failed");
++        for (size_t n = 0; n < ray_status.rows.size(); ++n) {
++          assert(cell(ray_status, n, "source_coordinate_basis").find("failed forward evaluation") != std::string::npos);
++          assert(cell(ray_status, n, "ray_derivatives_evaluated") == "0");
++          for (const char *axis : {"source_dx", "source_dy", "source_dz"}) assert(cell(ray_status, n, axis).empty());
++          const int event = csv_int(cell(ray_status, n, "event"));
++          assert(cell(ray_status, n, "source_event_resource_id") == "smi:invented/event" + std::to_string(event));
++          assert(cell(ray_status, n, "receiver_channel_seed_id") == "XX.MOCK..HHZ");
++          assert(cell(ray_status, n, "receiver_location_code").empty());
++        }
++        assert(std::filesystem::exists(prefix + "_ray_paths.csv"));
++        const auto accepted = read_events(prefix + "_accepted_events.csv");
++        const auto accepted_grid = read_grid(prefix + "_accepted_grid.csv");
++        const auto evaluated = read_events(prefix + "_events.csv");
++        const auto evaluated_grid = read_grid(prefix + "_grid.csv");
++        assert(accepted.size() == initial.size() && evaluated.size() == initial.size());
++        bool changed = evaluated_grid.v != accepted_grid.v;
++        for (size_t i = 0; i < initial.size(); ++i) {
++          changed |= evaluated[i].p != accepted[i].p || evaluated[i].t != accepted[i].t;
++          if (iteration == 0) assert(accepted[i].p == initial[i].p && accepted[i].t == initial[i].t);
++        }
++        assert(changed);
++        if (iteration == 0) assert(accepted_grid.v == g.v);
++      } else {
++        assert(status == "accepted" || status == "objective_rejected");
++        ++evaluated_count;
++        assert(cell(ledger, row, "objective_evaluated") == "1" && cell(ledger, row, "failure_prefix").empty());
++        const double before = csv_double(cell(ledger, row, "objective_before"));
++        const double after = csv_double(cell(ledger, row, "objective_after"));
++        if (status == "accepted") assert(after <= before && row + 1 == ledger.rows.size());
++        else assert(after > before);
++      }
++    }
++    last_evaluable_count = evaluated_count;
++  }
++  assert(rejected_trial_count > 0 && trial_ledger_count > 0);
++  const auto trial_history = csv_table(trial_dir + "/dd_history.csv");
++  if (trial_exhausted) {
++    assert(last_evaluable_count == 0);
++    assert(trial_history.rows.size() + 1 == size_t(trial_ledger_count));
++    assert(!std::filesystem::exists(trial_dir + "/dd_grid.csv") && !std::filesystem::exists(trial_dir + "/dd_events.csv"));
++  } else if (later_guard_failure) {
++    // An accepted action-only trial can fail the next derivative-requesting
++    // current/final guard. That fatal state is not trial exhaustion.
++    assert(trial_blocked && trial_history.rows.size() == size_t(trial_ledger_count));
++    const auto context = csv_table(trial_dir + "/dd_failed_forward_context.csv");
++    assert(context.rows.size() == 1 && cell(context, 0, "derivatives_requested") == "1");
++    const auto phase = cell(context, 0, "phase");
++    assert(phase == "current_model" || phase == "final_model");
++    trial_outcome = phase + "_fatal";
++    if (phase == "current_model")
++      assert(csv_int(cell(context, 0, "iteration")) == trial_ledger_count);
++    assert(!trial_history.rows.empty() && csv_double(cell(trial_history, trial_history.rows.size()-1, "step_fraction")) > 0);
++    const auto ray_status = csv_table(trial_dir + "/dd_failed_forward_ray_status.csv");
++    const auto failures = csv_table(trial_dir + "/dd_failed_forward_ray_failures.csv");
++    assert(ray_status.rows.size() == 4 && !failures.rows.empty());
++    for (size_t row = 0; row < ray_status.rows.size(); ++row) {
++      assert(cell(ray_status, row, "source_coordinate_basis").find("failed forward evaluation") != std::string::npos);
++      assert(cell(ray_status, row, "ray_derivatives_evaluated") == "1");
++      for (const char *axis : {"source_dx", "source_dy", "source_dz"})
++        assert(std::isfinite(csv_double(cell(ray_status, row, axis))));
++      const int event = csv_int(cell(ray_status, row, "event"));
++      assert(cell(ray_status, row, "source_event_resource_id") == "smi:invented/event" + std::to_string(event));
++      assert(cell(ray_status, row, "receiver_channel_seed_id") == "XX.MOCK..HHZ");
++      assert(cell(ray_status, row, "receiver_location_code").empty());
++    }
++    const auto accepted = read_events(trial_dir + "/dd_last_accepted_events.csv");
++    const auto evaluated = read_events(trial_dir + "/dd_failed_forward_events.csv");
++    assert(accepted.size() == initial.size() && evaluated.size() == initial.size());
++    for (size_t i = 0; i < accepted.size(); ++i)
++      assert(accepted[i].p == evaluated[i].p && accepted[i].t == evaluated[i].t);
++    assert(read_grid(trial_dir + "/dd_last_accepted_grid.csv").v == read_grid(trial_dir + "/dd_failed_forward_grid.csv").v);
++    assert(std::filesystem::exists(trial_dir + "/dd_failed_forward_ray_paths.csv"));
++    assert(!std::filesystem::exists(trial_dir + "/dd_grid.csv") && !std::filesystem::exists(trial_dir + "/dd_events.csv"));
++  } else {
++    assert(!trial_blocked);
++    assert(trial_history.rows.size() == size_t(trial_ledger_count));
++    assert(std::filesystem::exists(trial_dir + "/dd_grid.csv") && std::filesystem::exists(trial_dir + "/dd_events.csv"));
++  }
+   Config final = zero; final.v["iterations"] = 0;
+   failure("final_failure", gradient, final, "final_model");
+   const auto exception = fixture("worker_exception", g, c);
+@@ -172,7 +290,10 @@
+   g.v[0] = std::nextafter(g.v[0], INFINITY); write_grid(g, dir + "/precision_grid.csv", 17);
+   assert(read_grid(dir + "/precision_grid.csv").v == g.v);
+   output(dir + "/summary.json") << "{\"status\":\"passed\",\"scope\":\"invented geometry only\","
+-      "\"altered_ray_causes\":9,\"current_trial_final_rejections\":3,\"preflight_keeps_failed_local_flags\":true,"
++      "\"altered_ray_causes\":9,\"fatal_current_and_final_cases\":2,\"rejected_trial_count\":" << rejected_trial_count
++      << ",\"trial_ledger_count\":" << trial_ledger_count << ",\"trial_exhausted\":" << (trial_exhausted ? "true" : "false")
++      << ",\"trial_fixture_outcome\":\"" << trial_outcome << "\""
++      << ",\"preflight_keeps_failed_local_flags\":true,"
+       "\"native_sparse_order_and_epoch_metadata\":true,\"accepted_and_failed_states_separate\":true,"
+       "\"failure_states_round_trip_binary64\":true,\"real_inversions_run\":false}\n";
+ }

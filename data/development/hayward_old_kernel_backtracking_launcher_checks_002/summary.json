@@ -1,0 +1,495 @@
+{
+  "artifact_sha256": {
+    "README.md": "5f80ee41b78e365924ccea8e090341496b5358af5a19d98ffc8f261a95ff3e2d",
+    "controller.py": "d323e4fe0abe016d56ae2e71cc05af5f76678aba3a7f5963cb86f0a6bf0cf16d",
+    "copied_candidate/README.md": "b9458ffcaaefb6ea3825efa30bec0ac946f344da78bdbe12afd00f179fbfb8bf",
+    "copied_candidate/after/CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "copied_candidate/after/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "copied_candidate/after/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "copied_candidate/after/src/core.hpp.regular_fixture": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "copied_candidate/after/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "copied_candidate/after/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "copied_candidate/after/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "copied_candidate/after/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "copied_candidate/after/src/main.cpp": "a10dcdc300d9a4e43f6ae0cba2e354d7cec549438319cf411b577790b2373058",
+    "copied_candidate/after/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "copied_candidate/after/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "copied_candidate/before/CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "copied_candidate/before/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "copied_candidate/before/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "copied_candidate/before/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "copied_candidate/before/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "copied_candidate/before/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "copied_candidate/before/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "copied_candidate/before/src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "copied_candidate/before/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "copied_candidate/before/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "copied_candidate/candidate.patch": "09f7ec168e7bf4919128d962efd4215ed905ce72bedafbc2a59621c7776584db",
+    "copied_candidate/prepare.py": "4f17fc1cce249865b3be848e72aef197d5b3a095b54559cbe8358abaa72c2385",
+    "copied_candidate/prepared.json": "5bb45c57b3f594485abbaf144da3b540f2c7f8d42dc783837976fbe33b5d96dd",
+    "copied_candidate/root_source_review.json": "c168b6c54018015399608e4d0b28e1854af34020e2cd1a00b78f99e0a466ee54",
+    "copied_candidate/root_source_review.json.regular_fixture": "c168b6c54018015399608e4d0b28e1854af34020e2cd1a00b78f99e0a466ee54",
+    "copied_candidate/runner_reuse.patch": "4b94456878b774fa63af3fb75c5105e25bd148cd0295e9544da86b9291f6dad7",
+    "early_nonzero_driver_stderr.log": "a792db107a61bb172438eca350ef3f860e0e6cf39bf12069a3d975c240e811f2",
+    "early_nonzero_driver_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "early_zero_driver_stderr.log": "a792db107a61bb172438eca350ef3f860e0e6cf39bf12069a3d975c240e811f2",
+    "early_zero_driver_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented_accuracy_review.json": "7e8614ff53d4d187e996bc2153607cfb6553c24ffab125842105b3b50c544fee",
+    "invented_preflight/authoritative_ids_required": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "invented_preflight/event_pairs.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "invented_preflight/event_selection.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "invented_preflight/excluded_picks.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "invented_preflight/initial_events.csv": "b6b34101476e22e8bd363645d7413dd76013b2519af0b74d7193c5052cbd738b",
+    "invented_preflight/initial_geographic_events.csv": "88cabfa8c1c6f48ef7f606e09fc95dd6fd16b613822dd1092ce8a188a9c04aa5",
+    "invented_preflight/initial_grid.csv": "4cab86766c8e22376011976355400864e67fea667964aa7431624d59972101c8",
+    "invented_preflight/initial_linearization_columns.csv": "091d35257a3c2efcfd904a69ff63444768b23860e52f88bf5b0bfd3ac01d75cb",
+    "invented_preflight/initial_linearization_matrix.csv": "dc5146cbf8c44ef16e0f9a601c6b75f2d524a4c649aac531fb8fcce909983551",
+    "invented_preflight/initial_linearization_rows.csv": "c52a65839d85cf95d3ba00d34dbf87728d73a476fc5c1e30d6b74a4b0d341bb4",
+    "invented_preflight/initial_ray_convergence.csv": "1b090a017218313e62545910195925fb5ac604905a71505824f6c7b3429b1236",
+    "invented_preflight/initial_ray_derivatives.csv": "5c51fe1d261df17fdd7a4a6d47dbd74b480b0e98bcb12cffc11501b5f2beeb8e",
+    "invented_preflight/initial_ray_identifiers.csv": "dc8bd2407f0ecfab65852488fc2b0735d2a23eb213612a76c0d5d463f54bd9ae",
+    "invented_preflight/observations.csv": "3be0d83e14508c08d72252d252facdc3d83896b04b1d247c2e902c3635f395ab",
+    "invented_preflight/preflight.json": "bd378a40879a2af1543cd56516c967e256f609d318de8800733636ffd43cf911",
+    "invented_preflight/preflight_execution.json": "470fe27a5fb403bfc7a22fc6210f5b43beef906ab4ad9a867d6b00de4d2ed9ec",
+    "invented_preflight/run.cfg": "4ea19db2b7d47b400d825c05e92c3847faca4ea1637ca525124a29fa310d36c9",
+    "invented_preflight/run_manifest.json": "a97f6f73f39e80376bf211d17936a7ca6372b0f5f496fb8116557c0d2e7f52b4",
+    "invented_preflight/selection_manifest.json": "d90393f73588ea2bc99ace15252d008333d658245ebe543194bb58c491a4d66a",
+    "invented_preflight/stations.csv": "9970b0a96271e46701f42b5c7659176fc36a9a48537c08b826872301501ba771",
+    "invented_reference/analytic_comparison.csv": "83a76eb7d9a41a7960687b1a46d542b5758122b3db5754a46b9d0ac80d639c55",
+    "invented_reference/frozen_tables.tar.gz": "cfad7c0253a866e3115677feaa57700c9dcb1f29ec3849cfe1dcc4c5e5501260",
+    "invented_reference/independent_review.json": "1624a60764dd96e36474774b0dfae449936fb605a5b515db54f302e16497303a",
+    "invented_reference/packaging.json": "094365f37089ebb57c508690f2017ed0ecda6725214ee74c04ecd145d4358c02",
+    "invented_reference/summary.json": "6e84d95daad63d02f0b9dd3f76ea322eadf92c26a49e338e71990ab0ce4f93a7",
+    "lifecycle_early_nonzero/dd_inversion_execution.json": "e83a9a487bd5f4da6383bff847c2dad2f4dc0ea248f46ef2928cc5e3ce95fddd",
+    "lifecycle_early_nonzero/stub_ready.txt": "b92b1e4215b6c2afdca62196ce6cb7c64dabd56ada5c903fd3f06ccf8224db3f",
+    "lifecycle_early_nonzero/stub_resources.txt": "eaaf9c0395ddc0bde2d7878b1155a9f1fb409a8dc41152818309f7a7fa47d90f",
+    "lifecycle_early_nonzero/stub_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lifecycle_early_nonzero/stub_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lifecycle_early_nonzero/writer.txt": "202dd1ff635fd3c1e76609648d98278c109037eedeaad694403698faab3ac10d",
+    "lifecycle_early_nonzero/writer_pid.txt": "b92b1e4215b6c2afdca62196ce6cb7c64dabd56ada5c903fd3f06ccf8224db3f",
+    "lifecycle_early_zero/dd_inversion_execution.json": "0aa16909529217ecef7c6bc239b2e8055e20a90bc6f7b30a5e422806c87ec834",
+    "lifecycle_early_zero/stub_ready.txt": "f6187d709dcfd414eae54b56316f11f7436f6d57ce37954471ab09531fc5cb9a",
+    "lifecycle_early_zero/stub_resources.txt": "af0c6d21d6adb7df655615b50c46ea5c636d04e8efaeca68f26aae45df8de82d",
+    "lifecycle_early_zero/stub_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lifecycle_early_zero/stub_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lifecycle_early_zero/writer.txt": "800c00b02fca4d1275f2d36f8df2e152bfa9eace23266c5fd7f570c5f60a2d7b",
+    "lifecycle_early_zero/writer_pid.txt": "f6187d709dcfd414eae54b56316f11f7436f6d57ce37954471ab09531fc5cb9a",
+    "lifecycle_nonzero/dd_inversion_execution.json": "f5669c6fe8f73c1142142b13a06166d6f2b52f70a2012e1d42f115396dbb20c3",
+    "lifecycle_nonzero/stub_resources.txt": "b0bc943561ea6ab8f78371f96824b26fe86849f6457e89cade011ca71c30b268",
+    "lifecycle_nonzero/stub_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lifecycle_nonzero/stub_stdout.log": "69fa94ab14b072b99667a794b022b6f051c3a6389cce3c30be93721ba6ead1dc",
+    "lifecycle_sigterm/dd_inversion_execution.json": "c4762d40d88133b9c51d1632d51f03b27ee0966b7b1bb6d35361e1da6f587c59",
+    "lifecycle_sigterm/stub_ready.txt": "b5af97151fee94fb0077790d8c76582b0d3e28d9c14c600bc1d91f4f9e9532bd",
+    "lifecycle_sigterm/stub_resources.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lifecycle_sigterm/stub_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lifecycle_sigterm/stub_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lifecycle_sigterm/writer.txt": "ffe542ecdadbbd6f7d990ff8c6712ca83b1babf9ca572bcfca927a84abbf9060",
+    "lifecycle_sigterm/writer_pid.txt": "b5af97151fee94fb0077790d8c76582b0d3e28d9c14c600bc1d91f4f9e9532bd",
+    "lifecycle_zero/dd_inversion_execution.json": "7eb5c0167720ff41e8040f379c1187567ff9dc1b627d7f2d3086a014f71a9622",
+    "lifecycle_zero/stub_resources.txt": "ae90b8165e4f83c20f9b80aa19333f577acec0f3d1b417763e59a48f1ae1a7a9",
+    "lifecycle_zero/stub_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lifecycle_zero/stub_stdout.log": "ce9893edc75d2d097e9c8613d79dba022cf365b565da16aeb8cb1f7969bd4d08",
+    "nonzero_driver_stderr.log": "1678229734130ac6c21a86444d24fef489868b822c5e1795d9320a53c84a90ce",
+    "nonzero_driver_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "prelaunch_review.json": "a429154ff73304b33e0fa0dad2043ae9f0bfddc3896d8e1dbe5d46d7169c9999",
+    "prepared.json": "7c5a925580b4a01660659a37a4e48e8199a11ca4a278b9aa3d26003821b08d65",
+    "sigterm_driver_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sigterm_driver_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/check_old_kernel_backtracking_launcher.py": "1e9d9d6ff348b95b3cdf2cc8a3e8d6062b7dd31cc8bd6e02ee49c3c563f9832d",
+    "zero_driver_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "zero_driver_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "checks": [
+    {
+      "name": "configuration_AST_unchanged",
+      "passed": true
+    },
+    {
+      "name": "check_inverse_AST_unchanged",
+      "passed": true
+    },
+    {
+      "name": "eligibility_prefix_AST_unchanged",
+      "passed": true
+    },
+    {
+      "name": "common_evidence_AST_unchanged",
+      "passed": true
+    },
+    {
+      "name": "expected_counts_AST_unchanged",
+      "passed": true
+    },
+    {
+      "name": "completion_helper_exact_reviewed_bytes",
+      "passed": true
+    },
+    {
+      "name": "compiler_cache_STRING",
+      "passed": true
+    },
+    {
+      "name": "compiler_cache_FILEPATH",
+      "passed": true
+    },
+    {
+      "name": "cache_missing",
+      "passed": true,
+      "rejection": "Require one well-formed CMake compiler cache key",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "cache_empty",
+      "passed": true,
+      "rejection": "Require a nonempty CMake compiler cache value",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "cache_malformed",
+      "passed": true,
+      "rejection": "Require one well-formed CMake compiler cache key",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "cache_duplicate",
+      "passed": true,
+      "rejection": "Require one well-formed CMake compiler cache key",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "cache_malformed_duplicate",
+      "passed": true,
+      "rejection": "Require one well-formed CMake compiler cache key",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "004_guard_main_only_bridge_accepted",
+      "passed": true
+    },
+    {
+      "name": "actual_saved_eligibility_readback",
+      "passed": true
+    },
+    {
+      "name": "invented_prefix_reached_source_boundary_only",
+      "passed": true
+    },
+    {
+      "name": "running_preflight",
+      "passed": true,
+      "rejection": "Preflight is not terminal and successful",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "missing_preflight_child",
+      "passed": true,
+      "rejection": "Missing successful preflight command: initial_linearize",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "failed_preflight",
+      "passed": true,
+      "rejection": "Failed preflight diagnostics",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "stale_scientific_review",
+      "passed": true,
+      "rejection": "Stale scientific review: preflight_ledger",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "unassessed_FD",
+      "passed": true,
+      "rejection": "Final scientific accuracy review not accepted",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "failed_full_reference",
+      "passed": true,
+      "rejection": "Not all native rays pass both continuous-reference controls",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "changed_accuracy_gate",
+      "passed": true,
+      "rejection": "Stale full-reference review",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "changed_input_observations.csv",
+      "passed": true,
+      "rejection": "Pinned artifact changed: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/invented_preflight/observations.csv",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "changed_input_run.cfg",
+      "passed": true,
+      "rejection": "Pinned artifact changed: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/invented_preflight/run.cfg",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "changed_input_stations.csv",
+      "passed": true,
+      "rejection": "Pinned artifact changed: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/invented_preflight/stations.csv",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "invented_inputs_rejected_by_real_source_bridge",
+      "passed": true,
+      "rejection": "Native input differs from the reviewed old-kernel bridge: initial_events.csv",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "copied_candidate_same_source_bridge",
+      "passed": true
+    },
+    {
+      "name": "changed_after/src/core.hpp",
+      "passed": true,
+      "rejection": "Changed reviewed evidence: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/copied_candidate/after/src/core.hpp",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "missing_after/src/core.hpp",
+      "passed": true,
+      "rejection": "Missing regular reviewed evidence; restore the published evidence archive: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/copied_candidate/after/src/core.hpp",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "symlink_after/src/core.hpp",
+      "passed": true,
+      "rejection": "Unsafe or symlink reviewed evidence path: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/copied_candidate/after/src/core.hpp",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "existing_target_symlink_after/src/core.hpp",
+      "passed": true,
+      "rejection": "Unsafe or symlink reviewed evidence path: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/copied_candidate/after/src/core.hpp",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "changed_root_source_review.json",
+      "passed": true,
+      "rejection": "Changed reviewed evidence: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/copied_candidate/root_source_review.json",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "missing_root_source_review.json",
+      "passed": true,
+      "rejection": "Missing regular reviewed evidence; restore the published evidence archive: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/copied_candidate/root_source_review.json",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "symlink_root_source_review.json",
+      "passed": true,
+      "rejection": "Unsafe or symlink reviewed evidence path: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/copied_candidate/root_source_review.json",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "existing_target_symlink_root_source_review.json",
+      "passed": true,
+      "rejection": "Unsafe or symlink reviewed evidence path: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/copied_candidate/root_source_review.json",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "existing_parent_alias_rejected",
+      "passed": true,
+      "rejection": "Missing regular reviewed evidence; restore the published evidence archive: /data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/copied_candidate/after/src_regular_fixture/analytic_truth.hpp",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "wrong_guard_bridge_main",
+      "passed": true,
+      "rejection": "Candidate before-source differs from reviewed guard bridge",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "wrong_preflight_bridge_main",
+      "passed": true,
+      "rejection": "Candidate bridge starts from another preflight main",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "wrong_kernel_bridge",
+      "passed": true,
+      "rejection": "Candidate before-source differs from reviewed guard bridge",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "wrong_compiler_bridge",
+      "passed": true,
+      "rejection": "Compiler selection or flags differ from the original guard bridge",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "changed_completion_helper_hash_report_rejected",
+      "passed": true,
+      "rejection": "Completion helper differs from reviewed candidate002 bytes",
+      "rejection_type": "ValueError"
+    },
+    {
+      "name": "zero_status",
+      "passed": true
+    },
+    {
+      "name": "zero_group_reaped",
+      "passed": true
+    },
+    {
+      "name": "zero_hashes_stable_after_writers",
+      "passed": true
+    },
+    {
+      "name": "nonzero_status",
+      "passed": true
+    },
+    {
+      "name": "nonzero_group_reaped",
+      "passed": true
+    },
+    {
+      "name": "nonzero_hashes_stable_after_writers",
+      "passed": true
+    },
+    {
+      "name": "nonzero_code_preserved",
+      "passed": true
+    },
+    {
+      "name": "early_zero_status",
+      "passed": true
+    },
+    {
+      "name": "early_zero_group_reaped",
+      "passed": true
+    },
+    {
+      "name": "early_zero_hashes_stable_after_writers",
+      "passed": true
+    },
+    {
+      "name": "early_zero_orphan_reported",
+      "passed": true
+    },
+    {
+      "name": "early_nonzero_status",
+      "passed": true
+    },
+    {
+      "name": "early_nonzero_group_reaped",
+      "passed": true
+    },
+    {
+      "name": "early_nonzero_hashes_stable_after_writers",
+      "passed": true
+    },
+    {
+      "name": "early_nonzero_orphan_reported",
+      "passed": true
+    },
+    {
+      "name": "sigterm_status",
+      "passed": true
+    },
+    {
+      "name": "sigterm_group_reaped",
+      "passed": true
+    },
+    {
+      "name": "sigterm_hashes_stable_after_writers",
+      "passed": true
+    },
+    {
+      "name": "sigterm_code_preserved",
+      "passed": true
+    },
+    {
+      "name": "original_evidence_and_frozen_source_unchanged",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "case": "zero",
+      "child_group": 349915,
+      "command": [
+        "/usr/bin/python3",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/diagnostics/check_old_kernel_backtracking_launcher.py",
+        "--lifecycle-child",
+        "zero",
+        "--output",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/lifecycle_zero"
+      ],
+      "return_code": 0
+    },
+    {
+      "case": "nonzero",
+      "child_group": 349920,
+      "command": [
+        "/usr/bin/python3",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/diagnostics/check_old_kernel_backtracking_launcher.py",
+        "--lifecycle-child",
+        "nonzero",
+        "--output",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/lifecycle_nonzero"
+      ],
+      "return_code": 1
+    },
+    {
+      "case": "early_zero",
+      "child_group": 349924,
+      "command": [
+        "/usr/bin/python3",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/diagnostics/check_old_kernel_backtracking_launcher.py",
+        "--lifecycle-child",
+        "early_zero",
+        "--output",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/lifecycle_early_zero"
+      ],
+      "return_code": 1
+    },
+    {
+      "case": "early_nonzero",
+      "child_group": 349998,
+      "command": [
+        "/usr/bin/python3",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/diagnostics/check_old_kernel_backtracking_launcher.py",
+        "--lifecycle-child",
+        "early_nonzero",
+        "--output",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/lifecycle_early_nonzero"
+      ],
+      "return_code": 1
+    },
+    {
+      "case": "sigterm",
+      "child_group": 350008,
+      "command": [
+        "/usr/bin/python3",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/diagnostics/check_old_kernel_backtracking_launcher.py",
+        "--lifecycle-child",
+        "sigterm",
+        "--output",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/lifecycle_sigterm"
+      ],
+      "return_code": 143
+    }
+  ],
+  "compiler_calls": 0,
+  "controls_passed": 62,
+  "controls_total": 62,
+  "inverse_calls": 0,
+  "limitations": [
+    "No complete positive controller-final fixture with the required initializer=1 metadata is available.",
+    "Exact helper/check_inverse equivalence preserves that requirement; no fixture status is promoted to scientific success.",
+    "Lifecycle fixtures execute the actual nested run/handler AST in isolation, not the complete build/inverse main."
+  ],
+  "numerical_calls": 0,
+  "prepared_sha256": "39593013076b06ce0ab5fac64d9ac4ec7d23f272762dbbdb6931fc002df8cf3d",
+  "source_sha256": {
+    "data/development/hayward_old_kernel_backtracking_launcher_001/source_snapshot/run_hayward_old_kernel_backtracking.py": "8a6ebe8e401f4b83f34ea935a73719cc9de8ca97244a4574bdb9af125d81bd01",
+    "diagnostics/check_old_kernel_backtracking_launcher.py": "1e9d9d6ff348b95b3cdf2cc8a3e8d6062b7dd31cc8bd6e02ee49c3c563f9832d"
+  },
+  "status": "passed"
+}

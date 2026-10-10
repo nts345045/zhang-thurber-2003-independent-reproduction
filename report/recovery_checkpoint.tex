@@ -89,6 +89,21 @@ motion beside the face. This calculation, saved in
 but does not supply a nonsmooth stationarity test or justify changing a
 failed flag.
 
+Invented exactly face-aligned paths clarify the distinction. With
+$v(x)=6-|x|$ and endpoints $(0,\pm1/2,0)$, the straight face path attains
+the global length/speed lower bound $T=1/6$ s. Its selected right-cell
+midpoint partial is nevertheless $1/72$ s/km. Conversely,
+$v(x)=5+|x|$ admits normal descent in both directions even though zero lies
+in the convex hull of the two ordinary gradient limits. A separate coupled
+endpoint-direction example passes all signed coordinate probes but retains
+a decreasing combined direction; endpoint supports cannot be chosen
+independently. The 37 exact rational and 62 numerical checks in
+\path{data/development/internal_ridge_stationarity_controls_001/}
+use fixed invented geometry, with no trace or optimizer call. The variable
+trilinear face formula applies piecewise between other grid-plane crossings.
+It is not a continuous certificate for general paths, and these exact-face
+controls cannot relabel the merely nearby native nodes.
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\textwidth]{../figures/diagnostics/hayward_full_initial_accuracy.pdf}
@@ -830,6 +845,48 @@ Independent review and the optimized application build pass. These checks,
 saved in \path{data/development/inversion_ray_gate_checks/}, establish failure
 handling rather than global first-arrival accuracy or nonlinear recovery.
 No live executable was replaced, and no corrected inverse result is claimed.
+
+A separate candidate now retries only a pure local-stopping rejection during
+the inverse line search. It retains the old ray kernel used for the full
+initial Hayward accuracy checks, the original solve increment, fixed weights
+and twelve halving fractions. Current/final-model failures, mixed reasons,
+unexpected exceptions and failed evidence writes remain fatal. Each rejected
+trial retains its own native states and paths, and the first rejection saves
+all source/model increments, residuals, fixed weights and LSQR status.
+The old-kernel component suite passes 1,102 recorded assertions across small
+invented fixtures; 28 all-valid files remain byte-identical. Separate bounded
+integration checks pass all 48 core checks and complete a tiny joint-DD
+fixture after nine and eleven local rejections, accepting fractions $1/512$
+and $1/2048$. Its original zero ray-iteration cap is retained; this is not a
+new scientific stopping rule. The evidence is in
+\path{data/development/hayward_old_kernel_trial_backtracking_controls_001/}
+and \path{data/development/hayward_old_kernel_trial_backtracking_integration_checks_002/}.
+
+The prospective completion reviewer passes 190 saved-table controls after
+three preserved false acceptances were corrected: excess iterations,
+continuation after stage-2 no-update termination, and a shifted initial
+accepted state. Independent readback reconstructs all 20 joint-fixture
+rejected states and both accepted updates. The launcher controls exercise
+its actual child/source prerequisite only, stopping before final tables;
+complete positive launcher integration remains separate. An all-success
+final gate emits no standalone full ray-status table, so its enforcement
+is tied to the exact audited binary and successful return. These checks,
+saved in \path{data/development/hayward_trial_completion_checks_002/},
+establish evidence closure, not accepted field recovery or updated-model
+first-arrival accuracy.
+
+A separately reviewed launcher binds both main-program changes to the
+original initial-model evidence while retaining identical mathematical
+headers. Its 62 checks include the actual saved eligibility assessment of
+58,980 observations and 14,262 native rays, and five process-lifecycle
+cases. The latter exercise normal and failed exits, surviving writers and
+interruption; no compiler, ray or inverse calculation runs in this suite.
+The original unexecuted test draft remains preserved. No new field inversion
+has started at this checkpoint. A successful execution would still await
+final ray, derivative and scientific assessment. The launcher evidence is in
+\path{data/development/hayward_old_kernel_backtracking_launcher_checks_002/};
+the lossless archive and restoration instructions are in
+\path{data/development/trial_backtracking_evidence_001/README.md}.
 
 \subsection{Historical waveform metadata and identified correlations}
 The existing Hayward catalog pair at differential row 15108 links events

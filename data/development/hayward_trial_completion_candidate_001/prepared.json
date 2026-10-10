@@ -1,0 +1,28 @@
+{
+  "status": "prepared_not_executed",
+  "scope": "isolated completion-review patch; eligibility unchanged; no launch",
+  "input_sha256": {
+    "run_hayward_guarded_inversion.py": "f9ca4ae89a706d4f1c92e0f0277b846766af35a73998c6ce890cfdaef65b2df3",
+    "run_loma_initial_preflight.py": "f1acc19135c11edda106e3b8c7d8c1879d7d490db729d4ad55263b87022946f1",
+    "run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5",
+    "data/development/hayward_trial_backtracking_candidate_003/prepared.json": "1f3f1679c472a136f34709d2f7b0c015861e4c39ec3d3fe69ea768256c9bac9a",
+    "data/development/hayward_trial_backtracking_candidate_003/after/src/main.cpp": "a10dcdc300d9a4e43f6ae0cba2e354d7cec549438319cf411b577790b2373058",
+    "data/development/hayward_trial_backtracking_controls_002/prepared.json": "bf8a826e91b9d7554a74fca1e9c0c99d4b23c0b623c372a3d2048f786b63321c",
+    "data/development/hayward_trial_backtracking_controls_002/summary.json": "2b39d3225dfb60b6fad1dfbd1c85d5060dd71b3cfbeea5cd9b5f20bb3eab4a95",
+    "data/development/hayward_trial_backtracking_controls_002/review.json": "56a4dd3aa36539344a51a97feeaf5c91ab560d1a52b1fafba8974f886f8f0bb3"
+  },
+  "output_sha256": {
+    "README.md": "a0836dfc6d4022737b6c20e9f0cef7e4353752953b9f6e255cdd64b215ab9f57",
+    "after/diagnostics/review_trial_completion.py": "7c306790beef21513b0064a6071bee6f0f544db1c944fc645ffda1cada999564",
+    "after/run_hayward_guarded_inversion.py": "fa1a0e8338f43101ef6925c280067f6ab305b33afabb5a962a411b84b54524ca",
+    "before/run_hayward_guarded_inversion.py": "f9ca4ae89a706d4f1c92e0f0277b846766af35a73998c6ce890cfdaef65b2df3",
+    "candidate.patch": "88e89c0c97b736e96b196f5819e87de4dee59b1b417df532ee684bd05140624a"
+  },
+  "validation": {
+    "python_syntax": "AST parsed only",
+    "reviewed_inputs_AST_unchanged": true,
+    "configuration_AST_unchanged": true,
+    "candidate_main_sha256": "a10dcdc300d9a4e43f6ae0cba2e354d7cec549438319cf411b577790b2373058",
+    "controller_or_numerical_execution": false
+  }
+}

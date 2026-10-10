@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/diagnostics/check_old_kernel_backtracking_launcher.py", line 375, in <module>
+    main()
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/diagnostics/check_old_kernel_backtracking_launcher.py", line 239, in main
+    if args.lifecycle_child: return lifecycle_child(args.lifecycle_child, out)
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/diagnostics/check_old_kernel_backtracking_launcher.py", line 177, in lifecycle_child
+    exec(compile(template, str(SOURCE) + ':extracted_lifecycle', 'exec'), namespace)
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_001/source_snapshot/run_hayward_old_kernel_backtracking.py:extracted_lifecycle", line 15, in <module>
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_001/source_snapshot/run_hayward_old_kernel_backtracking.py:extracted_lifecycle", line 9, in exercise
+  File "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_001/source_snapshot/run_hayward_old_kernel_backtracking.py:extracted_lifecycle", line 374, in run
+subprocess.CalledProcessError: Command '['/usr/bin/python3', '/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/diagnostics/check_old_kernel_backtracking_launcher.py', '--stub', 'nonzero', '--output', '/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_backtracking_launcher_checks_002/lifecycle_nonzero']' returned non-zero exit status 7.

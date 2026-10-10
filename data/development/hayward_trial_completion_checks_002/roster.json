@@ -1,0 +1,3003 @@
+[
+  {
+    "base": "valid_dd",
+    "config": {},
+    "expected_accept": true,
+    "kind": "trial",
+    "name": "intact_valid_dd",
+    "required_error_fragment": null,
+    "steps": []
+  },
+  {
+    "base": "valid_loc1d",
+    "config": {},
+    "expected_accept": true,
+    "kind": "trial",
+    "name": "intact_valid_loc1d",
+    "required_error_fragment": null,
+    "steps": []
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": true,
+    "kind": "trial",
+    "name": "intact_half",
+    "required_error_fragment": null,
+    "steps": []
+  },
+  {
+    "base": "quarter",
+    "config": {},
+    "expected_accept": true,
+    "kind": "trial",
+    "name": "intact_quarter",
+    "required_error_fragment": null,
+    "steps": []
+  },
+  {
+    "base": "worse",
+    "config": {},
+    "expected_accept": true,
+    "kind": "trial",
+    "name": "intact_worse",
+    "required_error_fragment": null,
+    "steps": []
+  },
+  {
+    "base": "all",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "terminal_failure_all",
+    "required_error_fragment": "Missing history/matrix iterations",
+    "steps": []
+  },
+  {
+    "base": "state",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "terminal_failure_state",
+    "required_error_fragment": "Missing history/matrix iterations",
+    "steps": []
+  },
+  {
+    "base": "mixed_invalid",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "terminal_failure_mixed_invalid",
+    "required_error_fragment": "Missing history/matrix iterations",
+    "steps": []
+  },
+  {
+    "base": "state",
+    "config": {},
+    "expected_accept": true,
+    "kind": "trial",
+    "name": "schema_joint_clamp_exp",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "joint_schema"
+      }
+    ]
+  },
+  {
+    "base": "valid_dd",
+    "config": {
+      "iterations": 9,
+      "stage_length": 2
+    },
+    "expected_accept": true,
+    "kind": "trial",
+    "name": "schema_stage_skip_and_stage2_break",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "iterations": [
+          0,
+          2,
+          4
+        ],
+        "op": "stages"
+      }
+    ]
+  },
+  {
+    "base": "valid_dd",
+    "config": {
+      "iterations": 4,
+      "stage_length": 2
+    },
+    "expected_accept": true,
+    "kind": "trial",
+    "name": "schema_stage_skip_reaches_cap",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "iterations": [
+          0,
+          2
+        ],
+        "op": "stages"
+      }
+    ]
+  },
+  {
+    "base": "valid_dd",
+    "config": {
+      "iterations": 1,
+      "stage_length": 1
+    },
+    "expected_accept": true,
+    "kind": "trial",
+    "name": "schema_invalid_models_without_quality",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "iterations": [
+          0
+        ],
+        "op": "stages",
+        "status": "invalid_trial_model"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": true,
+    "kind": "trial",
+    "name": "nonincrease_equality_is_allowed",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "objective_after",
+        "op": "cell",
+        "row": 1,
+        "value": "0.025446381722154902"
+      },
+      {
+        "file": "loc1d_history.csv",
+        "key": "objective_after",
+        "op": "cell",
+        "row": 0,
+        "value": "0.0254463817222"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": true,
+    "kind": "trial",
+    "name": "legacy_absent_station_j",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "absent_station_j"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {
+      "ray_initializer": 1
+    },
+    "expected_accept": true,
+    "kind": "trial",
+    "name": "initializer_attempted_and_succeeded",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "initializer_success"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_rejected_trial_it_0_ls_0_ray_status",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_rejected_trial_it_0_ls_0_ray_failures",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_failures.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_rejected_trial_it_0_ls_0_ray_paths",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_paths.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_rejected_trial_it_0_ls_0_events",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_events.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_rejected_trial_it_0_ls_0_grid",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_grid.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_rejected_trial_it_0_ls_0_context",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_context.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_rejected_trial_it_0_ls_0_accepted_events",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_accepted_events.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_rejected_trial_it_0_ls_0_accepted_grid",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_accepted_grid.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_iteration_0_solve_accepted_events",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_accepted_events.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_iteration_0_solve_accepted_grid",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_accepted_grid.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_iteration_0_solve_delta",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_delta.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_iteration_0_solve_weights",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_iteration_0_solve_context",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_iteration_0_trials",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_last_accepted_events",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_last_accepted_events.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_loc1d_last_accepted_grid",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_last_accepted_grid.csv",
+        "op": "remove"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "orphan_loc1d_iteration_99_trials",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_99_trials.csv",
+        "op": "orphan"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "orphan_loc1d_iteration_99_solve_delta",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_99_solve_delta.csv",
+        "op": "orphan"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "orphan_loc1d_rejected_trial_it_0_ls_7_context",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_7_context.csv",
+        "op": "orphan"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "orphan_loc1d_last_accepted_extra",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_last_accepted_extra.csv",
+        "op": "orphan"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "fatal_prefix",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_failed_forward_context.csv",
+        "op": "orphan"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "symlink_loc1d_rejected_trial_it_0_ls_0_ray_status",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "op": "symlink"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "symlink_loc1d_rejected_trial_it_0_ls_0_ray_paths",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_paths.csv",
+        "op": "symlink"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "symlink_loc1d_iteration_0_solve_delta",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_delta.csv",
+        "op": "symlink"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "symlink_loc1d_iteration_0_trials",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "op": "symlink"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "symlink_initial_events",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "initial_events.csv",
+        "op": "symlink"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "dangling_symlink",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "dangling": true,
+        "file": "loc1d_rejected_trial_it_0_ls_0_grid.csv",
+        "op": "symlink"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "duplicate_header_loc1d_rejected_trial_it_0_ls_0_ray_status",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "op": "duplicate_header"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "duplicate_header_loc1d_iteration_0_solve_weights",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "op": "duplicate_header"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "duplicate_header_loc1d_history",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_history.csv",
+        "op": "duplicate_header"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "duplicate_header_observations",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "observations.csv",
+        "op": "duplicate_header"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "extra_csv_cell",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "op": "extra_cell"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "delta_duplicate_index",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_delta.csv",
+        "key": "parameter_index",
+        "op": "cell",
+        "row": 1,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "delta_increment",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_delta.csv",
+        "key": "increment",
+        "op": "cell",
+        "row": 3,
+        "value": ".125"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "delta_reference",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_delta.csv",
+        "key": "reference_x",
+        "op": "cell",
+        "row": 0,
+        "value": ".25"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "delta_component",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_delta.csv",
+        "key": "component",
+        "op": "cell",
+        "row": 0,
+        "value": "t"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "delta_event",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_delta.csv",
+        "key": "event",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "delta_origin",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_delta.csv",
+        "key": "source_origin_resource_id",
+        "op": "cell",
+        "row": 0,
+        "value": "wrong"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "delta_nonfinite",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_delta.csv",
+        "key": "increment",
+        "op": "cell",
+        "row": 0,
+        "value": "nan"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "trial_source",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_events.csv",
+        "key": "t",
+        "op": "cell",
+        "row": 0,
+        "value": ".3"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "accepted_source",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_accepted_events.csv",
+        "key": "x",
+        "op": "cell",
+        "row": 0,
+        "value": ".25"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "accepted_model",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_accepted_grid.csv",
+        "key": "v",
+        "op": "cell",
+        "row": 0,
+        "value": "5.01"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "trial_grid_axis",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_grid.csv",
+        "key": "x",
+        "op": "cell",
+        "row": 0,
+        "value": "-1.99"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "trial_grid_value",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_grid.csv",
+        "key": "v",
+        "op": "cell",
+        "row": 0,
+        "value": "5.01"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "trial_event_id",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_events.csv",
+        "key": "id",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "trial_event_native",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_events.csv",
+        "key": "event_resource_id",
+        "op": "cell",
+        "row": 0,
+        "value": "wrong"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "trial_coordinate_basis",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_events.csv",
+        "key": "coordinate_basis",
+        "op": "cell",
+        "row": 0,
+        "value": "final"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "source_outside",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_events.csv",
+        "key": "x",
+        "op": "cell",
+        "row": 0,
+        "value": "9"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "context_phase",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_context.csv",
+        "key": "phase",
+        "op": "cell",
+        "row": 0,
+        "value": "final"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "context_precision",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_context.csv",
+        "key": "significant_digits",
+        "op": "cell",
+        "row": 0,
+        "value": "12"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "context_derivatives",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_context.csv",
+        "key": "derivatives_requested",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "context_trial",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_context.csv",
+        "key": "line_search_trial",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "context_mode",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_context.csv",
+        "key": "mode",
+        "op": "cell",
+        "row": 0,
+        "value": "dd"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "context_initializer",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_context.csv",
+        "key": "initialization_required",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "solve_columns",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "key": "columns",
+        "op": "cell",
+        "row": 0,
+        "value": "9"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "solve_source_columns",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "key": "source_columns",
+        "op": "cell",
+        "row": 0,
+        "value": "4"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "solve_model_columns",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "key": "model_columns",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "solve_iteration",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "key": "iteration",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "solve_stage",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "key": "stage",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "solve_before",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "key": "objective_before",
+        "op": "cell",
+        "row": 0,
+        "value": ".1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "solve_lsqr_iterations",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "key": "lsqr_iterations",
+        "op": "cell",
+        "row": 0,
+        "value": "21"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "solve_lsqr_flag",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "key": "lsqr_converged",
+        "op": "cell",
+        "row": 0,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "solve_lsqr_residual",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "key": "lsqr_relative_normal_residual",
+        "op": "cell",
+        "row": 0,
+        "value": ".1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "solve_smoothing",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "key": "smoothing_weight",
+        "op": "cell",
+        "row": 0,
+        "value": "2"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "solve_damping",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "key": "damping_parameter",
+        "op": "cell",
+        "row": 0,
+        "value": ".2"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "solve_weight_basis",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "key": "weight_basis",
+        "op": "cell",
+        "row": 0,
+        "value": "recomputed at trial"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "solve_objective_basis",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_context.csv",
+        "key": "objective_basis",
+        "op": "cell",
+        "row": 0,
+        "value": "includes damping"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "weight_index",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "key": "observation_index",
+        "op": "cell",
+        "row": 1,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "weight_second_epoch",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "key": "station_j",
+        "op": "cell",
+        "row": 2,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "weight_original_second_epoch",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "key": "original_station_j",
+        "op": "cell",
+        "row": 2,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "weight_original_pick",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "key": "original_pick_i_resource_id",
+        "op": "cell",
+        "row": 0,
+        "value": "wrong"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "weight_original_note",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "key": "original_note",
+        "op": "cell",
+        "row": 0,
+        "value": "unquoted replacement"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "weight_original_collision",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "key": "original_current_residual",
+        "op": "cell",
+        "row": 0,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "weight_value",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "key": "value",
+        "op": "cell",
+        "row": 0,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "weight_negative",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "key": "fixed_row_multiplier",
+        "op": "cell",
+        "row": 0,
+        "value": "-1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "weight_nan",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "key": "current_residual",
+        "op": "cell",
+        "row": 0,
+        "value": "nan"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_second_epoch",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "receiver_metadata_epoch_start",
+        "op": "cell",
+        "row": 2,
+        "value": "1980-01-01T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_blank_location",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "receiver_location_code",
+        "op": "cell",
+        "row": 2,
+        "value": "--"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_seed",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "receiver_channel_seed_id",
+        "op": "cell",
+        "row": 2,
+        "value": "XX.MOCK.01.HHZ"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_origin",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "source_origin_resource_id",
+        "op": "cell",
+        "row": 2,
+        "value": "wrong"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_position",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "source_x",
+        "op": "cell",
+        "row": 2,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_origin_time",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "source_t",
+        "op": "cell",
+        "row": 2,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_receiver_position",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "receiver_z",
+        "op": "cell",
+        "row": 2,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_index",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "station",
+        "op": "cell",
+        "row": 2,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_flag_format",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_converged",
+        "op": "cell",
+        "row": 2,
+        "value": "false"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_hides_failure",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_converged",
+        "op": "cell",
+        "row": 2,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_invents_failure",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_converged",
+        "op": "cell",
+        "row": 0,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_negative_gradient",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_projected_gradient",
+        "op": "cell",
+        "row": 0,
+        "value": "-1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_nonfinite_gradient",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_raw_gradient",
+        "op": "cell",
+        "row": 0,
+        "value": "inf"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_nonfinite_time",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_time",
+        "op": "cell",
+        "row": 0,
+        "value": "nan"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_negative_iterations",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_iterations",
+        "op": "cell",
+        "row": 0,
+        "value": "-1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_initializer_failure",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_initialization_attempted",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_derivative_flag",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_derivatives_evaluated",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_derivative_value",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "source_dx",
+        "op": "cell",
+        "row": 0,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "status_no_points",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_path_points",
+        "op": "cell",
+        "row": 2,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "roster_mixed_reason",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_failures.csv",
+        "key": "reasons",
+        "op": "cell",
+        "row": 0,
+        "value": "local_stopping_failed;nonfinite_ray"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "roster_wrong_pair",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_failures.csv",
+        "key": "event",
+        "op": "cell",
+        "row": 0,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "roster_expected_nodes",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_failures.csv",
+        "key": "expected_velocity_nodes",
+        "op": "cell",
+        "row": 0,
+        "value": "7"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "roster_requested_derivatives",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_failures.csv",
+        "key": "derivatives_requested",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "path_epoch",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_paths.csv",
+        "key": "receiver_metadata_epoch_end",
+        "op": "cell",
+        "row": 1,
+        "value": "1990-01-01T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "path_node_index",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_paths.csv",
+        "key": "node",
+        "op": "cell",
+        "row": 1,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "path_source_endpoint",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_paths.csv",
+        "key": "z",
+        "op": "cell",
+        "row": 0,
+        "value": "2.9"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "path_receiver_endpoint",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_paths.csv",
+        "key": "z",
+        "op": "cell",
+        "row": -1,
+        "value": ".1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "path_outside",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_paths.csv",
+        "key": "z",
+        "op": "cell",
+        "row": 1,
+        "value": "6"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "path_nan",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_paths.csv",
+        "key": "x",
+        "op": "cell",
+        "row": 1,
+        "value": "nan"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "ledger_objective_on_rejection",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "objective_after",
+        "op": "cell",
+        "row": 0,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "ledger_rejection_evaluated",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "objective_evaluated",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "ledger_unknown_status",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "status",
+        "op": "cell",
+        "row": 0,
+        "value": "retry"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "ledger_fraction",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "step_fraction",
+        "op": "cell",
+        "row": 1,
+        "value": ".25"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "ledger_unequal_before",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "objective_before",
+        "op": "cell",
+        "row": 1,
+        "value": ".1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "ledger_wrong_trial",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "trial",
+        "op": "cell",
+        "row": 1,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "ledger_accepted_increase",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "objective_after",
+        "op": "cell",
+        "row": 1,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "ledger_accepted_not_evaluated",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "objective_evaluated",
+        "op": "cell",
+        "row": 1,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "ledger_other_prefix",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "failure_prefix",
+        "op": "cell",
+        "row": 0,
+        "value": "loc1d_rejected_trial_it_0_ls_1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "ledger_traversal",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "failure_prefix",
+        "op": "cell",
+        "row": 0,
+        "value": "../loc1d_rejected_trial_it_0_ls_0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "ledger_nonrejected_prefix",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "failure_prefix",
+        "op": "cell",
+        "row": 1,
+        "value": "loc1d_rejected_trial_it_0_ls_0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "history_fraction",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_history.csv",
+        "key": "step_fraction",
+        "op": "cell",
+        "row": 0,
+        "value": ".25"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "history_after",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_history.csv",
+        "key": "objective_after",
+        "op": "cell",
+        "row": 0,
+        "value": ".1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "history_before",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_history.csv",
+        "key": "objective_before",
+        "op": "cell",
+        "row": 0,
+        "value": ".1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "history_stage",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_history.csv",
+        "key": "stage",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "initial_event_id",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "initial_events.csv",
+        "key": "id",
+        "op": "cell",
+        "row": 0,
+        "value": "2"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "initial_station_id",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "stations.csv",
+        "key": "id",
+        "op": "cell",
+        "row": 1,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "observation_bad_i",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "observations.csv",
+        "key": "i",
+        "op": "cell",
+        "row": 0,
+        "value": "2"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "observation_bad_station",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "observations.csv",
+        "key": "station",
+        "op": "cell",
+        "row": 0,
+        "value": "2"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "observation_blank_second_epoch",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "observations.csv",
+        "key": "station_j",
+        "op": "cell",
+        "row": 2,
+        "value": ""
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "observation_negative_second_epoch",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "observations.csv",
+        "key": "station_j",
+        "op": "cell",
+        "row": 2,
+        "value": "-1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "observation_other_second_epoch",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "observations.csv",
+        "key": "station_j",
+        "op": "cell",
+        "row": 2,
+        "value": "2"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "stale_conventional_events",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_last_accepted_events.csv",
+        "key": "t",
+        "op": "cell",
+        "row": 0,
+        "value": ".1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "stale_conventional_grid",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_last_accepted_grid.csv",
+        "key": "v",
+        "op": "cell",
+        "row": 0,
+        "value": "5.1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "nonlocal_ray_finite",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_finite",
+        "op": "cell",
+        "row": 2,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "nonlocal_ray_path_in_domain",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_path_in_domain",
+        "op": "cell",
+        "row": 2,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "nonlocal_ray_exact_source_endpoint",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_exact_source_endpoint",
+        "op": "cell",
+        "row": 2,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "nonlocal_ray_exact_receiver_endpoint",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "key": "ray_exact_receiver_endpoint",
+        "op": "cell",
+        "row": 2,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "drop_last_loc1d_iteration_0_solve_delta",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_delta.csv",
+        "op": "drop_last"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "duplicate_last_loc1d_iteration_0_solve_delta",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_delta.csv",
+        "op": "duplicate_last"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "reverse_loc1d_iteration_0_solve_delta",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_delta.csv",
+        "op": "reverse"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "drop_last_loc1d_iteration_0_solve_weights",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "op": "drop_last"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "duplicate_last_loc1d_iteration_0_solve_weights",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "op": "duplicate_last"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "reverse_loc1d_iteration_0_solve_weights",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_solve_weights.csv",
+        "op": "reverse"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "drop_last_loc1d_rejected_trial_it_0_ls_0_ray_status",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "op": "drop_last"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "duplicate_last_loc1d_rejected_trial_it_0_ls_0_ray_status",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "op": "duplicate_last"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "reverse_loc1d_rejected_trial_it_0_ls_0_ray_status",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "op": "reverse"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "drop_last_loc1d_rejected_trial_it_0_ls_0_ray_paths",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_paths.csv",
+        "op": "drop_last"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "duplicate_last_loc1d_rejected_trial_it_0_ls_0_ray_paths",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_paths.csv",
+        "op": "duplicate_last"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "reverse_loc1d_rejected_trial_it_0_ls_0_ray_paths",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_paths.csv",
+        "op": "reverse"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "drop_last_loc1d_rejected_trial_it_0_ls_0_ray_failures",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_failures.csv",
+        "op": "drop_last"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "duplicate_last_loc1d_rejected_trial_it_0_ls_0_ray_failures",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_failures.csv",
+        "op": "duplicate_last"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "zero_weight_native_ray_omitted",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_rejected_trial_it_0_ls_0_ray_status.csv",
+        "index": 1,
+        "op": "drop_index"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_history",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_history.csv",
+        "op": "empty"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "missing_matrix",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_matrix_preflight.csv",
+        "op": "empty"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "matrix_iteration_mismatch",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_matrix_preflight.csv",
+        "key": "iteration",
+        "op": "cell",
+        "row": 0,
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "accepted_not_last",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "op": "duplicate_last"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "incomplete_unsuccessful_search",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "op": "drop_last"
+      }
+    ]
+  },
+  {
+    "base": "worse",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "objective_rejected_equal",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "objective_after",
+        "op": "cell",
+        "row": 1,
+        "value": "0.025446381722154902"
+      }
+    ]
+  },
+  {
+    "base": "worse",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "objective_rejected_better",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "key": "objective_after",
+        "op": "cell",
+        "row": 1,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "worse",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "too_many_trials",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "file": "loc1d_iteration_0_trials.csv",
+        "op": "duplicate_last"
+      }
+    ]
+  },
+  {
+    "base": "valid_dd",
+    "config": {
+      "iterations": 3
+    },
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "premature_history_end",
+    "required_error_fragment": null,
+    "steps": []
+  },
+  {
+    "base": "valid_dd",
+    "config": {
+      "iterations": 1
+    },
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "history_past_configured_end",
+    "required_error_fragment": null,
+    "steps": []
+  },
+  {
+    "base": "valid_dd",
+    "config": {
+      "iterations": 9,
+      "stage_length": 2
+    },
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "wrong_stage_skip",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "iterations": [
+          0,
+          1,
+          4
+        ],
+        "op": "stages"
+      }
+    ]
+  },
+  {
+    "base": "valid_dd",
+    "config": {
+      "iterations": 9,
+      "stage_length": 2
+    },
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "stage2_must_not_continue",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "iterations": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "op": "stages"
+      }
+    ]
+  },
+  {
+    "base": "half",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "coordinated_initial_state_shift",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "shift_initial_snapshot"
+      }
+    ]
+  },
+  {
+    "base": "state",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "joint_model_delta",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "joint_schema"
+      },
+      {
+        "file": "dd_iteration_0_solve_delta.csv",
+        "key": "increment",
+        "op": "cell",
+        "row": 8,
+        "value": ".5"
+      }
+    ]
+  },
+  {
+    "base": "state",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "joint_model_reference",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "joint_schema"
+      },
+      {
+        "file": "dd_iteration_0_solve_delta.csv",
+        "key": "reference_v",
+        "op": "cell",
+        "row": 8,
+        "value": "5.1"
+      }
+    ]
+  },
+  {
+    "base": "state",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "joint_model_invents_event",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "joint_schema"
+      },
+      {
+        "file": "dd_iteration_0_solve_delta.csv",
+        "key": "source_event_resource_id",
+        "op": "cell",
+        "row": 8,
+        "value": "wrong"
+      }
+    ]
+  },
+  {
+    "base": "state",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "joint_model_index",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "joint_schema"
+      },
+      {
+        "file": "dd_iteration_0_solve_delta.csv",
+        "key": "node",
+        "op": "cell",
+        "row": 9,
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "base": "state",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "joint_model_type",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "joint_schema"
+      },
+      {
+        "file": "dd_iteration_0_solve_delta.csv",
+        "key": "component",
+        "op": "cell",
+        "row": 8,
+        "value": "velocity"
+      }
+    ]
+  },
+  {
+    "base": "state",
+    "config": {},
+    "expected_accept": false,
+    "kind": "trial",
+    "name": "joint_clamp_mismatch",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "joint_schema"
+      },
+      {
+        "file": "dd_rejected_trial_it_0_ls_0_events.csv",
+        "key": "x",
+        "op": "cell",
+        "row": 0,
+        "value": "3.9"
+      }
+    ]
+  },
+  {
+    "base": "none",
+    "config": {},
+    "expected_accept": true,
+    "kind": "prefix",
+    "name": "child_source_prefix_good",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "child_prefix",
+        "variant": "good"
+      }
+    ]
+  },
+  {
+    "base": "none",
+    "config": {},
+    "expected_accept": false,
+    "kind": "prefix",
+    "name": "child_source_prefix_nonzero",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "child_prefix",
+        "variant": "nonzero"
+      }
+    ]
+  },
+  {
+    "base": "none",
+    "config": {},
+    "expected_accept": false,
+    "kind": "prefix",
+    "name": "child_source_prefix_missing",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "child_prefix",
+        "variant": "missing"
+      }
+    ]
+  },
+  {
+    "base": "none",
+    "config": {},
+    "expected_accept": false,
+    "kind": "prefix",
+    "name": "child_source_prefix_duplicate",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "child_prefix",
+        "variant": "duplicate"
+      }
+    ]
+  },
+  {
+    "base": "none",
+    "config": {},
+    "expected_accept": false,
+    "kind": "prefix",
+    "name": "child_source_prefix_other_stage",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "child_prefix",
+        "variant": "other_stage"
+      }
+    ]
+  },
+  {
+    "base": "none",
+    "config": {},
+    "expected_accept": false,
+    "kind": "prefix",
+    "name": "child_source_prefix_wrong_source",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "child_prefix",
+        "variant": "wrong_source"
+      }
+    ]
+  },
+  {
+    "base": "none",
+    "config": {},
+    "expected_accept": false,
+    "kind": "prefix",
+    "name": "child_source_prefix_missing_source",
+    "required_error_fragment": null,
+    "steps": [
+      {
+        "op": "child_prefix",
+        "variant": "missing_source"
+      }
+    ]
+  },
+  {
+    "base": "real_joint_dd",
+    "config": {},
+    "expected_accept": true,
+    "kind": "trial",
+    "name": "intact_real_joint_dd",
+    "required_error_fragment": null,
+    "steps": []
+  }
+]

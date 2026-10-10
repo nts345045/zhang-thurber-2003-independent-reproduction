@@ -1,0 +1,58 @@
+--- checks001/check.py
++++ checks002/check.py
+@@ -16,10 +16,11 @@
+ sys.dont_write_bytecode = True
+ HERE = Path(__file__).resolve().parent
+ ROOT = HERE.parents[2]
+-CANDIDATE = ROOT / 'data/development/hayward_trial_completion_candidate_001'
++CANDIDATE = ROOT / 'data/development/hayward_trial_completion_candidate_002'
++JOINT = ROOT / 'data/development/hayward_old_kernel_trial_backtracking_integration_checks_002'
+ CONTROLS = ROOT / 'data/development/hayward_trial_backtracking_controls_002'
+-FIXTURES = ('valid_dd', 'valid_loc1d', 'half', 'quarter', 'worse', 'all', 'state', 'mixed_invalid')
+-MODE = {name: ('dd' if name in ('valid_dd', 'state', 'mixed_invalid') else 'loc1d') for name in FIXTURES}
++FIXTURES = ('valid_dd', 'valid_loc1d', 'half', 'quarter', 'worse', 'all', 'state', 'mixed_invalid', 'real_joint_dd')
++MODE = {name: ('dd' if name in ('valid_dd', 'state', 'mixed_invalid', 'real_joint_dd') else 'loc1d') for name in FIXTURES}
+ R = 'loc1d_rejected_trial_it_0_ls_0_'
+ S = 'loc1d_iteration_0_solve_'
+ L = 'loc1d_iteration_0_trials.csv'
+@@ -248,6 +249,7 @@
+     for variant, good in [('good',True), ('nonzero',False), ('missing',False), ('duplicate',False),
+                           ('other_stage',False), ('wrong_source',False), ('missing_source',False)]:
+         add('child_source_prefix_'+variant, 'none', good, [dict(op='child_prefix', variant=variant)], kind='prefix')
++    add('intact_real_joint_dd', 'real_joint_dd', True)
+     assert len({t['name'] for t in tests}) == len(tests)
+     return tests
+ 
+@@ -396,15 +398,29 @@
+     for name in ('run_loma_analytic_simulation.py', 'run_loma_initial_preflight.py',
+                  'diagnostics/review_loma_analytic_simulation.py'):
+         copy(ROOT/name, HERE/'source'/name)
+-    for root, names, prefix in ((CANDIDATE, ('prepared.json','README.md','candidate.patch'), 'candidate'),
++    for root, names, prefix in ((CANDIDATE, ('prepared.json','README.md','proposal001.md','candidate.patch','correction.patch'), 'candidate'),
+                                (CONTROLS, ('prepared.json','summary.json','execution.json','review.json',
+                                            'nonzero_objective_review.json'), 'controls')):
+         for name in names: copy(root/name, HERE/'evidence'/prefix/name)
+     summary = json.loads((CONTROLS/'summary.json').read_text())
++    joint = json.loads((JOINT/'summary.json').read_text())
++    joint_review = json.loads((JOINT/'review.json').read_text())
++    assert joint['status'] == joint_review['status'] == 'passed'
++    assert joint_review['summary_sha256'] == sha(JOINT/'summary.json')
++    assert joint_review['execution_sha256'] == sha(JOINT/'execution.json')
++    for name in ('prepared.json','summary.json','execution.json','review.json'):
++        copy(JOINT/name, HERE/'evidence/joint'/name)
+     for fixture in FIXTURES:
+-        for src in sorted((CONTROLS/'results/after'/fixture).iterdir()):
+-            assert summary['artifact_sha256'][str(src.relative_to(CONTROLS))] == sha(src)
++        origin = JOINT/'results/inversion_gate/trial_backtracking' if fixture == 'real_joint_dd' else CONTROLS/'results/after'/fixture
++        package = JOINT if fixture == 'real_joint_dd' else CONTROLS
++        pins = joint['output_sha256'] if fixture == 'real_joint_dd' else summary['artifact_sha256']
++        for src in sorted(origin.iterdir()):
++            assert pins[str(src.relative_to(package))] == sha(src)
+             copy(src, HERE/'fixtures'/fixture/src.name)
++    prior = ROOT/'data/development/hayward_trial_completion_checks_001'
++    for name in ('check.py','prepared.json','roster.json','execution.json','summary.json'):
++        copy(prior/name, HERE/'evidence/prior'/name)
++    assert roster()[:-1] == json.loads((prior/'roster.json').read_text())
+     save(HERE/'roster.json', roster())
+     # Syntax only: no reviewer imports or fixture mutation during preparation.
+     for path in [HERE/'check.py'] + list((HERE/'source').rglob('*.py')):

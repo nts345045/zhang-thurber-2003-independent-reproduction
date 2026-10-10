@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "summary_sha256": "f6bc71ae646670caccda9ca42aef0205dcb1517ac96754e62154d73219aed40c",
+  "execution_sha256": "63270b5bb3116602b11ad4c25f289705451af7a01029a4072ed8e45dbe7ff094",
+  "prepared_sha256": "7c5a925580b4a01660659a37a4e48e8199a11ca4a278b9aa3d26003821b08d65",
+  "launcher_prepared_sha256": "39593013076b06ce0ab5fac64d9ac4ec7d23f272762dbbdb6931fc002df8cf3d",
+  "root_source_review_sha256": "658551b39b919cb85f332e212f366cada88d330ed80f24796a2b6ec41a48075f",
+  "review_source_sha256": "f23f5a6f44a179433c986c00cf26fc79467ff6385df6bca6d2529df8858e50a5",
+  "verified_unique_files": 8324,
+  "executed_artifact_pins": 98,
+  "saved_checks": 62,
+  "lifecycle": {
+    "zero": {
+      "driver_return_code": 0,
+      "status": "fixture_completed",
+      "supervisor_return_code": 0,
+      "live_group_members_now": [],
+      "stable_hashed_outputs": 3
+    },
+    "nonzero": {
+      "driver_return_code": 1,
+      "status": "failed",
+      "supervisor_return_code": 7,
+      "live_group_members_now": [],
+      "stable_hashed_outputs": 3
+    },
+    "early_zero": {
+      "driver_return_code": 1,
+      "status": "failed",
+      "supervisor_return_code": 0,
+      "live_group_members_now": [],
+      "stable_hashed_outputs": 6
+    },
+    "early_nonzero": {
+      "driver_return_code": 1,
+      "status": "failed",
+      "supervisor_return_code": 7,
+      "live_group_members_now": [],
+      "stable_hashed_outputs": 6
+    },
+    "sigterm": {
+      "driver_return_code": 143,
+      "status": "interrupted",
+      "supervisor_return_code": null,
+      "live_group_members_now": [],
+      "stable_hashed_outputs": 6
+    }
+  },
+  "original_source_and_evidence_unchanged": true,
+  "scope": "Saved results/source/hash readback only. Actual full real eligibility readback and copied-prefix sentinel are distinct; no scientific eligibility claim for invented inputs.",
+  "limitations": [
+    "No complete positive controller-final fixture with the required initializer=1 metadata is available.",
+    "Exact helper/check_inverse equivalence preserves that requirement; no fixture status is promoted to scientific success.",
+    "Lifecycle fixtures execute the actual nested run/handler AST in isolation, not the complete build/inverse main."
+  ]
+}

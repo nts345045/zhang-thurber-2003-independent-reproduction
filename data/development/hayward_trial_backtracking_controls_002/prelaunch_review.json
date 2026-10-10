@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "prepared_sha256": "bf8a826e91b9d7554a74fca1e9c0c99d4b23c0b623c372a3d2048f786b63321c",
+  "review_source_sha256": "c7b6a3f50c87c467ae756a6fce91af1577ee018d32689d6adfd415cc055eb114",
+  "verified_pin_counts": {
+    "input_sha256": 28,
+    "output_sha256": 29,
+    "runtime_sha256": 2
+  },
+  "candidate_prepared_sha256": "1f3f1679c472a136f34709d2f7b0c015861e4c39ec3d3fe69ea768256c9bac9a",
+  "source_review": "The actual copied invert loop, trial construction, objective, halving and gate are retained. Only fixture opener, gate wrapper and solve-return call sites are redirected. The actual solve and rays run; altered returned Rays exercise pure/mixed reasons in the actual gate. No synthesized quality exception. Inert seams must preserve before/after files and captured ray statuses byte-for-byte.",
+  "control_scope": [
+    "Known half/quarter time-offset objective targets and actual ordinary nonlinear controls",
+    "All12 pure quality and invalid-model/quality mixtures, distinct valid-but-worse behavior",
+    "Current/final/mixed/unexpected fatal cases; native full reason rosters",
+    "Original unscaled source/model delta, LSQR diagnostics, fixed weights and all-row native metadata including zero row and both epochs",
+    "Reconstruction of clamped sources and exponential model from original state at each fraction",
+    "Deferred full-device write failures, prior artifacts/dangling symlinks and malformed snapshots",
+    "Tiny homogeneous5-to6-to5 cached/fresh fields with identical physical receiver and separate native epochs"
+  ],
+  "execution_authorization": "Bounded invented controls only, using exact pinned compiler at unchanged production-compatible O3 flags. No real/native inverse, source adoption, full-cohort or failed-run restart.",
+  "limitations": [
+    "Fixture prescribed deltas are test inputs rather than claimed solver estimates; real solve/status is captured separately.",
+    "Short component runner is not the long-running native controller; interruption must not be mistaken for terminal success.",
+    "A passed harness would not certify a global3D first arrival or physical accuracy of future inverse trials."
+  ]
+}

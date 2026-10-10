@@ -1,0 +1,88 @@
+{
+  "status": "failed_preserved",
+  "started_utc": "2026-10-10T10:14:24.000331+00:00",
+  "prepared_sha256": "7e26b4fe88dcefceb139e56dae3af069939e4c5a154f18f5d186704532bb9a23",
+  "prelaunch_review_sha256": "dae2faef295c6cbebb47152d7c945863024472c8a6cb3f003e0e93929c80f31b",
+  "commands": [
+    {
+      "stage": "cmake_configure",
+      "command": [
+        "/usr/bin/cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_001/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_001/build/cmake",
+        "-DCMAKE_CXX_COMPILER=/usr/bin/c++"
+      ],
+      "started_utc": "2026-10-10T10:14:24.001876+00:00",
+      "pid": 337538,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:14:25.678585+00:00",
+      "stdout_sha256": "08c470d30519220ed8ab764ca20cb02c2501efd5f72b723e53f8583d820312fe",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "cmake_build",
+      "command": [
+        "/usr/bin/cmake",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/hayward_old_kernel_trial_backtracking_integration_checks_001/build/cmake",
+        "-j",
+        "2"
+      ],
+      "started_utc": "2026-10-10T10:14:25.679759+00:00",
+      "pid": 337589,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:14:58.040252+00:00",
+      "stdout_sha256": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Invented core/external/guard fixtures only; no authoritative rays, cohort or inversion.",
+  "environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "1",
+    "LC_ALL": "C",
+    "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "current_stage": "cmake_build",
+  "finished_utc": "2026-10-10T10:14:58.041863+00:00",
+  "error": "",
+  "outputs_stable": true,
+  "unsettled_process_groups": [],
+  "output_sha256": {
+    "build/cmake/CMakeCache.txt": "4e698ca10c780bbf88066186f9e6f9f3bccf529d84b505011801223b01d1873a",
+    "build/cmake/CMakeFiles/3.26.5/CMakeCXXCompiler.cmake": "60bd09aa80ff64449786c4f00d14afc17ef5ea26e054a32b37597e75ce372f77",
+    "build/cmake/CMakeFiles/3.26.5/CMakeDetermineCompilerABI_CXX.bin": "74fd3f75f9ed58e56452d646f50e6969bdf61b06b40713ef83fad0b30cc768df",
+    "build/cmake/CMakeFiles/3.26.5/CMakeSystem.cmake": "57afc7ad325e24a27f94c21c0ccb9d8b45e29d3774a7029c30f1c3a4d49766f9",
+    "build/cmake/CMakeFiles/3.26.5/CompilerIdCXX/CMakeCXXCompilerId.cpp": "6f94da5ac139bb54c7fa3635112c4e4b3a16ede555b3fbcc0cf275abc9639c98",
+    "build/cmake/CMakeFiles/3.26.5/CompilerIdCXX/a.out": "f3ee4cd38cd56ea4bd7ede1c83d0d377b581a1b50452134be62be0e153f4b80c",
+    "build/cmake/CMakeFiles/CMakeConfigureLog.yaml": "5e281ceabcf99628461062c318b375d2f597e312a8b8b59d384e69ba01b05a77",
+    "build/cmake/CMakeFiles/CMakeDirectoryInformation.cmake": "e31bf78b22972164a3463da7cda049e4bd48ac85aee03ec3c7d817cd3f3b64b6",
+    "build/cmake/CMakeFiles/FindOpenMP/ompver_CXX.bin": "0acc1b9fe0280d661063dcaef741e27a370bb8e27f52c1eeb6c316b835494b4b",
+    "build/cmake/CMakeFiles/Makefile.cmake": "2bb09c202f03182c5122d6e03fb528a2d6b96ae277b04c143f8db336ffe495c4",
+    "build/cmake/CMakeFiles/Makefile2": "140cd506f6168ffe37656bd727238ee7f7ba963c46ff2b72973a7b982cd02b98",
+    "build/cmake/CMakeFiles/TargetDirectories.txt": "1af01087247dd72d405572b3d29f8e18d790085b72492386f03a5d040a8e10d5",
+    "build/cmake/CMakeFiles/cmake.check_cache": "a26189e394421da57f45706a07713c5720acd200a41711b0c0c590c3c63371c4",
+    "build/cmake/CMakeFiles/dd.dir/DependInfo.cmake": "8cfb71ff7b5d5321a5cb3db2c68052e613b382e7e5d8c9d6ccd0af587f52d571",
+    "build/cmake/CMakeFiles/dd.dir/build.make": "d058f77d77558d13b6cbdff57373af5fdb29d3416807dc94f8d2056aa3b46500",
+    "build/cmake/CMakeFiles/dd.dir/cmake_clean.cmake": "912e3ba6f680d4e7c740556fcd17809895853251f0cb01ca683083d80e2b85cb",
+    "build/cmake/CMakeFiles/dd.dir/compiler_depend.make": "92010dfd8436aa24e4a16c364ea9ddfbe840d3141918fcdbbe1ca996c9096bcd",
+    "build/cmake/CMakeFiles/dd.dir/compiler_depend.ts": "69535e00e76668930b2659b3c9c7741264778c0b85adbdcdf68ce1ebb405ee7d",
+    "build/cmake/CMakeFiles/dd.dir/depend.make": "6cc26fb7b40b5ba44a9effef20f524f4734a4b0e2ddbb28f8cb1771374b328c2",
+    "build/cmake/CMakeFiles/dd.dir/flags.make": "d56dc65ba833a0cd88231813d73aba646ad70d11d564c6ec0b6b36620c8bd485",
+    "build/cmake/CMakeFiles/dd.dir/link.txt": "7240bb26b9d3bdcb54faa96a09f9e0255f807b70f59ced1a8d904458bfca9c98",
+    "build/cmake/CMakeFiles/dd.dir/progress.make": "c06e644090b09d41eaddf59d10bcf03c6db6499eb51fa0d03e5128e5a165cc3c",
+    "build/cmake/CMakeFiles/dd.dir/src/main.cpp.o": "ee6464b02a1daa9a9e8ba23ab5006df11e1b31da9d52a1df4b49ee77ebb4458c",
+    "build/cmake/CMakeFiles/dd.dir/src/main.cpp.o.d": "08d6143b04c969473d7a16351436473e333912fd80fc938672d225b6aa5e7082",
+    "build/cmake/CMakeFiles/progress.marks": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    "build/cmake/Makefile": "be8165632a045698a2d6f6947c54da8a3431326797e405e58597719fa799bdb8",
+    "build/cmake/cmake_install.cmake": "efef4389b5bd1affcf402c65cf90c50f87650cd8e38cace24da94d3ff9af582b",
+    "build/cmake/dd": "c32356cdd5fba3c8edc20b79a12b3be131efb29fcf424cf865e4ef71bfafb175",
+    "logs/cmake_build.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/cmake_build.stdout.log": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+    "logs/cmake_configure.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/cmake_configure.stdout.log": "08c470d30519220ed8ab764ca20cb02c2501efd5f72b723e53f8583d820312fe"
+  }
+}

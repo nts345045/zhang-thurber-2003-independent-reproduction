@@ -1,0 +1,76 @@
+--- diagnostics/run_trial_backtracking_checks.py
++++ diagnostics/run_old_kernel_trial_backtracking_checks.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Freeze, then separately execute invented controls of candidate003's actual loop."""
++"""Freeze, then test the separately prepared old-kernel backtracking loop."""
+ import argparse
+ import csv
+ import difflib
+@@ -14,9 +14,9 @@
+ 
+ sys.dont_write_bytecode = True
+ ROOT = Path(__file__).resolve().parents[1]
+-CANDIDATE = ROOT / 'data/development/hayward_trial_backtracking_candidate_003'
+-PREPARED_SHA = '1f3f1679c472a136f34709d2f7b0c015861e4c39ec3d3fe69ea768256c9bac9a'
+-HELPERS = ['diagnostics/check_trial_backtracking.cpp', 'diagnostics/run_trial_backtracking_checks.py']
++CANDIDATE = ROOT / 'data/development/hayward_old_kernel_trial_backtracking_candidate_001'
++PREPARED_SHA = '5bb45c57b3f594485abbaf144da3b540f2c7f8d42dc783837976fbe33b5d96dd'
++HELPERS = ['diagnostics/check_trial_backtracking.cpp', 'diagnostics/run_old_kernel_trial_backtracking_checks.py']
+ 
+ 
+ def sha(path):
+@@ -76,11 +76,14 @@
+         target.parent.mkdir(parents=True, exist_ok=True)
+         shutil.copyfile(str(ROOT / name), str(target))
+         inputs[name] = sha(ROOT / name)
+-    compiler = Path(shutil.which('g++')).resolve()
+-    runtime = {str(compiler): sha(compiler), str(Path(sys.executable).resolve()): sha(Path(sys.executable).resolve())}
++    compiler = Path(original['compiler']).resolve()
++    runtime = dict(original['runtime_sha256'])
++    runtime.update({str(compiler): sha(compiler), str(Path(sys.executable).resolve()): sha(Path(sys.executable).resolve())})
++    if any(sha(Path(name)) != digest for name, digest in runtime.items()):
++        raise ValueError('Original compiler/runtime changed')
+     (out / 'README.md').write_text('''# Invented trial-backtracking controls
+ 
+-This package tests the isolated candidate003, not an adopted solver or an observed earthquake. Every event, origin, pick, arrival and XX.MOCK..HHZ epoch is invented. Native-format fields exercise the actual loader and retain empty locations, quoted/newline metadata, a zero-weight observation and both differential receiver epochs.
++This package tests the separately frozen old7111-kernel candidate with the exact candidate003 main-only delta. Maintained D adoption and the earlier D-based controls remain separate. It is not an adopted solver or an observed earthquake. Every event, origin, pick, arrival and XX.MOCK..HHZ epoch is invented. Native-format fields exercise the actual loader and retain empty locations, quoted/newline metadata, a zero-weight observation and both differential receiver epochs.
+ 
+ Preparation does not compile or run the fixtures. Execution is a separate phase after source review. The copied `invert` loop is unchanged except for three explicit fixture seams shown in the saved diffs: the actual returned Rays pass through a wrapper into the actual gate; the actual LSQR solve runs before an optional prescribed test increment is returned; selected output streams can be redirected to `/dev/full` after freshness checks. No quality exception is fabricated. Pure/mixed failures alter actual returned Ray records. All-valid cases leave every seam inert and require byte-identical before/after output and status tables.
+ 
+@@ -91,7 +94,7 @@
+ After review, from the integration checkout:
+ 
+ ```sh
+-PYTHONDONTWRITEBYTECODE=1 python3 diagnostics/run_trial_backtracking_checks.py --phase run --variant 001
++PYTHONDONTWRITEBYTECODE=1 python3 diagnostics/run_old_kernel_trial_backtracking_checks.py --phase run --variant 001
+ ```
+ 
+ The runner requires unchanged prepared inputs and helpers, fresh build/results/execution paths, records commands before launch, preserves every failed output, and checks original inputs again after execution. It does not commit anything.
+@@ -119,7 +122,7 @@
+ def run(out, variant):
+     prepared = json.loads((out / 'prepared.json').read_text())
+     verify(out, prepared)
+-    build = ROOT / 'tmp/trial_backtracking_checks' / variant
++    build = ROOT / 'tmp/old_kernel_trial_backtracking_checks' / variant
+     for path in (build, out / 'results', out / 'execution.json', out / 'summary.json'):
+         if path.exists() or path.is_symlink():
+             raise ValueError('Use fresh execution: ' + str(path))
+@@ -127,7 +130,7 @@
+     (out / 'results').mkdir()
+     execution = dict(status='running', prepared_sha256=sha(out / 'prepared.json'), commands=[])
+     environment = dict(os.environ, TMPDIR=str(ROOT / 'tmp'), OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1',
+-                       PYTHONDONTWRITEBYTECODE='1')
++                       PYTHONDONTWRITEBYTECODE='1', LC_ALL='C')
+ 
+     def command(name, argv):
+         argv = [str(x) for x in argv]
+@@ -193,7 +196,7 @@
+     args = parser.parse_args()
+     if not args.variant.isdigit():
+         raise ValueError('Use a numeric variant')
+-    out = ROOT / ('data/development/hayward_trial_backtracking_controls_' + args.variant)
++    out = ROOT / ('data/development/hayward_old_kernel_trial_backtracking_controls_' + args.variant)
+     if args.phase == 'prepare':
+         prepare(out)
+     else:

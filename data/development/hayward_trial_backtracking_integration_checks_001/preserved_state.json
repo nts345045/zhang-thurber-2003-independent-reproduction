@@ -1,0 +1,32 @@
+{
+  "status": "source_draft_preserved_not_executed",
+  "reason": "Parent redirected validation to a separately prepared old7111 kernel; this D directory must not be repurposed.",
+  "created_utc": "2026-10-10T10:10:17.066627+00:00",
+  "compile_calls": 0,
+  "numerical_calls": 0,
+  "prepared_manifest_exists": false,
+  "runner_exists": false,
+  "notes": [
+    "The copied guard fixture includes the final uncompiled later-current/final-fatal branch correction.",
+    "guard_fixture.patch predates that final correction and is retained as a draft; it is not a frozen complete diff.",
+    "Original candidate source/CMake and copied external fixture are unchanged."
+  ],
+  "file_sha256": {
+    "guard_fixture.patch": "72c25f44b5fb71997baf9eb89e75c863ec1295f43c849ff273f4d7e242e095f1",
+    "original_diagnostics/check_external_inputs.cpp": "e9a49593636aabb3916d0eabf257d8f2befca2613b8c2e28acc7e1f342eb4cba",
+    "original_diagnostics/check_inversion_ray_gate.cpp": "be0370a1f1c364555479dcf246e7b2ba133c1f44bc6dc5d51eb2987f2e76a9fc",
+    "source/CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "source/diagnostics/check_external_inputs.cpp": "e9a49593636aabb3916d0eabf257d8f2befca2613b8c2e28acc7e1f342eb4cba",
+    "source/diagnostics/check_inversion_ray_gate.cpp": "59521502ae06268fc5ebc774a16912776ad09ae4896a82245a687063d4008f19",
+    "source/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "source/src/core.hpp": "c9500361c5ca3ff55b2fbcec0aedfb3639d3f3b68a53431267e6849c3a933044",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "source/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "source/src/main.cpp": "a10dcdc300d9a4e43f6ae0cba2e354d7cec549438319cf411b577790b2373058",
+    "source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/src/usable_ray_curvature.hpp": "5236f9df135dc2449662db70bb68aded36cae3f5ce23e7471caa02d45ce5daac"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "failed_validator_expectation",
+  "source_sha256": "e1428abf96cdd7d19833944ce4dc0d474b65563e3a752ebaea250592a3c568d6",
+  "compile_sha256": "d88a058f41217057b60379eb1706d59381842155c7e87788522a34dc5d3aae03",
+  "reason": "First pass also reports Label(s) may have changed after new prose shifts pages. Second pass clears this expected rerun warning. No compile/source change is needed.",
+  "observed_pass1_warning_lines": [
+    "pdfTeX warning: pdflatex (file ../figures/location_errors.pdf): PDF inclusion: ",
+    "LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right."
+  ],
+  "observed_pass2_warning_lines": [
+    "pdfTeX warning: pdflatex (file ../figures/location_errors.pdf): PDF inclusion: "
+  ]
+}

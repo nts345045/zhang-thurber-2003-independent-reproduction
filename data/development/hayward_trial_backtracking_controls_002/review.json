@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "summary_sha256": "2b39d3225dfb60b6fad1dfbd1c85d5060dd71b3cfbeea5cd9b5f20bb3eab4a95",
+  "execution_sha256": "410f7c03904c37cdbdf2c11b0bfd9797e8a68d624ad00c264e7b46dce472ebfa",
+  "source_sha256": "ec5e2da4632f7ce07463dd8cc46cdec4ba443a154c308f7632c8aa6636cdcac3",
+  "verified_pin_count": 993,
+  "executed_artifact_pins": 963,
+  "checks": {
+    "before": 4,
+    "after": 1102
+  },
+  "all_valid_identical_files": 28,
+  "native_metadata_cells": 600,
+  "independent_known_targets": {
+    "half": {
+      "quality_rejections": 1,
+      "accepted_fraction": 0.5,
+      "objective_after": 1.1732957585310766e-32
+    },
+    "quarter": {
+      "quality_rejections": 2,
+      "accepted_fraction": 0.25,
+      "objective_after": 1.1732957585310766e-32
+    }
+  },
+  "scope": "Saved-only rehash/readback plus complete frozen source/seam review. Actual pure-local failure rosters, all-row native weights, unscaled increments and clamped/exponential trial states independently reconstructed. No compiler/forward/solve/inverse rerun.",
+  "limitations": [
+    "1102 records include repeated fieldwise assertions across small invented cases, not1102 independent scientific experiments.",
+    "Prescribed test deltas are explicitly separated from actual solved vectors/status; this suite does not establish real-data convergence or global3D first arrivals.",
+    "The core/input/existing guard integration checks and production adoption remain separate.",
+    "Retained compile warning concerns fixture indentation only; no warning suppression or source rewrite followed execution."
+  ]
+}

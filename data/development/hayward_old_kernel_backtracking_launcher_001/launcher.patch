@@ -1,0 +1,264 @@
+--- completion_candidate002/run_hayward_guarded_inversion.py
++++ run_hayward_old_kernel_backtracking.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Freeze one guarded Hayward DD attempt after independently reviewed preflight."""
++"""Freeze one old-kernel Hayward DD attempt with reviewed local-ray trial backtracking."""
+ import argparse
+ import csv
+ import json
+@@ -13,9 +13,11 @@
+ import sys
+ import tarfile
+ 
++sys.dont_write_bytecode = True
++
+ from run_loma_analytic_simulation import atomic_json, inside, sha, utc, verify_hashes
+-from run_loma_initial_preflight import disjoint, finite, require, rows, terminate_group
+-from diagnostics.review_trial_completion import TRIAL_MAIN, review_trials
++from run_loma_initial_preflight import disjoint, finite, require, rows, terminate_group, live_group_members
++from diagnostics.review_old_kernel_trial_completion import TRIAL_MAIN, review_trials
+ 
+ ROOT = Path(__file__).resolve().parent
+ COPIED = ('initial_events.csv', 'initial_grid.csv', 'stations.csv', 'observations.csv',
+@@ -143,21 +145,133 @@
+             if name != 'src/main.cpp':
+                 require(parity['guarded_source_sha256'].get(name) == digest,
+                         'Mathematical header or CMake changed since full preflight: '+name)
+-    require(sha(ROOT/'src/main.cpp') == REVIEWED_GUARD_MAIN,
+-            'Main call path differs from the independently reviewed guard')
+-    source_names = ['CMakeLists.txt'] + [str(p.relative_to(ROOT)) for p in sorted((ROOT/'src').glob('*')) if p.is_file()]
+-    for name in source_names:
+-        require(parity['guarded_source_sha256'].get(name) == sha(ROOT/name), 'Guarded source differs from O3 controls: '+name)
++    selected, adoption, adoption_pins = source_adoption(parity, manifest)
++    for name,digest in adoption['bridge']['identical_native_numerical_input_sha256'].items():
++        require(copied[name]==digest, 'Native input differs from the reviewed old-kernel bridge: '+name)
++    require(configuration(data/'run.cfg')==adoption['bridge']['identical_effective_config'],
++            'Inverse configuration differs from the reviewed old-kernel bridge')
+     evidence = {str(path.relative_to(ROOT)):sha(path) for path in list(pins.values()) +
+                 [reference/'packaging.json',reference/package['archive'],accuracy_path,parity_path]}
+     evidence.update({str((data/n).relative_to(ROOT)):sha(data/n) for n in SAMPLE_FILES})
+-    return manifest, copied, evidence, parity, dict(observations=len(observations), rays=count,
++    evidence.update(adoption_pins)
++    return manifest, copied, evidence, parity, selected, adoption, dict(observations=len(observations), rays=count,
+               observation_types={str(k):sum(r['type']==str(k) for r in observations) for k in range(3)})
+ 
+ 
++CANDIDATE = 'hayward_old_kernel_trial_backtracking_candidate_001'
++ACTUAL = 'hayward_old_kernel_trial_backtracking_controls_001'
++INTEGRATION = 'hayward_old_kernel_trial_backtracking_integration_checks_002'
++COMPLETION = 'hayward_trial_completion_candidate_002'
++COMPLETION_CHECKS = 'hayward_trial_completion_checks_002'
++COMPLETION_HELPER = '8406148ed92afa18c43bf96693aaa78185f7961e99e567e4f8aced6d1d858392'
++SOURCE_REVIEWS = {
++    CANDIDATE+'/prepared.json':'5bb45c57b3f594485abbaf144da3b540f2c7f8d42dc783837976fbe33b5d96dd',
++    CANDIDATE+'/root_source_review.json':'c168b6c54018015399608e4d0b28e1854af34020e2cd1a00b78f99e0a466ee54',
++    ACTUAL+'/review.json':'fc750af56ea2d2333c7c1c2856a629181ca96a233fec2fd831ee5fd82b5bad5f',
++    ACTUAL+'/math_review.json':'f5822b254f0f5404153a6ae1ca69e78a569bfe2cc40907417f1e62068e994e4e',
++    INTEGRATION+'/review.json':'7faa22a6bb009a3c8c5470ffb4e7cff6dddf02987dfb3c18db032f7e362fdda6',
++    COMPLETION_CHECKS+'/review.json':'e975435edc021696f0e8766e6e7bcb15a45c8bfa2d09e09388ad4e35e2e7374c'}
++
++
++def compiler_from_cache(text):
++    entries=[line for line in text.splitlines() if line.startswith(('CMAKE_CXX_COMPILER:', 'CMAKE_CXX_COMPILER='))]
++    require(len(entries)==1 and ':' in entries[0] and '=' in entries[0],
++            'Require one well-formed CMake compiler cache key')
++    compiler=entries[0].split('=',1)[1]
++    require(bool(compiler), 'Require a nonempty CMake compiler cache value')
++    return compiler
++
++
++def source_adoption(parity, preflight):
++    """Explicit restored-file bridge; no retrieval, recomputation, or maintained source substitution."""
++    development=ROOT/'data/development'; evidence={}
++    def pinned(base, mapping):
++        for name,digest in mapping.items():
++            raw=base/name
++            require(not Path(name).is_absolute() and '..' not in Path(name).parts and not raw.is_symlink(),
++                    'Unsafe or symlink reviewed evidence path: '+str(raw))
++            path=inside(ROOT,raw)
++            require(path==raw and path.is_file(),
++                    'Missing regular reviewed evidence; restore the published evidence archive: '+str(path))
++            require(sha(path)==digest, 'Changed reviewed evidence: '+str(path))
++            evidence[str(path.relative_to(ROOT))]=digest
++    def document(base,name):
++        path=base/name
++        require(path.is_file() and not path.is_symlink(), 'Missing restored review document: '+str(path))
++        pinned(base,{name:sha(path)})
++        return load(path)
++    pinned(development,SOURCE_REVIEWS)
++    candidate=development/CANDIDATE
++    prepared=document(candidate,'prepared.json')
++    pinned(ROOT,prepared['input_sha256']);pinned(candidate,prepared['output_sha256'])
++    review=document(candidate,'root_source_review.json')
++    require(review['status']=='passed_source_review' and review['prepared_sha256']==sha(candidate/'prepared.json'),
++            'Source adoption review does not bind the candidate')
++    require(prepared['changed_source_files']==['src/main.cpp'], 'Old-kernel candidate changed more than main')
++    selected={name:candidate/'after'/name for name in prepared['original_sha256']}
++    before=prepared['original_sha256'];after={name:sha(path) for name,path in selected.items()}
++    require(before=={name:parity['guarded_source_sha256'].get(name) for name in before}, 'Candidate before-source differs from reviewed guard bridge')
++    require(before['src/main.cpp']==REVIEWED_GUARD_MAIN and after['src/main.cpp']==TRIAL_MAIN,
++            'Unexpected main in004-to-guard-to-backtracking bridge')
++    require(all(after[name]==digest for name,digest in before.items() if name!='src/main.cpp'),
++            'A mathematical kernel or CMake file changed')
++    require(prepared['bridge']['preflight_main_sha256']==preflight['source_sha256']['src/main.cpp'],
++            'Candidate bridge starts from another preflight main')
++    for name,digest in prepared['bridge']['identical_shared_kernel_and_cmake_sha256'].items():
++        require(preflight['source_sha256'][name]==after[name]==digest, 'Initial mathematical kernel changed: '+name)
++    for dirname in (ACTUAL,INTEGRATION,COMPLETION_CHECKS):
++        directory=development/dirname
++        summary=document(directory,'summary.json');execution=document(directory,'execution.json')
++        checked=document(directory,'review.json');plan=document(directory,'prepared.json')
++        require(summary['status']==checked['status']=='passed' and execution['status']=='completed' and
++                execution['return_code']==0, 'Required reviewed suite did not complete successfully: '+dirname)
++        summary_key='controls_summary_sha256' if dirname==COMPLETION_CHECKS else 'summary_sha256'
++        require(checked[summary_key]==sha(directory/'summary.json') and
++                checked['execution_sha256']==sha(directory/'execution.json'), 'Stale suite review: '+dirname)
++        require(summary['prepared_sha256']==sha(directory/'prepared.json'), 'Stale suite preparation')
++        for key in ('artifact_sha256','output_sha256','source_sha256'):
++            if isinstance(summary.get(key),dict):pinned(directory,summary[key])
++        if dirname!=COMPLETION_CHECKS:
++            require(plan['candidate_prepared_sha256']==sha(candidate/'prepared.json'), 'Suite used another candidate')
++            pinned(ROOT,plan.get('input_sha256',plan.get('original_sha256',{})))
++            pinned(directory,plan['output_sha256'])
++            source_root=directory/('source/after' if dirname==ACTUAL else 'source')
++            require({name:sha(source_root/name) for name in after}==after, 'Suite mathematical source differs')
++        else:
++            pinned(ROOT,plan['input_sha256']);pinned(directory,plan['prepared_sha256'])
++            require(summary['controls_passed']==summary['controls_total']==190, 'Incomplete completion controls')
++            for name in ('run_loma_analytic_simulation.py','run_loma_initial_preflight.py',
++                         'diagnostics/review_loma_analytic_simulation.py'):
++                require(sha(ROOT/name)==plan['prepared_sha256']['source/'+name],
++                        'Shared launcher dependency differs from completion controls: '+name)
++                pinned(ROOT,{name:sha(ROOT/name)})
++            for name,target in summary.get('intentional_symlinks',{}).items():
++                require((directory/name).is_symlink() and os.readlink(str(directory/name))==target,
++                        'Intentional negative-fixture symlink changed')
++    completion=development/COMPLETION
++    completion_plan=document(completion,'prepared.json')
++    pinned(ROOT,completion_plan['input_sha256']);pinned(completion,completion_plan['output_sha256'])
++    helper=completion/'after/diagnostics/review_trial_completion.py'
++    require(sha(helper)==COMPLETION_HELPER==sha(ROOT/'diagnostics/review_old_kernel_trial_completion.py'),
++            'Completion helper differs from reviewed candidate002 bytes')
++    require(prepared['compiler']==parity['compiler'] and prepared['flags']==parity['flags'],
++            'Compiler selection or flags differ from the original guard bridge')
++    for name,digest in prepared['runtime_sha256'].items():
++        require(sha(Path(name))==digest, 'Old-kernel compiler/runtime changed: '+name)
++    receipt=dict(candidate_directory=str(candidate.relative_to(ROOT)),candidate_prepared_sha256=sha(candidate/'prepared.json'),
++                 bridge=prepared['bridge'],candidate_source_sha256=after,
++                 source_mapping={name:str(path.relative_to(ROOT)) for name,path in selected.items()},
++                 review_sha256=SOURCE_REVIEWS,completion_helper_sha256=COMPLETION_HELPER,
++                 runtime_library_sha256={n:h for n,h in prepared['runtime_sha256'].items() if n!=prepared['compiler']},
++                 evidence_scope='Exact old kernel; main-only trial rejection with fixed weights and original halving. No maintained-source replacement.',
++                 limitations=['The004-to-guard main change is supported by prior controls, not byte equality.',
++                              'Saved completion helper positives and initializer/source-prefix tests do not constitute a full positive controller test with first-arrival residual metadata.',
++                              'Initial1Daccuracy does not certify later3Dmodels; final diagnostics and scientific review remain required.'])
++    return selected,receipt,evidence
++
++
+ def check_inverse(data, expected):
+-    # This is a completion-only candidate. Initial numerical/source eligibility
+-    # above stays unchanged until a separate exact old-kernel bridge is reviewed.
++    # Completion keeps the independently reviewed candidate002 helper and all final initializer gates.
+     manifest = load(data/'dd_inversion_run_manifest.json')
+     execution = load(data/'dd_inversion_execution.json')
+     inverse = [r for r in execution['completed_commands'] if r['stage'] == 'dd_invert']
+@@ -226,12 +340,12 @@
+     data,reference,accuracy_path,parity_path,out,build=[inside(ROOT,ROOT/p) for p in
+         (args.preflight,args.reference,args.accuracy_review,args.parity_review,args.output,args.build)]
+     disjoint(data,out,build)
+-    for protected in (reference,parity_path.parent):
++    for protected in (reference,parity_path.parent,ROOT/'data/development'):
+         for target in (out,build):
+             require(target != protected and target not in protected.parents and protected not in target.parents,
+                     'Run directories overlap reviewed evidence')
+     require(not out.exists() and not build.exists(),'Require fresh output/build directories')
+-    manifest,copied,evidence,parity,expected=reviewed_inputs(data,reference,accuracy_path,parity_path)
++    manifest,copied,evidence,parity,selected,adoption,expected=reviewed_inputs(data,reference,accuracy_path,parity_path)
+     out.mkdir(parents=True)
+     ledger_path=out/'dd_inversion_execution.json'
+     ledger=dict(status='preparing',mode='dd',started_utc=utc(),driver_pid=os.getpid(),command=sys.argv,
+@@ -254,8 +368,11 @@
+         record=dict(stage=stage,command=command,supervisor_command=measured,pid=active.pid,return_code=code,finished_utc=utc())
+         for line in (out/(stage+'_resources.txt')).read_text().splitlines():
+             if 'Maximum resident set size (kbytes):' in line:record['maximum_resident_set_kbytes']=int(line.rsplit(':',1)[1])
+-        ledger['completed_commands'].append(record); active=None; atomic_json(ledger_path,ledger)
++        record['remaining_live_group_members']=live_group_members(active.pid)
++        ledger['completed_commands'].append(record); atomic_json(ledger_path,ledger)
++        require(not record['remaining_live_group_members'], 'Supervisor exited while process-group writers remain')
+         if code:raise subprocess.CalledProcessError(code,command)
++        active=None
+     def interrupted(signum,unused):raise SystemExit(128+signum)
+     signal.signal(signal.SIGTERM,interrupted); signal.signal(signal.SIGINT,interrupted)
+     try:
+@@ -269,26 +386,27 @@
+             shutil.copyfile(str(path),str(provenance/(label+'.json')))
+             provenance_hashes['preflight_provenance/'+label+'.json']=sha(path)
+         source=build/'source'; source.mkdir(parents=True)
+-        names=['CMakeLists.txt','run_hayward_guarded_inversion.py','run_loma_initial_preflight.py',
+-               'run_loma_analytic_simulation.py','diagnostics/review_loma_analytic_simulation.py',
+-               'diagnostics/review_trial_completion.py']
+-        names += [str(p.relative_to(ROOT)) for p in sorted((ROOT/'src').glob('*')) if p.is_file()]
+-        source_hashes={name:sha(ROOT/name) for name in names}
++        scripts=('run_hayward_old_kernel_backtracking.py','run_loma_initial_preflight.py',
++                 'run_loma_analytic_simulation.py','diagnostics/review_loma_analytic_simulation.py',
++                 'diagnostics/review_old_kernel_trial_completion.py')
++        sources=dict(selected)
++        sources.update({name:ROOT/name for name in scripts})
++        names=sorted(sources)
++        source_hashes={name:sha(sources[name]) for name in names}
+         for name in names:
+-            target=source/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(str(ROOT/name),str(target))
++            target=source/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(str(sources[name]),str(target))
+         verify_hashes(source,source_hashes)
+-        for name,digest in source_hashes.items():
+-            if name.startswith('src/') or name == 'CMakeLists.txt':
+-                require(parity['guarded_source_sha256'].get(name) == digest,
+-                        'Source changed between eligibility review and frozen copy: '+name)
+-        require(source_hashes['src/main.cpp'] == REVIEWED_GUARD_MAIN, 'Copied guard call path changed')
++        require({name:source_hashes[name] for name in selected} == adoption['candidate_source_sha256'],
++                'Selected old-kernel source changed during frozen copy')
++        require(source_hashes['diagnostics/review_old_kernel_trial_completion.py'] == COMPLETION_HELPER,
++                'Copied completion helper changed')
+         def normalize(info):
+             info.uid=info.gid=info.mtime=0;info.uname=info.gname='';info.pax_headers={};return info
+         archive=out/'guarded_source.tar.gz'
+         with tarfile.open(str(archive),'x:gz') as stream:
+             for name in names:stream.add(str(source/name),arcname=name,filter=normalize)
+         run(['cmake','--version'],'cmake_version');run(['cmake','-S',source,'-B',build/'compiled'],'configure')
+-        compiler=next(line.split('=',1)[1] for line in (build/'compiled/CMakeCache.txt').read_text().splitlines() if line.startswith('CMAKE_CXX_COMPILER:FILEPATH='))
++        compiler=compiler_from_cache((build/'compiled/CMakeCache.txt').read_text())
+         require(sha(Path(compiler))==parity['compiler_sha256'],'Compiler differs from adoption controls')
+         flags=(build/'compiled/CMakeFiles/dd.dir/flags.make').read_text().split('CXX_FLAGS = ',1)[1].splitlines()[0]
+         require(flags==parity['flags'],'Compiler flags differ from adoption controls')
+@@ -300,7 +418,8 @@
+             build_records['build_provenance/'+name]=sha(target)
+         binary=build/'compiled/dd';run(['ldd',binary],'runtime_libraries')
+         libraries={name:sha(Path(name)) for line in (out/'runtime_libraries_stdout.log').read_text().splitlines() for name in line.split() if name.startswith('/')}
+-        frozen=dict(mode='dd',base_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=str(ROOT),universal_newlines=True).strip(),
++        require(libraries == adoption['runtime_library_sha256'], 'Runtime libraries differ from old-kernel controls')
++        frozen=dict(mode='dd',source_adoption=adoption,base_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=str(ROOT),universal_newlines=True).strip(),
+                     inherited_preflight=str(data.relative_to(ROOT)),inherited_evidence_sha256=evidence,
+                     inherited_binary=manifest['binary'],inherited_binary_sha256=manifest['sha256'][manifest['binary']],
+                     source_sha256=source_hashes,source_archive_sha256=sha(archive),input_sha256=copied,
+@@ -311,7 +430,8 @@
+                     threads=THREADS,address_space_limit_GiB=LIMIT_GIB,expected_counts=expected,
+                     environment={k:env[k] for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','LC_ALL','CXX','TMPDIR')},
+                     limitations=['Initial1Dreference applies only to the unchanged starting model and geometry.',
+-                                 'Per-evaluation guard preserves existing flags; it is not global first-arrival certification.',
++                                 'Pure local stopping failures only may reject an unevaluated trial; current/final/mixed failures remain fatal.',
++                                 'Old initial forward evidence is reused through004-to-guard-to-main-only-backtracking controls; no direct main or binary equality claim.',
+                                  'Completion requires later final-model diagnostics and scientific output review.'])
+         atomic_json(out/'dd_inversion_run_manifest.json',frozen)
+         def verify():
+@@ -329,7 +449,9 @@
+                       immutable_inputs_verified=True,original_preflight_verified=True)
+         atomic_json(ledger_path,ledger)
+     except BaseException as error:
+-        if active is not None:ledger['exception_child']=terminate_group(active)
++        if active is not None:
++            signal.signal(signal.SIGTERM,signal.SIG_IGN);signal.signal(signal.SIGINT,signal.SIG_IGN)
++            ledger['exception_child']=terminate_group(active)
+         ledger.update(status='interrupted' if isinstance(error,(SystemExit,KeyboardInterrupt)) else 'failed',
+                       finished_utc=utc(),error=str(error),return_code=getattr(error,'returncode',getattr(error,'code',None)))
+         if ledger.get('exception_child',{}).get('remaining_live_group_members'):

@@ -1,0 +1,23 @@
+{
+  "status": "passed_source_review",
+  "created_utc": "2026-10-10T10:14:04.230785Z",
+  "prepared_sha256": "5bb45c57b3f594485abbaf144da3b540f2c7f8d42dc783837976fbe33b5d96dd",
+  "checks_prepared_sha256": "dc39bd1205550c4d0a9ad72fcc88dc215317d6537628ca2a55dfbc63364d38b3",
+  "candidate_input_files_verified": 19,
+  "candidate_outputs_verified": 23,
+  "candidate_runtime_pins_verified": 9,
+  "checks_input_files_verified": 26,
+  "checks_output_files_verified": 27,
+  "checks_runtime_pins_verified": 10,
+  "changed_source_files": [
+    "src/main.cpp"
+  ],
+  "identical_to_reviewed_candidate003_patch": true,
+  "prior_guard_bridge_sha256": "6893f3fd746d21a88878990d5af1bfb0a60107d13ae16be42ae0d049cb59f3ab",
+  "prior_guard_bridge_controls": 30,
+  "unchanged_harness_sha256": "fcf8f58a2f0ca99cb331edd7971c4f59ca8b089d078dcfcd6d729cec63239bbe",
+  "runner_sha256": "62cd9874bc515595038ec6fff1bd53a3bfb951266dd6e748f888ca511c280102",
+  "runner_reuse_patch_sha256": "4b94456878b774fa63af3fb75c5105e25bd148cd0295e9544da86b9291f6dad7",
+  "approved_scope": "Two O3 compilations and unchanged invented before/after actual-loop controls only; no real inverse or maintained source change. Separate old core, main-only backtracking delta.",
+  "limits": "Source provenance uses explicit004\u2192originalguard\u2192backtracking chain; bounded source reuse is not new binary parity, later3Daccuracy or first-arrival certification."
+}

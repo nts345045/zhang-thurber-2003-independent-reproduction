@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "summary_sha256": "fb3912457ca0753d0cf3595f255ee246185e5b85b6cd1b1325580eefa3ca27d0",
+  "execution_sha256": "8c0d84b538ebb69023b56e8700f8a0cf5218dd843fdc64c1f161621aee774404",
+  "source_sha256": "3db50e2e6d731d11cf9bf3c812dd4dcb68e7e58fb8943d3bf5745425624ba60d",
+  "verified_pins": 441,
+  "executed_artifact_pins": 370,
+  "core_checks": 48,
+  "external_input_categories": 11,
+  "actual_trial_fixture": {
+    "status": "passed",
+    "scope": "invented geometry only",
+    "altered_ray_causes": 9,
+    "fatal_current_and_final_cases": 2,
+    "rejected_trial_count": 20,
+    "trial_ledger_count": 2,
+    "trial_exhausted": false,
+    "trial_fixture_outcome": "completed",
+    "preflight_keeps_failed_local_flags": true,
+    "native_sparse_order_and_epoch_metadata": true,
+    "accepted_and_failed_states_separate": true,
+    "failure_states_round_trip_binary64": true,
+    "real_inversions_run": false
+  },
+  "accepted_step_fractions": [
+    0.001953125,
+    0.00048828125
+  ],
+  "failed_path_nodes_checked": 371,
+  "native_metadata_cells": 1088,
+  "first_accepted_objective_independent": {
+    "saved": 0.4887865985347325,
+    "reconstructed": 0.48878659853473255,
+    "absolute_difference": 5.551115123125783e-17
+  },
+  "scope": "Saved-only source/hash/state/native readback; no compiler, ray or inversion rerun.",
+  "limitations": [
+    "Invented fixtures only; no real-data recovery or later3Daccuracy claim.",
+    "Guard fixture retains ray_iterations=0; passing small trial fractions is its actual observed outcome, not a new tolerance.",
+    "Controller completion validation and any real launch require separate review."
+  ]
+}

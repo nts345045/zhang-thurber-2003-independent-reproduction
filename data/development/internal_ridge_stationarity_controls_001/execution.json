@@ -1,0 +1,95 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T10:17:20.788443+00:00",
+  "prepared_sha256": "bdca8bf737e9c12d1f4e99c41c064b8d46341c2bdc4642d4c363afa99423440f",
+  "prelaunch_review_sha256": "b29d5b9d3814c0a9d4cdc596dea99b6a373dd016d1ea1170daab21b84e8fafb3",
+  "commands": [
+    {
+      "stage": "compiler_version",
+      "command": [
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "started_utc": "2026-10-10T10:17:20.789780+00:00",
+      "pid": 339865,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:17:21.020559+00:00",
+      "stdout_sha256": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/internal_ridge_stationarity_controls_001/observe.cpp",
+        "-I/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/internal_ridge_stationarity_controls_001/source",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/internal_ridge_stationarity_controls_001/build/observe"
+      ],
+      "started_utc": "2026-10-10T10:17:21.021572+00:00",
+      "pid": 339866,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:17:27.861552+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "runtime_libraries",
+      "command": [
+        "ldd",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/internal_ridge_stationarity_controls_001/build/observe"
+      ],
+      "started_utc": "2026-10-10T10:17:27.862712+00:00",
+      "pid": 339953,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:17:28.101936+00:00",
+      "stdout_sha256": "3d795b099c29e93f43847df9d2817a1b6454a5357cdde2466061b7080931f125",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "observe",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/internal_ridge_stationarity_controls_001/build/observe",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/internal_ridge_stationarity_controls_001/results"
+      ],
+      "started_utc": "2026-10-10T10:17:28.102933+00:00",
+      "pid": 339958,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:17:28.335817+00:00",
+      "stdout_sha256": "71b58477942cd0f681c74de9d5a5bd4d2cdbfbda081ea8e8d6a19daaa77f0aed",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "exact_and_saved_checks",
+      "command": [
+        "/usr/bin/python3",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/internal_ridge_stationarity_controls_001/check.py",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/internal_ridge_stationarity_controls_001/results"
+      ],
+      "started_utc": "2026-10-10T10:17:28.337190+00:00",
+      "pid": 339959,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T10:17:28.672471+00:00",
+      "stdout_sha256": "a3e4d9ae7452e8ce48dac7de0cf64c95b24df32c11a3b0d6fce39f59e845b4e5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Invented fixed paths and exact analytic directional components; no trace or optimization.",
+  "environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "1",
+    "LC_ALL": "C",
+    "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "current_stage": "exact_and_saved_checks",
+  "return_code": 0,
+  "finished_utc": "2026-10-10T10:17:28.737965+00:00",
+  "summary_sha256": "8b094968da699480af6ddbbb18f12c5a67b9bb6f1451525c759c5cb2de500dfc"
+}

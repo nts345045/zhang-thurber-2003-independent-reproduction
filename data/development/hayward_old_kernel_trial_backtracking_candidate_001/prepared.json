@@ -1,0 +1,121 @@
+{
+  "status": "prepared_not_executed",
+  "scope": "Separate old7111-kernel, exact candidate003 main-only backtracking candidate; no maintained mutation or numerical execution.",
+  "input_sha256": {
+    "data/hayward_first_arrival_guarded_001/dd_inversion_run_manifest.json": "89c013bb0bd5a8987d99e017abf5a6a6f32a88cfb3b75b3f124d8969b6b401e2",
+    "data/hayward_first_arrival_004/run_manifest.json": "75631991144e76cf16731e0b73e396860ab78db386c556415f990968cb7cc00a",
+    "data/development/hayward_trial_backtracking_candidate_003/prepared.json": "1f3f1679c472a136f34709d2f7b0c015861e4c39ec3d3fe69ea768256c9bac9a",
+    "data/hayward_first_arrival_guarded_001/guarded_source.tar.gz": "950b2f781804ce0f1311f4efd699b1d3f8ef3c7329b3f90aecc6d97b1c84fedd",
+    "data/development/hayward_trial_backtracking_candidate_003/before/src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "data/development/hayward_trial_backtracking_candidate_003/after/src/main.cpp": "a10dcdc300d9a4e43f6ae0cba2e354d7cec549438319cf411b577790b2373058",
+    "data/development/hayward_trial_backtracking_candidate_003/candidate.patch": "09f7ec168e7bf4919128d962efd4215ed905ce72bedafbc2a59621c7776584db",
+    "data/development/hayward_guard_adoption_checks/001/summary.json": "6893f3fd746d21a88878990d5af1bfb0a60107d13ae16be42ae0d049cb59f3ab",
+    "data/development/hayward_trial_backtracking_controls_002/review.json": "56a4dd3aa36539344a51a97feeaf5c91ab560d1a52b1fafba8974f886f8f0bb3",
+    "data/hayward_first_arrival_guarded_001/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward_first_arrival_004/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward_first_arrival_guarded_001/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/hayward_first_arrival_004/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/hayward_first_arrival_guarded_001/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward_first_arrival_004/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward_first_arrival_guarded_001/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/hayward_first_arrival_004/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/hayward_first_arrival_guarded_001/run.cfg": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4",
+    "data/hayward_first_arrival_004/run.cfg": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4"
+  },
+  "runtime_sha256": {
+    "/usr/bin/c++": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7",
+    "/lib64/libgomp.so.1": "855c301ab3ac34c8d0e4f8ddd135993156a4dca42a2778133e9ccba199753d54",
+    "/lib64/libpthread.so.0": "8e757a6a1bfb17649d6f4cfb1ca1f4bac8c06588913ebaa1076ec0f6cd36b481",
+    "/lib64/libstdc++.so.6": "7657b5709008fa4c3c1cc062e15417e9dd1a9f37c82a3615cd79baae7827fdfd",
+    "/lib64/libm.so.6": "07dee3042cbebba9c6378266b15579edc7494acad1b7d1048c5db6d79d908bf4",
+    "/lib64/libgcc_s.so.1": "fc8572b6747ab823b40d75a2b759db2c12b5c256ede7fa0e5da6ae5f4b0e144d",
+    "/lib64/libc.so.6": "28d830c37bfd68d5165b3d2fd28a87dd737180df5255e1290d5015b0f9db0027",
+    "/lib64/libdl.so.2": "e34274941b0b4cff9f07896ecb0a56c108338aac1b3f8d21cc67c247094ad901",
+    "/lib64/ld-linux-x86-64.so.2": "4a06fb242c7d5a06a4fcd54fd0723d680c0a5828ebd4a2ebeb4dd1fd68705a12"
+  },
+  "original_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "output_sha256": {
+    "README.md": "b9458ffcaaefb6ea3825efa30bec0ac946f344da78bdbe12afd00f179fbfb8bf",
+    "after/CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "after/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "after/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "after/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "after/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "after/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "after/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "after/src/main.cpp": "a10dcdc300d9a4e43f6ae0cba2e354d7cec549438319cf411b577790b2373058",
+    "after/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "after/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "before/CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "before/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "before/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "before/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "before/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "before/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "before/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "before/src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "before/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "before/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "candidate.patch": "09f7ec168e7bf4919128d962efd4215ed905ce72bedafbc2a59621c7776584db",
+    "prepare.py": "4f17fc1cce249865b3be848e72aef197d5b3a095b54559cbe8358abaa72c2385"
+  },
+  "changed_source_files": [
+    "src/main.cpp"
+  ],
+  "bridge": {
+    "preflight_main_sha256": "9f1e6db7569aafe01277a9d01b45330b5d26e001659b978dff18020a6bad5bf3",
+    "reviewed_guarded_main_sha256": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "candidate_main_sha256": "a10dcdc300d9a4e43f6ae0cba2e354d7cec549438319cf411b577790b2373058",
+    "prior_guard_bridge_summary_sha256": "6893f3fd746d21a88878990d5af1bfb0a60107d13ae16be42ae0d049cb59f3ab",
+    "identical_initial_ray_dispatch_block_sha256": "53f216dd58294faf20bbe68ba637faa1f9722ab460f6669da0fdea1ce8e18e24",
+    "identical_shared_kernel_and_cmake_sha256": {
+      "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+      "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+      "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+      "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+      "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+      "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+      "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+      "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+    },
+    "identical_native_numerical_input_sha256": {
+      "initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+      "initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+      "stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+      "observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c"
+    },
+    "identical_effective_config": {
+      "authoritative_ids_required": 1.0,
+      "catalog_only_dd": 1.0,
+      "iterations": 18.0,
+      "stage_length": 6.0,
+      "smoothing": 10.0,
+      "damping": 0.1,
+      "pair_distance": 10.0,
+      "ray_spacing": 0.03125,
+      "ray_iterations": 1000.0,
+      "ray_initializer": 1.0,
+      "fmm_spacing": 0.125
+    }
+  },
+  "compiler": "/usr/bin/c++",
+  "flags": "-std=gnu++17 -O3 -Wall -Wextra -Wpedantic -fopenmp",
+  "planned_threads": 4,
+  "limitations": [
+    "004 main and guarded main differ; reuse explicitly depends on the prior reviewed guard bridge.",
+    "New binary and bounded controls are pending. No exact binary-identity claim or real inverse authorization follows from source preparation.",
+    "Initial one-dimensional accuracy does not certify later three-dimensional trial models; unchanged current/final guards remain fatal.",
+    "Maintained D adoption and prior candidate003/controls002 remain unchanged and separate."
+  ]
+}
