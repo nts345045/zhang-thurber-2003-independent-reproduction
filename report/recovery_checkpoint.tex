@@ -148,7 +148,30 @@ reviews are retained in
 \path{data/development/loma_initial_reference_001/} and
 \path{data/development/loma_lon_initial_reference_001/}.
 
-The frozen LOM initial-forward preflight is now active. It exports full source
+The LON failure arose when reconstructing turning speed from the isolated
+root. Rounding $u=\sqrt{u_0^2+r^2}$ to binary64 loses part of the small
+offset above the layer-knot speed $u_0$. A separately reviewed variant retains
+a rational square-root enclosure midpoint while evaluating each turning
+candidate. It leaves the isolated roots, physical formulas, and acceptance
+limits unchanged. All 37,648 references now pass in the separate second
+attempt. Every one of the 37,752 candidate signatures is retained, with no
+change to a previously selected branch. Pair 8156 is the only validity
+change; its original failed values remain blank in the first attempt.
+The maximum candidate-time change is 1.701 nanoseconds, and the maximum
+source-vector change is $1.321\times10^{-13}$ s/km. Maximum distance closure
+residual decreases to $9.652\times10^{-10}$ km. The full identified comparison
+and independent readback are retained in
+\path{data/development/loma_lon_initial_reference_002/}. This corrects the
+reference arithmetic; it does not validate a production ray or inversion.
+
+Separate frozen LOM and LON initial-forward preflights are now active.
+The LON preflight uses the corrected complete reference and the same numerical
+settings as LOM. Seven bounded controls verify unchanged matrix-only outputs
+between the earlier LOM executable and the guarded executable used for LON,
+including retention of false local-convergence flags. These controls and
+the launch eligibility review are saved in
+\path{data/development/loma_lon_initial_preflight_adoption_001/}.
+Each preflight exports full source
 derivatives and exact endpoint/domain checks from the rays used to count matrix
 entries. A separate sampled refinement retains all 104 declared samples and
 24 valid source finite differences while limiting cached fine receiver fields.
@@ -214,17 +237,13 @@ categories remove no catalog observations and establish no study exclusion.
 Full native rows and the original unsubmitted requests are saved in
 \path{data/authoritative/waveforms/cohort_plan_001/}.
 
-The user clarified that normalized waveform correlation should supply
-differential times without calibration corrections.
-Authoritative retrieval can therefore continue despite missing
-historical response functions; these remain explicit metadata gaps.
-The documented EQcorrscan workflow provides a reference for local-window
-normalization, pick-relative extraction, and \texttt{dt.cc} sign and identifier
-mapping.\footnote{EQcorrscan documentation:
+Normalized waveform correlation will supply differential times without
+calibration corrections, as clarified by the user. Missing historical responses
+remain metadata gaps rather than retrieval prerequisites.
+EQcorrscan documents local-window normalization, pick-relative extraction,
+and \texttt{dt.cc} identifier and sign conventions.\footnote{EQcorrscan documentation:
 \href{https://eqcorrscan.readthedocs.io/en/latest/submodules/utils.correlate.html}{normalized correlation};
 \href{https://eqcorrscan.readthedocs.io/en/latest/submodules/autogen/eqcorrscan.utils.catalog_to_dd.write_correlations.html}{correlation-derived differential times}.}
-Its differential time is travel time for event 1 minus that for event 2.
-Preprocessing, sample support, lag range, and acceptance criteria must remain
-declared. Package defaults do not replace the manuscript's written method.
-The earlier failed coherence pilot remains preserved; this clarification
-does not turn it into an accepted differential observation.
+Differential time is travel time for event 1 minus that for event 2.
+Preprocessing and acceptance choices require declaration. The failed pilot
+remains preserved, with no accepted waveform observation.

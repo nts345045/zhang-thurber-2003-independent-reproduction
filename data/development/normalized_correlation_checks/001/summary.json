@@ -1,0 +1,217 @@
+{
+  "status": "passed",
+  "scope": "Invented normalization and lag-sign controls; no real measurements or acceptance thresholds",
+  "checks": [
+    {
+      "name": "local_definition",
+      "passed": true,
+      "maximum_coefficient_error": 6.661338147750939e-16
+    },
+    {
+      "name": "known_peak",
+      "passed": true
+    },
+    {
+      "name": "local_definition_small",
+      "passed": true,
+      "maximum_coefficient_error": 8.881784197001252e-16
+    },
+    {
+      "name": "same_peak_small",
+      "passed": true,
+      "maximum_change_from_untransformed": 4.440892098500626e-16
+    },
+    {
+      "name": "local_definition_large",
+      "passed": true,
+      "maximum_coefficient_error": 1.1102230246251565e-15
+    },
+    {
+      "name": "same_peak_large",
+      "passed": true,
+      "maximum_change_from_untransformed": 4.440892098500626e-16
+    },
+    {
+      "name": "local_definition_offset",
+      "passed": true,
+      "maximum_coefficient_error": 8.881784197001252e-16
+    },
+    {
+      "name": "same_peak_offset",
+      "passed": true,
+      "maximum_change_from_untransformed": 1.3336554083309693e-13
+    },
+    {
+      "name": "local_definition_gain_and_offset",
+      "passed": true,
+      "maximum_coefficient_error": 9.992007221626409e-16
+    },
+    {
+      "name": "same_peak_gain_and_offset",
+      "passed": true,
+      "maximum_change_from_untransformed": 2.220446049250313e-16
+    },
+    {
+      "name": "signed_polarity",
+      "passed": true
+    },
+    {
+      "name": "global_only_counterexample",
+      "passed": true,
+      "maximum_global_only_error": 0.1039646284914646
+    },
+    {
+      "name": "constant_data_is_degenerate",
+      "passed": true
+    },
+    {
+      "name": "constant_template_is_degenerate",
+      "passed": true
+    },
+    {
+      "name": "lag_sign_50.0_-12_0.0_0.0",
+      "passed": true,
+      "delay_j_minus_i_s": -0.24,
+      "dt_i_minus_j_s": 1.49
+    },
+    {
+      "name": "lag_sign_50.0_-12_0.001_-0.002",
+      "passed": true,
+      "delay_j_minus_i_s": -0.243,
+      "dt_i_minus_j_s": 1.4929999999999999
+    },
+    {
+      "name": "lag_sign_50.0_0_0.0_0.0",
+      "passed": true,
+      "delay_j_minus_i_s": 0.0,
+      "dt_i_minus_j_s": 1.25
+    },
+    {
+      "name": "lag_sign_50.0_0_0.001_-0.002",
+      "passed": true,
+      "delay_j_minus_i_s": -0.0030000000000000027,
+      "dt_i_minus_j_s": 1.2530000000000001
+    },
+    {
+      "name": "lag_sign_50.0_17_0.0_0.0",
+      "passed": true,
+      "delay_j_minus_i_s": 0.33999999999999997,
+      "dt_i_minus_j_s": 0.91
+    },
+    {
+      "name": "lag_sign_50.0_17_0.001_-0.002",
+      "passed": true,
+      "delay_j_minus_i_s": 0.33699999999999997,
+      "dt_i_minus_j_s": 0.913
+    },
+    {
+      "name": "lag_sign_100.0_-12_0.0_0.0",
+      "passed": true,
+      "delay_j_minus_i_s": -0.12,
+      "dt_i_minus_j_s": 1.37
+    },
+    {
+      "name": "lag_sign_100.0_-12_0.001_-0.002",
+      "passed": true,
+      "delay_j_minus_i_s": -0.123,
+      "dt_i_minus_j_s": 1.373
+    },
+    {
+      "name": "lag_sign_100.0_0_0.0_0.0",
+      "passed": true,
+      "delay_j_minus_i_s": 0.0,
+      "dt_i_minus_j_s": 1.25
+    },
+    {
+      "name": "lag_sign_100.0_0_0.001_-0.002",
+      "passed": true,
+      "delay_j_minus_i_s": -0.0030000000000000027,
+      "dt_i_minus_j_s": 1.2530000000000001
+    },
+    {
+      "name": "lag_sign_100.0_17_0.0_0.0",
+      "passed": true,
+      "delay_j_minus_i_s": 0.16999999999999998,
+      "dt_i_minus_j_s": 1.08
+    },
+    {
+      "name": "lag_sign_100.0_17_0.001_-0.002",
+      "passed": true,
+      "delay_j_minus_i_s": 0.16699999999999998,
+      "dt_i_minus_j_s": 1.083
+    },
+    {
+      "name": "lag_sign_200.0_-12_0.0_0.0",
+      "passed": true,
+      "delay_j_minus_i_s": -0.06000000000000005,
+      "dt_i_minus_j_s": 1.31
+    },
+    {
+      "name": "lag_sign_200.0_-12_0.001_-0.002",
+      "passed": true,
+      "delay_j_minus_i_s": -0.06300000000000006,
+      "dt_i_minus_j_s": 1.3130000000000002
+    },
+    {
+      "name": "lag_sign_200.0_0_0.0_0.0",
+      "passed": true,
+      "delay_j_minus_i_s": 0.0,
+      "dt_i_minus_j_s": 1.25
+    },
+    {
+      "name": "lag_sign_200.0_0_0.001_-0.002",
+      "passed": true,
+      "delay_j_minus_i_s": -0.0030000000000000027,
+      "dt_i_minus_j_s": 1.2530000000000001
+    },
+    {
+      "name": "lag_sign_200.0_17_0.0_0.0",
+      "passed": true,
+      "delay_j_minus_i_s": 0.08499999999999996,
+      "dt_i_minus_j_s": 1.165
+    },
+    {
+      "name": "lag_sign_200.0_17_0.001_-0.002",
+      "passed": true,
+      "delay_j_minus_i_s": 0.08199999999999996,
+      "dt_i_minus_j_s": 1.1680000000000001
+    },
+    {
+      "name": "independent_known_travel_time_difference",
+      "passed": true
+    },
+    {
+      "name": "boundary_peak_is_visible",
+      "passed": true
+    },
+    {
+      "name": "repeated_peak_ambiguity_is_visible",
+      "passed": true
+    },
+    {
+      "name": "invalid_sample_input_35",
+      "passed": true
+    },
+    {
+      "name": "invalid_sample_input_36",
+      "passed": true
+    }
+  ],
+  "versions": {
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "obspy": "1.5.1"
+  },
+  "obspy_cross_correlation_source_sha256": "57c1678900588926f43197b29d0156b14df142a9f7403c77241fd48ebcf6421e",
+  "source_sha256": "d27d95d4625f4b2f67185695b0078f5b453fd8f4a3b5793bbe20fc3cd03c4146",
+  "output_sha256": {
+    "invented_arrays.npz": "de03e0cccd42e6fa7241d5cb34d34d9edc437ef3d57d5c3243a52337fd06ff11",
+    "check_normalized_waveform_correlation.py": "d27d95d4625f4b2f67185695b0078f5b453fd8f4a3b5793bbe20fc3cd03c4146"
+  },
+  "limitations": [
+    "These controls do not specify waveform filtering, tapering, interpolation, quality acceptance or timing uncertainty.",
+    "A package zero for constant data is an undefined normalized coefficient, not a usable timing observation.",
+    "Signed correlation retains polarity; absolute correlation must not silently select a reversed-polarity peak."
+  ]
+}

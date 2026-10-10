@@ -1,0 +1,46 @@
+{
+  "status": "running_initial_matrix_preflight_verified",
+  "verified_utc": "2026-10-10T04:33:44.600290Z",
+  "driver_pid": 113090,
+  "supervisor_pid": 114765,
+  "solver_pid": 114766,
+  "source_archive_sha256": "4457ff984ec863180fa029f221014094c5072a9a08abd6e97c5da1984892dbf6",
+  "binary_sha256": "c8c1b56a78fc55cbe3fbbf6c7370a799ce0819e9a90db34e6f931a2f895e6203",
+  "manifest_sha256": "d42cee6a9380b7245d654037a297ddf23401813fdd3929dae7d30adeb4ab88a3",
+  "config_sha256": "b2bbdc79e2c5b94452fdca78424d3c69dc816158a4ac5fb964285efc5c195c27",
+  "source_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "run_loma_initial_preflight.py": "f1acc19135c11edda106e3b8c7d8c1879d7d490db729d4ad55263b87022946f1",
+    "run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5",
+    "diagnostics/review_loma_analytic_simulation.py": "786c1ccc99cfa3d3677dde88f11a96f9677693966de874d40c15ca2972a76246",
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "settings": {
+    "iterations": 1,
+    "matrix_preflight_only": 1,
+    "ray_initializer": 1,
+    "ray_spacing": 0.03125,
+    "fmm_spacing": 0.125,
+    "ray_iterations": 1000,
+    "raycheck_receiver_batch": 4
+  },
+  "configured_OMP_NUM_THREADS": 4,
+  "process_threads_at_snapshot": 1,
+  "address_space_limit_line": "Max address space         137438953472         137438953472         bytes     ",
+  "source_archive_members_verified": 13,
+  "manifest_inputs_match_independent_simulation_audit": true,
+  "actual_binary_matches_reviewed_guarded_O3": true,
+  "initial_inspection_correction": "An initial read-only check prematurely required four live kernel threads during serial input loading. OMP_NUM_THREADS=4 is verified from the child environment; workers are created when parallel work begins. No process or numerical input was changed.",
+  "limitations": [
+    "This is a launch-state verification, not a completed forward or inverse result.",
+    "Copied observation bytes were verified by the frozen launcher before tracing; this read-only check matches its manifest against the already independently rehashed simulation audit."
+  ]
+}

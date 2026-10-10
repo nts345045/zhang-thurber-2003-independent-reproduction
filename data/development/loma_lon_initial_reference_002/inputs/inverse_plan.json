@@ -1,0 +1,105 @@
+{
+  "status": "reference_only_plan",
+  "scope": "Recompute every unchanged LON initial pair using the independently reviewed rational turning-speed reconstruction; no forward or inverse calculation",
+  "actual_run": "data/loma_lon_analytic_001",
+  "input_sha256": {
+    "initial_events.csv": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+    "stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "initial_grid.csv": "121eb9afae309427db7dc579f951d1732ce6f28d674948889bde91ca88d5dcd0",
+    "run.cfg": "7295bfade7819f06b9f521ec0665b830c311b30b3748025f69e67b1e7c532b88",
+    "ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "preparation_manifest.json": "ae361697f110ae6886e9e6e16dae24ccc9b9db8dee2cbd191043ba6daea12411",
+    "analytic_truth_manifest.json": "64661c55d2a73b20841b83bafb35cdc0184f30bf4cbc00492869beb9863c46df",
+    "simulation_execution.json": "c209a4550dda670ddeaff018de744343148c677d6feaf6d7d80097e5ea80395f",
+    "simulation_run_manifest.json": "a2bc7f143b37837090f6f97ee175757d5400c9d9f9757d65745620e65c37594a",
+    "independent_simulation_review.json": "01483067c89c4df00f4807961eb2c8d7fddf4f8c2c6a368d9bff3c03213e0eff"
+  },
+  "source_sha256": {
+    "data/development/loma_lon_initial_reference_plan_002/prepare.py": "bdf793ca5f4d4cb898f85f2f3035761a4d17919419f139cb64cea770460c6626",
+    "diagnostics/run_loma_initial_precise_turn_reference.py": "7a2cac0846d92359af1ac4dc73934f63efbc38c5841841951546969948612f80",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2"
+  },
+  "expected_pairs": 37648,
+  "source_count": 724,
+  "receiver_count": 52,
+  "initial_profile_depth_velocity": [
+    [
+      -1.0,
+      2.53
+    ],
+    [
+      0.0,
+      2.53
+    ],
+    [
+      3.0,
+      5.50640625
+    ],
+    [
+      7.0,
+      6.03765625
+    ],
+    [
+      11.0,
+      6.345629139072848
+    ],
+    [
+      16.0,
+      6.478079470198676
+    ]
+  ],
+  "original_box_km": [
+    [
+      -35.0,
+      35.0
+    ],
+    [
+      -60.0,
+      40.0
+    ],
+    [
+      -1.0,
+      16.0
+    ]
+  ],
+  "initial_nodes": 288,
+  "source_time_included": false,
+  "shared_geometry_and_distinct_grid": {
+    "initial_events.csv": {
+      "lom": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+      "lon": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+      "byte_identical": true
+    },
+    "stations.csv": {
+      "lom": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+      "lon": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+      "byte_identical": true
+    },
+    "initial_grid.csv": {
+      "lom": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+      "lon": "121eb9afae309427db7dc579f951d1732ce6f28d674948889bde91ca88d5dcd0",
+      "byte_identical": false
+    }
+  },
+  "reviewed_observation_sha256_equal": true,
+  "observation_hash_basis": "The two passed exhaustive audits bind these hashes; observations are not reread or reused by this reference calculation.",
+  "limitations": [
+    "Only geometry may be byte identical to LOM; the initial velocity profile differs and every LON reference is recomputed.",
+    "Existing root/closure gates, native identities and finite box remain unchanged.",
+    "This is not a request or acceptance for LON numerical forward or inverse calculations.",
+    "Previous attempt001 remains invalid for pair8156; no result is overwritten or accepted retrospectively."
+  ],
+  "numerical_reference_sha256": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+  "numerical_review_sha256": {
+    "data/development/precise_turn_reference_checks/review_003.json": "11b6c57ed050588161e8f30801e644f67b04737188ab235a4df0a677e1d4a192",
+    "data/development/precise_turn_reference_checks/003/summary.json": "4bc542d3f4d2edb0a9e6ef82212db07f2d9d6dfd7f0bfbdff6af4d44e2dd24e6"
+  },
+  "preserved_previous_attempt": {
+    "data/development/loma_lon_initial_reference_plan_001/plan.json": "37e84168aa1bfce9535d94b6e55466725a8ded3a36c73b857fd780d7b50548d1",
+    "data/development/loma_lon_initial_reference_001/summary.json": "754fac2f78bb23952fa44af22ac0d59267e43ca5a2ccca1f9965ffce628ffa1b",
+    "data/development/loma_lon_initial_reference_001/execution.json": "587eb195af6b18fd04a0a2e8aa9ef1a7fd0f76e8483223691de859863289ae74",
+    "data/development/loma_lon_initial_reference_001/independent_review.json": "707f5b81626f2dc4e0ad4eeee46d1f0796c57a6dd34bf21d72d5b9668c08f7a6"
+  },
+  "arithmetic_change": "Retain an exact rational enclosure midpoint of sqrt(u0^2+r^2) during turning-candidate evaluation and sampling; root intervals, physical formulas and gates unchanged",
+  "comparison_required": "Inspect all candidate counts, validity, branch selections and times against preserved attempt001 after completion"
+}
