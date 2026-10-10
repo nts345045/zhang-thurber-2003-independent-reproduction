@@ -1,0 +1,59 @@
+{
+  "status": "completed_identified_measurements",
+  "scope": "Offline identified waveform measurements; no retrieval, dt.cc export or solver import.",
+  "input_source_sha256": {
+    "data/development/native_waveform_cc_checks/002/valid_fixture/samples/samples.json": "cb8582b466ea1259ab1b8e5a0221866feed6c10679035d7e3ae15e7684a8fd10",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/samples/review.json": "ecc735c3dd7b37d924350704575835c8fe6dd51fe2da8b57d66e944654b3cf4c",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/plan/summary.json": "395e21038f2159ba0a1e54212f4757ff140238f21b0b93f7126295c264e89e9e",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/plan/identified_catalog_differences.csv.gz": "7678e16bcbbbc66016f448479c7fd929e9a7982cfaa9e8e2bb8cb2179bd4d42b",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/samples/samples.picks.csv.gz": "9fcfa0784bedf27b44f314448e188f6490b90a1f572d22f401cef8bcafa43d0a",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/samples/source/acquire.py": "228d1cfd7e7ef6e90dc21e4914a5aaf2f4eadd3769d3b01f1b3d831708fefb36",
+    "diagnostics/run_native_waveform_cc.py": "54cd6533bac62a7f8d6b7b433fbd7782c14fd743b2d20b6f2059a1d71a255837",
+    "diagnostics/normalized_waveform_cc.py": "98bc3880882e9e117338931ce5c11d0d0b6863a929f2db045a72edb87645740e",
+    "data/development/normalized_correlation_specification/README.md": "fb656f2eddefb0c7fd2641e0d88367800d4742f475a0c0a2163b0596c30e8845",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/samples/raw/dataselect_000.response.decoded.json": "5a7d6d8b1fa3098ccef1224b5298e70206a550be565a01d642d570c5e35ce4f8",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/samples/raw/dataselect_000.response.provenance.json": "37e3f70f4cfc6a8af3daf11c2d8cc66880ab6936d4ec9c121f59be4ced5c5ec7",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/samples/raw/dataselect_000.response.identifiers.json": "098303d104d459e9e3fcb10ea828f2da5583bcb79373ff2af760c9d32ea76174",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "data/development/native_waveform_cc_checks/002/valid_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "ef8366176402c92dfa248b6593d6e42a745a17278c5c0c90bd7ab780d4cc96b5"
+  },
+  "samples_summary_sha256": "cb8582b466ea1259ab1b8e5a0221866feed6c10679035d7e3ae15e7684a8fd10",
+  "samples_review_sha256": "ecc735c3dd7b37d924350704575835c8fe6dd51fe2da8b57d66e944654b3cf4c",
+  "retained_original_picks": 8,
+  "retained_original_catalog_pairs": 7,
+  "attempted_pairs": 2,
+  "status_counts": {
+    "accepted_discrete_measurement": 1,
+    "not_attempted": 5,
+    "constant_search_windows": 1
+  },
+  "original_catalog_values_changed": false,
+  "solver_observations_added": 0,
+  "dt_cc_exported": false,
+  "weights": "Accepted CC squared is a declared relative weight, not inverse variance and not a solver row multiplier.",
+  "null_diagnostic_values": "Undefined/nonfinite diagnostic array entries are stored as JSON null; statuses retain their rejection reason.",
+  "versions": {
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "obspy": "1.5.1"
+  },
+  "output_sha256": {
+    "identified_measurements.csv.gz": "5fddf4a9b6c4efaf3a4b873ac419aaf29420f2fa3fb20f00a77d7494f34628a0",
+    "attempted_diagnostics.jsonl.gz": "c04a604f14c86168b99f6685e2be0f7e6f921397b996703053cf0ac99f2fc343",
+    "source/run_native_waveform_cc.py": "54cd6533bac62a7f8d6b7b433fbd7782c14fd743b2d20b6f2059a1d71a255837",
+    "source/normalized_waveform_cc.py": "98bc3880882e9e117338931ce5c11d0d0b6863a929f2db045a72edb87645740e",
+    "source/README.md": "fb656f2eddefb0c7fd2641e0d88367800d4742f475a0c0a2163b0596c30e8845",
+    "source/sample_decoder.py": "228d1cfd7e7ef6e90dc21e4914a5aaf2f4eadd3769d3b01f1b3d831708fefb36"
+  },
+  "limitations": [
+    "Native 100 Hz, provider-declared vertical components and the fixed documented discrete method only.",
+    "Missing samples/orientations and mismatched receiver positions remain identified unattempted rows; no study exclusion is inferred.",
+    "Empirical correlation/coherence acceptance does not establish formal timing uncertainty or instrument phase equivalence.",
+    "The next dt.cc export requires explicit event-resource integer mapping and collision checks with a full native sidecar; no solver import is performed."
+  ]
+}

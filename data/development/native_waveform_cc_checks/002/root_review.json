@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "reviewer": "root source and frozen-control-result review",
+  "reviewed_utc": "2026-10-10T04:56:11.171239+00:00",
+  "controls_summary_sha256": "5fc0be0600556c8dfa9b5bd1d4a2b9ef1e61752a6727288ff50c6684ef75aab8",
+  "runner_source_sha256": "54cd6533bac62a7f8d6b7b433fbd7782c14fd743b2d20b6f2059a1d71a255837",
+  "verified_controls": 48,
+  "verified_artifact_hashes": 324,
+  "verified_source_hashes": 5,
+  "review": [
+    "All original pick and pair rows are retained and compared field for field against the pinned plan.",
+    "Both event/origin/pick/association identities and both native receiver epochs are joined before measurement.",
+    "Catalog travel times are checked against integer-nanosecond origin/pick times; dt sign is separately controlled.",
+    "Raw provider miniSEED is re-decoded with the reviewed decoder and sample byte hashes are verified.",
+    "Explicit no-sample windows and decoded windows must be a disjoint complete union of requested available non-CMW1 windows.",
+    "Full NSLC, same reported physical position, provider-declared vertical and native100Hz checks precede the unchanged numerical core.",
+    "Failed/unattempted rows and undefined diagnostic arrays remain explicit; no catalog uncertainty is reused as CC uncertainty.",
+    "Fresh-output, corrupt-input, stale-review, partial-support and missing-mode controls pass."
+  ],
+  "limitations": [
+    "Invented native-I/O controls; no real measurement result has yet been reviewed.",
+    "Real acquisition must be terminal and separately hash-bound reviewed before use."
+  ]
+}

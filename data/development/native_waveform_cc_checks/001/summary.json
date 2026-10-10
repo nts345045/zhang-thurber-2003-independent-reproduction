@@ -1,0 +1,488 @@
+{
+  "status": "failed",
+  "scope": "Invented native miniSEED/identity controls; never reads observed waveforms.",
+  "checks": [
+    {
+      "name": "full_native_support_preserved",
+      "passed": true
+    },
+    {
+      "name": "empty_location_and_cross_epoch_retained",
+      "passed": true
+    },
+    {
+      "name": "accepted_actual_grid_offset_sign",
+      "passed": true
+    },
+    {
+      "name": "integer_own_pick_offsets_retained",
+      "passed": true
+    },
+    {
+      "name": "relative_weight_not_sigma",
+      "passed": true
+    },
+    {
+      "name": "original_sigma_and_catalog_value_labeled",
+      "passed": true
+    },
+    {
+      "name": "unattempted_status_1",
+      "passed": true
+    },
+    {
+      "name": "unattempted_status_2",
+      "passed": true
+    },
+    {
+      "name": "unattempted_status_3",
+      "passed": true
+    },
+    {
+      "name": "unattempted_status_4",
+      "passed": true
+    },
+    {
+      "name": "unattempted_status_5",
+      "passed": true
+    },
+    {
+      "name": "undefined_search_arrays_retained",
+      "passed": false
+    },
+    {
+      "name": "accepted_full_lag_and_coherence_arrays",
+      "passed": true
+    },
+    {
+      "name": "both_native_sidecars_complete",
+      "passed": true
+    },
+    {
+      "name": "no_solver_import_or_export",
+      "passed": true
+    },
+    {
+      "name": "fresh_output_required",
+      "passed": true
+    },
+    {
+      "name": "reject_pair_channel",
+      "passed": true,
+      "error": "Pair common channel differs"
+    },
+    {
+      "name": "failure_record_pair_channel",
+      "passed": true
+    },
+    {
+      "name": "reject_pair_origin",
+      "passed": true,
+      "error": "Pair resource identity differs"
+    },
+    {
+      "name": "failure_record_pair_origin",
+      "passed": true
+    },
+    {
+      "name": "reject_pair_pick_time",
+      "passed": true,
+      "error": "Pair pick time differs"
+    },
+    {
+      "name": "failure_record_pair_pick_time",
+      "passed": true
+    },
+    {
+      "name": "reject_pair_epoch",
+      "passed": true,
+      "error": "Pair native epoch differs"
+    },
+    {
+      "name": "failure_record_pair_epoch",
+      "passed": true
+    },
+    {
+      "name": "reject_pair_station_index",
+      "passed": true,
+      "error": "Pair native index mismatch"
+    },
+    {
+      "name": "failure_record_pair_station_index",
+      "passed": true
+    },
+    {
+      "name": "reject_pair_metadata_hash",
+      "passed": true,
+      "error": "Pair metadata source differs"
+    },
+    {
+      "name": "failure_record_pair_metadata_hash",
+      "passed": true
+    },
+    {
+      "name": "reject_pair_difference",
+      "passed": true,
+      "error": "Catalog differential convention differs"
+    },
+    {
+      "name": "failure_record_pair_difference",
+      "passed": true
+    },
+    {
+      "name": "reject_duplicate_pair",
+      "passed": true,
+      "error": "Duplicate original catalog pair"
+    },
+    {
+      "name": "failure_record_duplicate_pair",
+      "passed": true
+    },
+    {
+      "name": "reject_pick_travel_time",
+      "passed": true,
+      "error": "Catalog travel time differs from identified origin and pick"
+    },
+    {
+      "name": "failure_record_pick_travel_time",
+      "passed": true
+    },
+    {
+      "name": "reject_decoded_start",
+      "passed": true,
+      "error": "Independent raw re-decode differs from saved windows"
+    },
+    {
+      "name": "failure_record_decoded_start",
+      "passed": true
+    },
+    {
+      "name": "reject_gap",
+      "passed": true,
+      "error": "Native window lacks unique continuous sample support; do not merge gaps or select overlapping qualities"
+    },
+    {
+      "name": "failure_record_gap",
+      "passed": true
+    },
+    {
+      "name": "reject_incomplete_acquisition",
+      "passed": true,
+      "error": "Sample acquisition is incomplete or already transformed"
+    },
+    {
+      "name": "failure_record_incomplete_acquisition",
+      "passed": true
+    },
+    {
+      "name": "reject_stale_review",
+      "passed": true,
+      "error": "A completed hash-bound independent sample review is required"
+    },
+    {
+      "name": "failure_record_stale_review",
+      "passed": true
+    },
+    {
+      "name": "reject_raw_hash",
+      "passed": true,
+      "error": "Pinned input changed: data/development/native_waveform_cc_checks/001/raw_hash_fixture/samples/raw/dataselect_000.response"
+    },
+    {
+      "name": "failure_record_raw_hash",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "diagnostics/check_native_waveform_cc.py": "4bf49cc8997e18febaa9eb6da7fcd6aedc6affac86eedb13613c18344014c0f1",
+    "diagnostics/run_native_waveform_cc.py": "367231edb9a06bef728668b4992c0c526c49b357b0478d90bdbc49070ed9ab90",
+    "diagnostics/normalized_waveform_cc.py": "98bc3880882e9e117338931ce5c11d0d0b6863a929f2db045a72edb87645740e",
+    "data/development/normalized_correlation_specification/README.md": "fb656f2eddefb0c7fd2641e0d88367800d4742f475a0c0a2163b0596c30e8845",
+    "data/authoritative/waveforms/cohort_samples_001/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa"
+  },
+  "output_sha256": {
+    "source/check_native_waveform_cc.py": "4bf49cc8997e18febaa9eb6da7fcd6aedc6affac86eedb13613c18344014c0f1",
+    "source/run_native_waveform_cc.py": "367231edb9a06bef728668b4992c0c526c49b357b0478d90bdbc49070ed9ab90",
+    "source/normalized_waveform_cc.py": "98bc3880882e9e117338931ce5c11d0d0b6863a929f2db045a72edb87645740e",
+    "source/README.md": "fb656f2eddefb0c7fd2641e0d88367800d4742f475a0c0a2163b0596c30e8845",
+    "source/sample_decoder.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "valid_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "valid_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "valid_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "valid_fixture/plan/identified_catalog_differences.csv.gz": "7678e16bcbbbc66016f448479c7fd929e9a7982cfaa9e8e2bb8cb2179bd4d42b",
+    "valid_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "valid_fixture/plan/summary.json": "9a5b995af5ff65787d7a23e926cb6022ffbb2add2dddfc43bb131cbec705a33e",
+    "valid_fixture/samples/samples.picks.csv.gz": "f21b134cc1c99240f2bb518a8bfcfe5ff715db54b4e541b6f73ffdec6f6b3cbb",
+    "valid_fixture/samples/samples.json": "cdfb3fd4740aac797572215049f341af8c09d739ed5507e5829843271896c2a1",
+    "valid_fixture/samples/review.json": "1dcf89ee271e4b943a7aeec38ae6503f23529aee7ce4dc35b177da87a643c815",
+    "valid_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "valid_fixture/samples/raw/dataselect_000.response.decoded.json": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+    "valid_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "valid_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "1fa671510dfcfa30a94d2b42ebcefe66bb378cff34fd40b955ce2c4224552489",
+    "valid_fixture/samples/raw/dataselect_000.response.identifiers.json": "ebd11bd3b8da25aa1f37005fd7ab8d97890e3caf60e7908465a03386dbd3be12",
+    "valid_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "valid_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "valid_result/execution.json": "7af5694854e8c281e3366a87404f3c0017bd3adb7001f41d2dc89a974013e078",
+    "valid_result/identified_measurements.csv.gz": "b86f935f486653d6202119709aeff8a30ee6c9d4b808b199c501b7a14ab7943d",
+    "valid_result/attempted_diagnostics.jsonl.gz": "9a3c9a52c49c8f5ee2a9d05654dbee23c4fb27f5caa6d7712292835d57afad40",
+    "valid_result/summary.json": "8337f8c9be767e2ab80d59cf40144932e6f3c243fd8d705cefd3bc687e921d95",
+    "valid_result/source/run_native_waveform_cc.py": "367231edb9a06bef728668b4992c0c526c49b357b0478d90bdbc49070ed9ab90",
+    "valid_result/source/normalized_waveform_cc.py": "98bc3880882e9e117338931ce5c11d0d0b6863a929f2db045a72edb87645740e",
+    "valid_result/source/README.md": "fb656f2eddefb0c7fd2641e0d88367800d4742f475a0c0a2163b0596c30e8845",
+    "valid_result/source/sample_decoder.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "pair_channel_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "pair_channel_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "pair_channel_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "pair_channel_fixture/plan/identified_catalog_differences.csv.gz": "86432a2aaae78f042c4facaf89299876702c58750aa773bfaa51d69cef6ca8af",
+    "pair_channel_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "pair_channel_fixture/plan/summary.json": "4fbbb4d8df19042c9b2de13da07ce6224a23b283e5c509b98d6b5f872f3c7735",
+    "pair_channel_fixture/samples/samples.picks.csv.gz": "423902078cfbef405392d23aa6ffc9c72f03437c80c2815f6d6841d2c60d5137",
+    "pair_channel_fixture/samples/samples.json": "7da4c6a151b240e54341c8ea704bfac14f5d2e70a6c324d2e6ffcdc3700f4e67",
+    "pair_channel_fixture/samples/review.json": "4cb0ac949faf1a007ca24c3876e056f48c515f0fb8c824708f7cfce9451461b9",
+    "pair_channel_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "pair_channel_fixture/samples/raw/dataselect_000.response.decoded.json": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+    "pair_channel_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "pair_channel_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "088d671cda9bd7f82df745defd25975f629d0ed435208375ec3e460f33511094",
+    "pair_channel_fixture/samples/raw/dataselect_000.response.identifiers.json": "510e65909fd4ef7e6a756472e2943cc8170c37789c5b1241943f3517e1497e6f",
+    "pair_channel_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "pair_channel_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "pair_channel_result/execution.json": "941db0746e49b8951d523eea60a6e3e041161ba48c002131a0ad0e24befaa808",
+    "pair_origin_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "pair_origin_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "pair_origin_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "pair_origin_fixture/plan/identified_catalog_differences.csv.gz": "1ae9407d51ad342996e1ccf136fad4bc05882e02d245473fcee2ee458322f41c",
+    "pair_origin_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "pair_origin_fixture/plan/summary.json": "5e3500e440969fe06c6d7eb2f4216343cce086a7b9931dfdfcb9aa9bd5bf4641",
+    "pair_origin_fixture/samples/samples.picks.csv.gz": "bd94c91bb489c7a0b43eca098512359e5535dae4894aee084ef64161aacd67ea",
+    "pair_origin_fixture/samples/samples.json": "158c5293d2671635960062a6bc5e9d76dc698d5f9d4e624578bcac6373ad8abd",
+    "pair_origin_fixture/samples/review.json": "000c4be127f306cd5d2c6ec1e9792893a11a8ad639b6ea5b8b0b3afc9b895f9d",
+    "pair_origin_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "pair_origin_fixture/samples/raw/dataselect_000.response.decoded.json": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+    "pair_origin_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "pair_origin_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "b1eff3f81a536f211c0748c8d88ecca3b13c241880b084d447a948dcc0d4d4b8",
+    "pair_origin_fixture/samples/raw/dataselect_000.response.identifiers.json": "412057d46af62d2c960c3a13489a015578df705c1ecdca074ca28ddb83799dd4",
+    "pair_origin_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "pair_origin_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "pair_origin_result/execution.json": "24cf03efd84edf7414d932d51f0feca0a83260e6294f9fa5ef3ffbca583453a2",
+    "pair_pick_time_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "pair_pick_time_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "pair_pick_time_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "pair_pick_time_fixture/plan/identified_catalog_differences.csv.gz": "ac9b900ef33d102cb28724fb414be21a68c58eb8c80d0340a0be5bb2532f6899",
+    "pair_pick_time_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "pair_pick_time_fixture/plan/summary.json": "57821818c8c18561f23a22ac6cbf182fe06dd95a98c024b49ea12d36122f737d",
+    "pair_pick_time_fixture/samples/samples.picks.csv.gz": "4d8aa0c224a9cead358f9676b876706dfd06cd08ce73a14be90e8d633c0a87b3",
+    "pair_pick_time_fixture/samples/samples.json": "c92f896870e0e370480dad78d331cc87e3bc2436ca9b55865d2fe0643f23d8ee",
+    "pair_pick_time_fixture/samples/review.json": "f4c2e0163fe9485de20139b6b2629e13763d722a5bc88509edec9bebda01ad10",
+    "pair_pick_time_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "pair_pick_time_fixture/samples/raw/dataselect_000.response.decoded.json": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+    "pair_pick_time_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "pair_pick_time_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "66146a8ee82fa64e83fe3f083e3f3c1f3be8f05b7a7b653bb330aef6853919ac",
+    "pair_pick_time_fixture/samples/raw/dataselect_000.response.identifiers.json": "98f7d2968d98ae2d5d395b91aa2d520d84e814ac149d2ca1b7af0ca532616125",
+    "pair_pick_time_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "pair_pick_time_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "pair_pick_time_result/execution.json": "c761719c58d0468d7ce4a845c197416772e7b934456a51ef40f167611d6cb7bc",
+    "pair_epoch_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "pair_epoch_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "pair_epoch_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "pair_epoch_fixture/plan/identified_catalog_differences.csv.gz": "9e3a409d2bc4304db30cbb6f0415f4bc7c0d448a2469d3e8739428f7a2865268",
+    "pair_epoch_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "pair_epoch_fixture/plan/summary.json": "73c7842b3ab43053b2e2ed575c3df89acef28f1e1c342e4d7d6509f91f620b97",
+    "pair_epoch_fixture/samples/samples.picks.csv.gz": "33d25e6244def9f4c2f07aa073eb61109806fa60c940c15d3950890b88d62078",
+    "pair_epoch_fixture/samples/samples.json": "2e6b584e32209ee7cefcbf34a30f13b7e4fa4e664881ce3aa2a2453f2ce251b2",
+    "pair_epoch_fixture/samples/review.json": "c5d64199e00b7da66be05f6ad9014768e224a145584c77292a5455ce1b706a5e",
+    "pair_epoch_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "pair_epoch_fixture/samples/raw/dataselect_000.response.decoded.json": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+    "pair_epoch_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "pair_epoch_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "62e796919353d68759c3ab240c2580c26170a770da7bf293992e5dfd6230dfae",
+    "pair_epoch_fixture/samples/raw/dataselect_000.response.identifiers.json": "9c2ebe81c22f34bed556d7d19e70d041e6023d9c3bf5f7db634e650037c6334c",
+    "pair_epoch_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "pair_epoch_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "pair_epoch_result/execution.json": "1636f3155ffc327fcf0b2cd6324c4c42010c6806117a79556b88836ce3a1f89e",
+    "pair_station_index_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "pair_station_index_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "pair_station_index_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "pair_station_index_fixture/plan/identified_catalog_differences.csv.gz": "c033aec3fdd9db5590e43763774bec79685bdca16021e3ac3d5e6ba63d8f5d74",
+    "pair_station_index_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "pair_station_index_fixture/plan/summary.json": "23db9ad4e71084b97365987ad0dedc6bd97236049ef0ea59616d4211addbb4d3",
+    "pair_station_index_fixture/samples/samples.picks.csv.gz": "4ee9589951826424c7d0dcbd72c59ae25af6c57cc4b02b3e10b56cb7edcb8e9d",
+    "pair_station_index_fixture/samples/samples.json": "ff0b9a0a7271909f24cd88f04ba4f6c4f8727feb766d066fdd67f3485023c683",
+    "pair_station_index_fixture/samples/review.json": "3622ac4f20ae3eb52282e4f25ead9b62108e4ce1dcb612e2d792705422f35dd4",
+    "pair_station_index_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "pair_station_index_fixture/samples/raw/dataselect_000.response.decoded.json": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+    "pair_station_index_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "pair_station_index_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "7864de9b9ea2510a2f3910efa70fa2b611a26dccb4f69957469bb8eee77f09ca",
+    "pair_station_index_fixture/samples/raw/dataselect_000.response.identifiers.json": "bee1af9857b68b0bd39726c0f73410259cbf964a586e7c8e9cd202f0f7d780fa",
+    "pair_station_index_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "pair_station_index_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "pair_station_index_result/execution.json": "11e2c8c51b3712839a264626a63fd67dff4211bbccb2383b1b3746ec7b9f2b65",
+    "pair_metadata_hash_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "pair_metadata_hash_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "pair_metadata_hash_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "pair_metadata_hash_fixture/plan/identified_catalog_differences.csv.gz": "533faa223d130cd232010eec6a74edeb433220a6b8424af940a08164980863cc",
+    "pair_metadata_hash_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "pair_metadata_hash_fixture/plan/summary.json": "a0b1f2aba6020c6ff0f67e5da6dcb4f60753a0138100ce05ef85e227490c1f9d",
+    "pair_metadata_hash_fixture/samples/samples.picks.csv.gz": "b8c42ef1c47588d44037f1e1cb63953088b50404ac81baf28ca16e48c00f297d",
+    "pair_metadata_hash_fixture/samples/samples.json": "78c84b9324c3d24912daeb02225d68ae53984cbe8a4f976d8311e2e47cc2f85f",
+    "pair_metadata_hash_fixture/samples/review.json": "a9b1138983365990a834fc7fd028a9ce95b989f09c1c861853325eefe8a319f2",
+    "pair_metadata_hash_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "pair_metadata_hash_fixture/samples/raw/dataselect_000.response.decoded.json": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+    "pair_metadata_hash_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "pair_metadata_hash_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "c1fb384daa184667f64ce757a027e1f22281370c7ef43c054ba8a7c6c5dbce20",
+    "pair_metadata_hash_fixture/samples/raw/dataselect_000.response.identifiers.json": "fe6ab8476e946ed6a7982103532b7f310f211d939c8ab7adf7c3bd063e98fa82",
+    "pair_metadata_hash_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "pair_metadata_hash_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "pair_metadata_hash_result/execution.json": "4e98fe5da8ace5712395a0a216c62190e5041e8c762d2755402e00ab7b02f251",
+    "pair_difference_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "pair_difference_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "pair_difference_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "pair_difference_fixture/plan/identified_catalog_differences.csv.gz": "1450d645e2969bbca59ea5474da1c1498cd434929deb6e0d428b81226364d89c",
+    "pair_difference_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "pair_difference_fixture/plan/summary.json": "aac9e6a81414fe8b28d95aff7b721ffc3bd55a7a1d005ddb55f23470349e777a",
+    "pair_difference_fixture/samples/samples.picks.csv.gz": "2c31aa0366a47a8fd9fe3c05293a6fd1e55a4f0405c72792c07eff5cc276cbdb",
+    "pair_difference_fixture/samples/samples.json": "4691a38a2c4d7b2304cff945453735f5ef701f661ddac00255d1d752068890cc",
+    "pair_difference_fixture/samples/review.json": "63605e2fe47b26edc61b65e66ffab0516700192904e2bd8628415c5e4d293efc",
+    "pair_difference_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "pair_difference_fixture/samples/raw/dataselect_000.response.decoded.json": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+    "pair_difference_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "pair_difference_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "425a57845634f041f074a3d23c098b2a1d42e9ece41ebd66cef1d672f51f1d17",
+    "pair_difference_fixture/samples/raw/dataselect_000.response.identifiers.json": "7457030fca2b21180744af25eb9b64fca0f09159f7d7cf057fc51519f59fac05",
+    "pair_difference_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "pair_difference_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "pair_difference_result/execution.json": "b287c4fdcd279214eaee97c169e602132afecbb120de7504356aca41dad6bd07",
+    "duplicate_pair_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "duplicate_pair_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "duplicate_pair_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "duplicate_pair_fixture/plan/identified_catalog_differences.csv.gz": "5e8d24b3032615c23feda1ff8acded987548a6dad424fa4a474988202e77dc50",
+    "duplicate_pair_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "duplicate_pair_fixture/plan/summary.json": "ac543f58a156f145185a4b4e852bf3fa0bd7f15ecca6a83b9581ad3af062e564",
+    "duplicate_pair_fixture/samples/samples.picks.csv.gz": "4ffd7b36e795b3e982b22fbc3cafeb455a11fcbbeb434597a1c9e85b0bfb520c",
+    "duplicate_pair_fixture/samples/samples.json": "861d8855a9725f1c0e1963eee3cd657c45b1a58ea706e0850c32f1dcc90a6947",
+    "duplicate_pair_fixture/samples/review.json": "fd38fa79ea6400f51a6b309f7262453f070f8e704da1949af47b0c49eb8299da",
+    "duplicate_pair_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "duplicate_pair_fixture/samples/raw/dataselect_000.response.decoded.json": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+    "duplicate_pair_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "duplicate_pair_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "1977da59463a204ab6ff936c492297d9074d504065b24cdd276b2910093d4b2b",
+    "duplicate_pair_fixture/samples/raw/dataselect_000.response.identifiers.json": "e35f8a85d0f1712c7ff4d9faa9b30883db6a3dce580818484d98fc92017b5d4f",
+    "duplicate_pair_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "duplicate_pair_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "duplicate_pair_result/execution.json": "bc225898a5bba6f70e91ff6443c98721e9fa764f49703b8cfa2682b83fcf9852",
+    "pick_travel_time_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "pick_travel_time_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "pick_travel_time_fixture/plan/identified_picks.csv.gz": "5c706f5b239f696b4b135adc81d7583c0b574bc2b973761ffb7985c5762cfe43",
+    "pick_travel_time_fixture/plan/identified_catalog_differences.csv.gz": "7678e16bcbbbc66016f448479c7fd929e9a7982cfaa9e8e2bb8cb2179bd4d42b",
+    "pick_travel_time_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "pick_travel_time_fixture/plan/summary.json": "1af131be32c32550f041b491b1d418339acb3e291f621bdd233b3d81d05be426",
+    "pick_travel_time_fixture/samples/samples.picks.csv.gz": "9fc2b94a406a269684ca01da1305ac2918da498bc8f213d934e675658dac4fb0",
+    "pick_travel_time_fixture/samples/samples.json": "79cf83319f82e18400f6867ce037ce2c65272c12b51f71889f0e7ae4ca1d9c64",
+    "pick_travel_time_fixture/samples/review.json": "4f676786b1d7f067ebe804752d1773ac99e88e5c38b9617da240fdfcc199283f",
+    "pick_travel_time_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "pick_travel_time_fixture/samples/raw/dataselect_000.response.decoded.json": "347bede0ede0c861a394156091db1139bc6173cf5b26578b99f09f03f14d72a3",
+    "pick_travel_time_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "pick_travel_time_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "334c3bf02b76ef68a041c46347ded55351a06bb735339b7fc81801deb1e2875d",
+    "pick_travel_time_fixture/samples/raw/dataselect_000.response.identifiers.json": "5251499b8f410fb2af56b1899c8eec98d7bb6d4404e7db93cc77f61f54b0ddf8",
+    "pick_travel_time_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "pick_travel_time_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "pick_travel_time_result/execution.json": "d4fe250bab49e3d98fe66e171aed58d8b9ea484c2632eb562ee4b7b301f52012",
+    "decoded_start_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "decoded_start_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "decoded_start_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "decoded_start_fixture/plan/identified_catalog_differences.csv.gz": "7678e16bcbbbc66016f448479c7fd929e9a7982cfaa9e8e2bb8cb2179bd4d42b",
+    "decoded_start_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "decoded_start_fixture/plan/summary.json": "3ab51ad3dd262936ef8e67ed7fac100bcf4c9b7b4b7b9de47d370c21c6893806",
+    "decoded_start_fixture/samples/samples.picks.csv.gz": "d8b048210cc637385bc8ae71f528c96280c1b97139646276e5a239e961e34f82",
+    "decoded_start_fixture/samples/samples.json": "7720925a87f0fcc52fe5f77c487a2bc5e6c235980bf1dc7f47a04ab9125ccf6b",
+    "decoded_start_fixture/samples/review.json": "3c920261231f5dfff329c0594c8534be5cc48488b8858ab5ed9a0ad40de7957d",
+    "decoded_start_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "decoded_start_fixture/samples/raw/dataselect_000.response.decoded.json": "d072399f28e709eac4ffa20bd402bca3d1ad41dcdb90dac01378ca2a14390d92",
+    "decoded_start_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "decoded_start_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "c0fd7837d5cf68242a6d668d1dfc268bdd302815a3347674440fc3a4a95a21a5",
+    "decoded_start_fixture/samples/raw/dataselect_000.response.identifiers.json": "da6d2930611a84883b95faacf26914b7d632faace3d654cf1f7b5dc4a5aabd20",
+    "decoded_start_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "decoded_start_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "decoded_start_result/execution.json": "b1aad48a7565bc57c0da82a700810b3a30c8a294a5f7060a78ed1d05d1ef7f27",
+    "decoded_start_result/source/run_native_waveform_cc.py": "367231edb9a06bef728668b4992c0c526c49b357b0478d90bdbc49070ed9ab90",
+    "decoded_start_result/source/normalized_waveform_cc.py": "98bc3880882e9e117338931ce5c11d0d0b6863a929f2db045a72edb87645740e",
+    "decoded_start_result/source/README.md": "fb656f2eddefb0c7fd2641e0d88367800d4742f475a0c0a2163b0596c30e8845",
+    "decoded_start_result/source/sample_decoder.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "gap_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "gap_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "gap_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "gap_fixture/plan/identified_catalog_differences.csv.gz": "7678e16bcbbbc66016f448479c7fd929e9a7982cfaa9e8e2bb8cb2179bd4d42b",
+    "gap_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "gap_fixture/plan/summary.json": "0f76e3e1a76f4793ea58824def576ab16331682df54265933a0f56642b35218b",
+    "gap_fixture/samples/samples.picks.csv.gz": "f8198e81709a9a94b1545608f17539d5a52169a57e8e50a5b520236222214de9",
+    "gap_fixture/samples/samples.json": "50f2ce3ad770f776b06f2ecd91f04360e420438a07cd0e5e80ee73c44db2a077",
+    "gap_fixture/samples/review.json": "e35e3a04170e5a9b15f23746415bb126790f6dd8aa7d76ddee7a857a7486fd0a",
+    "gap_fixture/samples/raw/dataselect_000.response": "2bfcbb1b5e22a240948ac14d646c05b05d7eb9253ac4ad3ee220b59a4546dcf6",
+    "gap_fixture/samples/raw/dataselect_000.response.decoded.json": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+    "gap_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "gap_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "248b3c5959b50ab35b67edf697aafb8340b2d064b216e6eac0be182d96d1ba43",
+    "gap_fixture/samples/raw/dataselect_000.response.identifiers.json": "c8b236035b9d4ef3e066000c9901f7a904a91a0c3081a1a69cae7fed03863cff",
+    "gap_fixture/samples/raw/dataselect_000.response.provenance.json": "efd951afd9c1fd42b3be9bede3243b2230ffcde8c590982a7e0572fd6c7e32f9",
+    "gap_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "gap_result/execution.json": "a6f9efe44a388fd5cc5558e20eaf7c53e607b21c12f89e5d50455e7a90455894",
+    "gap_result/source/run_native_waveform_cc.py": "367231edb9a06bef728668b4992c0c526c49b357b0478d90bdbc49070ed9ab90",
+    "gap_result/source/normalized_waveform_cc.py": "98bc3880882e9e117338931ce5c11d0d0b6863a929f2db045a72edb87645740e",
+    "gap_result/source/README.md": "fb656f2eddefb0c7fd2641e0d88367800d4742f475a0c0a2163b0596c30e8845",
+    "gap_result/source/sample_decoder.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "incomplete_acquisition_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "incomplete_acquisition_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "incomplete_acquisition_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "incomplete_acquisition_fixture/plan/identified_catalog_differences.csv.gz": "7678e16bcbbbc66016f448479c7fd929e9a7982cfaa9e8e2bb8cb2179bd4d42b",
+    "incomplete_acquisition_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "incomplete_acquisition_fixture/plan/summary.json": "fedb5c71b71804b8a398f3ee99319a254a8e5e6f40345c0dbdd3c33c9daea049",
+    "incomplete_acquisition_fixture/samples/samples.picks.csv.gz": "877cc9a8bb4d58bab079ece7ced855b8f79f8cb0e959eb85356aaf3628cb4b44",
+    "incomplete_acquisition_fixture/samples/samples.json": "a4e11aa09a9737255d0f16cc44e63bf9301c8c47e379f45d0ac9ca752ba932b0",
+    "incomplete_acquisition_fixture/samples/review.json": "e099fcba8a467d649d5855bbc48c3e43422398a9ddc1c31d1dc2f749db1e9481",
+    "incomplete_acquisition_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "incomplete_acquisition_fixture/samples/raw/dataselect_000.response.decoded.json": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+    "incomplete_acquisition_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "incomplete_acquisition_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "e9372ea652d8329d269c409864a8be83b0a5e87dca684c07648d4243d5ab0856",
+    "incomplete_acquisition_fixture/samples/raw/dataselect_000.response.identifiers.json": "4e0add316bc7a683398e902c677111febba1b437c6ef24c6669ceb992b0254f2",
+    "incomplete_acquisition_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "incomplete_acquisition_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "incomplete_acquisition_result/execution.json": "5b24f174d46dc1d9a6c1f6dc4346632f83e8cf8a0332e3787ca89a0f94240e36",
+    "stale_review_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "stale_review_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "stale_review_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "stale_review_fixture/plan/identified_catalog_differences.csv.gz": "7678e16bcbbbc66016f448479c7fd929e9a7982cfaa9e8e2bb8cb2179bd4d42b",
+    "stale_review_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "stale_review_fixture/plan/summary.json": "fe29df6046253d69b2f393bb0fe4475ffb9f5442453cfad5031e3b04731e736e",
+    "stale_review_fixture/samples/samples.picks.csv.gz": "117d3fedbff5893c39b1ddb94264e4fc5b8931c8520297a7a6da482228c7c2ea",
+    "stale_review_fixture/samples/samples.json": "5968942c24321260bc1ce875015a5cfd27a149d5767e912225cd6d18dfb5f08e",
+    "stale_review_fixture/samples/review.json": "b60ad043bb2b8b1a8cfb5dc8d12f0c47204dd0a6b59700d022faa7339d5cca2f",
+    "stale_review_fixture/samples/raw/dataselect_000.response": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+    "stale_review_fixture/samples/raw/dataselect_000.response.decoded.json": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+    "stale_review_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "stale_review_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "8d30999fc6d6e8b0e959bd541360953b2e63fccfb93d67783b7be4407cb66061",
+    "stale_review_fixture/samples/raw/dataselect_000.response.identifiers.json": "f6110a475ea9711c5bfe5ca7b195c0fb3f4309bb683756dd8105995f6a691c1d",
+    "stale_review_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "stale_review_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "stale_review_result/execution.json": "e20812dd1e48b244046ab35c8a236eb79c4eccf6c3e87f3e5604d84a911bfeef",
+    "raw_hash_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586",
+    "raw_hash_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "raw_hash_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "raw_hash_fixture/plan/identified_catalog_differences.csv.gz": "7678e16bcbbbc66016f448479c7fd929e9a7982cfaa9e8e2bb8cb2179bd4d42b",
+    "raw_hash_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "raw_hash_fixture/plan/summary.json": "153ff1965a5e9ea97a464cf1a57c6140c6c1320605d83506e0293682bcf80f97",
+    "raw_hash_fixture/samples/samples.picks.csv.gz": "aadb0ad28e240f18d2aa933d394bdf3453d5b03eea93fd4694307a5201306a3e",
+    "raw_hash_fixture/samples/samples.json": "f81d9605077238255f9e06b783fd626cb51b160e71a97d19ba128df50b590396",
+    "raw_hash_fixture/samples/review.json": "c9ed7c0140136d6af87b7918aff6cf93bd44fb40ec86d44bcb61ce709c5459d4",
+    "raw_hash_fixture/samples/raw/dataselect_000.response": "41b983e06994cdc18097a23db0e0083f4c4c26217c5e5d8c9aa56bba814b0b1c",
+    "raw_hash_fixture/samples/raw/dataselect_000.response.decoded.json": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+    "raw_hash_fixture/samples/raw/dataselect_000.response.request.txt": "f031c5ee6e8bbc1f69a8da1926323597318ea5c23e1774ed6b4c600a1883bc64",
+    "raw_hash_fixture/samples/raw/dataselect_000.response.request.txt.identifiers.json": "583eee8865ac47ce8d5ae4b8208d57c5014ad2adc1c94d79693e4f7757adde05",
+    "raw_hash_fixture/samples/raw/dataselect_000.response.identifiers.json": "a151dbf8b9a481c369bf5e89eacbabee0ed68e8ec3a7a0ca1a8e254bc5842a59",
+    "raw_hash_fixture/samples/raw/dataselect_000.response.provenance.json": "be89f15b3f991d2624a20f85ea9e0cc4820a340405c8fb17273f68f95a85acd0",
+    "raw_hash_fixture/samples/source/acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "raw_hash_result/execution.json": "dbb6a4c84a5f7026599118b9bfb88b8f3f2253b032054d7ebdd887fcd36534c1",
+    "raw_hash_result/source/run_native_waveform_cc.py": "367231edb9a06bef728668b4992c0c526c49b357b0478d90bdbc49070ed9ab90",
+    "raw_hash_result/source/normalized_waveform_cc.py": "98bc3880882e9e117338931ce5c11d0d0b6863a929f2db045a72edb87645740e",
+    "raw_hash_result/source/README.md": "fb656f2eddefb0c7fd2641e0d88367800d4742f475a0c0a2163b0596c30e8845",
+    "raw_hash_result/source/sample_decoder.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa"
+  },
+  "limitations": [
+    "Invented native data only; no real correlation or legacy dt.cc serialization.",
+    "The core method has its own independent numerical tests; these controls test decoding, identities, timing, table preservation and gates."
+  ]
+}
