@@ -1,0 +1,160 @@
+{
+  "status": "passed",
+  "scope": "Invented capture-interface records only; no trace(), real ray, inverse or method change.",
+  "started_utc": "2026-10-10T05:52:40Z",
+  "commands": [
+    {
+      "stage": "compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "data/development/failed_search_capture_controls_001/source/diagnostics/check_failed_search_capture.cpp",
+        "-lstdc++fs",
+        "-o",
+        "tmp/failed_search_capture_controls_001/check"
+      ],
+      "return_code": 0
+    },
+    {
+      "stage": "controls",
+      "command": [
+        "tmp/failed_search_capture_controls_001/check",
+        "data/development/failed_search_capture_controls_001/invented"
+      ],
+      "return_code": 0
+    }
+  ],
+  "compiler": "/usr/bin/c++",
+  "compiler_sha256": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7",
+  "source_sha256": {
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "diagnostics/failed_search_capture.hpp": "f546ce81c2c3b73dfb5e04d23ddcdf541bd600ee08f5285505d19cf69953809b",
+    "diagnostics/check_failed_search_capture.cpp": "2f88ee8b781f8b54e4effa59d95423ec3ef184ad3a2b03f840793e89892fca75",
+    "diagnostics/run_failed_search_capture_checks.py": "bcc887cc91eefab6ac875f9f7ba46462595b526d49a9d91a9b8238a3908b34d2"
+  },
+  "binary_sha256": "d180bab3418c0e566bded94f5a8503ff46e92aa41c86ad7dbb8c00aa72ffaeab",
+  "checks": [
+    {
+      "check": "records_are_buffered_until_failure",
+      "passed": "1"
+    },
+    {
+      "check": "complete_four_node_direction_table",
+      "passed": "1"
+    },
+    {
+      "check": "exact_twenty_four_trial_inventory",
+      "passed": "1"
+    },
+    {
+      "check": "direction_native_join_keys_and_indices",
+      "passed": "1"
+    },
+    {
+      "check": "binary64_frame_and_signed_zero_round_trip",
+      "passed": "1"
+    },
+    {
+      "check": "binary64_direction_gradient_and_tiny_value_round_trip",
+      "passed": "1"
+    },
+    {
+      "check": "fixed_endpoint_direction_and_blank_gradient",
+      "passed": "1"
+    },
+    {
+      "check": "all_trial_rows_have_complete_join_keys",
+      "passed": "1"
+    },
+    {
+      "check": "caller_mutation_does_not_change_captured_paths",
+      "passed": "1"
+    },
+    {
+      "check": "every_trial_keeps_exact_endpoints",
+      "passed": "1"
+    },
+    {
+      "check": "all_decision_scalars_flags_and_cached_action_preserved",
+      "passed": "1"
+    },
+    {
+      "check": "invalid_trials_preserve_nan_action_without_reevaluation",
+      "passed": "1"
+    },
+    {
+      "check": "last_attempt_step_is_not_post_loop_step",
+      "passed": "1"
+    },
+    {
+      "check": "existing_failure_is_not_overwritten",
+      "passed": "1"
+    },
+    {
+      "check": "overwrite_rejection_preserves_all_three_files",
+      "passed": "1"
+    },
+    {
+      "check": "begin_resets_previous_failed_iteration",
+      "passed": "1"
+    },
+    {
+      "check": "merged_trial_keeps_its_own_vertex_count",
+      "passed": "1"
+    },
+    {
+      "check": "unchanged_trial_is_explicitly_identified",
+      "passed": "1"
+    },
+    {
+      "check": "empty_failure_buffer_rejected",
+      "passed": "1"
+    },
+    {
+      "check": "wrong_direction_dimension_rejected",
+      "passed": "1"
+    },
+    {
+      "check": "wrong_gradient_dimension_rejected",
+      "passed": "1"
+    },
+    {
+      "check": "rejected_dimensions_write_no_capture_files",
+      "passed": "1"
+    }
+  ],
+  "check_count": 22,
+  "ray_traces": 0,
+  "limitations": [
+    "The declared internal run labels contain no CSV delimiter; provider metadata attach through the caller sidecars.",
+    "Trial scalar actions/decisions are intentionally invented interface inputs. Only the invented base path is reevaluated by capture_failed.",
+    "No numerical neutrality of the future real replay is inferred; its observed/unobserved and old-output parity remain separate requirements."
+  ],
+  "finished_utc": "2026-10-10T05:52:53Z",
+  "artifact_sha256": {
+    "compile_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls_stdout.log": "f71a29f3b3a30dbddee21827c67f329878e99a80d6a7b62d1d7e4a939856bba8",
+    "controls_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/diagnostics/failed_search_capture.hpp": "f546ce81c2c3b73dfb5e04d23ddcdf541bd600ee08f5285505d19cf69953809b",
+    "source/diagnostics/check_failed_search_capture.cpp": "2f88ee8b781f8b54e4effa59d95423ec3ef184ad3a2b03f840793e89892fca75",
+    "source/diagnostics/run_failed_search_capture_checks.py": "bcc887cc91eefab6ac875f9f7ba46462595b526d49a9d91a9b8238a3908b34d2",
+    "invented/checks.csv": "f794357d758ecf397f5d9bc2f4b9063cf65dbb2356026bbee83ebebd2761a8d2",
+    "invented/failed/failed_search_directions.csv": "4b80a22ef8009bac2a72f77961c305b8221fd87fb24aef667f703ffb81de94b5",
+    "invented/failed/failed_search_trials.csv": "f6c00596e72a0b3c1139b6646f235cef471e5f6a0e74120147bf3468c92750f8",
+    "invented/failed/failed_search_decisions.csv": "047b931608811edbed70cf83dd55bb5b91a0f19a68bfea8e19420221adec6e70",
+    "invented/reset/failed_search_directions.csv": "e2ba9a6bb458ac4ac847e22c2031997dc200fa7ebc6f06cabd9716a4b59e4bbe",
+    "invented/reset/failed_search_trials.csv": "f10714efc4604c71f2175697470acdd54f4ae25b36e6bd89e0644c7527a83d49",
+    "invented/reset/failed_search_decisions.csv": "a53705748cbf559b2fb6ecb5e9449fb41a96fb436f92b6457a91164491b2e6b2"
+  }
+}

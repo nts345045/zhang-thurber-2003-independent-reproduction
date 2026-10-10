@@ -1,0 +1,33 @@
+--- original_observation
++++ capture_observation
+@@ -100,6 +100,7 @@
+     bool accepted = false;
+     int trial_merged = 0;
+     const double audit_feasible_step=step;
++    capture_begin();
+     for (int ls = 0; ls < 24; ls++, step *= 0.5) {
+       ++audit_searches;
+       trial = p;
+@@ -110,16 +111,21 @@
+         if (!g.contains(trial[i]))
+           valid = false;
+       }
+-      if (!valid)
++      if (!valid) {
++        capture_trial(ls,step,trial,false,0,NAN,NAN,false);
+         continue;
++      }
+       trial_merged = merge_close_nodes(trial);
+       newT = path_eval(g, trial);
++      capture_trial(ls,step,trial,true,trial_merged,newT,
++                    T+1e-4*step*slope,newT<=T+1e-4*step*slope);
+       if (newT <= T + 1e-4 * step * slope) {
+         accepted = true;
+         break;
+       }
+     }
+     if (!accepted) {
++      capture_failed(iter,g,p,grad,q,T,slope,step);
+       audit_step("line_search_failed",iter,updates,g,p,grad,T,NAN,step,audit_feasible_step,slope,&q,audit_searches,S.size(),audit_reset,0,false);
+       break;
+     }

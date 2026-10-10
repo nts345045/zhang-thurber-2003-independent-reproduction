@@ -1,0 +1,222 @@
+{
+  "status": "passed_saved_evidence_review",
+  "material_issue_found": false,
+  "scope": "Independent saved-table, binary64 construction and source/hash readback; no ray rerun or action certification.",
+  "summary_sha256": "cea7edf20c157cffd9e830eb730662dba20e991f5d60e44b7e5cd05521735c46",
+  "execution_sha256": "1a59a8b95d41045b06ca124a506d44ac7db65cc90094aa851534e8348a8f4747",
+  "prepared_sha256": "f287e4e8e5ef0e6b264505175460ca022e4e3ac25e343324197c5c526b87998c",
+  "root_prelaunch_review_sha256": "b0d6c8c4cf2e23105691c33ccec34bc14dd4db410a88f54d5ab383f4b0991fd2",
+  "launch_sha256": "8ef4ae37e7322895d406b7759cffb99f0deef97b14cec14ce7e3d422bcea013a",
+  "checker_path": "data/development/loma_failed_search_review_001/review_saved_result.py",
+  "checker_sha256": "2603d010c2a27cd26e1502f87c89ad54e3c9fef840f3d25e36c4b9fec46956a2",
+  "input_hashes_verified": 66,
+  "prepared_hashes_verified": 30,
+  "frozen_source_hashes_verified": 16,
+  "output_hashes_verified": 54,
+  "native_identifiers": {
+    "event": "65",
+    "station": "46",
+    "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/10090782",
+    "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642854",
+    "receiver_channel_seed_id": "NC.JSJ..EHZ",
+    "receiver_channel_fdsn_source_id": "FDSN:NC_JSJ__E_H_Z",
+    "receiver_metadata_epoch_start": "1989-05-02T15:00:00",
+    "receiver_metadata_epoch_end": "1990-09-14T21:50:00"
+  },
+  "native_fields_matched": 87,
+  "native_metadata_and_empty_location_preserved": true,
+  "source_t_separate_from_pure_ray_time": true,
+  "old_five_numerical_CSVs_byte_identical": true,
+  "observed_unobserved_array_parity_records": 2,
+  "captured_nodes": 1134,
+  "captured_trials": 24,
+  "captured_trial_vertices": 27216,
+  "all_binary64_trial_coordinates_reconstructed": true,
+  "all_binary64_Armijo_rhs_reconstructed": true,
+  "all_recorded_rejections_consistent": true,
+  "gradient_direction_dot_product_reconstructed": true,
+  "original_local_converged": false,
+  "cached_action_s": 6.518420041699388,
+  "recorded_reevaluated_action_s": 6.518420041699388,
+  "recorded_reevaluated_minus_cached_s": 0.0,
+  "saved_directional_slope": -6.7631181427496004e-15,
+  "identical_trial_paths": 0,
+  "Armijo_rhs_equal_cached_action_count": 24,
+  "saved_trial_arithmetic": [
+    {
+      "index": 0,
+      "step": 1.0,
+      "changed_coordinates": 3396,
+      "saved_trial_minus_cached_action_s": 1.2434497875801753e-14,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 1,
+      "step": 0.5,
+      "changed_coordinates": 3396,
+      "saved_trial_minus_cached_action_s": 4.440892098500626e-15,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 2,
+      "step": 0.25,
+      "changed_coordinates": 3396,
+      "saved_trial_minus_cached_action_s": 1.509903313490213e-14,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 3,
+      "step": 0.125,
+      "changed_coordinates": 3396,
+      "saved_trial_minus_cached_action_s": 6.217248937900877e-15,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 4,
+      "step": 0.0625,
+      "changed_coordinates": 3396,
+      "saved_trial_minus_cached_action_s": 4.440892098500626e-15,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 5,
+      "step": 0.03125,
+      "changed_coordinates": 3396,
+      "saved_trial_minus_cached_action_s": 1.0658141036401503e-14,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 6,
+      "step": 0.015625,
+      "changed_coordinates": 3395,
+      "saved_trial_minus_cached_action_s": 1.687538997430238e-14,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 7,
+      "step": 0.0078125,
+      "changed_coordinates": 3392,
+      "saved_trial_minus_cached_action_s": 2.042810365310288e-14,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 8,
+      "step": 0.00390625,
+      "changed_coordinates": 3389,
+      "saved_trial_minus_cached_action_s": 9.769962616701378e-15,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 9,
+      "step": 0.001953125,
+      "changed_coordinates": 3381,
+      "saved_trial_minus_cached_action_s": 1.4210854715202004e-14,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 10,
+      "step": 0.0009765625,
+      "changed_coordinates": 3365,
+      "saved_trial_minus_cached_action_s": 2.042810365310288e-14,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 11,
+      "step": 0.00048828125,
+      "changed_coordinates": 3336,
+      "saved_trial_minus_cached_action_s": 1.9539925233402755e-14,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 12,
+      "step": 0.000244140625,
+      "changed_coordinates": 3283,
+      "saved_trial_minus_cached_action_s": 1.7763568394002505e-14,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 13,
+      "step": 0.0001220703125,
+      "changed_coordinates": 3177,
+      "saved_trial_minus_cached_action_s": 1.3322676295501878e-14,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 14,
+      "step": 6.103515625e-05,
+      "changed_coordinates": 2967,
+      "saved_trial_minus_cached_action_s": 8.881784197001252e-15,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 15,
+      "step": 3.0517578125e-05,
+      "changed_coordinates": 2703,
+      "saved_trial_minus_cached_action_s": 2.6645352591003757e-15,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 16,
+      "step": 1.52587890625e-05,
+      "changed_coordinates": 2297,
+      "saved_trial_minus_cached_action_s": 4.440892098500626e-15,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 17,
+      "step": 7.62939453125e-06,
+      "changed_coordinates": 1608,
+      "saved_trial_minus_cached_action_s": 6.217248937900877e-15,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 18,
+      "step": 3.814697265625e-06,
+      "changed_coordinates": 1396,
+      "saved_trial_minus_cached_action_s": 2.6645352591003757e-15,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 19,
+      "step": 1.9073486328125e-06,
+      "changed_coordinates": 943,
+      "saved_trial_minus_cached_action_s": 2.6645352591003757e-15,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 20,
+      "step": 9.5367431640625e-07,
+      "changed_coordinates": 701,
+      "saved_trial_minus_cached_action_s": 8.881784197001252e-16,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 21,
+      "step": 4.76837158203125e-07,
+      "changed_coordinates": 606,
+      "saved_trial_minus_cached_action_s": 8.881784197001252e-16,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 22,
+      "step": 2.384185791015625e-07,
+      "changed_coordinates": 229,
+      "saved_trial_minus_cached_action_s": 8.881784197001252e-16,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    },
+    {
+      "index": 23,
+      "step": 1.1920928955078125e-07,
+      "changed_coordinates": 120,
+      "saved_trial_minus_cached_action_s": 8.881784197001252e-16,
+      "saved_armijo_rhs_minus_cached_action_s": 0.0
+    }
+  ],
+  "limitations": [
+    "Recorded base reevaluation is checked for linkage and consistency, not independently recomputed.",
+    "Trial action scalars are recorded binary64 evaluations; this review certifies no exact action or failure cause.",
+    "Control arrays are not separately saved: their equality is established by reviewed in-process code and its two true records.",
+    "Native catalog identities describe simulation geometry provenance; no synthetic provider pick is invented.",
+    "Original local-convergence flags and independent continuous-reference accuracy are unchanged."
+  ]
+}
