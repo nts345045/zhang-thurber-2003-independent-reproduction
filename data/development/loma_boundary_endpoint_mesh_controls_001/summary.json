@@ -1,0 +1,4820 @@
+{
+  "status": "passed_analytical_contract_controls",
+  "mode": "invented_controls_only",
+  "input_sha256": {
+    "diagnostics/run_endpoint_mesh.py": "6cd7ba09fcd1edb8755af256efe5f7fa0a7e50f91fdfa0da37d4b3ac3ed933d0",
+    "diagnostics/check_endpoint_mesh.cpp": "4c836a3db11a61552ab56b324600543ef8dc84460324c7596e92bbdfa7789e62",
+    "data/development/loma_boundary_endpoint_next_step/plan.json": "c932679eecd4d70bb33926ae08a2d3edd1d092ad713a748818f3e1103f2a3fa9",
+    "data/development/loma_initial_failure_24104_001/source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "data/development/loma_initial_failure_24104_001/source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "data/development/loma_initial_failure_24104_001/source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33"
+  },
+  "plan_sha256": "c932679eecd4d70bb33926ae08a2d3edd1d092ad713a748818f3e1103f2a3fa9",
+  "compiler": "/usr/bin/c++",
+  "compiler_sha256": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7",
+  "commands": [
+    {
+      "stage": "compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=gnu++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "data/development/loma_boundary_endpoint_mesh_controls_001/source/diagnostics/check_endpoint_mesh.cpp",
+        "-o",
+        "tmp/loma_boundary_endpoint_mesh/controls001/check"
+      ],
+      "status": "completed",
+      "pid": 180215,
+      "return_code": 0,
+      "seconds": 10.06532656995114
+    },
+    {
+      "stage": "positive_guide",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_boundary_endpoint_mesh/controls001/check",
+        "data/development/loma_boundary_endpoint_mesh_controls_001/positive_guide/grid.csv",
+        "data/development/loma_boundary_endpoint_mesh_controls_001/positive_guide/input_path.csv",
+        "positive_guide",
+        "data/development/loma_boundary_endpoint_mesh_controls_001/positive_guide",
+        "1000",
+        "0.0,0.0009765625,6.103515625e-05,3.814697265625e-06,2.384185791015625e-07",
+        "1,2,4,8,16",
+        "1"
+      ],
+      "status": "completed",
+      "pid": 180336,
+      "return_code": 0,
+      "seconds": 0.03088801505509764
+    },
+    {
+      "stage": "homogeneous_oblique",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_boundary_endpoint_mesh/controls001/check",
+        "data/development/loma_boundary_endpoint_mesh_controls_001/homogeneous_oblique/grid.csv",
+        "data/development/loma_boundary_endpoint_mesh_controls_001/homogeneous_oblique/input_path.csv",
+        "homogeneous_oblique",
+        "data/development/loma_boundary_endpoint_mesh_controls_001/homogeneous_oblique",
+        "1000",
+        "0.0,0.0009765625,6.103515625e-05,3.814697265625e-06,2.384185791015625e-07",
+        "1,2,4,8,16",
+        "1"
+      ],
+      "status": "completed",
+      "pid": 180337,
+      "return_code": 0,
+      "seconds": 0.009243128006346524
+    },
+    {
+      "stage": "near_zero_guide",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_boundary_endpoint_mesh/controls001/check",
+        "data/development/loma_boundary_endpoint_mesh_controls_001/near_zero_guide/grid.csv",
+        "data/development/loma_boundary_endpoint_mesh_controls_001/near_zero_guide/input_path.csv",
+        "near_zero_guide",
+        "data/development/loma_boundary_endpoint_mesh_controls_001/near_zero_guide",
+        "1000",
+        "0.0,9.313225746154785e-10,3.725290298461914e-09,1.4901161193847656e-08,5.960464477539063e-08,2.384185791015625e-07",
+        "1,2,4,8,16",
+        "1"
+      ],
+      "status": "completed",
+      "pid": 180338,
+      "return_code": 0,
+      "seconds": 0.030941637000069022
+    }
+  ],
+  "scope": "Three invented analytic controls; no native trace, source/flag change or inverse run.",
+  "unchanged_optimizer_and_derivative_suffix_sha256": "393e741dff39ac594c9b160fc43c130c235db034ac2b2fd89c737a42eae888b1",
+  "binary_sha256": "78e802761ffd68047bcc40b10ce14d4ec3cd60a5076313d45b5e5bcc0ae35c69",
+  "invented_cases": [
+    {
+      "name": "positive_guide",
+      "v0": 5.0,
+      "gradient": 1.0,
+      "bottom": 1.0,
+      "epsilons": [
+        0.0,
+        0.0009765625,
+        6.103515625e-05,
+        3.814697265625e-06,
+        2.384185791015625e-07
+      ],
+      "original_points": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.25,
+          0.0,
+          1.0
+        ],
+        [
+          0.5,
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0,
+          1.0
+        ],
+        [
+          2.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "homogeneous_oblique",
+      "v0": 6.0,
+      "gradient": 0.0,
+      "bottom": 1.0,
+      "epsilons": [
+        0.0,
+        0.0009765625,
+        6.103515625e-05,
+        3.814697265625e-06,
+        2.384185791015625e-07
+      ],
+      "original_points": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.25,
+          0.0,
+          0.75
+        ],
+        [
+          0.5,
+          0.0,
+          0.5
+        ],
+        [
+          0.75,
+          0.0,
+          0.25
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "near_zero_guide",
+      "v0": 5.0,
+      "gradient": 1.0,
+      "bottom": 1.0,
+      "epsilons": [
+        0.0,
+        9.313225746154785e-10,
+        3.725290298461914e-09,
+        1.4901161193847656e-08,
+        5.960464477539063e-08,
+        2.384185791015625e-07
+      ],
+      "original_points": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.001,
+          0.0,
+          1.0
+        ],
+        [
+          0.11080990832779901,
+          0.0,
+          0.998995064511476
+        ],
+        [
+          0.22058303269764126,
+          0.0,
+          0.9959805946776799
+        ],
+        [
+          0.330282601473405,
+          0.0,
+          0.9909576002811855
+        ],
+        [
+          0.4398718676585105,
+          0.0,
+          0.9839277639171025
+        ],
+        [
+          0.5493141212053744,
+          0.0,
+          0.974893440429442
+        ],
+        [
+          0.6585727013124855,
+          0.0,
+          0.9638576561223022
+        ],
+        [
+          0.7676110087049851,
+          0.0,
+          0.9508241077461133
+        ],
+        [
+          0.8763925178946378,
+          0.0,
+          0.9357971612593108
+        ],
+        [
+          0.9848807894150834,
+          0.0,
+          0.9187818503658294
+        ],
+        [
+          1.0930394820282752,
+          0.0,
+          0.899783874828926
+        ],
+        [
+          1.2008323648980137,
+          0.0,
+          0.8788095985618751
+        ],
+        [
+          1.3082233297264967,
+          0.0,
+          0.8558660474961997
+        ],
+        [
+          1.415176402849823,
+          0.0,
+          0.8309609072281328
+        ],
+        [
+          1.5216557572883969,
+          0.0,
+          0.8041025204441086
+        ],
+        [
+          1.6276257247481944,
+          0.0,
+          0.7752998841261398
+        ],
+        [
+          1.7330508075688766,
+          0.0,
+          0.7445626465380286
+        ],
+        [
+          1.837895690614741,
+          0.0,
+          0.7119011039933971
+        ],
+        [
+          1.9421252531045332,
+          0.0,
+          0.6773261974066509
+        ],
+        [
+          2.045704580376153,
+          0.0,
+          0.640849508628003
+        ],
+        [
+          2.1485989755823174,
+          0.0,
+          0.6024832565638061
+        ],
+        [
+          2.250773971313253,
+          0.0,
+          0.5622402930834793
+        ],
+        [
+          2.352195341142546,
+          0.0,
+          0.5201340987144132
+        ],
+        [
+          2.452829111092249,
+          0.0,
+          0.4761787781262763
+        ],
+        [
+          2.5526415710134405,
+          0.0,
+          0.43038905540625727
+        ],
+        [
+          2.651599285878397,
+          0.0,
+          0.3827802691268136
+        ],
+        [
+          2.749669106980608,
+          0.0,
+          0.33336836720757823
+        ],
+        [
+          2.8468181830388795,
+          0.0,
+          0.28216990157314914
+        ],
+        [
+          2.9430139712018097,
+          0.0,
+          0.2292020226085505
+        ],
+        [
+          3.038224247948942,
+          0.0,
+          0.17448247341422451
+        ],
+        [
+          3.132417119884949,
+          0.0,
+          0.11802958386247031
+        ],
+        [
+          3.225561034423242,
+          0.0,
+          0.059862264457335
+        ],
+        [
+          3.3176247903553997,
+          0.0,
+          0.0
+        ]
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "name": "positive_guide",
+      "checks": [
+        {
+          "name": "complete_control_roster",
+          "passed": true
+        },
+        {
+          "name": "ordinary_and_explicit_mesh_trace_parity",
+          "passed": true
+        },
+        {
+          "name": "no_optimizer_exceptions",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0.0009765625', 'fixed')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0.0009765625', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0.0009765625', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0.0009765625', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0.0009765625', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0.0009765625', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0.0009765625', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 8.673617379884035e-19,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '6.103515625e-05', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '6.103515625e-05', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '3.814697265625e-06', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '3.814697265625e-06', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0.0009765625', 'fixed')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0.0009765625', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0.0009765625', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0.0009765625', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0.0009765625', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0.0009765625', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0.0009765625', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 4.336808689942018e-19,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.168404344971009e-19,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '6.103515625e-05', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 4.336808689942018e-19
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '6.103515625e-05', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '3.814697265625e-06', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '3.814697265625e-06', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0.0009765625', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0.0009765625', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0.0009765625', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0.0009765625', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0.0009765625', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0.0009765625', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0.0009765625', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '6.103515625e-05', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '6.103515625e-05', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '3.814697265625e-06', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '3.814697265625e-06', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 8.673617379884035e-19
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0.0009765625', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0.0009765625', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0.0009765625', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0.0009765625', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0.0009765625', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0.0009765625', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0.0009765625', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '6.103515625e-05', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 4.336808689942018e-19
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '6.103515625e-05', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '3.814697265625e-06', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '3.814697265625e-06', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0.0009765625', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0.0009765625', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0.0009765625', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0.0009765625', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 8.673617379884035e-19
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0.0009765625', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0.0009765625', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0.0009765625', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 4.336808689942018e-19,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '6.103515625e-05', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '6.103515625e-05', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.421010862427522e-20,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '3.814697265625e-06', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '3.814697265625e-06', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.421010862427522e-20,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.710505431213761e-20,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.710505431213761e-20,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "rational_guide_baseline",
+          "passed": true
+        }
+      ],
+      "rows": 75,
+      "optimizer_false_flags": 2,
+      "optimizer_exceptions": 0,
+      "optimized_source_accuracy_failures": 24,
+      "scope": "Arithmetic/parity checks are separate from retained optimizer and continuous-reference accuracy outcomes."
+    },
+    {
+      "name": "homogeneous_oblique",
+      "checks": [
+        {
+          "name": "complete_control_roster",
+          "passed": true
+        },
+        {
+          "name": "ordinary_and_explicit_mesh_trace_parity",
+          "passed": true
+        },
+        {
+          "name": "no_optimizer_exceptions",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('1', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0.0009765625', 'fixed')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0.0009765625', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0.0009765625', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0.0009765625', 'tied')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0.0009765625', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0.0009765625', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0.0009765625', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('1', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '6.103515625e-05', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '6.103515625e-05', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('1', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '3.814697265625e-06', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '3.814697265625e-06', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('1', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('1', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('2', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0.0009765625', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0.0009765625', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0.0009765625', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0.0009765625', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0.0009765625', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0.0009765625', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0.0009765625', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('2', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '6.103515625e-05', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '6.103515625e-05', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('2', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '3.814697265625e-06', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '3.814697265625e-06', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('2', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('2', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('4', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0.0009765625', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0.0009765625', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0.0009765625', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0.0009765625', 'tied')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0.0009765625', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0.0009765625', 'optimized')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0.0009765625', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('4', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '6.103515625e-05', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '6.103515625e-05', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('4', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 4.163336342344337e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '3.814697265625e-06', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '3.814697265625e-06', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('4', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('4', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('8', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0.0009765625', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0.0009765625', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 4.163336342344337e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0.0009765625', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0.0009765625', 'tied')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0.0009765625', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0.0009765625', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0.0009765625', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('8', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '6.103515625e-05', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 4.163336342344337e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '6.103515625e-05', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('8', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '3.814697265625e-06', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '3.814697265625e-06', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('8', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 8.326672684688674e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('8', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0', 'fixed')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0', 'tied')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0', 'optimized')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('16', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0.0009765625', 'fixed')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0.0009765625', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0.0009765625', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0.0009765625', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '0.0009765625', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0.0009765625', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0.0009765625', 'optimized')",
+          "passed": true,
+          "error_s": 8.326672684688674e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0.0009765625', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('16', '0.0009765625', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '6.103515625e-05', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '6.103515625e-05', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '6.103515625e-05', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '6.103515625e-05', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '6.103515625e-05', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 4.163336342344337e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('16', '6.103515625e-05', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '3.814697265625e-06', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '3.814697265625e-06', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '3.814697265625e-06', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 4.163336342344337e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '3.814697265625e-06', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '3.814697265625e-06', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('16', '3.814697265625e-06', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 2.7755575615628914e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 8.326672684688674e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 5.551115123125783e-17,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3877787807814457e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "homogeneous_optimized_accuracy_('16', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        }
+      ],
+      "rows": 75,
+      "optimizer_false_flags": 0,
+      "optimizer_exceptions": 0,
+      "optimized_source_accuracy_failures": 0,
+      "scope": "Arithmetic/parity checks are separate from retained optimizer and continuous-reference accuracy outcomes."
+    },
+    {
+      "name": "near_zero_guide",
+      "checks": [
+        {
+          "name": "complete_control_roster",
+          "passed": true
+        },
+        {
+          "name": "ordinary_and_explicit_mesh_trace_parity",
+          "passed": true
+        },
+        {
+          "name": "no_optimizer_exceptions",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '0', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '9.3132257461547852e-10', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '9.3132257461547852e-10', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.6940658945086007e-21,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '9.3132257461547852e-10', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.6940658945086007e-21,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.6940658945086007e-21
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '9.3132257461547852e-10', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '9.3132257461547852e-10', 'optimized')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '9.3132257461547852e-10', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '9.3132257461547852e-10', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '3.7252902984619141e-09', 'fixed')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '3.7252902984619141e-09', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '3.7252902984619141e-09', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '3.7252902984619141e-09', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '3.7252902984619141e-09', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '3.7252902984619141e-09', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '3.7252902984619141e-09', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '1.4901161193847656e-08', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '1.4901161193847656e-08', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '1.4901161193847656e-08', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '1.4901161193847656e-08', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '1.4901161193847656e-08', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '1.4901161193847656e-08', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '1.4901161193847656e-08', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '5.9604644775390625e-08', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '5.9604644775390625e-08', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 6.776263578034403e-21,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '5.9604644775390625e-08', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 6.776263578034403e-21,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 6.776263578034403e-21
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '5.9604644775390625e-08', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '5.9604644775390625e-08', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '5.9604644775390625e-08', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '5.9604644775390625e-08', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('1', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('1', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('1', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('1', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '0', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '9.3132257461547852e-10', 'fixed')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '9.3132257461547852e-10', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '9.3132257461547852e-10', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '9.3132257461547852e-10', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '9.3132257461547852e-10', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '9.3132257461547852e-10', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '9.3132257461547852e-10', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '3.7252902984619141e-09', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '3.7252902984619141e-09', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '3.7252902984619141e-09', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '3.7252902984619141e-09', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '3.7252902984619141e-09', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '3.7252902984619141e-09', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '3.7252902984619141e-09', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '1.4901161193847656e-08', 'fixed')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '1.4901161193847656e-08', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '1.4901161193847656e-08', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '1.4901161193847656e-08', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '1.4901161193847656e-08', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '1.4901161193847656e-08', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '1.4901161193847656e-08', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '5.9604644775390625e-08', 'fixed')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '5.9604644775390625e-08', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 3.3881317890172014e-21,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '5.9604644775390625e-08', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '5.9604644775390625e-08', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '5.9604644775390625e-08', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '5.9604644775390625e-08', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '5.9604644775390625e-08', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('2', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('2', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('2', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('2', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '0', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '9.3132257461547852e-10', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '9.3132257461547852e-10', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '9.3132257461547852e-10', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '9.3132257461547852e-10', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '9.3132257461547852e-10', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '9.3132257461547852e-10', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '9.3132257461547852e-10', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '3.7252902984619141e-09', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '3.7252902984619141e-09', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '3.7252902984619141e-09', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 3.3881317890172014e-21
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '3.7252902984619141e-09', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '3.7252902984619141e-09', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '3.7252902984619141e-09', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '3.7252902984619141e-09', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '1.4901161193847656e-08', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '1.4901161193847656e-08', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '1.4901161193847656e-08', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '1.4901161193847656e-08', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '1.4901161193847656e-08', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '1.4901161193847656e-08', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '1.4901161193847656e-08', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '5.9604644775390625e-08', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '5.9604644775390625e-08', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '5.9604644775390625e-08', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '5.9604644775390625e-08', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '5.9604644775390625e-08', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '5.9604644775390625e-08', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '5.9604644775390625e-08', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('4', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('4', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('4', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('4', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '0', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '9.3132257461547852e-10', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '9.3132257461547852e-10', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '9.3132257461547852e-10', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '9.3132257461547852e-10', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '9.3132257461547852e-10', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '9.3132257461547852e-10', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 4.235164736271502e-22,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '9.3132257461547852e-10', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '3.7252902984619141e-09', 'fixed')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '3.7252902984619141e-09', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '3.7252902984619141e-09', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '3.7252902984619141e-09', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '3.7252902984619141e-09', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '3.7252902984619141e-09', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '3.7252902984619141e-09', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '1.4901161193847656e-08', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '1.4901161193847656e-08', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '1.4901161193847656e-08', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '1.4901161193847656e-08', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '1.4901161193847656e-08', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '1.4901161193847656e-08', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 3.3881317890172014e-21,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '1.4901161193847656e-08', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '5.9604644775390625e-08', 'fixed')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '5.9604644775390625e-08', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3552527156068805e-20,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '5.9604644775390625e-08', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '5.9604644775390625e-08', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '5.9604644775390625e-08', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '5.9604644775390625e-08', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '5.9604644775390625e-08', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('8', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 3.3881317890172014e-20
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('8', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('8', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('8', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '0', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '0', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '0', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '0', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '9.3132257461547852e-10', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '9.3132257461547852e-10', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '9.3132257461547852e-10', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '9.3132257461547852e-10', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 3.3881317890172014e-21
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '9.3132257461547852e-10', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '9.3132257461547852e-10', 'optimized')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '9.3132257461547852e-10', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 4.235164736271502e-22,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '9.3132257461547852e-10', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '3.7252902984619141e-09', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '3.7252902984619141e-09', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '3.7252902984619141e-09', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '3.7252902984619141e-09', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '3.7252902984619141e-09', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '3.7252902984619141e-09', 'optimized')",
+          "passed": true,
+          "error_s": 2.220446049250313e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '3.7252902984619141e-09', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '3.7252902984619141e-09', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '1.4901161193847656e-08', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '1.4901161193847656e-08', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '1.4901161193847656e-08', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 4.235164736271502e-22,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '1.4901161193847656e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '1.4901161193847656e-08', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '1.4901161193847656e-08', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '1.4901161193847656e-08', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '1.4901161193847656e-08', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '5.9604644775390625e-08', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '5.9604644775390625e-08', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '5.9604644775390625e-08', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 3.3881317890172014e-21,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '5.9604644775390625e-08', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '5.9604644775390625e-08', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '5.9604644775390625e-08', 'optimized')",
+          "passed": true,
+          "error_s": 0.0,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '5.9604644775390625e-08', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 0.0,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '5.9604644775390625e-08', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '2.384185791015625e-07', 'fixed')",
+          "passed": true,
+          "maximum_error_s_per_km": 5.551115123125783e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '2.384185791015625e-07', 'fixed')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 2.7755575615628914e-17,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "tied_chain_rule_('16', '2.384185791015625e-07', 'tied')",
+          "passed": true,
+          "maximum_error_s_per_km": 1.3552527156068805e-20
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '2.384185791015625e-07', 'tied')",
+          "passed": true
+        },
+        {
+          "name": "polygon_action_('16', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "error_s": 1.1102230246251565e-16,
+          "arithmetic_allowance_s": 1.1368683772161603e-13
+        },
+        {
+          "name": "polygon_source_partial_('16', '2.384185791015625e-07', 'optimized')",
+          "passed": true,
+          "maximum_error_s_per_km": 3.3881317890172014e-21,
+          "arithmetic_allowance_s_per_km": 4.547473508864641e-13
+        },
+        {
+          "name": "continuous_value_lower_bound_('16', '2.384185791015625e-07', 'optimized')",
+          "passed": true
+        },
+        {
+          "name": "near_zero_guide_crosses_branch_transition",
+          "passed": true
+        }
+      ],
+      "rows": 90,
+      "optimizer_false_flags": 0,
+      "optimizer_exceptions": 0,
+      "optimized_source_accuracy_failures": 8,
+      "scope": "Arithmetic/parity checks are separate from retained optimizer and continuous-reference accuracy outcomes."
+    }
+  ],
+  "passing_checks": 836,
+  "total_checks": 836,
+  "native_execution_performed": false,
+  "limitations": [
+    "Exact analytical polygon checks do not turn coarse endpoint partials into derivatives of a minimized envelope.",
+    "All optimizer local flags, source-accuracy failures, merges and topology are preserved.",
+    "No native execution is implemented by this controls-only launcher; source/control review must precede a separate native invocation."
+  ],
+  "artifact_sha256": {
+    "compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "homogeneous_oblique/comparisons.csv": "7405c8d590ab09cd8efe5b1687e2f26f4c64423de3012ff287b2cd5e7163f436",
+    "homogeneous_oblique/evaluations.csv": "d74f5c2e3fa0eb06a32aa325d3231263193f8a4b39feb4d2547dd0dd48e1509b",
+    "homogeneous_oblique/grid.csv": "568b814076c886cef8d3dc0288ddf4082a28262779f7cadf04c8f5c90c3533ce",
+    "homogeneous_oblique/input_path.csv": "1cbbf5e0701f6adf3445a6f077c1a7f3d0ab93c25de46edd746c7250904ee404",
+    "homogeneous_oblique/parity.csv": "6927ef629ee00db6d36a56f002ae1fcd7a0abd496fa525d6a4860abf39f9f9c2",
+    "homogeneous_oblique/paths.csv": "cbc61cd6f871fcc003178e89cc4deb0e33164a91488662a937cab4026907a187",
+    "homogeneous_oblique_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "homogeneous_oblique_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "initialization.diff": "b8715de8f53d8b6c1a4605b177a5da6bcc30f6f7e966b2bf22a3d3c653ac803c",
+    "near_zero_guide/comparisons.csv": "c5138da0a547c0a5a4bd8892d8b5b8a2d470431ec494c5fe2071ed26d5f6d4d4",
+    "near_zero_guide/evaluations.csv": "9f6ab084a89ac2bf98905ed40210043fc870696ae513ef92670cbf17a9526917",
+    "near_zero_guide/grid.csv": "38468cad3b8d7b48f4230b9c46dcd8d629d39f30d9f3b1e5763abb2605325c14",
+    "near_zero_guide/input_path.csv": "3e8f6bf8ceccc7fdff59ba6e4cedb2b3adb5df3467c074cac30404219ba6e7aa",
+    "near_zero_guide/parity.csv": "6927ef629ee00db6d36a56f002ae1fcd7a0abd496fa525d6a4860abf39f9f9c2",
+    "near_zero_guide/paths.csv": "4d7a9eb50833089051a38864bec4478dcc1be2be17e1ab175a0772e38e0f42ab",
+    "near_zero_guide_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "near_zero_guide_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "positive_guide/comparisons.csv": "26792823f0f44e2f31dc9166afe05ce329552cdf882b125ff0261668ecd28be2",
+    "positive_guide/evaluations.csv": "383637cd5adf387e486728251327a727154ebec4ed9d57251ef9c61d653d9baa",
+    "positive_guide/grid.csv": "38468cad3b8d7b48f4230b9c46dcd8d629d39f30d9f3b1e5763abb2605325c14",
+    "positive_guide/input_path.csv": "99a9f50a6d98c6d07df40ab5a5e634e1744ad649bcc96e00cf208226dd6ffbf2",
+    "positive_guide/parity.csv": "6927ef629ee00db6d36a56f002ae1fcd7a0abd496fa525d6a4860abf39f9f9c2",
+    "positive_guide/paths.csv": "70dacab2233a741b62fc140a9b5defbefba490ea0e68bb03690f99cd54b40adf",
+    "positive_guide_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "positive_guide_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/diagnostics/check_endpoint_mesh.cpp": "4c836a3db11a61552ab56b324600543ef8dc84460324c7596e92bbdfa7789e62",
+    "source/diagnostics/explicit_mesh_trace.hpp": "db4c7ae375930196d7878d05333aa4cf205ea981555530e5110341a93cc494f6",
+    "source/diagnostics/run_endpoint_mesh.py": "6cd7ba09fcd1edb8755af256efe5f7fa0a7e50f91fdfa0da37d4b3ac3ed933d0",
+    "source/plan.json": "c932679eecd4d70bb33926ae08a2d3edd1d092ad713a748818f3e1103f2a3fa9",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  }
+}

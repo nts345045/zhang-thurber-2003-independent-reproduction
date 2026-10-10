@@ -1,0 +1,57 @@
+{
+  "status": "awaiting_independent_read_only_review",
+  "created_utc": "2026-10-10T06:14:26.199587+00:00",
+  "owner": "earthscope_discovery",
+  "reviewer_requested": "scientific_audit/ray_math_review",
+  "source_frozen": true,
+  "controls_summary_sha256": "534fa492a55bb167f6b751efdb46642c235369a806d8e308d490cca6afac622c",
+  "source_and_document_sha256": {
+    "diagnostics/check_endpoint_mesh.cpp": "4c836a3db11a61552ab56b324600543ef8dc84460324c7596e92bbdfa7789e62",
+    "diagnostics/run_endpoint_mesh.py": "6cd7ba09fcd1edb8755af256efe5f7fa0a7e50f91fdfa0da37d4b3ac3ed933d0",
+    "data/development/loma_boundary_endpoint_next_step/proposal.md": "ec910dddf91746f9dcbbd7fc9d9d0be27e84bbb9a40a3f3156bf8e79d615d4b3",
+    "data/development/loma_boundary_endpoint_next_step/plan.json": "c932679eecd4d70bb33926ae08a2d3edd1d092ad713a748818f3e1103f2a3fa9",
+    "data/development/loma_boundary_endpoint_mesh_controls_001/summary.json": "534fa492a55bb167f6b751efdb46642c235369a806d8e308d490cca6afac622c",
+    "data/development/loma_boundary_endpoint_mesh_controls_001/README.md": "5a0231f10928f37717d845337cf8f17f1daf58baee6bf12b8548fa8391e5cf99",
+    "data/development/loma_boundary_endpoint_mesh_controls_001/initialization.diff": "b8715de8f53d8b6c1a4605b177a5da6bcc30f6f7e966b2bf22a3d3c653ac803c"
+  },
+  "reverified_input_hashes": 6,
+  "reverified_output_hashes": 34,
+  "analytical_checks": {
+    "passed": 836,
+    "total": 836,
+    "meaning": "Saved-polygon analytical action/partial/tied-chain-rule, reference lower-bound, roster and exact equal-initial-mesh optimizer parity; not acceptance of optimized continuous source sensitivities."
+  },
+  "retained_optimized_outcomes": [
+    {
+      "case": "positive_guide",
+      "optimized_rows": 25,
+      "false_local_flags": 2,
+      "optimizer_exceptions": 0,
+      "source_accuracy_failures": 24
+    },
+    {
+      "case": "homogeneous_oblique",
+      "optimized_rows": 25,
+      "false_local_flags": 0,
+      "optimizer_exceptions": 0,
+      "source_accuracy_failures": 0
+    },
+    {
+      "case": "near_zero_guide",
+      "optimized_rows": 30,
+      "false_local_flags": 0,
+      "optimizer_exceptions": 0,
+      "source_accuracy_failures": 8
+    }
+  ],
+  "review_questions": [
+    "Does the generated explicit-mesh initializer preserve the complete frozen optimizer/action/box/merge/derivative suffix and the ordinary trace parity contract?",
+    "Do the affine continuous finite-bottom and polygon action/gradient formulas have correct branch conditions, signs and exact binary64 input interpretation?",
+    "Do all reported counts, local flags, source-error failures and secant examples match frozen tables, with no numerical success inferred merely from the 836 analytical checks?",
+    "Does the interpretation distinguish fixed/tied-family derivatives from approximate reoptimized values, tangential knot nonuniqueness and changing optimization/discretization errors?",
+    "Would a native execution add useful evidence beyond the existing fixed-polygon calculation? Root and owner currently hold it because these controls already refute refinement-alone sufficiency."
+  ],
+  "proposed_review_output": "review.json in this directory, with exact controls_summary_sha256 and source hashes; no source or existing-evidence changes",
+  "boundary_status": "No more boundary experiments without a concrete new hypothesis. No native experiment, full48 expansion, inverse run, new threshold, gradient zeroing, production edit or flag promotion.",
+  "numerical_artifacts_immutable": true
+}
