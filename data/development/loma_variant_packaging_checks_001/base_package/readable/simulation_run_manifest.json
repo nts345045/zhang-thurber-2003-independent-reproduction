@@ -1,0 +1,68 @@
+{
+  "truth_mode": "continuous_layered_reference",
+  "prepared_manifest_sha256": "50c5bf093545545bf1681704b5f1212e1dc27057d086365ba9be87a43e28ca41",
+  "base_commit": "087c7c4818ea19dc9c3d0e655901622584988717",
+  "binary": "tmp/analytic_simulation_launcher_002/compiled/dd",
+  "binary_sha256": "c77252ed83d6b0bfd3daecf54fe3bcb3efba84a35a6498f771847e1666807bbe",
+  "compiler": "/usr/bin/c++",
+  "compiler_sha256": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7",
+  "runtime_library_sha256": {
+    "/lib64/libgomp.so.1": "855c301ab3ac34c8d0e4f8ddd135993156a4dca42a2778133e9ccba199753d54",
+    "/lib64/libpthread.so.0": "8e757a6a1bfb17649d6f4cfb1ca1f4bac8c06588913ebaa1076ec0f6cd36b481",
+    "/lib64/libstdc++.so.6": "7657b5709008fa4c3c1cc062e15417e9dd1a9f37c82a3615cd79baae7827fdfd",
+    "/lib64/libm.so.6": "07dee3042cbebba9c6378266b15579edc7494acad1b7d1048c5db6d79d908bf4",
+    "/lib64/libgcc_s.so.1": "fc8572b6747ab823b40d75a2b759db2c12b5c256ede7fa0e5da6ae5f4b0e144d",
+    "/lib64/libc.so.6": "28d830c37bfd68d5165b3d2fd28a87dd737180df5255e1290d5015b0f9db0027",
+    "/lib64/libdl.so.2": "e34274941b0b4cff9f07896ecb0a56c108338aac1b3f8d21cc67c247094ad901",
+    "/lib64/ld-linux-x86-64.so.2": "4a06fb242c7d5a06a4fcd54fd0723d680c0a5828ebd4a2ebeb4dd1fd68705a12"
+  },
+  "source_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "run_loma_analytic_simulation.py": "5b199a46cd6cd6c83ea44d94084bec4a06a9640e66524f93f316f8366d622fe5",
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "df472d1152302b685232cbfaf73587d472cab0c1a342938edbdd676e622057af",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "source_directory": "tmp/analytic_simulation_launcher_002/source",
+  "source_archive_sha256": "1b9d7f6695c3924cf523ee4c89cfed2a81cea407485cbf38cccf9857134c4d8d",
+  "simulation_command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/analytic_simulation_launcher_002/compiled/dd",
+    "simulate",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/analytic_simulation_launcher_002/invented_simulation/run.cfg",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/analytic_simulation_launcher_002/invented_simulation",
+    "--analytic-truth",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/analytic_simulation_launcher_002/invented_simulation/analytic_truth"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "1",
+    "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "address_space_limit_GiB": 128,
+  "mutable_input_files": [
+    "authoritative_geometry",
+    "truth_events.csv"
+  ],
+  "expected_counts": {
+    "events": 2,
+    "receivers": 2,
+    "unique_rays": 4,
+    "strict_below_20km_pairs": 1,
+    "absolute_rows": 4,
+    "catalog_rows": 2,
+    "precise_rows": 2,
+    "total_rows": 8
+  },
+  "limitations": [
+    "Simulation completion does not validate the inverse forward operator or reproduce an inverted manuscript panel.",
+    "The continuous truth timing definition explicitly replaces the generic preparation manifest local-ray definition.",
+    "The full output identity and numerical audit is separate from this execution ledger."
+  ]
+}

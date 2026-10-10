@@ -1,0 +1,524 @@
+{
+  "format": "simulation-overlay-v1",
+  "original_data": "tmp/loma_variant_packaging_checks_001/variant_run",
+  "scope": "Exact reviewed LON bytes restored from identical LOM base members and explicit LON replacements",
+  "members": {
+    "analytic_truth/inputs/stations.csv": {
+      "sha256": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+      "bytes": 413
+    },
+    "analytic_truth/inputs/truth_events.csv": {
+      "sha256": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+      "bytes": 256
+    },
+    "analytic_truth/inputs/truth_grid.csv": {
+      "sha256": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+      "bytes": 148
+    },
+    "analytic_truth/provenance/certificates.jsonl.gz": {
+      "sha256": "43f88b5ad8b32b11781ba8371809dc1866413c203073f5a7ec5e9591666bb3e7",
+      "bytes": 947
+    },
+    "analytic_truth/provenance/execution.json": {
+      "sha256": "b4c1b66e45389167aad38882a1eea13ed4c4bf7609268b953ed6020b7144be3a",
+      "bytes": 147
+    },
+    "analytic_truth/provenance/independent_review.json": {
+      "sha256": "76fad46da42cad502722514401f659da7fa119587a4fbce1adf802a3173f32db",
+      "bytes": 398
+    },
+    "analytic_truth/provenance/review.json": {
+      "sha256": "de6d089820e059edcdf360c672722fdee86a8a0f489dcd4cf7957269473e469a",
+      "bytes": 241
+    },
+    "analytic_truth/provenance/summary.json": {
+      "sha256": "bcabde525387e6a3d77fc825130ca8fd2da8176a183a3d65f08d4c22b8370f1f",
+      "bytes": 1479
+    },
+    "analytic_truth/references.csv": {
+      "sha256": "1036ac00a716d3f0e794fb8efeb43c68753faf6afe28bfbc09a9214983f18c2f",
+      "bytes": 1844
+    },
+    "analytic_truth_manifest.json": {
+      "sha256": "b8a88716199ee0e7c70c01a6768d33e3452415c0f4a87d6c70894889ffc2eacd",
+      "bytes": 2009
+    },
+    "arrivals.csv": {
+      "sha256": "c37288fd68409c93ddcc3263eaaeaae4e8cefee05e57983e7eef96b7c435c2a9",
+      "bytes": 2331
+    },
+    "authoritative_geometry": {
+      "sha256": "13952d674c3c41253c5943b0d457ae9f16eb88a17fc5c057bee727467c90d166",
+      "bytes": 90
+    },
+    "independent_simulation_review.json": {
+      "sha256": "8385db5f8d091cdd314089c8f9a4537884abf0b5036ce43ef41fee9cdb892cc4",
+      "bytes": 6146
+    },
+    "initial_events.csv": {
+      "sha256": "63e62e60e422c9a48b5818c2eeb70a6a626d6fb9528b00534dfe15306e254f9f",
+      "bytes": 810
+    },
+    "initial_grid.csv": {
+      "sha256": "3d73d7606b4e850c02bf7bfe643acfc30b720c77ede3eca04bcefa441615cb4e",
+      "bytes": 149
+    },
+    "inputs_before_simulation/authoritative_geometry": {
+      "sha256": "b0ce8a108f4346cb5ae60d8cab9c58f48e5c7d4cd4c6c47821b6d25bc3c9f8af",
+      "bytes": 67
+    },
+    "inputs_before_simulation/truth_events.csv": {
+      "sha256": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+      "bytes": 256
+    },
+    "observations.csv": {
+      "sha256": "ef7c62ddb2917550812432b5ac9df7c6c11e08ea5e0ea14befc1e132b41b8091",
+      "bytes": 2777
+    },
+    "preparation_manifest.json": {
+      "sha256": "a6ad37cf62cd0bead46e999b129cf935eeea1db384067cdd2ad112e49625a75e",
+      "bytes": 204
+    },
+    "run.cfg": {
+      "sha256": "7e796db2234cbfc8d29509125d2df6ba26d552104bf632e6bb164ce36bdfabd7",
+      "bytes": 194
+    },
+    "simulate_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "simulate_stdout.log": {
+      "sha256": "326e8cf3c81f0a46f8d1dc7c84ddbc3e42a3ad7b78ce01ca45ff9eeeb3e3aa41",
+      "bytes": 80
+    },
+    "simulation_cmake_version_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "simulation_cmake_version_stdout.log": {
+      "sha256": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+      "bytes": 91
+    },
+    "simulation_compile_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "simulation_compile_stdout.log": {
+      "sha256": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+      "bytes": 116
+    },
+    "simulation_compiler_version_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "simulation_compiler_version_stdout.log": {
+      "sha256": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+      "bytes": 246
+    },
+    "simulation_configure_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "simulation_configure_stdout.log": {
+      "sha256": "0bb906076b0649e8020ec6f7964662ba072b9db930f9f70afa74ba547761e9b5",
+      "bytes": 569
+    },
+    "simulation_execution.json": {
+      "sha256": "a6dae2350857418c480c965fc6b6ad2256475259df657c8cac48ba3b0f0bf59c",
+      "bytes": 6291
+    },
+    "simulation_run_manifest.json": {
+      "sha256": "7530b5672bb7ef753c08db17cc0de5866aa5119747ab6740b2e3e9b072cf55ca",
+      "bytes": 4091
+    },
+    "simulation_runtime_libraries_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "simulation_runtime_libraries_stdout.log": {
+      "sha256": "d86f5549cd129b3d1ab4fce39fffeb7cbb292005c03c5e5ebd7ebef70ef7897d",
+      "bytes": 490
+    },
+    "simulation_source.tar.gz": {
+      "sha256": "1b9d7f6695c3924cf523ee4c89cfed2a81cea407485cbf38cccf9857134c4d8d",
+      "bytes": 48823
+    },
+    "simulation_truth_mode.txt": {
+      "sha256": "f1a9a5dec8eaa6c2f51b484ef730768ec312b74a2bebe001244bfc1d7d5ff7d5",
+      "bytes": 465
+    },
+    "simulation_truth_status.csv": {
+      "sha256": "8bf2e77aba8fa69bcdd3a1745036c4a94487845f7b0b550dd49801b710c365a5",
+      "bytes": 1995
+    },
+    "stations.csv": {
+      "sha256": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+      "bytes": 413
+    },
+    "truth_events.csv": {
+      "sha256": "5f936b391fb206d48ed68f30f5caf4ff8fb6da23593292e6b048bcbb784d7310",
+      "bytes": 683
+    },
+    "truth_grid.csv": {
+      "sha256": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+      "bytes": 148
+    },
+    "variant_only_note.txt": {
+      "sha256": "85b8717d91dce227ac749d67abfb1c75659dd44f88f7f97bfd64b6507f0b9474",
+      "bytes": 42
+    }
+  },
+  "stored_files": {
+    "analytic_truth_manifest.json": {
+      "sha256": "b8a88716199ee0e7c70c01a6768d33e3452415c0f4a87d6c70894889ffc2eacd",
+      "bytes": 2009
+    },
+    "independent_simulation_review.json": {
+      "sha256": "8385db5f8d091cdd314089c8f9a4537884abf0b5036ce43ef41fee9cdb892cc4",
+      "bytes": 6146
+    },
+    "initial_grid.csv": {
+      "sha256": "3d73d7606b4e850c02bf7bfe643acfc30b720c77ede3eca04bcefa441615cb4e",
+      "bytes": 149
+    },
+    "run.cfg": {
+      "sha256": "7e796db2234cbfc8d29509125d2df6ba26d552104bf632e6bb164ce36bdfabd7",
+      "bytes": 194
+    },
+    "simulation_execution.json": {
+      "sha256": "a6dae2350857418c480c965fc6b6ad2256475259df657c8cac48ba3b0f0bf59c",
+      "bytes": 6291
+    },
+    "simulation_run_manifest.json": {
+      "sha256": "7530b5672bb7ef753c08db17cc0de5866aa5119747ab6740b2e3e9b072cf55ca",
+      "bytes": 4091
+    },
+    "variant_only_note.txt": {
+      "sha256": "85b8717d91dce227ac749d67abfb1c75659dd44f88f7f97bfd64b6507f0b9474",
+      "bytes": 42
+    }
+  },
+  "reused_members": [
+    "analytic_truth/inputs/stations.csv",
+    "analytic_truth/inputs/truth_events.csv",
+    "analytic_truth/inputs/truth_grid.csv",
+    "analytic_truth/provenance/certificates.jsonl.gz",
+    "analytic_truth/provenance/execution.json",
+    "analytic_truth/provenance/independent_review.json",
+    "analytic_truth/provenance/review.json",
+    "analytic_truth/provenance/summary.json",
+    "analytic_truth/references.csv",
+    "arrivals.csv",
+    "authoritative_geometry",
+    "initial_events.csv",
+    "inputs_before_simulation/authoritative_geometry",
+    "inputs_before_simulation/truth_events.csv",
+    "observations.csv",
+    "preparation_manifest.json",
+    "simulate_stderr.log",
+    "simulate_stdout.log",
+    "simulation_cmake_version_stderr.log",
+    "simulation_cmake_version_stdout.log",
+    "simulation_compile_stderr.log",
+    "simulation_compile_stdout.log",
+    "simulation_compiler_version_stderr.log",
+    "simulation_compiler_version_stdout.log",
+    "simulation_configure_stderr.log",
+    "simulation_configure_stdout.log",
+    "simulation_runtime_libraries_stderr.log",
+    "simulation_runtime_libraries_stdout.log",
+    "simulation_source.tar.gz",
+    "simulation_truth_mode.txt",
+    "simulation_truth_status.csv",
+    "stations.csv",
+    "truth_events.csv",
+    "truth_grid.csv"
+  ],
+  "counts": {
+    "events": 2,
+    "receivers": 2,
+    "unique_rays": 4,
+    "strict_below_20km_pairs": 1,
+    "absolute_rows": 4,
+    "catalog_rows": 2,
+    "precise_rows": 2,
+    "total_rows": 8
+  },
+  "base_manifest_sha256": "b95ce8eb5a0e1e64aab2193fb15128f81a72d6bd582c816a5e8bfb9334a011bb",
+  "base_inventory": {
+    "README.md": {
+      "sha256": "a93ebb61b446638de3ffb9d4a7be6584c8d2c51143dfc5181adb3d80efcfee3a",
+      "bytes": 1295
+    },
+    "execution.json": {
+      "sha256": "e7af49eeafa7dfb16c847e36383a39920c93f2de75a945003966cd82cc6a3d10",
+      "bytes": 117
+    },
+    "independent_output_review.json": {
+      "sha256": "93b25bf42366dfa515497817267bb88c897c6a253ac3c5c934b5dc7dc74f39bc",
+      "bytes": 6116
+    },
+    "manifest.json": {
+      "sha256": "b95ce8eb5a0e1e64aab2193fb15128f81a72d6bd582c816a5e8bfb9334a011bb",
+      "bytes": 16488
+    },
+    "readable/analytic_truth/inputs/stations.csv": {
+      "sha256": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+      "bytes": 413
+    },
+    "readable/analytic_truth/inputs/truth_events.csv": {
+      "sha256": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+      "bytes": 256
+    },
+    "readable/analytic_truth/provenance/execution.json": {
+      "sha256": "b4c1b66e45389167aad38882a1eea13ed4c4bf7609268b953ed6020b7144be3a",
+      "bytes": 147
+    },
+    "readable/analytic_truth/provenance/independent_review.json": {
+      "sha256": "76fad46da42cad502722514401f659da7fa119587a4fbce1adf802a3173f32db",
+      "bytes": 398
+    },
+    "readable/analytic_truth/provenance/review.json": {
+      "sha256": "de6d089820e059edcdf360c672722fdee86a8a0f489dcd4cf7957269473e469a",
+      "bytes": 241
+    },
+    "readable/analytic_truth/provenance/summary.json": {
+      "sha256": "bcabde525387e6a3d77fc825130ca8fd2da8176a183a3d65f08d4c22b8370f1f",
+      "bytes": 1479
+    },
+    "readable/analytic_truth_manifest.json": {
+      "sha256": "50c5bf093545545bf1681704b5f1212e1dc27057d086365ba9be87a43e28ca41",
+      "bytes": 1899
+    },
+    "readable/authoritative_geometry": {
+      "sha256": "13952d674c3c41253c5943b0d457ae9f16eb88a17fc5c057bee727467c90d166",
+      "bytes": 90
+    },
+    "readable/base_only_note.txt": {
+      "sha256": "ce38cd8132e6e0878339771f6caf1aaea7a78bcb0c4ecacf49de4552cb7fbb34",
+      "bytes": 39
+    },
+    "readable/initial_events.csv": {
+      "sha256": "63e62e60e422c9a48b5818c2eeb70a6a626d6fb9528b00534dfe15306e254f9f",
+      "bytes": 810
+    },
+    "readable/preparation_manifest.json": {
+      "sha256": "a6ad37cf62cd0bead46e999b129cf935eeea1db384067cdd2ad112e49625a75e",
+      "bytes": 204
+    },
+    "readable/run.cfg": {
+      "sha256": "1daef9a5ab261fecdf2123479f5e2cd05ea2f87f96d7b47ef0b476513b2d3c83",
+      "bytes": 118
+    },
+    "readable/simulate_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "readable/simulate_stdout.log": {
+      "sha256": "326e8cf3c81f0a46f8d1dc7c84ddbc3e42a3ad7b78ce01ca45ff9eeeb3e3aa41",
+      "bytes": 80
+    },
+    "readable/simulation_cmake_version_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "readable/simulation_cmake_version_stdout.log": {
+      "sha256": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+      "bytes": 91
+    },
+    "readable/simulation_compile_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "readable/simulation_compile_stdout.log": {
+      "sha256": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+      "bytes": 116
+    },
+    "readable/simulation_compiler_version_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "readable/simulation_compiler_version_stdout.log": {
+      "sha256": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+      "bytes": 246
+    },
+    "readable/simulation_configure_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "readable/simulation_configure_stdout.log": {
+      "sha256": "0bb906076b0649e8020ec6f7964662ba072b9db930f9f70afa74ba547761e9b5",
+      "bytes": 569
+    },
+    "readable/simulation_execution.json": {
+      "sha256": "642fc73c985373dc68d965281145ab57615dfe72cc135e7e7602a4ca9dcace85",
+      "bytes": 6291
+    },
+    "readable/simulation_run_manifest.json": {
+      "sha256": "c9b37996d3b33fa7651a9be88a0f2e7dba87b3158b4f9dea4cc77a90f4fe48ed",
+      "bytes": 4091
+    },
+    "readable/simulation_runtime_libraries_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "readable/simulation_runtime_libraries_stdout.log": {
+      "sha256": "d86f5549cd129b3d1ab4fce39fffeb7cbb292005c03c5e5ebd7ebef70ef7897d",
+      "bytes": 490
+    },
+    "readable/simulation_truth_mode.txt": {
+      "sha256": "f1a9a5dec8eaa6c2f51b484ef730768ec312b74a2bebe001244bfc1d7d5ff7d5",
+      "bytes": 465
+    },
+    "readable/stations.csv": {
+      "sha256": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+      "bytes": 413
+    },
+    "readable/truth_events.csv": {
+      "sha256": "5f936b391fb206d48ed68f30f5caf4ff8fb6da23593292e6b048bcbb784d7310",
+      "bytes": 683
+    },
+    "simulation.tar.gz.part0000": {
+      "sha256": "f587c4415d775348a25c80ae3218f926a8364b4d001c212dd0927c1cbdebf065",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0001": {
+      "sha256": "25d9865a1f4a7f1fedc571cc48c48a67f027c179f1eee674348c5ecc94d69e1d",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0002": {
+      "sha256": "2506f2afe8b67a1d365eb5a6eb6e161df6530688a8d75258df2a827b0f1f23db",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0003": {
+      "sha256": "a3ae05785dde18271248659f85143a411eaad0f4c71f66aed643ed1beeaf2f33",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0004": {
+      "sha256": "5534a3d3ccd88bcedca3f71941b8d1ff91313170253337038af5da4fc338967e",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0005": {
+      "sha256": "93fc072996004eb53be2ef8571122969de8231abb293ca9884994e53bec84883",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0006": {
+      "sha256": "cbc2174f49fb38bbf00f0507a140aeab1b82c304496936a1d26e01974d93d2d4",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0007": {
+      "sha256": "a73b2ae362bac7495d283f1719227abfd9438b77d86191e4ee7968319e1792bc",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0008": {
+      "sha256": "2bcf17753a498dddbc4a447614bcda40fd9924bd163bb2fa7ae3e90a669ad5c4",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0009": {
+      "sha256": "6f6d310c96210bf45c98675cc4560b21ffc9e08117ff6f9471ce3a3d3fcefcf9",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0010": {
+      "sha256": "a90a13a59858d118cdd89c79401d922966aa0876abd65f4fbb613c85cb7f3fe8",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0011": {
+      "sha256": "83bf2fc494c1c52689859917d85089e45fe02f8ef25a5a7955989f1412819739",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0012": {
+      "sha256": "12c8ca5f7f6057327d130d929c0334c3a11365aa04d98100d71309710329e2fd",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0013": {
+      "sha256": "97bd8d50814f88bf637b0ffb390e8b75119e5e0367c4c091576d4c1f5bdec424",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0014": {
+      "sha256": "3d47ba12d1bca9c9a2cc5a23dce8e5ffa50041e3d0cc46b4338fc17033f54193",
+      "bytes": 4096
+    },
+    "simulation.tar.gz.part0015": {
+      "sha256": "c6bf22569d464ff24b984fe6e09966e56f1907ffa260a8545e8105be39052bb5",
+      "bytes": 127
+    },
+    "verification.json": {
+      "sha256": "a5c547b144aca3e15d1a50e41881eee2c06b83e5d8b41ef82e1d8cf54fc8ee24",
+      "bytes": 293
+    }
+  },
+  "identity_mapping": {
+    "basis": "Native table links refer to the pinned base package; archived member paths refer to the restored LON directory",
+    "base_package_mapping": {
+      "native_tables": [
+        {
+          "archived_member": "analytic_truth/inputs/stations.csv",
+          "readable_file": "readable/analytic_truth/inputs/stations.csv",
+          "rows": 2,
+          "identifier_columns": [
+            "network_code",
+            "station_code",
+            "location_code",
+            "channel_code",
+            "channel_seed_id",
+            "channel_fdsn_source_id",
+            "metadata_epoch_start",
+            "metadata_epoch_end"
+          ],
+          "sha256": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11"
+        },
+        {
+          "archived_member": "analytic_truth/inputs/truth_events.csv",
+          "readable_file": "readable/analytic_truth/inputs/truth_events.csv",
+          "rows": 2,
+          "identifier_columns": [
+            "event_resource_id",
+            "origin_resource_id"
+          ],
+          "sha256": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b"
+        },
+        {
+          "archived_member": "stations.csv",
+          "readable_file": "readable/stations.csv",
+          "rows": 2,
+          "identifier_columns": [
+            "network_code",
+            "station_code",
+            "location_code",
+            "channel_code",
+            "channel_seed_id",
+            "channel_fdsn_source_id",
+            "metadata_epoch_start",
+            "metadata_epoch_end"
+          ],
+          "sha256": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11"
+        },
+        {
+          "archived_member": "truth_events.csv",
+          "readable_file": "readable/truth_events.csv",
+          "rows": 2,
+          "identifier_columns": [
+            "event_resource_id",
+            "origin_resource_id"
+          ],
+          "sha256": "5f936b391fb206d48ed68f30f5caf4ff8fb6da23593292e6b048bcbb784d7310"
+        }
+      ],
+      "observation_table": "observations.csv",
+      "observation_identity_basis": "Every original observation byte is retained, including both native event/origin identifiers and channel/epoch fields. Derived synthetic records are not provider picks."
+    }
+  },
+  "independent_review_sha256": "8385db5f8d091cdd314089c8f9a4537884abf0b5036ce43ef41fee9cdb892cc4",
+  "supporting_files": {
+    "README.md": {
+      "sha256": "8c5bb459a5c2fd084e030a42e0b9b570e98212cf36b0cb1781f794e052d8d375",
+      "bytes": 1266
+    },
+    "comparison.json": {
+      "sha256": "0892f3d9cc90f0166482d55e7f74a884f1cf91a9ad097983c217c7517d87355d",
+      "bytes": 12872
+    }
+  },
+  "helper_sha256": "a6e5b1e25ab395e96167bc0b62b0b3e8fafefd213579d2d84441ac333ff85763",
+  "archive_helper_sha256": "0efadef52efe787d713d80b93c74b2242e1355db02a4249e7341593427961195"
+}
