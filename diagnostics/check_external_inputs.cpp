@@ -1,6 +1,6 @@
 // Run from the project root (the fixture and executable stay under tmp):
 // TMPDIR="$PWD/tmp" g++ -std=c++17 -O2 -fopenmp diagnostics/check_external_inputs.cpp -lstdc++fs -o tmp/external_input_checks/check
-// OMP_NUM_THREADS=2 tmp/external_input_checks/check [RESULT_JSON]
+// OMP_NUM_THREADS=2 tmp/external_input_checks/check [RESULT_JSON [FIXTURE_DIR]]
 #ifdef NDEBUG
 #error "External-input component checks require assertions enabled"
 #endif
@@ -14,16 +14,17 @@ template <class F> void rejects(F f) {
   try { f(); } catch (const std::exception &) { rejected = true; }
   assert(rejected);
 }
-void write_observations(const std::string &path, const std::vector<Datum> &data) {
+void write_observations(const std::string &path, const ObservationSet &data) {
   auto f=output(path);
-  f << "i,j,station,type,value"; csv_metadata_header(f,data.front().metadata); f << '\n';
-  for (const auto &d:data) {
+  f << "i,j,station,type,value"; data.write_header(f); f << '\n';
+  for (size_t q=0;q<data.size();++q) {
+    const auto &d=data[q];
     f << d.i << ',' << d.j << ',' << d.k << ',' << d.type << ',' << d.value;
-    csv_metadata_values(f,d.metadata); f << '\n';
+    data.write_metadata(f,q); f << '\n';
   }
 }
 int main(int argc, char **argv) {
-  const std::string dir = "tmp/external_input_checks/fixture";
+  const std::string dir = argc > 2 ? argv[2] : "tmp/external_input_checks/fixture";
   std::filesystem::create_directories(dir);
   std::vector<Event> events{{{{0,0,2}},0,{{"event_resource_id","smi:fixture/event0"},{"origin_resource_id","smi:fixture/origin0"},{"note","comma, quote \" and\nnewline"}}},
                             {{{1,0,2}},0,{{"event_resource_id","smi:fixture/event1"},{"origin_resource_id","smi:fixture/origin1"},{"note",""}}},
@@ -40,7 +41,7 @@ int main(int argc, char **argv) {
   auto moved=reread; moved[0].p[0]+=0.1;
   write_events(moved,dir+"/roundtrip.csv");
   assert(read_events(dir+"/roundtrip.csv")[0].metadata==events[0].metadata);
-  std::vector<Datum> data;
+  ObservationSet data;
   for (int n=0;n<2;n++) {
     int i=n,j=n ? 0:-1;
     Metadata m{{"event_i_resource_id","smi:fixture/event"+std::to_string(i)},
@@ -54,18 +55,20 @@ int main(int argc, char **argv) {
                {"channel_seed_id","XX.TEST..HHZ"},{"channel_fdsn_source_id","FDSN:XX_TEST__H_H_Z"},
                {"metadata_epoch_start","1984-01-01T00:00:00Z"},{"metadata_epoch_end",""},
                {"a_priori_weight","0.25"},{"note","preserve, \"quoted\"\ntext"}};
-    data.push_back({i,j,0,n,1,std::move(m)});
+    data.rows.push_back({i,j,0,n,1});
+    data.native_metadata.push_back(std::move(m));
   }
+  for (const auto &field:data.native_metadata[0]) data.metadata_header.push_back(field.first);
   write_observations(dir+"/observations.csv",data);
   auto loaded=observations(dir+"/observations.csv");
-  assert(loaded[0].metadata==data[0].metadata && loaded[0].a_priori_weight==0.25);
+  assert(loaded.native_metadata[0]==data.native_metadata[0] && loaded[0].a_priori_weight==0.25);
   assert(loaded[1].station_j==-1 && second_station(loaded[1])==loaded[1].k);
   auto used=observed_rays(loaded,events.size(),stations);
   assert((used==std::vector<int>{0,2}));
   validate_identities(events,stations,loaded);
-  auto bad=loaded; bad[0].metadata[0].second="smi:fixture/wrong-event";
+  auto bad=loaded; bad.native_metadata[0][0].second="smi:fixture/wrong-event";
   rejects([&]{validate_identities(events,stations,bad);});
-  bad=loaded; bad[1].metadata[7].second="";
+  bad=loaded; bad.native_metadata[1][7].second="";
   rejects([&]{validate_identities(events,stations,bad);});
   auto no_channel=stations; no_channel[0].metadata.clear();
   rejects([&]{validate_identities(events,no_channel,loaded);});
@@ -137,22 +140,29 @@ int main(int argc, char **argv) {
   for (size_t k=0;k<cross_stations.size();k++)
     set_metadata(cross_stations[k].metadata,"source_sha256","invented-fixture-source-"+std::to_string(k));
   auto cross=loaded;
-  for (auto &d:cross) {
-    set_metadata(d.metadata,"station_j",d.j<0 ? "-1":"2");
-    set_metadata(d.metadata,"metadata_epoch_end",boundary);
-    set_metadata(d.metadata,"metadata_epoch_j_start",d.j<0 ? "":boundary);
-    set_metadata(d.metadata,"metadata_epoch_j_end","");
-    set_metadata(d.metadata,"channel_source_sha256","invented-fixture-source-0");
-    set_metadata(d.metadata,"channel_j_source_sha256",d.j<0 ? "":"invented-fixture-source-2");
-    set_metadata(d.metadata,"cross_metadata_epoch",d.j<0 ? "0":"1");
+  for (size_t q=0;q<cross.size();++q) {
+    const auto &d=cross[q];
+    auto &metadata=cross.native_metadata[q];
+    set_metadata(metadata,"station_j",d.j<0 ? "-1":"2");
+    set_metadata(metadata,"metadata_epoch_end",boundary);
+    set_metadata(metadata,"metadata_epoch_j_start",d.j<0 ? "":boundary);
+    set_metadata(metadata,"metadata_epoch_j_end","");
+    set_metadata(metadata,"channel_source_sha256","invented-fixture-source-0");
+    set_metadata(metadata,"channel_j_source_sha256",d.j<0 ? "":"invented-fixture-source-2");
+    set_metadata(metadata,"cross_metadata_epoch",d.j<0 ? "0":"1");
   }
+  cross.metadata_header.clear();
+  for (const auto &field:cross.native_metadata[0]) cross.metadata_header.push_back(field.first);
   write_observations(cross_dir+"/observations.csv",cross);
-  auto expected_metadata=cross[1].metadata;
+  auto expected_metadata=cross.native_metadata[1];
   cross=observations(cross_dir+"/observations.csv");
   assert(cross[0].station_j==-1 && cross[1].station_j==2);
-  assert(cross[1].metadata==expected_metadata);
+  assert(cross.native_metadata[1]==expected_metadata);
   validate_identities(events,cross_stations,cross);
-  auto cross_used=observed_rays({cross[1]},events.size(),cross_stations);
+  auto differential_only=cross;
+  differential_only.rows.erase(differential_only.rows.begin());
+  differential_only.native_metadata.erase(differential_only.native_metadata.begin());
+  auto cross_used=observed_rays(differential_only,events.size(),cross_stations);
   assert((cross_used==std::vector<int>{2,3}));
   auto cross_rays=rays(g,events,cross_stations,config,true,&cross_used);
   assert(cross_rays[0].dv.empty() && !cross_rays[2].dv.empty() && !cross_rays[3].dv.empty());
@@ -206,23 +216,23 @@ int main(int argc, char **argv) {
   set_metadata(wrong_stations[2].metadata,"channel_fdsn_source_id","FDSN:XX_OTHER__H_H_Z");
   rejects([&]{validate_identities(events,wrong_stations,cross);});
   for (const auto *field:{"metadata_epoch_start","metadata_epoch_end","metadata_epoch_j_start","metadata_epoch_j_end"}) {
-    bad=cross; set_metadata(bad[1].metadata,field,"wrong-epoch");
+    bad=cross; set_metadata(bad.native_metadata[1],field,"wrong-epoch");
     rejects([&]{validate_identities(events,cross_stations,bad);});
   }
   bad=cross; bad[1].station_j=3;
   rejects([&]{observed_rays(bad,events.size(),cross_stations);});
   rejects([&]{validate_identities(events,cross_stations,bad);});
-  bad=cross; set_metadata(bad[0].metadata,"metadata_epoch_j_start",boundary);
+  bad=cross; set_metadata(bad.native_metadata[0],"metadata_epoch_j_start",boundary);
   rejects([&]{observed_rays(bad,events.size(),cross_stations);});
   for (const auto *value:{"", "-1", "-2", "1.5"}) {
-    bad=cross; set_metadata(bad[1].metadata,"station_j",value);
+    bad=cross; set_metadata(bad.native_metadata[1],"station_j",value);
     write_observations(cross_dir+"/bad.csv",bad);
     rejects([&]{observations(cross_dir+"/bad.csv");});
   }
-  bad=cross; set_metadata(bad[0].metadata,"station_j","0");
+  bad=cross; set_metadata(bad.native_metadata[0],"station_j","0");
   write_observations(cross_dir+"/bad.csv",bad);
   rejects([&]{observations(cross_dir+"/bad.csv");});
-  bad=cross; set_metadata(bad[0].metadata,"station_j","");
+  bad=cross; set_metadata(bad.native_metadata[0],"station_j","");
   write_observations(cross_dir+"/empty_absolute.csv",bad);
   assert(observations(cross_dir+"/empty_absolute.csv")[0].station_j==-1);
 
@@ -266,7 +276,7 @@ int main(int argc, char **argv) {
   }
   std::filesystem::create_directories("data/development");
   {
-    auto result=output(argc==2 ? argv[1] : "data/development/external_input_checks.json");
+    auto result=output(argc>=2 ? argv[1] : "data/development/external_input_checks.json");
     result << "{\n  \"status\": \"passed\",\n"
            << "  \"fixture_kind\": \"invented component fixture; no provider observations\",\n"
            << "  \"checks\": [\"quoted CSV and empty metadata roundtrip\", "

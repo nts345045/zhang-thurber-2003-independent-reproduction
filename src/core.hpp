@@ -6,6 +6,7 @@
 #include <fstream>
 #include <iomanip>
 #include <iostream>
+#include <limits>
 #include <map>
 #include <numeric>
 #include <random>
@@ -505,32 +506,60 @@ struct Entry {
   double val;
 };
 using Row = std::vector<Entry>;
+// Ordered CSR: preserve duplicate entries and their insertion order. In
+// particular, solve's per-entry squared column norms must not coalesce them.
 struct Matrix {
   int n;
-  std::vector<Row> rows;
-  Vec rhs;
+  std::vector<size_t> offsets{0};
+  std::vector<int> columns;
+  Vec values, rhs;
   explicit Matrix(int n) : n(n) {}
-  void add(Row row, double b, double w = 1) {
-    for (auto &e : row)
-      e.val *= w;
-    rows.push_back(std::move(row));
+  static size_t storage_bytes(size_t rows, size_t entries) {
+    const size_t limit = std::numeric_limits<size_t>::max();
+    if (rows == limit || rows + 1 > limit / sizeof(size_t) ||
+        rows > limit / sizeof(double) ||
+        entries > limit / (sizeof(int) + sizeof(double)))
+      throw std::runtime_error("CSR storage size overflow");
+    size_t a = (rows + 1) * sizeof(size_t), b = rows * sizeof(double),
+           c = entries * (sizeof(int) + sizeof(double));
+    if (a > limit - b || a + b > limit - c)
+      throw std::runtime_error("CSR storage size overflow");
+    return a + b + c;
+  }
+  void reserve(size_t rows, size_t entries) {
+    storage_bytes(rows, entries);
+    if (rows >= offsets.max_size() || rows > rhs.max_size() ||
+        entries > columns.max_size() || entries > values.max_size())
+      throw std::runtime_error("CSR allocation exceeds vector capacity");
+    offsets.reserve(rows + 1);
+    rhs.reserve(rows);
+    columns.reserve(entries);
+    values.reserve(entries);
+  }
+  void add(const Row &row, double b, double w = 1) {
+    for (const auto &e : row) {
+      columns.push_back(e.col);
+      values.push_back(e.val * w);
+    }
+    offsets.push_back(values.size());
     rhs.push_back(b * w);
   }
   Vec mul(const Vec &x) const {
-    Vec y(rows.size());
-    for (size_t i = 0; i < rows.size(); i++)
-      for (auto e : rows[i])
-        y[i] += e.val * x[e.col];
+    Vec y(rhs.size());
+    for (size_t i = 0; i < rhs.size(); i++)
+      for (size_t q = offsets[i]; q < offsets[i + 1]; ++q)
+        y[i] += values[q] * x[columns[q]];
     return y;
   }
   Vec trans(const Vec &y) const {
     Vec x(n);
-    for (size_t i = 0; i < rows.size(); i++)
-      for (auto e : rows[i])
-        x[e.col] += e.val * y[i];
+    for (size_t i = 0; i < rhs.size(); i++)
+      for (size_t q = offsets[i]; q < offsets[i + 1]; ++q)
+        x[columns[q]] += values[q] * y[i];
     return x;
   }
 };
+
 struct LSQRInfo {
   int iterations = 0;
   double relative_normal_residual = 0;
@@ -575,7 +604,7 @@ Vec lsqr(const Matrix &A, int maxit, double tol = 1e-9,
     for (size_t i = 0; i < u.size(); i++)
       nu[i] -= alpha * u[i];
     beta = norm(nu);
-    u = nu;
+    u = std::move(nu);
     if (beta > 0)
       for (auto &q : u)
         q /= beta;
@@ -583,7 +612,7 @@ Vec lsqr(const Matrix &A, int maxit, double tol = 1e-9,
     for (size_t i = 0; i < v.size(); i++)
       nv[i] -= beta * v[i];
     alpha = norm(nv);
-    v = nv;
+    v = std::move(nv);
     if (alpha > 0)
       for (auto &q : v)
         q /= alpha;
@@ -614,14 +643,16 @@ Vec lsqr(const Matrix &A, int maxit, double tol = 1e-9,
 }
 Vec solve(Matrix A, double damping, LSQRInfo *info = nullptr) {
   Vec scales(A.n, 0);
-  for (auto &row : A.rows)
-    for (auto e : row)
-      scales[e.col] += e.val * e.val;
+  for (size_t q = 0; q < A.values.size(); ++q)
+    scales[A.columns[q]] += A.values[q] * A.values[q];
   for (auto &s : scales)
     s = s > 1e-20 ? 1 / std::sqrt(s) : 1;
-  for (auto &row : A.rows)
-    for (auto &e : row)
-      e.val *= scales[e.col];
+  for (size_t q = 0; q < A.values.size(); ++q)
+    A.values[q] *= scales[A.columns[q]];
+  if (A.rhs.size() > std::numeric_limits<size_t>::max() - size_t(A.n) ||
+      A.values.size() > std::numeric_limits<size_t>::max() - size_t(A.n))
+    throw std::runtime_error("Damped CSR dimensions overflow");
+  A.reserve(A.rhs.size() + A.n, A.values.size() + A.n);
   for (int i = 0; i < A.n; i++)
     A.add({{i, damping}}, 0);
   Vec x = lsqr(A, 600, 1e-8, info);

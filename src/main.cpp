@@ -11,9 +11,50 @@ struct Event {
 struct Datum {
   int i, j, k, type;
   double value;
-  Metadata metadata{};
   double a_priori_weight = 1;
   int station_j = -1; // Absent in legacy files: both events use station k.
+};
+// Numeric rows never own repeated metadata strings. Ordinary observational
+// inputs keep their complete native metadata separately. Only the exact
+// identified synthetic schema may share its event/channel/constant strings.
+struct ObservationSet {
+  std::vector<Datum> rows;
+  Strings metadata_header;
+  std::vector<Metadata> native_metadata;
+  bool shared_synthetic = false;
+  std::vector<std::array<std::string, 2>> event_ids;
+  std::vector<Strings> channel_ids;
+  std::array<Strings, 3> synthetic_values;
+  size_t size() const { return rows.size(); }
+  bool empty() const { return rows.empty(); }
+  const Datum &operator[](size_t q) const { return rows[q]; }
+  Datum &operator[](size_t q) { return rows[q]; }
+  auto begin() const { return rows.begin(); }
+  auto end() const { return rows.end(); }
+  auto begin() { return rows.begin(); }
+  auto end() { return rows.end(); }
+  const std::string &shared_value(const Datum &d, size_t field) const {
+    static const std::string empty;
+    if (field < 4) {
+      int event = field < 2 ? d.i : d.j;
+      return event < 0 ? empty : event_ids[event][field % 2];
+    }
+    if (field < 12)
+      return channel_ids[d.k][field - 4];
+    return synthetic_values[d.type][field - 12];
+  }
+  void write_header(std::ostream &out, const std::string &prefix = "") const {
+    for (const auto &name : metadata_header)
+      out << ',' << csv_quote(prefix + name);
+  }
+  void write_metadata(std::ostream &out, size_t q) const {
+    if (!shared_synthetic) {
+      csv_metadata_values(out, native_metadata[q]);
+      return;
+    }
+    for (size_t field = 0; field < metadata_header.size(); ++field)
+      out << ',' << csv_quote(shared_value(rows[q], field));
+  }
 };
 std::ofstream output(std::string p) {
   std::ofstream f(p);
@@ -332,30 +373,99 @@ void generate(const Config &c, std::string dir) {
   std::cout << "Generated " << ne << " independent sources and " << ns
             << " stations.\n";
 }
-std::vector<Datum> observations(std::string path) {
-  std::vector<Datum> d;
-  auto table = csv_table(path, {"i", "j", "station", "type", "value"});
-  for (const auto &row : table.rows) {
-    Datum datum{csv_int(row[0]), csv_int(row[1]), csv_int(row[2]),
-                csv_int(row[3]), csv_double(row[4]), csv_metadata(table, row, 5)};
-    if (const auto *station = metadata_value(datum.metadata, "station_j")) {
-      if (!station->empty())
-        datum.station_j = csv_int(*station);
-      if (datum.j >= 0 && (station->empty() || datum.station_j < 0))
-        throw std::runtime_error("Differential observation requires a nonnegative station_j when that column is present");
-      if (datum.j < 0 && datum.station_j != -1)
-        throw std::runtime_error("Absolute observation station_j must be empty or -1");
+void validate_observation_indices(const Datum &d, int ne, int ns);
+void validate_geometry(const std::vector<Event> &events,
+                       const std::vector<Event> &stations);
+
+ObservationSet observations(const std::string &path,
+                            const std::vector<Event> &events = {},
+                            const std::vector<Event> &stations = {},
+                            bool shared_synthetic = false) {
+  std::ifstream f(path);
+  if (!f)
+    throw std::runtime_error("Cannot read " + path);
+  const auto header = csv_header(f, path, {"i", "j", "station", "type", "value"});
+  ObservationSet data;
+  data.metadata_header.assign(header.begin() + 5, header.end());
+  data.shared_synthetic = shared_synthetic;
+  if (shared_synthetic) {
+    validate_geometry(events, stations);
+    if (events.empty() || stations.empty())
+      throw std::runtime_error("Shared synthetic metadata requires identified geometry");
+    for (const auto &event : events)
+      data.event_ids.push_back({required_metadata(event.metadata, "event_resource_id"),
+                               required_metadata(event.metadata, "origin_resource_id")});
+    for (size_t k = 0; k < stations.size(); ++k) {
+      auto schema = simulation_metadata(events, stations, 0, -1, k, 0);
+      Strings channel;
+      for (size_t field = 4; field < 12; ++field)
+        channel.push_back(schema[field].second);
+      data.channel_ids.push_back(std::move(channel));
     }
-    if (const auto *weight = metadata_value(datum.metadata, "a_priori_weight")) {
-      datum.a_priori_weight = csv_double(*weight);
-      if (datum.a_priori_weight < 0)
-        throw std::runtime_error("Negative a_priori_weight");
+    for (int type = 0; type < 3; ++type) {
+      auto schema = simulation_metadata(events, stations, 0, -1, 0, type);
+      if (schema.size() != data.metadata_header.size())
+        throw std::runtime_error("Unexpected shared synthetic metadata schema");
+      for (size_t field = 0; field < schema.size(); ++field) {
+        if (data.metadata_header[field] != schema[field].first)
+          throw std::runtime_error("Unexpected shared synthetic metadata column: " + data.metadata_header[field]);
+        if (field >= 12)
+          data.synthetic_values[type].push_back(schema[field].second);
+      }
     }
-    d.push_back(std::move(datum));
   }
-  if (d.empty())
+  // Count complete CSV records first, then allocate the numeric vector once.
+  // Neither pass retains CSV strings beyond the current record.
+  const auto body = f.tellg();
+  Strings row;
+  size_t count = 0;
+  while (csv_row(f, row, header.size(), path)) {
+    if (count == data.rows.max_size())
+      throw std::runtime_error("Observation count exceeds numeric storage capacity");
+    ++count;
+  }
+  if (!count)
     throw std::runtime_error("No observations in " + path);
-  return d;
+  data.rows.reserve(count);
+  if (!shared_synthetic)
+    data.native_metadata.reserve(count);
+  f.clear();
+  f.seekg(body);
+  if (!f)
+    throw std::runtime_error("Cannot rewind observation CSV: " + path);
+  while (csv_row(f, row, header.size(), path)) {
+    if (data.size() == count)
+      throw std::runtime_error("Observation CSV changed between counting and loading");
+    Datum datum{csv_int(row[0]), csv_int(row[1]), csv_int(row[2]),
+                csv_int(row[3]), csv_double(row[4])};
+    if (shared_synthetic) {
+      validate_observation_indices(datum, events.size(), stations.size());
+      for (size_t field = 0; field < data.metadata_header.size(); ++field)
+        if (row[field + 5] != data.shared_value(datum, field))
+          throw std::runtime_error("Synthetic identity/value mismatch at row " +
+                                   std::to_string(data.size()) + ": " + data.metadata_header[field]);
+    } else {
+      auto metadata = csv_metadata(header, row, 5);
+      if (const auto *station = metadata_value(metadata, "station_j")) {
+        if (!station->empty())
+          datum.station_j = csv_int(*station);
+        if (datum.j >= 0 && (station->empty() || datum.station_j < 0))
+          throw std::runtime_error("Differential observation requires a nonnegative station_j when that column is present");
+        if (datum.j < 0 && datum.station_j != -1)
+          throw std::runtime_error("Absolute observation station_j must be empty or -1");
+      }
+      if (const auto *weight = metadata_value(metadata, "a_priori_weight")) {
+        datum.a_priori_weight = csv_double(*weight);
+        if (datum.a_priori_weight < 0)
+          throw std::runtime_error("Negative a_priori_weight");
+      }
+      data.native_metadata.push_back(std::move(metadata));
+    }
+    data.rows.push_back(datum);
+  }
+  if (data.size() != count)
+    throw std::runtime_error("Observation CSV changed between counting and loading");
+  return data;
 }
 
 int second_station(const Datum &d) {
@@ -371,9 +481,10 @@ void validate_observation_indices(const Datum &d, int ne, int ns) {
 
 // Separate receiver rows retain native metadata epochs. Cross-epoch DD is only
 // defined here for the same identified channel at exactly the same position.
-void validate_receiver_pair(const Datum &d, const std::vector<Event> &stations) {
-  const auto *j_start = metadata_value(d.metadata, "metadata_epoch_j_start");
-  const auto *j_end = metadata_value(d.metadata, "metadata_epoch_j_end");
+void validate_receiver_pair(const Datum &d, const Metadata &metadata,
+                            const std::vector<Event> &stations) {
+  const auto *j_start = metadata_value(metadata, "metadata_epoch_j_start");
+  const auto *j_end = metadata_value(metadata, "metadata_epoch_j_end");
   if (d.j < 0) {
     if ((j_start && !j_start->empty()) || (j_end && !j_end->empty()))
       throw std::runtime_error("Absolute observation has a second receiver epoch");
@@ -393,32 +504,36 @@ void validate_receiver_pair(const Datum &d, const std::vector<Event> &stations) 
   for (const auto *key : {"channel_seed_id", "channel_fdsn_source_id",
                           "metadata_epoch_start", "metadata_epoch_end"}) {
     bool empty = std::string(key) == "metadata_epoch_end";
-    if (required_metadata(d.metadata, key, empty) != required_metadata(a.metadata, key, empty))
+    if (required_metadata(metadata, key, empty) != required_metadata(a.metadata, key, empty))
       throw std::runtime_error(std::string("Observation/channel identity mismatch: ") + key);
   }
   for (const auto *edge : {"start", "end"}) {
     std::string field = std::string("metadata_epoch_j_") + edge;
-    if (required_metadata(d.metadata, field, std::string(edge) == "end") !=
+    if (required_metadata(metadata, field, std::string(edge) == "end") !=
         required_metadata(b.metadata, std::string("metadata_epoch_") + edge, std::string(edge) == "end"))
       throw std::runtime_error("Observation/second receiver epoch mismatch: " + field);
   }
 }
 
-std::vector<int> observed_rays(const std::vector<Datum> &data, int ne,
+std::vector<int> observed_rays(const ObservationSet &data, int ne,
                               const std::vector<Event> &stations) {
   int ns = stations.size();
   if (ne <= 0 || ns <= 0 || size_t(ne) * size_t(ns) > size_t(std::numeric_limits<int>::max()))
     throw std::runtime_error("Invalid event/station dimensions");
-  std::vector<int> used;
-  for (const auto &d : data) {
+  std::vector<unsigned char> present(size_t(ne) * ns, 0);
+  for (size_t q = 0; q < data.size(); ++q) {
+    const auto &d = data[q];
     validate_observation_indices(d, ne, ns);
-    validate_receiver_pair(d, stations);
-    used.push_back(d.i * ns + d.k);
+    if (!data.shared_synthetic)
+      validate_receiver_pair(d, data.native_metadata[q], stations);
+    present[d.i * ns + d.k] = 1;
     if (d.j >= 0)
-      used.push_back(d.j * ns + second_station(d));
+      present[d.j * ns + second_station(d)] = 1;
   }
-  std::sort(used.begin(), used.end());
-  used.erase(std::unique(used.begin(), used.end()), used.end());
+  std::vector<int> used;
+  for (size_t index = 0; index < present.size(); ++index)
+    if (present[index])
+      used.push_back(int(index));
   return used;
 }
 
@@ -449,19 +564,38 @@ void validate_geometry(const std::vector<Event> &events,
 
 void validate_identities(const std::vector<Event> &events,
                          const std::vector<Event> &stations,
-                         const std::vector<Datum> &data,
+                         const ObservationSet &data,
                          bool simulated = false) {
   validate_geometry(events, stations);
-  for (const auto &d : data) {
+  if (data.shared_synthetic) {
+    if (!simulated || data.event_ids.size() != events.size() ||
+        data.channel_ids.size() != stations.size())
+      throw std::runtime_error("Shared synthetic metadata/geometry mismatch");
+    for (size_t i = 0; i < events.size(); ++i)
+      if (data.event_ids[i][0] != required_metadata(events[i].metadata, "event_resource_id") ||
+          data.event_ids[i][1] != required_metadata(events[i].metadata, "origin_resource_id"))
+        throw std::runtime_error("Shared synthetic event identity mismatch");
+    for (size_t k = 0; k < stations.size(); ++k) {
+      auto expected = simulation_metadata(events, stations, 0, -1, k, 0);
+      for (size_t field = 4; field < 12; ++field)
+        if (data.channel_ids[k][field - 4] != expected[field].second)
+          throw std::runtime_error("Shared synthetic channel/epoch identity mismatch");
+    }
+    // Every row's values were checked against this dictionary while loading.
+    return;
+  }
+  for (size_t q = 0; q < data.size(); ++q) {
+    const auto &d = data[q];
+    const auto &metadata = data.native_metadata[q];
     validate_observation_indices(d, events.size(), stations.size());
-    validate_receiver_pair(d, stations);
-    if (simulated && required_metadata(d.metadata, "synthetic_observation") != "1")
+    validate_receiver_pair(d, metadata, stations);
+    if (simulated && required_metadata(metadata, "synthetic_observation") != "1")
       throw std::runtime_error("Geometry-only identity mode requires explicitly synthetic observations");
     const auto &station = stations[d.k].metadata;
     for (const auto *key : {"channel_seed_id", "channel_fdsn_source_id",
                             "metadata_epoch_start", "metadata_epoch_end"}) {
       bool empty = std::string(key) == "metadata_epoch_end";
-      if (required_metadata(d.metadata, key, empty) != required_metadata(station, key, empty))
+      if (required_metadata(metadata, key, empty) != required_metadata(station, key, empty))
         throw std::runtime_error(std::string("Observation/channel identity mismatch: ") + key);
     }
     for (const auto &side : {std::make_pair("i", d.i), std::make_pair("j", d.j)}) {
@@ -469,12 +603,12 @@ void validate_identities(const std::vector<Event> &events,
       for (const auto *kind : {"event", "origin", "pick", "arrival"}) {
         std::string field = std::string(kind) + "_" + side.first + "_resource_id";
         if (simulated && (std::string(kind) == "pick" || std::string(kind) == "arrival")) {
-          const auto *id = metadata_value(d.metadata, field);
+          const auto *id = metadata_value(metadata, field);
           if (id && !id->empty())
             throw std::runtime_error("Synthetic observations must not claim provider pick/arrival IDs");
           continue;
         }
-        const auto &id = required_metadata(d.metadata, field, absent);
+        const auto &id = required_metadata(metadata, field, absent);
         if (absent) {
           if (!id.empty())
             throw std::runtime_error("Absolute observation has a second event identity");
@@ -533,7 +667,7 @@ void simulate(const Config &c, const std::string &dir) {
 }
 
 using StageWeights = std::array<std::array<double, 3>, 3>;
-StageWeights stage_weights(const Config &c, const std::vector<Datum> &data) {
+StageWeights stage_weights(const Config &c, const ObservationSet &data) {
   StageWeights weights{{{{1, 0.1, 0.01}}, {{0.1, 1, 0.01}}, {{0.001, 0.01, 1}}}};
   if (setting(c, "catalog_only_dd", 0) != 0) {
     for (const auto &d : data)
@@ -609,7 +743,8 @@ void smooth(Matrix &A, const Grid &g, int off, double weight) {
 void invert(const Config &c, std::string dir, std::string mode) {
   auto e = read_events(dir + "/initial_events.csv"),
        stations = read_events(dir + "/stations.csv");
-  auto data = observations(dir + "/observations.csv");
+  auto data = observations(dir + "/observations.csv", e, stations,
+                           !authoritative_input(c, dir) && authoritative_geometry(c, dir));
   const auto used = observed_rays(data, e.size(), stations);
   const bool authoritative = authoritative_input(c, dir);
   if (authoritative)
@@ -633,6 +768,10 @@ void invert(const Config &c, std::string dir, std::string mode) {
          "ray_converged_count,ray_projected_gradient_max,ray_raw_gradient_max,"
          "ray_initialization_attempted_count,ray_initialization_succeeded_count,"
          "ray_selected_fmm_count\n";
+  auto preflight = output(dir + "/" + mode + "_matrix_preflight.csv");
+  preflight << "iteration,observation_rows,active_data_rows,smoothing_rows,columns,"
+               "damped_rows,damped_entries,csr_payload_bytes,numeric_observation_bytes,"
+               "residual_weight_bytes,lsqr_row_workspace_bound_bytes\n";
   for (int it = 0; it < int(c.get("iterations")); it++) {
     auto r = rays(g, e, stations, c, true, &used, &fields);
     size_t ray_converged = 0, attempted = 0, succeeded = 0, selected_fmm = 0;
@@ -659,7 +798,7 @@ void invert(const Config &c, std::string dir, std::string mode) {
     }
     double cutoff[3];
     for (int t = 0; t < 3; t++) {
-      auto a = bytype[t];
+      auto &a = bytype[t];
       if (a.empty()) {
         cutoff[t] = 1;
         continue;
@@ -667,6 +806,9 @@ void invert(const Config &c, std::string dir, std::string mode) {
       std::nth_element(a.begin(), a.begin() + a.size() / 2, a.end());
       cutoff[t] = std::max(0.01, 6 * 1.4826 * a[a.size() / 2]);
     }
+    for (auto &a : bytype)
+      Vec().swap(a);
+    size_t active_rows = 0, entries = 0;
     for (size_t q = 0; q < data.size(); q++) {
       const auto &d = data[q];
       double res = residual[q];
@@ -687,12 +829,44 @@ void invert(const Config &c, std::string dir, std::string mode) {
       if (weight < 1e-12)
         continue;
       w[q] = weight;
-      A.add(observation_row(d, r, g, ne, ns, locate), res, weight);
+      size_t row_entries = observation_row(d, r, g, ne, ns, locate).size();
+      if (row_entries > std::numeric_limits<size_t>::max() - entries)
+        throw std::runtime_error("Observation matrix entry count overflow");
+      entries += row_entries;
+      ++active_rows;
     }
+    Matrix smoothing(n);
+    if (!locate)
+      smooth(smoothing, g, off, c.get("smoothing"));
+    const size_t extra_rows = smoothing.rhs.size() + size_t(n),
+                 extra_entries = smoothing.values.size() + size_t(n);
+    if (active_rows > std::numeric_limits<size_t>::max() - extra_rows ||
+        entries > std::numeric_limits<size_t>::max() - extra_entries)
+      throw std::runtime_error("Augmented matrix dimensions overflow");
+    const size_t total_rows = active_rows + extra_rows,
+                 total_entries = entries + extra_entries,
+                 bytes = Matrix::storage_bytes(total_rows, total_entries);
+    preflight << it << ',' << data.size() << ',' << active_rows << ','
+              << smoothing.rhs.size() << ',' << n << ',' << total_rows << ','
+              << total_entries << ',' << bytes << ',' << data.size() * sizeof(Datum)
+              << ',' << 2.L * data.size() * sizeof(double) << ','
+              << 3.L * total_rows * sizeof(double) << '\n';
+    preflight.flush();
+    std::cout << "Matrix preflight: " << total_rows << " rows, " << total_entries
+              << " ordered entries, " << bytes << " CSR payload bytes" << std::endl;
+    if (setting(c, "matrix_preflight_only", 0) != 0)
+      return; // Report actual current rows; do not allocate or solve the matrix.
+    A.reserve(total_rows, total_entries);
+    for (size_t q = 0; q < data.size(); ++q)
+      if (w[q] != 0)
+        A.add(observation_row(data[q], r, g, ne, ns, locate), residual[q], w[q]);
     if (!locate)
       smooth(A, g, off, c.get("smoothing"));
+    if (A.rhs.size() + size_t(n) != total_rows ||
+        A.values.size() + size_t(n) != total_entries)
+      throw std::runtime_error("Matrix assembly differs from preflight count");
     LSQRInfo linear_info;
-    Vec delta = solve(A, c.get("damping"), &linear_info);
+    Vec delta = solve(std::move(A), c.get("damping"), &linear_info);
     auto objective = [&](const Grid &gg, const std::vector<Event> &ee,
                          const std::vector<Ray> &rr) {
       double value = 0;
@@ -792,14 +966,15 @@ void invert(const Config &c, std::string dir, std::string mode) {
   }
   auto f = output(dir + "/" + mode + "_residuals.csv");
   f << "i,j,station,type,residual";
-  csv_metadata_header(f, data.front().metadata);
+  data.write_header(f);
   initializer_header(f, "i_");
   initializer_header(f, "j_");
   f << '\n';
-  for (const auto &d : data) {
+  for (size_t q = 0; q < data.size(); ++q) {
+    const auto &d = data[q];
     f << d.i << ',' << d.j << ',' << d.k << ',' << d.type << ','
       << d.value - prediction(d, rr, e, ns);
-    csv_metadata_values(f, d.metadata);
+    data.write_metadata(f, q);
     initializer_values(f, rr[d.i * ns + d.k]);
     if (d.j >= 0)
       initializer_values(f, rr[d.j * ns + second_station(d)]);
@@ -918,7 +1093,8 @@ void validate(std::string dir) {
 void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
   auto e = read_events(dir + "/" + mode + "_events.csv");
   auto stations = read_events(dir + "/stations.csv");
-  auto data = observations(dir + "/observations.csv");
+  auto data = observations(dir + "/observations.csv", e, stations,
+                           !authoritative_input(c, dir) && authoritative_geometry(c, dir));
   auto used = observed_rays(data, e.size(), stations);
   const bool authoritative = authoritative_input(c, dir);
   if (authoritative)
@@ -980,7 +1156,7 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
   // row identifies an original observations.csv row and its i/j event side.
   auto identifiers = output(dir + "/" + prefix + "_identifiers.csv");
   identifiers << "diagnostic_row,event,station,observation_row,observation_event_side";
-  csv_metadata_header(identifiers, data.front().metadata, "observation_");
+  data.write_header(identifiers, "observation_");
   csv_metadata_header(identifiers, e.front().metadata, "source_");
   csv_metadata_header(identifiers, stations.front().metadata, "receiver_");
   identifiers << '\n';
@@ -991,7 +1167,7 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
           (data[q].j == i && second_station(data[q]) == k)) {
         identifiers << n << ',' << i << ',' << k << ',' << q << ','
                     << (data[q].i == i ? "i" : "j");
-        csv_metadata_values(identifiers, data[q].metadata);
+        data.write_metadata(identifiers, q);
         csv_metadata_values(identifiers, e[i].metadata);
         csv_metadata_values(identifiers, stations[k].metadata);
         identifiers << '\n';
@@ -1035,7 +1211,8 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth") {
 void linearize(const Config &c, const std::string &dir, const std::string &mode) {
   auto events = read_events(dir + "/" + mode + "_events.csv");
   auto stations = read_events(dir + "/stations.csv");
-  auto data = observations(dir + "/observations.csv");
+  auto data = observations(dir + "/observations.csv", events, stations,
+                           !authoritative_input(c, dir) && authoritative_geometry(c, dir));
   observed_rays(data, events.size(), stations);
   if (authoritative_input(c, dir))
     validate_identities(events, stations, data);
@@ -1058,8 +1235,9 @@ void linearize(const Config &c, const std::string &dir, const std::string &mode)
   rows << "row,observation_row,i,station,observed,predicted,residual,"
           "ray_converged,ray_projected_gradient,ray_iterations,ray_time,ray_raw_gradient";
   initializer_header(rows, "ray_");
-  csv_metadata_header(rows, data.front().metadata);
-  const bool prior_column = metadata_value(data.front().metadata, "a_priori_weight");
+  data.write_header(rows);
+  const bool prior_column = std::find(data.metadata_header.begin(), data.metadata_header.end(),
+                                      "a_priori_weight") != data.metadata_header.end();
   if (!prior_column)
     rows << ",a_priori_weight";
   rows << '\n';
@@ -1083,7 +1261,7 @@ void linearize(const Config &c, const std::string &dir, const std::string &mode)
          << predicted << ',' << d.value - predicted << ',' << ray.converged << ','
          << ray.gradient << ',' << ray.iterations << ',' << ray.time << ',' << ray.raw_gradient;
     initializer_values(rows, ray);
-    csv_metadata_values(rows, d.metadata);
+    data.write_metadata(rows, q);
     if (!prior_column)
       rows << ',' << d.a_priori_weight;
     rows << '\n';
