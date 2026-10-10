@@ -1,0 +1,36 @@
+{
+  "scope": "Read-only comparison of the completed controlled same186-ray audit; no new inversion, data selection, or science gate.",
+  "status": "failed_checks_recorded",
+  "ray_count": 186,
+  "receiver_coordinate_groups": 30,
+  "all_original_observation_columns_and_identifiers_preserved": true,
+  "direct_time_and_convergence_match_historical": true,
+  "seed_nodes_per_receiver": {
+    "8": 30
+  },
+  "maximum_action_reduction_from_direct_s": 0.00369161981521948,
+  "current_minus_historical_selected_action_range_s": [
+    -5.657558697080844e-07,
+    6.745861100831974e-07
+  ],
+  "lower_equal_higher_than_historical_counts": [
+    83,
+    16,
+    87
+  ],
+  "maximum_source_derivative_change_from_direct_s_per_km": 0.0228725823480213,
+  "strict_endpoint_mismatch_count": 22,
+  "maximum_endpoint_error_km": 3.55314733320295e-15,
+  "all_strict_endpoint_mismatch_rows_select_direct_time": true,
+  "sha256": {
+    "data/development/fmm_hayward_order2_closed/results.csv": "f891aa17d5b832f6708bd27c934e5e5b72de660ad5bc6ecdf1098fab3089cd61",
+    "data/development/fmm_hayward_order2_closed/historical_comparison.csv": "d8ca56f970fb70fdc891102243adf09c3a877ed8a1b7dcdb9191d60c126fa104",
+    "data/development/fmm_hayward_order2_closed/summary.json": "c7f773bc9f6067476d80a4b84f047be88dfcdb1ca72462aed6119b8d6eed2938",
+    "data/development/fmm_hayward_order2_closed/source_snapshot.tar.gz": "5d421cf79d5ff59bbd93e5e84ff02e8ffcb28322d2487cc9c43f8a08bc16b106"
+  },
+  "limitations": [
+    "Different finite candidates can yield slightly higher or lower selected action than the historical candidate; neither agreement nor a lower value certifies a global first arrival.",
+    "All native receiver groups have eight seed nodes in this run; the optional closed-cell-union rule does not enlarge their seed sets. The historical comparison still combines the extraction correction and changed stencil, so it is not a single isolated change.",
+    "Reported strict endpoint mismatches remain failed even though their magnitude is floating-point roundoff; no threshold was relaxed."
+  ]
+}

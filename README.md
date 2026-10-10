@@ -53,6 +53,21 @@ The prototype has not been integrated into the production inversions.
 The [fixed-model field comparison](data/development/fmm_hayward_audit/README.md)
 finds two faster candidates exceeding 1 ms among 186 selected shallow-endpoint
 rays; it does not quantify the resulting inversion bias or certify first arrivals.
+A [controlled repeat](data/development/fmm_hayward_order2_closed/README.md)
+resolves the extraction failure while preserving one local-stopping failure
+and 22 strict endpoint discrepancies at roundoff. An [isolated boundary-ray
+audit](data/development/ray_stopping_i775_budget_path/README.md) traces the slow
+stopping to repeated loss of the search metric after boundary projection;
+longer runs satisfy the unchanged combined stopping rule but do not establish
+derivative accuracy.
+
+An [independent 1D reference](data/development/first_arrival_1d_enumeration/README.md)
+passes 250 original and 106 added component checks, with discovered failures
+and their corrections retained. All 32 saved initial Hayward rays have complete
+branch enumeration and valid distance closure. Production travel times exceed
+the continuous reference by 3.82--143.95 microseconds; the refined range is
+1.32--37.48 microseconds. This checks the initial sample only. Interval root
+enumeration does not certify floating-point ordering of nearly tied arrivals.
 
 The revised solver preserves identities in event/residual CSV files and ray
 diagnostic mappings, traces observed pairs only, and exports an unweighted

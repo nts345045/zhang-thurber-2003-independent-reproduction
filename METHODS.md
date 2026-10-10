@@ -197,6 +197,53 @@ passes 72 checks, including the continuously bent FMM candidate itself. Branch
 completeness in arbitrary 3D media and field validation remain open. These
 prototypes are not part of the production inversions.
 
+The independent [one-dimensional reference](data/development/first_arrival_1d_enumeration/README.md)
+uses the continuous saved initial profile within the finite model depth bounds.
+It enumerates monotone direct, downward turning, accessible plateau-grazing,
+and finite-bottom tangent candidates. Exact rational coefficients for the
+binary64 inputs and outward interval arithmetic exclude empty turning intervals
+or isolate roots. Unresolved tangencies, boundary membership, or exhausted
+subdivision budgets withhold the first-arrival result. Action evaluation and
+near-tie ordering use ordinary floating-point arithmetic, with no interval
+certificate on the minimum-time gap. Source gradients belong to individual
+branches; distinct tied branches need not share a derivative.
+
+The reference passes 250 original checks plus 106 regressions for nearly flat
+layers and finite-bottom membership. Stable `log1p` action formulas and
+half-angle path increments correct cancellation exposed by those regressions;
+the 39 original failures remain archived. For the 32 saved initial rays, this
+correction changes times by less than 9e-15 s and changes neither branch labels
+nor source derivatives. All 210 native observation/ray identity associations
+are preserved. The production and refined time errors reach 144 and 37.5
+microseconds respectively; this sample does not validate every field path.
+
+The [controlled 186-ray comparison](data/development/fmm_hayward_order2_closed/README.md)
+preserves the original identified shallow-endpoint subset and unchanged bending
+while applying the second-order stencil and extraction correction. It retains
+one local-stopping failure and 22 strict endpoint discrepancies below 3.56e-15 km.
+An [isolated audit of that stopping failure](data/development/ray_stopping_i775_budget_path/README.md)
+finds that boundary projection makes over 97% of proposed quasi-Newton directions
+non-descending; the existing fallback clears memory and uses an unpreconditioned
+projected gradient. Longer runs meet the original combined action-decrease and
+projected-gradient stopping rule, while derivative differences remain sensitive
+to path spacing. A positive-definite full-space inverse does not guarantee
+descent after component projection. These diagnostics do not alter the active
+production runs or establish a globally earliest ray.
+
+The [reduced-direction control](data/development/ray_stopping_i775_reduced_all/README.md)
+solves `L_FF d_F = -grad_F T` on free coordinates, retaining original incident-edge
+diagonals. Initially KKT-active coordinates are fixed; any newly outward boundary
+coordinate is fixed and the system is solved again. This gives a feasible descent
+direction, but the method does not release coordinates during a solve. Wrong-sign
+fixed-coordinate multipliers therefore remain; it is not the exact tangent-cone
+quadratic minimizer. Replacing only the original non-descent fallback fails three
+of four ray cases. Using the reduced direction on every update reaches unchanged
+stopping in all four, in 12/12 coarse and 20/21 fine updates; all 65 actions strictly
+decrease. The coarse FMM case uses the combined stopping rule, while the other
+three meet the strict gradient rule. Independent component checks pass, but one
+identified ray does not establish a production-ready optimizer or a first arrival.
+Both successful and failed variants remain separate from the production code.
+
 The sparse joint system is solved by an independently implemented LSQR
 bidiagonalization. Columns are normalized before adding damping equations.
 Damping therefore penalizes the scaled increment. Each solve records the

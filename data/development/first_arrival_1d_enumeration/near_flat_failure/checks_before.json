@@ -1,0 +1,3225 @@
+{
+  "created_utc": "2026-10-10T00:22:48Z",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 data/development/first_arrival_1d_enumeration/check_reference.py",
+  "geometry_status": "Every endpoint and path is invented numerical geometry, not a provider event/station record",
+  "model_input": "Only the saved initial_grid.csv profile is read; other profiles are explicitly invented",
+  "scope": "Independent one-dimensional branch enumeration and sampled paths; no production solver or observational queries",
+  "finite_difference_step_km": 1e-05,
+  "knot_derivative_method": "At source z equal to an interior model knot, halve h twice and cancel the centered difference O(h) term by Richardson extrapolation; all intermediate derivatives are retained",
+  "finite_difference_root_tolerance": 1e-14,
+  "versions": {
+    "python": "3.6.8",
+    "numpy": "1.19.5",
+    "scipy": "1.5.4"
+  },
+  "sha256": {
+    "data/hayward/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "diagnostics/first_arrival_1d_reference.py": "12acd45db7e8d79ef00154c481b00f97f4a10a8950a1d356e3d5af95b46b6911",
+    "data/development/first_arrival_1d_enumeration/check_reference.py": "e3ff5b6076577115c82ce99b671182258aba8af67373bdaaa5c650096c135db1",
+    "data/development/first_arrival_1d_enumeration/invented_paths.csv": "2e54ec2d2462a4322c29c546509ac3a0c631c4ce08216898b718a65c5c67bef4"
+  },
+  "cases": [
+    {
+      "name": "constant",
+      "depths_km": [
+        -1,
+        0,
+        4,
+        20
+      ],
+      "velocities_km_s": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "source_xyz_km": [
+        -2,
+        1,
+        2
+      ],
+      "receiver_xyz_km": [
+        9,
+        -3,
+        8
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "flat_direct",
+            "time_s": 2.1921577396609844,
+            "p_s_per_km": 0.14831530924678185,
+            "source_derivative_s_per_km": [
+              -0.13938575223277935,
+              0.05068572808464704,
+              -0.07602859212697057
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Straight path contained in one constant-velocity interval"
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 0,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "flat_direct",
+          "time_s": 2.1921577396609844,
+          "p_s_per_km": 0.14831530924678185,
+          "source_derivative_s_per_km": [
+            -0.13938575223277935,
+            0.05068572808464704,
+            -0.07602859212697057
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Straight path contained in one constant-velocity interval"
+        },
+        "best_enumerated_candidate": {
+          "kind": "flat_direct",
+          "time_s": 2.1921577396609844,
+          "p_s_per_km": 0.14831530924678185,
+          "source_derivative_s_per_km": [
+            -0.13938575223277935,
+            0.05068572808464704,
+            -0.07602859212697057
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Straight path contained in one constant-velocity interval"
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "affine_direct",
+      "depths_km": [
+        0,
+        20
+      ],
+      "velocities_km_s": [
+        4,
+        8
+      ],
+      "source_xyz_km": [
+        0,
+        0,
+        2
+      ],
+      "receiver_xyz_km": [
+        1,
+        0,
+        6
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 0.860914660432027,
+            "p_s_per_km": 0.050517293450893376,
+            "source_derivative_s_per_km": [
+              -0.050517293450893376,
+              -0.0,
+              -0.22158721900050957
+            ],
+            "distance_residual_km": 2.220446049250313e-16,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p"
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 1,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 0.860914660432027,
+          "p_s_per_km": 0.050517293450893376,
+          "source_derivative_s_per_km": [
+            -0.050517293450893376,
+            -0.0,
+            -0.22158721900050957
+          ],
+          "distance_residual_km": 2.220446049250313e-16,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p"
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 0.860914660432027,
+          "p_s_per_km": 0.050517293450893376,
+          "source_derivative_s_per_km": [
+            -0.050517293450893376,
+            -0.0,
+            -0.22158721900050957
+          ],
+          "distance_residual_km": 2.220446049250313e-16,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p"
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "affine_turn",
+      "depths_km": [
+        0,
+        20
+      ],
+      "velocities_km_s": [
+        4,
+        8
+      ],
+      "source_xyz_km": [
+        -20,
+        0,
+        2
+      ],
+      "receiver_xyz_km": [
+        20,
+        0,
+        2
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "turning",
+            "time_s": 8.15608900440148,
+            "p_s_per_km": 0.1681681984990781,
+            "source_derivative_s_per_km": [
+              -0.1681681984990781,
+              -0.0,
+              -0.15288018045370738
+            ],
+            "distance_residual_km": 7.105427357601002e-15,
+            "turning_depth_km": 9.732137494637012,
+            "certificate": "exact_linear",
+            "layer": 0,
+            "root_interval": [
+              4.0,
+              4.0
+            ]
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 0,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "turning",
+          "time_s": 8.15608900440148,
+          "p_s_per_km": 0.1681681984990781,
+          "source_derivative_s_per_km": [
+            -0.1681681984990781,
+            -0.0,
+            -0.15288018045370738
+          ],
+          "distance_residual_km": 7.105427357601002e-15,
+          "turning_depth_km": 9.732137494637012,
+          "certificate": "exact_linear",
+          "layer": 0,
+          "root_interval": [
+            4.0,
+            4.0
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "turning",
+          "time_s": 8.15608900440148,
+          "p_s_per_km": 0.1681681984990781,
+          "source_derivative_s_per_km": [
+            -0.1681681984990781,
+            -0.0,
+            -0.15288018045370738
+          ],
+          "distance_residual_km": 7.105427357601002e-15,
+          "turning_depth_km": 9.732137494637012,
+          "certificate": "exact_linear",
+          "layer": 0,
+          "root_interval": [
+            4.0,
+            4.0
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "plateau_two_turns",
+      "depths_km": [
+        -1,
+        0,
+        20
+      ],
+      "velocities_km_s": [
+        4,
+        4,
+        8
+      ],
+      "source_xyz_km": [
+        -10,
+        0,
+        -0.5
+      ],
+      "receiver_xyz_km": [
+        10,
+        0,
+        -0.5
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "flat_direct",
+            "time_s": 5.0,
+            "p_s_per_km": 0.25,
+            "source_derivative_s_per_km": [
+              -0.25,
+              0.0,
+              0.0
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Straight path contained in one constant-velocity interval"
+          },
+          {
+            "kind": "turning",
+            "time_s": 5.006740467575858,
+            "p_s_per_km": 0.24960401576884256,
+            "source_derivative_s_per_km": [
+              -0.24960401576884256,
+              -0.0,
+              -0.01406539413124954
+            ],
+            "distance_residual_km": 7.460698725481052e-14,
+            "turning_depth_km": 0.03172899521970418,
+            "certificate": "exact_quadratic",
+            "layer": 1,
+            "root_interval": [
+              0.22540333075851637,
+              0.22540333075851685
+            ]
+          },
+          {
+            "kind": "turning",
+            "time_s": 4.918988590051218,
+            "p_s_per_km": 0.22852028551639403,
+            "source_derivative_s_per_km": [
+              -0.22852028551639406,
+              -0.0,
+              -0.10138283438287643
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 1.879895645593792,
+            "certificate": "exact_quadratic",
+            "layer": 1,
+            "root_interval": [
+              1.7745966692414825,
+              1.7745966692414845
+            ]
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 0,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "turning",
+          "time_s": 4.918988590051218,
+          "p_s_per_km": 0.22852028551639403,
+          "source_derivative_s_per_km": [
+            -0.22852028551639406,
+            -0.0,
+            -0.10138283438287643
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 1.879895645593792,
+          "certificate": "exact_quadratic",
+          "layer": 1,
+          "root_interval": [
+            1.7745966692414825,
+            1.7745966692414845
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "turning",
+          "time_s": 4.918988590051218,
+          "p_s_per_km": 0.22852028551639403,
+          "source_derivative_s_per_km": [
+            -0.22852028551639406,
+            -0.0,
+            -0.10138283438287643
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 1.879895645593792,
+          "certificate": "exact_quadratic",
+          "layer": 1,
+          "root_interval": [
+            1.7745966692414825,
+            1.7745966692414845
+          ]
+        },
+        "near_ties": [
+          2
+        ]
+      }
+    },
+    {
+      "name": "exact_double_root",
+      "depths_km": [
+        -1,
+        0,
+        10
+      ],
+      "velocities_km_s": [
+        4,
+        4,
+        5.25
+      ],
+      "source_xyz_km": [
+        -8,
+        0,
+        -0.5
+      ],
+      "receiver_xyz_km": [
+        8,
+        0,
+        -0.5
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "flat_direct",
+            "time_s": 4.0,
+            "p_s_per_km": 0.25,
+            "source_derivative_s_per_km": [
+              -0.25,
+              0.0,
+              0.0
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Straight path contained in one constant-velocity interval"
+          },
+          {
+            "kind": "turning",
+            "time_s": 4.010392387817722,
+            "p_s_per_km": 0.24806946917841693,
+            "source_derivative_s_per_km": [
+              -0.24806946917841693,
+              -0.0,
+              -0.031008683647301985
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 0.24903099319419653,
+            "certificate": "exact_double_root",
+            "layer": 1,
+            "root_interval": [
+              0.5,
+              0.5
+            ]
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 0,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "flat_direct",
+          "time_s": 4.0,
+          "p_s_per_km": 0.25,
+          "source_derivative_s_per_km": [
+            -0.25,
+            0.0,
+            0.0
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Straight path contained in one constant-velocity interval"
+        },
+        "best_enumerated_candidate": {
+          "kind": "flat_direct",
+          "time_s": 4.0,
+          "p_s_per_km": 0.25,
+          "source_derivative_s_per_km": [
+            -0.25,
+            0.0,
+            0.0
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Straight path contained in one constant-velocity interval"
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "below_turn_minimum",
+      "depths_km": [
+        -1,
+        0,
+        10
+      ],
+      "velocities_km_s": [
+        4,
+        4,
+        5.25
+      ],
+      "source_xyz_km": [
+        0,
+        0,
+        -0.5
+      ],
+      "receiver_xyz_km": [
+        15.9,
+        0,
+        -0.5
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "flat_direct",
+            "time_s": 3.975,
+            "p_s_per_km": 0.25,
+            "source_derivative_s_per_km": [
+              -0.25,
+              0.0,
+              0.0
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Straight path contained in one constant-velocity interval"
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 0,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "flat_direct",
+          "time_s": 3.975,
+          "p_s_per_km": 0.25,
+          "source_derivative_s_per_km": [
+            -0.25,
+            0.0,
+            0.0
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Straight path contained in one constant-velocity interval"
+        },
+        "best_enumerated_candidate": {
+          "kind": "flat_direct",
+          "time_s": 3.975,
+          "p_s_per_km": 0.25,
+          "source_derivative_s_per_km": [
+            -0.25,
+            0.0,
+            0.0
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Straight path contained in one constant-velocity interval"
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "above_turn_minimum",
+      "depths_km": [
+        -1,
+        0,
+        10
+      ],
+      "velocities_km_s": [
+        4,
+        4,
+        5.25
+      ],
+      "source_xyz_km": [
+        0,
+        0,
+        -0.5
+      ],
+      "receiver_xyz_km": [
+        16.1,
+        0,
+        -0.5
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "flat_direct",
+            "time_s": 4.025,
+            "p_s_per_km": 0.25,
+            "source_derivative_s_per_km": [
+              -0.25,
+              0.0,
+              0.0
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Straight path contained in one constant-velocity interval"
+          },
+          {
+            "kind": "turning",
+            "time_s": 4.035225570345937,
+            "p_s_per_km": 0.2484525295077346,
+            "source_derivative_s_per_km": [
+              -0.24845252950773464,
+              -0.0,
+              -0.027773018943000476
+            ],
+            "distance_residual_km": -1.0658141036401503e-14,
+            "turning_depth_km": 0.19930992793917568,
+            "certificate": "exact_quadratic",
+            "layer": 1,
+            "root_interval": [
+              0.4471360222900963,
+              0.44713602229009725
+            ]
+          },
+          {
+            "kind": "turning",
+            "time_s": 4.035168430711485,
+            "p_s_per_km": 0.24759296127963765,
+            "source_derivative_s_per_km": [
+              -0.24759296127963765,
+              -0.0,
+              -0.034608171358508015
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 0.3110962389783012,
+            "certificate": "exact_quadratic",
+            "layer": 1,
+            "root_interval": [
+              0.559113977709903,
+              0.5591139777099037
+            ]
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 0,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "flat_direct",
+          "time_s": 4.025,
+          "p_s_per_km": 0.25,
+          "source_derivative_s_per_km": [
+            -0.25,
+            0.0,
+            0.0
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Straight path contained in one constant-velocity interval"
+        },
+        "best_enumerated_candidate": {
+          "kind": "flat_direct",
+          "time_s": 4.025,
+          "p_s_per_km": 0.25,
+          "source_derivative_s_per_km": [
+            -0.25,
+            0.0,
+            0.0
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Straight path contained in one constant-velocity interval"
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "turn_at_layer_node",
+      "depths_km": [
+        0,
+        10,
+        20
+      ],
+      "velocities_km_s": [
+        3,
+        5,
+        6
+      ],
+      "source_xyz_km": [
+        -20,
+        0,
+        0
+      ],
+      "receiver_xyz_km": [
+        20,
+        0,
+        0
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "turning",
+            "time_s": 10.986122886681096,
+            "p_s_per_km": 0.2,
+            "source_derivative_s_per_km": [
+              -0.2,
+              -0.0,
+              -0.26666666666666666
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 10.0,
+            "certificate": "exact_linear",
+            "layer": 0,
+            "root_interval": [
+              4.0,
+              4.0
+            ]
+          },
+          {
+            "kind": "turning",
+            "time_s": 10.986122886681096,
+            "p_s_per_km": 0.2,
+            "source_derivative_s_per_km": [
+              -0.2,
+              -0.0,
+              -0.26666666666666666
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 10.0,
+            "certificate": "exact_endpoint_and_monotonicity",
+            "layer": 1,
+            "root_interval": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 1,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "turning",
+          "time_s": 10.986122886681096,
+          "p_s_per_km": 0.2,
+          "source_derivative_s_per_km": [
+            -0.2,
+            -0.0,
+            -0.26666666666666666
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 10.0,
+          "certificate": "exact_linear",
+          "layer": 0,
+          "root_interval": [
+            4.0,
+            4.0
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "turning",
+          "time_s": 10.986122886681096,
+          "p_s_per_km": 0.2,
+          "source_derivative_s_per_km": [
+            -0.2,
+            -0.0,
+            -0.26666666666666666
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 10.0,
+          "certificate": "exact_linear",
+          "layer": 0,
+          "root_interval": [
+            4.0,
+            4.0
+          ]
+        },
+        "near_ties": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "name": "interior_plateau",
+      "depths_km": [
+        0,
+        10,
+        12,
+        32
+      ],
+      "velocities_km_s": [
+        3,
+        5,
+        5,
+        7
+      ],
+      "source_xyz_km": [
+        -40,
+        0,
+        0
+      ],
+      "receiver_xyz_km": [
+        40,
+        0,
+        0
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "turning",
+            "time_s": 19.0304608155566,
+            "p_s_per_km": 0.1985983965892696,
+            "source_derivative_s_per_km": [
+              -0.1985983965892696,
+              -0.0,
+              -0.26771213641387703
+            ],
+            "distance_residual_km": 3.495870259939693e-12,
+            "turning_depth_km": 12.352873798278726,
+            "certificate": "interval_monotonicity_and_sign_change",
+            "layer": 2,
+            "root_interval": [
+              0.5950789842142925,
+              0.5950789842148494
+            ]
+          },
+          {
+            "kind": "turning",
+            "time_s": 18.912827500124614,
+            "p_s_per_km": 0.17908664053259607,
+            "source_derivative_s_per_km": [
+              -0.17908664053259607,
+              -0.0,
+              -0.2811389092492532
+            ],
+            "distance_residual_km": 2.0605739337042905e-12,
+            "turning_depth_km": 17.838894348905228,
+            "certificate": "interval_monotonicity_and_sign_change",
+            "layer": 2,
+            "root_interval": [
+              2.485924620957082,
+              2.485924620957639
+            ]
+          },
+          {
+            "kind": "plateau_grazing",
+            "time_s": 18.986122886681095,
+            "p_s_per_km": 0.2,
+            "source_derivative_s_per_km": [
+              -0.2,
+              -0.0,
+              -0.26666666666666666
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 10.0,
+            "certificate": "Tangent legs plus a proven nonnegative horizontal interval",
+            "horizontal_guide_length_km": 40.0
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 13,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "turning",
+          "time_s": 18.912827500124614,
+          "p_s_per_km": 0.17908664053259607,
+          "source_derivative_s_per_km": [
+            -0.17908664053259607,
+            -0.0,
+            -0.2811389092492532
+          ],
+          "distance_residual_km": 2.0605739337042905e-12,
+          "turning_depth_km": 17.838894348905228,
+          "certificate": "interval_monotonicity_and_sign_change",
+          "layer": 2,
+          "root_interval": [
+            2.485924620957082,
+            2.485924620957639
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "turning",
+          "time_s": 18.912827500124614,
+          "p_s_per_km": 0.17908664053259607,
+          "source_derivative_s_per_km": [
+            -0.17908664053259607,
+            -0.0,
+            -0.2811389092492532
+          ],
+          "distance_residual_km": 2.0605739337042905e-12,
+          "turning_depth_km": 17.838894348905228,
+          "certificate": "interval_monotonicity_and_sign_change",
+          "layer": 2,
+          "root_interval": [
+            2.485924620957082,
+            2.485924620957639
+          ]
+        },
+        "near_ties": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "terminal_plateau",
+      "depths_km": [
+        0,
+        10,
+        20
+      ],
+      "velocities_km_s": [
+        3,
+        5,
+        5
+      ],
+      "source_xyz_km": [
+        -30,
+        0,
+        0
+      ],
+      "receiver_xyz_km": [
+        30,
+        0,
+        0
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "plateau_grazing",
+            "time_s": 14.986122886681096,
+            "p_s_per_km": 0.2,
+            "source_derivative_s_per_km": [
+              -0.2,
+              -0.0,
+              -0.26666666666666666
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 10.0,
+            "certificate": "Tangent legs plus a proven nonnegative horizontal interval",
+            "horizontal_guide_length_km": 20.0
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 0,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "plateau_grazing",
+          "time_s": 14.986122886681096,
+          "p_s_per_km": 0.2,
+          "source_derivative_s_per_km": [
+            -0.2,
+            -0.0,
+            -0.26666666666666666
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 10.0,
+          "certificate": "Tangent legs plus a proven nonnegative horizontal interval",
+          "horizontal_guide_length_km": 20.0
+        },
+        "best_enumerated_candidate": {
+          "kind": "plateau_grazing",
+          "time_s": 14.986122886681096,
+          "p_s_per_km": 0.2,
+          "source_derivative_s_per_km": [
+            -0.2,
+            -0.0,
+            -0.26666666666666666
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 10.0,
+          "certificate": "Tangent legs plus a proven nonnegative horizontal interval",
+          "horizontal_guide_length_km": 20.0
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "hayward_direct",
+      "depths_km": [
+        -1.0,
+        0.0,
+        4.0,
+        8.0,
+        12.0,
+        20.0
+      ],
+      "velocities_km_s": [
+        3.77,
+        3.77,
+        5.476666666666667,
+        5.8675,
+        6.1025,
+        7.18
+      ],
+      "source_xyz_km": [
+        0,
+        0,
+        8
+      ],
+      "receiver_xyz_km": [
+        20,
+        0,
+        -0.2
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 4.159312826877852,
+            "p_s_per_km": 0.16860483460843378,
+            "source_derivative_s_per_km": [
+              -0.16860483460843378,
+              -0.0,
+              0.024877889384410216
+            ],
+            "distance_residual_km": 3.552713678800501e-15,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p"
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 5,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 4.159312826877852,
+          "p_s_per_km": 0.16860483460843378,
+          "source_derivative_s_per_km": [
+            -0.16860483460843378,
+            -0.0,
+            0.024877889384410216
+          ],
+          "distance_residual_km": 3.552713678800501e-15,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p"
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 4.159312826877852,
+          "p_s_per_km": 0.16860483460843378,
+          "source_derivative_s_per_km": [
+            -0.16860483460843378,
+            -0.0,
+            0.024877889384410216
+          ],
+          "distance_residual_km": 3.552713678800501e-15,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p"
+        },
+        "near_ties": [
+          0
+        ]
+      },
+      "knot_derivative_refinement": [
+        {
+          "axis": 2,
+          "steps_km": [
+            1e-05,
+            5e-06,
+            2.5e-06
+          ],
+          "centered_derivatives": [
+            0.02487790840000059,
+            0.024877899118536103,
+            0.024877893700647743
+          ],
+          "first_order_richardson": 0.024877888282759383
+        }
+      ]
+    },
+    {
+      "name": "hayward_turn",
+      "depths_km": [
+        -1.0,
+        0.0,
+        4.0,
+        8.0,
+        12.0,
+        20.0
+      ],
+      "velocities_km_s": [
+        3.77,
+        3.77,
+        5.476666666666667,
+        5.8675,
+        6.1025,
+        7.18
+      ],
+      "source_xyz_km": [
+        0,
+        0,
+        4
+      ],
+      "receiver_xyz_km": [
+        15,
+        0,
+        -0.5
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "turning",
+            "time_s": 3.2881729662914987,
+            "p_s_per_km": 0.18234357814308075,
+            "source_derivative_s_per_km": [
+              -0.18234357814308075,
+              -0.0,
+              -0.009537122256649757
+            ],
+            "distance_residual_km": -4.694911126534862e-12,
+            "turning_depth_km": 4.076614637571178,
+            "certificate": "interval_monotonicity_and_sign_change",
+            "layer": 2,
+            "root_interval": [
+              0.2864462795495155,
+              0.2864462795504731
+            ]
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 6,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "turning",
+          "time_s": 3.2881729662914987,
+          "p_s_per_km": 0.18234357814308075,
+          "source_derivative_s_per_km": [
+            -0.18234357814308075,
+            -0.0,
+            -0.009537122256649757
+          ],
+          "distance_residual_km": -4.694911126534862e-12,
+          "turning_depth_km": 4.076614637571178,
+          "certificate": "interval_monotonicity_and_sign_change",
+          "layer": 2,
+          "root_interval": [
+            0.2864462795495155,
+            0.2864462795504731
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "turning",
+          "time_s": 3.2881729662914987,
+          "p_s_per_km": 0.18234357814308075,
+          "source_derivative_s_per_km": [
+            -0.18234357814308075,
+            -0.0,
+            -0.009537122256649757
+          ],
+          "distance_residual_km": -4.694911126534862e-12,
+          "turning_depth_km": 4.076614637571178,
+          "certificate": "interval_monotonicity_and_sign_change",
+          "layer": 2,
+          "root_interval": [
+            0.2864462795495155,
+            0.2864462795504731
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      },
+      "knot_derivative_refinement": [
+        {
+          "axis": 2,
+          "steps_km": [
+            1e-05,
+            5e-06,
+            2.5e-06
+          ],
+          "centered_derivatives": [
+            -0.009537647915891512,
+            -0.009537383505175967,
+            -0.009537250367230854
+          ],
+          "first_order_richardson": -0.009537117229285741
+        }
+      ]
+    },
+    {
+      "name": "hayward_equal_depth",
+      "depths_km": [
+        -1.0,
+        0.0,
+        4.0,
+        8.0,
+        12.0,
+        20.0
+      ],
+      "velocities_km_s": [
+        3.77,
+        3.77,
+        5.476666666666667,
+        5.8675,
+        6.1025,
+        7.18
+      ],
+      "source_xyz_km": [
+        -7.5,
+        0,
+        8
+      ],
+      "receiver_xyz_km": [
+        7.5,
+        0,
+        8
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "turning",
+            "time_s": 2.5540583187532477,
+            "p_s_per_km": 0.1699517981458115,
+            "source_derivative_s_per_km": [
+              -0.1699517981458115,
+              -0.0,
+              -0.012762677640903022
+            ],
+            "distance_residual_km": 4.085620730620576e-14,
+            "turning_depth_km": 8.281213590655332,
+            "certificate": "exact_linear",
+            "layer": 3,
+            "root_interval": [
+              0.4406250000000006,
+              0.4406250000000006
+            ]
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 5,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "turning",
+          "time_s": 2.5540583187532477,
+          "p_s_per_km": 0.1699517981458115,
+          "source_derivative_s_per_km": [
+            -0.1699517981458115,
+            -0.0,
+            -0.012762677640903022
+          ],
+          "distance_residual_km": 4.085620730620576e-14,
+          "turning_depth_km": 8.281213590655332,
+          "certificate": "exact_linear",
+          "layer": 3,
+          "root_interval": [
+            0.4406250000000006,
+            0.4406250000000006
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "turning",
+          "time_s": 2.5540583187532477,
+          "p_s_per_km": 0.1699517981458115,
+          "source_derivative_s_per_km": [
+            -0.1699517981458115,
+            -0.0,
+            -0.012762677640903022
+          ],
+          "distance_residual_km": 4.085620730620576e-14,
+          "turning_depth_km": 8.281213590655332,
+          "certificate": "exact_linear",
+          "layer": 3,
+          "root_interval": [
+            0.4406250000000006,
+            0.4406250000000006
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      },
+      "knot_derivative_refinement": [
+        {
+          "axis": 2,
+          "steps_km": [
+            1e-05,
+            5e-06,
+            2.5e-06
+          ],
+          "centered_derivatives": [
+            -0.01276271868189127,
+            -0.012762703693880438,
+            -0.01276269525618545
+          ],
+          "first_order_richardson": -0.012762686818490463
+        }
+      ]
+    },
+    {
+      "name": "hayward_deep_turn",
+      "depths_km": [
+        -1.0,
+        0.0,
+        4.0,
+        8.0,
+        12.0,
+        20.0
+      ],
+      "velocities_km_s": [
+        3.77,
+        3.77,
+        5.476666666666667,
+        5.8675,
+        6.1025,
+        7.18
+      ],
+      "source_xyz_km": [
+        -20,
+        0,
+        -0.5
+      ],
+      "receiver_xyz_km": [
+        20,
+        0,
+        -0.5
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "flat_direct",
+            "time_s": 10.610079575596817,
+            "p_s_per_km": 0.2652519893899204,
+            "source_derivative_s_per_km": [
+              -0.2652519893899204,
+              0.0,
+              0.0
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Straight path contained in one constant-velocity interval"
+          },
+          {
+            "kind": "turning",
+            "time_s": 10.613419521151725,
+            "p_s_per_km": 0.2651672555308588,
+            "source_derivative_s_per_km": [
+              -0.2651672555308588,
+              -0.0,
+              -0.006704063658907434
+            ],
+            "distance_residual_km": 7.318590178329032e-13,
+            "turning_depth_km": 0.00282351258379665,
+            "certificate": "exact_quadratic",
+            "layer": 1,
+            "root_interval": [
+              0.09531463431818853,
+              0.09531463431818878
+            ]
+          },
+          {
+            "kind": "turning",
+            "time_s": 8.371307618477996,
+            "p_s_per_km": 0.17807799229102747,
+            "source_derivative_s_per_km": [
+              -0.17807799229102747,
+              -0.0,
+              -0.19658801219023303
+            ],
+            "distance_residual_km": -5.243805389909539e-12,
+            "turning_depth_km": 5.421069909823894,
+            "certificate": "interval_monotonicity_and_sign_change",
+            "layer": 2,
+            "root_interval": [
+              1.2410293464328679,
+              1.2410293464338253
+            ]
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 7,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "turning",
+          "time_s": 8.371307618477996,
+          "p_s_per_km": 0.17807799229102747,
+          "source_derivative_s_per_km": [
+            -0.17807799229102747,
+            -0.0,
+            -0.19658801219023303
+          ],
+          "distance_residual_km": -5.243805389909539e-12,
+          "turning_depth_km": 5.421069909823894,
+          "certificate": "interval_monotonicity_and_sign_change",
+          "layer": 2,
+          "root_interval": [
+            1.2410293464328679,
+            1.2410293464338253
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "turning",
+          "time_s": 8.371307618477996,
+          "p_s_per_km": 0.17807799229102747,
+          "source_derivative_s_per_km": [
+            -0.17807799229102747,
+            -0.0,
+            -0.19658801219023303
+          ],
+          "distance_residual_km": -5.243805389909539e-12,
+          "turning_depth_km": 5.421069909823894,
+          "certificate": "interval_monotonicity_and_sign_change",
+          "layer": 2,
+          "root_interval": [
+            1.2410293464328679,
+            1.2410293464338253
+          ]
+        },
+        "near_ties": [
+          2
+        ]
+      }
+    },
+    {
+      "name": "hayward_vertical",
+      "depths_km": [
+        -1.0,
+        0.0,
+        4.0,
+        8.0,
+        12.0,
+        20.0
+      ],
+      "velocities_km_s": [
+        3.77,
+        3.77,
+        5.476666666666667,
+        5.8675,
+        6.1025,
+        7.18
+      ],
+      "source_xyz_km": [
+        0,
+        0,
+        8
+      ],
+      "receiver_xyz_km": [
+        0,
+        0,
+        -0.2
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "vertical_direct",
+            "time_s": 1.6337448460506678,
+            "p_s_per_km": 0.0,
+            "source_derivative_s_per_km": [
+              0.0,
+              0.0,
+              0.1704303365999148
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": null
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 0,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "vertical_direct",
+          "time_s": 1.6337448460506678,
+          "p_s_per_km": 0.0,
+          "source_derivative_s_per_km": [
+            0.0,
+            0.0,
+            0.1704303365999148
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": null
+        },
+        "near_ties": [
+          0
+        ]
+      },
+      "knot_derivative_refinement": [
+        {
+          "axis": 2,
+          "steps_km": [
+            1e-05,
+            5e-06,
+            2.5e-06
+          ],
+          "centered_derivatives": [
+            0.17043033933017424,
+            0.1704303381089289,
+            0.1704303370431148
+          ],
+          "first_order_richardson": 0.1704303359773007
+        }
+      ]
+    },
+    {
+      "name": "hayward_bottom",
+      "depths_km": [
+        -1.0,
+        0.0,
+        4.0,
+        8.0,
+        12.0,
+        20.0
+      ],
+      "velocities_km_s": [
+        3.77,
+        3.77,
+        5.476666666666667,
+        5.8675,
+        6.1025,
+        7.18
+      ],
+      "source_xyz_km": [
+        -30,
+        -27,
+        8
+      ],
+      "receiver_xyz_km": [
+        30,
+        27,
+        -0.2
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "bottom_boundary",
+            "time_s": 14.004195904953939,
+            "p_s_per_km": 0.1392757660167131,
+            "source_derivative_s_per_km": [
+              -0.10352286159431286,
+              -0.09317057543488158,
+              -0.09822810511263078
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 20.0,
+            "certificate": "Tangent legs plus a proven nonnegative horizontal interval",
+            "horizontal_guide_length_km": 3.726576138719473
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 11,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "bottom_boundary",
+          "time_s": 14.004195904953939,
+          "p_s_per_km": 0.1392757660167131,
+          "source_derivative_s_per_km": [
+            -0.10352286159431286,
+            -0.09317057543488158,
+            -0.09822810511263078
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 20.0,
+          "certificate": "Tangent legs plus a proven nonnegative horizontal interval",
+          "horizontal_guide_length_km": 3.726576138719473
+        },
+        "best_enumerated_candidate": {
+          "kind": "bottom_boundary",
+          "time_s": 14.004195904953939,
+          "p_s_per_km": 0.1392757660167131,
+          "source_derivative_s_per_km": [
+            -0.10352286159431286,
+            -0.09317057543488158,
+            -0.09822810511263078
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 20.0,
+          "certificate": "Tangent legs plus a proven nonnegative horizontal interval",
+          "horizontal_guide_length_km": 3.726576138719473
+        },
+        "near_ties": [
+          0
+        ]
+      },
+      "knot_derivative_refinement": [
+        {
+          "axis": 2,
+          "steps_km": [
+            1e-05,
+            5e-06,
+            2.5e-06
+          ],
+          "centered_derivatives": [
+            -0.09822811000148589,
+            -0.09822810778103984,
+            -0.09822810653759005
+          ],
+          "first_order_richardson": -0.09822810529414026
+        }
+      ]
+    },
+    {
+      "name": "coincident",
+      "depths_km": [
+        -1.0,
+        0.0,
+        4.0,
+        8.0,
+        12.0,
+        20.0
+      ],
+      "velocities_km_s": [
+        3.77,
+        3.77,
+        5.476666666666667,
+        5.8675,
+        6.1025,
+        7.18
+      ],
+      "source_xyz_km": [
+        0,
+        0,
+        8
+      ],
+      "receiver_xyz_km": [
+        0,
+        0,
+        8
+      ],
+      "result": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "vertical_direct",
+            "time_s": 0.0,
+            "p_s_per_km": 0.0,
+            "source_derivative_s_per_km": null,
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": null
+          }
+        ],
+        "unresolved": [],
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "isolation_boxes": 0,
+        "max_isolation_boxes_per_layer": 20000,
+        "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+        "near_tie_time_tolerance_s": 1e-09,
+        "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+        "first_arrival": {
+          "kind": "vertical_direct",
+          "time_s": 0.0,
+          "p_s_per_km": 0.0,
+          "source_derivative_s_per_km": null,
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": null
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    }
+  ],
+  "deliberately_unresolved": {
+    "complete": false,
+    "reference_valid": false,
+    "candidates": [
+      {
+        "kind": "flat_direct",
+        "time_s": 10.610079575596817,
+        "p_s_per_km": 0.2652519893899204,
+        "source_derivative_s_per_km": [
+          -0.2652519893899204,
+          0.0,
+          0.0
+        ],
+        "distance_residual_km": 0.0,
+        "turning_depth_km": null,
+        "certificate": "Straight path contained in one constant-velocity interval"
+      },
+      {
+        "kind": "turning",
+        "time_s": 10.613419521151725,
+        "p_s_per_km": 0.2651672555308588,
+        "source_derivative_s_per_km": [
+          -0.2651672555308588,
+          -0.0,
+          -0.006704063658907434
+        ],
+        "distance_residual_km": 7.318590178329032e-13,
+        "turning_depth_km": 0.00282351258379665,
+        "certificate": "exact_quadratic",
+        "layer": 1,
+        "root_interval": [
+          0.09531463431818853,
+          0.09531463431818878
+        ]
+      },
+      {
+        "kind": "turning",
+        "time_s": 8.371307618477996,
+        "p_s_per_km": 0.17807799229102747,
+        "source_derivative_s_per_km": [
+          -0.17807799229102747,
+          -0.0,
+          -0.19658801219023303
+        ],
+        "distance_residual_km": -5.243805389909539e-12,
+        "turning_depth_km": 5.421069909823894,
+        "certificate": "interval_monotonicity_and_sign_change",
+        "layer": 2,
+        "root_interval": [
+          1.2410293464328679,
+          1.2410293464338253
+        ]
+      }
+    ],
+    "unresolved": [
+      {
+        "layer": 4,
+        "r_interval": [
+          0.0,
+          1.8915531812507942
+        ],
+        "reason": "Root count or tangency unresolved"
+      },
+      {
+        "layer": 4,
+        "r_interval": [
+          1.8915531812507942,
+          3.7831063625015884
+        ],
+        "reason": "Root count or tangency unresolved"
+      }
+    ],
+    "root_tolerance": 1e-12,
+    "distance_tolerance_km": 1e-08,
+    "isolation_boxes": 3,
+    "max_isolation_boxes_per_layer": 1,
+    "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+    "near_tie_time_tolerance_s": 1e-09,
+    "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+    "first_arrival": null,
+    "best_enumerated_candidate": {
+      "kind": "turning",
+      "time_s": 8.371307618477996,
+      "p_s_per_km": 0.17807799229102747,
+      "source_derivative_s_per_km": [
+        -0.17807799229102747,
+        -0.0,
+        -0.19658801219023303
+      ],
+      "distance_residual_km": -5.243805389909539e-12,
+      "turning_depth_km": 5.421069909823894,
+      "certificate": "interval_monotonicity_and_sign_change",
+      "layer": 2,
+      "root_interval": [
+        1.2410293464328679,
+        1.2410293464338253
+      ]
+    },
+    "near_ties": [
+      2
+    ]
+  },
+  "unsupported": {
+    "complete": false,
+    "reference_valid": false,
+    "candidates": [],
+    "unresolved": [
+      {
+        "reason": "Unsupported profile: require finite increasing depths and positive nondecreasing velocities"
+      }
+    ],
+    "root_tolerance": 1e-12,
+    "distance_tolerance_km": 1e-08,
+    "isolation_boxes": 0,
+    "max_isolation_boxes_per_layer": 20000,
+    "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+    "near_tie_time_tolerance_s": 1e-09,
+    "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed"
+  },
+  "checks": [
+    {
+      "name": "constant_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "constant_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "constant_reciprocity",
+      "passed": true,
+      "value": 2.1921577396609844,
+      "reference": 2.1921577396609844,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "constant_finite_difference_complete_(0, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "constant_source_derivative_x",
+      "passed": true,
+      "value": -0.13938575223277935,
+      "reference": -0.13938575222915972,
+      "absolute_error": 3.6196323716097822e-12,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "constant_finite_difference_complete_(1, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "constant_source_derivative_y",
+      "passed": true,
+      "value": 0.05068572808464704,
+      "reference": 0.05068572808131221,
+      "absolute_error": 3.33482547132391e-12,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "constant_finite_difference_complete_(2, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "constant_source_derivative_z",
+      "passed": true,
+      "value": -0.07602859212697057,
+      "reference": -0.07602859213307056,
+      "absolute_error": 6.099995508712652e-12,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "constant_time",
+      "passed": true,
+      "value": 2.1921577396609844,
+      "reference": 2.1921577396609844,
+      "absolute_error": 0.0,
+      "tolerance": 1e-12,
+      "units": "s"
+    },
+    {
+      "name": "affine_direct_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "affine_direct_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "affine_direct_reciprocity",
+      "passed": true,
+      "value": 0.860914660432027,
+      "reference": 0.860914660432027,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "affine_direct_finite_difference_complete_(0, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "affine_direct_source_derivative_x",
+      "passed": true,
+      "value": -0.050517293450893376,
+      "reference": -0.05051729340399546,
+      "absolute_error": 4.689791610612559e-11,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "affine_direct_finite_difference_complete_(1, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "affine_direct_source_derivative_y",
+      "passed": true,
+      "value": -0.0,
+      "reference": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "affine_direct_finite_difference_complete_(2, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "affine_direct_source_derivative_z",
+      "passed": true,
+      "value": -0.22158721900050957,
+      "reference": -0.22158721901255338,
+      "absolute_error": 1.204381039343616e-11,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "affine_direct_hyperbolic_distance_time",
+      "passed": true,
+      "value": 0.860914660432027,
+      "reference": 0.8609146604320251,
+      "absolute_error": 1.887379141862766e-15,
+      "tolerance": 1e-11,
+      "units": "s"
+    },
+    {
+      "name": "affine_turn_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "affine_turn_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "affine_turn_reciprocity",
+      "passed": true,
+      "value": 8.15608900440148,
+      "reference": 8.15608900440148,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "affine_turn_finite_difference_complete_(0, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "affine_turn_source_derivative_x",
+      "passed": true,
+      "value": -0.1681681984990781,
+      "reference": -0.168168198655394,
+      "absolute_error": 1.5631590466469447e-10,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "affine_turn_finite_difference_complete_(1, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "affine_turn_source_derivative_y",
+      "passed": true,
+      "value": -0.0,
+      "reference": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "affine_turn_finite_difference_complete_(2, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "affine_turn_source_derivative_z",
+      "passed": true,
+      "value": -0.15288018045370738,
+      "reference": -0.15288018060388708,
+      "absolute_error": 1.5017970200759123e-10,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "affine_turn_hyperbolic_distance_time",
+      "passed": true,
+      "value": 8.15608900440148,
+      "reference": 8.156089004401478,
+      "absolute_error": 1.7763568394002505e-15,
+      "tolerance": 1e-11,
+      "units": "s"
+    },
+    {
+      "name": "plateau_two_turns_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "plateau_two_turns_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_reciprocity",
+      "passed": true,
+      "value": 4.918988590051218,
+      "reference": 4.918988590051218,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "plateau_two_turns_finite_difference_complete_(0, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_source_derivative_x",
+      "passed": true,
+      "value": -0.22852028551639406,
+      "reference": -0.22852028531694654,
+      "absolute_error": 1.994475140598695e-10,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "plateau_two_turns_finite_difference_complete_(1, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_source_derivative_y",
+      "passed": true,
+      "value": -0.0,
+      "reference": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "plateau_two_turns_finite_difference_complete_(2, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_source_derivative_z",
+      "passed": true,
+      "value": -0.10138283438287643,
+      "reference": -0.10138283443872352,
+      "absolute_error": 5.584709084072159e-11,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "plateau_two_turn_count",
+      "passed": true
+    },
+    {
+      "name": "plateau_branch_time_-1",
+      "passed": true,
+      "value": 5.006740467575858,
+      "reference": 5.00674046757584,
+      "absolute_error": 1.7763568394002505e-14,
+      "tolerance": 1e-11,
+      "units": "s"
+    },
+    {
+      "name": "plateau_branch_time_1",
+      "passed": true,
+      "value": 4.918988590051218,
+      "reference": 4.9189885900512165,
+      "absolute_error": 1.7763568394002505e-15,
+      "tolerance": 1e-11,
+      "units": "s"
+    },
+    {
+      "name": "exact_double_root_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "exact_double_root_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "exact_double_root_reciprocity",
+      "passed": true,
+      "value": 4.0,
+      "reference": 4.0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "exact_double_root_retained",
+      "passed": true
+    },
+    {
+      "name": "below_turn_minimum_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "below_turn_minimum_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "below_turn_minimum_reciprocity",
+      "passed": true,
+      "value": 3.975,
+      "reference": 3.975,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "below_minimum_has_no_turn",
+      "passed": true
+    },
+    {
+      "name": "above_turn_minimum_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "above_turn_minimum_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "above_turn_minimum_reciprocity",
+      "passed": true,
+      "value": 4.025,
+      "reference": 4.025,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "above_minimum_has_two_turns",
+      "passed": true
+    },
+    {
+      "name": "turn_at_layer_node_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "turn_at_layer_node_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "turn_at_layer_node_reciprocity",
+      "passed": true,
+      "value": 10.986122886681096,
+      "reference": 10.986122886681096,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "node_limiting_branches_retained",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "interior_plateau_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_reciprocity",
+      "passed": true,
+      "value": 18.912827500124614,
+      "reference": 18.912827500124614,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "interior_plateau_two_turns_and_guide",
+      "passed": true
+    },
+    {
+      "name": "interior_turn_depth_(0.1, 1.0)",
+      "passed": true,
+      "value": 12.352873798278726,
+      "reference": 12.352873798278814,
+      "absolute_error": 8.881784197001252e-14,
+      "tolerance": 1e-10,
+      "units": "km"
+    },
+    {
+      "name": "interior_turn_depth_(2.0, 3.0)",
+      "passed": true,
+      "value": 17.838894348905228,
+      "reference": 17.838894348904464,
+      "absolute_error": 7.638334409421077e-13,
+      "tolerance": 1e-10,
+      "units": "km"
+    },
+    {
+      "name": "terminal_plateau_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "terminal_plateau_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "terminal_plateau_reciprocity",
+      "passed": true,
+      "value": 14.986122886681096,
+      "reference": 14.986122886681096,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "terminal_plateau_time",
+      "passed": true,
+      "value": 14.986122886681096,
+      "reference": 14.986122886681098,
+      "absolute_error": 1.7763568394002505e-15,
+      "tolerance": 1e-11,
+      "units": "s"
+    },
+    {
+      "name": "hayward_direct_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "hayward_direct_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "hayward_direct_reciprocity",
+      "passed": true,
+      "value": 4.159312826877852,
+      "reference": 4.159312826877852,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "hayward_direct_finite_difference_complete_(0, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_direct_source_derivative_x",
+      "passed": true,
+      "value": -0.16860483460843378,
+      "reference": -0.16860483444958163,
+      "absolute_error": 1.588521536532994e-10,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_direct_finite_difference_complete_(1, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_direct_source_derivative_y",
+      "passed": true,
+      "value": -0.0,
+      "reference": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_direct_finite_difference_complete_(2, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_direct_finite_difference_complete_(2, 5e-06)",
+      "passed": true
+    },
+    {
+      "name": "hayward_direct_finite_difference_complete_(2, 2.5e-06)",
+      "passed": true
+    },
+    {
+      "name": "hayward_direct_source_derivative_z",
+      "passed": true,
+      "value": 0.024877889384410216,
+      "reference": 0.024877888282759383,
+      "absolute_error": 1.101650833057466e-09,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_turn_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "hayward_turn_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_reciprocity",
+      "passed": true,
+      "value": 3.2881729662914987,
+      "reference": 3.2881729662914987,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "hayward_turn_finite_difference_complete_(0, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_source_derivative_x",
+      "passed": true,
+      "value": -0.18234357814308075,
+      "reference": -0.18234357692659128,
+      "absolute_error": 1.2164894647170854e-09,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_turn_finite_difference_complete_(1, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_source_derivative_y",
+      "passed": true,
+      "value": -0.0,
+      "reference": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_turn_finite_difference_complete_(2, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_finite_difference_complete_(2, 5e-06)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_finite_difference_complete_(2, 2.5e-06)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_source_derivative_z",
+      "passed": true,
+      "value": -0.009537122256649757,
+      "reference": -0.009537117229285741,
+      "absolute_error": 5.027364016405023e-09,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_equal_depth_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "hayward_equal_depth_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "hayward_equal_depth_reciprocity",
+      "passed": true,
+      "value": 2.5540583187532477,
+      "reference": 2.5540583187532477,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "hayward_equal_depth_finite_difference_complete_(0, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_equal_depth_source_derivative_x",
+      "passed": true,
+      "value": -0.1699517981458115,
+      "reference": -0.16995180041057265,
+      "absolute_error": 2.2647611563897385e-09,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_equal_depth_finite_difference_complete_(1, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_equal_depth_source_derivative_y",
+      "passed": true,
+      "value": -0.0,
+      "reference": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_equal_depth_finite_difference_complete_(2, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_equal_depth_finite_difference_complete_(2, 5e-06)",
+      "passed": true
+    },
+    {
+      "name": "hayward_equal_depth_finite_difference_complete_(2, 2.5e-06)",
+      "passed": true
+    },
+    {
+      "name": "hayward_equal_depth_source_derivative_z",
+      "passed": true,
+      "value": -0.012762677640903022,
+      "reference": -0.012762686818490463,
+      "absolute_error": 9.177587441747126e-09,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_deep_turn_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "hayward_deep_turn_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "hayward_deep_turn_reciprocity",
+      "passed": true,
+      "value": 8.371307618477996,
+      "reference": 8.371307618477996,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "hayward_deep_turn_finite_difference_complete_(0, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_deep_turn_source_derivative_x",
+      "passed": true,
+      "value": -0.17807799229102747,
+      "reference": -0.17807799288505063,
+      "absolute_error": 5.940231639911531e-10,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_deep_turn_finite_difference_complete_(1, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_deep_turn_source_derivative_y",
+      "passed": true,
+      "value": -0.0,
+      "reference": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_deep_turn_finite_difference_complete_(2, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_deep_turn_source_derivative_z",
+      "passed": true,
+      "value": -0.19658801219023303,
+      "reference": -0.19658801173605409,
+      "absolute_error": 4.5417894445343165e-10,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_vertical_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "hayward_vertical_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_reciprocity",
+      "passed": true,
+      "value": 1.6337448460506678,
+      "reference": 1.6337448460506678,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "hayward_vertical_finite_difference_complete_(0, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_source_derivative_x",
+      "passed": true,
+      "value": 0.0,
+      "reference": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_vertical_finite_difference_complete_(1, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_source_derivative_y",
+      "passed": true,
+      "value": 0.0,
+      "reference": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_vertical_finite_difference_complete_(2, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_finite_difference_complete_(2, 5e-06)",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_finite_difference_complete_(2, 2.5e-06)",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_source_derivative_z",
+      "passed": true,
+      "value": 0.1704303365999148,
+      "reference": 0.1704303359773007,
+      "absolute_error": 6.226140991660856e-10,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_bottom_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "hayward_bottom_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_reciprocity",
+      "passed": true,
+      "value": 14.004195904953939,
+      "reference": 14.004195904953939,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "hayward_bottom_finite_difference_complete_(0, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_source_derivative_x",
+      "passed": true,
+      "value": -0.10352286159431286,
+      "reference": -0.1035228616608208,
+      "absolute_error": 6.650793804574562e-11,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_bottom_finite_difference_complete_(1, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_source_derivative_y",
+      "passed": true,
+      "value": -0.09317057543488158,
+      "reference": -0.09317057543256622,
+      "absolute_error": 2.315356240067956e-12,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "hayward_bottom_finite_difference_complete_(2, 1e-05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_finite_difference_complete_(2, 5e-06)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_finite_difference_complete_(2, 2.5e-06)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_source_derivative_z",
+      "passed": true,
+      "value": -0.09822810511263078,
+      "reference": -0.09822810529414026,
+      "absolute_error": 1.8150948799533495e-10,
+      "tolerance": 2e-07,
+      "units": "s/km"
+    },
+    {
+      "name": "coincident_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "coincident_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "coincident_reciprocity",
+      "passed": true,
+      "value": 0.0,
+      "reference": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "units": "s"
+    },
+    {
+      "name": "coincident_gradient_undefined",
+      "passed": true
+    },
+    {
+      "name": "limited_search_fails_closed",
+      "passed": true
+    },
+    {
+      "name": "nonmonotone_profile_explicitly_unsupported",
+      "passed": true
+    },
+    {
+      "name": "constant_path_endpoints_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "constant_path_domain_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "constant_path_knot_(0, 0.1, 4)",
+      "passed": true
+    },
+    {
+      "name": "constant_path_endpoints_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "constant_path_domain_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "constant_path_knot_(0, 0.05, 4)",
+      "passed": true
+    },
+    {
+      "name": "constant_path_refinement_0",
+      "passed": true,
+      "coarse_error_s": 8.881784197001252e-16,
+      "fine_error_s": 1.3322676295501878e-15
+    },
+    {
+      "name": "constant_fine_polygon_action_0",
+      "passed": true,
+      "value": 2.192157739660983,
+      "reference": 2.1921577396609844,
+      "absolute_error": 1.3322676295501878e-15,
+      "tolerance": 1e-05,
+      "units": "s"
+    },
+    {
+      "name": "affine_turn_path_endpoints_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "affine_turn_path_domain_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "affine_turn_turn_point_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "affine_turn_path_endpoints_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "affine_turn_path_domain_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "affine_turn_turn_point_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "affine_turn_path_refinement_0",
+      "passed": true,
+      "coarse_error_s": 3.82226624040527e-06,
+      "fine_error_s": 9.59923982080113e-07
+    },
+    {
+      "name": "affine_turn_fine_polygon_action_0",
+      "passed": true,
+      "value": 8.156089964325462,
+      "reference": 8.15608900440148,
+      "absolute_error": 9.59923982080113e-07,
+      "tolerance": 1e-05,
+      "units": "s"
+    },
+    {
+      "name": "plateau_two_turns_path_endpoints_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_domain_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_endpoints_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_domain_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_refinement_0",
+      "passed": true,
+      "coarse_error_s": 0.0,
+      "fine_error_s": 0.0
+    },
+    {
+      "name": "plateau_two_turns_fine_polygon_action_0",
+      "passed": true,
+      "value": 5.0,
+      "reference": 5.0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-05,
+      "units": "s"
+    },
+    {
+      "name": "plateau_two_turns_path_endpoints_(1, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_domain_(1, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_turn_point_(1, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_knot_(1, 0.1, 0)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_endpoints_(1, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_domain_(1, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_turn_point_(1, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_knot_(1, 0.05, 0)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_refinement_1",
+      "passed": true,
+      "coarse_error_s": 5.163931788843001e-07,
+      "fine_error_s": 1.405680434274359e-07
+    },
+    {
+      "name": "plateau_two_turns_fine_polygon_action_1",
+      "passed": true,
+      "value": 5.006740608143901,
+      "reference": 5.006740467575858,
+      "absolute_error": 1.405680434274359e-07,
+      "tolerance": 1e-05,
+      "units": "s"
+    },
+    {
+      "name": "plateau_two_turns_path_endpoints_(2, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_domain_(2, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_turn_point_(2, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_knot_(2, 0.1, 0)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_endpoints_(2, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_domain_(2, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_turn_point_(2, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_knot_(2, 0.05, 0)",
+      "passed": true
+    },
+    {
+      "name": "plateau_two_turns_path_refinement_2",
+      "passed": true,
+      "coarse_error_s": 3.6929555973230777e-06,
+      "fine_error_s": 9.333550803347634e-07
+    },
+    {
+      "name": "plateau_two_turns_fine_polygon_action_2",
+      "passed": true,
+      "value": 4.918989523406299,
+      "reference": 4.918988590051218,
+      "absolute_error": 9.333550803347634e-07,
+      "tolerance": 1e-05,
+      "units": "s"
+    },
+    {
+      "name": "interior_plateau_path_endpoints_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_domain_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_turn_point_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_knot_(0, 0.1, 10)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_knot_(0, 0.1, 12)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_endpoints_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_domain_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_turn_point_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_knot_(0, 0.05, 10)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_knot_(0, 0.05, 12)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_refinement_0",
+      "passed": true,
+      "coarse_error_s": 6.8819083196558495e-06,
+      "fine_error_s": 1.7204737581266727e-06
+    },
+    {
+      "name": "interior_plateau_fine_polygon_action_0",
+      "passed": true,
+      "value": 19.03046253603036,
+      "reference": 19.0304608155566,
+      "absolute_error": 1.7204737581266727e-06,
+      "tolerance": 1e-05,
+      "units": "s"
+    },
+    {
+      "name": "interior_plateau_path_endpoints_(1, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_domain_(1, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_turn_point_(1, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_knot_(1, 0.1, 10)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_knot_(1, 0.1, 12)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_endpoints_(1, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_domain_(1, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_turn_point_(1, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_knot_(1, 0.05, 10)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_knot_(1, 0.05, 12)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_refinement_1",
+      "passed": true,
+      "coarse_error_s": 5.274666381893667e-06,
+      "fine_error_s": 1.325274389785136e-06
+    },
+    {
+      "name": "interior_plateau_fine_polygon_action_1",
+      "passed": true,
+      "value": 18.912828825399004,
+      "reference": 18.912827500124614,
+      "absolute_error": 1.325274389785136e-06,
+      "tolerance": 1e-05,
+      "units": "s"
+    },
+    {
+      "name": "interior_plateau_path_endpoints_(2, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_domain_(2, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_turn_point_(2, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_endpoints_(2, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_domain_(2, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_turn_point_(2, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "interior_plateau_path_refinement_2",
+      "passed": true,
+      "coarse_error_s": 7.312976464390886e-06,
+      "fine_error_s": 1.8282415119585949e-06
+    },
+    {
+      "name": "interior_plateau_fine_polygon_action_2",
+      "passed": true,
+      "value": 18.986124714922607,
+      "reference": 18.986122886681095,
+      "absolute_error": 1.8282415119585949e-06,
+      "tolerance": 1e-05,
+      "units": "s"
+    },
+    {
+      "name": "hayward_turn_path_endpoints_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_path_domain_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_turn_point_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_path_knot_(0, 0.1, 0.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_path_knot_(0, 0.1, 4.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_path_endpoints_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_path_domain_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_turn_point_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_path_knot_(0, 0.05, 0.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_path_knot_(0, 0.05, 4.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_turn_path_refinement_0",
+      "passed": true,
+      "coarse_error_s": 5.243857451819878e-06,
+      "fine_error_s": 1.3121142696803645e-06
+    },
+    {
+      "name": "hayward_turn_fine_polygon_action_0",
+      "passed": true,
+      "value": 3.2881742784057684,
+      "reference": 3.2881729662914987,
+      "absolute_error": 1.3121142696803645e-06,
+      "tolerance": 1e-05,
+      "units": "s"
+    },
+    {
+      "name": "hayward_vertical_path_endpoints_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_path_domain_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_path_knot_(0, 0.1, 0.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_path_knot_(0, 0.1, 4.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_path_endpoints_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_path_domain_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_path_knot_(0, 0.05, 0.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_path_knot_(0, 0.05, 4.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_vertical_path_refinement_0",
+      "passed": true,
+      "coarse_error_s": 8.881784197001252e-16,
+      "fine_error_s": 6.661338147750939e-16
+    },
+    {
+      "name": "hayward_vertical_fine_polygon_action_0",
+      "passed": true,
+      "value": 1.6337448460506685,
+      "reference": 1.6337448460506678,
+      "absolute_error": 6.661338147750939e-16,
+      "tolerance": 1e-05,
+      "units": "s"
+    },
+    {
+      "name": "hayward_bottom_path_endpoints_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_path_domain_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_turn_point_(0, 0.1)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_path_knot_(0, 0.1, 0.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_path_knot_(0, 0.1, 4.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_path_knot_(0, 0.1, 8.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_path_knot_(0, 0.1, 12.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_path_endpoints_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_path_domain_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_turn_point_(0, 0.05)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_path_knot_(0, 0.05, 0.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_path_knot_(0, 0.05, 4.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_path_knot_(0, 0.05, 8.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_path_knot_(0, 0.05, 12.0)",
+      "passed": true
+    },
+    {
+      "name": "hayward_bottom_path_refinement_0",
+      "passed": true,
+      "coarse_error_s": 3.117335149127598e-06,
+      "fine_error_s": 7.798961654259529e-07
+    },
+    {
+      "name": "hayward_bottom_fine_polygon_action_0",
+      "passed": true,
+      "value": 14.004196684850104,
+      "reference": 14.004195904953939,
+      "absolute_error": 7.798961654259529e-07,
+      "tolerance": 1e-05,
+      "units": "s"
+    }
+  ],
+  "passed": true,
+  "check_count": 250,
+  "failed_checks": []
+}
