@@ -1,0 +1,30 @@
+{
+  "status": "completed",
+  "commands": [
+    {
+      "pass_index": 1,
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-output-directory=/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_outer_accumulation_report_compile_001",
+        "report.tex"
+      ],
+      "return_code": 0
+    },
+    {
+      "pass_index": 2,
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-output-directory=/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_outer_accumulation_report_compile_001",
+        "report.tex"
+      ],
+      "return_code": 0
+    }
+  ],
+  "pdf_sha256": "e2d1c753eb045df6dc1b9e24beb909f8913ee91ebc43750eac5d1ec97d0d3dfd",
+  "pdf_bytes": 1819469,
+  "finished_utc": "2026-10-10T06:42:06Z"
+}

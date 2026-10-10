@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "data/development/loma_outer_accumulation_delivery_review_001/check.py", line 124, in <module>
+    print(json.dumps(check(), indent=2, allow_nan=False))
+  File "data/development/loma_outer_accumulation_delivery_review_001/check.py", line 82, in check
+    need(old['validation']['panel_counts'] == manifest['validation']['panel_counts'],
+KeyError: 'panel_counts'
