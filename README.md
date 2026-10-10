@@ -14,11 +14,14 @@ and nonlinear-convergence failures. A separate guarded catalog-only inversion
 stopped at its first trial model, before accepting any update. This remains a
 partial scientific checkpoint.
 
-A separate catalog-only backtracking attempt has now saved its first accepted
-update. The [intermediate-state plot](figures/hayward_accepted_update_001.pdf)
-shows velocity changes and event movements from the identified starting model.
-The run remains incomplete; this update does not establish final convergence
-or updated-model ray and source-derivative accuracy.
+A separate catalog-only backtracking attempt has now preserved two accepted
+states. The [first-update plot](figures/hayward_accepted_update_001.pdf) shows
+changes from the identified starting model; the
+[second-update package](data/development/hayward_second_accepted_update_figure_001/RESULTS.md)
+and [comparison plot](data/development/hayward_second_accepted_update_figure_001/figure/accepted_update_2_minus_1.pdf)
+show the next state's velocity changes and event movements relative to the first.
+The run remains incomplete; these accepted states do not establish final
+convergence or updated-model ray and source-derivative accuracy.
 
 On 2026-10-09 the user revised that restriction: real station and earthquake
 data, including metadata, must now come from authoritative sources, starting
