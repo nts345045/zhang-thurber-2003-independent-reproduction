@@ -59,6 +59,23 @@ production action within $2.25\times10^{-13}$ s. All paths, original flags,
 identities, and isolated source changes are retained in
 \path{data/development/loma_geometry_preflight/reference_seeds_001/}.
 
+A separate directional calculation resolves two contributions to the large
+row-5 gradient. For an interface-aligned segment, the perturbed normal
+coordinate interpolates both endpoint directions. Its first variation must
+integrate the appropriate one-sided slowness derivative on each side of any
+directional zero; choosing one incident cell for the entire segment is
+insufficient. Homogeneous, fast-plateau, and reversed-jump cusp controls check
+this construction. The saved finest retained polygon also admits a small
+tangential descent. Independent 80- and 100-digit exact-segment evaluations
+agree on action reductions of $4.532\times10^{-12}$ s and
+$2.028\times10^{-10}$ s for two saved feasible directions. Thus the interface
+convention dominates the large ordinary gradient, but the polygon retains
+actual optimization error. Smaller normal-direction signs near $10^{-17}$ s
+are inconclusive. Neither finitely many probes nor accurate travel time
+justifies changing the original failed stopping flag. The identified paths,
+directions, and reviewed classification are saved in
+\path{data/development/interface_directional/001/}.
+
 Continuous layered enumeration was then extended to all 37,648 pairs in
 the prepared 724-source, 52-receiver geometry. The first attempt completed
 every candidate enumeration, but eleven direct candidates failed the
@@ -109,14 +126,54 @@ relax a scientific accuracy criterion. The raw run remains preserved, and
 \path{data/published/loma_lom_analytic_001/} contains a lossless ten-part archive
 of 504,089,284 compressed bytes. Every member was read back and verified.
 
+The independently audited LON-profile simulation contains the same number of
+rows. Full-file comparison establishes byte-identical synthetic observations,
+truth arrivals, and perturbed event geometry. Its starting grid differs at all
+288 velocity nodes; the numerical configuration changes only the declared
+starting-profile selector. The distinct source snapshot, configurations,
+execution records, and reviews are retained. Identical simulated observations
+do not establish equivalence of inversions from the two starting models.
+
 The inverse calculation starts from perturbed sources and a depth-dependent
-LOM grid. Its independent initial references therefore require a new
-enumeration; the $x$-dependent truth table cannot validate this operator.
-The next preflight exports its full source derivatives and exact endpoint/domain
-checks from the same rays used to count matrix entries. A separate sampled
-refinement retains every declared sample and finite difference while limiting
-the number of cached fine receiver fields. Neither simulation completion nor
-a matrix storage estimate establishes inverse convergence.
+grid, requiring references distinct from the $x$-dependent synthetic truth.
+All 37,648 LOM initial references pass their independent reviews, with unique
+first arrivals and defined source derivatives; 59 pairs use the finite-bottom
+branch. A separate LON enumeration preserves one invalid reference among the
+same 37,648 pairs. Pair 8156, event \texttt{NC/255127} at
+\texttt{NC.JSC..EHZ}, has a turning candidate just below the 11 km knot and
+distance residual $1.0784\times10^{-8}$ km, above the unchanged
+$10^{-8}$ km requirement. Its selected time and derivatives remain blank.
+No tolerance is relaxed. Both full identified reference streams and their
+reviews are retained in
+\path{data/development/loma_initial_reference_001/} and
+\path{data/development/loma_lon_initial_reference_001/}.
+
+The frozen LOM initial-forward preflight is now active. It exports full source
+derivatives and exact endpoint/domain checks from the rays used to count matrix
+entries. A separate sampled refinement retains all 104 declared samples and
+24 valid source finite differences while limiting cached fine receiver fields.
+It performs no inverse solve. Neither simulation completion nor a matrix
+storage estimate establishes inverse convergence.
+
+\subsection{Rejecting unsupported forward evaluations during inversion}
+The preceding inversion code recorded local ray failures but could still use
+those rays in a Jacobian, a line-search objective, or final output. An initial
+preflight therefore did not protect later model updates. A new guard on the
+integration branch applies the unchanged local, finite-value, domain,
+endpoint, initialization, and derivative-dimension checks before each such
+use. A failed evaluation stops the inverse run and saves its model, identified
+ray statuses and available paths separately from the last accepted state.
+Failure snapshots retain 17 significant digits. Unevaluated derivatives remain
+blank, including caught worker exceptions.
+
+Invented component runs exercise failures at the current model, a trial step,
+and the final model. They reproduce the parent code's use of unconverged rays;
+all seven outputs of a successful fixed-model location inversion remain
+byte-identical. The matrix-only diagnostic retains its original behavior.
+Independent review and the optimized application build pass. These checks,
+saved in \path{data/development/inversion_ray_gate_checks/}, establish failure
+handling rather than global first-arrival accuracy or nonlinear recovery.
+No live executable was replaced, and no corrected inverse result is claimed.
 
 \subsection{Historical waveform metadata and a rejected pilot pair}
 The existing Hayward catalog pair at differential row 15108 links events
@@ -154,6 +211,20 @@ define the vertical waveform selection. A further 89 picks and 542
 differences precede the archive's documented March 1984 start; this date
 is a coverage lead, not proof that all earlier data are absent. These audit
 categories remove no catalog observations and establish no study exclusion.
-Further retrieval is paused for clarification under the user's metadata
-rule. Full native rows and unsubmitted requests are saved in
+Full native rows and the original unsubmitted requests are saved in
 \path{data/authoritative/waveforms/cohort_plan_001/}.
+
+The user clarified that normalized waveform correlation should supply
+differential times without calibration corrections.
+Authoritative retrieval can therefore continue despite missing
+historical response functions; these remain explicit metadata gaps.
+The documented EQcorrscan workflow provides a reference for local-window
+normalization, pick-relative extraction, and \texttt{dt.cc} sign and identifier
+mapping.\footnote{EQcorrscan documentation:
+\href{https://eqcorrscan.readthedocs.io/en/latest/submodules/utils.correlate.html}{normalized correlation};
+\href{https://eqcorrscan.readthedocs.io/en/latest/submodules/autogen/eqcorrscan.utils.catalog_to_dd.write_correlations.html}{correlation-derived differential times}.}
+Its differential time is travel time for event 1 minus that for event 2.
+Preprocessing, sample support, lag range, and acceptance criteria must remain
+declared. Package defaults do not replace the manuscript's written method.
+The earlier failed coherence pilot remains preserved; this clarification
+does not turn it into an accepted differential observation.
