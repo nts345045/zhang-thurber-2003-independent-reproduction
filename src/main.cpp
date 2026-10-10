@@ -3,6 +3,7 @@
 #include "ray_checks.hpp"
 #include "csv.hpp"
 #include <filesystem>
+#include <optional>
 struct Event {
   P p;
   double t = 0;
@@ -63,8 +64,9 @@ std::ofstream output(std::string p) {
   f << std::setprecision(12);
   return f;
 }
-void write_grid(const Grid &g, std::string path) {
+void write_grid(const Grid &g, std::string path, int precision = 12) {
   auto f = output(path);
+  f << std::setprecision(precision);
   f << "x,y,z,v\n";
   for (int k = 0; k < int(g.z.size()); k++)
     for (int j = 0; j < int(g.y.size()); j++)
@@ -72,8 +74,9 @@ void write_grid(const Grid &g, std::string path) {
         f << g.x[i] << ',' << g.y[j] << ',' << g.z[k] << ','
           << g.v[g.id(i, j, k)] << '\n';
 }
-void write_events(const std::vector<Event> &e, std::string path) {
+void write_events(const std::vector<Event> &e, std::string path, int precision = 12) {
   auto f = output(path);
+  f << std::setprecision(precision);
   f << "id,x,y,z,t";
   if (!e.empty())
     csv_metadata_header(f, e.front().metadata);
@@ -345,15 +348,18 @@ bool ray_path_in_domain(const Grid &g, const Ray &ray) {
 std::pair<size_t, size_t> write_ray_status(const std::string &path,
                          const std::vector<Event> &events, const std::vector<Event> &stations,
                          const std::vector<Ray> &rr, const std::vector<int> *used = nullptr,
-                         const Grid *path_grid = nullptr) {
+                         const Grid *path_grid = nullptr, int precision = 12,
+                         std::optional<bool> derivatives_evaluated = {}) {
   if (rr.size() != events.size() * stations.size())
     throw std::runtime_error("Incomplete ray array");
   auto out = output(path);
+  out << std::setprecision(precision);
   out << "event,station,source_x,source_y,source_z,receiver_x,receiver_y,receiver_z,ray_time";
   ray_status_header(out);
   if (path_grid)
     out << ",source_t,source_dx,source_dy,source_dz,ray_path_points,ray_path_in_domain,"
            "ray_exact_source_endpoint,ray_exact_receiver_endpoint";
+  if (derivatives_evaluated.has_value()) out << ",ray_derivatives_evaluated";
   csv_metadata_header(out, events.front().metadata, "source_");
   csv_metadata_header(out, stations.front().metadata, "receiver_");
   out << '\n';
@@ -363,6 +369,11 @@ std::pair<size_t, size_t> write_ray_status(const std::string &path,
     size_t n = used ? (*used)[q] : q;
     size_t i = n / stations.size(), k = n % stations.size();
     const auto &ray = rr[n];
+    // A worker exception leaves an empty Ray, even when derivatives were
+    // requested. Do not export its default zeros as evaluated partials.
+    const bool evaluated = derivatives_evaluated.value_or(true) &&
+        (!derivatives_evaluated.has_value() || !path_grid ||
+         (ray.dv.size() == path_grid->v.size() && ray.length.size() == path_grid->v.size()));
     out << i << ',' << k;
     for (double value : events[i].p) out << ',' << value;
     for (double value : stations[k].p) out << ',' << value;
@@ -370,11 +381,15 @@ std::pair<size_t, size_t> write_ray_status(const std::string &path,
     ray_status_values(out, ray);
     if (path_grid) {
       out << ',' << events[i].t;
-      for (double value : ray.source) out << ',' << value;
+      for (double value : ray.source) {
+        out << ',';
+        if (evaluated) out << value;
+      }
       out << ',' << ray.path.size() << ',' << ray_path_in_domain(*path_grid, ray)
           << ',' << (!ray.path.empty() && ray.path.front() == events[i].p)
           << ',' << (!ray.path.empty() && ray.path.back() == stations[k].p);
     }
+    if (derivatives_evaluated.has_value()) out << ',' << evaluated;
     csv_metadata_values(out, events[i].metadata);
     csv_metadata_values(out, stations[k].metadata);
     out << '\n';
@@ -957,6 +972,80 @@ void smooth(Matrix &A, const Grid &g, int off, double weight) {
           }
       }
 }
+// An invalid forward evaluation must not enter an inverse Jacobian or objective.
+// These are the existing local checks, not a global first-arrival certificate.
+void inversion_ray_gate(const std::string &prefix, const Grid &g,
+                        const std::vector<Event> &events, const std::vector<Event> &stations,
+                        const std::vector<Ray> &rr, const std::vector<int> &used,
+                        bool initialization_required, bool derivatives) {
+  if (rr.size() != events.size() * stations.size())
+    throw std::runtime_error("Incomplete inverse forward ray array");
+  std::vector<std::pair<int, std::string>> failed;
+  for (int n : used) {
+    const auto &ray = rr[n];
+    const size_t i = n / stations.size(), k = n % stations.size();
+    std::string reasons;
+    const auto check = [&](bool valid, const char *reason) {
+      if (!valid) { if (!reasons.empty()) reasons += ";"; reasons += reason; }
+    };
+    check(finite_ray(ray), "nonfinite_or_empty_ray");
+    check(ray.converged, "local_stopping_failed");
+    check(ray_path_in_domain(g, ray), "path_outside_domain_or_empty");
+    check(!ray.path.empty() && ray.path.front() == events[i].p, "source_endpoint_changed");
+    check(!ray.path.empty() && ray.path.back() == stations[k].p, "receiver_endpoint_changed");
+    if (initialization_required) check(ray.initialization_attempted, "initializer_not_attempted");
+    if (initialization_required || ray.initialization_attempted)
+      check(ray.initialization_succeeded, "initializer_failed");
+    if (derivatives) {
+      check(ray.dv.size() == g.v.size(), "velocity_derivative_dimension");
+      check(ray.length.size() == g.v.size(), "path_length_dimension");
+    }
+    if (!reasons.empty()) failed.emplace_back(n, std::move(reasons));
+  }
+  if (failed.empty()) return;
+  auto identified_events = events;
+  for (auto &event : identified_events)
+    if (!event.metadata.empty())
+      set_metadata(event.metadata, "coordinate_basis",
+          "independent failed forward evaluation at recorded coordinates; see companion context for evaluation phase");
+  write_ray_status(prefix + "_ray_status.csv", identified_events, stations, rr, &used, &g, 17, derivatives);
+  auto out = output(prefix + "_ray_failures.csv");
+  out << "event,station,reasons,derivatives_requested,velocity_derivatives,path_lengths,expected_velocity_nodes";
+  csv_metadata_header(out, identified_events.front().metadata, "source_");
+  csv_metadata_header(out, stations.front().metadata, "receiver_");
+  out << '\n';
+  for (const auto &failure : failed) {
+    const size_t i = failure.first / stations.size(), k = failure.first % stations.size();
+    const auto &ray = rr[failure.first];
+    out << i << ',' << k << ',' << csv_quote(failure.second) << ',' << derivatives
+        << ',' << ray.dv.size() << ',' << ray.length.size() << ',' << g.v.size();
+    csv_metadata_values(out, identified_events[i].metadata);
+    csv_metadata_values(out, stations[k].metadata);
+    out << '\n';
+  }
+  out.close();
+  auto paths = output(prefix + "_ray_paths.csv");
+  paths << std::setprecision(17) << "event,station,node,x,y,z";
+  csv_metadata_header(paths, identified_events.front().metadata, "source_");
+  csv_metadata_header(paths, stations.front().metadata, "receiver_");
+  paths << '\n';
+  for (const auto &failure : failed) {
+    const size_t i = failure.first / stations.size(), k = failure.first % stations.size();
+    const auto &path = rr[failure.first].path;
+    for (size_t node = 0; node < path.size(); ++node) {
+      paths << i << ',' << k << ',' << node;
+      for (double value : path[node]) paths << ',' << value;
+      csv_metadata_values(paths, identified_events[i].metadata);
+      csv_metadata_values(paths, stations[k].metadata);
+      paths << '\n';
+    }
+  }
+  paths.close();
+  throw std::runtime_error("Inverse forward evaluation rejected " + std::to_string(failed.size()) +
+      " rays; see " + prefix + "_ray_status.csv; first: " +
+      ray_identity_context(events, stations, failed.front().first / stations.size(),
+                           failed.front().first % stations.size()));
+}
 void invert(const Config &c, std::string dir, std::string mode) {
   auto e = read_events(dir + "/initial_events.csv"),
        stations = read_events(dir + "/stations.csv");
@@ -978,6 +1067,36 @@ void invert(const Config &c, std::string dir, std::string mode) {
   int ne = e.size(), ns = stations.size(), off = 4 * ne,
       n = off + (locate ? 0 : g.size());
   ForwardFields fields;
+  int current_iteration = -1;
+  const auto checked_rays = [&](const Grid &model, const std::vector<Event> &sources,
+                                bool derivatives, const std::string &phase, int trial) {
+    const std::string prefix = dir + "/" + mode + "_failed_forward";
+    try {
+      auto result = rays(model, sources, stations, c, derivatives, &used, &fields, false);
+      inversion_ray_gate(prefix, model, sources, stations, result, used,
+                         auxiliary_spacing(c) > 0, derivatives);
+      return result;
+    } catch (const std::exception &error) {
+      // A failed trial is distinct from the last accepted state. In particular,
+      // do not write a candidate to the conventional final inversion filenames.
+      auto identified_sources = sources, accepted_sources = e;
+      if (authoritative || authoritative_geometry(c, dir)) {
+        for (auto &event : identified_sources)
+          set_metadata(event.metadata, "coordinate_basis", "independent failed " + phase + " forward evaluation; not a final inversion result");
+        for (auto &event : accepted_sources)
+          set_metadata(event.metadata, "coordinate_basis", "independent last accepted inversion state, or starting state before the first accepted update");
+      }
+      write_events(identified_sources, prefix + "_events.csv", 17);
+      write_grid(model, prefix + "_grid.csv", 17);
+      write_events(accepted_sources, dir + "/" + mode + "_last_accepted_events.csv", 17);
+      write_grid(g, dir + "/" + mode + "_last_accepted_grid.csv", 17);
+      auto context = output(prefix + "_context.csv");
+      context << "mode,iteration,phase,line_search_trial,derivatives_requested,initialization_required,significant_digits,message\n"
+              << mode << ',' << current_iteration << ',' << phase << ',' << trial << ',' << derivatives
+              << ',' << (auxiliary_spacing(c) > 0) << ",17," << csv_quote(error.what()) << '\n';
+      throw;
+    }
+  };
   auto log = output(dir + "/" + mode + "_history.csv");
   log << "iteration,stage,absolute_rms,catalog_rms,precise_rms,velocity_step,"
          "location_step,step_fraction,objective_before,objective_after,lsqr_"
@@ -990,8 +1109,10 @@ void invert(const Config &c, std::string dir, std::string mode) {
                "damped_rows,damped_entries,csr_payload_bytes,numeric_observation_bytes,"
                "residual_weight_bytes,lsqr_row_workspace_bound_bytes\n";
   for (int it = 0; it < int(c.get("iterations")); it++) {
+    current_iteration = it;
     const bool preflight_only = setting(c, "matrix_preflight_only", 0) != 0;
-    auto r = rays(g, e, stations, c, true, &used, &fields, !preflight_only);
+    auto r = preflight_only ? rays(g, e, stations, c, true, &used, &fields, false) :
+                             checked_rays(g, e, true, "current_model", -1);
     if (preflight_only) {
       write_ray_status(dir + "/" + mode + "_preflight_ray_status.csv", e, stations, r, &used, &g);
       for (int index : used)
@@ -1113,7 +1234,7 @@ void invert(const Config &c, std::string dir, std::string mode) {
         }
       if (!valid)
         continue;
-      auto nr = rays(ng, ee, stations, c, false, &used, &fields);
+      auto nr = checked_rays(ng, ee, false, "line_search_trial", ls);
       after = objective(ng, ee, nr);
       if (after <= before) {
         accepted = true;
@@ -1158,13 +1279,13 @@ void invert(const Config &c, std::string dir, std::string mode) {
       it = (stage + 1) * int(c.get("stage_length")) - 1;
     }
   }
+  auto rr = checked_rays(g, e, true, "final_model", -1);
   write_grid(g, dir + "/" + mode + "_grid.csv");
   if (authoritative || authoritative_geometry(c, dir))
     for (auto &event : e)
       set_metadata(event.metadata, "coordinate_basis",
                    "independent " + mode + " inversion estimate; provider IDs identify reference catalog records");
   write_events(e, dir + "/" + mode + "_events.csv");
-  auto rr = rays(g, e, stations, c, true, &used, &fields);
   auto coverage = output(dir + "/" + mode + "_coverage.csv");
   coverage << "node,path_length\n";
   for (int k = 0; k < g.size(); k++) {
