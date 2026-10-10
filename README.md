@@ -163,7 +163,7 @@ and the rejection decisions. Reusing those directions at
 [half length](data/development/hayward_cmj_tangent_half_step_001/RESULTS.md)
 decreases action by 1.9272e-11 and 7.5767e-11 s; both trials pass the same
 conservative Armijo check. Their maximum movements are 0.04553 and 0.02491 m.
-These half-step paths become the retained diagnostic state. Both action
+These half-step paths supply the subsequent refinement's starting state. Both action
 changes still exceed the combined stopping scale in magnitude.
 
 The [post-half gradient and support check](data/development/hayward_cmj_post_half_step_tangent_001/RESULTS.md)
@@ -191,6 +191,32 @@ existing integration method; they do not certify convergence or source accuracy.
 The separate [saved half-gradient comparison](data/development/hayward_cmj_half_gradient_comparison_001/RESULTS.md)
 finds available-vector errors below 1.020e-15 s/km on both half-step paths,
 using the existing emitted C++ values without rerunning the evaluator.
+
+A [bounded tangent iteration](data/development/hayward_cmj_tangent_iteration_001/RESULTS.md)
+starts from those half-step paths and retains the same face-normal search mask.
+It accepts 16 and 38 updates after 32 and 152 trials, respectively. The computed
+available norms fall to 8.1821e-8 and 9.6184e-8 s/km. Independent readback
+reconstructs all 184 rounded trial geometries and decisions. Intermediate
+gradient contractions and paired action sums remain recorded evaluator
+quantities; the final continuous action and full coupled support require
+their separate audit. No original convergence flag changes.
+
+That [final audit](data/development/hayward_cmj_final_tangent_support_001/RESULTS.md)
+now bounds feasible full supporting-vector norms below 8.1822e-8 and
+9.6185e-8 s/km, including every normal component and ordinary adjacent-edge
+term. One common mixture per convex face piece couples its two endpoint
+moments. Both bounds satisfy the 1e-7 scale on these prescribed polygons;
+their continuous actions decrease by another 3.3921e-11 and 5.8997e-11 s
+relative to the half-step paths. The fit proposes feasible coefficients,
+without certifying a minimum; the first event reaches its 10,000-sweep cap.
+Independent readback passes 90,213 checks. Automatic face-contact discovery,
+source/model derivative accuracy and first-arrival selection remain unresolved.
+
+A [saved original-geometry inventory](data/development/hayward_cmj_original_cut_inventory_001/RESULTS.md)
+finds all 30 exact grid-plane crossings represented in each original path's
+integration partition, with no omitted or spurious cuts. This excludes those
+cutoff omissions for the two saved original polygons; it does not establish
+quadrature or ordinary-gradient accuracy on arbitrary off-face trials.
 
 A [bounded backtracking candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)
 retains the original, initially validated ray kernel and changes only the

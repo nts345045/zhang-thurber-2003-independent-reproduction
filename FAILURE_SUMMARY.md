@@ -95,6 +95,28 @@ and first-step polygons are below 1.057e-15 s/km. Thus integration error does
 not explain these resolved increases and decreases; step selection and
 the full nonsmooth stationarity condition still require attention.
 
+The subsequent [bounded tangent iteration](data/development/hayward_cmj_tangent_iteration_001/RESULTS.md)
+reduces the computed available norms to 8.1821e-8 and 9.6184e-8 s/km after
+16 and 38 accepted updates. Independent readback reconstructs all 184 rounded
+trials. This resolves the computed tangent residual for these prescribed
+face paths, while the full coupled support and continuous action require
+separate bounds. It supplies no automatic contact rule, source-derivative
+validation or accepted inverse update; both original failed flags remain.
+
+The [final continuous audit](data/development/hayward_cmj_final_tangent_support_001/RESULTS.md)
+now supplies the missing full-vector bound on those prescribed polygons.
+Feasible norms are below 8.1822e-8 and 9.6185e-8 s/km, including coupled
+face-normal moments and all ordinary adjacent-edge terms. Both actions are
+also lower than on the preceding half-step paths. These results meet the
+strict first-order residual scale for the prescribed geometry, but do not
+provide an automatic way to reach that geometry or establish first arrival
+and source/model derivative accuracy. A feasible witness is sufficient for
+the bound; no minimum-norm fit is claimed, and one fit exhausts its sweep cap.
+The [original-cut inventory](data/development/hayward_cmj_original_cut_inventory_001/RESULTS.md)
+also finds zero omitted crossings on the two original paths. Their failure
+cannot be attributed to those cut omissions, while general off-face evaluator
+accuracy remains a separate question.
+
 The original guard also stopped before trying a smaller inverse step. A
 [separate old-kernel candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)
 now distinguishes a pure local-stopping trial rejection from fatal current,

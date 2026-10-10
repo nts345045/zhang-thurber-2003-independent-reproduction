@@ -1,0 +1,60 @@
+{
+  "cases": [
+    {
+      "catalog_uses": 9,
+      "edges": 1028,
+      "event": 981,
+      "nodes": 1029,
+      "station": 160
+    },
+    {
+      "catalog_uses": 9,
+      "edges": 1030,
+      "event": 987,
+      "nodes": 1031,
+      "station": 160
+    }
+  ],
+  "command": [
+    "/usr/libexec/platform-python3.6",
+    "data/development/hayward_cmj_original_cut_inventory_001/run.py"
+  ],
+  "core_cut_prefix_sha256": "62aa1259e503b86b6378b773e088326017d460a1593a5af8aa608eb83398da0e",
+  "created_utc": "2026-10-10T13:56:41.440716Z",
+  "evaluator_calls": 0,
+  "input_sha256": {
+    "data/development/hayward_cmj_face_action_001/inputs/native_context.json": "606c12da50bd8e79b753cecf6619882eced59e455896eb8b13bad46296788103",
+    "data/development/hayward_cmj_face_action_001/inputs/original_paths.csv": "ab3f44062c5df8d858261327e77630144a9707fe8e065a3e877b7fc2d04e1ea2",
+    "data/development/hayward_cmj_face_action_001/inputs/original_status.csv": "566de4c8410529338eca6b4126dd64a1e690a9121198dd1abd893760a6e670ae",
+    "data/development/hayward_cmj_face_action_001/inputs/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/development/hayward_cmj_face_action_001/inputs/trial_events.csv": "9b470b1d70ce469d4bc53c8eeaa8a49e7f3e4a68f7b213a9ee87d34a8759a2da",
+    "data/development/hayward_cmj_face_action_001/inputs/trial_grid.csv": "b85a7ff605674f46ac26d3953b7ab149092f1bd218fe82076d595bfc50c62d4c",
+    "data/development/hayward_cmj_face_action_001/model_provenance.json": "b2aaf8e17597cdcd00db18df0d50cc95502d34f1d81f7443d39b438823fb520c",
+    "data/development/hayward_cmj_face_action_001/prepared.json": "b76991263bddbaaaa75fd90b858f800fb4ec5339e40782b6aff8cf94f117ec08",
+    "data/development/hayward_cmj_face_action_001/summary.json": "56c51845fa8ee9a2cefe1be09c78819b7eef6e79b4f7c0b4f7ca2b3580fe77d9",
+    "data/development/hayward_cmj_face_action_review_001/review.json": "447091d4ec796691e7c3cfe8f852d0ae23a11cc7be74e11fcded101f6a37afc2",
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/native_contexts.json": "d937f7f85a224a3e131d13c04248e79be84b1fc0d3121c31ebdb6e5789ccd170",
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/prepared.json": "9fbc70bc9abd73eaf8b8fa2b40403c840af80732777d5b94468389b671cfc7cc",
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/review.json": "c37e04d163a922e822df00bf95bc122736459becea753ec270bd00a945eaa440",
+    "data/development/hayward_cmj_fixed_polygon_kernel_001/summary.json": "8dda71f8d0c1883f44655ee3738b0e59ff177cceb512503499dec8b93eee1047",
+    "data/development/hayward_trial_cmj_old_D_replay_001/source/old/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed"
+  },
+  "integration_calls": 0,
+  "output_sha256": {
+    "README.md": "988a983103903b59008cfe1ad501afffee3ff93032ceef2951fcd567e3dcfa39",
+    "core_cut_prefix.txt": "62aa1259e503b86b6378b773e088326017d460a1593a5af8aa608eb83398da0e",
+    "native_contexts.json": "d937f7f85a224a3e131d13c04248e79be84b1fc0d3121c31ebdb6e5789ccd170",
+    "run.py": "97a8e0b3c68a3f2a6313dbcc0622474b72d027637a8783fc27a6f197c1c92429"
+  },
+  "preparation_operations": "File reads/hashes, byte-copy identities, exact frozen source-prefix extraction and AST parsing only; inventory functions not imported or executed.",
+  "python": {
+    "executable": "/usr/libexec/platform-python3.6",
+    "mantissa_bits": 53,
+    "sha256": "64c7391db4c0e069b875bb1cb358627cf4064c6ab3a343d3b5d2bf73d3ecca53",
+    "version": "3.6.8 (default, Sep 24 2024, 09:44:46) \n[GCC 8.5.0 20210514 (Red Hat 8.5.0-22)]"
+  },
+  "scope": "Original old-kernel polygons only: exact grid-plane crossings versus scalar binary64 source cut predicates. No integration/evaluator/field/path mutation.",
+  "source_review_required": true,
+  "status": "source_only_not_executed",
+  "subprocess_calls": 0
+}

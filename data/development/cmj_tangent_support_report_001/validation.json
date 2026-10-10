@@ -1,0 +1,186 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-10T14:02:55.488047Z",
+  "checker_sha256": "aa037ea4a9639514540b6234d1ca2a4b12c36cf4df90667ed13b899c9b442e84",
+  "scope": "Compilation, document links and closed reviewed quantities only; no numerical evaluator or new scientific threshold.",
+  "compile_sha256": "6747e9192555d3413d87064f5a20263cf55cc3f21b76fb7e0586b77b00a79b06",
+  "report_sha256": "165187ed13aa0cc6fb6f034d7ccf5a4aba06f3d6742c9d047c9e583b8858833b",
+  "pdf_pages": 120,
+  "compile_execution_receipt_sha256": "f72ff42a2af18726045a769e5b31c18978deb6b6d6fea74c5449ac89189aee30",
+  "compile_passes": 2,
+  "tex_sources": 16,
+  "logs": {
+    "1": {
+      "errors_or_overfull": [],
+      "undefined": [
+        "LaTeX Warning: Reference `tab:cmj_final_support' on page 29 undefined on input ",
+        "LaTeX Warning: There were undefined references."
+      ],
+      "warnings": [
+        "pdfTeX warning: pdflatex (file ../figures/location_errors.pdf): PDF inclusion: ",
+        "LaTeX Warning: Reference `tab:cmj_final_support' on page 29 undefined on input ",
+        "LaTeX Warning: There were undefined references.",
+        "LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right."
+      ]
+    },
+    "2": {
+      "errors_or_overfull": [],
+      "undefined": [],
+      "warnings": [
+        "pdfTeX warning: pdflatex (file ../figures/location_errors.pdf): PDF inclusion: "
+      ]
+    }
+  },
+  "input_sha256": {
+    "data/development/cmj_tangent_support_report_001/compile.json": "6747e9192555d3413d87064f5a20263cf55cc3f21b76fb7e0586b77b00a79b06",
+    "report/report.pdf": "165187ed13aa0cc6fb6f034d7ccf5a4aba06f3d6742c9d047c9e583b8858833b",
+    "README.md": "7bfd2aa448d7dcfb98e08d5811fca746324abda608b5c5fd3cd3014d6908441e",
+    "FAILURE_SUMMARY.md": "910f5f1a3c05464d6047e204ebaa1ee582b879672f47bf9746f9ff98b5c098f2",
+    "report/hayward_full_results_section.tex": "1ef7149792af3ba4ce5a8f9492bdaa5ced41d4117de654a2316306a7dcfc7e28",
+    "report/hayward_results.tex": "4722d2a9473bcc1be0b3671f7efe1b25b408d42d36e8938ffa6bbc6522420614",
+    "report/hayward_velocity_checkpoint.tex": "d2c1b70f84acf00729ff7aca23b8ad14ad98b06d49fe9fc4555152c2a126ec59",
+    "report/joint_findings.tex": "4e94b1553e76b20051e6195b1d0b71d8097ce7d892fd6b2879cd233f72e43ee6",
+    "report/metrics.tex": "1adf4e381d0a645cec73b919eb176e23ae55f33d4f253717630d5dd2b480077a",
+    "report/panel_details.tex": "30a7870babfa8731adee566fb3c8e7dca84c4434a4b11074f1bbd71dff8013af",
+    "report/panel_table.tex": "de7947141f6a64c80a686b2a04c44972ac171eee2e46b5b50ff31fbcb9bac316",
+    "report/ray_failure_checkpoint.tex": "c4e64d2b323c353b4bcb92f24adf0d0e2c5e024d187299237a464f0035cf112d",
+    "report/ray_findings.tex": "87e02479f0fbd6e43ae564965e2ea79ee7bdad4670cdd62bbca25115f22f4fad",
+    "report/recovery_checkpoint.tex": "a2ae5d642ce6e7d96451c71211b417d77f0407984d0a38335517b2779e3f8f6b",
+    "report/report.tex": "289034e2eae49f6230f2d82c6e0005ab989af6e6443e1293382d6bcafd7f6efe",
+    "report/run_findings.tex": "c301712aeba4366c6b33a61d5939d2f3567a7dce0734aff2c62a2e936e37c28f",
+    "report/sensitivity_table.tex": "89e36d73e854c23e8baeb7436e33b7474c4fa82b318f6f39f26b3a26167aacfb",
+    "report/spatial_table.tex": "40139003a2d2ee5eae0a1ddd42af178bddc086642c8cd5687e617c399e873d9d",
+    "report/validation_table.tex": "2df4790edf0dfa6bf59fa64f9f42a943a75d77df7d0b6ffe4f061caaab08d343",
+    "report/velocity_metrics.tex": "9da0ab0e781f625c2abe70910c6ae0884a44adb5e8bf84ddbacec4bed8e45a62",
+    "data/development/cmj_tangent_support_report_001/pass1_stdout.txt": "5131343bab13f776bdd94e6779dc8628e7d87241eca88325a8050c958f9bf954",
+    "data/development/cmj_tangent_support_report_001/pass1_report.log": "a5e2032637d54d502c1da5ca6489e31643c4823e9b198bcac2527e7f95749028",
+    "data/development/cmj_tangent_support_report_001/pass2_stdout.txt": "9a73935026459d6f3b7d2940eadc7fe1b4a54ee178fa456fab70e6b314b8cc3a",
+    "data/development/cmj_tangent_support_report_001/pass2_report.log": "f72a619ec0d264378e9ffa38037e561a8bca22c9ade7a117f76a1f39410b7cac",
+    "data/development/cmj_tangent_support_report_001/report.log": "f72a619ec0d264378e9ffa38037e561a8bca22c9ade7a117f76a1f39410b7cac",
+    "data/development/cmj_tangent_support_report_001/report.txt": "d448a09c8561024594824aef565bdf23ef2f5af34c1249368516a477178a68a1",
+    "data/development/cmj_tangent_support_report_001/pdfinfo.txt": "b455891bf97e95ac7752bb699682e5af4f85fe4c86d814938ae0c323b0c8d1a8",
+    "data/development/cmj_tangent_support_report_001/compile_execution_receipt.json": "f72ff42a2af18726045a769e5b31c18978deb6b6d6fea74c5449ac89189aee30",
+    "data/development/cmj_half_step_kernel_report_001/validation.json": "a932eed55821624f48e4533f4894c78254fdcb3107a753be63a9c2b05c55b0a2",
+    "data/development/hayward_cmj_tangent_iteration_review_001/review.json": "4bba5bf6122237776c7478780da0619f6c531d714d717372c60b062772fdc57b",
+    "data/development/hayward_cmj_tangent_iteration_001/summary.json": "48ab9b0ce2c9547c195176b10fb1a796bf37bf0c1e018cf07640f5bf85f322ce",
+    "data/development/hayward_cmj_tangent_iteration_001/execution.json": "a5a18b615323322f1eccde09c939751f6505070e914d22038a84a41cdb8e7560",
+    "data/development/hayward_cmj_tangent_iteration_001/outer_reaping.json": "bcb39e133e6dbf4b28c36cc1f247c81f8654d56882b152e66be8c3802ed1b668",
+    "data/development/hayward_cmj_tangent_iteration_001/prepared.json": "f692174dcaa259d219b58e1339e13da8658572e7ad1dd63578b6e293b2ae6bc4",
+    "data/development/hayward_cmj_final_tangent_support_review_001/review.json": "a6020400eb0d8fe33ed1a63f6668f6c042b6fccbcfc688442887d4f49e8612e3",
+    "data/development/hayward_cmj_final_tangent_support_001/summary.json": "b650db7c71b0766ca85167c305ca64308610de26e6b6eb0e48e46c6f0ef18284",
+    "data/development/hayward_cmj_final_tangent_support_001/execution.json": "1cd0e9f5cd556a85912c8bc319668b203f3c5d0bdabc8aa7d98750d749cb243b",
+    "data/development/hayward_cmj_final_tangent_support_001/outer_reaping.json": "3dc72d9a497b780f472a7a944a070c77f5d59fc81e279c88418a7403792156aa",
+    "data/development/hayward_cmj_final_tangent_support_001/prepared.json": "cff1fa298a518967563059d378ed68eb068b0b6402f0cf244304778124b462e0",
+    "data/development/hayward_cmj_tangent_iteration_review_001/execution_receipt.json": "286b6e6c230227c9beb59ba90fda8fafc3fe939d48336da3528cb4867c9aa0cd",
+    "data/development/hayward_cmj_tangent_iteration_review_001/check_saved.py": "3d548773cb1b0ce00e1bfed3b7841942d99eabe62fcefce23c1737569c713761",
+    "data/development/hayward_cmj_final_tangent_support_review_001/execution_receipt.json": "3b5b3ef63fe5f77a58a5ba7ef572d5af87010d00d2253b3dca753964c9ac9515",
+    "data/development/hayward_cmj_final_tangent_support_review_001/check_saved.py": "8eb8656489c7557e390476e9281fd8615319f5be5a388a2b56f220cf4aeba4d2",
+    "data/development/hayward_cmj_final_tangent_support_001/controls/summary.json": "c640ff4c1174e28a704705c80c49e201113fb1c76949bd9a2defcfb0d44eb8b4",
+    "data/development/hayward_cmj_final_tangent_support_001/controls/review.json": "7cd2307868429e1a4aed4b75245e2000884ab3f8c3ec147d16d4b117ee1bed45",
+    "data/development/hayward_cmj_original_cut_inventory_001/review.json": "3c597f4b8f56657b5b80118c83d353b38c1a39bed6bfafce68b43f45b35461d1",
+    "data/development/hayward_cmj_original_cut_inventory_001/review_execution.json": "ae145bc387eab072fa363f3a2fd7b5f29ed1901f0b2fc329b08667087699eeba",
+    "data/development/hayward_cmj_original_cut_inventory_001/execution_receipt.json": "10b4c60be9edc0709eca325e78650c6fb95d7aa7dd92473cf4639657464a1d64",
+    "data/development/hayward_cmj_original_cut_inventory_001/summary.json": "1b59f57e5a405a952e76175252d1febc0c6ae32fe27f136289ee344e144a9317",
+    "data/development/hayward_cmj_original_cut_inventory_001/event_981.json.gz": "3b3a31c4a3b427cf6a83d12605e2f5f06691f20b4354b9b8c9d9f9ab656c3682",
+    "data/development/hayward_cmj_original_cut_inventory_001/event_981.json.gz.identifiers.json": "2812e83b08970a7952bcbbe32fc518dfafd2f6ffcfa2b093ddacf14de4dd4499",
+    "data/development/hayward_cmj_original_cut_inventory_001/event_987.json.gz": "dfeb61691d322c777e6c4f038d75acfe79397c7a8870c4a32d4f8653ae57d64d",
+    "data/development/hayward_cmj_original_cut_inventory_001/event_987.json.gz.identifiers.json": "1e4786eb21dea9b7673a36a7d339a2c30fc012b422ae58ad7a2fffca439db02a",
+    "data/development/hayward_cmj_original_cut_inventory_001/review_saved.py": "df9b44d47d32d76febe741ed15723891a246280b220a5f5d281c2be80d82f96c",
+    "data/development/hayward_cmj_original_cut_inventory_001/run.py": "97a8e0b3c68a3f2a6313dbcc0622474b72d027637a8783fc27a6f197c1c92429",
+    "data/development/hayward_cmj_final_tangent_support_001/event_981.json.gz": "466d0d034a01cef6b226be4242576a181ef009b1a6142e50c91634217f13c878",
+    "data/development/hayward_cmj_final_tangent_support_001/event_987.json.gz": "f43efc333b75649197852119a0ec04c551a5bf0111403e62602b8b2b0eadbca8",
+    "figures/hayward/figure05_locations.pdf": "957e56fa0dd7437ab661d5e1db7f467708fa9fb2005a331098ebde49d504dee0",
+    "figures/hayward/figure06_initial.pdf": "5e2a694f547ee7c394f18a769dadc1b7ec8418933dd141a3e01f683cb093c8d9",
+    "figures/hayward/figure07_standard.pdf": "243b4b3509da067b456da997f0542ff32b7d7cc962c677109fa8fc197d90aa10",
+    "figures/hayward/figure08_loc1d.pdf": "26871100a9a8a0dfe8e0811b6645f9df6a929a8be92e42645756437b82bfa3f7",
+    "figures/hayward/figure09_dd.pdf": "e906a5c3ca1d7edac17fc419551781d444e82a174316d4271ff1932ca5f8871e",
+    "figures/hayward/figure10_velocity.pdf": "63544c179821713dfa5f9d6c363e80662f883de1dfed9d12ab12308e4ac6e0e9",
+    "figures/hayward/figure11_resolution.pdf": "ab2f7ac5ee84c68e0e7a2329ce43cbd1d7d8b43264724c446bbee3b20e3cc943",
+    "figures/diagnostics/hayward_branch_failure.pdf": "c19d84c397d7b65fd91659cfc3fbdeb0ad656e0bf53fe7bed5bf5193e2c74d0c",
+    "figures/diagnostics/hayward_full_initial_accuracy.pdf": "79410fa5f495704507a2222763b1a6eef62b32a637589693f171bbd9037507b4",
+    "data/development/hayward_cmj_interface_geometry_001/geometry.pdf": "8484898b64ee5cbbda7cb30d9b62919071088ffa6c23f379d68657d5a92319b8",
+    "figures/diagnostics/loma_failed_trials.pdf": "39b803179f6a20e2fa0996c91765cea3b70200a01ef49bf77794191435b3852d",
+    "figures/diagnostics/loma_outer_accumulation.pdf": "1e854a1a6426a5c0ef04d0a119c55cd42488fb23631a0b70f18d27d2a920acdd",
+    "figures/diagnostics/loma_interface_candidate.pdf": "4118926d1c0e66908e35a644d03787f11650f12060d35de0d5190b06a19c2dff",
+    "figures/diagnostics/loma_retention.pdf": "12b5ae513102746410ffae0e6a5136102371498080d75c3357fa0272c7efdbe3",
+    "figures/diagnostics/loma_endpoint_shooting.pdf": "93656adb5e6029d6aabaf91e20e4407f021931c4245f70d5c7396e26a1965947",
+    "figures/figure01.pdf": "dbd6a8dea4ab734bd5548b5e4e4291361dcffbbc030aae0f37274366697d1f98",
+    "figures/figure02.pdf": "bdfd02e3530203e1bc4c91e3d26d2b97cceacb4fb1f587a4b263b15dcd579c93",
+    "figures/validation_ray.pdf": "f1583608f62e6655c78797317e342cec6f0e179337fa77a80e35e1c8361a95f3",
+    "figures/figure03a.pdf": "b46567f9e564dacce5420a25f44d96a15c581bf37780e60664fd1203fb8064db",
+    "figures/figure03b.pdf": "d1e6c086bbb1dab2e863183808f4979bfbfda72ed29e1b0b447b23e718037116",
+    "figures/figure03c.pdf": "e8b270a26108e95cb15dad143e04edb410f24eab59e227108b406ebe6dd7e90e",
+    "figures/figure03d.pdf": "acea59fa54c5838a6c4be9d3a00dcc66a01c6ed408c116655412dd3d4dacfccf",
+    "figures/convergence.pdf": "03948a9f524af69cecec5ca386d008bd508fdf28824b330cf5a8f26a62066685",
+    "figures/location_errors.pdf": "2c10fe2c984e78827c8d409b622c6e6fddbe371ec5c3c3d77d926bf93429db6c",
+    "figures/hayward/figure04_geometry.pdf": "5364bc445bb22550aaa07327fb1adfa1cc355ff8ba21513ad8beea36c8d2b1d0",
+    "figures/diagnostics/first_arrival_audit.pdf": "3fc4016c8891c12ffb8a755d055f7c75061d4372d48a252cb756191a2e5070f0",
+    "data/panel_audit.csv": "ee85a21eb3764b59cd7da9868baf57e948be65d0c2056ec152d53ccba5664931",
+    "data/panel_audit.json": "bda6631c088b5699407078710ec25de2ce63cd72361a0ccca326c814eca0fbf6",
+    "data/development/cmj_half_step_kernel_report_001/compile.json": "04675a1c4e6abb10cb7ca7fc4d7b9d2298b6844c886eacb8025258df17f7ecab",
+    "data/development/cmj_tangent_support_report_001/path_inventory.json": "4f1e9670f4f6e795783b633389aee0afe0474349f286a45d877befbc4ee4252a",
+    "data/development/cmj_tangent_support_report_001/validate.py": "aa037ea4a9639514540b6234d1ca2a4b12c36cf4df90667ed13b899c9b442e84"
+  },
+  "panel_counts": {
+    "independently reproduced": 1,
+    "partially reproduced": 61
+  },
+  "markdown_links": 138,
+  "tex_literal_paths": 134,
+  "figures": 27,
+  "changed_pages_for_visual_review": [
+    28,
+    29,
+    30,
+    31
+  ],
+  "new_quantities": [
+    {
+      "event": 981,
+      "accepted_updates": 16,
+      "trials": 32,
+      "accepted_fraction": "1/2",
+      "computed_available_norm_exact": "6182213561117477/75557863725914323419136",
+      "available_squared_bounds": [
+        "775188918693640816492864503466852531516342650889688387192736845/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "12112326854588137757701008463097999577144824309642821982742283/1809251394333065553493296640760748560207343510400633813116524750123642650624"
+      ],
+      "feasible_support_squared_bounds": [
+        "1006252746826147803712504130310948113060632762369348868230316208057785680765761051106483565611133/150306725297525326584926758194517569752043683130132471725266622178061377607334940381676735896625196994043838464",
+        "1006252746826147803712504179860283428892888765326195546195491276200639477975252813931838803426073/150306725297525326584926758194517569752043683130132471725266622178061377607334940381676735896625196994043838464"
+      ],
+      "net_action": [
+        "-2885645471651440735560718365/85070591730234615865843651857942052864",
+        "-180352841978215045972226335/5316911983139663491615228241121378304"
+      ],
+      "fit_sweeps": 10000,
+      "fit_termination": "sweep_budget",
+      "original_crossings": 30,
+      "original_cut_omissions": 0
+    },
+    {
+      "event": 987,
+      "accepted_updates": 38,
+      "trials": 152,
+      "accepted_fraction": "1/8",
+      "computed_available_norm_exact": "908432405557077/9444732965739290427392",
+      "available_squared_bounds": [
+        "1071235013200388927611227621907868408400294263038653959673321199/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "66952188325024307975701728453563174408519705395262473208609891/7237005577332262213973186563042994240829374041602535252466099000494570602496"
+      ],
+      "feasible_support_squared_bounds": [
+        "22248680775171576139690329077241956004608947872601191600542470036521220981736187408445539258382053/2404907604760405225358828131112281116032698930082119547604265954848982041717359046106827774346003151904701415424",
+        "22248680775171576139690329769876544907005697393354053006634677475039276483029579958462104191533157/2404907604760405225358828131112281116032698930082119547604265954848982041717359046106827774346003151904701415424"
+      ],
+      "net_action": [
+        "-20075699517764599232292038359/340282366920938463463374607431768211456",
+        "-20075699517764599232271945439/340282366920938463463374607431768211456"
+      ],
+      "fit_sweeps": 1894,
+      "fit_termination": "coefficients_unchanged",
+      "original_crossings": 30,
+      "original_cut_omissions": 0
+    }
+  ],
+  "visual_review_status": "pending root inspection of separately rendered pages"
+}

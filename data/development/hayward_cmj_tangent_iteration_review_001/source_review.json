@@ -1,0 +1,19 @@
+{
+  "README_sha256": "75618a9fc27d608f280a1d5950270194faacf28d649891d027430bf6168a69f8",
+  "checker_sha256": "3d548773cb1b0ce00e1bfed3b7841942d99eabe62fcefce23c1737569c713761",
+  "checks": [
+    "binary64 separate multiply/add replay; initial and final arrays and all rounded trial states",
+    "physical box and fixed face availability; trial and update rosters and decision reasons",
+    "wide RHS replay; saved-operand contractions and endpoint action comparisons",
+    "complete native catalog contexts, closed hashes and reaped commands",
+    "no full stationarity or first-arrival claims"
+  ],
+  "created_utc": "2026-10-10T13:29:40.060260Z",
+  "native_execution_sha256": "a5a18b615323322f1eccde09c939751f6505070e914d22038a84a41cdb8e7560",
+  "native_prepared_sha256": "f692174dcaa259d219b58e1339e13da8658572e7ad1dd63578b6e293b2ae6bc4",
+  "native_summary_sha256": "48ab9b0ce2c9547c195176b10fb1a796bf37bf0c1e018cf07640f5bf85f322ce",
+  "outer_reaping_sha256": "bcb39e133e6dbf4b28c36cc1f247c81f8654d56882b152e66be8c3802ed1b668",
+  "reviewer": "root",
+  "scope": "Read full checker source, geometry and scalar replay, native joins, final flags, explicit intermediate-operand limitations; no evaluator calls. Scientific audit independently read source.",
+  "status": "passed"
+}

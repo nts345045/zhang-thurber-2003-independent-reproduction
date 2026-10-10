@@ -1,0 +1,12 @@
+--- data/development/cmj_tangent_step_source_002/source/diagnostics/trilinear_action_bounds.py
++++ data/development/hayward_cmj_final_tangent_support_001/source/diagnostics/trilinear_action_bounds.py
+@@ -273,7 +273,8 @@
+     for (side,axis),term in zip(slots,medium):
+         geometric = mul(div(point((-1 if side == 0 else 1)*e[axis]),length),total)
+         result[side][axis] = rounded(sub(geometric,mul(length,term)),settings['bits'])
+-    return dict(components=result,blocked_axes=sorted(blocked))
++    return dict(components=result,blocked_axes=sorted(blocked),
++                action=rounded(mul(length,total),settings['bits']))
+ 
+ 
+ def face_jumps(grid, a, b):
