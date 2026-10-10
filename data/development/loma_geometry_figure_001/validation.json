@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "scope": "Independent saved-file checks and visual inspection; no numerical solver calls",
+  "script_sha256": "0327cb211ca77d57944eb515c542ae0efc7473481c77d50630c53128d81ed2dd",
+  "manifest_sha256": "0a6d04b0f8858ab813faf2e199e733662c38149fb054cf6853c3769823aa11f1",
+  "all_input_pins_verified": 13,
+  "all_output_pins_verified": 9,
+  "rebuild_directory": "tmp/loma_geometry_figure_rebuild_002",
+  "rebuild_manifest_sha256": "5072c97d6043f967bef7f113645edb00c395f00e2b2788cb3917d4c0fe4d4ad4",
+  "rebuild_from_package_inputs": true,
+  "simulation_archive_required": false,
+  "rebuild_output_hashes_exact": {
+    "README.md": "c9a3540bcd3e10884860c406700dd8400650693cf085ce0d5d4aed22965cb153",
+    "figure02_authoritative_geometry_candidate.pdf": "b51424019ac0e61199dbfbb99624ef428c96a421c1e3b3abf544e09fa2f51d58",
+    "figure02_authoritative_geometry_candidate.png": "9959b21a03fcbe2897c471ebae6e16f2b793f74d5b10e9097f49469b199640af",
+    "inputs/independent_simulation_review.json": "e4e2745f0fc4bc44ba32906bb6c1fe224c8e9dab364c61b276f05fa3ea5d60c7",
+    "inputs/initial_grid.csv": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+    "inputs/preparation_manifest.json": "951464e9b44c536b6fb241b45e046053b2b73d0c338a31b25c4cf0f66d20c90a",
+    "inputs/simulation_execution.json": "524d2ee8787b74c5b988624fb0381f2570a4a9667e71e03fd364546965b8e2bd",
+    "inputs/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "inputs/truth_events.csv": "45e2682389d1a21d7389c132dced4c98f11872b5c98909b53be44c12a254285e"
+  },
+  "identities": {
+    "unique_events": 724,
+    "unique_origins": 724,
+    "unique_receiver_epochs": 52,
+    "full_fdsn_codes_checked": 52,
+    "preserved_blank_locations": 40,
+    "provider_channel_ids_absent_and_preserved": 52
+  },
+  "complete_saved_grid_cartesian_product": true,
+  "visual_review": {
+    "inspected_png": "data/development/loma_geometry_figure_001/figure02_authoritative_geometry_candidate.png",
+    "status": "passed",
+    "notes": "Equal distance scales; all plotted cohorts within axes; legend and footer separated; title, axis labels, symbols, counts, and partial/input-geometry wording legible.",
+    "prior_layout_attempt": "tmp/loma_geometry_visual_attempt_001; retained because its third legend row overlapped the footer"
+  },
+  "pdfinfo": "Creator:        Matplotlib v3.11.2, https://matplotlib.org\nProducer:       Matplotlib pdf backend v3.11.2\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          1\nEncrypted:      no\nPage size:      460.8 x 619.2 pts\nPage rot:       0\nFile size:      32722 bytes\nOptimized:      no\nPDF version:    1.4\n",
+  "limitations": [
+    "Exact manuscript cohort, projection, and map layout are unknown.",
+    "Snapshot and selection windows are disclosed independent choices.",
+    "A -1 km top level extends the documented five depth levels.",
+    "This figure establishes input geometry only, not inversion or recovery results."
+  ]
+}

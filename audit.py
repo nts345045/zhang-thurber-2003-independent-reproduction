@@ -100,6 +100,36 @@ if geometry_path.exists():
                                  'CMW1 historical elevation interpretation and conflicting borehole wellhead tables are documented. '
                                  'This input-geometry panel does not establish an inferred velocity model.')
 
+loma_geometry_dir = Path('data/development/loma_geometry_figure_001')
+if (loma_geometry_dir / 'manifest.json').exists():
+    geometry = json.loads((loma_geometry_dir / 'manifest.json').read_text())
+    review = json.loads((loma_geometry_dir / 'validation.json').read_text())
+    assert geometry['status'] == review['status'] == 'passed'
+    assert review['manifest_sha256'] == hashlib.sha256((loma_geometry_dir / 'manifest.json').read_bytes()).hexdigest()
+    for name, digest in geometry['output_sha256'].items():
+        assert hashlib.sha256((loma_geometry_dir / name).read_bytes()).hexdigest() == digest, name
+    for name, digest in geometry['input_sha256'].items():
+        path = Path(name)
+        if path.parent == Path('data/loma_lom_analytic_001'):
+            path = loma_geometry_dir / 'inputs' / path.name
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == digest, str(path)
+    assert review['script_sha256'] == hashlib.sha256(Path('diagnostics/plot_loma_geometry.py').read_bytes()).hexdigest()
+    for row in rows:
+        if row['panel'] == '2':
+            row['parameters'] = ('724 catalog-defined sources, 52 identified NC EHZ receiver epochs; '
+                                 'documented 8x6 horizontal grid, five depth levels extended by z=-1 km')
+            row['data_command'] = ('python3 diagnostics/plot_loma_geometry.py '
+                                   '--output tmp/FRESH_loma_geometry')
+            row['plot_command'] = row['data_command']
+            row['status'] = 'partially reproduced'
+            row['limitation'] = ('The authoritative subset replaces the random geometry in this panel. '
+                                 'Exact manuscript cohort, projection and layout are unknown; selection, '
+                                 'receiver snapshot and rotation are disclosed independent choices. '
+                                 'The extra -1 km grid level contains the receivers. All native identities '
+                                 'and epochs are preserved; no digitization used. The one command copies '
+                                 'verified saved native tables and creates both plots; it runs no inversion. This is input geometry, '
+                                 'not recovery. Figure 3 retains the historical random-layout calculations.')
+
 # The plotting helper writes these metrics only after all field figures finish.
 # Require each panel's own outputs as well, and reject CSVs changed since that
 # completed plot run. Merely acquiring data does not complete an inverse panel.

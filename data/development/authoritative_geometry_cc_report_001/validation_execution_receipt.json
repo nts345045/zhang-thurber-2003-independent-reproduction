@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "observed_utc": "2026-10-10T20:46:51.458764Z",
+  "owner": "/root/earthscope_discovery",
+  "command": [
+    "/usr/libexec/platform-python3.6",
+    "-B",
+    "data/development/authoritative_geometry_cc_report_001/validate.py"
+  ],
+  "tool_session_id": 50935,
+  "launch_tool_chunk_id": "02a78c",
+  "terminal_chunk_id": "cbbf7d",
+  "return_code": 0,
+  "observed_command_exit_code": 0,
+  "child_reaped": true,
+  "checker_sha256": "0bc9184cee4cd17c3305286ceac7becabe70d61e39ec11c74100dacb3e4cd036",
+  "validation_sha256": "cedfaedef070a9e22e2b5902f434a5bfc98164822ec9aab0840283f250335788",
+  "report_sha256": "be24ec48fa83c23a3ad3f6f5689050aaa59368d271f60ceee2c39aecfda58fc5",
+  "output_sha256": {
+    "validation.json": "cedfaedef070a9e22e2b5902f434a5bfc98164822ec9aab0840283f250335788",
+    "path_inventory.json": "249a0d843e12341b52c7421b381ab336a36536c16020e3a1e8eca07d19eda755",
+    "validation_stdout.txt": "bb8ee9bdc4df5a0142edab1f01c203ad943e70df2e5441c685b748cc511c9ef4",
+    "validation_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "independent_source_read": {
+    "reviewer": "/root/scientific_audit",
+    "source_read_tool": "0ecd33",
+    "schema_readback_tool": "321e5f",
+    "scope": "Source and closed schema only, no duplicate validation execution."
+  }
+}

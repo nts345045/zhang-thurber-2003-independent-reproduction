@@ -157,16 +157,24 @@ $z=(0,3,7,11,16)$ km. The forward grid adds the profile breakpoints
 $x=1$ and 5 km. This prevents the data generator from using exactly the
 same coarse representation as the inverse problem.
 
-We generate 120 sources and 32 surface stations independently with seed
+The historical recovery calculations use 120 sources and 32 surface stations
+generated independently with seed
 2003. Half the sources sample a 12 km wide region around the trough, and
 half sample a broader 40 km interval; all sample the model volume in depth
-and along strike. Stations use a jittered surface array. Figure~\ref{fig:geometry}
-shows the complete generated geometry. These are not the paper's Loma
-Prieta observations. The starting velocity is homogeneous at 5.5 km/s,
+and along strike. Stations use a jittered surface array. These are not the
+paper's Loma Prieta observations. The saved recovery panels below retain
+this experimental layout. The starting velocity is homogeneous at 5.5 km/s,
 substituting for the paper's referenced layered starting model, whose values
 are not tabulated in the target article. Independent starting source-coordinate
 errors have standard deviation 0.6 km, with an initial depth restriction
 of 0.5--15.5 km. Starting origin-time errors have standard deviation 0.05 s.
+
+Figure~\ref{fig:geometry} now shows the independently retrieved authoritative
+Loma Prieta subset prepared for replacement calculations: 724 catalog-derived
+sources and 52 receiver epochs. Its horizontal grid follows the written
+caption; a $z=-1$ km level extends the five documented depths to contain the
+receivers. The exact study cohort and projection remain unknown. This new
+input-geometry plot does not imply completion of replacement recovery runs.
 
 We round forward travel times to 0.01 s, add independent 0.04 s Gaussian
 pick noise and a station-constant uniform bias between $-0.3$ and $0.3$ s.
@@ -208,11 +216,16 @@ colors show velocity in km/s. All plotted samples are saved C++ output.
 The trough occupies $x=1$--5 km and has velocity 4 km/s.}
 \label{fig:true}\end{figure}
 \begin{figure}[p]\centering
-\includegraphics[width=0.78\textwidth]{figure02.pdf}
-\caption{Partial reconstruction of manuscript Figure 2. Crosses are the
-written inversion grid, triangles are independent stations, and dots are
-independent true sources. The coordinates are experimental design choices,
-not estimates extracted from the published map.}
+\includegraphics[width=0.78\textwidth]{../data/development/loma_geometry_figure_001/figure02_authoritative_geometry_candidate.pdf}
+\caption{Partial reconstruction of manuscript Figure 2 using the documented
+authoritative subset. Crosses show 48 horizontal grid nodes, open triangles
+show 52 identified receiver epochs, and dots show 724 catalog-derived
+simulation sources. The saved coordinates use an independently chosen local
+projection; no fault trace or published coordinates were digitized. Complete
+event/origin and station/channel/epoch identities accompany the saved tables.
+The study cohort and map layout remain unmatched. This figure shows input
+geometry, not an inverse result; the historical recovery panels use the
+earlier random layout.}
 \label{fig:geometry}\end{figure}
 
 \section{Validation and numerical results}
