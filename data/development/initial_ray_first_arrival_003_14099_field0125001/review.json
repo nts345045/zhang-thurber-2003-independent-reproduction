@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "native_identity": {
+    "observation_index": "14099",
+    "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+    "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+    "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+    "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+    "channel_seed_id": "NC.JJR..EHZ",
+    "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+    "metadata_epoch_start": "1998-05-04T18:00:00",
+    "metadata_epoch_end": "1999-02-18T18:15:00",
+    "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+    "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786"
+  },
+  "field_spacing_km": 0.125,
+  "path_spacing_km": 0.03125,
+  "max_updates": 1000,
+  "observer_exact_parity_cases": 2,
+  "all_original_diagnosis_hashes_verified": 25,
+  "all_branch_review_hashes_verified": 6,
+  "source_hashes_identical_to_field05": true,
+  "native_inputs_identical_to_field05": true,
+  "reference_identical_to_field05": true,
+  "straight_control_identical_to_field05": true,
+  "selected_case": {
+    "run_id": "fmm_0.031250_1000",
+    "initialization": "fmm",
+    "path_spacing_km": "0.03125",
+    "max_updates": "1000",
+    "updates": "6",
+    "converged": "1",
+    "time_s": "10.775535731775243",
+    "projected_gradient": "9.4927112274837081e-08",
+    "path_max_z_km": 10.896103188293324,
+    "nearest_turning_depth_branch_index": 0,
+    "time_minus_nearest_branch_s": 3.328084474674142e-07,
+    "time_minus_first_arrival_s": 3.328084474674142e-07,
+    "source_norm_error_nearest_branch_s_per_km": 5.9793517382573355e-09,
+    "source_norm_error_first_arrival_s_per_km": 5.9793517382573355e-09,
+    "quadrature_minus_exact_saved_path_s": 3.280622301593539e-14
+  },
+  "maximum_absolute_quadrature_minus_exact_saved_path_s": 3.280622301593539e-14,
+  "maximum_exact_fixed_path_source_fd_error_at1e_minus5_s_per_km": 3.284416419391256e-09,
+  "conclusion": "The FMM start changes to the earlier branch at 10.896 km. Its excess time is 0.332808 microseconds and its source-vector error is 5.98e-9 s/km against that branch. The straight start remains on the slower branch. This resolves the identified branch failure in this diagnostic; it does not establish a sufficient field spacing for every ray.",
+  "limitations": [
+    "Single identified ray; does not establish a sufficient field spacing for full support.",
+    "Complete branch enumeration uses ordinary floating-point time ranking.",
+    "No production changes or full preflight were made."
+  ],
+  "documentation_sha256": {
+    "README.md": "d7504efc12d0972626b6ffe66e20bbe8ada3c9a4f35974122ed1291ab7e79f9a"
+  },
+  "independent_source_and_claim_review": "Scientific auditor found no material identity, retained-control, parity or claim-strength defect. Field0.25 remains deep; field0.125 reaches earlier branch. Sufficiency is limited to this ray."
+}

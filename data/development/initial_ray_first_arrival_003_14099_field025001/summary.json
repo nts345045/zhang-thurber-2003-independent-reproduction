@@ -1,0 +1,138 @@
+{
+  "status": "completed_with_original_flags_preserved",
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-fopenmp",
+        "-DAUDIT_PRODUCTION_HYBRID",
+        "-DAUDIT_CONE_METRIC",
+        "data/development/initial_ray_first_arrival_003_14099_field025001/source/diagnostics/check_ray_stopping.cpp",
+        "-lstdc++fs",
+        "-o",
+        "tmp/initial_ray_diagnosis/initial_ray_first_arrival_003_14099_field025001/check"
+      ],
+      "status": "completed",
+      "pid": 11923,
+      "exit_code": 0,
+      "seconds": 26.030035257339478
+    },
+    {
+      "name": "spacing0_031250",
+      "argv": [
+        "tmp/initial_ray_diagnosis/initial_ray_first_arrival_003_14099_field025001/check",
+        "data/development/initial_ray_first_arrival_003_14099_field025001/initial_grid.csv",
+        "data/development/initial_ray_first_arrival_003_14099_field025001/identified_ray.csv",
+        "data/development/initial_ray_first_arrival_003_14099_field025001/spacing0_031250",
+        "1000",
+        "0.03125",
+        "0.25"
+      ],
+      "status": "completed",
+      "pid": 12193,
+      "exit_code": 0,
+      "seconds": 27.510438203811646
+    }
+  ],
+  "observation_row": 14099,
+  "scope": "One frozen identified initial ray; observation hooks only; no inversion or production changes",
+  "input_sha256": {
+    "data/hayward_first_arrival_003/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward_first_arrival_003/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward_first_arrival_003/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/hayward_first_arrival_003/initial_linearization_rows.csv": "ba2fa167470b4de27c786a2aeaae65637d4d8b4c34276eaaad108e4cf11d9160"
+  },
+  "source_commit": "45dc91890ccb53913964bc668aafc27d2650a0ec",
+  "source_sha256": {
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_ray_stopping.cpp": "8e0088b01318f0dceadc502b700014412d19d623b089da512034b9e15489f238",
+    "diagnostics/run_ray_stopping.py": "b39f64a35ab3920d57be3336a3234a0ecda1f91b0a9147d900ae069eb7deb3ec",
+    "diagnostics/first_arrival_fmm.hpp": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+    "diagnostics/observed_optimizer.hpp": "34638c1996feaec7c0bc5df2da3b826e36ea1088c431a3d025d4de4e1ddebcf3",
+    "diagnostics/run_initial_ray_diagnosis.py": "c6c252d5573c18755444a2d44f03f9caa51b9d8866476eab51ac6fcd956aee5d"
+  },
+  "binary_sha256": "7e05369e934b432c0c930b7604be91a7a57a1de99875013cea60e6208967a0db",
+  "results": [
+    {
+      "run_id": "straight_0.031250_1000",
+      "observation_index": "14099",
+      "initialization": "straight",
+      "path_spacing_km": "0.03125",
+      "max_updates": "1000",
+      "updates": "12",
+      "converged": "1",
+      "time_s": "10.777721304353879",
+      "projected_gradient": "1.893780038572956e-07",
+      "raw_gradient": "1.893780038572956e-07",
+      "merged_nodes": "0",
+      "path_nodes": "1917",
+      "source_dx": "0.082174549644821196",
+      "source_dy": "0.13316646470467555",
+      "source_dz": "-0.061756286810671933",
+      "logged_matches_unobserved_variant": "1",
+      "field_spacing_km": 0.25
+    },
+    {
+      "run_id": "fmm_0.031250_1000",
+      "observation_index": "14099",
+      "initialization": "fmm",
+      "path_spacing_km": "0.03125",
+      "max_updates": "1000",
+      "updates": "8",
+      "converged": "1",
+      "time_s": "10.777721051986752",
+      "projected_gradient": "1.7765761222756277e-07",
+      "raw_gradient": "1.7765761222756277e-07",
+      "merged_nodes": "0",
+      "path_nodes": "2029",
+      "source_dx": "0.082174551025869166",
+      "source_dy": "0.13316646695047266",
+      "source_dz": "-0.061756279826249628",
+      "logged_matches_unobserved_variant": "1",
+      "field_spacing_km": 0.25
+    }
+  ],
+  "selected_initial_ray_matches": null,
+  "limitations": [
+    "One identified initial ray; no global first-arrival claim.",
+    "The higher iteration budget is a diagnostic only.",
+    "Both starts are recomputed from the same original seed; no interrupted BFGS state is resumed.",
+    "CSV rows join native identities and epochs through identified_ray.csv and observation_index."
+  ],
+  "output_sha256": {
+    "identified_ray.csv": "b465ceb1086f0d6308ff401076e2d781631698fd817273e1221c1722133ea279",
+    "initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "instrumentation.diff": "0a3e19a07e7fa2b29af50bb03fbc4466e4f0e20c4a6449b8d11a245177975773",
+    "driver_adaptation.diff": "a98cbcf82c9dd2b85ff3fd94bc0a2df2cdbcfebeace84464d7633c8792724271",
+    "compile_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spacing0_031250_stdout.log": "5f15ee79fcc7da03c02089bda83dfea0045e96be70fd16fab944a2d8427b5c31",
+    "spacing0_031250_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "source/src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/diagnostics/check_ray_stopping.cpp": "8e0088b01318f0dceadc502b700014412d19d623b089da512034b9e15489f238",
+    "source/diagnostics/run_ray_stopping.py": "b39f64a35ab3920d57be3336a3234a0ecda1f91b0a9147d900ae069eb7deb3ec",
+    "source/diagnostics/first_arrival_fmm.hpp": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+    "source/diagnostics/observed_optimizer.hpp": "34638c1996feaec7c0bc5df2da3b826e36ea1088c431a3d025d4de4e1ddebcf3",
+    "source/diagnostics/run_initial_ray_diagnosis.py": "c6c252d5573c18755444a2d44f03f9caa51b9d8866476eab51ac6fcd956aee5d",
+    "spacing0_031250/results.csv": "932bb3515a177976b6da8f83d9b7be52158512fa20ca3a458925535b8ce19aca",
+    "spacing0_031250/history.csv": "88621f2735e94e62e75a2e899dc6f87ef76a88a66a907b1b5ff01c0f06eea613",
+    "spacing0_031250/paths.csv": "467e3d07d5119d78f3557f48dac11f3f27671c2e17a211d5498fd9c496428302",
+    "spacing0_031250/path_gradient_checks.csv": "c9a03fc105d9e892d7dab4b304cb9ac2980db594f623c6dd5f0966341b0b8ead",
+    "spacing0_031250/cone_metric.csv": "aa55ac410a6a59908c1b2f5c57963efe6655117e8a259e607907fa61b5306920"
+  }
+}
