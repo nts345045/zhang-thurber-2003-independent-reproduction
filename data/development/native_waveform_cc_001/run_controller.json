@@ -1,0 +1,42 @@
+{
+  "status": "completed",
+  "command": [
+    "tmp/waveform_env/bin/python",
+    "diagnostics/run_native_waveform_cc.py",
+    "--samples-summary",
+    "data/authoritative/waveforms/cohort_samples_002/samples_002.json",
+    "--samples-review",
+    "data/authoritative/waveforms/cohort_samples_002/independent_samples_review.json",
+    "--plan",
+    "data/authoritative/waveforms/cohort_plan_001/summary.json",
+    "--events",
+    "data/hayward/initial_events.csv",
+    "--output",
+    "data/development/native_waveform_cc_001"
+  ],
+  "explicit_environment": {
+    "MPLCONFIGDIR": "tmp/waveform_cache/mpl",
+    "XDG_CACHE_HOME": "tmp/waveform_cache/xdg",
+    "TMPDIR": "tmp/waveform_cache/tmp",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "output": "data/development/native_waveform_cc_001",
+  "scope": "Offline native measurements only; no network, dt.cc export or solver import",
+  "runner_sha256": "54cd6533bac62a7f8d6b7b433fbd7782c14fd743b2d20b6f2059a1d71a255837",
+  "samples_summary_sha256": "48ce35efd1cbec40bb03e4df5235cecc8f892e8111c0847f84ea0c86846ba6ab",
+  "samples_review_sha256": "48ce35efd1cbec40bb03e4df5235cecc8f892e8111c0847f84ea0c86846ba6ab",
+  "controller_pid": 131491,
+  "launched_utc": "2026-10-10T04:59:14.449154+00:00",
+  "started_utc": "2026-10-10T04:59:14.544179+00:00",
+  "supervised_pid": 131492,
+  "returncode": 0,
+  "finished_utc": "2026-10-10T04:59:54.664611+00:00",
+  "output_sha256": {
+    "summary.json": "8a97e3c31d4a8db25c2c63b448addbfbfe258d94a17ecfa1663e5facb5772021",
+    "execution.json": "65a4e39b43b437f0060b008248198646369e1bc49f9a3190ad785e48e3fe3e5d",
+    "run_stdout.log": "c88fcfb71f17f33d3a6fddc898d1a0fce937de38e48c022e6b7b0f0ad15be925",
+    "run_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_resources.txt": "be42f0c7bd6789d44eda25d820f8e55f79995e30ca48587cadfdb6d3961b739d"
+  }
+}

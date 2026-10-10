@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T04:59:14.963584+00:00",
+  "network_requests": 0,
+  "command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/waveform_env/bin/python",
+    "diagnostics/run_native_waveform_cc.py",
+    "--samples-summary",
+    "data/authoritative/waveforms/cohort_samples_002/samples_002.json",
+    "--samples-review",
+    "data/authoritative/waveforms/cohort_samples_002/independent_samples_review.json",
+    "--plan",
+    "data/authoritative/waveforms/cohort_plan_001/summary.json",
+    "--events",
+    "data/hayward/initial_events.csv",
+    "--output",
+    "data/development/native_waveform_cc_001"
+  ],
+  "finished_utc": "2026-10-10T04:59:53.896926+00:00",
+  "summary_sha256": "8a97e3c31d4a8db25c2c63b448addbfbfe258d94a17ecfa1663e5facb5772021"
+}
