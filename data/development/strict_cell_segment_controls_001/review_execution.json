@@ -1,0 +1,29 @@
+{
+  "status": "completed_passed",
+  "owner": "earthscope_discovery",
+  "recorded_utc": "2026-10-10 14:34:39 UTC",
+  "command": [
+    "/usr/libexec/platform-python3.6",
+    "-B",
+    "data/development/strict_cell_segment_controls_001/review_saved.py"
+  ],
+  "working_directory": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration",
+  "checker_sha256": "d7c95ecbfceaff0cd7cb401f7deda8ebe9cb36b99af64d9288a4ba66728e1be0",
+  "review_sha256": "51f9416cbba5d35938be42203d2529259eb3fc2a33705bc9f173e4121db06dab",
+  "summary_sha256": "a5c23ccdbcde56ee800c9c4faba204baa0dc15f55732d1958780ef50f24d63a6",
+  "native_execution_sha256": "fa3b52af28d6d7549bc38c29fc31634768a3c6c24f55df91d27af7adbcff701d",
+  "outer_reaping_sha256": "f3e44155a4f571f36df57556ba368c33a43cfd1e03f681a1249628ac60b8dc77",
+  "return_code": 0,
+  "completed_synchronously": true,
+  "tool_result": {
+    "chunk_id": "e9e743",
+    "wall_time_seconds": 0.687333061,
+    "exit_code": 0,
+    "original_token_count": 99,
+    "output": "{\"status\": \"passed\", \"checks\": 3715, \"pins\": 80, \"review_sha256\": \"51f9416cbba5d35938be42203d2529259eb3fc2a33705bc9f173e4121db06dab\", \"mismatch_counts\": {\"below_displacement_cutoff\": 0, \"above_displacement_cutoff\": 0, \"below_endpoint_cutoff\": 0, \"above_endpoint_cutoff\": 0, \"translated_nextafter\": 4, \"constant_velocity\": 0, \"translated_reversal\": 4, \"aligned_face\": 0, \"genuine_trilinear\": 0}}\n"
+  },
+  "evaluator_calls": 0,
+  "oracle_calls": 0,
+  "compiler_calls": 0,
+  "numerical_integrations": 0
+}
