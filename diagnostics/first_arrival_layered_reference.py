@@ -104,6 +104,10 @@ def enumerate_arrivals(depths, speeds, source, receiver, bounds=None,
             source_derivative_s_per_km=[-p * dx / r if r else 0., -p * dy / r if r else 0., -normal_sign * normal],
             distance_residual_km=predicted - r, turning_depth_km=float(turn) if turn is not None else None,
             certificate=certificate)
+        if u is not None:
+            # Retain the parameter used in the rational leg calculation. Using
+            # 1 / rounded p in a later sampler can lose a near-critical offset.
+            candidate['phase_velocity_exact_ratio'] = [str(u.numerator), str(u.denominator)]
         candidate.update(extra)
         result['candidates'].append(candidate)
 
@@ -134,19 +138,27 @@ def enumerate_arrivals(depths, speeds, source, receiver, bounds=None,
             if relation is None:
                 result['unresolved'].append(dict(reason='Direct distance indistinguishable from a critical limit'))
             elif relation <= 0:
-                if relation == 0:
-                    u = vmax
-                else:
-                    def value(k):
-                        if k == 0:
-                            return -r
-                        if k == 1:
-                            return math.inf if limit == math.inf else float(limit.hi if isinstance(limit, Interval) else limit) - r
-                        return leg(profile, shallow, deep, vmax / Q(k))[0] - r
-                    k = brentq(value, 0., 1., xtol=float(np.nextafter(0., 1.)), rtol=4 * np.finfo(float).eps)
-                    u = vmax / Q(k)
-                x, time = leg(profile, shallow, deep, u)
-                add('direct', u, time, x, sign, certificate='Strictly increasing direct distance in p; full interval speed bound')
+                try:
+                    if relation == 0:
+                        u = vmax
+                    else:
+                        # X decreases with delta=u-vmax. Exact rational addition
+                        # preserves offsets too small to store in k=p*vmax near 1.
+                        def value(delta):
+                            if delta == 0:
+                                return math.inf if limit == math.inf else float(limit.hi if isinstance(limit, Interval) else limit) - r
+                            return leg(profile, shallow, deep, vmax + Q(delta))[0] - r
+                        upper = float(vmax)
+                        while value(upper) > 0:
+                            upper *= 2
+                            if not math.isfinite(upper):
+                                raise ArithmeticError('Direct offset bracket overflow')
+                        delta = brentq(value, 0., upper, xtol=float(np.nextafter(0., 1.)), rtol=4 * np.finfo(float).eps)
+                        u = vmax + Q(delta)
+                    x, time = leg(profile, shallow, deep, u)
+                    add('direct', u, time, x, sign, certificate='Strictly increasing direct distance in p; full interval speed bound')
+                except (ArithmeticError, ValueError, RuntimeError) as error:
+                    result['unresolved'].append(dict(reason='Direct-root arithmetic unresolved', exception=str(error)))
 
         for direction in (1, -1):
             oriented = profile if direction == 1 else [(-z, v) for z, v in reversed(profile)]

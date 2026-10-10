@@ -1,0 +1,155 @@
+{
+  "status": "complete",
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/compare_loma_layered_reference.py --output data/development/loma_geometry_preflight/layered_reference_delta_002",
+  "scope": "All104 declared identified geometry samples; no truth generation, inversion, gate change or production solver substitution",
+  "reference_counts": {
+    "production_saved_converged": 73,
+    "refined_saved_converged": 73,
+    "reference_complete": 104,
+    "reference_valid": 104,
+    "near_ties": 0,
+    "branch_direct": 73,
+    "branch_critical_maximum_or_plateau": 23,
+    "branch_turning": 6,
+    "branch_flat_direct": 2
+  },
+  "profile_x_velocity_km_km_s": [
+    [
+      -35.0,
+      6.0
+    ],
+    [
+      -15.0,
+      6.0
+    ],
+    [
+      0.0,
+      6.0
+    ],
+    [
+      1.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      4.0,
+      4.0
+    ],
+    [
+      5.0,
+      4.0
+    ],
+    [
+      6.0,
+      5.0
+    ],
+    [
+      20.0,
+      5.4375
+    ],
+    [
+      35.0,
+      5.90625
+    ]
+  ],
+  "original_box_km": [
+    [
+      -35.0,
+      35.0
+    ],
+    [
+      -60.0,
+      40.0
+    ],
+    [
+      -1.0,
+      16.0
+    ]
+  ],
+  "coordinate_permutation": "Reference (x,y,z) = original (y,z,x); derivatives are mapped back in comparison tables",
+  "input_source_sha256": {
+    "data/loma_lom_001/authoritative_geometry": "a80bab4f2cb737add7a2a6a437decfc18869c1bff22c364e3a0f6131f1d4d817",
+    "data/loma_lom_001/initial_grid.csv": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+    "data/loma_lom_001/preflight.cfg": "3264c2c3976793a7b4acb7e917790a0ef1a96994f786feaa998a8f3a907a7867",
+    "data/loma_lom_001/preparation_manifest.json": "eca3bfb01d15ddc8b0850486a82669cf48a85594814c5e5e43dea3b9226552e9",
+    "data/loma_lom_001/ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "data/loma_lom_001/run.cfg": "d28f691c27559c0fd45f99c5e107f35a343c15e4bf371065716814102352a6b2",
+    "data/loma_lom_001/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "data/loma_lom_001/truth_events.csv": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3",
+    "data/loma_lom_001/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "data/loma_lom_001/geometry_truth_ray_convergence.csv": "c57710a848860c3949807a71ea2c74c953875c130d51612d883563443a9c3f9d",
+    "data/loma_lom_001/geometry_truth_ray_derivatives.csv": "dadc2ef76634d849c0b8f609ed0cf53e5411e15e60f3fe7601de27f2c3ad1fb9",
+    "data/loma_lom_001/geometry_truth_ray_identifiers.csv": "a57151341b225e5e54ffe43553713e7ce77e2cc3e3c3ed9e5cacaadf177f7671",
+    "diagnostics/compare_loma_layered_reference.py": "7a144fae05c00367928a48c26b70e326bb2e37b29348a245df56351d9012980f",
+    "diagnostics/first_arrival_layered_reference.py": "2bf7fb9cb6adc477ae5f807267a7966247d95a68fe5b97a45565b685602da432",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "data/development/loma_geometry_preflight/001/summary.json": "57d8b30ba3b9a053de9842cdd2cb63834b615575050046bf7ce862bbd9d32be0"
+  },
+  "comparison": {
+    "production": {
+      "count": 104,
+      "minimum": -4.11404244005098e-12,
+      "maximum": 0.037158685102355093,
+      "median": 1.6552231290045682e-05,
+      "rms": 0.00487858539449065
+    },
+    "refined": {
+      "count": 104,
+      "minimum": -4.11404244005098e-12,
+      "maximum": 0.00018656906189207234,
+      "median": 8.307067820290115e-06,
+      "rms": 6.736562579387794e-05
+    }
+  },
+  "derivative_comparison": {
+    "production": {
+      "count": 24,
+      "minimum": -3.825387248873602e-05,
+      "maximum": 7.228043901752468e-05,
+      "median": 5.5666982166219237e-08,
+      "rms": 1.998894399539437e-05
+    },
+    "refined": {
+      "count": 24,
+      "minimum": -5.289863048874022e-05,
+      "maximum": 4.8115307017537745e-05,
+      "median": 5.027579608185562e-08,
+      "rms": 1.4896802472850562e-05
+    }
+  },
+  "original_metadata_preserved": true,
+  "all104_rows_preserved": true,
+  "saved_derivative_components": 24,
+  "limitations": [
+    "Candidate families suffice for minimum time only when enumeration is complete; equal maxima can admit a continuum of paths.",
+    "Time ordering is floating point, not an interval minimum-time certificate.",
+    "Tied first arrivals retain branch derivatives and may not have one ordinary source gradient.",
+    "Only24 source derivative components are saved by the original geometry diagnostic; none are invented for other rays.",
+    "Saved production/refined numbers retain their12-significant-digit serialization and original local flags.",
+    "The reported native source coordinates are catalog-defined simulation geometry, not inferred ground truth."
+  ],
+  "output_sha256": {
+    "comparison.csv": "2141c759b595e5d327e2240efb4466b38cf7d93b6698e5ffda7ff7ec51b61528",
+    "references.jsonl": "25c8f298443c9eedd34845cba3805f232c9bde0cbe23dfb0ee53bd3dee504735",
+    "derivative_comparison.csv": "25a93fa483a58598dfd440039a725c3ec97402c4b3e24cda29b0b2e6d01ff939",
+    "inputs/authoritative_geometry": "a80bab4f2cb737add7a2a6a437decfc18869c1bff22c364e3a0f6131f1d4d817",
+    "inputs/initial_grid.csv": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+    "inputs/preflight.cfg": "3264c2c3976793a7b4acb7e917790a0ef1a96994f786feaa998a8f3a907a7867",
+    "inputs/preparation_manifest.json": "eca3bfb01d15ddc8b0850486a82669cf48a85594814c5e5e43dea3b9226552e9",
+    "inputs/ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "inputs/run.cfg": "d28f691c27559c0fd45f99c5e107f35a343c15e4bf371065716814102352a6b2",
+    "inputs/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "inputs/truth_events.csv": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3",
+    "inputs/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "inputs/geometry_truth_ray_convergence.csv": "c57710a848860c3949807a71ea2c74c953875c130d51612d883563443a9c3f9d",
+    "inputs/geometry_truth_ray_derivatives.csv": "dadc2ef76634d849c0b8f609ed0cf53e5411e15e60f3fe7601de27f2c3ad1fb9",
+    "inputs/geometry_truth_ray_identifiers.csv": "a57151341b225e5e54ffe43553713e7ce77e2cc3e3c3ed9e5cacaadf177f7671",
+    "inputs/terminal_geometry_summary.json": "57d8b30ba3b9a053de9842cdd2cb63834b615575050046bf7ce862bbd9d32be0",
+    "source/compare_loma_layered_reference.py": "7a144fae05c00367928a48c26b70e326bb2e37b29348a245df56351d9012980f",
+    "source/first_arrival_layered_reference.py": "2bf7fb9cb6adc477ae5f807267a7966247d95a68fe5b97a45565b685602da432",
+    "source/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  }
+}

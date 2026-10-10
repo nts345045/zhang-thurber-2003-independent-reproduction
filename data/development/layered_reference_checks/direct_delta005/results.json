@@ -1,0 +1,3817 @@
+{
+  "scope": "Invented profiles/endpoints and saved monotone invented controls; no observational rays",
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/check_layered_reference.py --output data/development/layered_reference_checks/direct_delta005",
+  "checks": [
+    {
+      "name": "constant_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "constant_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "constant_reciprocity",
+      "passed": true,
+      "value": 0.7810249675906654,
+      "expected": 0.7810249675906654,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "constant_finite_normal_domain",
+      "passed": true
+    },
+    {
+      "name": "constant_speed_bounds",
+      "passed": true
+    },
+    {
+      "name": "constant_consistent_first_derivatives",
+      "passed": true
+    },
+    {
+      "name": "constant_derivative_complete_0",
+      "passed": true
+    },
+    {
+      "name": "constant_source_derivative_0",
+      "passed": true,
+      "value": -0.10242950394631678,
+      "expected": -0.10242950395089599,
+      "error": 4.579212009581113e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "constant_derivative_complete_1",
+      "passed": true
+    },
+    {
+      "name": "constant_source_derivative_1",
+      "passed": true,
+      "value": -0.15364425591947517,
+      "expected": -0.15364425591801734,
+      "error": 1.457833853635293e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "constant_derivative_complete_2",
+      "passed": true
+    },
+    {
+      "name": "constant_source_derivative_2",
+      "passed": true,
+      "value": -0.07682212795973759,
+      "expected": -0.07682212795900867,
+      "error": 7.289169268176465e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "constant_exact",
+      "passed": true,
+      "value": 0.7810249675906654,
+      "expected": 0.7810249675906654,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "affine_0.2_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "affine_0.2_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "affine_0.2_reciprocity",
+      "passed": true,
+      "value": 1.9584002141043748,
+      "expected": 1.9584002141043748,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "affine_0.2_finite_normal_domain",
+      "passed": true
+    },
+    {
+      "name": "affine_0.2_speed_bounds",
+      "passed": true
+    },
+    {
+      "name": "affine_0.2_consistent_first_derivatives",
+      "passed": true
+    },
+    {
+      "name": "affine_0.2_derivative_complete_0",
+      "passed": true
+    },
+    {
+      "name": "affine_0.2_source_derivative_0",
+      "passed": true,
+      "value": -0.1531676354812837,
+      "expected": -0.15316763553041568,
+      "error": 4.913197626521537e-11,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "affine_0.2_derivative_complete_1",
+      "passed": true
+    },
+    {
+      "name": "affine_0.2_source_derivative_1",
+      "passed": true,
+      "value": -0.11487572661096279,
+      "expected": -0.11487572676438516,
+      "error": 1.5342237202897735e-10,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "affine_0.2_derivative_complete_2",
+      "passed": true
+    },
+    {
+      "name": "affine_0.2_source_derivative_2",
+      "passed": true,
+      "value": -0.057820782394187045,
+      "expected": -0.057820782051187784,
+      "error": 3.429992609382815e-10,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "affine_exact_0.2",
+      "passed": true,
+      "value": 1.9584002141043748,
+      "expected": 1.9584002141041261,
+      "error": 2.4868995751603507e-13,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "affine_-0.2_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "affine_-0.2_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "affine_-0.2_reciprocity",
+      "passed": true,
+      "value": 2.0372996682787066,
+      "expected": 2.0372996682787066,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "affine_-0.2_finite_normal_domain",
+      "passed": true
+    },
+    {
+      "name": "affine_-0.2_speed_bounds",
+      "passed": true
+    },
+    {
+      "name": "affine_-0.2_consistent_first_derivatives",
+      "passed": true
+    },
+    {
+      "name": "affine_-0.2_derivative_complete_0",
+      "passed": true
+    },
+    {
+      "name": "affine_-0.2_source_derivative_0",
+      "passed": true,
+      "value": -0.15917411879268606,
+      "expected": -0.15917411881893884,
+      "error": 2.6252777729496302e-11,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "affine_-0.2_derivative_complete_1",
+      "passed": true
+    },
+    {
+      "name": "affine_-0.2_source_derivative_1",
+      "passed": true,
+      "value": -0.11938058909451454,
+      "expected": -0.11938058910310188,
+      "error": 8.587339173082853e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "affine_-0.2_derivative_complete_2",
+      "passed": true
+    },
+    {
+      "name": "affine_-0.2_source_derivative_2",
+      "passed": true,
+      "value": 0.02029470014606135,
+      "expected": 0.02029470003162004,
+      "error": 1.1444131059468177e-10,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "affine_exact_-0.2",
+      "passed": true,
+      "value": 2.0372996682787066,
+      "expected": 2.037299668278912,
+      "error": 2.05613304160579e-13,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "guide_between_endpoints_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "guide_between_endpoints_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "guide_between_endpoints_reciprocity",
+      "passed": true,
+      "value": 3.472516743977758,
+      "expected": 3.472516743977758,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "guide_between_endpoints_finite_normal_domain",
+      "passed": true
+    },
+    {
+      "name": "guide_between_endpoints_speed_bounds",
+      "passed": true
+    },
+    {
+      "name": "guide_between_endpoints_consistent_first_derivatives",
+      "passed": true
+    },
+    {
+      "name": "guide_between_endpoints_derivative_complete_0",
+      "passed": true
+    },
+    {
+      "name": "guide_between_endpoints_source_derivative_0",
+      "passed": true,
+      "value": -0.1,
+      "expected": -0.09999999999177332,
+      "error": 8.226683223533371e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "guide_between_endpoints_derivative_complete_1",
+      "passed": true
+    },
+    {
+      "name": "guide_between_endpoints_source_derivative_1",
+      "passed": true,
+      "value": -0.13333333333333333,
+      "expected": -0.13333333330756147,
+      "error": 2.57718568708043e-11,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "guide_between_endpoints_derivative_complete_2",
+      "passed": true
+    },
+    {
+      "name": "guide_between_endpoints_source_derivative_2",
+      "passed": true,
+      "value": -0.11055415967851333,
+      "expected": -0.11055415964911218,
+      "error": 2.940114818272832e-11,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "peak_guide_exact",
+      "passed": true,
+      "value": 3.472516743977758,
+      "expected": 3.4725167439777573,
+      "error": 4.440892098500626e-16,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "peak_guide_is_between_endpoints",
+      "passed": true
+    },
+    {
+      "name": "direct_crosses_interior_maximum_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "direct_crosses_interior_maximum_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "direct_crosses_interior_maximum_reciprocity",
+      "passed": true,
+      "value": 0.5149739939718998,
+      "expected": 0.5149739939718998,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "direct_crosses_interior_maximum_finite_normal_domain",
+      "passed": true
+    },
+    {
+      "name": "direct_crosses_interior_maximum_speed_bounds",
+      "passed": true
+    },
+    {
+      "name": "direct_crosses_interior_maximum_consistent_first_derivatives",
+      "passed": true
+    },
+    {
+      "name": "direct_crosses_interior_maximum_derivative_complete_0",
+      "passed": true
+    },
+    {
+      "name": "direct_crosses_interior_maximum_source_derivative_0",
+      "passed": true,
+      "value": -0.12803687993289598,
+      "expected": -0.12803687993723223,
+      "error": 4.336253578429705e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "direct_crosses_interior_maximum_derivative_complete_1",
+      "passed": true
+    },
+    {
+      "name": "direct_crosses_interior_maximum_source_derivative_1",
+      "passed": true,
+      "value": -0.0,
+      "expected": 0.0,
+      "error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "direct_crosses_interior_maximum_derivative_complete_2",
+      "passed": true
+    },
+    {
+      "name": "direct_crosses_interior_maximum_source_derivative_2",
+      "passed": true,
+      "value": -0.15364425591947517,
+      "expected": -0.15364425592356845,
+      "error": 4.09328126949049e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "interior_peak_direct_exact",
+      "passed": true,
+      "value": 0.5149739939718998,
+      "expected": 0.514973993971899,
+      "error": 7.771561172376096e-16,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "equal_endpoint_speeds_do_not_create_false_flat_path",
+      "passed": true
+    },
+    {
+      "name": "symmetric_valley_two_turns_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "symmetric_valley_two_turns_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "symmetric_valley_two_turns_reciprocity",
+      "passed": true,
+      "value": 1.250290234500833,
+      "expected": 1.250290234500833,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "symmetric_valley_two_turns_finite_normal_domain",
+      "passed": true
+    },
+    {
+      "name": "symmetric_valley_two_turns_speed_bounds",
+      "passed": true
+    },
+    {
+      "name": "valley_exact_turning_time",
+      "passed": true,
+      "value": 1.250290234500833,
+      "expected": 1.2502902345008333,
+      "error": 2.220446049250313e-16,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "valley_tied_branch_derivatives_retained",
+      "passed": true
+    },
+    {
+      "name": "two_equal_fast_boundaries_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "two_equal_fast_boundaries_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "two_equal_fast_boundaries_reciprocity",
+      "passed": true,
+      "value": 4.235198319614089,
+      "expected": 4.235198319614089,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "two_equal_fast_boundaries_finite_normal_domain",
+      "passed": true
+    },
+    {
+      "name": "two_equal_fast_boundaries_speed_bounds",
+      "passed": true
+    },
+    {
+      "name": "boundary_guide_exact",
+      "passed": true,
+      "value": 4.235198319614089,
+      "expected": 4.235198319614089,
+      "error": 0.0,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "both_boundary_ties_retained",
+      "passed": true
+    },
+    {
+      "name": "equal_interior_maxima_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "equal_interior_maxima_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "equal_interior_maxima_reciprocity",
+      "passed": true,
+      "value": 3.906652059216311,
+      "expected": 3.906652059216311,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "equal_interior_maxima_finite_normal_domain",
+      "passed": true
+    },
+    {
+      "name": "equal_interior_maxima_speed_bounds",
+      "passed": true
+    },
+    {
+      "name": "equal_interior_maxima_consistent_first_derivatives",
+      "passed": true
+    },
+    {
+      "name": "equal_interior_maxima_derivative_complete_0",
+      "passed": true
+    },
+    {
+      "name": "equal_interior_maxima_source_derivative_0",
+      "passed": true,
+      "value": -0.16666666666666666,
+      "expected": -0.16666666666775853,
+      "error": 1.0918765891432258e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "equal_interior_maxima_derivative_complete_1",
+      "passed": true
+    },
+    {
+      "name": "equal_interior_maxima_source_derivative_1",
+      "passed": true,
+      "value": -0.0,
+      "expected": 0.0,
+      "error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "equal_interior_maxima_derivative_complete_2",
+      "passed": true
+    },
+    {
+      "name": "equal_interior_maxima_source_derivative_2",
+      "passed": true,
+      "value": -0.11055415967851333,
+      "expected": -0.11055415967131664,
+      "error": 7.19668769022519e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "equal_maxima_exact",
+      "passed": true,
+      "value": 3.906652059216311,
+      "expected": 3.906652059216311,
+      "error": 0.0,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "equal_maxima_guide_allocations_retained",
+      "passed": true
+    },
+    {
+      "name": "plateau_interface_source_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "plateau_interface_source_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "plateau_interface_source_reciprocity",
+      "passed": true,
+      "value": 0.3333333333333333,
+      "expected": 0.3333333333333333,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "plateau_interface_source_finite_normal_domain",
+      "passed": true
+    },
+    {
+      "name": "plateau_interface_source_speed_bounds",
+      "passed": true
+    },
+    {
+      "name": "interface_source_normal_derivative_zero",
+      "passed": true,
+      "value": 0.0,
+      "expected": 0.0,
+      "error": 0.0,
+      "tolerance": 0.0
+    },
+    {
+      "name": "preceding_peak_blocks_later_low_turn_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "preceding_peak_blocks_later_low_turn_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "preceding_peak_blocks_later_low_turn_reciprocity",
+      "passed": true,
+      "value": 1.8068952570232688,
+      "expected": 1.8068952570232688,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "preceding_peak_blocks_later_low_turn_finite_normal_domain",
+      "passed": true
+    },
+    {
+      "name": "preceding_peak_blocks_later_low_turn_speed_bounds",
+      "passed": true
+    },
+    {
+      "name": "blocked_turn_layer_explicit",
+      "passed": true
+    },
+    {
+      "name": "deeper_turn_after_earlier_peak_complete",
+      "passed": true,
+      "unresolved": []
+    },
+    {
+      "name": "deeper_turn_after_earlier_peak_reverse_complete",
+      "passed": true
+    },
+    {
+      "name": "deeper_turn_after_earlier_peak_reciprocity",
+      "passed": true,
+      "value": 1.2336445367308861,
+      "expected": 1.2336445367308861,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "deeper_turn_after_earlier_peak_finite_normal_domain",
+      "passed": true
+    },
+    {
+      "name": "deeper_turn_after_earlier_peak_speed_bounds",
+      "passed": true
+    },
+    {
+      "name": "independently_planted_deeper_turn_found",
+      "passed": true
+    },
+    {
+      "name": "deeper_turn_independent_quadrature_time",
+      "passed": true,
+      "value": 1.5808989967436913,
+      "expected": 1.5808989967436924,
+      "error": 1.1102230246251565e-15,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "deeper_turn_independent_slowness",
+      "passed": true,
+      "value": 0.14285714285714268,
+      "expected": 0.14285714285714285,
+      "error": 1.6653345369377348e-16,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "signed_coefficient_root_control",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_constant_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_constant_time",
+      "passed": true,
+      "value": 2.1921577396609844,
+      "expected": 2.1921577396609844,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_constant_source_0",
+      "passed": true,
+      "value": -0.13938575223277935,
+      "expected": -0.13938575223277935,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_constant_source_1",
+      "passed": true,
+      "value": 0.05068572808464704,
+      "expected": 0.05068572808464704,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_constant_source_2",
+      "passed": true,
+      "value": -0.07602859212697057,
+      "expected": -0.07602859212697057,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_affine_direct_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_affine_direct_time",
+      "passed": true,
+      "value": 0.8609146604320274,
+      "expected": 0.8609146604320274,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_affine_direct_source_0",
+      "passed": true,
+      "value": -0.0505172934508934,
+      "expected": -0.050517293450893376,
+      "error": 2.0816681711721685e-17,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_affine_direct_source_1",
+      "passed": true,
+      "value": -0.0,
+      "expected": -0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_affine_direct_source_2",
+      "passed": true,
+      "value": -0.2215872190005096,
+      "expected": -0.22158721900050957,
+      "error": 2.7755575615628914e-17,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_affine_turn_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_affine_turn_time",
+      "passed": true,
+      "value": 8.15608900440148,
+      "expected": 8.15608900440148,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_affine_turn_source_0",
+      "passed": true,
+      "value": -0.1681681984990781,
+      "expected": -0.1681681984990781,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_affine_turn_source_1",
+      "passed": true,
+      "value": -0.0,
+      "expected": -0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_affine_turn_source_2",
+      "passed": true,
+      "value": -0.15288018045370738,
+      "expected": -0.15288018045370738,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_plateau_two_turns_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_plateau_two_turns_time",
+      "passed": true,
+      "value": 4.918988590051218,
+      "expected": 4.918988590051218,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_plateau_two_turns_source_0",
+      "passed": true,
+      "value": -0.22852028551639406,
+      "expected": -0.22852028551639406,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_plateau_two_turns_source_1",
+      "passed": true,
+      "value": -0.0,
+      "expected": -0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_plateau_two_turns_source_2",
+      "passed": true,
+      "value": -0.10138283438287643,
+      "expected": -0.10138283438287643,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_exact_double_root_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_exact_double_root_time",
+      "passed": true,
+      "value": 4.0,
+      "expected": 4.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_exact_double_root_source_0",
+      "passed": true,
+      "value": -0.25,
+      "expected": -0.25,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_exact_double_root_source_1",
+      "passed": true,
+      "value": 0.0,
+      "expected": 0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_exact_double_root_source_2",
+      "passed": true,
+      "value": 0.0,
+      "expected": 0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_below_turn_minimum_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_below_turn_minimum_time",
+      "passed": true,
+      "value": 3.975,
+      "expected": 3.975,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_below_turn_minimum_source_0",
+      "passed": true,
+      "value": -0.25,
+      "expected": -0.25,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_below_turn_minimum_source_1",
+      "passed": true,
+      "value": 0.0,
+      "expected": 0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_below_turn_minimum_source_2",
+      "passed": true,
+      "value": 0.0,
+      "expected": 0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_above_turn_minimum_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_above_turn_minimum_time",
+      "passed": true,
+      "value": 4.025,
+      "expected": 4.025,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_above_turn_minimum_source_0",
+      "passed": true,
+      "value": -0.25,
+      "expected": -0.25,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_above_turn_minimum_source_1",
+      "passed": true,
+      "value": 0.0,
+      "expected": 0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_above_turn_minimum_source_2",
+      "passed": true,
+      "value": 0.0,
+      "expected": 0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_turn_at_layer_node_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_turn_at_layer_node_time",
+      "passed": true,
+      "value": 10.986122886681096,
+      "expected": 10.986122886681096,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_turn_at_layer_node_source_0",
+      "passed": true,
+      "value": -0.2,
+      "expected": -0.2,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_turn_at_layer_node_source_1",
+      "passed": true,
+      "value": -0.0,
+      "expected": -0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_turn_at_layer_node_source_2",
+      "passed": true,
+      "value": -0.26666666666666666,
+      "expected": -0.26666666666666666,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_interior_plateau_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_interior_plateau_time",
+      "passed": true,
+      "value": 18.91282750012461,
+      "expected": 18.91282750012461,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_interior_plateau_source_0",
+      "passed": true,
+      "value": -0.17908664053259607,
+      "expected": -0.17908664053259607,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_interior_plateau_source_1",
+      "passed": true,
+      "value": -0.0,
+      "expected": -0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_interior_plateau_source_2",
+      "passed": true,
+      "value": -0.2811389092492532,
+      "expected": -0.2811389092492532,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_terminal_plateau_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_terminal_plateau_time",
+      "passed": true,
+      "value": 14.986122886681096,
+      "expected": 14.986122886681096,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_terminal_plateau_source_0",
+      "passed": true,
+      "value": -0.2,
+      "expected": -0.2,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_terminal_plateau_source_1",
+      "passed": true,
+      "value": -0.0,
+      "expected": -0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_terminal_plateau_source_2",
+      "passed": true,
+      "value": -0.26666666666666666,
+      "expected": -0.26666666666666666,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_direct_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_hayward_direct_time",
+      "passed": true,
+      "value": 4.159312826877852,
+      "expected": 4.159312826877853,
+      "error": 8.881784197001252e-16,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_direct_source_0",
+      "passed": true,
+      "value": -0.16860483460843378,
+      "expected": -0.16860483460843378,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_direct_source_1",
+      "passed": true,
+      "value": -0.0,
+      "expected": -0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_direct_source_2",
+      "passed": true,
+      "value": 0.02487788938441024,
+      "expected": 0.024877889384410216,
+      "error": 2.42861286636753e-17,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_turn_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_hayward_turn_time",
+      "passed": true,
+      "value": 3.2881729662915005,
+      "expected": 3.2881729662915005,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_turn_source_0",
+      "passed": true,
+      "value": -0.18234357814308075,
+      "expected": -0.18234357814308075,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_turn_source_1",
+      "passed": true,
+      "value": -0.0,
+      "expected": -0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_turn_source_2",
+      "passed": true,
+      "value": -0.009537122256649757,
+      "expected": -0.009537122256649757,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_equal_depth_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_hayward_equal_depth_time",
+      "passed": true,
+      "value": 2.554058318753249,
+      "expected": 2.554058318753249,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_equal_depth_source_0",
+      "passed": true,
+      "value": -0.1699517981458115,
+      "expected": -0.1699517981458115,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_equal_depth_source_1",
+      "passed": true,
+      "value": -0.0,
+      "expected": -0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_equal_depth_source_2",
+      "passed": true,
+      "value": -0.012762677640903022,
+      "expected": -0.012762677640903022,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_deep_turn_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_hayward_deep_turn_time",
+      "passed": true,
+      "value": 8.371307618477996,
+      "expected": 8.371307618477996,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_deep_turn_source_0",
+      "passed": true,
+      "value": -0.17807799229102747,
+      "expected": -0.17807799229102747,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_deep_turn_source_1",
+      "passed": true,
+      "value": -0.0,
+      "expected": -0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_deep_turn_source_2",
+      "passed": true,
+      "value": -0.19658801219023303,
+      "expected": -0.19658801219023303,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_vertical_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_hayward_vertical_time",
+      "passed": true,
+      "value": 1.633744846050669,
+      "expected": 1.633744846050669,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_vertical_source_0",
+      "passed": true,
+      "value": 0.0,
+      "expected": 0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_vertical_source_1",
+      "passed": true,
+      "value": 0.0,
+      "expected": 0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_vertical_source_2",
+      "passed": true,
+      "value": 0.1704303365999148,
+      "expected": 0.1704303365999148,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_bottom_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_hayward_bottom_time",
+      "passed": true,
+      "value": 14.004195904953939,
+      "expected": 14.004195904953939,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_bottom_source_0",
+      "passed": true,
+      "value": -0.10352286159431286,
+      "expected": -0.10352286159431286,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_bottom_source_1",
+      "passed": true,
+      "value": -0.09317057543488158,
+      "expected": -0.09317057543488158,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_hayward_bottom_source_2",
+      "passed": true,
+      "value": -0.09822810511263078,
+      "expected": -0.09822810511263078,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "monotone_regression_coincident_complete",
+      "passed": true
+    },
+    {
+      "name": "monotone_regression_coincident_time",
+      "passed": true,
+      "value": 0.0,
+      "expected": 0.0,
+      "error": 0.0,
+      "tolerance": 1e-11
+    },
+    {
+      "name": "near_flat_(0.0, 1, 0.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(0.0, 1, 0.0)_time",
+      "passed": true,
+      "value": 0.2,
+      "expected": 0.2,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(0.0, 1, 1.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(0.0, 1, 1.0)_time",
+      "passed": true,
+      "value": 0.282842712474619,
+      "expected": 0.282842712474619,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(0.0, 1, 3.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(0.0, 1, 3.0)_time",
+      "passed": true,
+      "value": 0.6324555320336759,
+      "expected": 0.6324555320336759,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(0.0, -1, 0.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(0.0, -1, 0.0)_time",
+      "passed": true,
+      "value": 0.2,
+      "expected": 0.2,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(0.0, -1, 1.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(0.0, -1, 1.0)_time",
+      "passed": true,
+      "value": 0.282842712474619,
+      "expected": 0.282842712474619,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(0.0, -1, 3.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(0.0, -1, 3.0)_time",
+      "passed": true,
+      "value": 0.6324555320336759,
+      "expected": 0.6324555320336759,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(8.881784197001252e-16, 1, 0.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(8.881784197001252e-16, 1, 0.0)_time",
+      "passed": true,
+      "value": 0.19999999999999998,
+      "expected": 0.2,
+      "error": 2.7755575615628914e-17,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(8.881784197001252e-16, 1, 1.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(8.881784197001252e-16, 1, 1.0)_time",
+      "passed": true,
+      "value": 0.282842712474619,
+      "expected": 0.282842712474619,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(8.881784197001252e-16, 1, 3.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(8.881784197001252e-16, 1, 3.0)_time",
+      "passed": true,
+      "value": 0.6324555320336758,
+      "expected": 0.6324555320336759,
+      "error": 1.1102230246251565e-16,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(8.881784197001252e-16, -1, 0.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(8.881784197001252e-16, -1, 0.0)_time",
+      "passed": true,
+      "value": 0.19999999999999998,
+      "expected": 0.2,
+      "error": 2.7755575615628914e-17,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(8.881784197001252e-16, -1, 1.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(8.881784197001252e-16, -1, 1.0)_time",
+      "passed": true,
+      "value": 0.282842712474619,
+      "expected": 0.282842712474619,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(8.881784197001252e-16, -1, 3.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(8.881784197001252e-16, -1, 3.0)_time",
+      "passed": true,
+      "value": 0.6324555320336757,
+      "expected": 0.6324555320336759,
+      "error": 2.220446049250313e-16,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(1e-12, 1, 0.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(1e-12, 1, 0.0)_time",
+      "passed": true,
+      "value": 0.19999999999998,
+      "expected": 0.19999999999998,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(1e-12, 1, 1.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(1e-12, 1, 1.0)_time",
+      "passed": true,
+      "value": 0.2828427124745907,
+      "expected": 0.28284271247459075,
+      "error": 5.551115123125783e-17,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(1e-12, 1, 3.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(1e-12, 1, 3.0)_time",
+      "passed": true,
+      "value": 0.6324555320336127,
+      "expected": 0.6324555320336126,
+      "error": 1.1102230246251565e-16,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(1e-12, -1, 0.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(1e-12, -1, 0.0)_time",
+      "passed": true,
+      "value": 0.19999999999998,
+      "expected": 0.19999999999998,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(1e-12, -1, 1.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(1e-12, -1, 1.0)_time",
+      "passed": true,
+      "value": 0.2828427124745907,
+      "expected": 0.28284271247459075,
+      "error": 5.551115123125783e-17,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(1e-12, -1, 3.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(1e-12, -1, 3.0)_time",
+      "passed": true,
+      "value": 0.6324555320336127,
+      "expected": 0.6324555320336126,
+      "error": 1.1102230246251565e-16,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(1e-08, 1, 0.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(1e-08, 1, 0.0)_time",
+      "passed": true,
+      "value": 0.1999999998,
+      "expected": 0.19999999979999997,
+      "error": 2.7755575615628914e-17,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(1e-08, 1, 1.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(1e-08, 1, 1.0)_time",
+      "passed": true,
+      "value": 0.28284271219177626,
+      "expected": 0.2828427121917763,
+      "error": 5.551115123125783e-17,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(1e-08, 1, 3.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(1e-08, 1, 3.0)_time",
+      "passed": true,
+      "value": 0.6324555314012202,
+      "expected": 0.6324555314012203,
+      "error": 1.1102230246251565e-16,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(1e-08, -1, 0.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(1e-08, -1, 0.0)_time",
+      "passed": true,
+      "value": 0.1999999998,
+      "expected": 0.19999999979999997,
+      "error": 2.7755575615628914e-17,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(1e-08, -1, 1.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(1e-08, -1, 1.0)_time",
+      "passed": true,
+      "value": 0.28284271219177626,
+      "expected": 0.2828427121917763,
+      "error": 5.551115123125783e-17,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(1e-08, -1, 3.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(1e-08, -1, 3.0)_time",
+      "passed": true,
+      "value": 0.6324555314012202,
+      "expected": 0.6324555314012203,
+      "error": 1.1102230246251565e-16,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(0.1, 1, 0.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(0.1, 1, 0.0)_time",
+      "passed": true,
+      "value": 0.19802627296179715,
+      "expected": 0.19802627296179715,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(0.1, 1, 1.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(0.1, 1, 1.0)_time",
+      "passed": true,
+      "value": 0.2800468654556391,
+      "expected": 0.2800468654556391,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(0.1, 1, 3.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(0.1, 1, 3.0)_time",
+      "passed": true,
+      "value": 0.6261220119712966,
+      "expected": 0.6261220119712966,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(0.1, -1, 0.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(0.1, -1, 0.0)_time",
+      "passed": true,
+      "value": 0.19802627296179715,
+      "expected": 0.19802627296179715,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(0.1, -1, 1.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(0.1, -1, 1.0)_time",
+      "passed": true,
+      "value": 0.2800468654556391,
+      "expected": 0.2800468654556391,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "near_flat_(0.1, -1, 3.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "near_flat_(0.1, -1, 3.0)_time",
+      "passed": true,
+      "value": 0.6261220119712966,
+      "expected": 0.6261220119712966,
+      "error": 0.0,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "finite_boundary_membership_39.99999999999999",
+      "passed": true
+    },
+    {
+      "name": "finite_boundary_membership_40.0",
+      "passed": true
+    },
+    {
+      "name": "finite_boundary_membership_40.00000000000001",
+      "passed": true
+    },
+    {
+      "name": "outside_closed_box_[0, 0, -5e-324]",
+      "passed": true
+    },
+    {
+      "name": "outside_closed_box_[0, 0, 1.0000000000000002]",
+      "passed": true
+    },
+    {
+      "name": "outside_closed_box_[2, 0, 0.5]",
+      "passed": true
+    },
+    {
+      "name": "limited_root_search_fails_closed",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(0, 0.4)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(0, 0.4)_mirror_time",
+      "passed": true,
+      "value": 1.275164651754258,
+      "expected": 1.2751646517542579,
+      "error": 2.220446049250313e-16,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(0, 0.4)_mirror_source_normal",
+      "passed": true,
+      "value": -0.1768657609121738,
+      "expected": -0.17686576091217382,
+      "error": 2.7755575615628914e-17,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(0, 0.4)_reciprocity",
+      "passed": true,
+      "value": 1.275164651754258,
+      "expected": 1.275164651754258,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(0, 0.4)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 1.275164651754258,
+      "lower_s": 0.7849398781084435,
+      "straight_path_action_s": 1.275273629849912
+    },
+    {
+      "name": "reviewer_sweep_(0, 8.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(0, 8.0)_mirror_time",
+      "passed": true,
+      "value": 2.1754027800276985,
+      "expected": 2.175402780027698,
+      "error": 4.440892098500626e-16,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(0, 8.0)_mirror_source_normal",
+      "passed": true,
+      "value": -0.06320813610364621,
+      "expected": -0.06320813610364621,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(0, 8.0)_reciprocity",
+      "passed": true,
+      "value": 2.1754027800276985,
+      "expected": 2.1754027800276985,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(0, 8.0)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 2.1754027800276985,
+      "lower_s": 1.3852753354846252,
+      "straight_path_action_s": 2.2506247353392426
+    },
+    {
+      "name": "reviewer_sweep_(0, 30.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(0, 30.0)_mirror_time",
+      "passed": true,
+      "value": 5.841885461388447,
+      "expected": 5.841885461388447,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(0, 30.0)_mirror_source_normal",
+      "passed": true,
+      "value": -0.06140886551320595,
+      "expected": -0.06140886551320595,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(0, 30.0)_reciprocity",
+      "passed": true,
+      "value": 5.841885461388447,
+      "expected": 5.841885461388447,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(0, 30.0)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 5.841885461388447,
+      "lower_s": 4.3566285410737,
+      "straight_path_action_s": 7.078113430638072
+    },
+    {
+      "name": "reviewer_sweep_(1, 0.4)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(1, 0.4)_mirror_time",
+      "passed": true,
+      "value": 1.2722514455222036,
+      "expected": 1.2722514455222036,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(1, 0.4)_mirror_source_normal",
+      "passed": true,
+      "value": -0.2189360251753033,
+      "expected": -0.2189360251753033,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(1, 0.4)_reciprocity",
+      "passed": true,
+      "value": 1.2722514455222036,
+      "expected": 1.2722514455222036,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(1, 0.4)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 1.2722514455222036,
+      "lower_s": 0.7849398781084435,
+      "straight_path_action_s": 1.2723708175145423
+    },
+    {
+      "name": "reviewer_sweep_(1, 8.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(1, 8.0)_mirror_time",
+      "passed": true,
+      "value": 2.1660736652531263,
+      "expected": 2.1660736652531267,
+      "error": 4.440892098500626e-16,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(1, 8.0)_mirror_source_normal",
+      "passed": true,
+      "value": -0.14430886280906838,
+      "expected": -0.14430886280906838,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(1, 8.0)_reciprocity",
+      "passed": true,
+      "value": 2.1660736652531263,
+      "expected": 2.1660736652531263,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(1, 8.0)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 2.1660736652531263,
+      "lower_s": 1.3852753354846252,
+      "straight_path_action_s": 2.2455018024320514
+    },
+    {
+      "name": "reviewer_sweep_(1, 30.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(1, 30.0)_mirror_time",
+      "passed": true,
+      "value": 5.57837572476406,
+      "expected": 5.57837572476406,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(1, 30.0)_mirror_source_normal",
+      "passed": true,
+      "value": 0.16670091564973144,
+      "expected": 0.16670091564973144,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(1, 30.0)_reciprocity",
+      "passed": true,
+      "value": 5.57837572476406,
+      "expected": 5.57837572476406,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(1, 30.0)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 5.57837572476406,
+      "lower_s": 4.3566285410737,
+      "straight_path_action_s": 7.06200203736789
+    },
+    {
+      "name": "reviewer_sweep_(2, 0.4)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(2, 0.4)_mirror_time",
+      "passed": true,
+      "value": 1.2287915334786867,
+      "expected": 1.2287915334786867,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(2, 0.4)_mirror_source_normal",
+      "passed": true,
+      "value": -0.2808507473012999,
+      "expected": -0.2808507473012999,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(2, 0.4)_reciprocity",
+      "passed": true,
+      "value": 1.2287915334786867,
+      "expected": 1.2287915334786867,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(2, 0.4)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 1.2287915334786867,
+      "lower_s": 0.9157631911265174,
+      "straight_path_action_s": 1.2288908222892927
+    },
+    {
+      "name": "reviewer_sweep_(2, 8.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(2, 8.0)_mirror_time",
+      "passed": true,
+      "value": 2.106082541135801,
+      "expected": 2.1060825411358004,
+      "error": 4.440892098500626e-16,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(2, 8.0)_mirror_source_normal",
+      "passed": true,
+      "value": -0.22817153174336824,
+      "expected": -0.22817153174336824,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(2, 8.0)_reciprocity",
+      "passed": true,
+      "value": 2.106082541135801,
+      "expected": 2.106082541135801,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(2, 8.0)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 2.106082541135801,
+      "lower_s": 1.6161545580653962,
+      "straight_path_action_s": 2.1687675624572975
+    },
+    {
+      "name": "reviewer_sweep_(2, 30.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(2, 30.0)_mirror_time",
+      "passed": true,
+      "value": 5.77170192690277,
+      "expected": 5.77170192690277,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(2, 30.0)_mirror_source_normal",
+      "passed": true,
+      "value": -0.22660209565509795,
+      "expected": -0.22660209565509795,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(2, 30.0)_reciprocity",
+      "passed": true,
+      "value": 5.77170192690277,
+      "expected": 5.77170192690277,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(2, 30.0)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 5.77170192690277,
+      "lower_s": 5.082733297919317,
+      "straight_path_action_s": 6.820676308548313
+    },
+    {
+      "name": "reviewer_sweep_(3, 0.4)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(3, 0.4)_mirror_time",
+      "passed": true,
+      "value": 1.1711652826837644,
+      "expected": 1.1711652826837642,
+      "error": 2.220446049250313e-16,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(3, 0.4)_mirror_source_normal",
+      "passed": true,
+      "value": -0.2154301571455385,
+      "expected": -0.2154301571455385,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(3, 0.4)_reciprocity",
+      "passed": true,
+      "value": 1.1711652826837644,
+      "expected": 1.1711652826837644,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(3, 0.4)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 1.1711652826837644,
+      "lower_s": 0.9157631911265174,
+      "straight_path_action_s": 1.1711807649621546
+    },
+    {
+      "name": "reviewer_sweep_(3, 8.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(3, 8.0)_mirror_time",
+      "passed": true,
+      "value": 2.057167123928003,
+      "expected": 2.0571671239280036,
+      "error": 4.440892098500626e-16,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(3, 8.0)_mirror_source_normal",
+      "passed": true,
+      "value": -0.12950760662358765,
+      "expected": -0.12950760662358765,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(3, 8.0)_reciprocity",
+      "passed": true,
+      "value": 2.057167123928003,
+      "expected": 2.057167123928003,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(3, 8.0)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 2.057167123928003,
+      "lower_s": 1.6161545580653962,
+      "straight_path_action_s": 2.066919865258706
+    },
+    {
+      "name": "reviewer_sweep_(3, 30.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(3, 30.0)_mirror_time",
+      "passed": true,
+      "value": 5.836852142790407,
+      "expected": 5.836852142790406,
+      "error": 1.7763568394002505e-15,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(3, 30.0)_mirror_source_normal",
+      "passed": true,
+      "value": -0.1373708781289611,
+      "expected": -0.1373708781289611,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(3, 30.0)_reciprocity",
+      "passed": true,
+      "value": 5.836852142790407,
+      "expected": 5.836852142790407,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(3, 30.0)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 5.836852142790407,
+      "lower_s": 5.082733297919317,
+      "straight_path_action_s": 6.5003698878014315
+    },
+    {
+      "name": "reviewer_sweep_(4, 0.4)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(4, 0.4)_mirror_time",
+      "passed": true,
+      "value": 1.2350550624792425,
+      "expected": 1.2350550624792425,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(4, 0.4)_mirror_source_normal",
+      "passed": true,
+      "value": -0.1993880778630574,
+      "expected": -0.1993880778630574,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(4, 0.4)_reciprocity",
+      "passed": true,
+      "value": 1.2350550624792425,
+      "expected": 1.2350550624792425,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(4, 0.4)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 1.2350550624792425,
+      "lower_s": 0.9157631911265174,
+      "straight_path_action_s": 1.2352011888585999
+    },
+    {
+      "name": "reviewer_sweep_(4, 8.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(4, 8.0)_mirror_time",
+      "passed": true,
+      "value": 2.089167661599662,
+      "expected": 2.089167661599662,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(4, 8.0)_mirror_source_normal",
+      "passed": true,
+      "value": -0.12196207770514336,
+      "expected": -0.12196207770514336,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(4, 8.0)_reciprocity",
+      "passed": true,
+      "value": 2.089167661599662,
+      "expected": 2.089167661599662,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(4, 8.0)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 2.089167661599662,
+      "lower_s": 1.6161545580653962,
+      "straight_path_action_s": 2.179904205415728
+    },
+    {
+      "name": "reviewer_sweep_(4, 30.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(4, 30.0)_mirror_time",
+      "passed": true,
+      "value": 5.727104325099191,
+      "expected": 5.727104325099191,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(4, 30.0)_mirror_source_normal",
+      "passed": true,
+      "value": -0.11081581427756393,
+      "expected": -0.11081581427756393,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(4, 30.0)_reciprocity",
+      "passed": true,
+      "value": 5.727104325099191,
+      "expected": 5.727104325099191,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(4, 30.0)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 5.727104325099191,
+      "lower_s": 5.082733297919317,
+      "straight_path_action_s": 6.8557005490885325
+    },
+    {
+      "name": "reviewer_sweep_(5, 0.4)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(5, 0.4)_mirror_time",
+      "passed": true,
+      "value": 1.1768400223809097,
+      "expected": 1.1768400223809097,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(5, 0.4)_mirror_source_normal",
+      "passed": true,
+      "value": -0.17700917366325455,
+      "expected": -0.17700917366325455,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(5, 0.4)_reciprocity",
+      "passed": true,
+      "value": 1.1768400223809097,
+      "expected": 1.1768400223809097,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(5, 0.4)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 1.1768400223809097,
+      "lower_s": 0.9157631911265174,
+      "straight_path_action_s": 1.1770152766384179
+    },
+    {
+      "name": "reviewer_sweep_(5, 8.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(5, 8.0)_mirror_time",
+      "passed": true,
+      "value": 1.985076542209934,
+      "expected": 1.985076542209934,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(5, 8.0)_mirror_source_normal",
+      "passed": true,
+      "value": -0.09171865880689326,
+      "expected": -0.09171865880689326,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(5, 8.0)_reciprocity",
+      "passed": true,
+      "value": 1.985076542209934,
+      "expected": 1.985076542209934,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(5, 8.0)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 1.985076542209934,
+      "lower_s": 1.6161545580653962,
+      "straight_path_action_s": 2.0772167113549975
+    },
+    {
+      "name": "reviewer_sweep_(5, 30.0)_complete",
+      "passed": true
+    },
+    {
+      "name": "reviewer_sweep_(5, 30.0)_mirror_time",
+      "passed": true,
+      "value": 5.583116688518895,
+      "expected": 5.583116688518894,
+      "error": 8.881784197001252e-16,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(5, 30.0)_mirror_source_normal",
+      "passed": true,
+      "value": -0.06290161385337346,
+      "expected": -0.06290161385337346,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(5, 30.0)_reciprocity",
+      "passed": true,
+      "value": 5.583116688518895,
+      "expected": 5.583116688518895,
+      "error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "reviewer_sweep_(5, 30.0)_independent_feasible_bounds",
+      "passed": true,
+      "time_s": 5.583116688518895,
+      "lower_s": 5.082733297919317,
+      "straight_path_action_s": 6.532753005032386
+    }
+  ],
+  "cases": [
+    {
+      "name": "constant",
+      "profile": [
+        [
+          -2,
+          5
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "source": [
+        0,
+        0,
+        -0.3
+      ],
+      "receiver": [
+        2,
+        3,
+        1.2
+      ],
+      "bounds": [
+        [
+          -1,
+          3
+        ],
+        [
+          -1,
+          4
+        ],
+        [
+          -2,
+          3
+        ]
+      ],
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "flat_direct",
+            "time_s": 0.7810249675906654,
+            "p_s_per_km": 0.18465741429939309,
+            "turning_depth_km": null,
+            "source_derivative_s_per_km": [
+              -0.10242950394631678,
+              -0.15364425591947517,
+              -0.07682212795973759
+            ],
+            "distance_residual_km": 0.0,
+            "certificate": "Whole intervening interval has constant velocity"
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -2.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 3.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -2.0,
+          3.0
+        ],
+        "first_arrival": {
+          "kind": "flat_direct",
+          "time_s": 0.7810249675906654,
+          "p_s_per_km": 0.18465741429939309,
+          "turning_depth_km": null,
+          "source_derivative_s_per_km": [
+            -0.10242950394631678,
+            -0.15364425591947517,
+            -0.07682212795973759
+          ],
+          "distance_residual_km": 0.0,
+          "certificate": "Whole intervening interval has constant velocity"
+        },
+        "best_enumerated_candidate": {
+          "kind": "flat_direct",
+          "time_s": 0.7810249675906654,
+          "p_s_per_km": 0.18465741429939309,
+          "turning_depth_km": null,
+          "source_derivative_s_per_km": [
+            -0.10242950394631678,
+            -0.15364425591947517,
+            -0.07682212795973759
+          ],
+          "distance_residual_km": 0.0,
+          "certificate": "Whole intervening interval has constant velocity"
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "affine_0.2",
+      "profile": [
+        [
+          -10.0,
+          3.0
+        ],
+        [
+          10.0,
+          7.0
+        ]
+      ],
+      "source": [
+        0.3,
+        -0.2,
+        0.0
+      ],
+      "receiver": [
+        8.3,
+        5.8,
+        1.0
+      ],
+      "bounds": [
+        [
+          -0.7,
+          9.3
+        ],
+        [
+          -1.2,
+          6.8
+        ],
+        [
+          -10.0,
+          10.0
+        ]
+      ],
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "turning",
+            "time_s": 1.9584002141043748,
+            "p_s_per_km": 0.19145954435160464,
+            "source_derivative_s_per_km": [
+              -0.1531676354812837,
+              -0.11487572661096279,
+              -0.057820782394187045
+            ],
+            "distance_residual_km": 1.2967404927621828e-12,
+            "turning_depth_km": 1.1151775793312346,
+            "certificate": "interval_monotonicity_and_sign_change",
+            "phase_velocity_exact_ratio": [
+              "1470153800187381",
+              "281474976710656"
+            ],
+            "direction": 1,
+            "oriented_layer": 0,
+            "root_interval": [
+              0.489999999999925,
+              0.49000000000045774
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -10.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 1,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -10.0,
+          10.0
+        ],
+        "first_arrival": {
+          "kind": "turning",
+          "time_s": 1.9584002141043748,
+          "p_s_per_km": 0.19145954435160464,
+          "source_derivative_s_per_km": [
+            -0.1531676354812837,
+            -0.11487572661096279,
+            -0.057820782394187045
+          ],
+          "distance_residual_km": 1.2967404927621828e-12,
+          "turning_depth_km": 1.1151775793312346,
+          "certificate": "interval_monotonicity_and_sign_change",
+          "phase_velocity_exact_ratio": [
+            "1470153800187381",
+            "281474976710656"
+          ],
+          "direction": 1,
+          "oriented_layer": 0,
+          "root_interval": [
+            0.489999999999925,
+            0.49000000000045774
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "turning",
+          "time_s": 1.9584002141043748,
+          "p_s_per_km": 0.19145954435160464,
+          "source_derivative_s_per_km": [
+            -0.1531676354812837,
+            -0.11487572661096279,
+            -0.057820782394187045
+          ],
+          "distance_residual_km": 1.2967404927621828e-12,
+          "turning_depth_km": 1.1151775793312346,
+          "certificate": "interval_monotonicity_and_sign_change",
+          "phase_velocity_exact_ratio": [
+            "1470153800187381",
+            "281474976710656"
+          ],
+          "direction": 1,
+          "oriented_layer": 0,
+          "root_interval": [
+            0.489999999999925,
+            0.49000000000045774
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "affine_-0.2",
+      "profile": [
+        [
+          -10.0,
+          7.0
+        ],
+        [
+          10.0,
+          3.0
+        ]
+      ],
+      "source": [
+        0.3,
+        -0.2,
+        0.0
+      ],
+      "receiver": [
+        8.3,
+        5.8,
+        1.0
+      ],
+      "bounds": [
+        [
+          -0.7,
+          9.3
+        ],
+        [
+          -1.2,
+          6.8
+        ],
+        [
+          -10.0,
+          10.0
+        ]
+      ],
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "turning",
+            "time_s": 2.0372996682787066,
+            "p_s_per_km": 0.19896764849085757,
+            "source_derivative_s_per_km": [
+              -0.15917411879268606,
+              -0.11938058909451454,
+              0.02029470014606135
+            ],
+            "distance_residual_km": -1.0320633236915455e-12,
+            "turning_depth_km": -0.12971348821940065,
+            "certificate": "interval_monotonicity_and_sign_change",
+            "phase_velocity_exact_ratio": [
+              "5658708415073611",
+              "1125899906842624"
+            ],
+            "direction": -1,
+            "oriented_layer": 0,
+            "root_interval": [
+              0.5099999999995708,
+              0.5100000000001277
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "upper_boundary",
+            "depth_km": 10.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 1,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -10.0,
+          10.0
+        ],
+        "first_arrival": {
+          "kind": "turning",
+          "time_s": 2.0372996682787066,
+          "p_s_per_km": 0.19896764849085757,
+          "source_derivative_s_per_km": [
+            -0.15917411879268606,
+            -0.11938058909451454,
+            0.02029470014606135
+          ],
+          "distance_residual_km": -1.0320633236915455e-12,
+          "turning_depth_km": -0.12971348821940065,
+          "certificate": "interval_monotonicity_and_sign_change",
+          "phase_velocity_exact_ratio": [
+            "5658708415073611",
+            "1125899906842624"
+          ],
+          "direction": -1,
+          "oriented_layer": 0,
+          "root_interval": [
+            0.5099999999995708,
+            0.5100000000001277
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "turning",
+          "time_s": 2.0372996682787066,
+          "p_s_per_km": 0.19896764849085757,
+          "source_derivative_s_per_km": [
+            -0.15917411879268606,
+            -0.11938058909451454,
+            0.02029470014606135
+          ],
+          "distance_residual_km": -1.0320633236915455e-12,
+          "turning_depth_km": -0.12971348821940065,
+          "certificate": "interval_monotonicity_and_sign_change",
+          "phase_velocity_exact_ratio": [
+            "5658708415073611",
+            "1125899906842624"
+          ],
+          "direction": -1,
+          "oriented_layer": 0,
+          "root_interval": [
+            0.5099999999995708,
+            0.5100000000001277
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "guide_between_endpoints",
+      "profile": [
+        [
+          -3,
+          3
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "source": [
+        0.2,
+        -0.1,
+        -1
+      ],
+      "receiver": [
+        12.2,
+        15.9,
+        1
+      ],
+      "bounds": [
+        [
+          -0.8,
+          13.2
+        ],
+        [
+          -1.1,
+          16.9
+        ],
+        [
+          -3,
+          3
+        ]
+      ],
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "critical_maximum_or_plateau",
+            "time_s": 3.472516743977758,
+            "p_s_per_km": 0.16666666666666666,
+            "source_derivative_s_per_km": [
+              -0.1,
+              -0.13333333333333333,
+              -0.11055415967851333
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 0.0,
+            "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+            "phase_velocity_exact_ratio": [
+              "6",
+              "1"
+            ],
+            "horizontal_guide_length_km": 13.366750419289202
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -3.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 3.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -3.0,
+          3.0
+        ],
+        "first_arrival": {
+          "kind": "critical_maximum_or_plateau",
+          "time_s": 3.472516743977758,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.1,
+            -0.13333333333333333,
+            -0.11055415967851333
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 0.0,
+          "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+          "phase_velocity_exact_ratio": [
+            "6",
+            "1"
+          ],
+          "horizontal_guide_length_km": 13.366750419289202
+        },
+        "best_enumerated_candidate": {
+          "kind": "critical_maximum_or_plateau",
+          "time_s": 3.472516743977758,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.1,
+            -0.13333333333333333,
+            -0.11055415967851333
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 0.0,
+          "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+          "phase_velocity_exact_ratio": [
+            "6",
+            "1"
+          ],
+          "horizontal_guide_length_km": 13.366750419289202
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "direct_crosses_interior_maximum",
+      "profile": [
+        [
+          -3,
+          3
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "source": [
+        0,
+        0,
+        -1
+      ],
+      "receiver": [
+        2,
+        0,
+        1
+      ],
+      "bounds": [
+        [
+          -1,
+          3
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -3,
+          3
+        ]
+      ],
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 0.5149739939718998,
+            "p_s_per_km": 0.12803687993289598,
+            "source_derivative_s_per_km": [
+              -0.12803687993289598,
+              -0.0,
+              -0.15364425591947517
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "35174237530083745",
+              "4503599627370496"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -3.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 3.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -3.0,
+          3.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 0.5149739939718998,
+          "p_s_per_km": 0.12803687993289598,
+          "source_derivative_s_per_km": [
+            -0.12803687993289598,
+            -0.0,
+            -0.15364425591947517
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "35174237530083745",
+            "4503599627370496"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 0.5149739939718998,
+          "p_s_per_km": 0.12803687993289598,
+          "source_derivative_s_per_km": [
+            -0.12803687993289598,
+            -0.0,
+            -0.15364425591947517
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "35174237530083745",
+            "4503599627370496"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "symmetric_valley_two_turns",
+      "profile": [
+        [
+          -3,
+          6
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "source": [
+        0,
+        0,
+        0
+      ],
+      "receiver": [
+        4,
+        0,
+        0
+      ],
+      "bounds": [
+        [
+          -1,
+          5
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -3,
+          3
+        ]
+      ],
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "turning",
+            "time_s": 1.250290234500833,
+            "p_s_per_km": 0.2773500981126146,
+            "source_derivative_s_per_km": [
+              -0.2773500981126146,
+              -0.0,
+              -0.18490006540840967
+            ],
+            "distance_residual_km": -4.440892098500626e-16,
+            "turning_depth_km": 0.6055512754639891,
+            "certificate": "exact_linear",
+            "phase_velocity_exact_ratio": [
+              "8118979690322419",
+              "2251799813685248"
+            ],
+            "direction": 1,
+            "oriented_layer": 1,
+            "root_interval": [
+              2.0,
+              2.0
+            ]
+          },
+          {
+            "kind": "turning",
+            "time_s": 1.250290234500833,
+            "p_s_per_km": 0.2773500981126146,
+            "source_derivative_s_per_km": [
+              -0.2773500981126146,
+              -0.0,
+              0.18490006540840967
+            ],
+            "distance_residual_km": -4.440892098500626e-16,
+            "turning_depth_km": -0.6055512754639891,
+            "certificate": "exact_linear",
+            "phase_velocity_exact_ratio": [
+              "8118979690322419",
+              "2251799813685248"
+            ],
+            "direction": -1,
+            "oriented_layer": 1,
+            "root_interval": [
+              2.0,
+              2.0
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -3.0,
+          3.0
+        ],
+        "first_arrival": {
+          "kind": "turning",
+          "time_s": 1.250290234500833,
+          "p_s_per_km": 0.2773500981126146,
+          "source_derivative_s_per_km": [
+            -0.2773500981126146,
+            -0.0,
+            -0.18490006540840967
+          ],
+          "distance_residual_km": -4.440892098500626e-16,
+          "turning_depth_km": 0.6055512754639891,
+          "certificate": "exact_linear",
+          "phase_velocity_exact_ratio": [
+            "8118979690322419",
+            "2251799813685248"
+          ],
+          "direction": 1,
+          "oriented_layer": 1,
+          "root_interval": [
+            2.0,
+            2.0
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "turning",
+          "time_s": 1.250290234500833,
+          "p_s_per_km": 0.2773500981126146,
+          "source_derivative_s_per_km": [
+            -0.2773500981126146,
+            -0.0,
+            -0.18490006540840967
+          ],
+          "distance_residual_km": -4.440892098500626e-16,
+          "turning_depth_km": 0.6055512754639891,
+          "certificate": "exact_linear",
+          "phase_velocity_exact_ratio": [
+            "8118979690322419",
+            "2251799813685248"
+          ],
+          "direction": 1,
+          "oriented_layer": 1,
+          "root_interval": [
+            2.0,
+            2.0
+          ]
+        },
+        "near_ties": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "name": "two_equal_fast_boundaries",
+      "profile": [
+        [
+          -3,
+          6
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "source": [
+        0,
+        0,
+        0
+      ],
+      "receiver": [
+        20,
+        0,
+        0
+      ],
+      "bounds": [
+        [
+          -1,
+          21
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -3,
+          3
+        ]
+      ],
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "lower_boundary",
+            "time_s": 4.235198319614089,
+            "p_s_per_km": 0.16666666666666666,
+            "source_derivative_s_per_km": [
+              -0.16666666666666666,
+              -0.0,
+              0.28867513459481287
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": -3.0,
+            "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+            "phase_velocity_exact_ratio": [
+              "6",
+              "1"
+            ],
+            "horizontal_guide_length_km": 9.607695154586736
+          },
+          {
+            "kind": "upper_boundary",
+            "time_s": 4.235198319614089,
+            "p_s_per_km": 0.16666666666666666,
+            "source_derivative_s_per_km": [
+              -0.16666666666666666,
+              -0.0,
+              -0.28867513459481287
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 3.0,
+            "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+            "phase_velocity_exact_ratio": [
+              "6",
+              "1"
+            ],
+            "horizontal_guide_length_km": 9.607695154586736
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -3.0,
+          3.0
+        ],
+        "first_arrival": {
+          "kind": "lower_boundary",
+          "time_s": 4.235198319614089,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666666,
+            -0.0,
+            0.28867513459481287
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": -3.0,
+          "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+          "phase_velocity_exact_ratio": [
+            "6",
+            "1"
+          ],
+          "horizontal_guide_length_km": 9.607695154586736
+        },
+        "best_enumerated_candidate": {
+          "kind": "lower_boundary",
+          "time_s": 4.235198319614089,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666666,
+            -0.0,
+            0.28867513459481287
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": -3.0,
+          "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+          "phase_velocity_exact_ratio": [
+            "6",
+            "1"
+          ],
+          "horizontal_guide_length_km": 9.607695154586736
+        },
+        "near_ties": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "name": "equal_interior_maxima",
+      "profile": [
+        [
+          -4,
+          4
+        ],
+        [
+          -2,
+          6
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "source": [
+        0,
+        0,
+        -3
+      ],
+      "receiver": [
+        20,
+        0,
+        3
+      ],
+      "bounds": [
+        [
+          -1,
+          21
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -4,
+          4
+        ]
+      ],
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "critical_maximum_or_plateau",
+            "time_s": 3.9066520592163116,
+            "p_s_per_km": 0.16666666666666666,
+            "source_derivative_s_per_km": [
+              -0.16666666666666666,
+              -0.0,
+              -0.11055415967851333
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": -2.0,
+            "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+            "phase_velocity_exact_ratio": [
+              "6",
+              "1"
+            ],
+            "horizontal_guide_length_km": 4.422478509290043
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "time_s": 3.906652059216311,
+            "p_s_per_km": 0.16666666666666666,
+            "source_derivative_s_per_km": [
+              -0.16666666666666666,
+              -0.0,
+              -0.11055415967851333
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 2.0,
+            "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+            "phase_velocity_exact_ratio": [
+              "6",
+              "1"
+            ],
+            "horizontal_guide_length_km": 4.422478509290041
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -4.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 4.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -4.0,
+          4.0
+        ],
+        "first_arrival": {
+          "kind": "critical_maximum_or_plateau",
+          "time_s": 3.906652059216311,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666666,
+            -0.0,
+            -0.11055415967851333
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 2.0,
+          "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+          "phase_velocity_exact_ratio": [
+            "6",
+            "1"
+          ],
+          "horizontal_guide_length_km": 4.422478509290041
+        },
+        "best_enumerated_candidate": {
+          "kind": "critical_maximum_or_plateau",
+          "time_s": 3.906652059216311,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666666,
+            -0.0,
+            -0.11055415967851333
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 2.0,
+          "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+          "phase_velocity_exact_ratio": [
+            "6",
+            "1"
+          ],
+          "horizontal_guide_length_km": 4.422478509290041
+        },
+        "near_ties": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "name": "plateau_interface_source",
+      "profile": [
+        [
+          -2,
+          6
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "source": [
+        0,
+        0,
+        0
+      ],
+      "receiver": [
+        2,
+        0,
+        0
+      ],
+      "bounds": [
+        [
+          -1,
+          3
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "flat_direct",
+            "time_s": 0.3333333333333333,
+            "p_s_per_km": 0.16666666666666666,
+            "turning_depth_km": null,
+            "source_derivative_s_per_km": [
+              -0.16666666666666666,
+              0.0,
+              0.0
+            ],
+            "distance_residual_km": 0.0,
+            "certificate": "Whole intervening interval has constant velocity"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "time_s": 0.3333333333333333,
+            "p_s_per_km": 0.16666666666666666,
+            "source_derivative_s_per_km": [
+              -0.16666666666666666,
+              -0.0,
+              0.0
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 0.0,
+            "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+            "phase_velocity_exact_ratio": [
+              "6",
+              "1"
+            ],
+            "horizontal_guide_length_km": 2.0
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -2.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 1.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -2.0,
+          1.0
+        ],
+        "first_arrival": {
+          "kind": "flat_direct",
+          "time_s": 0.3333333333333333,
+          "p_s_per_km": 0.16666666666666666,
+          "turning_depth_km": null,
+          "source_derivative_s_per_km": [
+            -0.16666666666666666,
+            0.0,
+            0.0
+          ],
+          "distance_residual_km": 0.0,
+          "certificate": "Whole intervening interval has constant velocity"
+        },
+        "best_enumerated_candidate": {
+          "kind": "flat_direct",
+          "time_s": 0.3333333333333333,
+          "p_s_per_km": 0.16666666666666666,
+          "turning_depth_km": null,
+          "source_derivative_s_per_km": [
+            -0.16666666666666666,
+            0.0,
+            0.0
+          ],
+          "distance_residual_km": 0.0,
+          "certificate": "Whole intervening interval has constant velocity"
+        },
+        "near_ties": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "name": "preceding_peak_blocks_later_low_turn",
+      "profile": [
+        [
+          -2,
+          4
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "source": [
+        0,
+        0,
+        -1
+      ],
+      "receiver": [
+        12,
+        0,
+        -0.5
+      ],
+      "bounds": [
+        [
+          -1,
+          13
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -2,
+          5
+        ]
+      ],
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "critical_maximum_or_plateau",
+            "time_s": 1.8068952570232688,
+            "p_s_per_km": 0.14285714285714285,
+            "source_derivative_s_per_km": [
+              -0.14285714285714285,
+              -0.0,
+              -0.11247083166031671
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 0.0,
+            "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+            "phase_velocity_exact_ratio": [
+              "7",
+              "1"
+            ],
+            "horizontal_guide_length_km": 7.011661951898789
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 2,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "lower_boundary",
+            "depth_km": -2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 5.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 3.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 1,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -2.0,
+          5.0
+        ],
+        "first_arrival": {
+          "kind": "critical_maximum_or_plateau",
+          "time_s": 1.8068952570232688,
+          "p_s_per_km": 0.14285714285714285,
+          "source_derivative_s_per_km": [
+            -0.14285714285714285,
+            -0.0,
+            -0.11247083166031671
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 0.0,
+          "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+          "phase_velocity_exact_ratio": [
+            "7",
+            "1"
+          ],
+          "horizontal_guide_length_km": 7.011661951898789
+        },
+        "best_enumerated_candidate": {
+          "kind": "critical_maximum_or_plateau",
+          "time_s": 1.8068952570232688,
+          "p_s_per_km": 0.14285714285714285,
+          "source_derivative_s_per_km": [
+            -0.14285714285714285,
+            -0.0,
+            -0.11247083166031671
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 0.0,
+          "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+          "phase_velocity_exact_ratio": [
+            "7",
+            "1"
+          ],
+          "horizontal_guide_length_km": 7.011661951898789
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "deeper_turn_after_earlier_peak",
+      "profile": [
+        [
+          0.0,
+          4.0
+        ],
+        [
+          1.0,
+          6.0
+        ],
+        [
+          2.0,
+          4.0
+        ],
+        [
+          3.0,
+          8.0
+        ]
+      ],
+      "source": [
+        0.0,
+        0.0,
+        0.2
+      ],
+      "receiver": [
+        6.675420777213703,
+        0.0,
+        0.4
+      ],
+      "bounds": [
+        [
+          -1.0,
+          7.675420777213703
+        ],
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          0.0,
+          3.0
+        ]
+      ],
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "turning",
+            "time_s": 1.5808989967436913,
+            "p_s_per_km": 0.14285714285714268,
+            "source_derivative_s_per_km": [
+              -0.14285714285714268,
+              -0.0,
+              -0.17676178686774296
+            ],
+            "distance_residual_km": -5.329070518200751e-15,
+            "turning_depth_km": 2.7500000000000018,
+            "certificate": "interval_monotonicity_and_sign_change",
+            "phase_velocity_exact_ratio": [
+              "7881299347898377",
+              "1125899906842624"
+            ],
+            "direction": 1,
+            "oriented_layer": 2,
+            "root_interval": [
+              3.6055512754637036,
+              3.605551275464305
+            ]
+          },
+          {
+            "kind": "upper_boundary",
+            "time_s": 1.577180491152704,
+            "p_s_per_km": 0.125,
+            "source_derivative_s_per_km": [
+              -0.125,
+              -0.0,
+              -0.18981014873284163
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 3.0,
+            "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+            "phase_velocity_exact_ratio": [
+              "8",
+              "1"
+            ],
+            "horizontal_guide_length_km": 0.32546255836078863
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "time_s": 1.2336445367308861,
+            "p_s_per_km": 0.16666666666666666,
+            "source_derivative_s_per_km": [
+              -0.16666666666666666,
+              -0.0,
+              -0.15451574283614503
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": 1.0,
+            "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+            "phase_velocity_exact_ratio": [
+              "6",
+              "1"
+            ],
+            "horizontal_guide_length_km": 2.8358129717765896
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": 0.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 14,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          0.0,
+          3.0
+        ],
+        "first_arrival": {
+          "kind": "critical_maximum_or_plateau",
+          "time_s": 1.2336445367308861,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666666,
+            -0.0,
+            -0.15451574283614503
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 1.0,
+          "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+          "phase_velocity_exact_ratio": [
+            "6",
+            "1"
+          ],
+          "horizontal_guide_length_km": 2.8358129717765896
+        },
+        "best_enumerated_candidate": {
+          "kind": "critical_maximum_or_plateau",
+          "time_s": 1.2336445367308861,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666666,
+            -0.0,
+            -0.15451574283614503
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": 1.0,
+          "certificate": "Accessible tangent legs and certified nonnegative guide in the finite box",
+          "phase_velocity_exact_ratio": [
+            "6",
+            "1"
+          ],
+          "horizontal_guide_length_km": 2.8358129717765896
+        },
+        "near_ties": [
+          2
+        ]
+      }
+    }
+  ],
+  "passed": true,
+  "failures": [],
+  "source_sha256": {
+    "first_arrival_layered_reference.py": "2bf7fb9cb6adc477ae5f807267a7966247d95a68fe5b97a45565b685602da432",
+    "first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "check_layered_reference.py": "16b2bf9637d5af131ab43fef74989b3063a8998abf6c88d2e1b0eedee595ab83"
+  },
+  "prior_monotone_fixture_sha256": "72d7930634e0eb455e48e528d73a017f35b5456344a685007a7a4ac850b87653",
+  "limitations": [
+    "Candidate-count certificates do not supply interval bounds on time ranking.",
+    "Distinct tied branch derivatives are retained rather than interpreted as a unique gradient.",
+    "This is an isolated numerical component, not truth generation or a production solver replacement."
+  ]
+}

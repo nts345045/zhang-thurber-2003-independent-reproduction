@@ -1,0 +1,4809 @@
+{
+  "scope": "Maintained direct-root integration against frozen identified/invented arithmetic controls; no solver runs",
+  "checks": [
+    {
+      "name": "native_pair_18566_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18566_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18566_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18568_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18568_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18568_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18576_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18576_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18576_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18581_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18581_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18581_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18582_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18582_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18582_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18585_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18585_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18585_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18586_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18586_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18586_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18590_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18590_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18590_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18592_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18592_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18592_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18593_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18593_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18593_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18608_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18608_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "native_pair_18608_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1.0_distance_5.0_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1.0_distance_5.0_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1.0_distance_5.0_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1.0_distance_50.0_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1.0_distance_50.0_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1.0_distance_50.0_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_0.01_distance_5.0_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_0.01_distance_5.0_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_0.01_distance_5.0_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_0.01_distance_50.0_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_0.01_distance_50.0_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_0.01_distance_50.0_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-05_distance_5.0_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-05_distance_5.0_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-05_distance_5.0_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-05_distance_50.0_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-05_distance_50.0_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-05_distance_50.0_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-08_distance_5.0_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-08_distance_5.0_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-08_distance_5.0_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-08_distance_50.0_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-08_distance_50.0_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-08_distance_50.0_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-12_distance_5.0_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-12_distance_5.0_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-12_distance_5.0_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-12_distance_50.0_valid_direct",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-12_distance_50.0_matches_80digit_checked_control",
+      "passed": true
+    },
+    {
+      "name": "invented_epsilon_1e-12_distance_50.0_rational_parameter_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "direct_arithmetic_overflow_fails_closed",
+      "passed": true
+    },
+    {
+      "name": "direct_root_iteration_failure_fails_closed",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "count": 65,
+  "cases": [
+    {
+      "case": {
+        "name": "native_pair_18566",
+        "kind": "identified failed closure",
+        "native_metadata": {
+          "pair_index": "18566",
+          "event": "357",
+          "station": "2",
+          "reference_complete": "1",
+          "reference_valid": "0",
+          "candidate_count": "1",
+          "near_tie_count": "1",
+          "time_s": "",
+          "branch": "",
+          "turning_x_km": "",
+          "source_dx_s_per_km": "",
+          "source_dy_s_per_km": "",
+          "source_dz_s_per_km": "",
+          "source_id": "357",
+          "source_x": "-0.011677621261526383",
+          "source_y": "11.343469913550745",
+          "source_z": "15.559",
+          "source_t": "0",
+          "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091139",
+          "source_provider_event_dataid": "nc20091139",
+          "source_provider_event_datasource": "nc",
+          "source_provider_event_eventid": "20091139",
+          "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2650404",
+          "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1404864",
+          "source_origin_time_utc": "1989-10-18T17:11:49.970000Z",
+          "source_origin_time_provider_text": "1989-10-18T17:11:49.97",
+          "source_latitude_deg": "37.1083333",
+          "source_longitude_deg": "-121.9701667",
+          "source_geoid_depth_km": "15.559",
+          "source_magnitude": "2.11",
+          "source_magnitude_type": "Md",
+          "source_event_type": "earthquake",
+          "source_origin_evaluation_status": "final",
+          "source_origin_method_resource_id": "smi:NC.anss.org/origin/HYPO_m2g",
+          "source_earth_model_resource_id": "",
+          "source_east_km": "-8.029301823239464",
+          "source_north_km": "8.012787172875159",
+          "source_x_km": "-0.011677621261526383",
+          "source_y_km": "11.343469913550745",
+          "source_selected": "1",
+          "source_exclusion_reasons": "",
+          "source_source_file": "raw/events_00001.xml",
+          "source_source_sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+          "source_source_url": "https://service.ncedc.org/fdsnws/event/1/query?start=1989-10-18T00%3A00%3A00&end=1989-11-18T00%3A00%3A00&minmag=2.0&maxmag=5.5&minlat=36.5&maxlat=37.6&minlon=-122.6&maxlon=-121.2&catalog=NCSS&format=xml&includearrivals=false&orderby=time-asc&limit=10000&offset=1",
+          "source_retrieved_utc": "2026-10-09T22:21:36.623257Z",
+          "source_coordinate_basis": "catalog-defined simulation truth",
+          "source_origin_resource_id_basis": "provider catalog geometry reference, not a simulated pick/origin identifier",
+          "source_simulation_origin_time_basis": "truth t=0; initial/inverted t is a simulated correction in seconds",
+          "receiver_id": "2",
+          "receiver_x": "13.158700251044163",
+          "receiver_y": "-53.71987480818031",
+          "receiver_z": "-0.142",
+          "receiver_t": "0",
+          "receiver_network_code": "NC",
+          "receiver_station_code": "BSL",
+          "receiver_station_seed_id": "NC.BSL",
+          "receiver_station_fdsn_source_id": "FDSN:NC_BSL",
+          "receiver_location_code": "",
+          "receiver_channel_code": "EHZ",
+          "receiver_channel_seed_id": "NC.BSL..EHZ",
+          "receiver_channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+          "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "receiver_latitude_deg": "36.776535",
+          "receiver_longitude_deg": "-121.35009",
+          "receiver_channel_sensor_elevation_m": "142.0",
+          "receiver_sensor_depth_below_ground_m": "0.0",
+          "receiver_station_elevation_m": "142.0",
+          "receiver_metadata_epoch_start": "1989-08-25T19:45:00",
+          "receiver_metadata_epoch_end": "1990-09-10T19:20:00",
+          "receiver_channel_epoch_start": "1989-08-25T19:45:00",
+          "receiver_channel_epoch_end": "1990-09-10T19:20:00",
+          "receiver_station_epoch_start": "1975-07-16T00:00:00",
+          "receiver_station_epoch_end": "2020-06-01T18:40:00",
+          "receiver_provider_channel_source_id": "",
+          "receiver_provider_channel_resource_ids_json": "[]",
+          "receiver_provider_station_resource_ids_json": "[]",
+          "receiver_provider_network_resource_ids_json": "[]",
+          "receiver_latitude_datum": "WGS84 (StationXML default)",
+          "receiver_longitude_datum": "WGS84 (StationXML default)",
+          "receiver_sensor_z_geoid_km": "-0.142",
+          "receiver_z_if_sensor_elevation_km": "-0.142",
+          "receiver_z_if_ground_elevation_km": "-0.142",
+          "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "receiver_metadata_source_kind": "StationXML channel metadata",
+          "receiver_stationxml_schema_version": "1.2",
+          "receiver_source_document_metadata_index": "39",
+          "receiver_source_file": "raw/ncedc_channel_epochs.xml",
+          "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&cha=EHZ&start=1989-11-01T00%3A00%3A00Z&end=1989-11-01T00%3A00%3A00Z&level=channel&format=xml",
+          "receiver_source_sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+          "receiver_retrieved_utc": "2026-10-09T22:21:22.924933Z",
+          "receiver_east_km": "47.29029394047113",
+          "receiver_north_km": "-28.681081582242232",
+          "receiver_x_km": "13.158700251044163",
+          "receiver_y_km": "-53.71987480818031",
+          "receiver_snapshot_utc": "1989-11-01T00:00:00Z",
+          "receiver_selected": "1",
+          "receiver_exclusion_reasons": ""
+        },
+        "profile": [
+          [
+            -35.0,
+            6.0
+          ],
+          [
+            -15.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ],
+          [
+            4.0,
+            4.0
+          ],
+          [
+            5.0,
+            4.0
+          ],
+          [
+            6.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.4375
+          ],
+          [
+            35.0,
+            5.90625
+          ]
+        ],
+        "source": [
+          -0.011677621261526383,
+          11.343469913550745,
+          15.559
+        ],
+        "receiver": [
+          13.158700251044163,
+          -53.71987480818031,
+          -0.142
+        ],
+        "saved_candidate": {
+          "kind": "direct",
+          "time_s": 12.88962422595484,
+          "p_s_per_km": 0.1666666617927995,
+          "source_derivative_s_per_km": [
+            0.16201593723471527,
+            0.039097470955449284,
+            -4.030660454131809e-05
+          ],
+          "distance_residual_km": -1.6324619878105295e-08,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound"
+        }
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 12.889624228675611,
+            "p_s_per_km": 0.1666666617927995,
+            "source_derivative_s_per_km": [
+              0.16201593723471527,
+              0.039097470955449284,
+              -4.030660452769154e-05
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "113336798903202509796975",
+              "18889465931478580854784"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 7,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 8,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "lower_boundary",
+            "depth_km": -35.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 35.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": -15.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 4.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -35.0,
+          35.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 12.889624228675611,
+          "p_s_per_km": 0.1666666617927995,
+          "source_derivative_s_per_km": [
+            0.16201593723471527,
+            0.039097470955449284,
+            -4.030660452769154e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "113336798903202509796975",
+            "18889465931478580854784"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 12.889624228675611,
+          "p_s_per_km": 0.1666666617927995,
+          "source_derivative_s_per_km": [
+            0.16201593723471527,
+            0.039097470955449284,
+            -4.030660452769154e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "113336798903202509796975",
+            "18889465931478580854784"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "native_pair_18568",
+        "kind": "identified failed closure",
+        "native_metadata": {
+          "pair_index": "18568",
+          "event": "357",
+          "station": "4",
+          "reference_complete": "1",
+          "reference_valid": "0",
+          "candidate_count": "1",
+          "near_tie_count": "1",
+          "time_s": "",
+          "branch": "",
+          "turning_x_km": "",
+          "source_dx_s_per_km": "",
+          "source_dy_s_per_km": "",
+          "source_dz_s_per_km": "",
+          "source_id": "357",
+          "source_x": "-0.011677621261526383",
+          "source_y": "11.343469913550745",
+          "source_z": "15.559",
+          "source_t": "0",
+          "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091139",
+          "source_provider_event_dataid": "nc20091139",
+          "source_provider_event_datasource": "nc",
+          "source_provider_event_eventid": "20091139",
+          "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2650404",
+          "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1404864",
+          "source_origin_time_utc": "1989-10-18T17:11:49.970000Z",
+          "source_origin_time_provider_text": "1989-10-18T17:11:49.97",
+          "source_latitude_deg": "37.1083333",
+          "source_longitude_deg": "-121.9701667",
+          "source_geoid_depth_km": "15.559",
+          "source_magnitude": "2.11",
+          "source_magnitude_type": "Md",
+          "source_event_type": "earthquake",
+          "source_origin_evaluation_status": "final",
+          "source_origin_method_resource_id": "smi:NC.anss.org/origin/HYPO_m2g",
+          "source_earth_model_resource_id": "",
+          "source_east_km": "-8.029301823239464",
+          "source_north_km": "8.012787172875159",
+          "source_x_km": "-0.011677621261526383",
+          "source_y_km": "11.343469913550745",
+          "source_selected": "1",
+          "source_exclusion_reasons": "",
+          "source_source_file": "raw/events_00001.xml",
+          "source_source_sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+          "source_source_url": "https://service.ncedc.org/fdsnws/event/1/query?start=1989-10-18T00%3A00%3A00&end=1989-11-18T00%3A00%3A00&minmag=2.0&maxmag=5.5&minlat=36.5&maxlat=37.6&minlon=-122.6&maxlon=-121.2&catalog=NCSS&format=xml&includearrivals=false&orderby=time-asc&limit=10000&offset=1",
+          "source_retrieved_utc": "2026-10-09T22:21:36.623257Z",
+          "source_coordinate_basis": "catalog-defined simulation truth",
+          "source_origin_resource_id_basis": "provider catalog geometry reference, not a simulated pick/origin identifier",
+          "source_simulation_origin_time_basis": "truth t=0; initial/inverted t is a simulated correction in seconds",
+          "receiver_id": "4",
+          "receiver_x": "6.625820427140017",
+          "receiver_y": "-51.98484190786898",
+          "receiver_z": "-0.647",
+          "receiver_t": "0",
+          "receiver_network_code": "NC",
+          "receiver_station_code": "BVY",
+          "receiver_station_seed_id": "NC.BVY",
+          "receiver_station_fdsn_source_id": "FDSN:NC_BVY",
+          "receiver_location_code": "",
+          "receiver_channel_code": "EHZ",
+          "receiver_channel_seed_id": "NC.BVY..EHZ",
+          "receiver_channel_fdsn_source_id": "FDSN:NC_BVY__E_H_Z",
+          "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "receiver_latitude_deg": "36.746239",
+          "receiver_longitude_deg": "-121.415764",
+          "receiver_channel_sensor_elevation_m": "647.0",
+          "receiver_sensor_depth_below_ground_m": "0.0",
+          "receiver_station_elevation_m": "647.0",
+          "receiver_metadata_epoch_start": "1989-02-27T22:25:00",
+          "receiver_metadata_epoch_end": "1990-08-08T21:00:00",
+          "receiver_channel_epoch_start": "1989-02-27T22:25:00",
+          "receiver_channel_epoch_end": "1990-08-08T21:00:00",
+          "receiver_station_epoch_start": "1975-12-11T00:00:00",
+          "receiver_station_epoch_end": "2019-12-19T23:36:00",
+          "receiver_provider_channel_source_id": "",
+          "receiver_provider_channel_resource_ids_json": "[]",
+          "receiver_provider_station_resource_ids_json": "[]",
+          "receiver_provider_network_resource_ids_json": "[]",
+          "receiver_latitude_datum": "WGS84 (StationXML default)",
+          "receiver_longitude_datum": "WGS84 (StationXML default)",
+          "receiver_sensor_z_geoid_km": "-0.647",
+          "receiver_z_if_sensor_elevation_km": "-0.647",
+          "receiver_z_if_ground_elevation_km": "-0.647",
+          "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "receiver_metadata_source_kind": "StationXML channel metadata",
+          "receiver_stationxml_schema_version": "1.2",
+          "receiver_source_document_metadata_index": "43",
+          "receiver_source_file": "raw/ncedc_channel_epochs.xml",
+          "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&cha=EHZ&start=1989-11-01T00%3A00%3A00Z&end=1989-11-01T00%3A00%3A00Z&level=channel&format=xml",
+          "receiver_source_sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+          "receiver_retrieved_utc": "2026-10-09T22:21:22.924933Z",
+          "receiver_east_km": "41.443996786919826",
+          "receiver_north_km": "-32.07367167700973",
+          "receiver_x_km": "6.625820427140017",
+          "receiver_y_km": "-51.98484190786898",
+          "receiver_snapshot_utc": "1989-11-01T00:00:00Z",
+          "receiver_selected": "1",
+          "receiver_exclusion_reasons": ""
+        },
+        "profile": [
+          [
+            -35.0,
+            6.0
+          ],
+          [
+            -15.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ],
+          [
+            4.0,
+            4.0
+          ],
+          [
+            5.0,
+            4.0
+          ],
+          [
+            6.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.4375
+          ],
+          [
+            35.0,
+            5.90625
+          ]
+        ],
+        "source": [
+          -0.011677621261526383,
+          11.343469913550745,
+          15.559
+        ],
+        "receiver": [
+          6.625820427140017,
+          -51.98484190786898,
+          -0.647
+        ],
+        "saved_candidate": {
+          "kind": "direct",
+          "time_s": 11.964947641318739,
+          "p_s_per_km": 0.16666666322367935,
+          "source_derivative_s_per_km": [
+            0.16146360320133918,
+            0.041319262715540366,
+            -3.387716686359779e-05
+          ],
+          "distance_residual_km": 2.1682666329070344e-08,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound"
+        }
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 11.964947637704961,
+            "p_s_per_km": 0.16666666322367935,
+            "source_derivative_s_per_km": [
+              0.16146360320133918,
+              0.041319262715540366,
+              -3.387716687638333e-05
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "226673595860348898506151",
+              "37778931862957161709568"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 7,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 8,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "lower_boundary",
+            "depth_km": -35.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 35.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": -15.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 4.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -35.0,
+          35.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 11.964947637704961,
+          "p_s_per_km": 0.16666666322367935,
+          "source_derivative_s_per_km": [
+            0.16146360320133918,
+            0.041319262715540366,
+            -3.387716687638333e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "226673595860348898506151",
+            "37778931862957161709568"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 11.964947637704961,
+          "p_s_per_km": 0.16666666322367935,
+          "source_derivative_s_per_km": [
+            0.16146360320133918,
+            0.041319262715540366,
+            -3.387716687638333e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "226673595860348898506151",
+            "37778931862957161709568"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "native_pair_18576",
+        "kind": "identified failed closure",
+        "native_metadata": {
+          "pair_index": "18576",
+          "event": "357",
+          "station": "12",
+          "reference_complete": "1",
+          "reference_valid": "0",
+          "candidate_count": "1",
+          "near_tie_count": "1",
+          "time_s": "",
+          "branch": "",
+          "turning_x_km": "",
+          "source_dx_s_per_km": "",
+          "source_dy_s_per_km": "",
+          "source_dz_s_per_km": "",
+          "source_id": "357",
+          "source_x": "-0.011677621261526383",
+          "source_y": "11.343469913550745",
+          "source_z": "15.559",
+          "source_t": "0",
+          "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091139",
+          "source_provider_event_dataid": "nc20091139",
+          "source_provider_event_datasource": "nc",
+          "source_provider_event_eventid": "20091139",
+          "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2650404",
+          "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1404864",
+          "source_origin_time_utc": "1989-10-18T17:11:49.970000Z",
+          "source_origin_time_provider_text": "1989-10-18T17:11:49.97",
+          "source_latitude_deg": "37.1083333",
+          "source_longitude_deg": "-121.9701667",
+          "source_geoid_depth_km": "15.559",
+          "source_magnitude": "2.11",
+          "source_magnitude_type": "Md",
+          "source_event_type": "earthquake",
+          "source_origin_evaluation_status": "final",
+          "source_origin_method_resource_id": "smi:NC.anss.org/origin/HYPO_m2g",
+          "source_earth_model_resource_id": "",
+          "source_east_km": "-8.029301823239464",
+          "source_north_km": "8.012787172875159",
+          "source_x_km": "-0.011677621261526383",
+          "source_y_km": "11.343469913550745",
+          "source_selected": "1",
+          "source_exclusion_reasons": "",
+          "source_source_file": "raw/events_00001.xml",
+          "source_source_sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+          "source_source_url": "https://service.ncedc.org/fdsnws/event/1/query?start=1989-10-18T00%3A00%3A00&end=1989-11-18T00%3A00%3A00&minmag=2.0&maxmag=5.5&minlat=36.5&maxlat=37.6&minlon=-122.6&maxlon=-121.2&catalog=NCSS&format=xml&includearrivals=false&orderby=time-asc&limit=10000&offset=1",
+          "source_retrieved_utc": "2026-10-09T22:21:36.623257Z",
+          "source_coordinate_basis": "catalog-defined simulation truth",
+          "source_origin_resource_id_basis": "provider catalog geometry reference, not a simulated pick/origin identifier",
+          "source_simulation_origin_time_basis": "truth t=0; initial/inverted t is a simulated correction in seconds",
+          "receiver_id": "12",
+          "receiver_x": "5.530176055632779",
+          "receiver_y": "-21.94605903660992",
+          "receiver_z": "-0.2",
+          "receiver_t": "0",
+          "receiver_network_code": "NC",
+          "receiver_station_code": "HCB",
+          "receiver_station_seed_id": "NC.HCB",
+          "receiver_station_fdsn_source_id": "FDSN:NC_HCB",
+          "receiver_location_code": "",
+          "receiver_channel_code": "EHZ",
+          "receiver_channel_seed_id": "NC.HCB..EHZ",
+          "receiver_channel_fdsn_source_id": "FDSN:NC_HCB__E_H_Z",
+          "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "receiver_latitude_deg": "36.93137",
+          "receiver_longitude_deg": "-121.661758",
+          "receiver_channel_sensor_elevation_m": "200.0",
+          "receiver_sensor_depth_below_ground_m": "0.0",
+          "receiver_station_elevation_m": "200.0",
+          "receiver_metadata_epoch_start": "1989-03-17T22:55:00",
+          "receiver_metadata_epoch_end": "1990-02-21T21:33:00",
+          "receiver_channel_epoch_start": "1989-03-17T22:55:00",
+          "receiver_channel_epoch_end": "1990-02-21T21:33:00",
+          "receiver_station_epoch_start": "1968-06-16T00:00:00",
+          "receiver_station_epoch_end": "2016-12-08T05:44:00",
+          "receiver_provider_channel_source_id": "",
+          "receiver_provider_channel_resource_ids_json": "[]",
+          "receiver_provider_station_resource_ids_json": "[]",
+          "receiver_provider_network_resource_ids_json": "[]",
+          "receiver_latitude_datum": "WGS84 (StationXML default)",
+          "receiver_longitude_datum": "WGS84 (StationXML default)",
+          "receiver_sensor_z_geoid_km": "-0.2",
+          "receiver_z_if_sensor_elevation_km": "-0.2",
+          "receiver_z_if_ground_elevation_km": "-0.2",
+          "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "receiver_metadata_source_kind": "StationXML channel metadata",
+          "receiver_stationxml_schema_version": "1.2",
+          "receiver_source_document_metadata_index": "119",
+          "receiver_source_file": "raw/ncedc_channel_epochs.xml",
+          "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&cha=EHZ&start=1989-11-01T00%3A00%3A00Z&end=1989-11-01T00%3A00%3A00Z&level=channel&format=xml",
+          "receiver_source_sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+          "receiver_retrieved_utc": "2026-10-09T22:21:22.924933Z",
+          "receiver_east_km": "19.428632155200596",
+          "receiver_north_km": "-11.607782175013774",
+          "receiver_x_km": "5.530176055632779",
+          "receiver_y_km": "-21.94605903660992",
+          "receiver_snapshot_utc": "1989-11-01T00:00:00Z",
+          "receiver_selected": "1",
+          "receiver_exclusion_reasons": ""
+        },
+        "profile": [
+          [
+            -35.0,
+            6.0
+          ],
+          [
+            -15.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ],
+          [
+            4.0,
+            4.0
+          ],
+          [
+            5.0,
+            4.0
+          ],
+          [
+            6.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.4375
+          ],
+          [
+            35.0,
+            5.90625
+          ]
+        ],
+        "source": [
+          -0.011677621261526383,
+          11.343469913550745,
+          15.559
+        ],
+        "receiver": [
+          5.530176055632779,
+          -21.94605903660992,
+          -0.2
+        ],
+        "saved_candidate": {
+          "kind": "direct",
+          "time_s": 7.079968524931323,
+          "p_s_per_km": 0.1666666544351489,
+          "source_derivative_s_per_km": [
+            0.1506399818261017,
+            0.07131177726040125,
+            -6.385274029952873e-05
+          ],
+          "distance_residual_km": -1.2435428686785599e-08,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound"
+        }
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 7.079968527003895,
+            "p_s_per_km": 0.16666665443514891,
+            "source_derivative_s_per_km": [
+              0.15063998182610172,
+              0.07131177726040126,
+              -6.385274027347916e-05
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "56668401953279135541835",
+              "9444732965739290427392"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 6,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 7,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 8,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "lower_boundary",
+            "depth_km": -35.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 35.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": -15.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 4.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -35.0,
+          35.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 7.079968527003895,
+          "p_s_per_km": 0.16666665443514891,
+          "source_derivative_s_per_km": [
+            0.15063998182610172,
+            0.07131177726040126,
+            -6.385274027347916e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "56668401953279135541835",
+            "9444732965739290427392"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 7.079968527003895,
+          "p_s_per_km": 0.16666665443514891,
+          "source_derivative_s_per_km": [
+            0.15063998182610172,
+            0.07131177726040126,
+            -6.385274027347916e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "56668401953279135541835",
+            "9444732965739290427392"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "native_pair_18581",
+        "kind": "identified failed closure",
+        "native_metadata": {
+          "pair_index": "18581",
+          "event": "357",
+          "station": "17",
+          "reference_complete": "1",
+          "reference_valid": "0",
+          "candidate_count": "1",
+          "near_tie_count": "1",
+          "time_s": "",
+          "branch": "",
+          "turning_x_km": "",
+          "source_dx_s_per_km": "",
+          "source_dy_s_per_km": "",
+          "source_dz_s_per_km": "",
+          "source_id": "357",
+          "source_x": "-0.011677621261526383",
+          "source_y": "11.343469913550745",
+          "source_z": "15.559",
+          "source_t": "0",
+          "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091139",
+          "source_provider_event_dataid": "nc20091139",
+          "source_provider_event_datasource": "nc",
+          "source_provider_event_eventid": "20091139",
+          "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2650404",
+          "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1404864",
+          "source_origin_time_utc": "1989-10-18T17:11:49.970000Z",
+          "source_origin_time_provider_text": "1989-10-18T17:11:49.97",
+          "source_latitude_deg": "37.1083333",
+          "source_longitude_deg": "-121.9701667",
+          "source_geoid_depth_km": "15.559",
+          "source_magnitude": "2.11",
+          "source_magnitude_type": "Md",
+          "source_event_type": "earthquake",
+          "source_origin_evaluation_status": "final",
+          "source_origin_method_resource_id": "smi:NC.anss.org/origin/HYPO_m2g",
+          "source_earth_model_resource_id": "",
+          "source_east_km": "-8.029301823239464",
+          "source_north_km": "8.012787172875159",
+          "source_x_km": "-0.011677621261526383",
+          "source_y_km": "11.343469913550745",
+          "source_selected": "1",
+          "source_exclusion_reasons": "",
+          "source_source_file": "raw/events_00001.xml",
+          "source_source_sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+          "source_source_url": "https://service.ncedc.org/fdsnws/event/1/query?start=1989-10-18T00%3A00%3A00&end=1989-11-18T00%3A00%3A00&minmag=2.0&maxmag=5.5&minlat=36.5&maxlat=37.6&minlon=-122.6&maxlon=-121.2&catalog=NCSS&format=xml&includearrivals=false&orderby=time-asc&limit=10000&offset=1",
+          "source_retrieved_utc": "2026-10-09T22:21:36.623257Z",
+          "source_coordinate_basis": "catalog-defined simulation truth",
+          "source_origin_resource_id_basis": "provider catalog geometry reference, not a simulated pick/origin identifier",
+          "source_simulation_origin_time_basis": "truth t=0; initial/inverted t is a simulated correction in seconds",
+          "receiver_id": "17",
+          "receiver_x": "14.34836463834679",
+          "receiver_y": "-37.46407613482154",
+          "receiver_z": "-0.101",
+          "receiver_t": "0",
+          "receiver_network_code": "NC",
+          "receiver_station_code": "HFH",
+          "receiver_station_seed_id": "NC.HFH",
+          "receiver_station_fdsn_source_id": "FDSN:NC_HFH",
+          "receiver_location_code": "",
+          "receiver_channel_code": "EHZ",
+          "receiver_channel_seed_id": "NC.HFH..EHZ",
+          "receiver_channel_fdsn_source_id": "FDSN:NC_HFH__E_H_Z",
+          "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "receiver_latitude_deg": "36.888168",
+          "receiver_longitude_deg": "-121.468834",
+          "receiver_channel_sensor_elevation_m": "101.0",
+          "receiver_sensor_depth_below_ground_m": "0.0",
+          "receiver_station_elevation_m": "101.0",
+          "receiver_metadata_epoch_start": "1989-08-25T22:40:00",
+          "receiver_metadata_epoch_end": "1991-02-05T21:30:00",
+          "receiver_channel_epoch_start": "1989-08-25T22:40:00",
+          "receiver_channel_epoch_end": "1991-02-05T21:30:00",
+          "receiver_station_epoch_start": "1975-12-05T21:15:00",
+          "receiver_station_epoch_end": "1991-02-05T21:30:00",
+          "receiver_provider_channel_source_id": "",
+          "receiver_provider_channel_resource_ids_json": "[]",
+          "receiver_provider_station_resource_ids_json": "[]",
+          "receiver_provider_network_resource_ids_json": "[]",
+          "receiver_latitude_datum": "WGS84 (StationXML default)",
+          "receiver_longitude_datum": "WGS84 (StationXML default)",
+          "receiver_sensor_z_geoid_km": "-0.101",
+          "receiver_z_if_sensor_elevation_km": "-0.101",
+          "receiver_z_if_ground_elevation_km": "-0.101",
+          "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "receiver_metadata_source_kind": "StationXML channel metadata",
+          "receiver_stationxml_schema_version": "1.2",
+          "receiver_source_document_metadata_index": "124",
+          "receiver_source_file": "raw/ncedc_channel_epochs.xml",
+          "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&cha=EHZ&start=1989-11-01T00%3A00%3A00Z&end=1989-11-01T00%3A00%3A00Z&level=channel&format=xml",
+          "receiver_source_sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+          "receiver_retrieved_utc": "2026-10-09T22:21:22.924933Z",
+          "receiver_east_km": "36.63692822053369",
+          "receiver_north_km": "-16.345276351109135",
+          "receiver_x_km": "14.34836463834679",
+          "receiver_y_km": "-37.46407613482154",
+          "receiver_snapshot_utc": "1989-11-01T00:00:00Z",
+          "receiver_selected": "1",
+          "receiver_exclusion_reasons": ""
+        },
+        "profile": [
+          [
+            -35.0,
+            6.0
+          ],
+          [
+            -15.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ],
+          [
+            4.0,
+            4.0
+          ],
+          [
+            5.0,
+            4.0
+          ],
+          [
+            6.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.4375
+          ],
+          [
+            35.0,
+            5.90625
+          ]
+        ],
+        "source": [
+          -0.011677621261526383,
+          11.343469913550745,
+          15.559
+        ],
+        "receiver": [
+          14.34836463834679,
+          -37.46407613482154,
+          -0.101
+        ],
+        "saved_candidate": {
+          "kind": "direct",
+          "time_s": 10.387892412539381,
+          "p_s_per_km": 0.16666665443251752,
+          "source_derivative_s_per_km": [
+            0.1586980492613942,
+            0.05091859051816259,
+            -6.385960822820226e-05
+          ],
+          "distance_residual_km": -1.0121461002654542e-08,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound"
+        }
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 10.387892414226293,
+            "p_s_per_km": 0.16666665443251752,
+            "source_derivative_s_per_km": [
+              0.1586980492613942,
+              0.05091859051816259,
+              -6.385960820699539e-05
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "113336803908347650774189",
+              "18889465931478580854784"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 7,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 8,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "lower_boundary",
+            "depth_km": -35.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 35.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": -15.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 4.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -35.0,
+          35.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 10.387892414226293,
+          "p_s_per_km": 0.16666665443251752,
+          "source_derivative_s_per_km": [
+            0.1586980492613942,
+            0.05091859051816259,
+            -6.385960820699539e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "113336803908347650774189",
+            "18889465931478580854784"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 10.387892414226293,
+          "p_s_per_km": 0.16666665443251752,
+          "source_derivative_s_per_km": [
+            0.1586980492613942,
+            0.05091859051816259,
+            -6.385960820699539e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "113336803908347650774189",
+            "18889465931478580854784"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "native_pair_18582",
+        "kind": "identified failed closure",
+        "native_metadata": {
+          "pair_index": "18582",
+          "event": "357",
+          "station": "18",
+          "reference_complete": "1",
+          "reference_valid": "0",
+          "candidate_count": "1",
+          "near_tie_count": "1",
+          "time_s": "",
+          "branch": "",
+          "turning_x_km": "",
+          "source_dx_s_per_km": "",
+          "source_dy_s_per_km": "",
+          "source_dz_s_per_km": "",
+          "source_id": "357",
+          "source_x": "-0.011677621261526383",
+          "source_y": "11.343469913550745",
+          "source_z": "15.559",
+          "source_t": "0",
+          "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091139",
+          "source_provider_event_dataid": "nc20091139",
+          "source_provider_event_datasource": "nc",
+          "source_provider_event_eventid": "20091139",
+          "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2650404",
+          "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1404864",
+          "source_origin_time_utc": "1989-10-18T17:11:49.970000Z",
+          "source_origin_time_provider_text": "1989-10-18T17:11:49.97",
+          "source_latitude_deg": "37.1083333",
+          "source_longitude_deg": "-121.9701667",
+          "source_geoid_depth_km": "15.559",
+          "source_magnitude": "2.11",
+          "source_magnitude_type": "Md",
+          "source_event_type": "earthquake",
+          "source_origin_evaluation_status": "final",
+          "source_origin_method_resource_id": "smi:NC.anss.org/origin/HYPO_m2g",
+          "source_earth_model_resource_id": "",
+          "source_east_km": "-8.029301823239464",
+          "source_north_km": "8.012787172875159",
+          "source_x_km": "-0.011677621261526383",
+          "source_y_km": "11.343469913550745",
+          "source_selected": "1",
+          "source_exclusion_reasons": "",
+          "source_source_file": "raw/events_00001.xml",
+          "source_source_sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+          "source_source_url": "https://service.ncedc.org/fdsnws/event/1/query?start=1989-10-18T00%3A00%3A00&end=1989-11-18T00%3A00%3A00&minmag=2.0&maxmag=5.5&minlat=36.5&maxlat=37.6&minlon=-122.6&maxlon=-121.2&catalog=NCSS&format=xml&includearrivals=false&orderby=time-asc&limit=10000&offset=1",
+          "source_retrieved_utc": "2026-10-09T22:21:36.623257Z",
+          "source_coordinate_basis": "catalog-defined simulation truth",
+          "source_origin_resource_id_basis": "provider catalog geometry reference, not a simulated pick/origin identifier",
+          "source_simulation_origin_time_basis": "truth t=0; initial/inverted t is a simulated correction in seconds",
+          "receiver_id": "18",
+          "receiver_x": "2.3825271207614485",
+          "receiver_y": "-46.63806897536881",
+          "receiver_z": "-0.658",
+          "receiver_t": "0",
+          "receiver_network_code": "NC",
+          "receiver_station_code": "HFP",
+          "receiver_station_seed_id": "NC.HFP",
+          "receiver_station_fdsn_source_id": "FDSN:NC_HFP",
+          "receiver_location_code": "",
+          "receiver_channel_code": "EHZ",
+          "receiver_channel_seed_id": "NC.HFP..EHZ",
+          "receiver_channel_fdsn_source_id": "FDSN:NC_HFP__E_H_Z",
+          "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "receiver_latitude_deg": "36.753544",
+          "receiver_longitude_deg": "-121.491661",
+          "receiver_channel_sensor_elevation_m": "658.0",
+          "receiver_sensor_depth_below_ground_m": "0.0",
+          "receiver_station_elevation_m": "658.0",
+          "receiver_metadata_epoch_start": "1989-05-05T21:40:00",
+          "receiver_metadata_epoch_end": "1990-08-02T23:10:00",
+          "receiver_channel_epoch_start": "1989-05-05T21:40:00",
+          "receiver_channel_epoch_end": "1990-08-02T23:10:00",
+          "receiver_station_epoch_start": "1970-09-02T00:00:00",
+          "receiver_station_epoch_end": "3000-01-01T00:00:00",
+          "receiver_provider_channel_source_id": "",
+          "receiver_provider_channel_resource_ids_json": "[]",
+          "receiver_provider_station_resource_ids_json": "[]",
+          "receiver_provider_network_resource_ids_json": "[]",
+          "receiver_latitude_datum": "WGS84 (StationXML default)",
+          "receiver_longitude_datum": "WGS84 (StationXML default)",
+          "receiver_sensor_z_geoid_km": "-0.658",
+          "receiver_z_if_sensor_elevation_km": "-0.658",
+          "receiver_z_if_ground_elevation_km": "-0.658",
+          "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "receiver_metadata_source_kind": "StationXML channel metadata",
+          "receiver_stationxml_schema_version": "1.2",
+          "receiver_source_document_metadata_index": "125",
+          "receiver_source_file": "raw/ncedc_channel_epochs.xml",
+          "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&cha=EHZ&start=1989-11-01T00%3A00%3A00Z&end=1989-11-01T00%3A00%3A00Z&level=channel&format=xml",
+          "receiver_source_sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+          "receiver_retrieved_utc": "2026-10-09T22:21:22.924933Z",
+          "receiver_east_km": "34.66279591738051",
+          "receiver_north_km": "-31.293393750477946",
+          "receiver_x_km": "2.3825271207614485",
+          "receiver_y_km": "-46.63806897536881",
+          "receiver_snapshot_utc": "1989-11-01T00:00:00Z",
+          "receiver_selected": "1",
+          "receiver_exclusion_reasons": ""
+        },
+        "profile": [
+          [
+            -35.0,
+            6.0
+          ],
+          [
+            -15.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ],
+          [
+            4.0,
+            4.0
+          ],
+          [
+            5.0,
+            4.0
+          ],
+          [
+            6.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.4375
+          ],
+          [
+            35.0,
+            5.90625
+          ]
+        ],
+        "source": [
+          -0.011677621261526383,
+          11.343469913550745,
+          15.559
+        ],
+        "receiver": [
+          2.3825271207614485,
+          -46.63806897536881,
+          -0.658
+        ],
+        "saved_candidate": {
+          "kind": "direct",
+          "time_s": 10.400607207740299,
+          "p_s_per_km": 0.16666666313621809,
+          "source_derivative_s_per_km": [
+            0.16050680942911522,
+            0.044892546462049675,
+            -3.430475441165174e-05
+          ],
+          "distance_residual_km": 5.2111239767782536e-08,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound"
+        }
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 10.400607199055093,
+            "p_s_per_km": 0.16666666313621809,
+            "source_derivative_s_per_km": [
+              0.16050680942911522,
+              0.044892546462049675,
+              -3.4304754443160555e-05
+            ],
+            "distance_residual_km": -7.105427357601002e-15,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "226673595979299806416667",
+              "37778931862957161709568"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 6,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 7,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 8,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "lower_boundary",
+            "depth_km": -35.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 35.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": -15.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 4.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -35.0,
+          35.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 10.400607199055093,
+          "p_s_per_km": 0.16666666313621809,
+          "source_derivative_s_per_km": [
+            0.16050680942911522,
+            0.044892546462049675,
+            -3.4304754443160555e-05
+          ],
+          "distance_residual_km": -7.105427357601002e-15,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "226673595979299806416667",
+            "37778931862957161709568"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 10.400607199055093,
+          "p_s_per_km": 0.16666666313621809,
+          "source_derivative_s_per_km": [
+            0.16050680942911522,
+            0.044892546462049675,
+            -3.4304754443160555e-05
+          ],
+          "distance_residual_km": -7.105427357601002e-15,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "226673595979299806416667",
+            "37778931862957161709568"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "native_pair_18585",
+        "kind": "identified failed closure",
+        "native_metadata": {
+          "pair_index": "18585",
+          "event": "357",
+          "station": "21",
+          "reference_complete": "1",
+          "reference_valid": "0",
+          "candidate_count": "1",
+          "near_tie_count": "1",
+          "time_s": "",
+          "branch": "",
+          "turning_x_km": "",
+          "source_dx_s_per_km": "",
+          "source_dy_s_per_km": "",
+          "source_dz_s_per_km": "",
+          "source_id": "357",
+          "source_x": "-0.011677621261526383",
+          "source_y": "11.343469913550745",
+          "source_z": "15.559",
+          "source_t": "0",
+          "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091139",
+          "source_provider_event_dataid": "nc20091139",
+          "source_provider_event_datasource": "nc",
+          "source_provider_event_eventid": "20091139",
+          "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2650404",
+          "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1404864",
+          "source_origin_time_utc": "1989-10-18T17:11:49.970000Z",
+          "source_origin_time_provider_text": "1989-10-18T17:11:49.97",
+          "source_latitude_deg": "37.1083333",
+          "source_longitude_deg": "-121.9701667",
+          "source_geoid_depth_km": "15.559",
+          "source_magnitude": "2.11",
+          "source_magnitude_type": "Md",
+          "source_event_type": "earthquake",
+          "source_origin_evaluation_status": "final",
+          "source_origin_method_resource_id": "smi:NC.anss.org/origin/HYPO_m2g",
+          "source_earth_model_resource_id": "",
+          "source_east_km": "-8.029301823239464",
+          "source_north_km": "8.012787172875159",
+          "source_x_km": "-0.011677621261526383",
+          "source_y_km": "11.343469913550745",
+          "source_selected": "1",
+          "source_exclusion_reasons": "",
+          "source_source_file": "raw/events_00001.xml",
+          "source_source_sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+          "source_source_url": "https://service.ncedc.org/fdsnws/event/1/query?start=1989-10-18T00%3A00%3A00&end=1989-11-18T00%3A00%3A00&minmag=2.0&maxmag=5.5&minlat=36.5&maxlat=37.6&minlon=-122.6&maxlon=-121.2&catalog=NCSS&format=xml&includearrivals=false&orderby=time-asc&limit=10000&offset=1",
+          "source_retrieved_utc": "2026-10-09T22:21:36.623257Z",
+          "source_coordinate_basis": "catalog-defined simulation truth",
+          "source_origin_resource_id_basis": "provider catalog geometry reference, not a simulated pick/origin identifier",
+          "source_simulation_origin_time_basis": "truth t=0; initial/inverted t is a simulated correction in seconds",
+          "receiver_id": "21",
+          "receiver_x": "0.6245485496707346",
+          "receiver_y": "-37.88811975742923",
+          "receiver_z": "-0.121",
+          "receiver_t": "0",
+          "receiver_network_code": "NC",
+          "receiver_station_code": "HJG",
+          "receiver_station_seed_id": "NC.HJG",
+          "receiver_station_fdsn_source_id": "FDSN:NC_HJG",
+          "receiver_location_code": "",
+          "receiver_channel_code": "EHZ",
+          "receiver_channel_seed_id": "NC.HJG..EHZ",
+          "receiver_channel_fdsn_source_id": "FDSN:NC_HJG__E_H_Z",
+          "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "receiver_latitude_deg": "36.79834",
+          "receiver_longitude_deg": "-121.574692",
+          "receiver_channel_sensor_elevation_m": "121.0",
+          "receiver_sensor_depth_below_ground_m": "0.0",
+          "receiver_station_elevation_m": "121.0",
+          "receiver_metadata_epoch_start": "1989-03-07T20:00:00",
+          "receiver_metadata_epoch_end": "1990-11-20T19:25:00",
+          "receiver_channel_epoch_start": "1989-03-07T20:00:00",
+          "receiver_channel_epoch_end": "1990-11-20T19:25:00",
+          "receiver_station_epoch_start": "1967-06-21T00:00:00",
+          "receiver_station_epoch_end": "2020-06-01T18:40:00",
+          "receiver_provider_channel_source_id": "",
+          "receiver_provider_channel_resource_ids_json": "[]",
+          "receiver_provider_station_resource_ids_json": "[]",
+          "receiver_provider_network_resource_ids_json": "[]",
+          "receiver_latitude_datum": "WGS84 (StationXML default)",
+          "receiver_longitude_datum": "WGS84 (StationXML default)",
+          "receiver_sensor_z_geoid_km": "-0.121",
+          "receiver_z_if_sensor_elevation_km": "-0.121",
+          "receiver_z_if_ground_elevation_km": "-0.121",
+          "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "receiver_metadata_source_kind": "StationXML channel metadata",
+          "receiver_stationxml_schema_version": "1.2",
+          "receiver_source_document_metadata_index": "128",
+          "receiver_source_file": "raw/ncedc_channel_epochs.xml",
+          "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&cha=EHZ&start=1989-11-01T00%3A00%3A00Z&end=1989-11-01T00%3A00%3A00Z&level=channel&format=xml",
+          "receiver_source_sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+          "receiver_retrieved_utc": "2026-10-09T22:21:22.924933Z",
+          "receiver_east_km": "27.232568921538615",
+          "receiver_north_km": "-26.349323892233823",
+          "receiver_x_km": "0.6245485496707346",
+          "receiver_y_km": "-37.88811975742923",
+          "receiver_snapshot_utc": "1989-11-01T00:00:00Z",
+          "receiver_selected": "1",
+          "receiver_exclusion_reasons": ""
+        },
+        "profile": [
+          [
+            -35.0,
+            6.0
+          ],
+          [
+            -15.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ],
+          [
+            4.0,
+            4.0
+          ],
+          [
+            5.0,
+            4.0
+          ],
+          [
+            6.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.4375
+          ],
+          [
+            35.0,
+            5.90625
+          ]
+        ],
+        "source": [
+          -0.011677621261526383,
+          11.343469913550745,
+          15.559
+        ],
+        "receiver": [
+          0.6245485496707346,
+          -37.88811975742923,
+          -0.121
+        ],
+        "saved_candidate": {
+          "kind": "direct",
+          "time_s": 8.661067065845852,
+          "p_s_per_km": 0.16666666209127054,
+          "source_derivative_s_per_km": [
+            0.15880659662841146,
+            0.050579058116445454,
+            -3.905293874232468e-05
+          ],
+          "distance_residual_km": -1.2633938695216784e-07,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound"
+        }
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 8.66106708690242,
+            "p_s_per_km": 0.16666666209127057,
+            "source_derivative_s_per_km": [
+              0.15880659662841148,
+              0.05057905811644546,
+              -3.905293864332428e-05
+            ],
+            "distance_residual_km": 7.105427357601002e-15,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "226673597400471948835559",
+              "37778931862957161709568"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 6,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 7,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 8,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "lower_boundary",
+            "depth_km": -35.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 35.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": -15.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 4.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -35.0,
+          35.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 8.66106708690242,
+          "p_s_per_km": 0.16666666209127057,
+          "source_derivative_s_per_km": [
+            0.15880659662841148,
+            0.05057905811644546,
+            -3.905293864332428e-05
+          ],
+          "distance_residual_km": 7.105427357601002e-15,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "226673597400471948835559",
+            "37778931862957161709568"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 8.66106708690242,
+          "p_s_per_km": 0.16666666209127057,
+          "source_derivative_s_per_km": [
+            0.15880659662841148,
+            0.05057905811644546,
+            -3.905293864332428e-05
+          ],
+          "distance_residual_km": 7.105427357601002e-15,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "226673597400471948835559",
+            "37778931862957161709568"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "native_pair_18586",
+        "kind": "identified failed closure",
+        "native_metadata": {
+          "pair_index": "18586",
+          "event": "357",
+          "station": "22",
+          "reference_complete": "1",
+          "reference_valid": "0",
+          "candidate_count": "1",
+          "near_tie_count": "1",
+          "time_s": "",
+          "branch": "",
+          "turning_x_km": "",
+          "source_dx_s_per_km": "",
+          "source_dy_s_per_km": "",
+          "source_dz_s_per_km": "",
+          "source_id": "357",
+          "source_x": "-0.011677621261526383",
+          "source_y": "11.343469913550745",
+          "source_z": "15.559",
+          "source_t": "0",
+          "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091139",
+          "source_provider_event_dataid": "nc20091139",
+          "source_provider_event_datasource": "nc",
+          "source_provider_event_eventid": "20091139",
+          "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2650404",
+          "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1404864",
+          "source_origin_time_utc": "1989-10-18T17:11:49.970000Z",
+          "source_origin_time_provider_text": "1989-10-18T17:11:49.97",
+          "source_latitude_deg": "37.1083333",
+          "source_longitude_deg": "-121.9701667",
+          "source_geoid_depth_km": "15.559",
+          "source_magnitude": "2.11",
+          "source_magnitude_type": "Md",
+          "source_event_type": "earthquake",
+          "source_origin_evaluation_status": "final",
+          "source_origin_method_resource_id": "smi:NC.anss.org/origin/HYPO_m2g",
+          "source_earth_model_resource_id": "",
+          "source_east_km": "-8.029301823239464",
+          "source_north_km": "8.012787172875159",
+          "source_x_km": "-0.011677621261526383",
+          "source_y_km": "11.343469913550745",
+          "source_selected": "1",
+          "source_exclusion_reasons": "",
+          "source_source_file": "raw/events_00001.xml",
+          "source_source_sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+          "source_source_url": "https://service.ncedc.org/fdsnws/event/1/query?start=1989-10-18T00%3A00%3A00&end=1989-11-18T00%3A00%3A00&minmag=2.0&maxmag=5.5&minlat=36.5&maxlat=37.6&minlon=-122.6&maxlon=-121.2&catalog=NCSS&format=xml&includearrivals=false&orderby=time-asc&limit=10000&offset=1",
+          "source_retrieved_utc": "2026-10-09T22:21:36.623257Z",
+          "source_coordinate_basis": "catalog-defined simulation truth",
+          "source_origin_resource_id_basis": "provider catalog geometry reference, not a simulated pick/origin identifier",
+          "source_simulation_origin_time_basis": "truth t=0; initial/inverted t is a simulated correction in seconds",
+          "receiver_id": "22",
+          "receiver_x": "19.592303447141976",
+          "receiver_y": "-53.75468662037471",
+          "receiver_z": "-0.162",
+          "receiver_t": "0",
+          "receiver_network_code": "NC",
+          "receiver_station_code": "HJS",
+          "receiver_station_seed_id": "NC.HJS",
+          "receiver_station_fdsn_source_id": "FDSN:NC_HJS",
+          "receiver_location_code": "",
+          "receiver_channel_code": "EHZ",
+          "receiver_channel_seed_id": "NC.HJS..EHZ",
+          "receiver_channel_fdsn_source_id": "FDSN:NC_HJS__E_H_Z",
+          "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "receiver_latitude_deg": "36.817066",
+          "receiver_longitude_deg": "-121.298546",
+          "receiver_channel_sensor_elevation_m": "162.0",
+          "receiver_sensor_depth_below_ground_m": "0.0",
+          "receiver_station_elevation_m": "162.0",
+          "receiver_metadata_epoch_start": "1989-05-31T21:20:00",
+          "receiver_metadata_epoch_end": "1990-08-13T19:44:00",
+          "receiver_channel_epoch_start": "1989-05-31T21:20:00",
+          "receiver_channel_epoch_end": "1990-08-13T19:44:00",
+          "receiver_station_epoch_start": "1975-06-17T00:00:00",
+          "receiver_station_epoch_end": "2020-06-01T18:40:00",
+          "receiver_provider_channel_source_id": "",
+          "receiver_provider_channel_resource_ids_json": "[]",
+          "receiver_provider_station_resource_ids_json": "[]",
+          "receiver_provider_network_resource_ids_json": "[]",
+          "receiver_latitude_datum": "WGS84 (StationXML default)",
+          "receiver_longitude_datum": "WGS84 (StationXML default)",
+          "receiver_sensor_z_geoid_km": "-0.162",
+          "receiver_z_if_sensor_elevation_km": "-0.162",
+          "receiver_z_if_ground_elevation_km": "-0.162",
+          "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "receiver_metadata_source_kind": "StationXML channel metadata",
+          "receiver_stationxml_schema_version": "1.2",
+          "receiver_source_document_metadata_index": "129",
+          "receiver_source_file": "raw/ncedc_channel_epochs.xml",
+          "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&cha=EHZ&start=1989-11-01T00%3A00%3A00Z&end=1989-11-01T00%3A00%3A00Z&level=channel&format=xml",
+          "receiver_source_sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+          "receiver_retrieved_utc": "2026-10-09T22:21:22.924933Z",
+          "receiver_east_km": "51.8641540563634",
+          "receiver_north_km": "-24.156452803286072",
+          "receiver_x_km": "19.592303447141976",
+          "receiver_y_km": "-53.75468662037471",
+          "receiver_snapshot_utc": "1989-11-01T00:00:00Z",
+          "receiver_selected": "1",
+          "receiver_exclusion_reasons": ""
+        },
+        "profile": [
+          [
+            -35.0,
+            6.0
+          ],
+          [
+            -15.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ],
+          [
+            4.0,
+            4.0
+          ],
+          [
+            5.0,
+            4.0
+          ],
+          [
+            6.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.4375
+          ],
+          [
+            35.0,
+            5.90625
+          ]
+        ],
+        "source": [
+          -0.011677621261526383,
+          11.343469913550745,
+          15.559
+        ],
+        "receiver": [
+          19.592303447141976,
+          -53.75468662037471,
+          -0.162
+        ],
+        "saved_candidate": {
+          "kind": "direct",
+          "time_s": 13.452898681042408,
+          "p_s_per_km": 0.16666665785130377,
+          "source_derivative_s_per_km": [
+            0.16200934830791924,
+            0.0391247479246432,
+            -5.4207510706466786e-05
+          ],
+          "distance_residual_km": -1.4474480281023716e-08,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound"
+        }
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 13.452898683454817,
+            "p_s_per_km": 0.16666665785130377,
+            "source_derivative_s_per_km": [
+              0.16200934830791924,
+              0.0391247479246432,
+              -5.420751068461401e-05
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "113336801583501684791055",
+              "18889465931478580854784"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 7,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 8,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "lower_boundary",
+            "depth_km": -35.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 35.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": -15.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 4.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -35.0,
+          35.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 13.452898683454817,
+          "p_s_per_km": 0.16666665785130377,
+          "source_derivative_s_per_km": [
+            0.16200934830791924,
+            0.0391247479246432,
+            -5.420751068461401e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "113336801583501684791055",
+            "18889465931478580854784"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 13.452898683454817,
+          "p_s_per_km": 0.16666665785130377,
+          "source_derivative_s_per_km": [
+            0.16200934830791924,
+            0.0391247479246432,
+            -5.420751068461401e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "113336801583501684791055",
+            "18889465931478580854784"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "native_pair_18590",
+        "kind": "identified failed closure",
+        "native_metadata": {
+          "pair_index": "18590",
+          "event": "357",
+          "station": "26",
+          "reference_complete": "1",
+          "reference_valid": "0",
+          "candidate_count": "1",
+          "near_tie_count": "1",
+          "time_s": "",
+          "branch": "",
+          "turning_x_km": "",
+          "source_dx_s_per_km": "",
+          "source_dy_s_per_km": "",
+          "source_dz_s_per_km": "",
+          "source_id": "357",
+          "source_x": "-0.011677621261526383",
+          "source_y": "11.343469913550745",
+          "source_z": "15.559",
+          "source_t": "0",
+          "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091139",
+          "source_provider_event_dataid": "nc20091139",
+          "source_provider_event_datasource": "nc",
+          "source_provider_event_eventid": "20091139",
+          "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2650404",
+          "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1404864",
+          "source_origin_time_utc": "1989-10-18T17:11:49.970000Z",
+          "source_origin_time_provider_text": "1989-10-18T17:11:49.97",
+          "source_latitude_deg": "37.1083333",
+          "source_longitude_deg": "-121.9701667",
+          "source_geoid_depth_km": "15.559",
+          "source_magnitude": "2.11",
+          "source_magnitude_type": "Md",
+          "source_event_type": "earthquake",
+          "source_origin_evaluation_status": "final",
+          "source_origin_method_resource_id": "smi:NC.anss.org/origin/HYPO_m2g",
+          "source_earth_model_resource_id": "",
+          "source_east_km": "-8.029301823239464",
+          "source_north_km": "8.012787172875159",
+          "source_x_km": "-0.011677621261526383",
+          "source_y_km": "11.343469913550745",
+          "source_selected": "1",
+          "source_exclusion_reasons": "",
+          "source_source_file": "raw/events_00001.xml",
+          "source_source_sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+          "source_source_url": "https://service.ncedc.org/fdsnws/event/1/query?start=1989-10-18T00%3A00%3A00&end=1989-11-18T00%3A00%3A00&minmag=2.0&maxmag=5.5&minlat=36.5&maxlat=37.6&minlon=-122.6&maxlon=-121.2&catalog=NCSS&format=xml&includearrivals=false&orderby=time-asc&limit=10000&offset=1",
+          "source_retrieved_utc": "2026-10-09T22:21:36.623257Z",
+          "source_coordinate_basis": "catalog-defined simulation truth",
+          "source_origin_resource_id_basis": "provider catalog geometry reference, not a simulated pick/origin identifier",
+          "source_simulation_origin_time_basis": "truth t=0; initial/inverted t is a simulated correction in seconds",
+          "receiver_id": "26",
+          "receiver_x": "15.757465902257785",
+          "receiver_y": "-43.86646598185839",
+          "receiver_z": "-0.088",
+          "receiver_t": "0",
+          "receiver_network_code": "NC",
+          "receiver_station_code": "HPH",
+          "receiver_station_seed_id": "NC.HPH",
+          "receiver_station_fdsn_source_id": "FDSN:NC_HPH",
+          "receiver_location_code": "01",
+          "receiver_channel_code": "EHZ",
+          "receiver_channel_seed_id": "NC.HPH.01.EHZ",
+          "receiver_channel_fdsn_source_id": "FDSN:NC_HPH_01_E_H_Z",
+          "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "receiver_latitude_deg": "36.856121",
+          "receiver_longitude_deg": "-121.407066",
+          "receiver_channel_sensor_elevation_m": "88.0",
+          "receiver_sensor_depth_below_ground_m": "0.0",
+          "receiver_station_elevation_m": "88.0",
+          "receiver_metadata_epoch_start": "1989-01-18T22:05:00",
+          "receiver_metadata_epoch_end": "1990-01-22T20:30:00",
+          "receiver_channel_epoch_start": "1989-01-18T22:05:00",
+          "receiver_channel_epoch_end": "1990-01-22T20:30:00",
+          "receiver_station_epoch_start": "1970-08-17T00:00:00",
+          "receiver_station_epoch_end": "2007-10-19T16:03:00",
+          "receiver_provider_channel_source_id": "",
+          "receiver_provider_channel_resource_ids_json": "[]",
+          "receiver_provider_station_resource_ids_json": "[]",
+          "receiver_provider_network_resource_ids_json": "[]",
+          "receiver_latitude_datum": "WGS84 (StationXML default)",
+          "receiver_longitude_datum": "WGS84 (StationXML default)",
+          "receiver_sensor_z_geoid_km": "-0.088",
+          "receiver_z_if_sensor_elevation_km": "-0.088",
+          "receiver_z_if_ground_elevation_km": "-0.088",
+          "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "receiver_metadata_source_kind": "StationXML channel metadata",
+          "receiver_stationxml_schema_version": "1.2",
+          "receiver_source_document_metadata_index": "134",
+          "receiver_source_file": "raw/ncedc_channel_epochs.xml",
+          "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&cha=EHZ&start=1989-11-01T00%3A00%3A00Z&end=1989-11-01T00%3A00%3A00Z&level=channel&format=xml",
+          "receiver_source_sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+          "receiver_retrieved_utc": "2026-10-09T22:21:22.924933Z",
+          "receiver_east_km": "42.16048655626335",
+          "receiver_north_km": "-19.876064568658798",
+          "receiver_x_km": "15.757465902257785",
+          "receiver_y_km": "-43.86646598185839",
+          "receiver_snapshot_utc": "1989-11-01T00:00:00Z",
+          "receiver_selected": "1",
+          "receiver_exclusion_reasons": ""
+        },
+        "profile": [
+          [
+            -35.0,
+            6.0
+          ],
+          [
+            -15.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ],
+          [
+            4.0,
+            4.0
+          ],
+          [
+            5.0,
+            4.0
+          ],
+          [
+            6.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.4375
+          ],
+          [
+            35.0,
+            5.90625
+          ]
+        ],
+        "source": [
+          -0.011677621261526383,
+          11.343469913550745,
+          15.559
+        ],
+        "receiver": [
+          15.757465902257785,
+          -43.86646598185839,
+          -0.088
+        ],
+        "saved_candidate": {
+          "kind": "direct",
+          "time_s": 11.535352761172563,
+          "p_s_per_km": 0.16666665682812243,
+          "source_derivative_s_per_km": [
+            0.16035125669538283,
+            0.04544501044641291,
+            -5.7267046801726834e-05
+          ],
+          "distance_residual_km": -1.408048433404474e-08,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound"
+        }
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 11.535352763519313,
+            "p_s_per_km": 0.16666665682812243,
+            "source_derivative_s_per_km": [
+              0.16035125669538283,
+              0.04544501044641291,
+              -5.7267046778001576e-05
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "14167100284910792259779",
+              "2361183241434822606848"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 7,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 8,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "lower_boundary",
+            "depth_km": -35.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 35.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": -15.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 4.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -35.0,
+          35.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 11.535352763519313,
+          "p_s_per_km": 0.16666665682812243,
+          "source_derivative_s_per_km": [
+            0.16035125669538283,
+            0.04544501044641291,
+            -5.7267046778001576e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "14167100284910792259779",
+            "2361183241434822606848"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 11.535352763519313,
+          "p_s_per_km": 0.16666665682812243,
+          "source_derivative_s_per_km": [
+            0.16035125669538283,
+            0.04544501044641291,
+            -5.7267046778001576e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "14167100284910792259779",
+            "2361183241434822606848"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "native_pair_18592",
+        "kind": "identified failed closure",
+        "native_metadata": {
+          "pair_index": "18592",
+          "event": "357",
+          "station": "28",
+          "reference_complete": "1",
+          "reference_valid": "0",
+          "candidate_count": "1",
+          "near_tie_count": "1",
+          "time_s": "",
+          "branch": "",
+          "turning_x_km": "",
+          "source_dx_s_per_km": "",
+          "source_dy_s_per_km": "",
+          "source_dz_s_per_km": "",
+          "source_id": "357",
+          "source_x": "-0.011677621261526383",
+          "source_y": "11.343469913550745",
+          "source_z": "15.559",
+          "source_t": "0",
+          "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091139",
+          "source_provider_event_dataid": "nc20091139",
+          "source_provider_event_datasource": "nc",
+          "source_provider_event_eventid": "20091139",
+          "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2650404",
+          "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1404864",
+          "source_origin_time_utc": "1989-10-18T17:11:49.970000Z",
+          "source_origin_time_provider_text": "1989-10-18T17:11:49.97",
+          "source_latitude_deg": "37.1083333",
+          "source_longitude_deg": "-121.9701667",
+          "source_geoid_depth_km": "15.559",
+          "source_magnitude": "2.11",
+          "source_magnitude_type": "Md",
+          "source_event_type": "earthquake",
+          "source_origin_evaluation_status": "final",
+          "source_origin_method_resource_id": "smi:NC.anss.org/origin/HYPO_m2g",
+          "source_earth_model_resource_id": "",
+          "source_east_km": "-8.029301823239464",
+          "source_north_km": "8.012787172875159",
+          "source_x_km": "-0.011677621261526383",
+          "source_y_km": "11.343469913550745",
+          "source_selected": "1",
+          "source_exclusion_reasons": "",
+          "source_source_file": "raw/events_00001.xml",
+          "source_source_sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+          "source_source_url": "https://service.ncedc.org/fdsnws/event/1/query?start=1989-10-18T00%3A00%3A00&end=1989-11-18T00%3A00%3A00&minmag=2.0&maxmag=5.5&minlat=36.5&maxlat=37.6&minlon=-122.6&maxlon=-121.2&catalog=NCSS&format=xml&includearrivals=false&orderby=time-asc&limit=10000&offset=1",
+          "source_retrieved_utc": "2026-10-09T22:21:36.623257Z",
+          "source_coordinate_basis": "catalog-defined simulation truth",
+          "source_origin_resource_id_basis": "provider catalog geometry reference, not a simulated pick/origin identifier",
+          "source_simulation_origin_time_basis": "truth t=0; initial/inverted t is a simulated correction in seconds",
+          "receiver_id": "28",
+          "receiver_x": "26.339257679515683",
+          "receiver_y": "-57.8250730339853",
+          "receiver_z": "-0.536",
+          "receiver_t": "0",
+          "receiver_network_code": "NC",
+          "receiver_station_code": "HQR",
+          "receiver_station_seed_id": "NC.HQR",
+          "receiver_station_fdsn_source_id": "FDSN:NC_HQR",
+          "receiver_location_code": "",
+          "receiver_channel_code": "EHZ",
+          "receiver_channel_seed_id": "NC.HQR..EHZ",
+          "receiver_channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+          "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "receiver_latitude_deg": "36.833668",
+          "receiver_longitude_deg": "-121.212669",
+          "receiver_channel_sensor_elevation_m": "536.0",
+          "receiver_sensor_depth_below_ground_m": "0.0",
+          "receiver_station_elevation_m": "536.0",
+          "receiver_metadata_epoch_start": "1989-07-11T19:55:00",
+          "receiver_metadata_epoch_end": "1990-03-24T19:55:00",
+          "receiver_channel_epoch_start": "1989-07-11T19:55:00",
+          "receiver_channel_epoch_end": "1990-03-24T19:55:00",
+          "receiver_station_epoch_start": "1969-05-16T00:00:00",
+          "receiver_station_epoch_end": "1992-10-19T18:45:00",
+          "receiver_provider_channel_source_id": "",
+          "receiver_provider_channel_resource_ids_json": "[]",
+          "receiver_provider_station_resource_ids_json": "[]",
+          "receiver_provider_network_resource_ids_json": "[]",
+          "receiver_latitude_datum": "WGS84 (StationXML default)",
+          "receiver_longitude_datum": "WGS84 (StationXML default)",
+          "receiver_sensor_z_geoid_km": "-0.536",
+          "receiver_z_if_sensor_elevation_km": "-0.536",
+          "receiver_z_if_ground_elevation_km": "-0.536",
+          "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "receiver_metadata_source_kind": "StationXML channel metadata",
+          "receiver_stationxml_schema_version": "1.2",
+          "receiver_source_document_metadata_index": "137",
+          "receiver_source_file": "raw/ncedc_channel_epochs.xml",
+          "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&cha=EHZ&start=1989-11-01T00%3A00%3A00Z&end=1989-11-01T00%3A00%3A00Z&level=channel&format=xml",
+          "receiver_source_sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+          "receiver_retrieved_utc": "2026-10-09T22:21:22.924933Z",
+          "receiver_east_km": "59.51316898154376",
+          "receiver_north_km": "-22.26383354833299",
+          "receiver_x_km": "26.339257679515683",
+          "receiver_y_km": "-57.8250730339853",
+          "receiver_snapshot_utc": "1989-11-01T00:00:00Z",
+          "receiver_selected": "1",
+          "receiver_exclusion_reasons": ""
+        },
+        "profile": [
+          [
+            -35.0,
+            6.0
+          ],
+          [
+            -15.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ],
+          [
+            4.0,
+            4.0
+          ],
+          [
+            5.0,
+            4.0
+          ],
+          [
+            6.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.4375
+          ],
+          [
+            35.0,
+            5.90625
+          ]
+        ],
+        "source": [
+          -0.011677621261526383,
+          11.343469913550745,
+          15.559
+        ],
+        "receiver": [
+          26.339257679515683,
+          -57.8250730339853,
+          -0.536
+        ],
+        "saved_candidate": {
+          "kind": "direct",
+          "time_s": 14.59994127978013,
+          "p_s_per_km": 0.1666666466192584,
+          "source_derivative_s_per_km": [
+            0.16232983892991476,
+            0.03777293327631168,
+            -8.174637008206494e-05
+          ],
+          "distance_residual_km": 1.4298166206572205e-08,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound"
+        }
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 14.599941277397102,
+            "p_s_per_km": 0.1666666466192584,
+            "source_derivative_s_per_km": [
+              0.16232983892991476,
+              0.03777293327631168,
+              -8.174637013115415e-05
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "56668404610763610362375",
+              "9444732965739290427392"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 8,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "lower_boundary",
+            "depth_km": -35.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 35.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": -15.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 4.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -35.0,
+          35.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 14.599941277397102,
+          "p_s_per_km": 0.1666666466192584,
+          "source_derivative_s_per_km": [
+            0.16232983892991476,
+            0.03777293327631168,
+            -8.174637013115415e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "56668404610763610362375",
+            "9444732965739290427392"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 14.599941277397102,
+          "p_s_per_km": 0.1666666466192584,
+          "source_derivative_s_per_km": [
+            0.16232983892991476,
+            0.03777293327631168,
+            -8.174637013115415e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "56668404610763610362375",
+            "9444732965739290427392"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "native_pair_18593",
+        "kind": "identified failed closure",
+        "native_metadata": {
+          "pair_index": "18593",
+          "event": "357",
+          "station": "29",
+          "reference_complete": "1",
+          "reference_valid": "0",
+          "candidate_count": "1",
+          "near_tie_count": "1",
+          "time_s": "",
+          "branch": "",
+          "turning_x_km": "",
+          "source_dx_s_per_km": "",
+          "source_dy_s_per_km": "",
+          "source_dz_s_per_km": "",
+          "source_id": "357",
+          "source_x": "-0.011677621261526383",
+          "source_y": "11.343469913550745",
+          "source_z": "15.559",
+          "source_t": "0",
+          "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091139",
+          "source_provider_event_dataid": "nc20091139",
+          "source_provider_event_datasource": "nc",
+          "source_provider_event_eventid": "20091139",
+          "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2650404",
+          "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1404864",
+          "source_origin_time_utc": "1989-10-18T17:11:49.970000Z",
+          "source_origin_time_provider_text": "1989-10-18T17:11:49.97",
+          "source_latitude_deg": "37.1083333",
+          "source_longitude_deg": "-121.9701667",
+          "source_geoid_depth_km": "15.559",
+          "source_magnitude": "2.11",
+          "source_magnitude_type": "Md",
+          "source_event_type": "earthquake",
+          "source_origin_evaluation_status": "final",
+          "source_origin_method_resource_id": "smi:NC.anss.org/origin/HYPO_m2g",
+          "source_earth_model_resource_id": "",
+          "source_east_km": "-8.029301823239464",
+          "source_north_km": "8.012787172875159",
+          "source_x_km": "-0.011677621261526383",
+          "source_y_km": "11.343469913550745",
+          "source_selected": "1",
+          "source_exclusion_reasons": "",
+          "source_source_file": "raw/events_00001.xml",
+          "source_source_sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+          "source_source_url": "https://service.ncedc.org/fdsnws/event/1/query?start=1989-10-18T00%3A00%3A00&end=1989-11-18T00%3A00%3A00&minmag=2.0&maxmag=5.5&minlat=36.5&maxlat=37.6&minlon=-122.6&maxlon=-121.2&catalog=NCSS&format=xml&includearrivals=false&orderby=time-asc&limit=10000&offset=1",
+          "source_retrieved_utc": "2026-10-09T22:21:36.623257Z",
+          "source_coordinate_basis": "catalog-defined simulation truth",
+          "source_origin_resource_id_basis": "provider catalog geometry reference, not a simulated pick/origin identifier",
+          "source_simulation_origin_time_basis": "truth t=0; initial/inverted t is a simulated correction in seconds",
+          "receiver_id": "29",
+          "receiver_x": "6.887981612265129",
+          "receiver_y": "-41.29265082600307",
+          "receiver_z": "-0.213",
+          "receiver_t": "0",
+          "receiver_network_code": "NC",
+          "receiver_station_code": "HSF",
+          "receiver_station_seed_id": "NC.HSF",
+          "receiver_station_fdsn_source_id": "FDSN:NC_HSF",
+          "receiver_location_code": "01",
+          "receiver_channel_code": "EHZ",
+          "receiver_channel_seed_id": "NC.HSF.01.EHZ",
+          "receiver_channel_fdsn_source_id": "FDSN:NC_HSF_01_E_H_Z",
+          "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "receiver_latitude_deg": "36.816334",
+          "receiver_longitude_deg": "-121.498001",
+          "receiver_channel_sensor_elevation_m": "213.0",
+          "receiver_sensor_depth_below_ground_m": "0.0",
+          "receiver_station_elevation_m": "213.0",
+          "receiver_metadata_epoch_start": "1989-07-31T20:13:00",
+          "receiver_metadata_epoch_end": "1990-10-02T23:13:00",
+          "receiver_channel_epoch_start": "1989-07-31T20:13:00",
+          "receiver_channel_epoch_end": "1990-10-02T23:13:00",
+          "receiver_station_epoch_start": "1975-11-13T00:00:00",
+          "receiver_station_epoch_end": "2019-08-27T20:14:00",
+          "receiver_provider_channel_source_id": "",
+          "receiver_provider_channel_resource_ids_json": "[]",
+          "receiver_provider_station_resource_ids_json": "[]",
+          "receiver_provider_network_resource_ids_json": "[]",
+          "receiver_latitude_datum": "WGS84 (StationXML default)",
+          "receiver_longitude_datum": "WGS84 (StationXML default)",
+          "receiver_sensor_z_geoid_km": "-0.213",
+          "receiver_z_if_sensor_elevation_km": "-0.213",
+          "receiver_z_if_ground_elevation_km": "-0.213",
+          "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "receiver_metadata_source_kind": "StationXML channel metadata",
+          "receiver_stationxml_schema_version": "1.2",
+          "receiver_source_document_metadata_index": "138",
+          "receiver_source_file": "raw/ncedc_channel_epochs.xml",
+          "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&cha=EHZ&start=1989-11-01T00%3A00%3A00Z&end=1989-11-01T00%3A00%3A00Z&level=channel&format=xml",
+          "receiver_source_sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+          "receiver_retrieved_utc": "2026-10-09T22:21:22.924933Z",
+          "receiver_east_km": "34.068851918955986",
+          "receiver_north_km": "-24.327774905514147",
+          "receiver_x_km": "6.887981612265129",
+          "receiver_y_km": "-41.29265082600307",
+          "receiver_snapshot_utc": "1989-11-01T00:00:00Z",
+          "receiver_selected": "1",
+          "receiver_exclusion_reasons": ""
+        },
+        "profile": [
+          [
+            -35.0,
+            6.0
+          ],
+          [
+            -15.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ],
+          [
+            4.0,
+            4.0
+          ],
+          [
+            5.0,
+            4.0
+          ],
+          [
+            6.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.4375
+          ],
+          [
+            35.0,
+            5.90625
+          ]
+        ],
+        "source": [
+          -0.011677621261526383,
+          11.343469913550745,
+          15.559
+        ],
+        "receiver": [
+          6.887981612265129,
+          -41.29265082600307,
+          -0.213
+        ],
+        "saved_candidate": {
+          "kind": "direct",
+          "time_s": 10.256696347072149,
+          "p_s_per_km": 0.16666666144006537,
+          "source_derivative_s_per_km": [
+            0.15965342531218107,
+            0.0478388944444287,
+            -4.173967431775478e-05
+          ],
+          "distance_residual_km": -2.913127161718876e-08,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound"
+        }
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 10.25669635192736,
+            "p_s_per_km": 0.16666666144006537,
+            "source_derivative_s_per_km": [
+              0.15965342531218107,
+              0.0478388944444287,
+              -4.173967429167839e-05
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "226673598286138127280405",
+              "37778931862957161709568"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 7,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 8,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "lower_boundary",
+            "depth_km": -35.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 35.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": -15.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 4.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -35.0,
+          35.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 10.25669635192736,
+          "p_s_per_km": 0.16666666144006537,
+          "source_derivative_s_per_km": [
+            0.15965342531218107,
+            0.0478388944444287,
+            -4.173967429167839e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "226673598286138127280405",
+            "37778931862957161709568"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 10.25669635192736,
+          "p_s_per_km": 0.16666666144006537,
+          "source_derivative_s_per_km": [
+            0.15965342531218107,
+            0.0478388944444287,
+            -4.173967429167839e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "226673598286138127280405",
+            "37778931862957161709568"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "native_pair_18608",
+        "kind": "identified failed closure",
+        "native_metadata": {
+          "pair_index": "18608",
+          "event": "357",
+          "station": "44",
+          "reference_complete": "1",
+          "reference_valid": "0",
+          "candidate_count": "1",
+          "near_tie_count": "1",
+          "time_s": "",
+          "branch": "",
+          "turning_x_km": "",
+          "source_dx_s_per_km": "",
+          "source_dy_s_per_km": "",
+          "source_dz_s_per_km": "",
+          "source_id": "357",
+          "source_x": "-0.011677621261526383",
+          "source_y": "11.343469913550745",
+          "source_z": "15.559",
+          "source_t": "0",
+          "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091139",
+          "source_provider_event_dataid": "nc20091139",
+          "source_provider_event_datasource": "nc",
+          "source_provider_event_eventid": "20091139",
+          "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2650404",
+          "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1404864",
+          "source_origin_time_utc": "1989-10-18T17:11:49.970000Z",
+          "source_origin_time_provider_text": "1989-10-18T17:11:49.97",
+          "source_latitude_deg": "37.1083333",
+          "source_longitude_deg": "-121.9701667",
+          "source_geoid_depth_km": "15.559",
+          "source_magnitude": "2.11",
+          "source_magnitude_type": "Md",
+          "source_event_type": "earthquake",
+          "source_origin_evaluation_status": "final",
+          "source_origin_method_resource_id": "smi:NC.anss.org/origin/HYPO_m2g",
+          "source_earth_model_resource_id": "",
+          "source_east_km": "-8.029301823239464",
+          "source_north_km": "8.012787172875159",
+          "source_x_km": "-0.011677621261526383",
+          "source_y_km": "11.343469913550745",
+          "source_selected": "1",
+          "source_exclusion_reasons": "",
+          "source_source_file": "raw/events_00001.xml",
+          "source_source_sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+          "source_source_url": "https://service.ncedc.org/fdsnws/event/1/query?start=1989-10-18T00%3A00%3A00&end=1989-11-18T00%3A00%3A00&minmag=2.0&maxmag=5.5&minlat=36.5&maxlat=37.6&minlon=-122.6&maxlon=-121.2&catalog=NCSS&format=xml&includearrivals=false&orderby=time-asc&limit=10000&offset=1",
+          "source_retrieved_utc": "2026-10-09T22:21:36.623257Z",
+          "source_coordinate_basis": "catalog-defined simulation truth",
+          "source_origin_resource_id_basis": "provider catalog geometry reference, not a simulated pick/origin identifier",
+          "source_simulation_origin_time_basis": "truth t=0; initial/inverted t is a simulated correction in seconds",
+          "receiver_id": "44",
+          "receiver_x": "4.168697614397047",
+          "receiver_y": "34.81294697260075",
+          "receiver_z": "-0.329",
+          "receiver_t": "0",
+          "receiver_network_code": "NC",
+          "receiver_station_code": "JSC",
+          "receiver_station_seed_id": "NC.JSC",
+          "receiver_station_fdsn_source_id": "FDSN:NC_JSC",
+          "receiver_location_code": "",
+          "receiver_channel_code": "EHZ",
+          "receiver_channel_seed_id": "NC.JSC..EHZ",
+          "receiver_channel_fdsn_source_id": "FDSN:NC_JSC__E_H_Z",
+          "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+          "receiver_latitude_deg": "37.284286",
+          "receiver_longitude_deg": "-122.124184",
+          "receiver_channel_sensor_elevation_m": "329.0",
+          "receiver_sensor_depth_below_ground_m": "0.0",
+          "receiver_station_elevation_m": "329.0",
+          "receiver_metadata_epoch_start": "1989-05-10T21:40:00",
+          "receiver_metadata_epoch_end": "1990-10-04T20:15:00",
+          "receiver_channel_epoch_start": "1989-05-10T21:40:00",
+          "receiver_channel_epoch_end": "1990-10-04T20:15:00",
+          "receiver_station_epoch_start": "1966-12-23T00:00:00",
+          "receiver_station_epoch_end": "2014-06-26T21:42:00",
+          "receiver_provider_channel_source_id": "",
+          "receiver_provider_channel_resource_ids_json": "[]",
+          "receiver_provider_station_resource_ids_json": "[]",
+          "receiver_provider_network_resource_ids_json": "[]",
+          "receiver_latitude_datum": "WGS84 (StationXML default)",
+          "receiver_longitude_datum": "WGS84 (StationXML default)",
+          "receiver_sensor_z_geoid_km": "-0.329",
+          "receiver_z_if_sensor_elevation_km": "-0.329",
+          "receiver_z_if_ground_elevation_km": "-0.329",
+          "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+          "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+          "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+          "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+          "receiver_metadata_source_kind": "StationXML channel metadata",
+          "receiver_stationxml_schema_version": "1.2",
+          "receiver_source_document_metadata_index": "161",
+          "receiver_source_file": "raw/ncedc_channel_epochs.xml",
+          "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&cha=EHZ&start=1989-11-01T00%3A00%3A00Z&end=1989-11-01T00%3A00%3A00Z&level=channel&format=xml",
+          "receiver_source_sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+          "receiver_retrieved_utc": "2026-10-09T22:21:22.924933Z",
+          "receiver_east_km": "-21.66875652555734",
+          "receiver_north_km": "27.564185229270016",
+          "receiver_x_km": "4.168697614397047",
+          "receiver_y_km": "34.81294697260075",
+          "receiver_snapshot_utc": "1989-11-01T00:00:00Z",
+          "receiver_selected": "1",
+          "receiver_exclusion_reasons": ""
+        },
+        "profile": [
+          [
+            -35.0,
+            6.0
+          ],
+          [
+            -15.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ],
+          [
+            4.0,
+            4.0
+          ],
+          [
+            5.0,
+            4.0
+          ],
+          [
+            6.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.4375
+          ],
+          [
+            35.0,
+            5.90625
+          ]
+        ],
+        "source": [
+          -0.011677621261526383,
+          11.343469913550745,
+          15.559
+        ],
+        "receiver": [
+          4.168697614397047,
+          34.81294697260075,
+          -0.329
+        ],
+        "saved_candidate": {
+          "kind": "direct",
+          "time_s": 5.422582157387435,
+          "p_s_per_km": 0.1666666456855527,
+          "source_derivative_s_per_km": [
+            -0.13801558167194328,
+            0.09343163275801572,
+            -8.362836966145246e-05
+          ],
+          "distance_residual_km": -1.3734229753481486e-08,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound"
+        }
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 5.422582159676472,
+            "p_s_per_km": 0.16666664568555273,
+            "source_derivative_s_per_km": [
+              -0.1380155816719433,
+              0.09343163275801573,
+              -8.362836961210326e-05
+            ],
+            "distance_residual_km": -3.552713678800501e-15,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "56668404928233303617607",
+              "9444732965739290427392"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 6,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 7,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "turning",
+            "direction": 1,
+            "layer": 8,
+            "reason": "A preceding velocity maximum blocks this turning layer"
+          },
+          {
+            "kind": "lower_boundary",
+            "depth_km": -35.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 35.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": -15.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 4.0,
+            "reason": "Intervening faster material blocks critical legs"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -35.0,
+          35.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 5.422582159676472,
+          "p_s_per_km": 0.16666664568555273,
+          "source_derivative_s_per_km": [
+            -0.1380155816719433,
+            0.09343163275801573,
+            -8.362836961210326e-05
+          ],
+          "distance_residual_km": -3.552713678800501e-15,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "56668404928233303617607",
+            "9444732965739290427392"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 5.422582159676472,
+          "p_s_per_km": 0.16666664568555273,
+          "source_derivative_s_per_km": [
+            -0.1380155816719433,
+            0.09343163275801573,
+            -8.362836961210326e-05
+          ],
+          "distance_residual_km": -3.552713678800501e-15,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "56668404928233303617607",
+            "9444732965739290427392"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "invented_epsilon_1.0_distance_5.0",
+        "kind": "invented near-critical plateau",
+        "profile": [
+          [
+            -2.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "source": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "receiver": [
+          1.0,
+          5.0,
+          0.0
+        ]
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 0.9668154175080288,
+            "p_s_per_km": 0.16014042706740925,
+            "source_derivative_s_per_km": [
+              -0.16014042706740925,
+              -0.0,
+              -0.04618247932328404
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "224982521145632173",
+              "36028797018963968"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -2.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -2.0,
+          2.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 0.9668154175080288,
+          "p_s_per_km": 0.16014042706740925,
+          "source_derivative_s_per_km": [
+            -0.16014042706740925,
+            -0.0,
+            -0.04618247932328404
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "224982521145632173",
+            "36028797018963968"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 0.9668154175080288,
+          "p_s_per_km": 0.16014042706740925,
+          "source_derivative_s_per_km": [
+            -0.16014042706740925,
+            -0.0,
+            -0.04618247932328404
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "224982521145632173",
+            "36028797018963968"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "invented_epsilon_1.0_distance_50.0",
+        "kind": "invented near-critical plateau",
+        "profile": [
+          [
+            -2.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "source": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "receiver": [
+          1.0,
+          50.0,
+          0.0
+        ]
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 8.443610152778374,
+            "p_s_per_km": 0.16663024563406612,
+            "source_derivative_s_per_km": [
+              -0.16663024563406612,
+              -0.0,
+              -0.0034841093135226622
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "27676164077409060183",
+              "4611686018427387904"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -2.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -2.0,
+          2.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 8.443610152778374,
+          "p_s_per_km": 0.16663024563406612,
+          "source_derivative_s_per_km": [
+            -0.16663024563406612,
+            -0.0,
+            -0.0034841093135226622
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "27676164077409060183",
+            "4611686018427387904"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 8.443610152778374,
+          "p_s_per_km": 0.16663024563406612,
+          "source_derivative_s_per_km": [
+            -0.16663024563406612,
+            -0.0,
+            -0.0034841093135226622
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "27676164077409060183",
+            "4611686018427387904"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "invented_epsilon_0.01_distance_5.0",
+        "kind": "invented near-critical plateau",
+        "profile": [
+          [
+            -2.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "source": [
+          -0.01,
+          0.0,
+          0.0
+        ],
+        "receiver": [
+          1.0,
+          5.0,
+          0.0
+        ]
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 0.9418701693283554,
+            "p_s_per_km": 0.16666558429382955,
+            "source_derivative_s_per_km": [
+              -0.16666558429382955,
+              -0.0,
+              -0.0006006577845792564
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "885449465856761391437",
+              "147573952589676412928"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -2.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -2.0,
+          2.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 0.9418701693283554,
+          "p_s_per_km": 0.16666558429382955,
+          "source_derivative_s_per_km": [
+            -0.16666558429382955,
+            -0.0,
+            -0.0006006577845792564
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "885449465856761391437",
+            "147573952589676412928"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 0.9418701693283554,
+          "p_s_per_km": 0.16666558429382955,
+          "source_derivative_s_per_km": [
+            -0.16666558429382955,
+            -0.0,
+            -0.0006006577845792564
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "885449465856761391437",
+            "147573952589676412928"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "invented_epsilon_0.01_distance_50.0",
+        "kind": "invented near-critical plateau",
+        "profile": [
+          [
+            -2.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "source": [
+          -0.01,
+          0.0,
+          0.0
+        ],
+        "receiver": [
+          1.0,
+          50.0,
+          0.0
+        ]
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 8.441867336610606,
+            "p_s_per_km": 0.16666666301402408,
+            "source_derivative_s_per_km": [
+              -0.16666666301402408,
+              -0.0,
+              -3.489337344708962e-05
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "226673596145488733061689",
+              "37778931862957161709568"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -2.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -2.0,
+          2.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 8.441867336610606,
+          "p_s_per_km": 0.16666666301402408,
+          "source_derivative_s_per_km": [
+            -0.16666666301402408,
+            -0.0,
+            -3.489337344708962e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "226673596145488733061689",
+            "37778931862957161709568"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 8.441867336610606,
+          "p_s_per_km": 0.16666666301402408,
+          "source_derivative_s_per_km": [
+            -0.16666666301402408,
+            -0.0,
+            -3.489337344708962e-05
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "226673596145488733061689",
+            "37778931862957161709568"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "invented_epsilon_1e-05_distance_5.0",
+        "kind": "invented near-critical plateau",
+        "profile": [
+          [
+            -2.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "source": [
+          -1e-05,
+          0.0,
+          0.0
+        ],
+        "receiver": [
+          1.0,
+          5.0,
+          0.0
+        ]
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 0.9418671621459869,
+            "p_s_per_km": 0.16666666666557584,
+            "source_derivative_s_per_km": [
+              -0.16666666666557584,
+              -0.0,
+              -6.030032967780596e-07
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "464227514735055987753686719",
+              "77371252455336267181195264"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -2.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -2.0,
+          2.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 0.9418671621459869,
+          "p_s_per_km": 0.16666666666557584,
+          "source_derivative_s_per_km": [
+            -0.16666666666557584,
+            -0.0,
+            -6.030032967780596e-07
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "464227514735055987753686719",
+            "77371252455336267181195264"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 0.9418671621459869,
+          "p_s_per_km": 0.16666666666557584,
+          "source_derivative_s_per_km": [
+            -0.16666666666557584,
+            -0.0,
+            -6.030032967780596e-07
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "464227514735055987753686719",
+            "77371252455336267181195264"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "invented_epsilon_1e-05_distance_50.0",
+        "kind": "invented near-critical plateau",
+        "profile": [
+          [
+            -2.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "source": [
+          -1e-05,
+          0.0,
+          0.0
+        ],
+        "receiver": [
+          1.0,
+          50.0,
+          0.0
+        ]
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 8.441867162143147,
+            "p_s_per_km": 0.16666666666666302,
+            "source_derivative_s_per_km": [
+              -0.16666666666666302,
+              -0.0,
+              -3.489383252545211e-08
+            ],
+            "distance_residual_km": 7.105427357601002e-15,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "237684487542798221976509557235",
+              "39614081257132168796771975168"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -2.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -2.0,
+          2.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 8.441867162143147,
+          "p_s_per_km": 0.16666666666666302,
+          "source_derivative_s_per_km": [
+            -0.16666666666666302,
+            -0.0,
+            -3.489383252545211e-08
+          ],
+          "distance_residual_km": 7.105427357601002e-15,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "237684487542798221976509557235",
+            "39614081257132168796771975168"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 8.441867162143147,
+          "p_s_per_km": 0.16666666666666302,
+          "source_derivative_s_per_km": [
+            -0.16666666666666302,
+            -0.0,
+            -3.489383252545211e-08
+          ],
+          "distance_residual_km": 7.105427357601002e-15,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "237684487542798221976509557235",
+            "39614081257132168796771975168"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "invented_epsilon_1e-08_distance_5.0",
+        "kind": "invented near-critical plateau",
+        "profile": [
+          [
+            -2.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "source": [
+          -1e-08,
+          0.0,
+          0.0
+        ],
+        "receiver": [
+          1.0,
+          5.0,
+          0.0
+        ]
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 0.9418671621429718,
+            "p_s_per_km": 0.16666666666666666,
+            "source_derivative_s_per_km": [
+              -0.16666666666666666,
+              -0.0,
+              -6.030056624236153e-10
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "973555660975280186721472537615279",
+              "162259276829213363391578010288128"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -2.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -2.0,
+          2.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 0.9418671621429718,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666666,
+            -0.0,
+            -6.030056624236153e-10
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "973555660975280186721472537615279",
+            "162259276829213363391578010288128"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 0.9418671621429718,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666666,
+            -0.0,
+            -6.030056624236153e-10
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "973555660975280186721472537615279",
+            "162259276829213363391578010288128"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "invented_epsilon_1e-08_distance_50.0",
+        "kind": "invented near-critical plateau",
+        "profile": [
+          [
+            -2.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "source": [
+          -1e-08,
+          0.0,
+          0.0
+        ],
+        "receiver": [
+          1.0,
+          50.0,
+          0.0
+        ]
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 8.44186716214297,
+            "p_s_per_km": 0.16666666666666666,
+            "source_derivative_s_per_km": [
+              -0.16666666666666663,
+              -0.0,
+              -3.489383298384296e-11
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "249230249209671726174926061722737995",
+              "41538374868278621028243970633760768"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -2.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -2.0,
+          2.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 8.44186716214297,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666663,
+            -0.0,
+            -3.489383298384296e-11
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "249230249209671726174926061722737995",
+            "41538374868278621028243970633760768"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 8.44186716214297,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666663,
+            -0.0,
+            -3.489383298384296e-11
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "249230249209671726174926061722737995",
+            "41538374868278621028243970633760768"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "invented_epsilon_1e-12_distance_5.0",
+        "kind": "invented near-critical plateau",
+        "profile": [
+          [
+            -2.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "source": [
+          -1e-12,
+          0.0,
+          0.0
+        ],
+        "receiver": [
+          1.0,
+          5.0,
+          0.0
+        ]
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 0.9418671621429718,
+            "p_s_per_km": 0.16666666666666666,
+            "source_derivative_s_per_km": [
+              -0.16666666666666666,
+              -0.0,
+              -6.030056647914124e-14
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "32667107224410092492483964451539673989169",
+              "5444517870735015415413993718908291383296"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -2.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -2.0,
+          2.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 0.9418671621429718,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666666,
+            -0.0,
+            -6.030056647914124e-14
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "32667107224410092492483964451539673989169",
+            "5444517870735015415413993718908291383296"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 0.9418671621429718,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666666,
+            -0.0,
+            -6.030056647914124e-14
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "32667107224410092492483964451539673989169",
+            "5444517870735015415413993718908291383296"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "invented_epsilon_1e-12_distance_50.0",
+        "kind": "invented near-critical plateau",
+        "profile": [
+          [
+            -2.0,
+            6.0
+          ],
+          [
+            0.0,
+            6.0
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "source": [
+          -1e-12,
+          0.0,
+          0.0
+        ],
+        "receiver": [
+          1.0,
+          50.0,
+          0.0
+        ]
+      },
+      "reference": {
+        "complete": true,
+        "reference_valid": true,
+        "candidates": [
+          {
+            "kind": "direct",
+            "time_s": 8.441867162142971,
+            "p_s_per_km": 0.16666666666666666,
+            "source_derivative_s_per_km": [
+              -0.16666666666666663,
+              -0.0,
+              -3.489383298430175e-15
+            ],
+            "distance_residual_km": 0.0,
+            "turning_depth_km": null,
+            "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+            "phase_velocity_exact_ratio": [
+              "8362779449448983678075894354075958473393647",
+              "1393796574908163946345982392040522594123776"
+            ]
+          }
+        ],
+        "unresolved": [],
+        "rejected_families": [
+          {
+            "kind": "lower_boundary",
+            "depth_km": -2.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          },
+          {
+            "kind": "upper_boundary",
+            "depth_km": 2.0,
+            "reason": "Intervening faster material blocks critical legs"
+          },
+          {
+            "kind": "critical_maximum_or_plateau",
+            "depth_km": 0.0,
+            "reason": "Positive-width constant critical-speed leg has infinite transverse distance"
+          }
+        ],
+        "isolation_boxes": 0,
+        "root_tolerance": 1e-12,
+        "distance_tolerance_km": 1e-08,
+        "max_isolation_boxes_per_layer": 20000,
+        "near_tie_time_tolerance_s": 1e-09,
+        "implementation_status": "isolated nonmonotone extension",
+        "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+        "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+        "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+        "finite_normal_domain_km": [
+          -2.0,
+          2.0
+        ],
+        "first_arrival": {
+          "kind": "direct",
+          "time_s": 8.441867162142971,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666663,
+            -0.0,
+            -3.489383298430175e-15
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "8362779449448983678075894354075958473393647",
+            "1393796574908163946345982392040522594123776"
+          ]
+        },
+        "best_enumerated_candidate": {
+          "kind": "direct",
+          "time_s": 8.441867162142971,
+          "p_s_per_km": 0.16666666666666666,
+          "source_derivative_s_per_km": [
+            -0.16666666666666663,
+            -0.0,
+            -3.489383298430175e-15
+          ],
+          "distance_residual_km": 0.0,
+          "turning_depth_km": null,
+          "certificate": "Strictly increasing direct distance in p; full interval speed bound",
+          "phase_velocity_exact_ratio": [
+            "8362779449448983678075894354075958473393647",
+            "1393796574908163946345982392040522594123776"
+          ]
+        },
+        "near_ties": [
+          0
+        ]
+      }
+    }
+  ],
+  "overflow_control": {
+    "complete": false,
+    "reference_valid": false,
+    "candidates": [],
+    "unresolved": [
+      {
+        "reason": "Direct-root arithmetic unresolved",
+        "exception": "integer division result too large for a float"
+      }
+    ],
+    "rejected_families": [
+      {
+        "kind": "lower_boundary",
+        "depth_km": 0.0,
+        "reason": "Intervening faster material blocks critical legs"
+      }
+    ],
+    "isolation_boxes": 1,
+    "root_tolerance": 1e-12,
+    "distance_tolerance_km": 1e-08,
+    "max_isolation_boxes_per_layer": 20000,
+    "near_tie_time_tolerance_s": 1e-09,
+    "implementation_status": "isolated nonmonotone extension",
+    "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+    "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+    "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+    "finite_normal_domain_km": [
+      0.0,
+      1.0
+    ],
+    "first_arrival": null
+  },
+  "iteration_failure_control": {
+    "complete": false,
+    "reference_valid": false,
+    "candidates": [],
+    "unresolved": [
+      {
+        "reason": "Direct-root arithmetic unresolved",
+        "exception": "Invented brentq iteration exhaustion"
+      }
+    ],
+    "rejected_families": [
+      {
+        "kind": "lower_boundary",
+        "depth_km": 0.0,
+        "reason": "Intervening faster material blocks critical legs"
+      }
+    ],
+    "isolation_boxes": 1,
+    "root_tolerance": 1e-12,
+    "distance_tolerance_km": 1e-08,
+    "max_isolation_boxes_per_layer": 20000,
+    "near_tie_time_tolerance_s": 1e-09,
+    "implementation_status": "isolated nonmonotone extension",
+    "certificate_basis": "Exact binary64-derived rational coefficients; reused outward interval root isolation",
+    "time_ordering": "Ordinary floating-point evaluation; candidate enumeration is distinct from interval-certified time ranking",
+    "topology_basis": "Direct, one outward turn, or accessible critical guide; repeated excursions admit a strictly earlier feasible shortcut",
+    "finite_normal_domain_km": [
+      0.0,
+      1.0
+    ],
+    "first_arrival": null
+  },
+  "control_sha256": "44f84d0b831a294a85d8ad86e977856fcd2d687e67fd4be726e6dcd5ff4228be",
+  "source_sha256": {
+    "check_layered_direct_regression.py": "1e98f7a9f72ee6e052dbe0ec26d27da4936db4533c122d2ec7834c608a8c0112",
+    "first_arrival_layered_reference.py": "ff9082ab01d51444d6d0ad09676c067884d496686394d66b7302badffe874997",
+    "first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  },
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/check_layered_direct_regression.py --output data/development/layered_reference_checks/direct_delta_guarded_integration008"
+}
