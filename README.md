@@ -429,9 +429,10 @@ linear term. All 24 raw failures remain reported; the separate extrapolates
 agree with limiting momentum but deteriorate at the finer steps.
 Only 37,599 LOM rays pass all full-ray comparison criteria. The [completed LON census](data/development/loma_lon_initial_accuracy_001/README.md)
 passes all 37,648 local and time checks but retains 50 source-vector failures:
-13 at bottom sources and 37 at interior sources. Both sampled preflights remain
-active; neither performs an inverse update. These results use the earlier
-frozen optimizer. Repeating the invented endpoint-mesh controls with D preserves
+13 at bottom sources and 37 at interior sources. The sampled preflights perform
+no inverse updates; their limited refinement and finite-difference checks do not
+supersede these full-cohort source failures. These results use the earlier frozen
+optimizer. Repeating the invented endpoint-mesh controls with D preserves
 their two false local flags and 32 derivative failures. A [bounded LON replay](data/development/loma_lon_straight_curvature_replay_001/RESULTS.md)
 also preserves the worst interior failure and a passing same-event control:
 source-vector errors remain 4.8071e-6 and 1.0600e-6 s/km. Their final paths and
