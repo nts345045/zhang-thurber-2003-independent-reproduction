@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "reviewer": "earthscope_discovery",
+  "created_utc": "2026-10-10T05:44:10.719228+00:00",
+  "scope": "Independent read-only factual, local-link, delivery-hash and PDF-text review; no numerical rerun, source edit or index operation.",
+  "delivery_receipt": "data/development/initial_failure_cc_delivery.json",
+  "delivery_receipt_sha256": "9041a300a973682136b775e847dca3665052c9c6629fbc6c7aef2826c91ca812",
+  "verified_receipt_pins": 143,
+  "document_sha256": {
+    "README.md": "27ba38c218995ebf0d7eadfbd26576925c5035c94bc1a84b75739bb87456ebbe",
+    "report/recovery_checkpoint.tex": "6c5f221a5081612a985dfdf8605ecad79c2e4cb429f16af98e30f6e83a937d57",
+    "data/development/loma_boundary_endpoint_001/README.md": "c69434e1d9deefb96a23da64a8b97338f5160af89f2ab39f4c0cf75ee235da57",
+    "data/development/loma_initial_failure_3426_001/README.md": "b2d25d7c66f6f5bf1a77d28e5a1f5b0c2b9f9f94af28cb534d4783943b156a8e",
+    "data/development/loma_initial_failure_24104_001/README.md": "f5dc6cdcf9f029644b62471d92cd1193795eec3c88d4e718b1992243b8a0997a"
+  },
+  "pdf": {
+    "path": "report/report.pdf",
+    "sha256": "74808f1598de021ec7f911e485f9853332bbdaaa0b07e4aa7ab43242daafa0b4",
+    "pages": 101,
+    "bytes": 1777325,
+    "pdfinfo_readable": true,
+    "updated_pages_26_through_32_text_extraction_passed": true,
+    "visual_inspection": "Root inspected corrected page 27 and established pages 29 and 31 pixels unchanged from prior inspected renders; this reviewer checked extracted text, not screenshots."
+  },
+  "compile": {
+    "execution_path": "tmp/initial_failure_cc_report_compile_002/execution.json",
+    "execution_sha256": "a044a32b32fecc3df82f8e71c45db03159879b3845db6c1be7ba139d08acf752",
+    "log_sha256": {
+      "tmp/initial_failure_cc_report_compile_002/pass_1.log": "6eeddf01b37eed4455be78a009557ec88e0b97be76dd82802eb21479aa6d3122",
+      "tmp/initial_failure_cc_report_compile_002/pass_2.log": "6eeddf01b37eed4455be78a009557ec88e0b97be76dd82802eb21479aa6d3122"
+    },
+    "both_return_codes_zero": true,
+    "no_errors_undefined_references_or_overfull_boxes_in_logs": true
+  },
+  "resolved_local_link_counts": {
+    "README.md": 49,
+    "report/recovery_checkpoint.tex": 27,
+    "data/development/loma_boundary_endpoint_001/README.md": 0,
+    "data/development/loma_initial_failure_3426_001/README.md": 0,
+    "data/development/loma_initial_failure_24104_001/README.md": 1
+  },
+  "missing_local_links": [],
+  "evidence_review_sha256": {
+    "data/hayward_catalog_cc_001/independent_review.json": "f7991cadfdab0d08efe8321c9595e09820ea092233a48264ea39a36cec0b850d",
+    "data/development/loma_lom_initial_accuracy_001/review.json": "d48209e9397cfd528c1f2e6f0145415daaf82a5398382f8c6f076ec69d8a83d2",
+    "data/development/loma_initial_failure_3426_001/review.json": "037c9f3b97dea31d584d26e2bc25f84abc2ccd355a81d7d4ea6e24afde2b863e",
+    "data/development/loma_initial_failure_24104_001/review.json": "4d0fead4b92bff7504b2eb702d7d8b4450a1abafd7e03508d52a759d2c8ec3db",
+    "data/development/loma_boundary_endpoint_001/review.json": "2f643811e53530cd4108bd9e412dfaa32f58b982399b5cb4eddde12be685cf07",
+    "data/development/native_interface_conditioning/002/summary.json": "5907b33c6f75a45961d17f7ada8f4570ab9df1f4b96190d44a5bf9ec69fcd86f",
+    "data/development/native_interface_conditioning/002/review.json": "91017fcfd41e2757739d69e03deb5e81b4023c9ca6966e91cb1a2e8c8db364a4"
+  },
+  "factual_checks": [
+    "CC preparation preserves 58,980 catalog rows and appends 98 accepted rows: 59,078 total, 103 CC events, four channels, 38 cross-epoch CC rows and the same 14,262 unique native forward-ray pairs. CC uncertainty remains blank and explicitly unestimated.",
+    "The adopted literal CC-squared row multiplier contributes CC to the fourth power to the squared objective when other factors are fixed; no timing-sigma, inverse-result or calibration claim follows.",
+    "All 37,648 LOM initial times pass, 48 bottom-face source derivatives fail, and one additional ray fails local stopping; 37,599 jointly pass. Reported maxima match preserved evidence.",
+    "Native pair 3426 retains its false local flag after 53 updates and 24 failed line-search evaluations; pair 24104 retains a true local flag after 33 updates but fails source accuracy. Resource identities, NSLC and epochs match saved observer records.",
+    "The captured horizontal bottom-edge derivative L times slowness-depth-gradient divided by two matches the saved source partial. Fixed inserted knots and source-tied knots define different perturbation families; five subdivisions and 25 controls do not establish a production correction or explain every derivative failure.",
+    "The full one-sided curvature includes 2,704 edges and 56 passing checks: 53 invented and three native. Scalar curvature, isotropic/longitudinal metric values and stated single-direction limitations match frozen evidence."
+  ],
+  "resolved_finding": {
+    "previous_wording": "Fifty-six controls precede the native calculation.",
+    "correction": "Fifty-six checks pass, including three against the saved native evidence.",
+    "verified_in_final_source_and_pdf_text": true
+  },
+  "limits": [
+    "Integrity and documentation pass does not promote failed scientific flags or establish inverse convergence.",
+    "No solver, observation retrieval, reference computation or numerical control was rerun.",
+    "Active-job status is a checkpoint statement from root; this review does not claim terminal outcomes.",
+    "Only local paths were rechecked; no new external-web verification."
+  ],
+  "material_issue_found": false
+}

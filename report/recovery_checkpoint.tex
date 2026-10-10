@@ -101,6 +101,20 @@ is inconclusive. The proof and 156 controls are in
 \path{data/development/interface_moment_set/}. No production stopping rule,
 optimizer, or first-arrival certificate follows from these isolated results.
 
+A one-sided second variation along the saved tangent direction evaluates all
+2,704 edge contributions, including transverse endpoints on velocity-gradient
+breaks. Fifty-six checks pass, including three against the saved native
+evidence. The resulting scalar
+curvature is $4.5882131$ s/km$^2$, whereas the existing isotropic metric assigns
+$15.3013125$ s/km$^2$ to that direction. Replacing midpoint slowness by exact
+segment-mean slowness changes the metric energy by only $4.45\times10^{-6}$
+relative; its longitudinal contribution is $10.7241988$ s/km$^2$.
+The saved action secants approach half the one-sided curvature. This comparison
+concerns one direction and determines neither a Hessian spectrum nor the cause
+of production convergence failure. The earlier incomplete calculation and the
+reviewed complete extension remain in
+\path{data/development/native_interface_conditioning/}.
+
 Continuous layered enumeration was then extended to all 37,648 pairs in
 the prepared 724-source, 52-receiver geometry. The first attempt completed
 every candidate enumeration, but eleven direct candidates failed the
@@ -189,7 +203,7 @@ and independent readback are retained in
 \path{data/development/loma_lon_initial_reference_002/}. This corrects the
 reference arithmetic; it does not validate a production ray or inversion.
 
-Separate frozen LOM and LON initial-forward preflights are now active.
+Separate frozen LOM and LON initial-forward preflights assess these inputs.
 The LON preflight uses the corrected complete reference and the same numerical
 settings as LOM. Seven bounded controls verify unchanged matrix-only outputs
 between the earlier LOM executable and the guarded executable used for LON,
@@ -202,6 +216,46 @@ entries. A separate sampled refinement retains all 104 declared samples and
 24 valid source finite differences while limiting cached fine receiver fields.
 It performs no inverse solve. Neither simulation completion nor a matrix
 storage estimate establishes inverse convergence.
+
+The LOM matrix census has completed. A full comparison with its continuous
+initial-model references finds all 37,648 time errors below 25 microseconds,
+with maximum $2.8984$ microseconds. However, 48 source-vector errors exceed
+$3\times10^{-6}$ s/km, and one additional ray retains a false local flag.
+Only 37,599 rays pass all requirements. All derivative failures involve seven
+sources at the 16 km bottom face and finite-bottom reference branches; their
+errors lie in the vertical component and reach $1.5851\times10^{-5}$ s/km.
+The complete identified comparison and its independent review are in
+\path{data/development/loma_lom_initial_accuracy_001/}.
+The LOM sampled checks and LON initial-forward calculation remain active at
+this checkpoint. No inverse calculation is accepted.
+
+Observation-only replays preserve both initializers and their original
+numerical results for the two distinct failures. Pair 3426, event
+\texttt{NC/10090782} at \texttt{NC.JSJ..EHZ}, exhausts all 24 line-search
+evaluations after 53 accepted updates; it does not reach the 1,000-update
+limit. Its selected path has projected gradient
+$1.3762\times10^{-5}$ s/km near the 7 km velocity-gradient break. Its accurate
+time and source vector do not justify changing the false stopping flag.
+Pair 24104, event \texttt{NC/20091537} at \texttt{NC.HQR..EHZ}, retains a true
+local flag after 33 updates but fails source accuracy. The complete paths,
+histories, native identities and independent saved-record reviews are in
+\path{data/development/loma_initial_failure_review_001/} and the two linked
+observer directories.
+
+For the captured boundary ray, the first segment is horizontal at 16 km.
+Let $L$ be its length and $s'_z$ the local depth derivative of slowness.
+Holding its other endpoint fixed gives
+$\partial T_{\rm edge}/\partial z_{\rm source}=L s'_z/2$.
+With $L=0.03125726$ km, this predicts the saved nonzero derivative
+$-1.5850656\times10^{-5}$ s/km, whereas the continuous boundary reference
+has zero normal derivative. Subdividing that edge leaves the saved action
+unchanged and reduces the endpoint partial when inserted knots are fixed.
+Moving those knots affinely with the source recovers the original derivative
+within $2.78\times10^{-17}$ s/km. These two perturbation families differ;
+subdivision alone is not a correction to an optimized travel-time derivative.
+Twenty-five closed-form controls and all five native subdivision levels are
+retained in \path{data/development/loma_boundary_endpoint_001/}.
+No production source derivative or convergence flag has changed.
 
 \subsection{Rejecting unsupported forward evaluations during inversion}
 The preceding inversion code recorded local ray failures but could still use
@@ -313,4 +367,25 @@ correlation nor the 10 ms sample spacing is a formal timing uncertainty.
 The checked \texttt{dt.cc} export in \path{data/development/native_dt_cc_001/}
 retains a complete 44,718-row identity sidecar, event integer map, and receiver
 epochs. It preserves binary64 values, rejects ambiguous mappings, and leaves
-solver weighting and the running catalog-only calculation unchanged.
+the running catalog-only calculation unchanged.
+
+A separate prepared dataset in \path{data/hayward_catalog_cc_001/} preserves
+all 58,980 original catalog rows and appends the 98 waveform measurements,
+giving 59,078 rows. Thirty-eight added pairs span different native metadata
+epochs at the same receiver. Both receiver indices and full identities are
+retained. The combined input requires exactly the original 14,262 native
+source--receiver rays, with no additional pair. The CC graph has 32 connected
+components and a largest component of seven events; these counts do not
+determine the rank of the combined inverse problem.
+
+The adopted empirical prior is literal $\mathrm{CC}^2$ as a multiplier of
+both residual and Jacobian row. It therefore contributes $\mathrm{CC}^4$
+to the squared data objective before the other squared weighting factors.
+This explicit convention is not a calibrated inverse variance or a claim
+to recover the paper's exact weights. Derived timing uncertainties remain
+blank and marked unestimated. Seventy Python and 36 C++ controls check
+loading, prediction, signed Jacobian entries, weighting and identity retention;
+an independent full-file audit checks the actual preparation. No run
+configuration or inversion was created. A future calculation must declare
+all nine stage factors explicitly; the existing catalog covariance analysis
+continues to reject waveform rows until their joint noise model is justified.
