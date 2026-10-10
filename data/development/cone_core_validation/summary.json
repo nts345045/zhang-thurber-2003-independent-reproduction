@@ -1,0 +1,29 @@
+{
+  "scope": "Existing ray, quadrature, derivative and linear-solver checks with the promoted cone hybrid",
+  "command": [
+    "./build/dd",
+    "validate",
+    "data/development/cone_core_validation"
+  ],
+  "OMP_NUM_THREADS": 2,
+  "return_code": 0,
+  "checks": 48,
+  "failed_checks": [],
+  "source_snapshot": "data/development/forward_integration_cone_production/source_snapshot.tar.gz",
+  "source_sha256": {
+    "src/core.hpp": "854214388b7e3def3770a8d75f347ba747443b98bcc4d5ade8627fa4b7566940",
+    "src/csv.hpp": "f3ec5080bd0234fc7d0d6731b66aadd9eae219353244c9d4ef1c157a67bfd4c0",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "src/main.cpp": "ffa423513f0bf25cea16ac7684f340ba90427d9d5aab66a8f3786d045baafca2",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "04d1f080ddc6253a988696706c7b1578e7637590d7ae5099a4cd3c60120839bf"
+  },
+  "binary_sha256": "a45efed29bd3b657825d4133065687e2da7ad4837f7ced235ed3f02866d33c05",
+  "sha256": {
+    "stdout.txt": "065e88c1b9b37e9e8a5d0dff8978299f83cde1c9c410f823f09afd24f52a90e7",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validation.csv": "8f73d2e479f3834dcd8fd08b573138b5da231182ec3774a4a7254e435e8d5384",
+    "validation_ray.csv": "f76ba32b5880ff9b5ab63bbe5d24fc9a92c0aa40609d1e57db86f1302a1d112e"
+  }
+}

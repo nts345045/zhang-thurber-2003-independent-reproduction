@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "scope": "Postprocessing routing/compatibility fixture, not an inversion",
+  "figures": 8,
+  "modern_initializer_and_perturbation_flags": true,
+  "legacy_flags_reported_unavailable": true,
+  "resolution_arrays_exactly_equal_pre_edit_implementation": true,
+  "source_sha256": {
+    "plot_hayward.py": "c9e48ae46bdf28588a52cc11f35fe5567529b2795b8b61137626a42a19af93ec",
+    "resolution_hayward.py": "241b7226df090ab32356f983b764c06823fdadb551a5dec6ab48165fcfb6f320",
+    "analyze.py": "07fb63f24f460b1911dd1177d0c251019d697b5588602bf97a0839afd3994868"
+  },
+  "created_utc": "2026-10-10T01:10:32Z",
+  "input_sha256": {
+    "data/development/forward_integration_baseline/identified_hayward/initial_events.csv": "4461eac5b0b0f68f83e63668a030087ef36ee490bd25a39822ca44275e05f6d1",
+    "data/development/forward_integration_baseline/identified_hayward/stations.csv": "b2b23994052a4516220c6ef864e7082ce3c90b9cd18c6c5976d61b71a4ab00e3",
+    "data/development/forward_integration_baseline/identified_hayward/observations.csv": "43941f4bcb07fbf94fb42378816596f0dd0fba41011abc5a3afa70edd716803f",
+    "data/development/forward_integration_baseline/identified_hayward/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/development/forward_integration_baseline/identified_hayward/initial_ray_convergence.csv": "06fc2678c9974317b5a4336438d608c2c2f142c6362eda6683c159acae067df1",
+    "data/development/forward_integration_baseline/identified_hayward/initial_ray_derivatives.csv": "4fcc7359300584653545d1cca7164af6d8953f3e73bf6f2909fa542a17e76c72",
+    "data/development/forward_integration_baseline/identified_hayward/initial_ray_identifiers.csv": "d412fdb875e359fb37479688ba9ebe90b56ddb1eaf2d12f596d8be6b3b536042",
+    "data/development/forward_integration_baseline/identified_hayward/initial_linearization_matrix.csv": "e79069404a5029170a71b456ad4ef2c4503d19493b0a49eb87914b01234520dd",
+    "data/development/forward_integration_baseline/identified_hayward/initial_linearization_rows.csv": "b5a245ac753b9c6636d1fa69274cc9f81f3684213e30238b4f8f36a798c0a503",
+    "data/development/forward_integration_baseline/identified_hayward/initial_linearization_columns.csv": "8d492d98de0cc8739a1d0c456c3f8a69f5d3ebd2040637ca13be2e7a7b34426a",
+    "configs/hayward.cfg": "cd7a922200f9811994d9fe4d7b66c48cbe1c9ff5f0dae2eef8ca85f6234aedb2"
+  },
+  "frozen_source_sha256": {
+    "plot_hayward.py": "c9e48ae46bdf28588a52cc11f35fe5567529b2795b8b61137626a42a19af93ec",
+    "resolution_hayward.py": "241b7226df090ab32356f983b764c06823fdadb551a5dec6ab48165fcfb6f320",
+    "analyze.py": "07fb63f24f460b1911dd1177d0c251019d697b5588602bf97a0839afd3994868",
+    "resolution_before.py": "07f1669e6053ebfd6ed95493ff7812c23d40bfd5c16660d6a30d4a771a2d93e1"
+  },
+  "source_snapshot_sha256": "7a089340635e7a264b7c34d0b456c9afcfac7ce6c224d4c15daf85ec6c5efef5",
+  "fixture": "Existing identified two-ray component geometry and linearization; three method labels reuse the same initial model, with explicit manufactured zero-update histories. This tests postprocessing and is not an inversion.",
+  "commands": [
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 resolution_hayward.py --data-dir tmp/hayward_variant_checks/data --config tmp/hayward_variant_checks/fixture.cfg",
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 plot_hayward.py --data-dir tmp/hayward_variant_checks/data --figure-dir tmp/hayward_variant_checks/figures",
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 analyze.py --hayward-only --data-dir tmp/hayward_variant_checks/data --report-dir tmp/hayward_variant_checks/report",
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 analyze.py --hayward-only --data-dir tmp/hayward_variant_checks/legacy_data --report-dir tmp/hayward_variant_checks/legacy_report"
+  ],
+  "limitations": [
+    "The full real inversion is not part of this fixture.",
+    "Plots retain their existing drawing logic; this test checks directory routing and metadata/numerical compatibility, not independent scientific accuracy."
+  ],
+  "evidence_sha256": {
+    "source_snapshot.tar.gz": "7a089340635e7a264b7c34d0b456c9afcfac7ce6c224d4c15daf85ec6c5efef5",
+    "README.md": "5bad78601af4ba485345554a857bda62e5d24ad93289286c5bdc2e4b790fe11e",
+    "fixture.json": "b817b608f06117571dcc77c39a8c8a4ff8d2abd9cc2cadbd8f621bde2e98c8e5"
+  }
+}

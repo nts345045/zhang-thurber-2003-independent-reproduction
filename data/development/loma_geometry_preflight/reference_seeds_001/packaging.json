@@ -1,0 +1,26 @@
+{
+  "archive": "frozen_tables.tar.gz",
+  "archive_sha256": "406d1a5954405a7898316d62109b096148600e45ce9cb9ef741dfce5ded261a0",
+  "archive_bytes": 5832422,
+  "purpose": "Lossless publication packaging; numerical files and original recorded hashes unchanged",
+  "members_sha256": {
+    "checks.csv": "c0584720a2f5bbcd9add015b58069d08070ef6dbd773e60d706065060f71d998",
+    "compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "diagnostic_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "diagnostic_stdout.log": "a07a4330c39eb85e202e668d7fa4d63120ae1e0ca7cdfbd500334217a7e52327",
+    "finite_difference.csv": "5e9516799c706d91c996fee8d23265ece0e30a472d1d51d5ddb142ba4a09152d",
+    "inputs/ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "inputs/reference_comparison.csv": "c9dff90b0190e2708e168205217f6b8b90abcff22c29fe59fbba2c817fdb88ea",
+    "inputs/reference_references.jsonl": "28d5278f4c0191878c9bb3f95b6284cc2c70542778263c6dfac7785950442723",
+    "inputs/reference_summary.json": "619d39032454fa9b75a62fdfacca4c8fb2f84d8470c4afef886f4f3ea0376f19",
+    "inputs/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "inputs/truth_events.csv": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3",
+    "inputs/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "paths.csv": "dcfdee50c1640d2cea02eb1838466a957a998c9fe35246d57995a66a4a5274ab",
+    "seeds.csv": "99bcdb7f26ce18a2142611348b87993603609f51205aab64721ae6f7f04c654f"
+  },
+  "readback_all_members_verified": true,
+  "expand_command": "tar -xzf frozen_tables.tar.gz",
+  "original_summary_sha256": "f8ac08aef10d66eb8b041a12c606a1b3b94e829a022538786992162aa7d1f21e"
+}

@@ -1,0 +1,116 @@
+{
+  "status": "passed",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 diagnostics/run_cone_ray_metric_checks.py --variant production_hybrid",
+  "compile_command": [
+    "c++",
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "tmp/cone_ray_metric_checks/production_hybrid/source/diagnostics/check_cone_ray_metric.cpp",
+    "-o",
+    "tmp/cone_ray_metric_checks/production_hybrid/check_cone_ray_metric"
+  ],
+  "run_command": [
+    "tmp/cone_ray_metric_checks/production_hybrid/check_cone_ray_metric"
+  ],
+  "TMPDIR": "tmp",
+  "return_code": 0,
+  "checks": 9007,
+  "groups": {
+    "solver_success": {
+      "checks": 1009,
+      "failures": 0,
+      "maximum_error": 0.0
+    },
+    "free_backward_error_certificate": {
+      "checks": 1009,
+      "failures": 0,
+      "maximum_error": 2.3090630792974175e-16
+    },
+    "primal_feasibility": {
+      "checks": 1009,
+      "failures": 0,
+      "maximum_error": 0.0
+    },
+    "dual_relative_residual": {
+      "checks": 1009,
+      "failures": 0,
+      "maximum_error": 3.0385875050535315e-13
+    },
+    "unbounded_relative_residual": {
+      "checks": 1009,
+      "failures": 0,
+      "maximum_error": 4.75437574091738e-13
+    },
+    "complementarity": {
+      "checks": 1009,
+      "failures": 0,
+      "maximum_error": 1.1449805909249756e-13
+    },
+    "nonpositive_slope": {
+      "checks": 1009,
+      "failures": 0,
+      "maximum_error": 0.0
+    },
+    "quadratic_descent_identity": {
+      "checks": 1009,
+      "failures": 0,
+      "maximum_error": 1.534779993466229e-13
+    },
+    "exhaustive_active_faces": {
+      "checks": 929,
+      "failures": 0,
+      "maximum_error": 0.0
+    },
+    "release_counterexample": {
+      "checks": 1,
+      "failures": 0,
+      "maximum_error": 1.1102230246251565e-16
+    },
+    "release_performed": {
+      "checks": 1,
+      "failures": 0,
+      "maximum_error": 0.0
+    },
+    "guard_reports_failure": {
+      "checks": 1,
+      "failures": 0,
+      "maximum_error": 0.0
+    },
+    "coefficient_overflow_fails_closed": {
+      "checks": 1,
+      "failures": 0,
+      "maximum_error": 0.0
+    },
+    "direction_overflow_fails_closed": {
+      "checks": 1,
+      "failures": 0,
+      "maximum_error": 0.0
+    },
+    "lost_positive_pivot_fails_closed": {
+      "checks": 1,
+      "failures": 0,
+      "maximum_error": 0.0
+    }
+  },
+  "failures": [],
+  "solver_work": "9007 checks, 0 failures; max solves 70, total blocks 22, releases 4952",
+  "source_sha256": {
+    "diagnostics/check_cone_ray_metric.cpp": "651ec3544803b483f833058617c149117b01c5d109f10a07a50d410fb7d69b51",
+    "diagnostics/cone_ray_metric.hpp": "eab7fb280a2336c3e0dd721fdf911692cca64a81df38949611c303d739280331",
+    "diagnostics/reduced_ray_metric.hpp": "7b83dec86204dd94b5c96b337ce98fa7e66dbd3b0e1ba4fdd9e22595b48d2925",
+    "diagnostics/run_cone_ray_metric_checks.py": "792eb5cdb06a70ce547a2d4ea8d181a63c2ffa4903bb3948a4552be026c4f529",
+    "src/core.hpp": "854214388b7e3def3770a8d75f347ba747443b98bcc4d5ade8627fa4b7566940",
+    "src/ray_metric.hpp": "04d1f080ddc6253a988696706c7b1578e7637590d7ae5099a4cd3c60120839bf"
+  },
+  "sha256": {
+    "tmp/cone_ray_metric_checks/production_hybrid/check_cone_ray_metric": "7b261210e5189654aef5a9a88dce41fbc09754ec838ca08667162db4c010a960",
+    "data/development/cone_ray_metric_checks/production_hybrid/source_snapshot.tar.gz": "6a0af5e99784782ee61c5c24eebfab3176024f01a02a477aedf7491efa4976cc",
+    "data/development/cone_ray_metric_checks/production_hybrid/results.csv": "2b9a925316de0e12ad3de9cb9773e48b99e2bda88e70d66076333a2c8d264a97",
+    "data/development/cone_ray_metric_checks/production_hybrid/stderr.txt": "9156f6f975238fa7875b83f51698626e1a529761726060e34f9fc494ea43db4a",
+    "data/development/cone_ray_metric_checks/production_hybrid/compile_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "scope": "Invented quadratic controls only: exhaustive small-face reference, randomized larger KKT residuals, explicit release/guard/overflow cases. Algebra tolerances do not change any ray stopping threshold."
+}

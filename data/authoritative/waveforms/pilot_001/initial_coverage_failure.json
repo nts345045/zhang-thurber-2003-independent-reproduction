@@ -1,0 +1,34 @@
+{
+  "status": "preserved_local_validation_failure",
+  "raw_waveform_sha256": "fc7d8518d72b7ae6e84a2b36a98e95b051002cc0adba284a3aa0858a5aa2a14d",
+  "source_sha256": "dcf3d6df46ad76c95643d5a33dc4f9ab2c610b55d2d057fe4d3ba731eecfe776",
+  "failed_source_file": "initial_coverage_check.py",
+  "old_condition": "last_sample_utc >= request_end_utc",
+  "request_start_utc": "1991-11-22T16:07:22.230000Z",
+  "request_end_utc": "1991-11-22T16:07:27.230000Z",
+  "decoded_records": [
+    {
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+      "provider_waveform_resource_id": null,
+      "metadata_epoch_start": "1990-07-31T21:10:00",
+      "metadata_epoch_end": "1992-03-26T21:00:00",
+      "response_raw_file": "response.xml",
+      "response_raw_sha256": "ae190ab229c8d2a22401d2f8b67c17b517d0d90c96ad6fe1efcebbe9b223c456",
+      "first_sample_utc": "1991-11-22T16:07:22.230000Z",
+      "last_sample_utc": "1991-11-22T16:07:27.220000Z",
+      "sample_rate_hz": 100.0,
+      "sample_count": 500,
+      "data_type": "int32",
+      "sample_min": -681.0,
+      "sample_max": 509.0,
+      "decoded_sample_byte_order": "little",
+      "decoded_samples_sha256": "c76ca9237f170d1a9e27e93326676bdf0806e9687c06d132d18ffc8ef7e1c5a4",
+      "miniseed_quality": "D",
+      "miniseed_encoding": "STEIM2"
+    }
+  ],
+  "explanation": "Five seconds at100Hz contains500 samples in a half-open window. The old test incorrectly required the additional sample at the exclusive endpoint. No waveform access or identity failure occurred.",
+  "correction": "Require first_sample <= requested start and first_sample + sample_count/sample_rate >= requested exclusive end, together with one continuous trace and exact NSLC/rate.",
+  "partner_requested_before_failure": false
+}

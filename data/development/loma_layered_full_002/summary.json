@@ -1,0 +1,128 @@
+{
+  "status": "complete",
+  "scope": "Independent fixed-truth geometry reference for every native source/receiver pair; no observations, simulation or inversion",
+  "source_count": 724,
+  "receiver_count": 52,
+  "expected_pairs": 37648,
+  "verified_pairs": 37648,
+  "input_source_sha256": {
+    "data/loma_lom_001/authoritative_geometry": "a80bab4f2cb737add7a2a6a437decfc18869c1bff22c364e3a0f6131f1d4d817",
+    "data/loma_lom_001/initial_grid.csv": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+    "data/loma_lom_001/preflight.cfg": "3264c2c3976793a7b4acb7e917790a0ef1a96994f786feaa998a8f3a907a7867",
+    "data/loma_lom_001/preparation_manifest.json": "eca3bfb01d15ddc8b0850486a82669cf48a85594814c5e5e43dea3b9226552e9",
+    "data/loma_lom_001/ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "data/loma_lom_001/run.cfg": "d28f691c27559c0fd45f99c5e107f35a343c15e4bf371065716814102352a6b2",
+    "data/loma_lom_001/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "data/loma_lom_001/truth_events.csv": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3",
+    "data/loma_lom_001/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "diagnostics/run_loma_layered_full.py": "4a01438a8646000b77136e8e65f98aa154b6dd8c28ff6a53dda597e855327e39",
+    "diagnostics/first_arrival_layered_reference.py": "ff9082ab01d51444d6d0ad09676c067884d496686394d66b7302badffe874997",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "data/development/loma_geometry_preflight/001/summary.json": "57d8b30ba3b9a053de9842cdd2cb63834b615575050046bf7ce862bbd9d32be0"
+  },
+  "profile_x_velocity_km_km_s": [
+    [
+      -35.0,
+      6.0
+    ],
+    [
+      -15.0,
+      6.0
+    ],
+    [
+      0.0,
+      6.0
+    ],
+    [
+      1.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      4.0,
+      4.0
+    ],
+    [
+      5.0,
+      4.0
+    ],
+    [
+      6.0,
+      5.0
+    ],
+    [
+      20.0,
+      5.4375
+    ],
+    [
+      35.0,
+      5.90625
+    ]
+  ],
+  "original_box_km": [
+    [
+      -35.0,
+      35.0
+    ],
+    [
+      -60.0,
+      40.0
+    ],
+    [
+      -1.0,
+      16.0
+    ]
+  ],
+  "coordinate_permutation": "Reference (x,y,z)=original (y,z,x); output source derivatives return to original axes",
+  "finite_box_basis": "Every candidate stays in the finite normal profile domain and has monotone transverse coordinates between its native endpoints",
+  "native_metadata_mapping": "All source_/receiver_ columns in references.csv.gz preserve native strings; complete input tables retained under inputs/",
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/run_loma_layered_full.py --output data/development/loma_layered_full_002 --workers 4",
+  "workers": 4,
+  "seconds": 752.7885278479662,
+  "limitations": [
+    "Catalog-defined simulation geometry is not inferred earthquake ground truth.",
+    "Complete enumeration means candidate families suffice for minimum time; equal maxima can admit a continuum of paths.",
+    "Time ordering uses ordinary floating point, not interval-certified minimum-time ranking.",
+    "Near ties retain all branch certificates and branch-specific derivatives; no unique gradient is asserted.",
+    "Unresolved or invalid references retain certificates and blank first-arrival values, without a successful reference flag.",
+    "This reference batch does not change or certify the production ray solver or generate noisy observations."
+  ],
+  "counts": {
+    "pairs": 37648,
+    "reference_complete": 37648,
+    "reference_valid": 37648,
+    "candidate_total": 66302,
+    "branch_turning": 5951,
+    "branch_direct": 25724,
+    "branch_critical_maximum_or_plateau": 5474,
+    "branch_flat_direct": 499
+  },
+  "unresolved_pair_indices": [],
+  "near_tie_pair_indices": [],
+  "time_range_s": [
+    0.5650642302812661,
+    16.842259017738108
+  ],
+  "output_sha256": {
+    "references.csv.gz": "e668a997d48fbf3f343a14a3b04f8658ecec556ac99774698d59d81291f154c2",
+    "certificates.jsonl.gz": "972f69ccc0bf2c1059511c68d66cd1d7ab02df131cf39e407744d606023dad92",
+    "check.py": "a212d2beab6b1e48b7d516d3f04c888a295003143651d233e819d4bfcbff1974",
+    "compare_prior.py": "1a0a9933f586846317d57e9aaf4dd7b348af3a1fec0dc401c435f774a8fdb84c",
+    "inputs/authoritative_geometry": "a80bab4f2cb737add7a2a6a437decfc18869c1bff22c364e3a0f6131f1d4d817",
+    "inputs/initial_grid.csv": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+    "inputs/preflight.cfg": "3264c2c3976793a7b4acb7e917790a0ef1a96994f786feaa998a8f3a907a7867",
+    "inputs/preparation_manifest.json": "eca3bfb01d15ddc8b0850486a82669cf48a85594814c5e5e43dea3b9226552e9",
+    "inputs/ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "inputs/run.cfg": "d28f691c27559c0fd45f99c5e107f35a343c15e4bf371065716814102352a6b2",
+    "inputs/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "inputs/truth_events.csv": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3",
+    "inputs/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "inputs/terminal_geometry_summary.json": "57d8b30ba3b9a053de9842cdd2cb63834b615575050046bf7ce862bbd9d32be0",
+    "source/run_loma_layered_full.py": "4a01438a8646000b77136e8e65f98aa154b6dd8c28ff6a53dda597e855327e39",
+    "source/first_arrival_layered_reference.py": "ff9082ab01d51444d6d0ad09676c067884d496686394d66b7302badffe874997",
+    "source/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  }
+}

@@ -872,11 +872,12 @@ rejects failed rays before writing synthetic observations. The prepared
 full experiment has 15,932,384 observations, including both catalog and
 precise differences. LOM and LON starting profiles, source perturbations,
 and time-rounding differences are explicit assumptions in the preparation
-record. Geometry preparation and component checks are complete; the real
-geometry preflight is still running. None of these prepared inputs has yet
+record. Geometry preparation and component checks are complete; the identified
+geometry diagnostic has finished with the failures described below. None of these prepared inputs has yet
 replaced the synthetic inversion figures earlier in this report.
 
 \input{ray_failure_checkpoint.tex}
+\input{recovery_checkpoint.tex}
 
 \IfFileExists{hayward_results.tex}{}{\IfFileExists{../figures/hayward/figure10_velocity.pdf}{\input{hayward_velocity_checkpoint.tex}}{}}
 
@@ -917,6 +918,12 @@ Oppenheimer, D. H., F. W. Klein, J. P. Eaton, and F. W. Lester (1993).
 The Northern California Seismic Network bulletin, January--December 1992.
 USGS Open-File Report 93-578, Table 4.
 \href{https://doi.org/10.3133/ofr93578}{doi:10.3133/ofr93578}.
+
+Waldhauser, F., and W. L. Ellsworth (2002). Fault structure and mechanics of
+the Hayward Fault, California, from double-difference earthquake locations.
+\emph{Journal of Geophysical
+Research}, 107(B3), ESE 3-1--ESE 3-15.
+\href{https://doi.org/10.1029/2000JB000084}{doi:10.1029/2000JB000084}.
 
 The two user-permitted guidance files are
 \href{https://github.com/bradlipovsky/vdv-damage/blob/main/AGENTS.md}{repository guidelines}

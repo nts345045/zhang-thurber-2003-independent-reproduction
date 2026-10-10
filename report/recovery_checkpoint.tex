@@ -1,0 +1,105 @@
+\subsection{Exact branch seeds and continuous synthetic truth}
+Supplying the exact earliest branch separates initialization error from
+path representation and local optimization. Four identified Loma rays,
+diagnostic rows 5, 49, 57, and 88, have continuous first arrivals along the
+critical guide at $x=0$. Circular arcs and the straight guide are sampled
+at five spacings from 0.5 to 0.03125 km. One calculation uses the unchanged
+tracer, including its initial uniform resampling. A second copied tracer
+retains the supplied nodes initially; all interior nodes remain free during
+optimization. The action, derivatives, line search, and 1,000-update budget
+remain unchanged.
+
+Only one of twenty optimized uniform-seed paths meets the local stopping
+rule; none of twenty retained-seed paths does. At 0.03125 km, all four
+uniform-seed results nevertheless have time errors below 4.750 microseconds
+and source-vector errors below $4.35\times10^{-7}$ s/km. The finest retained
+row-5 path accepts no update, despite time error 4.696 microseconds and
+source-vector error about $2\times10^{-15}$ s/km. Its ordinary gradient norm
+is 0.0751 s/km, and collective normal displacements of its interface nodes
+have unequal one-sided action slopes. The correct arrival branch therefore
+does not resolve the nonsmooth optimization problem. These controls also
+show that initial uniform resampling can damage a coarse guide seed; its
+additional row-5 time error falls from 473.730 microseconds at 0.5 km to
+0.05368 microseconds at 0.03125 km. Exact polygon integration agrees with
+production action within $2.25\times10^{-13}$ s. All paths, original flags,
+identities, and isolated source changes are retained in
+\path{data/development/loma_geometry_preflight/reference_seeds_001/}.
+
+Continuous layered enumeration was then extended to all 37,648 pairs in
+the prepared 724-source, 52-receiver geometry. The first attempt completed
+every candidate enumeration, but eleven direct candidates failed the
+unchanged $10^{-8}$ km distance-closure requirement. Their first-arrival
+values remain blank. All eleven use source 357, event
+\texttt{NC/20091139}, at $x=-0.011677621261526383$ km, just inside the
+6 km/s constant-speed region. Solving for $p v_{\max}$ close to one loses
+the small critical offset in binary64 arithmetic. A separate correction
+solves for $\delta=1/p-v_{\max}\geq0$ and forms the phase speed by exact
+rational addition before evaluating the segment integrals. Twenty-one
+isolated cases, including all eleven failed geometries and ten invented
+near-interface controls, close within $7.11\times10^{-15}$ km. Independent
+80-digit integrals agree in time within $3.91\times10^{-15}$ s and in
+source-vector norm within $2.87\times10^{-17}$ s/km. The failed first attempt
+is preserved under \path{data/development/loma_layered_full_001/}.
+
+The corrected second enumeration passes the full geometry and independent
+native-identity review: all 37,648 references are valid, with no near ties.
+Their first arrivals comprise 25,724 direct paths, 5,951 turning paths,
+5,474 critical guides, and 499 direct paths in constant-speed regions.
+The maximum closure residual across all 66,302 candidates is
+$3.13\times10^{-9}$ km. The eleven formerly invalid references are the only
+validity changes. Previously valid branch kinds remain unchanged; their
+largest time change is 1.55 ns. No source or receiver is removed. Both
+compressed identified streams, the executed reference source, and the
+separate completion, physical-consistency, and independent identity reviews
+are retained in \path{data/development/loma_layered_full_002/}.
+
+An explicit analytic-truth input mode permits a separately reviewed,
+complete continuous reference to supply synthetic travel times. The C++
+consumer verifies the model, ordered source--receiver support, every native
+metadata field, finite values, unique valid references, and physical speed
+bounds. It preserves the existing random-draw, quantization, and differential
+observation order. Its invented contract suite passes 55 checks, and six
+default-mode output files remain byte-identical to the frozen preceding
+executable. Analytic mode writes reference status separately and leaves
+polygon-ray status fields blank. This changes the declared synthetic truth
+calculation; it does not repair or accept the inverse forward operator.
+
+\subsection{Historical waveform metadata and a rejected pilot pair}
+The existing Hayward catalog pair at differential row 15108 links events
+\texttt{NC/238035} and \texttt{NC/30083101} at
+\texttt{NC.JPR.02.EHZ}. EarthScope routing identifies NCEDC as the archive
+for the two requested windows. The preserved miniSEED records each contain
+500 contiguous samples at 100 Hz over a half-open five-second interval.
+Full response metadata cover the distinct 1991 and 1995 epochs; their
+three-stage response contents agree. Event, origin, pick, association,
+channel, and epoch identities accompany the raw files and derived records.
+Missing provider response resource IDs remain explicitly missing.
+
+The written precursor method uses a tapered 2.56 s window and requires
+squared coherence above 0.9 at at least half the frequency bins between
+2 and 10 Hz (Waldhauser and Ellsworth, 2002, section 2.2, paragraph 16).
+For the primary pilot calculation, the unspecified choices are declared:
+a window beginning 0.5 s before the catalog P pick, demeaning, a Hann taper,
+and five-bin spectral averaging. No additional filter, response removal,
+or resampling is applied. Only two of twenty frequency bins pass, where ten
+are required. All nine declared window/smoothing variants fail, with zero
+to four passing bins. Consequently, no waveform difference is adopted.
+A line through the two coherent phase bins has two free parameters; its
+near-zero residual does not measure timing precision. The source, spectra,
+controls, and failed result are in
+\path{data/development/waveform_correlation_pilot_001/}.
+
+An offline audit retains all 14,262 picks and 44,718 catalog differences.
+Historical operation records identify \texttt{NC.CMW1}, but do not provide
+calibration: the saved EarthScope and NCEDC StationXML responses start in
+2000, whereas 117 retained picks and 199 differences involve its 1995--1998
+epochs. No later response is backdated. Among 398 picks whose channel names
+do not end in Z, provider orientation metadata identify 227 as vertical,
+54 as nonvertical, and 117 as unknown. Channel names alone therefore cannot
+define the vertical waveform selection. A further 89 picks and 542
+differences precede the archive's documented March 1984 start; this date
+is a coverage lead, not proof that all earlier data are absent. These audit
+categories remove no catalog observations and establish no study exclusion.
+Further retrieval is paused for clarification under the user's metadata
+rule. Full native rows and unsubmitted requests are saved in
+\path{data/authoritative/waveforms/cohort_plan_001/}.

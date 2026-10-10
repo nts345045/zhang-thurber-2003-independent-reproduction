@@ -1,0 +1,21 @@
+{
+  "scope": "Existing default trace, quadrature, derivative and linear-solver checks after optional-seed and exact-endpoint integration",
+  "command": "OMP_NUM_THREADS=2 ./build/dd validate tmp/forward_core_validation",
+  "checks": 48,
+  "failed_checks": [],
+  "source_snapshot": "data/development/forward_integration_baseline/source_snapshot.tar.gz",
+  "source_sha256": {
+    "src/core.hpp": "92c1fd4a28e012eea6aeb847751a5f1e0675fe40182b118f8a217e94ec1fba4d",
+    "src/csv.hpp": "f3ec5080bd0234fc7d0d6731b66aadd9eae219353244c9d4ef1c157a67bfd4c0",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "src/main.cpp": "ffa423513f0bf25cea16ac7684f340ba90427d9d5aab66a8f3786d045baafca2",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358"
+  },
+  "binary_sha256": "4ca2ceeadf67afc9fd6dc02f929327865909cf7fbdbccef8619ba311da10c5e1",
+  "sha256": {
+    "validation.csv": "aef26cf09dd62c0e2676507d95154846374cf343df0df7beda2b37438e85f358",
+    "validation_ray.csv": "f76ba32b5880ff9b5ab63bbe5d24fc9a92c0aa40609d1e57db86f1302a1d112e",
+    "stdout.txt": "09a9efa52617425b3089d4ac91a7e163234141dec0289b4ff44b99028c97a97e"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "identical_complete_reference",
+      "passed": true,
+      "rejected": false
+    },
+    {
+      "name": "changed_current_initial_events.csv",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache geometry/observation mismatch: initial_events.csv"
+    },
+    {
+      "name": "changed_current_stations.csv",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache geometry/observation mismatch: stations.csv"
+    },
+    {
+      "name": "changed_current_initial_grid.csv",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache geometry/observation mismatch: initial_grid.csv"
+    },
+    {
+      "name": "changed_current_observations.csv",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache geometry/observation mismatch: observations.csv"
+    },
+    {
+      "name": "changed_cached_geometry",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache geometry/observation mismatch: initial_events.csv"
+    },
+    {
+      "name": "changed_maintained_module",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache and maintained mathematical module differ"
+    },
+    {
+      "name": "changed_cached_module",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache and maintained mathematical module differ"
+    },
+    {
+      "name": "changed_candidate_bytes",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference candidate cache hash mismatch"
+    },
+    {
+      "name": "unresolved_cache_status",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache has unresolved cases"
+    },
+    {
+      "name": "candidate_count_mismatch",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache count mismatch"
+    },
+    {
+      "name": "reject_complete_False",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache must have unique valid complete arrivals"
+    },
+    {
+      "name": "reject_reference_valid_False",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache must have unique valid complete arrivals"
+    },
+    {
+      "name": "reject_near_ties_[0, 1]",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache must have unique valid complete arrivals"
+    },
+    {
+      "name": "reject_first_arrival_None",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache must have unique valid complete arrivals"
+    },
+    {
+      "name": "reject_first_arrival_{'time_s': 1.0, 'source_derivative_s_per_km': None}",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference cache must have unique valid complete arrivals"
+    },
+    {
+      "name": "full_14262_replay_bytes_and_norm_counts",
+      "passed": true
+    }
+  ],
+  "scope": "Invented cache rejection controls and byte-identical full 003 replay; no ray/reference rerun",
+  "replay_summary_sha256": "64d1f75ce4988282ae004d15d145ed24ea9871adf075993c4c2200618c6a004a",
+  "original_independent_review_sha256": "92219ff36cb87cb8c286ea95268349eb6f5b611d69c3a627e2339e3dafce3cea",
+  "full_reference_count": 14262,
+  "output_sha256": {
+    "invented_reference_module.py": "a746fff901ab3127711ff8a6e8831e58046eb6cb215e2d67ccb1891186645f46",
+    "cache/references.jsonl": "396e3c83b3be1244652d0b6b5d452d02fa6376c22f2e1511bea207a69b734a45",
+    "cache/summary.json": "d14824fc5f1956cdbf42c480cb75f8966101887485c94a62e6f8cab5e58ec7d4",
+    "cache/inputs/initial_events.csv": "ae9e5d54e10cd0792e9c812ecef46b3aad7ce072da914de92e44545e187fcc49",
+    "cache/inputs/stations.csv": "ae9e5d54e10cd0792e9c812ecef46b3aad7ce072da914de92e44545e187fcc49",
+    "cache/inputs/initial_grid.csv": "ae9e5d54e10cd0792e9c812ecef46b3aad7ce072da914de92e44545e187fcc49",
+    "cache/inputs/observations.csv": "ae9e5d54e10cd0792e9c812ecef46b3aad7ce072da914de92e44545e187fcc49",
+    "cache/source/invented_reference_module.py": "a746fff901ab3127711ff8a6e8831e58046eb6cb215e2d67ccb1891186645f46",
+    "data/initial_events.csv": "ae9e5d54e10cd0792e9c812ecef46b3aad7ce072da914de92e44545e187fcc49",
+    "data/stations.csv": "ae9e5d54e10cd0792e9c812ecef46b3aad7ce072da914de92e44545e187fcc49",
+    "data/initial_grid.csv": "ae9e5d54e10cd0792e9c812ecef46b3aad7ce072da914de92e44545e187fcc49",
+    "data/observations.csv": "ae9e5d54e10cd0792e9c812ecef46b3aad7ce072da914de92e44545e187fcc49",
+    "source/check_reference_cache.py": "86b5ae577c400dc332d8a20ab8f4d97827c43dde1dd57f0246221a8e8cbbc562",
+    "source/compare_hayward_1d_support.py": "9d85e163bf4d4fe60c5ca72854c3706963bd36d9bc232094f58c86bf0268f182"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "reviewer": "earthscope_discovery",
+  "scope": "Independent terminal artifact/native join audit; no reference arithmetic, new observations or solver run",
+  "verified_pairs": 37648,
+  "invalid_reference_count": 0,
+  "native_metadata_fields_all_match": true,
+  "ordered_indices_complete": true,
+  "source_derivative_permutation_matches": true,
+  "material_issue_found": false,
+  "summary_sha256": "d88e827166d5cfc8b0bbf58cd005831ea9c2c5169cc78c47e067d333e60b453d",
+  "execution_sha256": "9e77f560ece246036c717f3abdbca02356ab52adcadb47e887956417dc2a5008",
+  "verified_prior104_reference_dictionaries": 104,
+  "verified_output_hashes": 17,
+  "verified_input_source_hashes": 13,
+  "verified_prior104_output_hashes": 19,
+  "finite_box_and_x_only_grid_verified": true,
+  "maximum_candidate_distance_residual_km": 3.1251738974447107e-09,
+  "reference_counts": {
+    "pairs": 37648,
+    "reference_complete": 37648,
+    "reference_valid": 37648,
+    "candidate_total": 66302,
+    "branch_turning": 5951,
+    "branch_direct": 25724,
+    "branch_critical_maximum_or_plateau": 5474,
+    "branch_flat_direct": 499
+  },
+  "prior104_summary_sha256": "f283b0db2c9ecdd3a2f86f85cc03725368344c6172e112477cae87057bec6f63",
+  "limitations": [
+    "This checks frozen artifacts and joins, not a new independent arithmetic implementation.",
+    "Candidate time ordering is ordinary floating point, not an interval-certified time ranking.",
+    "Complete reference enumeration does not validate the separate production ray optimizer."
+  ]
+}

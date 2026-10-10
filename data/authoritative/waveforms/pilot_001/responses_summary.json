@@ -1,0 +1,43 @@
+{
+  "stage": "responses",
+  "scope": "Two previously selected native records; no measured waveform differential time",
+  "request_interval_semantics": "Half-open [start,end); five seconds at100Hz requires500 contiguous samples",
+  "records": [
+    {
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+      "identifier_basis": "Derived FDSN channel identifier; no missing provider response ID is fabricated",
+      "metadata_epoch_start": "1990-07-31T21:10:00",
+      "metadata_epoch_end": "1992-03-26T21:00:00",
+      "provider_channel_and_response_resource_ids": [],
+      "sample_rate_hz": 100.0,
+      "response_stage_count": 3,
+      "canonical_response_sha256": "e2ed2a621f4848c84257b9e577c9e3df5d305bcd437c8711b41da2d7aa8681a7",
+      "response_raw_file": "response.xml",
+      "response_raw_sha256": "ae190ab229c8d2a22401d2f8b67c17b517d0d90c96ad6fe1efcebbe9b223c456"
+    },
+    {
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+      "identifier_basis": "Derived FDSN channel identifier; no missing provider response ID is fabricated",
+      "metadata_epoch_start": "1995-08-03T18:15:00",
+      "metadata_epoch_end": "1997-01-29T22:30:00",
+      "provider_channel_and_response_resource_ids": [],
+      "sample_rate_hz": 100.0,
+      "response_stage_count": 3,
+      "canonical_response_sha256": "e2ed2a621f4848c84257b9e577c9e3df5d305bcd437c8711b41da2d7aa8681a7",
+      "response_raw_file": "partner_response.xml",
+      "response_raw_sha256": "9763ae753d17473ae998874693f90c55daaec994000b62f868d671cf58f47297"
+    }
+  ],
+  "canonical_provider_responses_identical": true,
+  "input_sha256": {
+    "discovery_001/summary.json": "b616428ac026b31084dbb4b6023757705159d3d9f10ad5411eb2ee39e84645f1",
+    "discovery_001/discover.py": "59ef9c0d3fdad892867a2753fc1f671c95388c391e4da35f40bef6d9150bb669"
+  },
+  "limitations": [
+    "Two records establish no full-cohort coverage.",
+    "No correlation delay or response correction is applied.",
+    "Identical canonical provider response content is distinct from independent calibration verification."
+  ]
+}

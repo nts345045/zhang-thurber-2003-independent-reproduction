@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "raw_responses": [
+    {
+      "raw_file": "response.xml",
+      "sha256": "ae190ab229c8d2a22401d2f8b67c17b517d0d90c96ad6fe1efcebbe9b223c456",
+      "byte_count": 5527
+    },
+    {
+      "raw_file": "partner_response.xml",
+      "sha256": "9763ae753d17473ae998874693f90c55daaec994000b62f868d671cf58f47297",
+      "byte_count": 5527
+    },
+    {
+      "raw_file": "waveform.mseed",
+      "sha256": "fc7d8518d72b7ae6e84a2b36a98e95b051002cc0adba284a3aa0858a5aa2a14d",
+      "byte_count": 4096
+    },
+    {
+      "raw_file": "partner_waveform.mseed",
+      "sha256": "4dffc443c96335d047003d22d85436739e1f167811c61b8b1643c93900e84709",
+      "byte_count": 4096
+    }
+  ],
+  "copied_native_contexts_match": true,
+  "response_epochs_unique_and_exact": true,
+  "cached_geometric_and_sample_fields_match_per_epoch": 8,
+  "canonical_provider_response_content_equal": true,
+  "decoded_sample_count_per_record": 500,
+  "sample_rate_hz": 100,
+  "decoded_data_type": "int32",
+  "miniSEED_encoding": "STEIM2",
+  "decoded_windows_continuous": true,
+  "half_open_interval_check_passed": true,
+  "initial_validation_failure_preserved": true,
+  "raw_first_waveform_unchanged_after_local_check_fix": true,
+  "observational_identification_or_access_failure": false,
+  "independent_review": "Scientific auditor found no material native-identity/window/provenance defect. Half-open500-sample windows are consistent; no calibration-correctness or measured-correlation claim.",
+  "offline_replay_commands": [
+    "python3 acquire.py responses",
+    "tmp/waveform_env/bin/python acquire.py waveforms"
+  ],
+  "source_dependency": "../discovery_001/discover.py",
+  "source_dependency_sha256": "59ef9c0d3fdad892867a2753fc1f671c95388c391e4da35f40bef6d9150bb669",
+  "limitations": [
+    "Only this selected pair has been retrieved.",
+    "No waveform-derived differential observation has been calculated.",
+    "Provider response equality is not independent instrument calibration verification."
+  ],
+  "output_sha256": {
+    "README.md": "4be6f04203ae46d409401abe511a25fe95a2eb5461418be5868dd6611e77fb82",
+    "acquire.py": "3c27e2d0625ea86c18a7b9326c63f1e075e228a5f01f8a149aecd6b477a5cb3c",
+    "dependencies.json": "8b5c176d578e192fb2876cf42433b6ce5218f099ff1e28049a92baae7e21fdeb",
+    "dependencies_install.json.gz": "2d33dcf60e194233e30d4b0554d84ae576ffa15f21fa77aa11d898c4c6beb43d",
+    "initial_coverage_check.py": "dcf3d6df46ad76c95643d5a33dc4f9ab2c610b55d2d057fe4d3ba731eecfe776",
+    "initial_coverage_failure.json": "6af37b153b70922d24f55641a7718454aab81666168300f2f4b573ab795ba0a8",
+    "partner_probe_identity.json": "716296f1e9b0847f7b2e181a6bab6444a77647cb6173f3c3c9874b702e5a2548",
+    "partner_response.xml": "9763ae753d17473ae998874693f90c55daaec994000b62f868d671cf58f47297",
+    "partner_response.xml.identifiers.json": "9845e19f2f8afa88864d98317ec41bb5ac9928a0b13fa22ed252050ca34eca24",
+    "partner_response.xml.provenance.json": "89d62775b9817c26f58db58a9f3f890f99cdd63b703b6c56b664d64bb2849f04",
+    "partner_waveform.mseed": "4dffc443c96335d047003d22d85436739e1f167811c61b8b1643c93900e84709",
+    "partner_waveform.mseed.identifiers.json": "e7a43440b74885788827259caf3825c177fe00b7287700ecf460b089386c61cd",
+    "partner_waveform.mseed.provenance.json": "ffbc41e838a6d48bc2a524aad06635c8463c448e449cfc40f1d582943d3e7859",
+    "probe_identity.json": "524fe5d5efa97ad3ad926891e9d7e3461f2a0e0575273a61de7fd08e899dfd41",
+    "requirements.txt": "328be6e15d7d4194492fc12ede4182ced801aa5a5a237e63c66ef55fd5bfbc08",
+    "response.xml": "ae190ab229c8d2a22401d2f8b67c17b517d0d90c96ad6fe1efcebbe9b223c456",
+    "response.xml.identifiers.json": "5fd1d09a48dcf451b3b628ed4cdd4cbb1462f0f532ebee67eb51607e965270d1",
+    "response.xml.provenance.json": "e3f3ff94bb5a4f2bbe653efbc111bef3b4b72980b6982ae96623de4326a443c4",
+    "responses_summary.json": "22d6de27914f8fcaddb77175420a4923054a2bbe02e5d1506d16105ff2a9498f",
+    "waveform.mseed": "fc7d8518d72b7ae6e84a2b36a98e95b051002cc0adba284a3aa0858a5aa2a14d",
+    "waveform.mseed.identifiers.json": "2d1454c30f0d01e7447929b6046bce1240736c8e4ed97ac095e563c2b5311dd1",
+    "waveform.mseed.provenance.json": "7952bea64f4850054626c636c36434666864a25c939c5b8604722c9c1f7572b6",
+    "waveforms_summary.json": "b64b531a44c06f3b2bf5972d23e81fd4a98f8bc722658ad38cb841876afb531f"
+  }
+}

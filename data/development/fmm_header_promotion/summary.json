@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "scope": "Header relocation and invented FMM components only; no field inversion or forward-cache validation",
+  "real_observations_used": false,
+  "fmm_order": 2,
+  "path_cases": 39,
+  "compile_command": [
+    "c++",
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "data/development/fmm_header_promotion/source_snapshot/diagnostics/check_fmm_field.cpp",
+    "-o",
+    "tmp/fmm_header_promotion/check_fmm_field"
+  ],
+  "run_command": [
+    "tmp/fmm_header_promotion/check_fmm_field",
+    "data/development/fmm_header_promotion/results.csv",
+    "2"
+  ],
+  "TMPDIR": "tmp",
+  "compile_return_code": 0,
+  "run_return_code": 0,
+  "implementation_unchanged_except_include_and_comment": true,
+  "previous_header_sha256": "c437c5d3ce2b09d59b098ae90b43705efdf9db9015dec26971421ee968337be7",
+  "source_sha256": {
+    "diagnostics/check_fmm_field.cpp": "9a10f138e0a458505dfad14964ca4a20c3e2651c371fe75a6192be7f64dff37f",
+    "diagnostics/first_arrival_fmm.hpp": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/core.hpp": "92c1fd4a28e012eea6aeb847751a5f1e0675fe40182b118f8a217e94ec1fba4d"
+  },
+  "output_sha256": {
+    "data/development/fmm_header_promotion/compile_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/development/fmm_header_promotion/compile_stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/development/fmm_header_promotion/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/development/fmm_header_promotion/stdout.txt": "42f3f23be96e7141dbc2c7bee76a2b904c7651814c8d566d92e34b561c52da90",
+    "data/development/fmm_header_promotion/run_check.py": "1abc588fa1458bc89789a5a7b4fe81769e3549a9ca259acc9286c95f9ca3aba2",
+    "tmp/fmm_header_promotion/check_fmm_field": "96a3beeee7502ea0c2598f1f6c1d9a03be240bb12c883f8829943c02d66f0928",
+    "data/development/fmm_header_promotion/results.csv": "1ac0a0fbfca067944bb64c3c3e8868d8abcc361689e9771e34d175fdbd0effac"
+  },
+  "source_snapshot_base": "data/development/fmm_header_promotion/source_snapshot",
+  "limitations": [
+    "Passing finite component cases does not certify global first arrivals.",
+    "The snapshotted core includes the separate integration branch changes; this check does not validate its new seeded entry point."
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "stage": "waveforms",
+  "scope": "Two previously selected native records; no measured waveform differential time",
+  "request_interval_semantics": "Half-open [start,end); five seconds at100Hz requires500 contiguous samples",
+  "records": [
+    {
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+      "identifier_basis": "Derived FDSN channel identifier; no missing provider response ID is fabricated",
+      "metadata_epoch_start": "1990-07-31T21:10:00",
+      "metadata_epoch_end": "1992-03-26T21:00:00",
+      "provider_channel_and_response_resource_ids": [],
+      "sample_rate_hz": 100.0,
+      "response_stage_count": 3,
+      "canonical_response_sha256": "e2ed2a621f4848c84257b9e577c9e3df5d305bcd437c8711b41da2d7aa8681a7",
+      "response_raw_file": "response.xml",
+      "response_raw_sha256": "ae190ab229c8d2a22401d2f8b67c17b517d0d90c96ad6fe1efcebbe9b223c456",
+      "waveform_raw_file": "waveform.mseed",
+      "waveform_raw_sha256": "fc7d8518d72b7ae6e84a2b36a98e95b051002cc0adba284a3aa0858a5aa2a14d",
+      "traces": [
+        {
+          "channel_seed_id": "NC.JPR.02.EHZ",
+          "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+          "provider_waveform_resource_id": null,
+          "metadata_epoch_start": "1990-07-31T21:10:00",
+          "metadata_epoch_end": "1992-03-26T21:00:00",
+          "response_raw_file": "response.xml",
+          "response_raw_sha256": "ae190ab229c8d2a22401d2f8b67c17b517d0d90c96ad6fe1efcebbe9b223c456",
+          "first_sample_utc": "1991-11-22T16:07:22.230000Z",
+          "last_sample_utc": "1991-11-22T16:07:27.220000Z",
+          "sample_rate_hz": 100.0,
+          "sample_count": 500,
+          "data_type": "int32",
+          "sample_min": -681.0,
+          "sample_max": 509.0,
+          "decoded_sample_byte_order": "little",
+          "decoded_samples_sha256": "c76ca9237f170d1a9e27e93326676bdf0806e9687c06d132d18ffc8ef7e1c5a4",
+          "miniseed_quality": "D",
+          "miniseed_encoding": "STEIM2"
+        }
+      ],
+      "obspy_version": "1.5.1",
+      "numpy_version": "2.4.6"
+    },
+    {
+      "channel_seed_id": "NC.JPR.02.EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+      "identifier_basis": "Derived FDSN channel identifier; no missing provider response ID is fabricated",
+      "metadata_epoch_start": "1995-08-03T18:15:00",
+      "metadata_epoch_end": "1997-01-29T22:30:00",
+      "provider_channel_and_response_resource_ids": [],
+      "sample_rate_hz": 100.0,
+      "response_stage_count": 3,
+      "canonical_response_sha256": "e2ed2a621f4848c84257b9e577c9e3df5d305bcd437c8711b41da2d7aa8681a7",
+      "response_raw_file": "partner_response.xml",
+      "response_raw_sha256": "9763ae753d17473ae998874693f90c55daaec994000b62f868d671cf58f47297",
+      "waveform_raw_file": "partner_waveform.mseed",
+      "waveform_raw_sha256": "4dffc443c96335d047003d22d85436739e1f167811c61b8b1643c93900e84709",
+      "traces": [
+        {
+          "channel_seed_id": "NC.JPR.02.EHZ",
+          "channel_fdsn_source_id": "FDSN:NC_JPR_02_E_H_Z",
+          "provider_waveform_resource_id": null,
+          "metadata_epoch_start": "1995-08-03T18:15:00",
+          "metadata_epoch_end": "1997-01-29T22:30:00",
+          "response_raw_file": "partner_response.xml",
+          "response_raw_sha256": "9763ae753d17473ae998874693f90c55daaec994000b62f868d671cf58f47297",
+          "first_sample_utc": "1995-09-08T04:15:37.560000Z",
+          "last_sample_utc": "1995-09-08T04:15:42.550000Z",
+          "sample_rate_hz": 100.0,
+          "sample_count": 500,
+          "data_type": "int32",
+          "sample_min": -226.0,
+          "sample_max": 167.0,
+          "decoded_sample_byte_order": "little",
+          "decoded_samples_sha256": "9d2788bac40740cce8d73a814658c3a30f8ceb1c7a8fa1a2963581ff5a21f81c",
+          "miniseed_quality": "D",
+          "miniseed_encoding": "STEIM2"
+        }
+      ],
+      "obspy_version": "1.5.1",
+      "numpy_version": "2.4.6"
+    }
+  ],
+  "canonical_provider_responses_identical": true,
+  "input_sha256": {
+    "discovery_001/summary.json": "b616428ac026b31084dbb4b6023757705159d3d9f10ad5411eb2ee39e84645f1",
+    "discovery_001/discover.py": "59ef9c0d3fdad892867a2753fc1f671c95388c391e4da35f40bef6d9150bb669"
+  },
+  "limitations": [
+    "Two records establish no full-cohort coverage.",
+    "No correlation delay or response correction is applied.",
+    "Identical canonical provider response content is distinct from independent calibration verification."
+  ]
+}

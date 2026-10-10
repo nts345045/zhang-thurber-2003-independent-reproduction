@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "complete_identified_homogeneous_reference",
+      "passed": true,
+      "rejected": false
+    },
+    {
+      "name": "unresolved_terminal_status",
+      "passed": true,
+      "rejected": true,
+      "message": "The full reference is not complete and valid"
+    },
+    {
+      "name": "reported_invalid_pair",
+      "passed": true,
+      "rejected": true,
+      "message": "Unresolved or nonunique references cannot define this truth bundle"
+    },
+    {
+      "name": "reported_near_tie",
+      "passed": true,
+      "rejected": true,
+      "message": "Unresolved or nonunique references cannot define this truth bundle"
+    },
+    {
+      "name": "independent_metadata_failure",
+      "passed": true,
+      "rejected": true,
+      "message": "Independent reference review is incomplete or reports a material issue"
+    },
+    {
+      "name": "independent_material_issue",
+      "passed": true,
+      "rejected": true,
+      "message": "Independent reference review is incomplete or reports a material issue"
+    },
+    {
+      "name": "independent_review_wrong_snapshot",
+      "passed": true,
+      "rejected": true,
+      "message": "Review does not describe this terminal reference"
+    },
+    {
+      "name": "changed_frozen_candidate_bytes",
+      "passed": true,
+      "rejected": true,
+      "message": "Reference artifact changed: references.csv.gz"
+    },
+    {
+      "name": "rehash_cannot_hide_native_coordinate_mismatch",
+      "passed": true,
+      "rejected": true,
+      "message": "Native metadata changed in output"
+    },
+    {
+      "name": "real_failed_full001_is_not_promoted",
+      "passed": true,
+      "rejected": true,
+      "message": "The full reference is not complete and valid"
+    }
+  ],
+  "scope": "Invented constant-speed preparation contract and rejection of the preserved failed full001; no real truth export or simulation",
+  "real_failed_summary_sha256": "3ad877e5d083fdba8489db304352359f11da490e8f691c85786a306e0fd4ae30",
+  "output_sha256": {
+    "invented_reference/references.csv.gz": "2a5e77f78c74c3167ba2cc12509f24f0c1a24a0396bde9f919444a8f296209f3",
+    "invented_reference/certificates.jsonl.gz": "43f88b5ad8b32b11781ba8371809dc1866413c203073f5a7ec5e9591666bb3e7",
+    "invented_reference/summary.json": "bcabde525387e6a3d77fc825130ca8fd2da8176a183a3d65f08d4c22b8370f1f",
+    "invented_reference/execution.json": "b4c1b66e45389167aad38882a1eea13ed4c4bf7609268b953ed6020b7144be3a",
+    "invented_reference/review.json": "de6d089820e059edcdf360c672722fdee86a8a0f489dcd4cf7957269473e469a",
+    "invented_reference/independent_review.json": "76fad46da42cad502722514401f659da7fa119587a4fbce1adf802a3173f32db",
+    "invented_reference/inputs/truth_events.csv": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+    "invented_reference/inputs/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "invented_reference/inputs/truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "invented_reference/source/run_loma_layered_full.py": "4a01438a8646000b77136e8e65f98aa154b6dd8c28ff6a53dda597e855327e39",
+    "invented_reference/source/first_arrival_layered_reference.py": "ff9082ab01d51444d6d0ad09676c067884d496686394d66b7302badffe874997",
+    "invented_reference/source/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "source/check_analytic_truth_preparation.py": "5329e9a7180358b57a5b06b7c8f83b9a4a6bb601ba257c13b083d8034771b7cf",
+    "source/prepare_loma_analytic_truth.py": "a57d0d9c5dfea971b6778f22a25cf79da5f60dcf0ff4d4e4656caa491f68f1df",
+    "source/run_loma_layered_full.py": "4a01438a8646000b77136e8e65f98aa154b6dd8c28ff6a53dda597e855327e39",
+    "source/first_arrival_layered_reference.py": "ff9082ab01d51444d6d0ad09676c067884d496686394d66b7302badffe874997",
+    "source/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  }
+}

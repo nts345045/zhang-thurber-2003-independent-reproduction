@@ -1,0 +1,40 @@
+{
+  "status": "passed offline integrity review; observational retrieval remains paused",
+  "original_observation_fields_preserved": true,
+  "original_observations_verified": 58980,
+  "complete_index_union": true,
+  "native_pick_rows": 14262,
+  "native_pairs": 44718,
+  "native_receiver_epochs": 372,
+  "planned_batches": 331,
+  "planned_stage_support": {
+    "routing_station": 14262,
+    "responses": 14262,
+    "routing_dataselect": 14262,
+    "availability": 14262,
+    "waveforms": 14262
+  },
+  "request_identity_window_and_hash_checks": true,
+  "input_hashes_verified": 25,
+  "output_hashes_verified": 5,
+  "cached_stationxml_unchanged_vs_HEAD": 6,
+  "no_network_requests": true,
+  "no_selection_changes": true,
+  "summary_sha256": "893b602d4d86447e2ce03648704d67bc833b74e14e39c6846c715650db8654ff",
+  "all_authored_artifact_sha256": {
+    "README.md": "896b59a4078af772c00ee2797c148aace7277b41154794fd599d4593daf71a6c",
+    "identified_catalog_differences.csv.gz": "a975f43bd33f6f042ff5ab0dcecdedd252a428b128f8377067cc258d73948e7c",
+    "identified_picks.csv.gz": "1b1424877392a689fd51aaa706d9e4821a713cdf7bf38a1b47cfa818056d0c22",
+    "identified_used_epochs.csv.gz": "ab826a031707be6b5a68ed5ac0430eb11df884a70a12861d708b32bc2d4637d0",
+    "planned_batches.json.gz": "09364b94d5ae65442b6dde8852813a2146b136bcd4541769a248031e011aadb4",
+    "prepare.py": "00400fe7a6d5a610ed271c91913e4808d32a23e8cd834794fdb191566d5df40e",
+    "summary.json": "893b602d4d86447e2ce03648704d67bc833b74e14e39c6846c715650db8654ff"
+  },
+  "catalog_pair_orientation_counts": {
+    "both provider-declared vertical": 44514,
+    "contains missing historical orientation": 199,
+    "contains provider-declared nonvertical channel": 5
+  },
+  "independent_review": "Scientific auditor independently verified all original cells, native identity/epoch/window mappings, hashes, complete stage support, and orientation counts; no material issue after correcting the README to identify NCEDC FDSN event API as the actual cohort ID source. USGS/ComCat supported initial discovery.",
+  "windows_crossing_native_epochs": 0
+}

@@ -1,0 +1,153 @@
+{
+  "scope": "Invented terminal simulation output audit controls only; no real output audit or simulator execution",
+  "passed": true,
+  "check_count": 25,
+  "checks": [
+    {
+      "name": "invented_terminal_manifest",
+      "passed": true,
+      "rejected": false
+    },
+    {
+      "name": "invented_all_native_noise_and_ordered_rows",
+      "passed": true,
+      "rejected": false
+    },
+    {
+      "name": "live_ledger_rejected",
+      "passed": true,
+      "rejected": true,
+      "message": "Require terminal successful simulation execution, not live or failed outputs"
+    },
+    {
+      "name": "failed_exit_rejected",
+      "passed": true,
+      "rejected": true,
+      "message": "Require terminal successful simulation execution, not live or failed outputs"
+    },
+    {
+      "name": "changed_output_hash_rejected",
+      "passed": true,
+      "rejected": true,
+      "message": "Pinned artifact changed: arrivals.csv"
+    },
+    {
+      "name": "altered_absolute_value",
+      "passed": true,
+      "rejected": true,
+      "message": "Value exceeds its CSV serialization/arithmetic bound"
+    },
+    {
+      "name": "wrong_DD_value",
+      "passed": true,
+      "rejected": true,
+      "message": "Value exceeds its CSV serialization/arithmetic bound"
+    },
+    {
+      "name": "wrong_precise_value",
+      "passed": true,
+      "rejected": true,
+      "message": "Value exceeds its CSV serialization/arithmetic bound"
+    },
+    {
+      "name": "wrong_observation_type",
+      "passed": true,
+      "rejected": true,
+      "message": "Observation support/type/order changed"
+    },
+    {
+      "name": "wrong_native_j_ID",
+      "passed": true,
+      "rejected": true,
+      "message": "Native identity, epoch or synthetic-basis mismatch"
+    },
+    {
+      "name": "empty_location_changed",
+      "passed": true,
+      "rejected": true,
+      "message": "Native identity, epoch or synthetic-basis mismatch"
+    },
+    {
+      "name": "wrong_epoch",
+      "passed": true,
+      "rejected": true,
+      "message": "Native identity, epoch or synthetic-basis mismatch"
+    },
+    {
+      "name": "fabricated_ray_flag",
+      "passed": true,
+      "rejected": true,
+      "message": "Ray flags fabricated or analytic-reference status changed"
+    },
+    {
+      "name": "wrong_quantization",
+      "passed": true,
+      "rejected": true,
+      "message": "Value exceeds its CSV serialization/arithmetic bound"
+    },
+    {
+      "name": "changed_full_precision_status_coordinate",
+      "passed": true,
+      "rejected": true,
+      "message": "Truth status differs from the full reference/native row"
+    },
+    {
+      "name": "bias_outside_uniform_support",
+      "passed": true,
+      "rejected": true,
+      "message": "Station bias exceeds its declared uniform support and CSV bound"
+    },
+    {
+      "name": "changed_saved_source_ID",
+      "passed": true,
+      "rejected": true,
+      "message": "Source metadata, including full-precision native coordinates, changed"
+    },
+    {
+      "name": "missing_observation",
+      "passed": true,
+      "rejected": true,
+      "message": "Missing/malformed observation"
+    },
+    {
+      "name": "round_away_0.5",
+      "passed": true,
+      "expected": 1.0
+    },
+    {
+      "name": "round_away_-0.5",
+      "passed": true,
+      "expected": -1.0
+    },
+    {
+      "name": "round_away_1.5",
+      "passed": true,
+      "expected": 2.0
+    },
+    {
+      "name": "round_away_-1.5",
+      "passed": true,
+      "expected": -2.0
+    },
+    {
+      "name": "round_away_0.49999999999999994",
+      "passed": true,
+      "expected": 0.0
+    },
+    {
+      "name": "round_away_-0.49999999999999994",
+      "passed": true,
+      "expected": 0.0
+    },
+    {
+      "name": "round_away_1.4999999999999998",
+      "passed": true,
+      "expected": 1.0
+    }
+  ],
+  "source_sha256": "c4f6cc7f340a3937ac4584fa33af4833145f50100ebf83cafdd442a93171ee38",
+  "check_source_sha256": "279450bd35361ca2f77fe6b6991c18c962b9749d5eafeacf06fb8725ee23ec9d",
+  "fixture_execution_sha256": "988072644dfa8711c5f4d6507ebd553f2d25774534db18804252e18b769f622a",
+  "fixture_run_manifest_sha256": "99a27b7dd84074490a821728626229e7928c9dd90ab82b914d9c46c2fc58c62b",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 data/development/analytic_simulation_review_checks/002/check.py"
+}

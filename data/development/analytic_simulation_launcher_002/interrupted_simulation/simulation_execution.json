@@ -1,0 +1,69 @@
+{
+  "status": "interrupted",
+  "started_utc": "2026-10-10T03:01:20.605873+00:00",
+  "driver_pid": 44431,
+  "command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/run_loma_analytic_simulation.py",
+    "--data",
+    "data/development/analytic_simulation_launcher_002/interrupted_simulation",
+    "--build",
+    "tmp/analytic_simulation_launcher_002_interrupt",
+    "--threads",
+    "2"
+  ],
+  "threads": 2,
+  "completed_commands": [
+    {
+      "stage": "simulation_cmake_version",
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "pid": 44450,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:01:20.735209+00:00"
+    },
+    {
+      "stage": "simulation_configure",
+      "command": [
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/analytic_simulation_launcher_002_interrupt/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/analytic_simulation_launcher_002_interrupt/compiled"
+      ],
+      "pid": 44460,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:01:22.504172+00:00"
+    },
+    {
+      "stage": "simulation_compiler_version",
+      "command": [
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "pid": 44530,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T03:01:22.603034+00:00"
+    }
+  ],
+  "analytic_truth_manifest_sha256": "50c5bf093545545bf1681704b5f1212e1dc27057d086365ba9be87a43e28ca41",
+  "scope": "Synthetic observations from reviewed continuous layered truth; no inverse calculation or forward-solver acceptance",
+  "current_stage": "simulation_compile",
+  "current_command": [
+    "cmake",
+    "--build",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/analytic_simulation_launcher_002_interrupt/compiled",
+    "-j",
+    "2"
+  ],
+  "current_command_started_utc": "2026-10-10T03:01:22.630958+00:00",
+  "current_child_pid": 44531,
+  "exception_child": {
+    "pid": 44531,
+    "return_code": -15
+  },
+  "finished_utc": "2026-10-10T03:01:22.739171+00:00",
+  "error": "143",
+  "return_code": 143
+}

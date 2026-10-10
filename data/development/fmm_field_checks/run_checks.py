@@ -35,7 +35,7 @@ result = subprocess.run(run_command, cwd=str(ROOT), env=environment,
                         stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                         universal_newlines=True)
 paths = ['diagnostics/first_arrival_fmm.hpp', 'diagnostics/check_fmm_field.cpp',
-         'src/core.hpp', 'data/development/fmm_field_checks/run_checks.py',
+         'src/first_arrival.hpp', 'src/core.hpp', 'data/development/fmm_field_checks/run_checks.py',
          str((OUT / 'results.csv').relative_to(ROOT)), str(binary.relative_to(ROOT))]
 summary = {
     'reviewed_utc': datetime.datetime.utcnow().isoformat() + 'Z',

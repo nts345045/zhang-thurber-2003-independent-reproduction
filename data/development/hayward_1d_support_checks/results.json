@@ -1,0 +1,55 @@
+{
+  "scope": "Invented two-ray homogeneous fixture and malformed identity/matrix controls; no real rays or inversion",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 data/development/hayward_1d_support_checks/check.py",
+  "helper_sha256": "fa6e3d2904705bb800ab4764c947c2ae5417dc41541ce1a4e12d6aab5ec1d358",
+  "fixture_source_sha256": "e27f8e6171592978294283af866386ee34dc5897c9c8c7461f4a63d36d6c71a8",
+  "reference_sha256": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+  "checks": [
+    {
+      "name": "valid",
+      "passed": true,
+      "command": [
+        "python3",
+        "diagnostics/compare_hayward_1d_support.py",
+        "--data",
+        "tmp/hayward_1d_support_checks/invented_valid",
+        "--output",
+        "tmp/hayward_1d_support_checks/valid_output"
+      ],
+      "return_code": 0,
+      "stdout": "{\n  \"status\": \"complete\",\n  \"rays\": 2,\n  \"reference_counts\": {\n    \"branch_flat_direct\": 2,\n    \"reference_complete\": 2,\n    \"reference_valid\": 2,\n    \"near_ties\": 0,\n    \"saved_nonconverged\": 0\n  },\n  \"production_minus_reference_s\": {\n    \"count\": 2,\n    \"minimum\": -3.0309088572266774e-14,\n    \"maximum\": 3.241851231905457e-14,\n    \"median\": 1.0547118733938987e-15,\n    \"mean\": 1.0547118733938987e-15,\n    \"rms\": 3.13815295282289e-14,\n    \"maximum_absolute\": 3.241851231905457e-14\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "changed_identity",
+      "passed": true,
+      "command": [
+        "python3",
+        "diagnostics/compare_hayward_1d_support.py",
+        "--data",
+        "tmp/hayward_1d_support_checks/changed_identity",
+        "--output",
+        "tmp/hayward_1d_support_checks/changed_identity_output"
+      ],
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"diagnostics/compare_hayward_1d_support.py\", line 263, in <module>\n    main()\n  File \"diagnostics/compare_hayward_1d_support.py\", line 129, in main\n    raise ValueError('Original observation metadata changed at row ' + str(n))\nValueError: Original observation metadata changed at row 0\n"
+    },
+    {
+      "name": "missing_origin_column",
+      "passed": true,
+      "command": [
+        "python3",
+        "diagnostics/compare_hayward_1d_support.py",
+        "--data",
+        "tmp/hayward_1d_support_checks/missing_origin_column",
+        "--output",
+        "tmp/hayward_1d_support_checks/missing_origin_column_output"
+      ],
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"diagnostics/compare_hayward_1d_support.py\", line 263, in <module>\n    main()\n  File \"diagnostics/compare_hayward_1d_support.py\", line 174, in main\n    raise ValueError('Missing absolute origin-time columns')\nValueError: Missing absolute origin-time columns\n"
+    }
+  ],
+  "passed": true
+}

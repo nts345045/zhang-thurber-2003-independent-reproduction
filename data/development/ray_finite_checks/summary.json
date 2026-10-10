@@ -1,0 +1,34 @@
+{
+  "scope": "Finite-return guards on invented constant fields, including arithmetic overflow with zero optimizer updates",
+  "commands": [
+    [
+      "c++",
+      "-O3",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "tmp/ray_finite_checks/source/diagnostics/check_ray_finite.cpp",
+      "-o",
+      "tmp/ray_finite_checks/check"
+    ],
+    [
+      "tmp/ray_finite_checks/check"
+    ]
+  ],
+  "checks": 4,
+  "failures": [],
+  "source_sha256": {
+    "src/core.hpp": "0ccdf3a4688260e991650c9194eafb36810a294298a371b63ae088d1b37193af",
+    "src/ray_metric.hpp": "04d1f080ddc6253a988696706c7b1578e7637590d7ae5099a4cd3c60120839bf",
+    "diagnostics/check_ray_finite.cpp": "bd313d5683de31bea963205a6bc9877ba632151d38db358e43c3b6c32b2718c4"
+  },
+  "sha256": {
+    "source_snapshot.tar.gz": "601e40dc1751fc1b212ec3a4f8d604d91d57f35ccfd4cd8ed61974d28114999b",
+    "compile_stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results.csv": "14726e13abe945a1eb40683cd1800d5a3662afca151bf16ce0b859df2c1d84d7",
+    "results_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "binary_sha256": "3ee80dda4fa9dde7f8144b1b530233f2a94c4cfbd51eef595e50d032cf28b56e"
+}

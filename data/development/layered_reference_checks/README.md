@@ -81,3 +81,11 @@ The component fixtures use invented endpoints and no provider records. Passing
 them is not a claim about the accuracy of any production ray, and it does not
 authorize replacing synthetic truth or bypassing simulation gates. An
 independent review precedes an identified comparison with the Loma sample.
+# Direct-root conditioning correction
+
+The failed full-geometry attempt and independent 80-digit diagnosis are preserved in `../loma_layered_full_001/` and `../loma_layered_direct_conditioning_001/`. The minimal maintained correction solves the direct branch using delta = u - vmax and exact rational addition. It retains rational-u numerator/denominator strings in candidates so later sampling need not reconstruct u from rounded p. The separate monotone helper is unchanged.
+
+`direct_delta005/` passes the original 355 checks. `direct_delta_integration006/` passes 64 additional checks: the 11 identified failures and ten invented near-critical controls match the independently checked values and preserve their rational parameters; an extreme positive finite input explicitly fails closed on arithmetic overflow.
+
+Review additionally required handling `brentq` iteration exhaustion. The final guarded source passes all 355 original checks in `direct_delta_guarded007/` and all 65 direct-root integration/failure checks in `direct_delta_guarded_integration008/`, including an injected iteration failure. The previous evidence and tolerances remain unchanged. The native 104-ray comparison for this exact source is `../loma_geometry_preflight/layered_reference_delta_003/`.
+

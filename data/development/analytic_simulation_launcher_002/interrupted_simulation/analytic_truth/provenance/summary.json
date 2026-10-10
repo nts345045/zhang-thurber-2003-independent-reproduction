@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_count": 2,
+  "receiver_count": 2,
+  "expected_pairs": 4,
+  "verified_pairs": 4,
+  "profile_x_velocity_km_km_s": [
+    [
+      -2.0,
+      6.0
+    ],
+    [
+      2.0,
+      6.0
+    ]
+  ],
+  "original_box_km": [
+    [
+      -2.0,
+      2.0
+    ],
+    [
+      -2.0,
+      2.0
+    ],
+    [
+      -1.0,
+      1.0
+    ]
+  ],
+  "counts": {
+    "pairs": 4,
+    "reference_complete": 4,
+    "reference_valid": 4,
+    "candidate_total": 4,
+    "branch_flat_direct": 4
+  },
+  "unresolved_pair_indices": [],
+  "near_tie_pair_indices": [],
+  "time_range_s": [
+    0.18633899812498247,
+    0.3004626062886658
+  ],
+  "output_sha256": {
+    "references.csv.gz": "2a5e77f78c74c3167ba2cc12509f24f0c1a24a0396bde9f919444a8f296209f3",
+    "certificates.jsonl.gz": "43f88b5ad8b32b11781ba8371809dc1866413c203073f5a7ec5e9591666bb3e7",
+    "inputs/truth_events.csv": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+    "inputs/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "inputs/truth_grid.csv": "0302a70ff2b499bd8cfa899b36587c33fc8952b5b3d379fdd8faac0521aac029",
+    "source/run_loma_layered_full.py": "4a01438a8646000b77136e8e65f98aa154b6dd8c28ff6a53dda597e855327e39",
+    "source/first_arrival_layered_reference.py": "ff9082ab01d51444d6d0ad09676c067884d496686394d66b7302badffe874997",
+    "source/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  }
+}
