@@ -96,7 +96,8 @@ int main(int argc, char **argv) {
   assert(std::find(mapping.header.begin(),mapping.header.end(),"observation_pick_j_resource_id")!=mapping.header.end());
   assert(std::find(mapping.header.begin(),mapping.header.end(),"receiver_metadata_epoch_end")!=mapping.header.end());
   auto convergence=csv_table(dir+"/ray_convergence.csv");
-  assert(convergence.rows.size()==2 && convergence.header.back()=="diagnostic_row");
+  assert(convergence.rows.size()==2 &&
+         std::find(convergence.header.begin(),convergence.header.end(),"diagnostic_row")!=convergence.header.end());
   char program[]="dd", command[]="linearize", mode[]="truth";
   std::string config_path=dir+"/fixture.cfg", input_dir=dir;
   char *arguments[]={program,command,config_path.data(),input_dir.data(),mode};

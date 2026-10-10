@@ -111,3 +111,27 @@ and both linearized absolute rows. Original inputs are hashed and unchanged.
 These two real rays are a metadata/dispatch check, not a representative scientific
 accuracy sample. The original [48 component checks](../data/development/forward_core_validation/summary.json)
 also pass. Source snapshots and numerical outputs are retained.
+Inherited `source_file` values in the small authoritative fixture keep their
+original interpretation relative to `data/hayward/`; provider IDs and source
+hashes are copied verbatim rather than rewritten as new provider records.
+
+The maintained 186-ray saved-model audit normally rejects solver sources that
+differ from its historical comparison. To evaluate the integration sources,
+explicitly use `--allow-solver-change`; every changed source hash is recorded.
+All input-model, geometry and metadata hash checks still apply. This comparison
+does not isolate the FMM stencil from the separate exact-endpoint correction.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 diagnostics/run_fmm_hayward_audit.py --variant NEW_INTEGRATED_FIELD --order 2 --closed-seed-cells --allow-solver-change --production-entry
+```
+
+The [saved production-entry comparison](../data/development/fmm_hayward_integrated_production_entry/summary.json)
+passes all 186 exact comparisons of selected time, path, source and velocity
+derivatives, integrated lengths, optimizer state, and initializer metadata.
+Parity flags are saved in the same rows as the original resource IDs and native
+channel epochs. All selected endpoints now match exactly. The original i775/k184
+local convergence failure remains; the runner therefore correctly exits 1 and
+records `failed_checks_recorded`. No extraction, domain, nonfinite, action-increase,
+or entry-parity failure occurs. This still is not a first-arrival certificate or
+a new inversion. The earlier shared-kernel run and its scope correction remain
+saved in `fmm_hayward_integrated_order2_closed/`.

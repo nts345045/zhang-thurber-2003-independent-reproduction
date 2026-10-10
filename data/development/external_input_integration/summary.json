@@ -1,0 +1,25 @@
+{
+  "scope": "Existing external-input and native-epoch component suite after forward integration",
+  "assertion_update": "Require diagnostic_row by column name; initializer diagnostics are appended after it. Row-count and all semantic checks remain.",
+  "compile_command": "TMPDIR=\"$PWD/tmp\" g++ -std=c++17 -O2 -Wall -Wextra -Wpedantic -fopenmp diagnostics/check_external_inputs.cpp -lstdc++fs -o tmp/external_input_checks/check_integration",
+  "run_command": "OMP_NUM_THREADS=2 tmp/external_input_checks/check_integration data/development/external_input_integration/checks.json",
+  "source_sha256": {
+    "diagnostics/check_external_inputs.cpp": "75d3fd594114017511cd62d584e1f74798334dd2f46c88530414ae7efe5b96a3",
+    "src/core.hpp": "92c1fd4a28e012eea6aeb847751a5f1e0675fe40182b118f8a217e94ec1fba4d",
+    "src/csv.hpp": "f3ec5080bd0234fc7d0d6731b66aadd9eae219353244c9d4ef1c157a67bfd4c0",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "src/main.cpp": "ffa423513f0bf25cea16ac7684f340ba90427d9d5aab66a8f3786d045baafca2",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358"
+  },
+  "binary_sha256": "7484dcd1056ca7097a47e783cee955380689737ab5068a2afd902920d2ce0af8",
+  "sha256": {
+    "checks.json": "29d0b35d72e77b12e3223e8643ad605e72516f784063c66c423bafb790279222",
+    "compile_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source_snapshot.tar.gz": "b5707c79c413d69a9513eb16d6069ed190176d88d071bf47070d27ff912082c4",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout.txt": "bd17756b34d0879ac25aa04fc257c63125d4db60558f8a79871d3ccea9d94d0f"
+  },
+  "status": "passed"
+}

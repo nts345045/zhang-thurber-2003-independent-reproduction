@@ -59,6 +59,7 @@ with (ROOT / identified).open('w', newline='') as stream:
     writer.writerows(selected)
 snapshot = build / 'source'
 sources = ['diagnostics/check_ray_stopping.cpp', 'diagnostics/first_arrival_fmm.hpp',
+           'src/first_arrival.hpp', 'src/forward.hpp',
            'diagnostics/seeded_bending.py', 'diagnostics/run_ray_stopping.py',
            'src/core.hpp', 'src/main.cpp', 'src/csv.hpp', 'src/ray_checks.hpp']
 if use_reduced:

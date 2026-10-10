@@ -24,6 +24,8 @@ parser.add_argument('--order', type=int, choices=[1, 2], default=1)
 parser.add_argument('--closed-seed-cells', action='store_true')
 parser.add_argument('--allow-solver-change', action='store_true',
                     help='Explicitly compare current solver sources; report every historical source hash difference')
+parser.add_argument('--production-entry', action='store_true',
+                    help='Evaluate and exactly compare trace_first_arrival for all identified rays')
 args = parser.parse_args()
 if not re.fullmatch(r'[a-zA-Z0-9_-]+', args.variant):
     parser.error('Variant must contain only letters, digits, underscores, or hyphens')
@@ -80,6 +82,7 @@ for r in inputs:
 (ROOT / OUT).mkdir(parents=True)
 snapshot = BUILD / 'source'
 sources = ['diagnostics/check_fmm_hayward.cpp', 'diagnostics/first_arrival_fmm.hpp',
+           'diagnostics/production_entry_checks.hpp',
            'src/first_arrival.hpp', 'src/forward.hpp',
            'diagnostics/seeded_bending.py', 'diagnostics/run_fmm_hayward_audit.py',
            'src/main.cpp', 'src/core.hpp', 'src/ray_checks.hpp', 'src/csv.hpp']
@@ -115,6 +118,8 @@ if compiled.returncode:
 output_path = OUT / 'results.csv'
 run_command = [str(binary), str(GRID), str(INPUT), str(output_path), '0.5', str(args.order),
                'closed' if args.closed_seed_cells else 'original']
+if args.production_entry:
+    run_command.append('production')
 with (ROOT / OUT / 'stdout.txt').open('w') as stdout, (ROOT / OUT / 'stderr.txt').open('w') as stderr:
     result = subprocess.run(run_command, cwd=str(ROOT), env=environment, stdout=stdout, stderr=stderr)
 for path in fixed:
@@ -159,6 +164,10 @@ summary = {
     'return_code': result.returncode, 'order': args.order, 'closed_seed_cells': args.closed_seed_cells,
     'allow_solver_change': args.allow_solver_change,
     'solver_changes_from_historical': solver_changes,
+    'production_entry': args.production_entry,
+    'production_entry_calls': sum(r['production_entry_checked'] == '1' for r in outputs),
+    'production_entry_failures': [r for r in outputs if args.production_entry and
+                                  (r['production_entry_checked'] != '1' or r['production_entry_passed'] != '1')],
     'selection': 'Exactly the frozen 186 absolute rays with DD-final source and receiver depths in [-1,0] km.',
     'ray_count': len(outputs), 'all_input_columns_and_native_identities_preserved': True,
     'auxiliary_spacing_km': .5, 'path_spacing_km': .5, 'optimizer_maximum_updates': 1000,
@@ -177,12 +186,14 @@ summary = {
     'limitations': ['Compared with the frozen first-order audit, this variant combines the separately verified closed-receiver-cell extraction correction, the selected stencil order, and the selected source seed rule. It is not an isolated stencil-effect estimate.',
                     'Smaller feasible action contradicts optimality of a prior path; equal actions do not certify a global first arrival.',
                     'Source derivatives require stationary paths and path-spacing checks; optimizer or strict endpoint failures remain recorded without relaxing tolerances.',
-                    'The targeted shallow-endpoint subset does not represent all rays. No production inversion, source, configuration, or input is changed.']}
+                    'The targeted shallow-endpoint subset does not represent all rays. The original running workflow and frozen input data remain unchanged; solver source differences are listed explicitly.']}
 failed = result.returncode != 0 or any(summary[name] for name in ['extraction_failures', 'selected_nonconverged',
-         'exact_endpoint_check_failures', 'domain_failures', 'action_increase_failures', 'nonfinite_failures'])
+         'exact_endpoint_check_failures', 'domain_failures', 'action_increase_failures', 'nonfinite_failures',
+         'production_entry_failures'])
 summary['status'] = 'failed_checks_recorded' if failed else 'passed'
 (ROOT / OUT / 'summary.json').write_text(json.dumps(summary, indent=2, allow_nan=False) + '\n')
 print(json.dumps({'status': summary['status'], 'ray_count': len(outputs),
                   'failure_counts': {name: len(summary[name]) for name in ['extraction_failures', 'selected_nonconverged',
-                   'exact_endpoint_check_failures', 'domain_failures', 'action_increase_failures', 'nonfinite_failures']}}, indent=2))
+                   'exact_endpoint_check_failures', 'domain_failures', 'action_increase_failures', 'nonfinite_failures',
+                   'production_entry_failures']}}, indent=2))
 raise SystemExit(1 if failed else 0)

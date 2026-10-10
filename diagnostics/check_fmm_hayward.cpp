@@ -4,13 +4,17 @@
 #undef main
 #include "first_arrival_fmm.hpp"
 #include "seeded_bending.hpp"
+#include "production_entry_checks.hpp"
 #include <chrono>
 
 int main(int argc, char **argv) {
-  if (argc != 5 && argc != 7)
-    throw std::runtime_error("Usage: check_fmm_hayward GRID.csv RAYS.csv OUTPUT.csv AUX_SPACING [1|2 original|closed]");
-  const int order = argc == 7 ? std::stoi(argv[5]) : 1;
-  const std::string rule = argc == 7 ? argv[6] : "original";
+  if (argc != 5 && argc != 7 && argc != 8)
+    throw std::runtime_error("Usage: check_fmm_hayward GRID.csv RAYS.csv OUTPUT.csv AUX_SPACING [1|2 original|closed [production]]");
+  const int order = argc >= 7 ? std::stoi(argv[5]) : 1;
+  const std::string rule = argc >= 7 ? argv[6] : "original";
+  const bool production_entry = argc == 8;
+  if (production_entry && std::string(argv[7]) != "production")
+    throw std::runtime_error("Unknown entry point");
   if ((order != 1 && order != 2) || (rule != "original" && rule != "closed"))
     throw std::runtime_error("Invalid FMM order or receiver seed rule");
   const bool closed_seed_cells = rule == "closed";
@@ -40,7 +44,8 @@ int main(int argc, char **argv) {
        "selected_outside_nodes,selected_endpoint_error_km,order,closed_seed_cells,seed_nodes,"
        "first_order_direction_evaluations,second_order_direction_evaluations,second_order_ineligible,"
        "causal_fallback_updates,root_bisection_updates,second_neighbor_revisits,"
-       "baseline_ray_iterations,fmm_bent_iterations,selected_iterations\n";
+       "baseline_ray_iterations,fmm_bent_iterations,selected_iterations,"
+       "production_entry_checked,production_entry_passed\n";
   size_t done=0;
   for (const auto &group:receivers) {
     auto start=std::chrono::steady_clock::now();
@@ -55,6 +60,21 @@ int main(int argc, char **argv) {
       if (seed.success) {
         bent=bend_seed(g,seed.path,.5,1000);
         if (bent.time<selected.time) selected=bent;
+      }
+      bool parity = false;
+      if (production_entry) {
+        Ray production = trace_first_arrival(g,a,b,.5,1000,true,field);
+        auto equal = ProductionEntryChecks::equal(selected, production);
+        bool metadata = production.initialization_attempted &&
+            production.initialization_succeeded == seed.success &&
+            production.selected_fmm_seed == (seed.success && bent.time < original.time) &&
+            production.direct_seed_time == original.time &&
+            (seed.success ? production.fmm_seed_time == bent.time : std::isnan(production.fmm_seed_time)) &&
+            production.initializer_field_time == seed.field_time &&
+            production.initializer_fallback_steps == seed.fallback_steps &&
+            production.initializer_message == seed.message;
+        parity = metadata && std::all_of(equal.begin(), equal.end(), [](bool value) { return value; });
+        selected = std::move(production);
       }
       double outside=0,maxdepth=a[2];
       for (auto p:selected.path) {
@@ -77,7 +97,8 @@ int main(int argc, char **argv) {
         << field.stats.second_order_ineligible << ',' << field.stats.causal_fallback_updates << ','
         << field.stats.root_bisection_updates << ',' << field.stats.second_neighbor_revisits << ','
         << original.iterations << ',' << (seed.success ? bent.iterations : 0) << ','
-        << selected.iterations << std::endl;
+        << selected.iterations << ',' << production_entry << ','
+        << (production_entry ? (parity ? "1" : "0") : "") << std::endl;
     }
     std::cout << "receiver " << ++done << '/' << receivers.size() << " rays "
               << group.second.size() << " field_seconds " << seconds << std::endl;

@@ -97,6 +97,12 @@ and exclusion records. It has not yet been simulated or inverted with this comma
 
 ## Where to inspect outputs
 
+This integration branch also provides an opt-in FMM initializer in the solver.
+Its [configuration, numerical checks, and identity-preserving output tests](diagnostics/FIRST_ARRIVAL.md)
+are documented separately. The PDF records the completed audit checkpoint;
+the saved full Hayward and synthetic inversions still use their documented
+earlier forward operators.
+
 - `data/synthetic/`: existing baseline inversions. `standard_grid.csv` and
   `dd_grid.csv` contain inferred P velocities; method-specific `*_events.csv`,
   `*_history.csv`, and `*_residuals.csv` contain source estimates, convergence
