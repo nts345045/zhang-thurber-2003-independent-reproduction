@@ -1,0 +1,478 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "one identified diagnostic row",
+      "passed": true
+    },
+    {
+      "name": "all frozen command exits are zero",
+      "passed": true
+    },
+    {
+      "name": "hash:truth_grid.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:identified_ray.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing050_input_paths.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing025_input_paths.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:compile_stdout.log",
+      "passed": true
+    },
+    {
+      "name": "hash:compile_stderr.log",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing050_1000_stdout.log",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing050_1000_stderr.log",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing050_4000_stdout.log",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing050_4000_stderr.log",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing025_1000_stdout.log",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing025_1000_stderr.log",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing025_4000_stdout.log",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing025_4000_stderr.log",
+      "passed": true
+    },
+    {
+      "name": "hash:source/src/main.cpp",
+      "passed": true
+    },
+    {
+      "name": "hash:source/src/core.hpp",
+      "passed": true
+    },
+    {
+      "name": "hash:source/src/csv.hpp",
+      "passed": true
+    },
+    {
+      "name": "hash:source/src/forward.hpp",
+      "passed": true
+    },
+    {
+      "name": "hash:source/src/first_arrival.hpp",
+      "passed": true
+    },
+    {
+      "name": "hash:source/src/ray_checks.hpp",
+      "passed": true
+    },
+    {
+      "name": "hash:source/src/ray_metric.hpp",
+      "passed": true
+    },
+    {
+      "name": "hash:source/diagnostics/straighten_loma_guide.cpp",
+      "passed": true
+    },
+    {
+      "name": "hash:source/diagnostics/loma_path_checks.hpp",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing050_1000/history.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing050_1000/result.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing050_1000/paths.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing050_4000/history.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing050_4000/result.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing050_4000/paths.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing025_1000/history.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing025_1000/result.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing025_1000/paths.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing025_4000/history.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing025_4000/result.csv",
+      "passed": true
+    },
+    {
+      "name": "hash:spacing025_4000/paths.csv",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: three declared stages",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: budget exhausted",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: strict restricted stop not met",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: action decreases",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: history is monotone",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: exact action agrees",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: final history agrees",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: all path identities join",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: fixed endpoints:original",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: finite in-domain points:original",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: fixed endpoints:straightened",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: finite in-domain points:straightened",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: exact guide contacts:straightened",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: fixed endpoints:branch_optimized",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: finite in-domain points:branch_optimized",
+      "passed": true
+    },
+    {
+      "name": "spacing025_1000: exact guide contacts:branch_optimized",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: three declared stages",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: budget exhausted",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: strict restricted stop not met",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: action decreases",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: history is monotone",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: exact action agrees",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: final history agrees",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: all path identities join",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: fixed endpoints:original",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: finite in-domain points:original",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: fixed endpoints:straightened",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: finite in-domain points:straightened",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: exact guide contacts:straightened",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: fixed endpoints:branch_optimized",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: finite in-domain points:branch_optimized",
+      "passed": true
+    },
+    {
+      "name": "spacing025_4000: exact guide contacts:branch_optimized",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: three declared stages",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: budget exhausted",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: strict restricted stop not met",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: action decreases",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: history is monotone",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: exact action agrees",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: final history agrees",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: all path identities join",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: fixed endpoints:original",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: finite in-domain points:original",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: fixed endpoints:straightened",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: finite in-domain points:straightened",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: exact guide contacts:straightened",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: fixed endpoints:branch_optimized",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: finite in-domain points:branch_optimized",
+      "passed": true
+    },
+    {
+      "name": "spacing050_1000: exact guide contacts:branch_optimized",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: three declared stages",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: budget exhausted",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: strict restricted stop not met",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: action decreases",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: history is monotone",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: exact action agrees",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: final history agrees",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: all path identities join",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: fixed endpoints:original",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: finite in-domain points:original",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: fixed endpoints:straightened",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: finite in-domain points:straightened",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: exact guide contacts:straightened",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: fixed endpoints:branch_optimized",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: finite in-domain points:branch_optimized",
+      "passed": true
+    },
+    {
+      "name": "spacing050_4000: exact guide contacts:branch_optimized",
+      "passed": true
+    },
+    {
+      "name": "four completed saved-path candidates",
+      "passed": true
+    }
+  ],
+  "results": [
+    {
+      "run_id": "fmm_0.250000_1000",
+      "diagnostic_row": 5,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "channel_seed_id": "NC.BSL..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "metadata_epoch_start": "1989-08-25T19:45:00",
+      "metadata_epoch_end": "1990-09-10T19:20:00",
+      "straightening_reduction_s": 3.0409021505306555e-06,
+      "total_reduction_s": 6.583400536364081e-05,
+      "branch_minus_exact_guide_s": 7.02588731247289e-05,
+      "restricted_gradient_s_per_km": 9.953573953788831e-06,
+      "maximum_source_derivative_error_s_per_km": 2.451860447477694e-06
+    },
+    {
+      "run_id": "fmm_0.250000_4000",
+      "diagnostic_row": 5,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "channel_seed_id": "NC.BSL..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "metadata_epoch_start": "1989-08-25T19:45:00",
+      "metadata_epoch_end": "1990-09-10T19:20:00",
+      "straightening_reduction_s": 7.099310685987348e-07,
+      "total_reduction_s": 2.771424954950419e-05,
+      "branch_minus_exact_guide_s": 5.732674651603986e-05,
+      "restricted_gradient_s_per_km": 3.9615555549479906e-05,
+      "maximum_source_derivative_error_s_per_km": 6.999200410112705e-06
+    },
+    {
+      "run_id": "fmm_0.500000_1000",
+      "diagnostic_row": 5,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "channel_seed_id": "NC.BSL..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "metadata_epoch_start": "1989-08-25T19:45:00",
+      "metadata_epoch_end": "1990-09-10T19:20:00",
+      "straightening_reduction_s": 4.66501830942434e-06,
+      "total_reduction_s": 0.00022355253410566434,
+      "branch_minus_exact_guide_s": 0.00022458853145579383,
+      "restricted_gradient_s_per_km": 7.022484617582798e-06,
+      "maximum_source_derivative_error_s_per_km": 2.4378661788865275e-05
+    },
+    {
+      "run_id": "fmm_0.500000_4000",
+      "diagnostic_row": 5,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "channel_seed_id": "NC.BSL..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "metadata_epoch_start": "1989-08-25T19:45:00",
+      "metadata_epoch_end": "1990-09-10T19:20:00",
+      "straightening_reduction_s": 2.159353945430098e-06,
+      "total_reduction_s": 8.988575107693464e-05,
+      "branch_minus_exact_guide_s": 0.00014633743741221394,
+      "restricted_gradient_s_per_km": 6.022909966661501e-07,
+      "maximum_source_derivative_error_s_per_km": 8.889331554517987e-06
+    }
+  ],
+  "scientific_conclusion": "Straightening is action-decreasing, but none of the four restricted searches meets the strict 1e-7 s/km gradient stop within 4000 updates. No production correction or unrestricted stationarity is claimed.",
+  "reference_sha256": "293061428d8241c5b17d0f384acb3089aca2fe2901cc23e85c5a84752517261f",
+  "review_source_sha256": "d9e482b8fe00d5f83939d6a4899c5fd74e569cb66c088d254718c55e94f6655e"
+}

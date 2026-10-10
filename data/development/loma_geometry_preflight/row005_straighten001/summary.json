@@ -1,0 +1,128 @@
+{
+  "scope": "One identified declared guide candidate; no production changes, no unrestricted stationarity claim",
+  "commands": [
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-fopenmp",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_geometry_preflight/row005_straighten001/source/diagnostics/straighten_loma_guide.cpp",
+        "-lstdc++fs",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_straighten001/check"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 23.893795013427734
+    },
+    {
+      "name": "spacing050_1000",
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_straighten001/check",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_geometry_preflight/row005_straighten001/truth_grid.csv",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_geometry_preflight/row005_straighten001/spacing050_input_paths.csv",
+        "fmm_0.500000_1000",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_geometry_preflight/row005_straighten001/spacing050_1000"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 2.2959489822387695
+    },
+    {
+      "name": "spacing050_4000",
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_straighten001/check",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_geometry_preflight/row005_straighten001/truth_grid.csv",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_geometry_preflight/row005_straighten001/spacing050_input_paths.csv",
+        "fmm_0.500000_4000",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_geometry_preflight/row005_straighten001/spacing050_4000"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 2.429955005645752
+    },
+    {
+      "name": "spacing025_1000",
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_straighten001/check",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_geometry_preflight/row005_straighten001/truth_grid.csv",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_geometry_preflight/row005_straighten001/spacing025_input_paths.csv",
+        "fmm_0.250000_1000",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_geometry_preflight/row005_straighten001/spacing025_1000"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 3.9201512336730957
+    },
+    {
+      "name": "spacing025_4000",
+      "argv": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_straighten001/check",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_geometry_preflight/row005_straighten001/truth_grid.csv",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_geometry_preflight/row005_straighten001/spacing025_input_paths.csv",
+        "fmm_0.250000_4000",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_geometry_preflight/row005_straighten001/spacing025_4000"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 4.120774269104004
+    }
+  ],
+  "source_commit": "a9fb73cd34c4baa766b1ad83f364ae4ac0ab2c81",
+  "input_sha256": {
+    "truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "identified_ray.csv": "22daadcb5dd1fccebbc51687894e7d8d12fca6d86d8cf06af54c5312ea8ec02d",
+    "spacing050_input_paths.csv": "c5c9b420fc43bb23457d6c456df6aebe30d2429ee5a8de68cc354204d4c789c3",
+    "spacing025_input_paths.csv": "48e29bd248038c8b318e7210b69ed2ecd4b25dd617d7703522decb255e419d4c",
+    "source/src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/diagnostics/straighten_loma_guide.cpp": "d5da4c02f3c2e7933cecc77a7f146d4bb5c1becbfcd9b0412f333c3e451e34ac",
+    "source/diagnostics/loma_path_checks.hpp": "479c44abd9d422b35d5cdee1ace6dd706829182246dfebc3f590b612c135e739"
+  },
+  "binary_sha256": "97700fcbc4714b4289d9ef0adc6c71ace1d72944bb405e6145a22bbc59deff62",
+  "status": "completed",
+  "output_sha256": {
+    "truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "identified_ray.csv": "22daadcb5dd1fccebbc51687894e7d8d12fca6d86d8cf06af54c5312ea8ec02d",
+    "spacing050_input_paths.csv": "c5c9b420fc43bb23457d6c456df6aebe30d2429ee5a8de68cc354204d4c789c3",
+    "spacing025_input_paths.csv": "48e29bd248038c8b318e7210b69ed2ecd4b25dd617d7703522decb255e419d4c",
+    "compile_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spacing050_1000_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spacing050_1000_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spacing050_4000_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spacing050_4000_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spacing025_1000_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spacing025_1000_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spacing025_4000_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spacing025_4000_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/diagnostics/straighten_loma_guide.cpp": "d5da4c02f3c2e7933cecc77a7f146d4bb5c1becbfcd9b0412f333c3e451e34ac",
+    "source/diagnostics/loma_path_checks.hpp": "479c44abd9d422b35d5cdee1ace6dd706829182246dfebc3f590b612c135e739",
+    "spacing050_1000/history.csv": "959e62b95392549a3c1a77182e06c43ded8b3f0cc15947e6b811b5d822d48798",
+    "spacing050_1000/result.csv": "ef5f3cf2e6e0fb834a78e25c54ae2ccb5fd5375ae8a521cfd224c4149e252ab2",
+    "spacing050_1000/paths.csv": "18fb5c11a7d521d1517c25f147bfe135720b31727fc35b8e8beacf9b049c303e",
+    "spacing050_4000/history.csv": "6fb574421bd2a0fb071f684212f9db211acd1e45d87978e7d544c3ed33781057",
+    "spacing050_4000/result.csv": "3642a7d9a5ca1ab8c41c9a5335bdd8fb842c587ed520127aba3b5b3c2fdde293",
+    "spacing050_4000/paths.csv": "068c4958fc9dff3dfb54dd6c86a7277cb8b3b30040c3fd51ee6d5a72c71936b4",
+    "spacing025_1000/history.csv": "8b20f5c456c4d17e8b419137834f1290a1f3b1da1dfe31f0a60dd5cedeb262c8",
+    "spacing025_1000/result.csv": "8b2201919e0834b7112f034a51e6833898bed437000d09a36749d32dbb2f6411",
+    "spacing025_1000/paths.csv": "620d1eb97a67662ac2b8745857ae60e1ac023369b063d5c406ec87512cedb89e",
+    "spacing025_4000/history.csv": "db1ebd0bb5117e4bc0d6b9271fce5d1c392636a8626eac1ecda6bab14dceaf86",
+    "spacing025_4000/result.csv": "8bffaa9f53869b81556d12bcd2b2d62089f51f68367da5803a89684b72034a1a",
+    "spacing025_4000/paths.csv": "9501b2eee21442a3977583fe3c36405851522c18b0710eb7ac8a013e9484d4d2"
+  }
+}
