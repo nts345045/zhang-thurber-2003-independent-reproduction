@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "reviewer": "earthscope_discovery",
+  "reviewed_utc": "2026-10-10T04:14:22.638742Z",
+  "scope": "Read-only numerical source and retained invented-result inspection; no rerun, real waveform processing, preprocessing or acceptance decision",
+  "summary_sha256": "79f195ec0e9593989424d3d7ae3b5ebf404bf68b920f2593caba7b8ed2cfb9fd",
+  "source_sha256": "d27d95d4625f4b2f67185695b0078f5b453fd8f4a3b5793bbe20fc3cd03c4146",
+  "invented_checks": 37,
+  "material_issue_found": false,
+  "findings": [
+    "Positive independent affine scaling preserves local-window Pearson NCC; retained represented-input direct-definition agreement is at most 1.1102230246251565e-15.",
+    "Native template/search start offsets enter delay j-minus-i correctly; dt.cc equals catalog i-minus-j minus that delay, including biased-pick control.",
+    "Signed polarity is retained; package zero for zero variance is explicitly undefined, not a usable observation.",
+    "Boundary and tied peaks expose ambiguity without asserting accepted delays."
+  ],
+  "limitations": [
+    "The 37 invented controls do not establish filtering, tapering, interpolation, quality criteria, timing uncertainty or real-waveform accuracy."
+  ]
+}
