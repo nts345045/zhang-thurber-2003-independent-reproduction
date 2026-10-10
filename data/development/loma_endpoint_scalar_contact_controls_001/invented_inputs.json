@@ -1,0 +1,101 @@
+{
+  "geometry": "invented; no provider identities",
+  "axes": [
+    [
+      "-0.25",
+      "0.5"
+    ],
+    [
+      "-0.5",
+      "0.5"
+    ],
+    [
+      "-1",
+      "0"
+    ]
+  ],
+  "node_order": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1
+    ]
+  ],
+  "baseline_node_velocities": [
+    5,
+    5,
+    5,
+    5,
+    6,
+    6,
+    6,
+    6
+  ],
+  "bottom": "0",
+  "ell": "0.25",
+  "epsilon_powers": [
+    8,
+    12,
+    16,
+    20,
+    24,
+    28
+  ],
+  "boundary_epsilon": 0,
+  "model_powers": [
+    12,
+    16,
+    20,
+    24
+  ],
+  "model_parameter": "node velocity multiplied by exp(-h); each of eight nodes separately, both signs",
+  "precisions": [
+    80,
+    120
+  ],
+  "gauss_points": 32,
+  "scalar_scan_intervals": 16,
+  "scalar_bracket_width_km": "1e-28",
+  "permitted_family": "a=(0,0,-epsilon), c=(r,0,0), b=(1/4,0,0), r in [0,1/4]",
+  "limits": {
+    "fixed_curve_model_column_s": "1e-10",
+    "numerical_candidate_model_column_s": "1e-10",
+    "endpoint_component_s_per_km": "1e-8"
+  },
+  "certification": "Baseline analytic convexity and epsilon=0 path identity only; general perturbed minima unresolved"
+}

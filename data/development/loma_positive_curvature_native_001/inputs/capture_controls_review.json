@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "reviewed_utc": "2026-10-10T07:01:42Z",
+  "controls_summary_sha256": "a9212cf9ec2332903ae5558ebf948b9d22f7e956b02534514c7c0e96f2c8b566",
+  "prepared_sha256": "02cf75763e372b8007ac5d95669e9b18ff93a3c69ca973ad967f457fb6d69f1d",
+  "verified_hash_counts": {
+    "sources": 25,
+    "outputs": 15,
+    "original_inputs": 56,
+    "prepared_files": 37
+  },
+  "compiler_sha256": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7",
+  "binary_sha256": "101254d02632c911c883c888ba2e5350568ac6faaa6518dd0c32e47286af9a4a",
+  "recorded_controls": 38,
+  "invented_ray_cases": 6,
+  "all_ray_fields_bitwise_equal": true,
+  "material_issue_found": false,
+  "method": "Read the independently authored C++ fixture and frozen insertion diffs; verify every declared source/output/prepared/input hash, compiler and binary, all check rows, six result joins, actual trace pair count and saved strict-threshold decisions. No compiler, ray or action rerun.",
+  "findings": [
+    "Manual telemetry controls preserve supplied computed sy, separate stored step from rounded displacement, and retain strict binary64 threshold decisions.",
+    "Memory creation IDs/ages survive eviction and rejection; reset and actual-memory mismatch controls are meaningful.",
+    "Cut inclusion controls exercise exact strict boundaries and adjacent binary64 values.",
+    "The six actual invented homogeneous/affine/kink traces compare complete Ray representations, not just printed travel time.",
+    "The fixture intentionally generates a few inconsistent manual telemetry states to test logging; these are explicitly invented and never optimizer inputs."
+  ],
+  "limitations": [
+    "The reviewer authored the logging header and wrapper, but did not implement the independently authored C++ test fixture; root separately reviews the header and exact insertions.",
+    "Bitwise equality on six invented cases does not establish native observation neutrality; five exact old-table hashes remain mandatory for the native replay.",
+    "Compiler warnings are preserved: compact fixture indentation and an unused renamed driver function with implicit main return removed. That function is never called.",
+    "No convergence/accuracy/global-first-arrival claim follows from these observation controls."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "summary_sha256": "7168b73438d57ad0db0de6c9f974794db93f122008a224a4c247494b5aba7273",
+  "execution_sha256": "ea5e69ec636c0db056d7a7218252db8aa1b63b081bd8e0985d6e4708dcf4adf7",
+  "source_sha256": {
+    "check_seeded_retention.cpp": "9543a9ca6a7b11d6c995c03e7d864a9c212771a0aa86737cb13dd536aed53296",
+    "run_seeded_retention_controls.py": "5a6ba5ef2df4b2f2269da9d2a21bcc78266b271b8323a84c03fca2fd762a09ee"
+  },
+  "verified_input_hashes": 71,
+  "verified_output_hashes": 326,
+  "verified_frozen_source_hashes": 42,
+  "variants": {
+    "seed_loaded_B": {
+      "checks": 100,
+      "rejected_loader_cases": 59,
+      "retention_cases": 19,
+      "accepted_steps": 1,
+      "retained_pairs": 1
+    },
+    "positive_curvature": {
+      "checks": 100,
+      "rejected_loader_cases": 59,
+      "retention_cases": 19,
+      "accepted_steps": 1,
+      "retained_pairs": 1
+    }
+  },
+  "complete_candidate_ray_history_parity": true,
+  "known_subnormal_parse_rejection_preserved": true,
+  "known_positive_reciprocal_overflow_preserved": true,
+  "native_execution_performed": false,
+  "material_issue_found": false,
+  "scope": "Independent source inspection and saved invented-output/hash readback; no compile, trace, provider query, or production edit",
+  "limitations": [
+    "The post-resampling frame is validated structurally only; native five-table seed-load replay remains required.",
+    "The homogeneous parity fixture exercises one pair retained by the old threshold; it does not assess native convergence with newly retained small pairs.",
+    "Positive-only retention remains unsafe as a general rule: positive subnormal reciprocal overflow and infinite dot admission are explicit failed generalization cases."
+  ]
+}

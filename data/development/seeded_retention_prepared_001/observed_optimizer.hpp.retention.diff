@@ -1,0 +1,11 @@
+--- seed_loaded_B/diagnostics/observed_optimizer.hpp
++++ positive_curvature/diagnostics/observed_optimizer.hpp
+@@ -137,7 +137,7 @@
+         y[k] = ng[k] - grad[k];
+       }
+       double sy = dot(s, y);
+-      if (sy > 1e-14) {
++      if (sy > 0) {
+         audit_curvature=true;
+         if (S.size() == 8) {
+           S.erase(S.begin());

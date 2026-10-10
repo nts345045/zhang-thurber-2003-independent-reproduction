@@ -1,0 +1,12 @@
+data/development/seeded_retention_controls_001/source/check_seeded_retention.cpp: In lambda function:
+data/development/seeded_retention_controls_001/source/check_seeded_retention.cpp:50:5: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+     for(std::size_t i=0;i<r.size();++i)out<<(i?",":"")<<csv_quote(r[i]);out<<'\n';
+     ^~~
+data/development/seeded_retention_controls_001/source/check_seeded_retention.cpp:50:73: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+     for(std::size_t i=0;i<r.size();++i)out<<(i?",":"")<<csv_quote(r[i]);out<<'\n';
+                                                                         ^~~
+In file included from data/development/seeded_retention_controls_001/source/check_seeded_retention.cpp:3:
+data/development/seeded_retention_controls_001/source/positive_curvature/diagnostics/fixture_driver.hpp: In function ‘int frozen_seed_driver_main(int, char**)’:
+data/development/seeded_retention_controls_001/source/positive_curvature/diagnostics/fixture_driver.hpp:97:27: warning: control reaches end of non-void function [-Wreturn-type]
+   Grid g=read_grid(argv[1]);
+                           ^

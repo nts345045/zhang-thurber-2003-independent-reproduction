@@ -21,7 +21,9 @@ The PDF remains 109 pages. Two LaTeX passes from `report/` completed; the final
 log contains the pre-existing underfull-box notice, with no overfull or
 undefined-reference warnings. An earlier compile command used the wrong
 working directory and failed to find a relative figure; its logs are retained.
-It produced no PDF. Numerical calculations were not rerun.
+It produced no PDF. No inversion, ray trace, or resolution solve was rerun.
+Plotting repeated deterministic coordinate and section calculations; their
+saved numerical tables remained byte-identical.
 
 The copies under `after/` preserve this completed layout checkpoint even when a
 later report adds interpretation or new experiments. Process completion does

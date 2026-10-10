@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "decision": "eligible_for_guarded_dd_attempt",
+  "preflight_directory": "data/hayward_first_arrival_004",
+  "checks": {
+    "full_reference_controls_pass": true,
+    "sample_local_flags_pass": true,
+    "sample_accuracy_assessed": true,
+    "finite_difference_truncation_assessed": true
+  },
+  "sha256": {
+    "preflight_manifest": "75631991144e76cf16731e0b73e396860ab78db386c556415f990968cb7cc00a",
+    "preflight_ledger": "8c51039a6fe28c3972cea0971b93346ee5cc2ed0cd021c6af14b28aff1ea8859",
+    "preflight_checks": "55a09aa9adda173043cc1baa713d55a3ab73e1705d6ddc533a4aa5547d0631e8",
+    "full_reference_summary": "a1fc5194c83a65019a62add7b6ec5d10478be87dd5f6c8d7ffb9e6eab535ad7d",
+    "full_reference_review": "29e95b53bbaaedccb1d98c8d24f41561fd5f0b5886d1e972789ba4858c5ef325",
+    "sampled_summary": "66d48c6df173068fc0cf404414387a02e6d08a34ab02ebb5a0dbdfd880aedaca",
+    "sampled_independent_review": "376f88cec5f59498ec4629ee98320744a6df8b1c30c71e19e9c61055a16dff0c"
+  },
+  "sampled_tables_sha256": {
+    "initial_ray_convergence.csv": "94c066425481b2a6bd17921efddbf3d07d7d259f18194c7531cc78d6d1b036ea",
+    "initial_ray_derivatives.csv": "77be66b9caa186b4519671a14d49277b56312b8216517ec857159d39cff7bbff",
+    "initial_ray_identifiers.csv": "f4aabb2de29ec88ae70b1de5b6a370ba06917427ebef1e4bf7f0a8a8cfa7b3eb"
+  },
+  "accuracy_control_limits": {
+    "absolute_time_s": 2.5e-05,
+    "source_euclidean_norm_s_per_km": 3e-06
+  },
+  "full_initial_pairs": 14262,
+  "sampled_pairs": 32,
+  "sampled_source_vectors": 8,
+  "times": {
+    "production": {
+      "maximum_absolute_error_s": 7.165166859834926e-07,
+      "passing": 32
+    },
+    "refined": {
+      "maximum_absolute_error_s": 1.8059668605019397e-07,
+      "passing": 32
+    }
+  },
+  "source_vectors": {
+    "production": {
+      "maximum_error_norm_s_per_km": 8.554814502466198e-08,
+      "passing": 8
+    },
+    "refined": {
+      "maximum_error_norm_s_per_km": 1.8288119809260677e-08,
+      "passing": 8
+    }
+  },
+  "interpretation": [
+    "All original initial-model forward pairs pass local/initialization flags and the unchanged continuous-reference time and source-vector limits.",
+    "The production and refined sampled times and source vectors independently pass these same limits.",
+    "The largest exact-reference central-difference truncation is 3.127681378637878e-6 s/km; saved finite differences differ from reference finite differences by at most 3.2654175557977894e-8 s/km.",
+    "The finite-difference truncation is assessed separately from source-vector accuracy; no new finite-difference threshold or relaxed local flag is introduced.",
+    "This supports one isolated catalog-only DD attempt using the reviewed per-evaluation guard and unchanged004 input/configuration."
+  ],
+  "limitations": [
+    "This is initial depth-only-model evidence; it is not an accuracy or global first-arrival certificate for later three-dimensional models.",
+    "The guard must stop on any invalid current/trial/final forward evaluation and preserve its identified evidence.",
+    "A completed inversion still requires final-model refinement/source checks, native output review and nonlinear/LSQR interpretation.",
+    "Ordinary floating reference ordering and saved 12-significant-digit candidate serialization retain the documented limitations.",
+    "No catalog-plus-CC inversion or additional modes are authorized by this evidence file alone."
+  ],
+  "checker_sha256": "cbeea638465fe0c07a144889e06dfc25d4a04041ebc9cddb6e0d90db41c73bbe"
+}

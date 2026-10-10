@@ -1,0 +1,60 @@
+case,rejected,message
+reordered_path_header,1,Saved candidate schema mismatch
+reordered_metadata_header,1,Saved candidate schema mismatch
+extra_column,1,Saved candidate schema mismatch
+missing_column,1,Saved candidate schema mismatch
+duplicate_header,1,Duplicate CSV column: run_id
+short_row,1,Wrong CSV row width: data/development/seeded_retention_controls_001/seed_loaded_B/loader/short_row_path.csv
+no_metadata,1,Saved candidate metadata must have exactly one row
+duplicate_metadata,1,Saved candidate metadata must have exactly one row
+metadata_identity_0,1,Saved candidate metadata identity mismatch
+path_identity_0,1,Saved candidate path identity mismatch
+metadata_identity_1,1,Saved candidate metadata identity mismatch
+path_identity_1,1,Saved candidate path identity mismatch
+success_0,1,Saved candidate was not successful
+success_true,1,Saved candidate was not successful
+success_1.0,1,Saved candidate was not successful
+success_empty,1,Saved candidate was not successful
+counter_4_-1,1,Invalid saved candidate counter/index
+counter_4_0.5,1,Invalid saved candidate counter/index
+counter_4_nan,1,Invalid saved candidate counter/index
+counter_4_inf,1,Invalid saved candidate counter/index
+counter_4_2147483648,1,Invalid saved candidate counter/index
+counter_4_2junk,1,Invalid saved candidate counter/index
+counter_4_empty,1,stod
+counter_5_-1,1,Invalid saved candidate counter/index
+counter_5_0.5,1,Invalid saved candidate counter/index
+counter_5_nan,1,Invalid saved candidate counter/index
+counter_5_inf,1,Invalid saved candidate counter/index
+counter_5_2147483648,1,Invalid saved candidate counter/index
+counter_5_2junk,1,Invalid saved candidate counter/index
+counter_5_empty,1,stod
+field_time_-1,1,Nonfinite or negative saved candidate field time
+field_time_nan,1,Invalid finite CSV number: nan
+field_time_inf,1,Invalid finite CSV number: inf
+field_time_1junk,1,Invalid finite CSV number: 1junk
+field_time_empty,1,stod
+node_-1,1,Invalid saved candidate counter/index
+node_0,1,Saved candidate node inventory changed
+node_2,1,Saved candidate node inventory changed
+node_0.5,1,Invalid saved candidate counter/index
+node_nan,1,Invalid saved candidate counter/index
+node_inf,1,Invalid saved candidate counter/index
+node_2147483648,1,Invalid saved candidate counter/index
+node_1junk,1,Invalid saved candidate counter/index
+missing_raw,1,Saved candidate frame/endpoints changed
+missing_post,1,Saved candidate frame/endpoints changed
+raw_after_post,1,Saved candidate frame order changed
+duplicate_post_frame,1,Saved candidate node inventory changed
+unknown_frame,1,Unknown saved candidate path frame
+two_point_raw,1,Saved candidate frame/endpoints changed
+two_point_post,1,Saved candidate frame/endpoints changed
+coordinate_nan,1,Invalid finite CSV number: nan
+coordinate_inf,1,Invalid finite CSV number: inf
+coordinate_-inf,1,Invalid finite CSV number: -inf
+coordinate_2.1,1,Saved candidate point is nonfinite or outside model
+coordinate_1junk,1,Invalid finite CSV number: 1junk
+endpoint_0,1,Saved candidate frame/endpoints changed
+endpoint_3,1,Saved candidate frame/endpoints changed
+endpoint_4,1,Saved candidate frame/endpoints changed
+endpoint_6,1,Saved candidate frame/endpoints changed

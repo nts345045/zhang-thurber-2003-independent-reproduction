@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "material_issue_found": false,
+  "reviewer": "scientific_audit/ray_math_review",
+  "controls_summary_sha256": "b6edb530be75d9454bc1a2edc86315e9e04ae970e6ab808601cecad2aa5799ad",
+  "summary_sha256": "b6edb530be75d9454bc1a2edc86315e9e04ae970e6ab808601cecad2aa5799ad",
+  "execution_sha256": "704eb2628e2ee4358e242dce3b77cd0c49a98625f5d670e0ce172ad958b40212",
+  "checker_sha256": "dcd0652e3ec8401311e49a293c6245e2caa0c06c3df9062b5fa1954864ff75ac",
+  "source_sha256": "e2a0da87e120bcd7f1700f153be929ba5315dc6d7cf323ed9b70fa4064b796fc",
+  "verified_input_sha256": {
+    "diagnostics/check_endpoint_scalar_contact.py": "e2a0da87e120bcd7f1700f153be929ba5315dc6d7cf323ed9b70fa4064b796fc",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "data/development/loma_endpoint_connector_next_step_001/proposal.md": "2ee561ca9e8254ac87665964e597110776451ac3c2bbb4b70daf7a34911d4166",
+    "data/development/loma_endpoint_connector_next_step_001/provenance.json": "67f4b50c9bad4fbfd4d430f962fb7872633057b9467012ec06859eaf9bbebe4a"
+  },
+  "verified_output_sha256": {
+    "checks.json": "275b02a4b7097089651c3efdc1a91af1001764c2fe02c1a4d4798dd96faa4839",
+    "execution.json": "704eb2628e2ee4358e242dce3b77cd0c49a98625f5d670e0ce172ad958b40212",
+    "invented_inputs.json": "8975aa8fe9eed45950be66d363e7656a6d009b1e0cfb3620c08e9d2dfe029a79",
+    "progress_120.json": "63d62aa00cab2fea0caad518cc87bd096e89d515f4d97eae2f194122c58d937c",
+    "progress_80.json": "faf29ee0961800f97ee778cdf1167cf7917dca0948d2dac50cc31d077ac61dc1",
+    "results_120.json": "63d62aa00cab2fea0caad518cc87bd096e89d515f4d97eae2f194122c58d937c",
+    "results_80.json": "faf29ee0961800f97ee778cdf1167cf7917dca0948d2dac50cc31d077ac61dc1",
+    "source/check_endpoint_scalar_contact.py": "e2a0da87e120bcd7f1700f153be929ba5315dc6d7cf323ed9b70fa4064b796fc",
+    "source/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/proposal.md": "2ee561ca9e8254ac87665964e597110776451ac3c2bbb4b70daf7a34911d4166",
+    "source/provenance.json": "67f4b50c9bad4fbfd4d430f962fb7872633057b9467012ec06859eaf9bbebe4a"
+  },
+  "controls_passed_as_recorded": 87,
+  "independently_reconstructed_inventory": [
+    {
+      "precision": 80,
+      "scalar_cases": 7,
+      "model_columns": 224,
+      "perturbations": 448,
+      "fixed_curve_budget_failures": 0,
+      "candidate_budget_failures": 0,
+      "unresolved_perturbed_family_envelopes": 192,
+      "uncertified_error_bounds": 224
+    },
+    {
+      "precision": 120,
+      "scalar_cases": 7,
+      "model_columns": 224,
+      "perturbations": 448,
+      "fixed_curve_budget_failures": 0,
+      "candidate_budget_failures": 0,
+      "unresolved_perturbed_family_envelopes": 192,
+      "uncertified_error_bounds": 224
+    }
+  ],
+  "model_arithmetic_precision_difference_s": "4.6963135750633089758294187524596122661867749376E-74",
+  "source_math_review": [
+    "The i-fastest original eight-node trilinear shape functions and their spatial gradients preserve the stated single-cell model.",
+    "Segment time, both endpoint first variations and velocity kernels use the same positive reciprocal-trilinear quadrature action; negative-log columns are -v_j times the velocity kernel.",
+    "For positive epsilon, baseline A(r)=alpha*sqrt(r^2+epsilon^2)+(ell-r)/V has positive second derivative alpha*epsilon^2/(r^2+epsilon^2)^(3/2); the stated interior minimizer and excess follow.",
+    "At epsilon=0 the whole family follows one horizontal curve; the collapsed source link has no selected endpoint partial, and numerical time remains an uncertified quadrature value.",
+    "The right collapsed-link contact derivative uses the valid left limit -1/v(b); positive-epsilon endpoints and all candidate contacts stay in the declared finite cell.",
+    "The continuous guide excess at g=1 is atanh(q)-q; the two-link excess approaches the stated 3/(2*sqrt(2)) ratio."
+  ],
+  "scope": "Read-only source/math and saved table/arithmetic/hash inspection, with no family/segment/minimum/FD numerical rerun.",
+  "limitations": [
+    "The 87 recorded controls are not a global perturbed-minimum or numerical-error certificate.",
+    "All 192 positive-epsilon perturbed model-envelope comparisons and all 224 derivative error bounds per precision remain unresolved.",
+    "The scan may miss stationary roots; high precision and polynomial Gauss moments do not certify continuous quadrature or candidate ranking.",
+    "At y=0 mirror-y nodes have identical kernels; eight original model columns remain represented without claiming unrestricted three-dimensional geometry.",
+    "No native geometry, production solver, nodal-grid Jacobian promotion or whole-path envelope certification is assessed."
+  ],
+  "saved_readback_sha256": "9a26bddc0b8b14b1ff0e59ab1a5ba9772d85f5805d1bba1b90376a82c501bbdb",
+  "readme_sha256": "1fa8018ffb4606fbc0f49be28b269b37ad24c88a95fd4b42741cfa7020821cbc",
+  "readme_review": "Counts, secant/coefficient values, y=0 symmetry and unresolved certificates match saved results. The receiver retains a finite adjacent-edge normal partial; no claim corrects both endpoints."
+}

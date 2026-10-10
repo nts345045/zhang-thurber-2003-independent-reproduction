@@ -1,0 +1,44 @@
+{
+  "started_utc": "2026-10-10T02:35:25.191865+00:00",
+  "base_commit": "7398399173fe6fc66104fb2633e39bea3ba8533b",
+  "scope": "Same authoritative Hayward cohort and inverse settings; corrected ray initializer/optimizer",
+  "baseline": "data/hayward/run_manifest.json",
+  "threads": 4,
+  "discretization": {
+    "path_spacing_km": 0.03125,
+    "fmm_spacing_km": 0.125
+  },
+  "binary": "tmp/hayward_runs/first_arrival_004/compiled/dd",
+  "source_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "run_hayward_first_arrival.py": "da1ec48583484b7cbb47dbe1a808166911361feab6057f932a76da854b9fcad2",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "9f1e6db7569aafe01277a9d01b45330b5d26e001659b978dff18020a6bad5bf3",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "sha256": {
+    "data/hayward_first_arrival_004/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "data/hayward_first_arrival_004/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "data/hayward_first_arrival_004/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "data/hayward_first_arrival_004/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "data/hayward_first_arrival_004/selection_manifest.json": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004",
+    "data/hayward_first_arrival_004/authoritative_ids_required": "00d86d4465702c0424ec511ef34eee9eb080977c55c21ac8af2106257760ba47",
+    "data/hayward_first_arrival_004/event_pairs.csv": "b678922c56c2c0841769aa882e98291631d3f7651a19661206c0433bfe9826ae",
+    "data/hayward_first_arrival_004/event_selection.csv": "d8563afe642aaaf719b9c92f0206bcd88003d256ad9067c08b0b40c60c3fb256",
+    "data/hayward_first_arrival_004/initial_geographic_events.csv": "7a7fba3e9f128a77dc2935d5a1a0a4926bd1442525ff4a477c45cba44c059a09",
+    "data/hayward_first_arrival_004/excluded_picks.csv": "93aab31ede96f61d65f4e363eb9bd8748b67014e477b12be12daee3ba09af0ca",
+    "data/hayward_first_arrival_004/run.cfg": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4",
+    "data/hayward_first_arrival_004/source_snapshot.tar.gz": "70735ea679cebcf3be385f76ec3674cc0c8136b96a3266df2b715d7b85630863",
+    "tmp/hayward_runs/first_arrival_004/compiled/dd": "951fa8bf5c43809bc4386bc41a6d6bdefccec33d7124fec2aacbd4e7bc7f13c8"
+  },
+  "limitations": [
+    "Declared path/field spacings are assessed discretizations, not a universal first-arrival accuracy certificate.",
+    "The same 32-ray refinement/derivative sample and full initial absolute-ray support are inspected before inversion.",
+    "Changes combine the first-arrival initializer and constrained ray optimizer; they do not isolate either change."
+  ]
+}
