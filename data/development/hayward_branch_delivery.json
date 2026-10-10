@@ -1,0 +1,39 @@
+{
+  "scope": "Completed identified branch diagnosis, refinement correction for one Hayward ray, strict-stopping negative control and 104 Loma reference comparison; no corrected inversion claim",
+  "created_utc": "2026-10-10T02:35:49.114383+00:00",
+  "evidence_commit": "7398399173fe6fc66104fb2633e39bea3ba8533b",
+  "validation": {
+    "pdf_pages": 96,
+    "pdflatex_exit": 0,
+    "no_undefined_references_errors_or_overfull_boxes": true,
+    "diagnostic_figure_and_report_page_visually_inspected": true,
+    "figure_input_hashes_verified": 114,
+    "figure_output_hashes_verified": 2,
+    "panel_statuses": {
+      "independently reproduced": 1,
+      "partially reproduced": 27,
+      "not reproduced": 34
+    }
+  },
+  "sha256": {
+    "README.md": "0616906092e388dea063d783bec707ad5754b5524b888d916d437b92bdfd3690",
+    "report/report.tex": "7bbaedf4b67b51b76a798d0de7501aecfd787210247377503eb957faf43dbb38",
+    "report/ray_failure_checkpoint.tex": "c4e64d2b323c353b4bcb92f24adf0d0e2c5e024d187299237a464f0035cf112d",
+    "report/report.pdf": "cd100b2e6b0f23558c048619c433ed27a49c5deb0b2d4235ebea745e13f1e2f9",
+    "plot_hayward_branch_failure.py": "030ed1dcbe7425ab0b64f211baf055c90e721fb4791eeadac01ec3ff02e22aa9",
+    "figures/diagnostics/hayward_branch_failure.pdf": "c19d84c397d7b65fd91659cfc3fbdeb0ad656e0bf53fe7bed5bf5193e2c74d0c",
+    "figures/diagnostics/hayward_branch_failure.png": "9f26990b7b3ce1e2b8f8094bd1159adb946dfc457e0e33880b43447682f5e01a",
+    "data/development/hayward_branch_figure.json": "31880e2c74431f7e2ab917e559206b870afa7b2a74402def964ca7fe1ad1419e",
+    "data/development/loma_geometry_preflight/layered_reference_001/summary.json": "619d39032454fa9b75a62fdfacca4c8fb2f84d8470c4afef886f4f3ea0376f19",
+    "data/development/loma_geometry_preflight/layered_reference_001/independent_review.json": "dc909223029f43a1e81ba03f77c8821cec84778fc2a01f244cde065781566e28",
+    "data/development/initial_ray_first_arrival_003_8147_strict_comparison001/review.json": "a9a490e90c47d4234bf0c79cc284b8c0d574b427fc14fc69628ced3cd6caa47e",
+    "data/panel_audit.csv": "e8b115d93a4db2a1a12ab58f160aa68496ba6c1c06f4eb31b9538f0ed6d55a03"
+  },
+  "limits": [
+    "The 0.125 km field result validates one identified initial-profile ray; full-cohort 004 preflight is separate.",
+    "The 139-ray path-refinement subset is not a complete geometry test.",
+    "The 104 Loma references do not establish full 37,648-ray coverage or production solver accuracy.",
+    "Original baseline run remains on its frozen main-worktree solver.",
+    "All 62 panel classifications remain unchanged."
+  ]
+}

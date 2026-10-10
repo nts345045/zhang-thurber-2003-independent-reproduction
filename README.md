@@ -84,9 +84,15 @@ to 0.03125 km brings all 139 within both limits; the
 [four-variant comparison](data/development/hayward_initial_failure_refinement.md)
 preserves every failed result. The complete initial-model reference also
 finds a locally converged ray 2.232 ms late, with a source-vector error of
-0.033571 s/km, outside the 139-ray subset. Its competing arrival branches
-require separate investigation. No corrected inversion follows this failed
-preflight.
+0.033571 s/km, outside the 139-ray subset. The [identified branch
+comparison](data/development/initial_ray_first_arrival_003_14099_audit001/README.md)
+shows that path refinement approaches a deeper stationary arrival, still
+2.185 ms late. At 0.03125 km path spacing, a [0.125 km initialization
+field](data/development/initial_ray_first_arrival_003_14099_field0125001/README.md)
+recovers the earlier branch with errors of 0.333 microseconds and
+5.98e-9 s/km. The [diagnostic figure](figures/diagnostics/hayward_branch_failure.pdf)
+shows both controls. This single-ray correction requires a full-cohort check;
+no corrected inversion follows the failed third preflight.
 
 The revised solver preserves identities in event/residual CSV files and ray
 diagnostic mappings, traces observed pairs only, and exports an unweighted
@@ -113,8 +119,12 @@ and exclusion records. It has not yet been simulated or inverted with this comma
 The [completed geometry check](data/development/loma_geometry_preflight/001/README.md)
 retains all 104 sampled rays and finds 31 local failures at each spacing.
 Three locally converged production paths are slower than explicitly feasible
-guide paths, with gaps up to 37.159 ms. These numerical failures do not justify
-excluding any observed geometry.
+guide paths, with gaps up to 37.159 ms. A subsequent [continuous layered
+reference](data/development/loma_geometry_preflight/layered_reference_001/README.md)
+passes completeness and distance closure for all 104 samples and confirms
+23 critical guides as first arrivals. Refined production errors still reach
+186.569 microseconds. These numerical failures do not justify excluding
+any observed geometry.
 
 [Read the PDF report](report/report.pdf) or the
 [panel-by-panel audit](FIGURE_AUDIT.md).
