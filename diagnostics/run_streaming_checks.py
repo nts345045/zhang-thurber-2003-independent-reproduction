@@ -49,16 +49,15 @@ def run(name, command, expected=0):
 
 try:
     drivers = ['check_external_inputs.cpp', 'check_forward_integration.cpp', 'check_matrix_storage.cpp', 'check_streaming_observations.cpp']
-    source_names = list(subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', args.baseline, 'src']).decode().splitlines())
+    legacy_names = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', args.baseline, 'src']).decode().splitlines()
+    source_names = sorted(str(p) for p in Path('src').glob('*') if p.suffix in ('.hpp', '.cpp'))
     source_names += ['diagnostics/'+name for name in drivers] + ['diagnostics/run_streaming_checks.py']
     for name in source_names:
         target = out / 'current_source' / name
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(name, str(target))
         manifest['source_sha256'][name] = sha(target)
-    for name in source_names:
-        if not name.startswith('src/'):
-            continue
+    for name in legacy_names:
         target = out / 'legacy_source' / name
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(subprocess.check_output(['git', 'show', args.baseline+':'+name]))

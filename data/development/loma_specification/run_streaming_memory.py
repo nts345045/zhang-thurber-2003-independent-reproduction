@@ -26,6 +26,8 @@ inputs = ['data/authoritative/loma_prieta/selected_events.csv',
           'src/csv.hpp', 'src/main.cpp', 'src/core.hpp',
           'data/development/loma_specification/streaming_memory.cpp',
           'data/development/loma_specification/run_streaming_memory.py']
+if (ROOT / 'src/ray_metric.hpp').exists():
+    inputs.append('src/ray_metric.hpp')
 for name in inputs:
     target = snapshot / name
     target.parent.mkdir(parents=True, exist_ok=True)
