@@ -1,0 +1,48 @@
+{
+  "checked_pin_counts": {
+    "frozen": 19,
+    "original": 33,
+    "preserved_failure": 59,
+    "runtime": 10
+  },
+  "commands": {
+    "compile_command": [
+      "/usr/bin/c++",
+      "-std=gnu++17",
+      "-O3",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-fopenmp",
+      "-ffp-contract=off",
+      "data/development/cmj_tangent_step_source_002/source/diagnostics/tangent_metric_step.cpp",
+      "-Idata/development/cmj_tangent_step_source_002/source/src",
+      "-o",
+      "data/development/cmj_tangent_step_source_002/build/metric_step"
+    ],
+    "control_command": [
+      "/usr/libexec/platform-python3.6",
+      "diagnostics/check_tangent_metric_step.py",
+      "--output",
+      "data/development/cmj_tangent_step_source_002",
+      "--binary",
+      "data/development/cmj_tangent_step_source_002/build/metric_step",
+      "--binary-sha256",
+      "COMPILED_BINARY_SHA256"
+    ],
+    "controller_command": [
+      "/usr/libexec/platform-python3.6",
+      "data/development/cmj_tangent_step_source_002/controller.py"
+    ]
+  },
+  "controller_sha256": "d6a2b9943740652ce6b1a947d477b90fc9f251fbebd5af365a9f3a782bf8263b",
+  "correction_patch_sha256": "c3e266eca25ab9de1b5af06193a5fd15668d14a003a4de96c6c4f8d90555cddc",
+  "native_execution_authorized": false,
+  "predecessor_prelaunch_sha256": "b0da84b1ef9410452d63259ed9fd21e14f6af2cb1fd0a633d8ce755ab5e8b663",
+  "prepared_sha256": "f712c478bd2ee3f557fc465a6978f7e149c2d70ca1a23e02c07c4ee21a64ee9f",
+  "reviewed_utc": "2026-10-10T12:00:19.944506Z",
+  "reviewer": "root",
+  "scope": "One compile and the unchanged13-call invented control budget; no native work.",
+  "source_review": "Reviewed exact two-file diff: signed zeros use floating JSON tokens; homogeneous/stationary experiments are retained before assertions; existing fixtures check negative and positive zero round trips. Numerical helper, controller, frozen core, metric, settings and command roles remain identical.",
+  "status": "passed"
+}

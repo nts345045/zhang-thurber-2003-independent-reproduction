@@ -1,0 +1,22 @@
+{
+  "control_stdout_sha256": "803f2e4d7ed6177b32c690f555e9fc3b3075847e6ca7be3c7cbd9aab6bf0a311",
+  "correction_scope": "Emit signed zero as a decimal floating token and retain failed experiment before assertions; no change to metric, physics, slope, action, Armijo rule or numerical budget.",
+  "execution_sha256": "c369fc6b5ab72c4b0586a7a16401d6148271b22d091f632abcbbe5349b2b778b",
+  "failure": "C++ decimal token -0 is parsed by Python json as integer zero; emitted rejects its positive-zero hex against the saved negative-zero hex before slope/trial evaluation.",
+  "parsed_decimal_hex": "0x0.0p+0",
+  "preserved": {
+    "all_owned_children_reaped": true,
+    "checks_passed": 15,
+    "checks_reached": 16,
+    "completed_compile": true,
+    "completed_helper_calls": 10,
+    "native_evaluations": 0,
+    "new_action_edges": 0,
+    "rounded_trials": 0
+  },
+  "recorded_binary64_hex": "-0x0.0p+0",
+  "reviewed_utc": "2026-10-10T11:56:48.119965Z",
+  "reviewer": "root",
+  "status": "failed_control_diagnosed",
+  "summary_sha256": "8fde18534881c98f153650146a894cf1306bdf1e5c54b0a4767e4b41c0f97b95"
+}

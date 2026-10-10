@@ -1,0 +1,53 @@
+{
+  "checked_pin_counts": {
+    "frozen": 17,
+    "original": 26,
+    "runtime": 10
+  },
+  "commands": {
+    "compile_command": [
+      "/usr/bin/c++",
+      "-std=gnu++17",
+      "-O3",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-fopenmp",
+      "-ffp-contract=off",
+      "data/development/cmj_tangent_step_source_001/source/diagnostics/tangent_metric_step.cpp",
+      "-Idata/development/cmj_tangent_step_source_001/source/src",
+      "-o",
+      "data/development/cmj_tangent_step_source_001/build/metric_step"
+    ],
+    "control_command": [
+      "/usr/libexec/platform-python3.6",
+      "diagnostics/check_tangent_metric_step.py",
+      "--output",
+      "data/development/cmj_tangent_step_source_001",
+      "--binary",
+      "data/development/cmj_tangent_step_source_001/build/metric_step",
+      "--binary-sha256",
+      "COMPILED_BINARY_SHA256"
+    ],
+    "controller_command": [
+      "/usr/libexec/platform-python3.6",
+      "data/development/cmj_tangent_step_source_001/controller.py"
+    ]
+  },
+  "controller_sha256": "d6a2b9943740652ce6b1a947d477b90fc9f251fbebd5af365a9f3a782bf8263b",
+  "copy_pairs": 15,
+  "native_execution_authorized": false,
+  "prepared_sha256": "141aed67b048a02909855f2ddad45e6a025aa28b9c0001b3d5f06bfc64192c12",
+  "reviewed_utc": "2026-10-10T11:55:51.896722Z",
+  "reviewer": "root",
+  "scope": "One compile and the declared invented control suite only; no native metric, trial, action, trace, field, optimizer or source/model derivative.",
+  "source_review": [
+    "Frozen original weighted principal Laplacian retains incident diagonals and exact unavailable zeros.",
+    "Every available saved component contributes to emitted dyadic direction and actual rounded-displacement contractions.",
+    "No-contraction binary64 multiply/add is checked independently.",
+    "Exact principal/dense fixture and independent integer-Newton homogeneous oracle cover positive and stationary cases.",
+    "Full action, identical ordered-edge cancellation and conservative nominal Armijo rule remain separate from convergence.",
+    "Action count is unknown while incomplete; controller and inner helper ownership/reaping preserve failed outputs."
+  ],
+  "status": "passed"
+}

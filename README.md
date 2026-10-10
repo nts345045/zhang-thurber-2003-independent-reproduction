@@ -144,6 +144,14 @@ displacement step was run, and no source/model derivative or first arrival
 is certified. The [independent saved review](data/development/hayward_cmj_face_action_review_001/README.md)
 retains exact rational action and tangent-norm bounds with full native identities.
 
+A [single prescribed tangent step](data/development/hayward_cmj_tangent_step_001/RESULTS.md)
+from each exact-face candidate decreases the action by a further 2.4666e-10
+and 4.6728e-10 s. The maximum node movements are 0.05169 and 0.14095 m.
+Both steps satisfy the fixed slope and Armijo checks, with all identifiers
+preserved. The saved-output review passes. Post-step gradients have not yet
+been evaluated, so this establishes descent without certifying stationarity,
+source accuracy or convergence. The original failed flags remain unchanged.
+
 A [bounded backtracking candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)
 retains the original, initially validated ray kernel and changes only the
 inverse control flow. A pure local-stopping failure at a trial rejects that
