@@ -569,7 +569,11 @@ earlier forward operators.
   The [saved snapshot archive](data/development/hayward_accepted_update_delivery_001/README.md)
   includes these files, identified starting inputs, the plotting script and
   [intermediate-state figure](figures/hayward_accepted_update_001.pdf).
-  The ongoing run has no accepted final model or full-DD resolution result.
+  The [second accepted state](data/development/hayward_second_accepted_update_figure_001/RESULTS.md)
+  now supplies identified event and grid tables plus a
+  [second-minus-first comparison](data/development/hayward_second_accepted_update_figure_001/figure/accepted_update_2_minus_1.pdf).
+  Both are intermediate models; the ongoing run has no accepted final model
+  or full-DD resolution result.
 - `figures/` and `figures/hayward/`: plots generated from the saved numerical
   tables. `report/report.pdf` explains the experiments and reproduction limits.
 - `data/development/`: numerical diagnostics and frozen failure evidence.

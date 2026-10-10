@@ -1,0 +1,70 @@
+{
+  "all_arrow_heads_within_global_axes": true,
+  "both_state_positions_within_global_axes": true,
+  "clean_scientific_input_replay": {
+    "command": "python -B data/development/hayward_second_accepted_update_figure_001/plot_second_update.py --output tmp/FRESH_hayward_second_update",
+    "export_bytes": 9968253,
+    "export_file_count": 7,
+    "exported_scientific_inputs_unchanged": true,
+    "initial_internal_tmp_exists": false,
+    "input_symlinks": 0,
+    "limits": "Uses the existing plotting runtime; this is a clean scientific-input replay, not a clean software installation or full project build.",
+    "missing_output_parent_created": true,
+    "pdf_changes_only_creation_date": true,
+    "prior_pdf_sha256": "57ee89fd30fdb98432c35da35f6f5ad5bc68b8e2cc133d97b4a1d642f189e66f",
+    "scientific_calls": 0,
+    "scientific_tables_and_png_byte_identical": [
+      "native_identifiers.json.gz",
+      "statistics.json",
+      "accepted_update_2_minus_1.png"
+    ],
+    "sidecar_changes_only_plot_source_sha256": true,
+    "source_change": "Only HERE.mkdir() changed to HERE.mkdir(parents=True); containment and fresh-output checks still precede creation.",
+    "status": "passed",
+    "summary_changes_only_plot_source_and_output_sha256": true
+  },
+  "detail_arrow_heads_within_axes": true,
+  "detail_events": 122,
+  "event_rows": 1092,
+  "method": "Saved-output and figure inspection only; no evaluator or solver call.",
+  "plot_hashes": {
+    "accepted_update_2_minus_1.pdf": "1dda86cc97cbf5a0947881156b08f809b1ed41d4e9aa2ad3feb7b119b1b23fd6",
+    "accepted_update_2_minus_1.png": "5a61229cc3cf2b1161f7f6cd161de1712bc97c8959ca051302bfb3379e3713d1"
+  },
+  "plot_source_sha256": "0277ccb5a75d92e5120de2f39cea84968f2df92cb19eb7535949dc68c026920e",
+  "position_ranges_km": {
+    "first_accepted": {
+      "x": [
+        -9.660046871919745,
+        9.992908714343187
+      ],
+      "y": [
+        -29.919036233720433,
+        29.970976154449307
+      ]
+    },
+    "second_accepted": {
+      "x": [
+        -9.710729909538516,
+        9.997082045667561
+      ],
+      "y": [
+        -29.965559238145584,
+        29.96311563608609
+      ]
+    }
+  },
+  "prior_published_figures_sha256": {
+    "figures/hayward_accepted_update_001.pdf": "35b01c027c3a0a011143a754838d653c043548bd0ce233e8316035e4ebef301c",
+    "figures/hayward_accepted_update_001.pdf.identifiers.json": "43a12a5cce1b4200e36d69e405cc5408847967ceff93616d0747457ac5f82708",
+    "figures/hayward_accepted_update_001.png": "027211f876c600801b1047bb5519c279213f0b1f32ba0d1678df042213bab326",
+    "figures/hayward_accepted_update_001.png.identifiers.json": "65bb7f91cc10a2b9f88221f930eec6e867a92cd265e1ddf55695628a2ee92be8"
+  },
+  "scientific_calls": 0,
+  "scientific_manifest_sha256": "4073752162ecac5173a118319c0ea102eb5f0872fa45dceda29de18bb9f3a97e",
+  "status": "passed_saved_plot_readback",
+  "summary_sha256": "f245a245bd880f5fc81282498d8f668e2843d1b794ed599735f53e9349452ac7",
+  "velocity_layer_nodes": 77,
+  "velocity_layer_within_axes": true,
+  "visual_review": "Previously inspected PNG is byte-identical after the clean replay. Labels, units, native-distance arrow key, detail selection and incomplete-run scope remain readable without overlap or clipping; the PDF differs only in its creation date."
+}
