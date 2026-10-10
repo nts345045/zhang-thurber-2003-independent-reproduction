@@ -1,0 +1,35 @@
+{
+  "status": "completed_requested_batches",
+  "all_reported_available_non_cmw1_windows_acquired": true,
+  "started_or_cached_batches": 1,
+  "total_planned_batches": 1,
+  "waveform_measurements_added": 0,
+  "provider": "https://service.ncedc.org/fdsnws/dataselect/1/query",
+  "retained_original_picks": 8,
+  "retained_catalog_differences": 7,
+  "decoded_native_windows": 7,
+  "selected_reported_available_non_cmw1_windows": 7,
+  "source_sha256": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+  "input_sha256": {
+    "data/development/native_waveform_cc_checks/001/raw_hash_fixture/plan/summary.json": "153ff1965a5e9ea97a464cf1a57c6140c6c1320605d83506e0293682bcf80f97",
+    "data/development/native_waveform_cc_checks/001/raw_hash_fixture/plan/identified_picks.csv.gz": "7b9cc6d1633fdc68b380b08d97cb524f229d5cc16a26e21359f65f0dcab7b0c0",
+    "data/development/native_waveform_cc_checks/001/raw_hash_fixture/plan/identified_catalog_differences.csv.gz": "7678e16bcbbbc66016f448479c7fd929e9a7982cfaa9e8e2bb8cb2179bd4d42b",
+    "data/development/native_waveform_cc_checks/001/raw_hash_fixture/plan/identified_used_epochs.csv.gz": "67cfbc18533b64bbcd9ecd57aa5955ef1ce3617c087113c9c686a1f4c69bd344",
+    "data/development/native_waveform_cc_checks/001/raw_hash_fixture/events.csv": "55898f4e355bfae997f8430906f76ac6a1a363be4c7f7bc08b9062dc071152e5",
+    "data/development/native_waveform_cc_checks/001/raw_hash_fixture/invented_station_metadata.json": "56c7c74e4fb10ca9fbb620db15522c5b4337cba62e4bf404c0758f88c2b29586"
+  },
+  "results": [
+    {
+      "batch": 0,
+      "raw_file": "raw/dataselect_000.response",
+      "raw_sha256": "05d25b31f38329d2e8510da80ffeb402909c69a7767a101415bd8ea67f26ebd4",
+      "decoded_file": "raw/dataselect_000.response.decoded.json",
+      "decoded_sha256": "799d0b2d04134d4939261bf9ee4877b85c25a19e3e3b9e03f9d08aef712dd9ba",
+      "native_window_count": 7
+    }
+  ],
+  "output_sha256": {
+    "samples.picks.csv.gz": "aadb0ad28e240f18d2aa933d394bdf3453d5b03eea93fd4694307a5201306a3e"
+  },
+  "scope": "Invented complete native sample fixture, never a real provider retrieval"
+}

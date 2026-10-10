@@ -1,0 +1,22 @@
+{
+  "status": "failed",
+  "started_utc": "2026-10-10T04:52:28.777816+00:00",
+  "network_requests": 0,
+  "command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/waveform_env/bin/python",
+    "diagnostics/run_native_waveform_cc.py",
+    "--samples-summary",
+    "data/development/native_waveform_cc_checks/001/pick_travel_time_fixture/samples/samples.json",
+    "--samples-review",
+    "data/development/native_waveform_cc_checks/001/pick_travel_time_fixture/samples/review.json",
+    "--plan",
+    "data/development/native_waveform_cc_checks/001/pick_travel_time_fixture/plan/summary.json",
+    "--events",
+    "data/development/native_waveform_cc_checks/001/pick_travel_time_fixture/events.csv",
+    "--output",
+    "data/development/native_waveform_cc_checks/001/pick_travel_time_result"
+  ],
+  "finished_utc": "2026-10-10T04:52:28.788123+00:00",
+  "error_type": "ValueError",
+  "error": "Catalog travel time differs from identified origin and pick"
+}
