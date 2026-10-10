@@ -1,0 +1,50 @@
+{
+  "status": "prepared_identified_catalog_plus_cc_inputs",
+  "created_utc": "2026-10-10T05:24:10.738918+00:00",
+  "input_source_sha256": {
+    "data/development/hayward_cc_input_checks/001/fixtures/catalog/observations.csv": "e4cb7998e1041165cb3f27e059f9a33b6d58d27bc69b53abcce12ff5dc56a74e",
+    "data/development/hayward_cc_input_checks/001/fixtures/catalog/initial_events.csv": "518fab06cc847ed4f1371fc2deba5a3ab590d56fc9dc801a8b2d14e27f784d78",
+    "data/development/hayward_cc_input_checks/001/fixtures/catalog/stations.csv": "e8271a4e80385481111bbff40067f9bcb2a354788f5a75d991ffce365e9b9720",
+    "data/development/hayward_cc_input_checks/001/fixtures/export/dt.cc.identifiers.csv.gz": "76168462adb63c3aca19b9f1e6acbdd8cb06745635c9682c5898ea2d5d57919f",
+    "data/development/hayward_cc_input_checks/001/fixtures/export/event_id_map.csv": "e896d5a38154215052b3d09c8f4a38e5beb07cdbd7dd5b5fd6878b32cb2a6510",
+    "data/development/hayward_cc_input_checks/001/fixtures/export/receiver_epochs.csv.gz": "c2f5b6dc431643faa6f59eafac3fffd5b718f54c75f251d5b94b88a63aa2318e",
+    "data/development/hayward_cc_input_checks/001/fixtures/export/dt.cc": "b5399b1ec9d4900fea156fb98dbc62bcd038ef8526a1c8efbc0a999f8a0048b1",
+    "data/development/hayward_cc_input_checks/001/fixtures/catalog/initial_grid.csv": "8ad94c017445c85d6743f618ea799c6785794df4964876672a180c2ffec1c2e2",
+    "data/development/hayward_cc_input_checks/001/fixtures/catalog/authoritative_ids_required": "4bc78d8ef562688140b922edd3745416a08bdca9077ce0bf59a5d37a285d065c",
+    "data/development/hayward_cc_input_checks/001/fixtures/export/summary.json": "6fa88e719d356bc4295b5e28530091b560d93352c1a5d6ab9091f96313dc10f7",
+    "data/development/hayward_cc_input_checks/001/fixtures/export/review.json": "387d006eb701d32148011bf6d287f303ad621e1a30a13a70dce0359137c68359",
+    "data/development/hayward_cc_input_checks/001/fixtures/export/execution.json": "67447584745f02d32788eb2f8049ecac3e124bd7c3746940afbc205571ff1123",
+    "prepare_hayward_cc.py": "01e0707098bf63456a911a91bc5cde31418fb491901c38b88b0445f9be9ba641"
+  },
+  "original_catalog_rows": 3,
+  "appended_cc_rows": 1,
+  "prepared_rows": 4,
+  "type_counts": {
+    "0": 2,
+    "1": 1,
+    "2": 1
+  },
+  "original_catalog_fields_and_order_unchanged": true,
+  "legacy_weight_adoption": "Literal saved CC squared is a_priori_weight; it multiplies residual and Jacobian rows.",
+  "squared_objective_quality": "CC to the fourth power before squared stage, robust and distance factors; no square-root reinterpretation.",
+  "uncertainty": "Derived CC uncertainty_s remains blank/unestimated. Original pick uncertainties remain reference-pick provenance, not CC sigmas.",
+  "required_future_configuration": "Explicitly set catalog_only_dd=0 and all nine stage weights in a separate reviewed run configuration.",
+  "covariance": "Existing catalog shared-pick covariance rejects type2 and must not silently treat CC as independent or noiseless.",
+  "solver_invocations": 0,
+  "original_inputs_changed": false,
+  "run_configuration_created": false,
+  "limitations": [
+    "Prepared inputs only: no inverse or forward validation is implied.",
+    "Empirical CC squared row weighting does not establish inverse-variance calibration or exact manuscript weighting.",
+    "Retain all native sidecars and rejected measurement records; no new pair/channel selection is applied."
+  ],
+  "output_sha256": {
+    "initial_events.csv": "518fab06cc847ed4f1371fc2deba5a3ab590d56fc9dc801a8b2d14e27f784d78",
+    "initial_grid.csv": "8ad94c017445c85d6743f618ea799c6785794df4964876672a180c2ffec1c2e2",
+    "stations.csv": "e8271a4e80385481111bbff40067f9bcb2a354788f5a75d991ffce365e9b9720",
+    "authoritative_ids_required": "4bc78d8ef562688140b922edd3745416a08bdca9077ce0bf59a5d37a285d065c",
+    "observations.csv": "0f6460973d25313893327b16e15d2702b8b91fdae408f717f78efa2ea28dc44d",
+    "source/prepare_hayward_cc.py": "01e0707098bf63456a911a91bc5cde31418fb491901c38b88b0445f9be9ba641",
+    "catalog_provenance/observations.csv": "e4cb7998e1041165cb3f27e059f9a33b6d58d27bc69b53abcce12ff5dc56a74e"
+  }
+}

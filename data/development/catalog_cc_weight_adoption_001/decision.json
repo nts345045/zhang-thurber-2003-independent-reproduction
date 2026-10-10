@@ -1,0 +1,32 @@
+{
+  "status": "adopted_for_isolated_input_preparation_only",
+  "created_utc": "2026-10-10T05:31:06.381325+00:00",
+  "row_prior": "literal exported maximum_cc_squared",
+  "conditional_squared_objective_quality": "maximum_cc to the fourth power",
+  "derived_sigma": "unestimated; blank uncertainty_s",
+  "origin_time_correction_s": 0,
+  "original_catalog_rows": 58980,
+  "appended_cc_rows": 98,
+  "run_configuration_created": false,
+  "solver_invocations": 0,
+  "source_and_evidence_sha256": {
+    "data/development/catalog_cc_weight_contract_001/README.md": "9dea64d34180e6f21e84275825d521c16ee7dfbb8a5a575f421ac824319b2bcf",
+    "data/development/catalog_cc_weight_contract_001/review.json": "2a8ebebec86772e3710c0354bc7ee1b1e6fc8b00111eb04c3a7d7ae0bd9ffb4f",
+    "prepare_hayward_cc.py": "01e0707098bf63456a911a91bc5cde31418fb491901c38b88b0445f9be9ba641",
+    "src/main.cpp": "8a6f1ea8ea8c37ec71fe01a8971cd63227895192411c91ccc3b82f20727be4ae",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "diagnostics/check_hayward_cc_input.cpp": "57f20690aa2e317925e008da7f1c809490908ab34e920d593cbf7be53aacc956",
+    "diagnostics/check_hayward_cc_input.py": "f033b201c901da060e8f738b5703c1b7f31df48c8df1141e5525a592f1c9c297",
+    "data/development/hayward_cc_input_checks/002/summary.json": "7a7130a5f4b8cb2b12855a925ed3070a5808bd41eebd03a9104199368afdc745",
+    "data/development/hayward_cc_input_checks/002/root_review.json": "f3c3ca27716fbc3d3258b05301ee614544f89e211e1d353e3e0f2ba1b3cee8d9",
+    "data/development/native_dt_cc_001/summary.json": "dba733887df96456993fdc5972f66f96dad62705f6f30f3e510f2f45786e1213",
+    "data/development/native_dt_cc_001/independent_export_review.json": "7c9c82847bc54a4e8b93274616f3827b4055c86700f729832ebbd08c792c40bc",
+    "data/hayward_catalog_cc_001/preparation_manifest.json": "63e909d134182a2dc116c73a20c2d204284f77baf5b333ffde54a820f04944a0",
+    "data/hayward_catalog_cc_001/execution.json": "21d01bbc4898d2ebf933566421ea8852d65dd0232665cf9d25c14ad4cfe8f7ec"
+  },
+  "limitations": [
+    "Empirical row multipliers are not calibrated inverse-variance weights.",
+    "The historical unsquared-row-prior proposal remains unchanged and is not adopted here.",
+    "No combined-run covariance or numerical convergence is established by preparation."
+  ]
+}
