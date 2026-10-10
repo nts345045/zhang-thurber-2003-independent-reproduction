@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "native_identity": {
+    "observation_index": "14099",
+    "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+    "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+    "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+    "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+    "channel_seed_id": "NC.JJR..EHZ",
+    "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+    "metadata_epoch_start": "1998-05-04T18:00:00",
+    "metadata_epoch_end": "1999-02-18T18:15:00",
+    "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+    "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786"
+  },
+  "observer_exact_parity_cases": 12,
+  "saved_initial_selected_result_reproduced": true,
+  "all_original_diagnosis_hashes_verified": 39,
+  "all_branch_review_hashes_verified": 6,
+  "independently_recomputed_reference_matches_saved_complete_support": true,
+  "saved_complete_support_reference_file": "data/development/hayward_first_arrival_003_1d_support/references.jsonl",
+  "saved_complete_support_reference_sha256": "ff32376d1ae5709c2360e72e5bc283795b37b5826594d5d459f6419cbefba40e",
+  "maximum_exact_source_fd_error_by_step_s_per_km": {
+    "0.0001": 3.0579270292319105e-07,
+    "1e-05": 3.0574008186290413e-09,
+    "1e-06": 1.3705075962988644e-10
+  },
+  "conclusions": [
+    "All 12 locally converged paths approach the slower 14.139 km turning branch; additional iteration budget has no effect after stopping.",
+    "Path refinement reduces error within that branch but leaves a 2.185 ms first-arrival deficit and a 0.03358 s/km source-vector difference.",
+    "Independent exact polygon actions and endpoint finite differences support integration/gradient consistency on these paths."
+  ],
+  "documentation_sha256": {
+    "README.md": "bdcc2b33251cc1661cae4bd8ed4d81b5066c16b9bf05b5071caab883acf86fbd"
+  },
+  "helper_sha256": "858307c5611358694f935ad469cfafaa46c24cb3ef7a4a6b7397ee9059e42d64",
+  "independent_source_review": "No material integral/sign/native mapping defect found; exact reciprocal-affine z-split action, fixed-interior endpoint differences, finite-box candidate paths, and branch association reviewed."
+}

@@ -1,0 +1,736 @@
+{
+  "scope": "One identified frozen Hayward initial ray; all continuous monotone 1D branches, exact saved-polygon action and fixed-path endpoint gradients",
+  "command": [
+    "python3",
+    "diagnostics/compare_initial_ray_branches.py",
+    "--diagnosis",
+    "data/development/initial_ray_first_arrival_003_14099_audit001",
+    "--output",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/branch_review"
+  ],
+  "native_identity": {
+    "observation_index": "14099",
+    "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+    "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+    "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+    "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+    "channel_seed_id": "NC.JJR..EHZ",
+    "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+    "metadata_epoch_start": "1998-05-04T18:00:00",
+    "metadata_epoch_end": "1999-02-18T18:15:00",
+    "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+    "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786"
+  },
+  "source_xyz_km": [
+    -3.2348778558694598,
+    23.399140389784833,
+    9.309
+  ],
+  "receiver_xyz_km": [
+    -34.25928892093205,
+    -26.87690199725739,
+    -0.4
+  ],
+  "profile_depth_velocity_km_km_s": [
+    [
+      -1.0,
+      3.77
+    ],
+    [
+      0.0,
+      3.77
+    ],
+    [
+      4.0,
+      5.476666666666667
+    ],
+    [
+      8.0,
+      5.8675
+    ],
+    [
+      12.0,
+      6.1025
+    ],
+    [
+      20.0,
+      7.18
+    ]
+  ],
+  "finite_domain_km": {
+    "x": [
+      -35.0,
+      35.0
+    ],
+    "y": [
+      -30.0,
+      30.0
+    ],
+    "z": [
+      -1.0,
+      20.0
+    ]
+  },
+  "reference": {
+    "complete": true,
+    "reference_valid": true,
+    "candidates": [
+      {
+        "kind": "turning",
+        "time_s": 10.775535398966795,
+        "p_s_per_km": 0.1656274643200659,
+        "source_derivative_s_per_km": [
+          0.08697833362440874,
+          0.14095114904468056,
+          -0.02945072710284737
+        ],
+        "distance_residual_km": -3.488764832582092e-12,
+        "turning_depth_km": 10.896102390521875,
+        "certificate": "interval_monotonicity_and_sign_change",
+        "layer": 3,
+        "root_interval": [
+          1.056992651243111,
+          1.0569926512437386
+        ]
+      },
+      {
+        "kind": "turning",
+        "time_s": 10.785471139933128,
+        "p_s_per_km": 0.1628929128961305,
+        "source_derivative_s_per_km": [
+          0.0855422992865013,
+          0.13862400984160356,
+          -0.04202024740758593
+        ],
+        "distance_residual_km": 7.815970093361102e-13,
+        "turning_depth_km": 12.27101626401493,
+        "certificate": "interval_monotonicity_and_sign_change",
+        "layer": 4,
+        "root_interval": [
+          0.6684650197058644,
+          0.6684650197067246
+        ]
+      },
+      {
+        "kind": "turning",
+        "time_s": 10.777720708968111,
+        "p_s_per_km": 0.15647991371332934,
+        "source_derivative_s_per_km": [
+          0.08217454874618729,
+          0.13316646324841508,
+          -0.06175628606263571
+        ],
+        "distance_residual_km": 3.268496584496461e-13,
+        "turning_depth_km": 14.139000062787433,
+        "certificate": "interval_monotonicity_and_sign_change",
+        "layer": 4,
+        "root_interval": [
+          1.897160584326398,
+          1.897160584327258
+        ]
+      }
+    ],
+    "unresolved": [],
+    "root_tolerance": 1e-12,
+    "distance_tolerance_km": 1e-08,
+    "isolation_boxes": 26,
+    "max_isolation_boxes_per_layer": 20000,
+    "certificate_basis": "Exact rational coefficients from binary64 inputs; outward interval arithmetic and exact rational special cases",
+    "near_tie_time_tolerance_s": 1e-09,
+    "time_ordering": "Ordinary floating-point action evaluation; branch count is certified, but no interval bound on minimum-time ordering is claimed",
+    "first_arrival": {
+      "kind": "turning",
+      "time_s": 10.775535398966795,
+      "p_s_per_km": 0.1656274643200659,
+      "source_derivative_s_per_km": [
+        0.08697833362440874,
+        0.14095114904468056,
+        -0.02945072710284737
+      ],
+      "distance_residual_km": -3.488764832582092e-12,
+      "turning_depth_km": 10.896102390521875,
+      "certificate": "interval_monotonicity_and_sign_change",
+      "layer": 3,
+      "root_interval": [
+        1.056992651243111,
+        1.0569926512437386
+      ]
+    },
+    "best_enumerated_candidate": {
+      "kind": "turning",
+      "time_s": 10.775535398966795,
+      "p_s_per_km": 0.1656274643200659,
+      "source_derivative_s_per_km": [
+        0.08697833362440874,
+        0.14095114904468056,
+        -0.02945072710284737
+      ],
+      "distance_residual_km": -3.488764832582092e-12,
+      "turning_depth_km": 10.896102390521875,
+      "certificate": "interval_monotonicity_and_sign_change",
+      "layer": 3,
+      "root_interval": [
+        1.056992651243111,
+        1.0569926512437386
+      ]
+    },
+    "near_ties": [
+      0
+    ]
+  },
+  "production_source_sha256": {
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_ray_stopping.cpp": "8e0088b01318f0dceadc502b700014412d19d623b089da512034b9e15489f238",
+    "diagnostics/run_ray_stopping.py": "b39f64a35ab3920d57be3336a3234a0ecda1f91b0a9147d900ae069eb7deb3ec",
+    "diagnostics/first_arrival_fmm.hpp": "c7fc29f90ba42803818fc5cbc0159330fbdb7c81f832f9d01592cefd77c6709d",
+    "diagnostics/observed_optimizer.hpp": "34638c1996feaec7c0bc5df2da3b826e36ea1088c431a3d025d4de4e1ddebcf3",
+    "diagnostics/run_initial_ray_diagnosis.py": "c6c252d5573c18755444a2d44f03f9caa51b9d8866476eab51ac6fcd956aee5d"
+  },
+  "production_diagnostic_binary_sha256": "7e05369e934b432c0c930b7604be91a7a57a1de99875013cea60e6208967a0db",
+  "exact_action_controls": [
+    {
+      "name": "constant",
+      "error_s": 0.0,
+      "reverse_error_s": 0.0
+    },
+    {
+      "name": "affine_vertical",
+      "error_s": 2.7755575615628914e-17,
+      "reverse_error_s": 2.7755575615628914e-17
+    },
+    {
+      "name": "crossing",
+      "error_s": 0.0,
+      "reverse_error_s": 0.0
+    }
+  ],
+  "exact_observer_parity_cases": 12,
+  "saved_initial_ray_reproduced": true,
+  "maximum_absolute_quadrature_minus_exact_saved_path_s": 1.4367847189777905e-14,
+  "maximum_exact_fixed_path_source_fd_error_at1e_minus5_s_per_km": 3.0574008186290413e-09,
+  "cases": [
+    {
+      "run_id": "straight_0.031250_1000",
+      "initialization": "straight",
+      "path_spacing_km": "0.03125",
+      "max_updates": "1000",
+      "updates": "12",
+      "converged": "1",
+      "time_s": "10.777721304353879",
+      "projected_gradient": "1.893780038572956e-07",
+      "path_max_z_km": 14.139000954591943,
+      "nearest_turning_depth_branch_index": 2,
+      "time_minus_nearest_branch_s": 5.953857673546281e-07,
+      "time_minus_first_arrival_s": 0.002185905387083409,
+      "source_norm_error_nearest_branch_s_per_km": 1.867564095226367e-09,
+      "source_norm_error_first_arrival_s_per_km": 0.03357568821084504,
+      "quadrature_minus_exact_saved_path_s": -1.4367847189777905e-14
+    },
+    {
+      "run_id": "fmm_0.031250_1000",
+      "initialization": "fmm",
+      "path_spacing_km": "0.03125",
+      "max_updates": "1000",
+      "updates": "10",
+      "converged": "1",
+      "time_s": "10.777721062313363",
+      "projected_gradient": "7.5716121220959969e-08",
+      "path_max_z_km": 14.138998472243228,
+      "nearest_turning_depth_branch_index": 2,
+      "time_minus_nearest_branch_s": 3.533452517245905e-07,
+      "time_minus_first_arrival_s": 0.002185663346567779,
+      "source_norm_error_nearest_branch_s_per_km": 4.0963028109291094e-09,
+      "source_norm_error_first_arrival_s_per_km": 0.033575684486277464,
+      "quadrature_minus_exact_saved_path_s": 1.470178145890344e-15
+    },
+    {
+      "run_id": "straight_0.031250_4000",
+      "initialization": "straight",
+      "path_spacing_km": "0.03125",
+      "max_updates": "4000",
+      "updates": "12",
+      "converged": "1",
+      "time_s": "10.777721304353879",
+      "projected_gradient": "1.893780038572956e-07",
+      "path_max_z_km": 14.139000954591943,
+      "nearest_turning_depth_branch_index": 2,
+      "time_minus_nearest_branch_s": 5.953857673546281e-07,
+      "time_minus_first_arrival_s": 0.002185905387083409,
+      "source_norm_error_nearest_branch_s_per_km": 1.867564095226367e-09,
+      "source_norm_error_first_arrival_s_per_km": 0.03357568821084504,
+      "quadrature_minus_exact_saved_path_s": -1.4367847189777905e-14
+    },
+    {
+      "run_id": "fmm_0.031250_4000",
+      "initialization": "fmm",
+      "path_spacing_km": "0.03125",
+      "max_updates": "4000",
+      "updates": "10",
+      "converged": "1",
+      "time_s": "10.777721062313363",
+      "projected_gradient": "7.5716121220959969e-08",
+      "path_max_z_km": 14.138998472243228,
+      "nearest_turning_depth_branch_index": 2,
+      "time_minus_nearest_branch_s": 3.533452517245905e-07,
+      "time_minus_first_arrival_s": 0.002185663346567779,
+      "source_norm_error_nearest_branch_s_per_km": 4.0963028109291094e-09,
+      "source_norm_error_first_arrival_s_per_km": 0.033575684486277464,
+      "quadrature_minus_exact_saved_path_s": 1.470178145890344e-15
+    },
+    {
+      "run_id": "straight_0.125000_1000",
+      "initialization": "straight",
+      "path_spacing_km": "0.125",
+      "max_updates": "1000",
+      "updates": "211",
+      "converged": "1",
+      "time_s": "10.777725901651527",
+      "projected_gradient": "1.7173494349388126e-06",
+      "path_max_z_km": 14.139030448715694,
+      "nearest_turning_depth_branch_index": 2,
+      "time_minus_nearest_branch_s": 5.192683415700117e-06,
+      "time_minus_first_arrival_s": 0.0021905026847317544,
+      "source_norm_error_nearest_branch_s_per_km": 2.2696684356177479e-07,
+      "source_norm_error_first_arrival_s_per_km": 0.03357591459685427,
+      "quadrature_minus_exact_saved_path_s": -2.594278958323315e-15
+    },
+    {
+      "run_id": "fmm_0.125000_1000",
+      "initialization": "fmm",
+      "path_spacing_km": "0.125",
+      "max_updates": "1000",
+      "updates": "177",
+      "converged": "1",
+      "time_s": "10.777724442434046",
+      "projected_gradient": "1.1601778107364288e-06",
+      "path_max_z_km": 14.138984484215502,
+      "nearest_turning_depth_branch_index": 2,
+      "time_minus_nearest_branch_s": 3.733465934629976e-06,
+      "time_minus_first_arrival_s": 0.002189043467250684,
+      "source_norm_error_nearest_branch_s_per_km": 1.2583827235371413e-07,
+      "source_norm_error_first_arrival_s_per_km": 0.033575570729731774,
+      "quadrature_minus_exact_saved_path_s": -5.1850884696946764e-15
+    },
+    {
+      "run_id": "straight_0.125000_4000",
+      "initialization": "straight",
+      "path_spacing_km": "0.125",
+      "max_updates": "4000",
+      "updates": "211",
+      "converged": "1",
+      "time_s": "10.777725901651527",
+      "projected_gradient": "1.7173494349388126e-06",
+      "path_max_z_km": 14.139030448715694,
+      "nearest_turning_depth_branch_index": 2,
+      "time_minus_nearest_branch_s": 5.192683415700117e-06,
+      "time_minus_first_arrival_s": 0.0021905026847317544,
+      "source_norm_error_nearest_branch_s_per_km": 2.2696684356177479e-07,
+      "source_norm_error_first_arrival_s_per_km": 0.03357591459685427,
+      "quadrature_minus_exact_saved_path_s": -2.594278958323315e-15
+    },
+    {
+      "run_id": "fmm_0.125000_4000",
+      "initialization": "fmm",
+      "path_spacing_km": "0.125",
+      "max_updates": "4000",
+      "updates": "177",
+      "converged": "1",
+      "time_s": "10.777724442434046",
+      "projected_gradient": "1.1601778107364288e-06",
+      "path_max_z_km": 14.138984484215502,
+      "nearest_turning_depth_branch_index": 2,
+      "time_minus_nearest_branch_s": 3.733465934629976e-06,
+      "time_minus_first_arrival_s": 0.002189043467250684,
+      "source_norm_error_nearest_branch_s_per_km": 1.2583827235371413e-07,
+      "source_norm_error_first_arrival_s_per_km": 0.033575570729731774,
+      "quadrature_minus_exact_saved_path_s": -5.1850884696946764e-15
+    },
+    {
+      "run_id": "straight_0.500000_1000",
+      "initialization": "straight",
+      "path_spacing_km": "0.5",
+      "max_updates": "1000",
+      "updates": "920",
+      "converged": "1",
+      "time_s": "10.777773804078656",
+      "projected_gradient": "1.0238593096378583e-06",
+      "path_max_z_km": 14.138961215301668,
+      "nearest_turning_depth_branch_index": 2,
+      "time_minus_nearest_branch_s": 5.309511054463201e-05,
+      "time_minus_first_arrival_s": 0.0022384051118606862,
+      "source_norm_error_nearest_branch_s_per_km": 3.1568554602807533e-06,
+      "source_norm_error_first_arrival_s_per_km": 0.03357275470946539,
+      "quadrature_minus_exact_saved_path_s": 3.5492442318485473e-15
+    },
+    {
+      "run_id": "fmm_0.500000_1000",
+      "initialization": "fmm",
+      "path_spacing_km": "0.5",
+      "max_updates": "1000",
+      "updates": "746",
+      "converged": "1",
+      "time_s": "10.777767572903665",
+      "projected_gradient": "1.2295685247199316e-06",
+      "path_max_z_km": 14.138399551872128,
+      "nearest_turning_depth_branch_index": 2,
+      "time_minus_nearest_branch_s": 4.686393555353163e-05,
+      "time_minus_first_arrival_s": 0.002232173936869586,
+      "source_norm_error_nearest_branch_s_per_km": 5.103471779514576e-06,
+      "source_norm_error_first_arrival_s_per_km": 0.033570769276341,
+      "quadrature_minus_exact_saved_path_s": -6.591949208711867e-17
+    },
+    {
+      "run_id": "straight_0.500000_4000",
+      "initialization": "straight",
+      "path_spacing_km": "0.5",
+      "max_updates": "4000",
+      "updates": "920",
+      "converged": "1",
+      "time_s": "10.777773804078656",
+      "projected_gradient": "1.0238593096378583e-06",
+      "path_max_z_km": 14.138961215301668,
+      "nearest_turning_depth_branch_index": 2,
+      "time_minus_nearest_branch_s": 5.309511054463201e-05,
+      "time_minus_first_arrival_s": 0.0022384051118606862,
+      "source_norm_error_nearest_branch_s_per_km": 3.1568554602807533e-06,
+      "source_norm_error_first_arrival_s_per_km": 0.03357275470946539,
+      "quadrature_minus_exact_saved_path_s": 3.5492442318485473e-15
+    },
+    {
+      "run_id": "fmm_0.500000_4000",
+      "initialization": "fmm",
+      "path_spacing_km": "0.5",
+      "max_updates": "4000",
+      "updates": "746",
+      "converged": "1",
+      "time_s": "10.777767572903665",
+      "projected_gradient": "1.2295685247199316e-06",
+      "path_max_z_km": 14.138399551872128,
+      "nearest_turning_depth_branch_index": 2,
+      "time_minus_nearest_branch_s": 4.686393555353163e-05,
+      "time_minus_first_arrival_s": 0.002232173936869586,
+      "source_norm_error_nearest_branch_s_per_km": 5.103471779514576e-06,
+      "source_norm_error_first_arrival_s_per_km": 0.033570769276341,
+      "quadrature_minus_exact_saved_path_s": -6.591949208711867e-17
+    }
+  ],
+  "histories": [
+    {
+      "observation_index": "14099",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+      "channel_seed_id": "NC.JJR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+      "metadata_epoch_start": "1998-05-04T18:00:00",
+      "metadata_epoch_end": "1999-02-18T18:15:00",
+      "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+      "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+      "run_id": "straight_0.031250_1000",
+      "phases": {
+        "accepted": 12,
+        "final": 1,
+        "initial": 1
+      },
+      "last_accepted_updates": "12",
+      "final_projected_gradient_s_per_km": 1.893780038572956e-07,
+      "final_normal_gradient_s_per_km": 3.5268907145413365e-08,
+      "last100_action_drop_s": 0.3525447545208973
+    },
+    {
+      "observation_index": "14099",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+      "channel_seed_id": "NC.JJR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+      "metadata_epoch_start": "1998-05-04T18:00:00",
+      "metadata_epoch_end": "1999-02-18T18:15:00",
+      "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+      "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+      "run_id": "fmm_0.031250_1000",
+      "phases": {
+        "accepted": 10,
+        "final": 1,
+        "initial": 1
+      },
+      "last_accepted_updates": "10",
+      "final_projected_gradient_s_per_km": 7.571612122095997e-08,
+      "final_normal_gradient_s_per_km": 2.7349491411136664e-08,
+      "last100_action_drop_s": 0.0033451175764920293
+    },
+    {
+      "observation_index": "14099",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+      "channel_seed_id": "NC.JJR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+      "metadata_epoch_start": "1998-05-04T18:00:00",
+      "metadata_epoch_end": "1999-02-18T18:15:00",
+      "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+      "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+      "run_id": "straight_0.031250_4000",
+      "phases": {
+        "accepted": 12,
+        "final": 1,
+        "initial": 1
+      },
+      "last_accepted_updates": "12",
+      "final_projected_gradient_s_per_km": 1.893780038572956e-07,
+      "final_normal_gradient_s_per_km": 3.5268907145413365e-08,
+      "last100_action_drop_s": 0.3525447545208973
+    },
+    {
+      "observation_index": "14099",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+      "channel_seed_id": "NC.JJR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+      "metadata_epoch_start": "1998-05-04T18:00:00",
+      "metadata_epoch_end": "1999-02-18T18:15:00",
+      "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+      "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+      "run_id": "fmm_0.031250_4000",
+      "phases": {
+        "accepted": 10,
+        "final": 1,
+        "initial": 1
+      },
+      "last_accepted_updates": "10",
+      "final_projected_gradient_s_per_km": 7.571612122095997e-08,
+      "final_normal_gradient_s_per_km": 2.7349491411136664e-08,
+      "last100_action_drop_s": 0.0033451175764920293
+    },
+    {
+      "observation_index": "14099",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+      "channel_seed_id": "NC.JJR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+      "metadata_epoch_start": "1998-05-04T18:00:00",
+      "metadata_epoch_end": "1999-02-18T18:15:00",
+      "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+      "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+      "run_id": "straight_0.125000_1000",
+      "phases": {
+        "accepted": 211,
+        "final": 1,
+        "initial": 1
+      },
+      "last_accepted_updates": "211",
+      "final_projected_gradient_s_per_km": 1.7173494349388126e-06,
+      "final_normal_gradient_s_per_km": 1.3600517787817374e-06,
+      "last100_action_drop_s": 4.816572261034935e-07
+    },
+    {
+      "observation_index": "14099",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+      "channel_seed_id": "NC.JJR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+      "metadata_epoch_start": "1998-05-04T18:00:00",
+      "metadata_epoch_end": "1999-02-18T18:15:00",
+      "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+      "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+      "run_id": "fmm_0.125000_1000",
+      "phases": {
+        "accepted": 177,
+        "final": 1,
+        "initial": 1
+      },
+      "last_accepted_updates": "177",
+      "final_projected_gradient_s_per_km": 1.1601778107364288e-06,
+      "final_normal_gradient_s_per_km": 8.180369862304036e-07,
+      "last100_action_drop_s": 6.805602605908234e-07
+    },
+    {
+      "observation_index": "14099",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+      "channel_seed_id": "NC.JJR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+      "metadata_epoch_start": "1998-05-04T18:00:00",
+      "metadata_epoch_end": "1999-02-18T18:15:00",
+      "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+      "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+      "run_id": "straight_0.125000_4000",
+      "phases": {
+        "accepted": 211,
+        "final": 1,
+        "initial": 1
+      },
+      "last_accepted_updates": "211",
+      "final_projected_gradient_s_per_km": 1.7173494349388126e-06,
+      "final_normal_gradient_s_per_km": 1.3600517787817374e-06,
+      "last100_action_drop_s": 4.816572261034935e-07
+    },
+    {
+      "observation_index": "14099",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+      "channel_seed_id": "NC.JJR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+      "metadata_epoch_start": "1998-05-04T18:00:00",
+      "metadata_epoch_end": "1999-02-18T18:15:00",
+      "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+      "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+      "run_id": "fmm_0.125000_4000",
+      "phases": {
+        "accepted": 177,
+        "final": 1,
+        "initial": 1
+      },
+      "last_accepted_updates": "177",
+      "final_projected_gradient_s_per_km": 1.1601778107364288e-06,
+      "final_normal_gradient_s_per_km": 8.180369862304036e-07,
+      "last100_action_drop_s": 6.805602605908234e-07
+    },
+    {
+      "observation_index": "14099",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+      "channel_seed_id": "NC.JJR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+      "metadata_epoch_start": "1998-05-04T18:00:00",
+      "metadata_epoch_end": "1999-02-18T18:15:00",
+      "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+      "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+      "run_id": "straight_0.500000_1000",
+      "phases": {
+        "accepted": 920,
+        "final": 1,
+        "initial": 1
+      },
+      "last_accepted_updates": "920",
+      "final_projected_gradient_s_per_km": 1.0238593096378583e-06,
+      "final_normal_gradient_s_per_km": 3.9289582436048195e-07,
+      "last100_action_drop_s": 7.51766613404925e-08
+    },
+    {
+      "observation_index": "14099",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+      "channel_seed_id": "NC.JJR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+      "metadata_epoch_start": "1998-05-04T18:00:00",
+      "metadata_epoch_end": "1999-02-18T18:15:00",
+      "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+      "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+      "run_id": "fmm_0.500000_1000",
+      "phases": {
+        "accepted": 746,
+        "final": 1,
+        "initial": 1
+      },
+      "last_accepted_updates": "746",
+      "final_projected_gradient_s_per_km": 1.2295685247199316e-06,
+      "final_normal_gradient_s_per_km": 6.486418305594291e-07,
+      "last100_action_drop_s": 3.972202193835983e-07
+    },
+    {
+      "observation_index": "14099",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+      "channel_seed_id": "NC.JJR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+      "metadata_epoch_start": "1998-05-04T18:00:00",
+      "metadata_epoch_end": "1999-02-18T18:15:00",
+      "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+      "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+      "run_id": "straight_0.500000_4000",
+      "phases": {
+        "accepted": 920,
+        "final": 1,
+        "initial": 1
+      },
+      "last_accepted_updates": "920",
+      "final_projected_gradient_s_per_km": 1.0238593096378583e-06,
+      "final_normal_gradient_s_per_km": 3.9289582436048195e-07,
+      "last100_action_drop_s": 7.51766613404925e-08
+    },
+    {
+      "observation_index": "14099",
+      "event_i_resource_id": "quakeml:NC.anss.org/Event/NC/30204761",
+      "origin_i_resource_id": "quakeml:NC.anss.org/Origin/NC/4674144",
+      "arrival_i_resource_id": "quakeml:NC.anss.org/AssocArO/NC/54504884",
+      "pick_i_resource_id": "quakeml:NC.anss.org/Arrival/NC/54504884",
+      "channel_seed_id": "NC.JJR..EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JJR__E_H_Z",
+      "metadata_epoch_start": "1998-05-04T18:00:00",
+      "metadata_epoch_end": "1999-02-18T18:15:00",
+      "pick_i_source_sha256": "9116475ec8ffc3dd75f20c5ed5b9bb6efa4778007d2d20c235bdc839371d809e",
+      "channel_source_sha256": "21e58fb2c04ddfc878d204164461acbe33b652af54cd0f00a7c44bd49b36a786",
+      "run_id": "fmm_0.500000_4000",
+      "phases": {
+        "accepted": 746,
+        "final": 1,
+        "initial": 1
+      },
+      "last_accepted_updates": "746",
+      "final_projected_gradient_s_per_km": 1.2295685247199316e-06,
+      "final_normal_gradient_s_per_km": 6.486418305594291e-07,
+      "last100_action_drop_s": 3.972202193835983e-07
+    }
+  ],
+  "input_sha256": {
+    "data/development/initial_ray_first_arrival_003_14099_audit001/spacing0_031250/results.csv": "424eec2720401d71b76f972a4019f43dbcfd5ef2ae53a2fbed45db6db3ea3e4e",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/spacing0_031250/paths.csv": "9ed1fb8c5225e277b9b13a27d6963948b4185d93088f7fe196e607df49c1c469",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/spacing0_031250/history.csv": "6d9dbba101a11f28f0894db1229ddce4603bfc5b3071dbf199fdc941d2dbb13a",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/spacing0_031250/path_gradient_checks.csv": "f550d17436a6329bfbdd73678765dc264a657d1136b633070376c19f01dc44f1",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/spacing0_125000/results.csv": "4efd73080d9d42257f31c6eed271557f929c6406f82e570576c430e0a409ecbc",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/spacing0_125000/paths.csv": "f65b7687ea025145aae6869af94aff0744426b2a0fc333a34e86981d1a22d18e",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/spacing0_125000/history.csv": "d80c2e80c15aaf880086709c8cb5cbd5016ed3b3668b01dd1f255820025def03",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/spacing0_125000/path_gradient_checks.csv": "4c00c4a74dc25fe601ab5126fd43fd06dc8c65139d0980a34d0b844802917fa3",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/spacing0_500000/results.csv": "fe989fe1d4328499f179dccc99613bf78a2d40578779d90c6fd459e881100c10",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/spacing0_500000/paths.csv": "e126728009954aa3d07ab759eca3961c7ce50d2318519a5a90b0133f036b8675",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/spacing0_500000/history.csv": "ad2be2297e78979b1694b479b5d195ed071794664ce893f91cb8b1f6b2d3122e",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/spacing0_500000/path_gradient_checks.csv": "eeec19274e2955de98edbad4d6fdf2e63f86b85a6153d0d8f6f8243abfec4fa8",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/summary.json": "794a5d2e406eef5decec61b2be0a351cc64c3783064bca239153ad1ad84ef9b3",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/identified_ray.csv": "b465ceb1086f0d6308ff401076e2d781631698fd817273e1221c1722133ea279",
+    "data/development/initial_ray_first_arrival_003_14099_audit001/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810"
+  },
+  "source_sha256": {
+    "diagnostics/compare_initial_ray_branches.py": "858307c5611358694f935ad469cfafaa46c24cb3ef7a4a6b7397ee9059e42d64",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  },
+  "limitations": [
+    "Nearest branch by path turning depth is a diagnostic association, checked independently using time and source derivative; it does not substitute one branch for another.",
+    "Exact action/gradient checks concern the retained polygon, not the globally optimized ray.",
+    "Branch enumeration and distance closure are certified as recorded; minimum-time ranking uses ordinary floating-point arithmetic.",
+    "No observation, cohort, production source, inversion or original frozen diagnostic was changed."
+  ],
+  "output_sha256": {
+    "identified_branch_comparison.csv": "42f4ed6349f835e5cdabad657ec6a417d2604e1f5fff72de0b612eed5a3f1dc7",
+    "exact_source_gradient_checks.csv": "10103c4b72edbaea903da01cf2c6e3a16b3a61ba83873906ed7a3016b3492e87",
+    "reference_paths.csv": "42b22ee811ee19e1091f9894ae96c4e252f7a671c5da49b201b08476810ad43a",
+    "identified_ray.csv": "b465ceb1086f0d6308ff401076e2d781631698fd817273e1221c1722133ea279",
+    "source/compare_initial_ray_branches.py": "858307c5611358694f935ad469cfafaa46c24cb3ef7a4a6b7397ee9059e42d64",
+    "source/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  }
+}
