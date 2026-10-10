@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit/ray_math_review",
+  "controls_summary_sha256": "534fa492a55bb167f6b751efdb46642c235369a806d8e308d490cca6afac622c",
+  "review_request_sha256": "4eec5aa736eed7bdbbf0b703a341fd0f4b0c57676ac66a60f118fa00cd2356ee",
+  "source_sha256": {
+    "diagnostics/check_endpoint_mesh.cpp": "4c836a3db11a61552ab56b324600543ef8dc84460324c7596e92bbdfa7789e62",
+    "diagnostics/run_endpoint_mesh.py": "6cd7ba09fcd1edb8755af256efe5f7fa0a7e50f91fdfa0da37d4b3ac3ed933d0"
+  },
+  "reviewed_document_sha256": {
+    "diagnostics/check_endpoint_mesh.cpp": "4c836a3db11a61552ab56b324600543ef8dc84460324c7596e92bbdfa7789e62",
+    "diagnostics/run_endpoint_mesh.py": "6cd7ba09fcd1edb8755af256efe5f7fa0a7e50f91fdfa0da37d4b3ac3ed933d0",
+    "data/development/loma_boundary_endpoint_next_step/proposal.md": "ec910dddf91746f9dcbbd7fc9d9d0be27e84bbb9a40a3f3156bf8e79d615d4b3",
+    "data/development/loma_boundary_endpoint_next_step/plan.json": "c932679eecd4d70bb33926ae08a2d3edd1d092ad713a748818f3e1103f2a3fa9",
+    "data/development/loma_boundary_endpoint_mesh_controls_001/summary.json": "534fa492a55bb167f6b751efdb46642c235369a806d8e308d490cca6afac622c",
+    "data/development/loma_boundary_endpoint_mesh_controls_001/README.md": "5a0231f10928f37717d845337cf8f17f1daf58baee6bf12b8548fa8391e5cf99",
+    "data/development/loma_boundary_endpoint_mesh_controls_001/initialization.diff": "b8715de8f53d8b6c1a4605b177a5da6bcc30f6f7e966b2bf22a3d3c653ac803c"
+  },
+  "input_hashes_verified": 6,
+  "artifact_hashes_verified": 34,
+  "unchanged_optimizer_and_derivative_suffix_sha256": "393e741dff39ac594c9b160fc43c130c235db034ac2b2fd89c737a42eae888b1",
+  "compiler_sha256": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7",
+  "binary_sha256": "78e802761ffd68047bcc40b10ce14d4ec3cd60a5076313d45b5e5bcc0ae35c69",
+  "recorded_analytical_checks_passed": 836,
+  "cases": [
+    {
+      "name": "positive_guide",
+      "all_records": 75,
+      "optimized_records": 25,
+      "false_local_flags": 2,
+      "source_accuracy_failures": 24,
+      "optimizer_exceptions": 0,
+      "merges": 0,
+      "maximum_optimized_time_error_s": 1.560983994564058e-06,
+      "passing_recorded_analytical_checks": 254
+    },
+    {
+      "name": "homogeneous_oblique",
+      "all_records": 75,
+      "optimized_records": 25,
+      "false_local_flags": 0,
+      "source_accuracy_failures": 0,
+      "optimizer_exceptions": 0,
+      "merges": 0,
+      "maximum_optimized_time_error_s": 5.079270337660091e-15,
+      "passing_recorded_analytical_checks": 278
+    },
+    {
+      "name": "near_zero_guide",
+      "all_records": 90,
+      "optimized_records": 30,
+      "false_local_flags": 0,
+      "source_accuracy_failures": 8,
+      "optimizer_exceptions": 0,
+      "merges": 0,
+      "maximum_optimized_time_error_s": 8.687120458872322e-06,
+      "passing_recorded_analytical_checks": 304
+    }
+  ],
+  "native_execution_performed": false,
+  "scope": "Read-only source/formula, generated suffix, saved-table/count and hash review; no controls rerun, native trace or new arithmetic evaluation.",
+  "findings": [
+    "The generated trace changes only explicit-mesh initialization. Its complete suffix from initial merge through action, metric/L-BFGS updates, Armijo search, stopping and derivative extraction matches the captured trace byte for byte. Three ordinary-trace equal-initial-mesh parity checks and fifteen zero-budget mesh-retention checks are preserved.",
+    "The affine polygon formulas use J=log(v_b/v_a)/(v_b-v_a), with endpoint normal derivatives g*(J-1/v_a)/(v_b-v_a) and g*(1/v_b-J)/(v_b-v_a). The equal-speed limit is -g/(2*v_a^2); length derivatives and endpoint signs are correct. Decimal.from_float preserves the recorded binary64 geometry interpretation.",
+    "For the admitted positive-gradient affine fixtures, q_a=sqrt(v_B^2-v_a^2) and q_b analogously give the guide margin H-(q_a+q_b)/g. The nonnegative-margin branch uses two grazing legs plus the remaining bottom guide and source normal momentum -sqrt(1/v_a^2-1/v_B^2). The other branch and its source vector correctly differentiate the unconstrained affine asinh travel time. The homogeneous oblique formula retains a nonzero normal derivative.",
+    "These fixture branches remain in the finite box: their transverse paths stay between endpoint coordinates and their depth extrema stay between the shallow endpoint and the declared bottom. The reference is not asserted as a general negative-gradient or arbitrary-box API.",
+    "Fixed knots, affinely tied inserted knots and freely optimized knots are stored as distinct families. The tied source contraction includes all inserted internal gradient terms with weights 1-j/n. Only optimized rows carry solver convergence flags; the source comparison uses Euclidean vector error.",
+    "All240 saved evaluations and836 analytical/parity checks are retained separately from optimizer outcomes. Counts reproduce two false local flags and32 optimized source-accuracy failures, with no exceptions or merges. Every optimized time passes25 microseconds, which does not bound differences of two nearby approximate values.",
+    "The README examples match saved rows: the smallest positive-guide perturbations stop with zero updates despite source error; the near-zero-guide level16 value secant is positive while the continuous finite-step secant is negative. This is changing forward-error contamination, not a physical positive normal derivative.",
+    "The baseline first-edge partial -L/72 is the fixed-other-knot family derivative. Collinear guide-knot nonuniqueness and near-zero-guide branch changes prevent claiming a differentiable minimized-value envelope merely from local flags or coarse endpoint refinement."
+  ],
+  "disposition": "No material source/math/evidence issue in the declared invented scope. Keep the native ladder on hold: these controls already disprove refinement with unchanged stopping as a sufficient source-sensitivity correction. A native repetition could quantify the same effect but is not a new validation or correction without a concrete additional hypothesis.",
+  "limitations": [
+    "The80-digit evaluations are independent numerical consistency calculations, not outward interval certificates.",
+    "This review does not validate any modified optimizer, stopping rule, source-derivative substitution or zeroing of boundary components.",
+    "Only inward source motion belongs to this finite-bottom problem; no outward two-sided boundary derivative is inferred.",
+    "No native execution, expansion to48 failures, inverse run, production edit or flag promotion is authorized by a passed analytical-contract review."
+  ],
+  "material_issue_found": false
+}
