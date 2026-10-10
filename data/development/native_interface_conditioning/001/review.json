@@ -1,0 +1,23 @@
+{
+  "status": "passed_with_partial_native_eligibility",
+  "reviewer": "scientific_audit",
+  "reviewed_utc": "2026-10-10T05:25:45.365961+00:00",
+  "summary_sha256": "458edaed586a5321ca5b6d975afe385ec94ae0d0ec3fbd039659b3d3b5e5aeb1",
+  "maintained_source_sha256": "6ad7375994b44f3826ff395581eb7a65cdeb85f74d6bf5a0d3f08e0ca6b92507",
+  "verified_artifacts": 17,
+  "invented_controls_passed": 34,
+  "native_ineligible_edges": 8,
+  "full_curvature_available": false,
+  "findings": [
+    "Segment action second variation and signed-Dx endpoint derivatives agree with differentiation of L times mean slowness.",
+    "Exact transverse squared norm and guide-tangent and smooth equal-x limits are consistent.",
+    "Fixed-normal split/unsplit control keeps the same perturbed curve; no moving-split chain-rule term is omitted.",
+    "Eight moved non-guide kink endpoints are retained as ineligible, preventing a full-curvature or full-secant claim.",
+    "Decimal finite differences are numerical controls only; rational/log/sqrt interval enclosures remain the stated mathematical evidence.",
+    "Exact rational homogeneous longitudinal control addresses decimal cancellation without changing the diagnostic formulas or eligibility."
+  ],
+  "limitations": [
+    "No new optimizer, path, stopping flag, or numerical rerun in this review.",
+    "This does not approve a one-sided extension until its separate mathematical and source review."
+  ]
+}

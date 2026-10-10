@@ -1,0 +1,11 @@
+{
+  "status": "preserved_invented_control_failure",
+  "source_sha256": "c0767b50a6d4b3185ffe537b85ca2770f69ca4342bd931fc3afcb4e85604c9bc",
+  "failed_check": "homogeneous_longitudinal_independent_second_difference_enclosed",
+  "decimal_precision": 170,
+  "finite_difference_step": "1/1000000000000000000000000000000",
+  "computed_decimal_second_difference": "1E-110",
+  "exact_second_variation": "0",
+  "reason": "An interval exactly equal to zero cannot contain the tiny nonzero cancellation remainder of separately rounded Decimal actions.",
+  "correction": "Use the exact rational homogeneous collinear action identity for this zero-curvature gate; retain the Decimal display as a consistency observation. Other independent Decimal controls are unchanged."
+}

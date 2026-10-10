@@ -1,0 +1,586 @@
+{
+  "checks": [
+    {
+      "name": "homogeneous_transverse_independent_action_enclosed",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_transverse_independent_second_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_transverse_exact_curvature",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_transverse_reversal",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_transverse_metric_decomposition",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_longitudinal_independent_action_enclosed",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_longitudinal_exact_action_second_difference",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_longitudinal_exact_curvature",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_longitudinal_reversal",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_longitudinal_metric_decomposition",
+      "passed": true
+    },
+    {
+      "name": "affine_oblique_independent_action_enclosed",
+      "passed": true
+    },
+    {
+      "name": "affine_oblique_independent_second_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "affine_oblique_reversal",
+      "passed": true
+    },
+    {
+      "name": "affine_oblique_metric_decomposition",
+      "passed": true
+    },
+    {
+      "name": "affine_equal_x_independent_action_enclosed",
+      "passed": true
+    },
+    {
+      "name": "affine_equal_x_independent_second_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "affine_equal_x_reversal",
+      "passed": true
+    },
+    {
+      "name": "affine_equal_x_metric_decomposition",
+      "passed": true
+    },
+    {
+      "name": "crossing_fixed_normals_independent_action_enclosed",
+      "passed": true
+    },
+    {
+      "name": "crossing_fixed_normals_independent_second_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "crossing_fixed_normals_reversal",
+      "passed": true
+    },
+    {
+      "name": "crossing_fixed_normals_metric_decomposition",
+      "passed": true
+    },
+    {
+      "name": "fixed_fraction_crossing_action_additivity",
+      "passed": true
+    },
+    {
+      "name": "fixed_fraction_crossing_curvature_additivity",
+      "passed": true
+    },
+    {
+      "name": "fixed_fraction_crossing_fd_in_split_enclosure",
+      "passed": true
+    },
+    {
+      "name": "affine_tiny_nonzero_dx_independent_action_enclosed",
+      "passed": true
+    },
+    {
+      "name": "affine_tiny_nonzero_dx_independent_second_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "affine_tiny_nonzero_dx_reversal",
+      "passed": true
+    },
+    {
+      "name": "affine_tiny_nonzero_dx_metric_decomposition",
+      "passed": true
+    },
+    {
+      "name": "tiny_dx_retained_exactly",
+      "passed": true
+    },
+    {
+      "name": "moving_kink_endpoint_explicitly_ineligible",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_fixed_endpoint_polygon_longitudinal",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_parameterization_action_and_slope_unchanged",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_fixed_endpoint_polygon_transverse",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "name": "homogeneous_transverse",
+      "curvature": {
+        "lower_rational": "28356863910078205288614550619314017621/340282366920938463463374607431768211456",
+        "upper_rational": "14178431955039102644307275309657008811/170141183460469231731687303715884105728",
+        "lower_display": 0.08333333333333333,
+        "upper_display": 0.08333333333333333
+      },
+      "curvature_sign": "strictly_positive",
+      "independent_decimal_second_difference": "0.08333333333333333333333333333333333333333333333333333333333332812500000000000000000000000000000000000000000000",
+      "exact_dx": "2",
+      "contributions": {
+        "action": {
+          "lower_rational": "113427455640312821154458202477256070485/340282366920938463463374607431768211456",
+          "upper_rational": "56713727820156410577229101238628035243/170141183460469231731687303715884105728",
+          "lower_display": 0.3333333333333333,
+          "upper_display": 0.3333333333333333
+        },
+        "first_variation": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "geometric": {
+          "lower_rational": "28356863910078205288614550619314017621/340282366920938463463374607431768211456",
+          "upper_rational": "14178431955039102644307275309657008811/170141183460469231731687303715884105728",
+          "lower_display": 0.08333333333333333,
+          "upper_display": 0.08333333333333333
+        },
+        "cross": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "medium": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "total": {
+          "lower_rational": "28356863910078205288614550619314017621/340282366920938463463374607431768211456",
+          "upper_rational": "14178431955039102644307275309657008811/170141183460469231731687303715884105728",
+          "lower_display": 0.08333333333333333,
+          "upper_display": 0.08333333333333333
+        },
+        "midpoint_metric": {
+          "lower_rational": "28356863910078205288614550619314017621/340282366920938463463374607431768211456",
+          "upper_rational": "14178431955039102644307275309657008811/170141183460469231731687303715884105728",
+          "lower_display": 0.08333333333333333,
+          "upper_display": 0.08333333333333333
+        },
+        "mean_metric": {
+          "lower_rational": "28356863910078205288614550619314017621/340282366920938463463374607431768211456",
+          "upper_rational": "14178431955039102644307275309657008811/170141183460469231731687303715884105728",
+          "lower_display": 0.08333333333333333,
+          "upper_display": 0.08333333333333333
+        },
+        "mean_longitudinal": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "length": {
+          "lower_rational": "2",
+          "upper_rational": "2",
+          "lower_display": 2.0,
+          "upper_display": 2.0
+        }
+      }
+    },
+    {
+      "name": "homogeneous_longitudinal",
+      "curvature": {
+        "lower_rational": "0",
+        "upper_rational": "0",
+        "lower_display": 0.0,
+        "upper_display": 0.0
+      },
+      "curvature_sign": "exact_zero",
+      "independent_decimal_second_difference": "1E-110",
+      "exact_dx": "2",
+      "contributions": {
+        "action": {
+          "lower_rational": "113427455640312821154458202477256070485/340282366920938463463374607431768211456",
+          "upper_rational": "56713727820156410577229101238628035243/170141183460469231731687303715884105728",
+          "lower_display": 0.3333333333333333,
+          "upper_display": 0.3333333333333333
+        },
+        "first_variation": {
+          "lower_rational": "28356863910078205288614550619314017621/170141183460469231731687303715884105728",
+          "upper_rational": "56713727820156410577229101238628035243/340282366920938463463374607431768211456",
+          "lower_display": 0.16666666666666666,
+          "upper_display": 0.16666666666666666
+        },
+        "geometric": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "cross": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "medium": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "total": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "midpoint_metric": {
+          "lower_rational": "28356863910078205288614550619314017621/340282366920938463463374607431768211456",
+          "upper_rational": "14178431955039102644307275309657008811/170141183460469231731687303715884105728",
+          "lower_display": 0.08333333333333333,
+          "upper_display": 0.08333333333333333
+        },
+        "mean_metric": {
+          "lower_rational": "28356863910078205288614550619314017621/340282366920938463463374607431768211456",
+          "upper_rational": "14178431955039102644307275309657008811/170141183460469231731687303715884105728",
+          "lower_display": 0.08333333333333333,
+          "upper_display": 0.08333333333333333
+        },
+        "mean_longitudinal": {
+          "lower_rational": "28356863910078205288614550619314017621/340282366920938463463374607431768211456",
+          "upper_rational": "14178431955039102644307275309657008811/170141183460469231731687303715884105728",
+          "lower_display": 0.08333333333333333,
+          "upper_display": 0.08333333333333333
+        },
+        "length": {
+          "lower_rational": "2",
+          "upper_rational": "2",
+          "lower_display": 2.0,
+          "upper_display": 2.0
+        }
+      }
+    },
+    {
+      "name": "affine_oblique",
+      "curvature": {
+        "lower_rational": "2603976521051536200325824281946927643/85070591730234615865843651857942052864",
+        "upper_rational": "10415906084206144801303297127787710573/340282366920938463463374607431768211456",
+        "lower_display": 0.03060959690169954,
+        "upper_display": 0.03060959690169954
+      },
+      "curvature_sign": "strictly_positive",
+      "independent_decimal_second_difference": "0.03060959690169954226608042521219090385125478065279666106860424605589664401525644079092187939799093218747933070",
+      "exact_dx": "3",
+      "contributions": {
+        "action": {
+          "lower_rational": "171429478724240273425551178628162454635/340282366920938463463374607431768211456",
+          "upper_rational": "171429478724240273425551178628162454637/340282366920938463463374607431768211456",
+          "lower_display": 0.5037859595118849,
+          "upper_display": 0.5037859595118849
+        },
+        "first_variation": {
+          "lower_rational": "-2280810559551428813010941311109246203/21267647932558653966460912964485513216",
+          "upper_rational": "-36492968952822861008175060977747939247/340282366920938463463374607431768211456",
+          "lower_display": -0.10724319712194101,
+          "upper_display": -0.10724319712194101
+        },
+        "geometric": {
+          "lower_rational": "9410444174044789074076546593004462593/340282366920938463463374607431768211456",
+          "upper_rational": "4705222087022394537038273296502231297/170141183460469231731687303715884105728",
+          "lower_display": 0.027654809913295393,
+          "upper_display": 0.027654809913295393
+        },
+        "cross": {
+          "lower_rational": "814738107378611620269195371997109817/340282366920938463463374607431768211456",
+          "upper_rational": "407369053689305810134597685998554909/170141183460469231731687303715884105728",
+          "lower_display": 0.0023943001065580005,
+          "upper_display": 0.0023943001065580005
+        },
+        "medium": {
+          "lower_rational": "190723802782744106957555162786138161/340282366920938463463374607431768211456",
+          "upper_rational": "95361901391372053478777581393069081/170141183460469231731687303715884105728",
+          "lower_display": 0.0005604868818461494,
+          "upper_display": 0.0005604868818461494
+        },
+        "total": {
+          "lower_rational": "2603976521051536200325824281946927643/85070591730234615865843651857942052864",
+          "upper_rational": "10415906084206144801303297127787710573/340282366920938463463374607431768211456",
+          "lower_display": 0.03060959690169954,
+          "upper_display": 0.03060959690169954
+        },
+        "midpoint_metric": {
+          "lower_rational": "16045881403108688612034132535896708711/340282366920938463463374607431768211456",
+          "upper_rational": "2005735175388586076504266566987088589/42535295865117307932921825928971026432",
+          "lower_display": 0.04715460735829666,
+          "upper_display": 0.04715460735829666
+        },
+        "mean_metric": {
+          "lower_rational": "16340182070133434672243940443508697811/340282366920938463463374607431768211456",
+          "upper_rational": "4085045517533358668060985110877174453/85070591730234615865843651857942052864",
+          "lower_display": 0.04801947928712371,
+          "upper_display": 0.04801947928712371
+        },
+        "mean_longitudinal": {
+          "lower_rational": "6929737896088645598167393850504235217/340282366920938463463374607431768211456",
+          "upper_rational": "3464868948044322799083696925252117609/170141183460469231731687303715884105728",
+          "lower_display": 0.020364669373828317,
+          "upper_display": 0.020364669373828317
+        },
+        "length": {
+          "lower_rational": "273555566474057749216581250096526049113/85070591730234615865843651857942052864",
+          "upper_rational": "547111132948115498433162500193052098227/170141183460469231731687303715884105728",
+          "lower_display": 3.215630230262456,
+          "upper_display": 3.215630230262456
+        }
+      }
+    },
+    {
+      "name": "affine_equal_x",
+      "curvature": {
+        "lower_rational": "8004843500115254703124229720436662981/340282366920938463463374607431768211456",
+        "upper_rational": "4002421750057627351562114860218331491/170141183460469231731687303715884105728",
+        "lower_display": 0.02352412078400497,
+        "upper_display": 0.02352412078400497
+      },
+      "curvature_sign": "strictly_positive",
+      "independent_decimal_second_difference": "0.02352412078400497266430742690071269411841080733597211525011631583918980093999841337237071421887367118675913144",
+      "exact_dx": "0",
+      "contributions": {
+        "action": {
+          "lower_rational": "117060692919960647660745745723045058103/340282366920938463463374607431768211456",
+          "upper_rational": "14632586614995080957593218215380632263/42535295865117307932921825928971026432",
+          "lower_display": 0.34401045807689073,
+          "upper_display": 0.34401045807689073
+        },
+        "first_variation": {
+          "lower_rational": "-1494882200337775853140200937827713677/42535295865117307932921825928971026432",
+          "upper_rational": "-11959057602702206825121607502621709415/340282366920938463463374607431768211456",
+          "lower_display": -0.03514451163283693,
+          "upper_display": -0.03514451163283693
+        },
+        "geometric": {
+          "lower_rational": "2000258000035570202865626044307594357/85070591730234615865843651857942052864",
+          "upper_rational": "8001032000142280811462504177230377429/340282366920938463463374607431768211456",
+          "lower_display": 0.023512919792289,
+          "upper_display": 0.023512919792289
+        },
+        "cross": {
+          "lower_rational": "-162941623844633868538766972068707407/340282366920938463463374607431768211456",
+          "upper_rational": "-81470811922316934269383486034353703/170141183460469231731687303715884105728",
+          "lower_display": -0.00047884239585794315,
+          "upper_display": -0.00047884239585794315
+        },
+        "medium": {
+          "lower_rational": "2605517559650121253132695551171765/5316911983139663491615228241121378304",
+          "upper_rational": "166753123817607760200492515274992961/340282366920938463463374607431768211456",
+          "lower_display": 0.0004900433875739184,
+          "upper_display": 0.0004900433875739184
+        },
+        "total": {
+          "lower_rational": "8004843500115254703124229720436662981/340282366920938463463374607431768211456",
+          "upper_rational": "4002421750057627351562114860218331491/170141183460469231731687303715884105728",
+          "lower_display": 0.02352412078400497,
+          "upper_display": 0.02352412078400497
+        },
+        "midpoint_metric": {
+          "lower_rational": "4690457390178990100515402524631829791/170141183460469231731687303715884105728",
+          "upper_rational": "9380914780357980201030805049263659583/340282366920938463463374607431768211456",
+          "lower_display": 0.027568030824640263,
+          "upper_display": 0.027568030824640263
+        },
+        "mean_metric": {
+          "lower_rational": "4690457390178990100515402524631829791/170141183460469231731687303715884105728",
+          "upper_rational": "9380914780357980201030805049263659583/340282366920938463463374607431768211456",
+          "lower_display": 0.027568030824640263,
+          "upper_display": 0.027568030824640263
+        },
+        "mean_longitudinal": {
+          "lower_rational": "689941390107849694784150436016641077/170141183460469231731687303715884105728",
+          "upper_rational": "1379882780215699389568300872033282155/340282366920938463463374607431768211456",
+          "lower_display": 0.004055111032351267,
+          "upper_display": 0.004055111032351267
+        },
+        "length": {
+          "lower_rational": "95111812997468026224355918399974109709/42535295865117307932921825928971026432",
+          "upper_rational": "380447251989872104897423673599896438837/170141183460469231731687303715884105728",
+          "lower_display": 2.23606797749979,
+          "upper_display": 2.23606797749979
+        }
+      }
+    },
+    {
+      "name": "crossing_fixed_normals",
+      "curvature": {
+        "lower_rational": "14390060943676385559213505483062850803/340282366920938463463374607431768211456",
+        "upper_rational": "3597515235919096389803376370765712701/85070591730234615865843651857942052864",
+        "lower_display": 0.04228858836820007,
+        "upper_display": 0.04228858836820007
+      },
+      "curvature_sign": "strictly_positive",
+      "independent_decimal_second_difference": "0.04228858836820006701542741611071254690733234985996882979704984458720116964215962143653930702472760376190300987",
+      "exact_dx": "3",
+      "contributions": {
+        "action": {
+          "lower_rational": "12473980365105009343272493147880578469/21267647932558653966460912964485513216",
+          "upper_rational": "199583685841680149492359890366089255505/340282366920938463463374607431768211456",
+          "lower_display": 0.586523738057963,
+          "upper_display": 0.586523738057963
+        },
+        "first_variation": {
+          "lower_rational": "-8000198018291659451012948498028599343/170141183460469231731687303715884105728",
+          "upper_rational": "-16000396036583318902025896996057198685/340282366920938463463374607431768211456",
+          "lower_display": -0.047020937879807524,
+          "upper_display": -0.047020937879807524
+        },
+        "geometric": {
+          "lower_rational": "14390060943676385559213505483062850803/340282366920938463463374607431768211456",
+          "upper_rational": "3597515235919096389803376370765712701/85070591730234615865843651857942052864",
+          "lower_display": 0.04228858836820007,
+          "upper_display": 0.04228858836820007
+        },
+        "cross": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "medium": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "total": {
+          "lower_rational": "14390060943676385559213505483062850803/340282366920938463463374607431768211456",
+          "upper_rational": "3597515235919096389803376370765712701/85070591730234615865843651857942052864",
+          "lower_display": 0.04228858836820007,
+          "upper_display": 0.04228858836820007
+        },
+        "midpoint_metric": {
+          "lower_rational": "15622993651942324660835731942001793803/340282366920938463463374607431768211456",
+          "upper_rational": "3905748412985581165208932985500448451/85070591730234615865843651857942052864",
+          "lower_display": 0.045911851951976654,
+          "upper_display": 0.045911851951976654
+        },
+        "mean_metric": {
+          "lower_rational": "15672794410832580634962602626870333795/340282366920938463463374607431768211456",
+          "upper_rational": "3918198602708145158740650656717583449/85070591730234615865843651857942052864",
+          "lower_display": 0.04605820322883205,
+          "upper_display": 0.04605820322883205
+        },
+        "mean_longitudinal": {
+          "lower_rational": "1282733467156195075749097143807482991/340282366920938463463374607431768211456",
+          "upper_rational": "80170841697262192234318571487967687/21267647932558653966460912964485513216",
+          "lower_display": 0.0037696148606319838,
+          "upper_display": 0.0037696148606319838
+        },
+        "length": {
+          "lower_rational": "273555566474057749216581250096526049113/85070591730234615865843651857942052864",
+          "upper_rational": "547111132948115498433162500193052098227/170141183460469231731687303715884105728",
+          "lower_display": 3.215630230262456,
+          "upper_display": 3.215630230262456
+        }
+      }
+    },
+    {
+      "name": "affine_tiny_nonzero_dx",
+      "curvature": {
+        "lower_rational": "3694223050728541149057064953783786913/340282366920938463463374607431768211456",
+        "upper_rational": "7388446101457082298114129907567573827/340282366920938463463374607431768211456",
+        "lower_display": 0.010856345817022193,
+        "upper_display": 0.021712691634044386
+      },
+      "curvature_sign": "strictly_positive",
+      "independent_decimal_second_difference": "0.01628451872553328864021246185693851011989856941786407233620407760458992058903709172092616593885076866292119195",
+      "exact_dx": "1/1267650600228229401496703205376",
+      "contributions": {
+        "action": {
+          "lower_rational": "7316293307497540478796609107689872167/21267647932558653966460912964485513216",
+          "upper_rational": "117060692919960647660745745723037954673/340282366920938463463374607431768211456",
+          "lower_display": 0.34401045807689073,
+          "upper_display": 0.34401045807689073
+        },
+        "first_variation": {
+          "lower_rational": "-4502334343075409525413297912424354579/85070591730234615865843651857942052864",
+          "upper_rational": "-9004668686150819050826595824848344879/170141183460469231731687303715884105728",
+          "lower_display": -0.05292468585798319,
+          "upper_display": -0.05292468585798319
+        },
+        "geometric": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "cross": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "medium": {
+          "lower_rational": "3694223050728541149057064953783786913/340282366920938463463374607431768211456",
+          "upper_rational": "7388446101457082298114129907567573827/340282366920938463463374607431768211456",
+          "lower_display": 0.010856345817022193,
+          "upper_display": 0.021712691634044386
+        },
+        "total": {
+          "lower_rational": "3694223050728541149057064953783786913/340282366920938463463374607431768211456",
+          "upper_rational": "7388446101457082298114129907567573827/340282366920938463463374607431768211456",
+          "lower_display": 0.010856345817022193,
+          "upper_display": 0.021712691634044386
+        },
+        "midpoint_metric": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "mean_metric": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "mean_longitudinal": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "length": {
+          "lower_rational": "95111812997468026224355918399974109709/42535295865117307932921825928971026432",
+          "upper_rational": "380447251989872104897423673599896438837/170141183460469231731687303715884105728",
+          "lower_display": 2.23606797749979,
+          "upper_display": 2.23606797749979
+        }
+      }
+    }
+  ]
+}

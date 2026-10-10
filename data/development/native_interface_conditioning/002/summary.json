@@ -1,0 +1,602 @@
+{
+  "status": "completed_scalar_curvature_diagnostic",
+  "full_curvature_available": true,
+  "directional_kink_endpoints": true,
+  "curvature_basis": "Second derivative as h approaches zero from above along the unchanged saved direction",
+  "first_positive_geometric_events": {
+    "domain_face": {
+      "kind": "domain_face",
+      "node": 88,
+      "axis": 2,
+      "h": "24732930003549818090069855288213997914524530592429015/631781541535290516408015112489183042419120211492864",
+      "plane": "16"
+    },
+    "endpoint_x_piece": {
+      "kind": "endpoint_x_piece",
+      "node": 87,
+      "h": "144362445835118844791430759758025694220162608343/2033710302825545815401538767566958709879823400960",
+      "plane": "0"
+    },
+    "nonzero_dx_becomes_zero": {
+      "kind": "nonzero_dx_becomes_zero",
+      "edge": 87,
+      "h": "144362445835118844791430759758025694220162608343/2033710302825545815401538767566958709879823400960"
+    }
+  },
+  "native_case": {
+    "case_id": "row5_h0.03125",
+    "diagnostic_row": "5",
+    "spacing_km": "0.03125",
+    "reference_time_s": "15.127837995735218",
+    "reference_source_dx": "0.18633899812498247",
+    "reference_source_dy": "0.16396795782848875",
+    "reference_source_dz": "0.029871166420692513",
+    "event": "473",
+    "station": "2",
+    "diagnostic_selection": "farthest_source",
+    "straight_distance_km": "80.44926892701524",
+    "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+    "source_provider_event_dataid": "nc20091683",
+    "source_provider_event_datasource": "nc",
+    "source_provider_event_eventid": "20091683",
+    "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+    "source_magnitude_resource_id": "quakeml:NC.anss.org/Netmag/NC/1411939",
+    "source_origin_time_utc": "1989-10-20T04:02:56.690000Z",
+    "source_origin_time_provider_text": "1989-10-20T04:02:56.69",
+    "source_latitude_deg": "37.1996667",
+    "source_longitude_deg": "-122.0661667",
+    "source_geoid_depth_km": "14.115",
+    "source_magnitude": "2.47",
+    "source_magnitude_type": "Md",
+    "source_event_type": "earthquake",
+    "source_origin_evaluation_status": "final",
+    "source_origin_method_resource_id": "smi:NC.anss.org/origin/HYPO_m2g",
+    "source_earth_model_resource_id": "",
+    "source_east_km": "-16.542349064131866",
+    "source_north_km": "18.161383222015537",
+    "source_x_km": "1.1448300320121945",
+    "source_y_km": "24.539244432017355",
+    "source_selected": "1",
+    "source_exclusion_reasons": "",
+    "source_source_file": "raw/events_00001.xml",
+    "source_source_sha256": "7bda913aaa2d9d90825a713f1a739975c82fecccc1989d7f73cc0be0d73d5b49",
+    "source_source_url": "https://service.ncedc.org/fdsnws/event/1/query?start=1989-10-18T00%3A00%3A00&end=1989-11-18T00%3A00%3A00&minmag=2.0&maxmag=5.5&minlat=36.5&maxlat=37.6&minlon=-122.6&maxlon=-121.2&catalog=NCSS&format=xml&includearrivals=false&orderby=time-asc&limit=10000&offset=1",
+    "source_retrieved_utc": "2026-10-09T22:21:36.623257Z",
+    "source_id": "473",
+    "source_x": "1.1448300320121945",
+    "source_y": "24.539244432017355",
+    "source_z": "14.115",
+    "source_t": "0",
+    "source_coordinate_basis": "catalog-defined simulation truth",
+    "source_origin_resource_id_basis": "provider catalog geometry reference, not a simulated pick/origin identifier",
+    "source_simulation_origin_time_basis": "truth t=0; initial/inverted t is a simulated correction in seconds",
+    "receiver_network_code": "NC",
+    "receiver_station_code": "BSL",
+    "receiver_station_seed_id": "NC.BSL",
+    "receiver_station_fdsn_source_id": "FDSN:NC_BSL",
+    "receiver_location_code": "",
+    "receiver_channel_code": "EHZ",
+    "receiver_channel_seed_id": "NC.BSL..EHZ",
+    "receiver_channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+    "receiver_identifier_basis": "derived from provider SEED codes using FDSN Source Identifiers v1.0",
+    "receiver_latitude_deg": "36.776535",
+    "receiver_longitude_deg": "-121.35009",
+    "receiver_channel_sensor_elevation_m": "142.0",
+    "receiver_sensor_depth_below_ground_m": "0.0",
+    "receiver_station_elevation_m": "142.0",
+    "receiver_metadata_epoch_start": "1989-08-25T19:45:00",
+    "receiver_metadata_epoch_end": "1990-09-10T19:20:00",
+    "receiver_channel_epoch_start": "1989-08-25T19:45:00",
+    "receiver_channel_epoch_end": "1990-09-10T19:20:00",
+    "receiver_station_epoch_start": "1975-07-16T00:00:00",
+    "receiver_station_epoch_end": "2020-06-01T18:40:00",
+    "receiver_provider_channel_source_id": "",
+    "receiver_provider_channel_resource_ids_json": "[]",
+    "receiver_provider_station_resource_ids_json": "[]",
+    "receiver_provider_network_resource_ids_json": "[]",
+    "receiver_latitude_datum": "WGS84 (StationXML default)",
+    "receiver_longitude_datum": "WGS84 (StationXML default)",
+    "receiver_sensor_z_geoid_km": "-0.142",
+    "receiver_z_if_sensor_elevation_km": "-0.142",
+    "receiver_z_if_ground_elevation_km": "-0.142",
+    "receiver_vertical_coordinate_status": "stationxml_sensor_elevation_convention_applied",
+    "receiver_vertical_datum_basis": "NCEDC documents station elevations and catalog geoid depth on the same datum; StationXML supplies no explicit vertical-datum field",
+    "receiver_elevation_semantics": "Channel/Elevation interpreted as sensor elevation per StationXML; no separate burial correction",
+    "receiver_metadata_epoch_basis": "Intersection of provider StationXML network, station and channel epochs",
+    "receiver_metadata_source_kind": "StationXML channel metadata",
+    "receiver_stationxml_schema_version": "1.2",
+    "receiver_source_document_metadata_index": "39",
+    "receiver_source_file": "raw/ncedc_channel_epochs.xml",
+    "receiver_source_url": "https://service.ncedc.org/fdsnws/station/1/query?net=NC&cha=EHZ&start=1989-11-01T00%3A00%3A00Z&end=1989-11-01T00%3A00%3A00Z&level=channel&format=xml",
+    "receiver_source_sha256": "effac7f25ee0ae1fb7b80b47f8a9d770397db159a350187269a4976e62f71034",
+    "receiver_retrieved_utc": "2026-10-09T22:21:22.924933Z",
+    "receiver_east_km": "47.29029394047113",
+    "receiver_north_km": "-28.681081582242232",
+    "receiver_x_km": "13.158700251044163",
+    "receiver_y_km": "-53.71987480818031",
+    "receiver_snapshot_utc": "1989-11-01T00:00:00Z",
+    "receiver_selected": "1",
+    "receiver_exclusion_reasons": "",
+    "receiver_id": "2",
+    "receiver_x": "13.158700251044163",
+    "receiver_y": "-53.71987480818031",
+    "receiver_z": "-0.142",
+    "receiver_t": "0",
+    "original_converged": "0",
+    "original_updates": "0"
+  },
+  "original_local_flag": "0",
+  "checks": [
+    {
+      "name": "homogeneous_transverse_independent_action_enclosed",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_transverse_independent_second_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_transverse_exact_curvature",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_transverse_reversal",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_transverse_metric_decomposition",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_longitudinal_independent_action_enclosed",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_longitudinal_exact_action_second_difference",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_longitudinal_exact_curvature",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_longitudinal_reversal",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_longitudinal_metric_decomposition",
+      "passed": true
+    },
+    {
+      "name": "affine_oblique_independent_action_enclosed",
+      "passed": true
+    },
+    {
+      "name": "affine_oblique_independent_second_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "affine_oblique_reversal",
+      "passed": true
+    },
+    {
+      "name": "affine_oblique_metric_decomposition",
+      "passed": true
+    },
+    {
+      "name": "affine_equal_x_independent_action_enclosed",
+      "passed": true
+    },
+    {
+      "name": "affine_equal_x_independent_second_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "affine_equal_x_reversal",
+      "passed": true
+    },
+    {
+      "name": "affine_equal_x_metric_decomposition",
+      "passed": true
+    },
+    {
+      "name": "crossing_fixed_normals_independent_action_enclosed",
+      "passed": true
+    },
+    {
+      "name": "crossing_fixed_normals_independent_second_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "crossing_fixed_normals_reversal",
+      "passed": true
+    },
+    {
+      "name": "crossing_fixed_normals_metric_decomposition",
+      "passed": true
+    },
+    {
+      "name": "fixed_fraction_crossing_action_additivity",
+      "passed": true
+    },
+    {
+      "name": "fixed_fraction_crossing_curvature_additivity",
+      "passed": true
+    },
+    {
+      "name": "fixed_fraction_crossing_fd_in_split_enclosure",
+      "passed": true
+    },
+    {
+      "name": "affine_tiny_nonzero_dx_independent_action_enclosed",
+      "passed": true
+    },
+    {
+      "name": "affine_tiny_nonzero_dx_independent_second_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "affine_tiny_nonzero_dx_reversal",
+      "passed": true
+    },
+    {
+      "name": "affine_tiny_nonzero_dx_metric_decomposition",
+      "passed": true
+    },
+    {
+      "name": "tiny_dx_retained_exactly",
+      "passed": true
+    },
+    {
+      "name": "moving_kink_endpoint_explicitly_ineligible",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_fixed_endpoint_polygon_longitudinal",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_parameterization_action_and_slope_unchanged",
+      "passed": true
+    },
+    {
+      "name": "homogeneous_fixed_endpoint_polygon_transverse",
+      "passed": true
+    },
+    {
+      "name": "kink_right_forward_probes_within_endpoint_pieces",
+      "passed": true
+    },
+    {
+      "name": "kink_right_one_sided_forward_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "kink_right_endpoint_reversal",
+      "passed": true
+    },
+    {
+      "name": "positive_normal_uses_right_slope",
+      "passed": true
+    },
+    {
+      "name": "kink_left_reversed_direction_forward_probes_within_endpoint_pieces",
+      "passed": true
+    },
+    {
+      "name": "kink_left_reversed_direction_one_sided_forward_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "kink_left_reversed_direction_endpoint_reversal",
+      "passed": true
+    },
+    {
+      "name": "negative_normal_uses_left_slope",
+      "passed": true
+    },
+    {
+      "name": "two_moved_kinks_forward_probes_within_endpoint_pieces",
+      "passed": true
+    },
+    {
+      "name": "two_moved_kinks_one_sided_forward_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "two_moved_kinks_endpoint_reversal",
+      "passed": true
+    },
+    {
+      "name": "independent_endpoint_sides",
+      "passed": true
+    },
+    {
+      "name": "fixed_kink_normals_forward_probes_within_endpoint_pieces",
+      "passed": true
+    },
+    {
+      "name": "fixed_kink_normals_one_sided_forward_difference_enclosed",
+      "passed": true
+    },
+    {
+      "name": "fixed_kink_normals_endpoint_reversal",
+      "passed": true
+    },
+    {
+      "name": "zero_normal_exact_eligible_interval_parity",
+      "passed": true
+    },
+    {
+      "name": "transverse_first_variation_remains_unique",
+      "passed": true
+    },
+    {
+      "name": "one_sided_curvatures_need_not_equal",
+      "passed": true
+    },
+    {
+      "name": "moved_aligned_kink_remains_ineligible",
+      "passed": true
+    },
+    {
+      "name": "native_action_matches_saved_enclosure",
+      "passed": true
+    },
+    {
+      "name": "native_first_variation_matches_saved_enclosure",
+      "passed": true
+    },
+    {
+      "name": "native_metric_decomposition",
+      "passed": true
+    }
+  ],
+  "path_nodes": 2705,
+  "edge_count": 2704,
+  "inconclusive_edges": [],
+  "total_curvature_sign": "strictly_positive",
+  "contributions": {
+    "action": {
+      "lower_rational": "2573869058823214783826668172334968838023/170141183460469231731687303715884105728",
+      "upper_rational": "160866816176450923989166760770935552461/10633823966279326983230456482242756608",
+      "lower_display": 15.127842692014836,
+      "upper_display": 15.127842692014836
+    },
+    "first_variation": {
+      "lower_rational": "-1161356404862596471119946219815505/170141183460469231731687303715884105728",
+      "upper_rational": "-2322712809725192942239892439628313/340282366920938463463374607431768211456",
+      "lower_display": -6.825839466036318e-06,
+      "upper_display": -6.825839466036318e-06
+    },
+    "geometric": {
+      "lower_rational": "778767126147172453190010926851561046791/170141183460469231731687303715884105728",
+      "upper_rational": "1557534252294344906380021853703122096281/340282366920938463463374607431768211456",
+      "lower_display": 4.577181786960545,
+      "upper_display": 4.577181786960545
+    },
+    "cross": {
+      "lower_rational": "5545121599972561557763869236942305623/340282366920938463463374607431768211456",
+      "upper_rational": "2772560799986280778881934618471153137/170141183460469231731687303715884105728",
+      "lower_display": 0.016295647788475975,
+      "upper_display": 0.016295647788475975
+    },
+    "medium": {
+      "lower_rational": "-1791354374904207384008553371947764519/340282366920938463463374607431768211456",
+      "upper_rational": "-1791354374904207384008553371947763865/340282366920938463463374607431768211456",
+      "lower_display": -0.005264317370051715,
+      "upper_display": -0.005264317370051715
+    },
+    "total": {
+      "lower_rational": "1561288019519413260553777169568116635353/340282366920938463463374607431768211456",
+      "upper_rational": "390322004879853315138444292392029159513/85070591730234615865843651857942052864",
+      "lower_display": 4.588213117378969,
+      "upper_display": 4.588213117378969
+    },
+    "midpoint_metric": {
+      "lower_rational": "5206766820003184312384707957621054913331/340282366920938463463374607431768211456",
+      "upper_rational": "1301691705000796078096176989405263729009/85070591730234615865843651857942052864",
+      "lower_display": 15.301312457406674,
+      "upper_display": 15.301312457406674
+    },
+    "mean_metric": {
+      "lower_rational": "2603394999508808888386968107245267017591/170141183460469231731687303715884105728",
+      "upper_rational": "2603394999508808888386968107245267018943/170141183460469231731687303715884105728",
+      "lower_display": 15.301380574407984,
+      "upper_display": 15.301380574407984
+    },
+    "mean_longitudinal": {
+      "lower_rational": "3649255746723272870393914360787411941289/340282366920938463463374607431768211456",
+      "upper_rational": "3649255746723272870393914360787411943993/340282366920938463463374607431768211456",
+      "lower_display": 10.72419878744744,
+      "upper_display": 10.72419878744744
+    }
+  },
+  "contributions_complete": true,
+  "groups": {
+    "smooth_or_contact_leg": {
+      "edges": 830,
+      "contributions": {
+        "action": {
+          "lower_rational": "228489709252042142645153129432714538855/42535295865117307932921825928971026432",
+          "upper_rational": "228489709252042142645153129432714538959/42535295865117307932921825928971026432",
+          "lower_display": 5.37176724893605,
+          "upper_display": 5.37176724893605
+        },
+        "first_variation": {
+          "lower_rational": "-37329610841510717383201868080828742575/340282366920938463463374607431768211456",
+          "upper_rational": "-37329610841510717383201868080828741747/340282366920938463463374607431768211456",
+          "lower_display": -0.10970186665647566,
+          "upper_display": -0.10970186665647566
+        },
+        "geometric": {
+          "lower_rational": "389383563073580655122123084990058326049/85070591730234615865843651857942052864",
+          "upper_rational": "778767126147161310244246169980116652513/170141183460469231731687303715884105728",
+          "lower_display": 4.577181786960479,
+          "upper_display": 4.577181786960479
+        },
+        "cross": {
+          "lower_rational": "5545121599972561557763869236942305623/340282366920938463463374607431768211456",
+          "upper_rational": "2772560799986280778881934618471153137/170141183460469231731687303715884105728",
+          "lower_display": 0.016295647788475975,
+          "upper_display": 0.016295647788475975
+        },
+        "medium": {
+          "lower_rational": "-1791354374904207384008553371947764519/340282366920938463463374607431768211456",
+          "upper_rational": "-1791354374904207384008553371947763865/340282366920938463463374607431768211456",
+          "lower_display": -0.005264317370051715,
+          "upper_display": -0.005264317370051715
+        },
+        "total": {
+          "lower_rational": "1561288019519390974662247655825227845967/340282366920938463463374607431768211456",
+          "upper_rational": "1561288019519390974662247655825227846797/340282366920938463463374607431768211456",
+          "lower_display": 4.588213117378904,
+          "upper_display": 4.588213117378904
+        },
+        "midpoint_metric": {
+          "lower_rational": "4813508541264457859609867798399136902829/340282366920938463463374607431768211456",
+          "upper_rational": "4813508541264457859609867798399136903665/340282366920938463463374607431768211456",
+          "lower_display": 14.145630244728,
+          "upper_display": 14.145630244728
+        },
+        "mean_metric": {
+          "lower_rational": "601691465034861415499887006908577003085/42535295865117307932921825928971026432",
+          "upper_rational": "4813531720278891323999096055268616025515/340282366920938463463374607431768211456",
+          "lower_display": 14.14569836172931,
+          "upper_display": 14.14569836172931
+        },
+        "mean_longitudinal": {
+          "lower_rational": "3255997467984568703510603715308382720175/340282366920938463463374607431768211456",
+          "upper_rational": "203499841749035543969412732206773920063/21267647932558653966460912964485513216",
+          "lower_display": 9.56851657476883,
+          "upper_display": 9.56851657476883
+        }
+      }
+    },
+    "aligned_kink": {
+      "edges": 1874,
+      "contributions": {
+        "action": {
+          "lower_rational": "1659910221815046213246055654604110682603/170141183460469231731687303715884105728",
+          "upper_rational": "414977555453761553311513913651027670885/42535295865117307932921825928971026432",
+          "lower_display": 9.756075443078785,
+          "upper_display": 9.756075443078785
+        },
+        "first_variation": {
+          "lower_rational": "37327288128700992190259628188389111565/340282366920938463463374607431768211456",
+          "upper_rational": "18663644064350496095129814094194556717/170141183460469231731687303715884105728",
+          "lower_display": 0.10969504081700963,
+          "upper_display": 0.10969504081700963
+        },
+        "geometric": {
+          "lower_rational": "11142945764756871444394693/170141183460469231731687303715884105728",
+          "upper_rational": "22285891529513742888791255/340282366920938463463374607431768211456",
+          "lower_display": 6.549234898995418e-14,
+          "upper_display": 6.549234898995418e-14
+        },
+        "cross": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "medium": {
+          "lower_rational": "0",
+          "upper_rational": "0",
+          "lower_display": 0.0,
+          "upper_display": 0.0
+        },
+        "total": {
+          "lower_rational": "11142945764756871444394693/170141183460469231731687303715884105728",
+          "upper_rational": "22285891529513742888791255/340282366920938463463374607431768211456",
+          "lower_display": 6.549234898995418e-14,
+          "upper_display": 6.549234898995418e-14
+        },
+        "midpoint_metric": {
+          "lower_rational": "196629139369363226387420079610959005251/170141183460469231731687303715884105728",
+          "upper_rational": "393258278738726452774840159221918012371/340282366920938463463374607431768211456",
+          "lower_display": 1.1556822126786737,
+          "upper_display": 1.1556822126786737
+        },
+        "mean_metric": {
+          "lower_rational": "196629139369363226387420079610959005251/170141183460469231731687303715884105728",
+          "upper_rational": "393258278738726452774840159221918012371/340282366920938463463374607431768211456",
+          "lower_display": 1.1556822126786737,
+          "upper_display": 1.1556822126786737
+        },
+        "mean_longitudinal": {
+          "lower_rational": "196629139369352083441655322739514610557/170141183460469231731687303715884105728",
+          "upper_rational": "393258278738704166883310645479029222985/340282366920938463463374607431768211456",
+          "lower_display": 1.1556822126786082,
+          "upper_display": 1.1556822126786082
+        }
+      }
+    }
+  },
+  "min_length_bounds": {
+    "lower_rational": "9445746460224748745274741165220298565/340282366920938463463374607431768211456",
+    "upper_rational": "4722873230112374372637370582610149283/170141183460469231731687303715884105728",
+    "lower_display": 0.02775855400823453,
+    "upper_display": 0.02775855400823453
+  },
+  "max_length_bounds": {
+    "lower_rational": "10629094269895927044116864744045220057/340282366920938463463374607431768211456",
+    "upper_rational": "5314547134947963522058432372022610029/170141183460469231731687303715884105728",
+    "lower_display": 0.031236100671550523,
+    "upper_display": 0.031236100671550523
+  },
+  "arithmetic": {
+    "sqrt_relative_bits": 128,
+    "log_absolute_tail_bits": 160,
+    "component_outward_absolute_bits": 128,
+    "max_log_terms": 11,
+    "max_log_tail_rational": "33257889701318625023300943982405863087404024335600945813687069361996063042592041534085608728614638054644902250629462704333655335215383154296875/48622122830874811991803350983485776857269223146690862246963439579990924138353844143363880671942071156095106854132747257001014118666568651428630014088888077332218927510271336918800661992174936"
+  },
+  "input_source_sha256": {
+    "diagnostics/check_native_interface_curvature.py": "5a8c959322b81fa593c783fb11b0a02cc24062de6e03b1f57b1e00431b112d42",
+    "diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "data/development/native_interface_conditioning/proposal.md": "f6717cb9006405b2332574054234d45f000b16c4a300fd0c2bd671b5bd9c477d",
+    "data/development/native_interface_support/001/summary.json": "4ab53a668bda8332b16259af18dd667ac3fff88382c6d38bf0ef61c02c43dbd1",
+    "data/development/native_interface_support/001/support_vector.csv": "6636cf7717010d99a2af9215f7fe4e001d8f476b584e5a20263ae3d35cea781a",
+    "data/development/native_interface_step/001/summary.json": "167bfd760019f461bdfcf373ce699575739bcc0704874c3ffde94044eedc23eb",
+    "data/development/native_interface_step/001/directions.csv": "a9046fd20c732f79beac66d7a269b80381ca62f9f71bb3e3fe6aacb92d8ee7c1",
+    "data/development/interface_moment_set/001/native_tangent_curvature.csv": "0bc560a2e48d5adb2dcf22cdad67809c0ace72dd1e8352375066f17c1c1861ed",
+    "data/development/native_interface_support/001/source/data/development/interface_directional/001/inputs/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "data/development/native_interface_support/001/source/data/development/interface_directional/001/inputs/native_path.csv": "55c0d830b86030c59775f7c1ceceee1110a0ecaedf39d964ba448fb37be57117",
+    "data/development/native_interface_support/001/source/data/development/interface_directional/001/inputs/native_case.csv": "df6e60bce09e0a8f2124bedfdb98e807c9d545d53f37e6f60ee79d6155564ae9",
+    "data/development/native_interface_conditioning/one_sided_extension.md": "5465e4e6948acee1d5dd5fcf7c48caeec8c30abaa9c46294ae7dfe2244d681bf"
+  },
+  "elapsed_seconds": 16.90848822996486,
+  "limitations": [
+    "Only the frozen original polygon and saved tangent direction; no new solve, direction, step or optimizer.",
+    "A scalar second variation does not determine the Hessian spectrum or the production convergence rate.",
+    "Midpoint metric is the continuous exact-coordinate formula used by production; this is not a bitwise replay of its binary64 sampling.",
+    "Moved aligned kink endpoints remain ineligible; transverse endpoint sides are used only under the explicit directional option.",
+    "Finite interval cancellation is preserved without a changed threshold; one-sided curvature is not a two-sided Hessian.",
+    "Native flags and all source/model derivative choices remain unchanged.",
+    "Decimal finite differences are independent controls, not interval proofs; exact rational enclosures are authoritative."
+  ],
+  "artifact_sha256": {
+    "invented_controls.json": "0697c52ccac7cf9e7fe0ce6cf639a2c3f071defde8d3cbb8523acbb5e9bbb212",
+    "native_edge_curvature.csv": "efd0bdec8d5a8997186f563a7ab38902848fa15ee8c10ee09d709b9cdbeda73c",
+    "saved_secant_comparison.json": "6c02a8f0cecc7aaf3b84b30438c00613ccc2b7875b3332f3daf503c92a34e3d9",
+    "source/diagnostics/check_native_interface_curvature.py": "5a8c959322b81fa593c783fb11b0a02cc24062de6e03b1f57b1e00431b112d42",
+    "source/diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "source/diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/data/development/native_interface_conditioning/proposal.md": "f6717cb9006405b2332574054234d45f000b16c4a300fd0c2bd671b5bd9c477d",
+    "source/data/development/native_interface_conditioning/one_sided_extension.md": "5465e4e6948acee1d5dd5fcf7c48caeec8c30abaa9c46294ae7dfe2244d681bf",
+    "source/data/development/native_interface_support/001/summary.json": "4ab53a668bda8332b16259af18dd667ac3fff88382c6d38bf0ef61c02c43dbd1",
+    "source/data/development/native_interface_support/001/support_vector.csv": "6636cf7717010d99a2af9215f7fe4e001d8f476b584e5a20263ae3d35cea781a",
+    "source/data/development/native_interface_support/001/source/data/development/interface_directional/001/inputs/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "source/data/development/native_interface_support/001/source/data/development/interface_directional/001/inputs/native_path.csv": "55c0d830b86030c59775f7c1ceceee1110a0ecaedf39d964ba448fb37be57117",
+    "source/data/development/native_interface_support/001/source/data/development/interface_directional/001/inputs/native_case.csv": "df6e60bce09e0a8f2124bedfdb98e807c9d545d53f37e6f60ee79d6155564ae9",
+    "source/data/development/native_interface_step/001/summary.json": "167bfd760019f461bdfcf373ce699575739bcc0704874c3ffde94044eedc23eb",
+    "source/data/development/native_interface_step/001/directions.csv": "a9046fd20c732f79beac66d7a269b80381ca62f9f71bb3e3fe6aacb92d8ee7c1",
+    "source/data/development/interface_moment_set/001/native_tangent_curvature.csv": "0bc560a2e48d5adb2dcf22cdad67809c0ace72dd1e8352375066f17c1c1861ed"
+  }
+}
