@@ -1,0 +1,58 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T04:12:38Z",
+  "scope": "Complete original 14,262-window availability inventory; empty supported results retained; no waveform samples",
+  "controller_sha256": "b52fab6c7f594aa9dbbc90df0909bc553c2278f099bb98a1efe00a2751faa5f1",
+  "acquisition_source_sha256": "8427457e1ca971275eb1e4b0d986f862d0d06e07cc09bb8e15d8a35762298901",
+  "stages": [
+    {
+      "stage": "routable_availability",
+      "status": "completed",
+      "command": [
+        "python3",
+        "data/authoritative/waveforms/cohort_cc_002/acquire.py",
+        "routable_availability",
+        "--fetch",
+        "--batches",
+        "142",
+        "--inventory-no-spans",
+        "--summary",
+        "routable_availability_all_001.json"
+      ],
+      "supervised_pid": 102835,
+      "returncode": 0,
+      "seconds": 1753.8708685250022,
+      "output_sha256": {
+        "routable_availability_stdout.log": "5d4847b54c2b5f5c1b14b59ca5323a684d38672ffcc31f18abd73151bdd019f1",
+        "routable_availability_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "routable_availability_resources.txt": "3aefa35e100112889fb851ddbf29793cdc0be961d7ee9f82ed4cad4186194b70",
+        "routable_availability_all_001.json": "00072e33a51d223f6d1acb75a6f68bbe2c19a7bb30ee4e73416e0942e011eb79"
+      }
+    },
+    {
+      "stage": "cmw1_availability",
+      "status": "completed",
+      "command": [
+        "python3",
+        "data/authoritative/waveforms/cohort_cc_002/acquire.py",
+        "cmw1_availability",
+        "--fetch",
+        "--batches",
+        "2",
+        "--inventory-no-spans",
+        "--summary",
+        "cmw1_availability_all_001.json"
+      ],
+      "supervised_pid": 120425,
+      "returncode": 0,
+      "seconds": 5.2656013710657135,
+      "output_sha256": {
+        "cmw1_availability_stdout.log": "470d683669f7b13a69edfc2893415404de82b1379de7cf69700c7c0a777bd896",
+        "cmw1_availability_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cmw1_availability_resources.txt": "a5a5fe4435ad2921f3acf4eeb0a0213edfe59404e47a3dfae514375a331d73b3",
+        "cmw1_availability_all_001.json": "c509290c8a110347bcd197a00de24f81c2aff04371a0071f914c6cd326581af4"
+      }
+    }
+  ],
+  "finished_utc": "2026-10-10T04:41:57Z"
+}

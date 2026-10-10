@@ -1,0 +1,25 @@
+{
+  "status": "passed_read_only_review",
+  "reviewer": "ray_math_review",
+  "scope": "Exact sample-grid indexing and alternative-trace edge correction; no decoding rerun, observational request or waveform measurement.",
+  "file_sha256": {
+    "acquire.py": "1a6b52502427615a6b140cf6fd0aef9170062f5bb8ec097466ea1349d80f12fa",
+    "check_decode.py": "13764c9abf31f7aec6ddaac4f1721a6e4fd41651171f92b77a9b3a0db2a09bfc",
+    "decode_checks_002.json": "889bba4210dc90ce62ffaa9e532c55accb75ac2ffb3df990db2184f9f3a7d392",
+    "pilot_decode_checks.json": "b2f0a07638a07c18f71d14759f9856723d4eaa466863858aaef0acc2a9c8b972",
+    "pilot_decode_checks_002.json": "59ec4a6bc005b7c36607eba226249c4fe667891775389958ee695fc0b6c68d7a",
+    "edge_counterexample_001.json": "f5e3d1e8235e2dafad045ca36a4157b4396b6fba406b3ce9fbe5a32c536f0c1c"
+  },
+  "findings": [
+    "For positive decoded rate f, the alternate trace indices in requested [a,b) are exactly [max(0,ceil((a-start)f)),min(N,ceil((b-start)f))). A nonempty intersection is rejected, including sub-sample leading/trailing margins; a sample at b is excluded.",
+    "Original first/stop indexing, native epoch containment and unique continuous support are unchanged.",
+    "All 17 recorded invented outcomes match their expected acceptance and the recorded helper hashes match maintained sources.",
+    "Both authoritative pilot raw/native/source hashes were independently rechecked; saved decoded dictionaries equal their prior versions exactly.",
+    "The previously accepted ambiguous leading/trailing examples and original helper remain preserved."
+  ],
+  "material_issue_found": false,
+  "limitations": [
+    "Rational indexing is relative to the standard decoder-provided sampling rate and start time.",
+    "This does not certify waveform correlation quality, calibration or future provider response completeness."
+  ]
+}

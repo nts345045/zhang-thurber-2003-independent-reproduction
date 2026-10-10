@@ -1,0 +1,202 @@
+{
+  "status": "demonstrated_invented_decoder_defect",
+  "scope": "Invented XX.TEST records only; an alternate in-window edge sample is silently ignored by the original overlap test",
+  "source_sha256": "3ea8ab17437846b82ac280790e08d07aee2dcc50c4d5f13156382ff4e2eb2944",
+  "native_context": {
+    "original_observation_index": "invented_0",
+    "channel_seed_id": "XX.TEST..EHZ",
+    "channel_fdsn_source_id": "FDSN:XX_TEST__E_H_Z",
+    "event_i_resource_id": "urn:example:invented-event",
+    "pick_i_resource_id": "urn:example:invented-pick",
+    "request_start_utc": "2000-01-01T00:00:00Z",
+    "request_end_utc": "2000-01-01T00:00:05Z",
+    "metadata_epoch_start": "1999-01-01T00:00:00",
+    "metadata_epoch_end": "2001-01-01T00:00:00",
+    "availability_sample_rates_hz": "[100.0]",
+    "availability_quality_codes": "[\"D\"]"
+  },
+  "results": [
+    {
+      "case": "trailing",
+      "expected_rejection": true,
+      "actual_accepted": true,
+      "raw_file": "edge_counterexample_trailing.mseed",
+      "raw_sha256": "97cf9ca71d76820d9e0c6995ef01721b59d09089bad7dd417ab6bd9ab36903cb",
+      "decoded_result": {
+        "traces": [
+          {
+            "trace_index": 0,
+            "channel_seed_id": "XX.TEST..EHZ",
+            "channel_fdsn_source_id": "FDSN:XX_TEST__E_H_Z",
+            "identifier_basis": "FDSN source ID derived from verified provider SEED codes",
+            "provider_waveform_resource_id": null,
+            "first_sample_utc": "2000-01-01T00:00:00.000000Z",
+            "first_sample_unix_ns": 946684800000000000,
+            "last_sample_utc": "2000-01-01T00:00:04.990000Z",
+            "sample_rate_hz": 100.0,
+            "sample_count": 500,
+            "data_type": "int32",
+            "miniseed_quality": "D",
+            "miniseed_encoding": "STEIM2",
+            "miniseed_record_length_bytes": 512,
+            "miniseed_record_count": 1,
+            "miniseed_byte_order": ">",
+            "miniseed_timing_quality": false,
+            "miniseed_calibration_type": false,
+            "decoded_samples_sha256": "2253930180b5ae89248437a25b4c5ffeef3028bc8b3afb41da441cdbed841c56",
+            "decoded_sample_byte_order": "little",
+            "native_pick_rows": [
+              "invented_0"
+            ]
+          },
+          {
+            "trace_index": 1,
+            "channel_seed_id": "XX.TEST..EHZ",
+            "channel_fdsn_source_id": "FDSN:XX_TEST__E_H_Z",
+            "identifier_basis": "FDSN source ID derived from verified provider SEED codes",
+            "provider_waveform_resource_id": null,
+            "first_sample_utc": "2000-01-01T00:00:04.995000Z",
+            "first_sample_unix_ns": 946684804995000000,
+            "last_sample_utc": "2000-01-01T00:00:04.995000Z",
+            "sample_rate_hz": 100.0,
+            "sample_count": 1,
+            "data_type": "int32",
+            "miniseed_quality": "R",
+            "miniseed_encoding": "STEIM2",
+            "miniseed_record_length_bytes": 512,
+            "miniseed_record_count": 1,
+            "miniseed_byte_order": ">",
+            "miniseed_timing_quality": false,
+            "miniseed_calibration_type": false,
+            "decoded_samples_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "decoded_sample_byte_order": "little",
+            "native_pick_rows": [
+              "invented_0"
+            ]
+          }
+        ],
+        "windows": [
+          {
+            "original_observation_index": "invented_0",
+            "native_pick": {
+              "original_observation_index": "invented_0",
+              "channel_seed_id": "XX.TEST..EHZ",
+              "channel_fdsn_source_id": "FDSN:XX_TEST__E_H_Z",
+              "event_i_resource_id": "urn:example:invented-event",
+              "pick_i_resource_id": "urn:example:invented-pick",
+              "request_start_utc": "2000-01-01T00:00:00Z",
+              "request_end_utc": "2000-01-01T00:00:05Z",
+              "metadata_epoch_start": "1999-01-01T00:00:00",
+              "metadata_epoch_end": "2001-01-01T00:00:00",
+              "availability_sample_rates_hz": "[100.0]",
+              "availability_quality_codes": "[\"D\"]"
+            },
+            "trace_index": 0,
+            "first_sample_index": 0,
+            "stop_sample_index_exclusive": 500,
+            "sample_count": 500,
+            "sample_rate_hz": 100.0,
+            "miniseed_quality": "D",
+            "first_sample_unix_ns_rational": "946684800000000000",
+            "last_sample_unix_ns_rational": "946684804990000000",
+            "window_samples_sha256": "2253930180b5ae89248437a25b4c5ffeef3028bc8b3afb41da441cdbed841c56",
+            "decoded_sample_byte_order": "little",
+            "no_response_correction": true
+          }
+        ],
+        "scope": "Decoded native sample identity and continuity only; no correlation, calibration or waveform-quality acceptance"
+      }
+    },
+    {
+      "case": "leading",
+      "expected_rejection": true,
+      "actual_accepted": true,
+      "raw_file": "edge_counterexample_leading.mseed",
+      "raw_sha256": "b35f2b9e9e8855a4ad0d034ae00256e6200f76bbcda9d5ae80b76515bbbb065f",
+      "decoded_result": {
+        "traces": [
+          {
+            "trace_index": 0,
+            "channel_seed_id": "XX.TEST..EHZ",
+            "channel_fdsn_source_id": "FDSN:XX_TEST__E_H_Z",
+            "identifier_basis": "FDSN source ID derived from verified provider SEED codes",
+            "provider_waveform_resource_id": null,
+            "first_sample_utc": "2000-01-01T00:00:00.003000Z",
+            "first_sample_unix_ns": 946684800003000000,
+            "last_sample_utc": "2000-01-01T00:00:04.993000Z",
+            "sample_rate_hz": 100.0,
+            "sample_count": 500,
+            "data_type": "int32",
+            "miniseed_quality": "D",
+            "miniseed_encoding": "STEIM2",
+            "miniseed_record_length_bytes": 512,
+            "miniseed_record_count": 1,
+            "miniseed_byte_order": ">",
+            "miniseed_timing_quality": false,
+            "miniseed_calibration_type": false,
+            "decoded_samples_sha256": "2253930180b5ae89248437a25b4c5ffeef3028bc8b3afb41da441cdbed841c56",
+            "decoded_sample_byte_order": "little",
+            "native_pick_rows": [
+              "invented_0"
+            ]
+          },
+          {
+            "trace_index": 1,
+            "channel_seed_id": "XX.TEST..EHZ",
+            "channel_fdsn_source_id": "FDSN:XX_TEST__E_H_Z",
+            "identifier_basis": "FDSN source ID derived from verified provider SEED codes",
+            "provider_waveform_resource_id": null,
+            "first_sample_utc": "2000-01-01T00:00:00.000000Z",
+            "first_sample_unix_ns": 946684800000000000,
+            "last_sample_utc": "2000-01-01T00:00:00.000000Z",
+            "sample_rate_hz": 100.0,
+            "sample_count": 1,
+            "data_type": "int32",
+            "miniseed_quality": "R",
+            "miniseed_encoding": "STEIM2",
+            "miniseed_record_length_bytes": 512,
+            "miniseed_record_count": 1,
+            "miniseed_byte_order": ">",
+            "miniseed_timing_quality": false,
+            "miniseed_calibration_type": false,
+            "decoded_samples_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "decoded_sample_byte_order": "little",
+            "native_pick_rows": [
+              "invented_0"
+            ]
+          }
+        ],
+        "windows": [
+          {
+            "original_observation_index": "invented_0",
+            "native_pick": {
+              "original_observation_index": "invented_0",
+              "channel_seed_id": "XX.TEST..EHZ",
+              "channel_fdsn_source_id": "FDSN:XX_TEST__E_H_Z",
+              "event_i_resource_id": "urn:example:invented-event",
+              "pick_i_resource_id": "urn:example:invented-pick",
+              "request_start_utc": "2000-01-01T00:00:00Z",
+              "request_end_utc": "2000-01-01T00:00:05Z",
+              "metadata_epoch_start": "1999-01-01T00:00:00",
+              "metadata_epoch_end": "2001-01-01T00:00:00",
+              "availability_sample_rates_hz": "[100.0]",
+              "availability_quality_codes": "[\"D\"]"
+            },
+            "trace_index": 0,
+            "first_sample_index": 0,
+            "stop_sample_index_exclusive": 500,
+            "sample_count": 500,
+            "sample_rate_hz": 100.0,
+            "miniseed_quality": "D",
+            "first_sample_unix_ns_rational": "946684800003000000",
+            "last_sample_unix_ns_rational": "946684804993000000",
+            "window_samples_sha256": "2253930180b5ae89248437a25b4c5ffeef3028bc8b3afb41da441cdbed841c56",
+            "decoded_sample_byte_order": "little",
+            "no_response_correction": true
+          }
+        ],
+        "scope": "Decoded native sample identity and continuity only; no correlation, calibration or waveform-quality acceptance"
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "reviewer": "scientific_audit",
+  "reviewed_utc": "2026-10-10T04:45:07.735546Z",
+  "scope": "Independent offline terminal artifact, raw-provider, exact-request, native full-cohort and pair-side identity audit. No network requests, waveform decoding, correlation or selection changes.",
+  "inventory_summary_sha256": "ffb0fac1b04380f94cbc31b3fcca265c31af7e8a2e531e92aacd4953c7e32c3e",
+  "inventory_execution_sha256": "04ba20db8a9ff898067c4f9783c6c81a88b56af0e0aedfeb614af5f4e186ff87",
+  "maintained_source_sha256": {
+    "acquire.py": "8427457e1ca971275eb1e4b0d986f862d0d06e07cc09bb8e15d8a35762298901",
+    "run_inventory.py": "b52fab6c7f594aa9dbbc90df0909bc553c2278f099bb98a1efe00a2751faa5f1",
+    "summarize_inventory.py": "205d2b7044f5020b9973f455d7f198add9891ee9bb63435d78465cd1e6a0ffac"
+  },
+  "summary_input_hashes_verified": 879,
+  "output_sha256": {
+    "identified_pick_availability.csv.gz": "afbee39ee203f1d6003c108c5a37b35d9a763dad46b78dad0aae25e06add9d02",
+    "identified_pair_availability.csv.gz": "a4b16068daebf2c1cea8c5951a72afc295961de55ce80f9e44a2e5e360abca2f"
+  },
+  "batches_verified": 144,
+  "raw_provider_records_verified": 464,
+  "response_http_counts": {
+    "200": 144
+  },
+  "raw_provenance_acquisition_source_counts": {
+    "4274453977e54f8bf3155c30bb7497bd73014761f5d17a1d0d0af6603e701ffd": 1,
+    "8427457e1ca971275eb1e4b0d986f862d0d06e07cc09bb8e15d8a35762298901": 142,
+    "a603915b1e7a250896d08383e7b8b3412071a5978feef8f023e030f673b88c69": 1
+  },
+  "retained_picks": 14262,
+  "retained_catalog_differences": 44718,
+  "unchanged_original_pick_cells": 755886,
+  "unchanged_original_pair_cells": 2101746,
+  "pick_counts": {
+    "no_covering_span_reported": 13798,
+    "provider_reports_covering_span": 464
+  },
+  "pair_counts": {
+    "0": 43486,
+    "1": 1232
+  },
+  "cmw1": {
+    "station_seed_id": "NC.CMW1",
+    "station_fdsn_source_id": "FDSN:NC_CMW1",
+    "pick_counts": {
+      "no_covering_span_reported": 117
+    }
+  },
+  "checks": [
+    "Both recorded child stages are terminal completed with returncode zero; every stage artifact and final input/output hash matches.",
+    "Every raw reply matches its byte count and request/response/native provenance; all POST bodies retain exact original NSLC/time selections and native epoch/resource/hash attachments.",
+    "All returned JSON datasource pointers, channels, rates, quality flags and spans match parsed records; independent exact rational time arithmetic rederives every covering-span index.",
+    "All 14,262 original pick rows and all 44,718 original catalog difference rows retain every original column value and order; no row is removed for a missing reported span.",
+    "Both sides of every catalog pair match their original event/origin/pick/arrival IDs, common SEED/FDSN channel, distinct native metadata epochs and raw availability responses.",
+    "Joined status/count fields agree with the independently rederived coverage and the final summary."
+  ],
+  "limitations": [
+    "Provider-reported coverage is not decoded waveform identity, actual sample-grid alignment, continuity or overlap validation.",
+    "No covering span reported does not establish historical waveform absence, study exclusion or permission to discard the identified record.",
+    "The 464 reported windows and 1,232 pairs with both reported spans are an access inventory, not accepted correlation measurements or solver observations.",
+    "The controller has no process-group interruption cleanup; this run completed normally, but future interrupted retrievals require child-state inspection before recovery.",
+    "Instrument response/calibration is not a prerequisite under the user instruction; missing response and historical CMW1 routing metadata remain explicit."
+  ]
+}

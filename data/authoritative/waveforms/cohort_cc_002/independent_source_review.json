@@ -1,0 +1,30 @@
+{
+  "status": "source_review_passed",
+  "reviewer": "scientific_audit",
+  "created_utc": "2026-10-10T04:19:59.815928Z",
+  "scope": "Read-only inspection of acquisition/controller/summary source and recorded bounded coverage-check evidence. No numerical, observational or network rerun; no source/input mutation.",
+  "source_sha256": {
+    "acquire.py": "8427457e1ca971275eb1e4b0d986f862d0d06e07cc09bb8e15d8a35762298901",
+    "run_inventory.py": "b52fab6c7f594aa9dbbc90df0909bc553c2278f099bb98a1efe00a2751faa5f1",
+    "summarize_inventory.py": "205d2b7044f5020b9973f455d7f198add9891ee9bb63435d78465cd1e6a0ffac"
+  },
+  "material_identity_or_selection_issue_found": false,
+  "checks": [
+    "Corrected routing POST removes only unsupported option headers; unchanged exact channel/time selection lines retain original request hashes and native attachments.",
+    "Acquisition retains the complete 14262-pick and 44718-pair cohort; known CMW1 routing gaps and supported no-span replies remain explicit inventory outcomes, not exclusions.",
+    "Authoritative response/request hashes, source URL, native pick/event/origin/association identities, full NSLC/FDSN identities and both native metadata epochs are retained.",
+    "Terminal summary requires completed stages and all batches, verifies raw/request/provenance hashes, exact original native request windows, one coverage row per original pick and complete native readback.",
+    "Offline provider_coverage compares parsed pointers, NSLC, quality, finite positive sample rates and timespans directly with raw JSON; each covering index is rederived from original request windows.",
+    "Pair summaries join through original pick resource IDs and verify both event/origin/pick/arrival and native epoch associations.",
+    "No reported span is interpreted as decoded waveform coverage, response calibration, correlation acceptance or a newly measured differential observation."
+  ],
+  "resolved_review_limitation": "The first summary draft trusted parsed covering indices by hash. The final offline function rederives those indices from raw reported spans; the live acquisition/controller were unchanged.",
+  "operational_limitations": [
+    "run_inventory.py does not install SIGTERM/process-group cleanup. If interrupted, inspect controller and child state before recovery; do not infer completion or restart while a child may still be live. This review does not request mutation of the current live controller.",
+    "The inventory uses reported contiguous spans and a half-open request convention. Exact sample-grid alignment, gaps/overlaps, quality and actual waveform identity still require standard waveform decoding.",
+    "The inventory is still active at review time; this source review is not a terminal inventory audit or evidence of complete availability."
+  ],
+  "network_requests_by_reviewer": 0,
+  "waveform_samples_downloaded_by_reviewer": 0,
+  "measurements_added_by_reviewer": 0
+}
