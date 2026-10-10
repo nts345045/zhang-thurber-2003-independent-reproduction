@@ -1,0 +1,25 @@
+{
+  "scope": "Independent read-only source/math review plus reproducible invented controls",
+  "source_sha256": {
+    "diagnostics/first_arrival_layered_reference.py": "f0d715938ef089de10908249bbbb69f875ede81a94f4d10df9c997203e144aff",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "diagnostics/check_layered_reference.py": "16b2bf9637d5af131ab43fef74989b3063a8998abf6c88d2e1b0eedee595ab83"
+  },
+  "reviewed_items": [
+    "Full-interval speed bounds for direct and turning branches",
+    "Reflection of left turning layers and source-normal derivative signs",
+    "Interior critical guides and finite normal/transverse domain",
+    "Vertical and whole-interval constant velocity cases",
+    "Critical boundaries, equal maxima and branch-specific tied derivatives"
+  ],
+  "material_defects_found": [],
+  "limitations": [
+    "Candidate-family sufficiency for minimum time is not finite enumeration of every geometrically distinct ray; equal-max guides can form a continuum.",
+    "Floating-point time ordering is not an interval minimum-time certificate.",
+    "No production solver or synthetic truth was replaced."
+  ],
+  "reproduced_independent_sweep": "reviewer_sweep004/results.json",
+  "reproduced_check_count": 355,
+  "all_reproduced_checks_pass": true,
+  "results_sha256": "e8c49430dc3f5a235698af1d12d713bee6e6740bc7bdb88745cd9c1a0ee2a59f"
+}
