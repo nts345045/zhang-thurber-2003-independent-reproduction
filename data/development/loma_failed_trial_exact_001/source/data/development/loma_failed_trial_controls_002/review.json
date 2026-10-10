@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "reviewer": "earthscope_discovery",
+  "created_utc": "2026-10-10T05:53:50.003226+00:00",
+  "controls_summary_sha256": "e97e7908829339c85eb1bbbf15aa36faba4b0325f33f0c38d75041776b6da67f",
+  "source_sha256": {
+    "diagnostics/check_loma_failed_trials.py": "a44942af240472c21f7ae8ce6283b75a1ddd35d3d656de378e542e154c850a29",
+    "diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2"
+  },
+  "verified_current_source_hashes": 3,
+  "verified_frozen_source_hashes": 3,
+  "passing_recorded_controls": 17,
+  "scope": "Read-only source, mathematical-contract and saved-control/hash review. No numerical controls, native replay, tracing, optimization or observation retrieval were run by this reviewer.",
+  "findings": [
+    "Each CSV coordinate and velocity is converted through binary64 and then Fraction, so the enclosed polygon/model is the exact interpretation of the recorded binary64 values. No idealized unrounded trial is substituted; actual-minus-intended coordinate changes are reported.",
+    "The depth-to-first-axis permutation and inverse gradient permutation are consistent. Homogeneous two-edge action 2 s and direction derivative -8/25 s, and affine horizontal action 1/3 s and nodal depth derivative -1/36 s/km, agree with the closed-form fixtures.",
+    "Identical unchanged edges cancel exactly before interval arithmetic. Changed-edge action differences use the reviewed reciprocal-affine primitive, rational square-root enclosure and outward rounding. Reversal, sub-binary64 action changes and collapsed rounded coordinates are explicitly controlled.",
+    "The native reader binds all three capture tables to their hashes, identified native context and replay summary; requires native pair 3426 at iteration 53, all 1134 ordered direction nodes, the identical saved base path/interior gradients, fixed endpoints, a complete positive depth-only grid, finite-box containment and all 24 full ordered trial paths.",
+    "The fixed-topology gate rejects invalid or merged paths. The evaluated step is checked as 2^-trial_index for indices 0 through 23; the separately recorded post-loop halved step must equal 2^-24 and is not substituted in any Armijo target.",
+    "Exact delta-action is compared separately with the exact product of the binary64 Armijo coefficient, evaluated step and saved slope, and with the independently enclosed continuous-gradient slope. A wholly nonpositive gap passes, a strictly positive lower bound fails, and overlapping bounds remain unresolved; no tolerance is inserted.",
+    "The reader preserves the original false local flag and recorded binary64 rejection, reports cached and reevaluated action discrepancies, and freezes and rehashes every used input before completion. No production acceptance, step, direction or convergence flag is changed."
+  ],
+  "limitations": [
+    "These 17 controls validate the arithmetic examples and rounding/cancellation distinctions; they do not execute the native CSV rejection paths. Native output integrity and neutral capture parity require the forthcoming replay and its separate review.",
+    "Ordinary gradients are used only when an aligned edge has equal incident slowness slopes; unsupported nonsmooth aligned edges and zero-length segments fail rather than receiving an arbitrary derivative.",
+    "The exact bounds concern the saved fixed-topology polygon in its continuous reciprocal-affine depth model. They do not certify an optimized first arrival or explain a production stopping failure by themselves.",
+    "The saved binary64 slope and Armijo right-hand-side provenance comes from the neutral capture. This checker encloses the stated exact comparison and checks recorded rejection; it does not independently replay the C++ floating-point dot-product/addition sequence."
+  ],
+  "material_issue_found": false
+}

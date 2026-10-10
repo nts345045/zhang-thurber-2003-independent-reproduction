@@ -1,0 +1,30 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T06:02:37.600670+00:00",
+  "command": [
+    "python3",
+    "diagnostics/check_loma_failed_trials.py",
+    "--replay",
+    "data/development/loma_failed_search_3426_001",
+    "--controls",
+    "data/development/loma_failed_trial_controls_002",
+    "--review",
+    "data/development/loma_failed_trial_controls_002/review.json",
+    "--output",
+    "data/development/loma_failed_trial_exact_001"
+  ],
+  "controller_sha256": "8a56521c36032ccce6f78c03ebb8e4ee7e6aa40e770c6f8858c5e42e04c544ef",
+  "input_sha256": {
+    "data/development/loma_failed_search_3426_001/summary.json": "cea7edf20c157cffd9e830eb730662dba20e991f5d60e44b7e5cd05521735c46",
+    "data/development/loma_failed_search_3426_001/review.json": "2bc6060c7c4d19161b7ffedbae3fd3455ccebefcd2160f7874c56de1b9321f16",
+    "diagnostics/check_loma_failed_trials.py": "a44942af240472c21f7ae8ce6283b75a1ddd35d3d656de378e542e154c850a29",
+    "data/development/loma_failed_trial_controls_002/summary.json": "e97e7908829339c85eb1bbbf15aa36faba4b0325f33f0c38d75041776b6da67f",
+    "data/development/loma_failed_trial_controls_002/review.json": "3e6923b3ab2a32a4b3ed5a6d9eba770fc795e96c4e18ab125a2a36dc52ab77ce"
+  },
+  "pid": 173479,
+  "return_code": 0,
+  "finished_utc": "2026-10-10T06:06:23.816459+00:00",
+  "stdout_sha256": "25859591cfff405306fadc9d0c62a986580d1b1e076f9091a9a75ba216d5c24f",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "summary_sha256": "dd15716206c0d09abdecdaa3bd008fa836f3f5a7aed1b4a604a66c9ea85584c7"
+}
