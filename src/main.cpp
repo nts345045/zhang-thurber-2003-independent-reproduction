@@ -1279,8 +1279,43 @@ void validate(std::string dir) {
     throw std::runtime_error(std::to_string(failures) +
                              " validation checks failed");
 }
+size_t checked_raycheck_receiver_batch(double requested_batch) {
+  if (!std::isfinite(requested_batch) || requested_batch < 0 ||
+      std::floor(requested_batch) != requested_batch ||
+      requested_batch > std::numeric_limits<int>::max())
+    throw std::runtime_error("raycheck_receiver_batch must be an integer in [0, INT_MAX]");
+  return static_cast<size_t>(requested_batch);
+}
+// Config's legacy numeric extraction ignores malformed tokens. Validate this
+// new optional setting explicitly, including every occurrence before a later
+// duplicate can hide an invalid value. Other configuration parsing is unchanged.
+void read_raycheck_receiver_batch(Config &c, const std::string &path) {
+  std::ifstream file(path);
+  std::string line;
+  while (std::getline(file, line)) {
+    line = line.substr(0, line.find('#'));
+    std::istringstream fields(line);
+    std::string name, token, extra;
+    if (!(fields >> name) || name != "raycheck_receiver_batch")
+      continue;
+    if (!(fields >> token) || fields >> extra)
+      throw std::runtime_error("raycheck_receiver_batch requires one numeric value");
+    size_t consumed = 0;
+    double value;
+    try { value = std::stod(token, &consumed); }
+    catch (const std::exception &) {
+      throw std::runtime_error("Invalid raycheck_receiver_batch numeric token");
+    }
+    if (consumed != token.size())
+      throw std::runtime_error("Invalid raycheck_receiver_batch numeric token");
+    checked_raycheck_receiver_batch(value);
+    c.v[name] = value;
+  }
+}
 void raycheck(const Config &c, std::string dir, std::string mode = "truth",
               bool geometry_only = false) {
+  const size_t receiver_batch = checked_raycheck_receiver_batch(
+      setting(c, "raycheck_receiver_batch", 0));
   auto e = read_events(dir + "/" + mode + "_events.csv");
   auto stations = read_events(dir + "/stations.csv");
   ObservationSet data;
@@ -1336,7 +1371,8 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth",
   ForwardFields production_fields, refined_fields;
   if (aux > 0) {
     prepare_receiver_fields(g, e, stations, aux, production_fields, samples);
-    prepare_receiver_fields(g, e, stations, aux / 2, refined_fields, samples);
+    if (!receiver_batch)
+      prepare_receiver_fields(g, e, stations, aux / 2, refined_fields, samples);
   }
   std::string prefix = geometry_only ? "geometry_" + mode + "_ray" :
                                       (mode == "truth" ? "ray" : mode + "_ray");
@@ -1370,7 +1406,24 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth",
   csv_metadata_header(identifiers, e.front().metadata, "source_");
   csv_metadata_header(identifiers, stations.front().metadata, "receiver_");
   identifiers << '\n';
+  size_t batch_end = 0;
   for (size_t n = 0; n < samples.size(); n++) {
+    if (aux > 0 && receiver_batch && n == batch_end) {
+      // Partition contiguous sample rows by exact physical receiver coordinates.
+      // Native indices and output order remain unchanged. Completed Ray values
+      // own their data; no field reference survives the preceding loop body.
+      std::map<P, bool> receivers;
+      std::vector<int> batch;
+      while (batch_end < samples.size()) {
+        const P receiver = stations[samples[batch_end] % ns].p;
+        if (!receivers.count(receiver) && receivers.size() == receiver_batch)
+          break;
+        receivers.emplace(receiver, true);
+        batch.push_back(samples[batch_end++]);
+      }
+      refined_fields.fields.clear();
+      prepare_receiver_fields(g, e, stations, aux / 2, refined_fields, batch);
+    }
     int i = samples[n] / ns, k = samples[n] % ns;
     if (geometry_only) {
       identifiers << n << ',' << i << ',' << k;
@@ -1529,6 +1582,8 @@ int main(int argc, char **argv) {
                                "dd linearize_full CONFIG OUT MODE [STAGE]");
     Config c(argv[2]);
     std::string cmd = argv[1];
+    if (cmd == "raycheck" || cmd == "geometrycheck")
+      read_raycheck_receiver_batch(c, argv[2]);
     if (cmd == "generate")
       generate(c, argv[3]);
     else if (cmd == "simulate" && (argc==4 || (argc==6 && std::string(argv[4])=="--analytic-truth")))

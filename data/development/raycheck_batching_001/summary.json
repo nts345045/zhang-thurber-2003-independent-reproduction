@@ -1,0 +1,1161 @@
+{
+  "status": "passed",
+  "commands": [
+    {
+      "label": "compile_baseline",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "-DBASELINE",
+        "tmp/raycheck_batching_001/baseline/diagnostics/check_raycheck_batching.cpp",
+        "-lstdc++fs",
+        "-o",
+        "tmp/raycheck_batching_001/baseline_check"
+      ],
+      "threads": 4,
+      "return_code": 0,
+      "elapsed_seconds": 30.00738787651062,
+      "maximum_resident_set_KiB": 341120
+    },
+    {
+      "label": "compile_current",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fopenmp",
+        "tmp/raycheck_batching_001/current/diagnostics/check_raycheck_batching.cpp",
+        "-lstdc++fs",
+        "-o",
+        "tmp/raycheck_batching_001/current_check"
+      ],
+      "threads": 4,
+      "return_code": 0,
+      "elapsed_seconds": 29.341355323791504,
+      "maximum_resident_set_KiB": 346404
+    },
+    {
+      "label": "baseline_b-1_t1",
+      "command": [
+        "tmp/raycheck_batching_001/baseline_check",
+        "data/development/raycheck_batching_001/baseline_b-1_t1",
+        "-1",
+        "1"
+      ],
+      "threads": 1,
+      "return_code": 0,
+      "elapsed_seconds": 0.46923208236694336,
+      "maximum_resident_set_KiB": 6412
+    },
+    {
+      "label": "baseline_b-1_t4",
+      "command": [
+        "tmp/raycheck_batching_001/baseline_check",
+        "data/development/raycheck_batching_001/baseline_b-1_t4",
+        "-1",
+        "4"
+      ],
+      "threads": 4,
+      "return_code": 0,
+      "elapsed_seconds": 0.35576319694519043,
+      "maximum_resident_set_KiB": 6968
+    },
+    {
+      "label": "current_b-1_t1",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "data/development/raycheck_batching_001/current_b-1_t1",
+        "-1",
+        "1"
+      ],
+      "threads": 1,
+      "return_code": 0,
+      "elapsed_seconds": 0.43390846252441406,
+      "maximum_resident_set_KiB": 6428
+    },
+    {
+      "label": "current_b0_t1",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "data/development/raycheck_batching_001/current_b0_t1",
+        "0",
+        "1"
+      ],
+      "threads": 1,
+      "return_code": 0,
+      "elapsed_seconds": 0.44094324111938477,
+      "maximum_resident_set_KiB": 6472
+    },
+    {
+      "label": "current_b1_t1",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "data/development/raycheck_batching_001/current_b1_t1",
+        "1",
+        "1"
+      ],
+      "threads": 1,
+      "return_code": 0,
+      "elapsed_seconds": 0.9883484840393066,
+      "maximum_resident_set_KiB": 5300
+    },
+    {
+      "label": "current_b2_t1",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "data/development/raycheck_batching_001/current_b2_t1",
+        "2",
+        "1"
+      ],
+      "threads": 1,
+      "return_code": 0,
+      "elapsed_seconds": 0.8447535037994385,
+      "maximum_resident_set_KiB": 5556
+    },
+    {
+      "label": "current_b4_t1",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "data/development/raycheck_batching_001/current_b4_t1",
+        "4",
+        "1"
+      ],
+      "threads": 1,
+      "return_code": 0,
+      "elapsed_seconds": 0.5487267971038818,
+      "maximum_resident_set_KiB": 6056
+    },
+    {
+      "label": "current_b-1_t4",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "data/development/raycheck_batching_001/current_b-1_t4",
+        "-1",
+        "4"
+      ],
+      "threads": 4,
+      "return_code": 0,
+      "elapsed_seconds": 0.2631361484527588,
+      "maximum_resident_set_KiB": 6796
+    },
+    {
+      "label": "current_b0_t4",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "data/development/raycheck_batching_001/current_b0_t4",
+        "0",
+        "4"
+      ],
+      "threads": 4,
+      "return_code": 0,
+      "elapsed_seconds": 0.2670114040374756,
+      "maximum_resident_set_KiB": 7072
+    },
+    {
+      "label": "current_b1_t4",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "data/development/raycheck_batching_001/current_b1_t4",
+        "1",
+        "4"
+      ],
+      "threads": 4,
+      "return_code": 0,
+      "elapsed_seconds": 1.1902577877044678,
+      "maximum_resident_set_KiB": 5976
+    },
+    {
+      "label": "current_b2_t4",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "data/development/raycheck_batching_001/current_b2_t4",
+        "2",
+        "4"
+      ],
+      "threads": 4,
+      "return_code": 0,
+      "elapsed_seconds": 0.5917463302612305,
+      "maximum_resident_set_KiB": 6384
+    },
+    {
+      "label": "current_b4_t4",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "data/development/raycheck_batching_001/current_b4_t4",
+        "4",
+        "4"
+      ],
+      "threads": 4,
+      "return_code": 0,
+      "elapsed_seconds": 0.40174317359924316,
+      "maximum_resident_set_KiB": 6704
+    },
+    {
+      "label": "invalid_token_0",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "--solver",
+        "raycheck",
+        "data/development/raycheck_batching_001/invalid_0.cfg",
+        "data/development/raycheck_batching_001/missing_inputs",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 1,
+      "elapsed_seconds": 0.013016223907470703,
+      "maximum_resident_set_KiB": 4084
+    },
+    {
+      "label": "invalid_token_1",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "--solver",
+        "raycheck",
+        "data/development/raycheck_batching_001/invalid_1.cfg",
+        "data/development/raycheck_batching_001/missing_inputs",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 1,
+      "elapsed_seconds": 0.009891033172607422,
+      "maximum_resident_set_KiB": 4200
+    },
+    {
+      "label": "invalid_token_2",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "--solver",
+        "raycheck",
+        "data/development/raycheck_batching_001/invalid_2.cfg",
+        "data/development/raycheck_batching_001/missing_inputs",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 1,
+      "elapsed_seconds": 0.010101318359375,
+      "maximum_resident_set_KiB": 4160
+    },
+    {
+      "label": "invalid_token_3",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "--solver",
+        "raycheck",
+        "data/development/raycheck_batching_001/invalid_3.cfg",
+        "data/development/raycheck_batching_001/missing_inputs",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 1,
+      "elapsed_seconds": 0.010772705078125,
+      "maximum_resident_set_KiB": 4300
+    },
+    {
+      "label": "invalid_token_4",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "--solver",
+        "raycheck",
+        "data/development/raycheck_batching_001/invalid_4.cfg",
+        "data/development/raycheck_batching_001/missing_inputs",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 1,
+      "elapsed_seconds": 0.011586666107177734,
+      "maximum_resident_set_KiB": 4144
+    },
+    {
+      "label": "invalid_token_5",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "--solver",
+        "raycheck",
+        "data/development/raycheck_batching_001/invalid_5.cfg",
+        "data/development/raycheck_batching_001/missing_inputs",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 1,
+      "elapsed_seconds": 0.010715961456298828,
+      "maximum_resident_set_KiB": 4288
+    },
+    {
+      "label": "invalid_token_6",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "--solver",
+        "raycheck",
+        "data/development/raycheck_batching_001/invalid_6.cfg",
+        "data/development/raycheck_batching_001/missing_inputs",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 1,
+      "elapsed_seconds": 0.011970996856689453,
+      "maximum_resident_set_KiB": 4016
+    },
+    {
+      "label": "invalid_token_7",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "--solver",
+        "raycheck",
+        "data/development/raycheck_batching_001/invalid_7.cfg",
+        "data/development/raycheck_batching_001/missing_inputs",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 1,
+      "elapsed_seconds": 0.012665271759033203,
+      "maximum_resident_set_KiB": 4088
+    },
+    {
+      "label": "invalid_token_8",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "--solver",
+        "raycheck",
+        "data/development/raycheck_batching_001/invalid_8.cfg",
+        "data/development/raycheck_batching_001/missing_inputs",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 1,
+      "elapsed_seconds": 0.01185917854309082,
+      "maximum_resident_set_KiB": 4284
+    },
+    {
+      "label": "invalid_token_9",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "--solver",
+        "raycheck",
+        "data/development/raycheck_batching_001/invalid_9.cfg",
+        "data/development/raycheck_batching_001/missing_inputs",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 1,
+      "elapsed_seconds": 0.010678291320800781,
+      "maximum_resident_set_KiB": 4352
+    },
+    {
+      "label": "invalid_token_10",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "--solver",
+        "raycheck",
+        "data/development/raycheck_batching_001/invalid_10.cfg",
+        "data/development/raycheck_batching_001/missing_inputs",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 1,
+      "elapsed_seconds": 0.011379480361938477,
+      "maximum_resident_set_KiB": 4132
+    },
+    {
+      "label": "valid_cli",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "--solver",
+        "raycheck",
+        "data/development/raycheck_batching_001/valid_comment_duplicate.cfg",
+        "data/development/raycheck_batching_001/valid_cli",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 0,
+      "elapsed_seconds": 0.713961124420166,
+      "maximum_resident_set_KiB": 6184
+    },
+    {
+      "label": "geometry_baseline",
+      "command": [
+        "tmp/raycheck_batching_001/baseline_check",
+        "--solver",
+        "geometrycheck",
+        "data/development/raycheck_batching_001/valid_comment_duplicate.cfg",
+        "data/development/raycheck_batching_001/geometry_baseline",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 0,
+      "elapsed_seconds": 0.30050110816955566,
+      "maximum_resident_set_KiB": 6960
+    },
+    {
+      "label": "geometry_current",
+      "command": [
+        "tmp/raycheck_batching_001/current_check",
+        "--solver",
+        "geometrycheck",
+        "data/development/raycheck_batching_001/valid_comment_duplicate.cfg",
+        "data/development/raycheck_batching_001/geometry_current",
+        "initial"
+      ],
+      "threads": 4,
+      "return_code": 0,
+      "elapsed_seconds": 0.5868701934814453,
+      "maximum_resident_set_KiB": 6212
+    }
+  ],
+  "checks": [
+    {
+      "name": "baseline_unique_diagnostic_insertion",
+      "passed": true
+    },
+    {
+      "name": "compile_baseline_exit",
+      "passed": true
+    },
+    {
+      "name": "current_unique_diagnostic_insertion",
+      "passed": true
+    },
+    {
+      "name": "compile_current_exit",
+      "passed": true
+    },
+    {
+      "name": "baseline_b-1_t1_exit",
+      "passed": true
+    },
+    {
+      "name": "baseline_b-1_t1_component_checks",
+      "passed": true
+    },
+    {
+      "name": "baseline_b-1_t1_ordered_cache_census",
+      "passed": true
+    },
+    {
+      "name": "baseline_b-1_t1_cache_limit",
+      "passed": true
+    },
+    {
+      "name": "baseline_b-1_t4_exit",
+      "passed": true
+    },
+    {
+      "name": "baseline_b-1_t4_component_checks",
+      "passed": true
+    },
+    {
+      "name": "baseline_b-1_t4_ordered_cache_census",
+      "passed": true
+    },
+    {
+      "name": "baseline_b-1_t4_cache_limit",
+      "passed": true
+    },
+    {
+      "name": "current_b-1_t1_exit",
+      "passed": true
+    },
+    {
+      "name": "current_b-1_t1_component_checks",
+      "passed": true
+    },
+    {
+      "name": "current_b-1_t1_ordered_cache_census",
+      "passed": true
+    },
+    {
+      "name": "current_b-1_t1_cache_limit",
+      "passed": true
+    },
+    {
+      "name": "current_b0_t1_exit",
+      "passed": true
+    },
+    {
+      "name": "current_b0_t1_component_checks",
+      "passed": true
+    },
+    {
+      "name": "current_b0_t1_ordered_cache_census",
+      "passed": true
+    },
+    {
+      "name": "current_b0_t1_cache_limit",
+      "passed": true
+    },
+    {
+      "name": "current_b1_t1_exit",
+      "passed": true
+    },
+    {
+      "name": "current_b1_t1_component_checks",
+      "passed": true
+    },
+    {
+      "name": "current_b1_t1_ordered_cache_census",
+      "passed": true
+    },
+    {
+      "name": "current_b1_t1_cache_limit",
+      "passed": true
+    },
+    {
+      "name": "current_b2_t1_exit",
+      "passed": true
+    },
+    {
+      "name": "current_b2_t1_component_checks",
+      "passed": true
+    },
+    {
+      "name": "current_b2_t1_ordered_cache_census",
+      "passed": true
+    },
+    {
+      "name": "current_b2_t1_cache_limit",
+      "passed": true
+    },
+    {
+      "name": "current_b4_t1_exit",
+      "passed": true
+    },
+    {
+      "name": "current_b4_t1_component_checks",
+      "passed": true
+    },
+    {
+      "name": "current_b4_t1_ordered_cache_census",
+      "passed": true
+    },
+    {
+      "name": "current_b4_t1_cache_limit",
+      "passed": true
+    },
+    {
+      "name": "current_b4_t1_noncontiguous_repeat_batch",
+      "passed": true
+    },
+    {
+      "name": "current_b-1_t4_exit",
+      "passed": true
+    },
+    {
+      "name": "current_b-1_t4_component_checks",
+      "passed": true
+    },
+    {
+      "name": "current_b-1_t4_ordered_cache_census",
+      "passed": true
+    },
+    {
+      "name": "current_b-1_t4_cache_limit",
+      "passed": true
+    },
+    {
+      "name": "current_b0_t4_exit",
+      "passed": true
+    },
+    {
+      "name": "current_b0_t4_component_checks",
+      "passed": true
+    },
+    {
+      "name": "current_b0_t4_ordered_cache_census",
+      "passed": true
+    },
+    {
+      "name": "current_b0_t4_cache_limit",
+      "passed": true
+    },
+    {
+      "name": "current_b1_t4_exit",
+      "passed": true
+    },
+    {
+      "name": "current_b1_t4_component_checks",
+      "passed": true
+    },
+    {
+      "name": "current_b1_t4_ordered_cache_census",
+      "passed": true
+    },
+    {
+      "name": "current_b1_t4_cache_limit",
+      "passed": true
+    },
+    {
+      "name": "current_b2_t4_exit",
+      "passed": true
+    },
+    {
+      "name": "current_b2_t4_component_checks",
+      "passed": true
+    },
+    {
+      "name": "current_b2_t4_ordered_cache_census",
+      "passed": true
+    },
+    {
+      "name": "current_b2_t4_cache_limit",
+      "passed": true
+    },
+    {
+      "name": "current_b4_t4_exit",
+      "passed": true
+    },
+    {
+      "name": "current_b4_t4_component_checks",
+      "passed": true
+    },
+    {
+      "name": "current_b4_t4_ordered_cache_census",
+      "passed": true
+    },
+    {
+      "name": "current_b4_t4_cache_limit",
+      "passed": true
+    },
+    {
+      "name": "current_b4_t4_noncontiguous_repeat_batch",
+      "passed": true
+    },
+    {
+      "name": "all_frozen_default_and_B0_B1_B2_B4_outputs_bitwise_equal",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_0_exit",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_0_rejects_before_input_access",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_1_exit",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_1_rejects_before_input_access",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_2_exit",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_2_rejects_before_input_access",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_3_exit",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_3_rejects_before_input_access",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_4_exit",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_4_rejects_before_input_access",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_5_exit",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_5_rejects_before_input_access",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_6_exit",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_6_rejects_before_input_access",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_7_exit",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_7_rejects_before_input_access",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_8_exit",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_8_rejects_before_input_access",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_9_exit",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_9_rejects_before_input_access",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_10_exit",
+      "passed": true
+    },
+    {
+      "name": "invalid_token_10_rejects_before_input_access",
+      "passed": true
+    },
+    {
+      "name": "valid_cli_exit",
+      "passed": true
+    },
+    {
+      "name": "valid_comments_duplicates_preserve_outputs",
+      "passed": true
+    },
+    {
+      "name": "geometry_baseline_exit",
+      "passed": true
+    },
+    {
+      "name": "geometry_current_exit",
+      "passed": true
+    },
+    {
+      "name": "geometry_only_identifiers_and_FDs_bitwise_equal",
+      "passed": true
+    },
+    {
+      "name": "maintained_sources_unchanged",
+      "passed": true
+    }
+  ],
+  "scope": "Invented diagnostic cache/output controls; no real preflight or inverse calculation",
+  "baseline_commit": "5b448ce6207502612548b1cd3d9c54f156bafdfb",
+  "maintained_source_sha256": {
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "9216f6ac80b5bb7b2ad532ea9a50c57e085907be72aba59666e86f9959641112",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_raycheck_batching.cpp": "fb18084fec31a161032e6200a93b8f8fc1839d953787b80d570c8b46f853b96b",
+    "diagnostics/run_raycheck_batching.py": "f082429f82efb8aead3702657d6eda739a360473d7a8618ee7d0a8e37807ba93"
+  },
+  "baseline_compiled_source_sha256": {
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "c2fa3bde6399c4a9830a4f7654dafc6f2120a9161d30f79e36962093f179e044",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_raycheck_batching.cpp": "fb18084fec31a161032e6200a93b8f8fc1839d953787b80d570c8b46f853b96b",
+    "diagnostics/run_raycheck_batching.py": "f082429f82efb8aead3702657d6eda739a360473d7a8618ee7d0a8e37807ba93"
+  },
+  "baseline_binary_sha256": "f6842617f234ae12468e1f0b53c4b52f4e477d4a64e7a56d4370b3727d48b9b4",
+  "current_compiled_source_sha256": {
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "874aab92c8996cd9978764195187623edc3fbe50d37223b22f89f8949131fc07",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_raycheck_batching.cpp": "fb18084fec31a161032e6200a93b8f8fc1839d953787b80d570c8b46f853b96b",
+    "diagnostics/run_raycheck_batching.py": "f082429f82efb8aead3702657d6eda739a360473d7a8618ee7d0a8e37807ba93"
+  },
+  "current_binary_sha256": "86e7530e1fdd9e899b67f067d24970d0d5f6451ad22e32fc8b2e900fe7ada5bf",
+  "parity_groups": {
+    "baseline_b-1_t1": {
+      "initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+      "initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+      "initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+      "identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1"
+    },
+    "baseline_b-1_t4": {
+      "initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+      "initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+      "initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+      "identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1"
+    },
+    "current_b-1_t1": {
+      "initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+      "initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+      "initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+      "identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1"
+    },
+    "current_b0_t1": {
+      "initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+      "initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+      "initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+      "identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1"
+    },
+    "current_b1_t1": {
+      "initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+      "initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+      "initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+      "identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1"
+    },
+    "current_b2_t1": {
+      "initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+      "initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+      "initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+      "identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1"
+    },
+    "current_b4_t1": {
+      "initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+      "initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+      "initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+      "identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1"
+    },
+    "current_b-1_t4": {
+      "initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+      "initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+      "initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+      "identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1"
+    },
+    "current_b0_t4": {
+      "initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+      "initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+      "initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+      "identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1"
+    },
+    "current_b1_t4": {
+      "initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+      "initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+      "initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+      "identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1"
+    },
+    "current_b2_t4": {
+      "initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+      "initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+      "initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+      "identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1"
+    },
+    "current_b4_t4": {
+      "initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+      "initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+      "initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+      "identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1"
+    }
+  },
+  "limitations": [
+    "Only copied diagnostic main.cpp files add a cache-count stderr statement after the unchanged refined trace; no arithmetic is changed.",
+    "Measured RSS is from small invented fixtures and is not a Loma peak or a 128 GiB guarantee.",
+    "Batching preserves mathematical inputs and ordered output; it does not validate global first-arrival accuracy or nonlinear inversion."
+  ],
+  "output_sha256": {
+    "baseline_diagnostic_access.diff": "40dfc047345db6427725d2fe6aa68bb642844b2b714a8e04d5114e1d5a1d109a",
+    "compile_baseline_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_baseline_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_baseline_resources.txt": "46dfe199bc7b6bec8c70f89a2554f7b3e3d5eb94f698b7098ca28ed243a655a3",
+    "current_diagnostic_access.diff": "4543083911af11e0cdd50e34faf01a78ce823f7d40e03e5e6a9badb533caa712",
+    "compile_current_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_current_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_current_resources.txt": "d694f3ccbf2cbe36d6d282c777c163c38b0cc0b5f978c86d4e1f0f32443f531f",
+    "baseline_b-1_t1_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline_b-1_t1_stderr.log": "307896375b581fc518a37d26e46f9d2046f90d332915dfa0c0d40b5418fabfd7",
+    "baseline_b-1_t1_resources.txt": "ccc14f5f456535bbb4c0e2d4a6e92972fdc8678b3729f97c1fe94fa3eefded21",
+    "baseline_b-1_t4_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline_b-1_t4_stderr.log": "307896375b581fc518a37d26e46f9d2046f90d332915dfa0c0d40b5418fabfd7",
+    "baseline_b-1_t4_resources.txt": "5be7f9380a9ac61397c3516e826c762d459be97f1e6aaa8b57b00ccfb04f832f",
+    "current_b-1_t1_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current_b-1_t1_stderr.log": "307896375b581fc518a37d26e46f9d2046f90d332915dfa0c0d40b5418fabfd7",
+    "current_b-1_t1_resources.txt": "58639b111a082e08e3f60f9e1b3b744e1354fe837df650a1265fe111899fea25",
+    "current_b0_t1_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current_b0_t1_stderr.log": "307896375b581fc518a37d26e46f9d2046f90d332915dfa0c0d40b5418fabfd7",
+    "current_b0_t1_resources.txt": "8a5da23e9119243224b7f5204229b030215e0b6e04459a9a9bf73d65c0184e1d",
+    "current_b1_t1_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current_b1_t1_stderr.log": "ac968dd9fc06cf73eeb550075c6aa0aedcb2f17fadd9b580d68c86b46288e823",
+    "current_b1_t1_resources.txt": "8e427a61f432928ca248c32a042391df3a23a3e04b88ace37437afe54c0e568f",
+    "current_b2_t1_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current_b2_t1_stderr.log": "ff8aa9e87cb326a31af16d39380d0719f4731773a040120eb45b1c8deeb4cb69",
+    "current_b2_t1_resources.txt": "fb6a372b3d62d134b0e1028a48801fc50be6b15fe8a81da7a7bfb573d45a72c2",
+    "current_b4_t1_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current_b4_t1_stderr.log": "bad9b6f9262608b35b02703a2a0b76cb5d503d4e7623c4f77ff86f852ac87b94",
+    "current_b4_t1_resources.txt": "c3fca0af84f1fb0e80c94a9a663d7e930c2e06586ed4011970434136c7373a81",
+    "current_b-1_t4_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current_b-1_t4_stderr.log": "307896375b581fc518a37d26e46f9d2046f90d332915dfa0c0d40b5418fabfd7",
+    "current_b-1_t4_resources.txt": "1f3378b6d2d3ff2a390d32e1d9b8e31fae5ebc25f1da2fdd69bf2a287423e375",
+    "current_b0_t4_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current_b0_t4_stderr.log": "307896375b581fc518a37d26e46f9d2046f90d332915dfa0c0d40b5418fabfd7",
+    "current_b0_t4_resources.txt": "d9f9272dbb60d4bd21cc6fb932dcc91bbc23c9d6052b65126180e9b5dd5ea025",
+    "current_b1_t4_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current_b1_t4_stderr.log": "ac968dd9fc06cf73eeb550075c6aa0aedcb2f17fadd9b580d68c86b46288e823",
+    "current_b1_t4_resources.txt": "5b272a5f62ac7458c1d8b035401a51fd1efc86822775d9c1b669e27996418b4a",
+    "current_b2_t4_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current_b2_t4_stderr.log": "ff8aa9e87cb326a31af16d39380d0719f4731773a040120eb45b1c8deeb4cb69",
+    "current_b2_t4_resources.txt": "cf93e88aee98c830a3bb5ea3353b846e7b1fddd7b2636d4d5d64fbe825095462",
+    "current_b4_t4_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current_b4_t4_stderr.log": "bad9b6f9262608b35b02703a2a0b76cb5d503d4e7623c4f77ff86f852ac87b94",
+    "current_b4_t4_resources.txt": "4b0492f36c172137e102ff318fdbba370ed2a183a39be15c4a24c83930cf159a",
+    "invalid_0.cfg": "4f8653c068afa813a43d82d730b89efa3cc3fd4de4e887dffc40746d89ee936d",
+    "invalid_token_0_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid_token_0_stderr.log": "5c763d215966d2336198ff224a03b25b67673fcd0c00b271e8b11793d6548fa7",
+    "invalid_token_0_resources.txt": "4f5b61f6cf663b3a045cf6db10d1de0b8a3d7484e61117ff6fea3cbb890ae0f9",
+    "invalid_1.cfg": "e96d758ce55eb36ddd26c6aa8450ece27960908d59719acaeae2d5bf4289bf0a",
+    "invalid_token_1_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid_token_1_stderr.log": "5c763d215966d2336198ff224a03b25b67673fcd0c00b271e8b11793d6548fa7",
+    "invalid_token_1_resources.txt": "62759a87661fcfbc60bcef0019001e2cc8ff7a1c7fd1fdcd2dfcda5ab6aa7bba",
+    "invalid_2.cfg": "25bcd6d4521a835b669b0b7ad3517d7015c7511a59e178077039196111b6585b",
+    "invalid_token_2_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid_token_2_stderr.log": "5c763d215966d2336198ff224a03b25b67673fcd0c00b271e8b11793d6548fa7",
+    "invalid_token_2_resources.txt": "f7b7ba428b4b04bee94575b4c9e30ba725406409db24f6641535c68b7982f966",
+    "invalid_3.cfg": "c798d9dfcdb4bf6c0a5dcfd67eef0a59f5d330f1adaced5ebb8d1d6860dcf5ab",
+    "invalid_token_3_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid_token_3_stderr.log": "5c763d215966d2336198ff224a03b25b67673fcd0c00b271e8b11793d6548fa7",
+    "invalid_token_3_resources.txt": "3dbc292f8b445af7b2ae29458d3fad9334ac643f7d691a49f8097a98c1a6a5fa",
+    "invalid_4.cfg": "5cf83db57533cf3e4d7f0f1c120a834e1f04c5e6bb93769025147a13d9c60c85",
+    "invalid_token_4_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid_token_4_stderr.log": "5c763d215966d2336198ff224a03b25b67673fcd0c00b271e8b11793d6548fa7",
+    "invalid_token_4_resources.txt": "e075ea6ab383df97e24d38a628040e3483df242c64a9605147045b27e9a1bb23",
+    "invalid_5.cfg": "61ba48b177c389426bdd31604a52e5a9bab478230fff4965f1e14f02aea4d881",
+    "invalid_token_5_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid_token_5_stderr.log": "c311e663760d8a33c4886c1db970fe7ef46ee807fc1a1d9d837bf7afaa5fe6ad",
+    "invalid_token_5_resources.txt": "7899f2c0ca0133e5b1a61827543aa0ec81bc2426caa3545a9b2fca525ee62f43",
+    "invalid_6.cfg": "6a974a52c2df3dfb57cb4cb11ad525ddc008e10279b53aa85bb81a733c4f560a",
+    "invalid_token_6_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid_token_6_stderr.log": "5c763d215966d2336198ff224a03b25b67673fcd0c00b271e8b11793d6548fa7",
+    "invalid_token_6_resources.txt": "dfb569fd7da2f09ac1320ac9e80329ea56cffa8993d011fe0b5275df8cc9f530",
+    "invalid_7.cfg": "cf6cef6161b199882d9afcf20233ff662901d599c92c4f0dbcb91e41938f602c",
+    "invalid_token_7_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid_token_7_stderr.log": "c311e663760d8a33c4886c1db970fe7ef46ee807fc1a1d9d837bf7afaa5fe6ad",
+    "invalid_token_7_resources.txt": "bc75fc8bcd18ec38f5e5ed27b87b6f4e170ff004ff62e37d6a878acf72a1ef15",
+    "invalid_8.cfg": "911b60c1e77841d4fc9ea9b5edb0f3811833f2c7d6dd6490d5ec73b379405843",
+    "invalid_token_8_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid_token_8_stderr.log": "d453a96761370c215f4227bee5504ef705dd046a1171025d5da49e5c5fb94927",
+    "invalid_token_8_resources.txt": "c8dc6ebe7d836f6343ba047b752aa95f133f2e5b9a27c2aafc83d3b92a5eb3d0",
+    "invalid_9.cfg": "794e4bc388ae91907573157b454e7abe7beec1d681d83a563bd43984ffee11f2",
+    "invalid_token_9_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid_token_9_stderr.log": "d453a96761370c215f4227bee5504ef705dd046a1171025d5da49e5c5fb94927",
+    "invalid_token_9_resources.txt": "529b01bcb9dc45721a244f2ad0e4cd25f023ec498212a3f056b8a452db655c26",
+    "invalid_10.cfg": "3bcd3e45787d165e89104055334c5dc372bb2387e3c61bf31ebe56deaf594987",
+    "invalid_token_10_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid_token_10_stderr.log": "5c763d215966d2336198ff224a03b25b67673fcd0c00b271e8b11793d6548fa7",
+    "invalid_token_10_resources.txt": "55fe1bb385d61ec0e21dc97fde9f8e027ce758ad7fd023beaacd73edb6e82d58",
+    "valid_comment_duplicate.cfg": "a7c9805e38e9b155ebc4116370eb447362c6312ef901cb1824f9329d483059c4",
+    "valid_cli_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "valid_cli_stderr.log": "ff8aa9e87cb326a31af16d39380d0719f4731773a040120eb45b1c8deeb4cb69",
+    "valid_cli_resources.txt": "b9f3319ad91ed8e11cf072f77545e334b59b64020e198e1086a586cedf5f935b",
+    "geometry_baseline_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "geometry_baseline_stderr.log": "307896375b581fc518a37d26e46f9d2046f90d332915dfa0c0d40b5418fabfd7",
+    "geometry_baseline_resources.txt": "5a50202e8bade9064103cbebc850f43166b267f087266439c4b807c4f0275743",
+    "geometry_current_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "geometry_current_stderr.log": "ff8aa9e87cb326a31af16d39380d0719f4731773a040120eb45b1c8deeb4cb69",
+    "geometry_current_resources.txt": "6942704d3283641cffbc6d58bf82c65427c904cac3e4296a727d59f123ae87db",
+    "source/baseline/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "source/baseline/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/baseline/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/baseline/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/baseline/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "source/baseline/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "source/baseline/src/main.cpp": "df472d1152302b685232cbfaf73587d472cab0c1a342938edbdd676e622057af",
+    "source/baseline/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/baseline/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/baseline/diagnostics/check_raycheck_batching.cpp": "fb18084fec31a161032e6200a93b8f8fc1839d953787b80d570c8b46f853b96b",
+    "source/baseline/diagnostics/run_raycheck_batching.py": "f082429f82efb8aead3702657d6eda739a360473d7a8618ee7d0a8e37807ba93",
+    "source/current/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "source/current/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/current/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/current/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/current/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "source/current/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "source/current/src/main.cpp": "9216f6ac80b5bb7b2ad532ea9a50c57e085907be72aba59666e86f9959641112",
+    "source/current/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/current/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/current/diagnostics/check_raycheck_batching.cpp": "fb18084fec31a161032e6200a93b8f8fc1839d953787b80d570c8b46f853b96b",
+    "source/current/diagnostics/run_raycheck_batching.py": "f082429f82efb8aead3702657d6eda739a360473d7a8618ee7d0a8e37807ba93",
+    "baseline_b-1_t1/checks.csv": "e3fa1d8df1c904b127587a678a0c3cc3dd623b97f6079f460464c0014cfe633d",
+    "baseline_b-1_t1/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "baseline_b-1_t1/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "baseline_b-1_t1/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "baseline_b-1_t1/fixture.cfg": "867638ca173ad2e98c314203243adfcb85adb4fce41a2caf6db33923e541478b",
+    "baseline_b-1_t1/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "baseline_b-1_t1/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "baseline_b-1_t1/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "baseline_b-1_t1/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "baseline_b-1_t1/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "baseline_b-1_t1/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "baseline_b-1_t4/checks.csv": "e3fa1d8df1c904b127587a678a0c3cc3dd623b97f6079f460464c0014cfe633d",
+    "baseline_b-1_t4/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "baseline_b-1_t4/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "baseline_b-1_t4/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "baseline_b-1_t4/fixture.cfg": "867638ca173ad2e98c314203243adfcb85adb4fce41a2caf6db33923e541478b",
+    "baseline_b-1_t4/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "baseline_b-1_t4/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "baseline_b-1_t4/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "baseline_b-1_t4/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "baseline_b-1_t4/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "baseline_b-1_t4/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "current_b-1_t1/checks.csv": "e1e9e03f2031fb1060fb2280932da8a8ee0aac4e8f1fa606d3fb2b9f985d943b",
+    "current_b-1_t1/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "current_b-1_t1/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "current_b-1_t1/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "current_b-1_t1/fixture.cfg": "867638ca173ad2e98c314203243adfcb85adb4fce41a2caf6db33923e541478b",
+    "current_b-1_t1/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "current_b-1_t1/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "current_b-1_t1/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "current_b-1_t1/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "current_b-1_t1/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "current_b-1_t1/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "current_b0_t1/checks.csv": "e1e9e03f2031fb1060fb2280932da8a8ee0aac4e8f1fa606d3fb2b9f985d943b",
+    "current_b0_t1/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "current_b0_t1/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "current_b0_t1/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "current_b0_t1/fixture.cfg": "67d1ff58071475266bc3bc8e477c8ea2497f67b184692c40a4d5e30d2d2cb6d1",
+    "current_b0_t1/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "current_b0_t1/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "current_b0_t1/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "current_b0_t1/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "current_b0_t1/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "current_b0_t1/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "current_b1_t1/checks.csv": "e1e9e03f2031fb1060fb2280932da8a8ee0aac4e8f1fa606d3fb2b9f985d943b",
+    "current_b1_t1/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "current_b1_t1/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "current_b1_t1/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "current_b1_t1/fixture.cfg": "1c8017b142430f20f323376b7e0dc938ea54281918fecef629e47401af4301f7",
+    "current_b1_t1/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "current_b1_t1/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "current_b1_t1/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "current_b1_t1/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "current_b1_t1/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "current_b1_t1/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "current_b2_t1/checks.csv": "e1e9e03f2031fb1060fb2280932da8a8ee0aac4e8f1fa606d3fb2b9f985d943b",
+    "current_b2_t1/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "current_b2_t1/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "current_b2_t1/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "current_b2_t1/fixture.cfg": "64f99c4e00c85cdf61a70ab716337c9ce8b501a7ea51501f38524f20d4eb33fb",
+    "current_b2_t1/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "current_b2_t1/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "current_b2_t1/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "current_b2_t1/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "current_b2_t1/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "current_b2_t1/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "current_b4_t1/checks.csv": "e1e9e03f2031fb1060fb2280932da8a8ee0aac4e8f1fa606d3fb2b9f985d943b",
+    "current_b4_t1/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "current_b4_t1/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "current_b4_t1/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "current_b4_t1/fixture.cfg": "d9b05b71b1a633bcaa0db98044418836377b47c6c180f8fdf252562bbe8b5fc0",
+    "current_b4_t1/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "current_b4_t1/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "current_b4_t1/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "current_b4_t1/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "current_b4_t1/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "current_b4_t1/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "current_b-1_t4/checks.csv": "e1e9e03f2031fb1060fb2280932da8a8ee0aac4e8f1fa606d3fb2b9f985d943b",
+    "current_b-1_t4/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "current_b-1_t4/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "current_b-1_t4/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "current_b-1_t4/fixture.cfg": "867638ca173ad2e98c314203243adfcb85adb4fce41a2caf6db33923e541478b",
+    "current_b-1_t4/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "current_b-1_t4/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "current_b-1_t4/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "current_b-1_t4/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "current_b-1_t4/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "current_b-1_t4/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "current_b0_t4/checks.csv": "e1e9e03f2031fb1060fb2280932da8a8ee0aac4e8f1fa606d3fb2b9f985d943b",
+    "current_b0_t4/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "current_b0_t4/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "current_b0_t4/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "current_b0_t4/fixture.cfg": "67d1ff58071475266bc3bc8e477c8ea2497f67b184692c40a4d5e30d2d2cb6d1",
+    "current_b0_t4/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "current_b0_t4/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "current_b0_t4/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "current_b0_t4/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "current_b0_t4/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "current_b0_t4/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "current_b1_t4/checks.csv": "e1e9e03f2031fb1060fb2280932da8a8ee0aac4e8f1fa606d3fb2b9f985d943b",
+    "current_b1_t4/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "current_b1_t4/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "current_b1_t4/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "current_b1_t4/fixture.cfg": "1c8017b142430f20f323376b7e0dc938ea54281918fecef629e47401af4301f7",
+    "current_b1_t4/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "current_b1_t4/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "current_b1_t4/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "current_b1_t4/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "current_b1_t4/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "current_b1_t4/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "current_b2_t4/checks.csv": "e1e9e03f2031fb1060fb2280932da8a8ee0aac4e8f1fa606d3fb2b9f985d943b",
+    "current_b2_t4/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "current_b2_t4/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "current_b2_t4/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "current_b2_t4/fixture.cfg": "64f99c4e00c85cdf61a70ab716337c9ce8b501a7ea51501f38524f20d4eb33fb",
+    "current_b2_t4/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "current_b2_t4/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "current_b2_t4/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "current_b2_t4/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "current_b2_t4/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "current_b2_t4/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "current_b4_t4/checks.csv": "e1e9e03f2031fb1060fb2280932da8a8ee0aac4e8f1fa606d3fb2b9f985d943b",
+    "current_b4_t4/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "current_b4_t4/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "current_b4_t4/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "current_b4_t4/fixture.cfg": "d9b05b71b1a633bcaa0db98044418836377b47c6c180f8fdf252562bbe8b5fc0",
+    "current_b4_t4/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "current_b4_t4/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "current_b4_t4/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "current_b4_t4/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "current_b4_t4/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "current_b4_t4/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "valid_cli/checks.csv": "e1e9e03f2031fb1060fb2280932da8a8ee0aac4e8f1fa606d3fb2b9f985d943b",
+    "valid_cli/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "valid_cli/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "valid_cli/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "valid_cli/fixture.cfg": "67d1ff58071475266bc3bc8e477c8ea2497f67b184692c40a4d5e30d2d2cb6d1",
+    "valid_cli/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "valid_cli/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "valid_cli/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "valid_cli/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "valid_cli/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "valid_cli/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "geometry_baseline/checks.csv": "e1e9e03f2031fb1060fb2280932da8a8ee0aac4e8f1fa606d3fb2b9f985d943b",
+    "geometry_baseline/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "geometry_baseline/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "geometry_baseline/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "geometry_baseline/fixture.cfg": "67d1ff58071475266bc3bc8e477c8ea2497f67b184692c40a4d5e30d2d2cb6d1",
+    "geometry_baseline/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "geometry_baseline/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "geometry_baseline/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "geometry_baseline/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "geometry_baseline/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "geometry_baseline/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "geometry_baseline/geometry_initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "geometry_baseline/geometry_initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "geometry_baseline/geometry_initial_ray_identifiers.csv": "9113db7ec8642c144315a2e61df554ee2bd881b71f634e2d9c6f9c76c277e039",
+    "geometry_current/checks.csv": "e1e9e03f2031fb1060fb2280932da8a8ee0aac4e8f1fa606d3fb2b9f985d943b",
+    "geometry_current/initial_events.csv": "2806da6c02372623d6d0eea59096421471ab11f539400425ae2098ec2894ab4a",
+    "geometry_current/stations.csv": "a0d54693636a40fdfeccce11721ac0ff76f81e8ffaccb6e4ef0a123ddc663e5c",
+    "geometry_current/initial_grid.csv": "ba75c0ebe70bf5bf978fb58190bd823559317bea778ac4d6a09117de0340b06c",
+    "geometry_current/fixture.cfg": "67d1ff58071475266bc3bc8e477c8ea2497f67b184692c40a4d5e30d2d2cb6d1",
+    "geometry_current/observations.csv": "16c4d401d1daac709de3209c52dec161138aa20b6676b7997bfc55dc08c444ea",
+    "geometry_current/ray_samples.csv": "f2785feae46c2b713e88ff1f228f9161e78b1b447f25db65e084955baee1fbb5",
+    "geometry_current/initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "geometry_current/initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "geometry_current/initial_ray_identifiers.csv": "dbb5ddb436e1c106d2a9e57cebd0606f16e7846e2bd62a3e3c8d0e92fa0635b8",
+    "geometry_current/identified_failure.txt": "29dc41a5ba601b79fbc4d390c3a738c8fc85a7c0f7e78177e24bfba2f94ef0f1",
+    "geometry_current/geometry_initial_ray_convergence.csv": "c364589d0474d6c0ded6932d335464aa4a904c84826885ff3deb314f5d3170f8",
+    "geometry_current/geometry_initial_ray_derivatives.csv": "9fed2faea15d83cdcd2b5b618d5ec259cb9ff0c071ca315bbb33c6003325eaff",
+    "geometry_current/geometry_initial_ray_identifiers.csv": "9113db7ec8642c144315a2e61df554ee2bd881b71f634e2d9c6f9c76c277e039"
+  }
+}

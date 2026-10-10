@@ -1,0 +1,10 @@
+--- frozen/src/main.cpp
++++ diagnostic/src/main.cpp
+@@ -1445,6 +1445,7 @@
+       }
+     Ray a = configured_trace(g, e[i].p, stations[k].p, c, production_fields);
+     Ray b = configured_trace(g, e[i].p, stations[k].p, refined, refined_fields);
++    std::cerr << "diagnostic_refined_cache " << n << ' ' << refined_fields.fields.size() << '\n';
+     f << i << ',' << k << ',' << a.time << ',' << b.time << ','
+       << a.time - b.time << ',' << a.gradient << ',' << b.gradient << ','
+       << a.raw_gradient << ',' << b.raw_gradient << ',' << a.iterations << ','
