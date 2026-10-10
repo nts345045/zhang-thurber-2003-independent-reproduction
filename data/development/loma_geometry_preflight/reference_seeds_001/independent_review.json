@@ -1,0 +1,41 @@
+{
+  "reviewer": "ray_math_review",
+  "scope": "Read-only source, native-data, completeness and finite-value audit; no optimizer rerun",
+  "material_issue_found": false,
+  "verified_output_hashes": 31,
+  "verified_source_hashes": 12,
+  "cases": 20,
+  "table_row_counts": {
+    "results.csv": 100,
+    "paths.csv": 84667,
+    "finite_difference.csv": 1125
+  },
+  "all_native_identity_columns_match_case_mapping": true,
+  "all_recorded_numeric_fields_finite": true,
+  "all_five_stages_present_once_per_case": true,
+  "trace_patch_limited_to_supplied_seed_resampling": true,
+  "coordinate_mapping_review": "The reversed negative-x profile makes the four x=0 critical guides outward; point mapping(-normal,transverse0,transverse1) and separate source derivative permutation are consistent.",
+  "numerical_scope": "Raw sampled polygons, two zero-update paths and two optimized paths remain distinct; flags are unchanged. Good time/source agreement in fine selected cases does not establish generic nonsmooth stationarity or production readiness.",
+  "optimized_convergence_counts": {
+    "uniform_resampled_optimized": 1,
+    "retained_seed_optimized": 0
+  },
+  "maximum_quadrature_vs_exact_polygon_error_s": 2.2412106892577555e-13,
+  "maximum_fixed_polygon_source_fd_error_s_per_km": 6.077816971927774e-09,
+  "summary_sha256": "f8ac08aef10d66eb8b041a12c606a1b3b94e829a022538786992162aa7d1f21e",
+  "review_summary_sha256": "8869a4edd206c0b3d35f5a29bc67f85ecf407d31aa75f039cf5700c1baf145ba",
+  "source_sha256": {
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_loma_reference_seeds.cpp": "2fb876dc9e10053f563e8169be413c42069864f9f16f939df3bc3559523e5266",
+    "diagnostics/run_loma_reference_seeds.py": "0d5bfe99867b7d3b945653f7e28387ae6513a540016dbf66013fc308c77f4439",
+    "diagnostics/loma_path_checks.hpp": "479c44abd9d422b35d5cdee1ace6dd706829182246dfebc3f590b612c135e739",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "diagnostics/preserve_seed_trace.hpp": "523d3a9770c6640cb2da3e4f7a77a426a516a14d3cf918533a979da74cb00e5d"
+  }
+}

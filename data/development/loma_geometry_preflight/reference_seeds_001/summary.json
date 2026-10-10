@@ -1,0 +1,123 @@
+{
+  "status": "completed_with_original_flags_preserved",
+  "started_utc": "2026-10-10T02:42:17.581828+00:00",
+  "scope": "Four identified exact critical-guide seeds; no production changes, observational queries, truth generation or inversion",
+  "selected_diagnostic_rows": [
+    5,
+    49,
+    57,
+    88
+  ],
+  "spacings_km": [
+    0.5,
+    0.25,
+    0.125,
+    0.0625,
+    0.03125
+  ],
+  "max_updates": 1000,
+  "commands": [
+    {
+      "stage": "compile",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-fopenmp",
+        "data/development/loma_geometry_preflight/reference_seeds_001/source/diagnostics/check_loma_reference_seeds.cpp",
+        "-lstdc++fs",
+        "-o",
+        "tmp/loma_reference_seeds/001/check"
+      ],
+      "status": "completed",
+      "pid": 31296,
+      "return_code": 0,
+      "seconds": 25.217015981674194
+    },
+    {
+      "stage": "diagnostic",
+      "command": [
+        "tmp/loma_reference_seeds/001/check",
+        "data/development/loma_geometry_preflight/reference_seeds_001/inputs/truth_grid.csv",
+        "data/development/loma_geometry_preflight/reference_seeds_001/cases.csv",
+        "data/development/loma_geometry_preflight/reference_seeds_001/seeds.csv",
+        "data/development/loma_geometry_preflight/reference_seeds_001"
+      ],
+      "status": "completed",
+      "pid": 31580,
+      "return_code": 0,
+      "seconds": 98.81668710708618
+    }
+  ],
+  "input_sha256": {
+    "truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "truth_events.csv": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3",
+    "stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "reference_summary.json": "619d39032454fa9b75a62fdfacca4c8fb2f84d8470c4afef886f4f3ea0376f19",
+    "reference_references.jsonl": "28d5278f4c0191878c9bb3f95b6284cc2c70542778263c6dfac7785950442723",
+    "reference_comparison.csv": "c9dff90b0190e2708e168205217f6b8b90abcff22c29fe59fbba2c817fdb88ea"
+  },
+  "source_sha256": {
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "diagnostics/check_loma_reference_seeds.cpp": "2fb876dc9e10053f563e8169be413c42069864f9f16f939df3bc3559523e5266",
+    "diagnostics/run_loma_reference_seeds.py": "0d5bfe99867b7d3b945653f7e28387ae6513a540016dbf66013fc308c77f4439",
+    "diagnostics/loma_path_checks.hpp": "479c44abd9d422b35d5cdee1ace6dd706829182246dfebc3f590b612c135e739",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "diagnostics/preserve_seed_trace.hpp": "523d3a9770c6640cb2da3e4f7a77a426a516a14d3cf918533a979da74cb00e5d"
+  },
+  "limitations": [
+    "Supplied first-arrival seeds use known x-only references and are not a general 3D initialization method.",
+    "Reference time ordering is floating point; complete candidate enumeration is distinct from interval-certified time ranking.",
+    "No-resampling copy changes only initialization; every interior node remains free during optimization.",
+    "Fixed-polygon source derivatives are not optimized-travel-time derivatives unless path stationarity and branch differentiability hold.",
+    "Raw sampled-polygon stages have no solver convergence claim; numerical flags remain unchanged elsewhere."
+  ],
+  "coordinate_mapping": "Sampler(y,z,-x), reversed x profile, guide normal0; returned points(-normal,transverse0,transverse1). Reference source derivative permutes(original dx,dy,dz)=(reference dz,dx,dy).",
+  "binary_sha256": "7ccd5384122aecbff850fa325f113d357655faa34eea56bafb661492ab7b8d39",
+  "result_rows": 100,
+  "checks_passed": 17339,
+  "optimized_convergence_counts": {
+    "uniform_resampled_optimized": 1,
+    "retained_seed_optimized": 0
+  },
+  "output_sha256": {
+    "initialization_only.diff": "494770e2d93a40a91a63ee21e81a930945edba5aa5694565d76bb28c6baf1daf",
+    "cases.csv": "ac570e0dd6a68a9a561c4ed6d1ba418a9273a86bf6efce034685e3e5f0c39d24",
+    "seeds.csv": "99bcdb7f26ce18a2142611348b87993603609f51205aab64721ae6f7f04c654f",
+    "selected_references.jsonl": "27cda7a9658891d86d9b11bb0092db45359e74946eac86fe6d161440b81c1ac0",
+    "compile_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "diagnostic_stdout.log": "a07a4330c39eb85e202e668d7fa4d63120ae1e0ca7cdfbd500334217a7e52327",
+    "diagnostic_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results.csv": "0ea6ac72e99cdb52514a1276e7dab7a813de3ebfd1a52e60384601254007b786",
+    "paths.csv": "dcfdee50c1640d2cea02eb1838466a957a998c9fe35246d57995a66a4a5274ab",
+    "finite_difference.csv": "5e9516799c706d91c996fee8d23265ece0e30a472d1d51d5ddb142ba4a09152d",
+    "checks.csv": "c0584720a2f5bbcd9add015b58069d08070ef6dbd773e60d706065060f71d998",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/src/forward.hpp": "e1683458e97051fc1c152caf3cb2a08b9df03de05560e8aa5d7060c32107c3f3",
+    "source/src/main.cpp": "67a25bb219b30a25af3b993f15e58e3dd58c25e38e21ea83daec50fbb13f0913",
+    "source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/diagnostics/check_loma_reference_seeds.cpp": "2fb876dc9e10053f563e8169be413c42069864f9f16f939df3bc3559523e5266",
+    "source/diagnostics/run_loma_reference_seeds.py": "0d5bfe99867b7d3b945653f7e28387ae6513a540016dbf66013fc308c77f4439",
+    "source/diagnostics/loma_path_checks.hpp": "479c44abd9d422b35d5cdee1ace6dd706829182246dfebc3f590b612c135e739",
+    "source/diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98",
+    "source/diagnostics/preserve_seed_trace.hpp": "523d3a9770c6640cb2da3e4f7a77a426a516a14d3cf918533a979da74cb00e5d",
+    "inputs/truth_grid.csv": "d8271406010a1543c0136f6300a7d8d7e6ae3c914a3a13d5082bbaad973f0f47",
+    "inputs/truth_events.csv": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3",
+    "inputs/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "inputs/ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "inputs/reference_summary.json": "619d39032454fa9b75a62fdfacca4c8fb2f84d8470c4afef886f4f3ea0376f19",
+    "inputs/reference_references.jsonl": "28d5278f4c0191878c9bb3f95b6284cc2c70542778263c6dfac7785950442723",
+    "inputs/reference_comparison.csv": "c9dff90b0190e2708e168205217f6b8b90abcff22c29fe59fbba2c817fdb88ea"
+  }
+}

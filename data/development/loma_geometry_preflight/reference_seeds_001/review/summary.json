@@ -1,0 +1,2270 @@
+{
+  "scope": "Saved-output numerical and native-identity checks for four exact-guide branch controls; no new solver runs",
+  "original_summary_sha256": "f8ac08aef10d66eb8b041a12c606a1b3b94e829a022538786992162aa7d1f21e",
+  "validated_original_hashes": 31,
+  "source_sha256": "4ea74385961c5edf9b403df49b3d66c448e0e645b06ae41ce88a046427565e0f",
+  "cases": 20,
+  "stage_rows": 100,
+  "path_rows": 84667,
+  "finite_difference_rows": 1125,
+  "native_identities_preserved": true,
+  "maximum_quadrature_vs_exact_polygon_error_s": 2.2412106892577555e-13,
+  "maximum_fixed_polygon_source_central_fd_error_at_1e_minus5_km": 6.077816971927774e-09,
+  "convergence_counts": {
+    "uniform_resampled_optimized": 1,
+    "retained_seed_optimized": 0
+  },
+  "results": [
+    {
+      "diagnostic_row": "5",
+      "event": "473",
+      "station": "2",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.BSL..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-08-25T19:45:00",
+      "receiver_metadata_epoch_end": "1990-09-10T19:20:00",
+      "case_id": "row5_h0.5",
+      "spacing_km": 0.5,
+      "analytic_seed_polygon": {
+        "time_error_s": 0.0008483629036764029,
+        "source_error_norm": 1.2980786360642968e-15,
+        "projected_gradient": 0.29874238419853455,
+        "quadrature_error_s": 2.703566537309854e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 119,
+        "exact_velocity_kink_nodes": {
+          "0.0": 119,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 0.0013220932057276258,
+        "source_error_norm": 0.003515628483432917,
+        "projected_gradient": 0.29956434001442245,
+        "quadrature_error_s": 3.5128150388530344e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 117,
+        "exact_velocity_kink_nodes": {
+          "0.0": 117,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 0.0008483629036764029,
+        "source_error_norm": 1.2980786360642968e-15,
+        "projected_gradient": 0.29874238419853455,
+        "quadrature_error_s": 2.703566537309854e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 119,
+        "exact_velocity_kink_nodes": {
+          "0.0": 119,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 0.00037659352467223073,
+        "source_error_norm": 2.8801016067648376e-05,
+        "projected_gradient": 0.00036060747919224343,
+        "quadrature_error_s": -1.240327285323417e-15,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 0.000848351610480691,
+        "source_error_norm": 2.3341292709834262e-07,
+        "projected_gradient": 0.0011869711639791705,
+        "quadrature_error_s": -2.197027282324626e-15,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "resampling_added_action_s": 0.0004737303020512229,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 3.2520636882480045,
+          "exact_forward": 3.252211889905616,
+          "exact_backward": -8.03140603501673e-05,
+          "exact_central": 1.6260657879226328
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 3.2520636882480045,
+          "exact_forward": 3.252078507968211,
+          "exact_backward": 2.663076269920905e-05,
+          "exact_central": 1.626052569365455
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 3.2520636882480045,
+          "exact_forward": 3.2520651702047654,
+          "exact_backward": 3.734933196053447e-05,
+          "exact_central": 1.626051259768363
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "5",
+      "event": "473",
+      "station": "2",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.BSL..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-08-25T19:45:00",
+      "receiver_metadata_epoch_end": "1990-09-10T19:20:00",
+      "case_id": "row5_h0.25",
+      "spacing_km": 0.25,
+      "analytic_seed_polygon": {
+        "time_error_s": 0.00025365693379875154,
+        "source_error_norm": 1.2980786360642968e-15,
+        "projected_gradient": 0.21191344112426216,
+        "quadrature_error_s": 1.7372388250169735e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 236,
+        "exact_velocity_kink_nodes": {
+          "0.0": 236,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 0.0003074349976746049,
+        "source_error_norm": 0.0016364190212526106,
+        "projected_gradient": 0.21212369870665018,
+        "quadrature_error_s": 2.1323220966706913e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 235,
+        "exact_velocity_kink_nodes": {
+          "0.0": 235,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 0.00025365693379875154,
+        "source_error_norm": 1.2980786360642968e-15,
+        "projected_gradient": 0.21191344112426216,
+        "quadrature_error_s": 1.7372388250169735e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 236,
+        "exact_velocity_kink_nodes": {
+          "0.0": 236,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 0.00012817851196267327,
+        "source_error_norm": 1.5312212682898608e-05,
+        "projected_gradient": 0.0002812753351412364,
+        "quadrature_error_s": 4.7618159415563355e-15,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 0.00025365693379875154,
+        "source_error_norm": 1.2980786360642968e-15,
+        "projected_gradient": 0.21191344112426216,
+        "quadrature_error_s": 1.7372388250169735e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 236,
+        "exact_velocity_kink_nodes": {
+          "0.0": 236,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "resampling_added_action_s": 5.377806387585338e-05,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 3.252031369790121,
+          "exact_forward": 3.2522125242893765,
+          "exact_backward": -0.0002102358775089852,
+          "exact_central": 1.6260011442059337
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 3.252031369790121,
+          "exact_forward": 3.2520494846956236,
+          "exact_backward": -1.5571385847401586e-05,
+          "exact_central": 1.626016956654888
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 3.252031369790121,
+          "exact_forward": 3.252033181279368,
+          "exact_backward": 4.041255177722469e-06,
+          "exact_central": 1.626018611267273
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "5",
+      "event": "473",
+      "station": "2",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.BSL..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-08-25T19:45:00",
+      "receiver_metadata_epoch_end": "1990-09-10T19:20:00",
+      "case_id": "row5_h0.125",
+      "spacing_km": 0.125,
+      "analytic_seed_polygon": {
+        "time_error_s": 6.985284082361432e-05,
+        "source_error_norm": 1.3074614405932247e-15,
+        "projected_gradient": 0.1500845568372721,
+        "quadrature_error_s": -9.124645483638005e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 470,
+        "exact_velocity_kink_nodes": {
+          "0.0": 470,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 7.614896768259882e-05,
+        "source_error_norm": 2.6378111856861204e-15,
+        "projected_gradient": 0.15019964910356876,
+        "quadrature_error_s": 7.248542044369088e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 469,
+        "exact_velocity_kink_nodes": {
+          "0.0": 469,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 6.985284082361432e-05,
+        "source_error_norm": 1.3074614405932247e-15,
+        "projected_gradient": 0.1500845568372721,
+        "quadrature_error_s": -9.124645483638005e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 470,
+        "exact_velocity_kink_nodes": {
+          "0.0": 470,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 7.608561093519484e-05,
+        "source_error_norm": 1.3721656307890775e-06,
+        "projected_gradient": 0.002489317117600253,
+        "quadrature_error_s": -1.6930901125533637e-14,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 6.985284082361432e-05,
+        "source_error_norm": 1.3074614405932247e-15,
+        "projected_gradient": 0.1500845568372721,
+        "quadrature_error_s": -9.124645483638005e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 470,
+        "exact_velocity_kink_nodes": {
+          "0.0": 470,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "resampling_added_action_s": 6.296126858984508e-06,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 3.252026040515763,
+          "exact_forward": 3.2522732083749544,
+          "exact_backward": -0.0004042312225140815,
+          "exact_central": 1.6259344885762201
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 3.252026040515763,
+          "exact_forward": 3.2520507565627836,
+          "exact_backward": -4.0612487678393094e-05,
+          "exact_central": 1.6260050720375527
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 3.252026040515763,
+          "exact_forward": 3.2520285121323544,
+          "exact_backward": -3.268046423754445e-06,
+          "exact_central": 1.6260126220429654
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "5",
+      "event": "473",
+      "station": "2",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.BSL..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-08-25T19:45:00",
+      "receiver_metadata_epoch_end": "1990-09-10T19:20:00",
+      "case_id": "row5_h0.0625",
+      "spacing_km": 0.0625,
+      "analytic_seed_polygon": {
+        "time_error_s": 1.8366468689023918e-05,
+        "source_error_norm": 3.9304531370967055e-15,
+        "projected_gradient": 0.10621068672741421,
+        "quadrature_error_s": 8.574738141753357e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 938,
+        "exact_velocity_kink_nodes": {
+          "0.0": 938,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 1.913249493235014e-05,
+        "source_error_norm": 4.424256383284522e-15,
+        "projected_gradient": 0.10623074832350884,
+        "quadrature_error_s": 4.992881108556446e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 937,
+        "exact_velocity_kink_nodes": {
+          "0.0": 937,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 1.8366468689023918e-05,
+        "source_error_norm": 3.9304531370967055e-15,
+        "projected_gradient": 0.10621068672741421,
+        "quadrature_error_s": 8.574738141753357e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 938,
+        "exact_velocity_kink_nodes": {
+          "0.0": 938,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 1.910257491211098e-05,
+        "source_error_norm": 6.799044617490764e-07,
+        "projected_gradient": 0.0015605028798096,
+        "quadrature_error_s": -4.476193721236754e-14,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 1.8366468689023918e-05,
+        "source_error_norm": 3.9304531370967055e-15,
+        "projected_gradient": 0.10621068672741421,
+        "quadrature_error_s": 8.574738141753357e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 938,
+        "exact_velocity_kink_nodes": {
+          "0.0": 938,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "resampling_added_action_s": 7.660262433262233e-07,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 3.2520252676094192,
+          "exact_forward": 3.252404524135806,
+          "exact_backward": -0.0007382845490684631,
+          "exact_central": 1.6258331197933689
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 3.2520252676094192,
+          "exact_forward": 3.2520631921396577,
+          "exact_backward": -8.02843982267154e-05,
+          "exact_central": 1.6259914538707154
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 3.2520252676094192,
+          "exact_forward": 3.2520290600525708,
+          "exact_backward": -7.996430774481755e-06,
+          "exact_central": 1.6260105318108982
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "5",
+      "event": "473",
+      "station": "2",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.BSL..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-08-25T19:45:00",
+      "receiver_metadata_epoch_end": "1990-09-10T19:20:00",
+      "case_id": "row5_h0.03125",
+      "spacing_km": 0.03125,
+      "analytic_seed_polygon": {
+        "time_error_s": 4.69627960164587e-06,
+        "source_error_norm": 1.960728715439934e-15,
+        "projected_gradient": 0.07511231723721869,
+        "quadrature_error_s": -1.5138931774849596e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 1875,
+        "exact_velocity_kink_nodes": {
+          "0.0": 1875,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 4.749958476324423e-06,
+        "source_error_norm": 6.522327738764101e-15,
+        "projected_gradient": 0.07512870832041231,
+        "quadrature_error_s": 2.2412106892577555e-13,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 1874,
+        "exact_velocity_kink_nodes": {
+          "0.0": 1874,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 4.69627960164587e-06,
+        "source_error_norm": 1.960728715439934e-15,
+        "projected_gradient": 0.07511231723721869,
+        "quadrature_error_s": -1.5138931774849596e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 1875,
+        "exact_velocity_kink_nodes": {
+          "0.0": 1875,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 4.749958476324423e-06,
+        "source_error_norm": 6.522327738764101e-15,
+        "projected_gradient": 0.07512870832041231,
+        "quadrature_error_s": 2.2412106892577555e-13,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 1874,
+        "exact_velocity_kink_nodes": {
+          "0.0": 1874,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 4.69627960164587e-06,
+        "source_error_norm": 1.960728715439934e-15,
+        "projected_gradient": 0.07511231723721869,
+        "quadrature_error_s": -1.5138931774849596e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 1875,
+        "exact_velocity_kink_nodes": {
+          "0.0": 1875,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "resampling_added_action_s": 5.3678874678553257e-08,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 3.2520251632427293,
+          "exact_forward": 3.2526686297712057,
+          "exact_backward": -0.0011962308166767188,
+          "exact_central": 1.6257361994772646
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 3.2520251632427293,
+          "exact_forward": 3.25208950808899,
+          "exact_backward": -0.00015426471246249296,
+          "exact_central": 1.625967621688264
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 3.2520251632427293,
+          "exact_forward": 3.252031597696277,
+          "exact_backward": -1.5969866054565962e-05,
+          "exact_central": 1.6260078139151113
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "49",
+      "event": "473",
+      "station": "24",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.HLT..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_HLT__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-05-19T21:20:00",
+      "receiver_metadata_epoch_end": "1990-02-14T21:58:00",
+      "case_id": "row49_h0.5",
+      "spacing_km": 0.5,
+      "analytic_seed_polygon": {
+        "time_error_s": 0.0008496416073260349,
+        "source_error_norm": 1.5845006391614995e-15,
+        "projected_gradient": 0.21249662694550558,
+        "quadrature_error_s": 4.890185478778619e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 61,
+        "exact_velocity_kink_nodes": {
+          "0.0": 61,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 0.0012693624285944338,
+        "source_error_norm": 0.0035540719998058477,
+        "projected_gradient": 0.21271753859271544,
+        "quadrature_error_s": 4.944829268271889e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 60,
+        "exact_velocity_kink_nodes": {
+          "0.0": 60,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 0.0008496416073260349,
+        "source_error_norm": 1.5845006391614995e-15,
+        "projected_gradient": 0.21249662694550558,
+        "quadrature_error_s": 4.890185478778619e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 61,
+        "exact_velocity_kink_nodes": {
+          "0.0": 61,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 0.00034245549428391087,
+        "source_error_norm": 0.0001138723506377794,
+        "projected_gradient": 0.0007512280012786296,
+        "quadrature_error_s": -3.168472428871638e-15,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 0.0008494905114577733,
+        "source_error_norm": 5.491651151152414e-06,
+        "projected_gradient": 0.0012219279279968272,
+        "quadrature_error_s": 5.073198805494172e-15,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "resampling_added_action_s": 0.00041972082126839894,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 1.6528865124567353,
+          "exact_forward": 1.6529814064315458,
+          "exact_backward": -8.03140603501673e-05,
+          "exact_central": 0.8264505461855979
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 1.6528865124567353,
+          "exact_forward": 1.6528960015693703,
+          "exact_backward": 2.663076269920905e-05,
+          "exact_central": 0.8264613161660348
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 1.6528865124567353,
+          "exact_forward": 1.6528874613643691,
+          "exact_backward": 3.734933196053447e-05,
+          "exact_central": 0.8264624053481648
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "49",
+      "event": "473",
+      "station": "24",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.HLT..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_HLT__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-05-19T21:20:00",
+      "receiver_metadata_epoch_end": "1990-02-14T21:58:00",
+      "case_id": "row49_h0.25",
+      "spacing_km": 0.25,
+      "analytic_seed_polygon": {
+        "time_error_s": 0.0002539823442155864,
+        "source_error_norm": 1.5845006391614995e-15,
+        "projected_gradient": 0.1505697350807014,
+        "quadrature_error_s": 1.3183031055685746e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 121,
+        "exact_velocity_kink_nodes": {
+          "0.0": 121,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 0.0003028181017121767,
+        "source_error_norm": 0.0016325688540282362,
+        "projected_gradient": 0.15099929712989424,
+        "quadrature_error_s": -3.6142963621976776e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 120,
+        "exact_velocity_kink_nodes": {
+          "0.0": 120,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 0.0002539823442155864,
+        "source_error_norm": 1.5845006391614995e-15,
+        "projected_gradient": 0.1505697350807014,
+        "quadrature_error_s": 1.3183031055685746e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 121,
+        "exact_velocity_kink_nodes": {
+          "0.0": 121,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 0.00014674427501226717,
+        "source_error_norm": 2.0390386932055203e-05,
+        "projected_gradient": 0.0009304974850064128,
+        "quadrature_error_s": 8.642392357316453e-15,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 0.0002539823442155864,
+        "source_error_norm": 1.5845006391614995e-15,
+        "projected_gradient": 0.1505697350807014,
+        "quadrature_error_s": 1.3183031055685746e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 121,
+        "exact_velocity_kink_nodes": {
+          "0.0": 121,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "resampling_added_action_s": 4.8835757496590304e-05,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 1.6528541939988526,
+          "exact_forward": 1.6529820408153761,
+          "exact_backward": -0.0002102358775089852,
+          "exact_central": 0.8263859024689335
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 1.6528541939988526,
+          "exact_forward": 1.6528669782972167,
+          "exact_backward": -1.557138619434628e-05,
+          "exact_central": 0.8264257034555113
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 1.6528541939988526,
+          "exact_forward": 1.652855472425094,
+          "exact_backward": 4.041255177722469e-06,
+          "exact_central": 0.8264297568401358
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "49",
+      "event": "473",
+      "station": "24",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.HLT..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_HLT__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-05-19T21:20:00",
+      "receiver_metadata_epoch_end": "1990-02-14T21:58:00",
+      "case_id": "row49_h0.125",
+      "spacing_km": 0.125,
+      "analytic_seed_polygon": {
+        "time_error_s": 6.993495457052745e-05,
+        "source_error_norm": 1.9438813109055185e-15,
+        "projected_gradient": 0.10680203054633908,
+        "quadrature_error_s": 4.109559914589056e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 240,
+        "exact_velocity_kink_nodes": {
+          "0.0": 240,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 7.600296829401998e-05,
+        "source_error_norm": 1.867078291767516e-15,
+        "projected_gradient": 0.1069717951648462,
+        "quadrature_error_s": 9.501947839662961e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 239,
+        "exact_velocity_kink_nodes": {
+          "0.0": 239,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 6.993495457052745e-05,
+        "source_error_norm": 1.9438813109055185e-15,
+        "projected_gradient": 0.10680203054633908,
+        "quadrature_error_s": 4.109559914589056e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 240,
+        "exact_velocity_kink_nodes": {
+          "0.0": 240,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 7.592983634552297e-05,
+        "source_error_norm": 2.2280679383643786e-06,
+        "projected_gradient": 0.0024519821347163723,
+        "quadrature_error_s": 6.361230986406952e-15,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 6.993495457052745e-05,
+        "source_error_norm": 1.9438813109055185e-15,
+        "projected_gradient": 0.10680203054633908,
+        "quadrature_error_s": 4.109559914589056e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 240,
+        "exact_velocity_kink_nodes": {
+          "0.0": 240,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "resampling_added_action_s": 6.068013723492527e-06,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 1.652848864724499,
+          "exact_forward": 1.6530427249007718,
+          "exact_backward": -0.0004042312225054079,
+          "exact_central": 0.8263192468391332
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 1.652848864724499,
+          "exact_forward": 1.6528682501629892,
+          "exact_backward": -4.061248750492075e-05,
+          "exact_central": 0.8264138188377421
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 1.652848864724499,
+          "exact_forward": 1.6528508032589984,
+          "exact_backward": -3.268045556392707e-06,
+          "exact_central": 0.826423767606721
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "49",
+      "event": "473",
+      "station": "24",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.HLT..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_HLT__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-05-19T21:20:00",
+      "receiver_metadata_epoch_end": "1990-02-14T21:58:00",
+      "case_id": "row49_h0.0625",
+      "spacing_km": 0.0625,
+      "analytic_seed_polygon": {
+        "time_error_s": 1.8387199657965425e-05,
+        "source_error_norm": 4.458378378966032e-15,
+        "projected_gradient": 0.07563904296580137,
+        "quadrature_error_s": -1.7789589246142157e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 478,
+        "exact_velocity_kink_nodes": {
+          "0.0": 478,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 1.927045916083614e-05,
+        "source_error_norm": 6.281243751179665e-15,
+        "projected_gradient": 0.07569014997140465,
+        "quadrature_error_s": -8.873977941359357e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 476,
+        "exact_velocity_kink_nodes": {
+          "0.0": 476,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 1.8387199657965425e-05,
+        "source_error_norm": 4.458378378966032e-15,
+        "projected_gradient": 0.07563904296580137,
+        "quadrature_error_s": -1.7789589246142157e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 478,
+        "exact_velocity_kink_nodes": {
+          "0.0": 478,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 1.521117982328235e-05,
+        "source_error_norm": 3.6318756763190343e-06,
+        "projected_gradient": 0.0006483245712263098,
+        "quadrature_error_s": 3.639449852599341e-15,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 1.8387199657965425e-05,
+        "source_error_norm": 4.458378378966032e-15,
+        "projected_gradient": 0.07563904296580137,
+        "quadrature_error_s": -1.7789589246142157e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 478,
+        "exact_velocity_kink_nodes": {
+          "0.0": 478,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "resampling_added_action_s": 8.832595028707146e-07,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 1.6528480918181299,
+          "exact_forward": 1.6531740406618405,
+          "exact_backward": -0.0007382845490684631,
+          "exact_central": 0.826217878056386
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 1.6528480918181299,
+          "exact_forward": 1.6528806857428988,
+          "exact_backward": -8.028439813997923e-05,
+          "exact_central": 0.8264002006723794
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 1.6528480918181299,
+          "exact_forward": 1.6528513512052354,
+          "exact_backward": -7.996431641843493e-06,
+          "exact_central": 0.8264216773867968
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "49",
+      "event": "473",
+      "station": "24",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.HLT..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_HLT__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-05-19T21:20:00",
+      "receiver_metadata_epoch_end": "1990-02-14T21:58:00",
+      "case_id": "row49_h0.03125",
+      "spacing_km": 0.03125,
+      "analytic_seed_polygon": {
+        "time_error_s": 4.70147449860292e-06,
+        "source_error_norm": 6.280802975189039e-15,
+        "projected_gradient": 0.05352695106344167,
+        "quadrature_error_s": -2.289574779767989e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 954,
+        "exact_velocity_kink_nodes": {
+          "0.0": 954,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 4.753536742896358e-06,
+        "source_error_norm": 1.0004876846111253e-14,
+        "projected_gradient": 0.05354550026677233,
+        "quadrature_error_s": 8.513155458356181e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 953,
+        "exact_velocity_kink_nodes": {
+          "0.0": 953,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 4.70147449860292e-06,
+        "source_error_norm": 6.280802975189039e-15,
+        "projected_gradient": 0.05352695106344167,
+        "quadrature_error_s": -2.289574779767989e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 954,
+        "exact_velocity_kink_nodes": {
+          "0.0": 954,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 4.746369757668845e-06,
+        "source_error_norm": 2.695064734534178e-07,
+        "projected_gradient": 0.000428274852769071,
+        "quadrature_error_s": -5.3024425128445074e-14,
+        "updates": 28,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 4.70147449860292e-06,
+        "source_error_norm": 6.280802975189039e-15,
+        "projected_gradient": 0.05352695106344167,
+        "quadrature_error_s": -2.289574779767989e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 954,
+        "exact_velocity_kink_nodes": {
+          "0.0": 954,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "resampling_added_action_s": 5.20622442934382e-08,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 1.652847987451451,
+          "exact_forward": 1.653438146297717,
+          "exact_backward": -0.0011962308166767188,
+          "exact_central": 0.8261209577405202
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 1.652847987451451,
+          "exact_forward": 1.6529070017016858,
+          "exact_backward": -0.00015426471254922913,
+          "exact_central": 0.8263763684945683
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 1.652847987451451,
+          "exact_forward": 1.652853888849809,
+          "exact_backward": -1.5969865187204224e-05,
+          "exact_central": 0.8264189594923109
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "57",
+      "event": "473",
+      "station": "28",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.HQR..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-07-11T19:55:00",
+      "receiver_metadata_epoch_end": "1990-03-24T19:55:00",
+      "case_id": "row57_h0.5",
+      "spacing_km": 0.5,
+      "analytic_seed_polygon": {
+        "time_error_s": 0.0008499492738494041,
+        "source_error_norm": 3.6203807780080786e-16,
+        "projected_gradient": 0.22712408925394487,
+        "quadrature_error_s": -7.771561172376096e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 70,
+        "exact_velocity_kink_nodes": {
+          "0.0": 70,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 0.0013261617254762825,
+        "source_error_norm": 0.0035104795840382383,
+        "projected_gradient": 0.22825126469462176,
+        "quadrature_error_s": 4.283032262186737e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 68,
+        "exact_velocity_kink_nodes": {
+          "0.0": 68,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 0.0008499492738494041,
+        "source_error_norm": 3.6203807780080786e-16,
+        "projected_gradient": 0.22712408925394487,
+        "quadrature_error_s": -7.771561172376096e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 70,
+        "exact_velocity_kink_nodes": {
+          "0.0": 70,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 0.00047504258343877837,
+        "source_error_norm": 3.20242722004397e-05,
+        "projected_gradient": 0.00028435391149206796,
+        "quadrature_error_s": 3.354955202539145e-15,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 0.0008498062324306943,
+        "source_error_norm": 4.79204146424266e-06,
+        "projected_gradient": 0.001222316713851117,
+        "quadrature_error_s": 1.93421667571414e-15,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "resampling_added_action_s": 0.0004762124516268784,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 1.8935005916666272,
+          "exact_forward": 1.8936035063781345,
+          "exact_backward": -8.031406036751454e-05,
+          "exact_central": 0.9467615961588834
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 1.8935005916666272,
+          "exact_forward": 1.8935108828289566,
+          "exact_backward": 2.6630762525736703e-05,
+          "exact_central": 0.9467687567957412
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 1.8935005916666272,
+          "exact_forward": 1.893501620777241,
+          "exact_backward": 3.734933196053447e-05,
+          "exact_central": 0.9467694850546008
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "57",
+      "event": "473",
+      "station": "28",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.HQR..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-07-11T19:55:00",
+      "receiver_metadata_epoch_end": "1990-03-24T19:55:00",
+      "case_id": "row57_h0.25",
+      "spacing_km": 0.25,
+      "analytic_seed_polygon": {
+        "time_error_s": 0.00025405948793988387,
+        "source_error_norm": 3.6203807780080786e-16,
+        "projected_gradient": 0.16147458112032365,
+        "quadrature_error_s": -1.2019898965043296e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 138,
+        "exact_velocity_kink_nodes": {
+          "0.0": 138,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 0.0003070925787937995,
+        "source_error_norm": 0.0016383734300961848,
+        "projected_gradient": 0.16177484285888388,
+        "quadrature_error_s": 8.829742492721948e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 137,
+        "exact_velocity_kink_nodes": {
+          "0.0": 137,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 0.00025405948793988387,
+        "source_error_norm": 3.6203807780080786e-16,
+        "projected_gradient": 0.16147458112032365,
+        "quadrature_error_s": -1.2019898965043296e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 138,
+        "exact_velocity_kink_nodes": {
+          "0.0": 138,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 0.00014632124953450898,
+        "source_error_norm": 4.9075813703407226e-05,
+        "projected_gradient": 0.0007286320035259918,
+        "quadrature_error_s": 1.9937176909401444e-14,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 0.00025405948793988387,
+        "source_error_norm": 3.6203807780080786e-16,
+        "projected_gradient": 0.16147458112032365,
+        "quadrature_error_s": -1.2019898965043296e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 138,
+        "exact_velocity_kink_nodes": {
+          "0.0": 138,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "resampling_added_action_s": 5.303309085391561e-05,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 1.893468273208742,
+          "exact_forward": 1.89360414076193,
+          "exact_backward": -0.00021023587752633244,
+          "exact_central": 0.9466969524422018
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 1.893468273208742,
+          "exact_forward": 1.893481859556803,
+          "exact_backward": -1.557138619434628e-05,
+          "exact_central": 0.9467331440853043
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 1.893468273208742,
+          "exact_forward": 1.8934696318414352,
+          "exact_backward": 4.041255177722469e-06,
+          "exact_central": 0.9467368365483064
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "57",
+      "event": "473",
+      "station": "28",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.HQR..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-07-11T19:55:00",
+      "receiver_metadata_epoch_end": "1990-03-24T19:55:00",
+      "case_id": "row57_h0.125",
+      "spacing_km": 0.125,
+      "analytic_seed_polygon": {
+        "time_error_s": 6.995425587774662e-05,
+        "source_error_norm": 3.3793499723024704e-15,
+        "projected_gradient": 0.1144926167736702,
+        "quadrature_error_s": 2.0990154059319366e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 274,
+        "exact_velocity_kink_nodes": {
+          "0.0": 274,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 7.744972120349303e-05,
+        "source_error_norm": 3.902140831246266e-15,
+        "projected_gradient": 0.11448783509078632,
+        "quadrature_error_s": -1.3562068135186678e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 273,
+        "exact_velocity_kink_nodes": {
+          "0.0": 273,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 6.995425587774662e-05,
+        "source_error_norm": 3.3793499723024704e-15,
+        "projected_gradient": 0.1144926167736702,
+        "quadrature_error_s": 2.0990154059319366e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 274,
+        "exact_velocity_kink_nodes": {
+          "0.0": 274,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 5.0053609733424764e-05,
+        "source_error_norm": 1.3522836383806189e-05,
+        "projected_gradient": 0.00015542609008730248,
+        "quadrature_error_s": -1.4190038033490282e-14,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 6.995425587774662e-05,
+        "source_error_norm": 3.3793499723024704e-15,
+        "projected_gradient": 0.1144926167736702,
+        "quadrature_error_s": 2.0990154059319366e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 274,
+        "exact_velocity_kink_nodes": {
+          "0.0": 274,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "resampling_added_action_s": 7.495465325746409e-06,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 1.8934629439343877,
+          "exact_forward": 1.893664824847291,
+          "exact_backward": -0.0004042312225227551,
+          "exact_central": 0.9466302968123841
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 1.8934629439343877,
+          "exact_forward": 1.893483131422749,
+          "exact_backward": -4.0612487678393094e-05,
+          "exact_central": 0.9467212594675353
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 1.8934629439343877,
+          "exact_forward": 1.8934649626770745,
+          "exact_backward": -3.268045556392707e-06,
+          "exact_central": 0.9467308473157591
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "57",
+      "event": "473",
+      "station": "28",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.HQR..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-07-11T19:55:00",
+      "receiver_metadata_epoch_end": "1990-03-24T19:55:00",
+      "case_id": "row57_h0.0625",
+      "spacing_km": 0.0625,
+      "analytic_seed_polygon": {
+        "time_error_s": 1.839202599995815e-05,
+        "source_error_norm": 3.5191361665123723e-15,
+        "projected_gradient": 0.08099559073787764,
+        "quadrature_error_s": -1.701069840542857e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 547,
+        "exact_velocity_kink_nodes": {
+          "0.0": 547,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 1.916580502125953e-05,
+        "source_error_norm": 3.4380031127010275e-15,
+        "projected_gradient": 0.08103002593260347,
+        "quadrature_error_s": -6.392456008974534e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 545,
+        "exact_velocity_kink_nodes": {
+          "0.0": 545,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 1.839202599995815e-05,
+        "source_error_norm": 3.5191361665123723e-15,
+        "projected_gradient": 0.08099559073787764,
+        "quadrature_error_s": -1.701069840542857e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 547,
+        "exact_velocity_kink_nodes": {
+          "0.0": 547,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 1.8873835475829992e-05,
+        "source_error_norm": 4.323212417052248e-06,
+        "projected_gradient": 8.376958990757865e-05,
+        "quadrature_error_s": -2.577972557649133e-14,
+        "updates": 42,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 1.839202599995815e-05,
+        "source_error_norm": 3.5191361665123723e-15,
+        "projected_gradient": 0.08099559073787764,
+        "quadrature_error_s": -1.701069840542857e-14,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 547,
+        "exact_velocity_kink_nodes": {
+          "0.0": 547,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "resampling_added_action_s": 7.737790213013795e-07,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 1.893462171028019,
+          "exact_forward": 1.893796140608351,
+          "exact_backward": -0.0007382845490684631,
+          "exact_central": 0.9465289280296413
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 1.893462171028019,
+          "exact_forward": 1.8934955670029188,
+          "exact_backward": -8.028439805324306e-05,
+          "exact_central": 0.9467076413024327
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 1.893462171028019,
+          "exact_forward": 1.89346551061724,
+          "exact_backward": -7.996431641843493e-06,
+          "exact_central": 0.946728757092799
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "57",
+      "event": "473",
+      "station": "28",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/20091683",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2660124",
+      "receiver_channel_seed_id": "NC.HQR..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-07-11T19:55:00",
+      "receiver_metadata_epoch_end": "1990-03-24T19:55:00",
+      "case_id": "row57_h0.03125",
+      "spacing_km": 0.03125,
+      "analytic_seed_polygon": {
+        "time_error_s": 4.70266872554248e-06,
+        "source_error_norm": 7.855220194382444e-15,
+        "projected_gradient": 0.05731188524935166,
+        "quadrature_error_s": -9.367506770274758e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 1092,
+        "exact_velocity_kink_nodes": {
+          "0.0": 1092,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 4.759174732527072e-06,
+        "source_error_norm": 9.23677098348979e-15,
+        "projected_gradient": 0.05731577112164313,
+        "quadrature_error_s": -2.645453300864631e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 1091,
+        "exact_velocity_kink_nodes": {
+          "0.0": 1091,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 4.70266872554248e-06,
+        "source_error_norm": 7.855220194382444e-15,
+        "projected_gradient": 0.05731188524935166,
+        "quadrature_error_s": -9.367506770274758e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 1092,
+        "exact_velocity_kink_nodes": {
+          "0.0": 1092,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 4.748407548049727e-06,
+        "source_error_norm": 2.1175962784593682e-07,
+        "projected_gradient": 0.0006117957387872738,
+        "quadrature_error_s": -1.4148404670066839e-14,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 4.70266872554248e-06,
+        "source_error_norm": 7.855220194382444e-15,
+        "projected_gradient": 0.05731188524935166,
+        "quadrature_error_s": -9.367506770274758e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 1092,
+        "exact_velocity_kink_nodes": {
+          "0.0": 1092,
+          "1.0": 2,
+          "5.0": 1,
+          "6.0": 1
+        }
+      },
+      "resampling_added_action_s": 5.6506006984591295e-08,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 1.8934620666613318,
+          "exact_forward": 1.8940602462442016,
+          "exact_backward": -0.0011962308166767188,
+          "exact_central": 0.9464320077137623
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 1.8934620666613318,
+          "exact_forward": 1.8935218829594507,
+          "exact_backward": -0.00015426471246249296,
+          "exact_central": 0.946683809123494
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 1.8934620666613318,
+          "exact_forward": 1.8934680482401296,
+          "exact_backward": -1.5969864319842486e-05,
+          "exact_central": 0.9467260391879049
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "88",
+      "event": "187",
+      "station": "44",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/256583",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2645094",
+      "receiver_channel_seed_id": "NC.JSC..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_JSC__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-05-10T21:40:00",
+      "receiver_metadata_epoch_end": "1990-10-04T20:15:00",
+      "case_id": "row88_h0.5",
+      "spacing_km": 0.5,
+      "analytic_seed_polygon": {
+        "time_error_s": 0.0007898453600283517,
+        "source_error_norm": 1.123865208011067e-15,
+        "projected_gradient": 0.07586243717217755,
+        "quadrature_error_s": 3.619066851756614e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 9,
+        "exact_velocity_kink_nodes": {
+          "0.0": 9,
+          "1.0": 2,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 0.0011896394024422108,
+        "source_error_norm": 2.172217384091364e-16,
+        "projected_gradient": 0.07540515000925853,
+        "quadrature_error_s": 3.8315704775637727e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 8,
+        "exact_velocity_kink_nodes": {
+          "0.0": 8,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 0.0007898453600283517,
+        "source_error_norm": 1.123865208011067e-15,
+        "projected_gradient": 0.07586243717217755,
+        "quadrature_error_s": 3.619066851756614e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 9,
+        "exact_velocity_kink_nodes": {
+          "0.0": 9,
+          "1.0": 2,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 0.0003434848307528604,
+        "source_error_norm": 4.916831552706928e-06,
+        "projected_gradient": 0.00020141628383923854,
+        "quadrature_error_s": 6.012985248604608e-16,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 0.00030718930512163567,
+        "source_error_norm": 2.8132106947409544e-06,
+        "projected_gradient": 0.00014713008636454904,
+        "quadrature_error_s": 5.973953970395129e-16,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "resampling_added_action_s": 0.0003997940424138591,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 0.22159985624434705,
+          "exact_forward": 0.22164703907359565,
+          "exact_backward": -8.031406035450411e-05,
+          "exact_central": 0.11078336250662056
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 0.22159985624434705,
+          "exact_forward": 0.2216045743856816,
+          "exact_backward": 2.663076263415692e-05,
+          "exact_central": 0.11081560257415789
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 0.22159985624434705,
+          "exact_forward": 0.22160032805713242,
+          "exact_backward": 3.7349331743694036e-05,
+          "exact_central": 0.11081883869443807
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "88",
+      "event": "187",
+      "station": "44",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/256583",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2645094",
+      "receiver_channel_seed_id": "NC.JSC..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_JSC__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-05-10T21:40:00",
+      "receiver_metadata_epoch_end": "1990-10-04T20:15:00",
+      "case_id": "row88_h0.25",
+      "spacing_km": 0.25,
+      "analytic_seed_polygon": {
+        "time_error_s": 0.0002346056844677591,
+        "source_error_norm": 1.261276390829487e-15,
+        "projected_gradient": 0.05451993626768664,
+        "quadrature_error_s": -1.177877240188252e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 17,
+        "exact_velocity_kink_nodes": {
+          "0.0": 17,
+          "1.0": 2,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 0.0002888764931641141,
+        "source_error_norm": 4.727750068566349e-16,
+        "projected_gradient": 0.05423335642966473,
+        "quadrature_error_s": 3.703634621210483e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 16,
+        "exact_velocity_kink_nodes": {
+          "0.0": 16,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 0.0002346056844677591,
+        "source_error_norm": 1.261276390829487e-15,
+        "projected_gradient": 0.05451993626768664,
+        "quadrature_error_s": -1.177877240188252e-15,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 17,
+        "exact_velocity_kink_nodes": {
+          "0.0": 17,
+          "1.0": 2,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 0.00012676238334075052,
+        "source_error_norm": 5.685944194065295e-05,
+        "projected_gradient": 0.000413004542327938,
+        "quadrature_error_s": 4.180683577104105e-16,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 0.00023458622979299903,
+        "source_error_norm": 2.1413018509912626e-06,
+        "projected_gradient": 0.0003678174356952617,
+        "quadrature_error_s": 1.52807454190107e-15,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "resampling_added_action_s": 5.427080869635503e-05,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 0.22156753778646446,
+          "exact_forward": 0.22164767345738462,
+          "exact_backward": -0.0002102358775089852,
+          "exact_central": 0.11071871878993782
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 0.22156753778646446,
+          "exact_forward": 0.22157555111341953,
+          "exact_backward": -1.557138606424202e-05,
+          "exact_central": 0.11077998986367765
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 0.22156753778646446,
+          "exact_forward": 0.22156833911655613,
+          "exact_backward": 4.041255394562904e-06,
+          "exact_central": 0.11078619018597535
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "88",
+      "event": "187",
+      "station": "44",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/256583",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2645094",
+      "receiver_channel_seed_id": "NC.JSC..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_JSC__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-05-10T21:40:00",
+      "receiver_metadata_epoch_end": "1990-10-04T20:15:00",
+      "case_id": "row88_h0.125",
+      "spacing_km": 0.125,
+      "analytic_seed_polygon": {
+        "time_error_s": 6.433737756106339e-05,
+        "source_error_norm": 3.712120170346891e-15,
+        "projected_gradient": 0.03885988638320731,
+        "quadrature_error_s": -5.679050979479072e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 33,
+        "exact_velocity_kink_nodes": {
+          "0.0": 33,
+          "1.0": 2,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 7.122953064220283e-05,
+        "source_error_norm": 2.276126435504334e-16,
+        "projected_gradient": 0.038677418922093885,
+        "quadrature_error_s": 7.626278081263038e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 32,
+        "exact_velocity_kink_nodes": {
+          "0.0": 32,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 6.433737756106339e-05,
+        "source_error_norm": 3.712120170346891e-15,
+        "projected_gradient": 0.03885988638320731,
+        "quadrature_error_s": -5.679050979479072e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 33,
+        "exact_velocity_kink_nodes": {
+          "0.0": 33,
+          "1.0": 2,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 3.813473389202571e-05,
+        "source_error_norm": 1.846735716145045e-05,
+        "projected_gradient": 0.0002184549173307477,
+        "quadrature_error_s": -1.0993810029003015e-16,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 6.433714420239767e-05,
+        "source_error_norm": 1.733953604433042e-07,
+        "projected_gradient": 0.00010052070983572432,
+        "quadrature_error_s": 8.291978215169138e-16,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "resampling_added_action_s": 6.8921530811394405e-06,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 0.2215622085121104,
+          "exact_forward": 0.2217083575427759,
+          "exact_backward": -0.0004042312225140815,
+          "exact_central": 0.11065206316013092
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 0.2215622085121104,
+          "exact_forward": 0.22157682297906187,
+          "exact_backward": -4.0612487678393094e-05,
+          "exact_central": 0.11076810524569174
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 0.2215622085121104,
+          "exact_forward": 0.2215636699547975,
+          "exact_backward": -3.268045556392707e-06,
+          "exact_central": 0.11078020095462056
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "88",
+      "event": "187",
+      "station": "44",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/256583",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2645094",
+      "receiver_channel_seed_id": "NC.JSC..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_JSC__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-05-10T21:40:00",
+      "receiver_metadata_epoch_end": "1990-10-04T20:15:00",
+      "case_id": "row88_h0.0625",
+      "spacing_km": 0.0625,
+      "analytic_seed_polygon": {
+        "time_error_s": 1.6876107386654127e-05,
+        "source_error_norm": 1.580914711770837e-15,
+        "projected_gradient": 0.027586787969438056,
+        "quadrature_error_s": 7.021293269016127e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 65,
+        "exact_velocity_kink_nodes": {
+          "0.0": 65,
+          "1.0": 2,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 1.761570954217362e-05,
+        "source_error_norm": 3.1051395160516043e-15,
+        "projected_gradient": 0.02755252927226865,
+        "quadrature_error_s": 4.978656376053436e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 64,
+        "exact_velocity_kink_nodes": {
+          "0.0": 64,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 1.6876107386654127e-05,
+        "source_error_norm": 1.580914711770837e-15,
+        "projected_gradient": 0.027586787969438056,
+        "quadrature_error_s": 7.021293269016127e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 65,
+        "exact_velocity_kink_nodes": {
+          "0.0": 65,
+          "1.0": 2,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 1.728062454908752e-05,
+        "source_error_norm": 4.651133152699626e-06,
+        "projected_gradient": 1.9289163852972234e-05,
+        "quadrature_error_s": -4.2500725161431774e-16,
+        "updates": 1000,
+        "converged": false,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 1.6876107386654127e-05,
+        "source_error_norm": 1.580914711770837e-15,
+        "projected_gradient": 0.027586787969438056,
+        "quadrature_error_s": 7.021293269016127e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 65,
+        "exact_velocity_kink_nodes": {
+          "0.0": 65,
+          "1.0": 2,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "resampling_added_action_s": 7.39602155519492e-07,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 0.22156143560574143,
+          "exact_forward": 0.2218396733038642,
+          "exact_backward": -0.0007382845490684631,
+          "exact_central": 0.11055069437739787
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 0.22156143560574143,
+          "exact_forward": 0.2215892585587329,
+          "exact_backward": -8.028439813997923e-05,
+          "exact_central": 0.11075448708029646
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 0.22156143560574143,
+          "exact_forward": 0.22156421789387878,
+          "exact_backward": -7.996431425003059e-06,
+          "exact_central": 0.11077811073122688
+        }
+      ]
+    },
+    {
+      "diagnostic_row": "88",
+      "event": "187",
+      "station": "44",
+      "source_event_resource_id": "quakeml:NC.anss.org/Event/NC/256583",
+      "source_origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2645094",
+      "receiver_channel_seed_id": "NC.JSC..EHZ",
+      "receiver_channel_fdsn_source_id": "FDSN:NC_JSC__E_H_Z",
+      "receiver_metadata_epoch_start": "1989-05-10T21:40:00",
+      "receiver_metadata_epoch_end": "1990-10-04T20:15:00",
+      "case_id": "row88_h0.03125",
+      "spacing_km": 0.03125,
+      "analytic_seed_polygon": {
+        "time_error_s": 4.323680213857983e-06,
+        "source_error_norm": 1.0847633560123333e-14,
+        "projected_gradient": 0.019545154108609318,
+        "quadrature_error_s": -5.993469609499869e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 129,
+        "exact_velocity_kink_nodes": {
+          "0.0": 129,
+          "1.0": 2,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "uniform_resampled_zero_updates": {
+        "time_error_s": 4.355739568140393e-06,
+        "source_error_norm": 8.708098980335474e-15,
+        "projected_gradient": 0.01954789018338519,
+        "quadrature_error_s": -9.733967104574859e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 128,
+        "exact_velocity_kink_nodes": {
+          "0.0": 128,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_zero_updates": {
+        "time_error_s": 4.323680213857983e-06,
+        "source_error_norm": 1.0847633560123333e-14,
+        "projected_gradient": 0.019545154108609318,
+        "quadrature_error_s": -5.993469609499869e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 129,
+        "exact_velocity_kink_nodes": {
+          "0.0": 129,
+          "1.0": 2,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "uniform_resampled_optimized": {
+        "time_error_s": 4.327326327491221e-06,
+        "source_error_norm": 4.3494086171999304e-07,
+        "projected_gradient": 6.244752969563114e-06,
+        "quadrature_error_s": 2.7005307712268944e-15,
+        "updates": 16,
+        "converged": true,
+        "exact_guide_nodes": 0,
+        "exact_velocity_kink_nodes": {
+          "0.0": 0,
+          "1.0": 0,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "retained_seed_optimized": {
+        "time_error_s": 4.323680213857983e-06,
+        "source_error_norm": 1.0847633560123333e-14,
+        "projected_gradient": 0.019545154108609318,
+        "quadrature_error_s": -5.993469609499869e-16,
+        "updates": 0,
+        "converged": false,
+        "exact_guide_nodes": 129,
+        "exact_velocity_kink_nodes": {
+          "0.0": 129,
+          "1.0": 2,
+          "5.0": 0,
+          "6.0": 0
+        }
+      },
+      "resampling_added_action_s": 3.205935428240991e-08,
+      "coupled_guide_one_sided_checks": [
+        {
+          "step_km": 0.0001,
+          "analytic_gradient": 0.22156133123905689,
+          "exact_forward": 0.22210377893955865,
+          "exact_backward": -0.0011962308166745504,
+          "exact_central": 0.11045377406144205
+        },
+        {
+          "step_km": 1e-05,
+          "analytic_gradient": 0.22156133123905689,
+          "exact_forward": 0.221615574517932,
+          "exact_backward": -0.00015426471250586105,
+          "exact_central": 0.11073065490271307
+        },
+        {
+          "step_km": 1e-06,
+          "analytic_gradient": 0.22156133123905689,
+          "exact_forward": 0.22156675555211336,
+          "exact_backward": -1.5969865187204224e-05,
+          "exact_central": 0.11077539284346308
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Supplied first-arrival seeds use known x-only references and are not a general 3D initialization method.",
+    "Reference time ordering is floating point; complete candidate enumeration is distinct from interval-certified time ranking.",
+    "No-resampling copy changes only initialization; every interior node remains free during optimization.",
+    "Fixed-polygon source derivatives are not optimized-travel-time derivatives unless path stationarity and branch differentiability hold.",
+    "Raw sampled-polygon stages have no solver convergence claim; numerical flags remain unchanged elsewhere.",
+    "The exact-circle/guide reference is continuous; its chordal samples have a separate polygon discretization error.",
+    "The C++ strict_interface_crossings field counts all x grid planes; review exact_velocity_kink_nodes counts only changes of velocity slope at x0,1,5,6km.",
+    "The one-sided coupled perturbation tests one direction and does not prove full nonsmooth stationarity.",
+    "Retaining knots only at initialization does not constrain their subsequent locations and is not a convergence repair."
+  ]
+}

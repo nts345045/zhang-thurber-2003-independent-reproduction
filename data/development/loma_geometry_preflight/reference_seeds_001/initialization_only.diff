@@ -1,0 +1,25 @@
+--- frozen_trace
++++ diagnostic_preserve_seed_trace
+@@ -1,4 +1,4 @@
+-Ray trace(const Grid &g, P a, P b, double spacing = 1, int maxit = 180,
++Ray trace_preserve_seed(const Grid &g, P a, P b, double spacing = 1, int maxit = 180,
+           bool deriv = true, const std::vector<P> *seed = nullptr) {
+   if (!(spacing > 0) || !std::isfinite(spacing))
+     throw std::runtime_error("Ray spacing must be finite and positive");
+@@ -16,15 +16,7 @@
+     }
+     if (!(arc.back() > 0) || !std::isfinite(arc.back()))
+       throw std::runtime_error("Seeded ray has zero or nonfinite length");
+-    int n = std::max(2, int(std::ceil(arc.back() / spacing)));
+-    p.resize(n + 1);
+-    size_t next = 1;
+-    for (int i = 1; i < n; ++i) {
+-      double distance = arc.back() * i / n;
+-      while (next + 1 < arc.size() && arc[next] <= distance) ++next;
+-      double fraction = (distance - arc[next-1]) / (arc[next] - arc[next-1]);
+-      p[i] = (*seed)[next-1] + ((*seed)[next] - (*seed)[next-1]) * fraction;
+-    }
++    p = *seed;
+   } else {
+     int n = std::max(2, int(std::ceil(norm(b - a) / spacing)));
+     p.resize(n + 1);
