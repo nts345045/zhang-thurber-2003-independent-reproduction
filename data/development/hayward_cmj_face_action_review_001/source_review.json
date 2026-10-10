@@ -1,0 +1,17 @@
+{
+  "checker_sha256": "a6dd49f783594b9e44619376d590d19286d743b2a97520cbfd38506fd3eb110c",
+  "findings": [
+    "Stdlib-only exact rational saved sums/cancellation and full edge/geometry identities.",
+    "Independent bilinear slope algebra reconstructs all whole-piece quadratic jump coefficients/extrema.",
+    "Tangent subset uses both incident edges and exact physical box projection; excludes unavailable face normals and fixed endpoints.",
+    "Squared-norm scales are diagnostic only; upper subset norm is not a full-support upper bound.",
+    "Witness sum and positive step bound checked without taking a step; native flags/context preserved."
+  ],
+  "native_execution_sha256": "c3655f6e72c7c99eeca6dc3724be4978d5bcd48ddc9773f035bfa7b373c4c933",
+  "native_summary_sha256": "56c51845fa8ee9a2cefe1be09c78819b7eef6e79b4f7c0b4f7ca2b3580fe77d9",
+  "plan_sha256": "ae83722191f91df39aba7879dba2bb1a03edb498325b01af2bac0c4a4cc9a913",
+  "reviewed_utc": "2026-10-10T11:36:01.942896Z",
+  "reviewer": "root",
+  "scope": "Source review only. Authorizes one saved-record readback; no numerical integration, trace, field or optimizer.",
+  "status": "passed"
+}

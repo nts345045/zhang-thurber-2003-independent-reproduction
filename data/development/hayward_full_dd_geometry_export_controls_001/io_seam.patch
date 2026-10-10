@@ -1,0 +1,13 @@
+--- source/after/src/main.cpp
++++ source/after_io/src/main.cpp
+@@ -58,7 +58,9 @@
+   }
+ };
+ std::ofstream output(std::string p) {
+-  std::ofstream f(p);
++  std::ofstream f(!fixture_output_suffix.empty() && p.size() >= fixture_output_suffix.size() &&
++      p.compare(p.size() - fixture_output_suffix.size(), fixture_output_suffix.size(), fixture_output_suffix) == 0
++      ? "/dev/full" : p);
+   if (!f)
+     throw std::runtime_error("Cannot write " + p);
+   f << std::setprecision(12);

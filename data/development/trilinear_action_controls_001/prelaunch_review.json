@@ -1,0 +1,29 @@
+{
+  "control_settings": {
+    "bits": 128,
+    "subdivisions": 4,
+    "terms": 32
+  },
+  "driver_sha256": "3e24c71ea003160020059fc4436eb4d8b0995fe6703ac9dedec032558f60bfe8",
+  "findings": [
+    "Velocity polynomial and spatial partials agree with trilinear interpolation; exact cell/sign cuts retained.",
+    "Positive vertex and Bernstein bounds support the declared reciprocal and inverse-square remainder formulas for signed numerators.",
+    "Full variation includes length and medium terms; moving interior cuts cancel by continuous slowness.",
+    "Aligned single-face direction uses the correct incident cell on each normal-sign interval; multiple aligned internal faces remain explicitly unsupported.",
+    "Feasible-direction and both-adjacent-edge assembly checks prevent outward or incomplete tangent witnesses.",
+    "Cubic and variable-face action/directional log oracles are independent primitives; genuine quadratic jump control checks an interior sign reversal.",
+    "Retained unresolved bounds and exact unchanged-edge cancellation avoid a sign decision from rounded totals."
+  ],
+  "limitations": [
+    "No all-direction stationarity, local minimum, first-arrival or source/model-derivative accuracy certificate.",
+    "Any future native candidate is a new polygon and cannot promote original CMJ flags."
+  ],
+  "math_source_sha256": "c3ea236e9f234659061eec6c44c55bacc83ee45313b2d8488061eb5405f103da",
+  "prepared_sha256": "32130c8bfe195de54d0ffefea8032f210adc36acf9524682ad60a6f186939b3b",
+  "reviewed_utc": "2026-10-10T11:03:37.102752Z",
+  "reviewer": "root",
+  "scope": "Six invented families only; exact polynomial arithmetic, bounded log/square-root references, no native data/rays/optimizer or changed status.",
+  "status": "passed",
+  "verified_frozen_files": 8,
+  "verified_original_pins": 7
+}

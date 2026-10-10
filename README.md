@@ -123,6 +123,27 @@ Its slow-face counterexample also shows that zero in the convex hull of branch
 gradients can coexist with descent. The 37 exact rational and 62 numerical
 checks do not establish stationarity of the nearby CMJ paths or replace their flags.
 
+Within each grid cell, velocity along a straight edge is a polynomial of
+degree at most three.
+The [completed action controls](data/development/trilinear_action_controls_001/RESULTS.md)
+bound reciprocal-velocity integrals and first variations after exact grid-plane
+splitting, including changes of incident cell during face-normal motion.
+All 80 checks pass: 65 mathematical checks and 15 source/file hash checks.
+Independent saved readback verifies 18 exact comparisons. Coupled descent and
+deliberately unresolved bounds remain explicit; no production flag changes.
+The [completed CMJ calculation](data/development/hayward_cmj_face_action_001/RESULTS.md)
+compares two separately identified candidates formed by setting only the
+previously selected 31 or 32 node x coordinates to zero. The continuous
+trilinear actions decrease by 4.3891e-11 and 8.1650e-11 s. All aligned face
+pieces have positive normal slowness jumps, but the available tangent
+components still have norms of 3.4637e-5 and 4.1306e-5 s/km. Their lower
+bounds exceed both existing gradient scales, even before unavailable face
+normals are included. Moving these nodes onto the face therefore does not
+resolve the failed paths. Original flags remain false; no optimizer or
+displacement step was run, and no source/model derivative or first arrival
+is certified. The [independent saved review](data/development/hayward_cmj_face_action_review_001/README.md)
+retains exact rational action and tangent-norm bounds with full native identities.
+
 A [bounded backtracking candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)
 retains the original, initially validated ray kernel and changes only the
 inverse control flow. A pure local-stopping failure at a trial rejects that
@@ -141,8 +162,10 @@ binds the exact source changes to the original initial-model evidence.
 Its [62 reviewed checks](data/development/hayward_old_kernel_backtracking_launcher_checks_002/review.json)
 include a saved eligibility assessment of all 58,980 observations and 14,262
 native rays, plus five process-lifecycle cases with no compiler or numerical
-calls. No new field inversion has started at this checkpoint. Any future
-successful execution still requires final scientific diagnostics.
+calls. This launcher validation preceded the separate field attempt; successful
+execution still requires final scientific diagnostics.
+The catalog-only attempt began at 10:52 UTC on 10 October 2026. At the
+11:21 UTC snapshot it remained in its initial evaluation, with no accepted update.
 The [lossless evidence archive](data/development/trial_backtracking_evidence_001/README.md)
 retains the completed controls, failed attempts and unexecuted drafts.
 
@@ -326,6 +349,19 @@ recorded local status before matrix assembly, and preserves existing outputs.
 All 56 new input controls pass; the 39 preceding covariance controls retain
 identical results. Final-model ray and derivative accuracy still require
 separate acceptance. No new field resolution has been calculated.
+The [geometry export](data/development/hayward_full_dd_geometry_adoption_002/README.md)
+now saves 17-digit paths and status from the same rays used for the full matrix,
+retaining native identities and both receiver epochs. Its
+[82 invented controls](data/development/hayward_full_dd_geometry_export_controls_002/RESULTS.md)
+pass on the frozen old-kernel source, with all eight original export files
+byte-identical. The separate reader checks complete support, endpoints,
+box membership, configured initialization
+and source-matrix joins at the parsed saved 12-digit model. Integration adoption
+compiled successfully; the earlier compile failure remains preserved, and
+neither adoption attempt evaluated rays. The
+[lossless archive](data/development/geometry_export_evidence_001/README.md)
+retains both control preparations, terminal results and independent reviews.
+These diagnostics supply no field, derivative-accuracy or covariance acceptance.
 Run these newer diagnostic and simulation commands from the
 [`first-arrival-integration` branch](https://github.com/nts345045/zhang-thurber-2003-independent-reproduction/tree/first-arrival-integration).
 

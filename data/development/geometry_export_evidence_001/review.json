@@ -1,0 +1,39 @@
+{
+  "compiled_fixtures_preserved_not_executed": 3,
+  "findings": [
+    "Explicit three-package scope preserves source-only candidate, unexecuted001 and reviewed terminal002; adoption001/002 and live numerical data are outside this archive.",
+    "Restore helper is byte-identical to prior reviewed0427f73f implementation; safe-member/type/mode/byte validation precedes writes, differing evidence is refused, and identical files may be retained.",
+    "All tar members independently matched manifest, current original bytes/modes and saved fresh-restoration bytes/modes; gzip trailer readback passed.",
+    "Saved restoration receipt records fresh/idempotent success and differing-mode/differing-byte refusals; no archived binary is executed by restoration.",
+    "Fourteen historical dependencies remain external at their recorded integration-checkout paths; ten system runtime hashes are recorded rather than bundled."
+  ],
+  "input_sha256": {
+    "README.md": "1e0e79bd5a55486d632c3cd5703dce96079c8caf10e00dff433471ea1892a19d",
+    "check_restore.py": "aefe051e0454e7132916adfd7dd402da48972608c38733f0d340cd207ef60a40",
+    "dependencies.json": "89056b497999af84497ae340224074fc7088576c470d32311c7fe4fa0ae7997a",
+    "evidence.tar.gz": "4621f390d3e84bd185b419e498dbdc954079430872d72c93915c03695b593158",
+    "members.json": "c24ff9b820c14455d871671b7515264924a4322c786eaba59e72165443693dc7",
+    "package.py": "f96ec0b0c66c2a36e2fc3214d881fb8b07dd09a96b95b9a74091ae3a45a1a104",
+    "packaging.json": "2ef883f85116d01933ecb13a7f6250c427195a527763aaa5e356e70920c3633c",
+    "restore.py": "0427f73f66b99530e7ffdcd103297e99199ab1b61a1596a997bc31cb8f39fc36",
+    "restore_check.json": "79fd3ca5a171e25dc05fc4a690e7d843e9b7fb8a4b1c1bbc222eb6dc353f6dac"
+  },
+  "limitations": [
+    "This review attests lossless evidence packaging, not numerical field accuracy or successful final inversion.",
+    "Historical source dependency resolution requires the matching published integration checkpoint or its declared restored evidence; the original main solver is a different lineage."
+  ],
+  "links": 0,
+  "package_counts": {
+    "hayward_full_dd_geometry_export_candidate_001": 25,
+    "hayward_full_dd_geometry_export_controls_001": 43,
+    "hayward_full_dd_geometry_export_controls_002": 1086
+  },
+  "reviewed_utc": "2026-10-10T11:20:48.985120+00:00",
+  "reviewer": "scientific_audit",
+  "scope": "Read-only archive/source/receipt review; no restoration, compilation or numerical execution by reviewer.",
+  "status": "passed",
+  "verified_members": 1154,
+  "verified_original_dependencies": 38,
+  "verified_runtime_pins": 10,
+  "verified_uncompressed_bytes": 4747041
+}
