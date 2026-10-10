@@ -138,6 +138,8 @@ an explicit alternative source of synthetic truth. The integration branch provid
 and a [frozen simulation launcher](data/development/analytic_simulation_launcher_002/README.md).
 They retain all native identities, preserve earlier failures, and require
 separate output review and inverse forward validation.
+Run these newer diagnostic and simulation commands from the
+[`first-arrival-integration` branch](https://github.com/nts345045/zhang-thurber-2003-independent-reproduction/tree/first-arrival-integration).
 
 The [authoritative waveform pilot](data/authoritative/waveforms/pilot_001/README.md)
 retrieved two five-second records and their historical instrument responses.
