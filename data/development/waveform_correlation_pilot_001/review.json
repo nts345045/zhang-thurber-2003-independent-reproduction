@@ -1,0 +1,130 @@
+{
+  "status": "passed; scientific pair remains rejected",
+  "input_hashes_verified": 25,
+  "frozen_output_hashes_verified": 6,
+  "spectra_rows": 180,
+  "native_pair_fields_verified_per_row": 42,
+  "all_nine_variants_rejected": true,
+  "no_accepted_waveform_differences": true,
+  "summary_sha256": "3e11f81ac22ae7748254be87ecbcdca16850652cf12fbc51a98cb359abaa934f",
+  "analytic_coherence_formula": "[sin(K*pi*df*delta)/(K*sin(pi*df*delta))]^2; limit 1 at delta=0, df=100/256 Hz",
+  "analytic_controls": [
+    {
+      "width": 3,
+      "input_delay_j_minus_i_s": -0.2,
+      "analytic_squared_coherence": 0.848758391492514,
+      "expected_pass": false,
+      "matched": true
+    },
+    {
+      "width": 3,
+      "input_delay_j_minus_i_s": -0.037,
+      "analytic_squared_coherence": 0.9945134847035848,
+      "expected_pass": true,
+      "matched": true
+    },
+    {
+      "width": 3,
+      "input_delay_j_minus_i_s": 0.0,
+      "analytic_squared_coherence": 1.0,
+      "expected_pass": true,
+      "matched": true
+    },
+    {
+      "width": 3,
+      "input_delay_j_minus_i_s": 0.037,
+      "analytic_squared_coherence": 0.9945134847035848,
+      "expected_pass": true,
+      "matched": true
+    },
+    {
+      "width": 3,
+      "input_delay_j_minus_i_s": 0.2,
+      "analytic_squared_coherence": 0.848758391492514,
+      "expected_pass": false,
+      "matched": true
+    },
+    {
+      "width": 5,
+      "input_delay_j_minus_i_s": -0.2,
+      "analytic_squared_coherence": 0.6006197283797006,
+      "expected_pass": false,
+      "matched": true
+    },
+    {
+      "width": 5,
+      "input_delay_j_minus_i_s": -0.037,
+      "analytic_squared_coherence": 0.9836126737233245,
+      "expected_pass": true,
+      "matched": true
+    },
+    {
+      "width": 5,
+      "input_delay_j_minus_i_s": 0.0,
+      "analytic_squared_coherence": 1.0,
+      "expected_pass": true,
+      "matched": true
+    },
+    {
+      "width": 5,
+      "input_delay_j_minus_i_s": 0.037,
+      "analytic_squared_coherence": 0.9836126737233245,
+      "expected_pass": true,
+      "matched": true
+    },
+    {
+      "width": 5,
+      "input_delay_j_minus_i_s": 0.2,
+      "analytic_squared_coherence": 0.6006197283797006,
+      "expected_pass": false,
+      "matched": true
+    },
+    {
+      "width": 7,
+      "input_delay_j_minus_i_s": -0.2,
+      "analytic_squared_coherence": 0.3382281970727515,
+      "expected_pass": false,
+      "matched": true
+    },
+    {
+      "width": 7,
+      "input_delay_j_minus_i_s": -0.037,
+      "analytic_squared_coherence": 0.9674407332878755,
+      "expected_pass": true,
+      "matched": true
+    },
+    {
+      "width": 7,
+      "input_delay_j_minus_i_s": 0.0,
+      "analytic_squared_coherence": 1.0,
+      "expected_pass": true,
+      "matched": true
+    },
+    {
+      "width": 7,
+      "input_delay_j_minus_i_s": 0.037,
+      "analytic_squared_coherence": 0.9674407332878755,
+      "expected_pass": true,
+      "matched": true
+    },
+    {
+      "width": 7,
+      "input_delay_j_minus_i_s": 0.2,
+      "analytic_squared_coherence": 0.3382281970727515,
+      "expected_pass": false,
+      "matched": true
+    }
+  ],
+  "independent_review": "Scientific auditor found no material sign, native identity, epoch, or rejection error; low-coherence phase unwrapping remains a declared candidate-stage risk.",
+  "output_sha256": {
+    "README.md": "3472ced04e51c9589134f0ce167e92c1a111cefa4174bb328402456581e0a2fa",
+    "check_waveform_correlation.py": "708ff04c3c187197d9adbd71043341a154a798c1f019048e0a72848457cb826f",
+    "diagnostic.pdf": "40e554b1bcec078f21fa91df13b895e8559158b6431cf96512330de53f1e85c8",
+    "diagnostic.png": "4ac54df628a7d7adafab28c19be6b57c1e75219d38587e43e8865f66d67cbe28",
+    "figure_identifiers.json": "7b98f9d23fef2f53fb38bff7d03bbf2a97d54d784cefee4fefcc4a327c105957",
+    "identified_spectra.csv": "461b71b73389a2865adaa6ddfd42277ae1b098213f7d7d7a1213a51256c7bd1c",
+    "method_provenance.json": "8f08e1d414c731c2d103a4e121cd3cbf576131a6613cb164857d5468bc4c3a37",
+    "specification.md": "4715f6215fae2a3d9c4d6c0882179f40b23416268c2bdf56cff4576da5fb0fe2",
+    "summary.json": "3e11f81ac22ae7748254be87ecbcdca16850652cf12fbc51a98cb359abaa934f"
+  }
+}
