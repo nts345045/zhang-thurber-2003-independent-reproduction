@@ -1,0 +1,10 @@
+--- frozen/src/first_arrival.hpp
++++ diagnostic/src/first_arrival.hpp
+@@ -121,6 +121,7 @@
+ };
+ 
+ class Field {
++public: // Diagnostic-only raw-state read access.
+   // The model must outlive the field and remain unchanged.
+   const Grid &model_;
+   P receiver_, spacing_{};

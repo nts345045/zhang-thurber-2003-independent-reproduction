@@ -1,6 +1,7 @@
 #pragma once
 #include "core.hpp"
 #include "first_arrival.hpp"
+#include <exception>
 #include <memory>
 
 // A cache owns the immutable model referenced by its receiver fields. Reuse
@@ -16,13 +17,63 @@ struct ForwardFields {
   double spacing = 0;
   std::map<P, std::unique_ptr<first_arrival::Field>> fields;
 
-  const first_arrival::Field &get(const Grid &g, P receiver, double h) {
+  void reset_if_changed(const Grid &g, double h) {
     if (spacing != h || model.x != g.x || model.y != g.y ||
         model.z != g.z || model.v != g.v) {
       fields.clear();
       model = g;
       spacing = h;
     }
+  }
+
+  // Cache mutation is serial. Only independent constructors run in parallel;
+  // they read the same immutable model and write distinct temporary slots.
+  // On construction failure no new field is published. Existing fields survive
+  // unless the model/spacing changed, which invalidates them before construction.
+  // The caller must serialize calls to prepare/get on a particular cache.
+  void prepare(const Grid &g, const std::vector<P> &receivers, double h,
+               std::size_t *failed_receiver = nullptr) {
+    if (failed_receiver) *failed_receiver = receivers.size();
+    reset_if_changed(g, h);
+    std::map<P, std::size_t> pending;
+    std::vector<P> missing;
+    std::vector<std::size_t> first_request;
+    for (std::size_t i = 0; i < receivers.size(); ++i) {
+      const P receiver = receivers[i];
+      bool finite = std::all_of(receiver.begin(), receiver.end(),
+                                [](double x) { return std::isfinite(x); });
+      // Nonfinite coordinates cannot be ordered safely as map keys. Pass them
+      // to the unchanged constructor so its exception retains request order.
+      if (finite && (fields.find(receiver) != fields.end() ||
+                     !pending.emplace(receiver, missing.size()).second))
+        continue;
+      missing.push_back(receiver);
+      first_request.push_back(i);
+    }
+    std::vector<std::unique_ptr<first_arrival::Field>> built(missing.size());
+    std::vector<std::exception_ptr> errors(missing.size());
+#pragma omp parallel for schedule(dynamic)
+    for (std::size_t i = 0; i < missing.size(); ++i) {
+      try {
+        built[i] = std::make_unique<first_arrival::Field>(model, missing[i], spacing, 2, true);
+      } catch (...) {
+        errors[i] = std::current_exception();
+      }
+    }
+    for (std::size_t i = 0; i < missing.size(); ++i)
+      if (errors[i]) {
+        if (failed_receiver) *failed_receiver = first_request[i];
+        std::rethrow_exception(errors[i]);
+      }
+    for (std::size_t i = 0; i < missing.size(); ++i)
+      fields.emplace(missing[i], std::move(built[i]));
+  }
+
+  const first_arrival::Field &get(const Grid &g, P receiver, double h) {
+    reset_if_changed(g, h);
+    if (!std::all_of(receiver.begin(), receiver.end(),
+                     [](double x) { return std::isfinite(x); }))
+      throw std::runtime_error("Invalid FMM receiver or requested spacing");
     auto found = fields.find(receiver);
     if (found == fields.end())
       found = fields.emplace(receiver, std::make_unique<first_arrival::Field>(

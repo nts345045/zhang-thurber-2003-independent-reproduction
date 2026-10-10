@@ -170,6 +170,24 @@ std::string ray_identity_context(const std::vector<Event> &events,
       message << ' ' << name << '=' << *value;
   return message.str();
 }
+void prepare_receiver_fields(const Grid &g, const std::vector<Event> &events,
+                             const std::vector<Event> &stations, double spacing,
+                             ForwardFields &cache, const std::vector<int> &support) {
+  std::vector<P> receivers;
+  receivers.reserve(support.size());
+  for (int n : support) receivers.push_back(stations[n % stations.size()].p);
+  std::size_t failed_receiver = receivers.size();
+  try { cache.prepare(g, receivers, spacing, &failed_receiver); }
+  catch (const std::exception &error) {
+    if (failed_receiver < support.size()) {
+      int n = support[failed_receiver];
+      throw std::runtime_error("Receiver-field construction failed for " +
+          ray_identity_context(events, stations, n / stations.size(), n % stations.size()) +
+          ": " + error.what());
+    }
+    throw std::runtime_error("Receiver-field preparation failed: " + std::string(error.what()));
+  }
+}
 std::vector<Ray> rays(const Grid &g, const std::vector<Event> &e,
                       const std::vector<Event> &s, const Config &c,
                       bool deriv = true, const std::vector<int> *used = nullptr,
@@ -182,19 +200,22 @@ std::vector<Ray> rays(const Grid &g, const std::vector<Event> &e,
   auto &cache = saved_fields ? *saved_fields : local_fields;
   double aux = auxiliary_spacing(c);
   std::vector<const first_arrival::Field *> fields(s.size(), nullptr);
-  // Construct/cache fields serially, then use only const access while bending
-  // rays in parallel. Native station indices are never combined or renumbered.
-  if (aux > 0)
+  // Prepare independent receiver fields in parallel, with serial cache changes.
+  // Native station indices are never combined or renumbered.
+  if (aux > 0) {
+    std::vector<int> first_observations;
+    std::vector<bool> requested(s.size(), false);
     for (int q = 0; q < count; ++q) {
       int n = used ? (*used)[q] : q, k = n % s.size();
-      if (!fields[k]) {
-        try { fields[k] = &cache.get(g, s[k].p, aux); }
-        catch (const std::exception &error) {
-          throw std::runtime_error("Receiver-field construction failed for " +
-              ray_identity_context(e, s, n / s.size(), k) + ": " + error.what());
-        }
+      if (!requested[k]) {
+        requested[k] = true;
+        first_observations.push_back(n);
       }
     }
+    prepare_receiver_fields(g, e, s, aux, cache, first_observations);
+    for (std::size_t k = 0; k < s.size(); ++k)
+      if (requested[k]) fields[k] = &cache.get(g, s[k].p, aux);
+  }
 #pragma omp parallel for schedule(dynamic)
   for (int q = 0; q < count; q++) {
     int n = used ? (*used)[q] : q;
@@ -1288,6 +1309,10 @@ void raycheck(const Config &c, std::string dir, std::string mode = "truth",
   const double aux = auxiliary_spacing(c);
   if (aux > 0) refined.v["fmm_spacing"] = aux / 2;
   ForwardFields production_fields, refined_fields;
+  if (aux > 0) {
+    prepare_receiver_fields(g, e, stations, aux, production_fields, samples);
+    prepare_receiver_fields(g, e, stations, aux / 2, refined_fields, samples);
+  }
   std::string prefix = geometry_only ? "geometry_" + mode + "_ray" :
                                       (mode == "truth" ? "ray" : mode + "_ray");
   auto f = output(dir + "/" + prefix + "_convergence.csv");

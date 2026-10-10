@@ -1,0 +1,72 @@
+{
+  "scope": "Prospective storage estimate only; no new production run",
+  "threads": 4,
+  "original_data": "data/hayward_first_arrival_003",
+  "input_sha256": {
+    "stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652",
+    "observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810"
+  },
+  "native_epochs": 372,
+  "support_rays": 14262,
+  "sample_rays": 32,
+  "bounds_km": {
+    "x": [
+      -35.0,
+      35.0
+    ],
+    "y": [
+      -30.0,
+      30.0
+    ],
+    "z": [
+      -1.0,
+      20.0
+    ]
+  },
+  "full_initial": {
+    "requested_spacing_km": 0.125,
+    "unique_coordinates": 37,
+    "shape": [
+      561,
+      481,
+      169
+    ],
+    "nodes_per_field": 45603129,
+    "time_and_parent_bytes_per_node": 12,
+    "time_and_parent_bytes": 20247789276,
+    "time_and_parent_GiB": 18.857223238795996
+  },
+  "sample_production": {
+    "requested_spacing_km": 0.125,
+    "unique_coordinates": 20,
+    "shape": [
+      561,
+      481,
+      169
+    ],
+    "nodes_per_field": 45603129,
+    "time_and_parent_bytes_per_node": 12,
+    "time_and_parent_bytes": 10944750960,
+    "time_and_parent_GiB": 10.19309364259243
+  },
+  "sample_refined": {
+    "requested_spacing_km": 0.0625,
+    "unique_coordinates": 20,
+    "shape": [
+      1121,
+      961,
+      337
+    ],
+    "nodes_per_field": 363043697,
+    "time_and_parent_bytes_per_node": 12,
+    "time_and_parent_bytes": 87130487280,
+    "time_and_parent_GiB": 81.1465897411108
+  },
+  "limitations": [
+    "Time(double) and parent(int32) arrays only; excludes transient priority queues, slowness/accepted arrays, axes, rays and other solver storage.",
+    "Full initial and sampled raycheck are separate subprocesses; sampled production and refined caches coexist.",
+    "No memory limit, worker count or numerical setting is changed by this estimate."
+  ],
+  "sample_combined_time_and_parent_GiB": 91.33968338370323
+}
