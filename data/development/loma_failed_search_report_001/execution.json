@@ -1,0 +1,39 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T06:25:13Z",
+  "passes": [
+    {
+      "number": 1,
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "report.tex"
+      ],
+      "return_code": 0,
+      "stdout_sha256": "8c7ea8854c583413f5fd97f5798b2519341bf1609aaede193791f108a87b5a95",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "number": 2,
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "report.tex"
+      ],
+      "return_code": 0,
+      "stdout_sha256": "8c7ea8854c583413f5fd97f5798b2519341bf1609aaede193791f108a87b5a95",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_sha256": {
+    "report/report.tex": "289034e2eae49f6230f2d82c6e0005ab989af6e6443e1293382d6bcafd7f6efe",
+    "report/recovery_checkpoint.tex": "189d463c16a31bd0ac347efa6f4ef96b025e7413926d12bf3968adce63ac157a",
+    "figures/diagnostics/loma_failed_trials.pdf": "39b803179f6a20e2fa0996c91765cea3b70200a01ef49bf77794191435b3852d"
+  },
+  "pdf_sha256": "59aa8f296a66696eda16b23143cf1825f8d24449a1f24c744ac65b5b0a0fe0ce",
+  "pdf_bytes": 1796102,
+  "pdfinfo": "Title:          Independent double-difference tomography reconstruction\nSubject:        \nKeywords:       \nAuthor:         \nCreator:        LaTeX with hyperref package\nProducer:       pdfTeX-1.40.19\nCreationDate:   Fri Oct  9 23:25:14 2026 PDT\nModDate:        Fri Oct  9 23:25:14 2026 PDT\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          103\nEncrypted:      no\nPage size:      612 x 792 pts (letter)\nPage rot:       0\nFile size:      1796102 bytes\nOptimized:      no\nPDF version:    1.5\n",
+  "finished_utc": "2026-10-10T06:25:16Z"
+}
