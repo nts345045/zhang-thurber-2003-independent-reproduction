@@ -1,0 +1,91 @@
+--- reviewed_runner_v3.py
++++ strict_runner.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Exclusive, reviewed execution: two archived straight calls, gate, two D calls."""
++"""Two straight D calls with only the combined early stop disabled."""
+ import csv
+ import datetime
+ import hashlib
+@@ -109,13 +109,15 @@
+             'time_limit_pass': abs(time_error) <= 2.5e-5, 'source_limit_pass': error_norm <= 3e-6,
+             'local_flag': int(row['ray_converged']),
+             'strict_gradient_test_pass': float(row['ray_projected_gradient']) < 1e-7,
+-            'termination_scope': 'No history captured. A true flag above1e-7 implies the unchanged combined criterion; final-path scalar only.'})
++            'derived_loop_termination': ('update_budget_exhausted' if int(row['ray_iterations']) == 1000 else
++                'strict_gradient_check' if row['ray_converged'] == '1' else 'line_search_exhausted'),
++            'termination_scope': 'Derived from inspected loop exits, not instrumented history. Budget status and post-return strict convergence flag are separate.'})
+     if len(paths) != sum(int(r['ray_path_points']) for r in rows) or len(partials) != 2*len(grid):
+         raise RuntimeError('Unexpected additional output rows')
+     return results
+ 
+ def main():
+-    prepared_path = HERE / 'prepared_v3.json'
++    prepared_path = HERE / 'prepared.json'
+     prepared = json.loads(prepared_path.read_text())
+     review_path = HERE / 'prelaunch_review.json'
+     review = json.loads(review_path.read_text())
+@@ -123,7 +125,7 @@
+         raise RuntimeError('Missing passed hash-bound preparation review')
+     verify(prepared)
+     ledger = {'status': 'running', 'started_utc': now(), 'prepared_sha256': sha(prepared_path),
+-              'prelaunch_review_sha256': sha(review_path), 'commands': [], 'native_calls_planned': 4}
++              'prelaunch_review_sha256': sha(review_path), 'commands': [], 'native_calls_planned': 2}
+     ledger_path = HERE / 'execution.json'
+     dump(ledger_path, ledger)
+     def update():
+@@ -213,7 +215,7 @@
+         context = json.loads((HERE / 'inputs/native_context.json').read_text())
+         variants = {}
+         binaries = {}
+-        for variant in ('old', 'D'):
++        for variant in ('strict',):
+             binary = HERE / 'build' / ('trace_' + variant)
+             cmd = [prepared['compiler']] + prepared['flags'] + [str(HERE / 'driver.cpp'),
+                 '-I' + str(HERE / 'source' / variant), '-o', str(binary), '-lstdc++fs']
+@@ -224,30 +226,28 @@
+             verify(prepared)
+             command('trace_' + variant, [str(binary), str(HERE / 'inputs'), str(out)])
+             variants[variant] = inspect(variant, context)
+-            if variant == 'old':
+-                old_rows = read(out / 'scalars_12.csv')
+-                expected = read(HERE / 'inputs/selected_status.csv')
+-                mismatches = [{'pair_index': PAIRS[n], 'column': key, 'expected': value, 'actual': old_rows[n].get(key)}
+-                    for n, row in enumerate(expected) for key, value in row.items()
+-                    if key not in SAVED_INITIALIZER and old_rows[n].get(key) != value]
+-                dump(HERE / 'old_parity.json', {'status': 'passed' if not mismatches else 'failed',
+-                    'compared_columns_per_pair': len(expected[0])-len(SAVED_INITIALIZER),
+-                    'excluded_saved_only_initializer_columns': list(SAVED_INITIALIZER),
+-                    'native_context': context, 'mismatches': mismatches})
+-                if mismatches:
+-                    raise RuntimeError('Original12-digit parity failed; D not executed')
+         verify(prepared)
+-        summary = {'status': 'completed_four_calls', 'scope': 'Four native straight-trace replays; no receiver field construction, history instrumentation or inversion',
++        baseline = read(HERE / 'inputs/baseline_D/scalars_17.csv')
++        for i, result in enumerate(variants['strict']):
++            row = result['scalars_17']
++            if int(row['ray_iterations']) > 1000 or bool(int(row['ray_converged'])) != (float(row['ray_projected_gradient']) < 1e-7):
++                raise RuntimeError('Unexpected strict-copy flag/budget semantics')
++            result['baseline_D_scalars_17'] = baseline[i]
++            result['strict_minus_baseline_D_time_s'] = float(row['ray_time']) - float(baseline[i]['ray_time'])
++            result['strict_minus_baseline_D_source_xyz_s_per_km'] = [float(row['source_d'+a])-float(baseline[i]['source_d'+a]) for a in 'xyz']
++            result['representation_dimension_unchanged'] = row['ray_path_points'] == baseline[i]['ray_path_points'] and row['ray_merged_nodes'] == baseline[i]['ray_merged_nodes']
++        summary = {'status': 'completed_two_calls', 'scope': 'Two native straight-trace calls with the combined early stop disabled; no receiver field construction, history instrumentation or inversion',
+             'prepared_sha256': sha(prepared_path), 'prelaunch_review_sha256': sha(review_path),
+-            'old_parity_sha256': sha(HERE / 'old_parity.json'), 'binary_sha256': binaries,
++            'baseline_D_review_sha256': sha(HERE / 'inputs/baseline_review.json'), 'binary_sha256': binaries,
+             'variants': variants, 'time_limit_s': 2.5e-5, 'source_vector_norm_limit_s_per_km': 3e-6,
+             'scientific_scope': 'Accuracy/status of these four calls only; no whole-cohort or global3D first-arrival acceptance',
+-            'D_change_scope': 'Extended action sum plus usable-curvature handling together; not isolated attribution',
+-            'old_parity_passed_before_D': True, 'original_inputs_and_sources_unchanged': True,
++            'change_scope': 'Only the combined small-action/1e-5 early-stop alternative is disabled relative to the reviewed D baseline; strict1e-7, all arithmetic and other settings unchanged',
++            'baseline_parity_basis': 'The previously reviewed D baseline already passed the old12-digit replay gate; its saved results are reused without another trace',
++            'original_inputs_and_sources_unchanged': True,
+             'output_sha256': {str(p.relative_to(HERE)): sha(p) for sub in ('results', 'logs', 'build') for p in sorted((HERE/sub).rglob('*')) if p.is_file()}}
+         dump(HERE / 'summary.json', summary)
+         ledger.update({'status': 'completed', 'return_code': 0, 'finished_utc': now(),
+-                       'summary_sha256': sha(HERE / 'summary.json'), 'native_calls_completed': 4})
++                       'summary_sha256': sha(HERE / 'summary.json'), 'native_calls_completed': 2})
+         update()
+         print(ledger['summary_sha256'])
+     except BaseException as error:

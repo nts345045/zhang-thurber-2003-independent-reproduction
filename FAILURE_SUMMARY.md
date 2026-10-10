@@ -21,10 +21,20 @@ need for authoritative samples, correct timing/channel identities, preprocessing
 records, or correlation-quality checks. Missing waveforms or responses do not
 justify deleting catalog observations or inferring study exclusions.
 
-The next corrected catalog-DD attempt uses the reviewed initial model and a
-guard that rejects invalid forward evaluations before inversion use. Its
-[launch record](data/development/hayward_guarded_dd_launch_plan_001/launch_status.md)
-is separate from the completed baseline. Boundary-action and curvature controls
-remain necessary before accepting a corrected Loma inversion. Inspect the
+The guarded catalog-DD attempt stopped at its first trial model: 181 of 14,262
+rays failed local stopping despite successful initialization. No inverse update
+was accepted. The [failure archive](data/development/hayward_guarded_failure_001/README.md)
+preserves the rejected trial, last accepted state, identified rays and execution
+evidence. Passing the initial one-dimensional model did not establish convergence
+in that first three-dimensional trial.
+
+Bounded LON tests also show that early stopping affects source derivatives:
+additional optimization improves one failing ray while worsening a passing
+control. Both exhaust even a 4,000-update diagnostic budget with false strict
+flags. Exact integration of the saved first edge is accurate to roundoff;
+curving that edge alone does not repair the original error. These tests isolate
+some causes without establishing a general optimizer or endpoint correction.
+Boundary-action and optimization controls remain necessary before accepting a
+corrected Loma inversion. Inspect the
 [output guide](data/hayward/README.md) for the completed baseline files and their
 limitations.

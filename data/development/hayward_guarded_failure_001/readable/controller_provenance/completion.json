@@ -1,0 +1,33 @@
+{
+  "status": "failed",
+  "driver_return_code": 1,
+  "child_reaped": true,
+  "controller_pid": 230098,
+  "driver_pid": 230109,
+  "started_utc": "2026-10-10T07:36:37Z",
+  "finished_utc": "2026-10-10T09:30:37Z",
+  "command": [
+    "python3",
+    "run_hayward_guarded_inversion.py",
+    "--preflight",
+    "data/hayward_first_arrival_004",
+    "--reference",
+    "data/development/hayward_first_arrival_004_1d_support",
+    "--accuracy-review",
+    "data/development/hayward_sampled_accuracy_004_002/accuracy_review.json",
+    "--parity-review",
+    "data/development/hayward_guard_adoption_checks/001/summary.json",
+    "--output",
+    "data/hayward_first_arrival_guarded_001",
+    "--build",
+    "tmp/hayward_guarded_runs/001"
+  ],
+  "launch_sha256": "c0e1a06711370aaab6eabe5cfaeff19015cde1055950ac8d0444d30853cf5ee1",
+  "controller_sha256": "66b3c6e3fedc773904606d50e002cd0c97962a33a3fb9cc9c4220e6f7584ee50",
+  "log_sha256": {
+    "stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr.log": "d896fe88f1aefb231a3e540803e17118e7f8b3c15644d7b757581568e07f6786"
+  },
+  "dd_inversion_execution.json_sha256": "48f863316f2719703b57c7d0684b30a2334d711ebe42faf1c460b2f569dfd418",
+  "dd_inversion_run_manifest.json_sha256": "89c013bb0bd5a8987d99e017abf5a6a6f32a88cfb3b75b3f124d8969b6b401e2"
+}

@@ -1,0 +1,8 @@
+--- baseline_driver.cpp
++++ strict_driver.cpp
+@@ -1,4 +1,4 @@
+-// Four calls total are authorized: this executable evaluates two fixed pairs.
++// Two calls total are authorized: this executable evaluates two fixed pairs.
+ // Keep the archived readers and scalar writer; never construct a receiver field.
+ #define main archived_application_main
+ #include "src/main.cpp"

@@ -1,0 +1,68 @@
+--- strict_1000/run.py
++++ strict_4000/run.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Two straight D calls with only the combined early stop disabled."""
++"""Two strict-only D calls with the fixed update cap increased to 4000."""
+ import csv
+ import datetime
+ import hashlib
+@@ -16,6 +16,7 @@
+ HERE = Path(__file__).resolve().parent
+ ROOT = HERE.parents[2]
+ PAIRS = (8670, 8674)
++MAX_UPDATES = 4000
+ SAVED_INITIALIZER = ('ray_initialization_attempted', 'ray_initialization_succeeded',
+                     'ray_selected_fmm_seed', 'ray_direct_seed_time', 'ray_fmm_seed_time',
+                     'ray_field_time', 'ray_extraction_fallback_steps', 'ray_extraction_message')
+@@ -109,7 +110,7 @@
+             'time_limit_pass': abs(time_error) <= 2.5e-5, 'source_limit_pass': error_norm <= 3e-6,
+             'local_flag': int(row['ray_converged']),
+             'strict_gradient_test_pass': float(row['ray_projected_gradient']) < 1e-7,
+-            'derived_loop_termination': ('update_budget_exhausted' if int(row['ray_iterations']) == 1000 else
++            'derived_loop_termination': ('update_budget_exhausted' if int(row['ray_iterations']) == MAX_UPDATES else
+                 'strict_gradient_check' if row['ray_converged'] == '1' else 'line_search_exhausted'),
+             'termination_scope': 'Derived from inspected loop exits, not instrumented history. Budget status and post-return strict convergence flag are separate.'})
+     if len(paths) != sum(int(r['ray_path_points']) for r in rows) or len(partials) != 2*len(grid):
+@@ -119,6 +120,8 @@
+ def main():
+     prepared_path = HERE / 'prepared.json'
+     prepared = json.loads(prepared_path.read_text())
++    if prepared['settings']['maximum_updates'] != MAX_UPDATES:
++        raise RuntimeError('Prepared cap differs from classifier')
+     review_path = HERE / 'prelaunch_review.json'
+     review = json.loads(review_path.read_text())
+     if review.get('status') != 'passed' or review.get('prepared_sha256') != sha(prepared_path):
+@@ -228,21 +231,27 @@
+             variants[variant] = inspect(variant, context)
+         verify(prepared)
+         baseline = read(HERE / 'inputs/baseline_D/scalars_17.csv')
++        strict_1000 = read(HERE / 'inputs/strict_1000/scalars_17.csv')
+         for i, result in enumerate(variants['strict']):
+             row = result['scalars_17']
+-            if int(row['ray_iterations']) > 1000 or bool(int(row['ray_converged'])) != (float(row['ray_projected_gradient']) < 1e-7):
++            if int(row['ray_iterations']) > MAX_UPDATES or bool(int(row['ray_converged'])) != (float(row['ray_projected_gradient']) < 1e-7):
+                 raise RuntimeError('Unexpected strict-copy flag/budget semantics')
+             result['baseline_D_scalars_17'] = baseline[i]
+             result['strict_minus_baseline_D_time_s'] = float(row['ray_time']) - float(baseline[i]['ray_time'])
+             result['strict_minus_baseline_D_source_xyz_s_per_km'] = [float(row['source_d'+a])-float(baseline[i]['source_d'+a]) for a in 'xyz']
+             result['representation_dimension_unchanged'] = row['ray_path_points'] == baseline[i]['ray_path_points'] and row['ray_merged_nodes'] == baseline[i]['ray_merged_nodes']
+-        summary = {'status': 'completed_two_calls', 'scope': 'Two native straight-trace calls with the combined early stop disabled; no receiver field construction, history instrumentation or inversion',
++            result['strict_1000_scalars_17'] = strict_1000[i]
++            result['strict_minus_strict_1000_time_s'] = float(row['ray_time']) - float(strict_1000[i]['ray_time'])
++            result['strict_minus_strict_1000_source_xyz_s_per_km'] = [float(row['source_d'+a])-float(strict_1000[i]['source_d'+a]) for a in 'xyz']
++            result['representation_dimension_unchanged_vs_strict_1000'] = row['ray_path_points'] == strict_1000[i]['ray_path_points'] and row['ray_merged_nodes'] == strict_1000[i]['ray_merged_nodes']
++        summary = {'status': 'completed_two_calls', 'scope': 'Two native strict-only straight calls at the fixed 4000-update cap; no receiver field construction, history instrumentation or inversion',
+             'prepared_sha256': sha(prepared_path), 'prelaunch_review_sha256': sha(review_path),
+             'baseline_D_review_sha256': sha(HERE / 'inputs/baseline_review.json'), 'binary_sha256': binaries,
++            'strict_1000_review_sha256': sha(HERE / 'inputs/strict_1000_review.json'), 'maximum_updates': MAX_UPDATES,
+             'variants': variants, 'time_limit_s': 2.5e-5, 'source_vector_norm_limit_s_per_km': 3e-6,
+-            'scientific_scope': 'Accuracy/status of these four calls only; no whole-cohort or global3D first-arrival acceptance',
+-            'change_scope': 'Only the combined small-action/1e-5 early-stop alternative is disabled relative to the reviewed D baseline; strict1e-7, all arithmetic and other settings unchanged',
+-            'baseline_parity_basis': 'The previously reviewed D baseline already passed the old12-digit replay gate; its saved results are reused without another trace',
++            'scientific_scope': 'Accuracy/status of these two calls only; no whole-cohort or global 3D first-arrival acceptance',
++            'change_scope': 'Only the maximum update cap changes from 1000 to 4000 relative to the reviewed strict-only calls; strict 1e-7, disabled combined stop, arithmetic and other settings unchanged',
++            'baseline_parity_basis': 'The previously reviewed D baseline passed the old 12-significant-digit replay gate; its outputs and the independently reviewed strict-1000 outputs are reused without another trace',
+             'original_inputs_and_sources_unchanged': True,
+             'output_sha256': {str(p.relative_to(HERE)): sha(p) for sub in ('results', 'logs', 'build') for p in sorted((HERE/sub).rglob('*')) if p.is_file()}}
+         dump(HERE / 'summary.json', summary)

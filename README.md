@@ -10,8 +10,9 @@ original task excluded source observations; a later authorized Hayward catalog
 workflow has now completed absolute-data tomography, catalog-DD tomography,
 and fixed-velocity catalog-DD relocation. Figures 4–11 provide independently
 generated partial counterparts. Their saved diagnostics retain unresolved ray
-and nonlinear-convergence failures. A separate corrected catalog-only inversion
-is active. This remains a partial scientific checkpoint.
+and nonlinear-convergence failures. A separate guarded catalog-only inversion
+stopped at its first trial model, before accepting any update. This remains a
+partial scientific checkpoint.
 
 On 2026-10-09 the user revised that restriction: real station and earthquake
 data, including metadata, must now come from authoritative sources, starting
@@ -99,7 +100,11 @@ retain the same native observations and references. The separate sampled
 refinement also passes [independent accuracy review](data/development/hayward_sampled_accuracy_004_002/README.md).
 All 32 travel times and eight source vectors satisfy the same reference limits.
 A separately [reviewed guarded DD attempt](data/development/hayward_guarded_dd_launch_plan_001/README.md)
-started on 2026-10-10 at 07:37 UTC. It remains active at this checkpoint.
+started on 2026-10-10 at 07:37 UTC and stopped after 1 h 53 min when the first
+trial model failed the local ray guard. All initializers succeeded, but 181
+of 14,262 rays failed local stopping. No inverse update was accepted. The
+[failure archive](data/development/hayward_guarded_failure_001/README.md)
+preserves the trial and last accepted states separately.
 Passing the initial depth-dependent model does not validate subsequent 3D models.
 
 The revised solver preserves identities in event/residual CSV files and ray
@@ -260,7 +265,12 @@ the adopted correction as a remedy for that failure, without resolving other
 optimization or path-representation effects. A [saved first-edge calculation](data/development/loma_lon_first_edge_decomposition_001/README.md)
 matches the recorded source partials within 1.63e-17 s/km. Curving that edge
 while fixing its other endpoint slightly worsens both reference discrepancies;
-it does not repair the failing ray. A separate
+it does not repair the failing ray. Disabling the combined early stop in
+[two bounded diagnostics](data/development/loma_lon_strict_straight_replay_001/REPLAY.md)
+improves the failing ray's derivative while worsening the control's. Both meet
+the derivative limit after 1,000 and 4,000 updates, but both exhaust those
+budgets with false strict convergence flags. No production stopping rule changes.
+A separate
 [one-sided curvature calculation](data/development/native_interface_conditioning/README.md)
 assesses a saved interface direction, without changing production optimization
 or promoting any failed flag.
@@ -346,9 +356,11 @@ earlier forward operators.
   checks. `numerical_review.json` and the independent completed-baseline review
   record failures. `absolute_resolution*` is conditional on absolute picks
   at the saved DD model; it is not full-DD resolution.
-- `data/hayward_first_arrival_guarded_001/`: separate active corrected catalog-DD
-  attempt in the integration worktree. Its manifest and execution records
-  identify the frozen inputs and solver. It has no accepted final result yet.
+- `data/hayward_first_arrival_guarded_001/`: failed guarded catalog-DD attempt
+  in the integration worktree. `dd_failed_forward_*` records the rejected
+  first trial; `dd_last_accepted_*` preserves the initial state. Its history
+  contains only a header. The [failure archive](data/development/hayward_guarded_failure_001/README.md)
+  preserves identified outputs and execution evidence. There is no accepted final model.
 - `figures/` and `figures/hayward/`: plots generated from the saved numerical
   tables. `report/report.pdf` explains the experiments and reproduction limits.
 - `data/development/`: numerical diagnostics and frozen failure evidence.

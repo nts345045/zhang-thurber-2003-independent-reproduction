@@ -1,0 +1,205 @@
+{
+  "status": "failed",
+  "mode": "dd",
+  "started_utc": "2026-10-10T07:36:43.722980+00:00",
+  "driver_pid": 230109,
+  "command": [
+    "run_hayward_guarded_inversion.py",
+    "--preflight",
+    "data/hayward_first_arrival_004",
+    "--reference",
+    "data/development/hayward_first_arrival_004_1d_support",
+    "--accuracy-review",
+    "data/development/hayward_sampled_accuracy_004_002/accuracy_review.json",
+    "--parity-review",
+    "data/development/hayward_guard_adoption_checks/001/summary.json",
+    "--output",
+    "data/hayward_first_arrival_guarded_001",
+    "--build",
+    "tmp/hayward_guarded_runs/001"
+  ],
+  "threads": 4,
+  "completed_commands": [
+    {
+      "stage": "cmake_version",
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001/cmake_version_resources.txt",
+        "cmake",
+        "--version"
+      ],
+      "pid": 230115,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T07:36:44.466763+00:00",
+      "maximum_resident_set_kbytes": 14400
+    },
+    {
+      "stage": "configure",
+      "command": [
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_runs/001/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_runs/001/compiled"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001/configure_resources.txt",
+        "cmake",
+        "-S",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_runs/001/source",
+        "-B",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_runs/001/compiled"
+      ],
+      "pid": 230118,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T07:36:46.947506+00:00",
+      "maximum_resident_set_kbytes": 23012
+    },
+    {
+      "stage": "compiler_version",
+      "command": [
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001/compiler_version_resources.txt",
+        "/usr/bin/c++",
+        "--version"
+      ],
+      "pid": 230210,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T07:36:47.052062+00:00",
+      "maximum_resident_set_kbytes": 2876
+    },
+    {
+      "stage": "compile",
+      "command": [
+        "cmake",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_runs/001/compiled",
+        "-j",
+        "2"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001/compile_resources.txt",
+        "cmake",
+        "--build",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_runs/001/compiled",
+        "-j",
+        "2"
+      ],
+      "pid": 230212,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T07:37:16.743741+00:00",
+      "maximum_resident_set_kbytes": 343724
+    },
+    {
+      "stage": "runtime_libraries",
+      "command": [
+        "ldd",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_runs/001/compiled/dd"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001/runtime_libraries_resources.txt",
+        "ldd",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_runs/001/compiled/dd"
+      ],
+      "pid": 230536,
+      "return_code": 0,
+      "finished_utc": "2026-10-10T07:37:16.861052+00:00",
+      "maximum_resident_set_kbytes": 2972
+    },
+    {
+      "stage": "dd_invert",
+      "command": [
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_runs/001/compiled/dd",
+        "invert",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001/run.cfg",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001",
+        "dd"
+      ],
+      "supervisor_command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001/dd_invert_resources.txt",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_runs/001/compiled/dd",
+        "invert",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001/run.cfg",
+        "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001",
+        "dd"
+      ],
+      "pid": 230544,
+      "return_code": 1,
+      "finished_utc": "2026-10-10T09:30:34.286350+00:00",
+      "maximum_resident_set_kbytes": 22365088
+    }
+  ],
+  "inherited_preflight": "data/hayward_first_arrival_004",
+  "scientific_success": false,
+  "scope": "One guarded DD attempt; no automatic other-mode cascade",
+  "current_stage": "dd_invert",
+  "current_command": [
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_runs/001/compiled/dd",
+    "invert",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001/run.cfg",
+    "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001",
+    "dd"
+  ],
+  "current_child_pid": 230544,
+  "current_command_started_utc": "2026-10-10T07:37:17.743737+00:00",
+  "child_pid_semantics": "GNU time process-group leader",
+  "finished_utc": "2026-10-10T09:30:34.346923+00:00",
+  "error": "Command '['/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/hayward_guarded_runs/001/compiled/dd', 'invert', '/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001/run.cfg', '/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/hayward_first_arrival_guarded_001', 'dd']' returned non-zero exit status 1.",
+  "return_code": 1,
+  "partial_output_sha256": {
+    "guarded_source.tar.gz": "950b2f781804ce0f1311f4efd699b1d3f8ef3c7329b3f90aecc6d97b1c84fedd",
+    "cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cmake_version_resources.txt": "d430db7fadd4bb612f6362e68cc3f89779e221fa69a1aae0fe6da64358293af6",
+    "configure_stdout.log": "dfef8119261d3824d1f78153e29e4d8e98ae5af3c866183637128d7d34bb6080",
+    "configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configure_resources.txt": "6e41d40e50fe6cb53a3e23effe9ada8e26c0393485bfa3892b140c33361b1fea",
+    "compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compiler_version_resources.txt": "3652f88e7ae6c8d127b01e163a58cf4eee780ca36a847d956a215ca854d76022",
+    "compile_stdout.log": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+    "compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_resources.txt": "7effaab8322a93e83623b24b3c01736589f6e39a3548f9da988f03e22e2bdb47",
+    "runtime_libraries_stdout.log": "a163ec0696af166127a8a6c3ac288158a4c9f031e5ae34a4637ca7d3fa94fe44",
+    "runtime_libraries_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime_libraries_resources.txt": "d8750e4f623981011b66aee832df981006b9d6d8ece86c18210aabf8f4c2f93b",
+    "dd_inversion_run_manifest.json": "89c013bb0bd5a8987d99e017abf5a6a6f32a88cfb3b75b3f124d8969b6b401e2",
+    "dd_invert_stdout.log": "654b85a14a0ffea4180bc3ea5fa96bec4d50bf66e3313a686271849e3bd5ab64",
+    "dd_invert_stderr.log": "ac1038217fb98d47cdbfb4a892516bce83b2b417c7316ef02ff98238b357b550",
+    "dd_invert_resources.txt": "adda6e288a82aacf7aa53dda2ce5436e6a496265b634c2080813759897bff839",
+    "dd_history.csv": "a81ab7df0823a47ffbd2d0430a3feac3c97abc306dd0b6b8eb63905949d5d134",
+    "dd_matrix_preflight.csv": "e921725b0ffdb3fd1b545a28b4357811fb24a1f224dc513a8beb53dfdd5579b5",
+    "dd_failed_forward_ray_status.csv": "76627475c13d5d258f9430093b047ca0e0e59107ac5592b51b238613503b0f4b",
+    "dd_failed_forward_ray_failures.csv": "2856fd154c61eaae4c678afad07a4d20fec1f42e14903b9cc0f5c97ac766aa83",
+    "dd_failed_forward_ray_paths.csv": "910826b8aee730d30f577554e31088d3456c8946a2fcc938a188db1808102f33",
+    "dd_failed_forward_events.csv": "9b470b1d70ce469d4bc53c8eeaa8a49e7f3e4a68f7b213a9ee87d34a8759a2da",
+    "dd_failed_forward_grid.csv": "b85a7ff605674f46ac26d3953b7ab149092f1bd218fe82076d595bfc50c62d4c",
+    "dd_last_accepted_events.csv": "f20935a739ca71ad97d313f965474cbe4db1f6cc230157b7e36008667eb409fa",
+    "dd_last_accepted_grid.csv": "ac72eb8bd9bd3379044854e8314723b99ecb672f379724acd53a47629b4ee40f",
+    "dd_failed_forward_context.csv": "0884cf02c39ffcef87344f3e433c78f512d40a11997dc5151309c5da3637a11f"
+  }
+}

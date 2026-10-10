@@ -1,0 +1,11 @@
+--- reviewed_D/src/core.hpp
++++ strict/src/core.hpp
+@@ -456,7 +456,7 @@
+     double change = T - newT;
+     T = newT;
+     updates++;
+-    if (change < 1e-11 && projected_ray_gradient(g, p, grad) < 1e-5) {
++    if (false && change < 1e-11 && projected_ray_gradient(g, p, grad) < 1e-5) {
+       converged = true;
+       break;
+     }
