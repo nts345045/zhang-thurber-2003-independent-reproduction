@@ -1,0 +1,37 @@
+{
+  "scope": "Full identical initial Hayward cohort only; no acceptance of sampled refinement, updated 3D models or inversion",
+  "time_limit_s": 2.5e-05,
+  "source_vector_limit_s_per_km": 3e-06,
+  "identical_native_observations_and_references": true,
+  "plotted_comparisons": {
+    "003": {
+      "comparison_sha256": "c9354801d1e8ebd60aeaab40b7550af6430a297b1b2fb87492eb707236ef2c4a",
+      "summary_sha256": "6d757a106a8c607fb5d2baa124cf447e1bad5b3033442710a6fddbaf018c86df",
+      "underlying_identified_table": "data/development/hayward_first_arrival_003_1d_support/comparison.csv",
+      "rays": 14262,
+      "local_flags_pass": 14123,
+      "time_limit_pass": 2326,
+      "source_vector_limit_pass": 1842,
+      "both_limits_pass": 603,
+      "max_absolute_time_error_s": 0.0022321739332049617,
+      "max_source_vector_error_s_per_km": 0.03357076927631357
+    },
+    "004": {
+      "comparison_sha256": "0705a0f6d2402187fecaf8d7313a20e69bd7f45d3370a88a7be16c477ffd256a",
+      "summary_sha256": "a1fc5194c83a65019a62add7b6ec5d10478be87dd5f6c8d7ffb9e6eab535ad7d",
+      "underlying_identified_table": "data/development/hayward_first_arrival_004_1d_support/comparison.csv",
+      "rays": 14262,
+      "local_flags_pass": 14262,
+      "time_limit_pass": 14262,
+      "source_vector_limit_pass": 14262,
+      "both_limits_pass": 14262,
+      "max_absolute_time_error_s": 9.585109452814322e-07,
+      "max_source_vector_error_s_per_km": 1.781633449771992e-06
+    }
+  },
+  "source_sha256": "2dd64275bd6bbbd3ea03704122d41ce94c401dd9c9b1d6ba8d2039f92fa3f46a",
+  "output_sha256": {
+    "figures/diagnostics/hayward_full_initial_accuracy.pdf": "79410fa5f495704507a2222763b1a6eef62b32a637589693f171bbd9037507b4",
+    "figures/diagnostics/hayward_full_initial_accuracy.png": "783aba335268507d166a8206c676f3fc0d0ae3f3b2c74cef66f0cb8005caba99"
+  }
+}

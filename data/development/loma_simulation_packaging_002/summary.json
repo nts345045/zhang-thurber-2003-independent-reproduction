@@ -1,0 +1,156 @@
+{
+  "status": "passed",
+  "scope": "Invented two-event/two-receiver simulation only; no real archive",
+  "checks": [
+    {
+      "name": "completed independent-reviewed fixture split and full stream readback",
+      "passed": true,
+      "status": "passed",
+      "members_verified": 39,
+      "parts_verified": 16,
+      "uncompressed_bytes": 79074,
+      "all_member_hashes_and_sizes_match": true,
+      "compressed_stream_hash_and_gzip_crc_match": true,
+      "manifest_sha256": "b8f5fe0aa9dae0c0c0c243632918371a9b2c0a3b4d47580a2aeb2dbfdea8b19b"
+    },
+    {
+      "name": "fresh restore preserves every original byte and filename",
+      "passed": true,
+      "members": 39
+    },
+    {
+      "name": "existing restore directory",
+      "passed": true,
+      "error_type": "FileExistsError",
+      "error": "[Errno 17] File exists: '/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_packaging_checks_002/restored'"
+    },
+    {
+      "name": "existing archive directory",
+      "passed": true,
+      "error_type": "ValueError",
+      "error": "Preserve prior publication output; use a fresh directory"
+    },
+    {
+      "name": "part bound greater than 50 MiB",
+      "passed": true,
+      "error_type": "ValueError",
+      "error": "Part bound must be at most 50 MiB"
+    },
+    {
+      "name": "live or interrupted simulation",
+      "passed": true,
+      "error_type": "ValueError",
+      "error": "Do not archive a live or failed simulation"
+    },
+    {
+      "name": "changed reviewed observations",
+      "passed": true,
+      "error_type": "ValueError",
+      "error": "Reviewed artifact changed: observations.csv"
+    },
+    {
+      "name": "review refers to different execution",
+      "passed": true,
+      "error_type": "ValueError",
+      "error": "Independent review does not identify this terminal simulation"
+    },
+    {
+      "name": "failed independent review",
+      "passed": true,
+      "error_type": "ValueError",
+      "error": "Independent review has not passed"
+    },
+    {
+      "name": "corrupted compressed part",
+      "passed": true,
+      "error_type": "ValueError",
+      "error": "Archive part hash/size mismatch: simulation.tar.gz.part0001"
+    },
+    {
+      "name": "missing compressed part",
+      "passed": true,
+      "error_type": "FileNotFoundError",
+      "error": "[Errno 2] No such file or directory: '/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp/loma_packaging_checks_002/missing/simulation.tar.gz.part0001'"
+    },
+    {
+      "name": "wrong member hash",
+      "passed": true,
+      "error_type": "ValueError",
+      "error": "Tar member bytes differ: observations.csv"
+    },
+    {
+      "name": "unsafe member manifest path",
+      "passed": true,
+      "error_type": "ValueError",
+      "error": "Unsafe member path: ../escape"
+    },
+    {
+      "name": "member larger than stream buffer crosses many part boundaries losslessly",
+      "passed": true,
+      "status": "passed",
+      "members_verified": 40,
+      "parts_verified": 33,
+      "uncompressed_bytes": 2176257,
+      "all_member_hashes_and_sizes_match": true,
+      "compressed_stream_hash_and_gzip_crc_match": true,
+      "manifest_sha256": "d0083372715f69092c25385475bb7aab13d59e55d693c9c60a9746c6a137f7f3"
+    }
+  ],
+  "original_fixture_files_unchanged": true,
+  "fixture": "data/development/analytic_simulation_launcher_002/invented_simulation",
+  "independent_fixture_review": "data/development/loma_simulation_packaging_001/fixture_review.json",
+  "review_sha256": "93b25bf42366dfa515497817267bb88c897c6a253ac3c5c934b5dc7dc74f39bc",
+  "output_sha256": {
+    "package_loma_simulation.py": "fcbb24366ca916a98027b7115522e651690aeae0d3bcb5a9c97c57d65366f3ab",
+    "check_loma_simulation_packaging.py": "b38435f80456992f9579d17063c97992509aed45ffb91c426d6aa6f54c8bc796",
+    "package/execution.json": "68e719f4dc9864f2a8ae16e39986adee5f3b41a9a5fb74bad9449442b4dfab84",
+    "package/independent_output_review.json": "93b25bf42366dfa515497817267bb88c897c6a253ac3c5c934b5dc7dc74f39bc",
+    "package/simulation.tar.gz.part0000": "e58b828fd0601e73018e805f0e141201a9919d3183658b03899905a65adfed1d",
+    "package/simulation.tar.gz.part0001": "83770b4e65a17df645a4883ceb52361e8334268b405dcf9119520f28c2630a18",
+    "package/simulation.tar.gz.part0002": "fe1cc9682b8c867395bebbc4ee2aed563e3661d183d704efe4d880964b5cfed8",
+    "package/simulation.tar.gz.part0003": "8f61f618337b0b4519f18b72bd311f98df67859a91f61dd2f1ca3c2ab4e6967c",
+    "package/simulation.tar.gz.part0004": "0d9dcbb99f7217b62df963706e229554baa198778932d93d5e05f3463e930236",
+    "package/simulation.tar.gz.part0005": "47088b45d6dd238137212a5d14a0c8cb864e62a53562f243120e88c9d5915ae5",
+    "package/simulation.tar.gz.part0006": "09f6287cbbb586c10a11b80e8aaec64bf0c3fb02d0abb94f93b6aa01792310f7",
+    "package/simulation.tar.gz.part0007": "94a457fae1866d6ce5f756a223213ad88d9a063917b97519bd4b6d4b6900c0bd",
+    "package/simulation.tar.gz.part0008": "760b7cec5c4319f374a9720d1f433840bae533a609bc9e0f2378a9b0434f2f8c",
+    "package/simulation.tar.gz.part0009": "6e986f5a0ba7bb827241787d2bc4901ef75acc1a9968a892703f9c59ca58d534",
+    "package/simulation.tar.gz.part0010": "16f45b6e1481264049ddaf26a1f4bcd9f95b1a714773a352857f70972571ad39",
+    "package/simulation.tar.gz.part0011": "f90220a29eb4cc6a18006942054bca6657f722ef2334656eb5fc380d6ce34958",
+    "package/simulation.tar.gz.part0012": "a4d1c701cbab4307da78826f30658a9c902319e627252adfcd9368ccfa8df6c7",
+    "package/simulation.tar.gz.part0013": "a1bbda19f1701c9b0913096459507f6e3ef33c00ed82b1e6bae3e78b2dc9cebf",
+    "package/simulation.tar.gz.part0014": "9d92ed055d555833f6f0b55ad33feab9d9f0fad92ffed9c3b787fefd62dcd463",
+    "package/simulation.tar.gz.part0015": "05d7e7e2389d68c8923de9fe21c5a8962968ba78f494c665e35954fcf53d07bf",
+    "package/manifest.json": "b8f5fe0aa9dae0c0c0c243632918371a9b2c0a3b4d47580a2aeb2dbfdea8b19b",
+    "package/verification.json": "3ef80112c96bd7912b3bf96f565cbf7c4cc53a3ac791c0831a533710b14ca3fd",
+    "package/README.md": "a93ebb61b446638de3ffb9d4a7be6584c8d2c51143dfc5181adb3d80efcfee3a",
+    "package/readable/analytic_truth_manifest.json": "50c5bf093545545bf1681704b5f1212e1dc27057d086365ba9be87a43e28ca41",
+    "package/readable/authoritative_geometry": "13952d674c3c41253c5943b0d457ae9f16eb88a17fc5c057bee727467c90d166",
+    "package/readable/initial_events.csv": "63e62e60e422c9a48b5818c2eeb70a6a626d6fb9528b00534dfe15306e254f9f",
+    "package/readable/preparation_manifest.json": "a6ad37cf62cd0bead46e999b129cf935eeea1db384067cdd2ad112e49625a75e",
+    "package/readable/run.cfg": "1daef9a5ab261fecdf2123479f5e2cd05ea2f87f96d7b47ef0b476513b2d3c83",
+    "package/readable/simulate_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "package/readable/simulate_stdout.log": "326e8cf3c81f0a46f8d1dc7c84ddbc3e42a3ad7b78ce01ca45ff9eeeb3e3aa41",
+    "package/readable/simulation_cmake_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "package/readable/simulation_cmake_version_stdout.log": "7749b602fde852de2d5616dae8b053e85b7b85fb7bbdd5dbca74c2259cc75ec8",
+    "package/readable/simulation_compile_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "package/readable/simulation_compile_stdout.log": "0491c637205a6881996b40f7fd43014fd5d33f76d4a3b94cf9d0dfb647dedaa1",
+    "package/readable/simulation_compiler_version_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "package/readable/simulation_compiler_version_stdout.log": "6f1cca248f3f5613d72e6c096bef772fe2807a4408bb7edf0dc1947b9e95549a",
+    "package/readable/simulation_configure_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "package/readable/simulation_configure_stdout.log": "0bb906076b0649e8020ec6f7964662ba072b9db930f9f70afa74ba547761e9b5",
+    "package/readable/simulation_execution.json": "642fc73c985373dc68d965281145ab57615dfe72cc135e7e7602a4ca9dcace85",
+    "package/readable/simulation_run_manifest.json": "c9b37996d3b33fa7651a9be88a0f2e7dba87b3158b4f9dea4cc77a90f4fe48ed",
+    "package/readable/simulation_runtime_libraries_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "package/readable/simulation_runtime_libraries_stdout.log": "d86f5549cd129b3d1ab4fce39fffeb7cbb292005c03c5e5ebd7ebef70ef7897d",
+    "package/readable/simulation_truth_mode.txt": "f1a9a5dec8eaa6c2f51b484ef730768ec312b74a2bebe001244bfc1d7d5ff7d5",
+    "package/readable/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "package/readable/truth_events.csv": "5f936b391fb206d48ed68f30f5caf4ff8fb6da23593292e6b048bcbb784d7310",
+    "package/readable/analytic_truth/inputs/stations.csv": "f8ccd4627670cec4476eeb34f6ea4bad0f921db8601a5797808256fd80051c11",
+    "package/readable/analytic_truth/inputs/truth_events.csv": "f82c3512581e993a2695387ad5bf5d1067ec82a8cf4499e0a3c53c647174679b",
+    "package/readable/analytic_truth/provenance/execution.json": "b4c1b66e45389167aad38882a1eea13ed4c4bf7609268b953ed6020b7144be3a",
+    "package/readable/analytic_truth/provenance/independent_review.json": "76fad46da42cad502722514401f659da7fa119587a4fbce1adf802a3173f32db",
+    "package/readable/analytic_truth/provenance/review.json": "de6d089820e059edcdf360c672722fdee86a8a0f489dcd4cf7957269473e469a",
+    "package/readable/analytic_truth/provenance/summary.json": "bcabde525387e6a3d77fc825130ca8fd2da8176a183a3d65f08d4c22b8370f1f"
+  }
+}

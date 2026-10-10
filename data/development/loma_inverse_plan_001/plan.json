@@ -1,0 +1,329 @@
+{
+  "status": "plan_only_no_inverse_forward_run",
+  "created_utc": "2026-10-10T03:16:51.400101+00:00",
+  "actual_run": "data/loma_lom_analytic_001",
+  "terminal_simulation": true,
+  "independent_output_review": "Pending separate full streaming review at plan creation; required before any forward preflight",
+  "input_sha256": {
+    "initial_events.csv": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+    "stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "initial_grid.csv": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+    "run.cfg": "d28f691c27559c0fd45f99c5e107f35a343c15e4bf371065716814102352a6b2",
+    "ray_samples.csv": "d7947caae93c788927075ee2dcb06d9b046ba1ba67314f58c4b00cd71b9b5e05",
+    "analytic_truth/inputs/truth_events.csv": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3",
+    "preparation_manifest.json": "951464e9b44c536b6fb241b45e046053b2b73d0c338a31b25c4cf0f66d20c90a",
+    "analytic_truth_manifest.json": "9cd8b597b1f90d03e6e0709c032c07589feed2e4dd2f1fa7b0ee8fea792f686d",
+    "simulation_run_manifest.json": "64d5eea9365ee513d129cf81f7dd4eaba9fdd581ec4433491d7c2d90de90744f",
+    "simulation_execution.json": "524d2ee8787b74c5b988624fb0381f2570a4a9667e71e03fd364546965b8e2bd"
+  },
+  "source_sha256": {
+    "src/main.cpp": "9216f6ac80b5bb7b2ad532ea9a50c57e085907be72aba59666e86f9959641112",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "diagnostics/first_arrival_1d_reference.py": "13020fef85113c302b27d846e1b4286c13576348a10710ba8a4c6fbd999e1c98"
+  },
+  "full_observations": {
+    "bytes": 6795336074,
+    "terminal_ledger_sha256": "c369cabeac01f5fea506cd05c21a5d6ea27673a0f69cb1e59bb9eea4823c2179",
+    "rehash_by_this_plan": false
+  },
+  "dimensions": {
+    "events": 724,
+    "native_receivers": 52,
+    "exact_receiver_coordinate_keys": 52,
+    "duplicate_coordinate_groups": [],
+    "initial_grid_axes": {
+      "x": [
+        -35.0,
+        -15.0,
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        20.0,
+        35.0
+      ],
+      "y": [
+        -60.0,
+        -40.0,
+        -20.0,
+        0.0,
+        20.0,
+        40.0
+      ],
+      "z": [
+        -1.0,
+        0.0,
+        3.0,
+        7.0,
+        11.0,
+        16.0
+      ]
+    },
+    "initial_nodes": 288,
+    "source_parameters": 2896,
+    "joint_parameters": 3184,
+    "absolute_support": 37648,
+    "fixed_truth_event_pairs": 152834,
+    "catalog_rows": 7947368,
+    "precise_rows": 7947368,
+    "total_rows": 15932384,
+    "diagnostic_samples": 104,
+    "diagnostic_receiver_keys": 52,
+    "valid_first_eight_central_FD_components": 24
+  },
+  "initial_profile_depth_velocity": [
+    [
+      -1.0,
+      3.0
+    ],
+    [
+      0.0,
+      3.0
+    ],
+    [
+      3.0,
+      5.160638297872341
+    ],
+    [
+      7.0,
+      5.9521387283237
+    ],
+    [
+      11.0,
+      6.113988439306358
+    ],
+    [
+      16.0,
+      6.316300578034682
+    ]
+  ],
+  "initial_ranges": {
+    "x": [
+      -11.8977885571,
+      18.44568409
+    ],
+    "y": [
+      -41.7964035447,
+      25.1516048325
+    ],
+    "z": [
+      -0.355487321216,
+      16.0
+    ],
+    "t": [
+      -0.157649180571,
+      0.15816780448
+    ]
+  },
+  "initial_domain_boundaries": [
+    {
+      "id": "31",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/10090670",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642454",
+      "x": 5.0197054316,
+      "y": 16.3266285931,
+      "z": 16.0,
+      "active_bounds": [
+        "z_upper"
+      ]
+    },
+    {
+      "id": "246",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/259767",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/13055119",
+      "x": -8.29218319277,
+      "y": -5.62670118429,
+      "z": 16.0,
+      "active_bounds": [
+        "z_upper"
+      ]
+    },
+    {
+      "id": "287",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/261623",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2647304",
+      "x": -0.115495372276,
+      "y": 3.77450918455,
+      "z": 16.0,
+      "active_bounds": [
+        "z_upper"
+      ]
+    },
+    {
+      "id": "318",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/262053",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2648254",
+      "x": 2.00688401161,
+      "y": 23.671676285,
+      "z": 16.0,
+      "active_bounds": [
+        "z_upper"
+      ]
+    },
+    {
+      "id": "411",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091417",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2654104",
+      "x": 2.00079404898,
+      "y": -7.45814331385,
+      "z": 16.0,
+      "active_bounds": [
+        "z_upper"
+      ]
+    },
+    {
+      "id": "433",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/269979",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2655534",
+      "x": 4.7479257577,
+      "y": 2.3388217429,
+      "z": 16.0,
+      "active_bounds": [
+        "z_upper"
+      ]
+    },
+    {
+      "id": "463",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091537",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2658134",
+      "x": 0.0745856100906,
+      "y": 12.6681592315,
+      "z": 16.0,
+      "active_bounds": [
+        "z_upper"
+      ]
+    },
+    {
+      "id": "467",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091616",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2659234",
+      "x": 1.14306883717,
+      "y": 15.265661619,
+      "z": 16.0,
+      "active_bounds": [
+        "z_upper"
+      ]
+    },
+    {
+      "id": "507",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20092287",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2665184",
+      "x": 1.91230048401,
+      "y": 10.9810268484,
+      "z": 16.0,
+      "active_bounds": [
+        "z_upper"
+      ]
+    }
+  ],
+  "negative_depth_initial_sources": [
+    {
+      "id": "339",
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/10090994",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2649244",
+      "z": -0.355487321216
+    }
+  ],
+  "initial_straight_distance_km": [
+    2.1032357188516357,
+    88.1022495066558
+  ],
+  "initial_distance_weight_zero": {
+    "fixed_pairs_at_or_beyond_20km": 2532,
+    "catalog_plus_precise_rows": 263328,
+    "cohort_unchanged": true,
+    "basis": "Fixed pairs use full-precision truth geometry; initial distance weights use saved perturbed positions"
+  },
+  "fmm_storage": {
+    "address_space_limit_GiB": 128,
+    "threads": 4,
+    "assumed_scalar_bytes": {
+      "double": 8,
+      "int": 4,
+      "accepted_flag": 1
+    },
+    "fields": [
+      {
+        "requested_spacing_km": 0.5,
+        "shape": [
+          141,
+          201,
+          35
+        ],
+        "nodes_per_field": 991935,
+        "one_field_time_parent_GiB": 0.011085737496614456,
+        "all_52_persistent_GiB": 0.5764583498239517,
+        "four_build_slowness_accepted_GiB": 0.03325721248984337
+      },
+      {
+        "requested_spacing_km": 0.25,
+        "shape": [
+          281,
+          401,
+          69
+        ],
+        "nodes_per_field": 7774989,
+        "one_field_time_parent_GiB": 0.0868922732770443,
+        "all_52_persistent_GiB": 4.518398210406303,
+        "four_build_slowness_accepted_GiB": 0.2606768198311329
+      },
+      {
+        "requested_spacing_km": 0.125,
+        "shape": [
+          561,
+          801,
+          137
+        ],
+        "nodes_per_field": 61562457,
+        "one_field_time_parent_GiB": 0.6880140714347363,
+        "all_52_persistent_GiB": 35.776731714606285,
+        "four_build_slowness_accepted_GiB": 2.0640422143042088
+      },
+      {
+        "requested_spacing_km": 0.0625,
+        "shape": [
+          1121,
+          1601,
+          273
+        ],
+        "nodes_per_field": 489958833,
+        "one_field_time_parent_GiB": 5.475716661661863,
+        "all_52_persistent_GiB": 284.7372664064169,
+        "four_build_slowness_accepted_GiB": 16.42714998498559
+      }
+    ],
+    "estimates_are_not_RSS_guarantees": true,
+    "production_and_full_refinement_persistent_GiB": {
+      "0.5": 5.094856560230255,
+      "0.25": 40.29512992501259,
+      "0.125": 320.5139981210232
+    },
+    "production_0125_refined_00625_batch4_nonqueue_GiB": 74.10674834623933,
+    "uncounted": "Heap entries/capacity, allocator/virtual address reservations, paths, ray derivatives, observation arrays and inversion workspaces; measure actual peak RSS/address-space use before committing a real batch."
+  },
+  "matrix_plan": {
+    "all_active_max_damped_rows": 15936300,
+    "all_active_max_ordered_entries": 4715839720,
+    "all_active_max_CSR_payload_GiB": 52.94108525663614,
+    "numeric_observation_payload_GiB_at_40_byte_Datum": 0.5935275554656982,
+    "residual_and_weight_payload_GiB": 0.2374110221862793,
+    "three_LSQR_row_vectors_GiB": 0.3562040627002716,
+    "requirement": "Use current matrix_preflight_only census on actual validated initial rays; do not allocate/solve from this worst-case estimate. Stream 15.9 million observation identities instead of Python dictionaries."
+  },
+  "full_initial_reference": {
+    "rays": 37648,
+    "layer_axis": "z",
+    "profile": "Exact saved initial_grid.csv, continuous piecewise linear with constant extension only within z=[-1,0]",
+    "source_geometry": "Exact saved initial_events.csv; source.t corrections are excluded from pure travel-time reference and retained separately in predicted arrivals",
+    "module": "diagnostics/first_arrival_1d_reference.py",
+    "required": "Complete unique branch enumeration, finite endpoint derivatives, full native event/origin/channel/epoch joins; preserve unresolved/near-tie cases as failures.",
+    "unchanged_accuracy_controls": {
+      "time_absolute_s": 2.5e-05,
+      "source_Euclidean_norm_s_per_km": 3e-06
+    },
+    "truth_cache_not_reusable": "The x-only truth reference and original unperturbed geometry do not describe this z-only initial model; neither validates arbitrary updated 3D models."
+  },
+  "no_runs_launched": true
+}

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "python3",
+    "diagnostics/package_loma_simulation.py",
+    "package",
+    "--data",
+    "data/loma_lom_analytic_001",
+    "--review",
+    "data/loma_lom_analytic_001/independent_simulation_review.json",
+    "--output",
+    "data/published/loma_lom_analytic_001"
+  ],
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "started_utc": "2026-10-10T03:21:56.606518Z",
+  "source_commit": "996d77127caef28ec2256ea3d50b595e184d33f4",
+  "helper_sha256": "0efadef52efe787d713d80b93c74b2242e1355db02a4249e7341593427961195",
+  "independent_review_sha256": "e4e2745f0fc4bc44ba32906bb6c1fe224c8e9dab364c61b276f05fa3ea5d60c7",
+  "originals_must_remain_unchanged": true
+}

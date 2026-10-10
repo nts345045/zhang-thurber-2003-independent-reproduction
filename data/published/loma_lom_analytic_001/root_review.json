@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "scope": "Independent part/stream digest, readable native tables and review/terminal links; prior full tar-member readback retained separately",
+  "manifest_sha256": "ac5443300be85779c789221ade281dc164f88fcc0559812735eb189903329695",
+  "verification_sha256": "672ed98b507bc36f793acf9904ff888d58465921b19f3ff19f7aa10ca6511e5d",
+  "parts_verified": 10,
+  "compressed_bytes": 504089284,
+  "compressed_sha256": "6fe053114783a1a77b448121d526b3517d7939822a9be2ded4b16992e139c52f",
+  "readable_files_verified": 31,
+  "native_tables": [
+    {
+      "file": "readable/analytic_truth/inputs/stations.csv",
+      "rows": 52,
+      "sha256": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da"
+    },
+    {
+      "file": "readable/analytic_truth/inputs/truth_events.csv",
+      "rows": 724,
+      "sha256": "e6bd07a92484efd5d152f8f82b17eefbbf8f517bb89be7d0931bb7d87547c8a3"
+    },
+    {
+      "file": "readable/stations.csv",
+      "rows": 52,
+      "sha256": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da"
+    },
+    {
+      "file": "readable/truth_events.csv",
+      "rows": 724,
+      "sha256": "45e2682389d1a21d7389c132dced4c98f11872b5c98909b53be44c12a254285e"
+    }
+  ],
+  "full_member_readback": "verification.json; not repeated by this review",
+  "limitations": [
+    "Lossless publication is not an inverse calculation or forward-solver accuracy result."
+  ]
+}
