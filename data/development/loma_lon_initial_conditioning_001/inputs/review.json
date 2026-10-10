@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "scope": "Saved-table/native/hash and independent straight-action physical checks; no reference enumeration or ray/inversion rerun",
+  "verified_pairs": 37648,
+  "counts": {
+    "derivative_defined": 37647,
+    "pairs": 37648,
+    "reference_complete": 37648,
+    "reference_valid": 37647,
+    "candidate_total": 37752,
+    "branch_turning": 19651,
+    "branch_direct": 17982,
+    "branch_bottom_boundary": 13,
+    "branch_flat_direct": 1
+  },
+  "invalid_reference_count": 1,
+  "near_tie_count": 0,
+  "reference_comparison_ready": false,
+  "native_metadata_fields_all_match": true,
+  "ordered_indices_complete": true,
+  "original_xyz_source_derivatives_match": true,
+  "source_time_preserved_as_metadata_only": true,
+  "exact_boundary_flags_match": true,
+  "maximum_candidate_distance_closure_km": 1.0783892889776325e-08,
+  "physical_bounds": {
+    "minimum_time_minus_euclidean_over_global_vmax_s": 0.3511224216813683,
+    "maximum_time_minus_independent_straight_action_s": 0.0,
+    "maximum_absolute_endpoint_eikonal_norm_residual_s_per_km": 1.1102230246251565e-16
+  },
+  "interpretation": "Physical-bound residuals are reported without imposing an additional scientific threshold; roundoff-sized signed differences can occur.",
+  "limitations": [
+    "The consistency bounds do not independently prove branch completeness or certify interval time ranking.",
+    "Boundary/tied derivatives are branch derivatives, not an assertion of a unique unconstrained centered derivative.",
+    "No numerical forward-operator or inversion acceptance follows from this reference-table review."
+  ],
+  "summary_sha256": "754fac2f78bb23952fa44af22ac0d59267e43ca5a2ccca1f9965ffce628ffa1b",
+  "execution_sha256": "587eb195af6b18fd04a0a2e8aa9ef1a7fd0f76e8483223691de859863289ae74",
+  "review_source_sha256": "9de0a6aad7a06446586c9fdb2001108d797f4be355ffc363c1dd75474dd85a35"
+}
