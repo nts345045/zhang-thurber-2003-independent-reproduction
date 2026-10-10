@@ -1,0 +1,71 @@
+{
+  "copies": [
+    {
+      "byte_identical": true,
+      "destination": "affine_log_reference.py",
+      "destination_sha256": "b464855841a83c8bae9d02c9536b91ca439bd722f30c7ff98e117c4b102ea0d5",
+      "source": "data/development/internal_face_contact_controls_001/affine_log_reference.py",
+      "source_sha256": "b464855841a83c8bae9d02c9536b91ca439bd722f30c7ff98e117c4b102ea0d5"
+    },
+    {
+      "byte_identical": true,
+      "destination": "source/src/core.hpp",
+      "destination_sha256": "c9500361c5ca3ff55b2fbcec0aedfb3639d3f3b68a53431267e6849c3a933044",
+      "source": "data/development/internal_face_contact_controls_001/source/src/core.hpp",
+      "source_sha256": "c9500361c5ca3ff55b2fbcec0aedfb3639d3f3b68a53431267e6849c3a933044"
+    },
+    {
+      "byte_identical": true,
+      "destination": "source/src/ray_metric.hpp",
+      "destination_sha256": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+      "source": "data/development/internal_face_contact_controls_001/source/src/ray_metric.hpp",
+      "source_sha256": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+    },
+    {
+      "byte_identical": true,
+      "destination": "source/src/usable_ray_curvature.hpp",
+      "destination_sha256": "5236f9df135dc2449662db70bb68aded36cae3f5ce23e7471caa02d45ce5daac",
+      "source": "data/development/internal_face_contact_controls_001/source/src/usable_ray_curvature.hpp",
+      "source_sha256": "5236f9df135dc2449662db70bb68aded36cae3f5ce23e7471caa02d45ce5daac"
+    },
+    {
+      "byte_identical": true,
+      "destination": "source/diagnostics/trilinear_action_bounds.py",
+      "destination_sha256": "11659e76f56537dcfc29e1c6189bea6e3466bceef13c497448a53b11d9f69f73",
+      "source": "data/development/internal_face_contact_controls_001/source/diagnostics/trilinear_action_bounds.py",
+      "source_sha256": "11659e76f56537dcfc29e1c6189bea6e3466bceef13c497448a53b11d9f69f73"
+    },
+    {
+      "byte_identical": true,
+      "destination": "source/diagnostics/check_native_interface_support.py",
+      "destination_sha256": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+      "source": "data/development/internal_face_contact_controls_001/source/diagnostics/check_native_interface_support.py",
+      "source_sha256": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67"
+    },
+    {
+      "byte_identical": true,
+      "destination": "source/diagnostics/first_arrival_1d_precise_turn_reference.py",
+      "destination_sha256": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+      "source": "data/development/internal_face_contact_controls_001/source/diagnostics/first_arrival_1d_precise_turn_reference.py",
+      "source_sha256": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2"
+    },
+    {
+      "byte_identical": false,
+      "change": "Ledger scope text only; owned/reaped lifecycle and signal-mask handling unchanged.",
+      "destination": "controller.py",
+      "destination_sha256": "05278dd1544079f727dbf8d5076b0e29d5af17a6a8e0850ee09edd1ee1a92e51",
+      "source": "data/development/internal_face_contact_controls_001/controller.py",
+      "source_sha256": "b05c912b6bf4c8ce59e154cfd2ea90b64aa029243f3dc4d4a69a0ea51beb1952"
+    }
+  ],
+  "numerical_kernel_edits": "Original copied core is untouched; a separate explicit-cell evaluator will be authored in observe.cpp.",
+  "old_segment_bridge": {
+    "copied_source": "source/src/core.hpp",
+    "old_source": "data/development/hayward_trial_cmj_old_D_replay_001/source/old/src/core.hpp",
+    "old_source_sha256": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "scope": "Only segment is called; inherited D path accumulation/optimizer changes are not exercised.",
+    "segment_body_byte_identical": true,
+    "segment_body_sha256": "56df6ed6aa88c3f3bb02b7173a1fee1f53388599a3fa41464b378373b2448648"
+  },
+  "status": "source_only_not_executed"
+}

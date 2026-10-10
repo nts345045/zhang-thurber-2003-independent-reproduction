@@ -1,0 +1,37 @@
+{
+  "compile_calls": 0,
+  "completion_evidence": "Synchronous exec_command returned its final JSON stdout with status passed, 1136 checks, 73 distinct pins and the review hash below. No background process or child evaluator was launched.",
+  "execution_sha256": "96b69c6bf51065baff9a85a8f9e6f2d3fa77ec3e710fd57f9c23e3ad64387dd8",
+  "field_calls": 0,
+  "inversion_calls": 0,
+  "numerical_evaluator_calls": 0,
+  "original_command": [
+    "python3",
+    "-B",
+    "-"
+  ],
+  "outer_reaping_sha256": "893dbc99ac136d8443b15aaf4c4da38f70d69ed23a96b0d6b4046e77c0ea1887",
+  "owner": "earthscope_discovery",
+  "python_sha256": "64c7391db4c0e069b875bb1cb358627cf4064c6ab3a343d3b5d2bf73d3ecca53",
+  "replay_command": "python3 -B - < data/development/internal_face_contact_controls_001/review_saved.py",
+  "replay_limit": "Run only in an equivalent scratch checkout with all pinned dependencies and runtime available, without an existing contact review.json. The exact source creates that output exclusively; do not remove or overwrite the published review. The timestamp and resulting new review hash will differ.",
+  "resolved_python": "/usr/libexec/platform-python3.6",
+  "results_sha256": "8d175519a87422803ab5e3c118066d6c309eea9ccb221a85e6942f0b518f9f50",
+  "return_code": null,
+  "return_code_limit": "The orchestration call forwarded stdout only; a separate OS return-code field was not retained. No exit code is fabricated here.",
+  "review_sha256": "8c0d9b507c877baa675891c2a667d98d79c664f71f4d69d2901ec48773e54a9b",
+  "reviewed_utc": "2026-10-10T14:20:01.863774Z",
+  "source_preservation": "Exact executed stdin body saved afterward; no second execution.",
+  "status": "completed_passed",
+  "stdin_source": "data/development/internal_face_contact_controls_001/review_saved.py",
+  "stdin_source_sha256": "71ff261b7dbea93fe4d54a9d3183a403f83d55efdb0afc22e02a1a0a651e0f36",
+  "summary_sha256": "a12179e8c856cec4a009252f7031da665acdb40dfffe4d43a3806b2d54547161",
+  "terminal_stdout_fields": {
+    "checks": 1136,
+    "review_sha256": "8c0d9b507c877baa675891c2a667d98d79c664f71f4d69d2901ec48773e54a9b",
+    "status": "passed",
+    "unique_pins": 73
+  },
+  "trace_calls": 0,
+  "working_directory": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration"
+}

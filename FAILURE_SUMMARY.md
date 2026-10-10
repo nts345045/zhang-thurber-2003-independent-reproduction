@@ -117,6 +117,34 @@ also finds zero omitted crossings on the two original paths. Their failure
 cannot be attributed to those cut omissions, while general off-face evaluator
 accuracy remains a separate question.
 
+The [invented contact and cutoff tests](data/development/internal_face_contact_controls_001/RESULTS.md)
+now isolate two further requirements. Exact event construction can place
+adjacent nodes on a fast face through two decreasing proposals, but a slow
+face still permits normal descent when its tangent residual vanishes.
+Separately, the existing displacement cutoff can omit a tiny crossing and
+leave a 1.1322e-4 s/km endpoint-gradient error while the action error is only
+5.2427e-17 s. Thus an accurate travel time can conceal an inaccurate
+variational derivative. These are bounded synthetic results; they neither
+attribute the original CMJ failures to omitted cuts nor validate an automatic
+contact optimizer. All 30 declared checks passed while preserving the
+observed evaluator error and unchanged production source.
+A [separate explicit-cell experiment](data/development/strict_cell_segment_controls_001/RESULTS.md)
+then reduces the tiny-crossing gradient error to 7.4166e-17 s/km. It preserves
+every true partition and keeps the selected cell fixed when a rounded sample
+lands on a face. Nine invented cases pass 59 structural checks; all numerical
+error intervals remain reported. The experiment changes several arithmetic
+steps together and does not yet validate general native segments or provide
+an optimizer correction.
+
+The [original-path component audit](data/development/hayward_cmj_original_gradient_bounds_001/RESULTS.md)
+then separates evaluator error from the failed rays' actual residuals.
+Independent ordinary-gradient norms are 4.9649e-4 and 4.9379e-4 s/km,
+whereas the saved C++ component errors are only 1.0564e-15 and 1.0436e-15
+s/km. All 6,168 free components are ordinary, with no active physical-box
+projection. The large original residuals therefore persist under independent
+evaluation. This finding supports testing how the search reaches a cell face;
+it does not establish the cause of every ray failure or validate first arrival.
+
 The original guard also stopped before trying a smaller inverse step. A
 [separate old-kernel candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)
 now distinguishes a pure local-stopping trial rejection from fatal current,

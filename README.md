@@ -218,6 +218,30 @@ integration partition, with no omitted or spurious cuts. This excludes those
 cutoff omissions for the two saved original polygons; it does not establish
 quadrature or ordinary-gradient accuracy on arbitrary off-face trials.
 
+A separate [invented contact experiment](data/development/internal_face_contact_controls_001/RESULTS.md)
+passes 30 checks: two exact fast-face contacts lower the action, and a slow
+face admits normal descent despite zero tangent residual. Temporary contact
+retention is a search proposal, with no convergence claim. The same experiment
+also measures a 1.1322e-4 s/km endpoint-gradient error when the existing
+displacement cutoff omits a tiny crossing, even though its action error is
+only 5.2427e-17 s. Accurate action alone therefore does not validate the
+derivative. This synthetic omission does not explain the two original CMJ
+paths, whose crossing inventories are complete; the production kernel is unchanged.
+A [separate exact-partition, explicit-cell diagnostic](data/development/strict_cell_segment_controls_001/RESULTS.md)
+reduces that gradient error to 7.4166e-17 s/km and passes 59 structural checks
+across nine invented edges. A translated-face example also improves, while
+constant-speed and three-dimensional errors remain near 1e-17 s/km. This
+combined arithmetic experiment has not been applied to native ray optimization.
+
+An [independent component audit of the unchanged original CMJ paths](data/development/hayward_cmj_original_gradient_bounds_001/RESULTS.md)
+finds ordinary gradient norms of 4.9649e-4 and 4.9379e-4 s/km. The saved
+C++ vectors differ from the independent bounds by only 1.0564e-15 and
+1.0436e-15 s/km. All 6,168 internal components are available, and no exact
+physical-box projection is active; 59,290 saved-data checks pass. Thus
+component-evaluation error does not explain these large original residuals.
+This fixed-geometry comparison leaves automatic contact search, optimized-ray
+source sensitivities and first-arrival selection unresolved.
+
 A [bounded backtracking candidate](data/development/hayward_old_kernel_trial_backtracking_candidate_001/README.md)
 retains the original, initially validated ray kernel and changes only the
 inverse control flow. A pure local-stopping failure at a trial rejects that

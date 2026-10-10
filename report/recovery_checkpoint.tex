@@ -340,6 +340,91 @@ still rounded; this inventory does not assess quadrature, sampled-cell
 selection or arbitrary future off-face gradients. The identified records are
 in \path{data/development/hayward_cmj_original_cut_inventory_001/RESULTS.md}.
 
+An invented contact experiment separates event construction from stopping.
+For $v=6-|x|$ km/s, two successive exact event proposals place adjacent
+internal vertices on $x=0$ and reduce the action by $4.2569\times10^{-4}$
+and $1.9651\times10^{-4}$ s. The first contact normal is retained for one
+search proposal only; its ordinary derivative still admits descent.
+For $v=6+|x|$ km/s, three unit edges initially on the face have zero tangent
+derivatives, yet simultaneous positive or negative unit-normal release of
+the two internal vertices gives $D T=-1/18$ s/km. The declared positive
+release lowers the action by $8.2554\times10^{-4}$ s. All 30 checks pass,
+including independently bounded action and true directional changes.
+These controls establish finite contact and release examples, not a full
+supporting vector or automatic convergence on native paths.
+
+The same experiment exposes a separate integration failure
+(Table~\ref{tab:synthetic_cut_errors}). Omitting a tiny central crossing
+leaves an endpoint-gradient error of $1.1322\times10^{-4}$ s/km, although
+the action error is only $5.2427\times10^{-17}$ s. The ordinary derivative
+weights the velocity-gradient jump on both sides of the face; accurate
+integration of the nearly constant slowness does not resolve that jump.
+Thus action agreement alone cannot validate the variational derivatives.
+The unchanged kernel and complete saved results are in
+\path{data/development/internal_face_contact_controls_001/RESULTS.md}.
+This synthetic omission does not explain the two original CMJ paths with
+complete crossing inventories.
+
+A separate diagnostic preserves every exact open crossing and fixes each
+integration piece's cell from its exact interior geometry. It retains the
+eight Gauss nodes and weights, but prepares local interpolation and endpoint
+shape weights before rounding them to binary64. This combined arithmetic
+change reduces the tiny-crossing gradient error to $7.4166\times10^{-17}$
+s/km. A ridge translated to $x=1$ also improves substantially. In that case
+the old evaluator omits the crossing as well, so the comparison does not
+isolate the effect of cell selection from partitioning. Constant-speed,
+reversed, aligned-face and genuinely trilinear controls complete the nine-case
+roster; 59 structural checks pass. The three-dimensional field is
+$v=(2+x)(3+y)(4+z)$ with coordinates in km and velocity in km/s, evaluated
+between $(-1/4,0,-1/4)$ and $(1/4,1,1/4)$. Its reference uses fixed rational
+bounds with reciprocal-series degree 16 (17 retained powers), four subdivisions
+and 192 bound bits.
+All approximation-error intervals are retained in
+\path{data/development/strict_cell_segment_controls_001/RESULTS.md}.
+These values approximate continuous endpoint variations; they are not exact
+derivatives of the finite floating-point quadrature sum. General native
+geometry, optimized paths and optimized-ray source sensitivities remain untested by this
+diagnostic, and the maintained kernel is unchanged.
+
+The unchanged original CMJ polygons provide a separate native test of the
+ordinary gradients. For \texttt{NC518943} and \texttt{NC519264}, the
+independent free-knot gradient norms are $4.9649\times10^{-4}$ and
+$4.9379\times10^{-4}$ s/km. The saved C++ vectors differ from the independent
+bounds by only $1.0564\times10^{-15}$ and $1.0436\times10^{-15}$ s/km.
+All 6,168 internal components are ordinary; no exact physical-box projection
+is active. Thus the large original residuals persist under independent
+evaluation and cannot be attributed to these component errors. The audit
+retains the historical activity-band norm separately and passes 59,290
+saved-data checks over all 2,058 edges. These results motivate testing exact
+contact proposals from the original paths, while leaving automatic search,
+optimized-ray source sensitivities and first-arrival selection unresolved.
+Both original failure flags remain unchanged. The complete error intervals
+and identified records are in
+\path{data/development/hayward_cmj_original_gradient_bounds_001/RESULTS.md}.
+
+\begin{table}[ht]
+\centering
+\caption{Invented segment gradient errors, in s/km. Norms compare all six
+ordinary endpoint components with independent affine references or, for the
+last row, rational trilinear bounds. The original and separate explicit-cell
+evaluators use the same eight-point quadrature. Displayed values round their
+saved error intervals; passing the structural checks imposes no numerical
+accuracy threshold.}
+\label{tab:synthetic_cut_errors}
+\begin{tabular}{llll}
+\hline
+Case & Original cut omitted? & Original norm & Explicit-cell norm \\
+\hline
+Below displacement cutoff & Yes & $1.1322\times10^{-4}$ & $7.4166\times10^{-17}$ \\
+Above displacement cutoff & No & $6.1085\times10^{-17}$ & $6.1085\times10^{-17}$ \\
+Below endpoint cutoff & Yes & $3.2342\times10^{-12}$ & $5.7856\times10^{-18}$ \\
+Above endpoint cutoff & No & $5.0938\times10^{-18}$ & $3.8688\times10^{-18}$ \\
+Translated nextafter edge & Yes & $7.5209\times10^{-3}$ & $2.2902\times10^{-17}$ \\
+Three-dimensional field & No & $1.2275\times10^{-17}$ & $1.2542\times10^{-17}$ \\
+\hline
+\end{tabular}
+\end{table}
+
 \begin{table}[ht]
 \centering
 \caption{One tangent step from each exact-face candidate at

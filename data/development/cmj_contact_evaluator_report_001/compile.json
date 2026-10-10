@@ -1,0 +1,60 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-10T14:44:28.455881Z",
+  "previous_report_sha256": "165187ed13aa0cc6fb6f034d7ccf5a4aba06f3d6742c9d047c9e583b8858833b",
+  "tex_source_sha256": {
+    "report/hayward_full_results_section.tex": "1ef7149792af3ba4ce5a8f9492bdaa5ced41d4117de654a2316306a7dcfc7e28",
+    "report/hayward_results.tex": "4722d2a9473bcc1be0b3671f7efe1b25b408d42d36e8938ffa6bbc6522420614",
+    "report/hayward_velocity_checkpoint.tex": "d2c1b70f84acf00729ff7aca23b8ad14ad98b06d49fe9fc4555152c2a126ec59",
+    "report/joint_findings.tex": "4e94b1553e76b20051e6195b1d0b71d8097ce7d892fd6b2879cd233f72e43ee6",
+    "report/metrics.tex": "1adf4e381d0a645cec73b919eb176e23ae55f33d4f253717630d5dd2b480077a",
+    "report/panel_details.tex": "30a7870babfa8731adee566fb3c8e7dca84c4434a4b11074f1bbd71dff8013af",
+    "report/panel_table.tex": "de7947141f6a64c80a686b2a04c44972ac171eee2e46b5b50ff31fbcb9bac316",
+    "report/ray_failure_checkpoint.tex": "c4e64d2b323c353b4bcb92f24adf0d0e2c5e024d187299237a464f0035cf112d",
+    "report/ray_findings.tex": "87e02479f0fbd6e43ae564965e2ea79ee7bdad4670cdd62bbca25115f22f4fad",
+    "report/recovery_checkpoint.tex": "5fba3c056b8e991a1c3c4b96ec2a3c96e4bec955212599109c7da5adec0679ba",
+    "report/report.tex": "289034e2eae49f6230f2d82c6e0005ab989af6e6443e1293382d6bcafd7f6efe",
+    "report/run_findings.tex": "c301712aeba4366c6b33a61d5939d2f3567a7dce0734aff2c62a2e936e37c28f",
+    "report/sensitivity_table.tex": "89e36d73e854c23e8baeb7436e33b7474c4fa82b318f6f39f26b3a26167aacfb",
+    "report/spatial_table.tex": "40139003a2d2ee5eae0a1ddd42af178bddc086642c8cd5687e617c399e873d9d",
+    "report/validation_table.tex": "2df4790edf0dfa6bf59fa64f9f42a943a75d77df7d0b6ffe4f061caaab08d343",
+    "report/velocity_metrics.tex": "9da0ab0e781f625c2abe70910c6ae0884a44adb5e8bf84ddbacec4bed8e45a62"
+  },
+  "readme_sha256": "2932ae2831caee5feadaa789cf502ef69c318655528f05101a183de8b142757c",
+  "failure_summary_sha256": "adf48c47b8076a5fb1b7710e9080cf43704c59e7f32d4a30c08f4a3995bff275",
+  "compile_source_sha256": "d51d2bc32daa4c6aaf30a0722579f3406f022d4bb816cd759ff0e932ccd963a1",
+  "commands": [
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "report.tex"
+      ],
+      "working_directory": "report",
+      "return_code": 0
+    },
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "report.tex"
+      ],
+      "working_directory": "report",
+      "return_code": 0
+    }
+  ],
+  "finished_utc": "2026-10-10T14:44:32.567436Z",
+  "report_sha256": "bde86a6807020709bf2666c9dad3c6c1774a4b96a1df4f7cf02aea4470136e7d",
+  "report_bytes": 2448351,
+  "output_sha256": {
+    "pass1_stdout.txt": "9f691e00668f15bca6446d7c14003553bf9e3d5f953dcbb59c0b388ec525fa2b",
+    "pass1_report.log": "4b342b0a789cfb77ac67a2207ff8e6d24df1fbda20f58b4810fe9c976a3dccbf",
+    "pass2_stdout.txt": "3dc340c31698b1f971135b4f57ea74e1b7d778120b0e65bf323be0503cf03184",
+    "pass2_report.log": "b54953b2a46136c035e56255db8bdc06d10177f1efd4c0834edea78c1784038d",
+    "report.log": "b54953b2a46136c035e56255db8bdc06d10177f1efd4c0834edea78c1784038d",
+    "report.txt": "d6cb620e3ec43f5e69de756981ff89afc07fa1be3eaeaa34b42b2f6deaa1c6c2",
+    "pdfinfo.txt": "8b7a00b305a979fe591bdebc601feb2ccb8bd5aff92eaae47933a4390eba6d58"
+  }
+}

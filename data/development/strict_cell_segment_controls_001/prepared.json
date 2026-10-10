@@ -1,0 +1,128 @@
+{
+  "budgets": {
+    "affine_references": 7,
+    "cases": 9,
+    "compiler_calls": 1,
+    "helpers": 9,
+    "homogeneous_references": 1,
+    "old_segment_calls": 9,
+    "strict_edge_calls": 9,
+    "strict_pieces": 17,
+    "strict_samples": 136,
+    "trilinear_references": 1
+  },
+  "command": [
+    "/usr/libexec/platform-python3.6",
+    "data/development/strict_cell_segment_controls_001/controller.py"
+  ],
+  "compile_command": [
+    "/usr/bin/c++",
+    "-std=gnu++17",
+    "-O3",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-fopenmp",
+    "-ffp-contract=off",
+    "-I",
+    "data/development/strict_cell_segment_controls_001/source/src",
+    "-I",
+    "data/development/strict_cell_segment_controls_001/source/diagnostics",
+    "data/development/strict_cell_segment_controls_001/observe.cpp",
+    "-o",
+    "data/development/strict_cell_segment_controls_001/build/observe"
+  ],
+  "control_command": [
+    "/usr/libexec/platform-python3.6",
+    "data/development/strict_cell_segment_controls_001/check_controls.py",
+    "data/development/strict_cell_segment_controls_001/build/observe",
+    "COMPILED_BINARY_SHA256"
+  ],
+  "created_utc": "2026-10-10T14:30:52.937090Z",
+  "environment": {
+    "LC_ALL": "C",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TMPDIR": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/tmp"
+  },
+  "expected_primary_summary": "results/summary.json",
+  "field_calls": 0,
+  "input_sha256": {
+    "data/development/hayward_trial_cmj_old_D_replay_001/source/old/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "data/development/internal_face_contact_controls_001/affine_log_reference.py": "b464855841a83c8bae9d02c9536b91ca439bd722f30c7ff98e117c4b102ea0d5",
+    "data/development/internal_face_contact_controls_001/controller.py": "b05c912b6bf4c8ce59e154cfd2ea90b64aa029243f3dc4d4a69a0ea51beb1952",
+    "data/development/internal_face_contact_controls_001/execution.json": "96b69c6bf51065baff9a85a8f9e6f2d3fa77ec3e710fd57f9c23e3ad64387dd8",
+    "data/development/internal_face_contact_controls_001/outer_reaping.json": "893dbc99ac136d8443b15aaf4c4da38f70d69ed23a96b0d6b4046e77c0ea1887",
+    "data/development/internal_face_contact_controls_001/prelaunch_review.json": "62610fa4818a6c58848be50ff0dffb4f192a6f276803b9fae138b6da9e901d0d",
+    "data/development/internal_face_contact_controls_001/prepared.json": "b0f5e3ff94d581765aefa6111b7f231d9efef493486adfd01e6567269ace4e2c",
+    "data/development/internal_face_contact_controls_001/results/summary.json": "a12179e8c856cec4a009252f7031da665acdb40dfffe4d43a3806b2d54547161",
+    "data/development/internal_face_contact_controls_001/review.json": "8c0d9b507c877baa675891c2a667d98d79c664f71f4d69d2901ec48773e54a9b",
+    "data/development/internal_face_contact_controls_001/review_execution.json": "2b833ebaa9c794e2afe47be600e869a4773c48c2e22e25ba8638516dffe1d90f",
+    "data/development/internal_face_contact_controls_001/review_saved.py": "71ff261b7dbea93fe4d54a9d3183a403f83d55efdb0afc22e02a1a0a651e0f36",
+    "data/development/internal_face_contact_controls_001/source/diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "data/development/internal_face_contact_controls_001/source/diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+    "data/development/internal_face_contact_controls_001/source/diagnostics/trilinear_action_bounds.py": "11659e76f56537dcfc29e1c6189bea6e3466bceef13c497448a53b11d9f69f73",
+    "data/development/internal_face_contact_controls_001/source/src/core.hpp": "c9500361c5ca3ff55b2fbcec0aedfb3639d3f3b68a53431267e6849c3a933044",
+    "data/development/internal_face_contact_controls_001/source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "data/development/internal_face_contact_controls_001/source/src/usable_ray_curvature.hpp": "5236f9df135dc2449662db70bb68aded36cae3f5ce23e7471caa02d45ce5daac",
+    "data/development/internal_face_contact_controls_001/source_review.json": "4d2f077202347e7c4f0370e53c6916e1b71530fbff005cc004e5cd831d3889e9"
+  },
+  "inversion_calls": 0,
+  "lifecycle": "Single-thread parent records PID before unmask and restores child signal mask before exec. Control helpers inherit the owned group. Root owns/reaps the outer tool; its open logs stay outside this package.",
+  "native_calls": 0,
+  "output_sha256": {
+    "README.md": "5997a5efdf3d1b3d62bf5ea338317b88b3e2d75f40da6bbf9b0cbcd4e9a0194a",
+    "affine_log_reference.py": "b464855841a83c8bae9d02c9536b91ca439bd722f30c7ff98e117c4b102ea0d5",
+    "check_controls.py": "64a370e3711be51034c09a0fb2607659023a3d1795a1f6aaf45e42aee32ca385",
+    "controller.py": "05278dd1544079f727dbf8d5076b0e29d5af17a6a8e0850ee09edd1ee1a92e51",
+    "observe.cpp": "8595bc70e13f325b4449fcc0e74c37989f0a09b62369a543b5681d6819f75d02",
+    "source/diagnostics/check_native_interface_support.py": "0ed7c9e024366248cbd4f105a10b17dca3e876dfa24605c4ca984faf15622e67",
+    "source/diagnostics/first_arrival_1d_precise_turn_reference.py": "55f3bd520aa472a3e4d4042808403eaa850c952301ea95d461331af9917ab5f2",
+    "source/diagnostics/trilinear_action_bounds.py": "11659e76f56537dcfc29e1c6189bea6e3466bceef13c497448a53b11d9f69f73",
+    "source/src/core.hpp": "c9500361c5ca3ff55b2fbcec0aedfb3639d3f3b68a53431267e6849c3a933044",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "source/src/usable_ray_curvature.hpp": "5236f9df135dc2449662db70bb68aded36cae3f5ce23e7471caa02d45ce5daac",
+    "source_mapping.json": "0c7fe8ffd70820d9f2cef5c9e308e33049a13a6cb6f0afb8dac35c631b88e603",
+    "source_review.json": "2e3b0ce1d2f0e80b59ac135b4c7bbcb9c8f1eaba70a2b010ce198da20fa93e3f"
+  },
+  "preparation_operations": "Source copies, exact hashes, AST and saved-schema inspection only. No compiler, evaluator import, numeric control or native calculation executed.",
+  "prior_contact_review_sha256": "8c0d9b507c877baa675891c2a667d98d79c664f71f4d69d2901ec48773e54a9b",
+  "prior_contact_summary_sha256": "a12179e8c856cec4a009252f7031da665acdb40dfffe4d43a3806b2d54547161",
+  "python": {
+    "executable": "/usr/libexec/platform-python3.6",
+    "sha256": "64c7391db4c0e069b875bb1cb358627cf4064c6ab3a343d3b5d2bf73d3ecca53",
+    "version": "3.6.8 (default, Sep 24 2024, 09:44:46) \n[GCC 8.5.0 20210514 (Red Hat 8.5.0-22)]"
+  },
+  "reference_settings": {
+    "affine_D_retained_terms": 16,
+    "affine_J_retained_powers": 17,
+    "affine_length_bits": 192,
+    "affine_terms": 16,
+    "genuine_trilinear": {
+      "bits": 192,
+      "retained_powers": 17,
+      "subdivisions": 4,
+      "terms": 16
+    },
+    "homogeneous": "Independent integer-root action and endpoint formula,192bits"
+  },
+  "runtime_sha256": {
+    "/lib64/ld-linux-x86-64.so.2": "4a06fb242c7d5a06a4fcd54fd0723d680c0a5828ebd4a2ebeb4dd1fd68705a12",
+    "/lib64/libc.so.6": "28d830c37bfd68d5165b3d2fd28a87dd737180df5255e1290d5015b0f9db0027",
+    "/lib64/libdl.so.2": "e34274941b0b4cff9f07896ecb0a56c108338aac1b3f8d21cc67c247094ad901",
+    "/lib64/libgcc_s.so.1": "fc8572b6747ab823b40d75a2b759db2c12b5c256ede7fa0e5da6ae5f4b0e144d",
+    "/lib64/libgomp.so.1": "855c301ab3ac34c8d0e4f8ddd135993156a4dca42a2778133e9ccba199753d54",
+    "/lib64/libm.so.6": "07dee3042cbebba9c6378266b15579edc7494acad1b7d1048c5db6d79d908bf4",
+    "/lib64/libpthread.so.0": "8e757a6a1bfb17649d6f4cfb1ca1f4bac8c06588913ebaa1076ec0f6cd36b481",
+    "/lib64/libstdc++.so.6": "7657b5709008fa4c3c1cc062e15417e9dd1a9f37c82a3615cd79baae7827fdfd",
+    "/usr/bin/c++": "d509f3862b3e81e89ad624d59985e57b0b65e4b9ced1b02a474c4f44e5dee4b7"
+  },
+  "scope": "Nine invented original-versus-exact-partition explicit-cell segment comparisons; no production patch or native generalization.",
+  "source_mapping_sha256": "0c7fe8ffd70820d9f2cef5c9e308e33049a13a6cb6f0afb8dac35c631b88e603",
+  "source_review_sha256": "2e3b0ce1d2f0e80b59ac135b4c7bbcb9c8f1eaba70a2b010ce198da20fa93e3f",
+  "status": "prepared_not_executed",
+  "trace_calls": 0,
+  "working_directory": "/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration"
+}
