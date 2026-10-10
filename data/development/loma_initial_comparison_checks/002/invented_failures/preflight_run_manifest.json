@@ -1,0 +1,27 @@
+{
+  "binary": "data/development/loma_initial_comparison_checks/002/invented_failures/invented_binary",
+  "binary_sha256": "a3b67725d0c47e06b8427a7a2342236e80eef71b4fc0a104e35a4c53287831e4",
+  "threads": 4,
+  "matrix_preflight_only": true,
+  "matrix_mode": "dd",
+  "matrix_iteration": 0,
+  "matrix_stage": 0,
+  "input_sha256": {
+    "initial_events.csv": "2d9f847e99a53fb7bb3eefb90cf1d41a4499e06e47497e251848ffdb6d745193",
+    "stations.csv": "83f7aaf77d0090c667bd5e9e267e2286bfddd8db088f0cc63964eb560c00814d",
+    "initial_grid.csv": "4b7a121984db055bba68a16bc9e94cd05b3ae7adfa50203ce4f7853f1bb0420e",
+    "run.cfg": "28214aa0c6522d4b01988dfe74c696a2a111b8693f2c2c45955a2d674cca73ae",
+    "simulation_provenance/simulation_execution.json": "7ec022037ef5a800969d5ad9e6c015466c9e3098f2b2781775532f241f06b731",
+    "simulation_provenance/simulation_run_manifest.json": "455f90289f730cb78d24d5bde4507ece89fd373081e798754fbd77eac72f8542",
+    "simulation_provenance/independent_simulation_review.json": "9c5ba64bfe75f3a9aca8ca36e3f9313c18af8a395eed7e37fc7824b86d6f74c1",
+    "simulation_provenance/analytic_truth_manifest.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+  },
+  "source_archive_sha256": "3442011511bba2a35d5e220f37deb436835812c21db7f7650631bab244ff596e",
+  "expected_counts": {
+    "events": 2,
+    "receivers": 2,
+    "unique_rays": 4,
+    "total_rows": 8
+  },
+  "simulation_review_sha256": "9c5ba64bfe75f3a9aca8ca36e3f9313c18af8a395eed7e37fc7824b86d6f74c1"
+}

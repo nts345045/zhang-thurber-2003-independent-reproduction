@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "diagnostics/compare_loma_initial_rays.py", line 270, in <module>
+    if __name__=='__main__':main()
+  File "diagnostics/compare_loma_initial_rays.py", line 213, in main
+    disjoint(out,data,reference);out.mkdir(parents=True)
+  File "/usr/lib64/python3.6/pathlib.py", line 1248, in mkdir
+    self._accessor.mkdir(self, mode)
+  File "/usr/lib64/python3.6/pathlib.py", line 387, in wrapped
+    return strfunc(str(pathobj), *args)
+FileExistsError: [Errno 17] File exists: '/data/data2/ntsteven/zhang_thurber_2003_repor/tmp/first_arrival_integration/data/development/loma_initial_comparison_checks/002/comparison_pass'

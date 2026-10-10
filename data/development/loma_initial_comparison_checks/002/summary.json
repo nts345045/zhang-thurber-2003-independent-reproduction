@@ -1,0 +1,194 @@
+{
+  "status": "passed",
+  "scope": "Invented saved tables and artificial stage/review ledgers only; no actual Loma comparator or ray/reference computation",
+  "checks": 45,
+  "failed": 0,
+  "results": [
+    {
+      "name": "completed matrix with live independent geometry stage accepted",
+      "passed": true
+    },
+    {
+      "name": "assessment config intentionally differs",
+      "passed": true
+    },
+    {
+      "name": "native quoted and empty metadata accepted",
+      "passed": true
+    },
+    {
+      "name": "nonzero source_t excluded from pure propagation time",
+      "passed": true
+    },
+    {
+      "name": "original xyz source derivatives and norm zero",
+      "passed": true
+    },
+    {
+      "name": "adding source_t to propagation time fails unchanged limit",
+      "passed": true
+    },
+    {
+      "name": "Euclidean gate not maximum component gate",
+      "passed": true
+    },
+    {
+      "name": "wrong axis permutation detected numerically",
+      "passed": true
+    },
+    {
+      "name": "preserve failed ray_converged",
+      "passed": true
+    },
+    {
+      "name": "preserve failed ray_finite",
+      "passed": true
+    },
+    {
+      "name": "preserve failed ray_path_in_domain",
+      "passed": true
+    },
+    {
+      "name": "preserve failed ray_exact_source_endpoint",
+      "passed": true
+    },
+    {
+      "name": "preserve failed ray_exact_receiver_endpoint",
+      "passed": true
+    },
+    {
+      "name": "preserve failed ray_initialization_attempted",
+      "passed": true
+    },
+    {
+      "name": "preserve failed ray_initialization_succeeded",
+      "passed": true
+    },
+    {
+      "name": "nonfinite modeled values retained but cannot pass",
+      "passed": true
+    },
+    {
+      "name": "reject changed source_event_resource_id",
+      "passed": true
+    },
+    {
+      "name": "reject changed receiver_channel_seed_id",
+      "passed": true
+    },
+    {
+      "name": "reject changed receiver_metadata_epoch_end",
+      "passed": true
+    },
+    {
+      "name": "reject changed source_t",
+      "passed": true
+    },
+    {
+      "name": "near tie preserved and ineligible",
+      "passed": true
+    },
+    {
+      "name": "invalid reference retained without arithmetic comparison",
+      "passed": true
+    },
+    {
+      "name": "reject corrupted reference reference_valid",
+      "passed": true
+    },
+    {
+      "name": "reject corrupted reference time_s",
+      "passed": true
+    },
+    {
+      "name": "reject corrupted reference source_dx_s_per_km",
+      "passed": true
+    },
+    {
+      "name": "reject corrupted reference source_on_z_upper_face",
+      "passed": true
+    },
+    {
+      "name": "reject unfinished matrix stage",
+      "passed": true
+    },
+    {
+      "name": "reject failed matrix stage",
+      "passed": true
+    },
+    {
+      "name": "reject foreign completed command",
+      "passed": true
+    },
+    {
+      "name": "reject thread provenance mismatch",
+      "passed": true
+    },
+    {
+      "name": "reject noninitial matrix stage",
+      "passed": true
+    },
+    {
+      "name": "reject changed pinned initial_events.csv",
+      "passed": true
+    },
+    {
+      "name": "reject changed pinned stations.csv",
+      "passed": true
+    },
+    {
+      "name": "reject changed pinned initial_grid.csv",
+      "passed": true
+    },
+    {
+      "name": "reject changed pinned simulation_provenance/independent_simulation_review.json",
+      "passed": true
+    },
+    {
+      "name": "reject output nested in data",
+      "passed": true
+    },
+    {
+      "name": "reject ancestor output",
+      "passed": true
+    },
+    {
+      "name": "full invented comparison executes without numerical rerun",
+      "passed": true
+    },
+    {
+      "name": "all four identified rows pass",
+      "passed": true
+    },
+    {
+      "name": "every original status and native field preserved",
+      "passed": true
+    },
+    {
+      "name": "live controller ledger snapshot retained",
+      "passed": true
+    },
+    {
+      "name": "scientific failures do not abort completed comparison",
+      "passed": true
+    },
+    {
+      "name": "completion separate from scientific failure",
+      "passed": true
+    },
+    {
+      "name": "all failures retain event origin channel epoch identifiers",
+      "passed": true
+    },
+    {
+      "name": "existing output cannot be overwritten",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "diagnostics/check_loma_initial_comparison.py": "40ab01e3372032f657b700db1df22673919eb094810efbe533f021466ffe5777",
+    "diagnostics/compare_loma_initial_rays.py": "1712d8ab9f55739aea26c58fd3fb5efb561078b1e184943979331d0e03fb8faf",
+    "diagnostics/run_loma_layered_full.py": "4a01438a8646000b77136e8e65f98aa154b6dd8c28ff6a53dda597e855327e39"
+  },
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 python3 diagnostics/check_loma_initial_comparison.py --output data/development/loma_initial_comparison_checks/002"
+}
