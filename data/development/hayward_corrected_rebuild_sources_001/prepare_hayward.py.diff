@@ -1,0 +1,45 @@
+--- originals/prepare_hayward.py
++++ prepare_hayward.py
+@@ -12,7 +12,7 @@
+ 
+ from data.authoritative.hayward.acquire import horizontal_coordinates, parse_time
+ 
+-ROOT = Path(__file__).resolve().parent
++ROOT = Path(__file__).resolve().parents[3]
+ CATALOG = ROOT / "data/authoritative/hayward"
+ STATIONS = ROOT / "data/authoritative/stations"
+ POLICY = STATIONS / "study_station_policy.csv"
+@@ -79,8 +79,14 @@
+     return selection == "reproduction" and policy.get(seed, {}).get("study_membership") == "excluded"
+ 
+ 
+-def prepare(selection="reproduction"):
+-    out = ROOT / "data" / ("hayward" if selection == "reproduction" else "hayward_additional")
++def prepare(selection="reproduction", output=None):
++    if output is None:
++        raise ValueError("An explicit fresh output directory is required")
++    out = Path(output).absolute()
++    if out.parent != ROOT / "data" or out.exists() or out.is_symlink():
++        raise ValueError("Output must be a fresh immediate child of repository data/")
++    if out.parent.is_symlink() or out.resolve() != out:
++        raise ValueError("Output may not traverse a symbolic link")
+     policy = study_station_policy()
+     if not json.loads((CATALOG / "pick_selection_manifest.json").read_text())["acquisition_complete"]:
+         raise ValueError("Refusing an incomplete catalog pick acquisition")
+@@ -141,7 +147,7 @@
+             continue
+         selected.append(dict(pick=pick, channel=channel, x=x, y=y, z=z,
+                              travel=travel, sigma=sigma))
+-    out.mkdir(parents=True, exist_ok=True)
++    out.mkdir()
+     if missing:
+         write(out / "unresolved_metadata.csv", missing)
+         raise RuntimeError("Required channel metadata is missing or ambiguous; "
+@@ -362,4 +368,6 @@
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument("--selection", choices=("reproduction", "additional"), default="reproduction",
+                         help="Write separate inputs; additional restores documented study-excluded stations if their metadata passes the same checks")
+-    prepare(parser.parse_args().selection)
++    parser.add_argument("--output", required=True, type=Path)
++    args = parser.parse_args()
++    prepare(args.selection, args.output)

@@ -117,8 +117,9 @@ measurements covering 103 events and four channels. Historical response calibrat
 is not a prerequisite for normalized correlation; authoritative samples, timing,
 identities, preprocessing and quality checks still are. The [59,078-row combined
 input](data/hayward_catalog_cc_001/README.md) preserves all 58,980 catalog rows,
-both observation endpoints' identities and channel epochs, but has not been
-inverted. Its sparse CC connectivity does not determine combined-system rank or
+both observation endpoints' identities and channel epochs. A separate guarded
+combined inversion is running, with no completed result. Its sparse CC
+connectivity does not determine combined-system rank or
 resolution. The squared correlation coefficient is an empirical row multiplier
 (fourth power in the objective), not a measured timing variance.
 
@@ -138,6 +139,12 @@ compiles, and [clean committed-input plot
 replay](data/development/authoritative_geometry_cc_checkout_replay_001/RESULTS.md)
 passes using the existing runtime. A clean end-to-end rebuild of corrected
 inversions, recovery tests, resolution and report remains pending.
+The [new corrected procedure](data/development/hayward_corrected_rebuild_sources_001/README.md)
+now covers authoritative selection replay, the saved CC inputs, a frozen
+guarded solver build, one combined inversion attempt, and an outcome PDF.
+Its process and reporting controls passed; the complete command has not yet
+been run from a clean committed checkout. This narrower procedure does not
+complete the pending recovery and final-model resolution work.
 
 The separate [historical clean rebuild](data/development/historical_clean_rebuild_001/README.md)
 completed all eight prescribed inversions and 48 component checks in 9,597

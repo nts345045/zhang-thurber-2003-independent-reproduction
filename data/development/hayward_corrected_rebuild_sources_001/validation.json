@@ -1,0 +1,161 @@
+{
+  "entrypoint_sha256": "8789dbdddaad20d87e1a31708d0913183ef43dd824a9d0d9376ff8b51d1306d9",
+  "final_renderer_delta": {
+    "change": "Only the LaTeX URL literal became a descriptive hyperlink; parsing, scientific arithmetic and plot content are unchanged.",
+    "current_sha256": "8eadadaf8b0b1967ff7878fbe82b18c40502490e2ea78e3221c335c4252d9f6c",
+    "layout_verification": {
+      "corrected_tex_sha256": "888fba3217b0c923ed5da484ab6d7d9b54ba829c276ae3555dc74f1b150a721a",
+      "figure_bytes_unchanged": true,
+      "figure_rerenders": 0,
+      "figure_sha256": "f78e0b3cf59738510594b33a5ff1ff10f8728239aca99ce6fdbe7c051c641673",
+      "numerical_calls": 0,
+      "original_tex_sha256": "b16c341607c5c43b1ff1bebe89d843fb84558de8be046ff3146b37b0c806bb7b",
+      "pdf_pages": 1,
+      "pdf_sha256": "1d586c849c2619881e2d56eb09b4a39b70113997d1f703a3502d3d3bdd320abd",
+      "status": "passed",
+      "tex_passes": 2,
+      "visual_review": "One-page corrected PDF inspected; no clipping or overlap.",
+      "warnings": []
+    },
+    "predecessor_sha256": "9ae2663f93078b8393b84a29a922b79fd23113f2a9382263e3c8e47678cdb5dd"
+  },
+  "limitations": [
+    "These controls do not validate a newly compiled numerical binary or an updated-model inverse result.",
+    "The six rendering invocations consume already closed identified data and do not create new measurements.",
+    "The full corrected command has not been invoked."
+  ],
+  "process_controls": {
+    "actual_direct_children": 4,
+    "adopted_descendants_reaped": 2,
+    "all_launched_processes_reaped": true,
+    "cases": [
+      {
+        "case": "child_zero",
+        "child_launched": true,
+        "child_reaped": true,
+        "expected_exception": null,
+        "observed_child_return_code": 0,
+        "outputs_stable": true,
+        "status": "passed"
+      },
+      {
+        "case": "child_seven",
+        "child_launched": true,
+        "child_reaped": true,
+        "expected_exception": "RuntimeError",
+        "observed_child_return_code": 7,
+        "outputs_stable": true,
+        "status": "passed"
+      },
+      {
+        "case": "missing_executable",
+        "child_launched": false,
+        "child_reaped": false,
+        "expected_exception": "FileNotFoundError",
+        "observed_child_return_code": null,
+        "outputs_stable": true,
+        "status": "passed"
+      },
+      {
+        "case": "orphan_grandchild",
+        "child_launched": true,
+        "child_reaped": true,
+        "expected_exception": "ValueError",
+        "observed_child_return_code": 0,
+        "outputs_stable": true,
+        "status": "passed"
+      },
+      {
+        "case": "parent_interruption",
+        "child_launched": true,
+        "child_reaped": true,
+        "expected_exception": "KeyboardInterrupt",
+        "observed_child_return_code": -15,
+        "outputs_stable": true,
+        "status": "passed"
+      }
+    ],
+    "no_remaining_writers": true,
+    "tested_source_sha256": "8789dbdddaad20d87e1a31708d0913183ef43dd824a9d0d9376ff8b51d1306d9"
+  },
+  "renderer_controls": [
+    {
+      "cases": [
+        {
+          "case": "initial",
+          "cc_rows": 98,
+          "event_count": 1092,
+          "figure": true,
+          "max_displacement_km": 0.0,
+          "selected_iteration": null,
+          "validation_error": null
+        },
+        {
+          "case": "third_state",
+          "cc_rows": 98,
+          "event_count": 1092,
+          "figure": true,
+          "max_displacement_km": 1.1164776932772291,
+          "selected_iteration": 2,
+          "validation_error": null
+        },
+        {
+          "case": "missing_inventory",
+          "cc_rows": null,
+          "event_count": null,
+          "figure": false,
+          "max_displacement_km": null,
+          "selected_iteration": null,
+          "validation_error": "Consumed table absent from closed inventory: observations.csv"
+        },
+        {
+          "case": "unlisted_acceptance",
+          "cc_rows": null,
+          "event_count": null,
+          "figure": false,
+          "max_displacement_km": null,
+          "selected_iteration": null,
+          "validation_error": "Accepted snapshots agree with closed history"
+        }
+      ],
+      "render_invocations": 4,
+      "tested_source_sha256": "dc07f84a19e72a618f9057652680f1c3567f3c95955318a9bd4872f51ca9bc4b"
+    },
+    {
+      "cases": [
+        {
+          "case": "interrupted_history",
+          "figure": true,
+          "incomplete_history_tail_ignored": true,
+          "pdf_pages": 1,
+          "pdf_sha256": "031d208580c5acb065fbe6b01b070c5733c31597265178a867adf318bfbf8d4d"
+        },
+        {
+          "case": "launch_failure",
+          "figure": false,
+          "incomplete_history_tail_ignored": false,
+          "pdf_pages": 1,
+          "pdf_sha256": "6c8acb8681cac50034b589726ab13d125a5a0e8ed89b32da5a7a1a50a983edb4"
+        }
+      ],
+      "render_invocations": 2,
+      "tested_source_sha256": "9ae2663f93078b8393b84a29a922b79fd23113f2a9382263e3c8e47678cdb5dd"
+    }
+  ],
+  "report_compilation": {
+    "observed_layout_issue": "The printed comprehensive-report URL exceeded the line width by 80.68057 pt.",
+    "pdf_count": 2,
+    "status": "both_compiled",
+    "tex_passes": 4
+  },
+  "scientific_calls": {
+    "cpp_compiler": 0,
+    "inversion": 0,
+    "preparation": 0,
+    "ray": 0
+  },
+  "scope": "Process ownership and saved-output presentation only; no end-to-end scientific rebuild executed.",
+  "selected_renderer_sha256": "8eadadaf8b0b1967ff7878fbe82b18c40502490e2ea78e3221c335c4252d9f6c",
+  "status": "passed_completed_process_and_renderer_controls",
+  "total_closed_tex_passes": 6
+}

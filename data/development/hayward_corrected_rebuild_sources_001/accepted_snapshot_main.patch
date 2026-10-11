@@ -1,0 +1,18 @@
+--- published_backtracking/src/main.cpp
++++ source/src/main.cpp
+@@ -1379,6 +1379,15 @@
+           dx = std::max(dx, std::abs(ee[i].p[k] - e[i].p[k]));
+       g = ng;
+       e = ee;
++      // Preserve every committed accepted state before the next evaluation.
++      const std::string accepted_prefix = dir + "/" + mode + "_accepted_it_" + std::to_string(it);
++      require_new_outputs(accepted_prefix, {"_events.csv", "_grid.csv"});
++      auto accepted_events = e;
++      for (auto &event : accepted_events)
++        if (!event.metadata.empty())
++          set_metadata(event.metadata, "coordinate_basis", "independent accepted inversion state after iteration " + std::to_string(it) + "; run incomplete");
++      write_events(accepted_events, accepted_prefix + "_events.csv", 17);
++      write_grid(g, accepted_prefix + "_grid.csv", 17);
+     }
+     if (!locate)
+       for (int k = 0; k < g.size(); k++)

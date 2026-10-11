@@ -537,14 +537,21 @@ The [CC spatial-support map](data/development/native_cc_spatial_support_001/rend
 places the 98 accepted pairs and their 103 events within the full 1,092-event
 catalog geometry, with four identified receiving channels. Its
 [saved identifiers and replot instructions](data/development/native_cc_spatial_support_001/REPLAY.md)
-retain all 22 used receiver epochs. This is an input-support diagnostic;
-the combined dataset remains uninverted, and the map establishes neither
-resolution nor inversion accuracy.
+retain all 22 used receiver epochs. This is an input-support diagnostic.
+A separate guarded catalog-plus-CC inversion is now running; it has no
+completed result. The map establishes neither resolution nor inversion accuracy.
 The [adopted empirical weighting](data/development/catalog_cc_weight_adoption_001/README.md)
 uses literal CC squared as a residual/Jacobian row multiplier, hence CC to the
 fourth power in the squared objective before other factors. Timing uncertainty
 remains explicitly unestimated. The preparation and independent full-file audit
 do not create a configuration or inversion result.
+
+The [corrected rebuild procedure](data/development/hayward_corrected_rebuild_sources_001/README.md)
+regenerates this identified subset from the saved authoritative selection tables,
+appends the saved CC measurements, compiles the frozen guarded solver, and makes
+one inversion attempt followed by a short outcome report. Process cleanup and
+saved-output reporting checks have passed. The complete command has not yet
+been run from a clean committed checkout.
 
 [Read the PDF report](report/report.pdf) or the
 [panel-by-panel audit](FIGURE_AUDIT.md).
@@ -618,6 +625,11 @@ earlier forward operators.
   reviewed combined inputs in `observations.csv`, copied original geometry,
   `preparation_manifest.json`, and `independent_review.json`. All original
   catalog rows remain unchanged; no inversion outputs exist in this directory.
+- `data/hayward_catalog_cc_backtracking_001/`: ongoing combined catalog-plus-CC
+  attempt in the integration worktree. `dd_history.csv` records completed
+  iterations; `dd_accepted_it_N_events.csv` and `dd_accepted_it_N_grid.csv`
+  preserve accepted updates. Trial and failure tables retain their own status.
+  No completed update or final model was available at this checkpoint.
 - [`data/published/loma_lom_analytic_001/`](data/published/loma_lom_analytic_001/README.md):
   complete, audited synthetic observations and authoritative geometry, with
   verified archive restoration instructions. These are inputs for the corrected
@@ -636,6 +648,28 @@ preparation requires Requests, including when reading the saved archive
 without web-service queries.
 Run `python3 plot_hayward.py` to plot the completed baseline tables. The optional
 `--velocity-only` mode produces Figures 4 and 10 and a separate Figure 10 manifest.
+
+For one corrected catalog-plus-CC attempt, use fresh output and build directories:
+
+```sh
+python3 rebuild_hayward_corrected.py \
+  --preparation-python /path/to/compatible/python3.6 \
+  --report-python /path/to/python-with-matplotlib \
+  --output data/hayward_corrected_rebuild_001 \
+  --build tmp/hayward_corrected_rebuild_001
+```
+
+The [source package](data/development/hayward_corrected_rebuild_sources_001/README.md)
+documents the exact source, scientific inputs, settings and failure behavior.
+Python 3.6.8 with NumPy 1.19.5 and Requests 2.20.0 reproduced all nine saved
+catalog files byte for byte. A Python 3.11.9 replay changed the last bit of some
+DD uncertainties and weights; the procedure stops on such differences before
+compilation. The entrypoint interpreter also runs the unchanged CC assembler.
+Use the compatible interpreter for both the entrypoint and preparation.
+The command preserves a failed attempt and generates its outcome report when
+the saved files are closed. Inspect `rebuild_outcome.json`, the identified
+accepted-state tables, and `report/report.pdf` under the requested output
+directory. Completion alone does not establish scientific reproduction.
 
 `./rebuild_hayward.sh` reuses the saved authoritative archive, prepares its
 identified subset, builds the solver, and runs absolute-data tomography,

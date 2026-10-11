@@ -1,0 +1,102 @@
+{
+  "compiler_calls": 0,
+  "entrypoint": "rebuild_hayward_corrected.py",
+  "entrypoint_sha256": "8789dbdddaad20d87e1a31708d0913183ef43dd824a9d0d9376ff8b51d1306d9",
+  "inverse_calls": 0,
+  "numerical_source_sha256": {
+    "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "src/main.cpp": "4844d330f7f8300513c7d7e2d1c17c8eb6b227936e2993e326723ce7ecb88116",
+    "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+  },
+  "package_sha256": {
+    "README.md": "9bfec785eefb0684a1909656af7e368808c9dd5c847abbb6c0571d7105fcfe88",
+    "accepted_snapshot_main.patch": "566d4d44827175354cb0567ebe751827cce560e2f4d1ab2e9ac44b038405205a",
+    "expected_selection_manifest.json": "76e9e92ca1e41ff99211c4ab220d6c7212f90d0eed81ad5914bae2cb9fc92004",
+    "originals/prepare_hayward.py": "d3197c79d54ed9fcd756c26091674850b07060e38690559fb253f97f1752ed34",
+    "prepare_hayward.py": "eb396034dd8b628845cb1321ef70e881625e0767559904bafd56a6f2c7dfc150",
+    "prepare_hayward.py.diff": "db2414f9c13893d7ef7b19eb8ec6ceca018724a382b9c90a1a14fdb86c367261",
+    "prepare_hayward_cc.py": "01e0707098bf63456a911a91bc5cde31418fb491901c38b88b0445f9be9ba641",
+    "run.cfg": "0987de86c0cf185dd07f9bf972c2c2c5b93b3577cc7a857bb80bed9fb7788baa",
+    "scientific_inputs.json": "f264c0ac75e8eeec0b0197f82b45ed661dbbcf06424e808b97091bdff2cb8373",
+    "source/CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "source/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "source/src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+    "source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "source/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "source/src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+    "source/src/main.cpp": "4844d330f7f8300513c7d7e2d1c17c8eb6b227936e2993e326723ce7ecb88116",
+    "source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "validation.json": "0130f937f164f1ef87f9b8231bdf2845fb77f3a7d84c5a4c6d1ac383d46cee9e"
+  },
+  "preparation": {
+    "adaptation": "prepare_hayward.py.diff",
+    "catalog_original": "prepare_hayward.py",
+    "catalog_original_sha256": "d3197c79d54ed9fcd756c26091674850b07060e38690559fb253f97f1752ed34",
+    "cc_copy": "prepare_hayward_cc.py",
+    "cc_original": "prepare_hayward_cc.py",
+    "cc_original_sha256": "01e0707098bf63456a911a91bc5cde31418fb491901c38b88b0445f9be9ba641",
+    "cc_use": "Call existing assemble only, with exact saved provenance constants; do not call receipt-dependent run.",
+    "changes": "Repository-root discovery and required fresh output only; selection, numerical formulas and native provenance unchanged.",
+    "preserved_original": "originals/prepare_hayward.py"
+  },
+  "preparation_calls": 0,
+  "renderer": "plot_hayward_corrected.py",
+  "renderer_sha256": "8eadadaf8b0b1967ff7878fbe82b18c40502490e2ea78e3221c335c4252d9f6c",
+  "schema": 1,
+  "scope": "Source-only portable preparation/build/one DD attempt; no execution result claimed.",
+  "source_only": true,
+  "source_origins": {
+    "CMakeLists.txt": {
+      "published_source": "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/CMakeLists.txt",
+      "sha256": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7"
+    },
+    "src/analytic_truth.hpp": {
+      "published_source": "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/analytic_truth.hpp",
+      "sha256": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca"
+    },
+    "src/core.hpp": {
+      "published_source": "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/core.hpp",
+      "sha256": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed"
+    },
+    "src/csv.hpp": {
+      "published_source": "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/csv.hpp",
+      "sha256": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33"
+    },
+    "src/first_arrival.hpp": {
+      "published_source": "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/first_arrival.hpp",
+      "sha256": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6"
+    },
+    "src/forward.hpp": {
+      "published_source": "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/forward.hpp",
+      "sha256": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e"
+    },
+    "src/full_linearization.hpp": {
+      "published_source": "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/full_linearization.hpp",
+      "sha256": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea"
+    },
+    "src/main.cpp": {
+      "change": "Export identified accepted events/grid at 17 digits immediately after committing each accepted state; no numerical change.",
+      "exact_output_only_patch": "accepted_snapshot_main.patch",
+      "predecessor_sha256": "a10dcdc300d9a4e43f6ae0cba2e354d7cec549438319cf411b577790b2373058",
+      "published_predecessor": "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/main.cpp",
+      "source_sha256": "4844d330f7f8300513c7d7e2d1c17c8eb6b227936e2993e326723ce7ecb88116"
+    },
+    "src/ray_checks.hpp": {
+      "published_source": "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/ray_checks.hpp",
+      "sha256": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358"
+    },
+    "src/ray_metric.hpp": {
+      "published_source": "data/development/hayward_old_kernel_trial_backtracking_candidate_001/after/src/ray_metric.hpp",
+      "sha256": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+    }
+  }
+}
