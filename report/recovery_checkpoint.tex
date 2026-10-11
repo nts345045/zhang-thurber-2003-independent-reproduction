@@ -1165,6 +1165,71 @@ candidate tests, not reproduced manuscript panels.}
 \label{fig:endpoint-shooting}
 \end{figure}
 
+Six subsequent native-geometry calculations refine the source-end mesh while
+leaving all internal vertices free. They use the identified LOM pair 24104,
+event \texttt{NC/20091537}, origin \texttt{NC/2658134}, and receiver
+\texttt{NC.HQR..EHZ}. The two initial prefix subdivision counts are 8 and 16;
+the source remains at the bottom boundary or moves inward by 10 or 2.5 m.
+These source displacements are declared simulation overrides. The original
+catalog and receiver metadata remain attached. Each calculation retains the
+1,000-update limit and 16 history pairs.
+
+All six fixed-polygon travel times and source partials pass the existing
+25 microsecond and $3\times10^{-6}$ s/km reference limits
+(Table~\ref{tab:endpoint-mesh}). Three calculations reach the approximate
+full projected-gradient target; three exhaust the update budget. The latter
+retain complete projected norms above $10^{-7}$ s/km. These norms include
+every available internal component and project only at the physical box;
+they are saved quadrature results, not interval certificates.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{llrrrr}
+\toprule
+Prefix & Inward & Updates & Projected norm & Source error & Time error \\
+count & offset (m) & & (s/km) & (s/km) & ($\mu$s) \\
+\midrule
+8  & 0   & 1000 & $1.749\times10^{-6}$ & $2.113\times10^{-6}$ & 0.2424 \\
+16 & 0   & 981  & $9.176\times10^{-8}$ & $1.057\times10^{-6}$ & 0.2416 \\
+8  & 10  & 967  & $9.838\times10^{-8}$ & $5.550\times10^{-10}$ & 0.2769 \\
+16 & 10  & 1000 & $2.924\times10^{-5}$ & $1.868\times10^{-9}$ & 0.3048 \\
+8  & 2.5 & 1000 & $1.049\times10^{-5}$ & $2.288\times10^{-9}$ & 0.2568 \\
+16 & 2.5 & 906  & $9.888\times10^{-8}$ & $1.368\times10^{-11}$ & 0.2826 \\
+\bottomrule
+\end{tabular}
+\caption{Six independently initialized, free-vertex endpoint-mesh calculations
+for the identified LOM geometry. Time and source errors compare the final
+fixed polygon with the continuous layered reference at the same endpoints.
+Three rows exhaust 1,000 updates; the other three also pass the separate
+final interval check described below. Reference agreement does not establish an
+optimized-source derivative or a first arrival.}
+\label{tab:endpoint-mesh}
+\end{table}
+
+At the bottom source, the returned first edge decreases from 4.16695 to
+2.08350 m, and its source-partial error halves. This agrees with the finite
+horizontal element's normal-partial scaling derived above. Every inserted
+vertex moves, so the returned paths are not fixed-grid approximations.
+The much smaller inward-source partial errors do not settle the derivative
+of the optimized value. At the 2.5 m offset with 16 subdivisions, the returned
+travel-time increment differs from the reference increment by
+0.040954 microseconds, or 2.74238\%. The six starts, final paths, scalar
+comparisons and full identities are retained in
+\path{data/development/lom24104_endpoint_mesh_results_001/}.
+
+A separate interval calculation assesses the 9,949 final edges of the three
+selected paths. It uses series degree 8, nine retained powers, one subdivision
+and 128-bit bounds. The full feasible-gradient upper norms, rounded outward,
+are $9.18\times10^{-8}$, $9.84\times10^{-8}$ and $9.89\times10^{-8}$ s/km
+for the bottom/16, inward 10 m/8 and inward 2.5 m/16 cases, respectively.
+All are below the unchanged $10^{-7}$ s/km scale. Their interval time and
+source-partial comparisons also pass the inherited reference limits. No
+starting action or net action change is assessed, and the three capped
+cases remain unresolved. This bounds a first-order condition for three
+specific final polygons; it does not establish a minimum, a first arrival,
+an optimized-source derivative or a completed synthetic inversion.
+
 \subsection{Rejecting unsupported forward evaluations during inversion}
 The preceding inversion code recorded local ray failures but could still use
 those rays in a Jacobian, a line-search objective, or final output. An initial
@@ -1411,7 +1476,8 @@ The 98 accepted event pairs each have one accepted channel and span 103 events:
 The complete identified roster and all attempted lag/coherence arrays remain in
 \path{data/development/native_waveform_cc_001/}.
 These new subset observations are not identified copies of the manuscript's
-17,955 waveform differences and have not entered an inversion. Neither squared
+17,955 waveform differences. A separate combined inversion is running, with no
+completed result. Neither squared
 correlation nor the 10 ms sample spacing is a formal timing uncertainty.
 The checked \texttt{dt.cc} export in \path{data/development/native_dt_cc_001/}
 retains a complete 44,718-row identity sidecar, event integer map, and receiver
@@ -1451,7 +1517,7 @@ triangles locate the four receiving channels. Panel (b) enlarges the dashed
 northern region in (a), using the same saved local coordinates in km.
 The companion tables preserve both epochs of 38 cross-epoch pairs.
 This input-support diagnostic establishes neither rank, resolution nor
-inversion accuracy; the combined catalog-plus-CC input remains uninverted.}
+inversion accuracy. The combined catalog-plus-CC inversion remains unfinished.}
 \label{fig:cc_spatial_support}
 \end{figure}
 
@@ -1462,10 +1528,30 @@ This explicit convention is not a calibrated inverse variance or a claim
 to recover the paper's exact weights. Derived timing uncertainties remain
 blank and marked unestimated. Seventy Python and 36 C++ controls check
 loading, prediction, signed Jacobian entries, weighting and identity retention;
-an independent full-file audit checks the actual preparation. No run
-configuration or inversion was created. A future calculation must declare
-all nine stage factors explicitly; the existing catalog covariance analysis
-continues to reject waveform rows until their joint noise model is justified.
+an independent full-file audit checks the actual preparation.
+
+The subsequent guarded combined attempt declares three six-iteration stages.
+Its absolute/catalog/precise row factors are $(1,0.1,0.01)$,
+$(0.1,1,0.01)$ and $(0.001,0.01,1)$. It is therefore a combined data and
+weighting experiment. It retains the reviewed trial backtracking and fatal
+current-model and final-model ray checks. No completed combined model is
+available. The existing catalog covariance analysis continues to reject
+waveform rows until their joint noise model is justified.
+
+A portable procedure, \path{rebuild_hayward_corrected.py}, regenerates the
+identified catalog subset from saved authoritative selection tables, appends
+the saved CC measurements, builds the frozen numerical source, makes one
+guarded inversion attempt, and reports its closed outcome. It was launched
+from a fresh checkout of commit \texttt{1d04838e7ac7}. Preparation and compilation
+completed; the inversion remains active. A separate input replay reproduced
+all nine saved catalog files byte for byte with Python 3.6.8, NumPy 1.19.5 and
+Requests 2.20.0. Python 3.11.9 changed the last bit of some differential
+uncertainties and row weights without changing the formula. The procedure
+checks exact input compatibility before compilation and documents the
+preparation interpreter explicitly. Its source and saved-output reporting
+checks are in \path{data/development/hayward_corrected_rebuild_sources_001/}.
+This narrower rebuild does not supply corrected synthetic recovery or
+final-model uncertainty.
 
 Catalog differences require a different covariance calculation from independent
 differential measurements because their constituent picks recur. Let $C$ map

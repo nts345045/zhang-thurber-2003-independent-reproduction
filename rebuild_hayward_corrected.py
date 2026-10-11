@@ -69,7 +69,8 @@ def fresh_path(value, parent):
 def executable(value):
     found = shutil.which(str(value))
     require(found is not None, 'Executable unavailable: ' + str(value))
-    return str(Path(found).resolve())
+    # Invocation names select TeX formats and Python virtual environments.
+    return os.path.abspath(found)
 
 
 def group_members(pgid):

@@ -91,6 +91,15 @@ complete feasible supporting vectors below 1e-7 s/km on two prescribed polygons.
 This is stronger first-order evidence for those geometries, but not a minimum,
 first-arrival, derivative-accuracy or inverse-convergence certificate.
 
+The [six native endpoint-mesh runs](data/development/lom24104_endpoint_mesh_results_001/RESULTS.md)
+make this distinction quantitative. All six travel-time errors are below
+0.305 microseconds, but three runs exhaust 1,000 updates with full projected
+gradient norms above 1e-7 s/km. The other three have interval bounds below
+that scale. Their local first-order success still leaves a 2.74238% discrepancy
+in one finite source-displacement travel-time increment. Neither a small
+travel-time error nor a successful local stopping check alone validates the
+derivative of the optimized arrival used in tomography.
+
 **Guarded inversion progress remains intermediate.** The [first guarded
 attempt](data/development/hayward_guarded_failure_001/README.md) rejected its first
 trial because 181 rays failed local stopping. A separate catalog-only backtracking

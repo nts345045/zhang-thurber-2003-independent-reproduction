@@ -1,5 +1,55 @@
 {
-  "entrypoint_sha256": "8789dbdddaad20d87e1a31708d0913183ef43dd824a9d0d9376ff8b51d1306d9",
+  "entrypoint_invocation_delta": {
+    "change": "Preserve absolute executable invocation paths instead of resolving symbolic links. Scientific arithmetic, lifecycle handling and eligibility checks are unchanged.",
+    "current_sha256": "a9a07fa490b8eecdbdc10e3118288fbc3692b04800b75b224a53d8e763182769",
+    "observed_predecessor_failure": {
+      "command": "pdflatex",
+      "reason": "The plain TeX format rejected documentclass. No PDF was created. The failed build is retained locally.",
+      "resolved_invocation": "pdftex",
+      "return_code": 1
+    },
+    "predecessor_sha256": "8789dbdddaad20d87e1a31708d0913183ef43dd824a9d0d9376ff8b51d1306d9",
+    "report_function_integration": {
+      "commands": [
+        {
+          "child_reaped": true,
+          "outputs_stable": true,
+          "return_code": 0,
+          "stage": "saved_output_render"
+        },
+        {
+          "child_reaped": true,
+          "outputs_stable": true,
+          "return_code": 0,
+          "stage": "report_tex_pass_1"
+        },
+        {
+          "child_reaped": true,
+          "outputs_stable": true,
+          "return_code": 0,
+          "stage": "report_tex_pass_2"
+        }
+      ],
+      "driver_sha256": "a9a07fa490b8eecdbdc10e3118288fbc3692b04800b75b224a53d8e763182769",
+      "invocation_names_preserved": true,
+      "numerical_outcome_unchanged": true,
+      "pdf_pages": 1,
+      "pdf_sha256": "d01d90864c6f48f2181fc8649f433f29fea38a77e2ef5522576cd666dc88f4b1",
+      "render_invocations": 1,
+      "renderer_sha256": "8eadadaf8b0b1967ff7878fbe82b18c40502490e2ea78e3221c335c4252d9f6c",
+      "scope": "One saved identified initial-state render and two actual TeX passes; no new numerical attempt.",
+      "status": "passed",
+      "tex_passes": 2,
+      "visual_review": "The one-page saved-output control PDF was inspected; no clipping or overlap.",
+      "warnings": []
+    },
+    "virtual_environment_diagnosis": {
+      "resolved_base_interpreter_has_matplotlib": false,
+      "scope": "Actual import-availability diagnosis; no numerical call.",
+      "selected_interpreter_has_matplotlib": true
+    }
+  },
+  "entrypoint_sha256": "a9a07fa490b8eecdbdc10e3118288fbc3692b04800b75b224a53d8e763182769",
   "final_renderer_delta": {
     "change": "Only the LaTeX URL literal became a descriptive hyperlink; parsing, scientific arithmetic and plot content are unchanged.",
     "current_sha256": "8eadadaf8b0b1967ff7878fbe82b18c40502490e2ea78e3221c335c4252d9f6c",
@@ -20,9 +70,10 @@
     "predecessor_sha256": "9ae2663f93078b8393b84a29a922b79fd23113f2a9382263e3c8e47678cdb5dd"
   },
   "limitations": [
-    "These controls do not validate a newly compiled numerical binary or an updated-model inverse result.",
-    "The six rendering invocations consume already closed identified data and do not create new measurements.",
-    "The full corrected command has not been invoked."
+    "These controls do not validate an updated-model inverse result.",
+    "Seven rendering invocations consume already closed identified data and create no new measurements.",
+    "The predecessor at commit 1d04838e7ac7d4602a56355f4aacffeeabb24e6c completed preparation and compilation in a fresh checkout; its inversion was active at this checkpoint.",
+    "The current invocation-path correction has not been run as a new end-to-end numerical attempt; the original active checkout remains unchanged."
   ],
   "process_controls": {
     "actual_direct_children": 4,
@@ -154,8 +205,9 @@
     "preparation": 0,
     "ray": 0
   },
-  "scope": "Process ownership and saved-output presentation only; no end-to-end scientific rebuild executed.",
+  "scope": "Completed process and saved-output presentation controls only; the separate clean scientific rebuild remains active.",
   "selected_renderer_sha256": "8eadadaf8b0b1967ff7878fbe82b18c40502490e2ea78e3221c335c4252d9f6c",
   "status": "passed_completed_process_and_renderer_controls",
-  "total_closed_tex_passes": 6
+  "total_closed_render_invocations": 7,
+  "total_closed_tex_passes": 8
 }

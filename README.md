@@ -460,6 +460,18 @@ A separate
 assesses a saved interface direction, without changing production optimization
 or promoting any failed flag.
 
+The [six native endpoint-mesh calculations](data/development/lom24104_endpoint_mesh_results_001/RESULTS.md)
+compare two initial refinements at the LOM bottom source and at 10 m and 2.5 m
+inward offsets. All six fixed-polygon time/source comparisons pass the existing
+reference limits; three optimizations still exhaust 1,000 updates. The other
+three pass a separate interval check over all 9,949 final edges, with full
+feasible-gradient bounds below 1e-7 s/km. At the bottom source, halving the
+returned first-edge length halves the source-partial error. A 2.74238% finite
+travel-time-increment discrepancy remains at one inward offset, so the checks
+do not establish optimized-source derivatives or a first arrival. The package
+retains all six cases, native identities, simulation overrides and numerical
+sources. This diagnostic does not replace the pending synthetic inversions.
+
 A new [inversion forward guard](data/development/inversion_ray_gate_checks/README.md)
 on the integration branch rejects locally unconverged or otherwise invalid rays
 before Jacobian, trial-objective, or final-output use. It preserves identified

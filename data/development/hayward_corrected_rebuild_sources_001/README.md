@@ -5,8 +5,9 @@ subset and appends the 98 saved, identified normalized cross-correlation
 measurements. It builds one frozen guarded/backtracking C++ snapshot and permits
 one DD inversion attempt. A failed preparation, build or inversion is an outcome
 to retain. A zero process exit is not a claim of final ray accuracy, convergence,
-resolution or manuscript recovery. This draft has not executed preparation,
-compilation or inversion. Closed saved outputs then feed a short outcome report.
+resolution or manuscript recovery. A fresh checkout of the first committed
+procedure completed preparation and compilation; its inversion remains active
+at this checkpoint. Closed saved outputs then feed a short outcome report.
 
 From the repository root, use fresh destinations:
 
@@ -30,6 +31,16 @@ All caches, temporary files, build products and command logs remain under the
 fresh build directory. Existing output/build directories and symbolic-link
 destinations are refused; there is no resume, retry, alternate solver or fallback
 dataset.
+
+Executable invocation paths are preserved. Resolving `pdflatex` to `pdftex`
+selected the plain TeX format in an actual failed report build. Resolving the
+selected virtual-environment Python also removed its Matplotlib environment.
+The corrected helper preserves both invocation names while recording hashes
+of the executable bytes. Its actual saved-output reporting check rendered one
+identified initial-state fixture and completed both LaTeX passes. The active
+clean inversion retains its original checkout; its eventual outcome and any
+reporting failure will be preserved. The corrected revision has not been run
+as a new end-to-end numerical attempt.
 
 ## Preparation and arithmetic compatibility
 
@@ -125,7 +136,7 @@ No report is attempted while an owned group might still write numerical output.
 
 ## Completed source and interface checks
 
-Five process-only controls passed for the unchanged entrypoint: zero and nonzero
+Five process-only controls passed for the preceding entrypoint revision: zero and nonzero
 child exits, an executable that could not launch, cleanup of an orphaned
 descendant, and interruption while a child and descendant were live. Every
 launched process was reaped and no writer remained. Six saved-data renderer
@@ -138,3 +149,8 @@ passes and visual inspection, with no layout warnings and unchanged figure
 bytes. [validation.json](validation.json) separates the tested source hashes
 and the layout-only result. These checks did not run preparation, a C++ compiler, rays or inversion,
 and do not establish a successful end-to-end corrected rebuild.
+The later executable-invocation correction passed a separate actual call to
+the report function: one saved-data render and two LaTeX passes, with the
+numerical outcome unchanged and no layout warnings. The earlier failed report
+build and the virtual-environment diagnosis are retained in the validation
+record. This adds no preparation, compiler, ray or inversion call.
