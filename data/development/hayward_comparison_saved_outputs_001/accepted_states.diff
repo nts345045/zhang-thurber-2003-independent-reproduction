@@ -1,0 +1,78 @@
+--- rebuild_hayward_corrected.py:accepted_states
++++ plot_hayward_comparison.py:accepted_states
+@@ -1,36 +1,35 @@
+-def accepted_states(output):
+-    """Only snapshot pairs joined to completed history AND accepted trial rows are reportable."""
+-    path = output / 'dd_history.csv'
+-    if not path.exists():
++def accepted_states(data, mode, closed_table):
++    """Mode-bound copy of the existing history/trial/snapshot acceptance joins."""
++    history_name = mode + '_history.csv'
++    if not (data / history_name).exists():
+         return [], []
+-    data = path.read_bytes()
+-    complete = data[:data.rfind(b'\n') + 1].decode('utf-8')
+-    history = list(csv.DictReader(io.StringIO(complete)))
+-    original, grid = [table(output / name) for name in ('initial_events.csv', 'initial_grid.csv')]
+-    bounds = {k: (min(float(r[k]) for r in grid), max(float(r[k]) for r in grid)) for k in 'xyz'}
++    history = closed_table(history_name, complete_lines=True)
++    original, grid = [closed_table(name) for name in ('initial_events.csv', 'initial_grid.csv')]
++    bounds = {k: (min(finite(r[k]) for r in grid), max(finite(r[k]) for r in grid)) for k in 'xyz'}
+     states, notes, seen = [], [], set()
+-    if len(complete.encode('utf-8')) != len(data):
++    content = (data / history_name).read_bytes()
++    if content and not content.endswith(b'\n'):
+         notes.append('Incomplete final history line retained but excluded from accepted-state joins.')
+     for row in history:
+         require(None not in row and all(v is not None for v in row.values()), 'Malformed complete history row')
+         iteration = int(row['iteration'])
+         require(iteration not in seen and 0 <= iteration < 18, 'Invalid/duplicate history iteration')
+         seen.add(iteration)
+-        step = float(row['step_fraction'])
+-        require(math.isfinite(step) and 0 <= step <= 1, 'Invalid history step')
++        step = finite(row['step_fraction'])
++        require(0 <= step <= 1, 'Invalid history step')
+         if step == 0:
+             continue
+-        trials = table(output / ('dd_iteration_%d_trials.csv' % iteration))
++        trials = closed_table(mode + '_iteration_%d_trials.csv' % iteration)
+         accepted = [r for r in trials if r['status'] == 'accepted']
+         require(len(accepted) == 1 and accepted[0] == trials[-1], 'Accepted history lacks one terminal accepted trial')
+         trial = accepted[0]
+-        require(trial['objective_evaluated'] == '1' and float(trial['step_fraction']) == step,
++        require(trial['objective_evaluated'] == '1' and finite(trial['step_fraction']) == step,
+                 'Accepted history/trial step differs')
+-        require(float(trial['objective_after']) <= float(trial['objective_before']), 'Accepted objective increased')
++        require(finite(trial['objective_after']) <= finite(trial['objective_before']), 'Accepted objective increased')
+         for key in ('objective_before', 'objective_after'):
+-            require(float(row[key]) == float(format(float(trial[key]), '.12g')), 'History/trial objective differs')
+-        names = {kind: 'dd_accepted_it_%d_%s.csv' % (iteration, kind) for kind in ('events', 'grid')}
+-        events, model = [table(output / names[kind]) for kind in ('events', 'grid')]
++            require(finite(row[key]) == float(format(finite(trial[key]), '.12g')), 'History/trial objective differs')
++        names = {kind: mode + '_accepted_it_%d_%s.csv' % (iteration, kind) for kind in ('events', 'grid')}
++        events, model = [closed_table(names[kind]) for kind in ('events', 'grid')]
+         require(len(events) == len(original) and len(model) == len(grid), 'Snapshot inventory differs')
+         for old, new in zip(original, events):
+             require(all(new[k] == v for k, v in old.items() if k not in ('x', 'y', 'z', 't', 'coordinate_basis')),
+@@ -38,14 +37,16 @@
+             require(new['coordinate_basis'] == 'independent accepted inversion state after iteration %d; run incomplete' % iteration,
+                     'Accepted snapshot scope differs')
+             require(all(math.isfinite(float(new[k])) for k in 'xyzt') and
+-                    all(bounds[k][0] <= float(new[k]) <= bounds[k][1] for k in 'xyz'), 'Invalid accepted source')
++                    all(bounds[k][0] <= finite(new[k]) <= bounds[k][1] for k in 'xyz'), 'Invalid accepted source')
+         for old, new in zip(grid, model):
+-            require(all(float(old[k]) == float(new[k]) for k in 'xyz') and
+-                    math.isfinite(float(new['v'])) and float(new['v']) > 0, 'Invalid accepted model')
++            require(all(finite(old[k]) == finite(new[k]) for k in 'xyz') and finite(new['v']) > 0,
++                    'Invalid accepted model')
++            if mode == 'loc1d':
++                require(finite(old['v']) == finite(new['v']), 'Fixed-model relocation changed velocity')
+         states.append(dict(iteration=iteration, events_file=names['events'], grid_file=names['grid'],
+-                           sha256s={name: sha(output / name) for name in names.values()}))
++                           sha256s={name: sha(local(data, name)) for name in names.values()}))
+     linked = {name for state in states for name in state['sha256s']}
+-    unlinked = sorted(p.name for p in output.glob('dd_accepted_it_*') if p.name not in linked)
++    unlinked = sorted(p.name for p in data.glob(mode + '_accepted_it_*') if p.name not in linked)
+     if unlinked:
+         notes.append('Unjoined snapshot files are preserved and not presented as accepted: ' + ', '.join(unlinked))
+     return states, notes

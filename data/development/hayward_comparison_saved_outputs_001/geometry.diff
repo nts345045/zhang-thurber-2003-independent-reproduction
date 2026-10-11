@@ -1,0 +1,57 @@
+--- plot_hayward_corrected.py:geometry
++++ plot_hayward_comparison.py:geometry
+@@ -1,8 +1,12 @@
+-def geometry(data, outcome):
++def geometry(data, outcome, mode):
++    """Existing complete native joins and geometry checks, with explicit mode names."""
++    consumed = set()
++
+     def closed_table(name, complete_lines=False):
+         require(name in outcome['output_sha256'], 'Consumed table absent from closed inventory: ' + name)
+         path = local(data, name)
+         require(sha(path) == outcome['output_sha256'][name], 'Consumed closed table changed: ' + name)
++        consumed.add(name)
+         return table(path, complete_lines=complete_lines)
+ 
+     names = ('initial_events.csv', 'initial_grid.csv', 'stations.csv', 'observations.csv')
+@@ -17,8 +21,8 @@
+         codes = [row[k] for k in ('network_code', 'station_code', 'location_code', 'channel_code')]
+         require(row['channel_seed_id'] == '.'.join(codes), 'SEED channel identity')
+         require(row['channel_fdsn_source_id'] == 'FDSN:' + '_'.join(codes[:3] + list(codes[3])), 'FDSN identity')
+-    cc = [r for r in observations if r['type'] == '2']
+     for row in observations:
++        require(row['type'] in ('0', '1'), 'Catalog-only comparison cannot contain waveform rows')
+         for side in ('i', 'j'):
+             index = int(row[side])
+             if index < 0:
+@@ -33,10 +37,11 @@
+             require(row['channel_seed_id'] == station['channel_seed_id'], 'Common channel join')
+             for edge in ('start', 'end'):
+                 require(row['metadata_epoch_' + ('j_' if side == 'j' else '') + edge] == station['metadata_epoch_' + edge], 'Native endpoint epoch')
+-    states = outcome['accepted_states']
++    states, notes = accepted_states(data, mode, closed_table)
+     require([s['iteration'] for s in states] == sorted(set(s['iteration'] for s in states)), 'Unique accepted iteration order')
+-    if (data / 'dd_history.csv').exists():
+-        history = closed_table('dd_history.csv', complete_lines=True)
++    history_name = mode + '_history.csv'
++    if (data / history_name).exists():
++        history = closed_table(history_name, complete_lines=True)
+         accepted = [int(r['iteration']) for r in history if finite(r['step_fraction']) > 0]
+         require(accepted == [s['iteration'] for s in states], 'Accepted snapshots agree with closed history')
+     else:
+@@ -45,8 +50,7 @@
+     final_events, final_grid = events, grid
+     if selected:
+         for name in ('events_file', 'grid_file'):
+-            path = local(data, selected[name])
+-            require(sha(path) == selected['sha256s'][selected[name]], 'Closed accepted snapshot hash')
++            require(sha(local(data, selected[name])) == selected['sha256s'][selected[name]], 'Closed accepted snapshot hash')
+         final_events, final_grid = [closed_table(selected[k]) for k in ('events_file', 'grid_file')]
+     require(len(events) == len(final_events) and len(grid) == len(final_grid), 'Complete saved-state geometry')
+     bounds = {a: (min(finite(r[a]) for r in grid), max(finite(r[a]) for r in grid)) for a in 'xyz'}
+@@ -64,4 +68,4 @@
+         initial, final = finite(before['v']), finite(after['v'])
+         require(initial > 0 and final > 0, 'Positive velocities')
+         nodes.append(dict(after, initial_v_km_s=initial, delta_v_km_s=final - initial))
+-    return events, stations, cc, points, nodes, selected
++    return events, stations, points, nodes, selected, states, notes, consumed

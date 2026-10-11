@@ -1,0 +1,114 @@
+{
+  "closed_readback": {
+    "accepted_iterations": 0,
+    "attempt": "standard_001",
+    "inverse_return_code": -15,
+    "mode": "standard",
+    "output_sha256": {
+      "standard_001/render_summary.json": "1e6d817a2077be187dce6e3e66135ed5eb00169aaf2e4962883abbad38dd5e74",
+      "standard_001/report.pdf": "a239d76f1e221cad5f1ae2cecd1873fd628b6efd19658a8f365ce44e94d32e09",
+      "standard_001/report.tex": "7d7a3d59b4895be275ccd159d2a6ebf19bc4de2651e38b34c591a17ca5fd9437"
+    },
+    "reader_return_code": 0,
+    "recovery_plot_created": false,
+    "report_pages": 1,
+    "saved_output_validation": "passed",
+    "tex_return_codes": [
+      0,
+      0
+    ],
+    "visual_review": "passed",
+    "warnings": []
+  },
+  "copied_function_mapping": {
+    "accepted_states": {
+      "changes": "Explicit mode filenames and supplied closed-table reader; equivalent finite checks; unchanged history/trial/objective/native/bounds logic; additional loc1d velocity equality.",
+      "diff": "accepted_states.diff",
+      "original": "rebuild_hayward_corrected.py:accepted_states"
+    },
+    "geometry": {
+      "changes": "Explicit mode history and locally joined accepted states, catalog-only row constraint, consumed-file roster; all original native identity, coordinate, displacement and positive-grid checks retained.",
+      "diff": "geometry.diff",
+      "original": "plot_hayward_corrected.py:geometry"
+    }
+  },
+  "imported_sources": {
+    "plot_hayward_corrected.py": {
+      "functions": [
+        "require",
+        "sha",
+        "local",
+        "table",
+        "write_table",
+        "finite",
+        "tex"
+      ],
+      "sha256": "8eadadaf8b0b1967ff7878fbe82b18c40502490e2ea78e3221c335c4252d9f6c"
+    },
+    "rebuild_hayward_corrected.py": {
+      "functions": [
+        "fresh_path",
+        "write_json"
+      ],
+      "sha256": "a9a07fa490b8eecdbdc10e3118288fbc3692b04800b75b224a53d8e763182769"
+    }
+  },
+  "new_sources": {
+    "data/development/hayward_comparison_saved_outputs_001/README.md": {
+      "bytes": 5052,
+      "sha256": "a08175150275b2a2de2251f672e1b18210ea98609f01caf1cce7219b1974129f"
+    },
+    "data/development/hayward_comparison_saved_outputs_001/RESULTS.md": {
+      "bytes": 1723,
+      "sha256": "b6463743a1fcf7e8c832bd8dfd5cd7930c690a167a5415a813c1d07800aff46f"
+    },
+    "data/development/hayward_comparison_saved_outputs_001/accepted_states.diff": {
+      "bytes": 5591,
+      "sha256": "20fb39f0193a91e68c8c737e62556e191f5e4e1f011f075320b39f07c70f48e6"
+    },
+    "data/development/hayward_comparison_saved_outputs_001/geometry.diff": {
+      "bytes": 3480,
+      "sha256": "da3f2db298d3bf472c69bf8d970ccb16943778e1f0cc9571488f02c5e27b6cea"
+    },
+    "data/development/hayward_comparison_saved_outputs_001/review_correction.diff": {
+      "bytes": 8453,
+      "sha256": "905b6bd1f11cba45036d84d58a8ae84116be4ddda504fe53da50c3db7dce241a"
+    },
+    "plot_hayward_comparison.py": {
+      "bytes": 23949,
+      "sha256": "08e2fc678ad36ee27d0a60b50e57c46dbfd7b16b0e6fbe65fe922fabd47b4133"
+    }
+  },
+  "preserved_files": [
+    "plot_hayward_corrected.py",
+    "rebuild_hayward_corrected.py",
+    "run_hayward_catalog_comparison.py",
+    "all live numerical inputs/outputs"
+  ],
+  "render_scope": "The existing closed-output/reaping/hash gate and two relevant model/source panels; comparison_outcome schema, explicit mode captions, no waveform panel or numerical call. No verified accepted state means no recovery plot. Complete recorded compiled-source and prepared-input provenance is required for scientific geometry; absent late-stage fields allow status-only failure reporting.",
+  "review_correction": {
+    "diff": "review_correction.diff",
+    "preserved_original_sha256": "af34583e164dd4fbcefbe1772749f5584f89b73e51c186e7f8ede96baa20e39b",
+    "scope": "Direct comparison/source/configuration/original-input recorded-hash joins; missing early-preparation evidence permits status only. Full saved-grid/initial/accepted plot extents plus two-percent margin. Accepted-state and geometry functions unchanged."
+  },
+  "reviewed_comparison_bindings": {
+    "data/development/hayward_catalog_comparisons_001/manifest.json": "eea1640a05d5cb9d2ecf45c510173ba8db9b0941e5809a0165d21735d641bf16",
+    "data/development/hayward_catalog_comparisons_001/run.cfg": "18b023df0730d56e00bc9afcd84d4f5cefa874a7cc05721a94a51bda5d48ee6b",
+    "data/development/hayward_corrected_rebuild_sources_001/scientific_inputs.json": "f264c0ac75e8eeec0b0197f82b45ed661dbbcf06424e808b97091bdff2cb8373",
+    "data/development/hayward_corrected_rebuild_sources_001/source_mapping.json": "d462f00bae8443fa32d10e0b1b226651e3712ab32d061a05e50d1b2207db4c95",
+    "run_hayward_catalog_comparison.py": "435ac92d7f4aa747997af30f0134276758d3dc4ff471af6bffba5eb7ddf51c2e"
+  },
+  "source_validation": {
+    "actual_interrupted_attempt_readback_executed": true,
+    "ast_parsed": true,
+    "new_numerical_calls": 0,
+    "script_executed": true,
+    "script_imported": true,
+    "successful_state_checks_executed": false,
+    "unchanged_copied_function_asts": [
+      "accepted_states",
+      "geometry"
+    ]
+  },
+  "status": "interrupted_attempt_readback_passed"
+}

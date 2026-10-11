@@ -1,0 +1,67 @@
+{
+  "accepted_iterations": 0,
+  "accepted_state_notes": [],
+  "accepted_states": [],
+  "consumed_table_sha256": {
+    "initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "standard_history.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652"
+  },
+  "data_directory": "data/hayward_standard_guarded_001",
+  "events": 1092,
+  "failed_stage": "standard_invert",
+  "history_metrics_scope": "pre-update",
+  "incomplete_history_tail_ignored": false,
+  "mode": "standard",
+  "numerical_return_code": -15,
+  "numerical_source_bindings": {
+    "built_source_sha256": {
+      "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+      "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+      "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+      "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+      "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+      "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+      "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+      "src/main.cpp": "4844d330f7f8300513c7d7e2d1c17c8eb6b227936e2993e326723ce7ecb88116",
+      "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+      "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+    },
+    "comparison_manifest_sha256": "eea1640a05d5cb9d2ecf45c510173ba8db9b0941e5809a0165d21735d641bf16",
+    "entrypoint_sha256": "435ac92d7f4aa747997af30f0134276758d3dc4ff471af6bffba5eb7ddf51c2e",
+    "helper_sha256": "a9a07fa490b8eecdbdc10e3118288fbc3692b04800b75b224a53d8e763182769",
+    "original_catalog_sha256": {
+      "authoritative_ids_required": "00d86d4465702c0424ec511ef34eee9eb080977c55c21ac8af2106257760ba47",
+      "event_pairs.csv": "b678922c56c2c0841769aa882e98291631d3f7651a19661206c0433bfe9826ae",
+      "event_selection.csv": "d8563afe642aaaf719b9c92f0206bcd88003d256ad9067c08b0b40c60c3fb256",
+      "excluded_picks.csv": "93aab31ede96f61d65f4e363eb9bd8748b67014e477b12be12daee3ba09af0ca",
+      "initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+      "initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+      "observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+      "stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652"
+    },
+    "run_config_sha256": "18b023df0730d56e00bc9afcd84d4f5cefa874a7cc05721a94a51bda5d48ee6b",
+    "scientific_geometry_provenance_complete": true,
+    "source_mapping_sha256": "d462f00bae8443fa32d10e0b1b226651e3712ab32d061a05e50d1b2207db4c95"
+  },
+  "numerical_status": "failed_preserved",
+  "outcome_sha256": "256fdce01e6c46d0a15a6a1122d28cc32b89a150d781f1386525ad449331f1fa",
+  "output_sha256": {
+    "report.tex": "7d7a3d59b4895be275ccd159d2a6ebf19bc4de2651e38b34c591a17ca5fd9437"
+  },
+  "plotting_validation_error": null,
+  "receiver_epochs": 372,
+  "recovery_plot_created": false,
+  "saved_output_validation": "passed",
+  "scientific_success": false,
+  "scope": "Saved accepted geometry or an explicit failed/interrupted disposition; no ray, inverse, covariance or convergence calculation.",
+  "selected_iteration": null,
+  "shared_source_sha256": {
+    "plot_hayward_corrected.py": "8eadadaf8b0b1967ff7878fbe82b18c40502490e2ea78e3221c335c4252d9f6c",
+    "rebuild_hayward_corrected.py": "a9a07fa490b8eecdbdc10e3118288fbc3692b04800b75b224a53d8e763182769"
+  },
+  "source_sha256": "08e2fc678ad36ee27d0a60b50e57c46dbfd7b16b0e6fbe65fe922fabd47b4133",
+  "status": "rendered_closed_comparison"
+}
