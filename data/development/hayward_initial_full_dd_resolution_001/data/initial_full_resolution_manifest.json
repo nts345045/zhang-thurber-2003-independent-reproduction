@@ -1,0 +1,68 @@
+{
+  "linearization_point": "initial saved event/model state",
+  "observations": 58980,
+  "active_observations": 58671,
+  "independent_primitive_pick_errors": 14262,
+  "stage": 0,
+  "stage_basis": "explicit command argument (zero based)",
+  "weights": "saved event/model state; residual and distance weights recomputed here",
+  "noise_assumption": "Native catalog picks have independent errors; reported symmetric uncertainty is assumed to be one sigma. Catalog differences share these same errors through their +1/-1 pick incidence. Confidence levels are not supplied; calibration is assumed.",
+  "estimator": "Frozen weighted/masked local design with coupled source elimination, exported smoothing and column-scaled damping; not an inverse-normal posterior covariance",
+  "masked_resolution": "Velocity/model block of H^-1 A^T A for the assembled masked design",
+  "unmasked_response": "Velocity/model block of H^-1 A^T W J_unmasked, conditional on the exported ray derivatives",
+  "noise_covariance": "Model block of H^-1 A^T W P Sigma_pick P^T W A H^-1; no extra 0.05^2 factor",
+  "ray_status_failures": 0,
+  "ray_input_validation": {
+    "unique_native_rays": 14262,
+    "unattempted_initialization_rays": 0,
+    "coordinate_significant_digits": 12,
+    "scope": "Exact native support/metadata and recorded finite/local/initializer status only",
+    "limitations": [
+      "Unattempted initialization is allowed; no first-arrival claim follows.",
+      "This export has no path-domain, exact-endpoint or source-partial fields.",
+      "Final-model ray and derivative accuracy require separate acceptance."
+    ]
+  },
+  "limitations": [
+    "Conditional on fixed robust/distance weights, kernel masks, column scales, and computed ray branches.",
+    "Source-domain bounds and their active sets are omitted; this is not the covariance of the constrained nonlinear estimator.",
+    "Reference catalog origin baselines are held fixed; source-coordinate and origin-time parameters remain jointly coupled in the local estimator.",
+    "Excludes correlated station/model errors, selection effects, regularization bias, nonlinear errors, and ray/derivative errors.",
+    "No cross-correlation data or independent differential noise are inferred.",
+    "Unmasked response uses the computed local ray derivatives and is not a first-arrival accuracy certificate."
+  ],
+  "conditioning": {
+    "source_normal_rows": 4368,
+    "source_solve_relative_residual": 6.531225769361309e-16,
+    "model_schur_condition_number": 2295.594882613046,
+    "resolution_equation_relative_residual": 5.9478325836113e-16,
+    "noise_transfer_relative_residual": 1.0483006700889699e-15
+  },
+  "masked_resolution_diagonal_range": [
+    -1.6510649787431347e-05,
+    0.801720766532849
+  ],
+  "unmasked_response_diagonal_range": [
+    -1.6511836288869872e-05,
+    0.8017205495687587
+  ],
+  "velocity_sigma_range_km_s": [
+    0.004049304221658203,
+    0.049412179707721764
+  ],
+  "input_sha256": {
+    "tmp/hayward_initial_full_dd_export_001/data/initial_full_linearization_rows.csv": "a98866accaa83b68603828c9fdbffe8314570f5890d909a32072bb77b929a0fe",
+    "tmp/hayward_initial_full_dd_export_001/data/initial_full_linearization_matrix.csv": "5943c2b06859cc479918d7b22661a482c3b0f23a119d514d5d951589f7d3514d",
+    "tmp/hayward_initial_full_dd_export_001/data/initial_full_linearization_columns.csv": "1f8a2ec0cf97e31bbe379a137956a7a427d864064bf71db8c729a5a204f9f1c6",
+    "tmp/hayward_initial_full_dd_export_001/data/initial_full_linearization_suppressed.csv": "bcdf8d5c75baea5a53fa56c78a6af38233a318b5ce48ed381f1294f0549ba398",
+    "tmp/hayward_initial_full_dd_export_001/data/initial_full_linearization_smoothing_rows.csv": "f1f58bfe7c238fbb77c475cc225928393458578807582729ba0a744c804d521d",
+    "tmp/hayward_initial_full_dd_export_001/data/initial_full_linearization_smoothing_matrix.csv": "d675eecc8c32569f8c701ebd73351b0c5bc4455b70d14369c83a8348340c0340",
+    "tmp/hayward_initial_full_dd_export_001/data/initial_full_linearization_rays.csv": "a504df08d6568b42aff8e3d1c88d962e50ff92a99911b8ebcbe1b357f430a592",
+    "tmp/hayward_initial_full_dd_export_001/data/initial_full_linearization_info.csv": "826723dca332c69f38782002e9081e15166966c18f0c0bc8fd9e15689bc28ae8",
+    "tmp/hayward_initial_full_dd_export_001/data/initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "tmp/hayward_initial_full_dd_export_001/data/initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "tmp/hayward_initial_full_dd_export_001/data/observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "tmp/hayward_initial_full_dd_export_001/data/stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652"
+  },
+  "analysis_script_sha256": "64315e341200cbac98be78e45a03de81eb040e96d265ab1adb15c9d08b907d43"
+}

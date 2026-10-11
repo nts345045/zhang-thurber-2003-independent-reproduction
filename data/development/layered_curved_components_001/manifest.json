@@ -1,0 +1,46 @@
+{
+  "documented_replay": {
+    "affine_checks": 58,
+    "full_nodal_checks": 24,
+    "scientific_result_files_byte_matched": 3,
+    "scope": "Two original control programs rebuilt and replayed once; no real data or inversion",
+    "status": "passed"
+  },
+  "package": "layered_curved_components_001",
+  "schema_version": 1,
+  "scientific_results": {
+    "affine": {
+      "checks": 58,
+      "file": "results/affine.json",
+      "status": "passed"
+    },
+    "full_nodal": {
+      "checks": 24,
+      "groups": 6,
+      "records": "results/curved_integrals.jsonl",
+      "status": "passed",
+      "summary": "results/curved_integrals_summary.json"
+    }
+  },
+  "scope": "Continuous selected-curve action and full trilinear nodal kernels; limited affine branch construction; invented controls only",
+  "sha256": {
+    "CONTROL_README.md": "f1ac8463674d78d3a7ff8de24569e7aab94ce37432eb94705944e6341ab9e1cd",
+    "METHOD.md": "1d375c2963b1017737576646740ab1101201056d1e1057a8b43bca5ee88b3609",
+    "README.md": "0afa3677d1ed314068d8b28611ee0a4fc77ebbd31dc316f9a1a08cd444a11bc2",
+    "RESULTS.md": "a5617105675fabd74286a3b2f1ee8fa71d23015f06a142a589e78443948e431e",
+    "replay.py": "c4f6884bfcca2d81e9bee709b8d807c4db2a2bac802bf4b094f9ebe79fb786a3",
+    "results/affine.json": "f9e1859e0c73530bebce74a058b74e1c81f418db89ef90a26271c639fd9e310d",
+    "results/curved_integrals.jsonl": "f49ca2c33fde542aac4f521b072d8b6cf8fd9c1fc1a8a2635b7c9f206a7bd39f",
+    "results/curved_integrals_summary.json": "030274081756fe3c9ee885da6b8ccecad21b1ce922ff6543ff940297d09032bb",
+    "source/affine_arrival.hpp": "6097efd3312c098a3ce8e47d0a4312b225f4f321af3d935e64191c67c25cc40d",
+    "source/check_affine_arrival.cpp": "21e0f885be902bba77e2256a2521dd43843fd044346c746d29c35b9254196b95",
+    "source/check_curved_integrals.cpp": "f7aefd8f975cd954b2895324a8be8f9b9d47d1e73bbf4bc1e02dc750cb2e0d22",
+    "source/layered_curved_ray.hpp": "ede8a8375b4dbba78acf66c32fe79f4135519a647fc17e7a9890d914337dea33"
+  },
+  "source_files": [
+    "source/affine_arrival.hpp",
+    "source/check_affine_arrival.cpp",
+    "source/check_curved_integrals.cpp",
+    "source/layered_curved_ray.hpp"
+  ]
+}

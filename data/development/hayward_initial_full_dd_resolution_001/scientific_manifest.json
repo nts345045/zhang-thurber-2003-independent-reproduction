@@ -1,0 +1,50 @@
+{
+  "input_archive": {
+    "file": "replay_inputs.tar.gz",
+    "index_file": "replay_inputs.json",
+    "index_sha256": "d31acc7c280229c3bbf816b59a07aecd4947a16e3691c66addb941848806ac6a",
+    "sha256": "a0c6b5c9554f63e8d1b1b9d2b92d09cd744398fe640c0c023113c6c1b8732107"
+  },
+  "limitations": [
+    "Conditional on fixed robust/distance weights, kernel masks, column scales, and computed ray branches.",
+    "Source-domain bounds and their active sets are omitted; this is not the covariance of the constrained nonlinear estimator.",
+    "Reference catalog origin baselines are held fixed; source-coordinate and origin-time parameters remain jointly coupled in the local estimator.",
+    "Excludes correlated station/model errors, selection effects, regularization bias, nonlinear errors, and ray/derivative errors.",
+    "No cross-correlation data or independent differential noise are inferred.",
+    "Unmasked response uses the computed local ray derivatives and is not a first-arrival accuracy certificate."
+  ],
+  "noise_assumption": "Independent primitive catalog-pick errors; provider symmetric timing uncertainty is assumed to represent one standard deviation, although confidence levels are not supplied. Catalog differences reuse the same constituent errors. This is an uncertainty-scale assumption, not instrument-response calibration. No cross-correlation input.",
+  "output_bytes": {
+    "data/initial_full_dd_identifiers.json.gz": 11090301,
+    "data/initial_full_dd_identifiers_manifest.json": 3471,
+    "data/initial_full_resolution.csv": 37529,
+    "data/initial_full_resolution_manifest.json": 4882,
+    "data/initial_full_resolution_matrices.npz": 6206345,
+    "data/initial_full_resolution_picks.csv": 5830185
+  },
+  "output_sha256": {
+    "data/initial_full_dd_identifiers.json.gz": "976e721be2a97badd69f710c3dee42eb17ed8d32cd00ca409ba936e6a69838a9",
+    "data/initial_full_dd_identifiers_manifest.json": "6649ac1fd3d6c848b428ad3d1f38aee35e49e7bda6477a55e66bcf33485f21e0",
+    "data/initial_full_resolution.csv": "476a10570da54820ae6adec92296b6a2acb7c9237b9bb9b1d7dd80ac4dbd5c35",
+    "data/initial_full_resolution_manifest.json": "2dabf4387a1a637ec915218b7e73511f109587e1bcc8a0f194625a6f33e273ac",
+    "data/initial_full_resolution_matrices.npz": "81cf9830ff85285fd29128c3af8b1fe3ac4ad88a680764480e03154cab0374ad",
+    "data/initial_full_resolution_picks.csv": "0b139f16ae6709f2a8acf0ca78c4ee4cd492f4735ad81d974ed905934057a581"
+  },
+  "record_type": "closed scientific output inventory",
+  "reference_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "numpy": "2.4.6",
+    "python": "3.11.9",
+    "scipy": "1.17.1"
+  },
+  "resolution_source": {
+    "base": "repository root",
+    "file": "resolution_full_hayward.py",
+    "sha256": "64315e341200cbac98be78e45a03de81eb040e96d265ab1adb15c9d08b907d43"
+  },
+  "scope": "INITIAL saved-model, chosen stage0, catalog-only conditional full-DD resolution and shared-pick noise.",
+  "status": "passed",
+  "verification_file": "scientific_verification.json",
+  "verification_sha256": "e214baf026d5c079850ba14dcbc35f250295b8a7fb2e0e5f10f8e34bd9ebcc95"
+}

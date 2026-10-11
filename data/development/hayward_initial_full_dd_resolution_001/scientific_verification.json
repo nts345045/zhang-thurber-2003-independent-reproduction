@@ -1,0 +1,155 @@
+{
+  "export_stage": 0,
+  "exporter_source_sha256": {
+    "data/development/hayward_full_dd_geometry_adoption_002/source/CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+    "data/development/hayward_full_dd_geometry_adoption_002/source/src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+    "data/development/hayward_full_dd_geometry_adoption_002/source/src/core.hpp": "c9500361c5ca3ff55b2fbcec0aedfb3639d3f3b68a53431267e6849c3a933044",
+    "data/development/hayward_full_dd_geometry_adoption_002/source/src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+    "data/development/hayward_full_dd_geometry_adoption_002/source/src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+    "data/development/hayward_full_dd_geometry_adoption_002/source/src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+    "data/development/hayward_full_dd_geometry_adoption_002/source/src/full_linearization.hpp": "107ce4a71f83652225ad412b259e065fe7c684547abb75c1d874fa93b2711977",
+    "data/development/hayward_full_dd_geometry_adoption_002/source/src/main.cpp": "dd659c059be80c077e08819352b3df872dda1023d30628b0b702395c3fb30529",
+    "data/development/hayward_full_dd_geometry_adoption_002/source/src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+    "data/development/hayward_full_dd_geometry_adoption_002/source/src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732",
+    "data/development/hayward_full_dd_geometry_adoption_002/source/src/usable_ray_curvature.hpp": "5236f9df135dc2449662db70bb68aded36cae3f5ce23e7471caa02d45ce5daac"
+  },
+  "geometry": {
+    "initializer_required": true,
+    "limitations": [
+      "No source/binary execution attestation is created by table agreement alone.",
+      "No first-arrival, derivative-accuracy or nonlinear-convergence certificate.",
+      "The saved 12-digit model is the evaluation point; earlier internal precision is unavailable.",
+      "No covariance calculation or change to its conditional/noise assumptions."
+    ],
+    "native_rays": 14262,
+    "observations": 58980,
+    "path_nodes": 11506620,
+    "reader_sha256": "144547cc7a80bf3c914e02fb1302813d07004b5350f6470cebc07776d715f398",
+    "scope": "Saved local/status/geometry/native/source-entry consistency at the parsed saved model only.",
+    "source_matrix_entries": 414792,
+    "status": "passed",
+    "unattempted_initializers": 0
+  },
+  "geometry_input_sha256": {
+    "initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "initial_full_linearization_columns.csv": "1f8a2ec0cf97e31bbe379a137956a7a427d864064bf71db8c729a5a204f9f1c6",
+    "initial_full_linearization_info.csv": "826723dca332c69f38782002e9081e15166966c18f0c0bc8fd9e15689bc28ae8",
+    "initial_full_linearization_matrix.csv": "5943c2b06859cc479918d7b22661a482c3b0f23a119d514d5d951589f7d3514d",
+    "initial_full_linearization_ray_geometry.csv": "dd81cda082e9332855a34e9e29c2a809136d6c13cee3c9040d146e8560a5bd6a",
+    "initial_full_linearization_ray_paths.csv": "1b8ede4cc27e937ed149d9eab1a2eaaec10f8ee1bda1324a5257fea3ea5ab515",
+    "initial_full_linearization_rays.csv": "a504df08d6568b42aff8e3d1c88d962e50ff92a99911b8ebcbe1b357f430a592",
+    "initial_full_linearization_rows.csv": "a98866accaa83b68603828c9fdbffe8314570f5890d909a32072bb77b929a0fe",
+    "initial_full_linearization_smoothing_matrix.csv": "d675eecc8c32569f8c701ebd73351b0c5bc4455b70d14369c83a8348340c0340",
+    "initial_full_linearization_smoothing_rows.csv": "f1f58bfe7c238fbb77c475cc225928393458578807582729ba0a744c804d521d",
+    "initial_full_linearization_suppressed.csv": "bcdf8d5c75baea5a53fa56c78a6af38233a318b5ce48ed381f1294f0549ba398",
+    "initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "run.cfg": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4",
+    "stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652"
+  },
+  "old_to_D_changed_files": [
+    "src/analytic_truth.hpp",
+    "src/core.hpp",
+    "src/full_linearization.hpp",
+    "src/main.cpp",
+    "src/usable_ray_curvature.hpp"
+  ],
+  "original_path_inventory": {
+    "bytes": 19727146842,
+    "disposition": "Preserved locally; intentionally not included in the portable package. Regeneration is documented separately from numerical replay.",
+    "file": "initial_full_linearization_ray_paths.csv",
+    "sha256": "1b8ede4cc27e937ed149d9eab1a2eaaec10f8ee1bda1324a5257fea3ea5ab515"
+  },
+  "reference_evidence_sha256": {
+    "data/development/hayward_first_arrival_004_1d_support/independent_review.json": "29e95b53bbaaedccb1d98c8d24f41561fd5f0b5886d1e972789ba4858c5ef325",
+    "data/development/hayward_first_arrival_004_1d_support/references.jsonl": "ff32376d1ae5709c2360e72e5bc283795b37b5826594d5d459f6419cbefba40e",
+    "data/development/hayward_first_arrival_004_1d_support/summary.json": "a1fc5194c83a65019a62add7b6ec5d10478be87dd5f6c8d7ffb9e6eab535ad7d"
+  },
+  "saved_resolution_readback": {
+    "conditioning": {
+      "model_schur_condition_number": 2295.594882613046,
+      "noise_transfer_relative_residual": 1.0483006700889699e-15,
+      "resolution_equation_relative_residual": 5.9478325836113e-16,
+      "source_normal_rows": 4368,
+      "source_solve_relative_residual": 6.531225769361309e-16
+    },
+    "counts": {
+      "events": 1092,
+      "model_nodes": 462,
+      "observations": 58980,
+      "primitive_picks": 14262,
+      "receiver_epochs": 372
+    },
+    "covariance_diagonal_min": 8.647805076613573e-07,
+    "covariance_symmetry_max_abs_difference": 0.0,
+    "limitations": [
+      "No ray, reference, inverse, Schur solve or covariance recalculation.",
+      "INITIAL stage0 conditional estimator; existing scientific limitations remain."
+    ],
+    "masked_negative_diagonal_count": 2,
+    "matrix_keys": [
+      "masked_log_slowness_resolution",
+      "unmasked_log_slowness_model_response",
+      "masked_velocity_resolution",
+      "shared_pick_log_slowness_noise_covariance"
+    ],
+    "matrix_shape": [
+      462,
+      462
+    ],
+    "scope": "Closed artifact/hash, complete native identity, array order and serialized diagonal/velocity transformation checks only."
+  },
+  "scope": "Initial saved-model scientific checks; no final-model or nonlinear accuracy promotion.",
+  "stage_multipliers": {
+    "absolute": 1,
+    "catalog": 0.1,
+    "precise": 0
+  },
+  "status": "passed",
+  "time_source": {
+    "absolute_time_error_s": {
+      "count": 14262,
+      "maximum": 9.585103422082852e-07,
+      "maximum_absolute": 9.585103422082852e-07,
+      "mean": 3.2851788046416227e-07,
+      "median": 3.331026561248507e-07,
+      "minimum": 9.31815735683017e-10,
+      "rms": 3.557495236905281e-07
+    },
+    "all_recorded_local_initializer_flags_pass": true,
+    "all_time_source_limits_pass": true,
+    "counts": {
+      "both_limits_pass": 14262,
+      "branch_direct": 9069,
+      "branch_turning": 5193,
+      "finite_local_initializer_pass": 14262,
+      "source_vector_limit_pass": 14262,
+      "time_limit_pass": 14262
+    },
+    "limitations": [
+      "Geometry/path and signed source-matrix consistency require the separate existing geometry reader.",
+      "This comparison does not establish model-derivative accuracy or final-model/nonlinear convergence.",
+      "Reference branch enumeration is inherited; minimum-time ordering retains its original floating-point/near-tie scope.",
+      "No covariance execution or scientific status promotion follows automatically from this result."
+    ],
+    "limits": {
+      "absolute_time_s": 2.5e-05,
+      "source_vector_norm_s_per_km": 3e-06
+    },
+    "source_error_norm_s_per_km": {
+      "count": 14262,
+      "maximum": 1.7816333949495693e-06,
+      "maximum_absolute": 1.7816333949495693e-06,
+      "mean": 4.4290642452839074e-08,
+      "median": 2.42170744286811e-08,
+      "minimum": 1.7060812202150767e-09,
+      "rms": 7.726674456550435e-08
+    }
+  },
+  "time_source_table": {
+    "file": "evidence/time_source_comparison.csv.gz",
+    "rows": 14262,
+    "sha256": "2499efc8b2322773e5196c7c5805025a179ca3b71d80ad7fb0012b345118da72",
+    "uncompressed_sha256": "f5f9b460c3d8726a7af459e2fd0875910fc6d7abfc606e5a4c1f72fe87b41dd3"
+  }
+}

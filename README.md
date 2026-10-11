@@ -461,8 +461,10 @@ The [full-DD resolution reader](data/development/full_dd_resolution_ray_input_ch
 now verifies its complete native ray inventory, metadata, coordinates and
 recorded local status before matrix assembly, and preserves existing outputs.
 All 56 new input controls pass; the 39 preceding covariance controls retain
-identical results. Final-model ray and derivative accuracy still require
-separate acceptance. No new field resolution has been calculated.
+identical results. The subsequent
+[initial-model calculation](data/development/hayward_initial_full_dd_resolution_001/README.md)
+includes the full catalog-DD system and shared-pick covariance. Final-model
+ray and derivative accuracy still require separate acceptance.
 The [geometry export](data/development/hayward_full_dd_geometry_adoption_002/README.md)
 now saves 17-digit paths and status from the same rays used for the full matrix,
 retaining native identities and both receiver epochs. Its
@@ -566,6 +568,14 @@ earlier forward operators.
   first trial; `dd_last_accepted_*` preserves the initial state. Its history
   contains only a header. The [failure archive](data/development/hayward_guarded_failure_001/README.md)
   preserves identified outputs and execution evidence. There is no accepted final model.
+- [Initial-model full-DD resolution](data/development/hayward_initial_full_dd_resolution_001/README.md):
+  `data/initial_full_resolution.csv` contains 462 nodal resolution and noise
+  diagnostics; `data/initial_full_resolution_matrices.npz` preserves the full
+  model matrices. The identified pick table and full companion retain all
+  contributing native identities. The [seven-section figure](data/development/hayward_initial_full_dd_resolution_001/figure/initial_full_dd_resolution.pdf)
+  propagates shared-pick covariance to interpolated velocity. This completed
+  calculation uses the initial model and stage-0 catalog-only weights; it is
+  separate from the ongoing inversion and supplies no final-model covariance.
 - `data/hayward_old_kernel_backtracking_001/`: separate catalog-DD attempt
   in the integration worktree. Its closed
   `dd_iteration_1_solve_accepted_grid.csv` and
@@ -647,6 +657,15 @@ Only completion of every command writes `data/rebuild_result.txt`; a failed
 command writes `data/rebuild_failure.txt` with its exit status and elapsed
 time. If a rebuild fails, older data or figures may remain, and those files
 do not establish that the latest rebuild succeeded.
+
+The [clean historical rebuild](data/development/historical_clean_rebuild_001/README.md)
+at commit `976d2590c60f` completed the unedited script in 9,597 seconds:
+48 component checks, all eight inversions, plots, audit and both PDF passes.
+Several sampled rays still failed local convergence, and the audit remained
+one reproduced panel and 61 partial panels. Its regenerated outputs are
+preserved separately; the report's original synthetic figures retain their
+baseline provenance. This run does not validate the later corrected
+authoritative inversion and recovery workflow.
 
 ## Files
 

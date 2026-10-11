@@ -1,0 +1,182 @@
+{
+  "cases": [
+    {
+      "actual_exit_code": 1,
+      "all_nonzero_depth_mismatches": [
+        {
+          "actual_depth_km": "6917529027641081855/2305843009213693952",
+          "endpoint": "end",
+          "nominal_depth_km": "3",
+          "piece_index": 3,
+          "signed_mismatch_display_km": -4.336808689942018e-19,
+          "signed_mismatch_km": "-1/2305843009213693952"
+        },
+        {
+          "actual_depth_km": "6917529027641081855/2305843009213693952",
+          "endpoint": "begin",
+          "nominal_depth_km": "3",
+          "piece_index": 4,
+          "signed_mismatch_display_km": -4.336808689942018e-19,
+          "signed_mismatch_km": "-1/2305843009213693952"
+        },
+        {
+          "actual_depth_km": "-1/1152921504606846976",
+          "endpoint": "end",
+          "nominal_depth_km": "0",
+          "piece_index": 4,
+          "signed_mismatch_display_km": -8.673617379884035e-19,
+          "signed_mismatch_km": "-1/1152921504606846976"
+        },
+        {
+          "actual_depth_km": "-1/1152921504606846976",
+          "endpoint": "begin",
+          "nominal_depth_km": "0",
+          "piece_index": 5,
+          "signed_mismatch_display_km": -8.673617379884035e-19,
+          "signed_mismatch_km": "-1/1152921504606846976"
+        },
+        {
+          "actual_depth_km": "-617965926469270017/1152921504606846976",
+          "endpoint": "end",
+          "nominal_depth_km": "-1206964700135293/2251799813685248",
+          "piece_index": 5,
+          "signed_mismatch_display_km": -8.673617379884035e-19,
+          "signed_mismatch_km": "-1/1152921504606846976"
+        }
+      ],
+      "candidate_near_face_slivers": [
+        {
+          "fraction_interpretation": "Depth-span fraction only; not an arc-parameter estimate or recovered partition cut.",
+          "fraction_of_stored_depth_span": "1/9223372036854775809",
+          "internal_depth_km": "3",
+          "kind": "affine_arc",
+          "near_endpoint": "end",
+          "offset_display_km": -4.336808689942018e-19,
+          "piece_index": 3,
+          "stored_endpoint_offset_km": "-1/2305843009213693952"
+        },
+        {
+          "fraction_interpretation": "Depth-span fraction only; not an arc-parameter estimate or recovered partition cut.",
+          "fraction_of_stored_depth_span": "2/6917529027641081857",
+          "internal_depth_km": "0",
+          "kind": "affine_arc",
+          "near_endpoint": "end",
+          "offset_display_km": -8.673617379884035e-19,
+          "piece_index": 4,
+          "stored_endpoint_offset_km": "-1/1152921504606846976"
+        }
+      ],
+      "case_id": "lom_24104",
+      "construction_complete": true,
+      "endpoint_closure_display_km": 7.204847710556568e-18,
+      "failed_piece_or_partition": null,
+      "full_identity_sidecar": "results/lom_24104.result.json.identifiers.json",
+      "full_identity_sidecar_sha256": "ec812dd993465b92635aa8d69d9004ffa100f6db9c6a519dba5a2990c1457bca",
+      "maximum_depth_join_error_km": "1/1152921504606846976",
+      "partial_quadrature_sample_count": null,
+      "pieces": 6,
+      "recorded_failure": "Quadrature node rounded to a partition endpoint"
+    },
+    {
+      "actual_exit_code": 1,
+      "all_nonzero_depth_mismatches": [
+        {
+          "actual_depth_km": "13835058055282163713/4611686018427387904",
+          "endpoint": "end",
+          "nominal_depth_km": "3",
+          "piece_index": 0,
+          "signed_mismatch_display_km": 2.168404344971009e-19,
+          "signed_mismatch_km": "1/4611686018427387904"
+        },
+        {
+          "actual_depth_km": "13835058055282163713/4611686018427387904",
+          "endpoint": "begin",
+          "nominal_depth_km": "3",
+          "piece_index": 1,
+          "signed_mismatch_display_km": 2.168404344971009e-19,
+          "signed_mismatch_km": "1/4611686018427387904"
+        },
+        {
+          "actual_depth_km": "15354309914146073059/4611686018427387904",
+          "endpoint": "end",
+          "nominal_depth_km": "15354309914146073065/4611686018427387904",
+          "piece_index": 1,
+          "signed_mismatch_display_km": -1.3010426069826053e-18,
+          "signed_mismatch_km": "-3/2305843009213693952"
+        },
+        {
+          "actual_depth_km": "15354309914146073059/4611686018427387904",
+          "endpoint": "begin",
+          "nominal_depth_km": "15354309914146073065/4611686018427387904",
+          "piece_index": 2,
+          "signed_mismatch_display_km": -1.3010426069826053e-18,
+          "signed_mismatch_km": "-3/2305843009213693952"
+        },
+        {
+          "actual_depth_km": "1/2305843009213693952",
+          "endpoint": "end",
+          "nominal_depth_km": "0",
+          "piece_index": 3,
+          "signed_mismatch_display_km": 4.336808689942018e-19,
+          "signed_mismatch_km": "1/2305843009213693952"
+        },
+        {
+          "actual_depth_km": "1/2305843009213693952",
+          "endpoint": "begin",
+          "nominal_depth_km": "0",
+          "piece_index": 4,
+          "signed_mismatch_display_km": 4.336808689942018e-19,
+          "signed_mismatch_km": "1/2305843009213693952"
+        },
+        {
+          "actual_depth_km": "-1939213970748716543/2305843009213693952",
+          "endpoint": "end",
+          "nominal_depth_km": "-3787527286618587/4503599627370496",
+          "piece_index": 4,
+          "signed_mismatch_display_km": 4.336808689942018e-19,
+          "signed_mismatch_km": "1/2305843009213693952"
+        }
+      ],
+      "candidate_near_face_slivers": [
+        {
+          "fraction_interpretation": "Depth-span fraction only; not an arc-parameter estimate or recovered partition cut.",
+          "fraction_of_stored_depth_span": "1/346228113147428865",
+          "internal_depth_km": "3",
+          "kind": "affine_arc",
+          "near_endpoint": "end",
+          "offset_display_km": 2.168404344971009e-19,
+          "piece_index": 0,
+          "stored_endpoint_offset_km": "1/4611686018427387904"
+        },
+        {
+          "exact_line_parameter_to_face": "1/1939213970748716544",
+          "fraction_interpretation": "Depth-span fraction only; not an arc-parameter estimate or recovered partition cut.",
+          "fraction_of_stored_depth_span": "1/1939213970748716544",
+          "internal_depth_km": "0",
+          "kind": "constant_layer_line",
+          "near_endpoint": "begin",
+          "offset_display_km": 4.336808689942018e-19,
+          "piece_index": 4,
+          "stored_endpoint_offset_km": "1/2305843009213693952"
+        }
+      ],
+      "case_id": "lon_8670",
+      "construction_complete": true,
+      "endpoint_closure_display_km": 1.3207600785321708e-12,
+      "failed_piece_or_partition": null,
+      "full_identity_sidecar": "results/lon_8670.result.json.identifiers.json",
+      "full_identity_sidecar_sha256": "6a34f01ead0610c16644b23c1451bcace1d16cc4bf2561153238b2f767d3632e",
+      "maximum_depth_join_error_km": "3/2305843009213693952",
+      "partial_quadrature_sample_count": null,
+      "pieces": 5,
+      "recorded_failure": "Quadrature node rounded to a partition endpoint"
+    }
+  ],
+  "interpretation": "Both constructions completed and passed their strict angle/box validation. The recorded exception is the unchanged quadrature interior-node guard. Stored depth-interface overshoots create candidate tiny partitions, but the absent cut/failed-piece/partial-count records prevent attributing either exception to a specific candidate. No action or nodal derivative result is available.",
+  "numerical_evaluator_calls": 0,
+  "reference_calls": 0,
+  "root_location_calls": 0,
+  "scope": "Saved hashes, full identity joins, lifecycle receipts and exact rational arithmetic on stored endpoints only.",
+  "status": "passed_saved_failure_readback",
+  "trigonometry_calls": 0
+}

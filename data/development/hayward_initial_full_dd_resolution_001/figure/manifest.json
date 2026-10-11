@@ -1,0 +1,61 @@
+{
+  "scope": "INITIAL saved model, stage 0, catalog only; no final-model covariance claim",
+  "input_sha256": {
+    "initial_full_resolution.csv": "476a10570da54820ae6adec92296b6a2acb7c9237b9bb9b1d7dd80ac4dbd5c35",
+    "initial_full_resolution_picks.csv": "0b139f16ae6709f2a8acf0ca78c4ee4cd492f4735ad81d974ed905934057a581",
+    "initial_full_resolution_matrices.npz": "81cf9830ff85285fd29128c3af8b1fe3ac4ad88a680764480e03154cab0374ad",
+    "initial_full_resolution_manifest.json": "2dabf4387a1a637ec915218b7e73511f109587e1bcc8a0f194625a6f33e273ac",
+    "initial_full_dd_identifiers.json.gz": "976e721be2a97badd69f710c3dee42eb17ed8d32cd00ca409ba936e6a69838a9",
+    "initial_full_dd_identifiers_manifest.json": "6649ac1fd3d6c848b428ad3d1f38aee35e49e7bda6477a55e66bcf33485f21e0"
+  },
+  "scientific_inventory_sha256": "d7f328c983840cc15ddf99718f6f7f5f87f7e1a6d898a5f9ee2ea36cc0a73aa3",
+  "plot_script_sha256": "3ffaa8920c2936430afa00a102ddd57a63b98e323675a666364c54e24c3e5f5a",
+  "model_nodes": 462,
+  "section_points": 83895,
+  "section_y_km": [
+    -30,
+    -20,
+    -10,
+    0,
+    10,
+    20,
+    30
+  ],
+  "covariance_display": "Cv=diag(v) Cq diag(v); sigma(point)=sqrt(w Cv w). Nodal sigmas are not interpolated.",
+  "resolution_display": "The saved nodal resolution diagonal is interpolated for display, not redefined as pointwise resolution.",
+  "identity_map": "Both copied companions retain contributing event/origin/pick/channel/epoch IDs and matrix node order. Each section row saves its eight node indices and basis weights.",
+  "artifact_identity_maps": {
+    "sections.csv.gz": "node_0 through node_7 index model_nodes in initial_full_dd_identifiers.json.gz; weight_0 through weight_7 give the full velocity basis. All contributing native observation identities remain in that companion.",
+    "initial_full_dd_resolution.pdf": "Rendered from sections.csv.gz; all contributor identities are in initial_full_dd_identifiers.json.gz.",
+    "initial_full_dd_resolution.png": "Rendered from sections.csv.gz; all contributor identities are in initial_full_dd_identifiers.json.gz."
+  },
+  "noise_assumption": "Independent primitive catalog-pick errors; provider symmetric timing uncertainty is assumed to represent one standard deviation, although confidence levels are not supplied. Catalog differences reuse the same constituent errors. This is an uncertainty-scale assumption, not instrument-response calibration. No cross-correlation input.",
+  "limitations": [
+    "Conditional on fixed robust/distance weights, kernel masks, column scales, and computed ray branches.",
+    "Source-domain bounds and their active sets are omitted; this is not the covariance of the constrained nonlinear estimator.",
+    "Reference catalog origin baselines are held fixed; source-coordinate and origin-time parameters remain jointly coupled in the local estimator.",
+    "Excludes correlated station/model errors, selection effects, regularization bias, nonlinear errors, and ray/derivative errors.",
+    "No cross-correlation data or independent differential noise are inferred.",
+    "Unmasked response uses the computed local ray derivatives and is not a first-arrival accuracy certificate."
+  ],
+  "negative_variances_within_roundoff_allowance": 0,
+  "variance_roundoff_allowance": "64 binary64 eps times sum of absolute quadratic-form terms; values within this allowance are displayed as zero.",
+  "resolution_range": [
+    -1.6510649787431347e-05,
+    0.801720766532849
+  ],
+  "sigma_max_km_s": 0.049412179707721764,
+  "masked_diagonal_color_limits": [
+    0,
+    1
+  ],
+  "colorbar_extend": "min",
+  "controls": "Independent two-variable covariance and tensor-basis midpoint/endpoint checks passed before input reads.",
+  "output_sha256": {
+    "initial_full_dd_identifiers.json.gz": "976e721be2a97badd69f710c3dee42eb17ed8d32cd00ca409ba936e6a69838a9",
+    "initial_full_dd_identifiers_manifest.json": "6649ac1fd3d6c848b428ad3d1f38aee35e49e7bda6477a55e66bcf33485f21e0",
+    "sections.csv.gz": "658394454f635436d5c6bd8b28c9347109cfc381b936d864b495225aaf154678",
+    "initial_full_dd_resolution.pdf": "901cf1939d21f016aaaad4e31cbeda9b236d239b284304c866455cadf0ff400c",
+    "initial_full_dd_resolution.png": "ced684a8542e1a55d8054d5206aa695d70cb03a87701713aaeb6074913efc172"
+  }
+}

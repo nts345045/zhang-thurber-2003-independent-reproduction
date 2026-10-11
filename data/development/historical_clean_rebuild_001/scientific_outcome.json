@@ -1,0 +1,285 @@
+{
+  "claims": {
+    "authoritative_geometry_recovery": false,
+    "full_cohort_ray_accuracy": false,
+    "global_first_arrival_certificate": false,
+    "panel_status_promotion": false,
+    "published_baseline_figures_replaced": false
+  },
+  "command": [
+    "./rebuild.sh"
+  ],
+  "commit": "976d2590c60fae542e25c37c8b2352ff3765c6a1",
+  "component_checks": {
+    "passed": 48,
+    "total": 48
+  },
+  "elapsed_seconds": 9597,
+  "inversions": [
+    {
+      "command_exit_code": 0,
+      "directory": "data/synthetic",
+      "history_rows": 18,
+      "last_saved_history_row": {
+        "absolute_rms": "0.343191296455",
+        "catalog_rms": "0.451156808816",
+        "iteration": "17",
+        "location_step": "0.10637581147",
+        "lsqr_converged": "1",
+        "lsqr_iterations": "180",
+        "lsqr_relative_normal_residual": "1.37602471277e-09",
+        "objective_after": "27.2741470853",
+        "objective_before": "27.292777163",
+        "precise_rms": "0.450436067012",
+        "ray_converged_count": "347",
+        "ray_count": "3840",
+        "ray_projected_gradient_max": "0.0248220476251",
+        "ray_raw_gradient_max": "0.0248220476251",
+        "stage": "2",
+        "step_fraction": "1",
+        "velocity_step": "0.0109293456872"
+      },
+      "mode": "standard",
+      "scope": "history RMS and ray fields describe the pre-update linearization; final grid/events are separate outputs"
+    },
+    {
+      "command_exit_code": 0,
+      "directory": "data/synthetic",
+      "history_rows": 18,
+      "last_saved_history_row": {
+        "absolute_rms": "0.360350027945",
+        "catalog_rms": "0.415075740017",
+        "iteration": "17",
+        "location_step": "0.260221942515",
+        "lsqr_converged": "1",
+        "lsqr_iterations": "200",
+        "lsqr_relative_normal_residual": "6.06777984769e-09",
+        "objective_after": "13.9419544113",
+        "objective_before": "13.9895082951",
+        "precise_rms": "0.413002630896",
+        "ray_converged_count": "1126",
+        "ray_count": "3840",
+        "ray_projected_gradient_max": "0.0870209982673",
+        "ray_raw_gradient_max": "0.0870209982673",
+        "stage": "2",
+        "step_fraction": "1",
+        "velocity_step": "0.00934903968693"
+      },
+      "mode": "dd",
+      "scope": "history RMS and ray fields describe the pre-update linearization; final grid/events are separate outputs"
+    },
+    {
+      "command_exit_code": 0,
+      "directory": "data/synthetic",
+      "history_rows": 15,
+      "last_saved_history_row": {
+        "absolute_rms": "0.633242417292",
+        "catalog_rms": "0.511487540023",
+        "iteration": "17",
+        "location_step": "0.343144642331",
+        "lsqr_converged": "1",
+        "lsqr_iterations": "160",
+        "lsqr_relative_normal_residual": "2.39975119332e-09",
+        "objective_after": "150.585050174",
+        "objective_before": "150.650081235",
+        "precise_rms": "0.510261962982",
+        "ray_converged_count": "3840",
+        "ray_count": "3840",
+        "ray_projected_gradient_max": "9.78571028234e-15",
+        "ray_raw_gradient_max": "9.78571028234e-15",
+        "stage": "2",
+        "step_fraction": "1",
+        "velocity_step": "0"
+      },
+      "mode": "loc1d",
+      "scope": "history RMS and ray fields describe the pre-update linearization; final grid/events are separate outputs"
+    },
+    {
+      "command_exit_code": 0,
+      "directory": "data/synthetic",
+      "history_rows": 18,
+      "last_saved_history_row": {
+        "absolute_rms": "0.176186269991",
+        "catalog_rms": "0.0577282656336",
+        "iteration": "17",
+        "location_step": "0.101514534647",
+        "lsqr_converged": "1",
+        "lsqr_iterations": "160",
+        "lsqr_relative_normal_residual": "1.36348205119e-09",
+        "objective_after": "0.308309577179",
+        "objective_before": "0.331136684087",
+        "precise_rms": "0.0153593139862",
+        "ray_converged_count": "1598",
+        "ray_count": "3840",
+        "ray_projected_gradient_max": "0.134695342908",
+        "ray_raw_gradient_max": "0.134695342908",
+        "stage": "2",
+        "step_fraction": "1",
+        "velocity_step": "0"
+      },
+      "mode": "loc3d",
+      "scope": "history RMS and ray fields describe the pre-update linearization; final grid/events are separate outputs"
+    },
+    {
+      "command_exit_code": 0,
+      "directory": "data/recovery",
+      "history_rows": 7,
+      "last_saved_history_row": {
+        "absolute_rms": "0.00312744194777",
+        "catalog_rms": "0.00469401292803",
+        "iteration": "6",
+        "location_step": "0",
+        "lsqr_converged": "1",
+        "lsqr_iterations": "80",
+        "lsqr_relative_normal_residual": "3.90644578468e-09",
+        "objective_after": "0.00200055942432",
+        "objective_before": "0.00200055942432",
+        "precise_rms": "0.00469401292803",
+        "ray_converged_count": "111",
+        "ray_count": "256",
+        "ray_projected_gradient_max": "0.00823647912574",
+        "ray_raw_gradient_max": "0.00823647912574",
+        "stage": "2",
+        "step_fraction": "0",
+        "velocity_step": "0"
+      },
+      "mode": "loc3d",
+      "scope": "history RMS and ray fields describe the pre-update linearization; final grid/events are separate outputs"
+    },
+    {
+      "command_exit_code": 0,
+      "directory": "data/joint_recovery",
+      "history_rows": 12,
+      "last_saved_history_row": {
+        "absolute_rms": "0.00560462689842",
+        "catalog_rms": "0.00035883578476",
+        "iteration": "11",
+        "location_step": "0.0116994784777",
+        "lsqr_converged": "1",
+        "lsqr_iterations": "160",
+        "lsqr_relative_normal_residual": "5.5183546899e-09",
+        "objective_after": "7.29513775274e-06",
+        "objective_before": "1.01224633804e-05",
+        "precise_rms": "0.00035883578476",
+        "ray_converged_count": "256",
+        "ray_count": "256",
+        "ray_projected_gradient_max": "9.95759507783e-08",
+        "ray_raw_gradient_max": "9.95759507783e-08",
+        "stage": "2",
+        "step_fraction": "1",
+        "velocity_step": "0.000356207954847"
+      },
+      "mode": "dd",
+      "scope": "history RMS and ray fields describe the pre-update linearization; final grid/events are separate outputs"
+    },
+    {
+      "command_exit_code": 0,
+      "directory": "data/synthetic_lom",
+      "history_rows": 18,
+      "last_saved_history_row": {
+        "absolute_rms": "0.370808492076",
+        "catalog_rms": "0.411083244884",
+        "iteration": "17",
+        "location_step": "0.245627825112",
+        "lsqr_converged": "1",
+        "lsqr_iterations": "200",
+        "lsqr_relative_normal_residual": "1.67579129165e-09",
+        "objective_after": "13.7859237888",
+        "objective_before": "13.8627557772",
+        "precise_rms": "0.408954808052",
+        "ray_converged_count": "1040",
+        "ray_count": "3840",
+        "ray_projected_gradient_max": "0.0251645014496",
+        "ray_raw_gradient_max": "0.0251645014496",
+        "stage": "2",
+        "step_fraction": "1",
+        "velocity_step": "0.0116734825276"
+      },
+      "mode": "dd",
+      "scope": "history RMS and ray fields describe the pre-update linearization; final grid/events are separate outputs"
+    },
+    {
+      "command_exit_code": 0,
+      "directory": "data/synthetic_lon",
+      "history_rows": 18,
+      "last_saved_history_row": {
+        "absolute_rms": "0.360205091084",
+        "catalog_rms": "0.414788117435",
+        "iteration": "17",
+        "location_step": "0.00171699509555",
+        "lsqr_converged": "1",
+        "lsqr_iterations": "200",
+        "lsqr_relative_normal_residual": "2.07831716946e-09",
+        "objective_after": "14.4508825021",
+        "objective_before": "14.4521739425",
+        "precise_rms": "0.412748892721",
+        "ray_converged_count": "1133",
+        "ray_count": "3840",
+        "ray_projected_gradient_max": "0.0313742130041",
+        "ray_raw_gradient_max": "0.0313742130041",
+        "stage": "2",
+        "step_fraction": "0.0078125",
+        "velocity_step": "7.95620859656e-05"
+      },
+      "mode": "dd",
+      "scope": "history RMS and ray fields describe the pre-update linearization; final grid/events are separate outputs"
+    }
+  ],
+  "panel_status_counts": {
+    "independently reproduced": 1,
+    "partially reproduced": 61
+  },
+  "procedure_completed": true,
+  "record_type": "historical synthetic rebuild scientific outcome",
+  "regenerated_plot_files": 18,
+  "report": {
+    "bytes": 2819523,
+    "pages": 125,
+    "path": "report/report.pdf",
+    "sha256": "54a3b6165335f5aaad84797ea08e2d9b90a99a692e5ea124f94b028abf117271",
+    "successful_tex_passes": 2
+  },
+  "report_figure_dependencies": {
+    "regenerated": 8,
+    "reused_byte_identical": 13
+  },
+  "sampled_ray_diagnostics": {
+    "dd": {
+      "finite_difference_components": 24,
+      "finite_difference_rays": 8,
+      "historical_fd_component_tolerance_s_per_km": 0.003,
+      "invented_observation_association_rows": 2712,
+      "max_absolute_production_fd_error_s_per_km": 0.000422882600544,
+      "max_absolute_refined_fd_error_s_per_km": 0.000415531161779,
+      "max_absolute_refinement_difference_s": 0.000350541590349,
+      "production_converged": 11,
+      "rays": 32,
+      "refined_converged": 29
+    },
+    "standard": {
+      "finite_difference_components": 24,
+      "finite_difference_rays": 8,
+      "historical_fd_component_tolerance_s_per_km": 0.003,
+      "invented_observation_association_rows": 2712,
+      "max_absolute_production_fd_error_s_per_km": 0.000162537165659,
+      "max_absolute_refined_fd_error_s_per_km": 0.000152546702136,
+      "max_absolute_refinement_difference_s": 0.00066964816162,
+      "production_converged": 2,
+      "rays": 32,
+      "refined_converged": 26
+    },
+    "truth": {
+      "finite_difference_components": 24,
+      "finite_difference_rays": 8,
+      "historical_fd_component_tolerance_s_per_km": 0.003,
+      "invented_observation_association_rows": 2712,
+      "max_absolute_production_fd_error_s_per_km": 0.00030234353467,
+      "max_absolute_refined_fd_error_s_per_km": 0.000311202197065,
+      "max_absolute_refinement_difference_s": 0.000559236595168,
+      "production_converged": 16,
+      "rays": 32,
+      "refined_converged": 26
+    }
+  },
+  "source_edits_during_attempt": false
+}

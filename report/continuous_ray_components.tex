@@ -1,0 +1,73 @@
+\subsection{Continuous layered-ray components}
+
+The finite-polygon endpoint discrepancy motivates a separate continuous-curve
+calculation. This component retains the original isotropic Fermat functional
+and the finite model box. Straight segments represent constant-speed and
+vertical legs; circular arcs represent positive affine depth gradients; a
+horizontal guide may lie on the physical bottom. The curve used for integration
+is distinct from its sampled display polygon. Its branch information does not
+set a polygon gradient or production convergence flag.
+
+For a single affine interval, $v(z)=v_0+g(z-z_0)$ with $g>0$, the unbounded
+arc travel time is
+\begin{equation}
+ T=\frac{2}{g}\operatorname{arsinh}
+ \left(\frac{gD}{2\sqrt{v_s v_r}}\right),
+\end{equation}
+where $D$ is the Euclidean endpoint separation and $v_s,v_r$ are the endpoint
+speeds. A finite-bottom guide replaces an inadmissibly deep arc when horizontal
+range reaches
+\begin{equation}
+ R_* = \frac{\sqrt{v_b^2-v_s^2}+\sqrt{v_b^2-v_r^2}}{g},
+\end{equation}
+where $v_b$ is the bottom speed. The implementation includes the homogeneous
+and vertical limits. It stores a small angular sweep independently of the
+starting angle to avoid cancellation in nearly straight arcs. It does not yet
+enumerate general piecewise-layered or three-dimensional branches.
+
+The integration component retains every nodal trilinear basis function $N_j$,
+including the lateral model degrees of freedom about an exactly depth-only
+base. On each supplied curve it calculates
+\begin{equation}
+ T=\int\frac{ds}{v},\qquad
+ \frac{\partial T}{\partial v_j}=-\int\frac{N_j}{v^2}\,ds,\qquad
+ \ell_j=\int N_j\,ds.
+\end{equation}
+The final quantity supplies the existing DD length mask. Each curve piece is
+split at all crossed $x$, $y$, and $z$ grid planes. Sixteen-point quadrature
+supplies the result; comparison with eight-point quadrature is a numerical
+diagnostic, not an interval error bound. The global depth-only check uses
+exact nodal equality. A lateral model change therefore invalidates this
+specialization. Unique nodal envelope derivatives also require a unique
+relevant ray; supplied tied or incomplete branch status remains unresolved.
+
+Two independent sets of invented controls passed. Across nine homogeneous,
+affine, reversed, bottom-guided and nearly homogeneous cases, the largest
+integrated-time discrepancy from the separate closed-form calculation is
+$5.42\times10^{-19}$ s, and receiver closure is within
+$1.27\times10^{-18}$ km. Central differences of the analytic travel time agree
+with source-momentum components within $2.63\times10^{-13}$ s/km. Separate
+polynomial and trigonometric antiderivatives check every nodal kernel in
+homogeneous and affine fixtures. Their largest velocity-partial and nodal-length
+differences are $3.80\times10^{-19}$ s$^2$/km and
+$1.52\times10^{-18}$ km. The complete 58 and 24 checks, sources and replay
+commands are preserved in
+\path{data/development/layered_curved_components_001/}.
+The documented fresh-directory replay rebuilt both control programs and
+reproduced all three scientific result files byte for byte.
+
+Two subsequent tests used reference-selected rays from the authoritative
+Loma Prieta geometry: a bottom-guided ray and an interior-turning ray.
+Construction completed with six and five pieces, respectively. Both calls
+to the unchanged integrator failed because a quadrature node rounded to a
+partition endpoint. Neither produced a completed native integral or display.
+The largest intended-versus-stored depth-join differences were
+$8.67\times10^{-19}$ and $1.30\times10^{-18}$ km. These saved discrepancies
+are distinct from the reported integration failure; their causal role needs
+the separate partition diagnosis. The complete inputs, identities, selected
+references and failures are retained in
+\path{data/development/layered_reference_selected_curves_001/}.
+
+These results establish a limited continuous-curve component. No real-data
+inversion, updated-model accuracy result, or manuscript-panel promotion follows
+from these tests.

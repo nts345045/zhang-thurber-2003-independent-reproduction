@@ -59,6 +59,15 @@ distinguish fixed, tied and reoptimized nodes, and expose both representation er
 and incomplete relaxation. Accurate integration, more nodes or a true local flag
 alone did not resolve all value-derivative discrepancies. Zeroing boundary
 derivatives would also discard valid nonzero derivatives in other cases.
+The separate [continuous-curve component](data/development/layered_curved_components_001/README.md)
+now passes 58 affine and 24 independent nodal-integral checks, including a
+documented replay. These controls cover limited layered geometry; the component
+has not replaced the production forward calculation. Two subsequent catalog-derived
+curve constructions succeeded, but both integrations rejected a quadrature node
+that rounded to a grid-partition endpoint. Those
+[failed native tests](data/development/layered_reference_selected_curves_001/README.md)
+are preserved separately; manufactured-case success did not establish native
+robustness.
 
 **Small samples and relaxed stopping do not validate the full inverse calculation.**
 The [completed legacy baseline
@@ -100,17 +109,30 @@ inverted. Its sparse CC connectivity does not determine combined-system rank or
 resolution. The squared correlation coefficient is an empirical row multiplier
 (fourth power in the objective), not a measured timing variance.
 
-**Full-DD uncertainty and complete rebuilding remain unfinished.** Published field
-resolution uses absolute picks, assumed independent one-sigma pick errors and
-unconstrained sources; it is not total model uncertainty. [Full-DD input and algebra
-controls](data/development/full_dd_resolution_ray_input_checks_001/README.md) and
-the [identified geometry
-export](data/development/hayward_full_dd_geometry_adoption_002/README.md) prepare
-the required analysis, but no accepted full-DD field covariance has been produced.
-It still needs a declared saved model with validated rays and derivatives, and the
-actual matrix, weights, masks and shared-pick identities. The [report
-checkpoint](data/development/authoritative_geometry_cc_report_001/RESULTS.md)
+**Final-model uncertainty and complete rebuilding remain unfinished.** The earlier
+field diagnostic uses only absolute picks at the legacy DD estimate. The new
+[initial-model full-DD calculation](data/development/hayward_initial_full_dd_resolution_001/README.md)
+includes catalog differences, source coupling and shared primitive-pick errors.
+All 14,262 initial rays passed the saved reference and geometry checks; the
+462-node matrices and seven-section display are complete. The display propagates
+the full covariance to interpolated velocity. These results remain conditional on
+initial sources/model and stage-0 weights, with reported symmetric pick
+uncertainties assumed to be one sigma. Active source bounds, model and ray errors,
+regularization bias and nonlinear uncertainty remain excluded. They do not supply
+final-model covariance or total model uncertainty. The [report
+checkpoint](data/development/initial_full_dd_report_001/RESULTS.md)
 compiles, and [clean committed-input plot
 replay](data/development/authoritative_geometry_cc_checkout_replay_001/RESULTS.md)
 passes using the existing runtime. A clean end-to-end rebuild of corrected
 inversions, recovery tests, resolution and report remains pending.
+
+The separate [historical clean rebuild](data/development/historical_clean_rebuild_001/README.md)
+completed all eight prescribed inversions and 48 component checks in 9,597
+seconds at commit `976d2590c60f`. Its sampled truth, standard and DD ray checks
+retained only 16/32, 2/32 and 11/32 true production convergence flags. Refinement
+did not eliminate every failure. Successful command completion therefore did
+not establish numerical acceptance or change the one/61 panel audit. The new
+results are preserved separately from the original synthetic figures. In the
+120-source experiment, location RMS error increased from 1.112 km initially to
+3.061 km for standard tomography and 1.388 km for DD tomography, despite passing
+the separate small homogeneous recovery control.

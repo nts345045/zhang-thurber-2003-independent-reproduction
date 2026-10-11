@@ -1,0 +1,44 @@
+{
+  "artifact_index_maps": {
+    "initial_full_resolution.csv": "node indexes model_nodes; velocity and both resolution diagonals use that order",
+    "initial_full_resolution_manifest.json": "all event/origin, receiver epoch, observation endpoint and pick mappings are in this companion",
+    "initial_full_resolution_matrices.npz": "both axes of all four arrays index model_nodes in saved grid order",
+    "initial_full_resolution_picks.csv": "pick_column indexes primitive_picks in first-appearance observation/side order"
+  },
+  "closed_review_sha256": {
+    "comparison.json": "519d373bf90cd718aea5bae1da75f71a3e6c9fcdbf62ff5f57fe00fa7c5768bd",
+    "comparison_execution_receipt.json": "1ade657bc06a51058ada146b3f34d3d8d78732743027d19ff914861e33706121",
+    "execution_receipt.json": "03392f9aef9bb72e7a4ae52d7de4dfeed501245abbfbf7eed2d964819905ec48",
+    "geometry_execution_receipt.json": "cfe83a611bc3ed3e677324a4f970541797937cbfcda595b5395a7bc2155c4bea",
+    "geometry_review.json": "6d227abd6e3516c8b97a644b53621cd21200d8d3b31b05fe122b3c59de12f228"
+  },
+  "counts": {
+    "events": 1092,
+    "model_nodes": 462,
+    "observations": 58980,
+    "primitive_picks": 14262,
+    "receiver_epochs": 372
+  },
+  "identity_file": "initial_full_dd_identifiers.json.gz",
+  "identity_sha256": "976e721be2a97badd69f710c3dee42eb17ed8d32cd00ca409ba936e6a69838a9",
+  "input_sha256": {
+    "authoritative_ids_required": "00d86d4465702c0424ec511ef34eee9eb080977c55c21ac8af2106257760ba47",
+    "initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "initial_full_linearization_columns.csv": "1f8a2ec0cf97e31bbe379a137956a7a427d864064bf71db8c729a5a204f9f1c6",
+    "initial_full_linearization_info.csv": "826723dca332c69f38782002e9081e15166966c18f0c0bc8fd9e15689bc28ae8",
+    "initial_full_linearization_matrix.csv": "5943c2b06859cc479918d7b22661a482c3b0f23a119d514d5d951589f7d3514d",
+    "initial_full_linearization_rays.csv": "a504df08d6568b42aff8e3d1c88d962e50ff92a99911b8ebcbe1b357f430a592",
+    "initial_full_linearization_rows.csv": "a98866accaa83b68603828c9fdbffe8314570f5890d909a32072bb77b929a0fe",
+    "initial_full_linearization_smoothing_matrix.csv": "d675eecc8c32569f8c701ebd73351b0c5bc4455b70d14369c83a8348340c0340",
+    "initial_full_linearization_smoothing_rows.csv": "f1f58bfe7c238fbb77c475cc225928393458578807582729ba0a744c804d521d",
+    "initial_full_linearization_suppressed.csv": "bcdf8d5c75baea5a53fa56c78a6af38233a318b5ce48ed381f1294f0549ba398",
+    "initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "run.cfg": "74dfc638231af871e81014486b20ebf275858fb6fefa99e17dfd7879e01191e4",
+    "stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652"
+  },
+  "noise_assumption": "Independent primitive catalog-pick errors; provider symmetric timing uncertainty is assumed to represent one standard deviation, although confidence levels are not supplied. Catalog differences reuse the same constituent errors. This is an uncertainty-scale assumption, not instrument-response calibration. No cross-correlation input.",
+  "resolution_script_sha256": "64315e341200cbac98be78e45a03de81eb040e96d265ab1adb15c9d08b907d43",
+  "status": "identity_companion_prepared_before_numerical_resolution",
+  "writer_sha256": "954d5004707702ba2be4aee5169fe699f33c923133cf88cef0296e8c13efaecf"
+}
