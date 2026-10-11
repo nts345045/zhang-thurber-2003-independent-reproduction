@@ -1,0 +1,96 @@
+{
+  "comparison_checkpoint": {
+    "binary_sha256": "cc7504adfc875fe4a846ef43d0a9322ef04443acefa6cbddba5e3bd53141940d",
+    "both_native_inversions_started": true,
+    "completed_numerical_outcomes": false,
+    "modes": [
+      "standard",
+      "loc1d"
+    ],
+    "preparation_and_compilation_completed": true
+  },
+  "compilation": {
+    "actual_tex_passes": 2,
+    "errors": [],
+    "return_codes": [
+      0,
+      0
+    ],
+    "source_hashes_unchanged": true,
+    "status": "passed",
+    "warnings": [
+      "Underfull \\vbox (badness 10000) detected at line 21"
+    ]
+  },
+  "documentation_sha256": {
+    "FAILURE_SUMMARY.md": "d6e7b8d09269ac4227a0dfed355d198682ecd430ea70d1e0d1ed1c45ed821c41",
+    "README.md": "7c5a389082fbe7476917aa5688b8f79acb77d072c653d01ebffdaadb2016655d",
+    "REBUILD.md": "cd0806f869682055c7dc54f9e31169c76c878ecda0ffa1abefd1b4c19022f64d",
+    "data/development/hayward_catalog_comparisons_001/ATTEMPTS.md": "e40fcdcf8445886da08c0f9bafb1e1b39056c3dad73fe14de00f5e7fc0851877"
+  },
+  "loma_outcomes": {
+    "lom": {
+      "distinct_failed_rays": 49,
+      "inverse_updates": 0,
+      "local_failures": 1,
+      "source_failures": 48,
+      "status": "inverse_not_started_initial_forward_validation_failed"
+    },
+    "lon": {
+      "distinct_failed_rays": 50,
+      "inverse_updates": 0,
+      "local_failures": 0,
+      "source_failures": 50,
+      "status": "inverse_not_started_initial_forward_validation_failed"
+    }
+  },
+  "package_sha256": {
+    "data/development/hayward_catalog_comparisons_001/manifest.json": "eea1640a05d5cb9d2ecf45c510173ba8db9b0941e5809a0165d21735d641bf16",
+    "data/development/loma_inverse_outcome_001/manifest.json": "ef4fd9193d117b0c3f4c70c44bddf2327621479e98f957fedafe883be739314e"
+  },
+  "panel_status": {
+    "independently_reproduced": 1,
+    "partially_reproduced": 61
+  },
+  "pdf": {
+    "bytes": 3218846,
+    "file": "report/report.pdf",
+    "pages": 131,
+    "sha256": "401b60ea28f17aecde90d76b02fc81eb5e1cf4f867516bb8dcc73577d005b002"
+  },
+  "preceding_report": {
+    "commit": "af07f8d1ea00362c61dbc7c208bf069f36d80602",
+    "pdf_sha256": "e80f5f3b61cd4e79a163eb6d0c4e4b16535751abf268c0970920fe5560f57d6d",
+    "validation": "report/endpoint_mesh_validation.json"
+  },
+  "report_source_sha256": {
+    "report/continuous_ray_components.tex": "0a9fb7f2bc6aff92b7c88af4ec8ad24114d72cc6ce42ad998faca7aba5da9bb0",
+    "report/hayward_full_results_section.tex": "1ef7149792af3ba4ce5a8f9492bdaa5ced41d4117de654a2316306a7dcfc7e28",
+    "report/hayward_results.tex": "4722d2a9473bcc1be0b3671f7efe1b25b408d42d36e8938ffa6bbc6522420614",
+    "report/hayward_velocity_checkpoint.tex": "d2c1b70f84acf00729ff7aca23b8ad14ad98b06d49fe9fc4555152c2a126ec59",
+    "report/initial_full_dd_resolution.tex": "6d9d802d22c0b0280f6b7f5f500c927311990ad192cbfc5400f84ffe083cc8e5",
+    "report/joint_findings.tex": "4e94b1553e76b20051e6195b1d0b71d8097ce7d892fd6b2879cd233f72e43ee6",
+    "report/metrics.tex": "1adf4e381d0a645cec73b919eb176e23ae55f33d4f253717630d5dd2b480077a",
+    "report/panel_details.tex": "a44c3a176bc33ad69e67787a97251a9b851f6ec118370581bdeeb9bf2fff7f0b",
+    "report/panel_table.tex": "03a4f24c131c6e1cc2d0c619e753df67f541d87c741133a9956d6aa5cf45ed65",
+    "report/ray_failure_checkpoint.tex": "c4e64d2b323c353b4bcb92f24adf0d0e2c5e024d187299237a464f0035cf112d",
+    "report/ray_findings.tex": "87e02479f0fbd6e43ae564965e2ea79ee7bdad4670cdd62bbca25115f22f4fad",
+    "report/recovery_checkpoint.tex": "343dce5d348b381bfd47b34b1ff3e0b526afb439763d89fb1aca0d7aa5112cea",
+    "report/report.tex": "978a3beae692308922dde0d22c365f8beb2ca7b0e30125ccadd49b80d620b1c9",
+    "report/run_findings.tex": "c301712aeba4366c6b33a61d5939d2f3567a7dce0734aff2c62a2e936e37c28f",
+    "report/sensitivity_table.tex": "89e36d73e854c23e8baeb7436e33b7474c4fa82b318f6f39f26b3a26167aacfb",
+    "report/spatial_table.tex": "40139003a2d2ee5eae0a1ddd42af178bddc086642c8cd5687e617c399e873d9d",
+    "report/validation_table.tex": "2df4790edf0dfa6bf59fa64f9f42a943a75d77df7d0b6ffe4f061caaab08d343",
+    "report/velocity_metrics.tex": "9da0ab0e781f625c2abe70910c6ae0884a44adb5e8bf84ddbacec4bed8e45a62"
+  },
+  "scope": "Closed LOM/LON initial-validation outcomes, corrected rebuild provenance, and actual launch of the two catalog-only comparison workflows. No completed comparison model claimed.",
+  "visual_review": {
+    "finding": "Rebuild scope, explicit failed preflight outcomes and active comparison account are legible without clipping or overlap.",
+    "pages": [
+      15,
+      37,
+      54
+    ],
+    "status": "passed"
+  }
+}

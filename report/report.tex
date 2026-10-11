@@ -435,20 +435,31 @@ A synthetic resolution matrix would not reproduce Figure 11, so none is
 substituted here.
 
 \section{Rebuild and artifact provenance}
-Run the following command from the project root:
+The historical synthetic workflow is invoked from the project root with:
 \begin{lstlisting}
 ./rebuild.sh
 \end{lstlisting}
 It configures and builds C++, runs validation, generates observations,
 performs four main inversion comparisons, two starting-profile sensitivities,
 fixed-model and joint recovery tests, and true/final-model ray checks,
-computes metrics,
-generates all figures and audit tables, and compiles this report twice with
-pdfLaTeX. Its outcome is recorded in \path{data/rebuild_result.txt} only
+computes metrics, regenerates its synthetic figures and audit tables, and
+compiles this report twice with pdfLaTeX using the other saved report
+dependencies. It does not rerun the field inversions or regenerate all later
+diagnostic figures. Its outcome is recorded in \path{data/rebuild_result.txt} only
 when all commands have succeeded. Machine-readable numerical checks and
 iteration histories remain in \path{data/}; raw console logs are local
 diagnostics excluded from the shared repository. All caches and build intermediates
 are confined to the project directory.
+
+\path{REBUILD.md} gives the current command and dependency account. It separates
+the historical field workflow, authoritative Figure 2 and CC-support replots,
+accepted-state displays, the initial-model full-DD calculation, and the
+guarded catalog-plus-CC attempt. The latter produces a short outcome report;
+the comprehensive report is assembled separately from the committed figures,
+tables and panel audit. Replotting saved data or compiling the report does not
+repeat the underlying inversions. Each recorded failure or partial result
+retains its own scope; the audit remains one reproduced panel and 61 partial
+panels.
 
 For the baseline delivery, the complete clean procedure finished successfully on
 9 October 2026 in 801 seconds, with all 32 implementation consistency checks

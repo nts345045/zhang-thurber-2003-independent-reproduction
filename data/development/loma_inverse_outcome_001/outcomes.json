@@ -1,0 +1,388 @@
+{
+  "consumed_closed_evidence_sha256": {
+    "data/development/loma_lom_initial_accuracy_001/comparison.csv.gz": "4199956147f8d4cfbf44feef54950ceb243a2aae5ea2b9ceb70ae603ee68fb04",
+    "data/development/loma_lom_initial_accuracy_001/inputs/preflight/initial_events.csv": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+    "data/development/loma_lom_initial_accuracy_001/inputs/preflight/initial_grid.csv": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f",
+    "data/development/loma_lom_initial_accuracy_001/inputs/preflight/run.cfg": "dc1effa319378e76db5c4459ea01a791d1a371458863d8c90cc9937fdd10bed8",
+    "data/development/loma_lom_initial_accuracy_001/inputs/preflight/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "data/development/loma_lom_initial_accuracy_001/summary.json": "72ed25dbde4bc14b1e0967f6a1880ff396683735c723b41f633e081a085fe6bb",
+    "data/development/loma_lon_initial_accuracy_001/comparison.csv.gz": "d01b4e45740ca741c2251cb7d226088a62445802cf3bc4aa1f0cf807aad8983b",
+    "data/development/loma_lon_initial_accuracy_001/inputs/preflight/initial_events.csv": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48",
+    "data/development/loma_lon_initial_accuracy_001/inputs/preflight/initial_grid.csv": "121eb9afae309427db7dc579f951d1732ce6f28d674948889bde91ca88d5dcd0",
+    "data/development/loma_lon_initial_accuracy_001/inputs/preflight/run.cfg": "b2bbdc79e2c5b94452fdca78424d3c69dc816158a4ac5fb964285efc5c195c27",
+    "data/development/loma_lon_initial_accuracy_001/inputs/preflight/stations.csv": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da",
+    "data/development/loma_lon_initial_accuracy_001/summary.json": "27044f9a6e96a55706924eceb85f9a87ba4465ac5ae3e8ef8fb8c87d2637d7ac",
+    "data/loma_lom_initial_preflight_001/preflight_checks.json": "2792ad6dfff6e27df03a4a0419170c2814b2c661bbed07f046c03077671ab98d",
+    "data/loma_lom_initial_preflight_001/preflight_execution.json": "b1eafa69377828abfa0ac41ffe26a6df0a29d1777aad26c209656cf278d93b09",
+    "data/loma_lon_initial_preflight_001/preflight_checks.json": "fc9ad3ceac971cab70556f01a69522fc9cf68cb5dbe26b805372394704f5dd86",
+    "data/loma_lon_initial_preflight_001/preflight_execution.json": "24ee05019ee822d84b5349e5f9fd92c56ac2a3e195d06e0c5646c0ab1a3a570c",
+    "data/published/loma_lom_analytic_001/manifest.json": "ac5443300be85779c789221ade281dc164f88fcc0559812735eb189903329695",
+    "data/published/loma_lom_analytic_001/readable/preparation_manifest.json": "951464e9b44c536b6fb241b45e046053b2b73d0c338a31b25c4cf0f66d20c90a",
+    "data/published/loma_lon_analytic_001/files/preparation_manifest.json": "ae361697f110ae6886e9e6e16dae24ccc9b9db8dee2cbd191043ba6daea12411",
+    "data/published/loma_lon_analytic_001/manifest.json": "9ccab3cb28abe7d6480b4b0c88ef88e31f487bdf183687b22c4ef1485ef13093"
+  },
+  "historical_manifest": {
+    "documentation_only_refresh": {
+      "base_readme_after": {
+        "bytes": 1761,
+        "sha256": "0a7e0a5ed57cf11238bcaf276bf0c615bbaeda49d862b43bf745ad8e3ad2916f"
+      },
+      "base_readme_before": {
+        "bytes": 1295,
+        "sha256": "a93ebb61b446638de3ffb9d4a7be6584c8d2c51143dfc5181adb3d80efcfee3a"
+      },
+      "overlay_readme_after": {
+        "bytes": 1739,
+        "sha256": "6ecca95aae30484a1928342480725b9726bf91d06dfc6c238bff5f4f82b4c2c6"
+      },
+      "overlay_readme_before": {
+        "bytes": 1266,
+        "sha256": "8c5bb459a5c2fd084e030a42e0b9b570e98212cf36b0cb1781f794e052d8d375"
+      }
+    },
+    "package_path": "historical/lon_manifest_before_status_links.json",
+    "sha256": "9ccab3cb28abe7d6480b4b0c88ef88e31f487bdf183687b22c4ef1485ef13093"
+  },
+  "numerical_errors_recomputed": false,
+  "observation_census_repeated": false,
+  "observation_table_rehash": false,
+  "profiles": [
+    {
+      "comparison_counts": {
+        "modeled_values_finite": 37648,
+        "numerically_compared": 37648,
+        "original_flags_and_path_pass": 37647,
+        "reference_eligible": 37648,
+        "saved_local_converged": 37647,
+        "scientific_pass": 37599,
+        "source_vector_limit_pass": 37600,
+        "time_limit_pass": 37648
+      },
+      "configuration": {
+        "authoritative_geometry": "1",
+        "damping": "0.1",
+        "fmm_spacing": "0.125",
+        "initial_model": "1",
+        "initial_velocity": "5.5",
+        "iterations": "1",
+        "location_noise": "0.6",
+        "matrix_preflight_only": "1",
+        "noise": "0.04",
+        "pair_distance": "20",
+        "ray_initializer": "1",
+        "ray_iterations": "1000",
+        "ray_spacing": "0.03125",
+        "raycheck_receiver_batch": "4",
+        "seed": "2003",
+        "smoothing": "5",
+        "stage_length": "6",
+        "station_noise": "0.3",
+        "time_quantum": "0.01"
+      },
+      "distinct_failed_rays": 49,
+      "earliest_failed_prerequisite": "Existing inverse plan step 3: initial forward/source-Jacobian checks",
+      "failed_original_local_checks": 1,
+      "failed_rows_file": "failures/lom.csv",
+      "failed_rows_sidecar": "failures/lom.csv.identifiers.json",
+      "failed_source_vector_checks": 48,
+      "failed_time_checks": 0,
+      "input_files": {
+        "initial_events.csv": {
+          "repository_path": "data/development/loma_lom_initial_accuracy_001/inputs/preflight/initial_events.csv",
+          "sha256": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48"
+        },
+        "initial_grid.csv": {
+          "repository_path": "data/development/loma_lom_initial_accuracy_001/inputs/preflight/initial_grid.csv",
+          "sha256": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f"
+        },
+        "run.cfg": {
+          "repository_path": "data/development/loma_lom_initial_accuracy_001/inputs/preflight/run.cfg",
+          "sha256": "dc1effa319378e76db5c4459ea01a791d1a371458863d8c90cc9937fdd10bed8"
+        },
+        "stations.csv": {
+          "repository_path": "data/development/loma_lom_initial_accuracy_001/inputs/preflight/stations.csv",
+          "sha256": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da"
+        }
+      },
+      "inverse_started": false,
+      "inverse_updates": 0,
+      "limits": {
+        "source_euclidean_norm_s_per_km": 3e-06,
+        "time_absolute_s": 2.5e-05
+      },
+      "matrix_census": {
+        "active_data_rows": "15669056",
+        "columns": "3184",
+        "csr_payload_bytes": "7753377620",
+        "damped_entries": "625217505",
+        "damped_rows": "15672972",
+        "iteration": "0",
+        "lsqr_row_workspace_bound_bytes": "376151328",
+        "numeric_observation_bytes": "637295360",
+        "observation_rows": "15932384",
+        "residual_weight_bytes": "254918144",
+        "smoothing_rows": "732"
+      },
+      "maximum_source_vector_error_s_per_km": 1.5850655663200005e-05,
+      "maximum_time_error_s": 2.8983983377806055e-06,
+      "nonlinear_inverse_failure": false,
+      "outcome": "inverse not started: initial forward validation failed",
+      "preflight_attempted": true,
+      "preflight_scientific_checks": {
+        "change": "byte-identical scientific checks; historical awaiting-reference label retained",
+        "package_path": "preflight/lom_checks.json",
+        "sha256": "2792ad6dfff6e27df03a4a0419170c2814b2c661bbed07f046c03077671ab98d"
+      },
+      "profile": "LOM",
+      "published_simulation_repository_path": "data/published/loma_lom_analytic_001/README.md",
+      "recorded_preflight_process_status": "completed",
+      "recorded_preflight_return_code": 0,
+      "recovery_output_reason": "No nonlinear inverse calculation started. Initial, truth, preflight and fixed-polygon diagnostic files are not recovered outputs.",
+      "recovery_outputs": {
+        "double_difference": {
+          "inverse_updates": 0,
+          "recovered_velocity_model": null,
+          "relocated_sources": null
+        },
+        "standard": {
+          "inverse_updates": 0,
+          "recovered_velocity_model": null,
+          "relocated_sources": null
+        }
+      },
+      "reference_comparison_repository_path": "data/development/loma_lom_initial_accuracy_001/README.md",
+      "sampled_preflight": {
+        "derivative_components": 24,
+        "local_failures": [],
+        "maximum_absolute_time_refinement_s": 1.69253522753e-06,
+        "maximum_production_fd_error_s_per_km": 5.6794606465e-07,
+        "maximum_refined_fd_error_s_per_km": 1.760758836e-07,
+        "numerical_magnitudes_status": "Retained for scientific review; no new sampled accuracy threshold imposed",
+        "sample_rays": 104
+      },
+      "simulation_overrides": {
+        "counts": {
+          "absolute_rows": 37648,
+          "catalog_rows": 7947368,
+          "diagnostic_sample_rays": 104,
+          "events": 724,
+          "precise_rows": 7947368,
+          "receivers": 52,
+          "strict_below_20km_pairs": 152834,
+          "total_rows": 15932384,
+          "unique_rays": 37648
+        },
+        "event_order": "Unchanged selected_events.csv order",
+        "initialization": "simulate creates initial_events.csv with independent Gaussian 0.6 km errors on each coordinate, clamped to the finite grid, plus independent 0.05 s origin corrections. These values are independent assumptions, not recovered target inputs.",
+        "model_assumptions": "Sample tabulated gradient adaptation at target inversion depths; interpolate between these samples in solver; extend its surface velocity constantly above z=0. This resampling does not retain every original gradient break.",
+        "native_source_path_base": "Provider source_file values retain their original data/authoritative/loma_prieta-relative base; original raw response files are unchanged.",
+        "profile": "LOM",
+        "profile_depth_km": [
+          0,
+          2,
+          6.7,
+          24,
+          26
+        ],
+        "profile_source": "USGS OFR 93-578 Table 4, pp.17-18, documented gradient adaptation attributed to Dietz and Ellsworth; not verified target start",
+        "profile_vp_km_s": [
+          3,
+          4.95,
+          5.94,
+          6.64,
+          8
+        ],
+        "random_sequence": "std::mt19937 seed 2003; C++ normal/uniform distributions; all source xyz/time perturbation draws precede station bias and pick-noise draws. Library/compiler build must be frozen for replay.",
+        "sampled_grid_depth_km": [
+          -1.0,
+          0,
+          3,
+          7,
+          11,
+          16
+        ],
+        "sampled_grid_vp_km_s": [
+          3,
+          3,
+          5.160638297872341,
+          5.9521387283237,
+          6.113988439306358,
+          6.316300578034682
+        ],
+        "station_order": "Unchanged selected_channels.csv order; native NSLC and epoch preserved",
+        "timing_definition": "T=continuous selected local ray action; Q=0.01*round(T/0.01), C++ halfway away from zero; A=Q+Uniform_station(-0.3,0.3)+Normal_pick(0,0.04). Absolute A; catalog A_i-A_j; precise Q_i-Q_j. Precise rounding difference error can approach 0.01 s, not 0.005 s."
+      },
+      "total_rays": 37648
+    },
+    {
+      "comparison_counts": {
+        "modeled_values_finite": 37648,
+        "numerically_compared": 37648,
+        "original_flags_and_path_pass": 37648,
+        "reference_eligible": 37648,
+        "saved_local_converged": 37648,
+        "scientific_pass": 37598,
+        "source_vector_limit_pass": 37598,
+        "time_limit_pass": 37648
+      },
+      "configuration": {
+        "authoritative_geometry": "1",
+        "damping": "0.1",
+        "fmm_spacing": "0.125",
+        "initial_model": "2",
+        "initial_velocity": "5.5",
+        "iterations": "1",
+        "location_noise": "0.6",
+        "matrix_preflight_only": "1",
+        "noise": "0.04",
+        "pair_distance": "20",
+        "ray_initializer": "1",
+        "ray_iterations": "1000",
+        "ray_spacing": "0.03125",
+        "raycheck_receiver_batch": "4",
+        "seed": "2003",
+        "smoothing": "5",
+        "stage_length": "6",
+        "station_noise": "0.3",
+        "time_quantum": "0.01"
+      },
+      "distinct_failed_rays": 50,
+      "earliest_failed_prerequisite": "Existing inverse plan step 3: initial forward/source-Jacobian checks",
+      "failed_original_local_checks": 0,
+      "failed_rows_file": "failures/lon.csv",
+      "failed_rows_sidecar": "failures/lon.csv.identifiers.json",
+      "failed_source_vector_checks": 50,
+      "failed_time_checks": 0,
+      "input_files": {
+        "initial_events.csv": {
+          "repository_path": "data/development/loma_lon_initial_accuracy_001/inputs/preflight/initial_events.csv",
+          "sha256": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48"
+        },
+        "initial_grid.csv": {
+          "repository_path": "data/development/loma_lon_initial_accuracy_001/inputs/preflight/initial_grid.csv",
+          "sha256": "121eb9afae309427db7dc579f951d1732ce6f28d674948889bde91ca88d5dcd0"
+        },
+        "run.cfg": {
+          "repository_path": "data/development/loma_lon_initial_accuracy_001/inputs/preflight/run.cfg",
+          "sha256": "b2bbdc79e2c5b94452fdca78424d3c69dc816158a4ac5fb964285efc5c195c27"
+        },
+        "stations.csv": {
+          "repository_path": "data/development/loma_lon_initial_accuracy_001/inputs/preflight/stations.csv",
+          "sha256": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da"
+        }
+      },
+      "inverse_started": false,
+      "inverse_updates": 0,
+      "limits": {
+        "source_euclidean_norm_s_per_km": 3e-06,
+        "time_absolute_s": 2.5e-05
+      },
+      "matrix_census": {
+        "active_data_rows": "15669056",
+        "columns": "3184",
+        "csr_payload_bytes": "7766663456",
+        "damped_entries": "626324658",
+        "damped_rows": "15672972",
+        "iteration": "0",
+        "lsqr_row_workspace_bound_bytes": "376151328",
+        "numeric_observation_bytes": "637295360",
+        "observation_rows": "15932384",
+        "residual_weight_bytes": "254918144",
+        "smoothing_rows": "732"
+      },
+      "maximum_source_vector_error_s_per_km": 9.863357300680003e-06,
+      "maximum_time_error_s": 4.8766574405334495e-06,
+      "nonlinear_inverse_failure": false,
+      "outcome": "inverse not started: initial forward validation failed",
+      "preflight_attempted": true,
+      "preflight_scientific_checks": {
+        "change": "byte-identical scientific checks; historical awaiting-reference label retained",
+        "package_path": "preflight/lon_checks.json",
+        "sha256": "fc9ad3ceac971cab70556f01a69522fc9cf68cb5dbe26b805372394704f5dd86"
+      },
+      "profile": "LON",
+      "published_simulation_repository_path": "data/published/loma_lon_analytic_001/README.md",
+      "recorded_preflight_process_status": "completed",
+      "recorded_preflight_return_code": 0,
+      "recovery_output_reason": "No nonlinear inverse calculation started. Initial, truth, preflight and fixed-polygon diagnostic files are not recovered outputs.",
+      "recovery_outputs": {
+        "double_difference": {
+          "inverse_updates": 0,
+          "recovered_velocity_model": null,
+          "relocated_sources": null
+        },
+        "standard": {
+          "inverse_updates": 0,
+          "recovered_velocity_model": null,
+          "relocated_sources": null
+        }
+      },
+      "reference_comparison_repository_path": "data/development/loma_lon_initial_accuracy_001/README.md",
+      "sampled_preflight": {
+        "derivative_components": 24,
+        "local_failures": [],
+        "maximum_absolute_time_refinement_s": 3.02987050693e-06,
+        "maximum_production_fd_error_s_per_km": 1.56274501738e-06,
+        "maximum_refined_fd_error_s_per_km": 5.12683324775e-07,
+        "numerical_magnitudes_status": "Retained for scientific review; no new sampled accuracy threshold imposed",
+        "sample_rays": 104
+      },
+      "simulation_overrides": {
+        "counts": {
+          "absolute_rows": 37648,
+          "catalog_rows": 7947368,
+          "diagnostic_sample_rays": 104,
+          "events": 724,
+          "precise_rows": 7947368,
+          "receivers": 52,
+          "strict_below_20km_pairs": 152834,
+          "total_rows": 15932384,
+          "unique_rays": 37648
+        },
+        "event_order": "Unchanged selected_events.csv order",
+        "initialization": "simulate creates initial_events.csv with independent Gaussian 0.6 km errors on each coordinate, clamped to the finite grid, plus independent 0.05 s origin corrections. These values are independent assumptions, not recovered target inputs.",
+        "model_assumptions": "Sample tabulated gradient adaptation at target inversion depths; interpolate between these samples in solver; extend its surface velocity constantly above z=0. This resampling does not retain every original gradient break.",
+        "native_source_path_base": "Provider source_file values retain their original data/authoritative/loma_prieta-relative base; original raw response files are unchanged.",
+        "profile": "LON",
+        "profile_depth_km": [
+          0,
+          2.5,
+          8.9,
+          24,
+          26
+        ],
+        "profile_source": "USGS OFR 93-578 Table 4, pp.17-18, documented gradient adaptation attributed to Dietz and Ellsworth; not verified target start",
+        "profile_vp_km_s": [
+          2.53,
+          5.44,
+          6.29,
+          6.69,
+          7.98
+        ],
+        "random_sequence": "std::mt19937 seed 2003; C++ normal/uniform distributions; all source xyz/time perturbation draws precede station bias and pick-noise draws. Library/compiler build must be frozen for replay.",
+        "sampled_grid_depth_km": [
+          -1.0,
+          0,
+          3,
+          7,
+          11,
+          16
+        ],
+        "sampled_grid_vp_km_s": [
+          2.53,
+          2.53,
+          5.50640625,
+          6.03765625,
+          6.345629139072848,
+          6.478079470198676
+        ],
+        "station_order": "Unchanged selected_channels.csv order; native NSLC and epoch preserved",
+        "timing_definition": "T=continuous selected local ray action; Q=0.01*round(T/0.01), C++ halfway away from zero; A=Q+Uniform_station(-0.3,0.3)+Normal_pick(0,0.04). Absolute A; catalog A_i-A_j; precise Q_i-Q_j. Precise rounding difference error can approach 0.01 s, not 0.005 s."
+      },
+      "total_rays": 37648
+    }
+  ],
+  "scientific_limits": "Known retained initial source-vector failures suffice. No universal global-first-arrival proof or new all-ray strict 1e-7 requirement is imposed.",
+  "scope": "Scientific documentation closure from saved evidence. Zero new forward/reference/optimization/inverse/simulation calls; no threshold/kernel/selection change.",
+  "status": "closed_preflight_outcomes_no_inverse_started"
+}

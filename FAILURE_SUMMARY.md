@@ -100,6 +100,14 @@ in one finite source-displacement travel-time increment. Neither a small
 travel-time error nor a successful local stopping check alone validates the
 derivative of the optimized arrival used in tomography.
 
+The [authoritative LOM/LON recovery outcomes](data/development/loma_inverse_outcome_001/README.md)
+are now explicit: neither inverse was started because its initial forward
+validation failed. LOM retains 48 source-vector failures and one separate local
+failure; LON retains 50 source-vector failures. Both have zero inverse updates
+and no recovered model or location outputs. These dispositions follow the
+completed full-cohort checks; the later single-ray diagnostics do not supply
+the missing recovery results.
+
 **Guarded inversion progress remains intermediate.** The [first guarded
 attempt](data/development/hayward_guarded_failure_001/README.md) rejected its first
 trial because 181 rays failed local stopping. A separate catalog-only backtracking

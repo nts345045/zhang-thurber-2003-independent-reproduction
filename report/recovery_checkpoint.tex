@@ -676,7 +676,14 @@ Only 37,598 LON rays meet all full-ray comparison criteria. The complete identif
 and independent readback are in
 \path{data/development/loma_lon_initial_accuracy_001/} and
 \path{data/development/loma_lon_initial_accuracy_review_001/}.
-Both sampled preflights remain active. No inverse calculation is accepted.
+Both sampled preflights have completed. The authoritative LOM and LON recovery
+outcomes are therefore recorded as ``inverse not started: initial forward
+validation failed.'' Each has zero inverse updates and no recovered event or
+velocity model. The complete failed-row extracts, native identities and
+simulation overrides are preserved in
+\path{data/development/loma_inverse_outcome_001/}. These are failed initial
+validation attempts, not failed nonlinear inversions. Later single-ray
+diagnostics do not replace either full-cohort comparison.
 
 Observation-only replays preserve both initializers and their original
 numerical results for the two distinct failures. Pair 3426, event
@@ -914,7 +921,7 @@ apply to the finest grid, so their success does not remove this coarse failure.
 The \texttt{first-arrival-integration} branch now adopts the exact tested
 outer accumulator and usable-curvature helper. Segment actions, derivatives,
 line search, fallback, stopping rules and configurations remain unchanged.
-The failed Hayward attempt and running LOM/LON preflights retain their earlier
+The failed Hayward attempt and completed LOM/LON preflights retain their earlier
 frozen binaries. Their results cannot validate the new optimizer.
 The bounded tests and adoption record are in
 \path{data/development/usable_curvature_integration_checks_001/} and
@@ -1552,6 +1559,18 @@ preparation interpreter explicitly. Its source and saved-output reporting
 checks are in \path{data/development/hayward_corrected_rebuild_sources_001/}.
 This narrower rebuild does not supply corrected synthetic recovery or
 final-model uncertainty.
+
+Two separate guarded catalog-only comparisons now use that same frozen
+numerical source and the original 58,980 observations. Standard tomography
+uses absolute rows and estimates sources and velocities; fixed-model
+relocation holds the initial velocity grid and uses the original catalog-DD
+weighting stages. Both completed preparation and compilation and began their
+inversions. Neither has a completed result at this checkpoint. Their commands
+and output directories are documented in
+\path{data/development/hayward_catalog_comparisons_001/} and \path{REBUILD.md}.
+The common 14,262-ray initial reference check applies to their unchanged
+starting support; later moved-source and model states retain their separate
+current/trial/final checks.
 
 Catalog differences require a different covariance calculation from independent
 differential measurements because their constituent picks recur. Let $C$ map

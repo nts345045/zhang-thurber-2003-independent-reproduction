@@ -8,6 +8,13 @@ keeps manifests, configuration, logs, and native event/channel tables accessible
 All observations are synthetic; authoritative resource IDs identify geometry,
 not new provider picks. This package does not establish inversion accuracy.
 
+The [corrected recovery outcome](../../development/loma_inverse_outcome_001/README.md)
+is **inverse not started: initial forward validation failed**. The completed
+LOM preflight has 48 source-vector failures and one additional local-stopping
+failure among 37,648 rays. It made zero inverse updates; no recovered velocity
+model or relocated-source output is claimed. Full failed-row identities and
+simulation assumptions are preserved in the linked outcome package.
+
 Parts are consecutive bytes of one gzip-compressed tar stream, each at most
 50 MiB. Keep every part in order. Verification and restore use bounded memory:
 

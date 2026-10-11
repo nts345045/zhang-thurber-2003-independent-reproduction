@@ -1,0 +1,1121 @@
+{
+  "columns": [
+    "event",
+    "station",
+    "source_x",
+    "source_y",
+    "source_z",
+    "receiver_x",
+    "receiver_y",
+    "receiver_z",
+    "ray_time",
+    "ray_converged",
+    "ray_finite",
+    "ray_projected_gradient",
+    "ray_raw_gradient",
+    "ray_iterations",
+    "ray_merged_nodes",
+    "ray_initialization_attempted",
+    "ray_initialization_succeeded",
+    "ray_selected_fmm_seed",
+    "ray_direct_seed_time",
+    "ray_fmm_seed_time",
+    "ray_field_time",
+    "ray_extraction_fallback_steps",
+    "ray_extraction_message",
+    "source_t",
+    "source_dx",
+    "source_dy",
+    "source_dz",
+    "ray_path_points",
+    "ray_path_in_domain",
+    "ray_exact_source_endpoint",
+    "ray_exact_receiver_endpoint",
+    "source_event_resource_id",
+    "source_provider_event_dataid",
+    "source_provider_event_datasource",
+    "source_provider_event_eventid",
+    "source_origin_resource_id",
+    "source_magnitude_resource_id",
+    "source_origin_time_utc",
+    "source_origin_time_provider_text",
+    "source_latitude_deg",
+    "source_longitude_deg",
+    "source_geoid_depth_km",
+    "source_magnitude",
+    "source_magnitude_type",
+    "source_event_type",
+    "source_origin_evaluation_status",
+    "source_origin_method_resource_id",
+    "source_earth_model_resource_id",
+    "source_east_km",
+    "source_north_km",
+    "source_x_km",
+    "source_y_km",
+    "source_selected",
+    "source_exclusion_reasons",
+    "source_source_file",
+    "source_source_sha256",
+    "source_source_url",
+    "source_retrieved_utc",
+    "source_coordinate_basis",
+    "source_origin_resource_id_basis",
+    "source_simulation_origin_time_basis",
+    "receiver_network_code",
+    "receiver_station_code",
+    "receiver_station_seed_id",
+    "receiver_station_fdsn_source_id",
+    "receiver_location_code",
+    "receiver_channel_code",
+    "receiver_channel_seed_id",
+    "receiver_channel_fdsn_source_id",
+    "receiver_identifier_basis",
+    "receiver_latitude_deg",
+    "receiver_longitude_deg",
+    "receiver_channel_sensor_elevation_m",
+    "receiver_sensor_depth_below_ground_m",
+    "receiver_station_elevation_m",
+    "receiver_metadata_epoch_start",
+    "receiver_metadata_epoch_end",
+    "receiver_channel_epoch_start",
+    "receiver_channel_epoch_end",
+    "receiver_station_epoch_start",
+    "receiver_station_epoch_end",
+    "receiver_provider_channel_source_id",
+    "receiver_provider_channel_resource_ids_json",
+    "receiver_provider_station_resource_ids_json",
+    "receiver_provider_network_resource_ids_json",
+    "receiver_latitude_datum",
+    "receiver_longitude_datum",
+    "receiver_sensor_z_geoid_km",
+    "receiver_z_if_sensor_elevation_km",
+    "receiver_z_if_ground_elevation_km",
+    "receiver_vertical_coordinate_status",
+    "receiver_vertical_datum_basis",
+    "receiver_elevation_semantics",
+    "receiver_metadata_epoch_basis",
+    "receiver_metadata_source_kind",
+    "receiver_stationxml_schema_version",
+    "receiver_source_document_metadata_index",
+    "receiver_source_file",
+    "receiver_source_url",
+    "receiver_source_sha256",
+    "receiver_retrieved_utc",
+    "receiver_east_km",
+    "receiver_north_km",
+    "receiver_x_km",
+    "receiver_y_km",
+    "receiver_snapshot_utc",
+    "receiver_selected",
+    "receiver_exclusion_reasons",
+    "reference_pair_index",
+    "reference_complete",
+    "reference_valid",
+    "reference_candidate_count",
+    "reference_near_tie_count",
+    "reference_time_s",
+    "reference_branch",
+    "reference_turning_depth_km",
+    "reference_source_dx_s_per_km",
+    "reference_source_dy_s_per_km",
+    "reference_source_dz_s_per_km",
+    "reference_source_x",
+    "reference_source_y",
+    "reference_source_z",
+    "reference_source_t",
+    "reference_receiver_x",
+    "reference_receiver_y",
+    "reference_receiver_z",
+    "reference_receiver_t",
+    "reference_source_on_x_lower_face",
+    "reference_source_on_x_upper_face",
+    "reference_source_on_y_lower_face",
+    "reference_source_on_y_upper_face",
+    "reference_source_on_z_lower_face",
+    "reference_source_on_z_upper_face",
+    "reference_receiver_on_x_lower_face",
+    "reference_receiver_on_x_upper_face",
+    "reference_receiver_on_y_lower_face",
+    "reference_receiver_on_y_upper_face",
+    "reference_receiver_on_z_lower_face",
+    "reference_receiver_on_z_upper_face",
+    "reference_eligible",
+    "modeled_values_finite",
+    "numerically_compared",
+    "time_error_s",
+    "source_error_euclidean_norm_s_per_km",
+    "time_limit_pass",
+    "source_vector_limit_pass",
+    "original_flags_and_path_pass",
+    "scientific_pass",
+    "source_dx_error_s_per_km",
+    "source_dy_error_s_per_km",
+    "source_dz_error_s_per_km",
+    "comparison_row"
+  ],
+  "extraction": "Complete original header and field strings for the existing failure comparison_row values; CSV serialization regenerated, no numeric value/error recomputed.",
+  "failed_row_identifiers_and_reasons": [
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BCG__E_H_Z",
+      "channel_seed_id": "NC.BCG..EHZ",
+      "comparison_row": 1612,
+      "event": 31,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/10090670",
+      "location_code": "",
+      "metadata_epoch_end": "1990-10-03T19:50:00",
+      "metadata_epoch_start": "1989-06-09T19:00:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642454",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 0,
+      "station_code": "BCG"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BPC__E_H_Z",
+      "channel_seed_id": "NC.BPC..EHZ",
+      "comparison_row": 1613,
+      "event": 31,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/10090670",
+      "location_code": "",
+      "metadata_epoch_end": "1991-06-24T17:29:00",
+      "metadata_epoch_start": "1989-03-06T22:45:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642454",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 1,
+      "station_code": "BPC"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "channel_seed_id": "NC.BSL..EHZ",
+      "comparison_row": 1614,
+      "event": 31,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/10090670",
+      "location_code": "",
+      "metadata_epoch_end": "1990-09-10T19:20:00",
+      "metadata_epoch_start": "1989-08-25T19:45:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642454",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 2,
+      "station_code": "BSL"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSR__E_H_Z",
+      "channel_seed_id": "NC.BSR..EHZ",
+      "comparison_row": 1615,
+      "event": 31,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/10090670",
+      "location_code": "",
+      "metadata_epoch_end": "1990-03-13T21:15:00",
+      "metadata_epoch_start": "1989-02-21T19:30:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642454",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 3,
+      "station_code": "BSR"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BVY__E_H_Z",
+      "channel_seed_id": "NC.BVY..EHZ",
+      "comparison_row": 1616,
+      "event": 31,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/10090670",
+      "location_code": "",
+      "metadata_epoch_end": "1990-08-08T21:00:00",
+      "metadata_epoch_start": "1989-02-27T22:25:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642454",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 4,
+      "station_code": "BVY"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HFP__E_H_Z",
+      "channel_seed_id": "NC.HFP..EHZ",
+      "comparison_row": 1630,
+      "event": 31,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/10090670",
+      "location_code": "",
+      "metadata_epoch_end": "1990-08-02T23:10:00",
+      "metadata_epoch_start": "1989-05-05T21:40:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642454",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 18,
+      "station_code": "HFP"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HJS__E_H_Z",
+      "channel_seed_id": "NC.HJS..EHZ",
+      "comparison_row": 1634,
+      "event": 31,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/10090670",
+      "location_code": "",
+      "metadata_epoch_end": "1990-08-13T19:44:00",
+      "metadata_epoch_start": "1989-05-31T21:20:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642454",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 22,
+      "station_code": "HJS"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HLT__E_H_Z",
+      "channel_seed_id": "NC.HLT..EHZ",
+      "comparison_row": 1636,
+      "event": 31,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/10090670",
+      "location_code": "",
+      "metadata_epoch_end": "1990-02-14T21:58:00",
+      "metadata_epoch_start": "1989-05-19T21:20:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642454",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 24,
+      "station_code": "HLT"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+      "channel_seed_id": "NC.HQR..EHZ",
+      "comparison_row": 1640,
+      "event": 31,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/10090670",
+      "location_code": "",
+      "metadata_epoch_end": "1990-03-24T19:55:00",
+      "metadata_epoch_start": "1989-07-11T19:55:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642454",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 28,
+      "station_code": "HQR"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_JSJ__E_H_Z",
+      "channel_seed_id": "NC.JSJ..EHZ",
+      "comparison_row": 3426,
+      "event": 65,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/10090782",
+      "location_code": "",
+      "metadata_epoch_end": "1990-09-14T21:50:00",
+      "metadata_epoch_start": "1989-05-02T15:00:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642854",
+      "reasons": [
+        "ray_converged_false"
+      ],
+      "station": 46,
+      "station_code": "JSJ"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BCG__E_H_Z",
+      "channel_seed_id": "NC.BCG..EHZ",
+      "comparison_row": 14924,
+      "event": 287,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/261623",
+      "location_code": "",
+      "metadata_epoch_end": "1990-10-03T19:50:00",
+      "metadata_epoch_start": "1989-06-09T19:00:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2647304",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 0,
+      "station_code": "BCG"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+      "channel_seed_id": "NC.HQR..EHZ",
+      "comparison_row": 14952,
+      "event": 287,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/261623",
+      "location_code": "",
+      "metadata_epoch_end": "1990-03-24T19:55:00",
+      "metadata_epoch_start": "1989-07-11T19:55:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2647304",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 28,
+      "station_code": "HQR"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BCG__E_H_Z",
+      "channel_seed_id": "NC.BCG..EHZ",
+      "comparison_row": 16536,
+      "event": 318,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/262053",
+      "location_code": "",
+      "metadata_epoch_end": "1990-10-03T19:50:00",
+      "metadata_epoch_start": "1989-06-09T19:00:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2648254",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 0,
+      "station_code": "BCG"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BPC__E_H_Z",
+      "channel_seed_id": "NC.BPC..EHZ",
+      "comparison_row": 16537,
+      "event": 318,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/262053",
+      "location_code": "",
+      "metadata_epoch_end": "1991-06-24T17:29:00",
+      "metadata_epoch_start": "1989-03-06T22:45:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2648254",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 1,
+      "station_code": "BPC"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "channel_seed_id": "NC.BSL..EHZ",
+      "comparison_row": 16538,
+      "event": 318,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/262053",
+      "location_code": "",
+      "metadata_epoch_end": "1990-09-10T19:20:00",
+      "metadata_epoch_start": "1989-08-25T19:45:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2648254",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 2,
+      "station_code": "BSL"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSR__E_H_Z",
+      "channel_seed_id": "NC.BSR..EHZ",
+      "comparison_row": 16539,
+      "event": 318,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/262053",
+      "location_code": "",
+      "metadata_epoch_end": "1990-03-13T21:15:00",
+      "metadata_epoch_start": "1989-02-21T19:30:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2648254",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 3,
+      "station_code": "BSR"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BVY__E_H_Z",
+      "channel_seed_id": "NC.BVY..EHZ",
+      "comparison_row": 16540,
+      "event": 318,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/262053",
+      "location_code": "",
+      "metadata_epoch_end": "1990-08-08T21:00:00",
+      "metadata_epoch_start": "1989-02-27T22:25:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2648254",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 4,
+      "station_code": "BVY"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HFP__E_H_Z",
+      "channel_seed_id": "NC.HFP..EHZ",
+      "comparison_row": 16554,
+      "event": 318,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/262053",
+      "location_code": "",
+      "metadata_epoch_end": "1990-08-02T23:10:00",
+      "metadata_epoch_start": "1989-05-05T21:40:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2648254",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 18,
+      "station_code": "HFP"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HJS__E_H_Z",
+      "channel_seed_id": "NC.HJS..EHZ",
+      "comparison_row": 16558,
+      "event": 318,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/262053",
+      "location_code": "",
+      "metadata_epoch_end": "1990-08-13T19:44:00",
+      "metadata_epoch_start": "1989-05-31T21:20:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2648254",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 22,
+      "station_code": "HJS"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HKR__E_H_Z",
+      "channel_seed_id": "NC.HKR..EHZ",
+      "comparison_row": 16559,
+      "event": 318,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/262053",
+      "location_code": "",
+      "metadata_epoch_end": "1990-10-02T20:36:00",
+      "metadata_epoch_start": "1989-02-16T21:30:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2648254",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 23,
+      "station_code": "HKR"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HLT__E_H_Z",
+      "channel_seed_id": "NC.HLT..EHZ",
+      "comparison_row": 16560,
+      "event": 318,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/262053",
+      "location_code": "",
+      "metadata_epoch_end": "1990-02-14T21:58:00",
+      "metadata_epoch_start": "1989-05-19T21:20:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2648254",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 24,
+      "station_code": "HLT"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HPH_01_E_H_Z",
+      "channel_seed_id": "NC.HPH.01.EHZ",
+      "comparison_row": 16562,
+      "event": 318,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/262053",
+      "location_code": "01",
+      "metadata_epoch_end": "1990-01-22T20:30:00",
+      "metadata_epoch_start": "1989-01-18T22:05:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2648254",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 26,
+      "station_code": "HPH"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+      "channel_seed_id": "NC.HQR..EHZ",
+      "comparison_row": 16564,
+      "event": 318,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/262053",
+      "location_code": "",
+      "metadata_epoch_end": "1990-03-24T19:55:00",
+      "metadata_epoch_start": "1989-07-11T19:55:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2648254",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 28,
+      "station_code": "HQR"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HSF_01_E_H_Z",
+      "channel_seed_id": "NC.HSF.01.EHZ",
+      "comparison_row": 16565,
+      "event": 318,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/262053",
+      "location_code": "01",
+      "metadata_epoch_end": "1990-10-02T23:13:00",
+      "metadata_epoch_start": "1989-07-31T20:13:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2648254",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 29,
+      "station_code": "HSF"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+      "channel_seed_id": "NC.HQR..EHZ",
+      "comparison_row": 22544,
+      "event": 433,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/269979",
+      "location_code": "",
+      "metadata_epoch_end": "1990-03-24T19:55:00",
+      "metadata_epoch_start": "1989-07-11T19:55:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2655534",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 28,
+      "station_code": "HQR"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BCG__E_H_Z",
+      "channel_seed_id": "NC.BCG..EHZ",
+      "comparison_row": 24076,
+      "event": 463,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091537",
+      "location_code": "",
+      "metadata_epoch_end": "1990-10-03T19:50:00",
+      "metadata_epoch_start": "1989-06-09T19:00:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2658134",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 0,
+      "station_code": "BCG"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BPC__E_H_Z",
+      "channel_seed_id": "NC.BPC..EHZ",
+      "comparison_row": 24077,
+      "event": 463,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091537",
+      "location_code": "",
+      "metadata_epoch_end": "1991-06-24T17:29:00",
+      "metadata_epoch_start": "1989-03-06T22:45:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2658134",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 1,
+      "station_code": "BPC"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "channel_seed_id": "NC.BSL..EHZ",
+      "comparison_row": 24078,
+      "event": 463,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091537",
+      "location_code": "",
+      "metadata_epoch_end": "1990-09-10T19:20:00",
+      "metadata_epoch_start": "1989-08-25T19:45:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2658134",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 2,
+      "station_code": "BSL"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSR__E_H_Z",
+      "channel_seed_id": "NC.BSR..EHZ",
+      "comparison_row": 24079,
+      "event": 463,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091537",
+      "location_code": "",
+      "metadata_epoch_end": "1990-03-13T21:15:00",
+      "metadata_epoch_start": "1989-02-21T19:30:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2658134",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 3,
+      "station_code": "BSR"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BVY__E_H_Z",
+      "channel_seed_id": "NC.BVY..EHZ",
+      "comparison_row": 24080,
+      "event": 463,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091537",
+      "location_code": "",
+      "metadata_epoch_end": "1990-08-08T21:00:00",
+      "metadata_epoch_start": "1989-02-27T22:25:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2658134",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 4,
+      "station_code": "BVY"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HJS__E_H_Z",
+      "channel_seed_id": "NC.HJS..EHZ",
+      "comparison_row": 24098,
+      "event": 463,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091537",
+      "location_code": "",
+      "metadata_epoch_end": "1990-08-13T19:44:00",
+      "metadata_epoch_start": "1989-05-31T21:20:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2658134",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 22,
+      "station_code": "HJS"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HLT__E_H_Z",
+      "channel_seed_id": "NC.HLT..EHZ",
+      "comparison_row": 24100,
+      "event": 463,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091537",
+      "location_code": "",
+      "metadata_epoch_end": "1990-02-14T21:58:00",
+      "metadata_epoch_start": "1989-05-19T21:20:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2658134",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 24,
+      "station_code": "HLT"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+      "channel_seed_id": "NC.HQR..EHZ",
+      "comparison_row": 24104,
+      "event": 463,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091537",
+      "location_code": "",
+      "metadata_epoch_end": "1990-03-24T19:55:00",
+      "metadata_epoch_start": "1989-07-11T19:55:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2658134",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 28,
+      "station_code": "HQR"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BCG__E_H_Z",
+      "channel_seed_id": "NC.BCG..EHZ",
+      "comparison_row": 24284,
+      "event": 467,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091616",
+      "location_code": "",
+      "metadata_epoch_end": "1990-10-03T19:50:00",
+      "metadata_epoch_start": "1989-06-09T19:00:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2659234",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 0,
+      "station_code": "BCG"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BPC__E_H_Z",
+      "channel_seed_id": "NC.BPC..EHZ",
+      "comparison_row": 24285,
+      "event": 467,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091616",
+      "location_code": "",
+      "metadata_epoch_end": "1991-06-24T17:29:00",
+      "metadata_epoch_start": "1989-03-06T22:45:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2659234",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 1,
+      "station_code": "BPC"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "channel_seed_id": "NC.BSL..EHZ",
+      "comparison_row": 24286,
+      "event": 467,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091616",
+      "location_code": "",
+      "metadata_epoch_end": "1990-09-10T19:20:00",
+      "metadata_epoch_start": "1989-08-25T19:45:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2659234",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 2,
+      "station_code": "BSL"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSR__E_H_Z",
+      "channel_seed_id": "NC.BSR..EHZ",
+      "comparison_row": 24287,
+      "event": 467,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091616",
+      "location_code": "",
+      "metadata_epoch_end": "1990-03-13T21:15:00",
+      "metadata_epoch_start": "1989-02-21T19:30:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2659234",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 3,
+      "station_code": "BSR"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BVY__E_H_Z",
+      "channel_seed_id": "NC.BVY..EHZ",
+      "comparison_row": 24288,
+      "event": 467,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091616",
+      "location_code": "",
+      "metadata_epoch_end": "1990-08-08T21:00:00",
+      "metadata_epoch_start": "1989-02-27T22:25:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2659234",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 4,
+      "station_code": "BVY"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HJS__E_H_Z",
+      "channel_seed_id": "NC.HJS..EHZ",
+      "comparison_row": 24306,
+      "event": 467,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091616",
+      "location_code": "",
+      "metadata_epoch_end": "1990-08-13T19:44:00",
+      "metadata_epoch_start": "1989-05-31T21:20:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2659234",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 22,
+      "station_code": "HJS"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HLT__E_H_Z",
+      "channel_seed_id": "NC.HLT..EHZ",
+      "comparison_row": 24308,
+      "event": 467,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091616",
+      "location_code": "",
+      "metadata_epoch_end": "1990-02-14T21:58:00",
+      "metadata_epoch_start": "1989-05-19T21:20:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2659234",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 24,
+      "station_code": "HLT"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+      "channel_seed_id": "NC.HQR..EHZ",
+      "comparison_row": 24312,
+      "event": 467,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20091616",
+      "location_code": "",
+      "metadata_epoch_end": "1990-03-24T19:55:00",
+      "metadata_epoch_start": "1989-07-11T19:55:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2659234",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 28,
+      "station_code": "HQR"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BCG__E_H_Z",
+      "channel_seed_id": "NC.BCG..EHZ",
+      "comparison_row": 26364,
+      "event": 507,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20092287",
+      "location_code": "",
+      "metadata_epoch_end": "1990-10-03T19:50:00",
+      "metadata_epoch_start": "1989-06-09T19:00:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2665184",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 0,
+      "station_code": "BCG"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BPC__E_H_Z",
+      "channel_seed_id": "NC.BPC..EHZ",
+      "comparison_row": 26365,
+      "event": 507,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20092287",
+      "location_code": "",
+      "metadata_epoch_end": "1991-06-24T17:29:00",
+      "metadata_epoch_start": "1989-03-06T22:45:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2665184",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 1,
+      "station_code": "BPC"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSL__E_H_Z",
+      "channel_seed_id": "NC.BSL..EHZ",
+      "comparison_row": 26366,
+      "event": 507,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20092287",
+      "location_code": "",
+      "metadata_epoch_end": "1990-09-10T19:20:00",
+      "metadata_epoch_start": "1989-08-25T19:45:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2665184",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 2,
+      "station_code": "BSL"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BSR__E_H_Z",
+      "channel_seed_id": "NC.BSR..EHZ",
+      "comparison_row": 26367,
+      "event": 507,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20092287",
+      "location_code": "",
+      "metadata_epoch_end": "1990-03-13T21:15:00",
+      "metadata_epoch_start": "1989-02-21T19:30:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2665184",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 3,
+      "station_code": "BSR"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_BVY__E_H_Z",
+      "channel_seed_id": "NC.BVY..EHZ",
+      "comparison_row": 26368,
+      "event": 507,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20092287",
+      "location_code": "",
+      "metadata_epoch_end": "1990-08-08T21:00:00",
+      "metadata_epoch_start": "1989-02-27T22:25:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2665184",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 4,
+      "station_code": "BVY"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HJS__E_H_Z",
+      "channel_seed_id": "NC.HJS..EHZ",
+      "comparison_row": 26386,
+      "event": 507,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20092287",
+      "location_code": "",
+      "metadata_epoch_end": "1990-08-13T19:44:00",
+      "metadata_epoch_start": "1989-05-31T21:20:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2665184",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 22,
+      "station_code": "HJS"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HLT__E_H_Z",
+      "channel_seed_id": "NC.HLT..EHZ",
+      "comparison_row": 26388,
+      "event": 507,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20092287",
+      "location_code": "",
+      "metadata_epoch_end": "1990-02-14T21:58:00",
+      "metadata_epoch_start": "1989-05-19T21:20:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2665184",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 24,
+      "station_code": "HLT"
+    },
+    {
+      "channel_code": "EHZ",
+      "channel_fdsn_source_id": "FDSN:NC_HQR__E_H_Z",
+      "channel_seed_id": "NC.HQR..EHZ",
+      "comparison_row": 26392,
+      "event": 507,
+      "event_resource_id": "quakeml:NC.anss.org/Event/NC/20092287",
+      "location_code": "",
+      "metadata_epoch_end": "1990-03-24T19:55:00",
+      "metadata_epoch_start": "1989-07-11T19:55:00",
+      "network_code": "NC",
+      "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2665184",
+      "reasons": [
+        "source_vector_norm_exceeds_3e-6_s_per_km"
+      ],
+      "station": 28,
+      "station_code": "HQR"
+    }
+  ],
+  "identity_scope": "Provider event/origin, SEED/FDSN, valid blank location, metadata epochs and provenance are copied verbatim in all source_/receiver_ columns. source_x/y/z/t describe perturbed synthetic initial conditions; original provider fields remain separate. No new observed picks or source relocation is claimed.",
+  "input_files": {
+    "initial_events.csv": {
+      "repository_path": "data/development/loma_lom_initial_accuracy_001/inputs/preflight/initial_events.csv",
+      "sha256": "1804277ec710107e49a7a9140eeb2972c6683198069c00f15d7794bfc4101f48"
+    },
+    "initial_grid.csv": {
+      "repository_path": "data/development/loma_lom_initial_accuracy_001/inputs/preflight/initial_grid.csv",
+      "sha256": "845a3f93c8f0b96138850da8290e60c41905bf69c2c23abec572da95a59b3b7f"
+    },
+    "run.cfg": {
+      "repository_path": "data/development/loma_lom_initial_accuracy_001/inputs/preflight/run.cfg",
+      "sha256": "dc1effa319378e76db5c4459ea01a791d1a371458863d8c90cc9937fdd10bed8"
+    },
+    "stations.csv": {
+      "repository_path": "data/development/loma_lom_initial_accuracy_001/inputs/preflight/stations.csv",
+      "sha256": "4500b0f7b97a2fa4f90f7dd18a22e5cc08b78843a711af5a39262f6a76d1a7da"
+    }
+  },
+  "profile": "LOM",
+  "row_count": 49,
+  "simulation_overrides": {
+    "counts": {
+      "absolute_rows": 37648,
+      "catalog_rows": 7947368,
+      "diagnostic_sample_rays": 104,
+      "events": 724,
+      "precise_rows": 7947368,
+      "receivers": 52,
+      "strict_below_20km_pairs": 152834,
+      "total_rows": 15932384,
+      "unique_rays": 37648
+    },
+    "event_order": "Unchanged selected_events.csv order",
+    "initialization": "simulate creates initial_events.csv with independent Gaussian 0.6 km errors on each coordinate, clamped to the finite grid, plus independent 0.05 s origin corrections. These values are independent assumptions, not recovered target inputs.",
+    "model_assumptions": "Sample tabulated gradient adaptation at target inversion depths; interpolate between these samples in solver; extend its surface velocity constantly above z=0. This resampling does not retain every original gradient break.",
+    "native_source_path_base": "Provider source_file values retain their original data/authoritative/loma_prieta-relative base; original raw response files are unchanged.",
+    "profile": "LOM",
+    "profile_depth_km": [
+      0,
+      2,
+      6.7,
+      24,
+      26
+    ],
+    "profile_source": "USGS OFR 93-578 Table 4, pp.17-18, documented gradient adaptation attributed to Dietz and Ellsworth; not verified target start",
+    "profile_vp_km_s": [
+      3,
+      4.95,
+      5.94,
+      6.64,
+      8
+    ],
+    "random_sequence": "std::mt19937 seed 2003; C++ normal/uniform distributions; all source xyz/time perturbation draws precede station bias and pick-noise draws. Library/compiler build must be frozen for replay.",
+    "sampled_grid_depth_km": [
+      -1.0,
+      0,
+      3,
+      7,
+      11,
+      16
+    ],
+    "sampled_grid_vp_km_s": [
+      3,
+      3,
+      5.160638297872341,
+      5.9521387283237,
+      6.113988439306358,
+      6.316300578034682
+    ],
+    "station_order": "Unchanged selected_channels.csv order; native NSLC and epoch preserved",
+    "timing_definition": "T=continuous selected local ray action; Q=0.01*round(T/0.01), C++ halfway away from zero; A=Q+Uniform_station(-0.3,0.3)+Normal_pick(0,0.04). Absolute A; catalog A_i-A_j; precise Q_i-Q_j. Precise rounding difference error can approach 0.01 s, not 0.005 s."
+  },
+  "source_comparison": {
+    "repository_path": "data/development/loma_lom_initial_accuracy_001/comparison.csv.gz",
+    "sha256": "4199956147f8d4cfbf44feef54950ceb243a2aae5ea2b9ceb70ae603ee68fb04",
+    "summary_repository_path": "data/development/loma_lom_initial_accuracy_001/summary.json",
+    "summary_sha256": "72ed25dbde4bc14b1e0967f6a1880ff396683735c723b41f633e081a085fe6bb"
+  },
+  "table_sha256": "9e8aad588378a7d58e7b42dc571e27bf02e9d2132419659cba721af8f0f61eed"
+}

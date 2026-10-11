@@ -470,7 +470,9 @@ returned first-edge length halves the source-partial error. A 2.74238% finite
 travel-time-increment discrepancy remains at one inward offset, so the checks
 do not establish optimized-source derivatives or a first arrival. The package
 retains all six cases, native identities, simulation overrides and numerical
-sources. This diagnostic does not replace the pending synthetic inversions.
+sources. It supplies no authoritative synthetic inverse result; the
+[LOM/LON outcome record](data/development/loma_inverse_outcome_001/README.md)
+documents the failed initial validation that prevented those inversions.
 
 A new [inversion forward guard](data/development/inversion_ray_gate_checks/README.md)
 on the integration branch rejects locally unconverged or otherwise invalid rays
@@ -643,12 +645,26 @@ earlier forward operators.
   iterations; `dd_accepted_it_N_events.csv` and `dd_accepted_it_N_grid.csv`
   preserve accepted updates. Trial and failure tables retain their own status.
   No completed update or final model was available at this checkpoint.
+- `data/hayward_standard_guarded_001/` and `data/hayward_loc1d_guarded_001/`:
+  separate [catalog-only comparison attempts](data/development/hayward_catalog_comparisons_001/ATTEMPTS.md)
+  in the integration worktree. Preparation and compilation passed; both
+  inversions are active. Inspect the `standard_*` or `loc1d_*` histories,
+  accepted snapshots and trial/failure files. No completed model is claimed.
 - [`data/published/loma_lom_analytic_001/`](data/published/loma_lom_analytic_001/README.md):
   complete, audited synthetic observations and authoritative geometry, with
-  verified archive restoration instructions. These are inputs for the corrected
-  Loma inversion, whose outputs are still pending.
+  verified archive restoration instructions. The
+  [LOM/LON recovery outcomes](data/development/loma_inverse_outcome_001/README.md)
+  record zero inverse updates: initial forward validation failed. Both profiles
+  retain their identified failed-ray rows; recovered event and velocity outputs
+  are unavailable.
 
 ## Build and run
+
+The [rebuild and replay guide](REBUILD.md) maps the commands below to their
+source versions, actual outcomes and figure dependencies. Numerical
+regeneration, saved-input plotting and compilation of the comprehensive report
+are separate operations; no single completed command regenerates every
+artifact in the current report.
 
 Requirements: C++17 compiler, CMake >=3.16, OpenMP, Python 3 with NumPy and
 Matplotlib, and pdfLaTeX with the `fontenc`, `lmodern`, `geometry`, `amsmath`,
@@ -684,13 +700,16 @@ the saved files are closed. Inspect `rebuild_outcome.json`, the identified
 accepted-state tables, and `report/report.pdf` under the requested output
 directory. Completion alone does not establish scientific reproduction.
 
-`./rebuild_hayward.sh` reuses the saved authoritative archive, prepares its
-identified subset, builds the solver, and runs absolute-data tomography,
-catalog DD tomography, and fixed-model relocation. It records source/input
+`./rebuild_hayward.sh` is the historical field workflow. It reuses the saved
+authoritative selection tables, prepares their identified subset, builds the
+solver, and runs absolute-data tomography, catalog DD tomography, and
+fixed-model relocation. It records source/input
 hashes and per-method logs in `data/hayward/`, then generates ray diagnostics,
-conditional resolution, figures, and the report. It uses three concurrent
-inversions with eight OpenMP threads each by default. This command makes no
-new web-service queries.
+absolute-arrival conditional resolution, figures, and the report. The recorded
+baseline used commit `3b674ba`; current root solver sources have since changed.
+This is separate from the guarded catalog-plus-CC attempt above. It uses three
+concurrent inversions with eight OpenMP threads each by default. This command
+makes no new web-service queries.
 
 ```sh
 ./rebuild.sh
@@ -700,16 +719,19 @@ The script compiles the model from clean object files with CMake's
 `--clean-first`, validates it, regenerates the synthetic observations,
 performs four main inversions, fixed-model and joint recovery tests, and
 two starting-model sensitivity inversions. It checks rays in the true and
-final standard/DD models, creates figures and audit tables, and compiles
-`report/report.pdf`. The LOM/LON sensitivity profiles are written gradient
-adaptations, not confirmed starting models for the target experiment.
+final standard/DD models, regenerates its synthetic figures and audit tables,
+and compiles `report/report.pdf` using the other saved report dependencies.
+It does not regenerate the field inversions or all later diagnostic figures.
+The LOM/LON sensitivity profiles are written gradient adaptations, not confirmed
+starting models for the target experiment.
 
 The eight inversions run concurrently; `OMP_NUM_THREADS` sets threads per
 process (default 8). Generation and final analysis remain sequential, and
 every inversion must exit successfully before analysis starts. A successful
-invocation overwrites all required numerical and report outputs. Caches and
-intermediate files stay inside the project. Standalone panel commands are
-in `FIGURE_AUDIT.md`.
+invocation refreshes the outputs of those scripted stages; other committed
+figures and tables can be reused by the report. Caches and intermediate files
+stay inside the project. Standalone panel commands are in `FIGURE_AUDIT.md`;
+[REBUILD.md](REBUILD.md) distinguishes their scope and recorded completion.
 
 Each invocation removes previous rebuild outcome records before starting.
 Only completion of every command writes `data/rebuild_result.txt`; a failed

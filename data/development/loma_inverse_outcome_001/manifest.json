@@ -1,0 +1,87 @@
+{
+  "claim_limits": "Both corrected inverses were not started because initial validation failed. No nonlinear inverse failure or recovered velocity/location output is claimed; limits and numerical implementations are unchanged.",
+  "consumed_evidence": "outcomes.json records exact closed evidence hashes. Its original LON publication-manifest hash is satisfied by historical/lon_manifest_before_status_links.json; the current public document-only refresh is pinned in related_documentation. Large observations were not rehashed.",
+  "files": {
+    "README.md": {
+      "bytes": 5161,
+      "sha256": "69f7a14d54ca55a6a907f376d434b0bc74fd6fa5a29b87659b2bc8d472673811"
+    },
+    "failures/lom.csv": {
+      "bytes": 135617,
+      "sha256": "9e8aad588378a7d58e7b42dc571e27bf02e9d2132419659cba721af8f0f61eed"
+    },
+    "failures/lom.csv.identifiers.json": {
+      "bytes": 38775,
+      "sha256": "c97928c571032cec30fe581c91874c5a5cb51371b4fc0b755e58c366602781d3"
+    },
+    "failures/lon.csv": {
+      "bytes": 139977,
+      "sha256": "eb03440394afe1cab447fa6c25e2848c9fe0f2acd0deeca17a9c61a01264aa10"
+    },
+    "failures/lon.csv.identifiers.json": {
+      "bytes": 39414,
+      "sha256": "40387fc51c940d1b8d446781ee1a790346a20e775f3a74f14c74522c9dca2d9b"
+    },
+    "historical/lon_manifest_before_status_links.json": {
+      "bytes": 22033,
+      "sha256": "9ccab3cb28abe7d6480b4b0c88ef88e31f487bdf183687b22c4ef1485ef13093"
+    },
+    "outcomes.json": {
+      "bytes": 18851,
+      "sha256": "f7d3a8ec9c53c94a894e601858a94fe5fc852db83fe833f9cc8e72ef248a8b80"
+    },
+    "preflight/lom_checks.json": {
+      "bytes": 1834,
+      "sha256": "2792ad6dfff6e27df03a4a0419170c2814b2c661bbed07f046c03077671ab98d"
+    },
+    "preflight/lon_checks.json": {
+      "bytes": 1213,
+      "sha256": "fc9ad3ceac971cab70556f01a69522fc9cf68cb5dbe26b805372394704f5dd86"
+    }
+  },
+  "format": "scientific-documentation-closure-v1",
+  "related_documentation": {
+    "data/published/loma_lom_analytic_001/README.md": {
+      "bytes": 1761,
+      "sha256": "0a7e0a5ed57cf11238bcaf276bf0c615bbaeda49d862b43bf745ad8e3ad2916f"
+    },
+    "data/published/loma_lon_analytic_001/README.md": {
+      "bytes": 1739,
+      "sha256": "6ecca95aae30484a1928342480725b9726bf91d06dfc6c238bff5f4f82b4c2c6"
+    },
+    "data/published/loma_lon_analytic_001/manifest.json": {
+      "bytes": 22033,
+      "sha256": "fa77a535e0d9da6dce8bf7311bcc737ede8117a540b3d16969c500ef80d4872c"
+    }
+  },
+  "status": "closed_preflight_outcomes_no_inverse_started",
+  "validation": {
+    "all_original_failed_comparison_fields_preserved": true,
+    "current_lon_manifest_only_two_readme_entries_changed": true,
+    "full_native_identifiers_and_simulation_overrides_preserved": true,
+    "new_numerical_calls": 0,
+    "no_private_absolute_machine_or_process_records": true,
+    "numerical_errors_recomputed": false,
+    "observation_census_repeated": false,
+    "observation_table_rehash": false,
+    "preflight_scientific_checks_byte_identical": true,
+    "prior_lon_manifest_byte_identical_to_git_HEAD": true,
+    "profiles": [
+      {
+        "complete_failed_row_identity_joins": 49,
+        "failed_rows": 49,
+        "inverse_updates": 0,
+        "preserved_columns": 152,
+        "profile": "LOM"
+      },
+      {
+        "complete_failed_row_identity_joins": 50,
+        "failed_rows": 50,
+        "inverse_updates": 0,
+        "preserved_columns": 152,
+        "profile": "LON"
+      }
+    ],
+    "relative_documentation_links_checked": 10
+  }
+}

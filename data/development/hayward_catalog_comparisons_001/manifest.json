@@ -1,0 +1,39 @@
+{
+  "counts": {
+    "absolute_rows": 14262,
+    "catalog_dd_rows": 44718,
+    "native_pairs": 14262,
+    "waveform_rows": 0
+  },
+  "effective_config": {
+    "authoritative_ids_required": 1.0,
+    "catalog_only_dd": 1.0,
+    "damping": 0.1,
+    "fmm_spacing": 0.125,
+    "iterations": 18.0,
+    "pair_distance": 10.0,
+    "ray_initializer": 1.0,
+    "ray_iterations": 1000.0,
+    "ray_spacing": 0.03125,
+    "smoothing": 10.0,
+    "stage_length": 6.0
+  },
+  "initial_reference_scope": "All 14262 original native pairs; no updated-state accuracy claim.",
+  "modes": [
+    "standard",
+    "loc1d"
+  ],
+  "new_execution_status": "not_executed_at_source_preparation",
+  "schema": 1,
+  "scientific_source": "data/development/hayward_corrected_rebuild_sources_001/source_mapping.json",
+  "scope": "Two separate catalog-only guarded comparison attempts; unchanged numerical source and original configuration.",
+  "sha256": {
+    "data/development/hayward_catalog_comparisons_001/README.md": "ae84a949f7fa6c5338ee46ae69bcfbebbb8d5ccaad57a2e3008d2f9eb395160e",
+    "data/development/hayward_catalog_comparisons_001/run.cfg": "18b023df0730d56e00bc9afcd84d4f5cefa874a7cc05721a94a51bda5d48ee6b",
+    "data/development/hayward_corrected_rebuild_sources_001/source_mapping.json": "d462f00bae8443fa32d10e0b1b226651e3712ab32d061a05e50d1b2207db4c95",
+    "data/development/hayward_first_arrival_004_1d_support/independent_review.json": "29e95b53bbaaedccb1d98c8d24f41561fd5f0b5886d1e972789ba4858c5ef325",
+    "data/development/hayward_first_arrival_004_1d_support/summary.json": "a1fc5194c83a65019a62add7b6ec5d10478be87dd5f6c8d7ffb9e6eab535ad7d",
+    "rebuild_hayward_corrected.py": "a9a07fa490b8eecdbdc10e3118288fbc3692b04800b75b224a53d8e763182769",
+    "run_hayward_catalog_comparison.py": "435ac92d7f4aa747997af30f0134276758d3dc4ff471af6bffba5eb7ddf51c2e"
+  }
+}

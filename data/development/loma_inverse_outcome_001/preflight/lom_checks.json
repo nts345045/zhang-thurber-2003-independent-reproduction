@@ -1,0 +1,52 @@
+{
+  "full": {
+    "full_rays": 37648,
+    "local_converged": 37647,
+    "local_failures": [
+      {
+        "event": 65,
+        "station": 46,
+        "event_resource_id": "quakeml:NC.anss.org/Event/NC/10090782",
+        "origin_resource_id": "quakeml:NC.anss.org/Origin/NC/2642854",
+        "network_code": "NC",
+        "station_code": "JSJ",
+        "location_code": "",
+        "channel_code": "EHZ",
+        "channel_seed_id": "NC.JSJ..EHZ",
+        "channel_fdsn_source_id": "FDSN:NC_JSJ__E_H_Z",
+        "metadata_epoch_start": "1989-05-02T15:00:00",
+        "metadata_epoch_end": "1990-09-14T21:50:00",
+        "row": 3426,
+        "reason": "unchanged local stopping criterion failed"
+      }
+    ],
+    "maximum_projected_gradient": 1.3761776566e-05,
+    "maximum_raw_gradient": 0.000843300816757,
+    "matrix_census": {
+      "iteration": "0",
+      "observation_rows": "15932384",
+      "active_data_rows": "15669056",
+      "smoothing_rows": "732",
+      "columns": "3184",
+      "damped_rows": "15672972",
+      "damped_entries": "625217505",
+      "csr_payload_bytes": "7753377620",
+      "numeric_observation_bytes": "637295360",
+      "residual_weight_bytes": "254918144",
+      "lsqr_row_workspace_bound_bytes": "376151328"
+    },
+    "matrix_stage": 0
+  },
+  "sample": {
+    "sample_rays": 104,
+    "derivative_components": 24,
+    "local_failures": [],
+    "maximum_absolute_time_refinement_s": 1.69253522753e-06,
+    "maximum_production_fd_error_s_per_km": 5.6794606465e-07,
+    "maximum_refined_fd_error_s_per_km": 1.760758836e-07,
+    "numerical_magnitudes_status": "Retained for scientific review; no new sampled accuracy threshold imposed"
+  },
+  "independent_reference_status": "awaiting separate full initial-z comparison",
+  "inversion_accepted": false,
+  "status": "failed_scientific_checks_preserved"
+}
