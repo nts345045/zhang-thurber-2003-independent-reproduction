@@ -142,8 +142,9 @@ inversions, recovery tests, resolution and report remains pending.
 The [new corrected procedure](data/development/hayward_corrected_rebuild_sources_001/README.md)
 now covers authoritative selection replay, the saved CC inputs, a frozen
 guarded solver build, one combined inversion attempt, and an outcome PDF.
-Its process and reporting controls passed; the complete command has not yet
-been run from a clean committed checkout. This narrower procedure does not
+Its process and reporting controls passed. A fresh checkout of commit
+`1d04838e7ac7` completed catalog preparation and compilation; its DD inversion
+is running. This narrower procedure does not
 complete the pending recovery and final-model resolution work.
 
 The separate [historical clean rebuild](data/development/historical_clean_rebuild_001/README.md)

@@ -551,7 +551,8 @@ regenerates this identified subset from the saved authoritative selection tables
 appends the saved CC measurements, compiles the frozen guarded solver, and makes
 one inversion attempt followed by a short outcome report. Process cleanup and
 saved-output reporting checks have passed. The complete command has not yet
-been run from a clean committed checkout.
+finished. It was launched from a fresh checkout of commit `1d04838e7ac7`;
+catalog preparation and compilation completed, and the DD inversion is running.
 
 [Read the PDF report](report/report.pdf) or the
 [panel-by-panel audit](FIGURE_AUDIT.md).
