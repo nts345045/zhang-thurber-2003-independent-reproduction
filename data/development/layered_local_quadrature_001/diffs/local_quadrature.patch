@@ -1,0 +1,108 @@
+--- diagnostic_source/layered_curved_ray.hpp
++++ source/layered_curved_ray.hpp
+@@ -186,11 +186,46 @@
+   std::sort(result.cuts.begin(),result.cuts.end());
+   result.cuts.erase(std::unique(result.cuts.begin(),result.cuts.end()),result.cuts.end());
+   for (std::size_t j=1;j<result.cuts.size();++j) {
+-    Real a0=result.cuts[j-1],b0=result.cuts[j],m=a0+(b0-a0)/2;
+-    require(a0<m && m<b0, "Grid-partition interval has no working-precision interior");
++    Real a0=result.cuts[j-1],b0=result.cuts[j],width=b0-a0;
++    require(finite(a0) && finite(b0) && a0>=0 && a0<b0 && b0<=1 &&
++            finite(width) && width>0, "Invalid positive grid-partition interval");
+   }
+   return result;
+ }
++
++// Quadrature uses q in (0,1) within each stored [a,b]. The endpoint choice
++// conditions the arithmetic; it imposes no physical constraint on the curve.
++class PieceSampler {
++  const Piece &piece;
++  const Meridional endpoint;
++  const Real end_angle;
++public:
++  explicit PieceSampler(const Piece &p):piece(p),endpoint(p.at(1)),
++    end_angle(p.kind==PieceKind::affine_arc ? p.theta0+p.sweep : 0) {}
++
++  Meridional from_end(Real distance) const {
++    require(finite(distance) && distance>=0 && distance<=1,
++            "Endpoint-relative parameter outside [0,1]");
++    if (distance==0) return endpoint;
++    if (piece.kind!=PieceKind::affine_arc)
++      return {endpoint.r-(piece.r1-piece.r0)*distance,
++              endpoint.z-(piece.z1-piece.z0)*distance};
++    Real half=piece.sweep*distance/2;
++    Real chord=2*std::sin(half)/piece.kappa;
++    return {endpoint.r-chord*std::sin(end_angle-half),
++            endpoint.z-chord*std::cos(end_angle-half)};
++  }
++
++  Meridional at_interval(Real a,Real b,Real q) const {
++    require(finite(a) && finite(b) && a>=0 && a<b && b<=1,
++            "Invalid local curve interval");
++    require(finite(q) && q>0 && q<1, "Local Gauss coordinate outside (0,1)");
++    // Compare distances of the interval midpoint from the two endpoints
++    // without forming that midpoint. Ties use the original forward formula.
++    if (a<=1-b) return piece.at(a+(b-a)*q);
++    return from_end((1-b)+(b-a)*(1-q));
++  }
++};
+ 
+ struct Accumulator {
+   Real action=0;
+@@ -234,6 +269,7 @@
+   std::vector<Real> dv,length;
+   Real action_difference=0,dv_max_difference=0,length_max_difference=0;
+   Real maximum_face_coordinate_residual=0;
++  Real maximum_anchor_roundtrip_displacement=0,maximum_anchor_midpoint_discrepancy=0;
+   std::size_t pieces=0,subpieces=0,samples=0,face_crossings=0;
+   BranchStatus supplied_status;
+ };
+@@ -260,15 +296,25 @@
+     Partition p=partition(g,curve,piece);
+     result.face_crossings+=p.crossings;
+     result.maximum_face_coordinate_residual=std::max(result.maximum_face_coordinate_residual,p.maximum_face_residual);
++    const auto &definition=curve.pieces[piece];
++    const PieceSampler sampler(definition);
++    const Meridional back_begin=sampler.from_end(1),forward_mid=definition.at(Real(0.5)),
++                     back_mid=sampler.from_end(Real(0.5));
++    const Real roundtrip=std::hypot(back_begin.r-definition.r0,back_begin.z-definition.z0),
++               midpoint_discrepancy=std::hypot(back_mid.r-forward_mid.r,back_mid.z-forward_mid.z);
++    require(finite(roundtrip) && finite(midpoint_discrepancy), "Nonfinite anchor discrepancy diagnostic");
++    result.maximum_anchor_roundtrip_displacement=std::max(result.maximum_anchor_roundtrip_displacement,roundtrip);
++    result.maximum_anchor_midpoint_discrepancy=std::max(result.maximum_anchor_midpoint_discrepancy,midpoint_discrepancy);
+     for (std::size_t part=1;part<p.cuts.size();++part) {
+-      Real a=p.cuts[part-1],b=p.cuts[part],half=(b-a)/2,mid=a+half;
++      Real a=p.cuts[part-1],b=p.cuts[part],half=(b-a)/2;
++      require(finite(half) && half>0, "Unrepresentable positive partition half-width");
+       auto rule=[&](const Real *nodes,const Real *weights,std::size_t count,Accumulator &out) {
+         for (std::size_t j=0;j<count;++j)
+           for (Real sign : {Real(-1),Real(1)}) {
+-            Real t=mid+sign*half*nodes[j];
+-            if (!(t>a && t<b)) {
++            Real q=(1+sign*nodes[j])/2,ds=length*half*weights[j];
++            if (!(finite(q) && q>0 && q<1 && finite(ds) && ds>0)) {
+               std::ostringstream message;
+-              message << "Quadrature node rounded to a partition endpoint"
++              message << "Invalid local Gauss coordinate or positive sample measure"
+                       << " [piece_index=" << piece
+                       << "; piece_kind=" << int(curve.pieces[piece].kind)
+                       << "; partition_index=" << part-1
+@@ -281,13 +327,15 @@
+                       << "; real_digits=" << std::numeric_limits<Real>::digits
+                       << std::hexfloat
+                       << "; a_hex=" << a << "; b_hex=" << b
+-                      << "; half_hex=" << half << "; mid_hex=" << mid
++                      << "; half_hex=" << half << "; q_hex=" << q
+                       << "; sign_hex=" << sign << "; node_hex=" << nodes[j]
+-                      << "; weight_hex=" << weights[j] << "; t_hex=" << t
++                      << "; weight_hex=" << weights[j] << "; ds_hex=" << ds
+                       << "; piece_arclength_hex=" << length << ']';
+               throw std::runtime_error(message.str());
+             }
+-            add_sample(g,curve.at(piece,t),length*half*weights[j],out);
++            const Meridional point=sampler.at_interval(a,b,q);
++            add_sample(g,{curve.origin[0]+curve.azimuth[0]*point.r,
++                          curve.origin[1]+curve.azimuth[1]*point.r,point.z},ds,out);
+             ++result.samples;
+           }
+       };

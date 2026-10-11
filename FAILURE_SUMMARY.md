@@ -68,6 +68,14 @@ that rounded to a grid-partition endpoint. Those
 [failed native tests](data/development/layered_reference_selected_curves_001/README.md)
 are preserved separately; manufactured-case success did not establish native
 robustness.
+A [local-coordinate formulation](data/development/layered_local_quadrature_001/README.md)
+now retains those positive partitions without forming a global Gauss parameter
+near one. It passes the unchanged 82 controls and four additional checks of a
+known tiny nodal contribution. Both original native integrations then complete,
+retaining 15/8 subpieces, 360/192 samples and all 288 nodal entries per case.
+This resolves the observed integration failure. It does not supply a general
+layered branch selector, native all-node accuracy bounds, optimized-source
+derivative validation or an updated three-dimensional forward solver.
 
 **Small samples and relaxed stopping do not validate the full inverse calculation.**
 The [completed legacy baseline
@@ -86,15 +94,20 @@ first-arrival, derivative-accuracy or inverse-convergence certificate.
 **Guarded inversion progress remains intermediate.** The [first guarded
 attempt](data/development/hayward_guarded_failure_001/README.md) rejected its first
 trial because 181 rays failed local stopping. A separate catalog-only backtracking
-attempt now has two preserved accepted states. The [first-state
+attempt now has three preserved accepted states. The [first-state
 plot](figures/hayward_accepted_update_001.pdf) shows the fraction-1/8 update from
 the initial model; the [second-state
 package](data/development/hayward_second_accepted_update_figure_001/RESULTS.md) and
 [comparison
 figure](data/development/hayward_second_accepted_update_figure_001/figure/accepted_update_2_minus_1.pdf)
 show the next fraction-1/16 update. Its fixed-weight objective fell by 11.3999%.
+The [third-state comparison](data/development/hayward_third_accepted_update_figure_001/RESULTS.md)
+preserves the subsequent fraction-1/8 update, reducing its own fixed-weight
+objective by 21.9581%. The two third-state snapshot variants agree numerically;
+their distinct coordinate-basis labels remain intact. The 394 failed rays in
+the next rejected trial do not describe this accepted state.
 Weights are recomputed between iterations, and history RMS/ray diagnostics describe
-pre-update states. Neither acceptance establishes final convergence, updated-model
+pre-update states. These acceptances do not establish final convergence, updated-model
 accuracy or recovery.
 
 **Catalog differences and normalized waveform differences remain separate

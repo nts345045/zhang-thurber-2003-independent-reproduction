@@ -1226,7 +1226,7 @@ final ray, derivative and scientific assessment. The launcher evidence is in
 \path{data/development/hayward_old_kernel_backtracking_launcher_checks_002/};
 the lossless archive and restoration instructions are in
 \path{data/development/trial_backtracking_evidence_001/README.md}.
-The catalog-only attempt has two preserved accepted states. Its first
+The catalog-only attempt has three preserved accepted states. Its first
 update uses inverse step fraction $1/8$, after three larger trials
 fail local ray stopping. The fixed-weight inversion objective, including
 data residuals and log-slowness smoothing, falls from $1812.15659$ to
@@ -1269,9 +1269,10 @@ directly comparable with this accepted fixed-weight objective.
 
 The inversion remains incomplete. History RMS and ray-quality fields
 describe the preupdate state; they do not establish post-update accuracy.
-Neither saved state establishes final convergence, first-arrival accuracy
-or source-derivative accuracy, and a complete eligible Jacobian export is
-still required for full-DD resolution and covariance. The manuscript audit
+None of these saved states establishes final convergence, first-arrival accuracy
+or source-derivative accuracy. A complete eligible Jacobian export at an updated
+state is still required for its full-DD resolution and covariance; the separate
+initial-model calculation does not supply this result. The manuscript audit
 remains one reproduced panel and 61 partial panels. The second-state tables,
 event and origin identities, both observation endpoints' pick identities,
 channel SEED/FDSN identifiers and metadata epochs accompany the scientific
@@ -1290,6 +1291,39 @@ locations; arrows retain the native distance scale without amplification,
 and colours give horizontal movement in km. These intermediate-state
 differences do not measure recovery error or post-update ray accuracy.}
 \label{fig:hayward_second_accepted_update}
+\end{figure}
+
+\clearpage
+The third update accepts iteration 2, trial 3 at fraction $1/8$. Its
+fixed-weight data-plus-smoothing objective falls from $1253.1810003788601$
+to $978.00644322787343$, or 21.9581\%. The next iteration recomputes weights
+and starts at $973.55329487224935$; this is a different objective context.
+The 394 failed rays recorded in the subsequent rejected trial belong to that
+trial, not to the accepted state. Both closed third-state snapshot variants
+agree in every event coordinate and provider metadata field, and their grids
+are byte-identical. Their distinct coordinate-basis labels remain preserved.
+
+Figure~\ref{fig:hayward_third_accepted_update} compares the third state with
+the second. Across all 462 nodes, velocity changes range from $-0.30347$ to
+$+0.15771$ km/s. At the plotted 8 km depth they range from $-0.19315$ to
+$+0.06053$ km/s. Horizontal event movements range from 0.00382 to 0.22981 km;
+three-dimensional movements range from 0.00960 to 0.37975 km. These differences
+describe the intermediate update, not recovery error. The saved tables, closed
+trial ledger, separate objective contexts, complete identities and figure
+source are in
+\path{data/development/hayward_third_accepted_update_figure_001/}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{../data/development/hayward_third_accepted_update_figure_001/figure/accepted_update_3_minus_2.pdf}
+\caption{Third accepted Hayward state minus the second in the incomplete
+catalog-only inversion. Left: velocity change at 77 saved nodes at 8 km depth,
+in km/s, without interpolation. Centre: native horizontal displacements of all
+1,092 events. Right: the indicated 4 km by 4 km window contains 122 events.
+Grey points mark the second-state locations; arrows retain the native distance
+scale and colours give horizontal movement in km. Acceptance at step fraction
+$1/8$ does not establish post-update ray accuracy or final convergence.}
+\label{fig:hayward_third_accepted_update}
 \end{figure}
 
 \subsection{Historical waveform metadata and identified correlations}

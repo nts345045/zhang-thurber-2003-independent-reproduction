@@ -14,12 +14,16 @@ and nonlinear-convergence failures. A separate guarded catalog-only inversion
 stopped at its first trial model, before accepting any update. This remains a
 partial scientific checkpoint.
 
-A separate catalog-only backtracking attempt has now preserved two accepted
+A separate catalog-only backtracking attempt has now preserved three accepted
 states. The [first-update plot](figures/hayward_accepted_update_001.pdf) shows
 changes from the identified starting model; the
 [second-update package](data/development/hayward_second_accepted_update_figure_001/RESULTS.md)
 and [comparison plot](data/development/hayward_second_accepted_update_figure_001/figure/accepted_update_2_minus_1.pdf)
 show the next state's velocity changes and event movements relative to the first.
+The [third-update package](data/development/hayward_third_accepted_update_figure_001/RESULTS.md)
+and [comparison plot](data/development/hayward_third_accepted_update_figure_001/figure/accepted_update_3_minus_2.pdf)
+show the subsequent fraction-1/8 update, whose fixed-weight objective falls by
+21.9581%. Its maximum three-dimensional event movement is 0.37975 km.
 The run remains incomplete; these accepted states do not establish final
 convergence or updated-model ray and source-derivative accuracy.
 
@@ -60,6 +64,11 @@ all 37 retained analytic checks at 0.0625-km grid/path spacing. This finite suit
 does not certify general first arrivals. A separate [oblique 3D affine check](data/development/fmm_rotated_affine_baseline/README.md)
 passes all 72 checks; branch completeness in arbitrary 3D media and field
 validation remain open.
+The separate [continuous layered-ray calculation](data/development/layered_local_quadrature_001/README.md)
+now completes its two previously failing native integrals using local quadrature
+coordinates, after 86 controls pass. It retains the original partition roots
+and full nodal kernels. This remains a limited component with supplied branch
+choices; it has not replaced the production forward calculation.
 The corrected initializer and feasible ray directions are integrated and tested
 on the `first-arrival-integration` branch. No completed corrected inversion
 result is available yet; the completed original workflow retains its frozen solver.
@@ -586,8 +595,11 @@ earlier forward operators.
   The [second accepted state](data/development/hayward_second_accepted_update_figure_001/RESULTS.md)
   now supplies identified event and grid tables plus a
   [second-minus-first comparison](data/development/hayward_second_accepted_update_figure_001/figure/accepted_update_2_minus_1.pdf).
-  Both are intermediate models; the ongoing run has no accepted final model
-  or full-DD resolution result.
+  The [third accepted state](data/development/hayward_third_accepted_update_figure_001/RESULTS.md)
+  supplies both closed snapshot variants, the iteration-2 trial ledger and a
+  [third-minus-second comparison](data/development/hayward_third_accepted_update_figure_001/figure/accepted_update_3_minus_2.pdf).
+  All three are intermediate models; the ongoing run has no accepted final
+  model or updated-model full-DD resolution result.
 - `figures/` and `figures/hayward/`: plots generated from the saved numerical
   tables. `report/report.pdf` explains the experiments and reproduction limits.
 - `data/development/`: numerical diagnostics and frozen failure evidence.

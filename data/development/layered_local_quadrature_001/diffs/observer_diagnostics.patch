@@ -1,0 +1,11 @@
+--- ../layered_reference_selected_curves_001/source/observe_reference_curve.cpp
++++ source/observe_reference_curve.cpp
+@@ -111,6 +111,8 @@
+   out << ",\"dv_8_16_max_difference\":";hex(out,r.dv_max_difference);
+   out << ",\"length_8_16_max_difference_km\":";hex(out,r.length_max_difference);
+   out << ",\"maximum_face_coordinate_residual_km\":";hex(out,r.maximum_face_coordinate_residual);
++  out << ",\"maximum_anchor_roundtrip_displacement_km\":";hex(out,r.maximum_anchor_roundtrip_displacement);
++  out << ",\"maximum_anchor_midpoint_discrepancy_km\":";hex(out,r.maximum_anchor_midpoint_discrepancy);
+   Real sum_length=0,scaling=0;
+   for(std::size_t j=0;j<r.dv.size();++j) {sum_length+=r.length[j];scaling-=Real(g.v[j])*r.dv[j];}
+   out << ",\"basis_length_sum_residual_km\":";hex(out,sum_length-r.arclength);

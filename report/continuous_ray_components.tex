@@ -63,10 +63,69 @@ to the unchanged integrator failed because a quadrature node rounded to a
 partition endpoint. Neither produced a completed native integral or display.
 The largest intended-versus-stored depth-join differences were
 $8.67\times10^{-19}$ and $1.30\times10^{-18}$ km. These saved discrepancies
-are distinct from the reported integration failure; their causal role needs
-the separate partition diagnosis. The complete inputs, identities, selected
+are distinct from the reported integration failure; the separate partition
+diagnosis below locates the actual failure. The complete inputs, identities, selected
 references and failures are retained in
 \path{data/development/layered_reference_selected_curves_001/}.
+
+An isolated exception-only diagnostic localized both failures to terminal
+partitions near the 3 km depth plane. The bottom-guided case failed on
+$[1-2^{-63},1]$ in piece 3, partition 1; the interior-turning case failed on
+$[1-2^{-58},1]$ in piece 0, partition 1, using zero-based indices. The
+working format has 64 significand bits, with spacing $2^{-64}$ immediately
+below one. The failed Gauss nodes lay only 0.47447 and 0.33917 such spacings
+above the lower partition endpoint before rounding. Both rounded to that
+endpoint, despite positive interval width and a representable midpoint.
+The later candidate partitions near zero depth were not reached by these
+failed calls. The diagnostic preserves all original result fields except
+the enriched exception message and retains identical native identifiers.
+
+A separate implementation evaluates quadrature in a local coordinate
+$q\in(0,1)$ for each unchanged stored partition $[a,b]$:
+\begin{equation}
+ t=a+(b-a)q,\qquad ds=L(b-a)\,dq,
+\end{equation}
+where $L$ is the curve piece's constant parameter speed. Near a piece's end,
+the sample is evaluated using the small backward distance
+$(1-b)+(b-a)(1-q)$. The exact straight-line and circular-arc identities
+retain the same curve and measure; endpoint and trigonometric rounding
+change the working arithmetic. Stored face roots, physical-domain checks
+and all nodal contributions remain. No positive partition is dropped,
+merged or snapped. Endpoint roundtrip and forward/backward midpoint
+discrepancies are observations, not error bounds or promotion criteria.
+
+This version passes the unchanged 58 affine and 24 full-nodal checks.
+An additional constant-speed vertical fixture crosses from $z=1\,\mathrm{km}$ to
+$z=-\delta$, where $\delta=2^{-63}\,\mathrm{km}$, in a grid with depth nodes
+$[-1,0,1]$ km. At fixed lateral coordinates, the exact sum of length-kernel
+weights on the lower depth plane is
+\begin{equation}
+ \int_{-\delta}^{0}\frac{-z}{1\,\mathrm{km}}\,dz
+ =\frac{\delta^2}{2\,\mathrm{km}}=2^{-127}\,\mathrm{km}.
+\end{equation}
+The computed mass differs by one unit in the last place and passes the declared
+relative allowance of 512 machine epsilons. Positivity, travel time and
+the two-subpiece, 48-sample inventory also pass. This checks a nonzero
+microscopic contribution independently of the quadrature implementation;
+it does not bound every native nodal kernel. The failure localization,
+new method and finite controls are preserved in
+\path{data/development/layered_local_quadrature_001/}.
+
+The two original native cases then complete with unchanged inputs and
+construction fields: 15 subpieces and 360 samples for the bottom-guided ray,
+and eight subpieces and 192 samples for the interior-turning ray. Their
+travel times are 13.315127513112486 and 3.6600250681424327 s. The former
+exceeds its saved reference interval by about $8.15\times10^{-20}$ s; the
+latter differs from its saved scalar reference by $-2.98\times10^{-16}$ s.
+The scalar comparison supplies no interval ordering or minimum-time proof.
+Eight-versus-sixteen-point action differences are $3.49\times10^{-13}$ and
+$1.50\times10^{-9}$ s; these are diagnostics, not error bounds. Both results
+retain all 288 nodal length and velocity-kernel entries, with their saved
+sum and scaling identities checked. The largest forward/backward midpoint
+discrepancies are $6.99\times10^{-18}$ and $8.67\times10^{-19}$ km. Those
+finite observations do not certify compatibility at every old face root.
+No independent native all-node kernel oracle or optimized-source derivative
+assessment accompanies these two completed integrals.
 
 These results establish a limited continuous-curve component. No real-data
 inversion, updated-model accuracy result, or manuscript-panel promotion follows

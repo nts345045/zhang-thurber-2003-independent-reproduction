@@ -1,0 +1,39 @@
+--- ../layered_reference_selected_curves_001/source/layered_curved_ray.hpp
++++ diagnostic_source/layered_curved_ray.hpp
+@@ -4,6 +4,7 @@
+ #include <cmath>
+ #include <cstddef>
+ #include <limits>
++#include <sstream>
+ #include <stdexcept>
+ #include <string>
+ #include <utility>
+@@ -265,7 +266,27 @@
+         for (std::size_t j=0;j<count;++j)
+           for (Real sign : {Real(-1),Real(1)}) {
+             Real t=mid+sign*half*nodes[j];
+-            require(t>a && t<b, "Quadrature node rounded to a partition endpoint");
++            if (!(t>a && t<b)) {
++              std::ostringstream message;
++              message << "Quadrature node rounded to a partition endpoint"
++                      << " [piece_index=" << piece
++                      << "; piece_kind=" << int(curve.pieces[piece].kind)
++                      << "; partition_index=" << part-1
++                      << "; partition_cut_count=" << p.cuts.size()
++                      << "; gauss_rule_nodes=" << 2*count
++                      << "; positive_node_index=" << j
++                      << "; completed_samples=" << result.samples
++                      << "; completed_subpieces=" << result.subpieces
++                      << "; real_radix=" << std::numeric_limits<Real>::radix
++                      << "; real_digits=" << std::numeric_limits<Real>::digits
++                      << std::hexfloat
++                      << "; a_hex=" << a << "; b_hex=" << b
++                      << "; half_hex=" << half << "; mid_hex=" << mid
++                      << "; sign_hex=" << sign << "; node_hex=" << nodes[j]
++                      << "; weight_hex=" << weights[j] << "; t_hex=" << t
++                      << "; piece_arclength_hex=" << length << ']';
++              throw std::runtime_error(message.str());
++            }
+             add_sample(g,curve.at(piece,t),length*half*weights[j],out);
+             ++result.samples;
+           }

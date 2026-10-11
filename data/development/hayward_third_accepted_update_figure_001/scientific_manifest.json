@@ -1,0 +1,190 @@
+{
+  "accepted_iteration": 2,
+  "accepted_step_fraction": "0.125",
+  "accepted_trial": 3,
+  "accepted_trial_record": {
+    "failure_prefix": "",
+    "iteration": "2",
+    "objective_after": "978.00644322787343",
+    "objective_before": "1253.1810003788601",
+    "objective_evaluated": "1",
+    "stage": "0",
+    "status": "accepted",
+    "step_fraction": "0.125",
+    "trial": "3"
+  },
+  "accepted_update_ordinal": 3,
+  "authoritative_observations_sha256": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+  "coordinate_units": "km",
+  "fixed_weight_objective_after": "978.00644322787343",
+  "fixed_weight_objective_before": "1253.1810003788601",
+  "history_scope": "Only a literal completed prefix was read. All RMS/ray counts/maxima/initializer counts are PRE-UPDATE iteration metrics, not accepted-candidate metrics.",
+  "input_files": {
+    "accepted_trials": {
+      "bytes": 547,
+      "original_sha256": "bc4fac1c6b8991082e49e8aad5f213d13409381d97e2eeaf3c7228098b610d0d",
+      "path": "inputs/dd_iteration_2_trials.csv",
+      "sha256": "7b0dc5082984bf068e2d0d3c1a63d99f2cc1253e190fefd523db4d909b3d6ade",
+      "transformation": "Only the known checkout-root prefix removed from failure_prefix; 3 references."
+    },
+    "rejection_context": {
+      "bytes": 574,
+      "original_sha256": "bcca480f8e7f69077e8740a5504b434c8954b4acc4167446e3742a2e97cc489d",
+      "path": "inputs/dd_rejected_trial_it_3_ls_0_context.csv",
+      "sha256": "cb042eb0c3f5ced3ba6d668d80a73ab99230c1998607feca9652b203da37c515",
+      "transformation": "Only the known checkout-root prefix removed from message; 1 references."
+    },
+    "solve_context": {
+      "bytes": 510,
+      "original_sha256": "cb70c348c7daa5095c581e424fdc98bed3e8c4a24d1cb17acdcfbf0f9c6d1781",
+      "path": "inputs/dd_iteration_3_solve_context.csv",
+      "sha256": "cb70c348c7daa5095c581e424fdc98bed3e8c4a24d1cb17acdcfbf0f9c6d1781",
+      "transformation": "byte-exact"
+    },
+    "third_events": {
+      "bytes": 579073,
+      "original_sha256": "d6e64a5c65a8e2a2e495a275db2c06bf5e27a59e67be8375478c3b18ecefc987",
+      "path": "inputs/dd_rejected_trial_it_3_ls_0_accepted_events.csv",
+      "sha256": "d6e64a5c65a8e2a2e495a275db2c06bf5e27a59e67be8375478c3b18ecefc987",
+      "transformation": "byte-exact"
+    },
+    "third_grid": {
+      "bytes": 12839,
+      "original_sha256": "c576fd9042e70e44c982145df59c52eeeb8f9b9774b7c960b7fa5757bdc995d9",
+      "path": "inputs/dd_rejected_trial_it_3_ls_0_accepted_grid.csv",
+      "sha256": "c576fd9042e70e44c982145df59c52eeeb8f9b9774b7c960b7fa5757bdc995d9",
+      "transformation": "byte-exact"
+    },
+    "third_solve_events": {
+      "bytes": 580165,
+      "original_sha256": "b8a8d04fa5635a0960ee5b004ba7efacbb0fff6afff183b52407ee1f5af3978f",
+      "path": "inputs/dd_iteration_3_solve_accepted_events.csv",
+      "sha256": "b8a8d04fa5635a0960ee5b004ba7efacbb0fff6afff183b52407ee1f5af3978f",
+      "transformation": "byte-exact"
+    },
+    "third_solve_grid": {
+      "bytes": 12839,
+      "original_sha256": "c576fd9042e70e44c982145df59c52eeeb8f9b9774b7c960b7fa5757bdc995d9",
+      "path": "inputs/dd_iteration_3_solve_accepted_grid.csv",
+      "sha256": "c576fd9042e70e44c982145df59c52eeeb8f9b9774b7c960b7fa5757bdc995d9",
+      "transformation": "byte-exact"
+    }
+  },
+  "local_path_references_projected": 4,
+  "native_counts": {
+    "catalog_side_uses": 103698,
+    "cross_epoch_rows": 28576,
+    "empty_location_pairs": 13786,
+    "events": 1092,
+    "observation_rows": 58980,
+    "observation_types": {
+      "0": 14262,
+      "1": 44718
+    },
+    "pairs": 14262,
+    "receiver_epochs": 372,
+    "used_events": 1092,
+    "used_receiver_epochs": 372
+  },
+  "next_iteration_weighted_objective": "973.55329487224935",
+  "next_solve_context": {
+    "columns": "4830",
+    "damping_parameter": "0.10000000000000001",
+    "iteration": "3",
+    "lsqr_converged": "1",
+    "lsqr_iterations": "180",
+    "lsqr_relative_normal_residual": "1.2687009052902095e-09",
+    "mode": "dd",
+    "model_columns": "462",
+    "objective_basis": "sum of squared fixed-weight data residuals plus final log-slowness smoothing; damping enters the solve only",
+    "objective_before": "973.55329487224935",
+    "smoothing_weight": "10",
+    "source_columns": "4368",
+    "stage": "0",
+    "weight_basis": "stage/robust/distance/prior row multipliers computed at the accepted state and fixed through this line search"
+  },
+  "numerical_calls": 0,
+  "objective_scope": "978.00644322787343 is the iteration-2 accepted objective; iteration-3 973.55329487224935 recomputes weights and is not directly comparable.",
+  "origin_time_correction_units": "s",
+  "preservation_receipt_sha256": "49554f0e25300032b0dd7a20193bd1492dc1a1041a6335b58bd18576672d589d",
+  "previous_package": {
+    "input_files": {
+      "second_events": {
+        "bytes": 579251,
+        "path": "data/development/hayward_second_accepted_update_figure_001/inputs/dd_rejected_trial_it_2_ls_0_accepted_events.csv",
+        "sha256": "adbbb9f3a026941d83dd5e7c6feff122564260ff44bd96716f20333386fde63d"
+      },
+      "second_grid": {
+        "bytes": 12849,
+        "path": "data/development/hayward_second_accepted_update_figure_001/inputs/dd_rejected_trial_it_2_ls_0_accepted_grid.csv",
+        "sha256": "e4aa28f533e5acbafcd45eb3b4158f3a775a01629745080b6e16efbe5abd16ff"
+      }
+    },
+    "manifest_path": "data/development/hayward_second_accepted_update_figure_001/scientific_manifest.json",
+    "manifest_sha256": "4073752162ecac5173a118319c0ea102eb5f0872fa45dceda29de18bb9f3a97e"
+  },
+  "prior_archive": {
+    "members": {
+      "catalog_refs": {
+        "bytes": 509851,
+        "member": "tmp/hayward_trial3_observation_001/saved/catalog_row_side_refs.csv.gz",
+        "sha256": "55574feed9730ae12d67ab20ed877f5bd929bfe479af504af19dd19d13de1000"
+      },
+      "executed_main": {
+        "bytes": 90565,
+        "member": "tmp/hayward_old_kernel_backtracking_runs/001/source/src/main.cpp",
+        "sha256": "a10dcdc300d9a4e43f6ae0cba2e354d7cec549438319cf411b577790b2373058"
+      },
+      "initial_events": {
+        "bytes": 438756,
+        "member": "data/hayward_old_kernel_backtracking_001/initial_events.csv",
+        "sha256": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05"
+      },
+      "native_pairs": {
+        "bytes": 380669,
+        "member": "tmp/hayward_trial3_observation_001/saved/native_pairs.csv.gz",
+        "sha256": "79c50821f6e2da9bbd185bc19903adfbb33b4685da47fba2b87add947fb89b60"
+      },
+      "stations": {
+        "bytes": 505739,
+        "member": "data/hayward_old_kernel_backtracking_001/stations.csv",
+        "sha256": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652"
+      }
+    },
+    "members_path": "data/development/hayward_accepted_update_delivery_001/members.json",
+    "members_sha256": "80e9371bd09d9385e283a163ab4f3b77b0f2fbb64061505e38bd368e948c92f0",
+    "path": "data/development/hayward_accepted_update_delivery_001/evidence.tar.gz",
+    "sha256": "db38545d8673b991fccd926c07adb7c781504aa09a29ef965fa1bcd33d2e6de8"
+  },
+  "rejected_trial_scope": "394 rays belong to rejected iteration-3 trial 0, not the accepted third state.",
+  "rejection_context": {
+    "derivatives_requested": "0",
+    "initialization_required": "1",
+    "iteration": "3",
+    "line_search_trial": "0",
+    "message": "Inverse forward evaluation rejected 394 rays; see data/hayward_old_kernel_backtracking_001/dd_rejected_trial_it_3_ls_0_ray_status.csv; first: event 4 event_resource_id=quakeml:NC.anss.org/Event/NC/3775 origin_resource_id=quakeml:NC.anss.org/Origin/NC/1275554; native receiver 115 channel_seed_id=NC.CLC..EHZ channel_fdsn_source_id=FDSN:NC_CLC__E_H_Z metadata_epoch_start=1984-01-01T00:00:00 metadata_epoch_end=1986-06-18T18:45:00",
+    "mode": "dd",
+    "phase": "line_search_trial",
+    "significant_digits": "17"
+  },
+  "scope": "Third accepted minus second accepted; run incomplete. No post-update RMS, convergence, recovery or first-arrival claim.",
+  "source_contract": {
+    "lines": {
+      "accepted_assignment_before_history": [
+        1361,
+        1404
+      ],
+      "current_model_gate": [
+        1206,
+        1211
+      ],
+      "separate_accepted_and_rejected_states": [
+        1159,
+        1192
+      ]
+    },
+    "member_key": "executed_main"
+  },
+  "source_snapshot_precision": 17,
+  "velocity_units": "km/s"
+}

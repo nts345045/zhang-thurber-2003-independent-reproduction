@@ -1,0 +1,53 @@
+{
+  "affine_case_ids": [
+    "homogeneous_oblique",
+    "affine_vertical",
+    "affine_direct",
+    "affine_turn",
+    "affine_turn_reversed",
+    "affine_bottom_guide",
+    "affine_bottom_source",
+    "affine_bottom_both",
+    "near_homogeneous"
+  ],
+  "full_nodal_definitions": "full_nodal.jsonl records each supplied grid/curve with its case label",
+  "scope": "invented mathematical fixtures; no provider observations or native catalog identities",
+  "source_bindings": {
+    "affine_arrival.hpp": "6097efd3312c098a3ce8e47d0a4312b225f4f321af3d935e64191c67c25cc40d",
+    "check_affine_arrival.cpp": "21e0f885be902bba77e2256a2521dd43843fd044346c746d29c35b9254196b95",
+    "check_curved_integrals.cpp": "f7aefd8f975cd954b2895324a8be8f9b9d47d1e73bbf4bc1e02dc750cb2e0d22",
+    "check_tiny_partition.cpp": "3e63e087f0589994024da59935c25819d3dcf1d77d6a74988db571e3d6d62c3e",
+    "layered_curved_ray.hpp": "70cfd3bc8079097984b4447189fbfe89667d674669fa789392bf19d7d561adbc"
+  },
+  "tiny_partition": {
+    "all_12_nodal_velocities_km_per_s": "4",
+    "case_id": "invented_constant_vertical",
+    "exact_lower_plane_length_km": "1/170141183460469231731687303715884105728",
+    "grid_axes_km": {
+      "x": [
+        "0",
+        "1"
+      ],
+      "y": [
+        "0",
+        "1"
+      ],
+      "z": [
+        "-1",
+        "0",
+        "1"
+      ]
+    },
+    "no_measured_data": true,
+    "receiver_xyz_km": [
+      "1/4",
+      "1/4",
+      "-1/9223372036854775808"
+    ],
+    "source_xyz_km": [
+      "1/4",
+      "1/4",
+      "1"
+    ]
+  }
+}
