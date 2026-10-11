@@ -27,6 +27,14 @@ show the subsequent fraction-1/8 update, whose fixed-weight objective falls by
 The run remains incomplete; these accepted states do not establish final
 convergence or updated-model ray and source-derivative accuracy.
 
+A separate guarded fixed-model relocation completed all 18 scheduled updates.
+Its [saved result](data/development/hayward_comparison_saved_outputs_001/loc1d_001/README.md)
+and [figure](data/development/hayward_comparison_saved_outputs_001/loc1d_001/comparison_figure.pdf)
+retain the initial velocity grid exactly. Median and maximum source displacement
+from the catalog starting state are 2.849 and 8.397 km. The result preserves
+1,092 event identities and 372 receiver epochs; completion of the scheduled
+updates does not establish nonlinear convergence or source-location accuracy.
+
 On 2026-10-09 the user revised that restriction: real station and earthquake
 data, including metadata, must now come from authoritative sources, starting
 with USGS and EarthScope web services. All saved records must retain SEED
@@ -70,8 +78,9 @@ coordinates, after 86 controls pass. It retains the original partition roots
 and full nodal kernels. This remains a limited component with supplied branch
 choices; it has not replaced the production forward calculation.
 The corrected initializer and feasible ray directions are integrated and tested
-on the `first-arrival-integration` branch. No completed corrected inversion
-result is available yet; the completed original workflow retains its frozen solver.
+on the `first-arrival-integration` branch. The guarded fixed-model relocation
+is now closed; corrected standard and joint-DD attempts remain incomplete.
+The completed original workflow retains its frozen solver.
 The [fixed-model field comparison](data/development/fmm_hayward_audit/README.md)
 finds two faster candidates exceeding 1 ms among 186 selected shallow-endpoint
 rays; it does not quantify the resulting inversion bias or certify first arrivals.
@@ -645,11 +654,18 @@ earlier forward operators.
   iterations; `dd_accepted_it_N_events.csv` and `dd_accepted_it_N_grid.csv`
   preserve accepted updates. Trial and failure tables retain their own status.
   No completed update or final model was available at this checkpoint.
-- `data/hayward_standard_guarded_002/` and `data/hayward_loc1d_guarded_001/`:
-  separate [catalog-only comparison attempts](data/development/hayward_catalog_comparisons_001/ATTEMPTS.md)
-  in the integration worktree. Preparation and compilation passed; both
-  inversions are active. Inspect the `standard_*` or `loc1d_*` histories,
-  accepted snapshots and trial/failure files. No completed model is claimed.
+- `data/hayward_loc1d_guarded_001/`: closed fixed-model relocation in the
+  integration worktree. Inspect `loc1d_history.csv` and the identified
+  `loc1d_accepted_it_17_events.csv`/`loc1d_accepted_it_17_grid.csv` for the last
+  accepted state. The [published result package](data/development/hayward_comparison_saved_outputs_001/loc1d_001/README.md)
+  includes figures, all 18 accepted states and their identified source tables.
+  `last_accepted_*` is an earlier rejection checkpoint. Scheduled completion
+  does not establish convergence; history diagnostics describe pre-update states.
+- `data/hayward_standard_guarded_002/`: separate
+  [catalog-only standard attempt](data/development/hayward_catalog_comparisons_001/ATTEMPTS.md)
+  in the integration worktree, still active at the 11 October 2026, 06:38 UTC
+  checkpoint. Inspect the `standard_*` histories, accepted snapshots and
+  trial/failure files after closure. No completed model is claimed.
   The original `data/hayward_standard_guarded_001/` is closed after a SIGTERM
   interruption before its first update. Its
   [preserved outcome](data/development/hayward_catalog_comparisons_001/standard_001_outcome.json)

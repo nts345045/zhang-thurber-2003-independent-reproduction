@@ -1,0 +1,110 @@
+{
+  "checkpoint_utc": "2026-10-11T06:38:03.499976+00:00",
+  "compilation": {
+    "actual_tex_passes": 2,
+    "return_codes": [
+      0,
+      0
+    ],
+    "source_hashes_unchanged": true,
+    "warnings": [
+      "Underfull \\vbox (badness 10000) detected at line 21"
+    ]
+  },
+  "documentation_sha256": {
+    "README.md": "43527b9c07e1bae0cbf66ae0543bd2599426931b1aa362b1e821b423f573586d",
+    "REBUILD.md": "a27c0b5f7721c8db96b12f6e3f3aace60265f515af23dedc454327ef4c6c29bb",
+    "data/development/hayward_catalog_comparisons_001/ATTEMPTS.md": "0034ef1b27d572effbb8bc6a720c9862c4ad7bfada02f4ff34eb3d9830d87ab2",
+    "data/development/hayward_comparison_saved_outputs_001/README.md": "40dc5752f7cd175282c894d36079afef8100f7076b6942872f1fe8681093b829",
+    "data/development/hayward_comparison_saved_outputs_001/RESULTS.md": "bda512339a4f290782b154e63f7744be51b92bc2a7648f32ed529fcb12292bff"
+  },
+  "loc1d_001": {
+    "accepted_iterations": 18,
+    "closed_outcome_sha256": "4adb41bbfc35e39e17ac49c3c5401aa6e15e660abd3c207d807b3d375000298d",
+    "convergence_established": false,
+    "displacement_3d_max_km": 8.397198361028174,
+    "displacement_3d_median_km": 2.849153287572931,
+    "events": 1092,
+    "history_metrics_scope": "pre-update",
+    "numerical_status": "completed_attempt_pending_scientific_review",
+    "receiver_epochs": 372,
+    "return_code": 0,
+    "saved_output_validation": "passed",
+    "selected_iteration": 17,
+    "velocity_change_range_km_s": [
+      0,
+      0
+    ]
+  },
+  "panel_status": {
+    "independently_reproduced": 1,
+    "partially_reproduced": 61
+  },
+  "pdf": {
+    "bytes": 3337753,
+    "file": "report/report.pdf",
+    "pages": 132,
+    "sha256": "9ae2745ed72d7201b24e082dae23649b78ad7d5fd3f71908e99bd65adfa7bfd7"
+  },
+  "preceding_report": {
+    "commit": "df5261619ccc48d99bb089b7eea0573b8e9caa11",
+    "pdf_sha256": "60b2b2cd5a9f7df002c01842326cb390ce9a136bb7b24d790d9a5eba12cc9a5f",
+    "validation": "report/comparison_interruption_validation.json"
+  },
+  "publication": {
+    "archive_members": 61,
+    "checked_local_documentation_links": 176,
+    "directory": "data/development/hayward_comparison_saved_outputs_001/loc1d_001",
+    "manifest_file_hashes_verified": true,
+    "manifest_sha256": "f9d93afa43a862fc59ae310e82b080fcc600162b79083fe753b48af89d48a315",
+    "published_files": 20,
+    "sidecar_referenced_tables": 59,
+    "standalone_original_renderer_replay": false
+  },
+  "report_source_sha256": {
+    "report/continuous_ray_components.tex": "0a9fb7f2bc6aff92b7c88af4ec8ad24114d72cc6ce42ad998faca7aba5da9bb0",
+    "report/hayward_full_results_section.tex": "1ef7149792af3ba4ce5a8f9492bdaa5ced41d4117de654a2316306a7dcfc7e28",
+    "report/hayward_results.tex": "4722d2a9473bcc1be0b3671f7efe1b25b408d42d36e8938ffa6bbc6522420614",
+    "report/hayward_velocity_checkpoint.tex": "d2c1b70f84acf00729ff7aca23b8ad14ad98b06d49fe9fc4555152c2a126ec59",
+    "report/initial_full_dd_resolution.tex": "6d9d802d22c0b0280f6b7f5f500c927311990ad192cbfc5400f84ffe083cc8e5",
+    "report/joint_findings.tex": "4e94b1553e76b20051e6195b1d0b71d8097ce7d892fd6b2879cd233f72e43ee6",
+    "report/metrics.tex": "1adf4e381d0a645cec73b919eb176e23ae55f33d4f253717630d5dd2b480077a",
+    "report/panel_details.tex": "a44c3a176bc33ad69e67787a97251a9b851f6ec118370581bdeeb9bf2fff7f0b",
+    "report/panel_table.tex": "03a4f24c131c6e1cc2d0c619e753df67f541d87c741133a9956d6aa5cf45ed65",
+    "report/ray_failure_checkpoint.tex": "c4e64d2b323c353b4bcb92f24adf0d0e2c5e024d187299237a464f0035cf112d",
+    "report/ray_findings.tex": "87e02479f0fbd6e43ae564965e2ea79ee7bdad4670cdd62bbca25115f22f4fad",
+    "report/recovery_checkpoint.tex": "505c2b9af794364337565e55665b27ea33a6bd51e71782538714935761682b15",
+    "report/report.tex": "978a3beae692308922dde0d22c365f8beb2ca7b0e30125ccadd49b80d620b1c9",
+    "report/run_findings.tex": "c301712aeba4366c6b33a61d5939d2f3567a7dce0734aff2c62a2e936e37c28f",
+    "report/sensitivity_table.tex": "89e36d73e854c23e8baeb7436e33b7474c4fa82b318f6f39f26b3a26167aacfb",
+    "report/spatial_table.tex": "40139003a2d2ee5eae0a1ddd42af178bddc086642c8cd5687e617c399e873d9d",
+    "report/validation_table.tex": "2df4790edf0dfa6bf59fa64f9f42a943a75d77df7d0b6ffe4f061caaab08d343",
+    "report/velocity_metrics.tex": "9da0ab0e781f625c2abe70910c6ae0884a44adb5e8bf84ddbacec4bed8e45a62"
+  },
+  "scope": "Closed fixed-model accepted-geometry readback, identified scientific-table publication, and updated comprehensive report. No new inversion, ray, covariance or convergence calculation.",
+  "short_report": {
+    "actual_tex_passes": 2,
+    "bytes": 147608,
+    "pages": 1,
+    "return_codes": [
+      0,
+      0
+    ],
+    "sha256": "ef1ba7f638a0a4fb9cfbb2480e647d2cf23c67772d6248991cdfc175477813db",
+    "text_and_visual_review": "passed",
+    "warnings": []
+  },
+  "standard_002": {
+    "completed_result_claimed": false,
+    "status": "native_inversion_active"
+  },
+  "visual_review": {
+    "finding": "Updated execution account and new saved-geometry figure are legible, with no clipping or overlap.",
+    "pages": [
+      54,
+      55,
+      56
+    ],
+    "status": "passed"
+  }
+}

@@ -110,13 +110,27 @@ The [actual attempts](data/development/hayward_catalog_comparisons_001/ATTEMPTS.
 passed preparation and compilation. Standard attempt 001 was interrupted by
 SIGTERM before its first update; its closed outcome preserves the interruption
 without attributing the signal's origin or inferring a numerical failure.
-A separate standard attempt 002 and the original fixed-model comparison are
-active at the 11 October 2026, 02:45 UTC checkpoint. Standard
+A separate standard attempt 002 remains active at the 11 October 2026,
+06:38 UTC checkpoint. The fixed-model comparison has closed with numerical
+return code zero and 18 verified accepted updates. Its
+[saved-output readback](data/development/hayward_comparison_saved_outputs_001/RESULTS.md)
+actually rendered the last accepted geometry and compiled its report in two
+pdfLaTeX passes. Standard
 tomography uses absolute rows and estimates velocities and sources. Fixed-model
 relocation holds the initial velocity grid and uses the original catalog-DD
 stages. These commands append no CC rows and retain all current/trial/final ray
-guards. Their closed outcomes will be recorded in `comparison_outcome.json`;
-they do not yet supply a corrected standard or relocated-source panel.
+guards. Each closed outcome is recorded in `comparison_outcome.json`.
+The fixed-model display supplies a corrected accepted-source diagnostic,
+without a convergence or updated-model accuracy claim. No completed corrected
+standard result is available yet.
+
+The [fixed-model result package](data/development/hayward_comparison_saved_outputs_001/loc1d_001/README.md)
+contains the exact rendered figures and identified tables, plus an archive of
+all 59 source tables referenced by the figure sidecars. Its README maps the
+original source paths to archive members and documents restoration. This
+reduced package supports figure and scientific-table inspection. It omits
+bulky solver diagnostics checked by the original renderer and therefore is
+not a standalone replay of that renderer or an inversion rebuild.
 
 ## Assemble the comprehensive report from saved artifacts
 
@@ -127,7 +141,9 @@ plotters refresh particular products from available data; they do not run all
 upstream experiments. Do not treat their execution as complete regeneration.
 
 Two-pass comprehensive report compilation has completed, as recorded in
-[the report validation](report/rebuild_scope_validation.json). To compile the
+[the current report validation](report/loc1d_saved_result_validation.json).
+The earlier [rebuild-scope validation](report/rebuild_scope_validation.json)
+remains a historical checkpoint. To compile the
 current source and saved dependencies into a fresh local directory without
 replacing the published PDF:
 

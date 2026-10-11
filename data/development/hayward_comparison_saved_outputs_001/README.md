@@ -1,10 +1,11 @@
 # Closed standard and fixed-model comparison displays
 
 `plot_hayward_comparison.py` is a saved-output reader and renderer for one
-`standard` or `loc1d` attempt. The source passed inspection and syntax parsing, then one
-[real interrupted-attempt readback](RESULTS.md). It does not build or run the solver,
+`standard` or `loc1d` attempt. The source passed inspection and syntax parsing,
+then actual readback of an interrupted standard attempt and a completed
+[fixed-model attempt](RESULTS.md). It does not build or run the solver,
 trace rays, calculate covariance, or change a numerical acceptance criterion.
-Successful-state rendering remains unexecuted until an eligible attempt closes.
+The fixed-model execution verified 18 accepted states and rendered the last state.
 
 The script requires the actual `comparison_outcome.json`, the matching mode,
 stable output hashes and the existing recorded child-reaping facts. It reads
@@ -59,8 +60,12 @@ python3 -B plot_hayward_comparison.py --mode loc1d \
 
 The first command has been executed once against the closed interrupted
 attempt; it does not rerun that inversion. Substitute the separately identified `standard_002`
-output only after its own closure. The second command must wait for its actual
-closed receipt. The fixed-model command and accepted-state plotting remain unexecuted.
+output only after its own closure. The second command has also executed once
+after actual closure, using Python 3.11 with Matplotlib. Its
+[published package](loc1d_001/README.md) preserves the exact rendered files and
+all referenced scientific tables, with an explicit archive path mapping.
+The reduced package supports inspection; replay of this original renderer
+requires the additional closed outputs that it hashes.
 
 Outputs are `render_summary.json` and `report.tex`, plus
 `comparison_figure.pdf`/`.png`, `event_points.csv`, `model_nodes.csv`,

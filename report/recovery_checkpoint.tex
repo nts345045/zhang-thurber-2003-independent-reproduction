@@ -1570,13 +1570,43 @@ tables and no recovered model; the signal's origin is unknown. This execution
 interruption does not establish a numerical failure. A separate standard
 replacement, with unchanged numerical source and settings, completed
 preparation and compilation and began its inversion. At the 11 October 2026,
-02:45 UTC checkpoint, that replacement and the fixed-model comparison remain
-active. Neither has a completed result. Their commands
+06:38 UTC checkpoint, that replacement remains active. The fixed-model
+comparison has completed all 18 scheduled updates. Their commands
 and output directories are documented in
 \path{data/development/hayward_catalog_comparisons_001/} and \path{REBUILD.md}.
 The common 14,262-ray initial reference check applies to their unchanged
 starting support; later moved-source and model states retain their separate
 current/trial/final checks.
+
+The closed fixed-model result preserves 18 accepted states, six per weighting
+stage, and 12 rejected trials. Saved-output readback joins each accepted
+history row to its terminal accepted trial and identified event/grid snapshots.
+Every accepted grid retains the initial velocities exactly. Figure
+\ref{fig:guarded_loc1d_saved} shows the last accepted state, iteration 17.
+Median and maximum three-dimensional displacement from the catalog starting
+state are 2.849 and 8.397 km. The last recorded maximum source-coordinate
+step is 0.442 km. These are calculated movements, not source-location errors.
+Completion of the scheduled updates does not establish nonlinear convergence.
+History RMS and ray diagnostics describe pre-update states; this display
+adds no final accuracy, first-arrival or covariance claim.
+The published package retains all referenced scientific tables, including
+the complete event, origin, pick, association and receiver identities and
+both metadata epochs for differential observations, in
+\path{data/development/hayward_comparison_saved_outputs_001/loc1d_001/}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.98\linewidth]{../data/development/hayward_comparison_saved_outputs_001/loc1d_001/comparison_figure.pdf}
+\caption{Closed fixed-model DD relocation using the identified catalog subset.
+The left panel shows zero velocity change at 8 km depth. The right panel
+shows horizontal displacement of 1,092 sources from their catalog starting
+positions, with arrows at 1:1 kilometre scale. Both panels enclose the full
+saved grid and all initial and accepted source positions. The plotted state
+is accepted iteration 17, with an unchanged velocity model. The figure is
+a saved-geometry diagnostic; it does not establish convergence or location
+accuracy and does not promote a manuscript panel.}
+\label{fig:guarded_loc1d_saved}
+\end{figure}
 
 Catalog differences require a different covariance calculation from independent
 differential measurements because their constituent picks recur. Let $C$ map
