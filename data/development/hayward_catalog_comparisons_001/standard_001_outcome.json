@@ -1,0 +1,137 @@
+{
+  "accepted_state_count": 0,
+  "attempt": "standard_001",
+  "closed_local_evidence": {
+    "comparison_outcome_sha256": "256fdce01e6c46d0a15a6a1122d28cc32b89a150d781f1386525ad449331f1fa",
+    "evidence_retained_locally": true,
+    "method_output_inventory": [
+      "standard_history.csv",
+      "standard_matrix_preflight.csv"
+    ],
+    "publication_scope": "Original commands, absolute paths, logs, process identifiers and detailed runtime records remain local; this file retains only the bounded outcome and scientific provenance."
+  },
+  "completed_stages": [
+    {
+      "return_code": 0,
+      "stage": "preparation_runtime"
+    },
+    {
+      "return_code": 0,
+      "stage": "catalog_preparation"
+    },
+    {
+      "return_code": 0,
+      "stage": "cmake_configure"
+    },
+    {
+      "return_code": 0,
+      "stage": "cmake_build"
+    },
+    {
+      "return_code": 0,
+      "stage": "runtime_libraries"
+    }
+  ],
+  "configuration": {
+    "effective_settings": {
+      "authoritative_ids_required": 1.0,
+      "catalog_only_dd": 1.0,
+      "damping": 0.1,
+      "fmm_spacing": 0.125,
+      "iterations": 18.0,
+      "pair_distance": 10.0,
+      "ray_initializer": 1.0,
+      "ray_iterations": 1000.0,
+      "ray_spacing": 0.03125,
+      "smoothing": 10.0,
+      "stage_length": 6.0
+    },
+    "mode_definition": "Absolute-observation tomography; differential rows excluded; source and velocity parameters free under the existing box constraints.",
+    "repository_path": "data/development/hayward_catalog_comparisons_001/run.cfg",
+    "sha256": "18b023df0730d56e00bc9afcd84d4f5cefa874a7cc05721a94a51bda5d48ee6b"
+  },
+  "counts": {
+    "absolute_rows": 14262,
+    "catalog_dd_rows": 44718,
+    "cc_rows": 0,
+    "events": 1092,
+    "grid_nodes": 462,
+    "native_rays": 14262,
+    "observations": 58980,
+    "receiver_epochs": 372
+  },
+  "empty_scientific_tables": {
+    "standard_history.csv": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "standard_matrix_preflight.csv": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "identity_scope": "The unchanged initial event/origin, observation/pick and channel SEED/FDSN/epoch metadata remain in the original catalog inputs. There is no derived accepted or final geometry from this attempt.",
+  "initial_forward_validation_result": "Not established by this interrupted attempt.",
+  "interruption": {
+    "controller_signal": "SIGTERM",
+    "interpretation": "The closed controller outcome records receipt of signal 15 and owned-child cleanup. It does not establish who or what originated the signal.",
+    "native_child_reaped": true,
+    "native_return_code": -15,
+    "native_stderr_bytes": 0,
+    "native_stdout_bytes": 0,
+    "outputs_stable": true,
+    "runner_exit_status": 143,
+    "signal_origin": null,
+    "stage": "standard_invert"
+  },
+  "inverse_updates": 0,
+  "limitations": [
+    "No inference about convergence, updated-state ray accuracy or numerical failure follows from the interruption.",
+    "Initial reference support and source controls do not turn an incomplete attempt into a completed standard comparison.",
+    "Any replacement is a distinct attempt with fresh destinations; this interruption remains part of the record."
+  ],
+  "mode": "standard",
+  "numerical_failure_established": false,
+  "recovery_outputs": {
+    "recovered_velocity_model": null,
+    "relocated_sources": null
+  },
+  "schema": 1,
+  "scientific_input_sha256": {
+    "authoritative_ids_required": "00d86d4465702c0424ec511ef34eee9eb080977c55c21ac8af2106257760ba47",
+    "event_pairs.csv": "b678922c56c2c0841769aa882e98291631d3f7651a19661206c0433bfe9826ae",
+    "event_selection.csv": "d8563afe642aaaf719b9c92f0206bcd88003d256ad9067c08b0b40c60c3fb256",
+    "excluded_picks.csv": "93aab31ede96f61d65f4e363eb9bd8748b67014e477b12be12daee3ba09af0ca",
+    "initial_events.csv": "923f3e4e18e9ab968f11de894c2fc9f83b1702cfe18070d110faebcb498e2b05",
+    "initial_grid.csv": "9e27c5356c1e04f2011fbc9d0fa70896f2bea31ead10379a03a119458bbb3810",
+    "observations.csv": "8c270875d675f07a5aa66d0471cd8f8a17c8f25b041e0eb6d2eb165784546a2c",
+    "stations.csv": "7dc852ab02eb24db3b8cfba4c38f35471a9e75ecaedd986bf48f0f26a6b41652"
+  },
+  "scientific_success": false,
+  "scope": "Closed catalog-only guarded standard-tomography attempt. This record preserves execution interruption, not a numerical solver-failure diagnosis.",
+  "source_context": {
+    "binary_sha256": "cc7504adfc875fe4a846ef43d0a9322ef04443acefa6cbddba5e3bd53141940d",
+    "comparison_manifest_repository_path": "data/development/hayward_catalog_comparisons_001/manifest.json",
+    "comparison_manifest_sha256": "eea1640a05d5cb9d2ecf45c510173ba8db9b0941e5809a0165d21735d641bf16",
+    "compiled_source_base": "data/development/hayward_corrected_rebuild_sources_001/source/",
+    "compiled_source_sha256": {
+      "CMakeLists.txt": "a156668fc94190542fc5baa77ccbecd476321f455e1496afb0de5590a31ca2e7",
+      "src/analytic_truth.hpp": "b35b35c8530530170f13f885a661f8046d3acc4a46a89e6c6b2939b71bed58ca",
+      "src/core.hpp": "7111f67c896b7b93d344372423259e288533210807392e7da2eec72f0c55caed",
+      "src/csv.hpp": "67c859589e0f07976b98307f1132bb97bd2839598515d009311add0190348a33",
+      "src/first_arrival.hpp": "32f74a7ba4ea4b012f0280815601d570fea20131defbf3ee384356cb4dea3bc6",
+      "src/forward.hpp": "2f0e6443c12cced1dc1ec8aa062505c3a8801b245441b88efc26d2e9ec34d71e",
+      "src/full_linearization.hpp": "b32e95830bdd76af1d16f0bfc4c75958f863f6a443c62b5f54b05301ce5b26ea",
+      "src/main.cpp": "4844d330f7f8300513c7d7e2d1c17c8eb6b227936e2993e326723ce7ecb88116",
+      "src/ray_checks.hpp": "ddabbfcd30530bb10114cf55178f6201d56729fea173adc5380167b5e23dc358",
+      "src/ray_metric.hpp": "a282299431787361ff343dd71fc984fad0abcb675f7bf23b42189d1c61ba8732"
+    },
+    "entrypoint_repository_path": "run_hayward_catalog_comparison.py",
+    "entrypoint_sha256": "435ac92d7f4aa747997af30f0134276758d3dc4ff471af6bffba5eb7ddf51c2e",
+    "shared_helper_repository_path": "rebuild_hayward_corrected.py",
+    "shared_helper_sha256": "a9a07fa490b8eecdbdc10e3118288fbc3692b04800b75b224a53d8e763182769",
+    "source_mapping_repository_path": "data/development/hayward_corrected_rebuild_sources_001/source_mapping.json",
+    "source_mapping_sha256": "d462f00bae8443fa32d10e0b1b226651e3712ab32d061a05e50d1b2207db4c95"
+  },
+  "status": "execution_interrupted_before_first_inverse_update"
+}

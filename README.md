@@ -645,11 +645,15 @@ earlier forward operators.
   iterations; `dd_accepted_it_N_events.csv` and `dd_accepted_it_N_grid.csv`
   preserve accepted updates. Trial and failure tables retain their own status.
   No completed update or final model was available at this checkpoint.
-- `data/hayward_standard_guarded_001/` and `data/hayward_loc1d_guarded_001/`:
+- `data/hayward_standard_guarded_002/` and `data/hayward_loc1d_guarded_001/`:
   separate [catalog-only comparison attempts](data/development/hayward_catalog_comparisons_001/ATTEMPTS.md)
   in the integration worktree. Preparation and compilation passed; both
   inversions are active. Inspect the `standard_*` or `loc1d_*` histories,
   accepted snapshots and trial/failure files. No completed model is claimed.
+  The original `data/hayward_standard_guarded_001/` is closed after a SIGTERM
+  interruption before its first update. Its
+  [preserved outcome](data/development/hayward_catalog_comparisons_001/standard_001_outcome.json)
+  establishes no numerical failure; the signal's origin is unknown.
 - [`data/published/loma_lom_analytic_001/`](data/published/loma_lom_analytic_001/README.md):
   complete, audited synthetic observations and authoritative geometry, with
   verified archive restoration instructions. The

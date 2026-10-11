@@ -180,11 +180,15 @@ pairs are computed with OpenMP.
 The numerical correction and analytic isolation experiments are recorded in
 `data/development/ray_optimizer_audit/README.md`. All 48 current component
 checks pass. Forward retracing of the frozen baseline models improves but does
-not eliminate nonconvergence. The saved synthetic inversions have not been
-regenerated with this correction. The independent Hayward DD inversion uses
-the revised kernel and has complete numerical outputs; the absolute-data and
-fixed-model runs and the full comparison workflow remain pending at this
-checkpoint. Local stationarity also fails to identify the earliest branch in
+not eliminate nonconvergence. A separate
+[historical synthetic rebuild](data/development/historical_clean_rebuild_001/RESULTS.md)
+completed; the report retains the original synthetic figures at their stated
+source checkpoint. The completed Hayward baseline supplies DD, absolute-data
+and fixed-model outputs. Its
+[independent review](data/development/hayward_completed_baseline_review_001/README.md)
+records remaining numerical failures. The corrected guarded attempts are
+separate and their execution status is recorded in [REBUILD.md](REBUILD.md).
+Local stationarity also fails to identify the earliest branch in
 the constant-layer/gradient counterexample in
 `data/development/first_arrival_audit/`. The original first-order FMM initializer
 retains near-crossing failures. A [controlled comparison](data/development/fmm_order_comparison.md)

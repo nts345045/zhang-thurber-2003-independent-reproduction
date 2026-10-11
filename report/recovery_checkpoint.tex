@@ -1564,8 +1564,14 @@ Two separate guarded catalog-only comparisons now use that same frozen
 numerical source and the original 58,980 observations. Standard tomography
 uses absolute rows and estimates sources and velocities; fixed-model
 relocation holds the initial velocity grid and uses the original catalog-DD
-weighting stages. Both completed preparation and compilation and began their
-inversions. Neither has a completed result at this checkpoint. Their commands
+weighting stages. The first standard attempt received SIGTERM before its
+first inverse update. Its closed record preserves empty history and matrix
+tables and no recovered model; the signal's origin is unknown. This execution
+interruption does not establish a numerical failure. A separate standard
+replacement, with unchanged numerical source and settings, completed
+preparation and compilation and began its inversion. At the 11 October 2026,
+02:45 UTC checkpoint, that replacement and the fixed-model comparison remain
+active. Neither has a completed result. Their commands
 and output directories are documented in
 \path{data/development/hayward_catalog_comparisons_001/} and \path{REBUILD.md}.
 The common 14,262-ray initial reference check applies to their unchanged

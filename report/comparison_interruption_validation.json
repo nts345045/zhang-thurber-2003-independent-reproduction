@@ -1,0 +1,83 @@
+{
+  "checkpoint_utc": "2026-10-11T02:45:11.275085+00:00",
+  "compilation": {
+    "actual_tex_passes": 2,
+    "return_codes": [
+      0,
+      0
+    ],
+    "source_hashes_unchanged": true,
+    "warnings": [
+      "Underfull \\vbox (badness 10000) detected at line 21"
+    ]
+  },
+  "documentation_sha256": {
+    "METHODS.md": "58fe8cb6309e6d24a6ebe9dfd03acfeb2e1f39af85a6f5a6dc3b22e77c359c0f",
+    "README.md": "f9bed4bed8dffbc2ed0236caeef2b72382c368998890617175aaa813f0e0ba28",
+    "REBUILD.md": "b4b2fd3ca586ec4e9e8342eb14088c4962a2fc9b6a290aa12c004a0afabd311f",
+    "data/development/hayward_catalog_comparisons_001/ATTEMPTS.md": "0af2a154ddd9973977710dd837474bc24c3bbf16e84409e436823a7c2c24871e",
+    "data/development/hayward_catalog_comparisons_001/standard_001_outcome.json": "7e0b09f049146e87408530867cec4798bc85c7dd6d735b3ac537b5ad0f43bf11"
+  },
+  "loc1d_001": {
+    "completed_result_claimed": false,
+    "status": "native_inversion_active"
+  },
+  "panel_status": {
+    "independently_reproduced": 1,
+    "partially_reproduced": 61
+  },
+  "pdf": {
+    "bytes": 3219128,
+    "file": "report/report.pdf",
+    "pages": 131,
+    "sha256": "60b2b2cd5a9f7df002c01842326cb390ce9a136bb7b24d790d9a5eba12cc9a5f"
+  },
+  "preceding_report": {
+    "commit": "6d91f3278e3fd3d1db4b88ff5c227e7410b07b15",
+    "pdf_sha256": "401b60ea28f17aecde90d76b02fc81eb5e1cf4f867516bb8dcc73577d005b002",
+    "validation": "report/rebuild_scope_validation.json"
+  },
+  "report_source_sha256": {
+    "report/continuous_ray_components.tex": "0a9fb7f2bc6aff92b7c88af4ec8ad24114d72cc6ce42ad998faca7aba5da9bb0",
+    "report/hayward_full_results_section.tex": "1ef7149792af3ba4ce5a8f9492bdaa5ced41d4117de654a2316306a7dcfc7e28",
+    "report/hayward_results.tex": "4722d2a9473bcc1be0b3671f7efe1b25b408d42d36e8938ffa6bbc6522420614",
+    "report/hayward_velocity_checkpoint.tex": "d2c1b70f84acf00729ff7aca23b8ad14ad98b06d49fe9fc4555152c2a126ec59",
+    "report/initial_full_dd_resolution.tex": "6d9d802d22c0b0280f6b7f5f500c927311990ad192cbfc5400f84ffe083cc8e5",
+    "report/joint_findings.tex": "4e94b1553e76b20051e6195b1d0b71d8097ce7d892fd6b2879cd233f72e43ee6",
+    "report/metrics.tex": "1adf4e381d0a645cec73b919eb176e23ae55f33d4f253717630d5dd2b480077a",
+    "report/panel_details.tex": "a44c3a176bc33ad69e67787a97251a9b851f6ec118370581bdeeb9bf2fff7f0b",
+    "report/panel_table.tex": "03a4f24c131c6e1cc2d0c619e753df67f541d87c741133a9956d6aa5cf45ed65",
+    "report/ray_failure_checkpoint.tex": "c4e64d2b323c353b4bcb92f24adf0d0e2c5e024d187299237a464f0035cf112d",
+    "report/ray_findings.tex": "87e02479f0fbd6e43ae564965e2ea79ee7bdad4670cdd62bbca25115f22f4fad",
+    "report/recovery_checkpoint.tex": "35d60c29390d4424f56e492ef29578c105c244719ace8db1e6fd942cee260242",
+    "report/report.tex": "978a3beae692308922dde0d22c365f8beb2ca7b0e30125ccadd49b80d620b1c9",
+    "report/run_findings.tex": "c301712aeba4366c6b33a61d5939d2f3567a7dce0734aff2c62a2e936e37c28f",
+    "report/sensitivity_table.tex": "89e36d73e854c23e8baeb7436e33b7474c4fa82b318f6f39f26b3a26167aacfb",
+    "report/spatial_table.tex": "40139003a2d2ee5eae0a1ddd42af178bddc086642c8cd5687e617c399e873d9d",
+    "report/validation_table.tex": "2df4790edf0dfa6bf59fa64f9f42a943a75d77df7d0b6ffe4f061caaab08d343",
+    "report/velocity_metrics.tex": "9da0ab0e781f625c2abe70910c6ae0884a44adb5e8bf84ddbacec4bed8e45a62"
+  },
+  "scope": "Saved execution-interruption disposition, separately launched identical standard replacement and current inversion-output guide. No new scientific inversion result or panel promotion.",
+  "standard_001": {
+    "inverse_updates": 0,
+    "numerical_failure_established": false,
+    "record": "data/development/hayward_catalog_comparisons_001/standard_001_outcome.json",
+    "signal_origin": null,
+    "status": "execution_interrupted_before_first_inverse_update"
+  },
+  "standard_002": {
+    "binary_sha256": "cc7504adfc875fe4a846ef43d0a9322ef04443acefa6cbddba5e3bd53141940d",
+    "completed_result_claimed": false,
+    "native_started_utc": "2026-10-11T02:45:01.939624+00:00",
+    "numerical_source_and_settings_unchanged": true,
+    "preparation_and_compilation_completed": true,
+    "status": "native_inversion_active"
+  },
+  "visual_review": {
+    "finding": "Updated execution account legible; no clipping or overlap.",
+    "pages": [
+      54
+    ],
+    "status": "passed"
+  }
+}

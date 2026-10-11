@@ -106,8 +106,12 @@ python3 -B run_hayward_catalog_comparison.py --mode loc1d \
   --output data/FRESH_hayward_loc1d --build tmp/FRESH_hayward_loc1d
 ```
 
-Both [actual attempts](data/development/hayward_catalog_comparisons_001/ATTEMPTS.md)
-passed preparation and compilation; both inversions remain active. Standard
+The [actual attempts](data/development/hayward_catalog_comparisons_001/ATTEMPTS.md)
+passed preparation and compilation. Standard attempt 001 was interrupted by
+SIGTERM before its first update; its closed outcome preserves the interruption
+without attributing the signal's origin or inferring a numerical failure.
+A separate standard attempt 002 and the original fixed-model comparison are
+active at the 11 October 2026, 02:45 UTC checkpoint. Standard
 tomography uses absolute rows and estimates velocities and sources. Fixed-model
 relocation holds the initial velocity grid and uses the original catalog-DD
 stages. These commands append no CC rows and retain all current/trial/final ray
