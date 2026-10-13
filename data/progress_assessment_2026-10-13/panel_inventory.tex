@@ -1,0 +1,127 @@
+\section{Panel inventory and evidence trail}
+
+The existing convention gives 62 entries: 27 through Figure 9, 21 sections in Figure 10 and 14 in Figure 11. R denotes reproduced input-profile agreement; P denotes partial reproduction. I means independently imposed input, O means independently assembled authoritative observations, and M means independently calculated model output. Generation and agreement are separate classifications. No schematic is counted as a numerical result.
+
+Figure 3 letters each cover the five generated depths (0, 3, 7, 11 and 16 km); correspondence to every inner published subplot was not established. Each grouped Figure 10/11 row enumerates all seven sections, $y=-30,-20,-10,0,10,20,30$ km, with identical status, evidence files and limitation. The CSV retains all 62 individual entries.
+
+\small\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{@{}p{0.115\linewidth}p{0.245\linewidth}p{0.06\linewidth}p{0.445\linewidth}p{0.055\linewidth}@{}}\toprule Panel & Quantity & Gen./\newline agree. & Quantitative comparison; limitation & Files\\\midrule\endhead
+
+1 & Horizontal true P-velocity slice & I/R & Saved 4--6 km/s profile agrees with the coded written profile at every sample (maximum error 0 km/s). Input reconstruction, not inversion recovery; plotted extent/depth are independent choices. & E1\\[3pt]
+
+2 & Synthetic-test event/station geometry and inversion grid & O/P & 724 catalog sources; 52 receiver epochs. No exact-cohort comparison. Original cohort and projection unmatched; geometry only. & E2\\[3pt]
+
+3a & Standard tomographic P velocity & M/P & Baseline interior mean |velocity error| 0.313 km/s; paper 0.245 km/s uses an unmatched mask. L1 & E3a\\[3pt]
+
+3b & DD tomographic P velocity & M/P & Baseline interior mean |velocity error| 0.214 km/s; paper 0.178 km/s uses an unmatched mask. L1 & E3b\\[3pt]
+
+3c & True minus DD P velocity & M/P & Baseline interior mean |velocity error| 0.214 km/s; paper 0.178 km/s uses an unmatched mask. L1 & E3c\\[3pt]
+
+3d & True minus standard P velocity & M/P & Baseline interior mean |velocity error| 0.313 km/s; paper 0.245 km/s uses an unmatched mask. L1 & E3d\\[3pt]
+
+4 & network, catalog seismicity, and inversion grid & O/P & 1,092 events / 37 physical stations; paper 1,489 / 52. L2; input geometry only. & E3\\[3pt]
+
+5a & event map: NCSN catalog & O/P & No matched error metric. L2 & E4\\[3pt]
+
+5b & event map: standard tomography & M/P & No matched error metric. L2, L3 & E4\\[3pt]
+
+5c & event map: DD location & M/P & No matched error metric. L2, L3 & E4\\[3pt]
+
+5d & event map: DD tomography & M/P & No matched error metric. L2, L3 & E4\\[3pt]
+
+6a & geographical map & O/P & No matched error metric. L2, L4 & E6\\[3pt]
+
+6b & rotated Cartesian map & O/P & No matched error metric. L2, L4 & E6\\[3pt]
+
+6c & across-strike depth section AA-prime & O/P & No matched error metric. L2, L4 & E6\\[3pt]
+
+6d & along-strike depth section BB-prime & O/P & No matched error metric. L2, L4 & E6\\[3pt]
+
+7a & standard: geographical map & M/P & No matched error metric. L2, L3, L4 & E7\\[3pt]
+
+7b & standard: rotated Cartesian map & M/P & No matched error metric. L2, L3, L4 & E7\\[3pt]
+
+7c & standard: across-strike depth section AA-prime & M/P & No matched error metric. L2, L3, L4 & E7\\[3pt]
+
+7d & standard: along-strike depth section BB-prime & M/P & No matched error metric. L2, L3, L4 & E7\\[3pt]
+
+8a & DD location: geographical map & M/P & No matched error metric. L2, L3, L4 & E8\\[3pt]
+
+8b & DD location: rotated Cartesian map & M/P & No matched error metric. L2, L3, L4 & E8\\[3pt]
+
+8c & DD location: across-strike depth section AA-prime & M/P & No matched error metric. L2, L3, L4 & E8\\[3pt]
+
+8d & DD location: along-strike depth section BB-prime & M/P & No matched error metric. L2, L3, L4 & E8\\[3pt]
+
+9a & DD: geographical map & M/P & No matched error metric. L2, L3, L4 & E9\\[3pt]
+
+9b & DD: rotated Cartesian map & M/P & No matched error metric. L2, L3, L4 & E9\\[3pt]
+
+9c & DD: across-strike depth section AA-prime & M/P & No matched error metric. L2, L3, L4 & E9\\[3pt]
+
+9d & DD: along-strike depth section BB-prime & M/P & No matched error metric. L2, L3, L4 & E9\\[3pt]
+
+10a (7 sections) & across-strike DD velocity & M/P & No matched error metric. L2, L3; no quantitative validation of sharpening. & E10\\[3pt]
+
+10b (7 sections) & across-strike standard velocity & M/P & No matched error metric. L2, L3; no quantitative validation of sharpening. & E10\\[3pt]
+
+10c (7 sections) & across-strike DD minus standard velocity & M/P & No matched error metric. L2, L3; no quantitative validation of sharpening. & E10\\[3pt]
+
+11a (7 sections) & resolution-matrix diagonal & M/P & No matched error metric. L2, L5 & E11\\[3pt]
+
+11b (7 sections) & interpolated nodal conditional velocity noise from independent picks & M/P & No matched error metric. L2, L5 & E11\\[3pt]
+
+\bottomrule\end{longtable}\normalsize
+
+\subsection*{Limitation keys}
+
+\noindent\textbf{L1.} Historical synthetic geometry and homogeneous starting model differ from the paper; sampling masks are unmatched and production ray convergence fails. Figure 2 was later replaced with authoritative geometry, but Figure 3 was not rerun on it.\par\smallskip
+
+\noindent\textbf{L2.} Authoritative independent subset, not the original cohort: 1,092 versus 1,489 events and 37 versus 52 stations. Uncertain study membership, historical receiver elevations, selection, projection and starting profile remain disclosed assumptions.\par\smallskip
+
+\noindent\textbf{L3.} Legacy calculated field solution, not a validated Earth model. Forward-calculation errors and unresolved nonlinear convergence limit interpretation; no independent true hypocenters or quantitative published-image comparison.\par\smallskip
+
+\noindent\textbf{L4.} Published section-box and fault-trace geometry were not recovered from written specifications. Both depth views use all selected zoom events; sections are not exact manuscript selections.\par\smallskip
+
+\noindent\textbf{L5.} Absolute-pick resolution at the legacy DD estimate uses independent regularization and covariance assumptions. It excludes ray/model errors and active bounds. Interpolated nodal noise is not uncertainty of an interpolated velocity. It is not a validated final corrected model.\par\smallskip
+
+\subsection*{Supplementary scope}
+
+No supplementary panel was identified in the original SSA issue contents or abstract listing, rechecked on 13 October 2026. Thus there is no documented supplementary panel identifier to inventory; this does not establish that no ancillary material exists elsewhere. Supplementary reproduction remains unspecified, rather than silently counted as successful.
+
+\subsection*{File references}
+
+Paths are relative to the repository root. Files were checked for existence. E2 preserves the generated geometry through its manifest and validation record; its data members are listed there. The individual numerical and provenance checks actually performed are specified in \path{data/progress_assessment_2026-10-13/evidence.json}. Uninspected content is not certified by existence alone.
+
+\footnotesize
+
+\noindent\textbf{E1} Data: \path{data/synthetic/truth_slice.csv}.\par Plot: \path{figures/figure01.pdf}.\par\medskip
+
+\noindent\textbf{E2} Data: \path{data/development/loma_geometry_figure_001/inputs/truth_events.csv}, \path{data/development/loma_geometry_figure_001/inputs/stations.csv}, \path{data/development/loma_geometry_figure_001/inputs/initial_grid.csv}, \path{data/development/loma_geometry_figure_001/manifest.json}.\par Plot: \path{data/development/loma_geometry_figure_001/figure02_authoritative_geometry_candidate.pdf}.\par\medskip
+
+\noindent\textbf{E3} Data: \path{data/hayward/initial_events.csv}, \path{data/hayward/stations.csv}, \path{data/hayward/selection_manifest.json}.\par Plot: \path{figures/hayward/figure04_geometry.pdf}.\par\medskip
+
+\noindent\textbf{E4} Data: \path{data/hayward/initial_events.csv}, \path{data/hayward/standard_events.csv}, \path{data/hayward/loc1d_events.csv}, \path{data/hayward/dd_events.csv}, \path{data/hayward/figure_metrics.json}.\par Plot: \path{figures/hayward/figure05_locations.pdf}.\par\medskip
+
+\noindent\textbf{E10} Data: \path{data/hayward/vertical_sections.csv}, \path{data/hayward/standard_grid.csv}, \path{data/hayward/dd_grid.csv}, \path{data/hayward/figure10_velocity_manifest.json}.\par Plot: \path{figures/hayward/figure10_velocity.pdf}.\par\medskip
+
+\noindent\textbf{E11} Data: \path{data/hayward/resolution_sections.csv}, \path{data/hayward/absolute_resolution.csv}, \path{data/hayward/absolute_resolution_manifest.json}.\par Plot: \path{figures/hayward/figure11_resolution.pdf}.\par\medskip
+
+\noindent\textbf{E3a} Data: \path{data/synthetic/standard_slices.csv}, \path{data/synthetic/standard_events.csv}, \path{data/metrics.json}.\par Plot: \path{figures/figure03a.pdf}.\par\medskip
+
+\noindent\textbf{E3b} Data: \path{data/synthetic/dd_slices.csv}, \path{data/synthetic/dd_events.csv}, \path{data/metrics.json}.\par Plot: \path{figures/figure03b.pdf}.\par\medskip
+
+\noindent\textbf{E3c} Data: \path{data/synthetic/dd_slices.csv}, \path{data/synthetic/dd_events.csv}, \path{data/metrics.json}.\par Plot: \path{figures/figure03c.pdf}.\par\medskip
+
+\noindent\textbf{E3d} Data: \path{data/synthetic/standard_slices.csv}, \path{data/synthetic/standard_events.csv}, \path{data/metrics.json}.\par Plot: \path{figures/figure03d.pdf}.\par\medskip
+
+\noindent\textbf{E6} Data: \path{data/hayward/initial_zoom_events.csv}, \path{data/hayward/initial_geographic_events.csv}.\par Plot: \path{figures/hayward/figure06_initial.pdf}.\par\medskip
+
+\noindent\textbf{E7} Data: \path{data/hayward/standard_zoom_events.csv}, \path{data/hayward/standard_geographic_events.csv}.\par Plot: \path{figures/hayward/figure07_standard.pdf}.\par\medskip
+
+\noindent\textbf{E8} Data: \path{data/hayward/loc1d_zoom_events.csv}, \path{data/hayward/loc1d_geographic_events.csv}.\par Plot: \path{figures/hayward/figure08_loc1d.pdf}.\par\medskip
+
+\noindent\textbf{E9} Data: \path{data/hayward/dd_zoom_events.csv}, \path{data/hayward/dd_geographic_events.csv}.\par Plot: \path{figures/hayward/figure09_dd.pdf}.\par\medskip
+
+\normalsize
